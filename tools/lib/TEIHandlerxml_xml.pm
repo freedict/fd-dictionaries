@@ -2,6 +2,7 @@
 
 # V1.2 5/2004 Michael Bunk
 #	* added option to generate 00-database-allchars header
+#	* if reverse index is generated, 00-database-short will indicate it now
 # V1.1 4/2004 Michael Bunk
 #	* when headwords contain entities, characters()
 #	  is called multiple times for the same element:
@@ -286,8 +287,7 @@ sub characters {
 
     if    (($preLastStartTag eq "titleStmt") &&
            ($lastStartTag    eq "title")) { $database_short = $data }
-    elsif (($preLastStartTag eq "sourceDesc") &&
-           ($lastStartTag    eq "p")) { $database_url=$data }
+    elsif ($lastStartTag     eq "pubPlace") { $database_url=$data }
 
     if ($reverse_index && ($lastStartTag eq "tr")) {
 	$current_headword .= $data;
@@ -354,6 +354,10 @@ sub end_element {
 	Dict::write_text(); Dict::end_headword();
         Dict::write_direct("\n  ");
         Dict::write_direct($database_short);
+	if($reverse_index)
+	{
+          Dict::write_direct(' [reverse index]');
+	}
         Dict::write_newline();
 
 	## 00-database-info

@@ -2,7 +2,6 @@
 
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<!--  xmlns="http://www.w3.org/TR/REC-html40" -->
 
 
 <xsl:output method="text"/>
@@ -19,7 +18,8 @@
      otherwise dictd shows empty shortname (url not tested as
      i don't know any project that uses it) -->
      
-<xsl:template match="entry[form/orth='00-database-short' or form/orth='00-database-url']">
+<xsl:template
+  match="entry[form/orth='00-database-short' or form/orth='00-database-url']">
 <xsl:value-of select="form/orth"/><xsl:text>
 </xsl:text><xsl:value-of select="def"/>
 <xsl:text>
@@ -92,6 +92,7 @@
 
 </xsl:text><xsl:value-of select="respStmt/resp"/>: <xsl:value-of select="respStmt/name"/>
   <xsl:text>
+  
 </xsl:text>
 </xsl:template>
 
@@ -102,9 +103,10 @@ Edition: <xsl:apply-templates/><xsl:text>
 
 <xsl:template match="publicationStmt">
 Published by: <xsl:value-of select="./publisher"/>, <xsl:value-of select="./date"/><xsl:text>
-</xsl:text>
+    
+Published at: </xsl:text><xsl:value-of select="./pubPlace"/><xsl:text>
+</xsl:text>  
 </xsl:template>
-
 
 <xsl:template match="availability">
 Availability: <xsl:value-of select="."/><xsl:text>
@@ -124,6 +126,11 @@ Notes:
 
 <xsl:template match="sourceDesc">
 Source: <xsl:value-of select="."/><xsl:text>
+</xsl:text></xsl:template>
+
+<xsl:template match="projectDesc">
+The Project: <xsl:value-of select="."/><xsl:text>
+
 </xsl:text></xsl:template>
 
 <xsl:template match="revisionDesc">Changelog:

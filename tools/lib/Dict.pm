@@ -1,6 +1,9 @@
+# V1.5 5/2004
+#   * generate warnings on empty headwords that appear after
+#     punctuation removal
 # V1.4 4/2004
 #   * trim leading spaces after punctuation removal from headwords
-#   * make warnings of non-acsii characters in non utf8 index work
+#   * made warnings of non-acsii characters in non utf8 index work
 # V1.3 2/2004
 #   * use LC_ALL instead of LANG environment variable
 #     for setting locale for 'sort'
@@ -9,9 +12,9 @@
 #   * do headword mangling in the same way (hopefully) like dictd
 #     does in its tolower_alnumspace_utf8() function
 # V1.2 5/2003
-#      gave optional argument 'locale' to open_dict()
+#   *  gave optional argument 'locale' to open_dict()
 # V1.1 improved by Michael Bunk, <kleinerwurm at gmx.net>
-#      This API is undocumented & cruel! But at least I added
+#   *  This API is undocumented & cruel! But at least I added
 #      some comments here.
 #  
 # V1.0 Copyright (C) 2000 Horst Eyermann <horst@freedict.de>
@@ -102,7 +105,7 @@ sub open_dict{
 
     # open a pipe and output the index in a sorted way
 
-    # dictfmt uses only -df (and no options in utf7 / 8bit mode) 
+    # dictfmt uses only -df (and no options in utf8 / 8bit mode) 
     # in bash we enter: sort -t $'\t' -k 1,1bdf
     # the sort options:
     # -t: give field separator, the TAB
@@ -115,7 +118,7 @@ sub open_dict{
     $sortcmd = "|sort -t \"\t\" -k 1,1b".$d." >$name.index";
     warn "using sort command: '$sortcmd'\n";
     open INDEX, $sortcmd;
-    if ($utf8mode) {binmode(INDEX, ":utf8");}
+    if ($utf8mode) { binmode(INDEX, ":utf8"); }
     warn "\nopened: $name.dict and \n       $name.index\n";    
 
     $headwords = 0;
@@ -150,11 +153,14 @@ sub set_headword {
 
 
     # Output status
-    if (($headwords % 100) == 0) { printf STDERR "%8d Headwords.\r", $headwords }
+    if (($headwords % 100) == 0)
+    {
+      printf STDERR "%8d Headwords.\r", $headwords
+    }
 
-    # that hwords is an array means multiple ways to write one headword
+    # that hwords is an array means multiple headwords
     # can reference the same definition! good.
-    if ( @hwords != 0) {
+    if(@hwords != 0) {
 	foreach (@hwords) {
 	    # warn about non-ascii chars if not in utf8 mode
 	    if(!$utf8mode && /\P{IsASCII}/)
@@ -165,7 +171,7 @@ sub set_headword {
 	  
 	    # make perl believe it is utf8
 	    # see 'man perluniintro' 
-	    if($utf8mode) {$_ = decode_utf8($_);}
+	    if($utf8mode) { $_ = decode_utf8($_); }
 
 	    # generate two headwords for "00-database-*":
 	    # first with, second without "-" characters
@@ -185,15 +191,23 @@ sub set_headword {
 	    # even in allchars mode!)
 	    $_ = lc $_;
 
+	    # sanity checks
             if(/^\s+(.+)/)
 	    {
-	      warn "Warning: Trimmed leading space(s) from headword '$_'\n";
+	      warn "\nWarning: Trimmed leading space(s) from headword '$_'\n";
 	      $_ = $1;
 	      warn "Now it is '$_'\n";
 	    }
 
-	    print INDEX "$_\t" . b64_encode($start_article);
-	    print INDEX "\t" . b64_encode($end_article-$start_article) . "\n";	    
+            if(/^\s*$/)
+	    {
+	      warn "\nSkipping empty or whitespace-only headword!\n";
+	      warn "\t\@hwords: ", @hwords, "\n";
+	    }
+	    else
+	    {
+	      print INDEX "$_\t" . b64_encode($start_article);
+	      print INDEX "\t" . b64_encode($end_article-$start_article) . "\n";	    }
 	}
     }
 

@@ -98,8 +98,9 @@ $ENV{SP_CHARSET_FIXED} = "YES";
 if (!defined($ENV{SGML_CATALOG_FILES})) {
  print STDERR "Warning: SGML_CATALOG_FILES is not set.\nPlease set it to point to\n";
  print STDERR " - the xml.soc file from the (Open)SP distribution\n";
- print STDERR " - the TEI catalog file(s)\n";
- $ENV{SGML_CATALOG_FILES}= "/usr/share/doc/packages/sp/html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.iso_ent";
+ print STDERR " - and the TEI catalog file(s)\n";
+ $ENV{SGML_CATALOG_FILES} = "/usr/share/doc/packages/sp/html-xml/xml.soc:".
+ 	"/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.iso_ent";
  print STDERR "Using SGML_CATALOG_FILES=$ENV{SGML_CATALOG_FILES}\n";
  }
  
@@ -107,8 +108,7 @@ if (!defined($ENV{SGML_CATALOG_FILES})) {
 # but if we do, we get:
 # > XML::ESISParser::parse: unable to parse `file.tei'
 # > nsgmls:/usr/lib/sgml/declaration/xml.decl:1:W: SGML declaration was not implied
-# now that we set SP_ENCODING and SP_CHARSET_FIXED by ourselvelves,
-# it might be different. It seems ESISParser.pm is not supporting XML...
+# It seems ESISParser.pm is not supporting XML...
 our @additional_args;
 push (@additional_args, IsSGML => 1);
 
