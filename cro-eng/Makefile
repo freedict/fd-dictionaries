@@ -54,6 +54,6 @@ clean:
 	rm -f ../dicts/bin/$(LANGUAGE).tar.gz
 
 dist:
-	tar cvjf $(LANGUAGE)-$(VERSION).src.bz2 AUTHORS ChangeLog COPYING \
+	tar cvjf $(LANGUAGE)-$(VERSION).src.tar.bz2 AUTHORS ChangeLog COPYING \
 cro-eng.tei INSTALL Makefile NEWS README
 
