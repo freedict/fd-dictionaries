@@ -14,9 +14,15 @@ rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 # depending on how much memory your machine has, extracting the
 # tiny edition element contents per XSLT might be overdimensioned
-version = $(shell grep -m 1 -o -P -e \
+# if $(version) contains spaces: 
+# Makefile.common:235: *** mixed implicit and normal rules.  Stop.
+# so spaces are substituted by underscores
+empty:=
+space:= $(empty) $(empty)
+version1 = $(shell grep -m 1 -o -P -e \
 	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
-# version = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+# version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+version = $(subst $(space),_,$(version1))
 
 ################
 # default target

@@ -22,13 +22,14 @@
 #  children: none
 #  attributes:
 #   @platform		allowed values: dict-tgz, dict-tbz2, mobi,
-#			zbedic, deb, rpm, gem
+#			bedic, deb, rpm, gem
 #   @version		version of the dictionary this is a release of
 #   @URL		URL where this release can be downloaded
 #			(additional click may be required by SourceForge)
 #   @size		size of this release in bytes
 #   @date		when this release was made, eg. 2004-12-25
 
+use FindBin;
 use Getopt::Std;
 use XML::DOM;
 use File::stat;
@@ -37,7 +38,16 @@ use strict;
 our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r);
 getopts('vhad:fr:');
 
-my $dbfile = "../freedict-database.xml";
+sub printd
+{
+  return if !$opt_v;
+  print @_;
+}
+
+my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
+printd "Using FREEDICTDIR=$FREEDICTDIR\n";
+
+my $dbfile = "$FREEDICTDIR/freedict-database.xml";
 
 if($opt_h)
 {
@@ -46,6 +56,11 @@ $0 [options] (-a | -d <la1-la2>) [-r [<file>]]
   
 Gather metadata from TEI files in FreeDict file tree
 and save it in the XML file $dbfile.
+
+The location is taken from the environment variable
+FREEDICTDIR or, if that is not set, the parent directory
+of the script is taken, assuming the script resides
+in the tools subdirectory of the FreeDict file tree.
 
 Options:
 
@@ -62,12 +77,6 @@ Options:
 
 EOT
   exit;
-}
-
-sub printd
-{
-  return if !$opt_v;
-  print @_;
 }
 
 sub contains_dictionary
@@ -112,6 +121,12 @@ sub fdict_extract_metadata
   my($headwords, $edition, $date, $status, $sourceURL);
 
   my $indexfile = "$dirname/$entry/$entry.index";
+  
+  if(!-r $indexfile)
+  {
+    system "cd $dirname/$entry; make $entry.index";
+  }
+  
   if(-r $indexfile)
   {
     my @a = split ' ', `wc -l "$indexfile"`;
@@ -221,7 +236,14 @@ sub fdict_extract_releases
   #</tr>
 
   my $file = *STDIN;
-  open $file,$opt_r if($opt_r ne '-');
+  if($opt_r ne '-')
+  {
+    if(!open($file,'<', $opt_r))
+    {
+      print "Cannot read file '$opt_r'\n";
+      exit;
+    };
+  };
   my @lines = <$file>;
   chomp foreach(@lines);
   my $line = join '', @lines;
@@ -266,6 +288,12 @@ sub fdict_extract_releases
       if($filename =~ /^freedict-/) { $name = substr($filename, 9,7) }
       else { $name = substr($filename,0,7); }
 
+      if($name !~ /^\w{3}-\w{3}$/)
+      {
+	printd "Invalid dictionary name '$name'. Skipping release.\n";
+	next;
+      }
+      
       my $d = contains_dictionary($doc,  $name);
       if(!$d)
       {
@@ -274,7 +302,7 @@ sub fdict_extract_releases
       }
 
       # find platform by extracting it from filename
-      # allowed values: dict-tgz, dict-tbz2, mobi, zbedic, deb, rpm, gem, src
+      # allowed values: dict-tgz, dict-tbz2, mobi, bedic, deb, rpm, gem, src
       my($platform, $fileversion, $sfn, $ssfn);
 
       # cut prefix "freedict-" if available
@@ -298,6 +326,14 @@ sub fdict_extract_releases
       
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.bz2/)
       { $platform = 'dict-tbz2'; } 
+
+      elsif($ssfn =~ /\.dic\.dz/)
+      # eg. freedict-kha-deu-0.0.1.dic.dz
+      { $platform = 'bedic'; } 
+      
+      elsif($ssfn =~ /\.ipk/)
+      # eg. freedict-kha-deu-0.0.1.ipk
+      { $platform = 'zbedic'; }
       
       elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
       { $platform = 'src'; }
@@ -349,7 +385,7 @@ sub fdict_extract_releases
   } # while
 }
 ##################################################################
-    
+
 if($opt_d && $opt_a)
 {
   print STDERR "Only one of -d and -a may be given at the same time.\n";
@@ -380,8 +416,8 @@ else
   $doc->appendChild( $doc->createElement('FreeDictDatabase') );   
 }
 
-fdict_extract_metadata("..", $opt_d, $doc) if $opt_d;
-fdict_extract_all_metadata("..", $doc) if $opt_a;
+fdict_extract_metadata($FREEDICTDIR, $opt_d, $doc) if $opt_d;
+fdict_extract_all_metadata($FREEDICTDIR, $doc) if $opt_a;
 fdict_extract_releases($doc) if $opt_r;
 
 `cp $dbfile $dbfile.bak` if(-s $dbfile);
