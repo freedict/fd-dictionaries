@@ -2,26 +2,30 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .vok
 
 TOOLS = ../tools/
-TEI2DICT = $(TOOLS)tei2dict_xml.pl
+TEI2DICT = $(TOOLS)tei2dict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
 TEI2WEBSTER = $(TOOLS)tei2webster.pl
 WEBSTERDIR = ../../1/
 WEBSTER = $(WEBSTERDIR)/webfmt
 DICT2VOK = $(TOOLS)dict2evolutionary.pl
+XSLPROCESSOR = sabcmd
+
+XSLT = $(TOOLS)tei2webster.xsl
 
 
 VPATH = ../tools:../dicts:../dicts/bin
 
 include Makefile.language
-
+include $(TOOLS)Makefile.config
 
 .tei.dict:
-	$(TEI2DICT) -f $*.tei -c -h
+	# $(TEI2DICT) $*.tei
 	#$(TEI2WEBSTER) $*.tei
-	#$(WEBSTER) < $*.web
+	$(XSLTPROCESSOR) $(XSLT) $*.tei $*.web
+	$(WEBSTER) < $*.web
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv $*.dict ../dicts
-	mv $*.index ../dicts
+	mv web1913.dict ../dicts/$*.dict
+	mv web1913.index ../dicts/$*.index
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
