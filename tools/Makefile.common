@@ -20,8 +20,11 @@ rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
-%.c5: %.tei
+$(dictname).c5: $(dictname).tei
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
+
+$(rdictname).c5: $(dictname).tei
+	$(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< >$@
 
 %.c5.dict %.c5.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
@@ -67,12 +70,12 @@ validation: $(dictname).tei
 
 test:
 	$(toolsdir)/testing/test-database.pl -f $(dictname) \
- -l en_US.utf-8 |tee testresult-$(version).log
+ -l $(DICTD_LOCALE) |tee testresult-$(version).log
 
-rtest:                                                                                             
+rtest:
 	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
- -l en_US.utf-8 |tee testresult-$(version)-reverse.log
-  
+ -l $(DICTD_LOCALE) |tee testresult-$(version)-reverse.log
+ 
 # this is a "double colon rule"
 # adding another "clean::" rule in your makefile
 # allows to extend this with additional commands
@@ -80,9 +83,10 @@ rtest:
 # for example:
 #
 # clean::
-#	-rm delete_zthie_file.too
+#	-rm delete_this_file.too
 clean::
-	rm -f $(dictname).index $(dictname).dict $(dictname).c5 $(dictname).dict.dz testresult-*.log
+	rm -f $(dictname).index $(dictname).dict
+	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
 	rm -f $(FREEDICTDIR)/bz2/$(dictname).tar.bz2
 	rm -f $(FREEDICTDIR)/tgz/$(dictname).tar.gz
 
@@ -99,3 +103,4 @@ reverse: $(dictname).tei
 	dictzip -k $(rdictname).dict
 
 # targets for palm, zaurus, deb, gem, rpm
+

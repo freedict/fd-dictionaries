@@ -5,12 +5,11 @@
 
   <xsl:include href="inc/teiheader2txt.xsl"/>
   
-  <xsl:output  method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
+  <xsl:output method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
 
   <xsl:strip-space elements="form trans def entry"/>
 
   <!-- Helper functions -->
-
 
   <xsl:template name="format">
     <xsl:param name="txt"/> 
