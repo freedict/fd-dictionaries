@@ -1,23 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+  <!ENTITY % TEI.XML		'INCLUDE' >
+  <!ENTITY % TEI.dictionaries	'INCLUDE'>
+  <!ENTITY % ISOLat1 PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN"
+    "/usr/share/sgml/xmlcharent/isolat1.ent">
+  %ISOLat1;
+  <!ENTITY % ISOnum PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN"
+    "/usr/share/sgml/xmlcharent/isonum.ent">
+  %ISOnum;
+  <!ENTITY % TEI.linking      "INCLUDE" >
+  <!ATTLIST xptr url CDATA #IMPLIED >
+  <!ATTLIST xref url CDATA #IMPLIED >
+  ]>
 <TEI.2>
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Khasi-German Freedict Dictionary</title>
+        <title>Khasi-German FreeDict Dictionary</title>
         <respStmt>
           <resp>Khasi Databases Maintainer</resp>
           <name>Michael Bunk, micha@luetzschena.de</name>
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>1st. Online Draft</edition>
+        <edition>0.0.1</edition>
       </editionStmt>
+      <extent>about 1000 headwords</extent>
       <publicationStmt>
-        <publisher>freedict.de</publisher>
-        <date>2002</date>
+        <publisher>FreeDict</publisher>
         <availability>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
+        <date>2002-2004</date>
+        <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
       <seriesStmt>
         <title>free dictionaries</title>
@@ -33,12 +49,28 @@
         community: thrust for trust &amp; development</note>
       </notesStmt>
       <sourceDesc>
-        <p>http://www.freedict.de/</p>
+        <p>Home: <xptr url="http://freedict.org/"/></p>
       </sourceDesc>
     </fileDesc>
+    <encodingDesc>
+        <projectDesc>
+          <p>This dictionary comes to you trough nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
     <revisionDesc>
       <change>
-        <date>18. February 2002</date>
+	<date>2003-05-01</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Updated some things in XML header information</item>
+      </change>
+      <change>
+        <date>2002-02-18</date>
         <respStmt>
           <name>Michael Bunk</name>
         </respStmt>
