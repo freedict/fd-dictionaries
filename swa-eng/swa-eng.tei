@@ -19,7 +19,7 @@
 -->
 
 <!DOCTYPE  TEI.2  PUBLIC "-//TEI Consortium//DTD TEI P4//EN"  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [ 
-<!ENTITY % TEI.XML            "INCLUDE" >
+<!ENTITY % TEI.XML          "INCLUDE" >
 <!ENTITY % TEI.dictionaries "INCLUDE" > 
 ]>
 
@@ -30,10 +30,14 @@
          <titleStmt> 
 		<title>Swahili-English xFried/FreeDict Dictionary</title>
 	    	<respStmt> 
-		 <resp>compiled by <name>Beata Wojtowicz, wierzchob@wp.pl</name></resp> 
+		  <resp>compiled by</resp> <name>Beata Wojtowicz, wierzchob@wp.pl</name> 
           	</respStmt> 
-          </titleStmt>
-        
+        </titleStmt>
+	      
+        <editionStmt>
+          <edition>0.0.2</edition>
+        </editionStmt>
+
 	<publicationStmt>
                 <publisher>FreeDict</publisher>
 		<availability> 
@@ -41,17 +45,18 @@
 		  Licence.</p> 
 		</availability> 
 		<date>2004</date>
+		<pubPlace>http://freedict.org/</pubPlace>
 	</publicationStmt>
 
         <sourceDesc> 
 	 <p>This file was compiled from other
 	  electronic documents. It is based on Swahili-Kiswahili to English
     	  Translation Program by Morris Fried available from
-    	  http://www.dict.org/links.html,which	has been supplemented by
+    	  http://www.dict.org/links.html, which has been supplemented by
     	  entries from Freedict Swahili-English Dictionary created by
     	  Horst Eyermann (http://www.freedict.de) from the
     	  Swahili-Esperanto and Esperanto-English Ergane
-    	  dictionaries, available from http://www.travlang.com .</p>
+    	  dictionaries, available from http://www.travlang.com.</p>
 	</sourceDesc>
     </fileDesc>
 
@@ -59,7 +64,9 @@
       <projectDesc>
        <p>This dictionary comes to you trough nice people making it
          available for free and for good. It is part of the FreeDict project,
-         http://www.freedict.de / http://freedict.org .</p>
+	 http://www.freedict.org / http://freedict.de. This
+         project aims to make available many translating dictionaries
+         for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
 
