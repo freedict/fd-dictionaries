@@ -1,5 +1,5 @@
 
-.SUFFIXES: .tar.gz .tei .dict .dic.dz .dz .vok .dic .fo .pdf
+.SUFFIXES: .tar.gz .tei .tei.gz .dict .dic.dz .dz .vok .dic .fo .pdf .ipk
 
 TOOLS = ../tools/
 ADDFREEDICT = $(TOOLS)add-freedict.sh
@@ -12,6 +12,7 @@ DICT2VOK = $(TOOLS)dict2evolutionary.pl
 XSLPROCESSOR = xsltproc
 XSLT = $(TOOLS)tei2txt.xsl
 TEIFO = /usr/src/packages/theater/teixsl/fo/tei.xsl
+DIC2IPK = $(TOOLS)zbedic2zaurus.sh
 
 VPATH = ../tools:../dicts:../dicts/bin
 
@@ -22,8 +23,8 @@ include $(TOOLS)Makefile.config
 	$(XSLPROCESSOR) $(XSLT) $*.tei | \
 	$(DICTFMT) --locale $(LOCALE) -c5 --without-headword  $* 
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv $*.dict ../dicts/$*.dict
-	mv $*.index ../dicts/$*.index
+	mv -f $*.dict ../dicts/$*.dict
+	mv -f $*.index ../dicts/$*.index
 
 .tei.dic:
 	echo Make dic 
@@ -31,10 +32,19 @@ include $(TOOLS)Makefile.config
 	$(XEROX) -d ../dicts/$*1.dic ../dicts/$*.dic
 	rm -f ../dicts/$*1.dic
 
+.dic.dz.ipk:
+	echo Make ipk
+	(cd ../dicts; ln -s  `$(DIC2IPK) $*.dic.dz` $*.ipk )
+
 
 .dic.dic.dz:
 	echo zip dic 
 	dictzip ../dicts/$*.dic
+
+.tei.tei.gz:
+	echo gzip tei
+	cp $*.tei ../dicts/
+	gzip ../dicts/$*.tei
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
@@ -55,10 +65,14 @@ include $(TOOLS)Makefile.config
 
 all:	\
 	$(LANGUAGE).tar.gz \
-	$(LANGUAGE).dic.dz
+	$(LANGUAGE).dic.dz \
+	$(LANGUAGE).tei.gz
 
 vok:	\
 	$(LANGUAGE).vok
+
+ipk:	\
+	$(LANGUAGE).ipk
 
 install: all
 	echo Hier
