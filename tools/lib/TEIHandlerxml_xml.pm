@@ -260,12 +260,9 @@ sub characters {
 
     $data =~ s/\n/ /;
     $data =~ s/\s+/ /;
-#    $data =~ s/\A\s//;
-#    $data =~ s/\s\Z//;
 
     if ($data eq "") {
-       # better not warn, because there are so many newlines
-       #warn "<$lastStartTag>\ndata : '$data'\ndata2: '$data2'\n\n";
+       # can happen because of newlines
        return;
        }
        
@@ -293,17 +290,6 @@ sub characters {
        else {
          print STDERR "multiple <orth>-s only at beginning of <form> supported. Skipping the others!\n" }
        }
-}
-
-
-# FIXME: this doesn't get called!
-sub internal_entity_ref
-{
-  my ($self, $element) = @_;
-  my $Name = $element->{Name};
-
-  print STDERR "internal_entity_ref($Name)\n";
-
 }
 
 
@@ -338,9 +324,7 @@ sub end_element {
 
 	$quoted = apply_filter_cmd($filtercmd,$quoted);
 							      
-    	Dict::write_direct($quoted);
-#	 print $quoted;
-	 
+    	Dict::write_direct($quoted);	 
         Dict::write_newline();
 	$state = "";
 	}
@@ -361,22 +345,13 @@ sub end_element {
         Dict::write_newline();
 
 	## 00-database-info
-#print STDERR "header unformatted: $quoted\n\n\n\n";
-
         Dict::set_headword();
 	$Dict::text="00-database-info";
 	Dict::write_text();
 	Dict::end_headword();
 
-#	Dict::add_text(" ");
-#	Dict::write_text();
-#       Dict::write_newline();
-
 	$quoted = apply_filter_cmd($filtercmd,$quoted);
 
-#print STDERR "header formatted: $quoted\n\n\n\n";
-
-#    	Dict::write_direct($quoted);
 	Dict::add_text($quoted);# will do wrapping
 	Dict::write_text();
         Dict::write_newline();
