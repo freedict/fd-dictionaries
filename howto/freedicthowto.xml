@@ -70,7 +70,7 @@
       </revision>
       <revision>
 	<revnumber>0.0.1</revnumber>
-	<date> Wed Feb 18 2004</date>
+	<date>Wed Feb 18 2004</date>
 	<authorinitials>PG</authorinitials>
 	<revdescription>
 	  <para>Some Proofing and checking. Small changes to layout. repair broken internal links.</para>
@@ -78,7 +78,7 @@
       </revision>
       <revision>
 	<revnumber>0.0.2</revnumber>
-	<date> Sat Feb 21 2004</date>
+	<date>Sat Feb 21 2004</date>
 	<authorinitials>PG</authorinitials>
 	<revdescription>
 	  <para>Literal inclusions, and references to The GFDL and GPL2 removed. Some article level
@@ -170,7 +170,7 @@ Where shall I find a man who forgets about words, and have a word with him?
     <title>Submission guidelines</title>
     &submit;
   </part>
-   <part id="development">
+  <part id="development">
     <title>Developer's utilities</title>
     &tools;
   </part>
@@ -193,7 +193,8 @@ Where shall I find a man who forgets about words, and have a word with him?
     <title>About this document</title>
     <para>This HOWTO was written using the <application>DocBook XML</application> set
       of DTDs using Xemacs as an editor.</para>
-    <para>Conversion to XHTML was done using <application>xmlto</application> and the
+    <para>Conversion to XHTML was done using <application><ulink
+      url="http://cyberelk.net/tim/xmlto/">xmlto</ulink></application> and the
       following command line string: <command>xmlto xhtml -o xhtml freedicthowto.xml</command>.
     </para>
     <para></para>

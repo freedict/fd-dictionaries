@@ -33,9 +33,9 @@
  ]>-->
 
 <article id="tools">
-  <title>Developers Toolkit</title>
+  <title>Developer's toolkit</title>
   <abstract>
-    <para>Here we outline the tools nedded or useful for building, editing
+    <para>Here we outline the tools needed or useful for building, editing
 	and maintaining translating dictionaries.</para>
   </abstract>
       
@@ -47,19 +47,19 @@
 
     <para>Xemacs supports all those features. Of particular note are the
 	functionalities Xemacs (and to a slightly lesser extent GNU Emacs)
-	provide in editing XML and SGML based documents. Xemacs, once it
+	provides in editing XML and SGML based documents. Xemacs, once it
 	has associated a document with a DTD, gives right mouse button
 	options that are compliant with the DTD and the ability to
 	validate XML files.</para>
 
-    <para>While writing this HOWTO we tries vim, emacs, GEdit and Xemacs.
-	It really depends on your own style but given that your more likely
+    <para>While writing this HOWTO we tried vim, emacs, GEdit and Xemacs.
+	It really depends on your own style, but given that you are more likely
 	to be working in multi language environments than most coders
 	Xemacs/emacs stand out for this alone. GEdit is actually better
 	than Vim (in this case) as it has native UTF-8 support and should
 	support multiple character sets (and "fonts") out of the box (though
 	in honesty I did not explore Vim's plug-in environment to any great
-	extent). Vim is still useful here and supports colourisation of tags
+	extent) [Peter: vim supports multibyte/unidode as well!!!]. Vim is still useful here and supports colourisation of tags
 	etc. but also lots of other coding languages, and has the important
 	advantage of using a relatively small memory footprint... especially
 	compared to Xemacs in full flight on a GUI.</para>
@@ -72,6 +72,8 @@
 	without it. It doesn't hurt and may be useful for your other work.</para>
       </abstract>
 
+      <para>Before configuring, make sure you have the psgml und Mule-UCS
+	packets installed. You can check this by ...TODO</para>
       <para>If you have a fresh install, all you need to do is configure the
 	interface so that you can bear it. It is <emphasis>surprisingly ugly</emphasis>
 	out of the box (though functional :) </para>
@@ -532,7 +534,7 @@ cut from above here.
 	Micha: we can move them when they have grown -->
 
     <section>
-      <title>Validation TEI format files</title>
+      <title>Validating TEI format files</title>
       <para>Requirements: TEI DTD, validation XML parser</para>
 
       <para>It should be available as a target int the Makefile
@@ -548,15 +550,15 @@ test:
     <section>
       <title>Converting into TEI format</title>
       <para>Some converters for this task are available. They can be found in the
-	<ulink ref="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
-         module</ulink> in the CVS repository of the freedict project. Unformatunately,
-	 many translating database / wordlist projects use their own unstandardized
+	<ulink url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
+         module</ulink> in the CVS repository of the FreeDict project. Unformatunately,
+	 many translation database/wordlist projects use their own unstandardized
 	 format and so require their own converter. It is an aim of FreeDict to
 	 lead to some kind of standardization of data with the TEI format.</para>
 
       <para>
 	 ding2tei.pl - conversion of the
-	   <ulink ref="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
+	   <ulink url="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
 	   (English/German) into TEI format
 	 hd2tei.pl - conversion of the "hd" format (which dictfmt also understands) into TEI format
 	 tab2tei.pl - conversion of tab delimited plain text file into TEI format
@@ -570,18 +572,25 @@ test:
 
       <para>First, using XSLT stylesheets and <command>dictfmt -c5</command>.
 	The stylesheet needs to be applied to the TEI file. Any XSLT processor
-	should do the work. Using <ulink ref="">Sablotron</a>, the command to give would
+	should do the work. Using
+        <ulink url="http://www.gingerall.com/charlie/ga/xml/p_sab.xml">Sablotron</ulink>,
+	the command to give would
 	be <command>sabcmd ...</command>
+	Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
+	you would say
         <command>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</command>
+      </para>
 
       <para>Second, using <command>xmltei2xmldict.pl</command>. This is the
 	conversion utility developed by the FreeDict project itself. Is converts
 	the TEI file into dictd database format without producing intermediate
-	files. Also it supports multiple headwords for a singl entry [TODO: explain].
+	files. Also it supports multiple headwords for a single entry [TODO: explain].
 	Its disadvantage is, that it depends on the FreeDict project for the conversion
 	to be successful, because the dictd database format is still subject to changes
 	and cannot be as well understood as <command>dictfmt</command> does, which comes
-	from the dictd project itself.</para>
+	from the dictd project itself. Please <ulink
+	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup">read</ulink>
+	the <filename>README</filename>.</para>
 
       <para>xmltei2xmldict.pl -f la1-la2.tei -t xsl/tei2txt.xsl</para>
   
@@ -608,7 +617,11 @@ test:
 	became unmaintainable. It was impossible to oversee what a code change
 	would do to the layout.</para>
 
-      <para> reference to XSLT standard, commented tei2txt.xsl
+      <para>The ultimate place to refer to is the place where the
+	<ulink url="http://www.w3.org/Style/XSL/">XSLT standard</ulink> comes from.
+        For learning though, some tutorial might be more useful :)</para>
+
+      <para> TODO include commented tei2txt.xsl
       </para>
     </section>
 	
