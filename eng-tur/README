@@ -1,0 +1,29 @@
+This database is not related to the existing (and presently
+small tur-eng FreeDict database).
+
+The data was taken from the GPL program gtksozluk2:
+ 
+http://www.linuxprogramlama.com/index.php?sayfa=gtksozluk2.htm
+ftp://ftp.deu.edu.tr/pub/infosystem/gtksozluk/gtksozluk-2.2.tgz
+
+Original turkish files were encoded as ISO 8859-9.
+
+Original author: Mehmet Ali Vardar <ali@linuxprogramlama.com>
+
+The converter splits turkish entries at ";" characters to separate
+senses. It also does separate translation equivalents at ","
+characters. But this should not be done maybe...
+
+After the eng-tur.tei file was made, `make validation` complains:
+
+> nsgmls:eng-tur.tei:136233:13:E: non SGML character number 149
+
+The offending character was subsituted by a "'".
+
+The, in line 14619 is an "&" character that was not properly encoded
+by the perl conversion script:
+
+xsltproc ../tools/xsl/getedition.xsl eng-tur.tei
+eng-tur.tei:14619: error: xmlParseEntityRef: no name
+         <tr>(matb.) 've anlamÄ±na  gelen iÅ
+
