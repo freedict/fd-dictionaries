@@ -4,6 +4,10 @@
 TOOLS = ../tools/
 TEI2DICT = $(TOOLS)tei2dict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
+TEI2WEBSTER = $(TOOLS)tei2webster.pl
+WEBSTERDIR = ../../1/dict-gcide/
+WEBSTER = $(WEBSTERDIR)/webfmt
+
 
 VPATH = ../tools:../dicts:../dicts/bin
 
@@ -11,10 +15,12 @@ include Makefile.language
 
 
 .tei.dict:
-	$(TEI2DICT) $*.tei
+	# $(TEI2DICT) $*.tei
+	$(TEI2WEBSTER) $*.tei
+	$(WEBSTER) < $*.web
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv $*.dict ../dicts
-	mv $*.index ../dicts
+	mv web1913.dict ../dicts/$*.dict
+	mv web1913.index ../dicts/$*.index
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
@@ -27,9 +33,18 @@ all:	\
 	$(LANGUAGE).tar.gz
 
 
-install: all\
-	$(ADDFREEDICT) --remove $*
-	$(ADDFREEDICT) --install $*
+install: all
+	echo Hier
+	cd ../dicts && \
+	pwd; \
+	$(ADDFREEDICT) --remove $(LANGUAGE); \
+	$(ADDFREEDICT) --install $(LANGUAGE); \
+	cd ../$(LANGUAGE); 
+
+uninstall: 
+	cd ../dicts
+	$(ADDFREEDICT) --remove $(LANGUAGE) 
+	cd ../$(LANGUAGE)
 
 commit: 
 	cvs -z3 commit
