@@ -1,27 +1,40 @@
 
-.SUFFIXES: .tar.gz .tei .dict .dz .vok
+.SUFFIXES: .tar.gz .tei .dict .dic.dz .dz .vok .dic .fo .pdf
 
 TOOLS = ../tools/
-TEI2DICT = $(TOOLS)tei2dict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
-TEI2WEBSTER = $(TOOLS)tei2webster.pl
-WEBSTERDIR = ../../1/
-WEBSTER = $(WEBSTERDIR)/webfmt
+TEI2ZBDIC = $(TOOLS)tei2zbdic.py
+WEBSTERDIR = /usr/local/bin/
+DICTFMT = dictfmt
+XEROX   = /usr/local/bin/xerox
 DICT2VOK = $(TOOLS)dict2evolutionary.pl
-
+#XSLPROCESSOR = sabcmd
+XSLPROCESSOR = xsltproc
+XSLT = $(TOOLS)tei2txt.xsl
+TEIFO = /usr/src/packages/theater/teixsl/fo/tei.xsl
 
 VPATH = ../tools:../dicts:../dicts/bin
 
 include Makefile.language
-
+include $(TOOLS)Makefile.config
 
 .tei.dict:
-	# $(TEI2DICT) $*.tei
-	$(TEI2WEBSTER) $*.tei
-	$(WEBSTER) < $*.web
+	$(XSLPROCESSOR) $(XSLT) $*.tei | \
+	$(DICTFMT) --locale $(LOCALE) -c5 --without-headword  $* 
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv web1913.dict ../dicts/$*.dict
-	mv web1913.index ../dicts/$*.index
+	mv $*.dict ../dicts/$*.dict
+	mv $*.index ../dicts/$*.index
+
+.tei.dic:
+	echo Make dic 
+	$(TEI2ZBDIC) $*.tei ../dicts/$*1.dic
+	$(XEROX) -d ../dicts/$*1.dic ../dicts/$*.dic
+	rm -f ../dicts/$*1.dic
+
+
+.dic.dic.dz:
+	echo zip dic 
+	dictzip ../dicts/$*.dic
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
@@ -34,8 +47,15 @@ include Makefile.language
 	$(DICT2VOK) < ../dicts/$*.dict |\
 	recode -f u8..cp1252 > ../dicts/$*.vok;
 
+.fo.pdf:
+	pdfxmltex $*.fo
+
+.tei.fo:
+	$(XSLPROCESSOR) -o $*.fo $(TEIFO) $*.tei
+
 all:	\
-	$(LANGUAGE).tar.gz
+	$(LANGUAGE).tar.gz \
+	$(LANGUAGE).dic.dz
 
 vok:	\
 	$(LANGUAGE).vok
@@ -58,3 +78,4 @@ commit:
 
 test:
 	nsgmls -s $(LANGUAGE).tei
+
