@@ -241,11 +241,13 @@ clean::
 $(FREEDICTDIR)/release/dic/%.dic.dz: $(FREEDICTDIR)/release/dic/%.dic
 	dictzip -k $<
 
+release-bedic: $(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
+
 $(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
 	cd $(FREEDICTDIR)/release/ipk && ln -s `$(toolsdir)/dic2ipk.sh $<` $@
 
-release-zbedic: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
-	
+release-zaurus: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
+
 #######################
 #### Makefile-technical
 #######################

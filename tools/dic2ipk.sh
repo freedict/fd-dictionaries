@@ -3,6 +3,16 @@
 # for the zbedic program on the Zaurus platform
 # into .ipk (installable packages)
 
+# the iPKG file format is loosely based on Debian's
+# package format. iPKG is documented at:
+#
+#   * http://www.zaurususergroup.com/modules.php?op=modload&name=phpWiki&file=index&pagename=IPKG%20Howto
+#   * http://www.ossh.com/zaurus/mirrors/docs.zaurus.com/ipkg_howto.shtml
+#     (same text like forst page)
+#   * http://www.handhelds.org/
+#     (The forst two links refer to the wiki here as reference, but
+#      that page is currently (Jan 2005) unavailable
+
 # ===== the filenames
 INFILE=$1
 EXTENSION=${INFILE#*.}
