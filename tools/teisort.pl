@@ -1,5 +1,8 @@
 #!/usr/bin/perl -w
 
+# V1.1 6/2002 by Guido Ostkamp, <Guido.Ostkamp@t-online.de>
+#  * more dictd-like sorting with by_dict_sort()
+#
 # V1.0 4/2002 by Michael Bunk, <kleinerwurm@gmx.net>
 #  * does some sorting of a tei-file, but without parser (worked out on xml,
 #    but might be fine with sgml - i didn't try it)
@@ -33,7 +36,20 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 use strict;
+
+sub by_dict_sort {
+ my $x = $a;
+ my $y = $b;
  
+ $x =~ s/[^\d\w\s]//gi; # remove all non-alphanumeric and non-whitespace
+ $x =~ s/(.*)/\L$1/gi;  # turn lowercase
+
+ $y =~ s/[^\d\w\s]//gi; # remove all non-alphanumeric and non-whitespace
+ $y =~ s/(.*)/\L$1/gi;  # turn lowercase
+
+ $x cmp $y;
+ }
+
 my $file = shift;
 
 if (!defined $file) {
@@ -133,7 +149,7 @@ readfile: while (<HANDLE>) {
     }
    else {
     #print STDERR ".";
-    warn "no orth found in entry!!! there is something wrong!";
+    warn "no orth found in entry!!! there is something wrong! Entry is <$entry>";
     }
 
    # we may not overwrite any pair in the hash that we already have
@@ -169,7 +185,7 @@ print $header;
 $counter = 0;
 
 # this one simple sort call does the keywork!
-foreach $orth (sort keys %orths) { 
+foreach $orth (sort by_dict_sort keys %orths) { 
 
  $counter++; if ($counter % 100 == 0) { print STDERR " $counter entrys\n" }
  

@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl -w -I../tools
 # w for warnings, d for debug
 
 # V1.2 5/2002 Michael Bunk
@@ -48,7 +48,7 @@ if (!defined $opt_f) {
  print STDERR " according to the C locale. If you want to convert old style SGML\n";
  print STDERR " TEI files, consider using tei2dict.pl, available from freedict.sf.net.\n";
  print STDERR " This help is outputted, because here was no tei file to process given.\n\n"; 
- print STDERR "Usage: tei2dict -f <teifile> [-h] [-n] [-c]\n";
+ print STDERR "Usage: tei2dict -f <teifile> [-h] [-s] [-c]\n";
  print STDERR " -h        : enable HTML in output, only give _after_ -f option\n";
  print STDERR "             (perl likes it more??)\n";#FIXME
  print STDERR " -s        : skip TEI header: do not treat it to generate\n";
