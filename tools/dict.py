@@ -188,10 +188,7 @@ class Dict:
 	# I'm not sure if this is an intended feature (most seperate
 	# translations are wrong) or a bug.
 	# Any superfluous information in the .TEI file is retained.
-	# imports a tei file, provided that it's very basic.
 
-        assert 0
-	# This method still doesn't work yet; it duplicates entries.
 	input = open(teifile, 'r')
 	self.output = open(teifile+".changed", 'w')
         self.translating = 0
@@ -269,7 +266,6 @@ class Dict:
 		self.translated = 1
 
             if self.discard_buffer:
-                print "DEBUG: discarding buffer:", self.buffered_lines
                 self.buffered_lines = []
                 self.discard_buffer = 0
             elif self.flush_buffer:
@@ -314,17 +310,32 @@ class Dict:
 
 	if tag == "entry":
 	    # end of the entry.
-	    current_word = self.allwords[self.allwords_counter]
+	    if self.allwords_counter < len(self.allwords):
+		current_word = self.allwords[self.allwords_counter]
+	    else:
+		# I've run out of words.
+		self.translated = 0
+		self.translating = 0
+		return
+	    
+	    print "DEBUG: word:", current_word, " from file:", self.word
 	    if self.word < current_word:
 		# Case one: word missing.
 		print "Warning: word ", self.word, " appears to be missing in memory; discarding."
                 self.discard_buffer = 1
 		# and nothing needs to be done.
 	    elif self.word > current_word:
-		# case two: word added.
-		while self.word > self.allwords[self.allwords_counter]:
+		# case two: word added. Write all words from here to the new word.
+		while self.allwords[self.allwords_counter] < self.word:
+		    print "DEBUG: Adding word: ",self.allwords[self.allwords_counter]
 		    self.__write_word(self.allwords[self.allwords_counter])
 		    self.allwords_counter = self.allwords_counter + 1
+		# but don't write the last word
+		self.allwords_counter = self.allwords_counter + 1
+	    else:
+		print "DEBUG: read word", self.allwords[self.allwords_counter]
+		self.allwords_counter = self.allwords_counter + 1
+
 	    self.flush_buffer = 1
 	    self.word = ""
 	    self.definitions = []
@@ -336,6 +347,7 @@ class Dict:
  	    return
 	state = self.tags[len(self.tags)-1]
 	if state == "orth":
+	    print "DEBUG: read word from file:", data
 	    self.word = data
 
     def __flush_buffer(self):
@@ -349,6 +361,7 @@ class Dict:
 	# writes the "current" word to the output.
 	w = self.output.write
 	w("      <entry>\n")
+	w("        <!-- Added by mikevdg; there is a duplicate somewhere.-->\n")
 	w("        <form>\n")
 	w("          <orth>"+word+"</orth>\n")
 	w("        </form>\n")
@@ -497,3 +510,7 @@ def change_tei(filename):
     d.import_tei(filename)
     print "Exporting.."
     d.update_tei(filename)
+
+# for debugging.
+if __name__=='__main__':
+    change_tei('head.tei')
