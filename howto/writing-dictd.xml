@@ -10,22 +10,44 @@
  ]>-->
 <!-- COMMENT OUT EVERYTHING above HERE UP TO BUILD -->
 <chapter id="dictd">
-  <title>The Dictd Approach</title>
+  <title>The dictd aproach</title>
   <abstract>
-    <para>This section explains HOWTO build most of the TEI format dictionary from a file formatted the same way as a Dictd compliant .dict file. Note, not the index file.</para>
-    <para>It relies on you laying out your dictionary with a very simple format. You will still have to construct the TEI header section but most of the work will be done for with the actual content of the dictionary.</para>
+    <para>This section explains how to build most of the TEI format
+      dictionary from a file formatted the same way as a dictd
+      compliant .dict file. But it should be noted, that the .index
+      file is not taken into consideration!</para>
+    <para>It relies on you laying out your dictionary with a very
+      simple format. You will still have to construct the TEI header
+      section, but most of the work will be done for with the actual
+      content of the dictionary.</para>
     <!-- one of (formalpara para simpara) -->
   </abstract>
   <section id="dictd-format">
     <title>The Dictd.dict Format</title>
-  <para>If you have any Dictd format dictionaries installed you may of course open one of the dictionary-name.dict.dz files to have a look at the format and contents. You will need the tool called dictunzip to do so but it comes along with the rest of the Dictd tools.</para>
-  <para>Beyond the Dictd header section you will notice that the file is a text file with a simple and predictable format. </para>
-    <para>When a Dictd dictionary is built, using the Dictd tools two files are created. One file, the one we are interested in here, the dictionary-name.dict file, contains the data that is displayed on the interface when a user asks for the translation of a word. The second file, the dictionary-name.index file is a listing of the position of everything in the first .dict file. Together they form an indexed  database of headwords and translations.<indexterm><primary>Interface</primary></indexterm><indexterm><primary>headwords</primary></indexterm><indexterm><primary>translations</primary></indexterm></para>
+    <para>If you have any dictd format dictionaries installed, you may of
+      course open one of the <filename>dictionary-name.dict.dz</filename>
+      files to have a look at the format and contents. You will need the
+      tool called <command>dictunzip</command> to do so, but it comes
+      along with the rest of dictd.</para>
+    <para>Beyond the dictd header section you will notice that the file
+      is a text file with a simple and predictable format.</para>
+    <para>When a dictd dictionary is built using <command>dictfmt</command>,
+      two files are created. One file, the one we are interested in here,
+      the dictionary-name.dict file, contains the data that is displayed
+      on the interface when a user asks for the translation of a word.
+      The second file, the dictionary-name.index file is a listing of the
+      position of everything in the first .dict file. Together they form an
+      indexed database of headwords and translations.
+      <indexterm><primary>interface</primary></indexterm>
+      <indexterm><primary>headwords</primary></indexterm>
+      <indexterm><primary>translations</primary></indexterm></para>
 
-    <para>Here are some <emphasis>&lt;comment type="commented" &gt;  snippets from each</emphasis> . In this case the freedict-eng-lat.dict</para>
+    <para>Here are some <emphasis>&lt;comment type="commented" &gt; snippets
+      from each</emphasis>. In this case the freedict-eng-lat.dict</para>
+
     <para><example id="eng-lat">
-	<title>A freedict-eng-lat.dict snippet</title>
-	<literallayout>
+      <title>A freedict-eng-lat.dict snippet</title>
+      <literallayout>
 	  00-database-info        <lineannotation> &lt;comment /&gt; A formatted string Dictd knows about</lineannotation>
    3. Apr. 2000 Database was converted to TEI format and checked
    into CVS 9.Jan.2000Phonetics added (H.Ey) - machine generated
@@ -100,9 +122,11 @@ zone [zoun]
 
 	  <lineannotation>&lt;comment /&gt; Notice the clean empty line between each entry</lineannotation>
 	</literallayout>
-	<para>So, an Entry has this format: Blank line above. Headword starts on the beginning of the line ( column 0) , the translation starts on the next new line that is indented more than Column 0.</para>
-	<para>
-Like so:
+	<para>So, an entry has this format: Blank line above. Headword
+          starts on the beginning of the line (column 0), the translation
+          starts on the next new line that is indented more than column 0.</para>
+
+	<para>Like so:
 	  <literallayout>
 Headword
     Translation
@@ -115,10 +139,12 @@ Headword2
 
       </example>
     </para>
+
     <para>
       <example id="eng-lat-idx-eg">
-	<title>The Dictd .index format</title>
-	<para>The corresponding .index file is built by the dictfmt tool and looks a little like this:</para>
+	<title>The dictd .index format</title>
+	<para>The corresponding .index file is built by the dictfmt tool
+          and looks a little like this:</para>
 	<para id="eng-lat-index">
 	  <literallayout>
 00-database-info        Q       QM
@@ -141,7 +167,10 @@ abhor   BiA     s
       </example>
     </para>
 
-    <para>When running from the Dictd (or Serpento) dictionary server these files are matched. strange, things will happen if you edit one with out the other. There is nothing to stop you working on copies though.
+    <para>When running the dictd (or Serpento) dictionary server, these files
+      are used for matching queries with headwords. Strange, things can happen
+      if you edit one with out the other. There is nothing to stop you working
+      on copies though.
       <indexterm>
 	<primary>database</primary>
 	<secondary>dictd</secondary>
@@ -157,32 +186,33 @@ abhor   BiA     s
       </indexterm>
     </para>
     <section id="howto-process">
-      <title>Processing your Dictd format file</title>
+      <title>Processing your dictd format file</title>
 
-      <para>
-	Somehow you have your Headwords and related translations written in the <link linkend="eng-lat"> simple format</link> described above.
-You might need to process a spread sheet or a some other document into
-this format, as there are many many possibilities I can not give you a
-	simple method to do that.</para>
-      <para> Otherwise you may have an existing Dictd
-dictionary file or finally you may be starting from scratch. In which
-case we recommend you you use a template as demonstrated later. If you
-have many lexicographic, etymological or other information to add to
-your dictionary we strongly suggest you use a template or a fully
-fledged XML editor.
-      </para>
-      <para>Down load the dict2xml.py python script from the Freedict
-	servers at Sourceforge. </para>
+      <para>Somehow you have your headwords and related translations
+        written in the <link linkend="eng-lat">simple format</link>
+        described above. You might need to process a spread sheet or
+        some other document into this format. As there are many many
+        possibilities I can not give you a simple method to do that.</para>
+      <para>Otherwise you may have an existing dictd dictionary file
+	or finally you may be starting from scratch. In that
+	case we recommend you to use a template as demonstrated later. If you
+	have much lexicographic, etymological or other information to add to
+	your dictionary, we strongly suggest you to use a template or a fully
+	fledged XML editor.</para>
+      <para>Download the <filename>dict2xml.py</filename> python script
+        from the FreeDict servers at Sourceforge. </para>
       <para>Follow the instructions included in the package to install and
-	run with your file.
-      </para>
+	run with your file.</para>
       <para>All you need to do is something like: <command>dict2xml.py
-	-f your-dict-format.dict -o same-working-name </command>and
+	-f your-dict-format.dict -o same-working-name</command> and
 	the rest should happen automatically. 
       </para>
       <para>Now hopefully all you have to do is markup any extra
-	entries and add the TEI Header information. Please see the<link linkend="write-tei"> Writing TEI</link> and <link linkend="installTeiDTD">installing TEI sections</link>. </para>
+	entries and add the TEI header information. Please see the
+        <link linkend="write-tei">Writing TEI</link> and
+        <link linkend="installTeiDTD">Installing TEI</link> sections.</para>
       
     </section>
   </section>
 </chapter>
+
