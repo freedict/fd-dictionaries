@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# This is a module which can load and manipulate .tei files.
 
 # TODO: convert this to use a dictionary, in memory, as the primary data
 # structure. Write a second routine to iterate through that dictionary 
@@ -43,8 +42,12 @@ class Dict:
     
 	self.tagstack = [] # a stack of tags.
 
+	# used for writing tei files.
 	self.translating = 0
 	self.translated = 0
+	self.buffered_lines = []
+
+	self.output = None # output file for writing.
 	
 ##    def p_head(self):
 ##	"Parses the header. Basically, just ignore it."
@@ -184,14 +187,17 @@ class Dict:
 	# translations are wrong) or a bug.
 	# Any superfluous information in the .TEI file is retained.
 	# imports a tei file, provided that it's very basic.
+
+	# This method doesn't work yet.
+	assert 0
 	
 	input = open(teifile, 'r')
-	output = open(teifile+".changed", 'w')
+	self.output = open(teifile+".changed", 'w')
 	
 	# retain the header.
 	depth = 0
 	c = input.read(1)
-	output.write(c)
+	self.output.write(c)
 	if c == '<':
 	    depth = depth + 1
 	else:
@@ -200,7 +206,7 @@ class Dict:
 	# and just keep reading < or >'s until we run out.
 	while depth > 0:
 	    c = input.read(1)
-	    output.write(c)
+	    self.output.write(c)
 	    if c == '<':
 		depth = depth+1
 	    elif c == '>':
@@ -208,10 +214,16 @@ class Dict:
 	self.state = "text"
 	
 
+	# This is to check if there are new words. If there are, 
+	# they need to be added.
+	self.allwords = self.__dict.keys()
+	self.allwords.sort()
+	self.allwords_counter = 0
+	
 	# Read the first line to get started.
 	rawline = input.readline()
 	# This line is probably not of parsing importance:
-	output.write(rawline) # this line already has a CR.
+	self.output.write(rawline) # this line already has a CR.
 	line = rawline
 	#print "Parsing first line:", line
 	sptr = 0
@@ -247,10 +259,10 @@ class Dict:
 			sptr = len(line) # which does the next iteration.
 	    
 	    if not self.translating:
-		output.write(rawline)
+		self.buffered_lines.append(rawline)
 	    elif not self.translated:
 		# write the new translation to the file.
-		self.__w_translation(rawline, output)
+		self.__w_translation(rawline, self.word)
 		self.translated = 1
 		
 	    # Get a new line
@@ -274,17 +286,8 @@ class Dict:
 	    sptr = 0
 	    
 	input.close()
-	output.close()
+	self.output.close()
 
-    def __w_translation(self, line, output):
-	# Write the tranlation of the current word.
-	indentation = line[:string.find(line, string.lstrip(line))]
-
-	output.write(indentation+"<trans>\n")
-	for d in self.__dict[self.word]:
-	    output.write(indentation+"  <tr>"+d+"</tr>\n")
-	output.write(indentation+"</trans>\n")
-	
     def w_starttag(self, tag):
 	self.tags.append(tag)
 	if tag == "trans":
@@ -298,6 +301,17 @@ class Dict:
 
 	if tag == "entry":
 	    # end of the entry.
+	    current_word = self.allwords[self.allwords_counter]
+	    if self.word < current_word:
+		# Case one: word missing.
+		print "Warning: word ", self.word, " appears to be missing in memory."
+		# and nothing needs to be done.
+	    elif self.word > current_word:
+		# case two: word added.
+		while self.word > self.allwords[self.allwords_counter]:
+		    self.__write_word(self.allwords[self.allwords_counter])
+		    self.allwords_counter = self.allwords_counter + 1
+	    self.__flush_buffer()
 	    self.word = ""
 	    self.definitions = []
 	    self.translated = 0
@@ -305,15 +319,40 @@ class Dict:
 	    
     def w_data(self, data):
 	if len(self.tags) < 1:
-	    return
+ 	    return
 	state = self.tags[len(self.tags)-1]
 	if state == "orth":
 	    self.word = data
 
-    def import_eddict(self, filename):
+    def __flush_buffer(self):
+	for i in self.buffered_lines:
+	    self.output.write(i)
+	self.buffered_lines = []
+
+    def __write_word(self, word):
+	# This is really a hack. Hard-coded indentation; bad thing.
+	# writes the "current" word to the output.
+	w = self.output.write
+	w("      <entry>\n")
+	w("        <form>\n")
+	w("          <orth>"+word+"</orth>\n")
+	w("        </form>\n")
+	self.__w_translation("        <trans>", word)
+	w("      </entry>\n")
+
+    def __w_translation(self, line, word):
+	# Write the tranlation of the current word.
+	indentation = line[:string.find(line, string.lstrip(line))]
+
+	self.output.write(indentation+"<trans>\n")
+	for d in self.__dict[word]:
+	    self.output.write(indentation+"  <tr>"+d+"</tr>\n")
+	self.output.write(indentation+"</trans>\n")
+		
+    def import_voc(self, filename):
 	# imports an eddict file and merges the changes
 	input = open(filename)
-	for l in input.readlines():
+	for line in input.readlines():
 	    l = string.strip(line)
 	    if l[0] == "[": # ignore all section headers.
 		if l=="[words]":
@@ -321,7 +360,7 @@ class Dict:
 		else:
 		    break
 	    # parse one line.
-	    word, d = string.split(l, '/)
+	    word, d = string.split(l, '/')
 	    word = string.strip(word)
 	    definitions = string.split(d, ';')
 	    if self.__dict.has_key(word):
