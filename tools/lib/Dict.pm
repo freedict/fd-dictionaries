@@ -184,6 +184,8 @@ sub set_headword {
 	    # if not in allchars mode (we can't be since we don't support it),
 	    # - any whitespace characters are translated to simple space
 	    # - only alphanumeric characters are considered
+	    # AlexeyCheusov> Minus should also be removed unless you use "allchars" mode.
+	    # AlexeyCheusov> In last case, ALL characters from the query should be matched.
 	    s/\s/ /g;
  	    s/[^\s\p{IsAlnum}]//g;
 
