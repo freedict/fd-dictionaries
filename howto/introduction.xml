@@ -2,6 +2,7 @@
                "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
  ]>-->
 <!-- remove comments around prolog  for easy editing -->
+<!-- setting sgml-parent-document in emacs would be better... -->
 <preface id="preface">
 
   <title>Introduction</title>
@@ -14,17 +15,17 @@
 
   <para>FreeDict also ensures that the dictionaries can be converted 
     into the dictd database format, that works with <application>dictd</application>
-      (see<ulink url=" http://www.dict.org" id="dictd-site"> http://www.dict.org</ulink>./) and <application>Serpento</application> 
-      <ulink url=" http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/" id="serpento-site"> http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/</ulink>)
-      dictionary servers.<indexterm>
-	<primary>Serpento</primary>
-	<secondary>Dictd</secondary>
-      </indexterm>
-</para>
+    (see <ulink url="http://www.dict.org/" id="dictd-site">http://www.dict.org</ulink>)
+    and <application>Serpento</application> (<ulink url=" http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/"
+    id="serpento-site">http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/</ulink>)
+    dictionary servers.<indexterm><primary>Serpento</primary>
+    <secondary>Dictd</secondary></indexterm>
+  </para>
 
   <para>The content of the dictionaries is left up to individual developers.
     We ourselves can't speak every language on the planet and so rely on the
-    contributing writers and users to produce  high-quality, useful dictionaries. We can, however, try to ensure that the dictionaries are formatted and organised
+    contributing writers and users to produce  high-quality, useful dictionaries.
+    We can, however, try to ensure that the dictionaries are formatted and organised
     correctly, are as easy as practicable to produce and will work on free
     operating systems.
     <indexterm><primary>contributing</primary> <secondary>writers</secondary></indexterm>
@@ -38,15 +39,15 @@
     <secondary>install</secondary></indexterm></para>
 
   <para>TODO list basic steps and link (leave till release)</para>
-    <section>
-      <title>Quick Steps</title>
-      <para></para><para><indexterm>
-	  <primary>Quick Steps</primary>
-	  <secondary>Basic Step through</secondary>
-	</indexterm>
-</para>
-     
-    </section>
+
+  <section>
+    <title>Quick Steps</title>
+    <para></para>
+    <para><indexterm>
+      <primary>Quick Steps</primary>
+      <secondary>Basic Step through</secondary>
+      </indexterm>
+    </para>
+  </section>
 
 </preface>
-

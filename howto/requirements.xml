@@ -12,7 +12,7 @@
 <!ENTITY requirements  SYSTEM "requirements.xml">
  ]> -->
 
-<chapter id="requirements">
+<part id="requirements">
   <title>Basic Requirements</title>
   <abstract>
     <para>This chapter describes the <indexterm><primary>basic requirements</primary></indexterm>
@@ -50,20 +50,19 @@
     <para>Please understand that FreeDict will not agree to any license that does not meet or agree
       with the aims and scope of the GPL2<indexterm><primary>GPL2</primary></indexterm>. For current
       examples of licenses that do agree (and some that don't), please see:
-      <ulink url="http://www.gnu.org/licenses/license-list.html">http://www.gnu.org/licenses/license-list.html</ulink>.</para>
-    
+      <ulink url="http://www.gnu.org/licenses/license-list.html">http://www.gnu.org/licenses/license-list.html</ulink>.</para>    
   </section>
 
   <section id="tei-xml">
     <title>XML Markup</title>
     <para>FreeDict dictionaries are marked up using the XML version of the
-	<ulink url="http://www.tei-c.org/">Text Encoding Initiative</ulink> DTD,
-	Chapter 12 (Dictionaries).</para>
+      <ulink url="http://www.tei-c.org/">Text Encoding Initiative</ulink> DTD,
+      Chapter 12 (Dictionaries).</para>
     <para>This may seem a little daunting at first, but please read on as we are
-	working quickly to make this much easier. Full instructions are given in
-	the "<link linkend="writing">Writing A Dictionary</link>" section.
-	We are also developing and testing <link linkend="tools">tools</link>
-	that may be suitable for automating most of this. 
+      working quickly to make this much easier. Full instructions are given in
+      the "<link linkend="writing">Writing a FreeDict Dictionary</link>" section.
+      We are also developing and testing <link linkend="tools">tools</link>
+      that may be suitable for automating most of this. 
       <indexterm>
 	<primary>Text Exchange Initiative</primary>
 	<secondary>TEI DTD</secondary>
@@ -71,7 +70,7 @@
     </para>
 
     <para>There are many advantages to using a standard content based approach
-	like this:</para>
+      like this:</para>
 
     <orderedlist numeration="upperroman">
       <title>Advantages of using the TEI XML markup format</title>
@@ -126,33 +125,60 @@
     </orderedlist>
 
     <section id="Unicode">
-      <title>The Universal Character Set (UCS)</title>
-<formalpara id="Unicode-howto">
-	<title>From the Unicode How To</title>
-	<para>  
-	  <quote> People in different countries use different characters to represent the words of their native languages. Nowadays most applications, including email systems and web browsers, are 8-bit clean, i.e. they can operate on and display text correctly provided that it is represented in an 8-bit character set, like ISO-8859-1. </quote><citation>Bruno Haible: Linux Unicode Howto</citation> <indexterm>
-	    <primary>Bruno Haible</primary></indexterm><indexterm>
-	    <primary> Unicode</primary></indexterm></para>
+      <title>Unicode</title>
+      <formalpara id="Unicode-howto">
+	<title>From the Unicode HOWTO</title>
+	<para>
+	  <quote>People in different countries use different characters to represent
+            the words of their native languages. Nowadays most applications, including
+            email systems and web browsers, are 8-bit clean, i.e. they can operate on
+            and display text correctly provided that it is represented in an 8-bit
+            character set, like ISO-8859-1.</quote>
+          <citation>Bruno Haible: Linux Unicode Howto</citation>
+          <indexterm>
+	    <primary>Bruno Haible</primary></indexterm>
+          <indexterm>
+	    <primary>Unicode</primary></indexterm>
+        </para>
       </formalpara>
       <formalpara>
-   <title> What is Unicode?</title>
-      <para>From:<citation><ulink url=" http://www.unicode.org/standard/WhatIsUnicode.html" id="link-unicodeOrg"> http://www.unicode.org/standard/WhatIsUnicode.html </ulink></citation>
-	<literallayout>
-	<quote>Unicode provides a unique number for every character,
-	    no matter what the platform,
-	    no matter what the program,
-	    no matter what the language.</quote>
+        <title> What is Unicode?</title>
+        <para>From: <citation><ulink url="http://www.unicode.org/standard/WhatIsUnicode.html"
+          id="link-unicodeOrg">http://www.unicode.org/standard/WhatIsUnicode.html</ulink></citation>
+	  <literallayout>
+	    <quote>Unicode provides a unique number for every character,
+	      no matter what the platform,
+	      no matter what the program,
+	      no matter what the language.</quote>
 	  </literallayout>
-	 
-      </para></formalpara>
-      <para>Essentially, Unicode encoding  supplies the unique character number that is typed to the page each time you enter a letter on your keyboard. A font-set then renders the character onto the screen so that you may read it. It's important to understand that Unicode is not a font-set, it is a protocol for the mappings that font-sets use to render fonts on your screen or on to a printed page.</para>
+        </para>
+      </formalpara>
+      <para>Essentially, Unicode encoding supplies the unique character number that is
+        typed to the page each time you enter a letter on your keyboard. A font-set then
+        renders the character onto the screen so that you may read it. It's important to
+        understand that Unicode is not a font-set, it is a protocol for the mappings that
+        font-sets use to render fonts on your screen or on to a printed page.</para>
       <highlights>
 	<tip>
-	  <para>All new dictionaries should be written using a Unicode  UTF-8
-compatible character set. If you use a text editor with a simple UTF-8 compliant font all should be well.</para>
-	  <para> UTF-8 is a very clever way of wrapping up all of the commonly used Latin and non Latin character sets in a portable efficient way. This includes most 8 bit and many<emphasis> 16bit or 2 byte</emphasis> character sets. Your current character sets are probably included, so it may be as simple as putting &lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt; as the XML declaration of your final document.</para></tip></highlights>
-<para>You should ensure that your Dictionary does not rely on any particular font set and is equally functional when rendered as simple text. Remember fonts are just "pretty renderings" of real characters. Most modern Text Editors ( e.g. Xemacs,emacs, Vim, GEdit, Kedit, notepad) should be fine.</para>
-      <para>This is not the place for a full explanation of Unicode. Please see Markus Kuhn's excellent summary at<ulink url="http://www.cl.cam.ac.uk/~mgk25/unicode.htm" id="link-utf8"> http://www.cl.cam.ac.uk/~mgk25/unicode.htm</ulink>. The Linux Unicode HOWTO is  well worth visiting e.g. <ulink url="ftp://ftp.ilog.fr/pub/Users/haible/utf8/Unicode-HOWTO.html">ftp://ftp.ilog.fr/pub/Users/haible/utf8/Unicode-HOWTO.html</ulink><indexterm>
+	  <para>All new dictionaries should be written using the Unicode character set.
+            If you use a text editor that is unicode capable, all should be well.</para>
+	  <para>UTF-8 is a way of wrapping up all real-world characters in a portable
+            and efficient way. This includes most 8 bit and many <emphasis>16 bit or 2 byte</emphasis>
+            character sets. Your current character sets are probably included, so it may be
+            as simple as putting &lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt; as
+            the XML declaration of your final document.</para>
+        </tip>
+      </highlights>
+      <para>You should ensure that your dictionary does not rely on any particular font set
+        and is equally functional when rendered as simple text. Remember, fonts are just
+        "pretty renderings" of real characters. Most modern Text Editors (e.g. Xemacs, emacs,
+        Vim, GEdit, Kedit, notepad) should be fine.</para>
+      <para>This is not the place for a full explanation of Unicode. Please see Markus Kuhn's
+        excellent summary at <ulink url="http://www.cl.cam.ac.uk/~mgk25/unicode.htm"
+        id="link-utf8">http://www.cl.cam.ac.uk/~mgk25/unicode.htm</ulink>. The Linux Unicode HOWTO
+        is well worth visiting e.g. <ulink
+        url="ftp://ftp.ilog.fr/pub/Users/haible/utf8/Unicode-HOWTO.html">ftp://ftp.ilog.fr/pub/Users/haible/utf8/Unicode-HOWTO.html</ulink>
+        <indexterm>
 	  <primary>encoding</primary>
 	  <secondary>UTF-8</secondary>
 	</indexterm>
@@ -162,7 +188,7 @@ compatible character set. If you use a text editor with a simple UTF-8 compliant
 	</indexterm>
 	<indexterm>
 	  <primary>Universal Character Set</primary>
-	  <secondary> UCS-2</secondary></indexterm>
+	  <secondary>UCS-2</secondary></indexterm>
 	<indexterm>
 	  <primary>UTF-8</primary>
 	</indexterm>
@@ -170,38 +196,52 @@ compatible character set. If you use a text editor with a simple UTF-8 compliant
 	  <primary>ISO IEC</primary>
 	</indexterm>
 	<indexterm>
-	  <primary> ISO 10646</primary> <secondary>ISO</secondary>
+	  <primary>ISO 10646</primary>
+          <secondary>ISO</secondary>
 	</indexterm>
-
-  </para>
+      </para>
      
       <itemizedlist spacing="normal" id="uft8quick">
 	<title>UTF-8 Quick notes</title>
 	<listitem>
-	  <para>The<emphasis> Universal Character Set</emphasis> is defined by<emphasis> ISO/IEC standard ISO 10646</emphasis>.</para></listitem>
-	<listitem><para> Unicode is a parallel standard that functionally defines a few "coal face" or real life, protocols.</para>
+	  <para>The <emphasis>Universal Character Set</emphasis> is defined by
+            <emphasis>ISO/IEC standard ISO 10646</emphasis>.
+          </para>
+        </listitem>
+	<listitem>
+          <para>Unicode is a parallel standard that functionally defines a few
+            "coal face" or real life, protocols.</para>
 	</listitem>
 	<listitem>
 	  <para>Unicode is kept in synchronisation with ISO/IEC 10646.</para>
 	</listitem>
 	<listitem>
-	  <para> UTF-8 is one of some four formal definitions of Unicode. The other common one is UTF-16.</para>
+	  <para>UTF-8 is one of four ways to save Unicode into bytes. Another common one is UTF-16.</para>
 	</listitem>
 	<listitem> 
-	  <para>Please don't use a UTF-16 based font unless you have no other choice.</para>	</listitem>
-	<listitem>
-	  <para>UTF-8 covers most common 16 bit character sets as well. (through some clever "flags" at the font of the character.)</para>
+	  <para>Please don't use a UTF-16 based font unless you have no other choice.</para>
+          <!-- Peter: Why??? -->
 	</listitem>
 	<listitem>
-	  <para>UTF-8 is the default standard for XML documents and is an excellent choice as it contains the character mappings sets from (almost) all known languages, while being fully compliant with current and earlier computer standards. Note most web browsers and protocols assume a UTF-8 compliant encoding</para>
+	  <para>UTF-8 is the default standard for XML documents and is an excellent
+            choice as it contains the character mappings sets from (almost) all known
+            languages, while being fully compliant with current and earlier computer
+            standards. Note most web browsers and protocols assume a UTF-8 compliant encoding.</para>
 	</listitem>
 	<listitem>
-	  <para>All ISO type character sets in general use are covered by UTF-8 (including ASCII) as are the KJC Family.(Korean, Japanese and some of the Chinese family of characters.) Broadly speaking you should not have a problem with this. If your editor has a UTF-8 option please set it on.
+	  <para>All ISO type character sets in general use are covered by UTF-8 (including ASCII)
+            as the KJC Family (Korean, Japanese and some of the Chinese family of characters).
+            If your editor has a UTF-8 option please set it on.
 	  </para>
 	</listitem>
       </itemizedlist>
       <tip>
-	<para>If you have automated some or all of your dictionary construction please be careful to maintain character type compatibility throughout the process. C coders should use the <quote>wide character type</quote>. Most scripting languages now also support UTF-8.( Python, Perl, PHP, Java and  Ruby at least.). Shell scripts usually adopt the local environment settings.  Please check your Gawk and SED are mapping  cleanly. You may need very recent versions. 
+	<para>If you have automated some or all of your dictionary construction, please be
+          careful to maintain character type compatibility throughout the process. C coders
+          should use the <quote>wide character type</quote>. Most scripting languages now
+          also support UTF-8 (Python, Perl, PHP, Java and Ruby at least). Shell scripts usually
+          adopt the local environment settings. Please check your Gawk and SED are mapping cleanly.
+          You may need very recent versions. 
 	  <indexterm>
 	    <primary>Scripting Languages</primary>
 	    <secondary>Python, Perl, Java, PHP, Ruby</secondary>
@@ -211,22 +251,24 @@ compatible character set. If you use a text editor with a simple UTF-8 compliant
       </tip>
       <formalpara id="Unicode-more">
 	<title>More Information</title>
-	<para>If your on a Linux (or similar) system try :
-	  <command>man 7 unicode</command> for more information.  You
-	  may also have some unicode tool(s) on board  <command>man 1
-	    unicode</command>. You may also need to set your LANG environment settings, most Linux type systems support doing this on a per instance basis, that is you may run a number of language and locales concurrently. Examples are given later. Meantime <command>man 7 locale</command> and <command>man 1 locale</command>.<indexterm>
+	<para>If you are on a Linux (or similar) system, try <command>man 7 unicode</command>.
+          You may also have some unicode tools on board: <command>man 1 unicode</command>.
+          You may also need to set your LANG environment settings, most Linux type systems
+          support doing this on a per instance basis, that is you may run a number of
+          language and locales concurrently. Examples are given later.
+          <indexterm>
 	    <primary>locale</primary>
 	  </indexterm>
 	  <indexterm>
-	    <primary> LANG</primary>
+	    <primary>LANG</primary>
 	  </indexterm>
 	  <indexterm>
 	    <primary>Linux Manual Page</primary>
 	  </indexterm>
 	</para>
       </formalpara>
-      <para>Templates and examples are given in the <link linkend="examples">Examples Section</link></para>
+      <para>Templates and examples are given in the <link linkend="examples">Examples Section</link>.</para>
     </section>
   </section>
   
-  </chapter>
+</part>

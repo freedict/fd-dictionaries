@@ -1,79 +1,79 @@
 <?xml version='1.0'  encoding="UTF-8" ?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
-<!ENTITY fdictUrl "http://www.freedict.org">
-<!ENTITY fdictsf "http://sourceforge.net/projects/freedict/">
-<!ENTITY fdictMail " freedict-beta@lists.sourceforge.net" >
-<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
-<!ENTITY Mich137 "micha137@ users.sourceforge.net">
-<!ENTITY PeteEmail  "petergozz@users.sf.net">
-<!ENTITY TEIsys "-//TEI P4//DTD Main Document Type//EN">
-<!ENTITY TEIUrl   "http://www.tei-c.org/">
-<!ENTITY TEIUrlTut   "http://www.tei-c.org/Tutorials/index.html">
-<!ENTITY TEIguide  "http://www.tei-c.org/Guidelines2/index.html">
-<!ENTITY TEIdl  "http://www.tei-c.org/P4X/DTD/dtd.zip">
-<!ENTITY xmluni  "http://skew.org/xml/tutorial/">
-<!ENTITY w3c  "http://www.w3.org/">
-<!ENTITY w3cxml11  "http://www.w3.org/TR/2004/REC-xml11-20040204/">
-<!ENTITY oasiscover  "http://xml.coverpages.org/ ">
-<!ENTITY oasis  "http://www.oasis-open.org/home/index.php">
-<!ENTITY cmdp  "account@host:~$">
-<!ENTITY Rcmdp  "ADMIN@host:##">
-<!ENTITY gnufdl "http://www.gnu.org/copyleft/fdl.html">
-<!ENTITY gnugpl "http://www.gnu.org/licenses/gpl.html">
-<!ENTITY intro SYSTEM "introduction.xml">
-<!ENTITY writing SYSTEM "writing.xml">
-<!ENTITY writing-dictd SYSTEM "writing-dictd.xml">
-<!ENTITY writing-tei SYSTEM "writing-tei.xml">
-<!ENTITY installing-tei SYSTEM "installing-tei.xml">
-<!ENTITY requirements  SYSTEM "requirements.xml">
-<!ENTITY submit SYSTEM "submitting.xml">
-<!ENTITY tools SYSTEM "tools.xml">
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+ "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
+ <!ENTITY fdictUrl "http://www.freedict.org/">
+ <!ENTITY fdictsf "http://sourceforge.net/projects/freedict/">
+ <!ENTITY fdictMail "freedict-beta@lists.sourceforge.net" >
+ <!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
+ <!ENTITY Mich137 "micha137@ users.sourceforge.net">
+ <!ENTITY PeteEmail "petergozz@users.sf.net">
+ <!ENTITY TEIsys "-//TEI P4//DTD Main Document Type//EN">
+ <!ENTITY TEIUrl "http://www.tei-c.org/">
+ <!ENTITY TEIUrlTut "http://www.tei-c.org/Tutorials/index.html">
+ <!ENTITY TEIguide "http://www.tei-c.org/Guidelines2/index.html">
+ <!ENTITY TEIdl "http://www.tei-c.org/P4X/DTD/dtd.zip">
+ <!ENTITY xmluni "http://skew.org/xml/tutorial/">
+ <!ENTITY w3c "http://www.w3.org/">
+ <!ENTITY w3cxml11 "http://www.w3.org/TR/2004/REC-xml11-20040204/">
+ <!ENTITY oasiscover "http://xml.coverpages.org/ ">
+ <!ENTITY oasis "http://www.oasis-open.org/home/index.php">
+ <!ENTITY cmdp "account@host:~$">
+ <!ENTITY Rcmdp "ADMIN@host:##">
+ <!ENTITY gnufdl "http://www.gnu.org/copyleft/fdl.html">
+ <!ENTITY gnugpl "http://www.gnu.org/licenses/gpl.html">
 
+ <!ENTITY intro SYSTEM "introduction.xml">
+ <!ENTITY writing SYSTEM "writing.xml">
+ <!ENTITY writing-dictd SYSTEM "writing-dictd.xml">
+ <!ENTITY writing-tei SYSTEM "writing-tei.xml">
+ <!ENTITY installing-tei SYSTEM "installing-tei.xml">
+ <!ENTITY requirements SYSTEM "requirements.xml">
+ <!ENTITY submit SYSTEM "submitting.xml">
+ <!ENTITY tools SYSTEM "tools.xml">
  ]>
-
-<!-- NOTES HERE     -->
 
 <book id="index">
 
-
   <bookinfo>
-	<title>FreeDict HOWTO</title>
-	<titleabbrev>FreeDict Howto</titleabbrev>
-	<author>
-	  <firstname>Peter</firstname>
-	  <surname>Gossner</surname>
-	  <address><city>Woodside</city><state>South Australia</state><email>&PeteEmail;</email></address>
-	</author>
-	<author>
-	  <firstname>Michael</firstname>
-	  <surname>Bunk </surname>
-	  <address><city>Lützschena</city><country>Germany</country><email>&Mich137;</email></address>
-	</author>
-	<collab>
-	  <collabname>namen</collabname>
-	</collab>
-	<orgname><ulink url="http://www.freedict.org.de">Freedict</ulink></orgname>
-	<abstract>
-	  <title>FreeDict Dictionaries</title>
-	  <para>This document describes how to build, install and improve
-FreeDict project dictionaries. It is aimed at developers rather than
-end users and was written from the point of view of a Debian GNU/Linux based
-platform (TODO: make it system independent :). Generally the information should be portable across any open
-Operating system. The approach is reasonably comprehensive. Information is
-given on Installation issues, XML basics, Editor selection, developer tools
-etc.</para> </abstract>
-	<revhistory>
-<!-- Michael we can comment out whatever we don't need in this revision section, perhaps leaving just the last couple. -->
-	  <revision>
-		<revnumber>0.0.0</revnumber>
-		<date>Sun Feb 08 2004</date>
-	  </revision>
+    <title>FreeDict HOWTO</title>
+    <titleabbrev>FreeDict Howto</titleabbrev>
+    <author>
+      <firstname>Peter</firstname>
+      <surname>Gossner</surname>
+      <address><city>Woodside</city><state>South Australia</state><email>&PeteEmail;</email></address>
+    </author>
+    <author>
+      <firstname>Michael</firstname>
+      <surname>Bunk</surname>
+      <address><city>Lützschena</city><country>Germany</country><email>&Mich137;</email></address>
+    </author>
+    <collab>
+      <collabname>namen</collabname>
+    </collab>
+    <orgname><ulink url="&fdictUrl;">Freedict</ulink></orgname>
+    <abstract>
+      <title>FreeDict Dictionaries</title>
+      <para>This document describes how to build, install and improve
+        FreeDict project dictionaries. It is aimed at developers rather than
+        end users and was written from the point of view of a GNU/Linux based
+        platform. Generally the information should be portable across any open
+        operating system. The approach is reasonably comprehensive. Information
+        is given on installation issues, XML basics, editor selection/setup,
+        developer tools etc.</para>
+    </abstract>
+    <revhistory>
+<!-- Michael we can comment out whatever we don't need in this revision section, perhaps leaving just the last couple.
+     PG: Yes, as long its not published, nobody cares for the history except us. Let's keep it short -->
+      <revision>
+	<revnumber>0.0.0</revnumber>
+	<date>Sun Feb 08 2004</date>
+      </revision>
       <revision>
 	<revnumber>0.0.1</revnumber>
 	<date> Wed Feb 18 2004</date>
 	<authorinitials>PG</authorinitials>
 	<revdescription>
-	  <synopsis>Some Proofing and checking. Small changes to layout. repair broken internal links.</synopsis>
+	  <para>Some Proofing and checking. Small changes to layout. repair broken internal links.</para>
 	</revdescription>
       </revision>
       <revision>
@@ -81,7 +81,9 @@ etc.</para> </abstract>
 	<date> Sat Feb 21 2004</date>
 	<authorinitials>PG</authorinitials>
 	<revdescription>
-	  <synopsis>Literal inclusions, and references to The GFDL and GPL2 removed. Some article level divisions moved to Chapter level. Grouped into Parts. XML / SGML sections developed. Editors section added.   </synopsis>
+	  <para>Literal inclusions, and references to The GFDL and GPL2 removed. Some article level
+            divisions moved to Chapter level. Grouped into Parts. XML / SGML sections developed. Editors
+            section added.</para>
 	</revdescription>
       </revision>
       <revision>
@@ -90,42 +92,42 @@ etc.</para> </abstract>
 	<authorinitials>PG</authorinitials>
 	<authorinitials>MB</authorinitials>
 	<revdescription>
-	  <synopsis>First Patches Applied. Now on Site CVS. Added links for Dictd and Serpento. Cleaned up Index Items. Rewrote manual install locations.</synopsis>
+	  <para>First Patches Applied. Now on Site CVS. Added links for Dictd and Serpento. Cleaned
+            up Index Items. Rewrote manual install locations.</para>
 	</revdescription>
       </revision>
-	</revhistory>
-	<legalnotice>
-	  <title>Copyright Notice</title>
-	  <blockquote id="copyrightSample">
-	<para>
-		  Copyright (c)  2004 Peter Gossner and Michael Bunk.
-	</para>
-	<para>
-		  Permission is granted to copy, distribute and/or modify this document
-		  under the terms of the <ulink url="&gnufdl;">GNU Free Documentation License,</ulink> Version 1.2
-		  or any later version published by the Free Software Foundation;
-		  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    </revhistory>
+    <legalnotice>
+      <title>Copyright Notice</title>
+      <blockquote id="copyrightSample">
+	<para>Copyright (c) 2004 Peter Gossner and Michael Bunk.</para>
+	<para>Permission is granted to copy, distribute and/or modify this document
+	  under the terms of the <ulink url="&gnufdl;">GNU Free Documentation License,</ulink> Version 1.2
+	  or any later version published by the Free Software Foundation;
+	  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 	  A copy of the license may be found at <ulink url="&gnufdl;"> GNU
-		  Free Documentation License</ulink>. 
-	</para>
-	<para>Permissions are extended to copy and distribute translations of this document into another language, under the above conditions for modified versions, except that this extended permission  notice may be included in translations approved by the <ulink url="http://www.fsf.org">Free Software Foundation</ulink> instead of in the original English. 
-	</para>
+	  Free Documentation License</ulink>.</para>
+	<para>Permissions are extended to copy and distribute translations of this document
+          into another language, under the above conditions for modified versions, except
+          that this extended permission notice may be included in translations approved by
+          the <ulink url="http://www.fsf.org/">Free Software Foundation</ulink> instead of
+          in the original English.</para>
+        <note>
+	  <title>Local Copies of the GNU Licences</title>
+          <para>You may also access the GNU Free Documentation License by accessing manual or info pages on your system:</para>
+          <para>Try <command>man gfdl</command>, <command>info gfdl</command>,
+                    <command>man gpl</command>, <command>info gpl</command>,
+                    <command>locate gpl</command> or <command>locate gfdl</command>.</para>
+          <para>Adding yet more local copies was a little redundant. Please refer to the GNU site for
+            latest information and versions of these important, indeed enabling licences.</para>
+        </note>
       </blockquote>
-      <note>
-	<title>Local Copies of the GNU Licences</title>
-      <para>You may also access the GNU Free Documentation License by accessing manual or info pages on your system.</para>
-	  
-      <para><command>man or info  gfdl</command></para> <para><command>man or info  gpl</command></para>
-      <para><command>locate gpl </command>or <command>locate gfdl</command></para>
-
-
-      <para>So we thought adding yet more local copies was a little redundant. Please refer to the GNU site for latest information and versions of these important, indeed enabling licences.</para></note>
-	</legalnotice>
+    </legalnotice>
   </bookinfo>
+
   <dedication>
     <para> 
-      <literallayout>
-(epigram)
+      <literallayout>(epigram)
 
 The bait is the means to get the fish where you want it,
  catch the fish and you forget the bait. 
@@ -134,10 +136,9 @@ The snare is the means to get the rabbit where you want it,
 Words are the means to get the idea where you want it,
  catch on to the idea and you forget about the words.
 
- Where shall I find a man who forgets about words, and have a word with him?
+Where shall I find a man who forgets about words, and have a word with him?
 
-    Chuang Tzu
-
+    <author><personname><firstname>Chuang</firstname> <surname>Tzu</surname></personname></author>
       </literallayout>
       <indexterm>
 	<primary>rabbit</primary>
@@ -149,44 +150,53 @@ Words are the means to get the idea where you want it,
 	<primary>Chuang Tzu</primary>
 	<secondary>epigram</secondary>
       </indexterm>
- </para>
+    </para>
   </dedication>
 
-<!-- include other docs here from article level in order the easiest way is to just write them here then cut and paste to a new document.xml see prolog for examples -->
-<!-- The introduction -->
-&intro;
-<!--requirements-->
-&requirements;
-  <!--Writing dictionaries -->
+  <!-- include other docs here from article level in order the easiest way is to just write them here
+    then cut and paste to a new document.xml see prolog for examples -->
+
+  &intro;
+
+  &requirements;
+
   <part id="writingnew">
-    <title>Constructing a Translating  Dictionary</title>
-<!--&writing;-->
-&installing-tei;
-&writing-tei;
-&writing-dictd;</part>
+    <title>Constructing a translating dictionary</title>
+    &installing-tei;
+    &writing-tei;
+    &writing-dictd;
+  </part>
   <part id="submissions">
-    <title>Submission Guidelines</title>
-<!-- submitting dictionaries -->
-&submit;</part>
-  <part id="development">
-    <title>Developers Utilities</title>
-<!-- developers tools -->
-&tools;</part>
+    <title>Submission guidelines</title>
+    &submit;
+  </part>
+   <part id="development">
+    <title>Developer's utilities</title>
+    &tools;
+  </part>
+  
   <appendix id="examples">
     <title>Examples</title>
     <para>Place Holder</para>
   </appendix>
+  
   <appendix id="related">
     <title>Related Stuff</title>
     <para>Place Holder</para>
   </appendix>
+  
   <index>
-    <!-- don't delete these index elements. It actually gets used -->
+    <!-- don't delete this index element. It actually gets used -->
   </index>
+  
   <colophon>
     <title>About this document</title>
-    <para>This series of articles was written using the<application>DocBook XML</application> set of DTD using Xemacs as an editor. </para>
-    <para>Conversion to XHTML was done using<application> xmlto</application> using the following command line string.<command> xmlto xhtml -o xhtml freedicthowto.xml</command> .</para>
+    <para>This HOWTO was written using the <application>DocBook XML</application> set
+      of DTDs using Xemacs as an editor.</para>
+    <para>Conversion to XHTML was done using <application>xmlto</application> and the
+      following command line string: <command>xmlto xhtml -o xhtml freedicthowto.xml</command>.
+    </para>
     <para></para>
   </colophon>
+ 
 </book>
