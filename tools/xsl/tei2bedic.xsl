@@ -4,7 +4,7 @@
      This stylesheet converts a TEI file into
      the dic format used by libbedic.
 
-     In FreeDict, tei2dic.py is poreferred for this purpose presently.
+     In FreeDict, tei2dic.py is preferred for this purpose presently.
 
   -->
 <xsl:stylesheet
