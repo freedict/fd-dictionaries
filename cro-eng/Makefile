@@ -4,6 +4,7 @@
 TOOLS = ../tools/
 TEI2DICT = $(TOOLS)xmltei2xmldict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
+VERSION = 0.0.3
 
 PWD = $(shell pwd)
 LANGUAGE = $(shell basename $(PWD))
@@ -13,7 +14,7 @@ SGML_CATALOG_FILES = "/usr/share/sgml/opensp/xml.soc:/usr/share/doc/packages/sp/
 .tei.dict:
 	#$(TEI2DICT) -f $*.tei -u -l de_DE.utf8)
 	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
-	$(TEI2DICT) -f $*.tei -u -s -t ../tools/lib/tei2txt.xsl)
+	$(TEI2DICT) -f $*.tei -u -s -t ../tools/xsl/tei2txt.xsl)
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
 	mv $*.dict ../dicts
 	mv $*.index ../dicts
@@ -26,10 +27,10 @@ SGML_CATALOG_FILES = "/usr/share/sgml/opensp/xml.soc:/usr/share/doc/packages/sp/
 	(cd ../dicts/ ; tar czvf bin/$*.tar.gz $*.dict.dz $*.index)
 
 all:	\
-	$(LANGUAGE).tar.gz
+	$(LANGUAGE)-$(VERSION).tar.gz
 reverse:
 	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
-	../tools/xmltei2xmldict.pl -f $(LANGUAGE).tei -l de_DE.utf8 -t ../tools/tei2txt.xsl -r)
+	../tools/xmltei2xmldict.pl -f $(LANGUAGE).tei -t ../tools/xsl/tei2txt.xsl -r)
 	mv $(LANGUAGE).dict ../dicts/$(LANGUAGE).dict
 	mv $(LANGUAGE).index ../dicts/$(LANGUAGE).index
 
@@ -40,12 +41,19 @@ install: all\
 commit: 
 	cvs -z3 commit
 
-test:
+validate:
 	(export SP_ENCODING=XML;export SP_CHARSET_FIXED=yes;\
 export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
 nsgmls -E 10 -s $(LANGUAGE).tei)
 
+test:
+	$(TOOLS)/testing/test-database.pl -f ../dicts/$(LANGUAGE) -l de_DE.utf-8
 clean:
 	rm -f $(LANGUAGE).dict $(LANGUAGE).index
 	rm -f ../dicts/$(LANGUAGE){.index,.dict,.dict.dz}
 	rm -f ../dicts/bin/$(LANGUAGE).tar.gz
+
+dist:
+	tar cvjf $(LANGUAGE)-$(VERSION).src.bz2 AUTHORS ChangeLog COPYING \
+cro-eng.tei INSTALL Makefile NEWS README
+
