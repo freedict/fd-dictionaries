@@ -1,8 +1,10 @@
 # SAX handler module for tei2dict converter
 
-# V1.1 4/2002 Michael Bunk <kleinerwurm@gmx.net>
+# V1.3 5/2003 Mcihael Bunk
+#      See tei2dict_xml.pl for changes
+# V1.1 4/2002 Michael Bunk <kleinerwurm at gmx.net>
 #      - switched from SGML to XML (TEI P4)
-#      - 00-database-info / ~-short / ~-url taken from tei header
+#      - 00-database-info / ~-short / ~-url optionally taken from tei header
 # V1.0 Copyright (C) 2000 Horst Eyermann <horst@freedict.de>
 
 # This program is free software; you can redistribute it and/or modify
@@ -109,7 +111,7 @@ sub _escape {
     my $string = shift;
      
     if ($HTML_enabled) {
-     $string =~ s/([\x09\x0a\x0d&<>"])/$char_entities{$1}/ge }
+     $string =~ s/([\x09\x0a\x0d&<>\"])/$char_entities{$1}/ge }
     return $string;
     }
 
@@ -120,14 +122,27 @@ sub new {
 }
 
 sub set_options {
-    my ($self,$filename,$aHTML_enabled,$askip_header,$acrossrefs_enabled) = @_;
+    my ($self,$filename,$aHTML_enabled,$askip_header,
+     $acrossrefs_enabled,$aGenerate00DatabaseUtf8,$aLocale) = @_;
     $file_name = $filename;
     $file_name =~ s/^(\w*\/)+//g;         
     $file_name =~ s/(\S*)\.\w*/$1/;
     $HTML_enabled = $aHTML_enabled;
     $skip_header=$askip_header;
     $crossrefs_enabled=$acrossrefs_enabled;
-    Dict->open_dict($file_name);
+    Dict->open_dict($file_name,$aLocale);
+    
+    if($aGenerate00DatabaseUtf8) {
+	print STDERR "Generating 00-database-utf8\n";
+    	Dict::set_headword(); Dict::add_text("00-database-utf8");
+	Dict::write_text(); Dict::end_headword();
+	
+	# might not be needed at all, but we give a hint
+        Dict::write_direct("\n  ");
+	Dict::write_direct("This dictionary is UTF-8 encoded. If you use dictd, ".
+		           "make sure to start it with the appropriate --locale option.");
+        Dict::write_newline();
+	}
 }
 
 sub start_element {
@@ -234,7 +249,7 @@ sub start_element {
 	  # add myself as
 	  # <change>
 	  #  <date>now</date>
-	  #  <respStmt><name>tei2dict_xml.pl</name>
+	  #  <respStmt><name>tei2dict_xml.pl</name></respStmt>
 	  #  <item>converted TEI database into .dict format</item>
 	  # </change>
 	  start_element(Element => { Name => "change"});
@@ -268,7 +283,9 @@ sub start_element {
       elsif (($part eq "item") && ($higherElements[-2] eq "change")) {
           Dict::add_text(":") }
 
-      elsif (($part eq "name") && ($preLastStartTag eq "respStmt")) {
+      elsif ((($part eq "name") ||
+	      ($part eq "resp") )
+	   && ($preLastStartTag eq "respStmt")) {
 	  Dict::add_text(" ") }
 
       elsif (($part eq "fileDesc") ||
@@ -280,7 +297,6 @@ sub start_element {
 	     ($part eq "publicationStmt") ||
 	     ($part eq "sourceDesc") ||
 	     ($part eq "respStmt") ||
-	     ($part eq "resp") ||
 	     ($part eq "name") ||
              ($part eq "p")) { return }
       }	# ^header
@@ -443,6 +459,7 @@ sub end_element {
 	Dict::write_direct(" ");
 	Dict::write_direct($database_url);
         Dict::write_newline();
+	
 	}
 	
     elsif ($header) {

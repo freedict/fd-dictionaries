@@ -1,4 +1,6 @@
-# V1.1 improved by Michael Bunk, <kleinerwurm@gmx.net>
+# V1.2 5/2003
+#      gave optional argument 'locale' to open_dict()
+# V1.1 improved by Michael Bunk, <kleinerwurm at gmx.net>
 #      This API is undocumented & cruel! But at least I added
 #      some comments here.
 #  
@@ -70,14 +72,17 @@ sub b64_encode {
 
 
 sub open_dict{
-    my ($this, $name) = @_;
-
+    my ($this, $name, $locale);
+    
+    $this = shift @_;
+    $name = shift @_;
+    $locale = defined $_[0] ? shift @_ : "C";
+    printf STDERR "Dict.pm: Using LANG: $locale\n";
+    
     open DATA, ">$name.dict";
 
     # open a pipe and output the index in a sorted way (more like
     # dictfmt USES it, but this is a long story)
-    # may be useless for unicode (but dictd server 1.7x
-    # isn't unicode capable anyway)
     
     # in bash we enter: sort -t $'\t' -k1,1bdf
     # the sort options:
@@ -85,7 +90,7 @@ sub open_dict{
     # -k: only use first field for sorting
     #  b: ignore trailing blanks (might not be needed)
     #  df: as usual
-    $ENV{'LANG'}="C";# otherwise collating sequence (sorting oder) might be
+    $ENV{'LANG'}=$locale;# otherwise collating sequence (sorting oder) might be
                      # wrong (space after letters and things like that)
     
     open INDEX, "|sort -t \"\t\" -k1,1bdf >$name.index";
