@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding="UTF-8" ?>
+<!--<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+               "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
+<!ENTITY fdictUrl "http://www.freedict.org">
+<!ENTITY fdictMail " freedict-beta@lists.sourceforge.net" >
+<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
+<!ENTITY PeteEmail  "petergozz@users.sf.net">
+
+ ]>-->
+<!-- COMMENT OUT EVERYTHING above HERE  TO BUILD -->
+
+
+<article id="writing">
+	<title>Writing A Freedict Dictionary</title>
+	<abstract>
+	  <para>This begins a series of sections that deal with the process of building a Freedict format file(s) from your gathered sources. We cover installation, SGML and XML system configuration, some introductory level XML, final formats,  and a couple of shortcuts.</para></abstract>
+	<section>
+	  <title>Introduction</title>
+	   <para>What we don't deal with here is the actual process of collating a translating dictionary. That task is potentially endless and will be very particular to your own circumstances. You need to develop your own approaches and processes for gathering source materials and checking the quality of your entries. Here are some of the "process" things you might look out for and check with small sample sets before you get too far along.</para>
+	  <orderedlist numeration="upperalpha">
+		<listitem>
+	  <para>Your editor or word processor can output UTF-8 format TEXT.Not word processor or browser specific markup, nor anything other than simple text that can handle the characters of the languages you are writing for. Using different fonts, while helpful in a word processor,  generally won't work in plain text (or UTF-8) format. In your final output version it almost certainly wont. <indexterm>
+		  <primary>word processor</primary></indexterm>
+		<indexterm>
+		  <primary>fonts</primary></indexterm>
+	  </para></listitem>
+		<listitem>
+	  <para>If you are importing from a spreadsheet application try exporting the pages as simple Comma Separated Value format. You can often use almost any character or set of characters as a "comma". You may be able to convert it to Dictd format with a simple script in which case we have a shortcut for you.<xref linkend="dictd" />
+		<indexterm>
+		  <primary> spreadsheet</primary></indexterm>
+	  </para></listitem>
+		<listitem>
+	  <para>If you are starting from scratch and writing your dictionary mostly by hand please consider using either a  template, and / or an XML editor. (like Xemacs / emacs). These make the process much less error prone and tedious. See the <link linkend="tools">tools section</link> for  more information.
+		  <indexterm>
+			<primary> XML</primary>
+			<secondary> Editor</secondary>
+			<tertiary>  Xemacs and  emacs</tertiary></indexterm> <indexterm>
+			<primary>writing</primary>
+			<secondary>by hand</secondary></indexterm><indexterm>
+			<primary>Starting from Scratch</primary>
+		  </indexterm>
+		  <indexterm>
+			<primary>CSV</primary>
+			<secondary>Comma Separated Value</secondary>
+		  </indexterm>
+</para></listitem></orderedlist>
+
+	<section>
+	  <title>Two Approaches</title>
+	  
+      <para>There are at least two approaches you might take to building a Freedict format dictionary.<link linkend="write-tei"> Approach One</link> is to use the Text Exchange Initiative DTD from the beginning. This gives you the most flexibility.</para>
+      <para><link linkend="dictd"> Approach Two</link> involves producing a simply (and accurately) formatted plain file that you then process with some command lines tools. (and will probably have to touch up). This can be quicker if you are comfortable with it, but may  limit your options for Lexicographic information. </para>
+      <para>You may of course combine these or find any number of others, after all,  it's your dictionary we just need it in a certain format.:)
+	<indexterm>
+	  <primary> Lexicographic</primary>
+	  <secondary>flexibility</secondary>
+	</indexterm>  <indexterm>
+	  <primary>Text Exchange Initiative</primary>
+	  <secondary>DTD</secondary>
+	</indexterm>
+	<indexterm>
+	  <primary>File Formats</primary>
+	</indexterm>
+      </para>
+	 
+    </section>	 
+  </section>
+
+  </article>
+
+
+<chapter id="write-tei">
+  <title>Writing Text Encoding Initiative XML files</title>
+  <abstract>
+    <formalpara>
+      <title>The Text Encoding Initiative</title>
+      <para>   <quote> The TEI (Text Encoding Initiative) is an international research effort established in 1987, intended to produce a community-based standard for encoding and interchange of texts.  </quote><citation><ulink url="http://www.tei-c.org/Consortium/TEIcharter.html">http://www.tei-c.org/Consortium/TEIcharter.html</ulink></citation></para></formalpara>
+    <para>This section gives examples and explanations of using the TEI format to write and deliver your Dictionary. While it is not assumed you have the<link linkend="installTeiDTD"> DTD's installed</link>it may be best if you did.<indexterm>
+	<primary>TEI</primary>
+	<secondary>Text Encoding Initiative</secondary>
+      </indexterm><indexterm>
+	<primary>TEI Consortium</primary>
+      </indexterm>
+</para>
+  </abstract>
+  <section id="overview-tei">
+    <title>Overview of the TEI Organisation</title>
+    <formalpara>
+      <title>In Brief :</title>
+      <para><quote>  In December of 2000, a new consortium was established to sustain and develop the Text Encoding Initiative (TEI). Initially launched in 1987, the TEI is an international and interdisciplinary standard that helps libraries, museums, publishers, and individual scholars represent all kinds of literary and linguistic texts for online research and teaching, using an encoding scheme that is maximally expressive and minimally obsolescent.  </quote>  <citation><ulink url="http://www.tei-c.org/Consortium/index.html">http://www.tei-c.org/Consortium/index.html</ulink></citation><indexterm>
+	  <primary>interdisciplinary standards</primary>
+	</indexterm>
+ </para> </formalpara>
+
+
+    <para>For a full explanation of the history, objectives and approaches of the text exchange Initiative it would be best if you visited them at<ulink url="&TEIUrl;"> &TEIUrl;</ulink>. There you will find links and information to all sorts of TEI related stuff. Of note is the Guidelines pages which you should enter from<ulink url="&TEIguide;"> &TEIguide;</ulink>  </para>
+<para>The TEI consortium  provides an approach to transcribing , or creating documents, in a format that allows (near) full XML and SGML compliance, is as obsolescence proof as possible and allows free exchange of content and ideas. We will only be using a very small subset of this systems capacity.</para>
+    <para>
+      <indexterm>
+	<primary> obsolescence proofing</primary>
+      </indexterm>
+    </para>
+  </section>
+
+
+  <section id="UsingTEI">
+    <title>The TEI DTD's</title>
+    <subtitle> Using The TEI Dictionary DTD</subtitle>
+    <para>
+	  In these  sections we are going to step through a basic introduction to building a marked up dictionary based on the Text Encoding Initiatives , TEI2 P4  Dictionary Document Type Definition. First we deal with  some technical information.  If you are familiar with XML and DTD's then you might want to skip these next sections :)
+    </para>
+    <para>The Install Instructions are dealt with separately. Please see <xref linkend="installTeiDTD"/>
+    </para>
+    <para>The TEI system of markup can be approached in a number of ways. Here we treat it pretty much like any other XML based markup system. The Consortium itself has not registered a formal XML name space (as of Feb 2004) but does have a unofficial Public and System identifiers we may use. If you don't know what all that means don't worry. Cut and paste examples are given below. While, in the following "Walking with" section there are some basic explanations of what this all means. For a deeper understanding a visit to the W3C XML pages may help.OASIS and associated XML portals usually have technical and introductory matter as well.  </para>
+    <para><ulink url="&w3c;">&w3c;</ulink></para> <para><ulink url="&oasiscover;">&oasiscover;</ulink></para>
+    <para>    <ulink linkend="http://www.xml.com/">http://www.xml.com</ulink><indexterm>
+	<primary>OASIS</primary>
+	<secondary>W3C</secondary>
+      </indexterm>
+    </para>
+  </section>
+
+
+
+  <section id="xmldecTEI">
+    <title>The XML Declaration</title>
+   
+    <para>&lt;?xml version='1.0' encoding="UTF-8" ?&gt;</para>
+    <para>The xml declaration is required on all valid xml documents. For our purposes the above is all we need, be aware though, that this declaration can contain much more than we use here. The "encoding="UTF-8""<emphasis> attribute and value pair</emphasis> is sometimes considered optional as all XML documents assume or default to this unless told otherwise. I believe it is better to add it now as future implementations of XML will probably require it.</para>
+    <para>It is the next section that defines our Text Encoding Initiative format in particular. So far we have just told a validating application or parser that this document should be valid XML version 1.<indexterm>
+	<primary>XML Declaration</primary>
+      </indexterm>
+    </para>
+  </section>
+
+    <section id="doctypeTEI">
+      <title>The SGML Declaration</title>   
+    <para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC &TEIsys; 
+"http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+ &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
+ &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
+      ]&gt;</literallayout></para>
+    <para> This above  section is called the DOCTYPE declaration. The UPPER case words are all keywords that are used to set variables and types in parsing and validating tools. The rest of the definition is very carefully structured to provide absolute definitions for a number of things. We step through them here, as they are understood by the protocols involved. The entire set between the opening &lt;! and the closing &gt; is called the document prolog. Functionally it defines or even redefines a specific named document type.
+      <indexterm>
+	<primary>DOCTYPE</primary>
+	<secondary>SGML</secondary>
+      </indexterm> 
+      <indexterm>
+	<primary>TEI.XML</primary>
+      </indexterm>
+      <indexterm>
+	<primary> TEI.dictionaries</primary>
+      </indexterm>
+      <indexterm>
+	<primary>document prolog</primary>
+	<secondary>INCLUDES</secondary>
+      </indexterm>
+ </para>
+    <section id="TEIdoctype">
+      <title>&lt;!DOCTYPE TEI.2</title>
+      <para>The combined effect of this declaration opening string is to tell a program (or person) who knows, that this document is claiming to be compliant to a<emphasis> defined type of document</emphasis>. In our case TEI.2.</para><para> Other document types (e.g.<application> DocBook</application>) use this parameter to set the "level" the document sits at, possibly within a larger definition. Text Encoding Initiative documents use a different system to achieve much the same end. (see the following description of ENTITIES.)<indexterm>
+	  <primary>DocBook </primary>
+	</indexterm>
+</para>
+
+    <para>Practically, another way of thinking about this is to consider that the opening ELEMENT  of the following document has to be of the type TEI.2. What that element is allowed to have as attributes or children elements is defined in the Document Type Definition for this DOCTYPE. <indexterm>
+	<primary>ELEMENT </primary>
+      </indexterm>
+</para>
+    </section>
+    <section id="TEIFPIid">
+      <title> PUBLIC "&TEIsys;"</title>
+      <para>This next "phrase" is called the Formal Public Identifier. It starts with the word PUBLIC and in this case ends with a language identifier. The quoting is important as is the string -// at the start of the actual definition. </para> <para>This means that this is an informal definition, or an unregistered definition. A registered definition would start start with +//. Most Formal Public Identifiers use this type of definition, there is nothing unusual or pejorative about it. <indexterm>
+	<primary> PUBLIC "&TEIsys;"</primary>
+	</indexterm>
+	<indexterm>
+	  <primary> Formal Public Identifiers</primary>
+	  <secondary>FPI</secondary>
+	</indexterm>
+ </para>
+	<para>The FPI must be exactly as shown or it means <quote>something else</quote>, and probably not what we need it to. It is also one of the ways your <link linkend="catalog-setup">local system</link> knows which DTD to compare your document to, and so must be correct.</para>
+<note>
+	  <para>Text Encoding Initiative documents<emphasis> also use other FPI's</emphasis> to define document "types" or "classes". If you visit their website you will see many other examples. The TEI2 zip file currently has HTML documentation explaining all those options, as that is likely to be up to date please refer to it rather than this for usages<emphasis> other than Freedict</emphasis>. Please see <xref linkend="findingTEI" /> if you haven't already :) </para>
+</note>
+    </section>
+    <section id="TEIsystemid">
+      <title>"http://www.tei-c.org/P4X/DTD/tei2.dtd"</title>
+      <para>This next string must be a URI (Universal Resource Identifier (RFC 1630)) in this case it is in URL ( Uniform Resource Locator ( RFC 1738))  format. Here it functions as a portable  System Identifier to the DTD. By convention it is often started on a new line, that is not a requirement.</para>
+    <para> This is just one way of doing this, and you may simply set the absolute path to the DTD on your system here and it should be OK. If you choose to install the DTD's only for your own use you must set the system identifier to the absolute path to your copy of the DTD. <indexterm>
+	  <primary> Uniform Resource Locator</primary><secondary>URL</secondary>
+      </indexterm><indexterm>
+	<primary>Universal Resource Identifier </primary><secondary>URI</secondary>
+      </indexterm>
+</para>
+<example id="ownDTD"><title> System Identifiers</title>
+	<para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;" 
+"/home/your-account/TEI/TEI2.dtd" [
+ &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
+ &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
+	]&gt;  
+
+	  </literallayout><indexterm>
+	    <primary>System Identifier </primary>
+	  </indexterm>
+	</para></example>
+      <para>Be aware that this method in not portable and  will need to be changed to the URL shown above for broad use. (i.e. The URL method is portable). It may save you a whole lot of bother if you don't plan on using the TEI2 DTD for much else other than Freedict.<indexterm><primary>Portability</primary></indexterm></para>
+    </section>
+    <section>
+      <title> &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
+	]&gt; </title>
+      <para>The final section of the DOCTYPE declaration is also enclosed between square brackets. For our purposes here we simply use it to Include some ENTITIES. In this case these entities are contained within files that are a part of the TEI2 P4 DTD set.  </para> 
+      <para>The first inclusion  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt; does some very clever "magic" remapping the DTD to XML compliant form. Without it the document will not be XML. </para>
+      <para>The second included ENTITY :  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt; adds the dictionary specific Elements to the base DTD, and thereby makes this a dictionary as opposed to say a stage script or process design document.</para>
+      <para>You may define your own extensions to the TEI set within these square braces as well. The Freedict project can not support this. A careful study of the DTD's and associated files would be of great value if you are interested in gaining a greater understanding of SGML and XML. Functionally this space is where a DTD is loaded for any document type. (you may also include other files in this place which can be useful for large document sets.<indexterm><primary>ENTITIES</primary>
+	</indexterm>
+      </para>
+    </section>
+  </section>
+  <section id="headerTEI">
+    <title>The TEI Header</title>
+    <abstract>
+      <para>In this section we step through the structure and intent behind the TEI header section.   </para>
+    </abstract>
+    <para>place holder</para>
+  </section>
+
+<!-- move this -->
+  <section id="templates">
+    <title>Examples and Templates</title>
+    <para>Move this somewhere useful</para>
+  </section>
+</chapter>
+ 

@@ -1,0 +1,48 @@
+<?xml version="1.0"  encoding="utf-8"  standalone="no" ?>
+<!DOCTYPE  TEI.2  PUBLIC "-//TEI Consortium//DTD TEI P4//EN" 
+ "file:///usr/share/xml/tei/schema/dtd/p4/tei2.dtd" [ 
+<!ENTITY % TEI.XML            "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+]>
+
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title></title>
+	<author></author>
+	<editor></editor>
+	<respStmt>
+	  <resp></resp>
+	  <!-- one of (pb milestone lb fw cb timeline spanGrp span respons linkGrp link joinGrp join interpGrp interp index fvLib fsLib fs fLib certainty altGrp alt gap delSpan addSpan anchor name resp) -->
+	</respStmt>
+      </titleStmt>
+      <publicationStmt>
+	<publisher></publisher>
+	<date></date>
+	<pubPlace>
+	  <address> </address>
+	</pubPlace>
+	<availability>
+	  <p></p>
+	</availability>
+	<timeline></timeline>
+      </publicationStmt>
+      <sourceDesc>
+	<p></p>
+	<!-- one of (recordingStmt scriptStmt listBibl biblStruct biblFull bibl p) -->
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+<!-- one of (body group) -->
+    <body>
+      <!-- one of (bibl biblFull biblStruct ab eTree graph l lg p sp tree witList figure cit q quote label list listBibl note witDetail stage table entry entryFree superEntry div div0 div1) -->
+      <entry>
+	<!-- one of (pb milestone lb fw cb timeline spanGrp span respons linkGrp link joinGrp join interpGrp interp index fvLib fsLib fs fLib certainty altGrp alt gap delSpan addSpan anchor xr usg trans re note gramGrp form etym eg dictScrap def sense hom) -->
+
+      </entry>
+    </body>
+    
+  </text>
+</TEI.2>
