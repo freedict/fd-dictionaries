@@ -25,10 +25,13 @@ http://www.cwi.nl/~dik/english/codes/indic.html (beware,
 the tables use octal codes!).
 
 The final step of converting the .tei file into
-.dict format is done using tei2dict_xml.pl.
+.dict format is done using xmltei2xmldict.pl.
 
 Now take your unicode compatible dict server
 and client and enjoy the nice devanagari!
+(When you use a webinterface, Internet Explorer >5
+can be used. Otherwise gnome-dictionary can
+render Devanagari.)
 
 As the Anusaaraka project aimed at machine aided
 translation between many Indian languages, there are
@@ -37,6 +40,15 @@ http://www.iiit.net/ltrc/Dictionaries/Dict_Frame.html.
 Btw, the dict here is _not_ the Shabdanjali English-Hindi
 dictionary! Also, for each dictionary there is
 further information at the IIIT server.
+
+With a 'make reverse' you can generate a reverse index
+for querying the dictionary in Hindi. When converting
+TEI into dictd database format, the converter might complain
+about "whitespace only headwords". These are cases
+where the Hindi translation of a word is not included
+in the dictionary. In the XML they look like
+"<tr>?</tr>". The question mark is removed because it is
+punctuation. EMpty headwords are left out of the index.
 
 There is much scope for future work :)
 
@@ -49,4 +61,4 @@ uniconv -encode IS_DV -in eng-hin.tei  | uniconv -decode IS_RM >eng-hin.roman.te
 one thing not working: uniconv cannot count syllables and so
 creates an 'a' too much sometimes in the transliteration :(
 (also, iscii code e5 becomes "o with a bar on top"
-as well as   code e1 becomes "e ..." -> i substitute simple "o" and "e" for them
+as well as   code e1 becomes "e ..." -> i substitute simple "o" and "e" for them)

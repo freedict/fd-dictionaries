@@ -9,7 +9,7 @@ WEBSTERDIR = ../../1/
 WEBSTER = $(WEBSTERDIR)/webfmt
 DICT2VOK = $(TOOLS)dict2evolutionary.pl
 
-VERSION = 1.2
+VERSION = 1.3
 
 VPATH = ../tools:../dicts:../dicts/bin
 
@@ -19,6 +19,9 @@ RLANGUAGE = hin-eng
 
 all:	\
 	$(LANGUAGE).tar.gz
+
+rtgz:	\
+	$(RLANGUAGE).tar.gz
 
 # these are eng-hin specific targets
 
@@ -39,7 +42,7 @@ clean:
 
 reverse:
 	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
-	$(TEI2DICT) -u -f $(LANGUAGE).tei -t ../tools/xsl/tei2txt.xsl -r)
+	$(TEI2DICT) -u -f $(LANGUAGE).tei -t ../tools/xsl/tei2txt.xsl -r -a)
 	mv $(LANGUAGE).dict ../dicts/$(RLANGUAGE).dict
 	mv $(LANGUAGE).index ../dicts/$(RLANGUAGE).index
 
@@ -82,16 +85,29 @@ uninstall:
 commit: 
 	cvs -z3 commit
 
-validation:	\
-	$(LANGUAGE).tei
+validation: $(LANGUAGE).tei
 	export SP_ENCODING=XML ;\
         export SP_CHARSET_FIXED=YES ;\
         export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES) ;\
         nsgmls -s -E 10 $(LANGUAGE).tei
 
+.PHONY: test rtest validation all install commit clean
+
 test:
-	$(TOOLS)/testing/test-database.pl -l de_DE.utf8 -f ../dicts/$(LANGUAGE)
+	$(TOOLS)/testing/test-database.pl -l de_DE.utf8 -f ../dicts/$(LANGUAGE) |tee testresult.txt
+
+rtest:
+	$(TOOLS)/testing/test-database.pl -l de_DE.utf8 -f ../dicts/$(RLANGUAGE) |tee testresult-reverse.txt
 
 dist:
-	tar cvjf $(LANGUAGE)-$(VERSION).src.tar.bz2 AUTHORS ChangeLog COPYING \
-English-Hindi-Dictionary_2.isc INSTALL Makefile NEWS README ehconv.yy eng-hin.tei.header
+	cd ..; tar cvjf $(LANGUAGE)/$(LANGUAGE)-$(VERSION).src.tar.bz2 \
+$(LANGUAGE)/AUTHORS \
+$(LANGUAGE)/ChangeLog \
+$(LANGUAGE)/COPYING \
+$(LANGUAGE)/English-Hindi-Dictionary_2.isc \
+$(LANGUAGE)/INSTALL \
+$(LANGUAGE)/Makefile \
+$(LANGUAGE)/NEWS \
+$(LANGUAGE)/README \
+$(LANGUAGE)/ehconv.yy \
+$(LANGUAGE)/eng-hin.tei.header
