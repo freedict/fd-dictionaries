@@ -8,6 +8,7 @@
 use strict;
 use Getopt::Std;
 use File::Temp qw/ tempfile tempdir /;
+use File::Spec;
 use FindBin;
 
 our ($opt_f, $opt_h, $opt_d, $opt_l, $opt_t);
@@ -38,10 +39,18 @@ die "Could not find $indexfile" if(! -f $indexfile);
 my $dir = tempdir( CLEANUP => 1 );
 my ($fh, $conffilename) = tempfile( DIR => $dir );
 print "Generating config file in $conffilename\n";
+
+my $abs_dict = $dictfile;
+my $abs_index = $indexfile;
+$abs_dict = File::Spec->rel2abs($dictfile)
+  if(!File::Spec->file_name_is_absolute($dictfile));
+$abs_index = File::Spec->rel2abs($indexfile)
+  if(!File::Spec->file_name_is_absolute($indexfile));
+
 print $fh <<HERE;
 database test {
-  data "$dictfile"
-  index "$indexfile"
+  data "$abs_dict"
+  index "$abs_index"
   }
 HERE
 
