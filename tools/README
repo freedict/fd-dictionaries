@@ -5,7 +5,11 @@ tei2dict_xml.pl requires:
 	(su)
 	perl -MCPAN -e shell;
 	install K/KM/KMACLEOD/libxml-perl-0.07.tar.gz
-- setting SGML_CATALOG_FILES to the right location
+- TEI P4 DTDs, available from http://www.tei-c.org/Guidelines2/index.html
+- make SGML_CATALOG_FILES point to the right location(s), e.g.
+	export SGML_CATALOG_FILES="/usr/share/doc/packages/sp/\
+html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/\
+CATALOG.iso_ent"
 
 hope this helps get you started :)
 
