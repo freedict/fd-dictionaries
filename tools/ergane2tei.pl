@@ -3,9 +3,9 @@
 # this program converts a ergane database from stdin
 # and converts it to tei dictionary format on stdout.
 # no sorting whatsoever is done. 
-# also the heaader & footer are just basic shells
+# also the header & footer are just basic shells
 #
-# GPL´ed 2000 by H.Eyermann
+# GPLed 2000 by H. Eyermann
 #
 #
 
@@ -67,7 +67,7 @@ EOF
 
 }
 
-# finaly print the footer:
+# finally print the footer:
     print<<EOF
     </body>
   </text>

@@ -5,7 +5,7 @@
 
 # This file imports a TEI (XML) dictionary (esp. for freedict) and
 # turns it into a dic format for ZBdic
-
+# ZBdic is a dictionary application on the Sharp Zaurus "Linux Palmtop"
 #-------------------------------------------------------------------------------
 
 from cStringIO import StringIO
