@@ -2,17 +2,20 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .vok
 
 TOOLS = ../tools/
-TEI2DICT = $(TOOLS)tei2dict_xml.pl
+TEI2DICT = $(TOOLS)xmltei2xmldict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
 TEI2WEBSTER = $(TOOLS)tei2webster.pl
 WEBSTERDIR = ../../1/
 WEBSTER = $(WEBSTERDIR)/webfmt
 DICT2VOK = $(TOOLS)dict2evolutionary.pl
 
+VERSION = 1.2
 
 VPATH = ../tools:../dicts:../dicts/bin
 
-include Makefile.language
+SGML_CATALOG_FILES = /usr/share/sgml/opensp/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.xmlcharent
+LANGUAGE = $(shell basename $(PWD))
+RLANGUAGE = hin-eng
 
 all:	\
 	$(LANGUAGE).tar.gz
@@ -34,10 +37,14 @@ eng-hin.tei : eng-hin.tei.header eng-hin.tei.end
 clean:
 	rm ehconv.c eng-hin.index eng-hin.dict eng-hin.tei eng-hin.tei.end ehconv
 
-# below is like the other freedict makefiles
+reverse:
+	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
+	$(TEI2DICT) -u -f $(LANGUAGE).tei -t ../tools/xsl/tei2txt.xsl -r)
+	mv $(LANGUAGE).dict ../dicts/$(RLANGUAGE).dict
+	mv $(LANGUAGE).index ../dicts/$(RLANGUAGE).index
 
 .tei.dict:
-	$(TEI2DICT) -f $*.tei -c
+	$(TEI2DICT) -f $*.tei -u -t ../tools/xsl/tei2txt.xsl
 	#$(TEI2WEBSTER) $*.tei
 	#$(WEBSTER) < $*.web
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
@@ -75,6 +82,16 @@ uninstall:
 commit: 
 	cvs -z3 commit
 
-test:	\
+validation:	\
 	$(LANGUAGE).tei
-	nsgmls -E 5 -s 
+	export SP_ENCODING=XML ;\
+        export SP_CHARSET_FIXED=YES ;\
+        export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES) ;\
+        nsgmls -s -E 10 $(LANGUAGE).tei
+
+test:
+	$(TOOLS)/testing/test-database.pl -l de_DE.utf8 -f ../dicts/$(LANGUAGE)
+
+dist:
+	tar cvjf $(LANGUAGE)-$(VERSION).src.tar.bz2 AUTHORS ChangeLog COPYING \
+English-Hindi-Dictionary_2.isc INSTALL Makefile NEWS README ehconv.yy eng-hin.tei.header

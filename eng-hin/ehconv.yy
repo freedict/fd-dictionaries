@@ -98,7 +98,7 @@ Without the anchor of his wife's support,he couldn't have been successful.
 --------
 
 * Sometimes the translation has alternatives separated by "/"
- -> to be translated into several <tr> Elements?
+ -> is translated into several <tr>-Elements
 
 "absurd","Adj","1.ÆÛÏÏèÃ³/ÊáÂÝ³Ú"
 I find his ideas absurd.
@@ -300,21 +300,28 @@ OPTCOMMENT	("#"[^\n]*)?
 WHITESPACE	[ \t]*
 %%
 
-<INITIAL>\"				printf("<entry>\n"); BEGIN(HEADWORD);
+<INITIAL>\"			printf("<entry>\n"); BEGIN(HEADWORD);
 
 <HEADWORD>[^"]+			printf(" <form><orth>%s</orth></form>\n",yytext);
 <HEADWORD>\",\"			BEGIN(POS);
 
 <POS>[^"]+				printf(" <gramGrp><pos>%s</pos></gramGrp>\n",yytext);
 <POS>\",\"[1-9]\.		{
-		printf(" <sense n=\"%c\">\n",yytext[3]); BEGIN(DEFINITION);
+		printf(" <sense n=\"%c\">\n  <trans>",yytext[3]); BEGIN(DEFINITION);
 		}
-<POS>\",\"				{
-		printf(" <sense n=\"1\">\n"); BEGIN(DEFINITION);
+<POS>\",\"			{
+		printf(" <sense n=\"1\">\n  <trans>"); BEGIN(DEFINITION);
 		}
 
-<DEFINITION>[^\"]+/\"		{
-		printf("  <trans><tr>");
+<DEFINITION>[^\"/]+\/		{
+		printf("<tr>");
+		yytext[yyleng-1]='\0';// remove trailing '/'
+		printfIscii2Utf8(yytext);
+		printf("</tr>");
+		}
+
+<DEFINITION>[^\"/]+/\"		{
+		printf("<tr>");
 		printfIscii2Utf8(yytext);
 		printf("</tr></trans>\n");
 		BEGIN(DE1);
@@ -325,29 +332,29 @@ WHITESPACE	[ \t]*
 
 <EXAMPLE>[^\n]+			{
 		printf("  <usg>");
-        /* special chars like " and & also get encoded! */
+	        /* special chars like " and & also get encoded! */
 		printfIscii2Utf8(yytext);
 		printf("</usg>\n"); BEGIN(EX1);
 		}
 
 <EX1>\n--\"[1-9]\.		{
-        printf(" </sense>\n <sense n='%c'>\n",yytext[4]);
+    		printf(" </sense>\n <sense n='%c'>\n  <trans>",yytext[4]);
 		BEGIN(DEFINITION);// Alternative
 		}
 <EX1>\n---\"[1-9]\.		{
-        printf(" </sense>\n <sense n='%c'>\n",yytext[5]);
+	        printf(" </sense>\n <sense n='%c'>\n  <trans>",yytext[5]);
 		BEGIN(DEFINITION);// Alternative
 		}
-<EX1>\n{WHITESPACE}\n				{
+<EX1>\n{WHITESPACE}\n		{
 		printf(" </sense>\n </entry>\n\n"); num_entries++;
 		if(num_entries) BEGIN(INITIAL);
 		else return 0;
 		}
-<EX1>\n					BEGIN(EXAMPLE);
+<EX1>\n				BEGIN(EXAMPLE);
 
-<<EOF>>					printf(" </sense>\n </entry>\n"); yyterminate();
+<<EOF>>				printf(" </sense>\n </entry>\n"); yyterminate();
 
-.		{
+.				{
     		fprintf(stderr, "Malformed input in line %i: %s\n",yylineno,yytext); }
 
 %%

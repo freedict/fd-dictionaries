@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI Consortium//DTD TEI P4//EN" [
-
-     <!ENTITY % ISOnum PUBLIC
-       "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN">
-     %ISOnum;
-
-<!ENTITY % TEI.dictionaries 'INCLUDE'> ]>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" [
+  <!ENTITY % TEI.XML 'INCLUDE'> 
+  <!ENTITY % TEI.dictionaries 'INCLUDE'>
+  <!ENTITY % ISOnum PUBLIC
+    "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML">
+  %ISOnum;
+  ]>
 <TEI.2>
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title>English-Hindi Freedict Dictionary</title>
         <respStmt>
-          <resp>Converter Text-XML</resp>
+          <resp>Author of Converter Text-XML</resp>
           <name>Michael Bunk, micha@luetzschena.de</name>
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>1.0</edition>
+        <edition>1.2</edition>
       </editionStmt>
       <publicationStmt>
         <publisher>freedict.de</publisher>
-        <date>2003</date>
+        <date>2004</date>
         <availability>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
@@ -30,9 +30,64 @@
         <title>free dictionaries</title>
       </seriesStmt>
       <notesStmt>
-        <note>Refer source website
-	 http://www.iiit.net/ltrc/Dictionaries/Dict_Downld.html.
-	 Original copyright note was GPL.</note>
+        <note>From the source website:&#x0a;
+&#x0a;
+         http://www.iiit.net/ltrc/Dictionaries/Dict_Frame.html&#x0a;
+&#x0a;
+GENERAL INFORMATION ABOUT THE DICTIONARY&#x0a;
+&#x0a;
+TITLE:	 	English - Hindi Dictionary : Version-2.0 (with example sentences)&#x0a;
+DEVELOPERS: 	Language Technologies Research Centre, IIIT, Hyderabad, India.&#x0a;
+FUNDED BY: 	Satyam Computers&#x0a;
+URL:	 	http://www.iiit.net/resources/overview.htm&#x0a;
+LICENCE: 	General Public Licence&#x0a;
+REMARKS: 	Developed through Voluntary Collaborative Effort. Quality not uniform.&#x0a;
+
+The English-Hindi Dictionary Version 2.0 contains approximately 25,000
+English headwords. For every English headword it's possible Hindi
+meanings are given. For each meaning an example sentence is given to
+show the context in which the meaning occurs. In most cases the example
+sentences are in English. But there are cases where the example
+sentences are given in Hindi.&#x0a;
+
+This dictionary has been developed through a Voluntary Collaborative
+effort. Since the contributors of the data base are from varying
+backgrounds, including school children, the quality of the content is
+not uniform. There is no claim of excellence in quality. In fact, it
+needs to be further improved. The idea here is to provide a basic
+electronic lexical data base for English- Hindi which the users can
+further improve and develop according to their needs.&#x0a;
+
+This dictionary is being released under the General Public Licence(GPL).
+This licence allows you to make copies of the dictionary and distribute
+freely. It also allows you to build on top of this dictionary or a part
+thereof and redistribute the resulting work. However, essentially, there
+is only one condition: the resulting work must also be licenced under
+GPL (See a copy of GPL Licence for more details).&#x0a;
+
+An effort has been made to make the entries as complete as possible.
+However, a number of entries need elaboration.There are entries which
+have their Hindi equivalents but no example sentences. There are entries
+where the English headword is given with its grammatical category but
+does not have either the Hindi meaning or an example sentence. There are
+also entries which have the english headword, its grammatical category,
+an example to show its semantic content, however, it does not have the
+Hindi equivalent for the same. These gaps have yet to be filled. Work
+will continue to complete the missing pieces of information. Users are
+invited to join the team of volunteers engaged in adding to and refining
+the dictionary. At the very least they can point out the errors to
+us.&#x0a;
+
+See the website for:&#x0a;
+&#x0a;
+ 1. Dictionary Format and Special Symbols Used.&#x0a;
+ 2. Abbreviations of the Grammatical Category Names.&#x0a;
+ 3. Data Sources.&#x0a;
+ 4. Contributors.&#x0a;
+ 5. You can contribute too!!!&#x0a;
+&#x0a;
+Your Valuable Feedback can be sent to dipti@iiit.net&#x0a;
+</note>
       </notesStmt>
       <sourceDesc>
         <p>http://www.freedict.de/</p>
