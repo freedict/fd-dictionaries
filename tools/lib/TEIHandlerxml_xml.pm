@@ -1,5 +1,7 @@
 # SAX handler module for tei2dictxml_xml converter
 
+# V1.2 5/2004 Michael Bunk
+#	* added option to generate 00-database-allchars header
 # V1.1 4/2004 Michael Bunk
 #	* when headwords contain entities, characters()
 #	  is called multiple times for the same element:
@@ -52,6 +54,7 @@ package lib::TEIHandlerxml_xml;
 use strict;
 use warnings;
 use lib::Dict;
+use utf8;
 
 # for filtering:
 use FileHandle;
@@ -152,8 +155,8 @@ sub apply_filter_cmd {
 }
 
 sub set_options {
-    my ($self,$filename,$askip_header,
-     $aGenerate00DatabaseUtf8,$aLocale,$aFilterCmd,$aStyleSheet,$aReverseindex) = @_;
+    my ($self, $filename, $askip_header, $aGenerate00DatabaseUtf8, $aLocale,
+      $aFilterCmd, $aStyleSheet, $aReverseindex, $aAllchars) = @_;
     $file_name = $filename;
     $file_name =~ s/^(\w*\/)+//g;         
     $file_name =~ s/(\S*)\.\w*/$1/;
@@ -170,7 +173,8 @@ sub set_options {
 
     Dict->open_dict($file_name,$aLocale,$aGenerate00DatabaseUtf8);
     
-    if($aGenerate00DatabaseUtf8) {
+    if($aGenerate00DatabaseUtf8)
+    {
 	print STDERR "Generating 00-database-utf8\n";
     	Dict::set_headword(); Dict::add_text("00-database-utf8");
 	Dict::write_text(); Dict::end_headword();
@@ -180,7 +184,15 @@ sub set_options {
 	Dict::write_direct("This dictionary is UTF-8 encoded. If you use dictd, ".
 		           "make sure to start it with the appropriate --locale option.");
         Dict::write_newline();
-	}
+    }
+    
+    if($aAllchars)
+    {
+	print STDERR "Generating 00-database-allchars\n";
+    	Dict::set_headword(); Dict::add_text("00-database-allchars");
+	Dict::write_text(); Dict::end_headword();
+        Dict::write_newline();
+    }	
 }
 
 sub start_element {

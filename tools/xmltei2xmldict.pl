@@ -1,6 +1,9 @@
 #!/usr/bin/perl
 # d for debug
 
+# V1.4 5/2004 Michael Bunk                                                                    
+#   * added option to generate 00-database-allchars header  
+#
 # V1.3 4/2004 Michael Bunk kleinerurm-at-gmx.net
 #   * finally used FindBin
 #   * use warnings; instead of #!perl -w to avoid warnings
@@ -42,8 +45,9 @@ use XML::Sablotron;
 use XML::Sablotron::DOM;
 use lib::TEIHandlerxml_xml;
 
-our ($opt_f, $opt_h, $opt_s, $opt_c, $opt_u, $opt_l, $opt_i, $opt_r,$opt_t,$sab,$sit);
-getopts('suri:l:f:t:');
+our ($opt_f, $opt_h, $opt_s, $opt_c, $opt_u, $opt_l, $opt_i,
+  $opt_r, $opt_t, $opt_a, $sab, $sit);
+getopts('surai:l:f:t:');
 
 if (!defined $opt_f) {
  print STDERR "\n$0 - convert Text Encoding Initiative files to\n";
@@ -52,7 +56,7 @@ if (!defined $opt_f) {
  print STDERR " http://www.tei-c.org/\n";
  print STDERR " Outputs .index and .dict file. The index is sorted with 'sort ...'\n";
  print STDERR " This help is outputted, because here was no tei file given.\n\n"; 
- print STDERR "Usage: $0 -f <teifile> [-sur] [-i <filtercmd>|-t <stylesheet.xsl>] [-l <locale>]\n";
+ print STDERR "Usage: $0 -f <teifile> [-sura] [-i <filtercmd>|-t <stylesheet.xsl>] [-l <locale>]\n";
  print STDERR " -s\t skip TEI header: do not treat it to generate\n";
  print STDERR "   \t  00-database-info & co special entrys (good to convert adapted\n";
  print STDERR "   \t  SGML tei files)\n";
@@ -61,6 +65,7 @@ if (!defined $opt_f) {
  print STDERR "   \t  When this is given, 'sort' is called without -d option,\n";
  print STDERR "   \t  ie. all characters are used in comparisons\n";
  print STDERR " -r\t generate reverse index (use <tr> instead of <orth>)\n";
+ print STDERR " -a\t generate headword 00-database-allchars (but no change in index mangling!)\n";
  print STDERR " -i <filtercmd>\t execute filtercmd for each entry (eg. 'sabcmd style.xsl')\n";
  print STDERR " -t <stylesheet.xsl>\t use an XSLT stylesheet for filtering the entries\n";
  print STDERR "   \t  with the Sablotron library. Excludes -i.\n";
@@ -83,8 +88,9 @@ $my_handler->set_options($file, # hand over name for .dict and .index output fil
     $opt_l ? $opt_l : "C",	# locale
     $opt_i ? $opt_i : "",	# filter command
     $opt_t,			# stylesheet for Sablotron
-    $opt_r ? 1 : 0);		# generate reverse index
-
+    $opt_r ? 1 : 0,		# generate reverse index
+    $opt_a ? 1 : 0);		# generate 00-database-allchars
+    
 # XML::ESISParser should set these if IsSGML != 1
 $ENV{SP_ENCODING} = "XML";
 $ENV{SP_CHARSET_FIXED} = "YES";

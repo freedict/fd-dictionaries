@@ -35,6 +35,7 @@ package Dict;
 use strict;
 use Text::Wrap;# for fill() or wrap()
 use Encode 'decode_utf8';
+use utf8;
 
 our ($headwords, $prev_word, $start_article, $head, $fill2, $end_article,
  @hwords, $text, $all_text, $utf8mode);
@@ -162,7 +163,7 @@ sub set_headword {
 		# btw, dictfmt quits here!
 	    }
 	  
-	    # make perl believe its utf8
+	    # make perl believe it is utf8
 	    # see 'man perluniintro' 
 	    if($utf8mode) {$_ = decode_utf8($_);}
 
