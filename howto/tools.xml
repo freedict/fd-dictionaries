@@ -31,36 +31,78 @@
 <!ENTITY tools SYSTEM "tools.xml">
 
  ]>-->
+
 <article id="tools">
-    <title>Developers Toolkit</title>
-    <abstract>
-    <para>Here we outline Free-dictionary and associated tools for building translating dictionaries in particular. The first section deals with an editor or two.</para>  </abstract>
+  <title>Developers Toolkit</title>
+  <abstract>
+    <para>Here we outline the tools nedded or useful for building, editing
+	and maintaining translating dictionaries.</para>
+  </abstract>
       
-  <section><title>Xemacs or ?</title>
-<para>The place to start is with a good general purpose editor. There are many excellent editors or Application programming Interfaces about these days. If your using a reasonably standard distribution of Linux or *BSD you should have a few choices.</para>
-<para>Now without starting yet another Holy War I would like to recommend Xemacs for all of the tasks outlined in this Howto. It easily scopes all given tasks and many more besides. Of particular note is the functionalities Xemacs (and to a slightly lesser extent GNU Emacs) provide in editing XML and SGML based documents. Xemacs, once it has associated a document with a DTD gives right mouse button options that are compliant with the DTD and the ability to validate most XML files.</para>
-<para>While undertaking this series of documents I trialled Vim Emacs GEdit and Xemacs. It really depends on your own style but given that your more likely to be working in multi language environments than most coders Xemacs/emacs  stand  out for this alone. GEdit is actually better than Vim (in this case) as it has native UTF-8 support and should support multiple character sets (and "fonts") out of the box. (though in honesty I did not explore Vim's plug-in environment to any great extent.) Vim is still useful here and supports colourisation of tags etc. but also lots of other coding languages, and has the important advantage of using a relatively small memory footprint... especially compared to Xemacs in full flight on a GUI.</para>
+  <section>
+    <title>Editing the TEI XML files directly</title>
+    <para>The place to start is with a good general purpose editor. The
+	features required for our purposes are Unicode support,
+	syntax hightlighting and maybe XML support.</para>
 
+    <para>Xemacs supports all those features. Of particular note are the
+	functionalities Xemacs (and to a slightly lesser extent GNU Emacs)
+	provide in editing XML and SGML based documents. Xemacs, once it
+	has associated a document with a DTD, gives right mouse button
+	options that are compliant with the DTD and the ability to
+	validate XML files.</para>
 
-<section id="xemacs-setup">
-<title>Xemacs Configuration Quick starts</title>
-      <abstract><para>Here I assume you have installed Xemacs with or without full support for MULE (Multi User Language Environment). (I think) You may not need all of that functionality and it should do everything we need with out it. It doesn't hurt and may be useful for your other work. </para></abstract>
+    <para>While writing this HOWTO we tries vim, emacs, GEdit and Xemacs.
+	It really depends on your own style but given that your more likely
+	to be working in multi language environments than most coders
+	Xemacs/emacs stand out for this alone. GEdit is actually better
+	than Vim (in this case) as it has native UTF-8 support and should
+	support multiple character sets (and "fonts") out of the box (though
+	in honesty I did not explore Vim's plug-in environment to any great
+	extent). Vim is still useful here and supports colourisation of tags
+	etc. but also lots of other coding languages, and has the important
+	advantage of using a relatively small memory footprint... especially
+	compared to Xemacs in full flight on a GUI.</para>
 
-	<para>If yours is a fresh install all you need to do is configure the interface so that you can bear it .. It is <emphasis>surprisingly ugly</emphasis> out of the box. (though functional :) </para>
-<para> Configuring and extending emacsen is a lifetimes work..:)  Lets just do some basic stuff.</para>
-      <para>At the single user level (your own configuration when running under your own account), there are two main files (by default) that you may like to tweak. Your <filename>.Xdefaults</filename> file  and the <filename>.xemacs/custom.el</filename> file.</para>
-	<para> Following are copies of mine just copy them over the file of the same name. <emphasis>(which of course you will backup first</emphasis> .. you may hate my configs even more !)</para>
+    <section id="xemacs-setup">
+      <title>Xemacs configuration quick start</title>
+      <abstract><para>Here I assume you have installed Xemacs with or without
+	full support for MULE (Multi User Language Environment). You may not
+	need all of that functionality and it should do everything we need
+	without it. It doesn't hurt and may be useful for your other work.</para>
+      </abstract>
 
-     
+      <para>If you have a fresh install, all you need to do is configure the
+	interface so that you can bear it. It is <emphasis>surprisingly ugly</emphasis>
+	out of the box (though functional :) </para>
+
+      <para>Configuring and extending emacsen is a lifetime's work..:) Lets just
+	do some basic stuff.</para>
+
+      <para>At the single user level (your own configuration when running under
+	your own account), there are two main files (by default) that you may like
+	to tweak. Your <filename>.Xdefaults</filename> file  and the
+	<filename>.xemacs/custom.el</filename> file.</para>
+
+      <para>Following are copies of mine just copy them over the file of the same
+	name <emphasis>(which of course you will backup first</emphasis>... you may
+	hate my configs even more!).</para>
 
       <section>
-	<title>A Home dot Xdefaults file</title>
-	  <para>You will find the original of the .Xdefaults file under the<guilabel> help menu</guilabel> in the Xemacs interface.(Top Right Hand corner) This file is essentially the default that comes with Xemacs with a few things tweaked. Please note that the most of the working font settings are actually done in the next file. As a bonus you also get some configs (colours only) for Xcalendar :)</para>
-      <para><filename>~/.Xdefaults</filename></para>
-	  <para>This is a very comprehensive .Xdefaults file, note however that most settings are either at defaults or commented (!) out.
-	  </para>
+	<title>A home dot Xdefaults file</title>
+	<para>You will find the original of the .Xdefaults file under
+	  the <guilabel>help menu</guilabel> in the Xemacs interface (top right hand
+	  corner). This file is essentially the default that comes with Xemacs with
+	  a few things tweaked. Please note that the most of the working font
+	  settings are actually done in the next file. As a bonus you also get
+	  some configs (colours only) for Xcalendar :)</para>
 
-	  <para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
+        <para><filename>~/.Xdefaults</filename></para>
+
+	<para>This is a very comprehensive .Xdefaults file. Note however, that most
+	  settings are either at defaults or commented (!) out.</para>
+
+	<para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
 ##########################################################################
 	    Cut from below here:
 	    <blockquote>
@@ -484,19 +526,90 @@ cut from above here.
 <para> Explore the GUI and buffer interfaces to the configuration settings, they really are quite extensive. (you can enter your latitude and longitude and have your sunrise sunset and day lengths for example, you can have your self psychoanalysed and play games write mail etc etc... Emacsen are designed to run on a X powered Graphical Interface or from a real consol (or even a virtual terminal, they take full advantage of Unix protocols and services.. you may never need another application :) They are also huge and daunting Interfaces , that can use lots of system resources if poorly configured. How far you take it is of course up to you.</para>
 <para>Oh on the Vi emacs war? I use both, so there :) Sometimes Xemacs is just plain overkill.</para>
 </section>
+
 </section>
-   <!-- these should all be standalone files ?? perhaps at article level -->
+   <!-- these should all be standalone files ?? perhaps at article level
+	Micha: we can move them when they have grown -->
+
     <section>
-      <title>To TEI</title>
-      <para>>Move to standalone file</para>
+      <title>Validation TEI format files</title>
+      <para>Requirements: TEI DTD, validation XML parser</para>
+
+      <para>It should be available as a target int the Makefile
+test:                                                                                                      
+        test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)                             
+        export SP_ENCODING=XML ;\                                                                          
+        export SP_CHARSET_FIXED=YES ;\                                                                     
+        export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)" ;\                                               
+        nsgmls -s -E 10 $(LANGUAGE).tei
+        </para>                                  
     </section>
+
+    <section>
+      <title>Converting into TEI format</title>
+      <para>Some converters for this task are available. They can be found in the
+	<ulink ref="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
+         module</ulink> in the CVS repository of the freedict project. Unformatunately,
+	 many translating database / wordlist projects use their own unstandardized
+	 format and so require their own converter. It is an aim of FreeDict to
+	 lead to some kind of standardization of data with the TEI format.</para>
+
+      <para>
+	 ding2tei.pl - conversion of the
+	   <ulink ref="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
+	   (English/German) into TEI format
+	 hd2tei.pl - conversion of the "hd" format (which dictfmt also understands) into TEI format
+	 tab2tei.pl - conversion of tab delimited plain text file into TEI format
+	 dict2tei.py -  conversion of an already formatted dictd database into TEI format
+	</para>
+    </section>
+
     <section id="tei2dict">
-      <title>TEI > Dictd</title>
-      <para>Move to standalone file</para>
+      <title>Converting TEI format into dictd database format</title>
+      <para>For this task, three ways are viable.</para>
+
+      <para>First, using XSLT stylesheets and <command>dictfmt -c5</command>.
+	The stylesheet needs to be applied to the TEI file. Any XSLT processor
+	should do the work. Using <ulink ref="">Sablotron</a>, the command to give would
+	be <command>sabcmd ...</command>
+        <command>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</command>
+
+      <para>Second, using <command>xmltei2xmldict.pl</command>. This is the
+	conversion utility developed by the FreeDict project itself. Is converts
+	the TEI file into dictd database format without producing intermediate
+	files. Also it supports multiple headwords for a singl entry [TODO: explain].
+	Its disadvantage is, that it depends on the FreeDict project for the conversion
+	to be successful, because the dictd database format is still subject to changes
+	and cannot be as well understood as <command>dictfmt</command> does, which comes
+	from the dictd project itself.</para>
+
+      <para>xmltei2xmldict.pl -f la1-la2.tei -t xsl/tei2txt.xsl</para>
+  
+      <para>Third, conversion might be done using sed and dictfmt.
+	<command>sed -f tei2j.sed la1-la2.tei la1-la2.j</command>
+      </para>
     </section>
+
     <section id="stylesheets">
       <title>Style Sheets</title>
-      <para>>Move to standalone file</para>
+      <para>For the conversion of XML data, XSL/XSLT was devised.
+	In FreeDict, style sheets written using the XSLT language are employed
+	to describe the transformation of entries into plain text. Using stylesheets
+	we hope to make the conversion process open and adjustable by users to their
+	needs, because now "only" the stylesheets need to be adjusted
+	in order to adjust the arrangement of information inside entries, no more
+	knowledge of converter programming should be required.</para>
+
+      <para>In practice though, it turns out that XSLT itself is no more
+	easier than a programming langugage. In fact, because of its different
+	approach, it is hard to get into. But, we believe the decision to use it
+	was a good one, because now the entry layout is independend of the
+	converter tool. In previous versions of the converter, the perl code
+	became unmaintainable. It was impossible to oversee what a code change
+	would do to the layout.</para>
+
+      <para> reference to XSLT standard, commented tei2txt.xsl
+      </para>
     </section>
 	
   </article>
