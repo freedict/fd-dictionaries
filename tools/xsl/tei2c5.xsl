@@ -1,17 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!-- this stylesheet converts a TEI dictionary file
+     into the c5 format suitable to be processed
+     by 'dictfmt -c5' -->
 
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-  <xsl:include href="inc/teiheader2txt.xsl"/>
-  <xsl:include href="inc/teientry2txt.xsl"/>  
+  <xsl:import href="inc/teiheader2txt.xsl"/>
+  <xsl:import href="inc/teientry2txt.xsl"/>  
   
   <xsl:output method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
 
   <xsl:strip-space elements="entry"/>
 
-  <xsl:template match="teiHeader">
-    <xsl:apply-templates/>
+  <!-- something like the main function -->
+  <xsl:template match="/">
+    <xsl:apply-templates select="*//teiHeader" />
+    <xsl:call-template name="00-database-short" />
+    <xsl:apply-templates select="//entry" />
+  </xsl:template>
+
+  <xsl:template name="00-database-short">
+    <xsl:text>_____&#x0A;&#x0A;</xsl:text>
+    <xsl:text>00-database-short&#x0A;</xsl:text>
+    <xsl:value-of select="//title" />
+    <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
   <xsl:template match="entry">

@@ -106,20 +106,20 @@ while(<>)
   {
      if(/(\w+):/)
      {
-       mywarn $v[0], "Pos already set: $1 (had: $pos)" if($pos);
+       mywarn $v[0], "Pos already set: $1 (had: $pos)" if $pos;
        $pos = $1;
        next;
      }
      if(/(pl\.)/)
      {
-       mywarn $v[0], "Number already set: $1 (had: $number)" if($number);
+       mywarn $v[0], "Number already set: $1 (had: $number)" if $number;
        $number = $1;
        next;
      }
      
      if(/\[([^\.]+)\.\]/)
      {
-       mywarn $v[0], "Domain already set: $1 (had: $domain)" if($domain);
+       mywarn $v[0], "Domain already set: $1 (had: $domain)" if $domain;
        $domain = $1;
        next;
      }
@@ -128,20 +128,20 @@ while(<>)
   }
 
   $pos1 = ""; $number1 = ""; $gen1= "";
-  $pos1 = "<pos>$pos</pos>";
-  $number1 = "<number>$number</number>";
-  $gen1 = "<gen>$gen</gen>";
+  $pos1 = "<pos>$pos</pos>" if $pos;
+  $number1 = "<number>$number</number>" if $number;
+  $gen1 = "<gen>$gen</gen>" if $gen;
   
   print "  <entry>\n";                                                        
   print "     <form>\n";                                                       
   print "       <orth>". htmlencode($v[0]) ."</orth>\n";                                    
   print "     </form>\n";                               
-  print "     <gramGrp>$pos1$gen1$number1</gramGrp>\n" if($pos || $number || $gen);    
+  print "     <gramGrp>$pos1$gen1$number1</gramGrp>\n" if $pos || $number || $gen;
   print "     <trans>\n";                                                     
-  print "       <usg type=\"dom\">$domain</usg>\n" if($domain);
+  print "       <usg type=\"dom\">$domain</usg>\n" if $domain;
   print "       <tr>". htmlencode($v[1]) ."</tr>\n";
   print "     </trans>\n";
-  $r = " resp=\"". htmlencode($v[4]) ."\"" if($v[4]);
-  print "     <note$r>". htmlencode($v[3]) ."</note>\n" if($v[4] || $v[3]); 
+  $r = " resp=\"". htmlencode($v[4]) ."\"" if$v[4];
+  print "     <note$r>". htmlencode($v[3]) ."</note>\n" if $v[4] || $v[3]; 
   print "   </entry>\n";       
 }

@@ -3,15 +3,15 @@
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-  <xsl:include href="indent.xsl"/> 
+  <xsl:include href="indent.xsl" /> 
   
-  <xsl:strip-space elements="form trans def"/>
+  <xsl:strip-space elements="form trans def usg" />
 
 
   <!-- TEI entry specific templates -->
   
   <xsl:template match="orth">
-    <xsl:apply-templates/>
+    <xsl:apply-templates />
   </xsl:template>
 
   <xsl:template match="form">
@@ -51,11 +51,19 @@
     <xsl:text>) </xsl:text>
   </xsl:template>
 
-  <xsl:template match="usg">
-    <USG><xsl:apply-templates/></USG>
+  <xsl:template match="usg[not(@type)]">
+    <xsl:text>&#x0A;      &quot;</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>&quot;&#x0A;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="p">
+  <xsl:template match="usg[@type]">
+    <xsl:text>[</xsl:text>
+    <xsl:value-of select="." />
+    <xsl:text>.] </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="entry//p">
     <xsl:apply-templates/>
   </xsl:template>
 
@@ -74,6 +82,12 @@
   <xsl:template match="gen"><xsl:text>(</xsl:text>
     <xsl:apply-templates/>
     <xsl:text> )</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="note[@resp]">
+    <xsl:text>&#x0A;         Entry edited by: </xsl:text>
+    <xsl:value-of select="@resp" />
+    <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

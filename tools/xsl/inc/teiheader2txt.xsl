@@ -15,7 +15,7 @@
 
 </xsl:text></xsl:template>
 
-<xsl:template match="xptr">
+<xsl:template match="xptr"><xsl:text> </xsl:text>
   <xsl:value-of select="@url"/>
 </xsl:template>
 
@@ -67,7 +67,7 @@ Series: <xsl:value-of select="./title"/><xsl:text>
 
 </xsl:text></xsl:template>
 
-<xsl:template match="note"> * <xsl:value-of select="."/><!-- todo: indentation
+<xsl:template match="teiHeader//note"> * <xsl:value-of select="."/><!-- todo: indentation
   of wrapped lines --></xsl:template>
 
 

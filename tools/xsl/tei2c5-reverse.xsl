@@ -10,7 +10,21 @@
   
   <xsl:strip-space elements="entry"/>
 
-       
+  <!-- something like the main function -->
+  <xsl:template match="/">
+    <xsl:apply-templates select="*//teiHeader" />
+    <xsl:call-template name="00-database-short" />
+    <xsl:apply-templates select="//entry" />
+  </xsl:template>
+
+  <xsl:template name="00-database-short">
+    <xsl:text>_____&#x0A;&#x0A;</xsl:text>
+    <xsl:text>00-database-short&#x0A;</xsl:text>
+    <xsl:value-of select="//title" />
+    <xsl:text> [reverse index]&#x0A;</xsl:text>
+  </xsl:template>
+
+
   <xsl:template match="entry">
     <!-- mark start of a new c5 format definition -->
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
