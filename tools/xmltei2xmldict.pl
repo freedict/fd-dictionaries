@@ -85,8 +85,10 @@ $my_handler->set_options($file, # hand over name for .dict and .index output fil
     $opt_t,			# stylesheet for Sablotron
     $opt_r ? 1 : 0);		# generate reverse index
 
+# XML::ESISParser should set these if IsSGML != 1
 $ENV{SP_ENCODING} = "XML";
 $ENV{SP_CHARSET_FIXED} = "YES";
+
 if (!defined($ENV{SGML_CATALOG_FILES})) {
  print STDERR "Warning: SGML_CATALOG_FILES is not set.\nPlease set it to point to\n";
  print STDERR " - the xml.soc file from the (Open)SP distribution\n";
@@ -105,7 +107,9 @@ our @additional_args;
 push (@additional_args, IsSGML => 1);
 
 XML::ESISParser->new->parse(Source => { SystemId => $file },
-                            Handler => $my_handler,@additional_args);
+                            Handler => $my_handler,@additional_args,
+#Declaration => "/usr/share/sgml/opensp/xml.dcl"
+  );
 
 print STDERR "Created $Dict::headwords headwords (including multiple <orth>-s / from the <tr>-s).\n";
 

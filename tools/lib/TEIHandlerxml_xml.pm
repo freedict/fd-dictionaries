@@ -1,5 +1,10 @@
 # SAX handler module for tei2dictxml_xml converter
 
+# V1.1 4/2004 Michael Bunk
+#	* when headwords contain entities, characters()
+#	  is called multiple times for the same element:
+#	  now only one call to add_headword()
+#	  will be done
 # V1.0 6/2003 Michael Bunk
 
 # This program is free software; you can redistribute it and/or modify
@@ -19,8 +24,8 @@
 # thinking about event & calling order of the Dict subs (there is no other doc?):
 # 1. set_file_name()    -> open_dict()
 # 2. <orth>             -> set_headword()
-# 3. characters()       -> add_text()
-# 4. end_tag	        -> write_text()
+# 3. characters()       -> $current_headword .= $data;
+# 4. end_tag	        -> add_headword($current_headword)
 # 5. </orth>            -> end_headword()
 # 6. several start_tags -> ( write_direct() | add_text() )
 # 7. several end_tags   -> write_text()
@@ -45,6 +50,7 @@
 package lib::TEIHandlerxml_xml;
 
 use strict;
+use warnings;
 use lib::Dict;
 
 # for filtering:
@@ -58,7 +64,8 @@ use XML::Sablotron::DOM;
 our ($header, $preLastStartTag, $lastStartTag,
      $database_short, $database_url, @higherElements,
      $file_name, $skip_header, $state, $quoted,
-     $filtercmd, $sit, $sab, $reverse_index, $sab_templ);
+     $filtercmd, $sit, $sab, $reverse_index, $sab_templ,
+     $current_headword);
 
 # i copied _escape() from XML::Handler::CanonXMLWriter
 # for escaping special chars in HTML/XML/SGML
@@ -127,25 +134,18 @@ sub apply_filter_cmd {
     elsif ($sab) {
 
 #        print STDERR "+";
-#	print STDERR "calling addArg...";
-
-#	my $data = XML::Sablotron::DOM::parse($sit, 'entry.xml');
 	$sab->addArg($sit, 'input', $quoted);
 
 #	print STDERR "\ncalling addArgTree...";
-
 	$sab->addArgTree($sit, 'template', $sab_templ);
 
 #	print STDERR "\ncalling process...";
-
 	$sab->process($sit, 'arg:/template', 'arg:/input', 'arg:/output');
 
 #	print STDERR "\ncalling getResultArg...";
-
 	$quoted = $sab->getResultArg('arg:/output');
 	
 #	print STDERR "\ngot: $quoted\n\n\n\n";
-
 	}
 
     return $quoted;
@@ -203,12 +203,12 @@ sub start_element {
 	
     elsif ($part eq "orth" && !$reverse_index) {
         if ($preLastStartTag eq "form") {Dict::set_headword()}
-	$state = "orth";
+	$state = "orth";$current_headword='';
 	}
 	
     elsif ($part eq "tr" && $reverse_index) {
         if (!$Dict::head) {Dict::set_headword()}
-	$state = "tr";
+	$state = "tr";$current_headword='';
 	}
 
 	
@@ -281,18 +281,29 @@ sub characters {
            ($lastStartTag    eq "p")) { $database_url=$data }
 
     if ($reverse_index && ($lastStartTag eq "tr")) {
-	Dict::add_headword($data);
+	$current_headword .= $data;
 	}
 	
     elsif (!$reverse_index && ($lastStartTag eq "orth")) {
        if (($preLastStartTag eq "form") ||
            ($preLastStartTag eq "orth")) {
 	      #warn "headwords add_text: '$data'\n";
-	      Dict::add_headword($data)
+	      $current_headword .= $data;
 	     }
        else {
          print STDERR "multiple <orth>-s only at beginning of <form> supported. Skipping the others!\n" }
        }
+}
+
+
+# FIXME: this doesn't get called!
+sub internal_entity_ref
+{
+  my ($self, $element) = @_;
+  my $Name = $element->{Name};
+
+  print STDERR "internal_entity_ref($Name)\n";
+
 }
 
 
@@ -309,12 +320,14 @@ sub end_element {
 	}
 	
     if ($part eq "orth") {
+	Dict::add_headword($current_headword);
         # Dict::end_headword() has to be called later, because we don't know now
 	# if there is another orth coming (multiple headwords for one entry)
 	if($state eq "orth") {$state = "quoting"};
 	}	    
 
     if ($part eq "tr") {
+	Dict::add_headword($current_headword);
         # Dict::end_headword() has to be called later, because we don't know now
 	# if there is another tr coming
 	if($state eq "tr") {$state = "quoting"};
