@@ -17,14 +17,31 @@
 <chapter id="submitting">
     <title>Submitting The Dictionaries</title>
     <abstract>
-      <para>naming as per ISO 639(?) langage codes - link to such list or
-       <command>info iso639</command>
-       ask a developer to import to cvs or
-       if you have cvs write access:
-       cvs import with some vendortag</para>
+      <para>Having a dictionary database fulfilling the
+       requirements for inclusion into FreeDict, these are the
+       steps to get your dictionary into FreeDict.</para>
     </abstract>
     <section>
-      <title></title>
-      <para></para>
+      <title>Naming of the dictionary files</title>
+      <para>For naming the TEI files we use the format <filename>la1-la2.tei</filename>,
+        where la1 and la2 are <ulink url="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO
+        639</ulink> 3-letter language codes. You might also use the command
+        <command>info iso639</command> to get the list.</para>
     </section>
+
+    <section>
+      <title>Importing into CVS</title>
+	<para>Ask a developer to import your TEI file (or the code to create
+	  the TEI file from a different format) into the FreeDict CVS repository.
+	  If you are a developer of FreeDict and have write access to the
+	  repository, you can import using a command like
+	  <command>cvs import freedict/la1-la2 vendortag releasetag</command>(?).
+	  At present vendortag and releasetag are not used, but it
+	  might be good to use them as intended by CVS: If you
+	  import files from some upstream project, use that project's
+	  name as vendortag and that project's release version as releasetag.</para>
+    </section>
+        
 </chapter>
+
+

@@ -571,10 +571,13 @@ cut from above here.
       <title>Converting into TEI format</title>
       <para>Some converters for this task are available. They can be found in the
 	<ulink url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
-         module</ulink> in the CVS repository of the FreeDict project. Unformatunately,
+         module</ulink> in the CVS repository of the FreeDict project. Unfortunately,
 	 many translation database/wordlist projects use their own unstandardized
 	 format and so require their own converter. It is an aim of FreeDict to
-	 lead to some kind of standardization of data with the TEI format.</para>
+	 lead to some kind of standardization of data with the TEI format.
+	 Also we hope that upstream projects (ie the projects where actual dictionary
+         data comes from) make their data available in TEI XML format or
+	 even directly use TEI XML as their primary data format.</para>
 
       <para>
         <itemizedlist>

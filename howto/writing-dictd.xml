@@ -211,7 +211,20 @@ abhor   BiA     s
 	entries and add the TEI header information. Please see the
         <link linkend="write-tei">Writing TEI</link> and
         <link linkend="installTeiDTD">Installing TEI</link> sections.</para>
-      
+    </section>
+    <section>
+      <title>Sorting a .index file</title>
+ 
+      <para>Sometimes a match lists headwords that yield no entry when they
+        are looked up. In such case, it is likely that the index is sorted
+        incorrectly. For a word to be looked up, the way the index is sorted
+        and the way the dict server looks for entries have to be exactly
+        the same.</para>
+       <para>In such case, it can be sorted again, using a command such as
+        <command>LC_ALL=C sort -t $'\t' -k1,1 -bdf broken.index >working.index</command>.
+        Note the LC_ALL=C! Leaving it out can produce a broken index,
+        especially related to space characters. </para>
+
     </section>
   </section>
 </chapter>
