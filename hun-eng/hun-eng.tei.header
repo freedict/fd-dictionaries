@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+ "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+ <!ENTITY % TEI.dictionaries "INCLUDE">
+ <!ENTITY % TEI.XML 'INCLUDE'>
+ <!ENTITY % TEI.linking      "INCLUDE" >
+ <!ATTLIST xptr url CDATA #IMPLIED >
+ <!ATTLIST xref url CDATA #IMPLIED >
+ ]>
+
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>Hungarian-English FreeDict Dictionary</title>
+      </titleStmt>
+      <editionStmt>
+	<edition>0.2</edition>
+      </editionStmt>
+      <extent>139 935 headwords</extent>
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+        <availability>
+          <p>Copyright (C) 1999 Vony Attila and Bui Pol</p>
+          <p>GNU GENERAL PUBLIC LICENSE</p>
+        </availability>
+        <date>2002</date>
+        <pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+      <sourceDesc>
+        <p>The original version of this file is from 13/Nov/1999,
+	made by Vony Attila and Bui Pol.
+	Home: <xptr url="http://almos.vein.hu/~vonyoa"/>
+	(mindenkori legteljesebb v#ltozat)</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+        <projectDesc>
+          <p>This dictionary comes to you through nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+    <revisionDesc>
+      <change>
+        <date>2005-03-07</date>
+        <respStmt><name>Michael Bunk</name></respStmt>
+	<item>Reimport from source. There are now almost 3000 entries
+	  more, don't know why. Fixes Bug #920855 (Index and dict file
+	  for Hungarian-English dictionary is bad), which included an
+	  encoding problem and missing spaces, besides an incorrectly
+	  sorted .index file for dictd.</item>
+      </change>
+      <change>
+        <date>2004-12-29</date>
+        <respStmt><name>Michael Bunk</name></respStmt>
+        <item>Converted TEI file from P3 to P4</item>
+      </change>
+      <change>
+        <date>2000-11-06</date>
+        <respStmt><name>Horst Eyermann</name></respStmt>
+        <item>Import from source</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
