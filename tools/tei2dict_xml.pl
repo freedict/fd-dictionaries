@@ -68,10 +68,17 @@ our $my_handler = TEIHandler_xml->new();
 # if "-h" given as switch, HTML_enabled is 1, else 0
 $my_handler->set_options($file,$opt_h ? 1 : 0, $opt_s ? 1 : 0, $opt_c ? 1 : 0);
 
+$ENV{SP_ENCODING} = "XML";
+$ENV{SP_CHARSET_FIXED} = "YES";
+if (!defined($ENV{SGML_CATALOG_FILES})) {
+ $ENV{SGML_CATALOG_FILES}= "/usr/share/doc/packages/sp/html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.iso_ent";
+ }
+ 
 # FIXME the following schould be removed if we use XML,
 # but if we do, we get:
 # > XML::ESISParser::parse: unable to parse `file.tei'
 # > nsgmls:/usr/lib/sgml/declaration/xml.decl:1:W: SGML declaration was not implied
+
 our @additional_args;
 push (@additional_args, IsSGML => 1);
 

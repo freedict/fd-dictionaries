@@ -430,7 +430,7 @@ sub end_element {
 	
 	Dict::set_headword(); Dict::add_text("00-database-short");
 	Dict::write_text(); Dict::end_headword();
-	Dict::write_direct(" ");
+	Dict::write_direct("\n  ");
 	Dict::write_direct($database_short);
         Dict::write_newline();
 	
