@@ -1,20 +1,22 @@
-<!DOCTYPE TEI.2       PUBLIC "-//TEI P3//DTD Main Document Type//EN"  [
-   <!ENTITY % TEI.dictionaries "INCLUDE" >
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" [
+   <!ENTITY % TEI.dictionaries 'INCLUDE'>
+   <!ENTITY % TEI.XML 'INCLUDE'>
 ]>
 
-<tei.2>
+<TEI.2>
   <teiHeader>
-    <filedesc>
-      <titlestmt>
-        <title>           </title>
-      </titlestmt>
-      <publicationstmt>
+    <fileDesc>
+      <titleStmt>
+        <title>English-Portuguese Freedict Dictionary</title>
+      </titleStmt>
+      <publicationStmt>
         <authority>Freedict.de</authority>
-      </publicationstmt>
-      <sourcedesc>
+      </publicationStmt>
+      <sourceDesc>
         <p>http://www.freedict.de</p>
-      </sourcedesc>
-    </filedesc>
+      </sourceDesc>
+    </fileDesc>
   </teiHeader>
   <text>
     <body>
@@ -3819,7 +3821,7 @@
           <tr>ajuntar</tr>
         </trans>
       </entry>
-      <entry>additive
+      <entry>
         <form>
           <orth>add up</orth>
           <pron>əddʌp</pron>
@@ -44338,14 +44340,14 @@
           <orth>entry</orth>
         </form>
         <trans>
-          <tr>entrada</tr>
           <tr>acesso</tr>
+          <tr>entrada</tr>
+          <tr>verbete</tr>
         </trans>
         <trans>
           <tr>registro</tr>
           <tr>lançamento</tr>
         </trans>
-          <tr>verbete</tr>
       </entry>
       <entry>
         <form>
@@ -93544,7 +93546,7 @@
           <tr>notar</tr>
           <tr>reparar</tr>
         </trans>
-      <entry>
+      </entry>
       <entry>
         <form>
           <orth>remarkable</orth>
@@ -124576,4 +124578,4 @@
       </entry>
     </body>
   </text>
-</tei.2>
+</TEI.2>
