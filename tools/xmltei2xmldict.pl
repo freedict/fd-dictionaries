@@ -1,7 +1,11 @@
-#!/usr/bin/perl -w -Ilib -I/home/micha/dict/CVS/tools -I/home/micha/dict/CVS/tools/lib
-#-I../tools -I../tools/lib -ICVS/tools
-# w for warnings, d for debug
+#!/usr/bin/perl
+# d for debug
 
+# V1.3 4/2004 Michael Bunk kleinerurm-at-gmx.net
+#   * finally used FindBin
+#   * use warnings; instead of #!perl -w to avoid warnings
+#     in foreign code (Sablotron module)
+#    
 # V1.1 2/2004 Michael Bunk kleinerurm-at-gmx.net
 #   * put .pm files into lib/
 #
@@ -28,14 +32,15 @@
 # along with this program; if not, write to the Free Software 
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+use warnings;
 use strict;
+use FindBin;
+use lib "$FindBin::Bin";
 use XML::ESISParser;
 use Getopt::Std;
 use XML::Sablotron;
 use XML::Sablotron::DOM;
 use lib::TEIHandlerxml_xml;
-#use lib/TEIHandlerxml_xml.pm;
-print "\$0: $0\n";
 
 our ($opt_f, $opt_h, $opt_s, $opt_c, $opt_u, $opt_l, $opt_i, $opt_r,$opt_t,$sab,$sit);
 getopts('suri:l:f:t:');
@@ -48,20 +53,20 @@ if (!defined $opt_f) {
  print STDERR " Outputs .index and .dict file. The index is sorted with 'sort ...'\n";
  print STDERR " This help is outputted, because here was no tei file given.\n\n"; 
  print STDERR "Usage: $0 -f <teifile> [-sur] [-i <filtercmd>|-t <stylesheet.xsl>] [-l <locale>]\n";
- print STDERR " -s        : skip TEI header: do not treat it to generate\n";
- print STDERR "             00-database-info & co special entrys (good to convert adapted\n";
- print STDERR "             SGML tei files)\n";
- print STDERR " -u        : generate headword 00-database-utf8 in index file to\n";
- print STDERR "             mark the database being in UTF-8 encoding\n";
- print STDERR "             When this is given, 'sort is called without -d option,\n";
- print STDERR "             ie. all characters are used in comparisons\n";
- print STDERR " -r	  : generate reverse index (use <tr> instead of <orth>\n";
- print STDERR " -i <filtercmd>: execute filtercmd for each entry (eg. 'sabcmd style.xsl')\n";
- print STDERR " -t <stylesheet.xsl>: use an XSLT stylesheet for filtering the entries\n";
- print STDERR " 	    with the Sablotron library. Excludes -i.\n";
- print STDERR " -l <locale>: call 'sort' using <locale>. If not given, 'C' locale\n";
- print STDERR "             will be used (only 'C' locale is allowed anyway)\n";
- print STDERR " <teifile> : name of tei inputfile\n\n";
+ print STDERR " -s\t skip TEI header: do not treat it to generate\n";
+ print STDERR "   \t  00-database-info & co special entrys (good to convert adapted\n";
+ print STDERR "   \t  SGML tei files)\n";
+ print STDERR " -u\t generate headword 00-database-utf8 in index file to\n";
+ print STDERR "   \t  mark the database being in UTF-8 encoding\n";
+ print STDERR "   \t  When this is given, 'sort' is called without -d option,\n";
+ print STDERR "   \t  ie. all characters are used in comparisons\n";
+ print STDERR " -r\t generate reverse index (use <tr> instead of <orth>)\n";
+ print STDERR " -i <filtercmd>\t execute filtercmd for each entry (eg. 'sabcmd style.xsl')\n";
+ print STDERR " -t <stylesheet.xsl>\t use an XSLT stylesheet for filtering the entries\n";
+ print STDERR "   \t  with the Sablotron library. Excludes -i.\n";
+ print STDERR " -l <locale>\t call 'sort' using <locale>. If not given, 'C' locale\n";
+ print STDERR "   \t  will be used ('C' locale for normal & utf-8 index)\n";
+ print STDERR " <teifile>\t name of tei inputfile\n\n";
  die;
  }
  
@@ -84,7 +89,7 @@ $ENV{SP_ENCODING} = "XML";
 $ENV{SP_CHARSET_FIXED} = "YES";
 if (!defined($ENV{SGML_CATALOG_FILES})) {
  print STDERR "Warning: SGML_CATALOG_FILES is not set.\nPlease set it to point to\n";
- print STDERR " - the xml.soc file from the SP distribution\n";
+ print STDERR " - the xml.soc file from the (Open)SP distribution\n";
  print STDERR " - the TEI catalog file(s)\n";
  $ENV{SGML_CATALOG_FILES}= "/usr/share/doc/packages/sp/html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.iso_ent";
  print STDERR "Using SGML_CATALOG_FILES=$ENV{SGML_CATALOG_FILES}\n";

@@ -45,7 +45,7 @@
 package lib::TEIHandlerxml_xml;
 
 use strict;
-use Dict;
+use lib::Dict;
 
 # for filtering:
 use FileHandle;
@@ -93,6 +93,10 @@ sub dumpTag {
 
     #dump attributes
     my $attr="";
+    if(!defined $element)
+    {
+      die "Please validate the input file!";
+    }
     my %attrhash = %{$element->{Attributes}};
     foreach(keys %attrhash) {
      $attr .= ' '.$_.'="'.$attrhash{$_}.'"';
