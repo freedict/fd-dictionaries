@@ -1,10 +1,11 @@
 
-VERSION = 0.0.2
 FREEDICTDIR = ..
 TOOLSDIR = $(FREEDICTDIR)/tools
 TEI2DICT = $(TOOLSDIR)/xmltei2xmldict.pl
 PWD = $(shell pwd)
 LANGUAGE = $(shell basename $(PWD))
+
+VERSION = $(shell sabcmd $(TOOLSDIR)/xsl/getedition.xsl $(LANGUAGE).tei)
 
 # name of reverse index
 RLANGUAGE = ara-eng
@@ -22,7 +23,7 @@ CATALOGS = /var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.iso_ent
 
 %.dict %.index: %.tei
 	export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)";\
-	$(TEI2DICT) -s -f $< -t $(TOOLSDIR)/xsl/tei2txt.xsl
+	$(TEI2DICT) -u -f $< -t $(TOOLSDIR)/xsl/tei2txt.xsl
 
 %.dict.dz: %.dict
 	dictzip -k $*.dict
@@ -59,12 +60,15 @@ uninstall:
 commit: 
 	cvs -z3 commit
 
-test:
+validation:
 	test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
 	export SP_ENCODING=XML ;\
 	export SP_CHARSET_FIXED=YES ;\
 	export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)" ;\
 	nsgmls -s -E 10 $(LANGUAGE).tei
+
+test:
+	$(TOOLSDIR)/testing/test-database.pl -f ../dicts/$(LANGUAGE) -l de_DE.utf-8
 
 clean:
 	-rm $(LANGUAGE).index
