@@ -1,6 +1,10 @@
 # module for tei dict converter
 #
 
+# 6 May 2002: Added uc() to make this handler work for xml
+# input. for tei files in xml format please use tei2dict_xml.pl
+# avaiable at freedict.sf.net (micha, kleinerwurm@gmx.net)
+
 # Copyright (C) 2000 Horst Eyermann <horst@freedict.de>
 #  
 # This program is free software; you can redistribute it and/or modify
@@ -56,7 +60,7 @@ sub characters {
 
 sub start_element {
     my ($self, $element) = @_;
-    $part = $element->{Name};
+    $part = uc $element->{Name};
     $header = 1 if ( $part eq "TEIHEADER");
 
   dict::set_headword() if ( $part eq "ORTH");
@@ -82,7 +86,7 @@ sub end_element {
   
   dict::write_text();
     
-    $part  = $element->{Name};
+    $part  = uc $element->{Name};
 
     $header = 0 if ( $part eq "TEIHEADER");
 
