@@ -1,25 +1,19 @@
 #!/usr/bin/perl
-# d for debug
+# $Id: xmltei2xmldict.pl,v 1.6 2004-10-23 09:26:14 micha137 Exp $
 
-# V1.4 5/2004 Michael Bunk                                                                    
-#   * added option to generate 00-database-allchars header  
+# V1.4 5/2004 Michael Bunk
+#   * added option to generate 00-database-allchars header 
 #
 # V1.3 4/2004 Michael Bunk kleinerurm-at-gmx.net
 #   * finally used FindBin
 #   * use warnings; instead of #!perl -w to avoid warnings
 #     in foreign code (Sablotron module)
-#    
+# 
 # V1.1 2/2004 Michael Bunk kleinerurm-at-gmx.net
 #   * put .pm files into lib/
 #
 # V1.0 6/2003 Michael Bunk kleinerurm-at-gmx.net
 #   * based on tei2dict_xml.pl
-#
-# Note from the homepage of the package SP, where nsgmls forms a part:
-#   Note that only the Win32/Unicode binaries are compiled with
-#   multibyte support. To get multibyte support on other platforms,
-#   you must compile from source. (If this is a problem, let me know.)
-#   (James Clark)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
