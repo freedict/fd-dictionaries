@@ -400,10 +400,76 @@ information
 
   </section>
 
-<!-- move this -->
   <section id="templates">
     <title>Examples and Templates</title>
-    <para>Move this somewhere useful</para>
+    
+    <para>A minimal entry:
+      <blockquote><literallayout><computeroutput>
+          &lt;entry&gt;                                                                
+                &lt;form&gt;&lt;orth&gt;dog&lt;/orth&gt;&lt;/form&gt;                                       
+                &lt;trans&gt;Hund&lt;/trans&gt;                                                  
+          &lt;/entry&gt;     
+      </computeroutput></literallayout></blockquote>
+    </para>
+
+    <para>After formatting this entry might look like:
+      <blockquote><literallayout><computeroutput>
+    dog
+       Hund
+      </computeroutput></literallayout></blockquote>
+    </para>
+       
+    <para>A more complete entry:
+    <blockquote><literallayout><computeroutput>
+      &lt;entry&gt;                                                                
+        &lt;form&gt;                                                                   
+          &lt;orth&gt;dog&lt;/orth&gt;                                   
+          &lt;pron&gt;dɔg&lt;/pron&gt;                          
+        &lt;/form&gt;                                                          
+        &lt;gramGrp&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;/gramGrp&gt;            
+        &lt;sense n="1"&gt;
+          &lt;trans&gt;                                                                  
+	  &lt;tr&gt;Hund&lt;/tr&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;gen&gt;m&lt;/gen&gt;
+          &lt;/trans&gt;                                                                 
+          &lt;eg&gt;                                                             
+            &lt;usg&gt;The dog is barking.&lt;/usg&gt;                           
+            &lt;trans&gt;Der Hund bellt.&lt;/trans&gt;            
+          &lt;/eg&gt;                            
+        &lt;/sense&gt;                                
+      &lt;/entry&gt;                                                                   
+    </computeroutput></literallayout></blockquote></para>
+
+    <para>orth gives the orthography, ie. how the word is correctly written.
+      If there are several ways, you can use multiple orth elements.
+      pron gives the pronunciation, ie how the word is spoken. In FreeDict
+      we use the IPA (International Phonetic Alphabet) that is also
+      contained in Unicode. There is nothing to simplify for you to
+      enter it here :) In a gramGrp elememnt, all grammatical information
+      is grouped. You can give the part of speech (here n for noun),
+      the gender and also
+      the number (singular, plural) of the headword - but not in this example.
+      Some time in the future we should suggest the possible parts of
+      speech to enter here, so that one doesn't write n and the other one
+      noun (or N or whatever).</para>
+
+    <para>You can group the different senses of homographs. The numbering is
+      optional. Translations are given in the tr element. Multiple tr
+      elements may be given. For each grammatical information is optional.</para>
+    <para>With eg you can give examples of usage (exampla grata) and
+      optionally their translation.</para>
+    
+    <para>After formatting it might look as (pronunciation
+       and ranslation of the example were done away with, because
+       the stylesheet used for formatting needs to be fixed):
+      <blockquote><literallayout><computeroutput>
+	    dog &lt;n.&gt;
+
+	      1. Hund,  n. m.
+	           "The dog is barking."
+      </computeroutput></literallayout></blockquote>
+    </para>
+
+    <para>Please refer to the TEI Guidelines and take a look at the XML code of a dictionary for more examples!</para>
   </section>
 </chapter>
  
