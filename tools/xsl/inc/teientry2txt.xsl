@@ -5,7 +5,7 @@
 
   <xsl:include href="indent.xsl" /> 
   
-  <xsl:strip-space elements="form trans def usg" />
+  <xsl:strip-space elements="form trans def usg tr" />
 
 
   <!-- TEI entry specific templates -->

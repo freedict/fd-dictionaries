@@ -26,6 +26,9 @@ version = $(shell grep -m 1 -o -P -e "(?<=<edition>).+(?=</edition>)" $(dictname
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
+%.vok: %.tei dirs
+	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$(FREEDICTDIR)/release/vok/$@
+
 # default target
 all:	$(dictname).dict $(dictname).index	
 
@@ -41,7 +44,6 @@ sourceURL:
 	@echo -n $(shell grep -m 1 -o -P -e "(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
 
 $(dictname).c5: $(dictname).tei
-	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
 
 $(rdictname).c5: $(dictname).tei
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< >$@
@@ -57,9 +59,10 @@ release-dict-bz2-c5-reverse: $(rdictname).c5.index
 
 
 dirs:
-	if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then  mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then  mkdir $(FREEDICTDIR)/release/dict-bz2; fi
-	if [ ! -d $(FREEDICTDIR)/release/src ]; then  mkdir $(FREEDICTDIR)/release/src; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then  mkdir $(FREEDICTDIR)/release/dict-tgz; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then  mkdir $(FREEDICTDIR)/release/dict-bz2; fi
+	@if [ ! -d $(FREEDICTDIR)/release/src ]; then  mkdir $(FREEDICTDIR)/release/src; fi
+	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then  mkdir $(FREEDICTDIR)/release/vok; fi
 
 release-dict-tgz: $(dictname).tar.gz dirs
 	cp $(dictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
@@ -139,4 +142,3 @@ reverse: $(dictname).tei
 	release-dict-tgz release-dict-tgz-reverse \
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	commit validation test test-reverse clean dist
-
