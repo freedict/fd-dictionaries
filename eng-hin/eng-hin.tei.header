@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" [
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML 'INCLUDE'> 
   <!ENTITY % TEI.dictionaries 'INCLUDE'>
   <!ENTITY % ISOnum PUBLIC
-    "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML">
+    "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" "/usr/share/sgml/xmlcharent/iso-num.ent">
   %ISOnum;
+  <!ENTITY % TEI.linking      "INCLUDE" >
+  <!ATTLIST xptr url CDATA #IMPLIED >
+  <!ATTLIST xref url CDATA #IMPLIED >
   ]>
 <TEI.2>
   <teiHeader>
@@ -19,17 +23,17 @@
       <editionStmt>
         <edition>1.3</edition>
       </editionStmt>
+      <extent>about 25 600 headwords</extent>
       <publicationStmt>
-        <publisher>freedict.de</publisher>
-        <date>2004</date>
+        <publisher>FreeDict</publisher>
         <availability>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
+	<date>2004</date>
+	<pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
-      <seriesStmt>
-        <title>free dictionaries</title>
-      </seriesStmt>
       <notesStmt>
+	<note type="status">low quality</note>
         <note>From the source website:&#x0a;
 &#x0a;
          http://www.iiit.net/ltrc/Dictionaries/Dict_Frame.html&#x0a;
@@ -90,12 +94,28 @@ Your Valuable Feedback can be sent to dipti@iiit.net&#x0a;
 </note>
       </notesStmt>
       <sourceDesc>
-        <p>http://www.freedict.de/</p>
+	<p>Home: <xptr url="http://www.iiit.net/ltrc/Dictionaries/Dict_Frame.html"/></p>
       </sourceDesc>
     </fileDesc>
+    <encodingDesc>
+        <projectDesc>
+              <p>This dictionary comes to you trough nice people making it
+                available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
     <revisionDesc>
       <change>
-        <date>22. November 2002</date>
+        <date>2004-12-28</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Update of TEI header</item>
+      </change>
+      <change>
+        <date>2002-11-22</date>
         <respStmt>
           <name>Michael Bunk</name>
         </respStmt>
