@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+
+<!--
+
+   This file is intended to be used after a TEI file was transformed with
+   group-homographs.xsl to get back the internal DTD subset which cannot
+   be output with XSLT.
+
+  -->
+
+<!ENTITY e SYSTEM "grouped.tei">
+<!ENTITY % TEI.dictionaries "INCLUDE">
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % TEI.linking "INCLUDE">
+<!ATTLIST xptr url CDATA #IMPLIED>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+<TEI.2>&e;</TEI.2>
+

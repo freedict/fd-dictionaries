@@ -202,8 +202,8 @@ clean::
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
 
 dist: dirs
-	(cd $(FREEDICTDIR); \
-	tar -cvjf release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
+	(cd $(shell pwd)/..; \
+	tar -cvjf $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES)))
 

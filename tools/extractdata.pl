@@ -1,5 +1,7 @@
 #!/usr/bin/perl -w
 
+# $Revision: 1.5 $
+
 # the produced freedict-database.xml has the following schema:
 #
 # document element: FreeDictDatabase
@@ -22,7 +24,7 @@
 #  children: none
 #  attributes:
 #   @platform		allowed values: dict-tgz, dict-tbz2, mobi,
-#			bedic, deb, rpm, gem
+#			bedic, deb, rpm, gem, src
 #   @version		version of the dictionary this is a release of
 #   @URL		URL where this release can be downloaded
 #			(additional click may be required by SourceForge)
@@ -35,8 +37,8 @@ use XML::DOM;
 use File::stat;
 use strict;
 
-our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r);
-getopts('vhad:fr:');
+our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l);
+getopts('vhald:fr:');
 
 sub printd
 {
@@ -70,6 +72,7 @@ Options:
 -d	extract data only from database la1-la2
 -f	force update of extracted data from TEI file,
 	even if its modification time is less than the last update
+-l	leave $dbfile untouched
 -r	extract released packages from a SourceForge file release
 	HTML page. Uses STDIN if '-' given as filename.
 	For FreeDict download:
@@ -216,7 +219,7 @@ sub fdict_extract_releases
   my $doc = shift;
   my $docel = $doc->getDocumentElement();
 
-  # one package looks like:
+  # one package looks (looked?!) like:
   #
   #<tr bgcolor="#FFFFFF">
   #<td colspan="3">
@@ -262,11 +265,11 @@ sub fdict_extract_releases
     warn "   cannot find release date"
       if($line !~ /middle"><b>([\d\- :]+)<\/b>/cg);
     my $release_date = $1;
-    printd "   package $packages: release_number: '$release_version' " .
+    printd "\n   package $packages: release_number: '$release_version' " .
       "release_date: '$release_date'\n";
 
     # for all files of a release
-    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">([^<]*)<\/a><\/td>|(show only this package)/cg)
+    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">Download ([^<]*)<\/a><\/td>|(show only this package)/cg)
     {
       #print "1: $1 2: $2 3:$3\n";
       if($3 and $3 eq "show only this package") { $myredo=1;last; }
@@ -354,19 +357,18 @@ sub fdict_extract_releases
 
       # find old release element
       my $r;
-#      for my $kid ($d->getChildNodes)
       for my $kid ($d->getElementsByTagName('release'))
       {
 	if($kid->getAttribute('platform') eq $platform)
 	{
-	  $r = $kid; last;
+	  $r = $kid; last;# found
 	}
       }
       
-      # or create new release element
+      # create new release element if no previous found
       if(!$r)
       {
-        print "  Release not found in database. Inserting it.\n";
+        print "+\tRelease not found in database. Inserting it.\n";
         $d->appendChild( $doc->createTextNode("\n") ) if( ! @{ ($d->getChildNodes) } );
         $d->appendChild( $doc->createTextNode("    ") ); 
         $r = $doc->createElement('release');   
@@ -375,11 +377,18 @@ sub fdict_extract_releases
         $r->setAttribute('platform', $platform);
       }
 
+      # if $r refers to a older release than available in the database,
+      # don't update the database
+      $release_version = "0.0.1" if($release_version eq "");
+      next if($r->getAttribute('version') ge $release_version);
+      
+      printd "+\tUpdating release for $platform platform. Old: '" .
+        $r->getAttribute('version') . "' New: '$release_version'\n";
       $r->setAttribute('version', $release_version);
       $r->setAttribute('URL', $URL);
       $r->setAttribute('size', $size);
       $r->setAttribute('date', substr($release_date,0,10));
-    
+      
     } # while
     if($myredo) { $myredo=0;redo; printd "redoing..."; }
   } # while
@@ -404,7 +413,7 @@ my $doc;
 if(-s $dbfile)
 {
   $doc = $parser->parsefile ($dbfile);
-  printd "Successfully read $dbfile. ";
+  printd "Successfully read $dbfile.\n";
   my $nodes = $doc->getElementsByTagName("dictionary");
   my $n = $nodes->getLength;
   printd "$n dictionary/-ies in my database.\n";
@@ -420,6 +429,13 @@ fdict_extract_metadata($FREEDICTDIR, $opt_d, $doc) if $opt_d;
 fdict_extract_all_metadata($FREEDICTDIR, $doc) if $opt_a;
 fdict_extract_releases($doc) if $opt_r;
 
+if($opt_l)
+{
+  printd "Leaving $dbfile untouched.\n";
+  exit(0);
+}
+
+# Write out freedict-database.xml
 `cp $dbfile $dbfile.bak` if(-s $dbfile);
 printd "Writing $dbfile\n";
 $doc->printToFile ($dbfile);
