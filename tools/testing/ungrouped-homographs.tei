@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.dictionaries "INCLUDE">
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % TEI.linking "INCLUDE">
+<!ATTLIST xptr url CDATA #IMPLIED>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Test FreeDict Dictionary</title>
+	<respStmt>
+	  <resp>Author</resp>
+	  <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
+	</respStmt>
+	<respStmt>
+	  <resp>Maintainer</resp>
+	  <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
+	</respStmt>
+      </titleStmt>
+      <editionStmt>
+	<edition>0.1</edition>
+      </editionStmt>
+      <extent>1 testcase</extent>
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability>
+	  <p>GNU GENERAL PUBLIC LICENSE</p>
+	</availability>
+	<date>2005</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+      <seriesStmt>
+	<title>free dictionaries</title>
+      </seriesStmt>
+     <notesStmt>
+       <note type="status">used only for testing purposes</note>
+     </notesStmt>
+     <sourceDesc>
+        <p>Home: <xptr url="http://freedict.org/"/></p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+        <projectDesc>
+          <p>This dictionary comes to you through nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+   <revisionDesc>
+       <change>
+	<date>2005-03-02</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Created this file to test group-homographs.xsl,
+	  an XSLT stylesheet to group homographs using the
+	  hom element.</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+      <entry>
+        <form>
+	  <orth>homograph1</orth>
+	  <orth>homograph2</orth>
+	</form>
+	<gramGrp>
+	  <pos>n</pos>
+	  <gen>m</gen>
+	</gramGrp>
+        <sense>
+	  <def>The first and second homograph. They are nouns.
+	    homograph1 should become grouped with its homograph1
+	    from the next entry. homograph2 should go into its
+	    own entry.</def>
+	</sense>
+      </entry>
+      <entry>
+        <form>
+	  <orth>homograph1</orth>
+	</form>
+	<gramGrp>
+	  <pos>adj</pos>
+	</gramGrp>
+        <sense>
+	  <def>This homograph1 is an adjective.</def>
+	</sense>
+      </entry>
+    </body>
+  </text>
+</TEI.2>
+
