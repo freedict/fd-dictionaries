@@ -1,28 +1,36 @@
 
+<preface id="preface">
 
+  <title>Introduction</title>
 
+  <para>FreeDict is a small organisation of people who together oversee
+    the publication of free translating dictionaries.  
+    They are archived in a flexible<indexterm><primary>XML</primary>
+    <secondary>TEI</secondary></indexterm> XML format that allows for
+    further use and development.</para>
 
-  <preface id="preface">
-	<title>Introduction</title>
-	<para>Freedict is an small organisation of  people who together oversee the publication of Translating Dictionaries. These translating dictionaries are currently output in a format that works with<application> Dictd</application> and <application>Serpento</application> dictionary servers. They are also archived in a flexible<indexterm>
-		<primary> XML</primary>
-		<secondary>TEI</secondary></indexterm> XML  format that allows for further use and development. </para>
-	<para>The content of the dictionaries is left up to individual developers, we can't speak every language on the planet and so rely on the <indexterm>
-		<primary>contributing</primary>
-		<secondary> writers</secondary></indexterm>contributing writers and users to produce <indexterm>
-      <primary>quality</primary></indexterm>quality , useful dictionaries. We can however, try to ensure that the dictionaries are formatted and organised correctly, are as easy as practicable to produce,  and will install  on free operating systems. </para>
-  <para>Your probably reading this to get an idea of what is involved in producing a translating dictionary. The approach taken with these HOWTOs is task orientated, we hope you can just jump in at the point you are at and continue forward.
-    <indexterm>
-      <primary>Free Operating Systems</primary>
-      <secondary>install</secondary>
-    </indexterm>
-  </para>
-	<para>TODO list basic steps and link (leave till release)</para>
-  </preface>
+  <para>FreeDict also ensures that the dictionaries can be converted 
+    into the dictd database format, that works with <application>dictd</application>
+    (see http://www.dict.org./) and <application>Serpento</application> (TODO:
+    make a clickable link http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/)
+    dictionary servers.</para>
 
+  <para>The content of the dictionaries is left up to individual developers.
+    We ourselves can't speak every language on the planet and so rely on the
+    <indexterm><primary>contributing</primary> <secondary>writers</secondary></indexterm>
+    contributing writers and users to produce <indexterm><primary>quality</primary></indexterm>
+    high-quality, useful dictionaries. We can, however, try to ensure that
+    the dictionaries are formatted and organised
+    correctly, are as easy as practicable to produce and will work on free
+    operating systems.</para>
 
+  <para>You are probably reading this HOWTO, to get an idea of what is involved in
+    producing a translating dictionary. The approach taken in this HOWTO is task
+    oriented. We hope you can just jump to the point you are aiming at and continue
+    forward. <indexterm><primary>free operating systems</primary>
+    <secondary>install</secondary></indexterm></para>
 
+  <para>TODO list basic steps and link (leave till release)</para>
 
-
-
+</preface>
 

@@ -38,8 +38,8 @@
 
 
   <bookinfo>
-	<title>Free-dictionary HOWTO's and Guidelines</title>
-	<titleabbrev>Freedict How to</titleabbrev>
+	<title>FreeDict HOWTO</title>
+	<titleabbrev>FreeDict Howto</titleabbrev>
 	<author>
 	  <firstname>Peter</firstname>
 	  <surname>Gossner</surname>
@@ -48,16 +48,21 @@
 	<author>
 	  <firstname>Michael</firstname>
 	  <surname>Bunk </surname>
-	  <address><city>FIXME</city><country>FIXME</country><email>&Mich137;</email></address>
+	  <address><city>Lützschena</city><country>Germany</country><email>&Mich137;</email></address>
 	</author>
 	<collab>
 	  <collabname>namen</collabname>
 	</collab>
 	<orgname><ulink url="http://www.freedict.org.de">Freedict</ulink></orgname>
 	<abstract>
-	  <title>Freedict Dictionaries</title>
-	  <para>This series of grouped articles describes how to build, install and improve Freedict project dictionaries. The document is aimed at developers rather than end users and was written from the point of view of a Debian GNU/Linux based platform. Generally the information should be portable across any open Operating system. The approach is reasonably comprehensive. Information is given on Installation issues, XML basics, Editor selection, developers tools etc</para>
-	</abstract>
+	  <title>FreeDict Dictionaries</title>
+	  <para>This document describes how to build, install and improve
+FreeDict project dictionaries. It is aimed at developers rather than
+end users and was written from the point of view of a Debian GNU/Linux based
+platform (TODO: make it system independent :). Generally the information should be portable across any open
+Operating system. The approach is reasonably comprehensive. Information is
+given on Installation issues, XML basics, Editor selection, developer tools
+etc.</para> </abstract>
 	<revhistory>
 	  <revision>
 		<revnumber>0.0.0</revnumber>
@@ -173,7 +178,7 @@ Words are the means to get the idea where you want it,
   <colophon>
     <title>About this document</title>
     <para>This series of articles was written using the<application>DocBook XML</application> set of DTD using Xemacs as an editor. </para>
-    <para>Conversion to XHTML was done using<application> xmlto</application> using the following command line string.<command> xmlto xhtml -o FreedictHowTo freedicthowto.xml</command> .</para>
+    <para>Conversion to XHTML was done using<application> xmlto</application> using the following command line string.<command> xmlto xhtml -o xhtml freedicthowto.xml</command> .</para>
     <para></para>
   </colophon>
 </book>
