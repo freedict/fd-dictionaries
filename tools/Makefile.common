@@ -1,11 +1,17 @@
 toolsdir = $(FREEDICTDIR)/tools
 xsldir = $(toolsdir)/xsl
-include $(toolsdir)/Makefile.config
 tei2dict = $(toolsdir)/xmltei2xmldict.pl
-dictname = $(shell basename $(shell pwd))
-version = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+xmllint = /usr/bin/xmllint
 
+include $(toolsdir)/Makefile.config
+
+dictname = $(shell basename $(shell pwd))
 rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
+
+# depending on how much memory your machine has, extracting the
+# tiny edition element contents per XSLT might be overdimensioned
+version = $(shell grep -m 1 -o -P -e "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
+# version = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
 
 %.dict %.index: %.tei
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
@@ -23,6 +29,17 @@ rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 # default target
 all:	$(dictname).dict $(dictname).index	
 
+# no newline, so output is equal to the output of xsl/getedition.xsl / xsl/getstaus.xsl
+version:
+	@echo -n $(version)
+
+# alternative: sabcmd xsl/getstatus.xsl $(dictname).tei
+status:
+	@echo -n $(shell grep -m 1 -o -P -e "(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)
+
+sourceURL:
+	@echo -n $(shell grep -m 1 -o -P -e "(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
+
 $(dictname).c5: $(dictname).tei
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
 
@@ -32,30 +49,29 @@ $(rdictname).c5: $(dictname).tei
 %.c5.dict %.c5.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
 
-# seems we have no target naming system
-rc5tbz2release: $(rdictname).c5.index
+release-dict-bz2-c5-reverse: $(rdictname).c5.index
 	dictzip $(rdictname).c5.dict
 	(cd ..; tar -cvjf $(dictname)/freedict-$(rdictname)-$(version).tar.bz2 \
 --exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* $(addprefix $(dictname)/, $(rdictname).c5.index $(rdictname).c5.dict.dz))
-	cp freedict-$(rdictname)-$(version).tar.bz2 $(FREEDICTDIR)/bz2/
+	cp freedict-$(rdictname)-$(version).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/
 
-.PHONY: all dirs tgzrelease bz2release install uninstall commit validation test clean dist
 
 dirs:
-	if [ ! -d $(FREEDICTDIR)/tgz ]; then  mkdir $(FREEDICTDIR)/tgz; fi
-	if [ ! -d $(FREEDICTDIR)/bz2 ]; then  mkdir $(FREEDICTDIR)/bz2; fi
+	if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then  mkdir $(FREEDICTDIR)/release/dict-tgz; fi
+	if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then  mkdir $(FREEDICTDIR)/release/dict-bz2; fi
+	if [ ! -d $(FREEDICTDIR)/release/src ]; then  mkdir $(FREEDICTDIR)/release/src; fi
 
-tgzrelease: $(dictname).tar.gz dirs
-	cp $(dictname).tar.gz $(FREEDICTDIR)/tgz/freedict-$(dictname)-$(version).tar.gz
+release-dict-tgz: $(dictname).tar.gz dirs
+	cp $(dictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
-rtgzrelease: $(rdictname).tar.gz dirs
-	cp $(rdictname).tar.gz $(FREEDICTDIR)/tgz/freedict-$(rdictname)-$(version).tar.gz
+release-dict-tgz-reverse: $(rdictname).tar.gz dirs
+	cp $(rdictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(rdictname)-$(version).tar.gz
 
-bz2release: $(dictname).tar.bz2 dirs
-	cp $(dictname).tar.bz2 $(FREEDICTDIR)/bz2/freedict-$(dictname)-$(version).tar.bz2
+release-dict-tbz2: $(dictname).tar.bz2 dirs
+	cp $(dictname).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
 
-rbz2release: $(rdictname).tar.bz2 dirs
-	cp $(rdictname).tar.bz2 $(FREEDICTDIR)/bz2/freedict-$(rdictname)-$(version).tar.bz2
+release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
+	cp $(rdictname).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/freedict-$(rdictname)-$(version).tar.bz2
 
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)
@@ -70,22 +86,26 @@ commit:
 	cvs -z3 commit
 
 validation: $(dictname).tei
+	# way 1
 	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
 	export SP_ENCODING=XML; \
 	export SP_CHARSET_FIXED=YES; \
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
 	nsgmls -s -E 10 $(dictname).tei
+	# way 2
+	if [ -x $(xmllint) ]; then \
+		$(xmllint) --noout --valid $(dictname).tei; fi
 
 test:
 	$(toolsdir)/testing/test-database.pl -f $(dictname) \
  -l $(DICTD_LOCALE) |tee testresult-$(version).log
 
-rtest:
+test-reverse:
 	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
  -l $(DICTD_LOCALE) |tee testresult-$(version)-reverse.log
  
 # this is a "double colon rule"
-# adding another "clean::" rule in your makefile
+# adding another "clean::" rule in your Makefile
 # allows to extend this with additional commands
 #
 # for example:
@@ -95,20 +115,28 @@ rtest:
 clean::
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
-	rm -f $(FREEDICTDIR)/bz2/$(dictname).tar.bz2
-	rm -f $(FREEDICTDIR)/tgz/$(dictname).tar.gz
+	rm -f $(FREEDICTDIR)/release/dict-bz2/$(dictname).tar.bz2
+	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
 
-dist:
-	(cd ..; tar -cvjf $(dictname)/freedict-$(dictname)-$(version).src.tar.bz2 \
---exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* $(addprefix $(dictname)/, $(DISTFILES)))
+dist: dirs
+	(cd $(FREEDICTDIR); \
+	tar -cvjf release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
+		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+		$(addprefix $(dictname)/, $(DISTFILES)))
 
 reverse: $(dictname).tei
 	@echo "Will generate $(rdictname):"
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
-	$(tei2dict) -f $< -r -u -t $(xsldir)/tei2txt.xsl
+	$(tei2dict) -f $< -r $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
 	mv $(dictname).index $(rdictname).index
 	mv $(dictname).dict $(rdictname).dict
 	dictzip -k $(rdictname).dict
 
 # targets for palm, zaurus, deb, gem, rpm
+
+.PHONY: all version status sourceURL dirs install uninstall reverse\
+	release-dict-bz2-c5-reverse \
+	release-dict-tgz release-dict-tgz-reverse \
+	release-dict-tbz2 release-dict-tbz2-reverse \
+	commit validation test test-reverse clean dist
 

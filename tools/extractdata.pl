@@ -1,194 +1,378 @@
 #!/usr/bin/perl -w
 
-# extracts data from FreeDict build file tree
-# and puts it into data.csv
-# but only if something changed
-# that file will be used by the php scripts of the website
+# the produced freedict-database.xml has the following schema:
+#
+# document element: FreeDictDatabase
+#  attributes: none
+#  children: dictionary*
+# 
+# element: dictionary
+#  children: release*
+#  attributes:
+#   @name		language-combination, eg. eng-deu
+#   @edition		taken from TEI header, will be used as release version
+#   @headwords		`wc -l formatted-db.index`
+#   @date		last change of TEI file
+#   @status		contents of status note in TEI header, if available
+#   @sourceURL		URL in sourceDesc in TEI header (upstream project)
+#   @notes		unused
+#   @HEADorRelease	in CVS, unused
+#
+# element: release
+#  children: none
+#  attributes:
+#   @platform		allowed values: dict-tgz, dict-tbz2, mobi,
+#			zbedic, deb, rpm, gem
+#   @version		version of the dictionary this is a release of
+#   @URL		URL where this release can be downloaded
+#			(additional click may be required by SourceForge)
+#   @size		size of this release in bytes
+#   @date		when this release was made, eg. 2004-12-25
 
-use strict;
-use Text::CSV_XS;
+use Getopt::Std;
+use XML::DOM;
 use File::stat;
-use IO::File;
+use strict;
 
-# read data.csv into %dataold
-my @column_names = qw(
-  headwords
-  version
-  last-change
-  status
-  sourceurl
-  download-dict-tgz-url
-  download-dict-tgz-size
-  download-dict-bz2-url
-  download-dict-bz2-size
-  download-mobi-url
-  download-mobi-size
-  download-zbedic-url
-  download-zbedic-size
-  download-deb-url
-  download-deb-size
-  download-rpm-url
-  download-rpm-size
-  download-gem-url
-  download-gem-size
-  notes
-);
-my $csv = Text::CSV_XS->new( { 'eol' => "\n" } );
-my $filename = "../data.csv";
-my %dataold;
-if(-r $filename)
+our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r);
+getopts('vhad:fr:');
+
+my $dbfile = "../freedict-database.xml";
+
+if($opt_h)
 {
-  my $csvf = new IO::File;
-  if(! $csvf->open("< $filename"))
-  {
-    die "Could not open '$filename'.\n";
-  }
-  print "Reading data from '$filename'... ";
-  while(!eof($csvf))
-  {
-    our $columns = $csv->getline($csvf);
-    my $combination = shift @$columns;
-    next if(0==scalar(@$columns));
-    my %h;
-    for(my $i=0; $i < @column_names; $i++)
-    {
-      @h{ $column_names[$i] } = $columns->[$i];
-    }
-    $dataold{$combination} = \%h;
-  }
+  print <<EOT;
+$0 [options] (-a | -d <la1-la2>) [-r [<file>]]
+  
+Gather metadata from TEI files in FreeDict file tree
+and save it in the XML file $dbfile.
+
+Options:
+
+-h	help & exit
+-v	verbose
+-a	extract metadata from all available databases
+-d	extract data only from database la1-la2
+-f	force update of extracted data from TEI file,
+	even if its modification time is less than the last update
+-r	extract released packages from a SourceForge file release
+	HTML page. Uses STDIN if '-' given as filename.
+	For FreeDict download:
+	http://sourceforge.net/project/showfiles.php?group_id=1419
+
+EOT
+  exit;
 }
-print "Now I know about ", scalar(keys %dataold), " dictionaries.\n";
 
-# generate data into %datanew
-my %datanew = ();
-my $dirname = "..";
-my $dir;
-opendir $dir, $dirname;
-my $entry;
-while($entry = readdir($dir))
+sub printd
 {
-  next if(! -d $dirname.'/'.$entry);
-  next if($entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$');
+  return if !$opt_v;
+  print @_;
+}
 
-  print "Getting info from dictionary in '$dirname/$entry'...";
-  our $n = {};
+sub contains_dictionary
+{
+  my($doc, $entry) = @_;
+  my $nodes = $doc->getElementsByTagName("dictionary");
+  my $n = $nodes->getLength;
 
-  my $indexfile = "$dirname/dicts/$entry.index";
+  for(my $i = 0; $i < $n; $i++)
+  {
+    my $node = $nodes->item($i);
+    my $name = $node->getAttributeNode("name");
+    next unless $name;
+    return $node if($name->getValue eq $entry);
+  }
+  return undef;
+}
+
+sub fdict_extract_metadata
+{
+  my($dirname, $entry, $doc) = @_;
+  printd " Getting metadata from dictionary in '$dirname/$entry'\n";
+
+  my $docel = $doc->getDocumentElement();
+
+  # find old dictionary element -> update
+  my $d = contains_dictionary($doc,  $entry);
+
+  # else create new dictionary element
+  if(!defined $d)
+  {
+    printd "  Dictionary not found in database. Inserting it.\n";
+    $docel->appendChild( $doc->createTextNode("  ") ); 
+    $d = $doc->createElement('dictionary');   
+    $docel->appendChild($d); 
+    $docel->appendChild( $doc->createTextNode("\n") ); 
+    $d->setAttribute('name', $entry);
+  }
+
+  ###################################################################
+
+  my($headwords, $edition, $date, $status, $sourceURL);
+
+  my $indexfile = "$dirname/$entry/$entry.index";
   if(-r $indexfile)
   {
     my @a = split ' ', `wc -l "$indexfile"`;
-    $n->{'headwords'} = shift @a;
+    $headwords = (shift @a) - 8;# substract /00-?database.*/ entries
+    printd "  $headwords headwords\n";
   }
   else
-  { warn "where is file '$indexfile'?"; }
-  
+  {
+    print STDERR "  Where is file '$indexfile'?\n";
+    $headwords = "ERROR: Could not find $indexfile";
+  }
+
+  $d->setAttribute('headwords', $headwords);
+
+  ###################################################################
+
   my $teifile = "$dirname/$entry/$entry.tei";
+  
   if(-r $teifile)
-  { 
-    $n->{'version'} = `sabcmd xsl/getedition.xsl "$teifile"`;
-    
+  {
+
     my $s = stat $teifile;
     my @ss = localtime($s->mtime);
-    $n->{'last-change'} = sprintf("%4d-%02d-%02d", $ss[5]+1900, $ss[4]+1, $ss[3]);
-    # like "2004-06-26"
+    $date = sprintf("%4d-%02d-%02d", $ss[5]+1900, $ss[4]+1, $ss[3]);
 
-    $n->{'status'} = `sabcmd xsl/getstatus.xsl "$teifile"`;
-    $n->{'status'} = 'unknown' if(!$n->{'status'});
-  
-    $n->{'sourceurl'} = `sabcmd xsl/getsourceurl.xsl "$teifile"`;
-  }
-  
-  my $dict_tgz_file = "$dirname/dicts/bin/$entry.tar.gz";
-  if(-r $dict_tgz_file)
-  {
-    my $s = stat $dict_tgz_file;
-    $n->{'download-dict-tgz-url'} =
-      "http://prdownloads.sourceforge.net/freedict/$entry.tar.gz?download";
-    $n->{'download-dict-tgz-size'} = $s->size;
-  }
-
-# "download-dict-bz2-url",
-# "download-dict-bz2-size",
-# "download-mobi-url", // non-available files have emtpy url, exactly ""
-# "download-mobi-size",
-# "download-zbedic-url",
-# "download-zbedic-size",
-# "download-deb-url",
-# "download-deb-size",
-# "download-rpm-url",
-# "download-rpm-size",
-# "download-gem-url",
-# "download-gem-size",
-# "notes" // optional, like "No notes today." or ""
- $datanew{"$entry"} = $n;
-  print "\n\t", (join "\n\t", %$n), "\n";
-#  last if((scalar (keys %datanew))>3);
-}
-closedir($dir);
-
-# any news?
-my $news = 0;
-print "\nLooking for new things...\n";
-# Look for old things that changed
-foreach my $ko (keys %dataold)
-{
-  if(defined($datanew{$ko}))
-  {
-    print "Dictionary $ko is in old & new.\n";
-    my $o = $dataold{$ko};
-    foreach my $koe (keys %$o)
+    if($date le $d->getAttribute('date') and !$opt_f)
     {
-      no warnings 'uninitialized';
-      if($o->{$koe} ne $datanew{$ko}{$koe})
-      {
-        $news++;
-        print "  difference: $ko / $koe: '",$o->{$koe}, "' != '",
-          $datanew{$ko}{$koe}, "'\n";
-      }
+      printd "  Skipping time consuming extraction steps for update (try -f).\n";
+      return;
     }
+    
+  ###################################################################
+
+    #$edition = `sabcmd xsl/getedition.xsl "$teifile"`;
+    $edition = `cd $dirname/$entry;make version`;
+
+  ###################################################################
+
+    #$status = `sabcmd xsl/getstatus.xsl "$teifile"`;
+    $status = `cd $dirname/$entry;make status`;
+    $status = 'unknown' if(!$status);
+
+  ###################################################################
+
+    #$sourceURL = `sabcmd xsl/getsourceurl.xsl "$teifile"`;
+    $sourceURL = `cd $dirname/$entry;make sourceURL`;
+
+  ###################################################################
   }
   else
   {
-    print "Dictionary $ko is in old only. Did it go away? Very sad.\n";
-    $news++;
+    $edition = "ERROR: $teifile not readable";
+    $date = $edition;
+    $status = $edition;
+    $sourceURL = $edition;
   }
-}
-# look for new dicts that are not in old
-foreach my $kn (keys %datanew)
-{
-  next if(defined($dataold{$kn}));
-  $news++;
-  print "Dictionary $kn in in new only. Good work!\n";
-}
-print "\nThere are about $news 'changes' to the data.\n";
-if($news == 0)
-{
-  print "No changes found. Not recreating '$filename'.\n";
-  exit 0;
+
+  $d->setAttribute('edition', $edition);
+  $d->setAttribute('date', $date);
+  $d->setAttribute('status', $status);
+  $d->setAttribute('sourceURL', $sourceURL);
+
 }
 
-# write new data.csv
-#$filename .= ".new";
-print "Writing '$filename' ... ";
-my $csvf = new IO::File;
-if(! $csvf->open("> $filename"))
+sub fdict_extract_all_metadata
 {
-  die "Could not open '$filename'.\n";
-}
-foreach(keys %datanew)
-{
-  my $n = $datanew{$_};
-  my @a = ($_);
-  for(my $i=0; $i < @column_names; $i++)
+  my($dirname, $doc) = @_;
+  my($dir, $entry);
+
+  printd "Getting metadata of all databases\n";
+  opendir $dir, $dirname;
+  while($entry = readdir($dir))
   {
-    no warnings "uninitialized";
-    #print "$i: ", $n->{ $column_names[$i] }, "\n"; 
-    push @a, $n->{ $column_names[$i] };
-  }
-  if(! $csv->print($csvf, \@a) )
-  {
-    warn "Error while writing!";
+    next if(! -d $dirname.'/'.$entry);
+    next if($entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$');
+
+    fdict_extract_metadata($dirname, $entry, $doc);
   }
 }
-print "Success.\n";
+
+##################################################################
+
+sub fdict_extract_releases
+{
+  my $doc = shift;
+  my $docel = $doc->getDocumentElement();
+
+  # one package looks like:
+  #
+  #<tr bgcolor="#FFFFFF">
+  #<td colspan="3">
+  #<h3>Afrikaans - English [<a href="showfiles.php?group_id=1419&amp;package_id=2664">show only this package</a>]</h3>
+  #</td>
+  #<td colspan="4">&nbsp;</td>
+  #</tr>
+  #<tr bgcolor="#FFFFFF">
+  #<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="shownotes.php?release_id=65175"><IMG src="http://images.sourceforge.net/images/ic/manual16c.png" alt="Release Notes" border="0" width="15" height="15"> 0.0.1</a></b> [<a href="showfiles.php?group_id=1419&amp;package_id=2664&amp;release_id=65175">show only this release</a>]</td>
+  #<td colspan="4" align="middle"><b>2001-12-11 11:03</b></td></tr>
+  #<tr bgcolor="#FFFFFF">
+  #<td colspan="3"><dd><a href="http://prdownloads.sourceforge.net/freedict/afr-eng.tar.gz?download">afr-eng.tar.gz</a></td>
+  #<td align="right">99947 </td>
+  #<td align="right">119 </td>
+  #<td>Any</td>
+  #<td>Source .gz</td>
+  #</tr>
+
+  my $file = *STDIN;
+  open $file,$opt_r if($opt_r ne '-');
+  my @lines = <$file>;
+  chomp foreach(@lines);
+  my $line = join '', @lines;
+
+  # tackle it with regexps
+  my($packages, $filename, $size, $downloads, $URL);
+
+  # for all packages
+  while($line =~ /(show only this package)/cg)
+  {
+    my $myredo;
+    $packages++;# counts packages
+    warn "   cannot find release number"
+      if($line !~ /height="15"> ([\d\.]+)<\/a>/cg);
+    my $release_version = $1;
+    warn "   cannot find release date"
+      if($line !~ /middle"><b>([\d\- :]+)<\/b>/cg);
+    my $release_date = $1;
+    printd "   package $packages: release_number: '$release_version' " .
+      "release_date: '$release_date'\n";
+
+    # for all files of a release
+    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">([^<]*)<\/a><\/td>|(show only this package)/cg)
+    {
+      #print "1: $1 2: $2 3:$3\n";
+      if($3 and $3 eq "show only this package") { $myredo=1;last; }
+
+      #warn "cannot find filename" if($line !~ /\?download">([^<]*)<\/a><\/td>/cg);
+      $filename = $2;
+      $URL = $1;
+
+      warn "   cannot find size/downloads"
+        if($line !~ /<td align="right">(\d*) <\/td><td align="right">(\d*) <\/td>/cg);
+      $size = $1;
+      $downloads = $2;
+      printd "\tfilename: $filename size: $size\n";
+
+      ################################################################
+      
+      # find old dictionary element -> update
+      my $name;
+      if($filename =~ /^freedict-/) { $name = substr($filename, 9,7) }
+      else { $name = substr($filename,0,7); }
+
+      my $d = contains_dictionary($doc,  $name);
+      if(!$d)
+      {
+        print "  Dictionary '$name' not in our database. Skipping release.\n";
+        next;
+      }
+
+      # find platform by extracting it from filename
+      # allowed values: dict-tgz, dict-tbz2, mobi, zbedic, deb, rpm, gem, src
+      my($platform, $fileversion, $sfn, $ssfn);
+
+      # cut prefix "freedict-" if available
+      if($filename =~ /^freedict-/) { $sfn = substr($filename, 9); }
+      else { $sfn = $filename; }
+      
+      # cut language combination
+      $ssfn = substr($sfn, 7);
+     
+      # cut a minus sign. if available 
+      if($ssfn =~ /^-/) { $ssfn = substr($ssfn, 1); }
+
+      if($ssfn =~ /^\.tar\.gz/)
+      { $platform = 'dict-tgz'; } 
+      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.gz/)
+      { $platform = 'dict-tgz'; } 
+      elsif($ssfn =~ /^\.tar\.bz2/)
+      { $platform = 'dict-tbz2'; }
+      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.bz2/)
+      { $platform = 'dict-tbz2'; } 
+      elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
+      { $platform = 'src'; }
+      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.[\w\.]+/)
+      { $platform = $1; }
+      else
+      {
+	print "Cannot make sense of filename '$filename'. Skip.\n";
+	next;
+      }
+      
+
+      # find old release element
+      my $r;
+#      for my $kid ($d->getChildNodes)
+      for my $kid ($d->getElementsByTagName('release'))
+      {
+	if($kid->getAttribute('platform') eq $platform)
+	{
+	  $r = $kid; last;
+	}
+      }
+      
+      # or create new release element
+      if(!$r)
+      {
+        print "  Release not found in database. Inserting it.\n";
+        $d->appendChild( $doc->createTextNode("\n") ) if( ! @{ ($d->getChildNodes) } );
+        $d->appendChild( $doc->createTextNode("    ") ); 
+        $r = $doc->createElement('release');   
+        $d->appendChild($r); 
+        $d->appendChild( $doc->createTextNode("\n") ); 
+        $r->setAttribute('platform', $platform);
+      }
+
+      $r->setAttribute('version', $release_version);
+      $r->setAttribute('URL', $URL);
+      $r->setAttribute('size', $size);
+      $r->setAttribute('date', substr($release_date,0,10));
+    
+    } # while
+    if($myredo) { $myredo=0;redo; printd "redoing..."; }
+  } # while
+}
+##################################################################
+    
+if($opt_d && $opt_a)
+{
+  print STDERR "Only one of -d and -a may be given at the same time.\n";
+  exit;
+}
+
+if(!$opt_d && !$opt_a && !$opt_r)
+{
+  print STDERR "One of -d, -a or -r must be given.\n";
+  exit;
+}
+
+my $parser = new XML::DOM::Parser;
+
+my $doc;
+if(-s $dbfile)
+{
+  $doc = $parser->parsefile ($dbfile);
+  printd "Successfully read $dbfile. ";
+  my $nodes = $doc->getElementsByTagName("dictionary");
+  my $n = $nodes->getLength;
+  printd "$n dictionary/-ies in my database.\n";
+}
+else
+{
+  printd "Creating new database.\n";
+  $doc = new XML::DOM::Document;
+  $doc->appendChild( $doc->createElement('FreeDictDatabase') );   
+}
+
+fdict_extract_metadata("..", $opt_d, $doc) if $opt_d;
+fdict_extract_all_metadata("..", $doc) if $opt_a;
+fdict_extract_releases($doc) if $opt_r;
+
+`cp $dbfile $dbfile.bak` if(-s $dbfile);
+printd "Writing $dbfile\n";
+$doc->printToFile ($dbfile);
 
