@@ -74,10 +74,21 @@ sub open_dict{
 
     open DATA, ">$name.dict";
 
-    # open a pipe and output the index in a sorted way (like dictfmt does it)
-    # may be useless for unicode (but dictd server 1.6x
+    # open a pipe and output the index in a sorted way (more like
+    # dictfmt USES it, but this is a long story)
+    # may be useless for unicode (but dictd server 1.7x
     # isn't unicode capable anyway)
-    open INDEX, "|sort -df >$name.index";
+    
+    # in bash we enter: sort -t $'\t' -k1,1bdf
+    # the sort options:
+    # -t: give field separator, the TAB
+    # -k: only use first field for sorting
+    #  b: ignore trailing blanks (might not be needed)
+    #  df: as usual
+    $ENV{'LANG'}="C";# otherwise collating sequence (sorting oder) might be
+                     # wrong (space after letters and things like that)
+    
+    open INDEX, "|sort -t \"\t\" -k1,1bdf >$name.index";
 
     warn "\nopened: $name.dict and \n       $name.index\n";    
 
@@ -147,7 +158,7 @@ sub write_text{
     $Text::Wrap::columns = 70;
     print DATA fill("", $fill2, $all_text);
     $all_text = "";
-    return if ($text eq "");
+    return if ((!defined $text) || ($text eq ""));
     push @hwords, $text if ($head == 1);# FIXME $text is an ugly global var!
     $text = "";
 }

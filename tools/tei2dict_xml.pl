@@ -1,6 +1,12 @@
 #!/usr/bin/perl -w
-# w for warnings, d für debug
+# w for warnings, d for debug
 
+# V1.2 5/2002 Michael Bunk
+#  * switches:
+#    * to turn off header treatment
+#    * to turn on cross references (off by default, as not standardized)
+#    * html switch default: off
+#  * sorting done more precisely, in C-locale
 # V1.1 4/2002 by Michael Bunk, <kleinerwurm@gmx.net>
 #  * beautified everything
 #  * perl -w for warnings, use strict
@@ -31,15 +37,24 @@ use XML::ESISParser;
 use Getopt::Std;
 use TEIHandler_xml;
 
-our ($opt_f, $opt_d);
+our ($opt_f, $opt_h, $opt_s, $opt_c);
 getopt('df:');
 
 if (!defined $opt_f) {
- print STDERR "tei2dict - convert Text Encoding Initiative files to dictd database format\n";
- print STDERR "\n The TEI inputfile is expected as XML in TEI P4 format, see http://www.tei-c.org/\n";
- print STDERR " Output is on stdout.\n\n"; 
- print STDERR " Usage: tei2dict -f <teifile> [-d]\n";
- print STDERR " -d        : disable HTML in output, only give _after_ -f option (perl likes it more)\n";#FIXME
+ print STDERR "\ntei2dict - convert Text Encoding Initiative files to dictd database format\n\n";
+ print STDERR " The TEI inputfile is expected as XML in TEI P4 format, see\n";
+ print STDERR " http://www.tei-c.org/\n";
+ print STDERR " Outputs .index and .dict file. The index is sorted with 'sort ...'\n";
+ print STDERR " according to the C locale. If you want to convert old style SGML\n";
+ print STDERR " TEI files, consider using tei2dict.pl, available from freedict.sf.net.\n";
+ print STDERR " This help is outputted, because here was no tei file to process given.\n\n"; 
+ print STDERR "Usage: tei2dict -f <teifile> [-h] [-n] [-c]\n";
+ print STDERR " -h        : enable HTML in output, only give _after_ -f option\n";
+ print STDERR "             (perl likes it more??)\n";#FIXME
+ print STDERR " -s        : skip TEI header: do not treat it to generate\n";
+ print STDERR "             00-database-info & co special entrys (good to convert adapted\n";
+ print STDERR "             SGML tei files)\n";
+ print STDERR " -c        : turn on generating cross references from <xr>-element\n";
  print STDERR " <teifile> : name of tei inputfile\n\n";
  die;
  }
@@ -50,8 +65,8 @@ die "Can't find file \"$file\"" unless -f $file;
 our $my_handler = TEIHandler_xml->new();
 
 # hand over name for .dict and .index output files,
-# if "-d" given as switch, HTML_enabled is 0, else 1
-$my_handler->set_options($file,$opt_d ? 0 : 1);
+# if "-h" given as switch, HTML_enabled is 1, else 0
+$my_handler->set_options($file,$opt_h ? 1 : 0, $opt_s ? 1 : 0, $opt_c ? 1 : 0);
 
 # FIXME the following schould be removed if we use XML,
 # but if we do, we get:
@@ -63,6 +78,6 @@ push (@additional_args, IsSGML => 1);
 XML::ESISParser->new->parse(Source => { SystemId => $file },
                             Handler => $my_handler,@additional_args);
 
-print STDERR "Processed $Dict::headwords headwords.\n";
+print STDERR "Processed $Dict::headwords headwords (including multiple orths).\n";
 
 # EOF

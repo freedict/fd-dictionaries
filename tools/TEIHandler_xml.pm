@@ -90,7 +90,8 @@ use Dict;
     
 our ($header, $preLastStartTag, $lastStartTag,
      $database_short, $database_url, @higherElements,
-     $file_name, $HTML_enabled);
+     $file_name, $HTML_enabled, $crossrefs_enabled, $skip_header,
+     $noteCharacters);
 
 # i copied _escape() from XML::Handler::CanonXMLWriter
 # for escaping special chars in HTML/XML/SGML
@@ -105,7 +106,7 @@ my %char_entities = (
     );
 
 sub _escape {
-    my $self = shift; my $string = shift;
+    my $string = shift;
      
     if ($HTML_enabled) {
      $string =~ s/([\x09\x0a\x0d&<>"])/$char_entities{$1}/ge }
@@ -119,11 +120,13 @@ sub new {
 }
 
 sub set_options {
-    my ($self,$filename,$aHTML_enabled) = @_;
+    my ($self,$filename,$aHTML_enabled,$askip_header,$acrossrefs_enabled) = @_;
     $file_name = $filename;
     $file_name =~ s/^(\w*\/)+//g;         
     $file_name =~ s/(\S*)\.\w*/$1/;
     $HTML_enabled = $aHTML_enabled;
+    $skip_header=$askip_header;
+    $crossrefs_enabled=$acrossrefs_enabled;
     Dict->open_dict($file_name);
 }
 
@@ -138,15 +141,14 @@ sub start_element {
     if (($Dict::head) && ($part ne "orth")) { Dict::end_headword() };
     
     # see what tag we have (& remember XML is case sensitive!)
-    # elsif for speed, most frequent tags on top
+    # most frequent tags on top
     if   (($part eq "entry") ||
           ($part eq "sense") ||
           ($part eq "form")) {
-        # nop
+        return
 	}
 	
     elsif ($part eq "orth") {
-        # i hope <orth> never appears after <pron> but always comes at beginning of <form>
         if ($preLastStartTag eq "form") {Dict::set_headword()} }
 	
     elsif ($part eq "pron") {
@@ -162,7 +164,7 @@ sub start_element {
         Dict::write_direct("\n  ".H("<i>")) }
 	
     elsif ($part eq "tr") {
-       if ($preLastStartTag eq "tr") { Dict::write_direct(", ")} }
+        Dict::write_direct(", ") if ($preLastStartTag eq "tr") }
 
     elsif ($part eq "pos") {
         }
@@ -173,109 +175,114 @@ sub start_element {
     elsif ($part eq "usg") {
         Dict::add_text(" (") }
 	
-    elsif ($part eq "teiHeader") {
-        $header = 1;
-	Dict::set_headword();
-	$Dict::text="00-database-info";
-	Dict::write_text();
-	Dict::end_headword();
-	Dict::add_text(" ");
-	Dict::write_text();
-        Dict::write_newline();
-	}
-
-    elsif ($part eq "edition") {
-	Dict::add_text(" Edition: ") }
-
-    elsif ($part eq "publisher") {
-	Dict::add_text(" Published by: ") }
-
-    elsif ($part eq "availability") {
-       	Dict::write_text(); Dict::write_newline();
-	Dict::write_direct("\n Availability: ") }
-
-    elsif ($part eq "note") {
-        if ($higherElements[-2] eq "notesStmt") {
-	  Dict::add_text($HTML_enabled ? "<li>" : "\n     * ") }
-	else { Dict::add_text(" (") }
-        }
-
-    elsif ($part eq "notesStmt") {
-	Dict::add_text(" Notes: ".H("\n<ul>"));
-	Dict::write_text();
-        Dict::write_newline();
-	}
-
-    elsif ($part eq "revisionDesc") {
-	Dict::add_text(" Changelog:".H("\n<ul>"));
-	Dict::write_text();
-	
-	# add myself as
-	# <change>
-	#  <date>now</date>
-	#  <respStmt><name>tei2dict_xml.pl</name>
-	#  <item>converted TEI database into .dict format</item>
-	# </change>
-	start_element(Element => { Name => "change"});
-
-         start_element(Element => { Name => "date"});
-         #my $now_string = strftime "%a %b %e %H:%M:%S %Y", localtime;
-	 my $now_string = gmtime();
-	 characters(Element => { Data => $now_string});
- 	 end_element(Element => { Name => "date"});
-
-	 start_element(Element => { Name => "respStmt"});
-          start_element(Element => { Name => "name"});
-          characters(Element => { Data => "tei2dict_xml.pl"});
-          end_element(Element => { Name => "name"});
-	 end_element(Element => { Name => "respStmt"});
-
-	 start_element(Element => { Name => "item"});
-	 characters(Element => { Data => "converted TEI database into .dict format"});
-	 end_element(Element => { Name => "item"});
-	end_element(Element => { Name => "change"});
-	}
-
-    elsif ($part eq "change") {
-        Dict::write_newline();
-	Dict::write_direct($HTML_enabled ? "<li>" : "     * ");
-	$Dict::fill2 = "       "; }
-
-    elsif ($part eq "date") {
-        if ($preLastStartTag eq "publisher") {
-	    Dict::add_text(", ") }
-	}
+    elsif (($part eq "note") && (!$header)) {
+        $noteCharacters = 0;
+	Dict::add_text(" (") }
 
     elsif ($part eq "ref") {
-        Dict::add_text(" {") }
+        Dict::add_text(" {") if $crossrefs_enabled }
 
-    elsif ($part eq "item") {
-        if ($higherElements[-2] eq "change") { Dict::add_text(":") }
-	}
-	
     elsif (($part eq "TEI.2") ||
-           ($part eq "p") ||
-           ($part eq "fileDesc") ||
-	   ($part eq "fileStmt") ||
-	   ($part eq "titleStmt") ||
-	   ($part eq "title") ||
-	   ($part eq "editionStmt") ||
-	   ($part eq "extent") ||
-	   ($part eq "publicationStmt") ||
-	   ($part eq "sourceDesc") ||
-	   ($part eq "respStmt") ||
-	   ($part eq "resp") ||
-	   ($part eq "name") ||
 	   ($part eq "body") ||
+           ($part eq "p") ||
 	   ($part eq "xr") ||
 	   ($part eq "text")
 	   ) {
         # NOP, just to avoid "unimplemented" warning
 	}
 	
-    else {
-	print STDERR "unimplemented starttag: $part\n" }
+    elsif ($part eq "teiHeader") {
+        $header = 1;
+	if (!$skip_header) {
+	  Dict::set_headword();
+	  $Dict::text="00-database-info";
+	  Dict::write_text();
+	  Dict::end_headword();
+	  Dict::add_text(" ");
+	  Dict::write_text();
+          Dict::write_newline();
+	  }
+	}
+    
+    elsif ($header) {
+      return if ($skip_header);
+      
+      if ($part eq "edition") {
+	 Dict::add_text(" Edition: ") }
 
+      elsif ($part eq "publisher") {
+	  Dict::add_text(" Published by: ") }
+
+      elsif ($part eq "availability") {
+          Dict::write_text(); Dict::write_newline();
+	  Dict::write_direct("\n Availability: ") }
+
+      elsif (($part eq "note") && ($higherElements[-2] eq "notesStmt")) {
+          $noteCharacters = 0;
+          Dict::add_text($HTML_enabled ? "<li>" : "\n     * ") }
+    
+      elsif ($part eq "notesStmt") {
+	  Dict::add_text(" Notes: ".H("\n<ul>"));
+	  Dict::write_text();
+          Dict::write_newline();
+	  }
+
+      elsif ($part eq "revisionDesc") {
+	  Dict::add_text(" Changelog:".H("\n<ul>"));
+	  Dict::write_text();
+	
+	  # add myself as
+	  # <change>
+	  #  <date>now</date>
+	  #  <respStmt><name>tei2dict_xml.pl</name>
+	  #  <item>converted TEI database into .dict format</item>
+	  # </change>
+	  start_element(Element => { Name => "change"});
+
+           start_element(Element => { Name => "date"});
+	    my $now_string = gmtime();
+	    characters(Element => { Data => $now_string});
+ 	   end_element(Element => { Name => "date"});
+
+	   start_element(Element => { Name => "respStmt"});
+            start_element(Element => { Name => "name"});
+             characters(Element => { Data => "tei2dict_xml.pl"});
+            end_element(Element => { Name => "name"});
+	   end_element(Element => { Name => "respStmt"});
+
+	   start_element(Element => { Name => "item"});
+	    characters(Element => { Data => "converted TEI database into .dict format"});
+	   end_element(Element => { Name => "item"});
+	   
+	  end_element(Element => { Name => "change"});
+	  }
+
+      elsif ($part eq "change") {
+          Dict::write_newline();
+	  Dict::write_direct($HTML_enabled ? "<li>" : "     * ");
+	  $Dict::fill2 = "       "; }
+
+      elsif ($part eq "date") {
+	  Dict::add_text(", ") if ($preLastStartTag eq "publisher") }
+
+      elsif (($part eq "item") && ($higherElements[-2] eq "change")) {
+          Dict::add_text(":") }
+	  
+      elsif (($part eq "fileDesc") ||
+	     ($part eq "fileStmt") ||
+	     ($part eq "titleStmt") ||
+	     ($part eq "title") ||
+	     ($part eq "editionStmt") ||
+	     ($part eq "extent") ||
+	     ($part eq "publicationStmt") ||
+	     ($part eq "sourceDesc") ||
+	     ($part eq "respStmt") ||
+	     ($part eq "resp") ||
+	     ($part eq "name") ||
+             ($part eq "p")) { return }
+      }	# ^header
+   
+    else { print STDERR "unimplemented starttag: $part\n" }
 }
 
 sub H {
@@ -283,21 +290,26 @@ sub H {
     # should depend on command line switch
     ($HTML_enabled) ? shift : "";
     }
+
+sub H2 {
+    # calls _escape if $HTML_enabled, otherwise just returns arg
+    ($HTML_enabled) ? _escape(shift) : shift;
+    }
     
 sub characters {
     my ($self, $element) = @_;
     my $data = $element->{Data};
     
     # FIXME: maybe with other parser than ESISParser?
-    # my guess: sometimes our loved ESISParser calls this handler while it shouldn't:
-    # to notify us of a line break and white space. there are handlers end_record()
-    # and white_space() for this. anyway: since we don't have <pre>-element where newlines
+    # my guess: sometimes our loved ESISParser calls this handler
+    # while it shouldn't: to notify us of a line break and white
+    # space. there are handlers end_record() and white_space() for
+    # this. anyway: since we don't have <pre>-element where newlines
     # are important inside, we just replace all \n by ' '
     # then all multiple white space by single ' '
     # then remove all ' ' at beginning or end
-    # and skip everything if we get $data empty
+    # and skip everything if we get empty $data 
     
-    # FIXME: use _ecape() more widely
     
     $data =~ s/\n/ /;
     $data =~ s/\s+/ /;
@@ -311,56 +323,57 @@ sub characters {
        }
 
     if ($header == 1) {
+        return if ($skip_header);
 	if    (($preLastStartTag eq "titleStmt") &&
 	       ($lastStartTag    eq "title")) { $database_short = $data }
 	elsif  ($lastStartTag    eq "name") { 
-	  Dict::add_text(" ".H("<b>").$data.H("<\/b>"));
+	  Dict::add_text(" ".H("<b>").H2($data).H("<\/b>"));
 	  Dict::write_text();
           if ($higherElements[-3] eq "titleStmt") {
 	    Dict::write_newline(); }
 	   }
 	elsif (($preLastStartTag eq "sourceDesc") &&
 	       ($lastStartTag    eq "p")) { $database_url=$data }
-	elsif ( #($preLastStartTag eq "name") && # just to check <name> isn't enough FIXME
-	       ($lastStartTag    eq "item")) { Dict::add_text(" ".$data) }
+	elsif ($lastStartTag    eq "item") { Dict::add_text(" ".H2($data)) }
 	elsif (($preLastStartTag eq "availability") &&
-	       ($lastStartTag    eq "p")) { Dict::add_text($data) }
+	       ($lastStartTag    eq "p")) { Dict::add_text(H2($data)) }
 	elsif  ($lastStartTag    eq "note") {
 	       # damn parser calls characters() multiple times if #PCDATA
 	       # extends for more than one line!
-	       Dict::add_text($self->_escape($data) . " ");
+	       Dict::add_text( ($noteCharacters ? " " : "") . H2($data));
+	       $noteCharacters = 1;# workaround for multiple calls
+	       # because then data lacks leading & trainling spaces...
+
 	       #warn "add: '$data'\n";
-	       
 	       # even though the pod says different things: not only
 	       # tabs are allowed in fill() parameters
 	       #warn "fill2: '".$Dict::fill2."'";
-#	       Dict::write_text();
                }
 	elsif (($preLastStartTag eq "titleStmt") &&
 	       ($lastStartTag    eq "resp")) {
-	       Dict::add_text($data);
+	       Dict::add_text(H2($data));
 	       Dict::write_text();
                Dict::write_newline() }	  
 	elsif (($lastStartTag    eq "edition") ||
 	       ($lastStartTag    eq "resp") ||
 	       ($lastStartTag    eq "publisher") ||
 	       ($lastStartTag    eq "date")
-	       ) { Dict::add_text($data) }
+	       ) { Dict::add_text(H2($data)) }
     }
     else {
 	if (($lastStartTag eq "orth")) {
 	    if (($preLastStartTag eq "form") ||
 	        ($preLastStartTag eq "orth")) {
 	      #warn "headwords add_text: '$data'\n";
-	      Dict::add_text($data) }
+	      Dict::add_text(H2($data)) }
 	    else {
 	      print STDERR "multiple <orth>-s only at beginning of <form> supported. Skipping the others!\n" }
 	    }
 	elsif ($lastStartTag eq "def") {
-	    Dict::add_text($data." ");
+	    Dict::add_text(H2($data)." ");
 	    }
 	else {
-	    Dict::add_text($self->_escape($data)) }
+	    Dict::add_text(H2($data)) }
 	}
 }
 
@@ -381,7 +394,7 @@ sub end_element {
 	}
     
     elsif ($part eq "orth") {
-        # Dict::end_headword() has to becalled later, because we don't know now
+        # Dict::end_headword() has to be called later, because we don't know now
 	# if there is another orth coming (multiple headwords for one entry)
 	}	    
 
@@ -392,7 +405,7 @@ sub end_element {
         Dict::write_direct("]") }
 
     elsif ($part eq "gramGrp") {
-        Dict::write_direct($HTML_enabled ? "&gt;" : ">") }
+        Dict::write_direct(H2(">")) }
 
     elsif ($part eq "usg") {
         Dict::write_direct(")") }
@@ -403,24 +416,15 @@ sub end_element {
     elsif ($part eq "p") {
         Dict::write_newline() }
 
-    elsif ($part eq "note") {
-        if ($higherElements[-2] eq "notesStmt") {
-	  Dict::add_text(H("</li>")) }
-	else { Dict::add_text(")") }
-        
-        $Dict::fill2 = "" }
-    
-    elsif ($part eq "change") {
-        $Dict::fill2 = "" }
-  
     elsif ($part eq "def") {
         Dict::add_text(H("</i>")) }
 
     elsif ($part eq "ref") {
-        Dict::add_text("} ") }
+        Dict::add_text("} ") if $crossrefs_enabled }
 
-    elsif ($part eq "teiHeader") {
+    elsif (($part eq "teiHeader")) {
         $header = 0;
+        return if $skip_header;
         Dict::write_text();
         Dict::write_newline();
 	
@@ -438,23 +442,42 @@ sub end_element {
         Dict::write_newline();
 	}
 	
+    elsif ($header) {
+        return if ($skip_header);
+	
+        if ($part eq "note") {
+          if ($higherElements[-1] eq "notesStmt") {
+	    Dict::add_text($HTML_enabled ? "</li>" : ")") }
+	  $noteCharacters = 0;
+	  }
+	  
+        elsif ($part eq "change") {
+          $Dict::fill2 = "" }
+  
+        elsif (($part eq "notesStmt") || ($part eq "revisionDesc")) {
+          Dict::add_text(H("</ul>\n"));
+          Dict::write_text();
+          Dict::write_newline();
+	  }
+
+        elsif (($part eq "edition") ||
+               ($part eq "titleStmt") ||
+	       ($part eq "editionStmt") ||
+	       ($part eq "publicationStmt")
+	      ) {
+          Dict::write_text();
+          Dict::write_newline();
+	  }	  
+	  
+	} # ^header
+	    
+    elsif ($part eq "note") {
+	Dict::add_text(")");        
+        $Dict::fill2 = "" }
+    
     elsif ($part eq "body") {
         Dict::set_headword();# to have the last headword appear in INDEX
-	}
-
-    elsif (($part eq "notesStmt") || ($part eq "revisionDesc")) {
-        Dict::add_text(H("</ul>\n"));
-        Dict::write_text();
-        Dict::write_newline();
-	}
-	
-    elsif (($part eq "edition") ||
-           ($part eq "titleStmt") ||
-	   ($part eq "editionStmt") ||
-	   ($part eq "publicationStmt")
-	   ) {
-        Dict::write_text();
-        Dict::write_newline(); };
+	};
 
 }
 
