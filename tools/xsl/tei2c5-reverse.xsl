@@ -21,7 +21,7 @@
 	 will have to call dictfmt as 'dictfmt - -headword-separator %%%'
 	 
 	 (those two minus signs are separated by a space here, because otherwise
-	 my sabcmd considers at a sgml comment end. for calling dictfmt you have
+	 my sabcmd considers them as sgml comment end. for calling dictfmt you have
 	 to omit that space.)  -->
     <xsl:for-each select=".//tr">
       <xsl:value-of select="." />
