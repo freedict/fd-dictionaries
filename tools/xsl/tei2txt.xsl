@@ -10,7 +10,7 @@
 <!-- using this stylesheet with Sablotron requires a version >=0.95,
      because xsl:strip-space was implemented from that version on -->
 
-<xsl:strip-space elements="form gramGrp entry teiHeader fileDesc titleStmt respStmt editionStmt publicationStmt seriesStmt notesStmt revisionDesc TEI.2 sense"/>
+<xsl:strip-space elements="form gramGrp entry teiHeader fileDesc titleStmt respStmt editionStmt publicationStmt seriesStmt notesStmt revisionDesc TEI.2 sense p sourceDesc availability encodingDesc"/>
 
 
 <!-- treat 00-database-short and 00-database-url specially:
@@ -88,23 +88,45 @@
 
 <!-- For transforming the teiHeader -->
 
-<xsl:template match="titleStmt"><xsl:value-of select="title"/><xsl:text>
+<xsl:template match="p"><xsl:text>  </xsl:text><xsl:apply-templates/><xsl:text>
+
+</xsl:text></xsl:template>
+
+<xsl:template match="xptr">
+  <xsl:value-of select="@url"/>
+</xsl:template>
+
+<xsl:template match="extent">  Size: <xsl:value-of select="."/><xsl:text>
+</xsl:text>
+</xsl:template>
+
+<xsl:template match="note[@type='status']"> * Database Status: <xsl:value-of
+   select="."/> (could be 'stable', 'low-quality' etc.)
+</xsl:template>
+
+<xsl:template match="titleStmt">
+  <xsl:value-of select="title"/>
+  <xsl:if test="respStmt">
+  <xsl:text>
 
 </xsl:text><xsl:value-of select="respStmt/resp"/>: <xsl:value-of select="respStmt/name"/>
+</xsl:if>  
   <xsl:text>
   
 </xsl:text>
 </xsl:template>
 
-<xsl:template match="edition">
-Edition: <xsl:apply-templates/><xsl:text>
+<xsl:template match="edition">  Edition: <xsl:apply-templates/><xsl:text>
 </xsl:text></xsl:template>
 
 
-<xsl:template match="publicationStmt">
-Published by: <xsl:value-of select="./publisher"/>, <xsl:value-of select="./date"/><xsl:text>
-    
-Published at: </xsl:text><xsl:value-of select="./pubPlace"/><xsl:text>
+<xsl:template match="publicationStmt">  Published by: <xsl:value-of
+   select="./publisher"/>, <xsl:value-of select="./date"/><xsl:text>
+            at: </xsl:text><xsl:value-of select="./pubPlace"/>
+	    
+Availability:
+	  
+<xsl:apply-templates select="availability/*"/><xsl:text>
 </xsl:text>  
 </xsl:template>
 
@@ -116,30 +138,37 @@ Availability: <xsl:value-of select="."/><xsl:text>
 Series: <xsl:value-of select="./title"/><xsl:text>
 </xsl:text></xsl:template>
 
-<xsl:template match="notesStmt">
-Notes:
+<xsl:template match="notesStmt">Notes:
+  
+<xsl:apply-templates/><xsl:text>
+
+</xsl:text></xsl:template>
+
+<xsl:template match="note"> * <xsl:value-of select="."/><!-- todo: indentation
+  of wrapped lines --></xsl:template>
+
+
+<xsl:template match="sourceDesc">Source(s):
+  
 <xsl:apply-templates/><xsl:text>
 </xsl:text></xsl:template>
 
-<xsl:template match="note"> * <xsl:value-of select="."/><!-- todo: indentation --></xsl:template>
-
-
-<xsl:template match="sourceDesc">
-Source: <xsl:value-of select="."/><xsl:text>
-</xsl:text></xsl:template>
-
-<xsl:template match="projectDesc">
-The Project: <xsl:value-of select="."/><xsl:text>
+<xsl:template match="projectDesc">The Project:
+<xsl:value-of select="."/><xsl:text>
 
 </xsl:text></xsl:template>
 
 <xsl:template match="revisionDesc">Changelog:
+  
 <xsl:apply-templates select="change"/>
 
 </xsl:template>
 
 <xsl:template match="change"> * <xsl:value-of select="./date"/><xsl:text> </xsl:text>
-    <xsl:value-of select="./respStmt/name"/>: <xsl:value-of select="./item"/><!-- todo: indentation --><xsl:text>
+    <xsl:value-of select="./respStmt/name"/>:
+
+             <xsl:value-of select="./item"/><!-- todo: indentation --><xsl:text>
+	
 </xsl:text></xsl:template>
 
 </xsl:stylesheet>
