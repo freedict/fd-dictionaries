@@ -1,20 +1,12 @@
-#!/usr/bin/perl -w -I../tools
+#!/usr/bin/perl -w -Ilib -I/home/micha/dict/CVS/tools -I/home/micha/dict/CVS/tools/lib
+#-I../tools -I../tools/lib -ICVS/tools
 # w for warnings, d for debug
 
-# V1.3 5/2003 Michael Bunk
-#  * environment variables to tell SP that it should work on XML are set
-#  * added -l parameter: it will influence the locale for 'sort'
-#  * added -u switch to generate 00-database-utf8 headword
-# V1.2 5/2002 Michael Bunk
-#  * switches:
-#    * to turn off header treatment
-#    * to turn on cross references (off by default, as not standardized)
-#    * html switch default: off
-#  * sorting done more precisely, in C-locale
-# V1.1 4/2002 by Michael Bunk, <kleinerwurm at gmx.net>
-#  * beautified everything
-#  * perl -w for warnings, use strict
-# V1.0 Copyright (C) 2000 Horst Eyermann <horst@freedict.de>
+# V1.1 2/2004 Michael Bunk kleinerurm-at-gmx.net
+#   * put .pm files into lib/
+#
+# V1.0 6/2003 Michael Bunk kleinerurm-at-gmx.net
+#   * based on tei2dict_xml.pl
 #
 # Note from the homepage of the package SP, where nsgmls forms a part:
 #   Note that only the Win32/Unicode binaries are compiled with
@@ -39,30 +31,36 @@
 use strict;
 use XML::ESISParser;
 use Getopt::Std;
-use TEIHandler_xml;
+use XML::Sablotron;
+use XML::Sablotron::DOM;
+use lib::TEIHandlerxml_xml;
+#use lib/TEIHandlerxml_xml.pm;
+print "\$0: $0\n";
 
-our ($opt_f, $opt_h, $opt_s, $opt_c, $opt_u, $opt_l);
-getopts('hscul:f:');
+our ($opt_f, $opt_h, $opt_s, $opt_c, $opt_u, $opt_l, $opt_i, $opt_r,$opt_t,$sab,$sit);
+getopts('suri:l:f:t:');
 
 if (!defined $opt_f) {
- print STDERR "\ntei2dict - convert Text Encoding Initiative files to dictd database format\n\n";
+ print STDERR "\n$0 - convert Text Encoding Initiative files to\n";
+ print STDERR " dictd database format keeping the xml in the <entry> elements\n\n";
  print STDERR " The TEI inputfile is expected as XML in TEI P4 format, see\n";
  print STDERR " http://www.tei-c.org/\n";
  print STDERR " Outputs .index and .dict file. The index is sorted with 'sort ...'\n";
- print STDERR " If you want to convert old style SGML\n";
- print STDERR " TEI files, consider using tei2dict.pl, also available from freedict.sf.net.\n";
  print STDERR " This help is outputted, because here was no tei file given.\n\n"; 
- print STDERR "Usage: tei2dict -f <teifile> [-hscu] [-l <locale>]\n";
- print STDERR " -h        : enable HTML in output, only give _after_ -f option\n";
- print STDERR "             (perl likes it more??)\n";#FIXME
+ print STDERR "Usage: $0 -f <teifile> [-sur] [-i <filtercmd>|-t <stylesheet.xsl>] [-l <locale>]\n";
  print STDERR " -s        : skip TEI header: do not treat it to generate\n";
  print STDERR "             00-database-info & co special entrys (good to convert adapted\n";
  print STDERR "             SGML tei files)\n";
- print STDERR " -c        : turn on generating cross references from <xr>-element\n";
  print STDERR " -u        : generate headword 00-database-utf8 in index file to\n";
  print STDERR "             mark the database being in UTF-8 encoding\n";
+ print STDERR "             When this is given, 'sort is called without -d option,\n";
+ print STDERR "             ie. all characters are used in comparisons\n";
+ print STDERR " -r	  : generate reverse index (use <tr> instead of <orth>\n";
+ print STDERR " -i <filtercmd>: execute filtercmd for each entry (eg. 'sabcmd style.xsl')\n";
+ print STDERR " -t <stylesheet.xsl>: use an XSLT stylesheet for filtering the entries\n";
+ print STDERR " 	    with the Sablotron library. Excludes -i.\n";
  print STDERR " -l <locale>: call 'sort' using <locale>. If not given, 'C' locale\n";
- print STDERR "             will be used\n";
+ print STDERR "             will be used (only 'C' locale is allowed anyway)\n";
  print STDERR " <teifile> : name of tei inputfile\n\n";
  die;
  }
@@ -70,14 +68,17 @@ if (!defined $opt_f) {
 our $file = $opt_f;
 die "Can't find file \"$file\"" unless -f $file;
 
-our $my_handler = TEIHandler_xml->new();
+die "Only one of -i and -t may be given" if $opt_i && $opt_t;
+
+our $my_handler = lib::TEIHandlerxml_xml->new();
 
 $my_handler->set_options($file, # hand over name for .dict and .index output files
-    $opt_h ? 1 : 0,		# HTML_enabled
     $opt_s ? 1 : 0,		# skip TEI header
-    $opt_c ? 1 : 0,		# generate cross references
     $opt_u ? 1 : 0,		# generate 00-database-utf8
-    $opt_l ? $opt_l : "C");	# locale
+    $opt_l ? $opt_l : "C",	# locale
+    $opt_i ? $opt_i : "",	# filter command
+    $opt_t,			# stylesheet for Sablotron
+    $opt_r ? 1 : 0);		# generate reverse index
 
 $ENV{SP_ENCODING} = "XML";
 $ENV{SP_CHARSET_FIXED} = "YES";
@@ -101,6 +102,6 @@ push (@additional_args, IsSGML => 1);
 XML::ESISParser->new->parse(Source => { SystemId => $file },
                             Handler => $my_handler,@additional_args);
 
-print STDERR "Processed $Dict::headwords headwords (including multiple orths).\n";
+print STDERR "Created $Dict::headwords headwords (including multiple <orth>-s / from the <tr>-s).\n";
 
 # EOF
