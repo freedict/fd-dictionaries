@@ -45,6 +45,8 @@ class Dict:
 	# used for writing tei files.
 	self.translating = 0
 	self.translated = 0
+        self.flush_buffer = 0
+        self.discard_buffer = 0
 	self.buffered_lines = []
 
 	self.output = None # output file for writing.
@@ -188,11 +190,11 @@ class Dict:
 	# Any superfluous information in the .TEI file is retained.
 	# imports a tei file, provided that it's very basic.
 
-	# This method doesn't work yet.
-	assert 0
-	
+        assert 0
+	# This method still doesn't work yet; it duplicates entries.
 	input = open(teifile, 'r')
 	self.output = open(teifile+".changed", 'w')
+        self.translating = 0
 	
 	# retain the header.
 	depth = 0
@@ -261,10 +263,18 @@ class Dict:
 	    if not self.translating:
 		self.buffered_lines.append(rawline)
 	    elif not self.translated:
-		# write the new translation to the file.
-		self.__w_translation(rawline, self.word)
+		# Write my own translation instead of the file's.
+                for l in self.__get_translation(rawline, self.word):
+                    self.buffered_lines.append(l)
 		self.translated = 1
-		
+
+            if self.discard_buffer:
+                print "DEBUG: discarding buffer:", self.buffered_lines
+                self.buffered_lines = []
+                self.discard_buffer = 0
+            elif self.flush_buffer:
+                self.__flush_buffer()
+    
 	    # Get a new line
 	    rawline = input.readline()
 	    line = rawline
@@ -284,7 +294,8 @@ class Dict:
 			line = string.strip(line)
 	    #print "Parsing now line:", line
 	    sptr = 0
-	    
+
+        self.__flush_buffer()
 	input.close()
 	self.output.close()
 
@@ -292,7 +303,9 @@ class Dict:
 	self.tags.append(tag)
 	if tag == "trans":
 	    self.translating = 1
-		
+        elif tag == 'body':
+            self.flush_buffer = 1
+    
     def w_endtag(self, tag):
 	end = self.tags.pop()
 	#if tag != end:
@@ -304,14 +317,15 @@ class Dict:
 	    current_word = self.allwords[self.allwords_counter]
 	    if self.word < current_word:
 		# Case one: word missing.
-		print "Warning: word ", self.word, " appears to be missing in memory."
+		print "Warning: word ", self.word, " appears to be missing in memory; discarding."
+                self.discard_buffer = 1
 		# and nothing needs to be done.
 	    elif self.word > current_word:
 		# case two: word added.
 		while self.word > self.allwords[self.allwords_counter]:
 		    self.__write_word(self.allwords[self.allwords_counter])
 		    self.allwords_counter = self.allwords_counter + 1
-	    self.__flush_buffer()
+	    self.flush_buffer = 1
 	    self.word = ""
 	    self.definitions = []
 	    self.translated = 0
@@ -328,6 +342,7 @@ class Dict:
 	for i in self.buffered_lines:
 	    self.output.write(i)
 	self.buffered_lines = []
+        self.flush_buffer = 0
 
     def __write_word(self, word):
 	# This is really a hack. Hard-coded indentation; bad thing.
@@ -337,18 +352,21 @@ class Dict:
 	w("        <form>\n")
 	w("          <orth>"+word+"</orth>\n")
 	w("        </form>\n")
-	self.__w_translation("        <trans>", word)
+        for l in self.__get_translation("        <trans>", word):
+            w(l)
 	w("      </entry>\n")
 
-    def __w_translation(self, line, word):
+    def __get_translation(self, line, word):
 	# Write the tranlation of the current word.
 	indentation = line[:string.find(line, string.lstrip(line))]
+        return_me = []
 
-	self.output.write(indentation+"<trans>\n")
+	return_me.append(indentation+"<trans>\n")
 	for d in self.__dict[word]:
-	    self.output.write(indentation+"  <tr>"+d+"</tr>\n")
-	self.output.write(indentation+"</trans>\n")
-		
+	    return_me.append(indentation+"  <tr>"+d+"</tr>\n")
+	return_me.append(indentation+"</trans>\n")
+        return return_me
+        
     def import_voc(self, filename):
 	# imports an eddict file and merges the changes
 	input = open(filename)
