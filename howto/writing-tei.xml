@@ -429,7 +429,7 @@ information
         &lt;gramGrp&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;/gramGrp&gt;            
         &lt;sense n="1"&gt;
           &lt;trans&gt;                                                                  
-	  &lt;tr&gt;Hund&lt;/tr&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;gen&gt;m&lt;/gen&gt;
+          &lt;tr&gt;Hund&lt;/tr&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;gen&gt;m&lt;/gen&gt;
           &lt;/trans&gt;                                                                 
           &lt;eg&gt;                                                             
             &lt;usg&gt;The dog is barking.&lt;/usg&gt;                           
@@ -439,27 +439,29 @@ information
       &lt;/entry&gt;                                                                   
     </computeroutput></literallayout></blockquote></para>
 
-    <para>orth gives the orthography, ie. how the word is correctly written.
-      If there are several ways, you can use multiple orth elements.
-      pron gives the pronunciation, ie how the word is spoken. In FreeDict
+    <para><emphasis>orth</emphasis> gives the orthography, ie. how the word is correctly written.
+      If there are several ways, you can use multiple <emphasis>orth</emphasis> elements.
+      <emphasis>pron</emphasis> gives the pronunciation (sic!), ie how the word is spoken. In FreeDict
       we use the IPA (International Phonetic Alphabet) that is also
-      contained in Unicode. There is nothing to simplify for you to
-      enter it here :) In a gramGrp elememnt, all grammatical information
-      is grouped. You can give the part of speech (here n for noun),
+      contained in Unicode. There is nothing to support you
+      entering it here :) In a <emphasis>gramGrp</emphasis> element, all grammatical information
+      is grouped. You can give the part of speech (here <emphasis>n</emphasis> for noun),
       the gender and also
-      the number (singular, plural) of the headword - but not in this example.
+      the number (singular, plural) of the headword (Number ist not given in this example).
       Some time in the future we should suggest the possible parts of
-      speech to enter here, so that one doesn't write n and the other one
-      noun (or N or whatever).</para>
+      speech to enter here, so that one doesn't write <emphasis>n</emphasis> and the other one
+      <emphasis>noun</emphasis> and the third one <emphasis>N</emphasis> or whatever.</para>
 
-    <para>You can group the different senses of homographs. The numbering is
-      optional. Translations are given in the tr element. Multiple tr
+    <para>You can group the different senses of homographs with <emphasis>sense</emphasis>.
+      The numbering is
+      optional. Translations are given in the <emphasis>tr</emphasis> element. Multiple
+      <emphasis>tr</emphasis>
       elements may be given. For each grammatical information is optional.</para>
-    <para>With eg you can give examples of usage (exampla grata) and
+    <para>With <emphasis>eg</emphasis> you can give examples of usage (exampla grata) and
       optionally their translation.</para>
     
     <para>After formatting it might look as (pronunciation
-       and ranslation of the example were done away with, because
+       and translation of the example were done away with, because
        the stylesheet used for formatting needs to be fixed):
       <blockquote><literallayout><computeroutput>
 	    dog &lt;n.&gt;
@@ -469,7 +471,8 @@ information
       </computeroutput></literallayout></blockquote>
     </para>
 
-    <para>Please refer to the TEI Guidelines and take a look at the XML code of a dictionary for more examples!</para>
+    <para>Please refer to the TEI Guidelines and take a look at the XML code
+      of a dictionary for more examples!</para>
   </section>
 </chapter>
  
