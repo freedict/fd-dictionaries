@@ -1,53 +1,66 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" [
-<!ENTITY % TEI.dictionaries 'INCLUDE'>
-<!ENTITY % TEI.XML 'INCLUDE'>
-<!ENTITY % ISOLat1 PUBLIC "-//ISO 8879:1986//ENTITIES Added Latin 1//EN//XML">
-%ISOLat1;
-<!NOTATION tei2dict SYSTEM "tei2dict_xml.pl">
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % TEI.dictionaries "INCLUDE">
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
 ]>
 
 <TEI.2>
-<teiHeader>
-<fileDesc>
-<titleStmt>
-<title>Sanskrit-German Freedict Dictionary</title>
-<respStmt>
-  <resp>Database Maintainer</resp>
-  <name>Michael Bunk, micha@luetzschena.de</name>
-</respStmt>
-</titleStmt>
-<editionStmt>
-<edition>1st. Online Draft</edition>
-</editionStmt>
-<publicationStmt>
-<publisher>freedict.de</publisher>
-<date>2003</date>
-<availability>
-  <p>GNU GENERAL PUBLIC LICENSE</p>
-</availability>
-</publicationStmt>
-<seriesStmt>
-<title>free dictionaries</title>
-</seriesStmt>
-<sourceDesc>
-<p>http://www.freedict.de/</p>
-</sourceDesc>
-</fileDesc>
-<revisionDesc>
-<change>
-<date>7. May 2003</date>
-<respStmt><resp>Michael Bunk</resp></respStmt>
-<item>Started writing the header and entering some words by hand.</item>
-</change>
-</revisionDesc>
-</teiHeader>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>Sanskrit-German FreeDict Dictionary</title>
+	<respStmt>
+	  <resp>Database Maintainer</resp>
+	  <name>Michael Bunk, micha@luetzschena.de</name>
+	</respStmt>
+      </titleStmt>
+      <editionStmt>
+	<edition>0.1</edition>
+      </editionStmt>
+      <extent>about 70 headwords</extent>
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability>
+	  <p>GNU GENERAL PUBLIC LICENSE</p>
+	</availability>
+	<date>2003</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+      <notesStmt>
+	<note type="status">too small</note>
+      </notesStmt>
+      <sourceDesc>
+	<p>Home: <xptr url="http://freedict.org/"/></p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+	<p>This dictionary comes to you trough nice people making it
+	  available for free and for good. It is part of the FreeDict project,
+	  http://www.freedict.org / http://freedict.de. This
+	  project aims to make available many translating dictionaries
+	  for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
 
-<text>
-<body>
+    <revisionDesc>
+      <change>
+	<date>2003-05-07</date>
+	<respStmt><resp>Michael Bunk</resp></respStmt>
+	<item>Started writing the header and entering some words by hand.</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
 
-<entry>
-<form>
+  <text>
+    <body>
+
+      <entry>
+	<form>
   <orth>तिथी</orth>
 	</form>
 	<gramGrp>
@@ -80,7 +93,7 @@
 	</form>
 	<trans>
 	  <tr>unerwartet</tr>
-	  <tr>pl&ouml;tzlich</tr>
+	  <tr>plötzlich</tr>
         </trans>	  
       </entry>
       <entry>
@@ -92,7 +105,7 @@
 	  <gen>m</gen>
 	</gramGrp>
 	<trans>
-	  <tr>W&uuml;rfel</tr>
+	  <tr>Würfel</tr>
         </trans>	  
       </entry>
       <entry>
@@ -100,7 +113,7 @@
 	  <orth>अक्शम</orth>
 	</form>
 	<trans>
-	  <tr>unf&auml;hig</tr>
+	  <tr>unfähig</tr>
         </trans>	  
       </entry>
 
@@ -109,7 +122,7 @@
 	  <orth>अक्शय</orth>
 	</form>
 	<trans>
-	  <tr>unverg�nglich</tr>
+	  <tr>unvergänglich</tr>
         </trans>	  
       </entry>
 
