@@ -20,6 +20,9 @@ rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
+# default target
+all:	$(dictname).dict $(dictname).index	
+
 $(dictname).c5: $(dictname).tei
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
 
@@ -29,9 +32,14 @@ $(rdictname).c5: $(dictname).tei
 %.c5.dict %.c5.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
 
-.PHONY: all dirs tgzrelease bz2release install uninstall commit validation test clean dist
+# seems we have no target naming system
+rc5tbz2release: $(rdictname).c5.index
+	dictzip $(rdictname).c5.dict
+	(cd ..; tar -cvjf $(dictname)/freedict-$(rdictname)-$(version).tar.bz2 \
+--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* $(addprefix $(dictname)/, $(rdictname).c5.index $(rdictname).c5.dict.dz))
+	cp freedict-$(rdictname)-$(version).tar.bz2 $(FREEDICTDIR)/bz2/
 
-all:	$(dictname).dict $(dictname).index	
+.PHONY: all dirs tgzrelease bz2release install uninstall commit validation test clean dist
 
 dirs:
 	if [ ! -d $(FREEDICTDIR)/tgz ]; then  mkdir $(FREEDICTDIR)/tgz; fi
