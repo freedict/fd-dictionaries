@@ -267,7 +267,10 @@ sub start_element {
 
       elsif (($part eq "item") && ($higherElements[-2] eq "change")) {
           Dict::add_text(":") }
-	  
+
+      elsif (($part eq "name") && ($preLastStartTag eq "respStmt")) {
+	  Dict::add_text(" ") }
+
       elsif (($part eq "fileDesc") ||
 	     ($part eq "fileStmt") ||
 	     ($part eq "titleStmt") ||
