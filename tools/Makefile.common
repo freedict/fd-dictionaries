@@ -1,3 +1,4 @@
+DESTDIR ?= /usr/share/dictd
 toolsdir = $(FREEDICTDIR)/tools
 xsldir = $(toolsdir)/xsl
 tei2dict = $(toolsdir)/xmltei2xmldict.pl
@@ -26,8 +27,8 @@ version = $(shell grep -m 1 -o -P -e "(?<=<edition>).+(?=</edition>)" $(dictname
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
-%.vok: %.tei dirs
-	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$(FREEDICTDIR)/release/vok/$@
+$(FREEDICTDIR)/release/vok/%.vok: %.tei dirs
+	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$@
 
 # default target
 all:	$(dictname).dict $(dictname).index	
@@ -59,10 +60,12 @@ release-dict-bz2-c5-reverse: $(rdictname).c5.index
 
 
 dirs:
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then  mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then  mkdir $(FREEDICTDIR)/release/dict-bz2; fi
-	@if [ ! -d $(FREEDICTDIR)/release/src ]; then  mkdir $(FREEDICTDIR)/release/src; fi
-	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then  mkdir $(FREEDICTDIR)/release/vok; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then mkdir $(FREEDICTDIR)/release/dict-tgz; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then mkdir $(FREEDICTDIR)/release/dict-bz2; fi
+	@if [ ! -d $(FREEDICTDIR)/release/src ]; then mkdir $(FREEDICTDIR)/release/src; fi
+	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then mkdir $(FREEDICTDIR)/release/vok; fi
+	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then ln -s /usr/src/packages/RPMS/noarch \
+		$(FREEDICTDIR)/release/rpm; fi
 
 release-dict-tgz: $(dictname).tar.gz dirs
 	cp $(dictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
@@ -75,6 +78,13 @@ release-dict-tbz2: $(dictname).tar.bz2 dirs
 
 release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
 	cp $(rdictname).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/freedict-$(rdictname)-$(version).tar.bz2
+
+release-evolutionary: $(FREEDICTDIR)/release/evolutionary/$(dictname).tld
+	(cd $(FREEDICTDIR)/release/evolutionary; \
+	 rm -f $(dictname)-$(version)-evolutionary.zip; \
+	 zip $(dictname)-$(version)-evolutionary.zip $(dictname).tld)
+
+vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
 
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)
@@ -135,10 +145,25 @@ reverse: $(dictname).tei
 	mv $(dictname).dict $(rdictname).dict
 	dictzip -k $(rdictname).dict
 
-# targets for palm, zaurus, deb, gem, rpm
+release-rpm: freedict-$(dictname).spec dist
+	@if [! -x /usr/src/packages/SOURCES/freedict-$(dictname)-$(version).src.tar.bz2 ]; then \
+		ln -s $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
+			/usr/src/packages/SOURCES; fi
+	rpmbuild --target=noarch -ba freedict-$(dictname).spec
+
+# TODO: targets for zaurus, deb
 
 .PHONY: all version status sourceURL dirs install uninstall reverse\
 	release-dict-bz2-c5-reverse \
 	release-dict-tgz release-dict-tgz-reverse \
 	release-dict-tbz2 release-dict-tbz2-reverse \
+	vok release-evolutionary \
+	rpm rpm-reverse freedict-tools-rpm\
 	commit validation test test-reverse clean dist
+
+freedict-tools-rpm:
+	(cd $(FREEDICTDIR); \
+	 tar cjf /usr/src/packages/SOURCES/freedict-tools.tbz2 \
+		--exclude=CVS tools/*)
+	rpmbuild --target=noarch -ba freedict-tools.spec
+

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- this stylesheet converts a TEI dictionary file
      into the vok format suitable to be processed
-     by the MakeDict.exe tool available from
+     by the MakeDict tool (Win32 GUI) available from
      http://www.evolutionary.net/dict-info1.htm -->
 
 <xsl:stylesheet
@@ -42,16 +42,27 @@
          and take the contents of the tr elements and put them behind the '/' -->
 
     <xsl:for-each select="form/orth">
-      <xsl:value-of select="." />
+      <xsl:value-of select="translate(normalize-space(.), ';/', ',+')" />
       <xsl:if test="not(position()=last())">;</xsl:if>
     </xsl:for-each>
 
     <xsl:text>/</xsl:text>
 
-    <!-- what about semicolons inside headwords? -->
+    <!-- another implicit assumption of the MakeDict tool is the
+	 maximum number of translation equivalents. For the version
+	 that was tested the limit was 16 translation alternatives. -->
     <xsl:for-each select=".//tr">
-      <xsl:value-of select="translate(normalize-space(.), ';/', ',+')" />
-      <xsl:if test="not(position()=last())">;</xsl:if>
+      <xsl:choose>
+        <xsl:when test="position()&lt;16">
+          <xsl:value-of select="translate(normalize-space(.), ';/', ',+')" />
+	  <xsl:if test="not(position()=last() or position()&gt;15)">;</xsl:if>
+	</xsl:when>
+	<xsl:otherwise>
+	  <xsl:message>Warning! Too many translation alternatives for entry:
+	    <xsl:value-of select="form/orth"/>
+	  </xsl:message>
+	</xsl:otherwise>
+      </xsl:choose>
     </xsl:for-each>
     
     <xsl:text>&#x0A;</xsl:text>
