@@ -1,6 +1,10 @@
-<!--this file  partially auto generated on   Mon Jun 21 12:22:26 2004   by dict2tei.py-0.1.1 --> 
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 
-<?xml version="1.0" encoding="utf-8" lang ="en" standalone="no" ?>
+<!-- I guess this doc is actually standalone="yes" - micha137 -->
+
+<!-- this file was partially generated
+  on Mon Jun 21 12:22:26 2004
+  by dict2tei.py-0.1.1 --> 
 
 <!-- Swahili-English xFried Dictionary
 	
@@ -21,55 +25,81 @@
 <!DOCTYPE  TEI.2  PUBLIC "-//TEI Consortium//DTD TEI P4//EN"  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [ 
 <!ENTITY % TEI.XML          "INCLUDE" >
 <!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking	    "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+<!-- The in teip4doc/SA.html#SAHTML recommended way of linking
+	without "url" attribute:
+
+		<!ENTITY HOME SYSTEM
+		"http://www.mimuw.edu.pl/~jsbien/BW/Swa-Eng-xFried/"
+		NDATA HTML >
+
+	does not work for me. sabcmd complains:
+
+	micha@muktaka:~/dict/CVS/swa-eng> make validate
+	(export SP_ENCODING=XML;export SP_CHARSET_FIXED=yes;\
+	export SGML_CATALOG_FILES="/usr/share/sgml/opensp/xml.soc:/usr/share/doc/packages/sp/html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.xmlcharent";\
+	nsgmls -E 10 -s swa-eng.tei)
+	nsgmls:swa-eng.tei:29:0:E: notation "HTML" for entity "HOME" undefined
+-->
+
 ]>
 
 <TEI.2>
 
-<teiHeader>
+  <teiHeader>
     <fileDesc>
-         <titleStmt> 
-		<title>Swahili-English xFried/FreeDict Dictionary</title>
-	    	<respStmt> 
-		  <resp>compiled by</resp> <name>Beata Wojtowicz, wierzchob@wp.pl</name> 
-          	</respStmt> 
-        </titleStmt>
+      <titleStmt> 
+	<title>Swahili-English xFried/FreeDict Dictionary</title>
+	<respStmt> 
+	  <resp>compiled by</resp> <name>Beata Wojtowicz, wierzchob@wp.pl</name> 
+	</respStmt> 
+      </titleStmt>
 	      
-        <editionStmt>
-          <edition>0.0.2</edition>
-        </editionStmt>
+      <editionStmt>
+	<edition>0.0.2</edition>
+      </editionStmt>
 
-	<publicationStmt>
-                <publisher>FreeDict</publisher>
-		<availability> 
-		 <p>Available under the terms of the GNU General Public
-		  Licence.</p> 
-		</availability> 
-		<date>2004</date>
-		<pubPlace>http://freedict.org/</pubPlace>
-	</publicationStmt>
+      <extent>about 1500 headwords</extent>
 
-        <sourceDesc> 
-	 <p>This file was compiled from other
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability> 
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p> 
+	</availability> 
+	<date>2004</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+	<note type="status">unknown</note><!-- descriptive adjective, eg. "stable" -->
+      </notesStmt>  
+
+      <sourceDesc>
+	<p>Home: <xptr url="http://www.mimuw.edu.pl/~jsbien/BW/Swa-Eng-xFried/"/></p>
+	<p>This file was compiled from other
 	  electronic documents. It is based on Swahili-Kiswahili to English
-    	  Translation Program by Morris Fried available from
+	  Translation Program by Morris Fried available from
     	  http://www.dict.org/links.html, which has been supplemented by
     	  entries from Freedict Swahili-English Dictionary created by
     	  Horst Eyermann (http://www.freedict.de) from the
     	  Swahili-Esperanto and Esperanto-English Ergane
-    	  dictionaries, available from http://www.travlang.com.</p>
-	</sourceDesc>
+	  dictionaries, available from http://www.travlang.com.</p>
+      </sourceDesc>
     </fileDesc>
 
     <encodingDesc>     
       <projectDesc>
-       <p>This dictionary comes to you trough nice people making it
-         available for free and for good. It is part of the FreeDict project,
-	 http://www.freedict.org / http://freedict.de. This
-         project aims to make available many translating dictionaries
-         for free. Your contributions are welcome!</p>
+	<p>This dictionary comes to you trough nice people making it
+	  available for free and for good. It is part of the FreeDict project,
+	  http://www.freedict.org / http://freedict.de. This
+	  project aims to make available many translating dictionaries
+	  for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
-
+    
 </teiHeader>
 
 
