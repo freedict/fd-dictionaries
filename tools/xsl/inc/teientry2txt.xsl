@@ -67,11 +67,16 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="trans"><xsl:text>&#x0A;  </xsl:text><xsl:apply-templates/>
+  <xsl:template match="trans">
+    <xsl:text>&#x0A;  </xsl:text>
+    <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="def">
-    <xsl:if test="(node())"><xsl:text>&#x0A;  </xsl:text><xsl:apply-templates/></xsl:if>
+    <xsl:if test="(node())">
+      <xsl:text>&#x0A;  </xsl:text>
+      <xsl:apply-templates/>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="tr">
@@ -79,15 +84,22 @@
     <xsl:if test="not(position()=last())">; </xsl:if>
   </xsl:template>
 
-  <xsl:template match="gen"><xsl:text>(</xsl:text>
+  <xsl:template match="gen">
+    <xsl:text>(</xsl:text>
     <xsl:apply-templates/>
     <xsl:text> )</xsl:text>
   </xsl:template>
 
-  <xsl:template match="note[@resp]">
-    <xsl:text>&#x0A;         Entry edited by: </xsl:text>
-    <xsl:value-of select="@resp" />
-    <xsl:text>&#x0A;</xsl:text>
+  <xsl:template match="entry//note">
+    <xsl:if test="text()">
+      <xsl:text>&#x0A;         Note: </xsl:text>
+      <xsl:value-of select="text()" />
+    </xsl:if>
+    <xsl:if test="@resp">
+      <xsl:text>&#x0A;         Entry edited by: </xsl:text>
+      <xsl:value-of select="@resp" />
+      <xsl:text>&#x0A;</xsl:text>
+    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

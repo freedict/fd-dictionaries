@@ -37,7 +37,7 @@
   <xsl:apply-templates select="form" />
   <xsl:apply-templates select="gramGrp" />
   <xsl:text>&#x0A;&#x0A;</xsl:text>
-  <xsl:apply-templates select="sense|trans|def" />
+  <xsl:apply-templates select="sense|trans|def|note" />
   <xsl:text>&#x0A;</xsl:text>
 </xsl:template>
 
@@ -97,7 +97,7 @@
   <xsl:text>&#x0A;</xsl:text>
 </xsl:template>
 
-<xsl:template match="usg">
+<xsl:template match="usg[not(@type)]">
   <xsl:text>     &quot;</xsl:text>
   <xsl:apply-templates />
   <xsl:text>&quot;&#x0A;</xsl:text>
