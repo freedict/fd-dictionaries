@@ -126,7 +126,7 @@ sub apply_filter_cmd {
     }
     elsif ($sab) {
 
-        print STDERR "+";
+#        print STDERR "+";
 #	print STDERR "calling addArg...";
 
 #	my $data = XML::Sablotron::DOM::parse($sit, 'entry.xml');

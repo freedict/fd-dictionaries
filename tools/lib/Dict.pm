@@ -1,3 +1,6 @@
+# V1.4 4/2004
+#   * trim leading spaces after punctuation removal from headwords
+#   * make warnings of non-acsii characters in non utf8 index work
 # V1.3 2/2004
 #   * use LC_ALL instead of LANG environment variable
 #     for setting locale for 'sort'
@@ -135,7 +138,7 @@ sub set_headword {
     # before having one??
 
     # For the first time set_headword is called, NOTHING is written to index!
-    # At second call, first entry's headword is written
+    # At second call, first entry's headword is written.
 
     # this also means that for the very last entry to appear in the index,
     # after outputting the last entry we once again have to call set_headword!
@@ -146,27 +149,27 @@ sub set_headword {
 
 
     # Output status
-    if (($headwords % 100) == 0) { warn $headwords." Headwords\n" }
+    if (($headwords % 100) == 0) { printf STDERR "%8d Headwords.\r", $headwords }
 
     # that hwords is an array means multiple ways to write one headword
     # can reference the same definition! good.
     if ( @hwords != 0) {
-	foreach my $hw  (@hwords) {
+	foreach (@hwords) {
 	    # warn about non-ascii chars if not in utf8 mode
 	    if(!$utf8mode && /\P{IsASCII}/)
 	    {
-		warn "Non ASCII char in headword: \"$hw\"\n";
+		warn "Non ASCII char in headword: \"$_\"\n";
 		# btw, dictfmt quits here!
 	    }
 	  
 	    # make perl believe its utf8
 	    # see 'man perluniintro' 
-	    if($utf8mode) {$hw = decode_utf8($hw);}
+	    if($utf8mode) {$_ = decode_utf8($_);}
 
 	    # generate two headwords for "00-database-*":
 	    # first with, second without "-" characters
-	    if($hw =~ /^00-database-/) {
-	      print INDEX "$hw\t" . b64_encode($start_article);
+	    if(/^00-database-/) {
+	      print INDEX "$_\t" . b64_encode($start_article);
 	      print INDEX "\t" . b64_encode($end_article-$start_article) . "\n";	    }
 
 	    # do headword mangling in the same way (hopefully) like dictd
@@ -174,14 +177,21 @@ sub set_headword {
 	    # if not in allchars mode (we can't be since we don't support it),
 	    # - any whitespace characters are translated to simple space
 	    # - only alphanumeric characters are considered
-	    $hw =~ s/\s/ /g;
- 	    $hw =~ s/[^\s\p{IsAlnum}]//g;
+	    s/\s/ /g;
+ 	    s/[^\s\p{IsAlnum}]//g;
 
 	    # thereafter characters are translated to lower case (required
 	    # even in allchars mode!)
-	    $hw = lc $hw;
+	    $_ = lc $_;
 
-	    print INDEX "$hw\t" . b64_encode($start_article);
+            if(/^\s+(.+)/)
+	    {
+	      warn "Warning: Trimmed leading space(s) from headword '$_'\n";
+	      $_ = $1;
+	      warn "Now it is '$_'\n";
+	    }
+
+	    print INDEX "$_\t" . b64_encode($start_article);
 	    print INDEX "\t" . b64_encode($end_article-$start_article) . "\n";	    
 	}
     }
