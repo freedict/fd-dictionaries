@@ -7,6 +7,9 @@ ADDFREEDICT = $(TOOLS)add-freedict.sh
 
 VPATH = ../tools:../dicts:../dicts/bin
 
+include Makefile.language
+
+
 .tei.dict:
 	$(TEI2DICT) $*.tei
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
@@ -21,7 +24,7 @@ VPATH = ../tools:../dicts:../dicts/bin
 	(cd ../dicts/ ; tar czvf bin/$*.tar.gz $*.dict.dz $*.index)
 
 all:	\
-	dan-eng.tar.gz
+	$(LANGUAGE).tar.gz
 
 
 install: all\
@@ -30,3 +33,6 @@ install: all\
 
 commit: 
 	cvs -z3 commit
+
+test:
+	nsgmls -s $(LANGUAGE).tei
