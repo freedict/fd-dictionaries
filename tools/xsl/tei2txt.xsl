@@ -3,6 +3,7 @@
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<xsl:include href="inc/teiheader2txt.xsl"/> 
 
 <xsl:output method="text"/>
 
@@ -87,7 +88,7 @@
 
 
 <!-- For transforming the teiHeader -->
-
+<!--
 <xsl:template match="p"><xsl:text>  </xsl:text><xsl:apply-templates/><xsl:text>
 
 </xsl:text></xsl:template>
@@ -144,8 +145,8 @@ Series: <xsl:value-of select="./title"/><xsl:text>
 
 </xsl:text></xsl:template>
 
-<xsl:template match="note"> * <xsl:value-of select="."/><!-- todo: indentation
-  of wrapped lines --></xsl:template>
+<xsl:template match="note"> * <xsl:value-of select="."/>--><!-- todo: indentation
+  of wrapped lines </xsl:template>
 
 
 <xsl:template match="sourceDesc">Source(s):
@@ -167,8 +168,9 @@ Series: <xsl:value-of select="./title"/><xsl:text>
 <xsl:template match="change"> * <xsl:value-of select="./date"/><xsl:text> </xsl:text>
     <xsl:value-of select="./respStmt/name"/>:
 
-             <xsl:value-of select="./item"/><!-- todo: indentation --><xsl:text>
+             <xsl:value-of select="./item"/><!- todo: indentation -<xsl:text>
 	
 </xsl:text></xsl:template>
+-->
 
 </xsl:stylesheet>

@@ -1,0 +1,93 @@
+toolsdir = $(FREEDICTDIR)/tools
+xsldir = $(toolsdir)/xsl
+include $(toolsdir)/Makefile.config
+tei2dict = $(toolsdir)/xmltei2xmldict.pl
+dictname = $(shell basename $(shell pwd))
+version = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+
+rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
+
+%.dict %.index: %.tei
+	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
+	$(tei2dict) -f $< $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
+
+%.dict.dz: %.dict
+	dictzip -k $*.dict
+
+%.tar.gz: %.dict.dz %.index
+	tar czf $*.tar.gz $*.dict.dz $*.index
+
+%.tar.bz2: %.dict.dz %.index
+	tar cjf $*.tar.bz2 $*.dict.dz $*.index
+
+%.c5: %.tei
+	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
+
+%.c5.dict %.c5.index: %.c5
+	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
+
+.PHONY: all dirs tgzrelease bz2release install uninstall commit validation test clean dist
+
+all:	$(dictname).dict $(dictname).index	
+
+dirs:
+	if [ ! -d $(FREEDICTDIR)/tgz ]; then  mkdir $(FREEDICTDIR)/tgz; fi
+	if [ ! -d $(FREEDICTDIR)/bz2 ]; then  mkdir $(FREEDICTDIR)/bz2; fi
+
+tgzrelease: $(dictname).tar.gz dirs
+	cp $(dictname).tar.gz $(FREEDICTDIR)/tgz/freedict-$(dictname)-$(version).tar.gz
+
+rtgzrelease: $(rdictname).tar.gz dirs
+	cp $(rdictname).tar.gz $(FREEDICTDIR)/tgz/freedict-$(rdictname)-$(version).tar.gz
+
+bz2release: $(dictname).tar.bz2 dirs
+	cp $(dictname).tar.bz2 $(FREEDICTDIR)/bz2/freedict-$(dictname)-$(version).tar.bz2
+
+rbz2release: $(rdictname).tar.bz2 dirs
+	cp $(rdictname).tar.bz2 $(FREEDICTDIR)/bz2/freedict-$(rdictname)-$(version).tar.bz2
+
+install: $(dictname).dict.dz $(dictname).index
+	install -d $(DESTDIR)
+	install -m 644 $^ $(DESTDIR)
+	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+
+uninstall: 
+	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
+	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+
+commit: 
+	cvs -z3 commit
+
+validation:
+	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
+	export SP_ENCODING=XML; \
+	export SP_CHARSET_FIXED=YES; \
+	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
+	nsgmls -s -E 10 $(dictname).tei
+
+test:
+	$(toolsdir)/testing/test-database.pl -f $(dictname) \
+ -l en_US.utf-8 |tee testresult-$(version).log
+
+rtest:                                                                                             
+	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
+ -l en_US.utf-8 |tee testresult-$(version)-reverse.log
+  
+clean:
+	rm -f $(dictname).index $(dictname).dict $(dictname).c5 $(dictname).dict.dz testresult-*.log
+	rm -f $(FREEDICTDIR)/bz2/$(dictname).tar.bz2
+	rm -f $(FREEDICTDIR)/tgz/$(dictname).tar.gz
+
+dist:
+	(cd ..; tar -cvjf $(dictname)/freedict-$(dictname)-$(version).src.tar.bz2 \
+--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* $(addprefix $(dictname)/, $(DISTFILES)))
+
+reverse: $(dictname).tei
+	@echo "Will generate $(rdictname):"
+	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
+	$(tei2dict) -f $< -r -u -t $(xsldir)/tei2txt.xsl
+	mv $(dictname).index $(rdictname).index
+	mv $(dictname).dict $(rdictname).dict
+	dictzip -k $(rdictname).dict
+
+# targets for palm, zaurus, deb, gem, rpm

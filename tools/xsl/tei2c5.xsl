@@ -2,6 +2,9 @@
 
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+  <xsl:include href="inc/teiheader2txt.xsl"/>
+  
   <xsl:output  method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
 
   <xsl:strip-space elements="form trans def entry"/>
@@ -72,6 +75,7 @@
 
 
   <xsl:template match="teiHeader">
+    <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="orth">
