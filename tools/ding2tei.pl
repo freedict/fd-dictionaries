@@ -10,6 +10,9 @@
 #
 
 $rev = "0";
+$sep = ",";
+$delm = ":";
+
 
 # first print the header
 print<<EOF;
@@ -37,8 +40,14 @@ EOF
 
 # now we can read the database from stdin
 
+
+
 while (<>) {
-  ($ger, $eng) = split "::", $_ ;
+  ($ger, $eng) = split "$delm$sep$delm", $_ ;
+  $ger =~ /^$delm(.+)$/;  # first field is all characters until end without leading delm
+  $ger = $1;
+  $eng =~ /^(.+)$delm/;  # first field is all characters until end without leading delm
+  $eng = $1;
   if ($rev == "1") {
     $temp = $eng;
     $eng = $ger;
@@ -72,7 +81,9 @@ print<<EOF;
         <form>
           <orth>$ge</orth>
         </form>$po
-        <trans>$eng</trans>
+        <trans>
+          <tr>$eng</tr>
+        </trans>
       </entry>
 EOF
     }
