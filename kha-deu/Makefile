@@ -2,7 +2,7 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .vok
 
 TOOLS = ../tools/
-TEI2DICT = $(TOOLS)tei2dict.pl
+TEI2DICT = $(TOOLS)tei2dict_xml.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
 TEI2WEBSTER = $(TOOLS)tei2webster.pl
 WEBSTERDIR = ../../1/
@@ -16,12 +16,12 @@ include Makefile.language
 
 
 .tei.dict:
-	# $(TEI2DICT) $*.tei
-	$(TEI2WEBSTER) $*.tei
-	$(WEBSTER) < $*.web
+	$(TEI2DICT) -f $*.tei -c -h
+	#$(TEI2WEBSTER) $*.tei
+	#$(WEBSTER) < $*.web
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv web1913.dict ../dicts/$*.dict
-	mv web1913.index ../dicts/$*.index
+	mv $*.dict ../dicts
+	mv $*.index ../dicts
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
