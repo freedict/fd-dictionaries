@@ -614,6 +614,9 @@ cut from above here.
 	Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
 	you would say
         <command>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</command>
+        Next, <command>dictfmt</command> has to be called to create the final
+        dictd database files:
+        <command>dictfmt -t --headword-separator %%% la1-la2 &lt;la1-la2.c5</command>
       </para>
 
       <para>Second, using <command>xmltei2xmldict.pl</command>. This is the
