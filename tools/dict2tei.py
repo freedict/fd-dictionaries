@@ -10,7 +10,8 @@
 ##	d2X_write_tei_header() (not here)
 ## TODO add detect for .dz files and uncompress
 ## (if tools on board if not .. explore the gzip modules :)
-## dz is a modded version of gzip so _might be easily doable ????
+## dz is a modded version of gzip so _might_ be  doable ?
+
 
 import sys
 import time
