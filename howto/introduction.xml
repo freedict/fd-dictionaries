@@ -2,7 +2,7 @@
                "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
  ]>-->
 <!-- remove comments around prolog  for easy editing -->
-<!-- setting sgml-parent-document in emacs would be better... -->
+<!-- setting sgml-parent-document in emacs would be better - see end of file -->
 <preface id="preface">
 
   <title>Introduction</title>
@@ -38,16 +38,10 @@
     forward. <indexterm><primary>free operating systems</primary>
     <secondary>install</secondary></indexterm></para>
 
-  <para>TODO list basic steps and link (leave till release)</para>
-
-  <section>
-    <title>Quick Steps</title>
-    <para></para>
-    <para><indexterm>
-      <primary>Quick Steps</primary>
-      <secondary>Basic Step through</secondary>
-      </indexterm>
-    </para>
-  </section>
-
 </preface>
+
+<!-- Keep this comment at the end of the file. It is for emacs.
+ Local Variables:
+ sgml-parent-document: ("freedicthowto.xml" "book" "preface")
+ End:
+ -->

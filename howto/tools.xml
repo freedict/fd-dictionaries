@@ -32,14 +32,14 @@
 
  ]>-->
 
-<article id="tools">
+<part id="tools">
   <title>Developer's toolkit</title>
-  <abstract>
+  <partintro>
     <para>Here we outline the tools needed or useful for building, editing
 	and maintaining translating dictionaries.</para>
-  </abstract>
+  </partintro>
       
-  <section>
+  <chapter>
     <title>Editing the TEI XML files directly</title>
     <para>The place to start is with a good general purpose editor. The
 	features required for our purposes are Unicode support,
@@ -59,7 +59,9 @@
 	than Vim (in this case) as it has native UTF-8 support and should
 	support multiple character sets (and "fonts") out of the box (though
 	in honesty I did not explore Vim's plug-in environment to any great
-	extent) [Peter: vim supports multibyte/unidode as well!!!]. Vim is still useful here and supports colourisation of tags
+	extent) [Peter: vim supports multibyte/unidode as well!!! see vim --version
+        and look for +multi_byte]. Vim is
+        still useful here and supports colourisation of tags
 	etc. but also lots of other coding languages, and has the important
 	advantage of using a relatively small memory footprint... especially
 	compared to Xemacs in full flight on a GUI.</para>
@@ -430,14 +432,15 @@ xcalendar.*editorTitle*Background: DarkSlateGray1
 		</computeroutput>
 	</literallayout>
     </blockquote>
-<indexterm>
+  <indexterm>
 	  <primary>Xemacs</primary>
 	  <secondary>emacs</secondary>
 	  <tertiary>Editors</tertiary>
 	</indexterm>
 cut from above here.
 ###############################################################################
-</para></section>
+</para>
+</section>
 
      
 
@@ -522,7 +525,10 @@ cut from above here.
  '(paren-face-no-match ((((class color)) (:foreground "blue4" :background "coral" :size "16" :family "helvetica")))))
 </computeroutput>
 
-	</literallayout></blockquote></para></section>
+	</literallayout>
+      </blockquote>
+    </para>
+
 <para>Spend Some Time Doing the Tutorials, it is time very well spent. In the meantime: Right clicking on things usually gives you some useful options. A Buffer is a file living in memory only. </para>
 <para>Now I have either saved you a LOT of time or confused you hopelessly , in the latter case I am very sorry. Restore the above files form your saved copies of the originals .. you did that right :) and start xemacs again.</para>
 <para> Explore the GUI and buffer interfaces to the configuration settings, they really are quite extensive. (you can enter your latitude and longitude and have your sunrise sunset and day lengths for example, you can have your self psychoanalysed and play games write mail etc etc... Emacsen are designed to run on a X powered Graphical Interface or from a real consol (or even a virtual terminal, they take full advantage of Unix protocols and services.. you may never need another application :) They are also huge and daunting Interfaces , that can use lots of system resources if poorly configured. How far you take it is of course up to you.</para>
@@ -531,23 +537,37 @@ cut from above here.
 
 </section>
    <!-- these should all be standalone files ?? perhaps at article level
-	Micha: we can move them when they have grown -->
-
-    <section>
+	Micha: the following we can move them when they have grown.
+          prehaps the example files from the previous section could go to their
+          own files -->
+    </chapter>
+    <chapter>
       <title>Validating TEI format files</title>
-      <para>Requirements: TEI DTD, validation XML parser</para>
+      <para>Validating TEI files requires an installed version of the TEI DTD
+        and a validating XML parser. It is assumed you have <application>sp</application>
+        or <application>opensp</application> installed. These make the commands
+        <command>nsgmls</command> respective <command>onsgmls</command> available.</para>
 
-      <para>It should be available as a target int the Makefile
-test:                                                                                                      
-        test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)                             
-        export SP_ENCODING=XML ;\                                                                          
-        export SP_CHARSET_FIXED=YES ;\                                                                     
-        export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)" ;\                                               
+      <para>Validation should be available as a target in the Makefile of each
+        the dictionary modules. Try <command>make test</command> for the
+        dictionary module you want to validate (cd to it first).</para>
+
+      <para>The makefile target itself is simple. It sets some environment variables,
+        so that nsgmls can find the DTDs, tells it to handle XML data and then
+        calls it.</para>
+
+      <para>This is what is done:
+        <programlisting>
+        test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
+        export SP_ENCODING=XML
+        export SP_CHARSET_FIXED=YES
+        export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)"
         nsgmls -s -E 10 $(LANGUAGE).tei
+        </programlisting>
         </para>                                  
-    </section>
+    </chapter>
 
-    <section>
+    <chapter id="x2tei">
       <title>Converting into TEI format</title>
       <para>Some converters for this task are available. They can be found in the
 	<ulink url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
@@ -557,25 +577,37 @@ test:
 	 lead to some kind of standardization of data with the TEI format.</para>
 
       <para>
-	 ding2tei.pl - conversion of the
-	   <ulink url="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
-	   (English/German) into TEI format
-	 hd2tei.pl - conversion of the "hd" format (which dictfmt also understands) into TEI format
-	 tab2tei.pl - conversion of tab delimited plain text file into TEI format
-	 dict2tei.py -  conversion of an already formatted dictd database into TEI format
-	</para>
-    </section>
+        <itemizedlist>
+          <listitem>
+            <para><command>ding2tei.pl</command> - conversion of the
+	     <ulink url="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
+	     (English/German) into TEI format</para>
+          </listitem>
+          <listitem>
+	    <para><command>hd2tei.pl</command> - conversion of the "hd" format (which
+            <application>dictfmt</application> also understands) into TEI format</para>
+          </listitem>
+          <listitem>
+            <para><command>tab2tei.pl</command> - conversion of tab delimited plain text file into TEI format</para>
+          </listitem>
+          <listitem>
+           <para><command>dict2tei.py</command> -  conversion of an already formatted dictd
+             database into TEI format</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </chapter>
 
-    <section id="tei2dict">
+    <chapter id="tei2dict">
       <title>Converting TEI format into dictd database format</title>
-      <para>For this task, three ways are viable.</para>
+      <para>For this task, two ways are viable.</para>
 
       <para>First, using XSLT stylesheets and <command>dictfmt -c5</command>.
 	The stylesheet needs to be applied to the TEI file. Any XSLT processor
 	should do the work. Using
         <ulink url="http://www.gingerall.com/charlie/ga/xml/p_sab.xml">Sablotron</ulink>,
 	the command to give would
-	be <command>sabcmd ...</command>
+	be <command>sabcmd xsl/tei2c5.xsl la1-la2.tei >la1-la2.c</command>
 	Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
 	you would say
         <command>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</command>
@@ -584,22 +616,24 @@ test:
       <para>Second, using <command>xmltei2xmldict.pl</command>. This is the
 	conversion utility developed by the FreeDict project itself. Is converts
 	the TEI file into dictd database format without producing intermediate
-	files. Also it supports multiple headwords for a single entry [TODO: explain].
+	files. Also it supports multiple headwords for a single entry, ie. multiple
+        &lt;orth&gt;-Elements inside a single entry, eg. for alternate spellings.
+        Another feature is generation of an inverse index. With this, the direction
+        of translation of the dictionary can be reversed, ie. an English-Arabic dicionary
+        would become queryable Arabic-English.
 	Its disadvantage is, that it depends on the FreeDict project for the conversion
 	to be successful, because the dictd database format is still subject to changes
 	and cannot be as well understood as <command>dictfmt</command> does, which comes
-	from the dictd project itself. Please <ulink
-	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup">read</ulink>
-	the <filename>README</filename>.</para>
+	from the dictd project itself. For the software dependencies, please read the <ulink
+	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup">
+        <filename>README</filename></ulink>.</para>
 
-      <para>xmltei2xmldict.pl -f la1-la2.tei -t xsl/tei2txt.xsl</para>
+      <para>An example command line would be:
+        <command>xmltei2xmldict.pl -f la1-la2.tei -t xsl/tei2txt.xsl</command></para>
   
-      <para>Third, conversion might be done using sed and dictfmt.
-	<command>sed -f tei2j.sed la1-la2.tei la1-la2.j</command>
-      </para>
-    </section>
+      </chapter>
 
-    <section id="stylesheets">
+    <chapter id="stylesheets">
       <title>Style Sheets</title>
       <para>For the conversion of XML data, XSL/XSLT was devised.
 	In FreeDict, style sheets written using the XSLT language are employed
@@ -621,9 +655,13 @@ test:
 	<ulink url="http://www.w3.org/Style/XSL/">XSLT standard</ulink> comes from.
         For learning though, some tutorial might be more useful :)</para>
 
-      <para> TODO include commented tei2txt.xsl
-      </para>
-    </section>
+      <para>TODO include commented tei2txt.xsl</para>
+    </chapter>
 	
-  </article>
+</part>
 
+<!-- Keep this comment at the end of the file. It is for emacs.
+ Local Variables:
+ sgml-parent-document: ("freedicthowto.xml" "book" "part")
+ End:
+ -->
