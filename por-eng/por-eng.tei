@@ -1,20 +1,22 @@
-<!DOCTYPE TEI.2       PUBLIC "-//TEI P3//DTD Main Document Type//EN"  [
-   <!ENTITY % TEI.dictionaries "INCLUDE" >
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" [
+   <!ENTITY % TEI.dictionaries 'INCLUDE'>
+   <!ENTITY % TEI.XML 'INCLUDE'>
 ]>
 
-<tei.2>
+<TEI.2>
   <teiHeader>
-    <filedesc>
-      <titlestmt>
-        <title>           </title>
-      </titlestmt>
-      <publicationstmt>
+    <fileDesc>
+      <titleStmt>
+        <title>Portuguese-English Freedict Dictionary</title>
+      </titleStmt>
+      <publicationStmt>
         <authority>Freedict.de</authority>
-      </publicationstmt>
-      <sourcedesc>
+      </publicationStmt>
+      <sourceDesc>
         <p>http://www.freedict.de</p>
-      </sourcedesc>
-    </filedesc>
+      </sourceDesc>
+    </fileDesc>
   </teiHeader>
   <text>
     <body>
@@ -102956,4 +102958,4 @@
       </entry>
     </body>
   </text>
-</tei.2>
+</TEI.2>
