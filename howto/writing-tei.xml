@@ -280,9 +280,124 @@
   <section id="headerTEI">
     <title>The TEI Header</title>
     <abstract>
-      <para>In this section we step through the structure and intent behind the TEI header section.   </para>
+      <para>In this section we step through the structure and intent behind the TEI header section.</para>
     </abstract>
-    <para>place holder</para>
+    <para>Headers usually give meta information, ie. information about something. The TEI header gives
+      general information about the following text like title, authors, publisher, revision history.
+      It is defined in <ulink url="http://www.tei-c.org/P4X/HD.html">The TEI Guidelines, Chater 5</ulink>.
+    </para>
+
+    <para>At present the only tool that makes use of the header in TEI dictionary files is the converter
+      <link linkend="tei2dict"><application>xmltei2xmldict.pl</application></link> by transforming it into the 00-database-info entry
+      in the dictd database files, if a style sheet is used that makes use of the header. The contents of the title
+      element go into the 00-database-short entry; the content of the sourceDesc element go into the
+      00-database-url entry. That is all.</para>
+
+    <para>In the following you find a header taken from the <filename>kha-deu.tei</filename> file. You can copy
+      it and replace element contents as they fit your database.</para>
+
+    <para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
+    <blockquote><literallayout><computeroutput>
+  &lt;teiHeader&gt;                                                                                       
+    &lt;fileDesc&gt;                                                                                      
+      &lt;titleStmt&gt;                                                                                   
+        &lt;title&gt;Khasi-German Freedict Dictionary&lt;/title&gt;
+        &lt;respStmt&gt;                                                                                  
+          &lt;resp&gt;Khasi Databases Maintainer&lt;/resp&gt;
+          &lt;name&gt;Michael Bunk, micha@luetzschena.de&lt;/name&gt;                                           
+        &lt;/respStmt&gt;                                                 
+      &lt;/titleStmt&gt;                                                                                  
+      &lt;editionStmt&gt;                                                                                 
+        &lt;edition&gt;2nd. Online Draft&lt;/edition&gt;                                                        
+      &lt;/editionStmt&gt;                                                                                
+      &lt;publicationStmt&gt;                                                                             
+        &lt;publisher&gt;freedict.de&lt;/publisher&gt;                                                          
+        &lt;date&gt;2002-2003&lt;/date&gt;                                                                      
+        &lt;availability&gt;                                                                              
+          &lt;p&gt;GNU GENERAL PUBLIC LICENSE&lt;/p&gt;                                                         
+        &lt;/availability&gt;                                                                             
+      &lt;/publicationStmt&gt;                                                                            
+      &lt;seriesStmt&gt;                                                                                  
+        &lt;title&gt;free dictionaries&lt;/title&gt;                                                            
+      &lt;/seriesStmt&gt;                                                                                 
+      &lt;notesStmt&gt;                                                                                   
+        &lt;note&gt;Thanks go to the supporters of this project:                                          
+        Karl-Heinz Gr&uuml;&szlig;ner, University of T&uuml;bingen; Rebekah Tham,                                
+        CIEFL, Shillong; Brother Sngi, Sacred Heart College,                                        
+        Shillong; University of Leipzig, Depts of Indology and                                      
+        Computer Science; Rik Faith for dictd server &amp;amp;                                          
+        protocol; TEI for their wonderful guidelines; Horst                                         
+        Eyermann for his generous freedict project; the open source                                 
+        community: thrust for trust &amp;amp; development&lt;/note&gt;                                        
+      &lt;/notesStmt&gt;                                                                                  
+      &lt;sourceDesc&gt;                             
+        &lt;p&gt;http://www.freedict.de/&lt;/p&gt;                                                              
+      &lt;/sourceDesc&gt;                                                                                 
+    &lt;/fileDesc&gt;                                                                                     
+    &lt;revisionDesc&gt;                                                                                  
+      &lt;change&gt;                                                                                      
+        &lt;date&gt;01. May 2003&lt;/date&gt;                                                                   
+        &lt;respStmt&gt;                                                                                  
+          &lt;name&gt;Michael Bunk&lt;/name&gt;                                                                 
+        &lt;/respStmt&gt;                                                                                 
+        &lt;item&gt;Updated some things in XML header information&lt;/item&gt;                                  
+      &lt;/change&gt;                                                                                     
+      &lt;change&gt;                                                                                      
+        &lt;date&gt;18. February 2002&lt;/date&gt;                                                              
+        &lt;respStmt&gt;                                                                                  
+          &lt;name&gt;Michael Bunk&lt;/name&gt;                                                                 
+        &lt;/respStmt&gt;                                                                                 
+        &lt;item&gt;First Draft&lt;/item&gt;                                                                    
+      &lt;/change&gt;                                                                                     
+      &lt;change&gt;                                                                                      
+        &lt;date&gt;before February 2002&lt;/date&gt;                                                           
+        &lt;respStmt&gt;                                                                                  
+          &lt;name&gt;Karl-Heinz Gr&uuml;&szlig;ner&lt;/name&gt;                                                         
+        &lt;/respStmt&gt;                                  
+        &lt;item&gt;compilation of wordlists&lt;/item&gt;                                                       
+      &lt;/change&gt;                                                                                     
+    &lt;/revisionDesc&gt;                                                                                 
+  &lt;/teiHeader&gt;
+    </computeroutput></literallayout></blockquote></para>
+
+    <para>That header is transformed to this 00-database-info text:</para>
+
+    <para><blockquote><literallayout><computeroutput>
+Khasi-German Freedict Dictionary                                                                    
+                                                                                                    
+Khasi Databases Maintainer: Michael Bunk, micha@luetzschena.de                                      
+                                                                                                    
+Edition: 2nd. Online Draft                                                                          
+                                                                                                    
+Published by: freedict.de, 2002-2003                                                                
+                                                                                                    
+Series: free dictionaries                                                                           
+                                                                                                    
+Notes:                                                                                              
+                                                                                                    
+* Thanks go to the supporters of this project: Karl-Heinz Grüßner,
+University of T&uuml;bingen; Rebekah Tham, CIEFL, Shillong; Brother Sngi,                               
+Sacred Heart College, Shillong; University of Leipzig, Depts of                                     
+Indology and Computer Science; Rik Faith for dictd server &amp; protocol;                               
+TEI for their wonderful guidelines; Horst Eyermann for his generous                                 
+freedict project; the open source community: thrust for trust &amp;                                     
+development                                                                                         
+                                                                                                    
+Source: http://www.freedict.de/                                                                     
+                                                                                                    
+Changelog:                                                                                          
+                                                                                                    
+* Mon Feb 23 23:03:30 2004 tei2dictxml_xml.pl: converted TEI database                               
+into .dict format                                                                                   
+                                                                                                    
+* 01. May 2003 Michael Bunk: Updated some things in XML header                                      
+information                                                                                         
+                                                                                                    
+* 18. February 2002 Michael Bunk: First Draft                                                       
+                                                                                                    
+* before February 2002 Karl-Heinz Grüßner: compilation of wordlists
+    </computeroutput></literallayout></blockquote></para>
+
   </section>
 
 <!-- move this -->
@@ -292,3 +407,8 @@
   </section>
 </chapter>
  
+<!-- Keep this comment at the end of the file. It is for emacs.
+ Local Variables:
+ sgml-parent-document: ("freedicthowto.xml" "book" "chapter")
+ End:
+ -->
