@@ -62,12 +62,15 @@ sub start_element {
   dict::set_headword() if ( $part eq "ORTH");
 
   dict::write_direct("[") if ($part eq "PRON");
-  dict::write_direct("<") if ($part eq "GRAM");
+  dict::write_direct(" <") if ($part eq "GRAMGRP");
 
   dict::write_direct("\n  ") if ($part eq "TRANS");
+  dict::write_direct(", ") if (($part eq "TR") && ($aword == 1));
 
   dict::add_text(", ") 
       if (($part eq "POS") || ($part eq "NUM") || ($part eq "GEN"));
+
+  dict::add_text(" (") if ($part eq "USG");
 
     %elements = ();
 }
@@ -91,11 +94,14 @@ sub end_element {
 
   dict::write_direct("]") if ($part eq "PRON");
 
-  dict::write_direct(">") if ($part eq "GRAM");
+  dict::write_direct(">") if ($part eq "GRAMGRP");
+
+  dict::write_direct(")") if ($part eq "USG");
 
   dict::write_newline() if ($part eq "P");
   
   dict::add_text(".") if (($part eq "POS") || ($part eq "NUM") || ($part eq "GEN"));
+  $aword = (($part eq "TR") ? 1 : 0); 
 
 
 }
