@@ -13,13 +13,17 @@
         <title>Khasi-English FreeDict Dictionary</title>
 	<respStmt>
 	  <resp>Author</resp>
-	  <name>Michael Bunk, micha@luetzschena.de</name>
+	  <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
+	</respStmt>
+	<respStmt>
+	  <resp>Maintainer</resp>
+	  <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
 	</respStmt>
       </titleStmt>
       <editionStmt>
 	<edition>0.1</edition>
       </editionStmt>
-      <extent>about ? headwords</extent>
+      <extent>at least 1400 headwords</extent>
       <publicationStmt>
 	<publisher>FreeDict</publisher>
 	<availability>
@@ -32,7 +36,7 @@
 	<title>free dictionaries</title>
       </seriesStmt>
      <notesStmt>
-       <note type="status">still have to start</note>
+       <note type="status">presently growing (Mar 05)</note>
        <note>Thanks go to Pyndap for her patience during
          all the hours that I spent on this project!</note>
      </notesStmt>
@@ -49,13 +53,17 @@
           for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
-    <revisionDesc>
+   <revisionDesc>
+       <change>
+	<date>2005-03-02</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Reached 1400 entries</item>
+      </change>
       <change>
 	<date>2005-01-30</date>
 	<respStmt><name>Michael Bunk</name></respStmt>
 	<item>Reached 100 entries</item>
       </change>
-
        <change>
 	<date>2005-01-29</date>
 	<respStmt><name>Michael Bunk</name></respStmt>
@@ -1529,6 +1537,8 @@
   </gramGrp>
   <sense>
     <trans><tr>tree</tr></trans>
+  </sense>  <sense>
+    <trans><tr>stick</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -2356,6 +2366,9 @@
   </gramGrp>
   <sense>
     <trans><tr>lesson</tr></trans>
+  </sense>  <sense>
+    <trans><tr>clump</tr></trans>
+    <eg><q>shilynning ki siej =  a clump of bamboos</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -5654,7 +5667,7 @@
     <orth>phong</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>v</pos>
   </gramGrp>
   <sense>
     <trans><tr>put on</tr></trans>
@@ -5855,6 +5868,7 @@
   </gramGrp>
   <sense>
     <trans><tr>lot</tr></trans>
+    <trans><tr>crowd</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7726,6 +7740,7 @@
   </gramGrp>
   <sense>
     <trans><tr>bunch</tr></trans>
+    <trans><tr>bundle</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -9665,6 +9680,9 @@
   </gramGrp>
   <sense>
     <trans><tr>band</tr></trans>
+    <trans><tr>pack</tr></trans>
+    <trans><tr>flock</tr></trans>
+    <trans><tr>gang</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -10855,7 +10873,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>lashai lashisngi</orth>
+    <orth>lashai la shisngi</orth>
   </form>
   <gramGrp>
     <pos>adv</pos>
@@ -13654,6 +13672,7 @@
   </gramGrp>
   <sense>
     <trans><tr>win</tr></trans>
+    <trans><tr>conquer</tr></trans>
     <eg><q>Ka klas VI ka jop ia ka jingiakhun.</q></eg>
   </sense>
 </entry><entry>
@@ -14707,6 +14726,327 @@
   </gramGrp>
   <sense>
     <trans><tr>vapour</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rynjup</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>bunch</tr></trans>
+    <eg><q>shi rynjup ki shabi</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>phong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>suit</tr></trans>
+    <eg><q>shiphong ki sopti = a suit of clothes</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shikyntien</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>mouthful</tr></trans>
+    <eg><q>shikyntien ka ja = a mouthful of rice</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lyngkhot</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>piece</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyrton</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>regiment</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shisbuk</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>quantity</tr></trans>
+    <eg><q>shisbuk ka mar = a quantity of goods</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nongthuh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>thief</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>siej</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>bamboo</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>la lah</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>might</tr></trans>
+    <trans><tr>could</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>la leh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>might</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>donbor</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>could</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>wengnoh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>remove</tr></trans>
+    <trans><tr>leave out</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sngewkwah</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>would like</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khein</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>calculate</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynsngewbha</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>please</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kam ki duk</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><num>pl</num>
+  </gramGrp>
+  <sense>
+    <trans><tr>duties</tr></trans>
+    <eg><q>Ngi lah ban leh la ki kam ki duk da ka jingdonakor bad jingryntih. = We may be able to perform our duties with decency and order.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingdonakor</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>decency</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingryntih</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>order</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pulit</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><num>pl</num>
+  </gramGrp>
+  <sense>
+    <trans><tr>police</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kano kano</orth>
+  </form>
+  <gramGrp>
+    <pos>pron</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>any</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tohkit</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>examine</tr></trans>
+    <eg><q>U don ka bor ban tohkit ia kano kano ka kam na ki liang baroh. = He could examine any question from all sides.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sah shuh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>continue</tr></trans>
+    <trans><tr>stay longer</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sorkar</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>government</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bela</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>violin</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tem</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>play</tr></trans>
+    <eg><q>Phi nang ban tem bela? = Do you know how to play violin?</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingiathong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>bet</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hukum</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>order</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jai-pdeh</orth>
+  </form>
+  <sense>
+    <trans><tr>lazy</tr></trans>
+    <note>?</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nym</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>could not</tr></trans>
+    <def>n + ym after a negative article (that always ends in -n)</def>
+    <eg><q>Kin nym lah ban pyndep ia ka khala khala. = They could not finish it soon.</q></eg>
+    <xr><ref>ym</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingiarap</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>help</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ha ka por donkam</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>in time of need</tr></trans>
   </sense>
 </entry></body>
   </text>
