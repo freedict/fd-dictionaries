@@ -58,7 +58,7 @@ uninstall:
 commit: 
 	cvs -z3 commit
 
-validation:
+validation: $(dictname).tei
 	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
 	export SP_ENCODING=XML; \
 	export SP_CHARSET_FIXED=YES; \
@@ -73,7 +73,15 @@ rtest:
 	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
  -l en_US.utf-8 |tee testresult-$(version)-reverse.log
   
-clean:
+# this is a "double colon rule"
+# adding another "clean::" rule in your makefile
+# allows to extend this with additional commands
+#
+# for example:
+#
+# clean::
+#	-rm delete_zthie_file.too
+clean::
 	rm -f $(dictname).index $(dictname).dict $(dictname).c5 $(dictname).dict.dz testresult-*.log
 	rm -f $(FREEDICTDIR)/bz2/$(dictname).tar.bz2
 	rm -f $(FREEDICTDIR)/tgz/$(dictname).tar.gz

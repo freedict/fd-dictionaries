@@ -106,11 +106,11 @@ sub dumpTag {
     my $attr="";
     if(!defined $element)
     {
-      die "Please validate the input file!";
+      die "Please make sure the input file is valid!";
     }
     my %attrhash = %{$element->{Attributes}};
     foreach(keys %attrhash) {
-     $attr .= ' '.$_.'="'.$attrhash{$_}.'"';
+     $attr .= ' '.$_.'="'._escape($attrhash{$_}).'"';
      }
     
     return "<".$element->{Name}.$attr.">";
