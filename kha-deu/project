@@ -1,0 +1,21 @@
+[General]
+BuildRoot=/var/tmp/build-root-%{name}
+CFLAGS=$RPM_OPT_FLAGS
+CXXFLAGS=$RPM_OPT_FLAGS
+Configure=--prefix=%{prefix}
+Copyright=GPL
+Description=nice dictionary from khasi to german with 1000 entries.\nrequires dictd, the dictionary server.
+Distribution=all
+Files=
+Group=dict
+Name=kha-deu
+Packager=Michael Bunk, kleinerwurm@gmx.net
+Prefix=/usr/local/dictd
+Provides=xy
+Release=a
+SPEC=/home/micha/dict/CVS/kha-deu/kha-deu
+Source=/home/micha/dict/CVS/dicts/bin/kha-deu.tar.gz
+Summary=
+Url=www.freedict.de
+Vendor=none
+Version=0.1
