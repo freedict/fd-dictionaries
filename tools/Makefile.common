@@ -1,18 +1,71 @@
-DESTDIR ?= /usr/share/dictd
 toolsdir = $(FREEDICTDIR)/tools
+include $(toolsdir)/Makefile.config
+
+#######################
+#### set some variables
+#######################
+
 xsldir = $(toolsdir)/xsl
 tei2dict = $(toolsdir)/xmltei2xmldict.pl
 xmllint = /usr/bin/xmllint
-
-include $(toolsdir)/Makefile.config
 
 dictname = $(shell basename $(shell pwd))
 rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 # depending on how much memory your machine has, extracting the
 # tiny edition element contents per XSLT might be overdimensioned
-version = $(shell grep -m 1 -o -P -e "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
+version = $(shell grep -m 1 -o -P -e \
+	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
 # version = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+
+################
+# default target
+################
+
+all:	$(dictname).dict $(dictname).index	
+
+##################################################
+#### targets to extract information from TEI files
+##################################################
+
+# no newline, so output is equal to the output of
+# xsl/getedition.xsl / xsl/getstaus.xsl
+version:
+	@echo -n $(version)
+
+# alternative: sabcmd xsl/getstatus.xsl $(dictname).tei
+status:
+	@echo -n $(shell grep -m 1 -o -P -e \
+	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)
+
+sourceURL:
+	@echo -n $(shell grep -m 1 -o -P -e \
+	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
+
+##################################################
+#### create direcories where release files are put
+##################################################
+
+dirs:
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \
+		mkdir $(FREEDICTDIR)/release/dict-tgz; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then \
+		mkdir $(FREEDICTDIR)/release/dict-bz2; fi
+	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
+		mkdir $(FREEDICTDIR)/release/src; fi
+	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
+		mkdir $(FREEDICTDIR)/release/vok; fi
+	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+		ln -s /usr/src/packages/RPMS/noarch \
+		$(FREEDICTDIR)/release/rpm; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dic ]; then \
+		mkdir $(FREEDICTDIR)/release/dic; fi
+	@if [ ! -d $(FREEDICTDIR)/release/ipk ]; then \
+		mkdir $(FREEDICTDIR)/release/ipk; fi
+
+#############################################################
+#### rules how to create dict database format in standard way
+#############################################################
 
 %.dict %.index: %.tei
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
@@ -27,22 +80,33 @@ version = $(shell grep -m 1 -o -P -e "(?<=<edition>).+(?=</edition>)" $(dictname
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
-$(FREEDICTDIR)/release/vok/%.vok: %.tei dirs
-	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$@
+release-dict-tgz: $(dictname).tar.gz dirs
+	cp $(dictname).tar.gz \
+	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
-# default target
-all:	$(dictname).dict $(dictname).index	
+release-dict-tgz-reverse: $(rdictname).tar.gz dirs
+	cp $(rdictname).tar.gz \
+	$(FREEDICTDIR)/release/dict-tgz/freedict-$(rdictname)-$(version).tar.gz
 
-# no newline, so output is equal to the output of xsl/getedition.xsl / xsl/getstaus.xsl
-version:
-	@echo -n $(version)
+release-dict-tbz2: $(dictname).tar.bz2 dirs
+	cp $(dictname).tar.bz2 \
+	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
 
-# alternative: sabcmd xsl/getstatus.xsl $(dictname).tei
-status:
-	@echo -n $(shell grep -m 1 -o -P -e "(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)
+release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
+	cp $(rdictname).tar.bz2 \
+	$(FREEDICTDIR)/release/dict-bz2/freedict-$(rdictname)-$(version).tar.bz2
 
-sourceURL:
-	@echo -n $(shell grep -m 1 -o -P -e "(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
+reverse: $(dictname).tei
+	@echo "Will generate $(rdictname):"
+	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
+	$(tei2dict) -f $< -r $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
+	mv $(dictname).index $(rdictname).index
+	mv $(dictname).dict $(rdictname).dict
+	dictzip -k $(rdictname).dict
+
+############################################
+#### targets for c5/dictfmt conversion style
+############################################
 
 $(dictname).c5: $(dictname).tei
 
@@ -54,37 +118,30 @@ $(rdictname).c5: $(dictname).tei
 
 release-dict-bz2-c5-reverse: $(rdictname).c5.index
 	dictzip $(rdictname).c5.dict
-	(cd ..; tar -cvjf $(dictname)/freedict-$(rdictname)-$(version).tar.bz2 \
---exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* $(addprefix $(dictname)/, $(rdictname).c5.index $(rdictname).c5.dict.dz))
-	cp freedict-$(rdictname)-$(version).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/
+	cd .. && tar -cvjf $(dictname)/freedict-$(rdictname)-\
+$(version).tar.bz2 --exclude=CVS --exclude=freedict-*.tar.bz2 \
+		--exclude=.* $(addprefix $(dictname)/, $(rdictname).c5.index \
+		$(rdictname).c5.dict.dz)
+	cp freedict-$(rdictname)-$(version).tar.bz2 \
+		$(FREEDICTDIR)/release/dict-bz2/
 
+######################################
+#### targets for evolutionary platform
+######################################
 
-dirs:
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then mkdir $(FREEDICTDIR)/release/dict-bz2; fi
-	@if [ ! -d $(FREEDICTDIR)/release/src ]; then mkdir $(FREEDICTDIR)/release/src; fi
-	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then mkdir $(FREEDICTDIR)/release/vok; fi
-	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then ln -s /usr/src/packages/RPMS/noarch \
-		$(FREEDICTDIR)/release/rpm; fi
-
-release-dict-tgz: $(dictname).tar.gz dirs
-	cp $(dictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
-
-release-dict-tgz-reverse: $(rdictname).tar.gz dirs
-	cp $(rdictname).tar.gz $(FREEDICTDIR)/release/dict-tgz/freedict-$(rdictname)-$(version).tar.gz
-
-release-dict-tbz2: $(dictname).tar.bz2 dirs
-	cp $(dictname).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
-
-release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
-	cp $(rdictname).tar.bz2 $(FREEDICTDIR)/release/dict-bz2/freedict-$(rdictname)-$(version).tar.bz2
+$(FREEDICTDIR)/release/vok/%.vok: %.tei dirs
+	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$@
 
 release-evolutionary: $(FREEDICTDIR)/release/evolutionary/$(dictname).tld
 	(cd $(FREEDICTDIR)/release/evolutionary; \
 	 rm -f $(dictname)-$(version)-evolutionary.zip; \
-	 zip $(dictname)-$(version)-evolutionary.zip $(dictname).tld)
+	 zip freedict-$(dictname)-$(version).evolutionary.zip $(dictname).tld)
 
 vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
+
+######################
+#### not used by me :)
+######################
 
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)
@@ -95,8 +152,9 @@ uninstall:
 	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
 	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
 
-commit: 
-	cvs -z3 commit
+########################
+#### maintenance targets
+########################
 
 validation: $(dictname).tei
 	# way 1
@@ -117,6 +175,12 @@ test-reverse:
 	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
  -l $(DICTD_LOCALE) |tee testresult-$(version)-reverse.log
  
+commit: 
+	cvs -z3 commit
+
+dbupdate:
+	$(toolsdir)/extractdata.pl -vfd $(dictname)
+
 # this is a "double colon rule"
 # adding another "clean::" rule in your Makefile
 # allows to extend this with additional commands
@@ -137,13 +201,9 @@ dist: dirs
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES)))
 
-reverse: $(dictname).tei
-	@echo "Will generate $(rdictname):"
-	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
-	$(tei2dict) -f $< -r $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
-	mv $(dictname).index $(rdictname).index
-	mv $(dictname).dict $(rdictname).dict
-	dictzip -k $(rdictname).dict
+###################
+#### tagets for rpm
+###################
 
 release-rpm: freedict-$(dictname).spec dist
 	@if [! -x /usr/src/packages/SOURCES/freedict-$(dictname)-$(version).src.tar.bz2 ]; then \
@@ -151,19 +211,51 @@ release-rpm: freedict-$(dictname).spec dist
 			/usr/src/packages/SOURCES; fi
 	rpmbuild --target=noarch -ba freedict-$(dictname).spec
 
-# TODO: targets for zaurus, deb
+freedict-tools-rpm:
+	(cd $(FREEDICTDIR); \
+	 tar cjf /usr/src/packages/SOURCES/freedict-tools.tbz2 \
+		--exclude=CVS tools/*)
+	rpmbuild --target=noarch -ba freedict-tools.spec
+
+##################################
+#### targets for (z)bedic / zaurus
+##################################
+# it takes 4 steps:
+#  1. execute tei2zbdic.py to create a bedic format file
+#  2. execute xerox (that comes with libbedic) to reformat it somehow
+#  3. execute dictzip to compress it
+#  4. execute dic2ipk.sh to create a Zaurus installation package
+#
+# the xsl/tei2bedic.xsl file is not used presently, as
+# it is an old version
+
+%.unxeroxed.dic: %.tei
+	$(toolsdir)/tei2dic.py $< $*.unxeroxed.dic
+
+$(FREEDICTDIR)/release/dic/freedict-%-$(version).dic: %.unxeroxed.dic
+	$(XEROX) -d $*.unxeroxed.dic $@
+
+clean::
+	rm -f $(dictname).unxeroxed.dic
+
+$(FREEDICTDIR)/release/dic/%.dic.dz: $(FREEDICTDIR)/release/dic/%.dic
+	dictzip -k $<
+
+$(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
+	cd $(FREEDICTDIR)/release/ipk && ln -s `$(toolsdir)/dic2ipk.sh $<` $@
+
+release-zbedic: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
+	
+#######################
+#### Makefile-technical
+#######################
 
 .PHONY: all version status sourceURL dirs install uninstall reverse\
 	release-dict-bz2-c5-reverse \
 	release-dict-tgz release-dict-tgz-reverse \
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	vok release-evolutionary \
+	release-zbedic \
 	rpm rpm-reverse freedict-tools-rpm\
-	commit validation test test-reverse clean dist
-
-freedict-tools-rpm:
-	(cd $(FREEDICTDIR); \
-	 tar cjf /usr/src/packages/SOURCES/freedict-tools.tbz2 \
-		--exclude=CVS tools/*)
-	rpmbuild --target=noarch -ba freedict-tools.spec
+	commit validation test test-reverse clean dist dbupdate
 

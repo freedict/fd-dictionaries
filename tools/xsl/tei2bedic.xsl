@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
+<!--
+     This stylesheet converts a TEI file into
+     the dic format used by libbedic.
+
+     In FreeDict, tei2dic.py is poreferred for this purpose presently.
+
+  -->
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output  method="xml" omit-xml-declaration="yes" encoding="UTF-8"/>

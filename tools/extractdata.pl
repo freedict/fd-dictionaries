@@ -146,18 +146,20 @@ sub fdict_extract_metadata
   ###################################################################
 
     #$edition = `sabcmd xsl/getedition.xsl "$teifile"`;
-    $edition = `cd $dirname/$entry;make version`;
+    # the --no-print-directory switch is required if extractdata is
+    # run from inside a Makefile
+    $edition = `cd $dirname/$entry;make --no-print-directory version`;
 
   ###################################################################
 
     #$status = `sabcmd xsl/getstatus.xsl "$teifile"`;
-    $status = `cd $dirname/$entry;make status`;
+    $status = `cd $dirname/$entry;make --no-print-directory status`;
     $status = 'unknown' if(!$status);
 
   ###################################################################
 
     #$sourceURL = `sabcmd xsl/getsourceurl.xsl "$teifile"`;
-    $sourceURL = `cd $dirname/$entry;make sourceURL`;
+    $sourceURL = `cd $dirname/$entry;make --no-print-directory sourceURL`;
 
   ###################################################################
   }
@@ -287,16 +289,26 @@ sub fdict_extract_releases
 
       if($ssfn =~ /^\.tar\.gz/)
       { $platform = 'dict-tgz'; } 
+      
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.gz/)
       { $platform = 'dict-tgz'; } 
+      
       elsif($ssfn =~ /^\.tar\.bz2/)
       { $platform = 'dict-tbz2'; }
+      
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.bz2/)
       { $platform = 'dict-tbz2'; } 
+      
       elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
       { $platform = 'src'; }
+      
+      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.noarch\.rpm/)
+      # eg. freedict-kha-deu-0.0.1-1.noarch.rpm
+      { $platform = 'rpm'; }
+
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.[\w\.]+/)
-      { $platform = $1; }
+      { $platform = $2; }
+      
       else
       {
 	print "Cannot make sense of filename '$filename'. Skip.\n";
@@ -346,7 +358,7 @@ if($opt_d && $opt_a)
 
 if(!$opt_d && !$opt_a && !$opt_r)
 {
-  print STDERR "One of -d, -a or -r must be given.\n";
+  print STDERR "One of -h, -d, -a or -r must be given.\n";
   exit;
 }
 
