@@ -1,55 +1,88 @@
-<!DOCTYPE TEI.2       PUBLIC "-//TEI P3//DTD Main Document Type//EN"  [
-   <!ENTITY % TEI.dictionaries "INCLUDE" >
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE  TEI.2
+  PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
 ]>
 
-<tei.2>
+<TEI.2>
   <teiHeader>
-    <filedesc>
-      <titlestmt>
-        <title>           </title>
-      </titlestmt>
-      <publicationstmt>
-        <authority>Freedict.de</authority>
-      </publicationstmt>
-      <sourcedesc>
-        <p>http://www.freedict.de</p>
-      </sourcedesc>
-    </filedesc>
-  </teiHeader>
-  <text>
-    <body>
-      <entry>
-	<form><orth>00-database-info</orth></form>
-	<def>3. Apr. 2000</def>
-	<def>  Database was converted to TEI format and checked into CVS</def>
-	<def>10.April 2000</def>
-	<def>This Database was  generated from ergane (http://www.travlang.com).</def>
-	<def>- Thanks!</def>
+    <fileDesc>
+      <titleStmt>
+        <title>German-Italian FreeDict Dictionary</title>
+        <respStmt>
+          <resp>by</resp> <name>Horst Eyermann, Horst@freedict.de</name>
+        </respStmt>
+      </titleStmt>
 
-	<def></def>
-	<def>Copyright (C) 1999 Horst Eyermann (Horst@freedict.de)</def>
-	<def>This program is free software; you can redistribute it and/or modify</def>
-	<def>it under the terms of the GNU General Public License as published by</def>
-	<def>the Free Software Foundation; either version 2 of the License, or</def>
-	<def>(at your option) any later version.</def>
-	<def></def>
-	<def> This program is distributed in the hope that it will be useful,</def>
-	<def>but WITHOUT ANY WARRANTY; without even the implied warranty of</def>
-	<def>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</def>
-	<def>GNU General Public License for more details.</def>
-	<def></def>
-	<def>You should have received a copy of the GNU General Public License</def>
-	<def>along with this program; if not, write to the Free Software</def>
-	<def>Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</def>
-      </entry>
-      <entry>
-	<form><orth>00-database-short</orth></form>
-	<def>German-Italian Freedict dictionary</def>
-      </entry>
-      <entry>
-	<form><orth>00-database-url</orth></form>
-	<def>http://www.freedict.de</def>
-      </entry>
+      <editionStmt>
+        <edition>0.0.2</edition>
+      </editionStmt>
+
+      <extent>about 4450 headwords</extent>
+
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+        <availability>
+	  <p>Copyright (C) 1999 Horst Eyermann, horst@freedict.de</p>
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p>
+        </availability>
+        <date>2004</date>
+        <pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+        <note type="status">unknown</note>
+      </notesStmt>
+
+      <sourceDesc>
+        <p>Home: <xptr url="http://freedict.de/"/></p>
+        <p>This Database was  generated from ergane, http://www.travlang.com.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you trough nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+       <change>
+        <date>2004-Jul-01</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Converted file to TEI P4</item>
+      </change>
+      <change>
+        <date>2000-Apr-10</date>
+        <respStmt>
+          <name>Horst Eyermann</name>
+        </respStmt>
+        <item>Database was converted to TEI format and checked into CVS</item>
+      </change>
+      <change>
+        <date>2000-Apr-03</date>
+        <respStmt>
+          <name>Horst Eyermann</name>
+        </respStmt>
+        <item>This Database was  generated from ergane, http://www.travlang.com - Thanks!</item>
+      </change>
+    </revisionDesc>
+</teiHeader>
+
+<text>
+  <body>
       <entry>
         <form>
           <orth>Aachen</orth>
@@ -38404,4 +38437,4 @@
       </entry>
     </body>
   </text>
-</tei.2>
+</TEI.2>
