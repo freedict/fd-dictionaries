@@ -2,7 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
                "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
 <!ENTITY fdictUrl "http://www.freedict.org">
-<!ENTITY fdictMail " freedict-beta@lists.sourceforge.net" >
+<!ENTITY fdictMail "freedict-beta@lists.sourceforge.net" >
 <!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
 <!ENTITY PeteEmail  "petergozz@users.sf.net">
 
@@ -196,7 +196,7 @@
 
     <section id="doctypeTEI">
       <title>The SGML Declaration</title>   
-    <para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC &TEIsys; 
+    <para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;" 
 "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
