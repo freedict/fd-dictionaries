@@ -1,28 +1,35 @@
-
+<!-- <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+               "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
+ ]>-->
+<!-- remove comments around prolog  for easy editing -->
 <preface id="preface">
 
   <title>Introduction</title>
 
   <para>FreeDict is a small organisation of people who together oversee
     the publication of free translating dictionaries.  
-    They are archived in a flexible<indexterm><primary>XML</primary>
-    <secondary>TEI</secondary></indexterm> XML format that allows for
-    further use and development.</para>
+    They are archived in a flexible XML format that allows for
+    further use and development.<indexterm><primary>XML</primary>
+    <secondary>TEI</secondary></indexterm></para>
 
   <para>FreeDict also ensures that the dictionaries can be converted 
     into the dictd database format, that works with <application>dictd</application>
-    (see http://www.dict.org./) and <application>Serpento</application> (TODO:
-    make a clickable link http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/)
-    dictionary servers.</para>
+      (see<ulink url=" http://www.dict.org" id="dictd-site"> http://www.dict.org</ulink>./) and <application>Serpento</application> 
+      <ulink url=" http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/" id="serpento-site"> http://melkor.dnp.fmph.uniba.sk/~garabik/serpento/</ulink>)
+      dictionary servers.<indexterm>
+	<primary>Serpento</primary>
+	<secondary>Dictd</secondary>
+      </indexterm>
+</para>
 
   <para>The content of the dictionaries is left up to individual developers.
     We ourselves can't speak every language on the planet and so rely on the
-    <indexterm><primary>contributing</primary> <secondary>writers</secondary></indexterm>
-    contributing writers and users to produce <indexterm><primary>quality</primary></indexterm>
-    high-quality, useful dictionaries. We can, however, try to ensure that
-    the dictionaries are formatted and organised
+    contributing writers and users to produce  high-quality, useful dictionaries. We can, however, try to ensure that the dictionaries are formatted and organised
     correctly, are as easy as practicable to produce and will work on free
-    operating systems.</para>
+    operating systems.
+    <indexterm><primary>contributing</primary> <secondary>writers</secondary></indexterm>
+    <indexterm><primary>quality</primary></indexterm>
+  </para>
 
   <para>You are probably reading this HOWTO, to get an idea of what is involved in
     producing a translating dictionary. The approach taken in this HOWTO is task
@@ -31,6 +38,15 @@
     <secondary>install</secondary></indexterm></para>
 
   <para>TODO list basic steps and link (leave till release)</para>
+    <section>
+      <title>Quick Steps</title>
+      <para></para><para><indexterm>
+	  <primary>Quick Steps</primary>
+	  <secondary>Basic Step through</secondary>
+	</indexterm>
+</para>
+     
+    </section>
 
 </preface>
 
