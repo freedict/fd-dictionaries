@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+]>
+
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>English-Romanian FreeDict Dictionary</title>
+        <respStmt>
+          <resp>by</resp> <name>Pauliuc George &lt;pauliuc@gmx.net&gt;</name>
+        </respStmt>
+      </titleStmt>
+
+      <editionStmt>
+        <edition>0.5</edition>
+      </editionStmt>
+
+      <extent>about 950 headwords</extent>
+
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+	<availability>
+	  <p>Copyright (C) 2002 Pauliuc George &lt;pauliuc@gmx.net&gt;</p>
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p>
+	</availability>
+	<date>2004</date>
+        <pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+        <note type="status">too small</note>
+      </notesStmt>
+
+      <sourceDesc>
+        <p>Home: <xptr url="http://romdict.sourceforge.net/"/></p>
+        <p>This Database was imported from the RomDict project.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you trough nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+       <change>
+        <date>2005-02-11</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Converted file to TEI P4 and imported to CVS</item>
+      </change>
+      <change>
+        <date>2002-10-27</date>
+        <respStmt>
+          <name>Horst Eyermann</name>
+        </respStmt>
+        <item>Database was converted to TEI format</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
