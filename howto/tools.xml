@@ -549,7 +549,7 @@ cut from above here.
         <command>nsgmls</command> respective <command>onsgmls</command> available.</para>
 
       <para>Validation should be available as a target in the Makefile of each
-        the dictionary modules. Try <command>make test</command> for the
+        the dictionary modules. Try <command>make validation</command> for the
         dictionary module you want to validate (cd to it first).</para>
 
       <para>The makefile target itself is simple. It sets some environment variables,
