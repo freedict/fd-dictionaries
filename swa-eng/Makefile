@@ -1,31 +1,22 @@
 
-.SUFFIXES: .tar.gz .tei .dict .dz .vok
+.SUFFIXES: .tar.gz .tei .dict .dz
 
 TOOLS = ../tools/
-TEI2DICT = $(TOOLS)tei2dict.pl
+TEI2DICT = $(TOOLS)xmltei2xmldict.pl
 ADDFREEDICT = $(TOOLS)add-freedict.sh
-TEI2WEBSTER = $(TOOLS)tei2webster.pl
-WEBSTERDIR = ../../1/
-WEBSTER = $(WEBSTERDIR)/webfmt
-DICT2VOK = $(TOOLS)dict2evolutionary.pl
-XSLPROCESSOR = sabcmd
+VERSION = 0.0.2
 
-XSLT = $(TOOLS)tei2webster.xsl
+PWD = $(shell pwd)
+LANGUAGE = $(shell basename $(PWD))
 
-
-VPATH = ../tools:../dicts:../dicts/bin
-
-include Makefile.language
-include $(TOOLS)Makefile.config
+SGML_CATALOG_FILES = "/usr/share/sgml/opensp/xml.soc:/usr/share/doc/packages/sp/html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/CATALOG.xmlcharent"
 
 .tei.dict:
-	# $(TEI2DICT) $*.tei
-	#$(TEI2WEBSTER) $*.tei
-	$(XSLTPROCESSOR) $(XSLT) $*.tei $*.web
-	$(WEBSTER) < $*.web
+	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
+	$(TEI2DICT) -f $*.tei -u -t ../tools/xsl/tei2txt.xsl)
 	if [ ! -d ../dicts ]; then  mkdir ../dicts; fi
-	mv web1913.dict ../dicts/$*.dict
-	mv web1913.index ../dicts/$*.index
+	mv $*.dict ../dicts
+	mv $*.index ../dicts
 
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
@@ -34,31 +25,41 @@ include $(TOOLS)Makefile.config
 	if [ ! -d ../dicts ]; then mkdir ../dicts/bin; fi
 	(cd ../dicts/ ; tar czvf bin/$*.tar.gz $*.dict.dz $*.index)
 
-.dict.vok:
-	$(DICT2VOK) < ../dicts/$*.dict |\
-	recode -f u8..cp1252 > ../dicts/$*.vok;
-
 all:	\
 	$(LANGUAGE).tar.gz
+reverse:
+	(export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
+	../tools/xmltei2xmldict.pl -f $(LANGUAGE).tei -t ../tools/xsl/tei2txt.xsl -r)
+	mv $(LANGUAGE).dict ../dicts/$(LANGUAGE).dict
+	mv $(LANGUAGE).index ../dicts/$(LANGUAGE).index
 
-vok:	\
-	$(LANGUAGE).vok
-
-install: all
-	echo Hier
-	cd ../dicts && \
-	pwd; \
-	$(ADDFREEDICT) --remove $(LANGUAGE); \
-	$(ADDFREEDICT) --install $(LANGUAGE); \
-	cd ../$(LANGUAGE); 
-
-uninstall: 
-	cd ../dicts
-	$(ADDFREEDICT) --remove $(LANGUAGE) 
-	cd ../$(LANGUAGE)
+install: all\
+	$(ADDFREEDICT) --remove $*
+	$(ADDFREEDICT) --install $*
 
 commit: 
 	cvs -z3 commit
 
+validate:
+	(export SP_ENCODING=XML;export SP_CHARSET_FIXED=yes;\
+export SGML_CATALOG_FILES=$(SGML_CATALOG_FILES);\
+nsgmls -E 10 -s $(LANGUAGE).tei)
+
 test:
-	nsgmls -s $(LANGUAGE).tei
+	$(TOOLS)/testing/test-database.pl -f ../dicts/$(LANGUAGE) -l de_DE.utf-8
+clean:
+	rm -f $(LANGUAGE).dict $(LANGUAGE).index
+	rm -f ../dicts/$(LANGUAGE){.index,.dict,.dict.dz}
+	rm -f ../dicts/bin/$(LANGUAGE).tar.gz
+
+dist:
+	cd ..; tar cvjf $(LANGUAGE)/$(LANGUAGE)-$(VERSION).src.tar.bz2 \
+$(LANGUAGE)/AUTHORS \
+$(LANGUAGE)/ChangeLog \
+$(LANGUAGE)/COPYING \
+$(LANGUAGE)/$(LANGUAGE).tei \
+$(LANGUAGE)/INSTALL \
+$(LANGUAGE)/Makefile \
+$(LANGUAGE)/NEWS \
+$(LANGUAGE)/README
+
