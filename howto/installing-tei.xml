@@ -49,9 +49,9 @@
       users may use them?</para>
     <para>If not, you can install them anywhere you have write permissions.
       If so, install them under /usr/local/share. You will need administrator
-      level permissions to do so. Please see <xref linkend="system-install"/>.</para>
-    <para>(so pass them to your local administrator and ask her to set everything
-       up for you :) ) OK in real life it goes like this...
+      level permissions to do so. Please see <xref linkend="system-install"/>.
+      You could pass them to your local administrator and ask her to set everything
+      up for you :) OK in real life it goes like this...
       <indexterm><primary>binary packages</primary></indexterm>
       <indexterm><primary>permissions</primary></indexterm>
       <indexterm><primary>Catalogs</primary></indexterm> 
@@ -59,20 +59,18 @@
 
     <section id="userInstall">
       <title>User only install</title>
-	<para>You download the zip file from The TEI Consortium at: <ulink url="&TEIdl;"> &TEIdl;</ulink>.</para>
-	<para>&cmdp; mkdir /home/youraccount/TEI .
+	<para>Download the zip file from The TEI Consortium at:
+	  <ulink url="&TEIdl;">&TEIdl;</ulink>.</para>
+	<para><userinput>&cmdp; cd /home/account; mkdir TEI</userinput>
 	  <caution>
-	    <para>
-	      You must mkdir. Use any name you like but note: the <filename>zip file</filename>
-              unpacks without a directory structure!
-	    </para>
-	  </caution> 
+	    <para>You must create a new directory, since the zip archive unpacks without
+	      a directory structure, cluttering your current directory!</para>
+	  </caution>
 	</para>
-	<para>&cmdp;<command> mv dtd.zip TEI/</command></para>
-	<para>&cmdp;<command> cd TEI</command></para>
-	<para>&cmdp;<command> unzip dtd.zip</command></para>
+	<para><userinput>&cmdp; cd TEI</userinput></para>
+	<para><userinput>&cmdp; unzip ../dtd.zip</userinput></para>
 	<para>You should get a directory full of files that looks much like this:
-	  <literallayout>&cmdp;
+	  <screen>
 catalog.local   teiclas2.ent  teigen2.dtd   teind2.ent    teite2n.dtd
 catalog.tei     teicore2.dtd  teigis2.ent   teinet2.dtd   teiterm2.dtd
 catalog.xml     teicorp2.dtd  teihdr2.dtd   teipl2.dtd    teiterm2.ent
@@ -85,31 +83,22 @@ teiana2.ent     teifig2.ent   teilitex.dtd  teistr2.dtd   teiwsd2.dtd
 teiback2.dtd    teifron2.dtd  teilitex.ent  teitc2.dtd    teixlite.dec
 teicatalog.xml  teifs2.dtd    teimix2.dtd   teitc2.ent
 teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
-	</literallayout>
+	</screen>
       </para>
-      <para>You have now installed them. Move the original dtd.zip file away for
-        archiving and you are done. The file <filename>index.html</filename> has
-        some reading for later :)</para>
+      <para>You have now installed them. Move the original <filename>dtd.zip</filename>
+        away for archiving and you are done. The file <filename>index.html</filename> has
+        some reading for later...</para>
       <note>
 	<title>DOCTYPE system identifier</title>
-	<para>You will have to use a /full/path/name/to/your/DTD in the DOCTYPE
-          declaration if you need to validate the file as SGML.</para>
-	<para>For correct XML validation you will have to use a file URI like:</para>
-	<para>file:///path/to/your/dtd</para>
-	<para>In your DOCTYPE system identification string. See
-          <xref linkend="doctypeTEI"/>
-          <indexterm>
-            <primary>Zip</primary>
-          </indexterm>
-          <indexterm>
-            <primary>XML</primary>
-          </indexterm>
-          <indexterm>
-            <primary>validation</primary>
-          </indexterm>
-          <indexterm>
-            <primary>User only Install</primary>
-          </indexterm>
+	<para>You will have to use a <filename>/full/path/name/to/your/DTD</filename>
+	  in the DOCTYPE declaration if you need to validate the file as SGML.</para>
+	<para>For correct XML validation you will have to use a file URI like
+	<literal>file:///path/to/your/dtd</literal> in your DOCTYPE system
+	  identifier string. See <xref linkend="doctypeTEI"/>.
+          <indexterm><primary>Zip</primary></indexterm>
+          <indexterm><primary>XML</primary></indexterm>
+          <indexterm><primary>validation</primary></indexterm>
+          <indexterm><primary>User only Install</primary></indexterm>
         </para>
       </note>	
     </section>
@@ -129,33 +118,22 @@ teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
         <indexterm>
 	  <primary>System wide TEI Install</primary>
 	  <secondary>Installation</secondary>
-	  <tertiary>TEI DTD's</tertiary>
+	  <tertiary>TEI DTDs</tertiary>
 	</indexterm>
         <indexterm>
-	  <primary> Linux File Hierarchy Standard</primary>
+	  <primary>Linux File Hierarchy Standard</primary>
 	  <secondary>Installation</secondary>
 	</indexterm>
       </para>
-      <para>
-        <example>
-	  <title>Administrator install</title>
-	  <orderedlist>
-	    <title>Suggested system XML install</title>
-	    <listitem>
-	      <para><command>mkdir -p /usr/local/share/xml/tei2/p4/schema/dtd/</command></para></listitem>   
-	    <listitem>
-	      <para><command>cp dtd.zip /usr/local/share/xml/tei2/p4/schema/dtd/</command></para></listitem>
-	    <listitem>
-	      <para><command>cd /usr/local/share/xml/tei2/p4/schema/dtd/</command></para></listitem>
-	    <listitem>
-	      <para><command>unzip dtd.zip</command></para></listitem>
-	    <listitem>
-	      <para><command>rm dtd.zip</command></para>
-            </listitem>
-          </orderedlist>
-        </example>
-      </para>
-      <para>OK now everybody may access the TEI2 DTDs. Especially if the catalogs are also set up...
+      <example>
+        <title>Administrator install</title>
+        <para><userinput>mkdir -p /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
+        <para><userinput>cp dtd.zip /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
+        <para><userinput>cd /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
+        <para><userinput>unzip dtd.zip</userinput></para>
+        <para><userinput>rm dtd.zip</userinput></para>
+      </example>
+      <para>OK. Now everybody may access the TEI DTDs. Especially if the catalogs are set up as well...
         You may also symlink to the appropriate place under /usr/local/share/sgml/ or elsewhere.
         If you do so, I strongly suggest you mirror your package management's file system structure.
         The catalog system described below assumes you haven't. Only do it if you need to. 
@@ -194,7 +172,8 @@ teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
       <title>Setting up your catalogs</title>
       <note>
 	<para>This section assumes you have administrator (or similar) permissions.</para>
-	<para>If you have <application>update-catalogs</application> or similar please use it.</para>
+	<para>If you have the <application>update-catalogs</application> command or similar
+	 please use them.</para>
 	<indexterm>
 	  <primary>update-catalogs</primary>
 	</indexterm>
@@ -210,7 +189,7 @@ teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
       </para>
       <example>
 	<title>New SGML catalog.tei</title>
-	<literallayout>
+	<programlisting>
 --  
 /usr/local/share/xml/tei2/p4/schema/dtd/catalog.tei 
     This TEI catalog file was auto-generated by makeCatalogs.xsl for use with 
@@ -277,24 +256,24 @@ PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Verse//EN" "/usr/local/share/xm
 PUBLIC "-//TEI P4//ENTITIES Element Classes for Verse//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teivers2.ent"
 PUBLIC "-//TEI P4//DTD Auxiliary Document Type: Writing System Declaration//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teiwsd2.dtd"
 PUBLIC "-//TEI P4//DTD Concurrent Document Type: Pages and Lines//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teipl2.dtd"
-	  </literallayout>
+	  </programlisting>
 	</example>
-	<para>Next we need to write a Central Catalog for the TEI DTD set. This file
+	<para>Next we need to write a central Catalog for the TEI DTD set. This file
           lives at <filename>/etc/sgml/tei2.cat</filename>. You can cut and paste this one.</para>
 	<example>
 	  <title>Sample SGML central catalog file</title>
-	  <literallayout>
+	  <programlisting>
 --
 ##====================================================
 ##              /etc/sgml/tei2.cat 
-## Centralised SGML catalog file for the tei2-p4 DTD's
+## Centralised SGML catalog file for the tei2-p4 DTDs
 ##====================================================
 --
 
 CATALOG /usr/local/share/xml/tei2/p4/schema/dtd/catalog.tei
-	  </literallayout>
+	  </programlisting>
 	</example>
-	<para>Finally we need to add the Central Catalog file to the top level system catalog.</para>
+	<para>Finally we need to add the central Catalog file to the top level system catalog.</para>
 	<warning>
 	  <para><emphasis>Please don't just cut and paste this file!</emphasis> It probably will
           not match your local needs for all sorts of reasons. Just add the TEI section.
@@ -303,7 +282,7 @@ CATALOG /usr/local/share/xml/tei2/p4/schema/dtd/catalog.tei
 	<example>
 	  <title>Addition to SGML super catalog</title>
           <para>Super catalogs _may_ be Debian specific in which case you _may_  be able to leave it out.</para>
-	  <literallayout>
+	  <programlisting>
 -- 
 ## ======================================================================
 ## /etc/sgml/catalog : SGML super catalog
@@ -327,7 +306,7 @@ CATALOG /etc/sgml/festival.cat
 ## TEI section follows here
 ##========================================================================
 CATALOG /etc/sgml/tei2.cat
-	  </literallayout>
+	  </programlisting>
 	</example>
       <para>Now you may use a large variety of approaches in your document type declaration.</para>
       <para>Throughout this HOWTO we generally only use one. Please see <xref linkend="doctypeTEI"/>
@@ -353,14 +332,14 @@ CATALOG /etc/sgml/tei2.cat
 	    <primary>XML Catalogs</primary>
 	  </indexterm>
 	</para>
-	<literallayout>
+	<programlisting>
 	   &lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd"&gt;
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"/&gt;
 &lt;delegatePublic publicIdStartString="&TEIsys;" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml"/&gt;
 &lt;delegateSystem systemIdStartString="http://www.tei-c.org/P4X/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
 &lt;/catalog&gt;
-	</literallayout>
+	</programlisting>
       </example>
       <para>The delegate sections tell XML compliant applications where
         to look for the TEI2 DTDs. The strings go into the document
@@ -372,10 +351,10 @@ CATALOG /etc/sgml/tei2.cat
 	<title>The XML super catalog</title>
 	<para>Use your system tools if you trust them. Here is an example
           catalog off a <emphasis>Debian box</emphasis>.</para>
-        <para> Please don't just copy and paste this. You only need the two
+        <para>Please don't just copy and paste this. You only need the two
           last entries, they map TEI prologs for us (Make sure you put
           them inside the closing catalog tag ;>).</para>
-	<literallayout>
+	<programlisting>
 &lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.0//EN"
   "file:///usr/share/xml/schema/xml-core/catalog.dtd"&gt;
@@ -386,7 +365,7 @@ CATALOG /etc/sgml/tei2.cat
 &lt;delegatePublic publicIdStartString="&TEIsys;" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml"/&gt;
 &lt;delegateSystem systemIdStartString="http://www.tei-c.org/P4X/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
 &lt;/catalog&gt;
-	  </literallayout>
+	  </programlisting>
 	</example>
 	<para>OK, you now really installed everything and are ready to do
           <emphasis>much</emphasis> more than write dictionaries. In the
@@ -394,10 +373,12 @@ CATALOG /etc/sgml/tei2.cat
           and describe how and what all this means... to a point.
           <indexterm><primary>Super Catalog</primary></indexterm>
         </para>
-	<para>Note: When you have SuSE 9 (and possibly earlier versions of SuSE also)
-	  and use the tei_4 package, you might have to <ulink
-	  url="http://sourceforge.net/mailarchive/message.php?msg_id=7672975">repair
-          your XML catalog</ulink>.</para>
+	<note><title>XML catalog for TEI package in SuSE 9.0 is broken</title>
+	  <para>The tei_4 package in SuSE Linux 9.0 has a broken XML catalog. You have
+	  to <ulink
+	  url="http://sourceforge.net/mailarchive/message.php?msg_id=7672975">repair</ulink>
+	  it manually. This might apply to earlier versions as well.</para>
+	</note>
       </section>
     </section>
  </chapter>

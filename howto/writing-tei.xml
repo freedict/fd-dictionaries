@@ -1,23 +1,13 @@
-<!-- <?xml version='1.0' encoding="UTF-8" ?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
-               "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
-<!ENTITY fdictUrl "http://www.freedict.org">
-<!ENTITY fdictMail "freedict-beta@lists.sourceforge.net" >
-<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
-<!ENTITY PeteEmail  "petergozz@users.sf.net">
-
- ]>-->
-<!-- COMMENT OUT EVERYTHING above HERE  TO BUILD -->
-
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this file is included by freedicthowto.xml -->
 
 <chapter id="writing">
   <title>Writing a FreeDict Dictionary</title>
   <abstract>
-    <para>This begins a series of sections that deal with the process of building
+    <para>This chapter deals with the process of building
       a FreeDict format file from your gathered sources. We cover installation,
       SGML and XML system configuration, some introductory level XML, final formats
-      and a couple of shortcuts.
-    </para>
+      and a couple of shortcuts.</para>
   </abstract>
   <section>
     <title>Introduction</title>
@@ -42,7 +32,7 @@
 	<para>If you are importing from a spreadsheet application, try exporting the pages
           as simple Comma Separated Value format. You can often use almost any character or
           set of characters as a "comma". You may be able to convert it to Dictd format with
-          a simple script (in which case we have a shortcut for you). <xref linkend="dictd" />
+          a simple script (in which case we have a shortcut for you), <xref linkend="dictd"/>.
 	  <indexterm><primary>spreadsheet</primary></indexterm>
 	</para>
       </listitem>
@@ -52,7 +42,7 @@
           process much less error prone and tedious. See the <link linkend="tools">tools section</link>
           for more information.
 	  <indexterm>
-            <primary> XML</primary>
+            <primary>XML</primary>
             <secondary>Editor</secondary>
 	    <tertiary>Xemacs and emacs</tertiary>
           </indexterm>
@@ -73,7 +63,7 @@
 
     <section>
       <title>Two Approaches</title>
-	  
+
       <para>There are at least two approaches you might take to building a FreeDict format dictionary.
         <link linkend="write-tei">Approach One</link> is to use the Text Encoding Initiative DTD from
         the beginning. This gives you the most flexibility.</para>
@@ -94,8 +84,8 @@
 	<indexterm>
 	  <primary>File Formats</primary>
 	</indexterm>
-      </para>	 
-    </section>	 
+      </para>
+    </section>
   </section>
 
 </chapter>
@@ -146,25 +136,23 @@
     <para>For a full explanation of the history, objectives and approaches of the Text Encoding Initiative
       it would be best if you visited them at <ulink url="&TEIUrl;">&TEIUrl;</ulink>. There you will find
       links and information to all sorts of TEI related stuff. Of note are the <ulink url="&TEIguide;">Guidelines</ulink>.</para>
-    <para>The TEI consortium provides an approach to transcribing and creating documents in a format that
-      allows (near) full XML and SGML compliance, is as obsolescence proof as possible and allows free
+    <para>The TEI consortium provides an approach to transcribing and creating documents in SGML (that was the old
+      version of the TEI Guidelines, up to P3) and XML (from P4 on), is as obsolescence proof as possible and allows free
       exchange of content and ideas. We will only be using a very small subset of this system's capacity.
       <indexterm>
-	<primary>obsolescence proofing</primary>
+	<primary>obsolescence proof</primary>
       </indexterm>
     </para>
   </section>
 
   <section id="UsingTEI">
     <title>The TEI DTDs</title>
-    <subtitle> Using The TEI Dictionary DTD</subtitle>
+    <subtitle>Using The TEI Dictionary DTD</subtitle>
     <para>In these sections we are going to step through a basic introduction
       to building a marked up dictionary based on the Text Encoding Initiative
       TEI2 P4 Dictionary Document Type Definition. First we deal with some
       technical information. If you are familiar with XML and DTDs, you might
-      want to skip these next sections.
-    </para>
-    <para>The Install Instructions are dealt with separately. Please see <xref linkend="installTeiDTD"/>
+      want to skip the next sections.
     </para>
     <para>The TEI system of markup can be approached in a number of ways. Here
       we treat it pretty much like any other XML based markup system. The consortium
@@ -186,268 +174,412 @@
 
   <section id="xmldecTEI">
     <title>The XML Declaration</title>
-    <para>&lt;?xml version='1.0' encoding="UTF-8" ?&gt;</para>
-    <para>The xml declaration is required on all valid xml documents. For our purposes the above is all we need, be aware though, that this declaration can contain much more than we use here. The "encoding="UTF-8""<emphasis> attribute and value pair</emphasis> is sometimes considered optional as all XML documents assume or default to this unless told otherwise. I believe it is better to add it now as future implementations of XML will probably require it.</para>
-    <para>It is the next section that defines our Text Encoding Initiative format in particular. So far we have just told a validating application or parser that this document should be valid XML version 1.<indexterm>
-	<primary>XML Declaration</primary>
-      </indexterm>
+    <para><literal>&lt;?xml version='1.0' encoding="UTF-8" ?&gt;</literal></para>
+    <para>The xml declaration is required on all valid xml documents.
+      For our purposes the above is all we need. Be aware though, that
+      this declaration can contain much more than we use here. The
+      <literal>encoding="UTF-8"</literal> <emphasis>attribute and value pair</emphasis>
+      is sometimes considered optional as all XML documents assume or default to this
+      unless told otherwise. I believe it is better to add it now as future
+      versions of XML will probably require it.</para>
+    <para>It is the next section that defines our Text Encoding Initiative format
+      in particular. So far we have just told a validating parser that this document
+      should be valid XML version 1.0.
+      <indexterm><primary>XML Declaration</primary></indexterm>
     </para>
   </section>
 
     <section id="doctypeTEI">
-      <title>The SGML Declaration</title>   
-    <para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;" 
+      <title>The DOCTYPE Declaration</title>
+    <para><programlisting>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;"
 "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
-      ]&gt;</literallayout></para>
-    <para> This above  section is called the DOCTYPE declaration. The UPPER case words are all keywords that are used to set variables and types in parsing and validating tools. The rest of the definition is very carefully structured to provide absolute definitions for a number of things. We step through them here, as they are understood by the protocols involved. The entire set between the opening &lt;! and the closing &gt; is called the document prolog. Functionally it defines or even redefines a specific named document type.
+      ]&gt;</programlisting></para>
+    <para>The above is called the DOCTYPE declaration. The UPPER case words are all
+      keywords that are used to set variables and types in parsing and validating
+      tools. The rest of the definition is very carefully structured to provide
+      absolute definitions for a number of things. We step through them here, as
+      they are understood by the protocols involved. The entire set between the
+      opening <literal>&lt;!</literal> and the closing <literal>&gt;</literal> is
+      called the document prolog. Functionally it defines or even redefines a
+      specific named document type.
       <indexterm>
 	<primary>DOCTYPE</primary>
 	<secondary>SGML</secondary>
-      </indexterm> 
-      <indexterm>
-	<primary>TEI.XML</primary>
       </indexterm>
+      <indexterm><primary>TEI.XML</primary></indexterm>
       <indexterm>
-	<primary> TEI.dictionaries</primary>
+	<primary>TEI.dictionaries</primary>
       </indexterm>
       <indexterm>
 	<primary>document prolog</primary>
 	<secondary>INCLUDES</secondary>
       </indexterm>
- </para>
+    </para>
     <section id="TEIdoctype">
       <title>&lt;!DOCTYPE TEI.2</title>
-      <para>The combined effect of this declaration opening string is to tell a program (or person) who knows, that this document is claiming to be compliant to a<emphasis> defined type of document</emphasis>. In our case TEI.2.</para><para> Other document types (e.g.<application> DocBook</application>) use this parameter to set the "level" the document sits at, possibly within a larger definition. Text Encoding Initiative documents use a different system to achieve much the same end. (see the following description of ENTITIES.)<indexterm>
-	  <primary>DocBook </primary>
-	</indexterm>
-</para>
+      <para>The combined effect of this declaration opening string is to tell
+        a program (or person) who knows, that this document is claiming to be
+	compliant to a <emphasis>defined type of document</emphasis>. In our
+	case TEI.2.</para>
+      <para>Other document types (e.g. <application>DocBook</application>) use
+        this parameter to set the "level" the document sits at, possibly
+	within a larger definition. Text Encoding Initiative documents use
+	a different system to achieve much the same end (see the following
+	description of ENTITIES).
+	<indexterm><primary>DocBook</primary></indexterm>
+      </para>
 
-    <para>Practically, another way of thinking about this is to consider that the opening ELEMENT  of the following document has to be of the type TEI.2. What that element is allowed to have as attributes or children elements is defined in the Document Type Definition for this DOCTYPE. <indexterm>
-	<primary>ELEMENT </primary>
-      </indexterm>
-</para>
+      <para>Practically, another way of thinking about this is to consider
+        that the opening ELEMENT of the following document has to be of the
+	type TEI.2. What that element is allowed to have as attributes or
+	children elements is defined in the Document Type Definition for
+	this DOCTYPE.
+	<indexterm><primary>ELEMENT</primary></indexterm>
+      </para>
     </section>
     <section id="TEIFPIid">
-      <title> PUBLIC "&TEIsys;"</title>
-      <para>This next "phrase" is called the Formal Public Identifier. It starts with the word PUBLIC and in this case ends with a language identifier. The quoting is important as is the string -// at the start of the actual definition. </para> <para>This means that this is an informal definition, or an unregistered definition. A registered definition would start start with +//. Most Formal Public Identifiers use this type of definition, there is nothing unusual or pejorative about it. <indexterm>
-	<primary> PUBLIC "&TEIsys;"</primary>
-	</indexterm>
+      <title>PUBLIC "&TEIsys;"</title>
+      <para>This "phrase" is called the Formal Public Identifier. It starts
+        with the word PUBLIC and in this case ends with a language identifier.
+	The quoting is important as is the string <literal>-//</literal> at
+	the start of the actual definition.</para>
+      <para>This means that this is an informal definition, or an unregistered
+        definition. A registered definition would start start with
+	<literal>+//</literal>. Most Formal Public Identifiers use this type of
+	definition, there is nothing unusual or pejorative about it.
+	<indexterm><primary>PUBLIC "&TEIsys;"</primary></indexterm>
 	<indexterm>
-	  <primary> Formal Public Identifiers</primary>
+	  <primary>Formal Public Identifier</primary>
 	  <secondary>FPI</secondary>
 	</indexterm>
- </para>
-	<para>The FPI must be exactly as shown or it means <quote>something else</quote>, and probably not what we need it to. It is also one of the ways your <link linkend="catalog-setup">local system</link> knows which DTD to compare your document to, and so must be correct.</para>
-<note>
-	  <para>Text Encoding Initiative documents<emphasis> also use other FPI's</emphasis> to define document "types" or "classes". If you visit their website you will see many other examples. The TEI2 zip file currently has HTML documentation explaining all those options, as that is likely to be up to date please refer to it rather than this for usages<emphasis> other than Freedict</emphasis>. Please see <xref linkend="findingTEI" /> if you haven't already :) </para>
-</note>
+      </para>
+      <para>The FPI must be exactly as shown or it means <quote>something else</quote>,
+        and probably not what we need it to. It is also one of the ways your
+	<link linkend="catalog-setup">local system</link> knows which DTD to
+	compare your document to, and so must be correct.</para>
+      <note>
+	<para>Text Encoding Initiative documents <emphasis>also use other FPIs</emphasis>!
+	  If you visit their website you will see many other examples. The TEI2 zip file
+	  currently has HTML documentation explaining all those options, as that is likely
+	  to be up to date please refer to it rather than this for usages
+	  <emphasis>other than FreeDict</emphasis>. Please see
+	  <xref linkend="findingTEI"/> if you haven't already :)</para>
+      </note>
     </section>
     <section id="TEIsystemid">
       <title>"http://www.tei-c.org/P4X/DTD/tei2.dtd"</title>
-      <para>This next string must be a URI (Universal Resource Identifier (RFC 1630)) in this case it is in URL ( Uniform Resource Locator ( RFC 1738))  format. Here it functions as a portable  System Identifier to the DTD. By convention it is often started on a new line, that is not a requirement.</para>
-    <para> This is just one way of doing this, and you may simply set the absolute path to the DTD on your system here and it should be OK. If you choose to install the DTD's only for your own use you must set the system identifier to the absolute path to your copy of the DTD. <indexterm>
+      <para>This next string must be a URI (Universal Resource Identifier, RFC 1630).
+        In this case it is in URL (Uniform Resource Locator, RFC 1738) format. Here
+	it functions as a portable System Identifier to the DTD. By convention it is
+	often started on a new line, but that is not a requirement.</para>
+      <para>This is just one way of doing this, and you may simply set the absolute
+        path to the DTD on your system here and it should be OK. If you choose to
+	install the DTDs only for your own use, you must set the system identifier
+	to the absolute path to your copy of the DTD.
+	<indexterm>
 	  <primary> Uniform Resource Locator</primary><secondary>URL</secondary>
-      </indexterm><indexterm>
-	<primary>Universal Resource Identifier </primary><secondary>URI</secondary>
-      </indexterm>
-</para>
-<example id="ownDTD"><title> System Identifiers</title>
-	<para><literallayout>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;" 
+        </indexterm>
+	<indexterm>
+	  <primary>Universal Resource Identifier</primary><secondary>URI</secondary>
+        </indexterm>
+      </para>
+
+      <example id="ownDTD"><title>System Identifiers</title>
+	<programlisting>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;"
 "/home/your-account/TEI/TEI2.dtd" [
  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
-	]&gt;  
-
-	  </literallayout><indexterm>
-	    <primary>System Identifier </primary>
-	  </indexterm>
-	</para></example>
-      <para>Be aware that this method in not portable and  will need to be changed to the URL shown above for broad use. (i.e. The URL method is portable). It may save you a whole lot of bother if you don't plan on using the TEI2 DTD for much else other than Freedict.<indexterm><primary>Portability</primary></indexterm></para>
+	]&gt;</programlisting>
+	<indexterm><primary>System Identifier</primary></indexterm>
+      </example>
+      <para>Be aware that this method in not portable. It may save you
+        a whole lot of bother if you don't plan to use the TEI2 DTD for
+	much else other than FreeDict.
+	<indexterm><primary>Portability</primary></indexterm>
+      </para>
     </section>
     <section>
-      <title> &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
-	]&gt; </title>
-      <para>The final section of the DOCTYPE declaration is also enclosed between square brackets. For our purposes here we simply use it to Include some ENTITIES. In this case these entities are contained within files that are a part of the TEI2 P4 DTD set.  </para> 
-      <para>The first inclusion  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt; does some very clever "magic" remapping the DTD to XML compliant form. Without it the document will not be XML. </para>
-      <para>The second included ENTITY :  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt; adds the dictionary specific Elements to the base DTD, and thereby makes this a dictionary as opposed to say a stage script or process design document.</para>
-      <para>You may define your own extensions to the TEI set within these square braces as well. The Freedict project can not support this. A careful study of the DTD's and associated files would be of great value if you are interested in gaining a greater understanding of SGML and XML. Functionally this space is where a DTD is loaded for any document type. (you may also include other files in this place which can be useful for large document sets.<indexterm><primary>ENTITIES</primary>
-	</indexterm>
+      <title>&lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt; ]&gt;</title>
+      <para>The final section of the DOCTYPE declaration is also enclosed
+        in square brackets. We use it to include some ENTITIES. In this case
+	these entities are contained within files that are a part of the
+	TEI2 P4 DTD set.</para>
+      <para>The first inclusion <literal>&lt;!ENTITY % TEI.XML          "INCLUDE" &gt;</literal>
+        does some very clever "magic" remapping the DTD to XML compliant form.
+	Without it the document will not be XML.</para>
+      <para>The second included ENTITY
+        <literal>&lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;</literal> adds the
+	dictionary specific elements to the base DTD, and thereby makes this a
+	dictionary as opposed to say a stage script or process design document.</para>
+      <para>You may define your own extensions to the TEI set within these square
+        brackets as well. A careful study of the DTDs and associated files would
+	be of great value if you are interested in gaining a greater understanding
+	of SGML and XML. Functionally this space is where a DTD is loaded for any
+	document type. You may also include other files in this place which can be
+	useful for large document sets.
+	<indexterm><primary>ENTITIES</primary></indexterm>
       </para>
     </section>
   </section>
   <section id="headerTEI">
     <title>The TEI Header</title>
     <abstract>
-      <para>In this section we step through the structure and intent behind the TEI header section.</para>
+      <para>In this section we step through the structure and intent
+        behind the TEI header section.</para>
     </abstract>
-    <para>Headers usually give meta information, ie. information about something. The TEI header gives
-      general information about the following text like title, authors, publisher, revision history.
-      It is defined in <ulink url="http://www.tei-c.org/P4X/HD.html">The TEI Guidelines, Chater 5</ulink>.
+    <para>Headers usually give meta information, ie. information about something.
+      The TEI header gives general information about the following text like title,
+      authors, publisher and revision history. It is defined in
+      <ulink url="http://www.tei-c.org/P4X/HD.html">The TEI Guidelines, Chapter 5</ulink>.
     </para>
 
-    <para>At present the only tool that makes use of the header in TEI dictionary files is the converter
-      <link linkend="tei2dict"><application>xmltei2xmldict.pl</application></link> by transforming it into the 00-database-info entry
-      in the dictd database files, if a style sheet is used that makes use of the header. The contents of the title
-      element go into the 00-database-short entry; the content of the sourceDesc element go into the
-      00-database-url entry. That is all.</para>
+    <para>At present the only tool that makes use of the header in TEI
+      dictionary files is the converter
+      <link linkend="tei2dict"><application>xmltei2xmldict.pl</application></link>
+      by transforming it into the <literal>00-database-info</literal> entry in the
+      dictd database files, if a stylesheet is used that makes use of the header.
+      The contents of the title element go into the <literal>00-database-short</literal>
+      entry; the content of the sourceDesc element goes into the
+      <literal>00-database-url</literal> entry. That is all.</para>
 
-    <para>In the following you find a header taken from the <filename>kha-deu.tei</filename> file. You can copy
+    <variablelist><title>supported elements in the TEI header (contents of
+	<sgmltag>teiHeader</sgmltag>)</title>
+      <para>In the following an XPath expression is given for elements that have
+       	a different meaning depending on their parents.</para>
+      <varlistentry>
+	<term><literal>titleStmt/title</literal></term>
+	<listitem>
+	  <para>This becomes <literal>00-database-short</literal> when
+	    converted to dictd database format and the <literal>id</literal>
+	    property when converted to BEDic.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>titleStmt/respStmt/resp</literal></term>
+	<listitem>
+	  <para>A responsibility to this database. Values with special treatment are
+	    <literal>Author</literal> and <literal>Maintainer</literal>.
+	    Both should be shown on the FreeDict website. BEDic has a property
+	    for the maintainer, but not the author.</para>
+	</listitem>
+      </varlistentry>
+       <varlistentry>
+	 <term><literal>titleStmt/respStmt/name</literal></term>
+	<listitem>
+	  <para>Name and email address of the person carying the responsibility
+	    named in <literal>../resp</literal>, ie. the contents should follow the
+	    form <literal>FirstName LastName &lt;user@host></literal>.</para>
+	</listitem>
+      </varlistentry>
+       <varlistentry>
+	<term><literal>edition </literal></term>
+	<listitem>
+	  <para>This becomes the release version number. It is shown on
+	    the website and used in building filenames for releases.
+	    It is recommended to use only numbers and dots. Also,
+	    two levels of versioning should be enough, ie.
+	    <literal>0.1</literal> is a good start.</para>
+	</listitem>
+      </varlistentry>
+       <varlistentry>
+	<term><literal>extent</literal></term>
+	<listitem>
+	  <para>Should contain the approximate number of headwords, including the
+	    unit "headwords". It is put into <literal>00-database-info</literal>.
+	    The headword count for the website is extracted from the .index file
+	    of the dictd database format.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>notesStmt</literal></term>
+	<listitem>
+	  <para>The notes from in here are put into <literal>00-database-info</literal>
+	    and should be available on the website as well. But presently
+	    a "more info on this dictionary" page doesn't exist.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>sourceDesc/xptr </literal></term>
+	<listitem>
+	  <para>This becomes the source url on the website and is put
+	    into <literal>00-database-url</literal> when converting to
+	    dictd database format.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>revisionDesc</literal></term>
+	<listitem>
+	  <para>Description of the changes this database went through,
+	    bugfixes are noted here as well. It would be nice
+	    to generate the <filename>Changelog</filename> file of the
+	    dictionary module out of this.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>revisionDesc/change/date</literal></term>
+	<listitem>
+	  <para>These dates should follow the format
+	    <replaceable>YYYY-MM-DD</replaceable>.</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>In the following you find a header taken from the
+      <filename>kha-deu.tei</filename> file. You can copy
       it and replace element contents as they fit your database.</para>
 
-    <para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
-    <blockquote><literallayout><computeroutput>
-  &lt;teiHeader&gt;                                                                                       
-    &lt;fileDesc&gt;                                                                                      
-      &lt;titleStmt&gt;                                                                                   
+    <warning>
+      <para>This example is outdated!</para>
+    </warning>
+    <!-- warning replace &lt; and %gt; with < and > if copying from XML source
+         or better: in future use CDATA sections or include an external file -->
+    <programlisting>&lt;teiHeader&gt;
+    &lt;fileDesc&gt;
+      &lt;titleStmt&gt;
         &lt;title&gt;Khasi-German Freedict Dictionary&lt;/title&gt;
-        &lt;respStmt&gt;                                                                                  
+        &lt;respStmt&gt;
           &lt;resp&gt;Khasi Databases Maintainer&lt;/resp&gt;
-          &lt;name&gt;Michael Bunk, micha@luetzschena.de&lt;/name&gt;                                           
-        &lt;/respStmt&gt;                                                 
-      &lt;/titleStmt&gt;                                                                                  
-      &lt;editionStmt&gt;                                                                                 
-        &lt;edition&gt;2nd. Online Draft&lt;/edition&gt;                                                        
-      &lt;/editionStmt&gt;                                                                                
-      &lt;publicationStmt&gt;                                                                             
-        &lt;publisher&gt;freedict.de&lt;/publisher&gt;                                                          
-        &lt;date&gt;2002-2003&lt;/date&gt;                                                                      
-        &lt;availability&gt;                                                                              
-          &lt;p&gt;GNU GENERAL PUBLIC LICENSE&lt;/p&gt;                                                         
-        &lt;/availability&gt;                                                                             
-      &lt;/publicationStmt&gt;                                                                            
-      &lt;seriesStmt&gt;                                                                                  
-        &lt;title&gt;free dictionaries&lt;/title&gt;                                                            
-      &lt;/seriesStmt&gt;                                                                                 
-      &lt;notesStmt&gt;                                                                                   
-        &lt;note&gt;Thanks go to the supporters of this project:                                          
-        Karl-Heinz Gr&uuml;&szlig;ner, University of T&uuml;bingen; Rebekah Tham,                                
-        CIEFL, Shillong; Brother Sngi, Sacred Heart College,                                        
-        Shillong; University of Leipzig, Depts of Indology and                                      
-        Computer Science; Rik Faith for dictd server &amp;amp;                                          
-        protocol; TEI for their wonderful guidelines; Horst                                         
-        Eyermann for his generous freedict project; the open source                                 
-        community: thrust for trust &amp;amp; development&lt;/note&gt;                                        
-      &lt;/notesStmt&gt;                                                                                  
-      &lt;sourceDesc&gt;                             
-        &lt;p&gt;http://www.freedict.de/&lt;/p&gt;                                                              
-      &lt;/sourceDesc&gt;                                                                                 
-    &lt;/fileDesc&gt;                                                                                     
-    &lt;revisionDesc&gt;                                                                                  
-      &lt;change&gt;                                                                                      
-        &lt;date&gt;01. May 2003&lt;/date&gt;                                                                   
-        &lt;respStmt&gt;                                                                                  
-          &lt;name&gt;Michael Bunk&lt;/name&gt;                                                                 
-        &lt;/respStmt&gt;                                                                                 
-        &lt;item&gt;Updated some things in XML header information&lt;/item&gt;                                  
-      &lt;/change&gt;                                                                                     
-      &lt;change&gt;                                                                                      
-        &lt;date&gt;18. February 2002&lt;/date&gt;                                                              
-        &lt;respStmt&gt;                                                                                  
-          &lt;name&gt;Michael Bunk&lt;/name&gt;                                                                 
-        &lt;/respStmt&gt;                                                                                 
-        &lt;item&gt;First Draft&lt;/item&gt;                                                                    
-      &lt;/change&gt;                                                                                     
-      &lt;change&gt;                                                                                      
-        &lt;date&gt;before February 2002&lt;/date&gt;                                                           
-        &lt;respStmt&gt;                                                                                  
-          &lt;name&gt;Karl-Heinz Gr&uuml;&szlig;ner&lt;/name&gt;                                                         
-        &lt;/respStmt&gt;                                  
-        &lt;item&gt;compilation of wordlists&lt;/item&gt;                                                       
-      &lt;/change&gt;                                                                                     
-    &lt;/revisionDesc&gt;                                                                                 
-  &lt;/teiHeader&gt;
-    </computeroutput></literallayout></blockquote></para>
+          &lt;name&gt;Michael Bunk, micha@luetzschena.de&lt;/name&gt;
+        &lt;/respStmt&gt;
+      &lt;/titleStmt&gt;
+      &lt;editionStmt&gt;
+        &lt;edition&gt;2nd. Online Draft&lt;/edition&gt;
+      &lt;/editionStmt&gt;
+      &lt;publicationStmt&gt;
+        &lt;publisher&gt;freedict.de&lt;/publisher&gt;
+        &lt;date&gt;2002-2003&lt;/date&gt;
+        &lt;availability&gt;
+          &lt;p&gt;GNU GENERAL PUBLIC LICENSE&lt;/p&gt;
+        &lt;/availability&gt;
+      &lt;/publicationStmt&gt;
+      &lt;seriesStmt&gt;
+        &lt;title&gt;free dictionaries&lt;/title&gt;
+      &lt;/seriesStmt&gt;
+      &lt;notesStmt&gt;
+        &lt;note&gt;Thanks go to the supporters of this project:
+	Karl-Heinz Grüßner, University of Tübingen; Rebekah Tham,
+        CIEFL, Shillong; Brother Sngi, Sacred Heart College,
+        Shillong; University of Leipzig, Depts of Indology and
+        Computer Science; Rik Faith for dictd server &amp;amp;
+        protocol; TEI for their wonderful guidelines; Horst
+        Eyermann for his generous freedict project; the open source
+        community: thrust for trust &amp;amp; development&lt;/note&gt;
+      &lt;/notesStmt&gt;
+      &lt;sourceDesc&gt;
+        &lt;p&gt;http://www.freedict.de/&lt;/p&gt;
+      &lt;/sourceDesc&gt;
+    &lt;/fileDesc&gt;
+    &lt;revisionDesc&gt;
+      &lt;change&gt;
+        &lt;date&gt;01. May 2003&lt;/date&gt;
+        &lt;respStmt&gt;
+          &lt;name&gt;Michael Bunk&lt;/name&gt;
+        &lt;/respStmt&gt;
+        &lt;item&gt;Updated some things in XML header information&lt;/item&gt;
+      &lt;/change&gt;
+      &lt;change&gt;
+        &lt;date&gt;18. February 2002&lt;/date&gt;
+        &lt;respStmt&gt;
+          &lt;name&gt;Michael Bunk&lt;/name&gt;
+        &lt;/respStmt&gt;
+        &lt;item&gt;First Draft&lt;/item&gt;
+      &lt;/change&gt;
+      &lt;change&gt;
+        &lt;date&gt;before February 2002&lt;/date&gt;
+        &lt;respStmt&gt;
+	&lt;name&gt;Karl-Heinz Grüßner&lt;/name&gt;
+        &lt;/respStmt&gt;
+        &lt;item&gt;compilation of wordlists&lt;/item&gt;
+      &lt;/change&gt;
+    &lt;/revisionDesc&gt;
+  &lt;/teiHeader&gt;</programlisting>
 
-    <para>That header is transformed to this 00-database-info text:</para>
+<para>That header is transformed to this <literal>00-database-info</literal> text:</para>
 
-    <para><blockquote><literallayout><computeroutput>
-Khasi-German Freedict Dictionary                                                                    
-                                                                                                    
-Khasi Databases Maintainer: Michael Bunk, micha@luetzschena.de                                      
-                                                                                                    
-Edition: 2nd. Online Draft                                                                          
-                                                                                                    
-Published by: freedict.de, 2002-2003                                                                
-                                                                                                    
-Series: free dictionaries                                                                           
-                                                                                                    
-Notes:                                                                                              
-                                                                                                    
+    <screen>Khasi-German Freedict Dictionary
+
+Khasi Databases Maintainer: Michael Bunk, micha@luetzschena.de
+
+Edition: 2nd. Online Draft
+
+Published by: freedict.de, 2002-2003
+
+Series: free dictionaries
+
+Notes:
+
 * Thanks go to the supporters of this project: Karl-Heinz Grüßner,
-University of T&uuml;bingen; Rebekah Tham, CIEFL, Shillong; Brother Sngi,                               
-Sacred Heart College, Shillong; University of Leipzig, Depts of                                     
-Indology and Computer Science; Rik Faith for dictd server &amp; protocol;                               
-TEI for their wonderful guidelines; Horst Eyermann for his generous                                 
-freedict project; the open source community: thrust for trust &amp;                                     
-development                                                                                         
-                                                                                                    
-Source: http://www.freedict.de/                                                                     
-                                                                                                    
-Changelog:                                                                                          
-                                                                                                    
-* Mon Feb 23 23:03:30 2004 tei2dictxml_xml.pl: converted TEI database                               
-into .dict format                                                                                   
-                                                                                                    
-* 01. May 2003 Michael Bunk: Updated some things in XML header                                      
-information                                                                                         
-                                                                                                    
-* 18. February 2002 Michael Bunk: First Draft                                                       
-                                                                                                    
-* before February 2002 Karl-Heinz Grüßner: compilation of wordlists
-    </computeroutput></literallayout></blockquote></para>
+University of Tübingen; Rebekah Tham, CIEFL, Shillong; Brother Sngi,
+Sacred Heart College, Shillong; University of Leipzig, Depts of
+Indology and Computer Science; Rik Faith for dictd server &amp; protocol;
+TEI for their wonderful guidelines; Horst Eyermann for his generous
+freedict project; the open source community: thrust for trust &amp;
+development
 
+Source: http://www.freedict.de/
+
+Changelog:
+
+* Mon Feb 23 23:03:30 2004 tei2dictxml_xml.pl: converted TEI database
+into .dict format
+
+* 01. May 2003 Michael Bunk: Updated some things in XML header
+information
+
+* 18. February 2002 Michael Bunk: First Draft
+
+* before February 2002 Karl-Heinz GrÃ¼Ãner: compilation of wordlists</screen>
   </section>
 
-  <section id="templates">
-    <title>Examples and Templates</title>
-    
-    <para>A minimal entry:
-      <blockquote><literallayout><computeroutput>
-          &lt;entry&gt;                                                                
-                &lt;form&gt;&lt;orth&gt;dog&lt;/orth&gt;&lt;/form&gt;                                       
-                &lt;trans&gt;Hund&lt;/trans&gt;                                                  
-          &lt;/entry&gt;     
-      </computeroutput></literallayout></blockquote>
-    </para>
+  <section id="entry-examples">
+    <title>Entry Examples</title>
+
+    <example>
+      <title>A minimal entry</title>
+      <programlisting>&lt;entry&gt;
+  &lt;form&gt;&lt;orth&gt;dog&lt;/orth&gt;&lt;/form&gt;
+  &lt;trans&gt;Hund&lt;/trans&gt;
+&lt;/entry&gt;</programlisting>
+    </example>
 
     <para>After formatting this entry might look like:
-      <blockquote><literallayout><computeroutput>
-    dog
-       Hund
-      </computeroutput></literallayout></blockquote>
+      <screen>dog
+    Hund</screen>
     </para>
-       
-    <para>A more complete entry:
-    <blockquote><literallayout><computeroutput>
-      &lt;entry&gt;                                                                
-        &lt;form&gt;                                                                   
-          &lt;orth&gt;dog&lt;/orth&gt;                                   
-          &lt;pron&gt;dɔg&lt;/pron&gt;                          
-        &lt;/form&gt;                                                          
-        &lt;gramGrp&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;/gramGrp&gt;            
-        &lt;sense n="1"&gt;
-          &lt;trans&gt;                                                                  
-          &lt;tr&gt;Hund&lt;/tr&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;gen&gt;m&lt;/gen&gt;
-          &lt;/trans&gt;                                                                 
-          &lt;eg&gt;                                                             
-            &lt;usg&gt;The dog is barking.&lt;/usg&gt;                           
-            &lt;trans&gt;Der Hund bellt.&lt;/trans&gt;            
-          &lt;/eg&gt;                            
-        &lt;/sense&gt;                                
-      &lt;/entry&gt;                                                                   
-    </computeroutput></literallayout></blockquote></para>
 
-    <para><emphasis>orth</emphasis> gives the orthography, ie. how the word is correctly written.
-      If there are several ways, you can use multiple <emphasis>orth</emphasis> elements.
-      <emphasis>pron</emphasis> gives the pronunciation (sic!), ie how the word is spoken. In FreeDict
+    <example>
+      <title>A more complete entry</title>
+    <programlisting>
+      &lt;entry&gt;
+        &lt;form&gt;
+          &lt;orth&gt;dog&lt;/orth&gt;
+          &lt;pron&gt;dÉg&lt;/pron&gt;
+        &lt;/form&gt;
+        &lt;gramGrp&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;/gramGrp&gt;
+        &lt;sense n="1"&gt;
+          &lt;trans&gt;
+          &lt;tr&gt;Hund&lt;/tr&gt;&lt;pos&gt;n&lt;/pos&gt;&lt;gen&gt;m&lt;/gen&gt;
+          &lt;/trans&gt;
+          &lt;eg&gt;
+            &lt;usg&gt;The dog is barking.&lt;/usg&gt;
+            &lt;trans&gt;Der Hund bellt.&lt;/trans&gt;
+          &lt;/eg&gt;
+        &lt;/sense&gt;
+      &lt;/entry&gt;</programlisting>
+    </example>
+
+    <para><sgmltag>orth</sgmltag> gives the orthography, ie. how the word is
+      correctly written.  If there are several ways, you can use multiple
+      <sgmltag>orth</sgmltag> elements.
+      <sgmltag>pron</sgmltag> gives the pronunciation (sic!), ie how the word is spoken. In FreeDict
       we use the IPA (International Phonetic Alphabet) that is also
       contained in Unicode. There is nothing to support you
       entering it here :) In a <emphasis>gramGrp</emphasis> element, all grammatical information
       is grouped. You can give the part of speech (here <emphasis>n</emphasis> for noun),
       the gender and also
-      the number (singular, plural) of the headword (Number ist not given in this example).
+      the number (singular, plural) of the headword (Number is not given in this example).
       Some time in the future we should suggest the possible parts of
       speech to enter here, so that one doesn't write <emphasis>n</emphasis> and the other one
       <emphasis>noun</emphasis> and the third one <emphasis>N</emphasis> or whatever.</para>
@@ -457,27 +589,320 @@ information
       optional. Translations are given in the <emphasis>tr</emphasis> element. Multiple
       <emphasis>tr</emphasis>
       elements may be given. For each grammatical information is optional.</para>
-    <para>With <emphasis>eg</emphasis> you can give examples of usage (exampla grata) and
+    <para>With <emphasis>eg</emphasis> (exempla grata) you can give examples of usage and
       optionally their translation.</para>
-    
+
     <para>After formatting it might look as (pronunciation
        and translation of the example were done away with, because
        the stylesheet used for formatting needs to be fixed):
-      <blockquote><literallayout><computeroutput>
+      <screen>
 	    dog &lt;n.&gt;
 
 	      1. Hund,  n. m.
 	           "The dog is barking."
-      </computeroutput></literallayout></blockquote>
+      </screen>
     </para>
+
+    <variablelist><title>Supported elements in entries (children
+	 of <sgmltag>entry</sgmltag>)</title>
+      <varlistentry>
+	<term><literal>form</literal></term>
+	<listitem>
+	  <para>for grouping of <sgmltag>orth</sgmltag> and
+	    <sgmltag>pron</sgmltag> elements</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><literal>orth</literal></term>
+	<listitem>
+	  <para>becomes a headword</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>pron</literal></term>
+	<listitem>
+	  <para>pronunciation; optional</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>gramGrp</literal></term>
+	<listitem>
+	  <para>grouping of <sgmltag>pos</sgmltag>, <sgmltag>num</sgmltag>
+	    and <sgmltag>gen</sgmltag> which give part of speech, number
+	    and genus; giving grammatical information is optional;
+	    <sgmltag>pos</sgmltag>, <sgmltag>num</sgmltag> 
+            and <sgmltag>gen</sgmltag> are allowed after <sgmltag>tr</sgmltag>
+            as well</para>
+	</listitem>
+      </varlistentry>
+
+     <varlistentry>
+	<term><literal>sense</literal></term>
+	<listitem>
+	  <para>becomes a numbered sense; optional</para>
+	</listitem>
+      </varlistentry>
+
+     <varlistentry>
+	<term><literal>usg type="dom"</literal></term>
+	<listitem>
+	  <para>domain to which a sense applies
+	    <note>
+	      <para>For increasing machinary dictionary usability, the contents of this element
+		should be standardized accross dictionaries. A table could translate the content
+		to a specific language, if required.</para> 
+	    </note>
+	  </para>
+	</listitem>
+      </varlistentry>
+
+     <varlistentry>
+	<term><literal>trans</literal></term>
+	<listitem>
+	  <para>groups informtion relating to a translation equivalent; the translation
+	    equivalent itself is givenn in a <sgmltag>tr</sgmltag> element; other information
+	    regarding a single translation equivalent would be grammatical information, esp.
+	    <sgmltag>gen</sgmltag> (the part of speech is always the same as in the headword,
+	    I say); optional by DTD; usage recommended
+	    <warning>
+	      <para>This element was used incorrectly in connection with the <sgmltag>tr</sgmltag>
+		element in FreeDict. Do not copy those mistakes!</para>
+	    </warning>
+	  </para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>tr</literal></term>
+	<listitem>
+	  <para>contains a literal translation equivalent; when building a reverse index,
+	    the contentes of these elements will be used instead of those of <sgmltag>orth</sgmltag>
+	    elements for indexed headwords</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>def</literal></term>
+	<listitem>
+	  <para>contains a definition; is taken over verbatim; in a bilingual dictionary,
+	    grammatical particles sometimes cannot be translated, so a
+	    definition of their function is more appropriate</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>eq</literal></term>
+	<listitem>
+	  <para>"exempla grata"; example sentence; optional; the example itself
+	    must be contained in a <sgmltag>q</sgmltag> element to mark it as a quote.
+	    A translation of the example can also be given, but currently we don't know how.
+	    You have to read in the TEI Guidelines to find out.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>xref</literal></term>
+	<listitem>
+	  <para>a cross reference; optional; transformed to
+	    {} in dictd database format and {sa} in BEDic format</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><literal>note</literal></term>
+	<listitem>
+	  <para>free notes; the attribute "resp" is reserved to
+	    contain the translator string (id or name or email),
+	    only used in <command>xdf2tei.pl</command></para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
 
     <para>Please refer to the TEI Guidelines and take a look at the XML code
       of a dictionary for more examples!</para>
+
   </section>
+  
+  <section id="template">
+    <title>TEI Dictionary Template</title>
+
+    <para>You can use the <firstterm>FreeDict Dictionary TEI XML
+	Template</firstterm> as a starting point for your own dictionaries. You
+      can download it from <ulink url="la1-la2.template.tei">here</ulink>.</para>
+    
+    <programlisting>&la1-la2.template.tei;</programlisting>
+  </section>
+
+  <section>
+    <title>Dictionary Quality</title>
+
+    <para>As dictionaries are used as authoritative sources for people looking
+      up the spelling of words or learning foreign languages, it is important
+      that they maintain a high quality standard.</para>
+
+    <para>The following quality criteria are important:</para>
+
+    <variablelist><title>Quality Criteria for Dictionaries</title>
+      <varlistentry>
+	<term>Correctness</term>
+        <listitem>
+	  <para>The reason for this we mentioned in the introductory paragraph.</para>
+        </listitem>
+      </varlistentry>
+
+       <varlistentry>
+	<term>Headword Count</term>
+        <listitem>
+	  <para>It is frustrating not to find a word in a dictionary.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>Usability</term>
+        <listitem>
+	  <para>This is mainly a question for the platforms that our dictionaries
+	    are provided for. Dictionaries should be easy to install and word lookup
+	    should be easy as well. Electronic dictionaries have a great advantage
+	    in the speed of entry lookups and can provide lookup strategies that
+	    paper dictionaries can't. Paper dictionaries have the advantage to
+	    be quite portable, up to a number of kg that depends on the capacity of
+	    the bearer. PDA can replace nowadays a whole bunch of dictionaries
+	    while maintaining portability.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <section>
+      <title>Improving Quality</title>
+
+      <para>So what can be done for above criteria? Indirectly you can always
+	support the people working on dictionaries, sparing resources for them.
+	To directly improve, the following can be done:</para>
+
+      <variablelist>
+	<title>Means to Improve Dictionary Quality</title>
+	
+	<varlistentry>
+	  <term>Revise entries manually</term>
+	  <listitem>
+	    <para>Having no comfortable editor presently makes this a bit hard.
+	      It requires profound knowledge of the languages of the dictionary,
+	      so this task is reserved for experts.</para>
+	  </listitem>
+	</varlistentry>
+
+        <varlistentry>
+          <term>Spellcheck the dictionary</term>
+          <listitem>
+            <para>When you write a dictionary for a language where no spellchecker
+	      wordlist exists yet, of course you can't do this. But mostly
+	      dictionaries will be from some language into English. The English
+	      part of the dictionary can be spellchecked! This requires a
+	      suitable tool.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Check sanity/completeness of entries</term>
+          <listitem>
+            <para>Can help to spot entries without part of speech information
+	      or carrying editorial marks requesting clarification. Requires a supporting
+	      tool.</para>
+	  </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Report and fix bugs</term>
+          <listitem>
+            <para>This is a natural activity for Open Source Software.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Grow the dictionary</term>
+          <listitem>
+	    <para>Provided there is a way to enter/submit new entries, the
+	      question arises from from where to get new entries or information
+	      to extend existing entries. This is a quite complex topic, so it
+	      might go into its own section one day when it has grown up (are
+	      there parallels to "How to grow a language" from Guy
+	      Steele?).</para>
+	    
+	    <para>Having a miss during word lookup creates a likely candidate
+	      to be added to the dictionary if the query was not misspelled.
+	      Usually the translation can be found in another dictionary (that
+	      is what I do when I have a miss). This combination of headword
+	      and translation can be added to the dictionary you want to
+	      grow.</para>
+
+	    <para>Doing it systematically can be called copying a dictionary.
+	      Watch out for author's rights here. Nobody can own words, but
+	      compiling a dictionary can be quite some work, so acknowledge
+	      this!</para> 
+
+	    <para>Often, having parts can help get you going. Having wordlists
+	      of the headwords or translation equivalents of one of the
+	      languages of the dictionary can help growing a dictionary. With a
+	      wordlist you only have to answer slightly more easy questions
+	      like "What is the translation of word
+	      <replaceable>XXX</replaceable> in the other language?" or "What
+	      is the Part of Speech of word
+	      <replaceable>XXX</replaceable>?".</para>
+
+	    <para>Sometimes wordlists are quite easy to get. You can for
+	      example extract them from existing dictionaries or spellchecker
+	      databases. The tool <command>index2wordlist.pl</command> in the
+	      <filename>tools/testing</filename> directory can make a word
+	      list out of a dictd database index file. The <command>aspell
+		dump</command> command can give you the wordlist of a database
+	      of the aspell spellchecker.</para>
+
+	    <para>For languages where you cannot reuse exisiting word lists,
+	      eg. when you are spearheading the development of the first-ever
+	      dictionary of a minority language, the situation is slightly more
+	      difficult.</para>
+
+	    <para>If electronic documents - preferably websites -
+	      in that language exist, you can use a Natural Language Processing
+	      technique that employs <firstterm>seed</firstterm> words as
+	      input. The seeds you have to give should be specific to your
+	      language, ie. they should not be used in other languages.  Then
+	      you can identify the electronic documents containing those seeds.
+	      They are likely to be in your language. From the documents in
+	      your language you can extract additional words which you can
+	      reuse to find more documents in your language and more words in
+	      turn. In hypertexts you can exploit a locality feature of
+	      documents in a certain language: The links are likely to lead to
+	      documents in the same language. So you can get more words from
+	      there as well.</para>
+	    
+	     <para>An implementation of this technique was done by Prof. Kevin
+	       Scannell with <ulink
+		 url="http://borel.slu.edu/crubadan/">Crudaban</ulink>, a
+	       crawler that uses the <ulink url="http://www.google.com/apis/">Google
+		 API(s)</ulink> to find websites.</para>
+
+          </listitem>
+        </varlistentry>
+
+
+      </variablelist>
+    </section>
+  </section>
+    
 </chapter>
- 
+
 <!-- Keep this comment at the end of the file. It is for emacs.
+
+ Why emacs' psgml extension cannot validate using the parent document?
+
  Local Variables:
- sgml-parent-document: ("freedicthowto.xml" "book" "chapter")
+ mode: xml
+ sgml-doctype: "freedicthowto.xml"
+ sgml-parent-document: ("freedicthowto.xml" "book" "part" "chapter")
+ sgml-trace-entity-lookup: t
  End:
  -->
+

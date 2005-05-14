@@ -10,7 +10,7 @@
  ]>-->
 <!-- COMMENT OUT EVERYTHING above HERE UP TO BUILD -->
 <chapter id="dictd">
-  <title>The dictd aproach</title>
+  <title>The dictd approach</title>
   <abstract>
     <para>This section explains how to build most of the TEI format
       dictionary from a file formatted the same way as a dictd
@@ -20,7 +20,6 @@
       simple format. You will still have to construct the TEI header
       section, but most of the work will be done for with the actual
       content of the dictionary.</para>
-    <!-- one of (formalpara para simpara) -->
   </abstract>
   <section id="dictd-format">
     <title>The Dictd.dict Format</title>
@@ -47,7 +46,9 @@
 
     <para><example id="eng-lat">
       <title>A freedict-eng-lat.dict snippet</title>
-      <literallayout>
+      <warning><para>The pronunciation encoding is messed up
+        in this example!</para></warning>
+      <screen>
 	  00-database-info        <lineannotation> &lt;comment /&gt; A formatted string Dictd knows about</lineannotation>
    3. Apr. 2000 Database was converted to TEI format and checked
    into CVS 9.Jan.2000Phonetics added (H.Ey) - machine generated
@@ -121,20 +122,20 @@ zone [zoun]
      zona
 
 	  <lineannotation>&lt;comment /&gt; Notice the clean empty line between each entry</lineannotation>
-	</literallayout>
+	</screen>
 	<para>So, an entry has this format: Blank line above. Headword
           starts on the beginning of the line (column 0), the translation
           starts on the next new line that is indented more than column 0.</para>
 
 	<para>Like so:
-	  <literallayout>
+	  <screen>
 Headword
     Translation
 
 Headword2
     Translation2
 
-	  </literallayout>
+	  </screen>
 	</para>
 
       </example>
@@ -143,10 +144,11 @@ Headword2
     <para>
       <example id="eng-lat-idx-eg">
 	<title>The dictd .index format</title>
-	<para>The corresponding .index file is built by the dictfmt tool
-          and looks a little like this:</para>
+	<para>The corresponding .index file is built by the
+	  <application>dictfmt</application> tool
+          and looks like this:</para>
 	<para id="eng-lat-index">
-	  <literallayout>
+	  <screen>
 00-database-info        Q       QM
 00-database-short       Qd      3
 00-database-url RV      q
@@ -162,8 +164,8 @@ abdomen BeV     BW
 abductor        Bfs     k
 aberration      BgR     x
 abet    BhD     8
-abhor   BiA     s
-	  </literallayout>  </para>
+abhor   BiA     s</screen>
+	</para>
       </example>
     </para>
 
@@ -222,7 +224,7 @@ abhor   BiA     s
         the same.</para>
        <para>In such case, it can be sorted again, using a command such as
         <command>LC_ALL=C sort -t $'\t' -k1,1 -bdf broken.index >working.index</command>.
-        Note the LC_ALL=C! Leaving it out can produce a broken index,
+        Note the <literal>LC_ALL=C</literal>! Leaving it out can produce a broken index,
         especially related to space characters. </para>
 
     </section>

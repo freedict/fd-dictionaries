@@ -2,11 +2,11 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
  "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
 
-<!-- why make urls to entitites? i think they are only useful for recurring things -->
+ <!-- Why make all urls to entitites? entitties are only useful for recurring things (Michael) -->
  <!ENTITY fdictUrl "http://www.freedict.org/">
  <!ENTITY fdictsf "http://sourceforge.net/projects/freedict/">
- <!ENTITY fdictMail "freedict-beta@lists.sourceforge.net" >
- <!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
+ <!ENTITY fdictMail "freedict-beta@lists.sourceforge.net">
+ <!ENTITY MichEmail "bunk@imn.htwk-leipzig.de">
  <!ENTITY Mich137 "micha137@users.sourceforge.net">
  <!ENTITY PeteEmail "petergozz@users.sf.net">
  <!ENTITY TEIsys "-//TEI P4//DTD Main Document Type//EN">
@@ -17,12 +17,14 @@
  <!ENTITY xmluni "http://skew.org/xml/tutorial/">
  <!ENTITY w3c "http://www.w3.org/">
  <!ENTITY w3cxml11 "http://www.w3.org/TR/2004/REC-xml11-20040204/">
- <!ENTITY oasiscover "http://xml.coverpages.org/ ">
- <!ENTITY oasis "http://www.oasis-open.org/home/index.php">
- <!ENTITY cmdp "account@host:~$">
- <!ENTITY Rcmdp "ADMIN@host:##">
+ <!ENTITY oasiscover "http://xml.coverpages.org/">
+ <!ENTITY oasis "http://www.oasis-open.org/home/">
+ <!ENTITY cmdp "<prompt>account@host:~$</prompt>">
+ <!ENTITY Rcmdp "<prompt>ADMIN@host:##</prompt>">
  <!ENTITY gnufdl "http://www.gnu.org/copyleft/fdl.html">
  <!ENTITY gnugpl "http://www.gnu.org/licenses/gpl.html">
+
+ <!ENTITY la1-la2.template.tei SYSTEM "inc/la1-la2.template.tei.escaped.xml">
 
  <!ENTITY intro SYSTEM "introduction.xml">
  <!ENTITY writing SYSTEM "writing.xml">
@@ -42,12 +44,20 @@
     <author>
       <firstname>Peter</firstname>
       <surname>Gossner</surname>
-      <address><city>Woodside</city><state>South Australia</state><email>&PeteEmail;</email></address>
+      <address>
+       <city>Woodside</city>
+       <state>South Australia</state>
+       <email>&PeteEmail;</email>
+      </address>
     </author>
     <author>
       <firstname>Michael</firstname>
       <surname>Bunk</surname>
-      <address><city>Lützschena</city><country>Germany</country><email>&Mich137;</email></address>
+      <address>
+       <city>Lützschena</city>
+       <country>Germany</country>
+       <email>&Mich137;</email>
+      </address>
     </author>
     <collab>
       <collabname>namen</collabname>
@@ -64,8 +74,6 @@
         developer tools etc.</para>
     </abstract>
     <revhistory>
-<!-- Michael we can comment out whatever we don't need in this revision section, perhaps leaving just the last couple.
-     PG: Yes, as long its not published, nobody cares for the history except us. Let's keep it short -->
       <revision>
 	<revnumber>0.0.0</revnumber>
 	<date>Sun Feb 08 2004</date>
@@ -106,17 +114,36 @@
 	  <para>Renamed dict2xml.py into dict2tei.py, added example dictfmt command</para>
 	</revdescription>
       </revision>
+      <revision>
+        <revnumber>0.0.5</revnumber>
+	<date>Sat Mar 19 2005</date>
+	<authorinitials>MB</authorinitials>
+	<revdescription>
+	  <para>Added some DocBook style customisations. Most notably the long XML
+	    listings now stand out by having a different background. Shortened
+	    TOC (2 levels, no list of examples). Added sections on CVS and Makefile.common,
+	    making the TOC unbalanced. Spellchecked. Extended description of supported
+	    elements in TEI header and entries. The XHTML version now uses a
+	    CSS stylesheet to make usage of a serifless font.</para>
+	</revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.0.6</revnumber>
+	<date>Sat Apr 15 2005</date>
+	<authorinitials>MB</authorinitials>
+	<revdescription>
+	  <para>Less chunking. Sections on Build System and Quality/Growing a Dictionary.</para>
+	</revdescription>
+      </revision>
     </revhistory>
     <legalnotice>
       <title>Copyright Notice</title>
       <blockquote id="copyrightSample">
-	<para>Copyright (c) 2004 Peter Gossner and Michael Bunk.</para>
+	<para>Copyright (c) 2004-2005 Peter Gossner and Michael Bunk.</para>
 	<para>Permission is granted to copy, distribute and/or modify this document
 	  under the terms of the <ulink url="&gnufdl;">GNU Free Documentation License,</ulink> Version 1.2
 	  or any later version published by the Free Software Foundation;
-	  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-	  A copy of the license may be found at <ulink url="&gnufdl;"> GNU
-	  Free Documentation License</ulink>.</para>
+	  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.</para>
 	<para>Permissions are extended to copy and distribute translations of this document
           into another language, under the above conditions for modified versions, except
           that this extended permission notice may be included in translations approved by
@@ -148,23 +175,21 @@ Words are the means to get the idea where you want it,
 
 Where shall I find a man who forgets about words, and have a word with him?
 
-    <author><personname><firstname>Chuang</firstname> <surname>Tzu</surname></personname></author>
-</literallayout>
-      <indexterm>
-	<primary>rabbit</primary>
-      </indexterm><indexterm>
-	<primary>fish</primary>
-      </indexterm><indexterm>
-	<primary>bait</primary>
-      </indexterm><indexterm>
-	<primary>Chuang Tzu</primary>
-	<secondary>epigram</secondary>
+  </literallayout>
+    <author>
+      <personname>
+        <firstname>Chuang</firstname>
+	<surname>Tzu</surname>
+      </personname>
+    </author>
+      <indexterm><primary>rabbit</primary></indexterm>
+      <indexterm><primary>fish</primary></indexterm>
+      <indexterm><primary>bait</primary></indexterm>
+      <indexterm><primary>Chuang Tzu</primary>
+        <secondary>epigram</secondary>
       </indexterm>
     </para>
   </dedication>
-
-  <!-- include other docs here from article level in order the easiest way is to just write them here
-    then cut and paste to a new document.xml see prolog for examples -->
 
   &intro;
 
@@ -177,34 +202,36 @@ Where shall I find a man who forgets about words, and have a word with him?
     &writing-dictd;
   </part>
   <part id="submissions">
-    <title>Submission guidelines</title>
+    <title>FreeDict Build System and Submitting New Dictionaries</title>
     &submit;
   </part>
 
   &tools;
   
+  <!-- As long as we cannot make the list of examples appear in an appendix,
+       its generation is disabled in customize-docbook.xsl -->
+
+  <!-- and here as well
   <appendix id="examples">
     <title>Examples</title>
     <para>I see that we get a list of examples. Unfortunately it does
-      not appear in this appendix.</para>
+      not appear in this appendix.</para>    
   </appendix>
+    --> 
   
-  <appendix id="related">
-    <title>Related Stuff</title>
-    <para>Michael asks: What is related stuff? Links?</para>
-  </appendix>
+  <!-- Don't delete this element! It makes the index appear here. -->
+  <index/>
   
-  <index>
-    <!-- don't delete the index element. It makes the index appear here -->
-  </index>
-  
-  <colophon><!-- another of Michael's questions: where will this colophon part appear? -->
+  <colophon>
+    <!-- Michael: this colophon part doesn't appear in the TOC. The "next"
+         link from the index will show this information -->
     <title>About this document</title>
     <para>This HOWTO was written using the <application>DocBook XML</application> set
       of DTDs using <application>Xemacs</application> as an editor.</para>
-    <para>Conversion to XHTML was done using <application><ulink
-      url="http://cyberelk.net/tim/xmlto/">xmlto</ulink></application> and the
-      following command line string: <command>xmlto xhtml -o xhtml freedicthowto.xml</command>.
+    <para>Conversion to XHTML was done using
+      <application><ulink url="http://cyberelk.net/tim/xmlto/">xmlto</ulink></application>
+      with the following command:
+      <command>xmlto -m customise-docbook.xsl -o xhtml xhtml freedicthowto.xml</command>.
     </para>
   </colophon>
  

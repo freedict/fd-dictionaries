@@ -43,7 +43,7 @@
     <title>Editing the TEI XML files directly</title>
     <para>The place to start is with a good general purpose editor. The
 	features required for our purposes are Unicode support,
-	syntax hightlighting and maybe XML support.</para>
+	syntax highlighting and maybe XML support.</para>
 
     <para>Xemacs supports all those features. Of particular note are the
 	functionalities Xemacs (and to a slightly lesser extent GNU Emacs)
@@ -59,7 +59,7 @@
 	than Vim (in this case) as it has native UTF-8 support and should
 	support multiple character sets (and "fonts") out of the box (though
 	in honesty I did not explore Vim's plug-in environment to any great
-	extent) [Peter: vim supports multibyte/unidode as well!!! see vim --version
+	extent) [Peter: vim supports multibyte/unicode as well!!! see vim --version
         and look for +multi_byte]. Vim is
         still useful here and supports colourisation of tags
 	etc. but also lots of other coding languages, and has the important
@@ -74,7 +74,7 @@
 	without it. It doesn't hurt and may be useful for your other work.</para>
       </abstract>
 
-      <para>Before configuring, make sure you have the psgml und Mule-UCS
+      <para>Before configuring, make sure you have the psgml and Mule-UCS
 	packets installed. You can check this by ...TODO</para>
       <para>If you have a fresh install, all you need to do is configure the
 	interface so that you can bear it. It is <emphasis>surprisingly ugly</emphasis>
@@ -107,19 +107,13 @@
 	  settings are either at defaults or commented (!) out.</para>
 
 	<para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
-##########################################################################
-	    Cut from below here:
-	    <blockquote>
-	      
-	      <literallayout><computeroutput>
-
-
+	  <programlisting>
 ! 
 ! You can use the examples below as a basis for your own customisations:
 ! copy and modify any of the resources below into your own ~/.Xdefaults file.
-! .Xdefaults specifies defaults for all applications, not just XEmacs; it is
+! .Xdefaults specifies defaults for all applications, not just Xemacs; it is
 ! normally used to customise fonts, colours, and the like, while ~/.emacs is
-! used to change other sorts of (XEmacs-specific) behaviour.
+! used to change other sorts of (Xemacs-specific) behaviour.
 
 ! READ THIS NOW
 ! =============
@@ -129,7 +123,7 @@
 ! 
 ! 	xrdb -load ~/.Xdefaults
 ! 
-! The resources will take effect the next time you restart XEmacs.  (Simply
+! The resources will take effect the next time you restart Xemacs.  (Simply
 ! creating a new xemacs frame is not enough - you must restart the editor
 ! for the changes to take effect.)
 ! 
@@ -429,30 +423,33 @@ xcalendar.*helpButton*Background: SteelBlue3
 xcalendar.*daynames*Background: SteelBlue3
 xcalendar.*quitButton*Foreground: White
 xcalendar.*editorTitle*Background: DarkSlateGray1
-		</computeroutput>
-	</literallayout>
-    </blockquote>
-  <indexterm>
-	  <primary>Xemacs</primary>
-	  <secondary>emacs</secondary>
-	  <tertiary>Editors</tertiary>
-	</indexterm>
-cut from above here.
-###############################################################################
-</para>
-</section>
+	</programlisting>
+      <indexterm>
+	<primary>Xemacs</primary>
+	<secondary>emacs</secondary>
+	<tertiary>Editors</tertiary>
+      </indexterm>
+    </para>
+  </section>
 
-     
+  <section>
+    <title>A home dot xemacs/custom.el file</title>
+    <para>Most of the following should be OK for a normal xemacs install.
+      <emphasis>All of them may be set from the <guimenu>options menus</guimenu>.</emphasis>
+      Start with the first set of menus that <guilabel>Options</guilabel>
+      open and set your email addresses and any other first level preferences.
+      You save them by choosing the <guimenuitem>save options to init file</guimenuitem>
+      right at the bottom of the opening dialog (which rather confusingly saves the
+      file <filename>~/.xemacs/custom.el</filename>). You are best to leave the
+      <filename>~/.xemacs/init.el</filename> file alone for now. One other word
+      of advice is to not edit this file too much by hand, as the syntax is very
+      strict and unforgiving. If it doesn't work, remove it and start again.</para>
 
-
-      <section>
-	<title>A home dot xemacs/custom.el file</title>
-	  <para>Most of the following should be ok for a normal xemacs install. (I hope).<emphasis> All of them may be set from the<guimenu> options menus</guimenu>.</emphasis> Start with the first set of menus that <guilabel>"Options"</guilabel> open and set your email addresses and any other first level preferences. You save them by choosing the "<guimenuitem>save options to init file</guimenuitem>" right at the bottom of the opening dialog. (which rather confusingly saves the file<filename> ~/.xemacs/custom.el</filename>.) Your best to leave the <filename> ~/.xemacs/init.el</filename> file alone for now. One other word of advice is to not edit this file too much by hand the syntax is very strict and unforgiving. If it doesn't work remove it and start again.</para>
-<para>~/.xemacs/custom.el</para>
-	  <beginpage/> <!-- for print format -->
-	  <para><!-- warning replace &lt; and %gt; with < and > if copying from XML source --><blockquote>
-<literallayout>
-	      <computeroutput>
+    <para>~/.xemacs/custom.el</para>
+    <beginpage/> <!-- for print format -->
+    
+    <!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
+    <programlisting>
 (custom-set-variables
  '(require-final-newline t)
  '(init-face-from-resources nil)
@@ -523,22 +520,30 @@ cut from above here.
  '(html-helper-bold-face ((t (:background "white" :family "helvetica" :bold t))))
  '(arial ((t (:foreground "blue4" :size "14" :family "arial"))) t)
  '(paren-face-no-match ((((class color)) (:foreground "blue4" :background "coral" :size "16" :family "helvetica")))))
-</computeroutput>
+</programlisting>
 
-	</literallayout>
-      </blockquote>
-    </para>
-
-<para>Spend Some Time Doing the Tutorials, it is time very well spent. In the meantime: Right clicking on things usually gives you some useful options. A Buffer is a file living in memory only. </para>
-<para>Now I have either saved you a LOT of time or confused you hopelessly , in the latter case I am very sorry. Restore the above files form your saved copies of the originals .. you did that right :) and start xemacs again.</para>
-<para> Explore the GUI and buffer interfaces to the configuration settings, they really are quite extensive. (you can enter your latitude and longitude and have your sunrise sunset and day lengths for example, you can have your self psychoanalysed and play games write mail etc etc... Emacsen are designed to run on a X powered Graphical Interface or from a real consol (or even a virtual terminal, they take full advantage of Unix protocols and services.. you may never need another application :) They are also huge and daunting Interfaces , that can use lots of system resources if poorly configured. How far you take it is of course up to you.</para>
-<para>Oh on the Vi emacs war? I use both, so there :) Sometimes Xemacs is just plain overkill.</para>
-</section>
-
+    <para>Spend some time doing the tutorials, it is time very well spent. In the meantime:
+      Right clicking on things usually gives you some useful options. A buffer is a file
+      living in memory only.</para>
+    <para>Now I have either saved you a LOT of time or confused you hopelessly. In the
+      latter case I am very sorry. Restore the above files form your saved copies of the
+      originals... you did that right :) and start xemacs again.</para>
+    <para>Explore the GUI and buffer interfaces to the configuration settings,
+      they really are quite extensive (you can enter your latitude and longitude
+      and have your sunrise sunset and day lengths for example, you can have yourself
+      psychoanalysed and play games, write mail, etc etc... Emacsen are designed
+      to run on a X powered graphical interface or from a real console (or even a
+      virtual terminal, they take full advantage of Unix protocols and services... you
+      may never need another application :) They are also huge and daunting interfaces,
+      that can use lots of system resources if poorly configured. How far you take it
+      is of course up to you.</para>
+    <para>Oh on the Vi emacs war? I use both, so there :) Sometimes Xemacs is just
+      plain overkill.</para>
+  </section>
 </section>
    <!-- these should all be standalone files ?? perhaps at article level
-	Micha: the following we can move them when they have grown.
-          prehaps the example files from the previous section could go to their
+	Michael: the following we can move them when they have grown.
+          perhaps the example files from the previous section could go to their
           own files -->
     </chapter>
     <chapter>
@@ -549,8 +554,8 @@ cut from above here.
         <command>nsgmls</command> respective <command>onsgmls</command> available.</para>
 
       <para>Validation should be available as a target in the Makefile of each
-        the dictionary modules. Try <command>make validation</command> for the
-        dictionary module you want to validate (cd to it first).</para>
+        dictionary module. Try <command>make validation</command> for the
+        dictionary module you want to validate (<command>cd</command> to it first).</para>
 
       <para>The makefile target itself is simple. It sets some environment variables,
         so that nsgmls can find the DTDs, tells it to handle XML data and then
@@ -572,9 +577,9 @@ cut from above here.
       <para>Some converters for this task are available. They can be found in the
 	<ulink url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
          module</ulink> in the CVS repository of the FreeDict project. Unfortunately,
-	 many translation database/wordlist projects use their own unstandardized
+	 many translation database/wordlist projects use their own unstandardised
 	 format and so require their own converter. It is an aim of FreeDict to
-	 lead to some kind of standardization of data with the TEI format.
+	 lead to some kind of standardisation of data with the TEI format.
 	 Also we hope that upstream projects (ie the projects where actual dictionary
          data comes from) make their data available in TEI XML format or
 	 even directly use TEI XML as their primary data format.</para>
@@ -609,15 +614,19 @@ cut from above here.
 	The stylesheet needs to be applied to the TEI file. Any XSLT processor
 	should do the work. Using
         <ulink url="http://www.gingerall.com/charlie/ga/xml/p_sab.xml">Sablotron</ulink>,
-	the command to give would
-	be <command>sabcmd xsl/tei2c5.xsl la1-la2.tei >la1-la2.c</command>
-	Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
-	you would say
-        <command>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</command>
-        Next, <command>dictfmt</command> has to be called to create the final
-        dictd database files:
-        <command>dictfmt -t --headword-separator %%% la1-la2 &lt;la1-la2.c5</command>
-      </para>
+	the command to give would be</para>
+
+      <para><userinput>sabcmd xsl/tei2c5.xsl <replaceable>la1-la2</replaceable>.tei ><replaceable>la1-la2</replaceable>.c5</userinput></para>
+
+      <para>Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
+	you would say</para>
+
+      <para><userinput>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</userinput></para>
+
+      <para>Next, <command>dictfmt</command> has to be called to create the final
+	dictd database files:</para>
+
+      <para><userinput>dictfmt -t --headword-separator %%% <replaceable>la1-la2</replaceable> &lt;<replaceable>la1-la2</replaceable>.c5</userinput></para>
 
       <para>Second, using <command>xmltei2xmldict.pl</command>. This is the
 	conversion utility developed by the FreeDict project itself. Is converts
@@ -625,24 +634,23 @@ cut from above here.
 	files. Also it supports multiple headwords for a single entry, ie. multiple
         &lt;orth&gt;-Elements inside a single entry, eg. for alternate spellings.
         Another feature is generation of an inverse index. With this, the direction
-        of translation of the dictionary can be reversed, ie. an English-Arabic dicionary
+        of translation of the dictionary can be reversed, ie. an English-Arabic dictionary
         would become queryable Arabic-English.
 	Its disadvantage is, that it depends on the FreeDict project for the conversion
 	to be successful, because the dictd database format is still subject to changes
 	and cannot be as well understood as <command>dictfmt</command> does, which comes
 	from the dictd project itself. For the software dependencies, please read the <ulink
-	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup">
-        <filename>README</filename></ulink>.</para>
+	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup"><filename>README</filename></ulink>.</para>
 
       <para>An example command line would be:
-        <command>xmltei2xmldict.pl -f la1-la2.tei -t xsl/tei2txt.xsl</command></para>
+	<userinput>xmltei2xmldict.pl -f <replaceable>la1-la2</replaceable>.tei -t xsl/tei2txt.xsl</userinput></para>
   
       </chapter>
 
     <chapter id="stylesheets">
-      <title>Style Sheets</title>
-      <para>For the conversion of XML data, XSL/XSLT was devised.
-	In FreeDict, style sheets written using the XSLT language are employed
+      <title>Stylesheets</title>
+      <para>For conversion of XML data, the XSLT language was devised.
+	In FreeDict, stylesheets written in XSLT are employed
 	to describe the transformation of entries into plain text. Using stylesheets
 	we hope to make the conversion process open and adjustable by users to their
 	needs, because now "only" the stylesheets need to be adjusted
@@ -650,15 +658,15 @@ cut from above here.
 	knowledge of converter programming should be required.</para>
 
       <para>In practice though, it turns out that XSLT itself is no more
-	easier than a programming langugage. In fact, because of its different
+	easier than a programming language. In fact, because of its different
 	approach, it is hard to get into. But, we believe the decision to use it
-	was a good one, because now the entry layout is independend of the
-	converter tool. In previous versions of the converter, the perl code
+	was a good one, because now the entry layout is independent of the
+	converter tool. In previous versions of the converter, the Perl code
 	became unmaintainable. It was impossible to oversee what a code change
 	would do to the layout.</para>
 
-      <para>The ultimate place to refer to is the place where the
-	<ulink url="http://www.w3.org/Style/XSL/">XSLT standard</ulink> comes from.
+      <para>The reference for XSLT can be found near the place where
+	<ulink url="http://www.w3.org/Style/XSL/">XSL</ulink> comes from.
         For learning though, some tutorial might be more useful :)</para>
 
       <para>TODO include commented tei2txt.xsl</para>
