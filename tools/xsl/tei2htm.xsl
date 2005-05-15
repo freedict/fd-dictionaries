@@ -55,6 +55,7 @@
     <xsl:if test="not(last()=1)">
       <xsl:number value="position()" format="1. "/>
     </xsl:if>
+    <xsl:apply-templates select="usg"/>
 
     <!-- all trans, comma separated; then the def(s), semicolon separated -->
     <xsl:apply-templates select="trans"/>
@@ -74,6 +75,10 @@
   </blockquote> 
 </xsl:template>
 
+<xsl:template match="usg[@type='dom']">
+  <i><xsl:value-of select="."/>. </i>
+</xsl:template>
+
 <xsl:template match="trans">
   <xsl:apply-templates/>
   <xsl:if test="not(position()=last())">, </xsl:if>
@@ -84,11 +89,15 @@
 </xsl:template>
 
 <xsl:template match="eg">
-  <br/><xsl:apply-templates/>
+  <br/><xsl:apply-templates select="q | trans/tr"/>
 </xsl:template>
 
 <xsl:template match="q">
   &quot;<xsl:apply-templates/>&quot;
+</xsl:template>
+
+<xsl:template match="eg/trans/tr">
+  = &quot;<xsl:value-of select="."/>&quot;
 </xsl:template>
 
 <xsl:template match="xr">

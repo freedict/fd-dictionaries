@@ -20,7 +20,7 @@ Requires:	sablot
 
 %description 
 Scripts to translate TEI XML files of the FreeDict project
-intoi other formats, primarily dictd database format.
+into other formats, primarily dictd database format.
 
 %prep
 %setup -n tools

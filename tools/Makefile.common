@@ -207,9 +207,9 @@ dist: dirs
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES)))
 
-###################
-#### tagets for rpm
-###################
+####################
+#### targets for rpm
+####################
 
 release-rpm: freedict-$(dictname).spec dist
 	@if [! -x /usr/src/packages/SOURCES/freedict-$(dictname)-$(version).src.tar.bz2 ]; then \
@@ -266,4 +266,3 @@ release-zaurus: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).
 	release-zbedic \
 	rpm rpm-reverse freedict-tools-rpm\
 	commit validation test test-reverse clean dist dbupdate
-
