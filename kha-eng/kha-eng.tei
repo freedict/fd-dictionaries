@@ -23,7 +23,7 @@
       <editionStmt>
 	<edition>0.1</edition>
       </editionStmt>
-      <extent>at least 1400 headwords</extent>
+      <extent>at least 1900 headwords</extent>
       <publicationStmt>
 	<publisher>FreeDict</publisher>
 	<availability>
@@ -36,7 +36,7 @@
 	<title>free dictionaries</title>
       </seriesStmt>
      <notesStmt>
-       <note type="status">presently growing (Mar 05)</note>
+       <note type="status">presently growing (May 05)</note>
        <note>Thanks go to Pyndap for her patience during
          all the hours that I spent on this project!</note>
      </notesStmt>
@@ -46,7 +46,7 @@
     </fileDesc>
     <encodingDesc>
         <projectDesc>
-          <p>This dictionary comes to you trough nice people making it
+          <p>This dictionary comes to you through nice people making it
           available for free and for good. It is part of the FreeDict project,
           http://www.freedict.org / http://freedict.de. This
           project aims to make available many translating dictionaries
@@ -54,6 +54,11 @@
       </projectDesc>
     </encodingDesc>
    <revisionDesc>
+       <change>
+	<date>2005-05-04</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Reached 1900 entries, split examples from their translations</item>
+      </change>
        <change>
 	<date>2005-03-02</date>
 	<respStmt><name>Michael Bunk</name></respStmt>
@@ -118,7 +123,6 @@
       <entry>
         <form type="variant">
 	  <orth>'a</orth>
-<?tei2dict printloc?>
 	</form>
 	<gramGrp>
 	  <pos>n</pos>
@@ -260,9 +264,13 @@
   <form>
     <orth>lah jan dep</orth>
   </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
   <sense>
-    <trans><tr>almost finished</tr><pos>v</pos></trans>
+    <trans><tr>almost finished</tr></trans>
   </sense>
+<note resp="translator">Michael Bunk &lt;micha@luetzschena.de&gt;  26 Mar 2005</note>
 </entry>
    <entry>
   <form>
@@ -273,8 +281,16 @@
   </gramGrp>
   <sense>
     <trans><tr>is</tr></trans>
-    <xr><ref>don</ref></xr>
-    <xr><ref>dei</ref></xr>
+    <xr type="syn"><ref>don</ref></xr>
+    <xr type="syn"><ref>dei</ref></xr>
+  </sense>  <sense>
+    <trans><tr>grow</tr></trans>
+  </sense>  <sense>
+    <trans><tr>be ready</tr></trans>
+    <eg>
+      <q>U khiew u la long ban pyndonkam.</q>
+      <trans><tr>The pot is ready for use.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -295,6 +311,8 @@
     <trans><tr>be present</tr></trans>
   </sense>  <sense>
     <trans><tr>consist</tr></trans>
+  </sense>  <sense>
+    <trans><tr>lay</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -306,8 +324,8 @@
   <sense>
     <trans><tr>is</tr></trans>
     <eg><q>U dei u ksew.</q></eg>
-    <xr><ref>don</ref></xr>
-    <xr><ref>long</ref></xr>
+    <xr type="syn"><ref>don</ref></xr>
+    <xr type="syn"><ref>long</ref></xr>
   </sense>  <sense>
     <trans><tr>have</tr></trans>
     <trans><tr>ought</tr></trans>
@@ -317,6 +335,9 @@
   <form>
     <orth>hangne</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>here</tr></trans>
   </sense>
@@ -324,6 +345,9 @@
   <form>
     <orth>shane</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>here</tr></trans>
   </sense>
@@ -336,6 +360,7 @@
   </gramGrp>
   <sense>
     <trans><tr>on</tr></trans>
+    <trans><tr>over</tr></trans>
     <xr><ref>hajrong ha</ref></xr>
   </sense>
 </entry><entry>
@@ -432,6 +457,9 @@
   <form>
     <orth>tang</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>only</tr></trans>
   </sense>
@@ -439,6 +467,9 @@
   <form>
     <orth>hangto</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>there</tr></trans>
     <xr><ref>hangtai</ref></xr>
@@ -447,6 +478,9 @@
   <form>
     <orth>hangtai</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>there</tr></trans>
     <xr><ref>shato</ref></xr>
@@ -455,6 +489,9 @@
   <form>
     <orth>shato</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>there</tr></trans>
     <xr><ref>shatai</ref></xr>
@@ -463,6 +500,9 @@
   <form>
     <orth>shatai</orth>
   </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
   <sense>
     <trans><tr>there</tr></trans>
     <xr><ref>hangto</ref></xr>
@@ -516,6 +556,7 @@
     <trans><tr>in</tr></trans>
     <trans><tr>inside</tr></trans>
     <trans><tr>under</tr></trans>
+    <trans><tr>into</tr></trans>
     <eg><q>Kane ka waitlam; buhrieh ia ka hapoh ka soptilor jong phi.</q></eg>
     <xr><ref>ha</ref></xr>
   </sense>
@@ -635,6 +676,7 @@
     <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
+    <usg type="dom">bio</usg>
     <trans><tr>dog</tr></trans>
   </sense>
 </entry><entry>
@@ -682,13 +724,14 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ia</orth>
+    <orth>ïa</orth>
   </form>
   <gramGrp>
     <pos>prep</pos>
   </gramGrp>
   <sense>
     <trans><tr>of</tr></trans>
+    <trans><tr>for</tr></trans>
     <xr><ref>jong</ref></xr>
   </sense>  <sense>
     <def>precedes the object following a transitive verb</def>
@@ -702,6 +745,7 @@
   </gramGrp>
   <sense>
     <trans><tr>inside</tr></trans>
+    <trans><tr>into</tr></trans>
     <xr><ref>hapoh</ref></xr>
   </sense>
 </entry><entry>
@@ -762,6 +806,8 @@
     <trans><tr>where</tr></trans>
     <xr><ref>shano</ref></xr>
     <xr><ref>haei</ref></xr>
+  </sense>  <sense>
+    <trans><tr>somewhere</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -800,6 +846,7 @@
   </gramGrp>
   <sense>
     <trans><tr>from</tr></trans>
+    <trans><tr>of</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -810,7 +857,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>la iing</orth>
+    <orth>la ïing</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -843,7 +890,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iingrit</orth>
+    <orth>ïingrit</orth>
   </form>
   <gramGrp>
     <pos>n</pos>
@@ -855,13 +902,17 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iing</orth>
+    <orth>ïing</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>house</tr></trans>
+    <trans><tr>cottage</tr></trans>
+    <note>in example: na instead of ia?</note>
+    <eg><q>Ym lah ban iohi ei ei ia ka ïing jong u nongrep.</q>      <trans><tr>Nothing could be seen of the farmer's cottage.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -990,11 +1041,17 @@
   </gramGrp>
   <sense>
     <trans><tr>tail</tr></trans>
+  </sense>  <sense>
+    <trans><tr>bottom</tr></trans>
+    <eg><q>Ha tdong u khiew um ka lah ban iohi ia ka um khyndiat.</q></eg>
   </sense>
 </entry><entry>
   <form>
     <orth>uwei</orth>
   </form>
+  <gramGrp>
+    <pos>pron</pos>
+  </gramGrp>
   <sense>
     <trans><tr>one</tr></trans>
     <xr><ref>kawei</ref></xr>
@@ -1140,7 +1197,10 @@
   </gramGrp>
   <sense>
     <trans><tr>run</tr></trans>
-    <eg><q>Ki la mareh stet katba lah. = They ran as fast as they could.</q></eg>
+    <eg>
+      <q>Ki la mareh stet katba lah.</q>
+      <trans><tr>They ran as fast as they could.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -1184,7 +1244,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iaid</orth>
+    <orth>ïaid</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -1213,6 +1273,7 @@
   <sense>
     <trans><tr>sit</tr></trans>
     <trans><tr>sit down</tr></trans>
+    <trans><tr>settle</tr></trans>
   </sense>  <sense>
     <trans><tr>live</tr></trans>
     <trans><tr>stay</tr></trans>
@@ -1245,7 +1306,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iakren</orth>
+    <orth>ïakren</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -1295,6 +1356,8 @@
   <sense>
     <trans><tr>sleep</tr></trans>
     <xr><ref>jynthiah</ref></xr>
+  </sense>  <sense>
+    <trans><tr>lay</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -1481,6 +1544,7 @@
   </gramGrp>
   <sense>
     <trans><tr>star</tr></trans>
+    <eg><q>U bnai bad ki khlur kin wan ha ka jaka jong nga.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -1618,7 +1682,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>shniuh</orth>
+    <orth>shñiuh</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -1668,7 +1732,10 @@
     <trans><tr>word</tr></trans>
   </sense>  <sense>
     <trans><tr>voice</tr></trans>
-    <eg><q>Ka ktien jong u ka jam kat u pyrthat. = His voice is as loud as thunder.</q></eg>
+    <eg>
+      <q>Ka ktien jong u ka jam kat u pyrthat.</q>
+      <trans><tr>His voice is as loud as thunder.</tr></trans>
+    </eg>
     <xr><ref>jingsawa</ref></xr>
     <xr><ref>sur ktien</ref></xr>
   </sense>  <sense>
@@ -1680,7 +1747,10 @@
   </form>
   <sense>
     <trans><tr>something</tr></trans>
-    <eg><q>U don ei ei ban leh. = He has got something to do.</q></eg>
+    <eg>
+      <q>U don ei ei ban leh.</q>
+      <trans><tr>He has got something to do.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -1721,6 +1791,9 @@
   </gramGrp>
   <sense>
     <trans><tr>keep</tr></trans>
+    <trans><tr>preserve</tr></trans>
+    <eg><q>Ri bha ia la ka burom!</q>      <trans><tr>Preserve carefully your reputation!</tr></trans>
+</eg>
     <xr><ref>sumar</ref></xr>
     <xr><ref>da</ref></xr>
   </sense>
@@ -1780,7 +1853,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iam</orth>
+    <orth>ïam</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -1833,7 +1906,10 @@
     <xr><ref>sngewieit</ref></xr>
   </sense>  <sense>
     <trans><tr>please</tr></trans>
-    <eg><q>Sngewbha ap khyndiat! = Wait a bit, please!</q></eg>
+    <eg>
+      <q>Sngewbha ap khyndiat!</q>
+      <trans><tr>Wait a bit, please!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -1886,6 +1962,11 @@
   </gramGrp>
   <sense>
     <trans><tr>show</tr></trans>
+    <trans><tr>point at</tr></trans>
+    <eg>
+      <q>U kdew ia ka masi sawbthuh ka baitynnad.</q>
+      <trans><tr>He points at a nice brown cow.</tr></trans>
+    </eg>
     <xr><ref>pyni</ref></xr>
   </sense>
 </entry><entry>
@@ -1941,7 +2022,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iathuh</orth>
+    <orth>ïathuh</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -1958,7 +2039,10 @@
   </gramGrp>
   <sense>
     <trans><tr>send</tr></trans>
-    <eg><q>Phah ia kine ki kot kloi katba lah. = Send these books as soon as possible.</q></eg>
+    <eg>
+      <q>Phah ia kine ki kot kloi katba lah.</q>
+      <trans><tr>Send these books as soon as possible.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -1971,6 +2055,12 @@
     <trans><tr>put</tr></trans>
     <trans><tr>set</tr></trans>
     <trans><tr>keep</tr></trans>
+  </sense>  <sense>
+    <trans><tr>station</tr></trans>
+    <eg>
+      <q>La lah buh ia ki nongap ha ka khyrdop.</q>
+      <trans><tr>The guards could have been stationed at the gate.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -1984,6 +2074,8 @@
     <xr><ref>nang</ref></xr>
   </sense>  <sense>
     <trans><tr>may</tr></trans>
+  </sense>  <sense>
+    <trans><tr>behave</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -2006,6 +2098,7 @@
   </gramGrp>
   <sense>
     <trans><tr>cut</tr></trans>
+    <trans><tr>hack</tr></trans>
     <xr><ref>kum ot</ref></xr>
   </sense>  <sense>
     <trans><tr>reap</tr></trans>
@@ -2053,7 +2146,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ia nga</orth>
+    <orth>ïa nga</orth>
   </form>
   <gramGrp>
     <pos>pron</pos>
@@ -2108,7 +2201,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ia ka</orth>
+    <orth>ïa ka</orth>
   </form>
   <sense>
     <trans><tr>it</tr></trans>
@@ -2159,7 +2252,7 @@
     <orth>kotsada</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>sheet</tr></trans>
@@ -2186,16 +2279,6 @@
   <sense>
     <trans><tr>pig</tr></trans>
     <trans><tr>sow</tr></trans>
-  </sense>
-</entry><entry>
-  <form>
-    <orth>tdong</orth>
-  </form>
-  <gramGrp>
-    <pos>n</pos><gen>m</gen>
-  </gramGrp>
-  <sense>
-    <trans><tr>tail</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -2281,7 +2364,10 @@
   </gramGrp>
   <sense>
     <trans><tr>come</tr></trans>
-    <eg><q>Ale hangne! = Come here!</q></eg>
+    <eg>
+      <q>Ale hangne!</q>
+      <trans><tr>Come here!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -2293,7 +2379,10 @@
   <sense>
     <trans><tr>go</tr></trans>
     <trans><tr>get up</tr></trans>
-    <eg><q>Khie sha la ka jaka. = Go to your place!</q></eg>
+    <eg>
+      <q>Khie sha la ka jaka.</q>
+      <trans><tr>Go to your place!</tr></trans>
+    </eg>
   </sense>  <sense>
     <trans><tr>wake</tr></trans>
   </sense>
@@ -2344,11 +2433,20 @@
     <eg><q>la ka kti</q></eg>
   </sense>  <sense>
     <trans><tr>by</tr></trans>
-    <def>denotes quadratic measures</def>
+    <def>denotes dimension of measures</def>
     <eg><q>20 la 14 miter</q></eg>
   </sense>  <sense>
     <def>denotes past tense of the following verb</def>
-    <eg><q>la iap = died</q></eg>
+    <eg>
+      <q>la iap</q>
+      <trans><tr>died</tr></trans>
+    </eg>
+  </sense>  <sense>
+    <def>denotes passive voice of following verb</def>
+    <eg>
+      <q>La shna ia ka kotsada na ja jainjot.</q>
+      <trans><tr>Paper is made from rags.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -2381,7 +2479,10 @@
     <trans><tr>lesson</tr></trans>
   </sense>  <sense>
     <trans><tr>clump</tr></trans>
-    <eg><q>shilynning ki siej =  a clump of bamboos</q></eg>
+    <eg>
+      <q>shilynning ki siej</q>
+      <trans><tr> a clump of bamboos</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -2391,7 +2492,7 @@
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
-    <trans><tr>possesive case</tr></trans>
+    <trans><tr>possessive case</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -2520,7 +2621,7 @@
     <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
-    <trans><tr>inkpot</tr></trans>
+    <trans><tr>ink pot</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -2619,7 +2720,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ia uba</orth>
+    <orth>ïa uba</orth>
   </form>
   <gramGrp>
     <pos>pron</pos>
@@ -2755,8 +2856,9 @@
   </gramGrp>
   <sense>
     <trans><tr>number</tr></trans>
-    <note>(grammatical sense ie. singular)</note>
+    <note>grammatical sense ie. singular</note>
   </sense>  <sense>
+    <usg type="dom">mat</usg>
     <trans><tr>sum</tr></trans>
     <trans><tr>number</tr></trans>
   </sense>
@@ -2886,6 +2988,9 @@
     <trans><tr>leaf</tr></trans>
   </sense>  <sense>
     <trans><tr>page</tr></trans>
+  </sense>  <sense>
+    <trans><tr>surface</tr></trans>
+    <xr><ref>sla khyndew</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -3255,6 +3360,8 @@
   <sense>
     <trans><tr>within</tr></trans>
     <trans><tr>among</tr></trans>
+    <trans><tr>between</tr></trans>
+    <eg><q>Ki ong ba kin wan hapdeng shisngi ne arsngi, hynrei kim poi haduh mynta.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -3456,6 +3563,7 @@
   </gramGrp>
   <sense>
     <trans><tr>glad</tr></trans>
+    <trans><tr>pleasant</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -3466,6 +3574,7 @@
   </gramGrp>
   <sense>
     <trans><tr>yellow</tr></trans>
+    <trans><tr>golden</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -3638,6 +3747,7 @@
   </gramGrp>
   <sense>
     <trans><tr>answer</tr></trans>
+    <trans><tr>reply</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -3693,7 +3803,10 @@
     <trans><tr>flesh</tr></trans>
   </sense>  <sense>
     <trans><tr>kiss</tr></trans>
-    <eg><q>Ai doh! = Give me a kiss!</q></eg>
+    <eg>
+      <q>Ai doh!</q>
+      <trans><tr>Give me a kiss!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -3717,6 +3830,7 @@
   <sense>
     <trans><tr>land</tr></trans>
     <trans><tr>country</tr></trans>
+    <eg><q>Ngan leit noh sha kiwei pat ki ri.</q></eg>
     <xr><ref>khyndew</ref></xr>
   </sense>
 </entry><entry>
@@ -3810,6 +3924,7 @@
   </gramGrp>
   <sense>
     <trans><tr>seed</tr></trans>
+    <eg><q>Bet ia u symbai ha lyngkha!</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -3829,6 +3944,7 @@
     <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
+    <usg type="dom">bot</usg>
     <trans><tr>rose</tr></trans>
     <xr><ref>syntiew</ref></xr>
   </sense>
@@ -3869,13 +3985,16 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>jingialang</orth>
+    <orth>jingïalang</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>meeting</tr></trans>
+    <trans><tr>conference</tr></trans>
+    <eg><q>U kren ha ka jingïalang ki khynnah skul.</q>      <trans><tr>He speaks at the students' conference.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -3907,6 +4026,10 @@
     <xr><ref>por</ref></xr>
   </sense>  <sense>
     <trans><tr>season</tr></trans>
+    <eg>
+      <q>Don saw aiom shisnem.</q>
+      <trans><tr>There are four seasons in a year.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -3977,7 +4100,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>nongniah</orth>
+    <orth>nongñiah</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -4323,7 +4446,10 @@
   <sense>
     <trans><tr>very</tr></trans>
     <trans><tr>so</tr></trans>
-    <eg><q>U da tlot eh. = He is so weak.</q></eg>
+    <eg>
+      <q>U da tlot eh.</q>
+      <trans><tr>He is so weak.</tr></trans>
+    </eg>
     <xr><ref>shibun</ref></xr>
   </sense>
 </entry><entry>
@@ -4358,7 +4484,10 @@
     <trans><tr>how much</tr></trans>
   </sense>  <sense>
     <trans><tr>how long</tr></trans>
-    <eg><q>Phi la don katno ha kane ka school? = How long have you been in this school?</q></eg>
+    <eg>
+      <q>Phi la don katno ha kane ka school?</q>
+      <trans><tr>How long have you been in this school?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4395,7 +4524,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iing shet ja</orth>
+    <orth>ïing shet ja</orth>
   </form>
   <gramGrp>
     <pos>n</pos>
@@ -4412,6 +4541,7 @@
   </gramGrp>
   <sense>
     <trans><tr>be thirsty</tr></trans>
+    <trans><tr>thirst</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -4489,7 +4619,12 @@
     <xr><ref>shapang</ref></xr>
   </sense>  <sense>
     <trans><tr>as</tr></trans>
-    <eg><q>Leh kumba nga leh! = Do as I do!</q></eg>
+    <eg>
+      <q>Leh kumba nga leh!</q>
+      <trans><tr>Do as I do!</tr></trans>
+    </eg>
+  </sense>  <sense>
+    <trans><tr>as if</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -4613,7 +4748,10 @@
   </form>
   <sense>
     <def>filling word used in connection with future tense</def>
-    <eg><q>Ngin sa suk. = We will be happy.</q></eg>
+    <eg>
+      <q>Ngin sa suk.</q>
+      <trans><tr>We will be happy.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4624,6 +4762,7 @@
   </gramGrp>
   <sense>
     <trans><tr>principal</tr></trans>
+    <trans><tr>main</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -4708,7 +4847,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be angry</tr></trans>
-    <eg><q>Wat bitar ia u. = Don't be angry with him.</q></eg>
+    <eg>
+      <q>Wat bitar ia u.</q>
+      <trans><tr>Don't be angry with him.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4719,7 +4861,10 @@
   </gramGrp>
   <sense>
     <def>denotes present continuous tense of following verb</def>
-    <eg><q>dang leit = going</q></eg>
+    <eg>
+      <q>dang leit</q>
+      <trans><tr>going</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4730,19 +4875,25 @@
   </gramGrp>
   <sense>
     <def>denotes perfect tense of the following verb</def>
-    <eg><q>ba la leit = gone</q></eg>
+    <eg>
+      <q>ba la leit</q>
+      <trans><tr>gone</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
-    <orth>ba</orth>
+    <orth>ba-</orth>
   </form>
   <gramGrp>
     <pos>prep</pos>
   </gramGrp>
   <sense>
     <def>makes an adjective out of the following verb</def>
-    <note>(rather prefix than preposition)</note>
-    <eg><q>baleit = going</q></eg>
+    <note>rather prefix than preposition</note>
+    <eg>
+      <q>baleit</q>
+      <trans><tr>going</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4860,6 +5011,11 @@
   <sense>
     <trans><tr>when</tr></trans>
     <trans><tr>after</tr></trans>
+    <trans><tr>till</tr></trans>
+    <eg>
+      <q>Ap ynda nga wan!</q>
+      <trans><tr>Wait till I come!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -4924,6 +5080,10 @@
   <sense>
     <trans><tr>teach</tr></trans>
     <trans><tr>train</tr></trans>
+    <eg>
+      <q>Ki la hikai ia u ban kren hok.</q>
+      <trans><tr>They have taught him to speak the truth.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -5102,6 +5262,7 @@
   </gramGrp>
   <sense>
     <trans><tr>sin</tr></trans>
+    <eg><q>U la iap ha ka pop.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -5194,6 +5355,10 @@
   </gramGrp>
   <sense>
     <trans><tr>harm</tr></trans>
+    <eg>
+      <q>La shah ia ki Phareng ban leit noh khlem jingma ei ei.</q>
+      <trans><tr>The Europeans (foreigners?) were allowed to go away without any harm.</tr></trans>
+    </eg>
     <xr><ref>basniew</ref></xr>
   </sense>
 </entry><entry>
@@ -5287,10 +5452,11 @@
     <orth>mrad</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
     <trans><tr>animal</tr></trans>
+    <trans><tr>beast</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -5455,6 +5621,10 @@
     <trans><tr>with</tr></trans>
     <trans><tr>by</tr></trans>
     <trans><tr>through</tr></trans>
+    <eg>
+      <q>da ka jingiarap jong u</q>
+      <trans><tr> through his help</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -5487,7 +5657,10 @@
   </gramGrp>
   <sense>
     <trans><tr>that</tr></trans>
-    <eg><q>Nga tip ba u blei u ieit ia ngi. = I know that god loves us.</q></eg>
+    <eg>
+      <q>Nga tip ba u blei u ieit ia ngi.</q>
+      <trans><tr>I know that god loves us.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -5531,9 +5704,14 @@
   </gramGrp>
   <sense>
     <trans><tr>rise</tr></trans>
-    <trans><tr>set out</tr></trans>
   </sense>  <sense>
     <trans><tr>grow</tr></trans>
+    <trans><tr>sprout</tr></trans>
+  </sense>  <sense>
+    <trans><tr>set out</tr></trans>
+    <trans><tr>leave</tr></trans>
+    <trans><tr>go out</tr></trans>
+    <eg><q>Ngi la iamih tang shu rang u slap.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -5604,6 +5782,7 @@
   </gramGrp>
   <sense>
     <trans><tr>who</tr></trans>
+    <eg><q>Eiba ong ia phi ba i kpa jong u i pang?</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -5657,6 +5836,10 @@
     <trans><tr>pardon</tr></trans>
     <trans><tr>excuse</tr></trans>
     <trans><tr>forgive</tr></trans>
+    <eg>
+      <q>La map ia ki pop jong phi.</q>
+      <trans><tr>Your sins are forgiven.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -5777,6 +5960,9 @@
     <trans><tr>get</tr></trans>
     <trans><tr>gain</tr></trans>
     <trans><tr>receive</tr></trans>
+  </sense>  <sense>
+    <trans><tr>manage</tr></trans>
+    <eg><q>U la ioh ban pam shibun ka snepdieng.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -5821,6 +6007,10 @@
   </gramGrp>
   <sense>
     <trans><tr>take off</tr></trans>
+    <eg>
+      <q>U la law noh bak ia ka shakuriaw na ka masi.</q>
+      <trans><tr>He took off the bell from the cow.</tr></trans>
+    </eg>
     <xr><ref>loit</ref></xr>
   </sense>
 </entry><entry>
@@ -6223,7 +6413,10 @@
   <sense>
     <trans><tr>wealth</tr></trans>
     <trans><tr>riches</tr></trans>
-    <eg><q>Phim lah ban shakri ia u blei bad ia ka spah. = You cannot serve god and riches.</q></eg>
+    <eg>
+      <q>Phim lah ban shakri ia u blei bad ia ka spah.</q>
+      <trans><tr>You cannot serve god and riches.</tr></trans>
+    </eg>
     <xr><ref>jingdon</ref></xr>
   </sense>
 </entry><entry>
@@ -6330,6 +6523,7 @@
   </gramGrp>
   <sense>
     <trans><tr>till</tr></trans>
+    <eg><q>Ngi ap haduh ba un da wan.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -6400,6 +6594,11 @@
   </gramGrp>
   <sense>
     <trans><tr>turn</tr></trans>
+    <trans><tr>spin</tr></trans>
+    <eg>
+      <q>U nongthawkhiew u phai ïa ka shaka da la ka kjat.</q>
+      <trans><tr>The potter spins the wheel with his foot.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -6454,7 +6653,10 @@
   <sense>
     <trans><tr>much</tr></trans>
     <trans><tr>plenty</tr></trans>
-    <eg><q>Ki don kyrhai ka bam ka dih. = They have plenty to eat and drink.</q></eg>
+    <eg>
+      <q>Ki don kyrhai ka bam ka dih.</q>
+      <trans><tr>They have plenty to eat and drink.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -6465,6 +6667,9 @@
   </gramGrp>
   <sense>
     <trans><tr>work</tr></trans>
+    <trans><tr>labour</tr></trans>
+    <eg><q>Ka jingtrei ka wallam jingsngewbha.</q>      <trans><tr>Labour brings pleasure.</tr></trans>
+</eg>
     <xr><ref>kam</ref></xr>
   </sense>
 </entry><entry>
@@ -6779,6 +6984,7 @@
   </gramGrp>
   <sense>
     <trans><tr>light</tr></trans>
+    <eg><q>Ka jingshai bad jingshit ki la wan na ka sngi.</q></eg>
     <xr><ref>sharak</ref></xr>
   </sense>
 </entry><entry>
@@ -6841,7 +7047,10 @@
   <sense>
     <trans><tr>light</tr></trans>
     <trans><tr>burn</tr></trans>
-    <eg><q>Ka thang ia ka sharak. = She lights the lamp.</q></eg>
+    <eg>
+      <q>Ka thang ia ka sharak.</q>
+      <trans><tr>She lights the lamp.</tr></trans>
+    </eg>
     <xr><ref>sliew</ref></xr>
   </sense>
 </entry><entry>
@@ -6864,7 +7073,10 @@
   </gramGrp>
   <sense>
     <trans><tr>find</tr></trans>
+    <trans><tr>discover</tr></trans>
+    <eg><q>Ia ka America la shem da u Kolombos.</q></eg>
     <xr><ref>lap</ref></xr>
+    <xr><ref>wad</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -6876,6 +7088,9 @@
   <sense>
     <trans><tr>find</tr></trans>
     <xr><ref>shem</ref></xr>
+  </sense>  <sense>
+    <trans><tr>overtake</tr></trans>
+    <eg><q>U ksew u mareh nadien jong u bad u la lap ia u.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -6956,7 +7171,10 @@
   </gramGrp>
   <sense>
     <trans><tr>look</tr></trans>
-    <eg><q>Peit shane! = Look here!</q></eg>
+    <eg>
+      <q>Peit shane!</q>
+      <trans><tr>Look here!</tr></trans>
+    </eg>
     <xr><ref>i</ref></xr>
     <xr><ref>khmih</ref></xr>
   </sense>
@@ -7003,7 +7221,10 @@
     <trans><tr>knock</tr></trans>
     <trans><tr>ring</tr></trans>
     <trans><tr>strike</tr></trans>
-    <eg><q>U theid ia ka jingkhang. = He knocks at the door.</q></eg>
+    <eg>
+      <q>U theid ia ka jingkhang.</q>
+      <trans><tr>He knocks at the door.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7082,7 +7303,10 @@
     <trans><tr>carry</tr></trans>
     <trans><tr>take</tr></trans>
     <trans><tr>lift</tr></trans>
-    <eg><q>Rah ki kti! = Hands up!</q></eg>
+    <eg>
+      <q>Rah ki kti!</q>
+      <trans><tr>Hands up!</tr></trans>
+    </eg>
     <xr><ref>kit</ref></xr>
     <xr><ref>rong</ref></xr>
   </sense>
@@ -7170,6 +7394,7 @@
   </gramGrp>
   <sense>
     <trans><tr>often</tr></trans>
+    <trans><tr>frequently</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7204,6 +7429,8 @@
   </sense>  <sense>
     <trans><tr>hunt</tr></trans>
     <trans><tr>chase</tr></trans>
+  </sense>  <sense>
+    <trans><tr>expel</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7234,7 +7461,10 @@
   </gramGrp>
   <sense>
     <trans><tr>draw</tr></trans>
-    <eg><q>Nga tong um na ka pung. = I draw water from the well.</q></eg>
+    <eg>
+      <q>Nga tong um na ka pung.</q>
+      <trans><tr>I draw water from the well.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7249,6 +7479,7 @@
     <trans><tr>pond</tr></trans>
     <trans><tr>lake</tr></trans>
     <trans><tr>tank</tr></trans>
+    <trans><tr>pool</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7280,6 +7511,10 @@
   </gramGrp>
   <sense>
     <trans><tr>catch</tr></trans>
+    <eg>
+      <q>La ngat ia ka sati ha u shang.</q>
+      <trans><tr>The ring has been caught up in the basket.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7300,7 +7535,7 @@
     <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
-    <trans><tr>satan</tr></trans>
+    <trans><tr>Satan</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7323,7 +7558,10 @@
   <sense>
     <trans><tr>when</tr></trans>
     <trans><tr>while</tr></trans>
-    <eg><q>Ka lymbit ka i kum ka sim haba ka her. = The bat looks like a bird when it flies.</q></eg>
+    <eg>
+      <q>Ka lymbit ka i kum ka sim haba ka her.</q>
+      <trans><tr>The bat looks like a bird when it flies.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7380,6 +7618,10 @@
   </gramGrp>
   <sense>
     <trans><tr>lion</tr></trans>
+    <eg>
+      <q>U sing u la bam shibun ki mrad khlaw.</q>
+      <trans><tr>The lion has devoured many wild animals.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7406,9 +7648,10 @@
     <orth>hati</orth>
   </form>
   <gramGrp>
-    <pos>n</pos><gen>f</gen>
+    <pos>n</pos>
   </gramGrp>
   <sense>
+    <usg type="dom">bio</usg>
     <trans><tr>elephant</tr></trans>
   </sense>
 </entry><entry>
@@ -7752,6 +7995,10 @@
   </gramGrp>
   <sense>
     <trans><tr>life</tr></trans>
+    <eg>
+      <q>La thoh ia ka kyrteng jong phi ha kitab ka jingim.</q>
+      <trans><tr>Your name is written in the book of life.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7798,13 +8045,15 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iit</orth>
+    <orth>ïit</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>glass</tr></trans>
+  </sense>  <sense>
+    <trans><tr>mirror</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -7836,7 +8085,10 @@
   <sense>
     <trans><tr>lead</tr></trans>
     <trans><tr>take</tr></trans>
-    <eg><q>Ngan ialam ia phi bad nga. = I will take you with me.</q></eg>
+    <eg>
+      <q>Ngan ialam ia phi bad nga.</q>
+      <trans><tr>I will take you with me.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -7879,6 +8131,8 @@
   </gramGrp>
   <sense>
     <trans><tr>help</tr></trans>
+    <trans><tr>assist</tr></trans>
+    <xr><ref>bynrap</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -7952,6 +8206,8 @@
   </gramGrp>
   <sense>
     <trans><tr>climb</tr></trans>
+    <trans><tr>rise</tr></trans>
+    <eg><q>Haba ki maw ki hap shapoh, ka um la sdang ban kiew ha u khiew um.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -8074,6 +8330,10 @@
     <trans><tr>give birth</tr></trans>
     <trans><tr>lay</tr></trans>
     <note>lay in the sense of &quot;lay eggs&quot;</note>
+    <eg>
+      <q>La kha ia u Sayed ha Delhi ha ka 17th October 1817.</q>
+      <trans><tr>Sayed was born at Delhi on the 17th October 1817.</tr></trans>
+    </eg>
   </sense>  <sense>
     <trans><tr>bear</tr></trans>
   </sense>
@@ -8108,7 +8368,7 @@
     <pos>prep</pos>
   </gramGrp>
   <sense>
-    <note>against?</note>
+    <trans><tr>over</tr></trans>
     <eg><q>U runsied nalor kynroh.</q></eg>
   </sense>
 </entry><entry>
@@ -8274,7 +8534,7 @@
     <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
-    <trans><tr>hourhand</tr></trans>
+    <trans><tr>hour-hand</tr></trans>
     <def>pointer of a clock</def>
   </sense>
 </entry><entry>
@@ -8367,6 +8627,7 @@
   <sense>
     <trans><tr>way</tr></trans>
     <trans><tr>lane</tr></trans>
+    <trans><tr>path</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -8570,7 +8831,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>paisa</orth>
+    <orth>peisa</orth>
   </form>
   <gramGrp>
     <pos>n</pos>
@@ -8646,6 +8907,7 @@
   </gramGrp>
   <sense>
     <trans><tr>near</tr></trans>
+    <trans><tr>by</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -8658,6 +8920,8 @@
     <trans><tr>post</tr></trans>
   </sense>  <sense>
     <trans><tr>plant</tr></trans>
+  </sense>  <sense>
+    <trans><tr>grow</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -8689,6 +8953,12 @@
   <sense>
     <trans><tr>mind</tr></trans>
     <trans><tr>think</tr></trans>
+    <trans><tr>consider</tr></trans>
+    <trans><tr>ponder</tr></trans>
+    <eg>
+      <q>Ngi la pyrkhat ia ka la slem jlang.</q>
+      <trans><tr>We had pondered over it for a long time.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -8770,7 +9040,10 @@
   </gramGrp>
   <sense>
     <trans><tr>cash</tr></trans>
-    <eg><q>Iapli ia kane ka lut! = Cash this note!</q></eg>
+    <eg>
+      <q>Iapli ia kane ka lut!</q>
+      <trans><tr>Cash this note!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -8899,6 +9172,13 @@
   </gramGrp>
   <sense>
     <trans><tr>wait</tr></trans>
+  </sense>  <sense>
+    <trans><tr>look after</tr></trans>
+    <trans><tr>guard</tr></trans>
+    <eg>
+      <q>U khynnah u dang ap ia ki masi.</q>
+      <trans><tr>The boy is looking after the cattle.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -8927,7 +9207,10 @@
   </gramGrp>
   <sense>
     <trans><tr>still</tr></trans>
-    <eg><q>Shong khop! = Sit still!</q></eg>
+    <eg>
+      <q>Shong khop!</q>
+      <trans><tr>Sit still!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -8950,7 +9233,16 @@
   </gramGrp>
   <sense>
     <trans><tr>away</tr></trans>
-    <eg><q>leit noh = go away</q></eg>
+    <eg>
+      <q>leit noh</q>
+      <trans><tr>go away</tr></trans>
+    </eg>
+  </sense>  <sense>
+    <trans><tr>down</tr></trans>
+    <eg>
+      <q>ot noh</q>
+      <trans><tr>cut down</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -9399,7 +9691,10 @@
     <trans><tr>keep</tr></trans>
     <trans><tr>hold</tr></trans>
     <note>juban == jubab ?</note>
-    <eg><q>U la bat la ka juban. = He kept his word.</q></eg>
+    <eg>
+      <q>U la bat la ka juban.</q>
+      <trans><tr>He kept his word.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -9610,6 +9905,8 @@
   </gramGrp>
   <sense>
     <trans><tr>children</tr></trans>
+    <eg><q>Ki khun ki dei ban kohnguh bad burom ia la ki kmie ki kpa.</q>      <trans><tr>Children should obey and respect their parents.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -9656,7 +9953,10 @@
   </form>
   <sense>
     <def>grammatical particle to express negative past tense</def>
-    <eg><q>Em, um shym wan hangne. = No, he did not come here.</q></eg>
+    <eg>
+      <q>Em, um shym wan hangne.</q>
+      <trans><tr>No, he did not come here.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -9667,7 +9967,10 @@
   </gramGrp>
   <sense>
     <trans><tr>which</tr></trans>
-    <eg><q>Uno u khun jong phi? = Which is your child?</q></eg>
+    <eg>
+      <q>Uno u khun jong phi?</q>
+      <trans><tr>Which is your child?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -9767,7 +10070,7 @@
   </gramGrp>
   <sense>
     <trans><tr>hue</tr></trans>
-    <trans><tr>color</tr></trans>
+    <trans><tr>colour</tr></trans>
     <trans><tr>paint</tr></trans>
   </sense>
 </entry><entry>
@@ -9782,7 +10085,10 @@
     <trans><tr>high</tr></trans>
   </sense>  <sense>
     <trans><tr>long</tr></trans>
-    <eg><q>U kulai u don u tdong shniuh uba jrong. = The horse has a long hairy tail.</q></eg>
+    <eg>
+      <q>U kulai u don u tdong shniuh uba jrong.</q>
+      <trans><tr>The horse has a long hairy tail.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -9936,7 +10242,7 @@
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
-    <trans><tr>cowdung</tr></trans>
+    <trans><tr>cow dung</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -10113,7 +10419,10 @@
   </gramGrp>
   <sense>
     <trans><tr>wrong</tr></trans>
-    <eg><q>Ka jingkhein jong u ka bakla. = His sum is wrong.</q></eg>
+    <eg>
+      <q>Ka jingkhein jong u ka bakla.</q>
+      <trans><tr>His sum is wrong.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10140,7 +10449,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be less</tr></trans>
-    <eg><q>Ka jingpang ka la nang duna. = The pain is already less.</q></eg>
+    <eg>
+      <q>Ka jingpang ka la nang duna.</q>
+      <trans><tr>The pain is already less.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10152,6 +10464,12 @@
   <sense>
     <trans><tr>be wrong</tr></trans>
     <eg><q>Kane ka jingkhein ka lait.</q></eg>
+  </sense>  <sense>
+    <trans><tr>get away</tr></trans>
+    <eg>
+      <q>Ngan iarap ia phi ban lait.</q>
+      <trans><tr> I will help you to get away.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10271,13 +10589,18 @@
   </form>
   <sense>
     <trans><tr>at the foot</tr></trans>
+    <trans><tr>at the bottom</tr></trans>
   </sense>
 </entry><entry>
   <form>
-    <orth>ha lyeit</orth>
+    <orth>lyeit</orth>
   </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
   <sense>
-    <trans><tr>at the foot</tr></trans>
+    <trans><tr>bottom</tr></trans>
+    <note>body part</note>
   </sense>
 </entry><entry>
   <form>
@@ -10298,16 +10621,17 @@
   </gramGrp>
   <sense>
     <trans><tr>after</tr></trans>
+    <trans><tr>behind</tr></trans>
   </sense>
 </entry><entry>
   <form>
-    <orth>dig up</orth>
+    <orth>tih lut</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <trans><tr>tih lut</tr></trans>
+    <trans><tr>dig up</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -10399,6 +10723,7 @@
   </gramGrp>
   <sense>
     <trans><tr>dear</tr></trans>
+    <trans><tr>expensive</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -10696,7 +11021,10 @@
   </gramGrp>
   <sense>
     <trans><tr>loose</tr></trans>
-    <eg><q>Kato ka sopti poh ka kylluid eh ia phi. = This shirt is too loose for you.</q></eg>
+    <eg>
+      <q>Kato ka sopti poh ka kylluid eh ia phi.</q>
+      <trans><tr>This shirt is too loose for you.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10858,6 +11186,7 @@
   </gramGrp>
   <sense>
     <trans><tr>rise</tr></trans>
+    <trans><tr>growth</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -10886,7 +11215,10 @@
   <sense>
     <trans><tr>not</tr></trans>
     <note>Used in the absence of any article or if the article cannot be repeated, as in &quot;un ym = he will not&quot;.</note>
-    <eg><q>Em, ym don eiei. = No, there is nothing.</q></eg>
+    <eg>
+      <q>Em, ym don eiei.</q>
+      <trans><tr>No, there is nothing.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10924,7 +11256,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be high</tr></trans>
-    <eg><q>Ka baiwai ka rem ha kane ka jaka. = The rent is high in this locality.</q></eg>
+    <eg>
+      <q>Ka baiwai ka rem ha kane ka jaka.</q>
+      <trans><tr>The rent is high in this locality.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10946,7 +11281,10 @@
   <sense>
     <trans><tr>perform</tr></trans>
     <trans><tr>finish</tr></trans>
-    <eg><q>Suki ban kular hynrei kloi ban pyndep. = Be slow to promise but quick to perform.</q></eg>
+    <eg>
+      <q>Suki ban kular hynrei kloi ban pyndep.</q>
+      <trans><tr>Be slow to promise but quick to perform.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -10971,7 +11309,10 @@
   <sense>
     <trans><tr>get</tr></trans>
     <note>for someone else</note>
-    <eg><q>Nga la pynioh jingtrei ia phi bad u nongrep. = I have got you a job with the farmer.</q></eg>
+    <eg>
+      <q>Nga la pynioh jingtrei ia phi bad u nongrep.</q>
+      <trans><tr>I have got you a job with the farmer.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11178,6 +11519,8 @@
   </gramGrp>
   <sense>
     <trans><tr>mile</tr></trans>
+    <eg><q>Khyndiat mail na Amsterdam la don kawei ka shnong ka barit ba la khot Saardam.</q>      <trans><tr>Some miles from Amsterdam a small village called Saardam is located.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -11219,6 +11562,12 @@
   <sense>
     <trans><tr>put up</tr></trans>
     <trans><tr>stay</tr></trans>
+  </sense>  <sense>
+    <trans><tr>leave</tr></trans>
+    <eg>
+      <q>U sah sa ka kor thew jingthew.</q>
+      <trans><tr>He left the weighing machine.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11249,11 +11598,15 @@
   </gramGrp>
   <sense>
     <trans><tr>snow</tr></trans>
-    <eg><q>Phin sa lieh kat ka ior. = You will be white as snow.</q></eg>
+    <eg>
+      <q>Phin sa lieh kat ka ior.</q>
+      <trans><tr>You will be white as snow.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
     <orth>dpei</orth>
+    <pron>dp&#603;&#720;y</pron>
   </form>
   <gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -11300,6 +11653,7 @@
   </gramGrp>
   <sense>
     <trans><tr>loud</tr></trans>
+    <trans><tr>noisy</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -11527,7 +11881,10 @@
   </gramGrp>
   <sense>
     <trans><tr>better</tr></trans>
-    <eg><q>Ka kham bha ia u ban leit noh. = It is better for him to go away.</q></eg>
+    <eg>
+      <q>Ka kham bha ia u ban leit noh.</q>
+      <trans><tr>It is better for him to go away.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11538,7 +11895,10 @@
   </gramGrp>
   <sense>
     <trans><tr>better</tr></trans>
-    <eg><q>Nga la kham shait. = I am better.</q></eg>
+    <eg>
+      <q>Nga la kham shait.</q>
+      <trans><tr>I am better.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11569,7 +11929,10 @@
   </gramGrp>
   <sense>
     <trans><tr>clever</tr></trans>
-    <eg><q>Ngam da long eh uba sian. = I am not so clever.</q></eg>
+    <eg>
+      <q>Ngam da long eh uba sian.</q>
+      <trans><tr>I am not so clever.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11840,6 +12203,7 @@
   </gramGrp>
   <sense>
     <trans><tr>be proud</tr></trans>
+    <eg><q>Phim lah ban leh ei ei khlem ma nga, kumta phim dei ban sarong.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -11847,7 +12211,10 @@
   </form>
   <sense>
     <trans><tr>do not</tr></trans>
-    <eg><q>Wat wan hangne! = Don't come here!</q></eg>
+    <eg>
+      <q>Wat wan hangne!</q>
+      <trans><tr>Don't come here!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11868,7 +12235,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be straight</tr></trans>
-    <eg><q>Une u lain um beit. = This line is not straight.</q></eg>
+    <eg>
+      <q>Une u lain um beit.</q>
+      <trans><tr>This line is not straight.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11879,7 +12249,10 @@
   </gramGrp>
   <sense>
     <trans><tr>more</tr></trans>
-    <eg><q>Ngan sa long basngewsih haba phim don shuh. = I'll be sad when you are no more.</q></eg>
+    <eg>
+      <q>Ngan sa long basngewsih haba phim don shuh.</q>
+      <trans><tr>I'll be sad when you are no more.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -11890,6 +12263,7 @@
   </gramGrp>
   <sense>
     <trans><tr>basket</tr></trans>
+    <note>masc gender?</note>
   </sense>
 </entry><entry>
   <form>
@@ -12040,7 +12414,10 @@
   <sense>
     <trans><tr>lean</tr></trans>
     <note>possibly shaniah (only one n)</note>
-    <eg><q>shaniah ha ki ksangkti jong u = lean onto his arms</q></eg>
+    <eg>
+      <q>shaniah ha ki ksangkti jong u</q>
+      <trans><tr>lean onto his arms</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12051,7 +12428,10 @@
   </gramGrp>
   <sense>
     <trans><tr>envy</tr></trans>
-    <eg><q>Wat bishni ia kiwei pat. = Don't envy others.</q></eg>
+    <eg>
+      <q>Wat bishni ia kiwei pat.</q>
+      <trans><tr>Don't envy others.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12089,6 +12469,10 @@
   </gramGrp>
   <sense>
     <trans><tr>compel</tr></trans>
+    <eg>
+      <q>La pynbor ia nga ban kren iada lade.</q>
+      <trans><tr>I am compelled to speak in my defence.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12153,7 +12537,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ialang</orth>
+    <orth>ïalang</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -12180,7 +12564,10 @@
   </gramGrp>
   <sense>
     <trans><tr>serve</tr></trans>
-    <eg><q>Ym don uba lah ban shakri ar kynrad. = No man can serve two masters.</q></eg>
+    <eg>
+      <q>Ym don uba lah ban shakri ar kynrad.</q>
+      <trans><tr>No man can serve two masters.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12221,6 +12608,7 @@
   </gramGrp>
   <sense>
     <trans><tr>ruin</tr></trans>
+    <trans><tr>destruction</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -12232,7 +12620,10 @@
   <sense>
     <trans><tr>let</tr></trans>
     <note>used with future verb</note>
-    <eg><q>Ia ngin ialehkai! = Let us play!</q></eg>
+    <eg>
+      <q>Ia ngin ialehkai!</q>
+      <trans><tr>Let us play!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12303,7 +12694,10 @@
   </gramGrp>
   <sense>
     <trans><tr>leave</tr></trans>
-    <eg><q>Iehnoh ia u marwei! = Leave him alone!</q></eg>
+    <eg>
+      <q>Iehnoh ia u marwei!</q>
+      <trans><tr>Leave him alone!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12317,14 +12711,17 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>niew</orth>
+    <orth>ñiew</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
   </gramGrp>
   <sense>
     <trans><tr>treat</tr></trans>
-    <eg><q>Sngewbha niew kine ki kam kum kiba kyrkieh eh. = Please treat these matters as urgent.</q></eg>
+    <eg>
+      <q>Sngewbha ñiew kine ki kam kum kiba kyrkieh eh.</q>
+      <trans><tr>Please treat these matters as urgent.</tr></trans>
+    </eg>
   </sense>  <sense>
     <trans><tr>count</tr></trans>
   </sense>
@@ -12360,7 +12757,10 @@
   <sense>
     <trans><tr>purpose</tr></trans>
     <trans><tr>motive</tr></trans>
-    <eg><q>Ka kam ka don ka jingthmu hadien jong ka. = Work has a motive behind it.</q></eg>
+    <eg>
+      <q>Ka kam ka don ka jingthmu hadien jong ka.</q>
+      <trans><tr>Work has a motive behind it.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12420,7 +12820,10 @@
   </gramGrp>
   <sense>
     <trans><tr>by me</tr></trans>
-    <eg><q>Ngam don tyngka ha lade. = I have no money with me.</q></eg>
+    <eg>
+      <q>Ngam don tyngka ha lade.</q>
+      <trans><tr>I have no money with me.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12431,7 +12834,10 @@
   </gramGrp>
   <sense>
     <trans><tr>get down</tr></trans>
-    <eg><q>Um hiar na u kulai. = He got down from the horse.</q></eg>
+    <eg>
+      <q>Um hiar na u kulai.</q>
+      <trans><tr>He got down from the horse.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12439,7 +12845,10 @@
   </form>
   <sense>
     <trans><tr>utmost</tr></trans>
-    <eg><q>Um shym ialeh tyngeh? = Did he not try his utmost?</q></eg>
+    <eg>
+      <q>Um shym ialeh tyngeh?</q>
+      <trans><tr>Did he not try his utmost?</tr></trans>
+    </eg>
   </sense>  <sense>
     <trans><tr>loudly</tr></trans>
   </sense>  <sense>
@@ -12455,7 +12864,10 @@
   <sense>
     <trans><tr>be in ruins</tr></trans>
     <trans><tr>be broken</tr></trans>
-    <eg><q>Kam shym jot shuh. = It was no longer in ruins.</q></eg>
+    <eg>
+      <q>Kam shym jot shuh.</q>
+      <trans><tr>It was no longer in ruins.</tr></trans>
+    </eg>
   </sense>  <sense>
     <trans><tr>break</tr></trans>
     <trans><tr>ruin</tr></trans>
@@ -12469,7 +12881,10 @@
   </gramGrp>
   <sense>
     <trans><tr>glass</tr></trans>
-    <eg><q>Ym don um ha ka klat. = There is no water in the glass.</q></eg>
+    <eg>
+      <q>Ym don um ha ka klat.</q>
+      <trans><tr>There is no water in the glass.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12480,7 +12895,10 @@
   </gramGrp>
   <sense>
     <trans><tr>thank</tr></trans>
-    <eg><q>Ngam lah ban sngewnguh ia phi katba dei. = I cannot thank you enough.</q></eg>
+    <eg>
+      <q>Ngam lah ban sngewnguh ia phi katba dei.</q>
+      <trans><tr>I cannot thank you enough.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -12528,7 +12946,7 @@
     <orth>japung</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>n</pos><gen>m</gen>
   </gramGrp>
   <sense>
     <trans><tr>reed</tr></trans>
@@ -12735,7 +13153,10 @@
   </gramGrp>
   <sense>
     <trans><tr>too</tr></trans>
-    <eg><q>U kren jam than. = He talks too loudly.</q></eg>
+    <eg>
+      <q>U kren jam than.</q>
+      <trans><tr>He talks too loudly.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13019,7 +13440,12 @@
   </gramGrp>
   <sense>
     <trans><tr>right</tr></trans>
-    <eg><q>Ieng skhem na ka bynta ka hok. = Stand firmly for the right.</q></eg>
+    <eg><q>Ieng skhem na ka bynta ka hok.</q>      <trans><tr>Stand firmly for the right.</tr></trans>
+</eg>
+  </sense>  <sense>
+    <trans><tr>honesty</tr></trans>
+    <eg><q>Ka hok ka long ka buit babha tam.</q>      <trans><tr>Honesty is the best policy.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -13030,7 +13456,10 @@
   </gramGrp>
   <sense>
     <trans><tr>truth</tr></trans>
-    <eg><q>Man ka por kren ia ka bashisha. = Always speak the truth.</q></eg>
+    <eg>
+      <q>Man ka por kren ia ka bashisha.</q>
+      <trans><tr>Always speak the truth.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13063,6 +13492,8 @@
   <sense>
     <trans><tr>really</tr></trans>
     <trans><tr>practically</tr></trans>
+  </sense>  <sense>
+    <trans><tr>of course</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -13073,6 +13504,10 @@
   </gramGrp>
   <sense>
     <trans><tr>punish</tr></trans>
+    <eg>
+      <q>U nonghikai yn pynshitom ne un beh ia phi.</q>
+      <trans><tr>The teacher will punish or expel you.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13197,9 +13632,13 @@
   <sense>
     <trans><tr>arrive</tr></trans>
     <trans><tr>reach</tr></trans>
+    <xr><ref>kot</ref></xr>
   </sense>  <sense>
     <trans><tr>be to</tr></trans>
-    <eg><q>Phi la ju poi Sohra? = Have you been to Cherra?</q></eg>
+    <eg>
+      <q>Phi la ju poi Sohra?</q>
+      <trans><tr>Have you been to Cherra?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13220,6 +13659,8 @@
   </gramGrp>
   <sense>
     <trans><tr>use</tr></trans>
+  </sense>  <sense>
+    <trans><tr>necessity</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -13322,7 +13763,10 @@
   </gramGrp>
   <sense>
     <trans><tr>day after tomorrow</tr></trans>
-    <eg><q>Phin leit la shisngi? = Will you go day after tomorrow?</q></eg>
+    <eg>
+      <q>Phin leit la shisngi?</q>
+      <trans><tr>Will you go day after tomorrow?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13343,6 +13787,7 @@
   </gramGrp>
   <sense>
     <trans><tr>if</tr></trans>
+    <eg><q>Ngan leit Sohra lada kam slap jur.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -13353,7 +13798,10 @@
   </gramGrp>
   <sense>
     <trans><tr>when</tr></trans>
-    <eg><q>Lano un poi? = When will he arrive?</q></eg>
+    <eg>
+      <q>Lano un poi?</q>
+      <trans><tr>When will he arrive?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13454,6 +13902,7 @@
   </gramGrp>
   <sense>
     <trans><tr>fail</tr></trans>
+    <eg><q>Lada phim minot, phin ym lah ha ka eksamin.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -13474,6 +13923,7 @@
   </gramGrp>
   <sense>
     <trans><tr>break</tr></trans>
+    <eg><q>Ngi pynpait ia ka khyndew da ka dieng moi.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -13620,21 +14070,26 @@
     <orth>khamtam eh</orth>
   </form>
   <gramGrp>
-    <pos>adj</pos>
+    <pos>adv</pos>
   </gramGrp>
   <sense>
-    <trans><tr>most</tr></trans>
+    <trans><tr>mostly</tr></trans>
+    <trans><tr>chiefly</tr></trans>
+    <eg>
+      <q>La leh ia kane ka kam khamtam eh ha ka jaka ba la khot Aligarh.</q>
+      <trans><tr>The work was chiefly done in the place called Aligarh.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
-    <orth>iit khmih</orth>
+    <orth>ïit khmih</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>looking-glass</tr></trans>
-    <trans><tr>mirror</tr></trans>
+    <xr><ref>ïit khmat</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -13661,10 +14116,15 @@
     <orth>buit</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>talent</tr></trans>
+  </sense>  <sense>
+    <trans><tr>trick</tr></trans>
+  </sense>  <sense>
+    <trans><tr>plan</tr></trans>
+    <trans><tr>policy</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -13815,7 +14275,10 @@
   </gramGrp>
   <sense>
     <trans><tr>use to</tr></trans>
-    <eg><q>Ka la ju phah ia u ba un spel biang ia ki lynnong mynmiet. = She used to make him repeat the lessons at night.</q></eg>
+    <eg>
+      <q>Ka la ju phah ia u ba un spel biang ia ki lynnong mynmiet.</q>
+      <trans><tr>She used to make him repeat the lessons at night.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13846,7 +14309,10 @@
   </gramGrp>
   <sense>
     <trans><tr>spare time</tr></trans>
-    <eg><q>U la pynleit lut la ka por balait sha kane ka kam. = He gave all his spare time to this work.</q></eg>
+    <eg>
+      <q>U la pynleit lut la ka por balait sha kane ka kam.</q>
+      <trans><tr>He gave all his spare time to this work.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13868,7 +14334,10 @@
   </gramGrp>
   <sense>
     <trans><tr>spend</tr></trans>
-    <eg><q>U la pynlut shibun ka por bad la ka kmie. = He spent much time with his mother.</q></eg>
+    <eg>
+      <q>U la pynlut shibun ka por bad la ka kmie.</q>
+      <trans><tr>He spent much time with his mother.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -13939,6 +14408,7 @@
   </gramGrp>
   <sense>
     <trans><tr>when</tr></trans>
+    <eg><q>Mynno phi wan na Calcutta?</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -13949,6 +14419,9 @@
   </gramGrp>
   <sense>
     <trans><tr>prepare</tr></trans>
+    <eg><q>Ka rel ka khreh ban mih; u nongap u la put ia ka jingput.</q></eg>
+  </sense>  <sense>
+    <trans><tr>provide</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -13979,6 +14452,8 @@
   </gramGrp>
   <sense>
     <trans><tr>reach</tr></trans>
+    <eg><q>Ka tngab kam lah ban kot ia ka um.</q></eg>
+    <xr><ref>poi</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -14069,6 +14544,7 @@
   </gramGrp>
   <sense>
     <trans><tr>build</tr></trans>
+    <trans><tr>invent</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -14079,6 +14555,8 @@
   </gramGrp>
   <sense>
     <trans><tr>build</tr></trans>
+    <eg><q>La tei ïa kane ka kynroh da u mawit bad ka sorki.</q>      <trans><tr>This wall is built with brick and mortar.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -14366,7 +14844,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ba haiing</orth>
+    <orth>ba haïing</orth>
   </form>
   <gramGrp>
     <pos>n</pos><num>pl</num>
@@ -14414,6 +14892,7 @@
   <sense>
     <trans><tr>search</tr></trans>
     <trans><tr>seek</tr></trans>
+    <xr><ref>shem</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -14434,6 +14913,10 @@
   </gramGrp>
   <sense>
     <trans><tr>tear</tr></trans>
+    <eg>
+      <q>U jen u la tar ia la ka sopti poh.</q>
+      <trans><tr>Jen has torn his shirt.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -14455,6 +14938,7 @@
   </gramGrp>
   <sense>
     <trans><tr>chop</tr></trans>
+    <trans><tr>hack</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -14681,6 +15165,7 @@
   </gramGrp>
   <sense>
     <trans><tr>scythe</tr></trans>
+    <trans><tr>sickle</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -14732,7 +15217,8 @@
   </gramGrp>
   <sense>
     <trans><tr>object</tr></trans>
-    <note>gramm.</note>
+    <note>gramm., shahleh?</note>
+    <xr><ref>shahleh</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -14825,7 +15311,10 @@
   </gramGrp>
   <sense>
     <trans><tr>suit</tr></trans>
-    <eg><q>shiphong ki sopti = a suit of clothes</q></eg>
+    <eg>
+      <q>shiphong ki sopti</q>
+      <trans><tr>a suit of clothes</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -14836,7 +15325,10 @@
   </gramGrp>
   <sense>
     <trans><tr>mouthful</tr></trans>
-    <eg><q>shikyntien ka ja = a mouthful of rice</q></eg>
+    <eg>
+      <q>shikyntien ka ja</q>
+      <trans><tr>a mouthful of rice</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -14867,7 +15359,10 @@
   </gramGrp>
   <sense>
     <trans><tr>quantity</tr></trans>
-    <eg><q>shisbuk ka mar = a quantity of goods</q></eg>
+    <eg>
+      <q>shisbuk ka mar</q>
+      <trans><tr>a quantity of goods</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -14970,7 +15465,10 @@
   </gramGrp>
   <sense>
     <trans><tr>duties</tr></trans>
-    <eg><q>Ngi lah ban leh la ki kam ki duk da ka jingdonakor bad jingryntih. = We may be able to perform our duties with decency and order.</q></eg>
+    <eg>
+      <q>Ngi lah ban leh la ki kam ki duk da ka jingdonakor bad jingryntih.</q>
+      <trans><tr>We may be able to perform our duties with decency and order.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15021,7 +15519,10 @@
   </gramGrp>
   <sense>
     <trans><tr>examine</tr></trans>
-    <eg><q>U don ka bor ban tohkit ia kano kano ka kam na ki liang baroh. = He could examine any question from all sides.</q></eg>
+    <eg>
+      <q>U don ka bor ban tohkit ia kano kano ka kam na ki liang baroh.</q>
+      <trans><tr>He could examine any question from all sides.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15039,7 +15540,7 @@
     <orth>sorkar</orth>
   </form>
   <gramGrp>
-    <pos>n</pos>
+    <pos>n</pos><gen>f</gen>
   </gramGrp>
   <sense>
     <trans><tr>government</tr></trans>
@@ -15063,7 +15564,10 @@
   </gramGrp>
   <sense>
     <trans><tr>play</tr></trans>
-    <eg><q>Phi nang ban tem bela? = Do you know how to play violin?</q></eg>
+    <eg>
+      <q>Phi nang ban tem bela?</q>
+      <trans><tr>Do you know how to play violin?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15103,7 +15607,10 @@
   <sense>
     <trans><tr>could not</tr></trans>
     <def>n + ym after a negative article (that always ends in -n)</def>
-    <eg><q>Kin nym lah ban pyndep ia ka khala khala. = They could not finish it soon.</q></eg>
+    <eg>
+      <q>Kin nym lah ban pyndep ia ka khala khala.</q>
+      <trans><tr>They could not finish it soon.</tr></trans>
+    </eg>
     <xr><ref>ym</ref></xr>
   </sense>
 </entry><entry>
@@ -15177,7 +15684,10 @@
   </gramGrp>
   <sense>
     <trans><tr>while</tr></trans>
-    <eg><q>Hamar ba ngi dang iakren lwet... = While we were chatting...</q></eg>
+    <eg>
+      <q>Hamar ba ngi dang iakren lwet...</q>
+      <trans><tr>While we were chatting...</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15248,7 +15758,10 @@
   </gramGrp>
   <sense>
     <trans><tr>come along</tr></trans>
-    <eg><q>Ngan wan lang bad phi? = Shall I come with you?</q></eg>
+    <eg>
+      <q>Ngan wan lang bad phi?</q>
+      <trans><tr>Shall I come with you?</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15289,7 +15802,10 @@
   </gramGrp>
   <sense>
     <trans><tr>give at cost price</tr></trans>
-    <eg><q>Haba nga die ia u san tynka nga shu ai baitrai ia phi. = When I sell it for five rupees, I am practically giving it to you at cost price.</q></eg>
+    <eg>
+      <q>Haba nga die ia u san tynka nga shu ai baitrai ia phi.</q>
+      <trans><tr>When I sell it for five rupees, I am practically giving it to you at cost price.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -15374,6 +15890,7 @@
   </gramGrp>
   <sense>
     <trans><tr>together</tr></trans>
+    <trans><tr>with</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -15670,7 +16187,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iingbyndi</orth>
+    <orth>ïingbyndi</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -15777,6 +16294,7 @@
   </gramGrp>
   <sense>
     <trans><tr>hook</tr></trans>
+    <eg><q>La thaw ia u narwoh na ka rnong.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -16093,7 +16611,10 @@
   </gramGrp>
   <sense>
     <trans><tr>bundle</tr></trans>
-    <eg><q>Sngewbha ai ia nga shinat ka kait! = Please give me a bundle of plantains!</q></eg>
+    <eg>
+      <q>Sngewbha ai ia nga shinat ka kait!</q>
+      <trans><tr>Please give me a bundle of plantains!</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16144,7 +16665,10 @@
   </gramGrp>
   <sense>
     <trans><tr>spoil</tr></trans>
-    <eg><q>Bun than ki nonghset ki pynsniew ia ka syrwa. = Too many cooks spoil the broth.</q></eg>
+    <eg>
+      <q>Bun than ki nonghset ki pynsniew ia ka syrwa.</q>
+      <trans><tr>Too many cooks spoil the broth.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16211,6 +16735,7 @@
   </gramGrp>
   <sense>
     <trans><tr>plough</tr></trans>
+    <eg><q>Ki masi ki lur ia ka lyngkha.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -16251,6 +16776,7 @@
   </gramGrp>
   <sense>
     <trans><tr>particular</tr></trans>
+    <trans><tr>chief</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -16302,6 +16828,7 @@
   </gramGrp>
   <sense>
     <trans><tr>swear</tr></trans>
+    <eg><q>U smai da ka kyrteng U Blei ban um lamler.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -16416,7 +16943,10 @@
   </gramGrp>
   <sense>
     <trans><tr>good</tr></trans>
-    <eg><q>U la ioh jinghikai ka bapaka. = He had a good education.</q></eg>
+    <eg>
+      <q>U la ioh jinghikai ka bapaka.</q>
+      <trans><tr>He had a good education.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16427,7 +16957,10 @@
   </gramGrp>
   <sense>
     <trans><tr>toothache</tr></trans>
-    <eg><q>Nga la ioh pangbniat. = I had toothache.</q></eg>
+    <eg>
+      <q>Nga la ioh pangbniat.</q>
+      <trans><tr>I had toothache.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16505,7 +17038,10 @@
   </gramGrp>
   <sense>
     <trans><tr>Hindi</tr></trans>
-    <eg><q>Kim nang Hindi ruh. = They also don't know Hindi.</q></eg>
+    <eg>
+      <q>Kim nang Hindi ruh.</q>
+      <trans><tr>They also don't know Hindi.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16513,7 +17049,10 @@
   </form>
   <sense>
     <trans><tr>of its own</tr></trans>
-    <eg><q>U bnai um don jingshai na lade hi. = The moon doesn't have light of its own.</q></eg>
+    <eg>
+      <q>U bnai um don jingshai na lade hi.</q>
+      <trans><tr>The moon doesn't have light of its own.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16611,7 +17150,10 @@
   </gramGrp>
   <sense>
     <trans><tr>gain</tr></trans>
-    <eg><q>Ha bakut un phoida lada u iathuh hok. = In the end he will gain if he tells the truth.</q></eg>
+    <eg>
+      <q>Ha bakut un phoida lada u iathuh hok.</q>
+      <trans><tr>In the end he will gain if he tells the truth.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16659,7 +17201,10 @@
   </form>
   <sense>
     <trans><tr>as far as</tr></trans>
-    <eg><q>Ki wan hangne shisien ne arsien katba nga kynmaw. = They come here once or twice as far as i remember.</q></eg>
+    <eg>
+      <q>Ki wan hangne shisien ne arsien katba nga kynmaw.</q>
+      <trans><tr>They come here once or twice as far as i remember.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16761,6 +17306,8 @@
   </gramGrp>
   <sense>
     <trans><tr>unable</tr></trans>
+  </sense>  <sense>
+    <trans><tr>impossible</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -16852,7 +17399,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be anxoius</tr></trans>
-    <eg><q>Kim nud ban mih shabar ki sheptieng bsien. = They are not anxious to go out for fear of snakes.</q></eg>
+    <eg>
+      <q>Kim nud ban mih shabar ki sheptieng bsien.</q>
+      <trans><tr>They are not anxious to go out for fear of snakes.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -16894,7 +17444,10 @@
   </gramGrp>
   <sense>
     <trans><tr>request</tr></trans>
-    <eg><q>Ngi kyrpad ia phi ba phin ianoh sha ka jingkynshew. = We request you to contribute to the fund.</q></eg>
+    <eg>
+      <q>Ngi kyrpad ia phi ba phin ianoh sha ka jingkynshew.</q>
+      <trans><tr>We request you to contribute to the fund.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17096,6 +17649,8 @@
   <sense>
     <trans><tr>because</tr></trans>
     <trans><tr>owing to</tr></trans>
+    <trans><tr>for</tr></trans>
+    <trans><tr>since</tr></trans>
   </sense>
 </entry><entry>
   <form>
@@ -17106,6 +17661,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be cold</tr></trans>
+    <trans><tr>feel cold</tr></trans>
+    <eg><q>Nga khriat.</q>      <trans><tr>I feel cold.</tr></trans>
+</eg>
+    <xr type="ant"><ref>shit</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -17138,7 +17697,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be brave</tr></trans>
-    <eg><q>Ngam shlur kat ma u. = I am not as brave as he.</q></eg>
+    <eg>
+      <q>Ngam shlur kat ma u.</q>
+      <trans><tr>I am not as brave as he.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17149,7 +17711,10 @@
   </gramGrp>
   <sense>
     <trans><tr>expect</tr></trans>
-    <eg><q>Ka ri jong ngi ka khmih lynti manla u briew ban leh la ka kamram. = Our country expects every man to do his duty.</q></eg>
+    <eg>
+      <q>Ka ri jong ngi ka khmih lynti manla u briew ban leh la ka kamram.</q>
+      <trans><tr>Our country expects every man to do his duty.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17170,7 +17735,10 @@
   </gramGrp>
   <sense>
     <trans><tr>be soft</tr></trans>
-    <eg><q>I jem mom-mom kum ka makhon. = It is very soft like butter.</q></eg>
+    <eg>
+      <q>I jem mom-mom kum ka makhon.</q>
+      <trans><tr>It is very soft like butter.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17262,7 +17830,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iit khmat</orth>
+    <orth>ïit khmat</orth>
   </form>
   <gramGrp>
     <pos>n</pos><num>pl</num>
@@ -17530,6 +18098,10 @@
   </gramGrp>
   <sense>
     <trans><tr>motion</tr></trans>
+    <eg>
+      <q>Ka jingshad sawdong jong ka pyrthei man ka sngi ka pyllong ia ka sngi bad miet.</q>
+      <trans><tr>The daily motion of the earth causes day and night.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17590,6 +18162,7 @@
   </gramGrp>
   <sense>
     <trans><tr>revolve</tr></trans>
+    <eg><q>Ka pyrthei ka tawiar sawdong ia ka sngi.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -17600,6 +18173,10 @@
   </gramGrp>
   <sense>
     <trans><tr>consist</tr></trans>
+    <eg>
+      <q>Ka sla jong ka pyrthei ka kynthup ia ka khyndew bad ka um.</q>
+      <trans><tr>The surface of the earth consists of land and water.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17620,6 +18197,10 @@
   </gramGrp>
   <sense>
     <trans><tr>earthquake</tr></trans>
+    <eg>
+      <q>U jumai u pynkyllon ia ka nongbah baroh khoit.</q>
+      <trans><tr>The earthquake shakes down the whole town.</tr></trans>
+    </eg>
   </sense>
 </entry><entry>
   <form>
@@ -17650,6 +18231,8 @@
   </gramGrp>
   <sense>
     <trans><tr>spring</tr></trans>
+    <eg><q>Ka pyrem jong ka jingim ka long ka jinglong samla.</q>      <trans><tr>The spring of life is youth.</tr></trans>
+</eg>
   </sense>
 </entry><entry>
   <form>
@@ -17690,6 +18273,7 @@
   </gramGrp>
   <sense>
     <trans><tr>summer vacation</tr></trans>
+    <eg><q>Shano phin leit ha kane ka shuti lyiur?</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -17700,6 +18284,7 @@
   </gramGrp>
   <sense>
     <trans><tr>in winter</tr></trans>
+    <eg><q>Ka khriat shibun hangne myntlang.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -17740,7 +18325,6 @@
   </gramGrp>
   <sense>
     <trans><tr>guard</tr></trans>
-    <note>nongap?</note>
   </sense>
 </entry><entry>
   <form>
@@ -17761,6 +18345,2462 @@
   </gramGrp>
   <sense>
     <trans><tr>distance</tr></trans>
+    <eg><q>Phi tip ia ka jingjngai jong ka pyrthei na ka sngi?</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>mynba</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>when</tr></trans>
+    <eg>
+      <q>U mih skul mynba u dang khadhynniew snem ka rta.</q>
+      <trans><tr>He left school at the age of seventeen.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>put</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>whistle</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sabut</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>proof</tr></trans>
+    <eg><q>Don bun ki sabut ba ka pyrthei kam long ka bamadan.</q></eg>
+    <xr><ref>jingpynsabut</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sakhlieh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>cold</tr></trans>
+    <note>saklieh?</note>
+    <eg>
+      <q>Nga ioh sakhlieh, kumta ngan shong noh ha iing.</q>
+      <trans><tr>I have a cold, so I will stay indoors.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sawdong</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>round</tr></trans>
+    <trans><tr>around</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tlor noh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fall off</tr></trans>
+    <eg><q>Ki sla ki tlor noh ha ka por synrai.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyniasoh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>join</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bad</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>and</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>haduh ba</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>till</tr></trans>
+    <xr><ref>haduh</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lymne</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>neither</tr></trans>
+    <trans><tr>nor</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lane</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>either</tr></trans>
+    <trans><tr>or</tr></trans>
+    <eg><q>Ngam don ksiar lane rupa.</q>      <trans><tr>I have neither gold nor silver.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lym kumta</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>otherwise</tr></trans>
+    <eg>
+      <q>Ai um ia u shisyndon lym kumta un iap!</q>
+      <trans><tr>Give him water at once, otherwise he will die!</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>la</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>whether</tr></trans>
+    <eg><q>Iathuh ia nga la phin leit ne em!</q></eg>
+  </sense>  <sense>
+    <trans><tr>though</tr></trans>
+    <eg><q>La nga mai ia u, hynrei um sngap satia.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lymda kumta</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>unless</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynban</orth>
+    <pron>pnban</pron>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>still</tr></trans>
+    <eg>
+      <q>U bakhlain, pynban um treh ban trei minot.</q>
+      <trans><tr> He is strong, still he refuses to work hard.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>naba</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>for</tr></trans>
+    <xr><ref>namar</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tadynda</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>until</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tad</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>until</tr></trans>
+    <xr><ref>tadynda</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ban ia</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>than</tr></trans>
+    <eg>
+      <q>U rynsied kham jrong ban ia nga.</q>
+      <trans><tr>He jumps higher than me.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>naduh</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>since</tr></trans>
+    <trans><tr>from</tr></trans>
+    <eg><q>Ngam lah ban wan namar ba nga ioh biongkhlieh naduh hynne ka miet.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>maham</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>warn</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyntait</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>refuse</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pule minot</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>study</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth/>
+  </form>
+  <gramGrp>
+    <pos/>
+    <gen/>
+  </gramGrp>
+  <trans>
+    <tr/>
+    <gen/>
+  </trans>
+</entry><entry>
+  <form>
+    <orth>pynmih</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>yield</tr></trans>
+  </sense>  <sense>
+    <trans><tr>reduce</tr></trans>
+    <eg><q>Pynmih ia kine ki tyngka sawphew sha ki peisa.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rang</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>cease</tr></trans>
+    <eg>
+      <q>U slap u rang.</q>
+      <trans><tr>The rain ceases.</tr></trans>
+    </eg>
+    <xr><ref>keinnoh</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>keinnoh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>cease</tr></trans>
+    <xr><ref>rang</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>riam</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>dress</tr></trans>
+    <eg>
+      <q>Riam shuwa ba phin mih na ka kamra.</q>
+      <trans><tr>Dress yourself before you leave the room.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyniaid</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>manage</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>slap</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>rain</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bynrap</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>assist</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ym kohnguh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>disobey</tr></trans>
+    <xr><ref>pyllah</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyllah</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>disobey</tr></trans>
+    <xr><ref>ym kohnguh</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>suhjer</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>cold</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hapoh ïing</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>indoors</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tang shu</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>as soon as</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shitom kat</orth>
+  </form>
+  <sense>
+    <trans><tr>as hard as</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>eh kat</orth>
+  </form>
+  <sense>
+    <trans><tr>as hard as</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khah khah</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>frequently</tr></trans>
+    <xr><ref>bunsien</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>treh</orth>
+    <pron>tr&#603;?</pron>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>refuse</tr></trans>
+    <trans><tr>not want</tr></trans>
+    <eg><q>Ym treh?</q>      <trans><tr>You don't want?</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>Ka long ka bymlah.</orth>
+  </form>
+  <sense>
+    <trans><tr>It is impossible.</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bakyllut</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>deaf</tr></trans>
+    <eg>
+      <q>U khynnah u kyllut ne um nangkren.</q>
+      <trans><tr>The child is either deaf or dumb.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bym nangkren</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>dumb</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shongthait</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>rest</tr></trans>
+    <trans><tr>take rest</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingshongthait</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>rest</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khublei burom</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>salute</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jakhlia jakhlaid</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>stain</tr></trans>
+    <eg><q>Ka pum pum bad ki jakhlia jakhlaid kin khuid lut.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rwai ka siaw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>singing</tr></trans>
+    <eg><q>Ki sim kin sangeh ka rwai ka siaw.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pam</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>cut off</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>snepdieng</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>bark</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lyngba</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>through</tr></trans>
+    <trans><tr>across</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sha shiliang</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>through</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bad</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>with</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khlem</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>without</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khlem da</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>without</tr></trans>
+    <xr><ref>khlem</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shilynter</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>along</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>namar</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>for</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ha khrum</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>under</tr></trans>
+    <xr><ref>hapoh</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nadien</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>behind</tr></trans>
+    <xr><ref>hadien</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyrshah</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>against</tr></trans>
+    <eg>
+      <q>La pynbor ia u ban leh ia kane pyrshah ia ka mon jong u.</q>
+      <trans><tr>He was compelled to do this against his wish.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ain</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>law</tr></trans>
+    <eg>
+      <q>ka ain ka ri</q>
+      <trans><tr>the law of the country</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hapdeng khlaw</orth>
+  </form>
+  <sense>
+    <trans><tr>in the midst of the forest</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>slem jlang</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>for a long time</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>katba jia</orth>
+  </form>
+  <sense>
+    <trans><tr>at all events</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hapoh kitei kiei kiei ba la ong haneng</orth>
+  </form>
+  <sense>
+    <trans><tr>under the above circumstances</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ha khrum ka suin bneng</orth>
+  </form>
+  <sense>
+    <trans><tr>under the sky</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingtlot</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>weakness</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingleit noh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>departure</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynkylla sha</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>reduce to</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynmih kynsan</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>burst</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>iam hut</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>burst into tears</tr></trans>
+    <note>iam huk?</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>baroh shirynieng</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>from head to foot</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shuti</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>leave</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingshah</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>leave</tr></trans>
+    <xr><ref>shuti</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingsbun</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>kindness</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kynrei</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>abound</tr></trans>
+    <note>&quot;to team&quot; not found in gcide</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>baher</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>flying</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khlem da shah</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>without leave</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>thliew</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>hole</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ummat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>tear</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>na lynti</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>along the path</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingkah syrngiew</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>shade</tr></trans>
+    <eg><q>Nga shongthait hapoh ka jingkah syrngiew u dieng.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>napdeng</orth>
+  </form>
+  <sense>
+    <xr><ref>hapdeng</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sngewrem</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>be ashamed of</tr></trans>
+    <eg><q>U long uwei napdeng ki babun, kumta phim dei ban sngewrem ia kata.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>noph-phai-sngi</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>afternoon</tr></trans>
+    <eg><q>Un wan hapdeng ar ne lai baje noh-phai-sngi.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sha lyndet</orth>
+  </form>
+  <gramGrp>
+    <pos>prep</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>beyond</tr></trans>
+    <eg><q>Ngam lah ban leh ia kata namar ka long sha lyndet ka bor jong nga.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>mon</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>wish</tr></trans>
+    <trans><tr>will</tr></trans>
+    <eg><q>U leh ia kane pyrshah ia ka mon jong nga.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>joit</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>suddenly</tr></trans>
+    <trans><tr>at once</tr></trans>
+    <eg><q>U la khie joit na bathiah.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingput tyndong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>pipe</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kdiah</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>pluck</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sur</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>music</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bakynjah</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>lonely</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>imat</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>seem</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bakynjai</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>happy</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jaitbynriew</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>nation</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynmlien</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>practice</tr></trans>
+  </sense>  <sense>
+    <trans><tr>teach good habits</tr></trans>
+    <eg>
+      <q>La lah pynmlien ia nga naduh dang-khynnah.</q>
+      <trans><tr>I could be taught good habits since childhood.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sur ki jingkynud</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><num>pl</num>
+  </gramGrp>
+  <sense>
+    <trans><tr>tunes</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bawin</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>noisy</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nongput</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>piper</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jar-jar</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>quiet</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>basngap</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>quiet</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bajai-jai</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>cool</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rep</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>grow</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dieng moi</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>harrow</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hooid kein</orth>
+  </form>
+  <sense>
+    <trans><tr>of course</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hapoh</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>beneath</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>stem</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>grow golden</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>stem mur</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>turn yellow</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dap</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fill</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pyndap</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fill</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kba</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>paddy</tr></trans>
+    <def>rice plants</def>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>san</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>grow tall</tr></trans>
+    <trans><tr>grow up</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jrong</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>grow tall</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sei rangbah</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>grow up</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lappraw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>shower</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynphret</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>break up</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>spehlung</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>shoot</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nongot</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>reaper</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bet</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>sow</tr></trans>
+    <eg><q>Ha ka por aiu ki bet kba?</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rkhiang</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>get dry</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingsan</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>growth</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jhieh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>get wet</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nangta</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>then</tr></trans>
+    <eg><q>U nongot nangta u wan bad la ka rashi bad u ot noh ia ki jingthung.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dung</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>thrash</tr></trans>
+    <eg><q>Te ki briew ki dung ia u kba bad ki sa peh ia ki symboh.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sa peh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>clean</tr></trans>
+    <eg><q>Te ki briew ki dung ia u kba bad ki sa peh ia ki symboh.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bam da</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>live on</tr></trans>
+    <eg><q>Ki Khasi ki bam da u khaw.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ih</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>be ripe</tr></trans>
+    <eg><q>Ki nongrep ki ot ia u kba da ka rashi haba u la ih.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>speh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>shoot</tr></trans>
+    <eg><q>Phi iohi ia ki speh ki bajyrngam?</q></eg>
+    <xr><ref>spehlung</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pashat</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fling</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingthawlad</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>invention</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingwadbuit</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>invention</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingtan khait</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>necessity</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynkylla khongpong</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>upset</tr></trans>
+    <eg><q>Te ka la pyrshang ban pynkylla khongpong ia u khiew um khnang ba ka um ka lah ban mih shabar.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingskhem</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>security</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingshong shngain</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>security</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tlor</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fall</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bein</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>defy</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hangno hangno ruh</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>anywhere</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>nuksa</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>plan</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ha kaba khadduh</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>at last</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ma-hangno</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>somewhere</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kumta ba</orth>
+  </form>
+  <gramGrp>
+    <pos>conj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>so that</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>mih shabar</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>run out</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khyndiat por</orth>
+  </form>
+  <sense>
+    <trans><tr>a little while</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kiew soit</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>rise right up</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>thliewkhmut</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>nostril</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>'niuhmat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>eyelash</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>snepkhmat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>eyelid</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>'niuhtmoh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>beard</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>'niuhthmain</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>moustache</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shynrongkhlieh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>skull</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pylliawkhmat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>pupil</tr></trans>
+    <def>hole in iris of the eye</def>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pohtit</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>armpit</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shyieng ïingdong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>backbone</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sohpet</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>navel</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jylleng</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>abdomen</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>matsohlah</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>ankle</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>khongdongjat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>heel</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dohbniat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>gum</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>'tikmie</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>thumb</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>budlum</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>spine</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lyngkdong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>occiput</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>rengmat</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>eyebrow</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingiohi</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>eyesight</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bor iohi</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>eyesight</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kynton</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>heap</tr></trans>
+    <eg>
+      <q>Ia ki jainjot linen la buh ha kawei ka kynton.</q>
+      <trans><tr>The linen rags are put in one heap.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jied</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>choose</tr></trans>
+    <eg>
+      <q>La jied is u Suba ban pynmareh thong.</q>
+      <trans><tr>Suba is chosen to start the race.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>thong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>race</tr></trans>
+    <eg>
+      <q>La jied ia u Suba ban pynmareh thong.</q>
+      <trans><tr>Suba is chosen to start the race.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrsiew</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>wake</tr></trans>
+    <eg>
+      <q>Ia ka Sita la kyrsiew na ki jingphohsniew lyngngai.</q>
+      <trans><tr>Sita was waken from her pleasant dreams.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lyngngai</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>pleasant</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>burom</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>honour</tr></trans>
+    <trans><tr>reputation</tr></trans>
+    <eg><q>La ai ruh ha u ia kiwei pat ki burom.</q>      <trans><tr>Other honours were also bestowed upon him.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>la pynkyndit kynsan kynsan</orth>
+  </form>
+  <sense>
+    <trans><tr>be taken by surprise</tr></trans>
+    <eg>
+      <q>La pynkyndit kynsan kynsan ia u nongkhaii.</q>
+      <trans><tr>The merchant was taken by surprise.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pdiang sngewbha</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>welcome</tr></trans>
+    <eg><q>Hangta la pdiang sngewbha ia u Ram da u para jong u Bharat.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingpep skul tuh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>truancy</tr></trans>
+    <eg><q>La pynshitom jur ia u khynnah da ki nonghikai namar ka kingpep skul tuh.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>penshon</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>pension</tr></trans>
+    <eg><q>La ai penshon ia u bad ia u khun jong u da ka sorkar.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sorkar kmie</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>central government</tr></trans>
+    <trans><tr>centre</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sngewthuh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>understand</tr></trans>
+    <eg>
+      <q>Ki la lah sngewthuh bha ia ka kam.</q>
+      <trans><tr>They could understand the matter fully well.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>mukotduma</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>case</tr></trans>
+    <eg>
+      <q>La lah rai ia ka mukotduma la slem jlang.</q>
+      <trans><tr>The case had been decided long ago.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>phla</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>confess</tr></trans>
+    <eg>
+      <q>U la phla ia kaba u la leh.</q>
+      <trans><tr>He confessed what he had done.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shimti</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>take up</tr></trans>
+    <eg>
+      <q>Ki la lah shimti ia kane ka kam mynnymwei.</q>
+      <trans><tr>They could have taken up this matter last year.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynmane</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>subdue</tr></trans>
+    <eg>
+      <q>La lah pynmane ia ki la slem bah.</q>
+      <trans><tr>They cold have been subdued since a long time.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingbakla</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>mistake</tr></trans>
+    <eg>
+      <q>Ki la lah iohi ia la ka jingbakla bad ki la kylla jingmut.</q>
+      <trans><tr>They could have seen their mistake and have changed their mind.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynkmen</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>gladden</tr></trans>
+    <eg>
+      <q>La pynkmen ia ka dohnud jong ki.</q>
+      <trans><tr> Their heart was gladdened.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dang-khynnah</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>childhood</tr></trans>
+    <note>example ok?</note>
+    <eg>
+      <q>Ka lah pynmlien ia nga naduh dang-khynnah.</q>
+      <trans><tr>She could practice me since childhood.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynim</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>bring alife</tr></trans>
+    <trans><tr>give life</tr></trans>
+    <eg>
+      <q>La pynim ia u bad ka iing jong u.</q>
+      <trans><tr>Life was given to him and his house.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kor thew jingthew</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>weighing machine</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dur</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>photo</tr></trans>
+    <eg>
+      <q>Nga leit shim dur.</q>
+      <trans><tr> I go and fetch photos (from the development studio).</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kumne harum</orth>
+  </form>
+  <gramGrp>
+    <pos>adv</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>as follows</tr></trans>
+    <eg>
+      <q>U la ong kumne harum: ...</q>
+      <trans><tr>He said as follows: ...</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>iathoh</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>cut</tr></trans>
+    <trans><tr>fell</tr></trans>
+    <eg>
+      <q>Ia ngin ialeit sha khlaw bad ngin iathoh dieng katto-katne.</q>
+      <trans><tr>Let's go to the jungle and cut some wood.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>thiah kram</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>fall down</tr></trans>
+    <eg>
+      <q>U lok jong u la thiah kram ha khyndew bad um khih um ksaid.</q>
+      <trans><tr>His friend fell down to the ground and lay quite still.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>um khih um ksaid</orth>
+  </form>
+  <sense>
+    <trans><tr>lay quite still</tr></trans>
+    <eg>
+      <q>U lok jong u la thiah kram ha khyndew bad um khih um ksaid.</q>
+      <trans><tr>His friend fell down to the ground and lay quite still.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shakuriaw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>bell</tr></trans>
+    <eg>
+      <q>Manla ka masi ka don ka shakuriaw ha ka ryndang jong ka.</q>
+      <trans><tr>Every cow has a bell round her neck.</tr></trans>
+    </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingthaw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>creature</tr></trans>
+    <note>masc. and fem.</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lait tang</orth>
+  </form>
+  <sense>
+    <trans><tr>except</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dkar</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>tortoise</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>iingsyiem</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>palace</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>tim</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>curse</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>naduh kata</orth>
+  </form>
+  <sense>
+    <trans><tr>ever since</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>babyrsaw</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>pink</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>'tiewlili</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <usg type="dom">bot</usg>
+    <trans><tr>lily</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>phyllaw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>compound</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sakiar ing</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>compound</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingkhawai</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>feast</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shaka</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>wheel</tr></trans>
+    <eg><q>U nongthawkhiew u shong ha khmat ka shaka jong u.</q></eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynwandur</orth>
+  </form>
+  <gramGrp>
+    <pos>vt</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>shape</tr></trans>
+    <eg><q>U nongthawkhiew u pynwandur ïa u khiew.</q>      <trans><tr>The potter shapes the pot.</tr></trans>
+</eg>
+    <xr type="syn"><ref>pynjanai</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pynjanai</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>shape</tr></trans>
+    <xr><ref>pynwandur</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>dewbyrtha</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>clay</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>pdeng</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>middle</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>hapdeng</orth>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>middle</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>baleh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>nominative</tr></trans>
+    <note>gram.</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>shahleh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>accusative</tr></trans>
+    <trans><tr>objective case</tr></trans>
+    <xr><ref>shaleh</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>baioh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>possesive case</tr></trans>
+    <trans><tr>genitive</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingsarong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>pride</tr></trans>
+    <eg><q>Ka jingsarong ka leit ha shuwa ka jingjot.</q>      <trans><tr>Pride goes before destruction.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>bahalor</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><num>pl</num>
+  </gramGrp>
+  <sense>
+    <trans><tr>superiors</tr></trans>
+    <note>sg.?</note>
+    <eg><q>Burom ia ki bahalor jong phi!</q>      <trans><tr>Respect your superiors!</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>ri khlaw</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>wilderness</tr></trans>
+    <eg><q>Khlem u lok ka pyrthei ka long tang ka ri khlaw.</q>      <trans><tr>Without a friend the world is but a wilderness.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng bathikna</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>proper noun</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng badei kajuh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>common noun</tr></trans>
+    <note>gram.</note>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng bakyllum</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>collective noun</tr></trans>
+    <xr type="syn"><ref>kyrteng babun</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng babun</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>collective noun</tr></trans>
+    <xr type="syn"><ref>kyrteng bakyllum</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng ki mar khyndew</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>material noun</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kyrteng ka jinglong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>abstract noun</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>kren ha</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>address</tr></trans>
+    <eg><q>U Uberto u la kren ha la u lok samla.</q>      <trans><tr>Uberto addressed his young friend.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>lum durbar</orth>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>call an assembly</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingjaipdeh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>sloth</tr></trans>
+    <trans><tr>laziness</tr></trans>
+    <eg><q>Ka jingjaipdeh ka long ka kmie jong ka jingkyrduh.</q>      <trans><tr>Sloth is the mother of poverty.</tr></trans>
+</eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>jingkyrduh</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>f</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>poverty</tr></trans>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>mistri</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>carpenter</tr></trans>
+    <xr type="syn"><ref>misteridieng</ref></xr>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>patsha</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <trans><tr>emperor</tr></trans>
+    <xr type="syn"><ref>syiem</ref></xr>
   </sense>
 </entry></body>
   </text>
