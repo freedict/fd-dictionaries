@@ -1,0 +1,1056 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "0.1">
+  <!ENTITY manrevision "0.1">
+  <!ENTITY date "March 2005">
+  <!ENTITY app "<application>FreeDict-Editor</application>">
+  <!ENTITY appn "freedict-editor">
+  <!ENTITY ipatable SYSTEM "ipa-table.xml">
+  <!--
+The GDP Style Guide should be read. The
+Style Guide tells how to write documentation, ways to structure the documenta-
+tion, and technical writing techniques. The GDP Style Guide is located at
+http://developer.gnome.org/projects/gdp/styleguide.html.
+
+ -->
+]>
+
+<!-- 
+  Do not remove this comment block!
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+
+<!-- =============Document Header ============================= -->
+<article id="index" lang="en">
+<!-- please do not change the id; for translations, change lang -->
+
+  <articleinfo> 
+    <title>&app; Manual V&manrevision;</title>
+    <!-- <copyright> 
+      <year>2005</year> 
+      <year>2006</year> 
+      <holder>DOCUMENTATION WRITER 2</holder> 
+    </copyright> -->
+    <copyright> 
+      <year>2005</year> 
+      <holder>Michael Bunk &lt;micha@luetzschena.de&gt;</holder> 
+    </copyright>
+
+    <!-- translators: uncomment this: <copyright>
+      <year>2002</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+    -->
+    <publisher> 
+      <publishername>FreeDict</publishername> 
+    </publisher>
+    &legal;
+    <authorgroup> 
+      <!-- <author> 
+	<firstname>Documentation</firstname> 
+	<surname>Writer 2</surname> 
+	<affiliation> 
+	  <orgname>GNOME Documentation Project</orgname> 
+	  <address> <email>doc-writer2@gnome.org</email> </address> 
+	</affiliation> 
+      </author> -->
+      <author> 
+	<firstname>Michael</firstname> 
+	<surname>Bunk</surname> 
+	<affiliation> 
+	  <orgname>FreeDict</orgname> 
+	  <address> <email>micha@luetzschena.de</email> </address> 
+	</affiliation> 
+      </author> 
+
+      <!-- place for other contributors: translators, maintainers etc.
+      <othercredit role="translator">
+	<firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+	  <orgname>Latin Translation Team</orgname> 
+	  <address> <email>translator@gnome.org</email> </address> 
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit> -->
+    </authorgroup>
+
+
+    <!-- The revision numbering system for GNOME manuals is as follows:
+    * the revision number consists of two components
+    * the first component of the revision number reflects the release version of the GNOME desktop.
+    * the second component of the revision number is a decimal unit that is incremented with each revision of the manual.
+    For example, if the GNOME desktop release is V2.x, the first version of the manual that
+    is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc.
+    When the desktop release version changes to V3.x, the revision number of the manual changes
+    to V3.0, and so on. -->  
+    <revhistory>
+      <!-- <revision> 
+	<revnumber>&app; Manual V&manrevision;</revnumber> 
+	<date>&date;</date> 
+	<revdescription> 
+	  <para role="author">Documentation Writer 2
+	    <email>docwriter2@gnome.org</email>
+	  </para>
+	  <para role="publisher">GNOME Documentation Project</para>
+	</revdescription> 
+      </revision> -->
+      <revision> 
+	<revnumber>&app; Manual V0.1</revnumber> 
+	<date>2005-03-22</date> 
+	<revdescription> 
+	  <para role="author">Michael Bunk
+	    <email>micha@luetzschena.de</email>
+	  </para>
+	  <para role="publisher">FreeDict</para>
+	</revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>This manual describes version &appversion; of &app;.</releaseinfo> 
+    <legalnotice> 
+      <title>Feedback</title> 
+      <para>To report a bug or make a suggestion regarding the &app;
+	application or this manual, use the <ulink
+	  url="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419">FreeDict
+	  Bug Tracking System</ulink>, provided by SourceForge. Please use the
+	category FreeDict-Editor (XXX setup category, include it in
+	the link).</para>
+      <!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>&app;</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="freedict-editor-introduction">
+    <title>Introduction</title>
+    <para>The &app; enables you to create and edit dictionaries.  It provides
+      the following features:</para>
+    <itemizedlist>
+      <listitem>
+	<para>Partial support for the TEI P4 XML file format - Text Encoding
+	  Initiative eXtensible Markup Language (only Chapter 12 "Print
+	  Dictionaries" is covered).  The generated file is always valid TEI
+	  XML.</para> 
+      </listitem> 
+      <listitem>
+	<para>XPath Support to flexibly select entries to be edited</para>
+      </listitem> 
+      <listitem> 
+	<para>easy, user friendly Form View to edit entries, fallback to
+	  plain XML for entries that do not match the structure of the
+	  Form View</para>
+      </listitem> 
+      <listitem> 
+	<para>Support for entering pronunciation in IPA characters as well
+	  as some hints on entering special characters</para>
+      </listitem> 
+      <listitem> 
+	<para>HTML preview of a formatted entry using a user-configurable
+	  XSLT stylesheet</para>
+      </listitem> 
+      <listitem>
+	<para>When entering information, the workflow ensures that
+	  double-entries of the same word are avoided</para>
+      </listitem> 
+    </itemizedlist>
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+<!-- Use the Getting Started section to describe the steps required
+     to start the application and to describe the user interface components
+     of the application. If there is other information that it is important
+     for readers to know before they start using the application, you should
+     also include this information here. 
+     If the information about how to get started is very short, you can 
+     include it in the Introduction and omit this section. -->
+
+  <sect1 id="&appn;-getting-started"> 
+    <title>Getting Started</title> 
+
+    <para>This section mostly assumes that you have already started &app;.</para>
+    
+    <sect2 id="&appn;-opening">
+      <title>Opening a TEI dictionary</title>
+      <para>Before you can work on a dictionary, you have to open one.  You can
+	open a TEI file in the following ways:</para> 
+      
+      <variablelist>
+	<varlistentry>
+	  <term>Open File Dialog</term>
+	  <listitem>
+	    <para>This is not worth mentioning, since it is standard.</para>
+
+	    <para>But one thing deserves mentioning, even though it is not
+	      specific to this application. When opening or saving files with
+	      the standard GTK+ file dialog, you can use Filename-Completion
+	      with the <keycap>TAB</keycap> key. I always considered the GTK+
+	      standard file dialog inferior to others (eg.  the standard
+	      dialogs from KDE or M$ Windoze) for lack of favorite locations
+	      and cumbersome directory traversal. But this feature outweighs
+	      this lack a bit.</para>
+	  </listitem>
+	</varlistentry>
+	
+	<varlistentry>
+	  <term>Command line</term>
+	  <listitem>
+	    <para>To start <application>&app;</application> and open a TEI file
+	      from a command line, type the following command, then press
+	      <keycap>Return</keycap>:</para>
+
+	    <para> 
+	      <command>&appn;</command> 
+	      <replaceable>filename.tei</replaceable>
+	    </para> 
+
+	    <para>where <replaceable>filename.tei</replaceable> is the name of
+	      the dictionary file you want to open. You can specify only one
+	      file to open.</para>
+	    
+	    <tip>
+	      <para>The following line might come in handy in your
+		<filename>~/.bashrc</filename>, because it enables filename
+		completion of TEI files when you have already entered the
+		command <command>freedict-editor</command>:</para>
+	      
+	      <para><literal>complete -G '*.tei' -X '!&amp;*'
+		  freedict-editor</literal></para>
+	    </tip>
+	  </listitem>
+	</varlistentry>
+	
+	<varlistentry>
+	  <term>Drag-And-Drop</term>
+	  <listitem>
+	    <para>You can also drag a TEI file from another application such as
+	      a file manager like <ulink type="help"
+		url="ghelp:user-guide#gosnautilus-1"><application>Nautilus</application></ulink>
+	      to the &app; window to open it.</para>
+	    
+	    <warning>
+	      <para>Do not drop it on the list of matching entries, it
+		doesn't like it! This is a bug that should be fixed.</para> 
+	    </warning>
+	  </listitem>
+	</varlistentry>	
+
+	<varlistentry>
+	  <term>Doubleclick</term>
+	  <listitem>
+	    <para>If the mime-info files were installed in the right location,
+	      double-clicking on a TEI file in the
+	      <application>Nautilus</application> file manager should default
+	      to open it with &app;.</para>
+	  </listitem>
+	</varlistentry>	
+      </variablelist>
+    </sect2>
+
+    <sect2 id="&appn;-when-start">
+      <title>When You Start &app;</title>
+      <para>When you start <application>&app;</application>, the following
+	window is displayed.</para>
+
+      <!-- ==== Figure ====
+      <figure id="mainwindow-fig"> 
+	<title>&app; Start Up Window</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/myapp_start_window.png"
+		format="PNG"/> </imageobject>
+	    <textobject> 
+	      <phrase>Shows main window. Contains titlebar, menubar, toolbar,
+		display area, and scrollbars. Menubar contains File, View,
+		Settings, and Help menus. </phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!- ==== End of Figure ====
+
+      <!- Include any descriptions of the GUI immediately after the screenshot
+      of the main UI, for example, the items on the menubar and on the
+      toolbar. This section is optional.
+
+      <para>The &app; window contains the following elements:</para>
+      <variablelist>
+	<varlistentry>
+	  <term>Menubar.</term>
+	  <listitem>
+	    <para>The menus on the menubar contain all of the commands you need
+	      to work with files in <application>&app;</application>.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>Toolbar.</term>
+	  <listitem>
+	    <para>The toolbar contains a subset of the commands that you can
+	      access from the menubar.</para> </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>Statusbar.</term>
+	  <listitem>
+	    <para>The statusbar displays information about current
+	      <application>&app;</application> activity and contextual
+	      information about the menu items. </para>
+	  </listitem>
+	</varlistentry>
+      </variablelist> -->
+    </sect2>
+  </sect1>
+
+  <!-- ================ Usage ================================ -->
+  <!-- Use this section to describe how to use the application to perform the
+  tasks for which the application is designed. -->
+  <sect1 id="freedict-editor-usage"> 
+    <title>Usage</title> 
+    
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="freedict-editor-enter-ipa"> 
+      <title>How to Enter IPA Characters</title> 
+      <para>To enter characters of the International Phonetic Alphabet, the
+	<firstterm>IPA Input Method</firstterm> of GTK+ can be used. The global
+	GTK+ Input Method is automatically switched to IPA Mode when then
+	<guilabel>Pronunciation</guilabel> field is entered. The user's
+	previously selected input method is restored, when the
+	<guilabel>Pronunciation</guilabel> field is left.</para>
+     
+      <para>To manually choose a GTK+ Input Method,
+	<mousebutton>Right-Click</mousebutton> on any input field except the
+	Pronunciation field (since that is handled automatically), eg. the
+	<guilabel>Orthography</guilabel> field in the <guilabel>Form</guilabel>
+	View of the Entry Editor. Choose your desired input method from the
+	offered ones in the <menuchoice><guimenu>Input Methods</guimenu>
+      </menuchoice> submenu.</para>
+
+      <para>You can now use the following key sequences to compose IPA
+	characters:</para>
+
+      <para>
+	<table frame='all'>
+	  <title>Key Sequences of the IPA Input Method</title>
+	  <tgroup cols='3' align='left' colsep='1' rowsep='1'>
+	    <thead>
+	      <row>
+		<entry align="center">Key Sequence</entry>
+		<entry>IPA Character</entry>
+		<entry>Character Name</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      &ipatable;
+	    </tbody>
+	  </tgroup>
+	</table>
+	<note>
+	  <para>These sequences were extracted from the file
+	    <filename>modules/input/imipa.c</filename> in the GTK+ 2.6.1
+	    distribution. The lines <literal>GDK_O / O / LATIN LETTER SMALL
+	      CAPITAL OE</literal>, <literal>GDK_d / d / LATIN SMALL LETTER
+	      E</literal> and <literal>GDK_s / s / LATIN SMALL
+	      LETTER_ESH</literal> are obviously wrong. That is a mistake in
+	    <filename>imipa.c</filename> that I should have reported.</para>
+	</note>
+      </para>
+
+      <note>
+        <para>Other applications supporting IPA Characters are
+	  <application>Yudit</application> and <application>Emacs</application>.
+	  Please refer to files like
+	  <filename>/usr/share/yudit/src/ASCII-IPA.kmap</filename> and
+	  <filename>/usr/share/xemacs/mule-packages/etc/mule-ucs/reldata/uipa.el</filename>
+	  for inspiration in case the GTK+ IPA Input Method lacks any character.</para>
+	  
+	  <para>The ultimative reference regarding IPA Characters is the Unicode Standard
+	   Character Range 0x250-0x2af (XXX link to the unicode excerpt). That range covers
+	   at least 85 characters, so some might be missing here!</para>
+      </note>
+      
+      <tip>
+	<para>In <filename>gtk/gtkimcontextsimple.c</filename> it is documented
+	  that you can enter Unicode characters by holding down Shift + Control
+	  and entering the hexadecimal code of the Unicode character you want
+	  to enter.</para>
+      </tip>
+
+    </sect2> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="&appn;-special-chars"> 
+      <title>How to Enter Special Characters</title> 
+      <para>This functionality is not provided by &app; itself. But many languages
+	require accented and other special characters to be entered, hence this
+	word of advice.</para> 
+
+      <para>One way to enter special characters is to use GTK+ Input Methods.
+	In &app; this way is mainly used for entering IPA Characters, but it
+        can be used to enter other characters as well. See
+	<xref linkend="&appn;-enter-ipa"/>.</para>
+
+      <para>In the <ulink type="help" url="man:x"><application>X
+	    Window System</application></ulink>, the <firstterm>X Keyboard
+	  Extension</firstterm> (XKB) is responsible for translating numeric
+	scancodes sent from the keyboard into symbolic keysyms that are handed
+	over to the application. XKB can also compose characters out of
+	combining (among them diacritical) marks and base characters. For the
+	compose function to work, a key with the compose function is required,
+	as well as "dead" keyboard keys.  Those dead keys will hold the
+	combining marks and will not produce a character immediately after
+	being pressed. They are composed with other characters.</para>
+
+      <note>
+	<para>The most authoritative source for XKB is "The X Keyboard
+	  Extension: Protocol Specification" that could be found at
+	  <filename>/mnt/hdb2/cygwin/usr/x11r6/lib/x11/doc/PostScript/XKBproto.PS</filename>
+	  on my system.</para>
+      </note>
+
+      <sect3>
+	<title>Keyboard Layouts</title>
+
+	<para>An exemplary keyboard layout with dead keys is
+	  <literal>latin</literal>.  The following table shows by which key combinations
+	  the dead keys are reachable (using the "basic" section of that file;
+	  there are other sections for example for a German keyboard model). The
+	  information presented here was extracted from
+	  <filename>/etc/X11/xkb/symbols/pc/latin</filename>. The file comments
+	  say it is Revision 1.4 from 2003/01/26.  Above path is valid for my
+	  SuSE 9.0 system and may differ for yours.</para>
+
+	<table>
+	  <title>Dead keys of the <literal>latin</literal> keyboard layout</title>
+	  <tgroup cols="5">
+	    <thead>
+	      <row>
+		<entry>Keysym without any modifier / Keycap</entry>
+		<entry>Keysym with Shift modifier only / Keycap</entry>
+		<entry>Keysym with ISO_Level3_Shift modifier only</entry>
+		<entry>Keysym with Shift+ISO_Level3_Shift modifiers</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry>equal / =</entry>
+		<entry>plus / +</entry>
+		<entry>dead_cedilla</entry>
+		<entry>dead_ogonek</entry>
+	      </row>
+	      <row>
+		<entry>bracketleft / [</entry>
+		<entry>braceleft / {</entry>
+		<entry>dead_diaeresis</entry>
+		<entry>dead_abovering</entry>
+	      </row>
+	      <row>
+		<entry>bracketright / ]</entry>
+		<entry>braceright / }</entry>
+		<entry>dead_tilde</entry>
+		<entry>dead_macron</entry>
+	      </row>
+	      <row>
+		<entry>semicolon / ;</entry>
+		<entry>colon / :</entry>
+		<entry>dead_acute</entry>
+		<entry>dead_doubleacute</entry>
+	      </row>
+	      <row>
+		<entry>apostrophe / '</entry>
+		<entry>quotedbl / "</entry>
+		<entry>dead_circumflex</entry>
+		<entry>dead_caron</entry>
+	      </row>
+	      <row>
+		<entry>backslash / \</entry>
+		<entry>bar / |</entry>
+		<entry>dead_grave</entry>
+		<entry>dead_breve</entry>
+	      </row>
+	      <row>
+		<entry>slash / /</entry>
+		<entry>question / ?</entry>
+		<entry>dead_belowdot</entry>
+		<entry>dead_abovedot</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+
+	<warning>
+	  <para>Another keyboard layout promising many dead keys is
+	    <literal>us_intl</literal>. But its disadvantage is that it
+	    interferes with the multi layout concept because it uses group 2
+	    instead of shift levels 3 and 4.</para>
+
+	  <para>For <literal>us_intl</literal> to be useful, you must have an
+	    easy way to switch to group 2, eg. by defining the right Alt key to
+	    function as Mode_switch.</para>
+	</warning>
+    </sect3>
+
+    <sect3>
+      <title>Configuring the X Keyboard Extension</title>
+
+      <para>The <ulink type="help"
+	  url="man:setxkbmap"><command>setxkbmap</command></ulink> command can
+	be used to configure XKB.  For example, enter the
+	following command into an xterm:</para>
+      
+      <para>
+	<userinput>setxkbmap latin,de -option compose:ralt -option
+	  grp:alt_shift_toggle</userinput>
+      </para>
+	    
+      <para>The <literal>compose:ralt</literal> option puts the compose
+	function on the right <keycap>Alt</keycap> key.  That key will produce
+	the <keysym>LevelThree</keysym> keysym, which will be interpreted
+	as <literal>ISO_Level3_Shift</literal> modifier.</para>
+
+      <note>
+	<para>The above command also sets up a multi layout configuration.
+	  Initially, the latin layout is active. Using the group toggle keys
+	  <keycombo><keycap>Shift</keycap><keycap>Left Alt</keycap></keycombo>
+	  is is possible to switch permanently between the two layouts. The
+	  permanently here means the layout switched to is enabled even when
+	  the toggle keys are left.</para>
+       
+	<para>An alternative to toggling is to switch between layouts only
+	  temporarily.  The <keysym>Mode_switch</keysym> key can do this by
+	  selecting the next group while it is pressed. Thus, it acts like
+	  another modifier.
+	  <!-- Holding down
+	  <keycombo><keycap>Shift</keycap><keysym>Mode_switch</keysym></keycombo>
+	  results in the keysym <keysym>Multi_key</keysym>. That keysym has no
+	  interpretation of its own in the XKB config files, because the shift
+	  key is interpreted independently from Mode_switch.--></para>
+      </note>
+
+      <tip>
+	<para>You can use the command <userinput>setxkbmap -print</userinput> to
+	  find out the current xkb settings.</para>
+      </tip>
+
+      <tip>
+	<para>Another nice thing of XKB is its ability to show the current
+	  keyboard configuration using the current keyboard geometry. Enter the
+	  following command:</para>
+
+	<userinput><ulink type="help" url="man:xkbprint">xkbprint</ulink>
+	  -color -lg <replaceable>group</replaceable> -ll
+	  <replaceable>shiftlevel</replaceable> :0 - | <ulink type="help"
+	    url="man:gv">gv</ulink> -seascape -</userinput>
+
+	<para><replaceable>group</replaceable> must be replaced by the keyboard
+	  group to be shown (1-4). <replaceable>shiftlevel</replaceable> must
+	  also be replaced by a number from 1-4  - out of which 1 (the default)
+	  and 3 are most useful. The first part of this command produces a
+	  PostScript file. To view it with the second part of this command, the
+	 <literal>gv</literal> command must be available, ie. the
+	 <application>ghostview</application> application must be
+	 installed.</para>
+      </tip>
+
+      <para>Another way of configuring the XKB extension is to specify the XKB
+	options in the InputDevice Section of the <ulink type="help"
+	  url="man:XF86Config"><filename>XF86Config</filename></ulink> file.
+	The manual page <ulink type="help"
+	  url="man:keyboard">keyboard(4)</ulink> describes how to specify XKB
+	options there. An example is:</para>
+
+      <programlisting># from /etc/X11/XF86Config
+Section "InputDevice"
+  Driver       "Keyboard"
+  Identifier   "Keyboard[0]"
+  Option       "AutoRepeat" "200 39"
+  Option       "Protocol" "Standard"
+  Option       "XkbLayout" "latin,de"
+  Option       "XkbModel" "pc104"
+  Option       "XkbRules" "xfree86"
+  Option       "XkbVariant" "xfree86"
+  # How to specify multiple Options in XkbOptions?
+  Option       "XKbOptions" "grp:alt_shift_toggle,grp:switch"
+EndSection</programlisting>
+      </sect3>
+    </sect2> 
+
+    <!-- ================ Usage Subsection ================================ -
+    <sect2 id="freedict-editor-scroll-image"> 
+      <title>To Scroll an Image</title> 
+      <para>To scroll around an image that is larger than the image window or
+	full screen window, you can use the following methods:</para> 
+      <itemizedlist> 
+	<listitem> 
+	  <para>Use the arrow keys on the keyboard.</para> 
+	</listitem> 
+	<listitem> 
+	  <para>Drag the image in the opposite direction to the direction in
+	    which you want to scroll. For example, if you want to
+	      scroll down the image, 
+	    drag the image upwards in the window.</para> 
+	</listitem> 
+	<listitem> 
+	  <para>Use the scrollbars on the window.</para> 
+	</listitem> 
+      </itemizedlist> 
+    </sect2>
+    
+    <!- ================ Usage Subsection ================================ ->
+    <sect2 id="freedict-editor-close-image"> 
+      <title>To Close an Image</title> 
+      <para>To close an image, choose 
+	<menuchoice> 
+	  <guimenu>File</guimenu> 
+	  <guimenuitem>Close This Window</guimenuitem> 
+	</menuchoice>. If the window is the last
+	&app; window open, the application exits. </para> 
+      <para>To quit &app; and close all of the
+	windows that you opened in the current session, choose 
+	<menuchoice> 
+	  <guimenu>File</guimenu> 
+	  <guimenuitem>Exit</guimenuitem> 
+	</menuchoice>. </para> 
+      <warning>
+      <para>This is a warning.</para>
+      </warning>
+    </sect2>
+    --> 
+  </sect1>
+  
+  <!-- ============= Customization ============================= -->
+  <sect1 id="&appn;-prefs"> 
+    <title>Settings</title> 
+    <para>To configure &app;, choose 
+      <menuchoice> 
+	<guimenu>Edit</guimenu> 
+	<guimenuitem>Preferences</guimenuitem> 
+      </menuchoice>. The 
+      <guilabel>Preferences</guilabel> dialog contains the following tabbed
+      sections:</para> 
+    <itemizedlist> 
+      <listitem> 
+	<para> 
+	  <xref linkend="&appn;-prefs-general"/></para> 
+      </listitem> 
+      <listitem> 
+	<para> 
+	  <xref linkend="&appn;-prefs-entry-editor"/></para> 
+      </listitem> 
+    </itemizedlist>
+    
+    <!-- Use a new section to describe different tabbed sections on the
+         Settings or Preferences dialog. -->
+    <sect2 id="&appn;-prefs-general">
+      <title>General</title> 
+      <!--
+      <variablelist> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Interpolation type</guilabel> </term> 
+	  <listitem> 
+	    <para>Use this drop-down list box to specify the
+	      interpolation method that
+	      &app; uses when the
+	      application resizes images. Select one of the following
+	      options:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Nearest neighbor</guilabel> </para> 
+		<para>This method of interpolation takes a location in the
+		  original image and replicates the pixel that is
+		  nearest to this location. When 
+		  you zoom in on an image, the pixels are
+		  replicated. When you zoom out of an 
+		  image, the image loses some of its detail. </para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Bilinear</guilabel> </para> 
+		<para>This is a simple and fast method of interpolation. When
+		  you zoom in on an image, &app; uses up to four
+		  adjacent pixels to compute the colors of the new
+		  pixels. When you zoom out of 
+		  an image, &app; averages regions of color in the
+		  existing image to compute the colors of the pixels. </para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Hyperbolic</guilabel> </para> 
+		<para>This is a high-quality, slow method of interpolation. The
+		  application performs interpolation on the image in
+		  the manner described in 
+		  Digital Image Warping by George Wolberg.</para> 
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Default: 
+	      <guilabel>Nearest neighbor</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Transparency type</guilabel> </term> 
+	  <listitem> 
+	    <para>Use this drop-down list box to specify how
+	      &app; displays transparent or partially opaque
+	      backgrounds in images. Select one of the following options:</para> 
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Dark checks</guilabel> </para> 
+		<para>This option displays black and dark gray checks.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Midtone checks</guilabel> </para> 
+		<para>This option displays dark gray and light gray
+		  checks.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Light checks</guilabel> </para> 
+		<para>This option displays light gray and white checks.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Black only</guilabel> </para> 
+		<para>This option displays solid black.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Gray only</guilabel> </para> 
+		<para>This option displays solid gray.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>White only</guilabel> </para> 
+		<para>This option displays solid white.</para> 
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Default: 
+	      <guilabel>Dark checks</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Check size</guilabel> </term> 
+	  <listitem> 
+	    <para>Use this drop-down list box to specify the size of the checks
+	      to use to display transparent or partially opaque
+	      backgrounds in images. This 
+	      option is only relevant if you choose 
+	      <guilabel>Dark checks</guilabel>, 
+	      <guilabel>Midtone checks</guilabel>, or 
+	      <guilabel>Light checks</guilabel> from the 
+	      <guilabel>Transparency type</guilabel> drop-down list box.
+	      Select one of the following options:</para> 
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Small</guilabel></para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Medium</guilabel></para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Large</guilabel></para> 
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Default: 
+	      <guilabel>Small</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Dither type</guilabel> </term> 
+	  <listitem> 
+	    <para>Use this drop-down list box to specify the dithering method
+	      to use to display images. Dithering is a technique that
+	      is used to simulate 
+	      colors in the original image file but that your system
+	      can not display. Select 
+	      one of the following options:</para> 
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>None</guilabel> </para> 
+		<para>This option does not use dithering. </para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Normal (pseudocolor)</guilabel> </para> 
+		<para>This option performs dithering on pseudocolor displays,
+		  which use a limited palette of colors. </para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Maximum (high color)</guilabel> </para> 
+		<para>This option performs dithering on pseudocolor and high
+		  color displays. </para> 
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Default: 
+	      <guilabel>None</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Two-pass scrolling</guilabel> </term> 
+	  <listitem> 
+	    <para>Select this option to render an image in two passes
+	      when you scroll the image quickly. The first pass
+	      renders a low quality version of the image. The second
+	      pass renders a full quality version of the image over
+	      the low quality version. Two-pass scrolling enables you
+	      to view at least a low quality version of the image at
+	      all times regardless of how quickly you scroll the
+	      image. 
+	    </para>
+	    <para>Default: unselected.</para> 
+	  </listitem> 
+	</varlistentry> 
+      </variablelist>
+      --> 
+    </sect2>
+    
+    <sect2 id="&appn;-prefs-entry-editor">
+      <title>Entry Editor</title>
+
+      <!--
+      <para>You can set the following viewer preferences: 
+	<itemizedlist> 
+	  <listitem> 
+	    <para> 
+	      <xref linkend="&appn;-viewer-prefs-image-window"/></para> 
+	  </listitem> 
+	  <listitem> 
+	    <para> 
+	      <xref linkend="&appn;-viewer-prefs-full-screen"/></para> 
+	  </listitem> 
+	</itemizedlist> </para> 
+      <sect3 id="&appn;-viewer-prefs-image-window"> 
+	<title>Image Windows</title> 
+	<para>The 
+	  <guilabel>Image Windows</guilabel> group contains the preferences
+	  that you can set to view images in image windows.</para> 
+	<variablelist> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Use scrollbars</guilabel> </term> 
+	    <listitem> 
+	      <para>Use this drop-down list box to specify when to use
+		scrollbars to scroll through an image. Select one of
+		the following options:</para> 
+	      <itemizedlist> 
+		<listitem> 
+		  <para> 
+		    <guilabel>Never</guilabel> </para> 
+		  <para>This option never displays scrollbars. You can use the
+		    arrow keys on the keyboard or the mouse to scroll
+		    through the image. </para>  
+		</listitem> 
+		<listitem> 
+		  <para> 
+		    <guilabel>Only if image does not fit</guilabel> </para> 
+		  <para>This option displays scrollbars when the image is
+		    larger than the image window.</para> 
+		</listitem> 
+	      </itemizedlist> 
+	      <para>Default: 
+		<guilabel>Never</guilabel>.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Pick window size and zoom factor
+		automatically</guilabel> </term> 
+	    <listitem> 
+	      <para>Select this option to resize the image window to fit the
+		image or to resize the image to fit the image
+		window. If the image is small, 
+		&app; resizes the image window to fit the image. If
+		the image is large, &app; resizes the image to fit
+		the image window. </para> 
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Open images in a new window</guilabel> </term> 
+	    <listitem> 
+	      <para>Select this option to open a new
+		&app; window each time you open an image. If you do
+		not select this option, &app; replaces the existing
+		image with the new image when you open an image. </para> 
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	</variablelist> 
+      </sect3> 
+      <sect3 id="&appn;-viewer-prefs-full-screen"> 
+	<title>Full Screen</title> 
+	<para>The 
+	  <guilabel>Full Screen</guilabel> group contains the preferences that
+	  you can set to view images in full screen mode.</para> 
+	<variablelist> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Use scrollbars</guilabel> </term> 
+	    <listitem> 
+	      <para>Use this drop-down list box to specify when to use
+		scrollbars to scroll through an image. Select one of the following
+		options:</para> 
+	      <itemizedlist> 
+		<listitem> 
+		  <para> 
+		    <guilabel>Never</guilabel> </para> 
+		  <para>This option never displays scrollbars. You can use the
+		    arrow keys on the keyboard or the mouse to scroll
+		    through the image. </para>  
+		</listitem> 
+		<listitem> 
+		  <para> 
+		    <guilabel>Only if image does not fit</guilabel> </para> 
+		  <para>This option displays scrollbars when the image is
+		    larger than the full screen. </para> 
+		</listitem> 
+	      </itemizedlist> 
+	      <para>Default: 
+		<guilabel>Never</guilabel>.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Use 1:1 zoom factor</guilabel> </term> 
+	    <listitem> 
+	      <para>Select this option to use the 1:1 zoom factor when you open
+		an image. The 1:1 zoom factor displays the image at
+		its actual size. </para>  
+	      <para>Default: selected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Use same zoom factor as image window</guilabel> </term>
+	    
+	    <listitem> 
+	      <para>Select this option to use the same zoom factor that the
+		application uses to display the image in an image
+	      window. </para>  
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Fit all images to screen</guilabel> </term> 
+	    <listitem> 
+	      <para>Select this option to resize images to fill the full screen
+		when you open the images in full screen mode. </para> 
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Fit standard-sized images to screen</guilabel> </term> 
+	    <listitem> 
+	      <para>Select this option to automatically resize images
+		that are the same size as standard screens so that the
+		images fill the full screen when you open them in full
+		screen mode. If you select this option, &app; ignores
+		the settings for the previous three options when you
+		open an image that is the same size as a standard
+		screen.  Examples of standard screen sizes are 640 x
+		480 pixels, 1024 x 768 pixels, and so on. </para>
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	  <varlistentry> 
+	    <term> 
+	      <guilabel>Put a bevel around the edge of the screen</guilabel>
+	    </term> 
+	    <listitem> 
+	      <para>Select this option to display a 3D beveled border around
+		the full screen view of an image. </para> 
+	      <para>Default: unselected.</para> 
+	    </listitem> 
+	  </varlistentry> 
+	</variablelist>
+      </sect3> 
+      -->
+    </sect2> 
+  </sect1>
+
+  <!-- ============= Limitations =========================== -->
+  <sect1 id="&appn;-bugs">
+    <title>Known Bugs and Limitations</title>
+
+    <para>
+      <itemizedlist>
+	<listitem>Parameter Entities (ie. entities for use in DTDs)
+	  in the internal DTD subset are dereferenced (ie. replaced by their
+	  replacement text), you see the result after saving and
+	  reloading.</listitem>
+	<listitem>General Entities (ie. entities for use in the document
+	  content) are not handled transparently by XSLT. They are replaced by
+	  their replacement text and should be avoided from the
+	  beginning.</listitem>
+	<listitem>Memleaks are likely</listitem>
+	<listitem>Some deprecated and/or private fields/functions of GTK+,
+	  libgnomeui and libbonoboui are used</listitem>
+      </itemizedlist>
+    </para>
+  </sect1>
+
+  <!-- ============= Limitations =========================== -->
+  <sect1 id="&appn;-see-also">
+    <title>Links</title>
+
+    <para>This section contians links to sources of further information.</para>
+    
+    <para>
+      <itemizedlist>
+        <listitem>This document assumes that you are familiar with the
+	  <ulink type="http" url="http://freedict.org/howto/">FreeDict HOWTO</ulink>
+	</listitem>
+	<listitem>"Dictionary Editor and Browser" as presented in "Lexical Databases in XML"
+	  by Pavel Smrz and Martin Povolny, Faculty of Informatics, Masaryk University Brno,
+          Botanicka, 68a, 602 00 Brno, Czech Republic, E-mail: {smrz,xpovolny}@fi.muni.cz
+	  (XXX add link) -  DEB is a system that might be more suited to large projects than
+	  &app;</listitem>
+      </itemizedlist>
+    </para>
+  </sect1>
+
+  <!-- This section contains info about the program (not docs), such as
+  author's name(s), web page, license, feedback address. It is optional:
+  primary place for this info is "About.." box of the program.  However, if you
+  do wish to include this info in the manual, this is the place to put it.
+  Alternatively, you can put this information in the title page.-->
+  <sect1 id="&appn;-about"> 
+    <title>About &app;</title> 
+    <para>&app; was written by Michael Bunk
+      <email>micha@luetzschena.de</email>. To find more information, please
+      visit <ulink url="http://freedict.org/"
+	type="http">freedict.org</ulink>.</para> <para>To report a bug or make
+      a suggestion regarding this application or this manual, follow the
+      directions in the Feedback paragraph (XXX link to releaseinfo/legalnotice
+      - but that legal notice astually only belongs to this doc).</para>
+   
+    <para>This program is distributed under the terms of the GNU General Public
+      license as published by the Free Software Foundation; either version 2 of
+      the License, or (at your option) any later version. A copy of this
+      license can be found at this <ulink url="ghelp:gpl"
+	type="help">link</ulink>, or in the file COPYING included with the
+      source code of this program.</para>
+  </sect1> 
+</article>
+
