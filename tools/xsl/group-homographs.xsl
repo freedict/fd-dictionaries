@@ -3,14 +3,12 @@
 
   <!--
 
-  $Revision: 1.1 $
+  $Revision: 1.2 $
 
   This stylesheet converts a TEI file where homographs are not necessarily
   grouped by using the 'hom' element into a TEI file, where this grouping exists.
 
-  It is required for the tei2dic.py script which uses SAX and would find his
-  transformation quite hard. Unfortunately, NUL bytes are invalid in XML, so the
-  conversion to BEDic format cannot be done in an XSLT stylesheet.
+  It is required for conversion to bedic format.
 
   Grouping is done with the 'hom' element instead of the 'superEntry' element, so
   the structure can be translated more directly into the bedic-format by the SAX event
@@ -20,23 +18,25 @@
 
     * entries with multiple orth elements are not supported
     * very slow, the xsl:sort element might be a solution
-    * pron elements of all but the first homogrpah are discarded
+    * pron elements of all but the first homograph are discarded
 
   -->
 
   
+  <!-- Using the doctype-public and doctype-system properties here is in vain,
+       since TEI needs an internal subset to include optional portions of the TEI DTD -->
   <xsl:output method="xml" encoding="UTF-8"/>
   
   <!--
  
-  Since XSL provides no way of outputting an internal DTD subset,
-  we have to do the following:
+  Since XSL provides no way of outputting an internal DTD subset, we use a wrapper script
+  as suggested in the XSLT Recommendation, 16.1 XML Output Method, which contains the
+  default internal subset and includes the output of this stylesheet via an entity reference:
 
-  1. Do not output the TEI.2 document element.
-  2. Use a wrapper script as suggested in the XSLT Recommendation, 16.1 XML Output Method,
-     which contains the internal subset and includes the output of this stylesheet
-     via an entity reference.
-  3. Optionally, unwrapping can be done like this (replace each + by minus signs):
+  1. Do not output the TEI.2 element. If we output it, the wrapper would have leave it out,
+     which would make him non-well formed.
+  2. The wrapper and the output of this stylesheet are then used together.
+  2. Optionally, unwrapping to a single file can be done like this (replace each + by minus signs):
 
           xmllint ++noent tei-wrapper.xml >unwrapped.tei
   

@@ -34,6 +34,9 @@
 #  * limitation: TEI <sense> element not handled, all translation equivalents
 #	of all different <senses> get listed as separate subsenses ({ss}),
 #	examples get listed as {ss}, though they belong to specific <sense>s
+# Version 0.4 Michael Bunk 23 May 2005
+#  * "end of entry" NUL characters now outputtted after every entry, instead
+#	of before
 #-------------------------------------------------------------------------------
 
 import xml.sax.handler
@@ -208,13 +211,11 @@ class TEISplit(xml.sax.handler.ContentHandler):
 
 	    # create references from alternate headwords to us
 	    while(len(self._hw) > 1):
-	      self._write.write("\000" +
-		  		self._hw.pop().encode("utf-8") +
+	      self._write.write(self._hw.pop().encode("utf-8") +
 				"\n{s}{ss}see also {sa}" +
 				self._hw[0].encode("utf-8") +
-	      			"{/sa}{/ss}{/s}")
+	      			"{/sa}{/ss}{/s}" + "\000")
 
-	    self._write.write("\000")
             self._write.write(self._hw[0].encode("utf-8"))
             self._write.write("\n")
 
@@ -240,6 +241,7 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	        self._write.write("{s}")
                 self._write.write(self._homographs.pop())
                 self._write.write("{/s}")
+	    self._write.write("\000")
 	    return
 
 	if (name == "respStmt"):

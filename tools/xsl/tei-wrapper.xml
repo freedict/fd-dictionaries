@@ -4,7 +4,7 @@
 <!--
 
    This file is intended to be used after a TEI file was transformed with
-   group-homographs.xsl to get back the internal DTD subset which cannot
+   group-homographs.xsl to get back the default internal DTD subset which cannot
    be output with XSLT.
 
   -->
@@ -17,4 +17,3 @@
 <!ATTLIST xref url CDATA #IMPLIED>
 ]>
 <TEI.2>&e;</TEI.2>
-

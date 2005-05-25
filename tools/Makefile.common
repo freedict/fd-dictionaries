@@ -77,8 +77,8 @@ dirs:
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
 	$(tei2dict) -f $< $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
 
-%.dict.dz: %.dict
-	dictzip -k $*.dict
+%.dz: %
+	dictzip -k $<
 
 %.tar.gz: %.dict.dz %.index
 	tar czf $*.tar.gz $*.dict.dz $*.index
@@ -223,36 +223,70 @@ freedict-tools-rpm:
 		--exclude=CVS tools/*)
 	rpmbuild --target=noarch -ba freedict-tools.spec
 
-##################################
-#### targets for (z)bedic / zaurus
-##################################
-# it takes 4 steps:
-#  1. execute tei2zbdic.py to create a bedic format file
-#  2. execute xerox (that comes with libbedic) to reformat it somehow
-#  3. execute dictzip to compress it
-#  4. execute dic2ipk.sh to create a Zaurus installation package
-#
-# the xsl/tei2bedic.xsl file is not used presently, as
-# it is an old version
+############################################
+#### targets for (z)bedic on zaurus platform
+############################################
+# it takes 5 major steps:
+#  1a. apply `sort.xsl'
+#  1b. apply `group-homographs-sorted.xsl'
+#  1c. link to `tei-wrapper.xml'
+#  2a. apply `tei2dic.xsl' to create a bedic format file with newlines
+#      (formerly `tei2zbdic.py' was used for 2a & 2b)
+#  2b. replace double newlines by NUL bytes using perl
+#  3. apply `xerox' that comes with libbedic to generate missing properties
+#  4. apply `dictzip' to compress it
+#  5. optionally execute dic2ipk.sh to create a Zaurus installation package
 
-%.unxeroxed.dic: %.tei
-	$(toolsdir)/tei2dic.py $< $*.unxeroxed.dic
+sorted.tei: $(dictname).tei $(xsldir)/sort.xsl
+	$(XSLTPROCESSOR) $(xsldir)/sort.xsl $< >$@
+
+# `group-homographs.xsl' is not used presently, as it is the slow old version
+grouped.tei: sorted.tei $(xsldir)/group-homographs-sorted.xsl
+	$(XSLTPROCESSOR) $(xsldir)/group-homographs-sorted.xsl $< >$@
+
+tei-wrapper.xml: $(xsldir)/tei-wrapper.xml
+	ln -s $(xsldir)/tei-wrapper.xml
+
+# optional
+unwrapped.tei: grouped.tei tei-wrapper.xml
+	xmllint --noent tei-wrapper.xml >unwrapped.tei
+
+bedic-precedence: $(dictname).unxeroxed.dic
+	@if [ -z "$(LA1locale)" ]; \
+	then echo 'Please set LA1locale to the locale of the source language!'; \
+	else echo "The output of this should be incorporated appropriately \
+into \`tei2dic.xsl':"; \
+	$(XEROX) --generate-char-precedence $(LA1locale) $<; fi
+
+$(dictname).newlines.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
+	$(XSLTPROCESSOR) $(xsldir)/tei2dic.xsl $< >$@
+
+$(dictname).unxeroxed.dic: $(dictname).newlines.dic
+	perl -e '@ii=<>; $$i=join "",@ii; $$i=~s/\n\n/\x00/gm; \
+print $$i' <$< >$@
+
+# old style:
+#%.unxeroxed.dic: %.tei
+#	$(toolsdir)/tei2dic.py $< $*.unxeroxed.dic
 
 $(FREEDICTDIR)/release/dic/freedict-%-$(version).dic: %.unxeroxed.dic
-	$(XEROX) -d $*.unxeroxed.dic $@
-
-clean::
-	rm -f $(dictname).unxeroxed.dic
-
-$(FREEDICTDIR)/release/dic/%.dic.dz: $(FREEDICTDIR)/release/dic/%.dic
-	dictzip -k $<
+	$(XEROX) $*.unxeroxed.dic $@
 
 release-bedic: $(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
 
+# optional
 $(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
 	cd $(FREEDICTDIR)/release/ipk && ln -s `$(toolsdir)/dic2ipk.sh $<` $@
 
+# optional
 release-zaurus: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
+
+clean::
+	rm -f sorted.tei grouped.tei tei-wrapper.xml unwrapped.tei \
+	$(dictname).newlines.dic $(dictname).unxeroxed.dic \
+	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic \
+	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
+
 
 #######################
 #### Makefile-technical
@@ -263,6 +297,6 @@ release-zaurus: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).
 	release-dict-tgz release-dict-tgz-reverse \
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	vok release-evolutionary \
-	release-zbedic \
+	bedic-precedence release-bedic release-zaurus \
 	rpm rpm-reverse freedict-tools-rpm\
 	commit validation test test-reverse clean dist dbupdate

@@ -51,6 +51,7 @@
       <xsl:text>, </xsl:text>
     </xsl:if>
   </xsl:for-each>
+  <!-- XXX better write 'orth' -->
   <xsl:apply-templates select="*[local-name()!=orth]" />
 </xsl:template>
 
