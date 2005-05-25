@@ -1,25 +1,20 @@
 FREEDICTDIR ?= ..
 DISTFILES = kha-eng.tei Makefile
 include $(FREEDICTDIR)/tools/Makefile.common
+LA1locale = kha_IN
 
-grouped.tei: ../tools/xsl/group-homographs.xsl kha-eng.tei
-	sabcmd ../tools/xsl/group-homographs.xsl kha-eng.tei >grouped.tei '$$verbose='
 
-tei-wrapper.xml:
-	ln -s ../tools/xsl/tei-wrapper.xml
+# bedic related
 
-unwrapped.tei: grouped.tei tei-wrapper.xml
-	xmllint --noent tei-wrapper.xml >unwrapped.tei
-
-unwrapped.dic: unwrapped.tei
-	../tools/tei2dic.py unwrapped.tei unwrapped.dic
-
-unwrapped.xeroxed.dic: unwrapped.dic
-	xerox -d unwrapped.dic unwrapped.xeroxed.dic
+# old style to group homographs, kept for timing comparison
+grouped2.tei: $(dictname).tei $(xsldir)/group-homographs.xsl
+	time $(XSLTPROCESSOR) $(xsldir)/group-homographs.xsl $< '$$verbose=' >$@
 
 clean::
-	-rm unwrapped.dic unwrapped.xeroxed.dic
+	rm -f grouped2.tei
 
+
+# stardict related
 .PHONY: stardict
 
 $(dictname).idxhead:
@@ -45,11 +40,14 @@ dictd_www.freedict.de_$(dictname).ifo: dictd_www.freedict.de_$(dictname).idx.gz
 	echo "date=2005.03.25" >> $@
 	echo "sametypesequence=m" >> $@
 
-la1 = $(shell export V=$(dictname); echo $${V:0:3})
-	
 clean::
-	-rm $(dictname).idxhead dictd_www.freedict.de_$(dictname).idx.gz dictd_www.freedict.de_$(dictname).dict.dz $(dictname).ifo
-	-rm $(la1).wordlist $(la1).rws
+	rm -f $(dictname).idxhead dictd_www.freedict.de_$(dictname).idx.gz dictd_www.freedict.de_$(dictname).dict.dz $(dictname).ifo
+
+# aspell related
+la1 = $(shell export V=$(dictname); echo $${V:0:3})
+
+clean::
+	rm -f $(la1).wordlist $(la1).rws
 
 $(la1).wordlist: $(dictname).index
 	$(toolsdir)/testing/index2wordlist.pl $< >$@
