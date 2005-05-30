@@ -1,24 +1,21 @@
+# Makefile that can call `make' for all dictionary modules
 
-.SUFFIXES: .tar.gz  
-
-VPATH = ../dicts/bin
-
-vok:
-	for file in ../*-*; do echo make $$file; $(MAKE) -C $$file vok; done
-
+# calls default target for each dictionary module
 all:	
-	for file in ../*-*; do echo make $$file; $(MAKE) -C $$file; done
+	for file in ../???-???; do $(MAKE) -C $$file; done
 
+# most useful targets
+release-%:
+	for file in ../???-???; do $(MAKE) -C $$file $@; done
+
+# if you forgot where you made changes... :)
 commit:
-	for file in ../*-*; do echo commit $$file; $(MAKE) -C $$file commit; done
+	for file in ../???-???; do $(MAKE) -C $$file $@; done
 
 install:
-	for file in ../*-*; do echo make $$file; $(MAKE) -C $$file install; done
-
+	for file in ../*-*; do $(MAKE) -C $$file install; done
 
 uninstall:
-	for file in ../*-*; do echo make $$file; $(MAKE) -C $$file uninstall; done
+	for file in ../*-*; do $(MAKE) -C $$file uninstall; done
 
-makefiles:
-	for file in ../*-*; do echo makefiles $$file; rm $$file/Makefile; ln -s ../tools/Makefile.dicts $$file/Makefile; done
- 
+.PHONY: install uninstall commit release-% all
