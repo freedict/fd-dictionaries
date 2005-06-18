@@ -6,5 +6,6 @@ include $(FREEDICTDIR)/tools/Makefile.common
 clean::
 	-rm eng-rom.tei
 
-eng-rom.tei: eng-rom.tei.header
-	./romtext2tei.pl <eng-rom.text >eng-rom.tei
+eng-rom.tei: eng-rom.text eng-rom.tei.header
+	./romtext2tei.pl < $< > $@
+

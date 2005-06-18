@@ -5,7 +5,7 @@
 # No sorting is done. 
 #
 # V1.0 GPL´ed 2002 by H.Eyermann
-# V1.1 simplified script, converted to TEI P4
+# V1.1 Michael Bunk: simplified script, converted to TEI P4
 
 sub xmlescape
 {
@@ -56,7 +56,7 @@ EOF
 
   # why this, while there is no pronunciation information
   # in the dictionary source?
-  if(/\[(.*)\]/)
+  if(/^\[(.*)\]$/)
   {
     $pron = "          <pron>$1</pron>\n";
     next;
