@@ -31,7 +31,8 @@
       <titleStmt> 
 	<title>English-Czech fdicts/FreeDict Dictionary</title>
 	<respStmt> 
-	  <resp>converted into TEI by</resp> <name>Michael Bunk, micha@luetzschena.de</name> 
+	  <resp>converted into TEI</resp>
+	  <name>Michael Bunk &lt;micha@luetzschena.de></name> 
 	</respStmt> 
       </titleStmt>
 	      
@@ -50,9 +51,12 @@
 	<date>2004</date>
 	<pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
+      <seriesStmt>
+        <title>free dictionaries</title>
+      </seriesStmt>
 
       <notesStmt>
-	<note type="status">unknown</note><!-- descriptive adjective, eg. "stable" -->
+	<note type="status">stable</note>
       </notesStmt>  
 
       <sourceDesc>
@@ -71,8 +75,18 @@
       </projectDesc>
     </encodingDesc>
     
-</teiHeader>
+    <revisionDesc>
+      <change>
+	<date>2005-06-12</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Removed div0 TEI element that was a child of body
+	  and contained all the entries. Now the entries are direct
+	  children of body. Maybe the XSLT stylesheets that deal with
+	  entries should not use absolute XPath expressions.</item>
+      </change>
+    </revisionDesc>
+
+  </teiHeader>
 
 <text>
   <body>
-    <div0 type='dictionary'>
