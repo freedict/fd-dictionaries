@@ -1,37 +1,89 @@
-<!DOCTYPE TEI.2       PUBLIC "-//TEI P3//DTD Main Document Type//EN"  [
-   <!ENTITY % TEI.dictionaries "INCLUDE" >
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
 ]>
 
-<tei.2>
+<TEI.2>
   <teiHeader>
-    <filedesc>
-      <titlestmt>
-        <title>           </title>
-      </titlestmt>
-      <publicationstmt>
-        <authority>Freedict.de</authority>
-      </publicationstmt>
-      <sourcedesc>
-        <p>http://www.freedict.de</p>
-      </sourcedesc>
-    </filedesc>
+    <fileDesc>
+      <titleStmt>
+	<title>English-Serbocroatian FreeDict Dictionary</title>
+        <respStmt>
+          <resp>by</resp> <name>Horst Eyermann, Horst@freedict.de</name>
+        </respStmt>
+      </titleStmt>
+
+      <editionStmt>
+        <edition>0.1</edition>
+      </editionStmt>
+
+      <extent>about 600 headwords</extent>
+
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+        <availability>
+          <p>Copyright (C) 1999 Horst Eyermann, horst@freedict.de</p>
+          <p>Available under the terms of the GNU General Public
+            Licence.</p>
+        </availability>
+        <date>2004</date>
+        <pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+        <note type="status">too small</note>
+      </notesStmt>
+
+      <sourceDesc>
+        <p>Home: <xptr url="http://freedict.de/"/></p>
+        <p>This Database was generated from ergane, http://www.travlang.com.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you trough nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+       <change>
+        <date>2005-02-11</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Converted file to TEI P4</item>
+      </change>
+      <change>
+        <date>2000-04-27</date>
+        <respStmt>
+          <name>Horst Eyermann</name>
+        </respStmt>
+        <item>Database was converted to TEI format and checked into CVS</item>
+      </change>
+      <change>
+        <date>2000-01-10</date>
+        <respStmt>
+          <name>Horst Eyermann</name>
+        </respStmt>
+        <item>This Database was generated from ergane,
+	  http://www.travlang.com - Thanks!</item>
+      </change>
+    </revisionDesc>
   </teiHeader>
+
   <text>
     <body>
-      <entry>
-        <form>
-          <orth>00</orth>
-        </form>
-        <trans>
-          <tr>ThisDatabasewasgeneratedfromergane(http://www.travlang.com).</tr>
-        </trans>
-        <trans>
-          <tr>Thedatacanfreelybeusedforanyotherprojects.</tr>
-        </trans>
-        <trans>
-          <tr>-Thanks!</tr>
-        </trans>
-      </entry>
       <entry>
         <form>
           <orth>April</orth>
@@ -5685,4 +5737,4 @@
       </entry>
     </body>
   </text>
-</tei.2>
+</TEI.2>
