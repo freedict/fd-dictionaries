@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<!DOCTYPE  TEI.2  PUBLIC "-//TEI Consortium//DTD TEI P4//EN"  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [ 
-<!ENTITY % TEI.XML          "INCLUDE" >
-<!ENTITY % TEI.dictionaries "INCLUDE" > 
-<!ENTITY % TEI.linking      "INCLUDE" >
-<!ATTLIST xptr url CDATA #IMPLIED >
-<!ATTLIST xref url CDATA #IMPLIED >
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI Consortium//DTD TEI P4//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % TEI.dictionaries "INCLUDE">
+<!ENTITY % TEI.linking "INCLUDE">
+<!ATTLIST xptr url CDATA #IMPLIED>
+<!ATTLIST xref url CDATA #IMPLIED>
 ]>
-
 <TEI.2>
 
   <teiHeader>
@@ -57,7 +56,7 @@
 
     <encodingDesc>
       <projectDesc>
-        <p>This dictionary comes to you trough nice people making it
+        <p>This dictionary comes to you through nice people making it
         available for free and for good. It is part of the FreeDict project,
         http://www.freedict.org / http://freedict.de. This
         project aims to make available many translating dictionaries
@@ -13278,7 +13277,7 @@
       </entry>
       <entry>
         <form>
-          <orth>accomodate</orth>
+          <orth>accommodate</orth>
           <pron>əkɔmədeit</pron>
         </form>
         <trans>
@@ -13304,7 +13303,7 @@
       </entry>
       <entry>
         <form>
-          <orth>accomodate oneself</orth>
+          <orth>accommodate oneself</orth>
           <pron>əkɔmədeitwʌnself</pron>
         </form>
         <trans>
@@ -63069,14 +63068,17 @@
         </trans>
       </entry>
       <entry>
-        <form>
-          <orth>occurence</orth>
-          <pron>əkjeərəns</pron>
-        </form>
-        <trans>
-          <tr>occasion</tr>
-        </trans>
-      </entry>
+  <form>
+    <orth>occurrence</orth>
+    <pron>əkjeərəns</pron>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+  </gramGrp>
+  <sense>
+    <trans><tr>occasion</tr></trans>
+  </sense>
+</entry>
       <entry>
         <form>
           <orth>ocean</orth>
@@ -78907,7 +78909,7 @@
       </entry>
       <entry>
         <form>
-          <orth>sleeping‐accomodation</orth>
+          <orth>sleeping‐accommodation</orth>
         </form>
         <trans>
           <tr>dortoir</tr>
