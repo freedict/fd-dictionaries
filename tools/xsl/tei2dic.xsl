@@ -4,14 +4,18 @@
 
   This stylesheet converts a TEI dictionary into the format expected by
   the `xerox' tool of libbedic from http://bedic.sf.net.
-  The expected TEI input needs all homographs to be grouped in <hom>
-  elements. The support for the bedic format 0.9.4 is complete.
+  The expected TEI input needs all homographs grouped in <hom>
+  elements. The support for the bedic format 0.9.6 is complete.
 
   Limitations:
 
       * multiple <orth> elements are not supported
-      * we cannot generate multi-line bedic properties with XSLT
-        (maybe we should employ perl for this?)
+
+      * cross references are typeless and contain the english language
+        specific "see also" instead of "synonyms:", "antonym(s):" etc.
+        (typing could be added easily)
+
+      *	 We don't have an escaping mechanism for literal backslashes.
 
 
   V0.1 Horst Eyermann 2002
@@ -27,33 +31,70 @@
 
   V0.2 Michael Bunk 2005-May-25
 
-	* The `xerox' tool of libbedic now supports an input format that uses
-	  two newlines instead of the NUL bytes. This stylesheet is designed to
-	  supersede `tei2dic.py'.
+	* This stylesheet is designed to supersede `tei2dic.py'.
 
-	  Note: It seems xerox doesn't support that double-newline format.
-	        But some perl code can do that conversion easily. We should
-		have done that from the beginning:
-		
-                perl -e '@ii=<>; $i=join "",@ii; $i=~s/\n\n/\x00/gm; \
-		print $i' <input.newlines.dic >output.dic
+	* The output of has to be filtered by small perl
+          script. We should have done that from V0.1:
+
+	  perl -pi -e 's/\\0/\x00/gm; s/\\e/\e/gm;' <input.escapes >output.dic
  
-        * The same limitation of XML/XSLT/XPath as above, ie. not being able
-	  to represent ESC characters prevents us from generating multi-line
-       	  properties.
+          Due to the limitation of XML 1.0 not to be able to represent NUL and
+	  ESC characters and due to XSLT/XPath/EXSLT providing no function
+	  to output them, the perl code has to do the following translations
+	  (XML 1.1 allows ESC. But then xsltproc using libxml 20510
+	  doesn't support XML 1.1 yet):
+	  
+	  <\><0> -> <NUL>
+	  <\><e> -> <ESC>
+
+  V0.3 Michael Bunk 2005-Jun-18
+
+        * <trans> elements with multiple <tr> children are handled now,
+	  even though their usage is usually not in compliance with the
+	  TEI Guidelines.
+
+	* Skipping of malformed entries that consist only of the headword,
+	  ie. that have only a single child and that is <form>.
+
+  V0.4 Michael Bunk 2005-Jul-03
+
+        * TEI <usg type="dom"> (domain) will be translated into
+          bedic {ct} (category).
+	
+        * In case no char-precedence exists for a language, the
+	  Wikipedia-char-precedence coming with libbedic 0.9.6
+	  is used, modified by having the non-accented lowercase
+	  characters in their own equivalence classes preceding
+	  the uppercase characters. Another modification is that
+	  some characters 81-9f were removed.
 
   -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-  <xsl:output method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
+  <xsl:output method="text" encoding="UTF-8"/>
 
   <xsl:template match="/">
     <xsl:apply-templates select="TEI.2/teiHeader"/>
     <xsl:apply-templates select="TEI.2/text/body/entry"/>
   </xsl:template>
 
-  <xsl:variable name="version" select="0.2"/>
+  <xsl:variable name="version" select="0.4"/>
 
+  <xsl:template name="new-line">
+    <!-- To directly create bedic escaped newlines is not possible here,
+         as ESC may not be represented in XML 1.0:
+	 <xsl:text>&#27;n</xsl:text>
+
+	 So we output "\en". The "\e" will have to be transformed
+	 into a real ESC char, eg. by a perl script. Then <ESC><n>
+         will be a correctly encoded newline in the bedic format.
+
+	 To be complete, we should have an escaping mechanism for
+	 literal backslashes in place. But we do not.
+    --> 
+    <xsl:text>\en</xsl:text>
+  </xsl:template>
+  
   <!-- Counter for commentXX. Has to be a global variable,
        so we can bind more frequently --> 
   <xsl:variable name="n" select="2"/>
@@ -65,14 +106,24 @@
     <xsl:text>&#10;</xsl:text>
 
     <!-- The used char-precedence depends on the language of the dictionary -->
+    <xsl:text>char-precedence=</xsl:text>
     <xsl:choose>
       <xsl:when test="starts-with(fileDesc/titleStmt/title, 'German')">
-	<xsl:text>char-precedence={ -,!/.()?}{aAäÄ}{bB}{cC}{dD}{eE}{fF}{gG}{hH}{iI}{jJ}{kK}{lL}{mM}{nN}{oOöÖ}{pP}{qQ}{rR}{sSß}{tT}{uUüÜ}{vV}{wW}{xX}{yY}{zZ}&#10;</xsl:text>
+	<xsl:text>{ -,!/.()?}{a}{AäÄ}{b}{B}{c}{C}</xsl:text>
+	<xsl:text>{d}{D}{e}{E}{f}{F}{g}{G}{h}{H}{i}{I}{j}{J}{k}{K}</xsl:text>
+        <xsl:text>{l}{L}{m}{M}{n}{N}{o}{OöÖ}{p}{P}{q}{Q}{r}{R}{s}{Sß}</xsl:text>
+	<xsl:text>{t}{T}{u}{UüÜ}{v}{V}{w}{W}{x}{X}{y}{Y}{z}{Z}&#10;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-	<!-- The error message is wrong for 'Serbo-Croat', as that contains a '-' -->
+	<!-- The warning is wrong for 'Serbo-Croat', as that contains a '-' -->
 	<xsl:message>Warning: No preset char-precedence for <xsl:value-of
-	    select="substring-before(fileDesc/titleStmt/title, '-')"/> language.</xsl:message>
+	    select="substring-before(fileDesc/titleStmt/title, '-')"/> language.
+	 Using modified Wikipedia char-precedence.</xsl:message>
+	<xsl:text>{a}{AäâàáåãæÀÁÂÃÄÅÆ}{b}{B}{c}{CçÇ}{d}{DðÐ}{e}{EèéêëÈÉÊ}</xsl:text>
+	<xsl:text>{f}{F}{g}{G}{hH}{i}{IíîìïÍÎ}{j}{J}{k}{K}{l}{L£}{m}{Mµ}</xsl:text>
+	<xsl:text>{n}{NñÑ}{o}{OôøòõóöÓÔÕÖ}{p}{P}{q}{Q}{r}{R}{s}{Sß}{t}{T}</xsl:text>
+	<xsl:text>{u}{UüùúûÙÚÜ}{v}{V}{w}{W}{x}{X}{y}{Yýÿ}{z}{Z}0123456789</xsl:text>
+	<xsl:text>-,;:!?/.`~'()}@$*\&amp;%=×ØÞ­´¸§°·²½±¡³ºª»«þ¼¿</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
 
@@ -88,16 +139,10 @@
  
     <xsl:text>copyright=Publisher: </xsl:text>
     <xsl:value-of select="fileDesc/publicationStmt/publisher"/>
-    <!-- To created bedic escaped newlines is not possible here,
-         as ESC may not be represented in XML --> 
-    <!--
-    <xsl:text>&#27;n</xsl:text>
-    -->
-    <xsl:text> -- Year: </xsl:text>
+    <xsl:text> Year: </xsl:text>
     <xsl:value-of select="fileDesc/publicationStmt/date"/>
-    <xsl:text> -- Place: </xsl:text>
+    <xsl:text> Place: </xsl:text>
     <xsl:value-of select="fileDesc/publicationStmt/pubPlace"/>
-    <xsl:text> -- </xsl:text>
     <!-- replace newlines with spaces and normalize space -->
     <xsl:value-of select="normalize-space(translate(fileDesc/publicationStmt/availability, '&#10;', ' '))"/>
     <xsl:text>&#10;</xsl:text>
@@ -110,7 +155,7 @@
     <xsl:text>comment01=XSLT processor used for TEI->bedic conversion: </xsl:text>
     <xsl:value-of select="system-property('xsl:vendor')"/>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>comment02=Version of Stylesheet used for TEI->bedic conversion: </xsl:text>
+    <xsl:text>comment02=Stylesheet used for TEI->bedic conversion: V</xsl:text>
     <xsl:value-of select="$version"/>
     <xsl:text>&#10;</xsl:text>
     
@@ -136,8 +181,9 @@
       <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
    
-    <!-- End Mark of Header Section -->
-    <xsl:text>&#10;&#10;</xsl:text>
+    <!-- End Mark of Header Section. This \0 has to be translated into
+         NUL by a perl one-liner. -->
+    <xsl:text>\0</xsl:text>
   </xsl:template>
 
   <!-- Templates to transform entries -->
@@ -146,6 +192,9 @@
     <xsl:choose>
       <xsl:when test="normalize-space(form/orth)=''">
 	<xsl:message>Warning: Skipping entry without or with empty orth element(s).</xsl:message>
+      </xsl:when>
+      <xsl:when test="1 > count(*[name() != 'form'])">
+	<xsl:message>Warning: Skipping entry with only form child(ren). form contents: '<xsl:value-of select='form'/>'</xsl:message>
       </xsl:when>
       <xsl:otherwise>
 	<xsl:if test="count(form/orth)>1">
@@ -167,7 +216,7 @@
 	</xsl:if>
 
 	<!-- End Mark of entry -->
-	<xsl:text>&#10;&#10;</xsl:text>
+	<xsl:text>\0</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -262,13 +311,23 @@
   </xsl:template>
   
   <xsl:template match="usg[@type='dom']">
-    <xsl:text>[</xsl:text>
+    <xsl:text>{ct}</xsl:text>
     <xsl:value-of select="."/>
-    <xsl:text>] </xsl:text>
+    <xsl:text>.{/ct} </xsl:text>
   </xsl:template>
 
   <xsl:template match="trans">
-    <xsl:value-of select="tr"/>
+    <!-- We have to handle multiple <tr> inside trans, because the old
+         style encoded TEI files have this. Actually <trans> is meant only
+	   to group information related to a single translation eqivalent,
+	   while each translation equivalent should reside inside its own
+	   <trans>.
+    -->
+    <xsl:for-each select="tr">
+      <xsl:value-of select="."/>
+      <xsl:if test="not(position()=last())">, </xsl:if>
+    </xsl:for-each>
+      
     <!-- the gender of nouns in the destination language might be of interest
          (not in English, but in German, French etc.) -->
     <xsl:if test="gen"> (<xsl:value-of select="gen"/>)</xsl:if>

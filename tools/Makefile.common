@@ -1,19 +1,22 @@
-toolsdir = $(FREEDICTDIR)/tools
+toolsdir := $(FREEDICTDIR)/tools
 include $(toolsdir)/Makefile.config
 
 #######################
 #### set some variables
 #######################
 
-xsldir = $(toolsdir)/xsl
-tei2dict = $(toolsdir)/xmltei2xmldict.pl
-xmllint = /usr/bin/xmllint
+xsldir := $(toolsdir)/xsl
+tei2dict := $(toolsdir)/xmltei2xmldict.pl
+xmllint := /usr/bin/xmllint
 
-dictname = $(shell basename $(shell pwd))
-rdictname = $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
+dictname := $(shell basename $(shell pwd))
+rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
-# depending on how much memory your machine has, extracting the
-# tiny edition element contents per XSLT might be overdimensioned
+# Extracting the tiny edition element contents per XSLT is
+# overdimensioned.
+# version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
+
+# So we use grep to extract the edition.
 # if $(version) contains spaces: 
 # Makefile.common:235: *** mixed implicit and normal rules.  Stop.
 # so spaces are substituted by underscores
@@ -21,7 +24,6 @@ empty:=
 space:= $(empty) $(empty)
 version1 = $(shell grep -m 1 -o -P -e \
 	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
-# version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
 version = $(subst $(space),_,$(version1))
 
 ################
@@ -115,9 +117,9 @@ reverse: $(dictname).tei
 	mv $(dictname).dict $(rdictname).dict
 	dictzip -k $(rdictname).dict
 
-############################################
-#### targets for c5/dictfmt conversion style
-############################################
+#####################################################################
+#### targets for c5/dictfmt conversion style for dict database format
+#####################################################################
 
 $(dictname).c5: $(dictname).tei
 
@@ -231,13 +233,14 @@ freedict-tools-rpm:
 ############################################
 #### targets for (z)bedic on zaurus platform
 ############################################
-# it takes 5 major steps:
+# it takes these steps:
 #  1a. apply `sort.xsl'
 #  1b. apply `group-homographs-sorted.xsl'
 #  1c. link to `tei-wrapper.xml'
 #  2a. apply `tei2dic.xsl' to create a bedic format file with newlines
-#      (formerly `tei2zbdic.py' was used for 2a & 2b)
-#  2b. replace double newlines by NUL bytes using perl
+#      (formerly `tei2zbdic.py' was used for 2a&c)
+#  2b. convert to Unicode NFC using charlint.pl
+#  2c. replace double newlines by NUL bytes and replace \\e by \e using perl
 #  3. apply `xerox' that comes with libbedic to generate missing properties
 #  4. apply `dictzip' to compress it
 #  5. optionally execute dic2ipk.sh to create a Zaurus installation package
@@ -245,7 +248,6 @@ freedict-tools-rpm:
 sorted.tei: $(dictname).tei $(xsldir)/sort.xsl
 	$(XSLTPROCESSOR) $(xsldir)/sort.xsl $< >$@
 
-# `group-homographs.xsl' is not used presently, as it is the slow old version
 grouped.tei: sorted.tei $(xsldir)/group-homographs-sorted.xsl
 	$(XSLTPROCESSOR) $(xsldir)/group-homographs-sorted.xsl $< >$@
 
@@ -263,12 +265,30 @@ bedic-precedence: $(dictname).unxeroxed.dic
 into \`tei2dic.xsl':"; \
 	$(XEROX) --generate-char-precedence $(LA1locale) $<; fi
 
-$(dictname).newlines.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
+$(dictname).escaped.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
 	$(XSLTPROCESSOR) $(xsldir)/tei2dic.xsl $< >$@
 
-$(dictname).unxeroxed.dic: $(dictname).newlines.dic
-	perl -e '@ii=<>; $$i=join "",@ii; $$i=~s/\n\n/\x00/gm; \
-print $$i' <$< >$@
+# Charlint - A Character Normalization Tool
+# http://www.w3.org/International/charlint/
+#
+# This might have to adapted for you:
+#unicodedata = /usr/lib/perl5/5.8.5/unicore/UnicodeData.txt
+# or
+#unicodedata = $(toolsdir)/UnicodeData.txt
+#$(unicodedata):
+#	wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+#
+#$(CHARLINT_DATA): $(unicodedata)
+#	$(CHARLINT) -f $< -S $@ -d -D
+#$(CHARLINT):
+#	wget http://www.w3.org/International/charlint/charlint.pl
+
+# generate NFC (Canonical Decomposition followed by Canonical Composition)
+$(dictname).normalized.dic: $(dictname).escaped.dic
+	$(CHARLINT) -s $(CHARLINT_DATA) <$< >$@
+
+$(dictname).unxeroxed.dic: $(dictname).normalized.dic
+	perl -pi -e 's/\\0/\x00/gm; s/\\e/\e/gm;' <$< >$@
 
 # old style:
 #%.unxeroxed.dic: %.tei
@@ -306,4 +326,3 @@ clean::
 	rpm rpm-reverse freedict-tools-rpm\
 	commit validation test test-reverse clean dist dbupdate \
 	find-homographs
-

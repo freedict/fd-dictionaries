@@ -3,16 +3,20 @@
 
   <!--
 
-  $Revision: 1.1 $
+  $Revision: 1.2 $
 
   This stylesheet sorts the entries of a TEI file using <xsl:sort>.
   
   The sorted dictionary can be further processed by
-  `group-homographs-sorted.xsl'
+  `group-homographs-sorted.xsl', which presupposes this
+  sorting.
 
   Limitations:
 
     * The internal DTD subset gets lost.
+    * All entry descendants of the <body> element become direct
+      children of the <body> element, eg. any <div0> children of
+      <body> get lost.
 
   -->
 
@@ -27,7 +31,7 @@
 
   <xsl:template match="text/body">
     <body>
-      <xsl:apply-templates select="entry">
+      <xsl:apply-templates select=".//entry">
         <xsl:sort select="form/orth[1]"/>
       </xsl:apply-templates>
     </body>
@@ -40,3 +44,4 @@
   </xsl:template>
 
 </xsl:stylesheet>
+

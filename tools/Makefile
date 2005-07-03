@@ -1,21 +1,30 @@
 # Makefile that can call `make' for all dictionary modules
 
-# calls default target for each dictionary module
+include Makefile.config
+
+BUILD =	for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file $@; done
+
+# Calls default target for each dictionary module.
+# Note: There is a conflict if you wanted to call
+# the 'all' target of each dictionary module.
 all:	
-	for file in ../???-???; do $(MAKE) -C $$file; done
+	for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file; done
 
 # most useful targets
 release-%:
-	for file in ../???-???; do $(MAKE) -C $$file $@; done
+	$(BUILD)
 
 # if you forgot where you made changes... :)
 commit:
-	for file in ../???-???; do $(MAKE) -C $$file $@; done
+	$(BUILD)
 
 install:
-	for file in ../*-*; do $(MAKE) -C $$file install; done
+	$(BUILD)
 
 uninstall:
-	for file in ../*-*; do $(MAKE) -C $$file uninstall; done
+	$(BUILD)
 
-.PHONY: install uninstall commit release-% all
+dbupdate:
+	$(BUILD)
+
+.PHONY: install uninstall dbupdate commit release-% all
