@@ -7,6 +7,9 @@
   The expected TEI input needs all homographs grouped in <hom>
   elements. The support for the bedic format 0.9.6 is complete.
 
+  For an overview of the context where this stylesheet is used see the
+  FreeDict HOWTO.
+
   Limitations:
 
       * multiple <orth> elements are not supported

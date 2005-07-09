@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.5 $
+# $Revision: 1.6 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -278,10 +278,16 @@ sub fdict_extract_releases
       $filename = $2;
       $URL = $1;
 
-      warn "   cannot find size/downloads"
-        if($line !~ /<td align="right">(\d*) <\/td><td align="right">(\d*) <\/td>/cg);
+      $size = -1;
+      warn "   cannot find size"
+        if($line !~ /<td align="right">(\d*) <\/td>/cg);
       $size = $1;
-      $downloads = $2;
+      
+      $downloads = -1;
+      warn "   cannot find downloads"
+        if($line !~ /<td align="right"><a href="[^"]+">(\d*)<\/a><\/td>/cg);
+      $downloads = $1;
+ 
       printd "\tfilename: $filename size: $size\n";
 
       ################################################################
@@ -379,8 +385,8 @@ sub fdict_extract_releases
 
       # if $r refers to a older release than available in the database,
       # don't update the database
-      $release_version = "0.0.1" if($release_version eq "");
-      next if($r->getAttribute('version') ge $release_version);
+#      $release_version = "0.0.1" if($release_version eq "");
+#      next if($r->getAttribute('version') ge $release_version);
       
       printd "+\tUpdating release for $platform platform. Old: '" .
         $r->getAttribute('version') . "' New: '$release_version'\n";
