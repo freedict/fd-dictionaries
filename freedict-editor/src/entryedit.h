@@ -11,6 +11,7 @@ struct _Sense_trans
   // GtkWidgets of this translation equivalent
   GtkWidget *hbox, *entry, *pos_optionmenu, *gen_optionmenu;
 
+  // XXX needed only during entry parsing -> put into its own struct?
   // xmlNodes of this translation equivalent
   xmlNodePtr xTr, xPos, xGen;
 };

@@ -1,14 +1,25 @@
-into docs:
-
-mem usage:
-
-0 entries 11 mb
-8000 entries 30 mb (ps / virtual mem)
-80 000 entries-> 140 mb
-____
 TODO
 ----
 
+into docs:
+
+"fd" prefix for namespace "http://freedict.org/freedict-editor" is reserved
+document unbalanced-braces function: bool unbalanced-braces(nodeset)
+ checks the string representation of each node in the nodeset
+ and returns true is any node's string representation is unbalanced
+ 
+mem usage
+ 0 entries 11 mb
+ 8000 entries 30 mb (ps / virtual mem)
+ 80 000 entries-> 140 mb
+
+google (api) integration to resolve spelling and idiom frequency questions
+
+sanity
+ trimmable spaces                                                                                         
+ entry with only form child(ren)                                                                          
+ put sanity checks into free standing stylesheet/Makefile.common target/tool
+ 
 automatically add to new/changed entry
  editer name/email/timestamp
 
@@ -19,7 +30,7 @@ additional optionmenu <form type="">
  type classifies form as simple, compound etc.
  (phrase? abbreviation? wrong spelling? derived/inessential word?)
 
-stop XPath-Match: glib threads || timeout
+stop XPath-Match: glib threads && timeout
 
 DB Backend(s)
  xml-db
@@ -49,3 +60,8 @@ put into teiHeader
  use of ï and ñ, n g
 
 check: only allowed chars in headwords (no c!)
+ everything that
+   starts with
+     jing should be fem noun
+     pyn should be verb and have a xr to verb without pyn
+ all ïa with diaeresis i

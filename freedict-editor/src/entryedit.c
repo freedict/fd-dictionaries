@@ -102,8 +102,16 @@ GtkWidget *create_menu(GtkOptionMenu *parent, const char *accel_path,
   GnomeUIInfo menu_item[] = 
   {
     {
-      GNOME_APP_UI_ITEM, "None", NULL, (gpointer) NULL, NULL, NULL,
-      GNOME_APP_PIXMAP_NONE, NULL, 0, (GdkModifierType) 0, NULL
+      GNOME_APP_UI_ITEM, /* Type */
+      "None", /* label */
+      NULL, /* tooltip */
+      (gpointer) NULL, /* Extra information; depends on the type */
+      NULL, /* User data sent to the callback */
+      NULL, /* reserved */
+      GNOME_APP_PIXMAP_NONE, NULL,
+      0, /* Accelerator key, or 0 for none */
+      (GdkModifierType) 0, /* Mask of modifier keys for the accelerator */
+      NULL
     },
     GNOMEUIINFO_END 
   };
@@ -128,12 +136,12 @@ GtkWidget *create_menu(GtkOptionMenu *parent, const char *accel_path,
 
 // typology for cross references
 const Values xr_values[] = {
-  { "Undetermined", "" },
-  { "Antonym", "ant" },
-  { "Hypernym", "hyper" },
-  { "Hyponym", "hypo" },
-  { "Synonym", "syn" },
-  { "Derived from", "der" },
+  { N_("Undetermined"), "" },
+  { N_("Antonym"), "ant" },
+  { N_("Hypernym"), "hyper" },
+  { N_("Hyponym"), "hypo" },
+  { N_("Synonym"), "syn" },
+  { N_("Derived from"), "der" },
   NULL
 };
 
@@ -141,6 +149,7 @@ const Values xr_values[] = {
 // fill dropdown box of combo entry of a cross reference
 // with suggestions, ie. headwords from other entries that
 // match the existing prefix in the GtkEntry of the combo box
+// XXX see gtk-demos for correct entry completion
 static void on_xr_combo_dropdown(GtkWidget *widget, gpointer user_data)
 {
   int both = GPOINTER_TO_INT(user_data);
@@ -159,7 +168,7 @@ static void on_xr_combo_dropdown(GtkWidget *widget, gpointer user_data)
   gchar expr[200];
   g_snprintf(expr, sizeof(expr),
       "/TEI.2/text/body/entry/form/orth[contains(.,'%s')]", select);
-  xmlNodeSetPtr nodes = find_node_set(expr, teidoc);
+  xmlNodeSetPtr nodes = find_node_set(expr, teidoc, NULL);
   
   if(nodes)
   {
@@ -279,43 +288,43 @@ on_xr_delete_button_clicked        (GtkButton       *button,
 }
 
 
-// XXX these should be user configurable
+// XXX these should be configurable
 // but how to load/save them easily while staying(?) portable? is gconf portable?
 const Values pos_values[] = {
-  { "None", "" },
-  { "Verb", "v" },
-  { "Transitive Verb", "vt" },
-  { "Intransitive Verb", "vi" },
-  { "Adverb", "adv" },
-  { "_Noun", "n" },
-  { "Pronoun", "pron" },
-  { "_Adjective", "adj" },
-  { "_Preposition", "prep" },
-  { "Conjunction", "conj" },
-  { "_Interjection", "interj" },
-  { "Imitative", "imit" },
-  { "Abbreviation", "abbr" },
-  { "Phrase", "phra" },
+  { N_("None"), "" },
+  { N_("Verb"), "v" },
+  { N_("Transitive Verb"), "vt" },
+  { N_("Intransitive Verb"), "vi" },
+  { N_("Adverb"), "adv" },
+  { N_("_Noun"), "n" },
+  { N_("Pronoun"), "pron" },
+  { N_("_Adjective"), "adj" },
+  { N_("_Preposition"), "prep" },
+  { N_("Conjunction"), "conj" },
+  { N_("_Interjection"), "interj" },
+  { N_("Imitative"), "imit" },
+  { N_("Abbreviation"), "abbr" },
+  { N_("Phrase"), "phra" },
   NULL
 };
 
 const Values gen_values[] = {
-  { "None", "" },
-  { "Masculine", "m" },
-  { "_Feminine", "f" },
-  { "Neuter", "n" },
-  { "Common", "i" },
-  { "Masc. & Fem.", "mf" },
-  { "Masc., Fem. & Neut.", "mfn" },
+  { N_("None"), "" },
+  { N_("Masculine"), "m" },
+  { N_("_Feminine"), "f" },
+  { N_("Neuter"), "n" },
+  { N_("Common"), "i" },
+  { N_("Masc. & Fem."), "mf" },
+  { N_("Masc., Fem. & Neut."), "mfn" },
   NULL
 };
 
 
 const Values num_values[] = {
-  { "None", "" },
-  { "_Singular", "sg" },
-  { "Dual", "du" },
-  { "Plural", "pl" },
+  { N_("None"), "" },
+  { N_("_Singular"), "sg" },
+  { N_("Dual"), "du" },
+  { N_("Plural"), "pl" },
   NULL
 };
 
@@ -324,31 +333,31 @@ const Values domain_values[] = {
 
   // in German: "Sachgebiete"
   // taken from fdicts.com
-  { "Agriculture", "agr" },
-  { "Astronomy", "astr" },
-  { "Automobile", "aut" },
-  { "_Biology", "bio" },
-  { "Botany", "bot" },
-  { "Chemistry", "chem" },
-  { "Electrotechnics", "el" },
-  { "Finance", "fin" },
-  { "Geography", "geo" },
-  { "Geology", "geol" },
-  { "Grammar", "gram" },
-  { "History", "hist" },
-  { "Information Technology", "it" },
-  { "Law", "law" },
-  { "Mathematics", "mat" },
-  { "Medicine", "med" },
-  { "Military", "mil" },
-  { "Music", "mus" },
-  { "Mythology", "myt" },
-  { "Physics", "phy" },
-  { "Politics", "pol" },
-  { "Religion", "rel" },
-  { "Sexual", "sex" },
-  { "Sport", "sport" },
-  { "_Technology", "tech" },
+  { N_("Agriculture"), "agr" },
+  { N_("Astronomy"), "astr" },
+  { N_("Automobile"), "aut" },
+  { N_("_Biology"), "bio" },
+  { N_("Botany"), "bot" },
+  { N_("Chemistry"), "chem" },
+  { N_("Electrotechnics"), "el" },
+  { N_("Finance"), "fin" },
+  { N_("Geography"), "geo" },
+  { N_("Geology"), "geol" },
+  { N_("Grammar"), "gram" },
+  { N_("History"), "hist" },
+  { N_("Information Technology"), "it" },
+  { N_("Law"), "law" },
+  { N_("Mathematics"), "math" },
+  { N_("Medicine"), "med" },
+  { N_("Military"), "mil" },
+  { N_("Music"), "mus" },
+  { N_("Mythology"), "myt" },
+  { N_("Physics"), "phy" },
+  { N_("Politics"), "pol" },
+  { N_("Religion"), "rel" },
+  { N_("Sexual"), "sex" },
+  { N_("Sport"), "sport" },
+  { N_("_Technology"), "tech" },
 
   // XXX these are a bit different and should have
   // usg[@type='reg'] for "register"
@@ -696,7 +705,7 @@ Sense *senses_append(GArray *senses)
   gtk_label_set_justify(GTK_LABEL(s.xr_delete_label), GTK_JUSTIFY_LEFT);
 
   // example
-  s.example_label = gtk_label_new("Example");
+  s.example_label = gtk_label_new(_("Example"));
   gtk_table_attach(GTK_TABLE(s.table), s.example_label, 0, 1, 6, 7,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
@@ -753,7 +762,7 @@ void senses_remove_last(GArray *senses)
   // will also remove it from its container, as well as destroy all
   // child widgets
   gtk_widget_destroy(s.frame);
-  
+ 
   g_array_free(s.trans, TRUE);
 
   // since we always remove the last element, the fast function
@@ -794,7 +803,7 @@ static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
   guint index_ = value2index(values, content);
   if(index_==-1)
   {
-    g_printerr(_("unknown <%s> content: '%s'\n"), errormsg, content);
+    g_printerr(_("Unknown <%s> content: '%s'\n"), errormsg, content);
     if(content) xmlFree(content);
     gtk_option_menu_set_history(om, 0);
     return FALSE;
@@ -805,10 +814,22 @@ static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
 }
 
 
-// extracts contents of xml nodes and fills input fields with them
-// n: zero-based
-// returns whether extraction was successful (it may fail for invalid
-// values for the optionmenus)
+/** Frees xmlNodePtr p, if it is non-NULL. Nullifies it after freeing.
+ */
+void my_free_node(xmlNodePtr *p)
+{
+  g_return_if_fail(p);
+  if(!*p) return;
+  xmlFreeNode(*p);
+  *p = 0;
+}
+
+
+/** Extracts contents of xml nodes and fills input fields with them.
+ * @n: zero-based
+ * returns whether extraction was successful (it may fail for invalid values
+ * for the optionmenus)
+ */
 static gboolean sense_dom2widgets(const GArray *senses, const int n)
 {
   g_return_val_if_fail(senses, FALSE);
@@ -821,6 +842,7 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
   // domain  
   gboolean can = nodeContent2optionmenu(s->xUsg,
       GTK_OPTION_MENU(s->domain_optionmenu), domain_values, "usg type=\"dom\"");
+  my_free_node(&(s->xUsg));
 
   // for all trans
   int i;
@@ -829,6 +851,7 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
     // tr
     Sense_trans *t = &g_array_index(s->trans, Sense_trans, i);
     nodeContent2gtk_entry(t->xTr, GTK_ENTRY(t->entry));
+    my_free_node(&(t->xTr));
 
     // pos of trans should always be pos of headword, because
     // as per convention homographs should be put into different
@@ -836,19 +859,25 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
     can = can &&
       nodeContent2optionmenu(t->xPos, GTK_OPTION_MENU(t->pos_optionmenu),
 	  pos_values, "pos");
+    my_free_node(&(t->xPos));
 
     // gen
     can = can && nodeContent2optionmenu(t->xGen,
 	GTK_OPTION_MENU(t->gen_optionmenu), gen_values, "gen");
+    my_free_node(&(t->xGen));
   }
   
   // note, def
   nodeContent2gtk_entry(s->xNote, GTK_ENTRY(s->note_entry));
+  my_free_node(&(s->xNote));
   nodeContent2gtk_entry(s->xDef, GTK_ENTRY(s->def_entry));
+  my_free_node(&(s->xDef));
 
   // ex & its translation
   nodeContent2gtk_entry(s->xEx, GTK_ENTRY(s->example_entry));
+  my_free_node(&(s->xEx));
   nodeContent2gtk_entry(s->xExTr, GTK_ENTRY(s->example_tr_entry));
+  my_free_node(&(s->xExTr));
   
   // for all xr
   for(i=0; i < s->xr->len; i++)
@@ -856,10 +885,12 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
     // xr
     Sense_xr *xr = &g_array_index(s->xr, Sense_xr, i);
     nodeContent2gtk_entry(xr->xRef, GTK_ENTRY(xr->combo_entry));
+    my_free_node(&(xr->xRef));
     // xr type
     if(xr->xType)
       can = nodeContent2optionmenu(xr->xType,
 	GTK_OPTION_MENU(xr->type_optionmenu), xr_values, "xr @type");
+    my_free_node(&(xr->xType));
   }
 
   return can;
@@ -872,85 +903,92 @@ struct Parsed_entry
 };
 
 
-// fill main form fields, parse optionmenu contents
-// sense form filed are filled by sense_dom2widgets()
-static void parsed_entry2widgets(const struct Parsed_entry *pe, gboolean *can)
+/** Fill main form fields, parse optionmenu contents. Fields of the senses
+ * of the entry are filled by sense_dom2widgets().
+ */
+static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
 {
   g_return_if_fail(pe && can);
   
   // orth
   nodeContent2gtk_entry(pe->orth, GTK_ENTRY(lookup_widget(app1, "entry1")));
+  my_free_node(&(pe->orth));
   
   // pron
   nodeContent2gtk_entry(pe->pron, GTK_ENTRY(lookup_widget(app1, "entry2")));
+  my_free_node(&(pe->pron));
 
-  // pos  
   *can = *can && nodeContent2optionmenu(pe->pos,
       GTK_OPTION_MENU(lookup_widget(app1, "pos_optionmenu")), pos_values, "pos");
+  my_free_node(&(pe->pos));
 
-  // num
   *can = *can && nodeContent2optionmenu(pe->num,
       GTK_OPTION_MENU(lookup_widget(app1, "num_optionmenu")), num_values, "num");
+  my_free_node(&(pe->num));
   
-  // gen
   *can = *can && nodeContent2optionmenu(pe->gen,
       GTK_OPTION_MENU(lookup_widget(app1, "gen_optionmenu")), gen_values, "gen");
+  my_free_node(&(pe->gen));
   
   // parse '<note resp="translator">Translator Name <email address>[two spaces]date</note>'
   // the contents of this <note> are similar to the last line of a debian changelog entry
-  if(pe->noteRespTranslator)
+  if(!pe->noteRespTranslator) return;
+
+  xmlChar *content = xmlNodeGetContent(pe->noteRespTranslator);
+  my_free_node(&(pe->noteRespTranslator));
+  if(!content) return;
+  char *nameS = NULL, *emailS = NULL;
+  char dateS[100];
+  if(strlen(content)>0)
   {
-    xmlChar *content = xmlNodeGetContent(pe->noteRespTranslator);
-    char *nameS = NULL, *emailS = NULL;
-    char dateS[100];
-    if(content && strlen(content)>0)
-    {
-      // %as =  match a string, malloc it
-      // &a[^>] = match a string, malloc it, all chars allowed except '>'
-      // XXX might not be robust
-      int ret = sscanf(content, "%a[^<]<%a[^>]>  %[a-zA-Z0-9 .,-]",
-	  &nameS, &emailS, &dateS);
-      
-      if(ret != 3)
-      {
-	*can = FALSE;
-	g_printerr("sscanf() = %i\n", ret);
-      }
-      else
-      {
-	// remove trailing space from name
-	nameS = g_strchomp(nameS);
-	
-	GDate date;
-	//g_date_clear(&date, 1); 
-	
-	g_date_set_parse(&date, dateS);
-	*can = *can && g_date_valid(&date);
-        if(!*can) g_printerr("Invalid date: '%s'\n", dateS);
-      }
-    }
-    else
+    // %as =  match a string, malloc it
+    // &a[^>] = match a string, malloc it, all chars allowed except '>'
+    // XXX might not be robust
+    int ret = sscanf(content, "%a[^<]<%a[^>]>  %[a-zA-Z0-9 .,-]",
+	&nameS, &emailS, &dateS);
+
+    if(ret != 3)
     {
       *can = FALSE;
+      g_printerr("sscanf() = %i\n", ret);
     }
-
-    if(!*can)
-      g_printerr("note resp=translator: content='%s' name='%s' "
-	  "email='%s' dateS='%s'\n", content, nameS, emailS, dateS);
     else
     {
-      // XXX save found things
+      // remove trailing space from name
+      nameS = g_strchomp(nameS);
+	
+      GDate date;
+      //g_date_clear(&date, 1); 
+
+      g_date_set_parse(&date, dateS);
+      *can = *can && g_date_valid(&date);
+      if(!*can) g_printerr("Invalid date: '%s'\n", dateS);
     }
   }
+  else
+  {
+    *can = FALSE;
+  }
+
+  if(!*can)
+    g_printerr("note resp=translator: content='%s' name='%s' "
+	"email='%s' dateS='%s'\n", content, nameS, emailS, dateS);
+  else
+  {
+    // XXX save found things
+  }
+  if(nameS) free(nameS);
+  if(emailS) free(emailS);
+  if(content) xmlFree(content);
 }
 
-// check whether entry is editable in our form
-// this presupposes that it has only elements/attributes
-// that we can handle with our form. we check this condition by  
-// 1. removing every node from the entry tree that we
-//    handle (first attributes, then elements)
-// 2. checking whether nothing remains from the tree
-// returns whether taking the entry apart was successful
+/** Checks whether @entry is editable in our form. This presupposes is possible
+ * only if @entry has only elements/attributes that we can handle with our
+ * form. We check this condition by first removing every node from the entry
+ * tree that we handle (first attributes, then elements). Then we check whether
+ * nothing remains from the tree. Returns whether parsing the entry tree was
+ * successful.
+ */
 gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 {
   g_return_val_if_fail(entry && senses, FALSE);
@@ -959,10 +997,10 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   xmlDocPtr entry_doc = copy_node_to_doc(entry);
 
   // abbreviate the coming source
-  // in the spirit of C++'s design i don't like macros / cpp
+  // in the spirit of C++'s design avoid macros are avoided
   xmlNodePtr inline my_unlink(const char *xpath)
   {
-    return unlink_leaf_node(xpath, entry_doc, &can);
+    return unlink_leaf_node_with_attr(xpath, NULL, entry_doc, &can);
   }
   
   struct Parsed_entry pe;
@@ -972,14 +1010,16 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   pe.pron = my_unlink("/entry/form/pron[1]");
   
   // <form> should be empty now and without attribute nodes
-  unlink_leaf_node("/entry/form", entry_doc, &can);
+  xmlNodePtr f = unlink_leaf_node_with_attr("/entry/form", NULL, entry_doc, &can);
+  if(f) xmlFreeNode(f);
 
   if(find_single_node("/entry/gramGrp[1]", entry_doc))
   {
     pe.pos = my_unlink("/entry/gramGrp/pos");
     pe.num = my_unlink("/entry/gramGrp/num");
     pe.gen = my_unlink("/entry/gramGrp/gen");
-    unlink_leaf_node("/entry/gramGrp", entry_doc, &can);
+    f = unlink_leaf_node_with_attr("/entry/gramGrp", NULL, entry_doc, &can);
+    if(f) xmlFreeNode(f);
   }
 
   senses_clear(senses);
@@ -1001,7 +1041,8 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
       t->xTr = my_unlink("/entry/trans[1]/tr[1]");
     }
 
-    my_unlink("/entry/trans[1]");
+    f = my_unlink("/entry/trans[1]");
+    if(f) xmlFreeNode(f);
     sense_dom2widgets(senses, 0);
   }
   else
@@ -1013,8 +1054,10 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
       // parse a sense
       Sense *s = senses_append(senses);
 
-      // domain
-      s->xUsg = my_unlink("/entry/sense[1]/usg[1][@type='dom']");
+      // domain    
+      const char *allowedattrs[] = { "type", NULL };
+      s->xUsg = unlink_leaf_node_with_attr("/entry/sense[1]/usg[1][@type='dom']",
+	  allowedattrs, entry_doc, &can);
       
       // for all trans
       while(can && find_single_node("/entry/sense[1]/trans[1]", entry_doc))
@@ -1025,7 +1068,8 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
         t->xTr  = my_unlink("/entry/sense[1]/trans[1]/tr[1]");
         t->xGen = my_unlink("/entry/sense[1]/trans[1]/gen[1]");
         t->xPos = my_unlink("/entry/sense[1]/trans[1]/pos[1]");
-        my_unlink("/entry/sense[1]/trans[1]");
+        f = my_unlink("/entry/sense[1]/trans[1]");
+	if(f) xmlFreeNode(f);
       } // while trans
 
       // def
@@ -1048,19 +1092,22 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 	xr->xRef = my_unlink("/entry/sense[1]/xr[1]/ref[1]");
 	// @type
 	xr->xType = my_unlink("/entry/sense[1]/xr[1]/@type");
-	my_unlink("/entry/sense[1]/xr[1]");
+	f = my_unlink("/entry/sense[1]/xr[1]");
+	if(f) xmlFreeNode(f);
       }
       
-      my_unlink("/entry/sense[1]");
+      f = my_unlink("/entry/sense[1]");
+      if(f) xmlFreeNode(f);
       can = can && sense_dom2widgets(senses, senses->len-1);
     } // while sense
     //g_printerr("Finished parsing complex entry\n");
   } // complex entry
  
-  pe.noteRespTranslator = unlink_leaf_node("/entry/note[@resp='translator'][1]",
-      entry_doc, &can);
+  pe.noteRespTranslator = unlink_leaf_node_with_attr("/entry/note[@resp='translator'][1]",
+      NULL, entry_doc, &can);
   
-  unlink_leaf_node("/entry", entry_doc, &can);
+  f = unlink_leaf_node_with_attr("/entry", NULL, entry_doc, &can);
+  if(f) xmlFreeNode(f);
 
   // fill main Widgets
   parsed_entry2widgets(&pe, &can);
@@ -1072,7 +1119,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
     xmlBufferPtr buf = xmlBufferCreate();
     int ret2 = xmlNodeDump(buf, entry_doc, xmlDocGetRootElement(entry_doc), 0, 1);
     g_assert(ret2 != -1);    
-    g_printerr("Remaining content in entry: '%s'.\n", xmlBufferContent(buf));
+    g_printerr(_("Remaining content in entry: '%s'.\n"), xmlBufferContent(buf));
     xmlBufferFree(buf); 
     can = FALSE;
   }
@@ -1108,16 +1155,7 @@ xmlNodePtr form2xml(const GArray *senses)
 {
   g_return_if_fail(teidoc);
 
-  //xmlNodePtr bodyNode = find_single_node("/TEI.2/text/body[1]", teidoc);
-  //g_return_if(fail(bodyNode);
-
-  xmlNodePtr rootNode = //xmlNewDocFragment(teidoc);
-      xmlNewDocNode(teidoc, NULL, "entry", "\n");
-//  	xmlNewNode(NULL,"entry");
-//  xmlNodeAddContent(rootNode, "\n"); 
-
-   
-  xmlNodePtr entryNode = rootNode;//string2xmlNode(rootNode, NULL, "entry", "\n", "\n");
+  xmlNodePtr entryNode = xmlNewDocNode(teidoc, NULL, "entry", "\n");
   xmlNodePtr formNode = string2xmlNode(entryNode, "  ", "form", "\n", "\n");
 
   // orth
@@ -1237,5 +1275,5 @@ xmlNodePtr form2xml(const GArray *senses)
 
   // XXX add <note resp='translator>Name <Email>  Date</note>
 
-  return rootNode;
+  return entryNode;
 }

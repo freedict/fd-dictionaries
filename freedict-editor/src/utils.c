@@ -29,6 +29,7 @@ void show_in_textview1(const xmlNodePtr n)
   int ret2 = xmlNodeDump(buf, teidoc, n, 0, 1);
   g_assert(ret2 != -1);
 
+  // XXX make textview1 global var to save lookups
   GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
 
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
@@ -36,48 +37,43 @@ void show_in_textview1(const xmlNodePtr n)
   xmlBufferFree(buf); 
   gtk_text_buffer_set_modified(b, FALSE);
 
-  // XXX switch to XML view?
+  // XXX make sure notebook1 shows page 0 (XML view)
 }
 
 
 // side effect: changes the edit mode (XML or Form)
-// maybe we should try form mode only option "Always try Form mode" enabled
-void set_edited_entry(const xmlNodePtr e)
+// maybe we should try form mode only when option "Always try Form mode" enabled
+void set_edited_node(const xmlNodePtr n)
 {
+  // XXX nb1 could be a global var inited at startup
   GtkWidget *nb1 = lookup_widget(app1, "notebook1");
-  gboolean sensitive = e ? TRUE : FALSE; 
-  gtk_widget_set_sensitive(nb1, sensitive);
-  gtk_widget_set_sensitive(lookup_widget(app1, "delete_button"), sensitive);
+  gtk_widget_set_sensitive(nb1, n!=NULL);
 
-  // XXX maybe we should refuse to set a new edited_entry when
+  gboolean is_entry = n && !strcmp(n->name, "entry");
+  gtk_widget_set_sensitive(lookup_widget(app1, "delete_button"), is_entry);
+
+  // XXX maybe we should refuse to set a new edited_node when
   // the currently edited one is not saved yet (or try to auto-save it)
   // this should ease the problem of on_notebook1_switch_page()
   // that it has to prevent switching if auto-save fails. 
   // but then, how to handle the user switching to the other view?
   
-  // temporarily set edited_entry to NULL so on_notebook1_switch_page()
+  // temporarily set edited_node to NULL so on_notebook1_switch_page()
   // doesn't disturb us
-  edited_entry = NULL;
+  edited_node = NULL;
 
-  if(e)
+  // en-/disable switching to Form View
+  gtk_widget_set_sensitive(lookup_widget(app1, "form_view_label"), is_entry);
+  
+  if(n)
   {
-//    switch(gtk_notebook_get_current_page(GTK_NOTEBOOK(nb1)))
-//    {
-//      case 0: show_in_textview1(e);
-//	      break;
-//      case 1:
-	      if(!xml2form(e, senses))
-	      {
-		show_in_textview1(e);
-		gtk_notebook_set_current_page(GTK_NOTEBOOK(nb1), 0);
-	      }
-	      else
-		gtk_notebook_set_current_page(GTK_NOTEBOOK(nb1), 1);
-//	      break;
-//      default:
-//	      g_printerr("Unknown page number %i for notebook1!\n",
-//		  gtk_notebook_get_current_page(GTK_NOTEBOOK(nb1)));
-//    } // switch
+    if(!is_entry || !xml2form(n, senses))
+    {
+      show_in_textview1(n);
+      gtk_notebook_set_current_page(GTK_NOTEBOOK(nb1), 0);
+    }
+    else
+      gtk_notebook_set_current_page(GTK_NOTEBOOK(nb1), 1);
   }
   else
   {
@@ -86,19 +82,19 @@ void set_edited_entry(const xmlNodePtr e)
     // XXX make a wizard out of this?
     // should show only "No XML chunk currently edited."
     char text[] =
-       	"1. Open a TEI file\n"
-	"2. Modify the XPath select expression to match\n"
-        "\tthe entries you desire to edit\n"
-	"3. Double-click on an entry headword in the list\n"
-        "\tof matching entries to the right!";
-    gtk_text_buffer_set_text(b, text, -1);
+       	N_("1. Open a TEI file\n\
+2. Modify the XPath select expression to match\n\
+\tthe entries you desire to edit\n\
+3. Double-click on an entry headword in the list\n\
+\tof matching entries to the right!");
+    gtk_text_buffer_set_text(b, _(text), -1);
     GtkTextIter start, end;
     gtk_text_buffer_get_iter_at_offset(b, &start, 0);
     gtk_text_buffer_get_iter_at_offset(b, &end, sizeof(text));
     gtk_text_buffer_apply_tag_by_name(b, "instructions", &start, &end);
   }
   
-  edited_entry = e;
+  edited_node = n;
   if(form_modified) { form_modified = FALSE; on_form_modified_changed(); }
 }
 
@@ -127,7 +123,7 @@ void setTeidoc(const xmlDocPtr t)
   gtk_window_set_title(GTK_WINDOW(app1),
       (t && selected_filename) ? selected_filename : PACKAGE_NAME);
   teidoc = t;
-  set_edited_entry(NULL);
+  set_edited_node(NULL);
 }
 
     
@@ -137,11 +133,11 @@ void mysave(void)
   int ret = xmlSaveFile(selected_filename, teidoc);
   if(ret==-1)
   {
-    mystatus("Saving to %s failed.", selected_filename); 
+    mystatus(_("Saving to %s failed."), selected_filename); 
   }
 
   if(file_modified)
   { file_modified = FALSE; on_file_modified_changed(); }
 
-  mystatus("Saved.");
+  mystatus(_("Saved."));
 }

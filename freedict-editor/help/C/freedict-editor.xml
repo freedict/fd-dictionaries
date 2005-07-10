@@ -9,7 +9,7 @@
   <!ENTITY appn "freedict-editor">
   <!ENTITY ipatable SYSTEM "ipa-table.xml">
   <!--
-The GDP Style Guide should be read. The
+XXX The GDP Style Guide should be read. The
 Style Guide tells how to write documentation, ways to structure the documenta-
 tion, and technical writing techniques. The GDP Style Guide is located at
 http://developer.gnome.org/projects/gdp/styleguide.html.
@@ -136,30 +136,30 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
       the following features:</para>
     <itemizedlist>
       <listitem>
-	<para>Partial support for the TEI P4 XML file format - Text Encoding
-	  Initiative eXtensible Markup Language (only Chapter 12 "Print
-	  Dictionaries" is covered).  The generated file is always valid TEI
-	  XML.</para> 
+	<para>Partial support for the Text Encoding
+	  Initiative eXtensible Markup Language, Version 4, Chapter 12 "Print
+	  Dictionaries"  file format (TEI P4 XML).  The generated file is
+	  always valid.</para> 
       </listitem> 
       <listitem>
-	<para>XPath Support to flexibly select entries to be edited</para>
+	<para>XPath support to flexibly select entries to be edited.</para>
       </listitem> 
       <listitem> 
-	<para>easy, user friendly Form View to edit entries, fallback to
+	<para>Easy, user friendly Form View to edit entries, fallback to
 	  plain XML for entries that do not match the structure of the
-	  Form View</para>
+	  Form.</para>
       </listitem> 
       <listitem> 
 	<para>Support for entering pronunciation in IPA characters as well
-	  as some hints on entering special characters</para>
-      </listitem> 
+	  as some hints on entering special characters under X11.</para>
+      </listitem>
       <listitem> 
 	<para>HTML preview of a formatted entry using a user-configurable
-	  XSLT stylesheet</para>
+	  XSLT stylesheet.</para>
       </listitem> 
       <listitem>
-	<para>When entering information, the workflow ensures that
-	  double-entries of the same word are avoided</para>
+	<para>When adding entries, the workflow ensures that
+	  double-entries of the same word are avoided.</para>
       </listitem> 
     </itemizedlist>
   </sect1>
@@ -169,9 +169,7 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
      to start the application and to describe the user interface components
      of the application. If there is other information that it is important
      for readers to know before they start using the application, you should
-     also include this information here. 
-     If the information about how to get started is very short, you can 
-     include it in the Introduction and omit this section. -->
+     also include this information here. -->
 
   <sect1 id="&appn;-getting-started"> 
     <title>Getting Started</title> 
@@ -187,16 +185,20 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
 	<varlistentry>
 	  <term>Open File Dialog</term>
 	  <listitem>
-	    <para>This is not worth mentioning, since it is standard.</para>
+	    <para>This is not worth mentioning, since it is a standard dialog.</para>
 
 	    <para>But one thing deserves mentioning, even though it is not
-	      specific to this application. When opening or saving files with
-	      the standard GTK+ file dialog, you can use Filename-Completion
-	      with the <keycap>TAB</keycap> key. I always considered the GTK+
-	      standard file dialog inferior to others (eg.  the standard
-	      dialogs from KDE or M$ Windoze) for lack of favorite locations
+	      specific to this application. The standard GTK+ file dialog
+	      supports filename completion with the <keycap>TAB</keycap> key.
+	      I always considered the GTK+ standard file dialog inferior to
+	      others (eg. those from KDE or M$ Windoze) for lack of favorite locations
 	      and cumbersome directory traversal. But this feature outweighs
 	      this lack a bit.</para>
+	
+	    <note>
+	      <para>From GTK+ 2.4 GtkFileChooser is available, which supports
+	        favorite locations.</para>
+	    </note>
 	  </listitem>
 	</varlistentry>
 	
@@ -266,51 +268,63 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
 	<screenshot> 
 	  <mediaobject> 
 	    <imageobject><imagedata fileref="figures/myapp_start_window.png"
-		format="PNG"/> </imageobject>
+		format="PNG"/></imageobject>
 	    <textobject> 
 	      <phrase>Shows main window. Contains titlebar, menubar, toolbar,
 		display area, and scrollbars. Menubar contains File, View,
-		Settings, and Help menus. </phrase> 
+		Settings, and Help menus.</phrase> 
 	    </textobject> 
 	  </mediaobject> 
 	</screenshot> 
       </figure>
-      <!- ==== End of Figure ====
-
-      <!- Include any descriptions of the GUI immediately after the screenshot
-      of the main UI, for example, the items on the menubar and on the
-      toolbar. This section is optional.
+      <!- ==== End of Figure ==== -->
 
       <para>The &app; window contains the following elements:</para>
       <variablelist>
 	<varlistentry>
-	  <term>Menubar.</term>
+	  <term>Menubar, Toolbar, Statusbar</term>
 	  <listitem>
-	    <para>The menus on the menubar contain all of the commands you need
-	      to work with files in <application>&app;</application>.</para>
+	    <para>These are Standard GUI elements not requiring much mention
+	      if the manual is not to bore the user. Remember that toolbars
+	      generally contain only a subset of the things reachable via
+	      the Menubar for faster access.</para>
 	  </listitem>
 	</varlistentry>
 	<varlistentry>
-	  <term>Toolbar.</term>
+	  <term>XPath Matching Controls</term>
 	  <listitem>
-	    <para>The toolbar contains a subset of the commands that you can
-	      access from the menubar.</para> </listitem>
-	</varlistentry>
-	<varlistentry>
-	  <term>Statusbar.</term>
-	  <listitem>
-	    <para>The statusbar displays information about current
-	      <application>&app;</application> activity and contextual
-	      information about the menu items. </para>
+	    <para>These are two Input fields. The XPath Template contains a
+	     template. It may contain the string <literal>%s</literal>, which
+	     would be replaced by the contents of the Select  Input Field.
+	     If you want to use a literal <literal>%</literal> character in
+	     the template, you would have to escape it by preceding it with
+	     another <literal>%</literal> character.</para>
 	  </listitem>
 	</varlistentry>
-      </variablelist> -->
+	<varlistentry>
+	  <term>Matching Entries</term>
+	  <listitem>
+	    <para>After every change of the Select Input Field, the list of
+	      headwords of entries that matched the XPath expression is shown,
+	      limited to 50 entries. You can double-click any of those to
+	      openit in the Entry Editor.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>Entry Editor</term>
+	  <listitem>
+	    <para>This is the heart of the application. The editor can in two
+	      modes. If the entry matches a certain format (XXX document that format!),
+	      it can be edited by filling fields of a Form. Otherwise, the plain XML
+	      source has to be edited.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
     </sect2>
   </sect1>
 
   <!-- ================ Usage ================================ -->
-  <!-- Use this section to describe how to use the application to perform the
-  tasks for which the application is designed. -->
+  <!-- How to use the application to perform the tasks for which it was designed. -->
   <sect1 id="freedict-editor-usage"> 
     <title>Usage</title> 
     
@@ -370,9 +384,11 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
 	  <filename>/usr/share/xemacs/mule-packages/etc/mule-ucs/reldata/uipa.el</filename>
 	  for inspiration in case the GTK+ IPA Input Method lacks any character.</para>
 	  
-	  <para>The ultimative reference regarding IPA Characters is the Unicode Standard
-	   Character Range 0x250-0x2af (XXX link to the unicode excerpt). That range covers
-	   at least 85 characters, so some might be missing here!</para>
+	  <para>The ultimative reference regarding IPA Characters is the Unicode Standard,
+	   especially the Character Range 0x250-0x2af covers at least 85 characters, so
+	   some might be missing here! You can look at the
+	   <ulink type="http" url="http://www.unicode.org/charts/symbols.html#PhoneticSymbols">Unicode
+	     Code Charts for Symbols</ulink>.</para>
       </note>
       
       <tip>
@@ -563,7 +579,9 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
 	  url="man:XF86Config"><filename>XF86Config</filename></ulink> file.
 	The manual page <ulink type="help"
 	  url="man:keyboard">keyboard(4)</ulink> describes how to specify XKB
-	options there. An example is:</para>
+	options there (But it does not explicitly mention how to specify
+	multiple values for <literal>XkbOptions</literal>. <command>xf86config</command>
+	separates values by comma). XXX extend keyboard(4) man page. An example is:</para>
 
       <programlisting># from /etc/X11/XF86Config
 Section "InputDevice"
@@ -575,7 +593,6 @@ Section "InputDevice"
   Option       "XkbModel" "pc104"
   Option       "XkbRules" "xfree86"
   Option       "XkbVariant" "xfree86"
-  # How to specify multiple Options in XkbOptions?
   Option       "XKbOptions" "grp:alt_shift_toggle,grp:switch"
 EndSection</programlisting>
       </sect3>
@@ -1014,7 +1031,7 @@ EndSection</programlisting>
   <sect1 id="&appn;-see-also">
     <title>Links</title>
 
-    <para>This section contians links to sources of further information.</para>
+    <para>This section contains links to sources of further information.</para>
     
     <para>
       <itemizedlist>
@@ -1031,9 +1048,7 @@ EndSection</programlisting>
   </sect1>
 
   <!-- This section contains info about the program (not docs), such as
-  author's name(s), web page, license, feedback address. It is optional:
-  primary place for this info is "About.." box of the program.  However, if you
-  do wish to include this info in the manual, this is the place to put it.
+  It is optional: primary place for this info is "About.." box of the program.
   Alternatively, you can put this information in the title page.-->
   <sect1 id="&appn;-about"> 
     <title>About &app;</title> 

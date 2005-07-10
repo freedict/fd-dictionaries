@@ -424,3 +424,23 @@ on_gtkeditable_changed                 (GtkEditable     *editable,
 void
 on_propertybox1_show                   (GtkWidget       *widget,
                                         gpointer         user_data);
+
+void
+on_add_new_entry1_activate             (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+
+void
+on_delete_entry1_activate              (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+
+void
+on_save_entry1_activate                (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+
+void
+on_cancel_edit1_activate               (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+
+void
+on_stop_find_nodeset_clicked           (GtkButton       *button,
+                                        gpointer         user_data);

@@ -141,8 +141,7 @@ freedict_editor_SOURCES = \
 	utils.c utils.h \
 	xml.c xml.h \
 	callbacks.c callbacks.h \
-	entryedit.c entryedit.h \
-	Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h
+	entryedit.c entryedit.h
 
 
 freedict_editor_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
@@ -156,8 +155,7 @@ PROGRAMS = $(bin_PROGRAMS)
 
 am_freedict_editor_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) utils.$(OBJEXT) xml.$(OBJEXT) \
-	callbacks.$(OBJEXT) entryedit.$(OBJEXT) \
-	Spell-1.0.5-common.$(OBJEXT) Spell-1.0.5-stubs.$(OBJEXT)
+	callbacks.$(OBJEXT) entryedit.$(OBJEXT)
 freedict_editor_OBJECTS = $(am_freedict_editor_OBJECTS)
 freedict_editor_DEPENDENCIES =
 freedict_editor_LDFLAGS =
@@ -165,12 +163,10 @@ freedict_editor_LDFLAGS =
 DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/Spell-1.0.5-common.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/Spell-1.0.5-stubs.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/callbacks.Po ./$(DEPDIR)/entryedit.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/interface.Po ./$(DEPDIR)/main.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/support.Po ./$(DEPDIR)/utils.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/xml.Po
+@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/callbacks.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/entryedit.Po ./$(DEPDIR)/interface.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/support.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/utils.Po ./$(DEPDIR)/xml.Po
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
@@ -222,8 +218,6 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Spell-1.0.5-common.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Spell-1.0.5-stubs.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/entryedit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
@@ -369,6 +363,10 @@ clean-generic:
 
 distclean-generic:
 	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
@@ -425,15 +423,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
 	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
 	uninstall-am uninstall-binPROGRAMS uninstall-info-am
 
-
-# might not be very portable...
-callbacks.c: Spell-1.0.5.h
-
-Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h:
-	orbit-idl-2 --noskels /opt/gnome/share/idl/Spell-1.0.5.idl
-
-maintainer-clean-generic:
-	-rm Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

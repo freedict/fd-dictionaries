@@ -43,6 +43,36 @@ static GnomeUIInfo edit1_menu_uiinfo[] =
   GNOMEUIINFO_MENU_COPY_ITEM (on_copy1_activate, NULL),
   GNOMEUIINFO_MENU_PASTE_ITEM (on_paste1_activate, NULL),
   GNOMEUIINFO_MENU_CLEAR_ITEM (on_clear1_activate, NULL),
+  GNOMEUIINFO_SEPARATOR,
+  {
+    GNOME_APP_UI_ITEM, N_("Ne_w Entry"),
+    N_("Add New Entry"),
+    (gpointer) on_add_new_entry1_activate, NULL, NULL,
+    GNOME_APP_PIXMAP_STOCK, "gtk-add",
+    0, (GdkModifierType) 0, NULL
+  },
+  {
+    GNOME_APP_UI_ITEM, N_("_Delete Entry"),
+    N_("Delete Currently Edited Entry"),
+    (gpointer) on_delete_entry1_activate, NULL, NULL,
+    GNOME_APP_PIXMAP_STOCK, "gtk-remove",
+    0, (GdkModifierType) 0, NULL
+  },
+  {
+    GNOME_APP_UI_ITEM, N_("Sa_ve Entry"),
+    N_("Save Changes to Entry"),
+    (gpointer) on_save_entry1_activate, NULL, NULL,
+    GNOME_APP_PIXMAP_STOCK, "gtk-apply",
+    0, (GdkModifierType) 0, NULL
+  },
+  {
+    GNOME_APP_UI_ITEM, N_("_Cancel Edit"),
+    N_("Cancel Edit of Entry"),
+    (gpointer) on_cancel_edit1_activate, NULL, NULL,
+    GNOME_APP_PIXMAP_STOCK, "gtk-cancel",
+    0, (GdkModifierType) 0, NULL
+  },
+  GNOMEUIINFO_SEPARATOR,
   {
     GNOME_APP_UI_ITEM, N_("_Edit TEI Header"),
     N_("Edit information about the dictionary"),
@@ -112,13 +142,6 @@ static GnomeUIInfo view1_menu_uiinfo[] =
 static GnomeUIInfo help1_menu_uiinfo[] =
 {
   GNOMEUIINFO_HELP ("freedict-editor"),
-  {
-    GNOME_APP_UI_ITEM, N_("Bonobo Experiment"),
-    NULL,
-    (gpointer) on_bonobo_experiment1_activate, NULL, NULL,
-    GNOME_APP_PIXMAP_STOCK, "gnome-stock-not",
-    0, (GdkModifierType) 0, NULL
-  },
   GNOMEUIINFO_MENU_ABOUT_ITEM (on_about1_activate, NULL),
   GNOMEUIINFO_END
 };
@@ -226,6 +249,7 @@ create_app1 (void)
   GtkWidget *delete_button;
   GtkWidget *apply_button;
   GtkWidget *cancel_edit_button;
+  GtkWidget *stop_find_nodeset;
   GtkWidget *hpaned1;
   GtkWidget *frame1;
   GtkWidget *scrolledwindow2;
@@ -293,8 +317,6 @@ create_app1 (void)
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (view1_menu_uiinfo[2].widget), TRUE);
 
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (view1_menu_uiinfo[3].widget), TRUE);
-
-  gtk_widget_set_sensitive (help1_menu_uiinfo[1].widget, FALSE);
 
   hbox18 = gtk_hbox_new (FALSE, 2);
   gtk_widget_show (hbox18);
@@ -408,6 +430,14 @@ create_app1 (void)
                                 tmp_toolbar_icon, NULL, NULL);
   gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
   gtk_widget_show (cancel_edit_button);
+
+  gtk_toolbar_append_space (GTK_TOOLBAR (toolbar1));
+
+  stop_find_nodeset = gtk_toolbar_insert_stock (GTK_TOOLBAR (toolbar1),
+                                "gtk-stop",
+                                "gtk-stop",
+                                NULL, NULL, NULL, -1);
+  gtk_widget_show (stop_find_nodeset);
 
   hpaned1 = gtk_hpaned_new ();
   gtk_widget_show (hpaned1);
@@ -664,6 +694,9 @@ create_app1 (void)
   g_signal_connect ((gpointer) cancel_edit_button, "clicked",
                     G_CALLBACK (on_cancel_edit_button_clicked),
                     NULL);
+  g_signal_connect ((gpointer) stop_find_nodeset, "clicked",
+                    G_CALLBACK (on_stop_find_nodeset_clicked),
+                    NULL);
   g_signal_connect ((gpointer) treeview1, "row_activated",
                     G_CALLBACK (on_treeview1_row_activated),
                     NULL);
@@ -725,11 +758,17 @@ create_app1 (void)
   GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[1].widget, "copy1");
   GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[2].widget, "paste1");
   GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[3].widget, "clear1");
-  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[4].widget, "edit_header");
-  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[5].widget, "spell_check1");
-  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[6].widget, "sanity_check");
-  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[7].widget, "separator5");
-  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[8].widget, "preferences1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[4].widget, "separator6");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[5].widget, "add_new_entry1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[6].widget, "delete_entry1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[7].widget, "save_entry1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[8].widget, "cancel_edit1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[9].widget, "separator7");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[10].widget, "edit_header");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[11].widget, "spell_check1");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[12].widget, "sanity_check");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[13].widget, "separator5");
+  GLADE_HOOKUP_OBJECT (app1, edit1_menu_uiinfo[14].widget, "preferences1");
   GLADE_HOOKUP_OBJECT (app1, menubar1_uiinfo[2].widget, "view1");
   GLADE_HOOKUP_OBJECT (app1, view1_menu_uiinfo[0].widget, "lock_dockitems");
   GLADE_HOOKUP_OBJECT (app1, view1_menu_uiinfo[1].widget, "view_labels");
@@ -737,8 +776,7 @@ create_app1 (void)
   GLADE_HOOKUP_OBJECT (app1, view1_menu_uiinfo[3].widget, "view_html");
   GLADE_HOOKUP_OBJECT (app1, view1_menu_uiinfo[4].widget, "view_keyboard_layout");
   GLADE_HOOKUP_OBJECT (app1, menubar1_uiinfo[3].widget, "help1");
-  GLADE_HOOKUP_OBJECT (app1, help1_menu_uiinfo[1].widget, "bonobo_experiment1");
-  GLADE_HOOKUP_OBJECT (app1, help1_menu_uiinfo[2].widget, "about1");
+  GLADE_HOOKUP_OBJECT (app1, help1_menu_uiinfo[1].widget, "about1");
   GLADE_HOOKUP_OBJECT (app1, hbox18, "hbox18");
   GLADE_HOOKUP_OBJECT (app1, select_label, "select_label");
   GLADE_HOOKUP_OBJECT (app1, entry3, "entry3");
@@ -755,6 +793,7 @@ create_app1 (void)
   GLADE_HOOKUP_OBJECT (app1, delete_button, "delete_button");
   GLADE_HOOKUP_OBJECT (app1, apply_button, "apply_button");
   GLADE_HOOKUP_OBJECT (app1, cancel_edit_button, "cancel_edit_button");
+  GLADE_HOOKUP_OBJECT (app1, stop_find_nodeset, "stop_find_nodeset");
   GLADE_HOOKUP_OBJECT (app1, hpaned1, "hpaned1");
   GLADE_HOOKUP_OBJECT (app1, frame1, "frame1");
   GLADE_HOOKUP_OBJECT (app1, scrolledwindow2, "scrolledwindow2");
@@ -884,6 +923,11 @@ create_fileselection1 (void)
   return fileselection1;
 }
 
+static GnomeUIInfo menu4_uiinfo[] =
+{
+  GNOMEUIINFO_END
+};
+
 GtkWidget*
 create_spellcheck_window (void)
 {
@@ -896,8 +940,6 @@ create_spellcheck_window (void)
   GtkWidget *replacement_entry;
   GtkWidget *suggestions_label;
   GtkWidget *label50;
-  GtkWidget *spell_dict_combo;
-  GtkWidget *check_dict_combo_entry;
   GtkWidget *vbox7;
   GtkWidget *spell_orth_checkbutton;
   GtkWidget *spell_tr_checkbutton;
@@ -911,6 +953,8 @@ create_spellcheck_window (void)
   GtkWidget *scrolledwindow5;
   GtkWidget *suggestions_treeview;
   GtkWidget *spell_progressbar;
+  GtkWidget *spell_dict_optionmenu;
+  GtkWidget *menu4;
   GtkWidget *vbuttonbox1;
   GtkWidget *spell_replace_button;
   GtkWidget *alignment7;
@@ -932,7 +976,6 @@ create_spellcheck_window (void)
 
   spellcheck_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (spellcheck_window), _("Spell Check"));
-  gtk_window_set_modal (GTK_WINDOW (spellcheck_window), TRUE);
 
   hbox14 = gtk_hbox_new (FALSE, 7);
   gtk_widget_show (hbox14);
@@ -945,7 +988,7 @@ create_spellcheck_window (void)
   gtk_table_set_row_spacings (GTK_TABLE (table2), 4);
   gtk_table_set_col_spacings (GTK_TABLE (table2), 4);
 
-  misspelled_word_label = gtk_label_new (_("Misspelled word:"));
+  misspelled_word_label = gtk_label_new (_("Misspelled Word:"));
   gtk_widget_show (misspelled_word_label);
   gtk_table_attach (GTK_TABLE (table2), misspelled_word_label, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
@@ -975,6 +1018,7 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table2), replacement_entry, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, replacement_entry, _("The misspelled word will be replaced by this when you click on Replace"), NULL);
   gtk_entry_set_activates_default (GTK_ENTRY (replacement_entry), TRUE);
 
   suggestions_label = gtk_label_new (_("Suggestions:"));
@@ -992,20 +1036,6 @@ create_spellcheck_window (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify (GTK_LABEL (label50), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (label50), 0, 0.5);
-
-  spell_dict_combo = gtk_combo_new ();
-  g_object_set_data (G_OBJECT (GTK_COMBO (spell_dict_combo)->popwin),
-                     "GladeParentKey", spell_dict_combo);
-  gtk_widget_show (spell_dict_combo);
-  gtk_table_attach (GTK_TABLE (table2), spell_dict_combo, 1, 2, 5, 6,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_combo_set_value_in_list (GTK_COMBO (spell_dict_combo), TRUE, FALSE);
-
-  check_dict_combo_entry = GTK_COMBO (spell_dict_combo)->entry;
-  gtk_widget_show (check_dict_combo_entry);
-  gtk_tooltips_set_tip (tooltips, check_dict_combo_entry, _("What lnagugae to use for checking the words"), NULL);
-  gtk_editable_set_editable (GTK_EDITABLE (check_dict_combo_entry), FALSE);
 
   vbox7 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox7);
@@ -1069,7 +1099,7 @@ create_spellcheck_window (void)
   suggestions_treeview = gtk_tree_view_new ();
   gtk_widget_show (suggestions_treeview);
   gtk_container_add (GTK_CONTAINER (scrolledwindow5), suggestions_treeview);
-  gtk_tooltips_set_tip (tooltips, suggestions_treeview, _("Double-Click to replace the misspelled word with a suggestion"), NULL);
+  gtk_tooltips_set_tip (tooltips, suggestions_treeview, _("Double-Click a suggestion to replace the misspelled word with it"), NULL);
   gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (suggestions_treeview), FALSE);
   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (suggestions_treeview), TRUE);
 
@@ -1080,6 +1110,19 @@ create_spellcheck_window (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_progress_bar_set_text (GTK_PROGRESS_BAR (spell_progressbar), _("Nodes checked"));
 
+  spell_dict_optionmenu = gtk_option_menu_new ();
+  gtk_widget_show (spell_dict_optionmenu);
+  gtk_table_attach (GTK_TABLE (table2), spell_dict_optionmenu, 1, 2, 5, 6,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_tooltips_set_tip (tooltips, spell_dict_optionmenu, _("What language to use for checking the words"), NULL);
+
+  menu4 = gtk_menu_new ();
+  gnome_app_fill_menu (GTK_MENU_SHELL (menu4), menu4_uiinfo,
+                       NULL, FALSE, 0);
+
+  gtk_option_menu_set_menu (GTK_OPTION_MENU (spell_dict_optionmenu), menu4);
+
   vbuttonbox1 = gtk_vbutton_box_new ();
   gtk_widget_show (vbuttonbox1);
   gtk_box_pack_start (GTK_BOX (hbox14), vbuttonbox1, TRUE, TRUE, 0);
@@ -1088,7 +1131,7 @@ create_spellcheck_window (void)
   gtk_widget_show (spell_replace_button);
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_replace_button);
   GTK_WIDGET_SET_FLAGS (spell_replace_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, spell_replace_button, _("Replace misspelled word with replacement or suggestion"), NULL);
+  gtk_tooltips_set_tip (tooltips, spell_replace_button, _("Replace misspelled word with current Replacement"), NULL);
 
   alignment7 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment7);
@@ -1111,13 +1154,13 @@ create_spellcheck_window (void)
   gtk_widget_show (spell_replace_all_button);
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_replace_all_button);
   GTK_WIDGET_SET_FLAGS (spell_replace_all_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, spell_replace_all_button, _("Replace all occurences of the misspelled word with replacement or selected suggestion"), NULL);
+  gtk_tooltips_set_tip (tooltips, spell_replace_all_button, _("Replace all occurences of the misspelled word with current Replacement"), NULL);
 
   spell_ignore_button = gtk_button_new ();
   gtk_widget_show (spell_ignore_button);
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_ignore_button);
   GTK_WIDGET_SET_FLAGS (spell_ignore_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, spell_ignore_button, _("Ignore the occurence of a misspelled word"), NULL);
+  gtk_tooltips_set_tip (tooltips, spell_ignore_button, _("Ignore current occurence of the misspelled word"), NULL);
 
   alignment8 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment8);
@@ -1140,13 +1183,13 @@ create_spellcheck_window (void)
   gtk_widget_show (spell_ignore_all_button);
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_ignore_all_button);
   GTK_WIDGET_SET_FLAGS (spell_ignore_all_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, spell_ignore_all_button, _("Ignore all occurences of this misspelled word"), NULL);
+  gtk_tooltips_set_tip (tooltips, spell_ignore_all_button, _("Ignore all occurences of the misspelled word"), NULL);
 
   spell_add_button = gtk_button_new_from_stock ("gtk-add");
   gtk_widget_show (spell_add_button);
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_add_button);
   GTK_WIDGET_SET_FLAGS (spell_add_button, GTK_CAN_DEFAULT);
-  gtk_tooltips_set_tip (tooltips, spell_add_button, _("Add this word to the personal word list of this language"), NULL);
+  gtk_tooltips_set_tip (tooltips, spell_add_button, _("Add misspelled word to the personal GNU aspell word list of this language"), NULL);
 
   spell_close_button = gtk_button_new_from_stock ("gtk-close");
   gtk_widget_show (spell_close_button);
@@ -1194,8 +1237,6 @@ create_spellcheck_window (void)
   GLADE_HOOKUP_OBJECT (spellcheck_window, replacement_entry, "replacement_entry");
   GLADE_HOOKUP_OBJECT (spellcheck_window, suggestions_label, "suggestions_label");
   GLADE_HOOKUP_OBJECT (spellcheck_window, label50, "label50");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_dict_combo, "spell_dict_combo");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, check_dict_combo_entry, "check_dict_combo_entry");
   GLADE_HOOKUP_OBJECT (spellcheck_window, vbox7, "vbox7");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_orth_checkbutton, "spell_orth_checkbutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_tr_checkbutton, "spell_tr_checkbutton");
@@ -1208,6 +1249,8 @@ create_spellcheck_window (void)
   GLADE_HOOKUP_OBJECT (spellcheck_window, scrolledwindow5, "scrolledwindow5");
   GLADE_HOOKUP_OBJECT (spellcheck_window, suggestions_treeview, "suggestions_treeview");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_progressbar, "spell_progressbar");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_dict_optionmenu, "spell_dict_optionmenu");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, menu4, "menu4");
   GLADE_HOOKUP_OBJECT (spellcheck_window, vbuttonbox1, "vbuttonbox1");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_replace_button, "spell_replace_button");
   GLADE_HOOKUP_OBJECT (spellcheck_window, alignment7, "alignment7");
@@ -1580,7 +1623,6 @@ create_sanity_window (void)
   GtkWidget *sanity_treeview;
 
   sanity_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_widget_set_size_request (sanity_window, 100, 200);
   gtk_window_set_title (GTK_WINDOW (sanity_window), _("Check Sanity"));
   gtk_window_set_default_size (GTK_WINDOW (sanity_window), 200, 400);
   gtk_window_set_destroy_with_parent (GTK_WINDOW (sanity_window), TRUE);
@@ -1598,7 +1640,7 @@ create_sanity_window (void)
   sanity_treeview = gtk_tree_view_new ();
   gtk_widget_show (sanity_treeview);
   gtk_container_add (GTK_CONTAINER (scrolledwindow7), sanity_treeview);
-  gtk_widget_set_size_request (sanity_treeview, 130, 200);
+  gtk_widget_set_size_request (sanity_treeview, 200, 200);
   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (sanity_treeview), TRUE);
   gtk_tree_view_set_reorderable (GTK_TREE_VIEW (sanity_treeview), TRUE);
 
@@ -1610,12 +1652,6 @@ create_sanity_window (void)
                     NULL);
   g_signal_connect ((gpointer) sanity_treeview, "cursor_changed",
                     G_CALLBACK (on_sanity_treeview_cursor_changed),
-                    NULL);
-  g_signal_connect ((gpointer) sanity_treeview, "expand_collapse_cursor_row",
-                    G_CALLBACK (on_sanity_treeview_expand_collapse_cursor_row),
-                    NULL);
-  g_signal_connect ((gpointer) sanity_treeview, "row_expanded",
-                    G_CALLBACK (on_sanity_treeview_row_expanded),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */

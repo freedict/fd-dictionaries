@@ -14,16 +14,7 @@ freedict_editor_SOURCES = \
 	utils.c utils.h \
 	xml.c xml.h \
 	callbacks.c callbacks.h \
-	entryedit.c entryedit.h \
-	Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h
+	entryedit.c entryedit.h
 
 freedict_editor_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 
-# might not be very portable...
-callbacks.c: Spell-1.0.5.h
-
-Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h:
-	orbit-idl-2 --noskels /opt/gnome/share/idl/Spell-1.0.5.idl
-
-maintainer-clean-generic:
-	-rm Spell-1.0.5-common.c Spell-1.0.5-stubs.c Spell-1.0.5.h
