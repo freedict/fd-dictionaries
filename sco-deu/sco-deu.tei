@@ -13,9 +13,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Scottish-German FreeDict Dictionary</title>
+        <title>Gaelic-German FreeDict Dictionary</title>
         <respStmt>
-          <resp>by</resp> <name>Horst Eyermann, Horst@freedict.de</name>
+          <resp>by</resp> <name>Horst Eyermann &lt;Horst@freedict.de></name>
         </respStmt>
       </titleStmt>
 
@@ -38,11 +38,13 @@
 
       <notesStmt>
         <note type="status">too small</note>
+	<note>This dictionary module is named incorrectly. Instead of
+	  'sco-deu' it should be named 'gal-deu' (for Gaelic-German).</note>
       </notesStmt>
 
       <sourceDesc>
-        <p>Home: <xptr url="http://freedict.de/"/></p>
-        <p>This Database was generated from ergane, http://www.travlang.com.</p>
+        <p>Home: <xptr url="http://www.travlang.com/"/></p>
+        <p>This Database was generated from Ergane.</p>
       </sourceDesc>
     </fileDesc>
 
@@ -57,6 +59,14 @@
     </encodingDesc>
 
     <revisionDesc>
+       <change>
+        <date>2005-07-19</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Following Debian Bug#318025, retitled the dictionary from 'Scottish-German'
+	  to 'Gaelic-German'.</item>
+      </change>
        <change>
         <date>2005-02-12</date>
         <respStmt>
