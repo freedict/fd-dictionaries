@@ -13,9 +13,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Africaans-English FreeDict Dictionary</title>
+        <title>Afrikaans-English FreeDict Dictionary</title>
         <respStmt>
-	  <resp>by</resp> <name>Horst Eyermann, horst@freedict.de</name>
+	  <resp>by</resp> <name>Horst Eyermann &lt;horst@freedict.de></name>
         </respStmt>
       </titleStmt>
 
@@ -41,14 +41,14 @@
       </notesStmt>
 
       <sourceDesc>
-	<p>Home: <xptr url="http://freedict.de/"/></p>
-	<p>This Database was generated from ergane, http://www.travlang.com.</p>
+	<p>Home: <xptr url="http://www.travlang.com/"/></p>
+	<p>This Database was generated from Ergane.</p>
       </sourceDesc>
     </fileDesc>
 
     <encodingDesc>
       <projectDesc>
-        <p>This dictionary comes to you trough nice people making it
+        <p>This dictionary comes to you through nice people making it
           available for free and for good. It is part of the FreeDict project,
           http://www.freedict.org / http://freedict.de. This
           project aims to make available many translating dictionaries
@@ -57,6 +57,13 @@
     </encodingDesc>
 
     <revisionDesc>
+      <change>
+        <date>2005-07-19</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Fixed Debian Bug#318024 (Africaan -> Afrikaans).</item>
+      </change>
        <change>
         <date>2005-02-13</date>
         <respStmt>
