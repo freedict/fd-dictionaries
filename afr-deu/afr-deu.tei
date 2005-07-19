@@ -13,9 +13,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Africaans-German FreeDict Dictionary</title>
+        <title>Afrikaans-German FreeDict Dictionary</title>
         <respStmt>
-          <resp>by</resp> <name>Horst Eyermann, Horst@freedict.de</name>
+          <resp>by</resp> <name>Horst Eyermann &lt;Horst@freedict.de></name>
         </respStmt>
       </titleStmt>
 
@@ -48,7 +48,7 @@
 
     <encodingDesc>
       <projectDesc>
-        <p>This dictionary comes to you trough nice people making it
+        <p>This dictionary comes to you through nice people making it
           available for free and for good. It is part of the FreeDict project,
           http://www.freedict.org / http://freedict.de. This
           project aims to make available many translating dictionaries
@@ -57,6 +57,15 @@
     </encodingDesc>
 
     <revisionDesc>
+       <change>
+        <date>2005-07-19</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Check for Debian Bug#318024 (Africaan -> Afrikaans). Actually,
+	  the missing 's' was already fixed in the TEI file. Just it was not released
+	  for so long. Changed the 'c' to 'k' as well.</item>
+      </change>
        <change>
         <date>2005-01-04</date>
         <respStmt>
@@ -76,8 +85,7 @@
         <respStmt>
           <name>Horst Eyermann</name>
         </respStmt>
-        <item>This Database was generated from ergane,
-	  http://www.travlang.com - Thanks!</item>
+        <item>This Database was generated from Ergane - Thanks!</item>
       </change>
     </revisionDesc>
   </teiHeader>
