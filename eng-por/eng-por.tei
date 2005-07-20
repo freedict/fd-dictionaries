@@ -1,19 +1,30 @@
-<?xml version = '1.0' encoding = 'utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+]>
+
 <TEI.2>
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title>English-Portuguese Freedict Dictionary</title>
         <respStmt>
-          <resp>by</resp>
-          <name>Horst Eyermann, Horst@freedict.de</name>
+          <resp>by</resp> <name>Horst Eyermann, Horst@freedict.de</name>
         </respStmt>
       </titleStmt>
+
       <editionStmt>
         <edition>0.1</edition>
       </editionStmt>
-      <extent>about 13000 headwords</extent>
+
+      <extent>about 14000 headwords</extent>
+
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability>
@@ -24,17 +35,19 @@
         <date>2004</date>
         <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
+
       <notesStmt>
-        <note type="status" >too small</note>
+        <note type="status">too small</note>
       </notesStmt>
+
       <sourceDesc>
-        <p>Home: <xptr url="http://freedict.de/" />
-        </p>
+        <p>Home: <xptr url="http://freedict.de/"/></p>
         <p>This Database was generated from ergane, http://www.travlang.com.</p>
-        <p>Other contributors: Raul Fernandes &lt;rgf@ieg.com.br></p>
-        <p>Thanks!</p>
+	<p>Other contributors: Raul Fernandes &lt;rgfbr@yahoo.com.br&gt;</p>
+	<p>Thanks!</p>
       </sourceDesc>
     </fileDesc>
+
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you trough nice people making it
@@ -44,8 +57,9 @@
           for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
+
     <revisionDesc>
-      <change>
+       <change>
         <date>2005-02-11</date>
         <respStmt>
           <name>Michael Bunk</name>
@@ -6756,7 +6770,7 @@
           <pron>æfrikɑːns</pron>
         </form>
         <trans>
-          <tr>afrikaans</tr>
+          <tr>Afric�er</tr>
         </trans>
       </entry>
       <entry>
@@ -13679,6 +13693,17 @@
       </entry>
       <entry>
         <form>
+          <orth>aponeurosis</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>aponeurose</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>apoplectic fit</orth>
           <pron>æpəplektikfit</pron>
         </form>
@@ -13695,6 +13720,17 @@
         </gramGrp>
         <trans>
           <tr>apoplexia</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>apoptosis</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>apoptose</tr>
         </trans>
       </entry>
       <entry>
@@ -14795,6 +14831,55 @@
       </entry>
       <entry>
         <form>
+          <orth>archaeological</orth>
+          <orth>archeological</orth>
+        </form>
+        <gramGrp>
+          <pos>adj</pos>
+        </gramGrp>
+        <trans>
+          <tr>arqueológico</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>archaeologically</orth>
+          <orth>archeologically</orth>
+        </form>
+        <gramGrp>
+          <pos>adv</pos>
+        </gramGrp>
+        <trans>
+          <tr>arqueologicamente</tr>
+          <tr>de forma arqueológica</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>archaeologist</orth>
+          <orth>archeologist</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>arqueólogo</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>archaeology</orth>
+          <orth>archeology</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>arqueologia</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>archaic</orth>
         </form>
         <gramGrp>
@@ -14884,6 +14969,17 @@
         </gramGrp>
         <trans>
           <tr>arquiteto</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>architectonic</orth>
+        </form>
+        <gramGrp>
+          <pos>adj</pos>
+        </gramGrp>
+        <trans>
+          <tr>arquitetônico</tr>
         </trans>
       </entry>
       <entry>
@@ -15041,6 +15137,18 @@
         </gramGrp>
         <trans>
           <tr>argentino</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>argentum</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>prata</tr>
+          <tr>argento</tr>
         </trans>
       </entry>
       <entry>
@@ -15230,6 +15338,29 @@
         </gramGrp>
         <trans>
           <tr>aritmética</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>arithmetical</orth>
+        </form>
+        <gramGrp>
+          <pos>adj</pos>
+        </gramGrp>
+        <trans>
+          <tr>aritmético</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>arithmetically</orth>
+        </form>
+        <gramGrp>
+          <pos>adv</pos>
+        </gramGrp>
+        <trans>
+          <tr>aritmeticamente</tr>
+          <tr>de forma aritmética</tr>
         </trans>
       </entry>
       <entry>
@@ -15561,6 +15692,17 @@
       </entry>
       <entry>
         <form>
+          <orth>arrhythmic</orth>
+        </form>
+        <gramGrp>
+          <pos>adj</pos>
+        </gramGrp>
+        <trans>
+          <tr>arrítmico</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>arrival</orth>
           <pron>əraivəl</pron>
         </form>
@@ -15704,6 +15846,17 @@
       </entry>
       <entry>
         <form>
+          <orth>artefact</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>artefato</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>Artemis</orth>
           <pron>ɑːtemis</pron>
         </form>
@@ -15731,6 +15884,17 @@
         </gramGrp>
         <trans>
           <tr>arteriografia</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>arteriole</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>arteríola</tr>
         </trans>
       </entry>
       <entry>
@@ -15802,6 +15966,17 @@
       </entry>
       <entry>
         <form>
+          <orth>arthrodesis</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>artrodese</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>arthromyalgia</orth>
         </form>
         <gramGrp>
@@ -15820,6 +15995,17 @@
         </gramGrp>
         <trans>
           <tr>artropatia</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>arthroscopy</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>artroscopia</tr>
         </trans>
       </entry>
       <entry>
@@ -16271,6 +16457,17 @@
       </entry>
       <entry>
         <form>
+          <orth>asexual</orth>
+        </form>
+        <gramGrp>
+          <pos>adj</pos>
+        </gramGrp>
+        <trans>
+          <tr>assexual</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>ash</orth>
           <pron>əʃou</pron>
         </form>
@@ -16625,6 +16822,17 @@
       </entry>
       <entry>
         <form>
+          <orth>assassin</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>assassino</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>assassinate</orth>
         </form>
         <gramGrp>
@@ -16681,6 +16889,17 @@
         </trans>
         <trans>
           <tr>correr no alcancede alguém para atacar</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>assaulter</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>assaltante</tr>
         </trans>
       </entry>
       <entry>
@@ -44462,6 +44681,17 @@
         <trans>
           <tr>crocitar</tr>
           <tr>grasnar</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>Croatian</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>Croata</tr>
         </trans>
       </entry>
       <entry>
@@ -80557,9 +80787,6 @@
           <orth>Hungarian</orth>
           <pron>hʌŋgɛəriən</pron>
         </form>
-        <trans>
-          <tr>húngaro</tr>
-        </trans>
         <trans>
           <tr>húngaro</tr>
         </trans>
@@ -130405,6 +130632,17 @@
       </entry>
       <entry>
         <form>
+          <orth>Sanskrit</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>Sânscrito</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
           <orth>sap</orth>
           <pron>seip</pron>
         </form>
@@ -136347,6 +136585,17 @@
         <trans>
           <tr>preguiçoso</tr>
           <tr>vadio</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>Slovak</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>Eslovaco</tr>
         </trans>
       </entry>
       <entry>
@@ -144774,6 +145023,17 @@
         </form>
         <trans>
           <tr>cueiro</tr>
+        </trans>
+      </entry>
+      <entry>
+        <form>
+          <orth>Swahili</orth>
+        </form>
+        <gramGrp>
+          <pos>s</pos>
+        </gramGrp>
+        <trans>
+          <tr>Swahili</tr>
         </trans>
       </entry>
       <entry>
