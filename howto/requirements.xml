@@ -110,8 +110,38 @@
       <listitem>
 	<para>TEI technologies are reasonably well understood and used in academic circles.</para>
       </listitem>
-      
     </orderedlist>
+
+    <para>Like for anything else, using TEI XML bears disadvantages:</para>
+
+    <orderedlist numeration="upperroman">
+      <title>Disadvantages of using the TEI XML markup format</title>
+      <listitem>
+	<para>High memory requirements, for storage as well as for processing</para>
+      </listitem>
+      <listitem>
+	<para>The TEI DTD is too permissive. It allows too complex content
+	  models for its elements, because it was written to capture as many
+	  existing texts as possible. Since almost all elements are allowed
+	  inside others, writing software to further process TEI data becomes
+	  complex. FreeDict uses its own subset of the TEI DTD. This subset wil
+	  be defined in this Howto, once it is stable. Till then it is
+	  described only.</para>
+      </listitem>
+      <listitem>
+	<para>TEI is missing typologies. Eg. TEI does not prescribe to encode
+	  the Part of Speech of a noun as "noun" or "n" or anything else.
+	  Another missing typology is one for Cross References, eg. "synonym",
+	  "hypernym" etc. FreeDict has to define them.</para>
+      </listitem>
+      <listitem>
+	<para>XML data requires more than a text editor for easy maintenance
+	  due to its verbosity. Eg. you cannot enter entries speedily when you
+	  have to enter all tags manually. To ease this, FreeDict develops the
+	  (as of yet unreleased)
+	  <application>FreeDict-Editor</application>.</para>
+      </listitem>
+    </orderedlist>      
     </chapter>
 
     <chapter id="Unicode">

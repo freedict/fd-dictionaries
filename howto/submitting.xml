@@ -170,9 +170,13 @@ include $(FREEDICTDIR)/tools/Makefile.common
       <title>Naming convention for dictionary modules</title>
       <para>For naming the dictionary modules and their TEI files we use the format
 	<filename><replaceable>la1</replaceable>-<replaceable>la2</replaceable>.tei</filename>,
-	where <replaceable>la1</replaceable> and <replaceable>la2</replaceable> are
-	<ulink url="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO 639-2</ulink>
-	3-letter language codes (ISO 639-1 defines the two letter codes).</para>
+	where <replaceable>la1</replaceable> and <replaceable>la2</replaceable>
+	are <ulink url="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO
+	  639-2/T</ulink> 3-letter language codes (ISO 639-1 defines the two
+	letter codes; the "T" stands for "Terminology"). See also the <ulink
+	  url="http://www.loc.gov/standards/iso639-2/">ISO
+	  639-2 Registration Authority</ulink>, where this standard is
+	made.</para>
     </section>
 
     <section>

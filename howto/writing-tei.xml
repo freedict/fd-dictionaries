@@ -62,6 +62,24 @@
     </orderedlist>
 
     <section>
+      <title>The FreeDict Entry Format</title>
+      <abstract><para>Though we claim to adhere to TEI P4 XML, Chapter 12 "Print Dictionaries",
+          additional rules and restrictions apply.</para>
+      </abstract>
+      
+      <para>At first sight the TEI guidelines are very complex. At second sight they are still,
+        but it is important to notice that they were written under the primary assumption to
+	encode existing text by tagging it up to a reasonable level of details. The wide variety
+	of exisiting text makes the TEI tagset very permissible, allowing almost any tags
+	to be used insidy any other.</para>
+	
+      <para>This permissibility makes is difficult to process "pure TEI" with software, eg. software
+        to reformat TEI into other formats such as TeX, Formatting Objects or text.</para>
+	
+	tei is not complete - need our own typologies
+	why uniform/lang independent encoding?
+    </section>
+    <section>
       <title>Two Approaches</title>
 
       <para>There are at least two approaches you might take to building a FreeDict format dictionary.
@@ -368,7 +386,7 @@
        <varlistentry>
 	 <term><literal>titleStmt/respStmt/name</literal></term>
 	<listitem>
-	  <para>Name and email address of the person carying the responsibility
+	  <para>Name and email address of the person carrying the responsibility
 	    named in <literal>../resp</literal>, ie. the contents should follow the
 	    form <literal>FirstName LastName &lt;user@host></literal>.</para>
 	</listitem>
