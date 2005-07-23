@@ -41,7 +41,7 @@ all:	$(dictname).dict $(dictname).index
 version:
 	@echo -n $(version)
 
-# alternative: sabcmd xsl/getstatus.xsl $(dictname).tei
+# alternative: $(XSLTPROCESSOR) $(xsldir)/getstatus.xsl $(dictname).tei
 status:
 	@echo -n $(shell grep -m 1 -o -P -e \
 	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)
@@ -312,6 +312,74 @@ clean::
 	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic \
 	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
 
+##################################
+#### targets for StarDict platform
+##################################
+
+# This tool comes with stardict
+# I have a symbolic link in my tools directory to the actual location
+DICTD2DIC = $(toolsdir)/dictd2dic
+
+# This is hardcoded into dictd2dic :(
+stardict_prefix = dictd_www.freedict.de_
+
+# idxhead is required to preexist by dictd2dic. The reason is not documented.
+$(dictname).idxhead:
+	echo -n "" > $@
+
+$(stardict_prefix)$(dictname).idx.gz $(stardict_prefix)$(dictname).dict.dz \
+	dictd2dic.out: $(dictname).index $(dictname).dict $(dictname).idxhead
+	$(DICTD2DIC) $(dictname) >dictd2dic.out
+
+# $(wordcount) and $(idxfilesize) are a target-specific variables
+$(stardict_prefix)$(dictname).ifo: \
+	wordcount=$(word 2, $(shell tail -n1 dictd2dic.out))
+
+$(stardict_prefix)$(dictname).ifo: \
+	idxfilesize=$(strip $(shell zcat $(stardict_prefix)$(dictname).idx.gz | wc -c))
+
+authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
+	$(XSLTPROCESSOR) $(xsldir)/getauthor.xsl $< >$@
+
+title.out: $(dictname).tei $(xsldir)/gettitle.xsl
+	$(XSLTPROCESSOR) $(xsldir)/gettitle.xsl $< >$@
+
+$(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx.gz \
+	dictd2dic.out authorresp.out title.out
+	@echo "Generating $@..."
+	@echo "StarDict's dict ifo file" > $@
+	@echo "version=2.4.2" >> $@
+	@echo "wordcount=$(wordcount)" >> $@
+	@echo "idxfilesize=$(idxfilesize)" >> $@
+	@echo "bookname=$(shell cat title.out)" >> $@
+	@echo "author=$(shell sed -e "s/ <.*>//" <authorresp.out)" >> $@
+	@echo "email=$(shell sed -e "s/.* <\(.*\)>/\1/" <authorresp.out)" >> $@
+	@echo "website=$(shell $(MAKE) sourceURL)" >> $@
+	@echo "description=Converted to StarDict format by freedict.org" >> $@
+	@echo "date=$(shell date +%G.%m.%d)" >> $@
+	@echo "sametypesequence=m" >> $@
+	@cat $@
+
+stardict: $(stardict_prefix)$(dictname).ifo
+
+$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
+       	$(stardict_prefix)$(dictname).ifo \
+	$(stardict_prefix)$(dictname).dict.dz \
+	$(stardict_prefix)$(dictname).idx.gz
+	@if [ ! -d $(FREEDICTDIR)/release/stardict ]; then \
+		mkdir $(FREEDICTDIR)/release/stardict; fi
+	cd .. && tar -cvjf \
+	  $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+	  $(addprefix $(dictname)/, $^)
+
+release-stardict: \
+	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
+
+clean::
+	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
+	$(stardict_prefix)$(dictname).dict.dz $(stardict_prefix)$(dictname).ifo \
+	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+	dictd2dic.out authorresp.out
 
 #######################
 #### Makefile-technical
@@ -325,4 +393,5 @@ clean::
 	bedic-precedence release-bedic release-zaurus \
 	rpm rpm-reverse freedict-tools-rpm\
 	commit validation test test-reverse clean dist dbupdate \
-	find-homographs
+	find-homographs \
+	stardict release-stardict

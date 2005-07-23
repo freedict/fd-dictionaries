@@ -27,6 +27,8 @@ if($opt_h || $opt_f eq "")
 my $dictd = $opt_d || '/usr/local/sbin/dictd';
 die 'dictd binary not found' if(! -x $dictd);
 
+my $port = 2629;
+
 my ($dictfile, $indexfile);
 $dictfile = $opt_f .'.dict';
 $dictfile .= '.dz' if(! -f $dictfile);
@@ -60,7 +62,7 @@ print "Generating wordlist in $wordlist\n";
 my $cmdline = "$FindBin::Bin/index2wordlist.pl $indexfile >$wordlist";
 system $cmdline || die "Could not run '$cmdline': $!";
 
-my $commandline = "-c $conffilename -d nodetach -l none";
+my $commandline = "-c $conffilename -d nodetach -l none -p $port";
 if($opt_l) { $commandline .= " --locale $opt_l"; }
 
 # use alternative testing method: --test-file
@@ -85,7 +87,7 @@ sleep 3;
 print "Child has pid $pid.\n";
 
 # lookup all headwords and report missing ones
-$cmdline = "$FindBin::Bin/test-lookupall.pl 127.0.0.1 test $wordlist";
+$cmdline = "$FindBin::Bin/test-lookupall.pl 127.0.0.1 test $wordlist $port";
 system $cmdline || die "Could not run '$cmdline': $!";
 
 # terminate dictd

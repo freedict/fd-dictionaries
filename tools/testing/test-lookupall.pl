@@ -7,23 +7,25 @@ use strict;
 use Net::Dict;
 
 die "This program is for testing indices, not search strategies\n".
-"Call me as '$0 <hostname> <database> <filename>'\n". 
- " where <hostname> is the name of the dictd server,\n".
+"Call me as '$0 <hostname> <database> <filename> <port>'\n". 
+ " where <hostname> is the name of a DICT server,\n".
  "       <database> is the name of the database to query and\n".
- "       <filename> is the name of the wordlist file\n\n".
+ "       <filename> is the name of the wordlist file\n".
+ "	 <port> at which the DICT server listens\n".
 
  "There should not be any headword yielding 0 definitions.\n".
  "Otherwise it means the server was unable to find those headwords.\n".
  "Assuming the wordlist used was generated out of a dict index file,\n".
  "this could mean the index is incorrectly sorted or there is something\n".
- "wrong with the server.\n" if ($#ARGV != 2);
+ "wrong with the server.\n" if ($#ARGV != 3);
 
-my $host = $ARGV[0];print "Using host: $host\n";
+my $port = $ARGV[3];
+my $host = $ARGV[0];print "Using host:port: $host:$port\n";
 my @databases = ($ARGV[1]); 
 open my $f,$ARGV[2] or die $!;
 
 my $words = 0;
-my $dict = Net::Dict->new($host) or die $!;
+my $dict = Net::Dict->new($host, "Port", $port) or die $!;
 
 my %dbhash = $dict->dbs();
 print "Available dictionaries:\n";
@@ -48,6 +50,7 @@ while (<$f>) {
 
   # use 'define' strategy
   my $h = $dict->define($_);
+  
   my $count = $#{@$h};
 
   $counters{$count+1}++;
