@@ -66,10 +66,13 @@ my $commandline = "-c $conffilename -d nodetach -l none -p $port";
 if($opt_l) { $commandline .= " --locale $opt_l"; }
 
 # use alternative testing method: --test-file
+# the results, even without --test-nooutput are not very useful
 if($opt_t)
 {
   $commandline .= " --test-file $wordlist --test-strategy exact --test-nooutput";
+  print "Starting dictd: $dictd $commandline\n";
   system "$dictd $commandline";
+  print "dictd returned: $?\n";
   exit;
 }
 

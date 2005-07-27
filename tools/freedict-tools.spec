@@ -1,6 +1,6 @@
 Summary:	Tools for building the FreeDict dictionaries from source
 Name:		freedict-tools
-Version:	0.1
+Version:	0.2
 Release:	1
 License:	GPL
 Vendor:		FreeDict

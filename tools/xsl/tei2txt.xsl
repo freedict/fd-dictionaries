@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- this stylesheet is somewhat competitive for tei2c5.xsl.
+<!-- This stylesheet is an alternative to tei2c5.xsl.
 	it was written to convert single entry chunks (or the header chunk)
-	into plain text. is was to be used with xmltei2xmldict.pl -->
+	into plain text. Is is to be used with xmltei2xmldict.pl -->
 	
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -12,12 +12,12 @@
 
 <xsl:output method="text" />
 
-<!-- using this stylesheet with Sablotron requires a version >=0.95,
+<!-- Using this stylesheet with Sablotron requires a version >=0.95,
      because xsl:strip-space was implemented from that version on -->
 
 <xsl:strip-space elements="form gramGrp entry teiHeader fileDesc titleStmt respStmt editionStmt publicationStmt seriesStmt notesStmt revisionDesc TEI.2 sense p sourceDesc availability encodingDesc" />
 
-<!-- treat 00-database-short and 00-database-url specially:
+<!-- Treat 00-database-short and 00-database-url specially:
      don't generate an empty line between headword and shortname/url.
      otherwise dictd shows empty shortname (url not tested as
      i don't know any project that uses it) -->
@@ -31,7 +31,7 @@
 </xsl:template>
 
 
-<!-- the main template, matching entry elements -->
+<!-- The main template, matching entry elements -->
 
 <xsl:template match="entry">
   <xsl:apply-templates select="form" />
@@ -41,7 +41,7 @@
   <xsl:text>&#x0A;</xsl:text>
 </xsl:template>
 
-<!-- here we overwrite some templates from inc/teientry2txt.xsl
+<!-- Here we overwrite some templates from inc/teientry2txt.xsl
      might not be required mostly -->
 
 <xsl:template match="form">
@@ -51,14 +51,13 @@
       <xsl:text>, </xsl:text>
     </xsl:if>
   </xsl:for-each>
-  <!-- XXX better write 'orth' -->
-  <xsl:apply-templates select="*[local-name()!=orth]" />
+  <xsl:apply-templates select="*[name() != 'orth']"/>
 </xsl:template>
 
 <xsl:template match="pron">
-  <xsl:text> [</xsl:text>
-  <xsl:value-of select="." />
-  <xsl:text>]</xsl:text>
+  <xsl:text> /</xsl:text>
+  <xsl:value-of select="."/>
+  <xsl:text>/</xsl:text>
 </xsl:template>
 
 <xsl:template match="gramGrp">
@@ -91,7 +90,7 @@
 <xsl:template match="trans">
   <xsl:for-each select="*">
     <xsl:apply-templates select="." />
-    <xsl:if test="local-name()='tr' and not(position()=last())">
+    <xsl:if test="name()='tr' and not(position()=last())">
       <xsl:text>, </xsl:text>
     </xsl:if>
   </xsl:for-each>

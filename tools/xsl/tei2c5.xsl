@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- this stylesheet converts a TEI dictionary file
+<!-- This stylesheet converts a TEI dictionary file
      into the c5 format suitable to be processed
      by 'dictfmt -c5' -->
 
@@ -13,7 +13,7 @@
 
   <xsl:strip-space elements="entry"/>
 
-  <!-- something like the main function -->
+  <!-- "main()" function -->
   <xsl:template match="/">
     <xsl:apply-templates select="*//teiHeader" />
     <xsl:call-template name="00-database-short" />
@@ -31,14 +31,14 @@
     <!-- mark start of a new c5 format definition -->
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
 
-    <!-- take the contents of the orth elements
-         and put them in the c5 headword line. headwords in that line will be
-         put into the .index file by dictfmt. they are separated by %%%, so you
-         will have to call dictfmt as 'dictfmt - -headword-separator %%%'
+    <!-- take the contents of the orth elements and put them in the c5 headword
+	 line. headwords in that line will be put into the .index file by
+	 dictfmt. they are separated by %%%, so you will have to call dictfmt
+	 as 'dictfmt - -headword-separator %%%'
          
-         (those two minus signs are separated by a space here, because otherwise
-         my sabcmd considers them as sgml comment end. for calling dictfmt you have
-         to omit that space.)  -->
+	 (those two minus signs are separated by a space here, because
+	 otherwise an XML parser considers them as sgml comment end. for
+	 calling dictfmt you have to omit that space.)  -->
     <xsl:for-each select="form/orth">
       <xsl:value-of select="." />
       <xsl:if test="not(position()=last())">%%%</xsl:if>

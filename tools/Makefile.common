@@ -38,17 +38,20 @@ all:	$(dictname).dict $(dictname).index
 
 # no newline, so output is equal to the output of
 # xsl/getedition.xsl / xsl/getstaus.xsl
-version:
-	@echo -n $(version)
+version: $(dictname).tei
+	@echo -n "$(version)"
 
-# alternative: $(XSLTPROCESSOR) $(xsldir)/getstatus.xsl $(dictname).tei
-status:
-	@echo -n $(shell grep -m 1 -o -P -e \
-	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)
+# alternative: @$(XSLTPROCESSOR) $(xsldir)/getstatus.xsl $(dictname).tei
+status: $(dictname).tei
+	@echo -n "$(shell grep -m 1 -o -P -e \
+	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)"
 
-sourceURL:
-	@echo -n $(shell grep -m 1 -o -P -e \
-	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
+sourceURL: $(dictname).tei
+	@echo -n "$(shell grep -m 1 -o -P -e \
+	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)"
+
+maintainer: $(dictname).tei $(xsldir)/getmaintainer.xsl
+	@$(XSLTPROCESSOR) $(xsldir)/getmaintainer.xsl $<
 
 find-homographs: $(dictname).tei
 	@cat $< | grep orth | \
@@ -62,19 +65,8 @@ find-homographs: $(dictname).tei
 dirs:
 	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \
 		mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dict-bz2 ]; then \
-		mkdir $(FREEDICTDIR)/release/dict-bz2; fi
-	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
-		mkdir $(FREEDICTDIR)/release/src; fi
-	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
-		mkdir $(FREEDICTDIR)/release/vok; fi
-	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
-		ln -s /usr/src/packages/RPMS/noarch \
-		$(FREEDICTDIR)/release/rpm; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dic ]; then \
-		mkdir $(FREEDICTDIR)/release/dic; fi
-	@if [ ! -d $(FREEDICTDIR)/release/ipk ]; then \
-		mkdir $(FREEDICTDIR)/release/ipk; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tbz2 ]; then \
+		mkdir $(FREEDICTDIR)/release/dict-tbz2; fi
 
 #############################################################
 #### rules how to create dict database format in standard way
@@ -117,40 +109,64 @@ reverse: $(dictname).tei
 	mv $(dictname).dict $(rdictname).dict
 	dictzip -k $(rdictname).dict
 
-#####################################################################
-#### targets for c5/dictfmt conversion style for dict database format
-#####################################################################
+######################################################################
+#### targets for c5/dictfmt conversion style into dict database format
+######################################################################
 
-$(dictname).c5: $(dictname).tei
+$(dictname).c5: $(dictname).tei $(xsldir)/tei2c5.xsl \
+       	$(xsldir)/inc/teientry2txt.xsl \
+	$(xsldir)/inc/teiheader2txt.xsl \
+	$(xsldir)/inc/indent.xsl
+	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
 
-$(rdictname).c5: $(dictname).tei
+$(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< >$@
 
 %.c5.dict %.c5.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
 
-release-dict-bz2-c5-reverse: $(rdictname).c5.index
-	dictzip $(rdictname).c5.dict
-	cd .. && tar -cvjf $(dictname)/freedict-$(rdictname)-\
-$(version).tar.bz2 --exclude=CVS --exclude=freedict-*.tar.bz2 \
-		--exclude=.* $(addprefix $(dictname)/, $(rdictname).c5.index \
-		$(rdictname).c5.dict.dz)
-	cp freedict-$(rdictname)-$(version).tar.bz2 \
-		$(FREEDICTDIR)/release/dict-bz2/
+$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
+	$(dictname).c5.dict.dz $(dictname).c5.index
+	cd .. && \
+	tar -cvjf $@ $(addprefix $(dictname)/, $^)
+
+release-dict-tbz2-c5: dirs \
+	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
+	
+$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
+	$(dictname)-reverse.c5.dict.dz $(dictname)-reverse.c5.index
+	cd .. && \
+	tar -cvjf $@ $(addprefix $(dictname)/, $^)
+
+release-dict-tbz2-c5-reverse: dirs \
+	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
 ######################################
 #### targets for evolutionary platform
 ######################################
 
-$(FREEDICTDIR)/release/vok/%.vok: %.tei dirs
+$(FREEDICTDIR)/release/vok/%.vok: %.tei
+	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
+		mkdir $(FREEDICTDIR)/release/vok; fi
 	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$@
 
-release-evolutionary: $(FREEDICTDIR)/release/evolutionary/$(dictname).tld
-	(cd $(FREEDICTDIR)/release/evolutionary; \
+vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
+
+$(FREEDICTDIR)/release/vok/tld/%.tld: $(FREEDICTDIR)/release/vok/%.vok
+ifdef EVOLUTIONARY_WINE
+	$(EVOLUTIONARY_WINE) $<
+else
+	@echo "To convert from '.vok' to '.tld' requires manual invervention,"
+	@echo "because the 'Dictionary.exe' tool for it is a Win32 Application."
+	@echo "Fortunately, it runs in the Windows Emulator 'Wine'."
+	@echo "Please define EVOLUTIONARY_WINE in $(toolsdir)/Makefile.config"
+	exit 1
+endif
+
+release-evolutionary: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
+	(cd $(FREEDICTDIR)/release/vok/tld; \
 	 rm -f $(dictname)-$(version)-evolutionary.zip; \
 	 zip freedict-$(dictname)-$(version).evolutionary.zip $(dictname).tld)
-
-vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
 
 ######################
 #### not used by me :)
@@ -208,23 +224,34 @@ clean::
 	rm -f $(FREEDICTDIR)/release/dict-bz2/$(dictname).tar.bz2
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
 
-dist: dirs
+dist:
+	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
+		mkdir $(FREEDICTDIR)/release/src; fi
 	(cd $(shell pwd)/..; \
 	tar -cvjf $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES)))
 
-####################
-#### targets for rpm
-####################
+#############################
+#### targets for rpm packages
+#############################
 
 release-rpm: freedict-$(dictname).spec dist
+	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+		ln -s /usr/src/packages/RPMS/noarch \
+		$(FREEDICTDIR)/release/rpm; fi
 	@if [! -x /usr/src/packages/SOURCES/freedict-$(dictname)-$(version).src.tar.bz2 ]; then \
 		ln -s $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
 			/usr/src/packages/SOURCES; fi
 	rpmbuild --target=noarch -ba freedict-$(dictname).spec
 
-freedict-tools-rpm:
+release-rpm-reverse:
+
+
+release-rpm-freedict-tools:
+	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+		ln -s /usr/src/packages/RPMS/noarch \
+		$(FREEDICTDIR)/release/rpm; fi
 	(cd $(FREEDICTDIR); \
 	 tar cjf /usr/src/packages/SOURCES/freedict-tools.tbz2 \
 		--exclude=CVS tools/*)
@@ -295,16 +322,20 @@ $(dictname).unxeroxed.dic: $(dictname).normalized.dic
 #	$(toolsdir)/tei2dic.py $< $*.unxeroxed.dic
 
 $(FREEDICTDIR)/release/dic/freedict-%-$(version).dic: %.unxeroxed.dic
+	@if [ ! -d $(FREEDICTDIR)/release/dic ]; then \
+		mkdir $(FREEDICTDIR)/release/dic; fi
 	$(XEROX) $*.unxeroxed.dic $@
 
 release-bedic: $(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
 
 # optional
 $(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
+	@if [ ! -d $(FREEDICTDIR)/release/ipk ]; then \
+		mkdir $(FREEDICTDIR)/release/ipk; fi
 	cd $(FREEDICTDIR)/release/ipk && ln -s `$(toolsdir)/dic2ipk.sh $<` $@
 
 # optional
-release-zaurus: dirs $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
+release-zaurus: $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
 
 clean::
 	rm -f sorted.tei grouped.tei tei-wrapper.xml unwrapped.tei \
@@ -385,13 +416,14 @@ clean::
 #### Makefile-technical
 #######################
 
-.PHONY: all version status sourceURL dirs install uninstall reverse\
-	release-dict-bz2-c5-reverse \
+.PHONY: all version status sourceURL maintainer dirs install uninstall reverse \
+	release-dict-tbz2-c5 release-dict-tbz2-c5-reverse \
 	release-dict-tgz release-dict-tgz-reverse \
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	vok release-evolutionary \
 	bedic-precedence release-bedic release-zaurus \
-	rpm rpm-reverse freedict-tools-rpm\
+	release-rpm release-rpm-reverse release-rpm-freedict-tools \
 	commit validation test test-reverse clean dist dbupdate \
 	find-homographs \
 	stardict release-stardict
+

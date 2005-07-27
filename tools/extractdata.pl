@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.6 $
+# $Revision: 1.7 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -19,6 +19,9 @@
 #   @sourceURL		URL in sourceDesc in TEI header (upstream project)
 #   @notes		unused
 #   @HEADorRelease	in CVS, unused
+#   @maintainerName     Maintainer name (without email) from
+#                       /TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
+#   @maintainerEmail    Email address of Maintainer from same place
 #
 # element: release
 #  children: none
@@ -121,7 +124,8 @@ sub fdict_extract_metadata
 
   ###################################################################
 
-  my($headwords, $edition, $date, $status, $sourceURL);
+  my($headwords, $edition, $date, $status, $sourceURL, $maintainerName,
+    $maintainerEmail);
 
   my $indexfile = "$dirname/$entry/$entry.index";
   
@@ -180,6 +184,22 @@ sub fdict_extract_metadata
     $sourceURL = `cd $dirname/$entry;make --no-print-directory sourceURL`;
 
   ###################################################################
+
+    #my $maintainer = `sabcmd xsl/getmaintainer.xsl "$teifile"`;
+    my $maintainer = `cd $dirname/$entry;make --no-print-directory maintainer`;
+    if($maintainer =~ /^([^<]+)\s<(.*)>$/)
+    {
+      $maintainerName = $1;
+      $maintainerEmail = $2;
+      #printd "  Extracted maintainer: name='$maintainerName' email='$maintainerEmail'\n";
+    }
+    else
+    {
+      printd "  Could not extract maintainer name or email from:\n" .
+        "\t$maintainer\n";
+    }
+
+  ###################################################################
   }
   else
   {
@@ -193,7 +213,8 @@ sub fdict_extract_metadata
   $d->setAttribute('date', $date);
   $d->setAttribute('status', $status);
   $d->setAttribute('sourceURL', $sourceURL);
-
+  $d->setAttribute('maintainerName', $maintainerName);
+  $d->setAttribute('maintainerEmail', $maintainerEmail);
 }
 
 sub fdict_extract_all_metadata

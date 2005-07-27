@@ -1,9 +1,7 @@
 #!/usr/bin/perl
-#
-
 # 4/2002 Michael Bunk <kleinerwurm@gmx.net>
-# this code generates sgml tei but formatting tab delimited text file
-# if is specific for khasi language, but may be a starting point for you
+# This code generates sgml tei by formatting a tab delimited text file.
+# It is specific for khasi language, but may be a starting point for you.
 
 # features:
 #  + Khasi-Artikel u/ka, Deutsche Artikel der/die/das
