@@ -145,14 +145,23 @@ release-dict-tbz2-c5-reverse: dirs \
 #### targets for evolutionary platform
 ######################################
 
-$(FREEDICTDIR)/release/vok/%.vok: %.tei
+date=$(shell date +%G-%m-%d)
+
+$(FREEDICTDIR)/release/vok/%.vok: %.tei $(xsldir)/tei2vok.xsl \
+	$(xsldir)/inc/teiheader2txt.xsl $(xsldir)/inc/indent.xsl
 	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
-		mkdir $(FREEDICTDIR)/release/vok; fi
-	$(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< >$@
+	  mkdir $(FREEDICTDIR)/release/vok; fi
+	@if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
+	  echo "Warning! xsltproc does not warn of invalid chars in output encoding."; \
+	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2vok.xsl $< >$@; \
+	  else \
+	  $(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< \$current-date=$(date) >$@; fi
 
 vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
 
 $(FREEDICTDIR)/release/vok/tld/%.tld: $(FREEDICTDIR)/release/vok/%.vok
+	@if [ ! -d $(FREEDICTDIR)/release/vok/tld ]; then \
+		mkdir $(FREEDICTDIR)/release/vok/tld; fi
 ifdef EVOLUTIONARY_WINE
 	$(EVOLUTIONARY_WINE) $<
 else
@@ -167,6 +176,11 @@ release-evolutionary: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
 	(cd $(FREEDICTDIR)/release/vok/tld; \
 	 rm -f $(dictname)-$(version)-evolutionary.zip; \
 	 zip freedict-$(dictname)-$(version).evolutionary.zip $(dictname).tld)
+
+clean::
+	rm -f $(FREEDICTDIR)/release/vok/$(dictname).vok \
+	$(FREEDICTDIR)/release/vok/tld/$(dictname).tld \
+	freedict-$(dictname)-$(version).evolutionary.zip
 
 ######################
 #### not used by me :)
@@ -339,7 +353,7 @@ release-zaurus: $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
 
 clean::
 	rm -f sorted.tei grouped.tei tei-wrapper.xml unwrapped.tei \
-	$(dictname).newlines.dic $(dictname).unxeroxed.dic \
+	$(dictname).escaped.dic $(dictname).normalized.dic $(dictname).unxeroxed.dic \
 	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic \
 	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
 

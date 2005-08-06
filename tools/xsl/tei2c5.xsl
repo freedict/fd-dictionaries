@@ -15,9 +15,9 @@
 
   <!-- "main()" function -->
   <xsl:template match="/">
-    <xsl:apply-templates select="*//teiHeader" />
-    <xsl:call-template name="00-database-short" />
-    <xsl:apply-templates select="//entry" />
+    <xsl:apply-templates select="*//teiHeader"/>
+    <xsl:call-template name="00-database-short"/>
+    <xsl:apply-templates select="//entry" mode="c5"/>
   </xsl:template>
 
   <xsl:template name="00-database-short">
@@ -27,7 +27,7 @@
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="entry">
+  <xsl:template match="entry" mode="c5">
     <!-- mark start of a new c5 format definition -->
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
 
@@ -46,7 +46,7 @@
     <xsl:text>&#x0A;</xsl:text>
 
     <!-- output the usual text formatted entry -->
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="."/>
 
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>

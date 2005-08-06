@@ -5,7 +5,7 @@ include Makefile.config
 BUILD =	for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file $@; done
 
 # Calls default target for each dictionary module.
-# Note: There is a conflict if you wanted to call
+# Note: This is a conflict if you wanted to call
 # the 'all' target of each dictionary module.
 all:	
 	for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file; done
@@ -18,6 +18,9 @@ release-%:
 commit:
 	$(BUILD)
 
+vok:
+	$(BUILD)
+
 install:
 	$(BUILD)
 
@@ -27,4 +30,4 @@ uninstall:
 dbupdate:
 	$(BUILD)
 
-.PHONY: install uninstall dbupdate commit release-% all
+.PHONY: install uninstall dbupdate commit release-% all vok

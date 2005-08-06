@@ -5,10 +5,15 @@
 
   <xsl:include href="indent.xsl"/> 
   
-  <xsl:strip-space elements="form trans def usg tr"/>
+  <xsl:strip-space elements="form sense trans def usg tr"/>
 
 
   <!-- TEI entry specific templates -->
+  <xsl:template match="entry">
+    <xsl:apply-templates select="form | gramGrp"/>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates select="sense | trans"/>
+  </xsl:template>  
   
   <xsl:template match="form">
     <xsl:for-each select="orth">
@@ -42,22 +47,30 @@
   </xsl:template>
 
   <xsl:template match="sense">
+    <xsl:text> </xsl:text>
     <xsl:if test="not(last()=1)">
       <xsl:number value="position()"/>
+      <xsl:text>. </xsl:text>
     </xsl:if>
-    <xsl:apply-templates/>
-  </xsl:template>
     
-  <xsl:template match="eg">
-    <xsl:text>&#x0A;      &quot;</xsl:text>
-    <xsl:apply-templates select="q"/>
-    <xsl:text>&quot;</xsl:text>
-    <xsl:if test="trans">
-      <xsl:text> (</xsl:text>
-      <xsl:value-of select="trans/tr"/>
-      <xsl:text>)</xsl:text>
+    <xsl:if test="count(usg | trans | def)>0">
+      <xsl:apply-templates select="usg | trans | def"/>
+      <xsl:text>&#xa;</xsl:text>
     </xsl:if>
-    <xsl:text>&#x0A;</xsl:text>
+    
+    <xsl:if test="count(eg)>0">
+      <xsl:text>    </xsl:text>
+      <xsl:apply-templates select="eg"/>
+    </xsl:if>
+    
+    <xsl:if test="count(xr)>0">
+      <xsl:text>    </xsl:text>
+      <xsl:apply-templates select="xr"/>
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:if>
+
+    <xsl:apply-templates select="name() != 'usg' and name() != 'trans' and name() != 'def' and name() != 'eg' and name() != 'xr'"/>
+
   </xsl:template>
 
   <xsl:template match="usg[@type]">
@@ -65,21 +78,10 @@
     <xsl:value-of select="." />
     <xsl:text>.] </xsl:text>
   </xsl:template>
-  
-  <xsl:template match="entry//p">
-    <xsl:apply-templates/>
-  </xsl:template>
 
   <xsl:template match="trans">
     <xsl:apply-templates/>
     <xsl:if test="not(position()=last())">, </xsl:if>
-  </xsl:template>
-
-  <xsl:template match="def">
-    <xsl:if test="(node())">
-      <xsl:text>&#x0A;  </xsl:text>
-      <xsl:apply-templates/>
-    </xsl:if>
   </xsl:template>
 
   <xsl:template match="tr">
@@ -87,22 +89,64 @@
     <xsl:if test="not(position()=last())">, </xsl:if>
   </xsl:template>
 
-  <xsl:template match="entry//note">
-    <xsl:choose>
-      <xsl:when test="@resp='translator'">
-	<xsl:text>&#x0A;         Entry edited by: </xsl:text>
-	<xsl:value-of select="."/>
-	<xsl:text>&#x0A;</xsl:text>
-      </xsl:when>
-      <xsl:when test="text()">
-	<xsl:text>&#x0A;         Note: </xsl:text>
-	<xsl:value-of select="text()"/>
-      </xsl:when>
-    </xsl:choose>
+  <xsl:template match="def">
+    <xsl:call-template name="format">
+      <xsl:with-param name="txt" select="."/>
+      <xsl:with-param name="width" select="75"/>
+      <xsl:with-param name="start" select="4"/>
+    </xsl:call-template>
+    <xsl:if test="not(position()=last())">&#xa;     </xsl:if>
+  </xsl:template>
+    
+  <xsl:template match="eg">
+    <xsl:text>&quot;</xsl:text>
+    <xsl:call-template name="format">
+      <xsl:with-param name="txt" select="concat(q,'&quot;')"/>
+      <xsl:with-param name="width" select="75"/>
+      <xsl:with-param name="start" select="4"/>
+    </xsl:call-template>
+
+    <xsl:if test="trans">
+      <xsl:text>    (</xsl:text>
+      <xsl:value-of select="trans/tr"/>
+      <xsl:text>)&#xa;</xsl:text>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="xr">
-    &#xa;<xsl:value-of select="@type"/>: {<xsl:value-of select="ref"/>}
+    <xsl:choose>
+      <xsl:when test="not(@type)">
+        <xsl:text>See also</xsl:text>
+      </xsl:when>
+      <xsl:when test="@type='syn'">
+        <xsl:text>Synonym</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="@type"/>
+      </xsl:otherwise>
+    </xsl:choose>  
+    <xsl:text>: {</xsl:text>
+    <xsl:value-of select="ref"/>
+    <xsl:text>}</xsl:text>
+    <xsl:if test="not(position()=last())">, </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="entry//p">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="entry//note">
+    <xsl:choose>
+      <xsl:when test="@resp='translator'">
+	<xsl:text>&#xa;         Entry edited by: </xsl:text>
+	<xsl:value-of select="."/>
+	<xsl:text>&#xa;</xsl:text>
+      </xsl:when>
+      <xsl:when test="text()">
+	<xsl:text>&#xa;         Note: </xsl:text>
+	<xsl:value-of select="text()"/>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
 
 </xsl:stylesheet>
