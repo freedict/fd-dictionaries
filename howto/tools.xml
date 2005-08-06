@@ -1,662 +1,188 @@
-<!--<?xml version='1.0'  encoding="UTF-8" ?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
-               "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
-<!ENTITY fdictUrl "http://www.freedict.org">
-<!ENTITY fdictsf "http://sourceforge.net/projects/freedict/">
-<!ENTITY fdictMail " freedict-beta@lists.sourceforge.net" >
-<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
-<!ENTITY Mich137 "micha137@ users.sourceforge.net">
-<!ENTITY PeteEmail  "petergozz@users.sf.net">
-<!ENTITY TEIsys "-//TEI P4//DTD Main Document Type//EN">
-<!ENTITY TEIUrl   "http://www.tei-c.org/">
-<!ENTITY TEIUrlTut   "http://www.tei-c.org/Tutorials/index.html">
-<!ENTITY TEIguide  "http://www.tei-c.org/Guidelines2/index.html">
-<!ENTITY TEIdl  "http://www.tei-c.org/P4X/DTD/dtd.zip">
-<!ENTITY xmluni  "http://skew.org/xml/tutorial/">
-<!ENTITY w3c  "http://www.w3.org/">
-<!ENTITY w3cxml11  "http://www.w3.org/TR/2004/REC-xml11-20040204/">
-<!ENTITY oasiscover  "http://xml.coverpages.org/ ">
-<!ENTITY oasis  "http://www.oasis-open.org/home/index.php">
-<!ENTITY cmdp  "account@host:~$">
-<!ENTITY Rcmdp  "ADMIN@host:##">
-<!ENTITY gnufdl "http://www.gnu.org/copyleft/fdl.html">
-<!ENTITY gnugpl "http://www.gnu.org/licenses/gpl.html">
-<!ENTITY intro SYSTEM "introduction.xml">
-<!ENTITY writing SYSTEM "writing.xml">
-<!ENTITY writing-dictd SYSTEM "writing-dictd.xml">
-<!ENTITY writing-tei SYSTEM "writing-tei.xml">
-<!ENTITY installing-tei SYSTEM "installing-tei.xml">
-<!ENTITY requirements  SYSTEM "requirements.xml">
-<!ENTITY submit SYSTEM "submitting.xml">
-<!ENTITY tools SYSTEM "tools.xml">
-
- ]>-->
-
 <part id="tools">
   <title>Developer's toolkit</title>
   <partintro>
-    <para>Here we outline the tools needed or useful for building, editing
-	and maintaining translating dictionaries.</para>
-  </partintro>
+    <para>Here we outline the tools needed or useful for building, editing and
+      maintaining translating dictionaries.</para>
       
+    <para>Most scripts and stylesheets mentioned in the following chapters can
+      be found in the <ulink
+	url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
+	module</ulink> in the CVS repository of the FreeDict project.</para> 
+  </partintro>
+
+  &writing-texteditor;
+  
   <chapter>
-    <title>Editing the TEI XML files directly</title>
-    <para>The place to start is with a good general purpose editor. The
-	features required for our purposes are Unicode support,
-	syntax highlighting and maybe XML support.</para>
+    <title>Validating TEI format files</title>
+    <para>Validating TEI files requires an installed version of the TEI DTD and
+      a validating XML parser. It is assumed you have
+      <application>sp</application> or <application>opensp</application>
+      installed. These make the commands <command>nsgmls</command> respective
+      <command>onsgmls</command> available.</para>
 
-    <para>Xemacs supports all those features. Of particular note are the
-	functionalities Xemacs (and to a slightly lesser extent GNU Emacs)
-	provides in editing XML and SGML based documents. Xemacs, once it
-	has associated a document with a DTD, gives right mouse button
-	options that are compliant with the DTD and the ability to
-	validate XML files.</para>
+    <para>Validation should be available as a target in the Makefile of each
+      dictionary module. Try <command>make validation</command> for the
+      dictionary module you want to validate (<command>cd</command> to it
+      first).</para>
 
-    <para>While writing this HOWTO we tried vim, emacs, GEdit and Xemacs.
-	It really depends on your own style, but given that you are more likely
-	to be working in multi language environments than most coders
-	Xemacs/emacs stand out for this alone. GEdit is actually better
-	than Vim (in this case) as it has native UTF-8 support and should
-	support multiple character sets (and "fonts") out of the box (though
-	in honesty I did not explore Vim's plug-in environment to any great
-	extent) [Peter: vim supports multibyte/unicode as well!!! see vim --version
-        and look for +multi_byte]. Vim is
-        still useful here and supports colourisation of tags
-	etc. but also lots of other coding languages, and has the important
-	advantage of using a relatively small memory footprint... especially
-	compared to Xemacs in full flight on a GUI.</para>
+    <para>The makefile target itself is simple. It sets some environment
+      variables, so that nsgmls can find the DTDs, tells it to handle XML data
+      and then calls it.</para>
 
-    <section id="xemacs-setup">
-      <title>Xemacs configuration quick start</title>
-      <abstract><para>Here I assume you have installed Xemacs with or without
-	full support for MULE (Multi User Language Environment). You may not
-	need all of that functionality and it should do everything we need
-	without it. It doesn't hurt and may be useful for your other work.</para>
-      </abstract>
-
-      <para>Before configuring, make sure you have the psgml and Mule-UCS
-	packets installed. You can check this by ...TODO</para>
-      <para>If you have a fresh install, all you need to do is configure the
-	interface so that you can bear it. It is <emphasis>surprisingly ugly</emphasis>
-	out of the box (though functional :) </para>
-
-      <para>Configuring and extending emacsen is a lifetime's work..:) Lets just
-	do some basic stuff.</para>
-
-      <para>At the single user level (your own configuration when running under
-	your own account), there are two main files (by default) that you may like
-	to tweak. Your <filename>.Xdefaults</filename> file  and the
-	<filename>.xemacs/custom.el</filename> file.</para>
-
-      <para>Following are copies of mine just copy them over the file of the same
-	name <emphasis>(which of course you will backup first</emphasis>... you may
-	hate my configs even more!).</para>
-
-      <section>
-	<title>A home dot Xdefaults file</title>
-	<para>You will find the original of the .Xdefaults file under
-	  the <guilabel>help menu</guilabel> in the Xemacs interface (top right hand
-	  corner). This file is essentially the default that comes with Xemacs with
-	  a few things tweaked. Please note that the most of the working font
-	  settings are actually done in the next file. As a bonus you also get
-	  some configs (colours only) for Xcalendar :)</para>
-
-        <para><filename>~/.Xdefaults</filename></para>
-
-	<para>This is a very comprehensive .Xdefaults file. Note however, that most
-	  settings are either at defaults or commented (!) out.</para>
-
-	<para><!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
-	  <programlisting>
-! 
-! You can use the examples below as a basis for your own customisations:
-! copy and modify any of the resources below into your own ~/.Xdefaults file.
-! .Xdefaults specifies defaults for all applications, not just Xemacs; it is
-! normally used to customise fonts, colours, and the like, while ~/.emacs is
-! used to change other sorts of (Xemacs-specific) behaviour.
-
-! READ THIS NOW
-! =============
-! In general, changes to your .Xdefaults file will not take effect until the
-! next time you restart the window system.  To reload your resources
-! explicitly, use the shell command
-! 
-! 	xrdb -load ~/.Xdefaults
-! 
-! The resources will take effect the next time you restart Xemacs.  (Simply
-! creating a new xemacs frame is not enough - you must restart the editor
-! for the changes to take effect.)
-! 
-
-
-
-! Colours and backgrounds.
-! ======================
-! The contrasts of these colours will cause them to map to the appropriate
-! one of "black" or "white" on monochrome systems.
-! 
-! The valid colour names on your system can be found by looking in the file
-! `rgb.txt', usually found in /usr/lib/X11/ or /usr/openwin/lib/X11/.
-
-! You may have xcolorsel or xcolors installed which show you the real rendered colours
-! Set the foreground and background colours of the `default' face.
-! The default face colours are the base for most of the other faces'
-! colours.  The default background is gray80, and the default foreground
-! is black.
-Emacs.default.attributeBackground:	seashell
-Emacs.default.attributeForeground:	black
-
-! Set the modeline colors.
-Emacs.modeline*attributeForeground:	darkblue
-Emacs.modeline*attributeBackground:	LightSteelBlue3
-
-! Set the colour of the text cursor.
-Emacs.text-cursor*attributeBackground: SpringGreen4
-
-! If you want to set the colour of the mouse pointer, do this:
- Emacs.pointer*attributeForeground:	red1
-! If you want to set the background of the mouse pointer, do this:
- Emacs.pointer*attributeBackground:	skyblue
-! Note that by default, the pointer foreground and background are the same
-! as the default face.
-
-! Set the menubar colours.  This overrides the default foreground and
-! background colours specified above.
-Emacs*menubar*Foreground:		grey50
-Emacs*menubar*Background:	 DarkSlateGray3
-! This is for buttons in the menubar.  
-! Yellow would be better, but that would map to white on monochrome.
-Emacs*menubar.buttonForeground: Blue
-Emacs*XlwMenu.selectColor:		Green
-Emacs*XmToggleButton.selectColor: CornflowerBlue
-
-! Specify the colours of popup menus.
-Emacs*popup*Foreground:	 VioletRed4
-Emacs*popup*Background:	PaleTurquoise3
-
-! Specify the colours of the various sub-widgets of the dialog boxes.
-Emacs*dialog*Foreground:		Black
-! #A5C0C1 is a shade of blue
-Emacs*dialog*Background:		CadetBlue2
-! The following three are for Motif dialog boxes ...
-Emacs*dialog*XmTextField*Background:	WhiteSmoke
-Emacs*dialog*XmText*Background:	WhiteSmoke
-Emacs*dialog*XmList*Background:	WhiteSmoke
-! While this one is for Athena dialog boxes.
-Emacs*dialog*Command*Background:	WhiteSmoke
-
-! Athena dialog boxes are sometimes built with the Xaw3d
-! variant of the Athena toolkit.
-! XEmacs being nice to 8bit displays, it defaults to:
-Emacs*dialog*Command*beNiceToColormap:	true
-! If you are shocked by the ugliness of the 3d rendition,
-! you may want to set (even on 8bit displays) the above to false.
-
-! Xlw Scrollbar colours
-Emacs*XlwScrollBar.Foreground:	Gray30
-Emacs*XlwScrollBar.Background:	Gray75
-Emacs*XmScrollBar.Foreground:		Gray30
-Emacs*XmScrollBar.Background:		DarkSeaGreen4
-
-!
-! The Lucid Scrollbar supports two added resources, SliderStyle is either
-! "plain" (default) or "dimple".  Dimple puts a small dimple in the middle
-! of the slider that depresses when the slider is clicked on.  ArrowPosition is
-! either "opposite" (default) or "same".  Opposite puts the arrows at opposite
-! of the scrollbar, same puts both arrows at the same end, like the Amiga.
-!
- Emacs*XlwScrollBar.SliderStyle:    dimple
- Emacs*XlwScrollBar.ArrowPosition:  opposite
-
-
-!
-! If you want to turn off a tool bar, set its height or width to 0.
-! The correct size value is not really arbitrary.  We only control it
-! this way in order to avoid excess frame resizing when turning the
-! tool bars on and off.
-!
-! To change the heights and widths of the tool bars:
-!
-! Emacs.topToolBarHeight:	37
-! Emacs.bottomToolBarHeight:	10
-! Emacs.leftToolBarWidth:	10
-! Emacs.rightToolBarWidth:	10
-! these set Highlight Colours Around The Top Icon Based Menu
-Emacs*topToolBarShadowColor:	Lavender
-Emacs*bottomToolBarShadowColor:	skyblue
-! This is the Top Icon Menu Background Colour
-Emacs*backgroundToolBarColor:	 SteelBlue4
-Emacs*toolBarShadowThickness:		2
-
-
-! If you want to turn off vertical scrollbars, or change the default
-! pixel width of the vertical scrollbars, do it like this (0 width
-! means no vertical scrollbars):
-! 
-! Emacs.scrollBarWidth: 0
-! 
-! To change it for a particular frame, do this:
-! 
-! Emacs*FRAME-NAME.scrollBarWidth: 0
-
-
-! If you want to turn off horizontal scrollbars, or change the default
-! pixel height of the horizontal scrollbars, do it like this (0 height
-! means no horizontal scrollbars):
-! 
-! Emacs.scrollBarHeight: 0
-! 
-! To change it for a particular frame, do this:
-! 
-! Emacs*FRAME-NAME.scrollBarHeight: 0
-
-
-! To dynamically change the labels used for menubar buttons...
-! 
-Emacs*XlwMenu.resourceLabels: True
-Emacs*XlwMenu.newFrame.labelString: Open Another Window
-
-! To have the Motif scrollbars on the left instead of the right, do this:
-! 
-! Emacs*scrollBarPlacement: BOTTOM_LEFT
-!
-! To have the Athena scrollbars on the right, use `BOTTOM_RIGHT' instead
-
-! To have Motif scrollbars act more like Xt scrollbars...
-!
-! Emacs*XmScrollBar.translations: #override \n\
-!     &lt;Btn1Down&gt;:     PageDownOrRight(0)    \n\
-!     &lt;Btn3Down&gt;:     PageUpOrLeft(0)
-
-! Fonts.
-! ======
-! NOTE: This now sets only the menu bar and mini buffer fonts (which are  direct Xresources ).
-! XEmacs requires the use of XLFD (X Logical Font Description) format font
-! names, which look like
-! 
-! 	*-courier-medium-r-*-*-*-120-*-*-*-*-*-*
-! 
-! if you use any of the other, less strict font name formats, some of which
-! look like
-! 		lucidasanstypewriter-12
-! and		fixed
-! and		9x13
-! 
-! then XEmacs won't be able to guess the names of the bold and italic versions.
-! All X fonts can be referred to via XLFD-style names, so you should use those
-! forms.  See the man pages for X(1), xlsfonts(1), and xfontsel(1).
-! The font attributes are now set in your .xemacs/custom.el file
-
-! The default font for the text area of XEmacs is chosen at run-time
-! by lisp code which tries a number of different possibilities in order
-! of preference.  If you wish to override it, use this:
-! 
-! Emacs.default.attributeFont:  -*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-
-! If you choose a font which does not have an italic version, you can specify
-! some other font to use for it here:
-! 
-! Emacs.italic.attributeFont:  -*-courier-medium-o-*-*-*-120-*-*-*-*-iso8859-*
-!
-! And here is how you would set the background colour of the `highlight' face,
-! but only on the screen named `debugger':
-! 
-! Emacs*debugger.highlight.attributeBackground:		PaleTurquoise
-! 
-! See the NEWS file (C-h n) for a more complete description of the resource
-! syntax of faces.
-
-
-! Font of the modeline, menubar and pop-up menus.
-! Note That the Menubar Resources Do Not Use the `Face' Syntax, Since They
-! Are X Toolkit Widgets and Thus Outside the Domain of Xemacs Proper.
-!
-Emacs.default.attributeFont:  -*-*-medium-r-*-*-*-120-*-*-m-*-*-*
-Emacs*menubar*font:           fixed
-Emacs.modeline.attributeFont: fixed
-!Emacs*menubar*Font: 		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
-!Emacs*popup*Font:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
-!Emacs*menubar*Font: -adobe-avant garde gothic-*-r-normal-*-12-120-75-75-p-*-iso8859-15
-
-!Emacs*popup*Font: -adobe-avant garde gothic-*-r-normal-*-12-120-75-75-p-*-iso8859-15
-! Font in the Motif dialog boxes.
-! (Motif uses `fontList' while most other things use `font' - if you don't
-! know why you probably don't want to.)
-!
-!MOTIF list all commented out (pete) feb 2004 
-!Emacs*XmDialogShell*FontList:	-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
-!Emacs*XmTextField*FontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-!Emacs*XmText*FontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-!Emacs*XmList*FontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-
-! Font in the Athena dialog boxes.
-! I think 14-point looks nicer than 12-point.
-! Some people use 12-point anyway because you get more text, but
-! there's no purpose at all in doing this for dialog boxes.
-
-!Emacs*Dialog*Font:	 -adobe-avant garde gothic-*-r-normal-*-12-120-75-75-p-*-iso8859-15
-
-! Dialog box translations.
-! =======================
-
-! This accelerator binds &lt;return&gt; in a dialog box to &lt;activate&gt; on button1
-Emacs*dialog*button1.accelerators:#override\
-&lt;KeyPress&gt;Return: ArmAndActivate()\n\
-&lt;KeyPress&gt;KP_Enter: ArmAndActivate()\n\
-Ctrl&lt;KeyPress&gt;m: ArmAndActivate()\n
-
-! Translations to make the TextField widget behave more like XEmacs
-Emacs*XmTextField.translations: #override\n\
-	!&lt;Key&gt;osfBackSpace:	delete-previous-character()\n\
-	!&lt;Key&gt;osfDelete:	delete-previous-character()\n\
-	!Ctrl&lt;Key&gt;h: 		delete-previous-character()\n\
-	!Ctrl&lt;Key&gt;d: 		delete-next-character()\n\
-	!Meta&lt;Key&gt;osfDelete:	delete-previous-word()\n\
-	!Meta&lt;Key&gt;osfBackSpace:	delete-previous-word()\n\
-	!Meta&lt;Key&gt;d:		delete-next-word()\n\
-	!Ctrl&lt;Key&gt;k:		delete-to-end-of-line()\n\
-	!Ctrl&lt;Key&gt;g:		process-cancel()\n\
-	!Ctrl&lt;Key&gt;b:		backward-character()\n\
-	!&lt;Key&gt;osfLeft:		backward-character()\n\
-	!Ctrl&lt;Key&gt;f:		forward-character()\n\
-	!&lt;Key&gt;osfRight:		forward-character()\n\
-	!Meta&lt;Key&gt;b:		backward-word()\n\
-	!Meta&lt;Key&gt;osfLeft:	backward-word()\n\
-	!Meta&lt;Key&gt;f:		forward-word()\n\
-	!Meta&lt;Key&gt;osfRight:	forward-word()\n\
-	!Ctrl&lt;Key&gt;e:		end-of-line()\n\
-	!Ctrl&lt;Key&gt;a:		beginning-of-line()\n\
-	!Ctrl&lt;Key&gt;w:		cut-clipboard()\n\
-	!Meta&lt;Key&gt;w:		copy-clipboard()\n\
-	&lt;Btn2Up&gt;:		copy-primary()\n
-
-! With the XEmacs typeahead it's better to not have space be bound to
-! ArmAndActivate() for buttons that appear in dialog boxes.  This is
-! not 100% Motif compliant but the benefits far outweigh the
-! compliance problem.  
-Emacs*dialog*XmPushButton.translations:#override\n\
-    &lt;Btn1Down&gt;:         Arm()\n\
-    &lt;Btn1Down&gt;,&lt;Btn1Up&gt;: Activate()\
-			Disarm()\n\
-    &lt;Btn1Down&gt;(2+):     MultiArm()\n\
-    &lt;Btn1Up&gt;(2+):       MultiActivate()\n\
-    &lt;Btn1Up&gt;:           Activate()\
-		        Disarm()\n\
-    &lt;Key&gt;osfSelect:  	ArmAndActivate()\n\
-    &lt;Key&gt;osfActivate:   ArmAndActivate()\n\
-    &lt;Key&gt;osfHelp:	Help()\n\
-    ~Shift ~Meta ~Alt &lt;Key&gt;Return:	ArmAndActivate()\n\
-    &lt;EnterWindow&gt;:      Enter()\n\
-    &lt;LeaveWindow&gt;:      Leave()\n
-
-! XIM input method style 
-! ======================= 
-
-! ximStyles is a (whitespace or comma-separated) list of XIMStyles in
-! order of user's preference.  
-! Choose a subset of the following styles or reorder to taste
-Emacs*ximStyles: XIMPreeditPosition|XIMStatusArea\
-            XIMPreeditPosition|XIMStatusNothing\
-            XIMPreeditPosition|XIMStatusNone\
-            XIMPreeditNothing|XIMStatusArea\
-            XIMPreeditNothing|XIMStatusNothing\
-            XIMPreeditNothing|XIMStatusNone\
-            XIMPreeditNone|XIMStatusArea\
-            XIMPreeditNone|XIMStatusNothing\
-            XIMPreeditNone|XIMStatusNone
-
-! XIM Preedit and Status foreground and background
-Emacs*EmacsFrame.ximForeground: black
-Emacs*EmacsFrame.ximBackground: white
-
-! XIM fontset (defaults to system fontset default)
-! Emacs*EmacsFrame.FontSet: -dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*
-
-
-!Xcalendar .Xdefault settings
-! colours
-! Note: These may cause problems using the -rv option on monochrome displays
-
-xcalendar.*Background: SkyBlue1
-xcalendar.*markBackground: LightCyan3
-xcalendar.*helpButton*Background: SteelBlue3
-xcalendar.*daynames*Background: SteelBlue3
-xcalendar.*quitButton*Foreground: White
-xcalendar.*editorTitle*Background: DarkSlateGray1
-	</programlisting>
-      <indexterm>
-	<primary>Xemacs</primary>
-	<secondary>emacs</secondary>
-	<tertiary>Editors</tertiary>
-      </indexterm>
-    </para>
-  </section>
-
-  <section>
-    <title>A home dot xemacs/custom.el file</title>
-    <para>Most of the following should be OK for a normal xemacs install.
-      <emphasis>All of them may be set from the <guimenu>options menus</guimenu>.</emphasis>
-      Start with the first set of menus that <guilabel>Options</guilabel>
-      open and set your email addresses and any other first level preferences.
-      You save them by choosing the <guimenuitem>save options to init file</guimenuitem>
-      right at the bottom of the opening dialog (which rather confusingly saves the
-      file <filename>~/.xemacs/custom.el</filename>). You are best to leave the
-      <filename>~/.xemacs/init.el</filename> file alone for now. One other word
-      of advice is to not edit this file too much by hand, as the syntax is very
-      strict and unforgiving. If it doesn't work, remove it and start again.</para>
-
-    <para>~/.xemacs/custom.el</para>
-    <beginpage/> <!-- for print format -->
-    
-    <!-- warning replace &lt; and %gt; with < and > if copying from XML source -->
-    <programlisting>
-(custom-set-variables
- '(require-final-newline t)
- '(init-face-from-resources nil)
- '(strokes-mode t nil (strokes))
- '(shell-input-autoexpand (quote history))
- '(european-calendar-style t)
- '(font-menu-ignore-scaled-fonts t)
- '(mwheel-follow-mouse t)
- '(paren-message-no-match t)
- '(x-face-xmas-like-highlight-headers t)
- '(mail-from-style (quote angles))
- '(bbdb/mail-auto-create-p (quote prompt))
- '(mail-header-separator "--message text follows this line--")
- '(mail-signature "")
- '(sc-citation-delimiter "/>")
- '(paren-no-match-face (quote paren-face-no-match))
- '(mouse-avoidance-nudge-dist 10)
- '(mouse-avoidance-mode (quote animate) nil (avoid))
- '(paren-message-linefeed-display " RET ")
- '(mail-abbrev-mailrc-file "~/.mailrc")
- '(sc-default-author-name "Somebody")
- '(sc-default-attribution "Unknown")
- '(paren-message-show-linenumber (quote absolute))
- '(scroll-conservatively 2)
- '(next-screen-context-lines 4)
- '(mail-alias-separator-string ",\\n ")
- '(bbdb-north-american-phone-numbers-p nil)
- '(toolbar-captioned-p nil)
- '(eudc-max-servers-to-query 2)
- '(progress-feedback-use-echo-area t)
- '(ibuffer-use-other-window t)
- '(mouse-track-scroll-delay 100)
- '(browse-url-browser-function (quote browse-url-mozilla))
- '(dictionary-server "localhost")
- '(buffers-menu-format-buffer-line-function (quote slow-format-buffers-menu-line))
- '(ibuffer-default-shrink-to-minimum-size t)
- '(bbdb/vm-update-records-mode (quote (if (vm-new-flag msg) (quote annotating) (quote searching))))
- '(pending-delete-mode t nil (pending-del))
- '(face-frob-from-locale-first t)
- '(ndspell-ispell-program "aspell -c")
- '(toolbar-mail-reader (quote vm))
- '(default-gutter-position (quote top))
- '(paren-highlight-offscreen t)
- '(mark-diary-entries-in-calendar t)
- '(view-diary-entries-initially t)
- '(no-redraw-on-reenter t)
- '(bbdb-default-label-list (quote ("Home" "Office" "Mobile" "Facs")))
- '(ndspell-process-coding-system (quote UTF-8))
- '(bbdb-check-zip-codes-p t)
- '(font-blink-interval 0.8)
- '(dictionary-default-popup-strategy "lev")
- '(ibuffer-dired-buffer-face (quote arial))
- '(colon-double-space t)
- '(sc-downcase-p t)
- '(mail-use-rfc822 t)
- '(mail-specify-envelope-from nil)
- '(dictionary-use-single-buffer t)
- '(paren-blink-interval 0.4)
- '(mail-archive-file-name "MailSent")
- '(font-lock-mode t nil (font-lock))
- '(sc-citation-leader "&lt;    "))
-(custom-set-faces
- '(default ((t (:size "12pt" :family "Fixed"))) t)
- '(info-xref ((t (:foreground "blue3" :background "white" :size "14" :bold t))))
- '(info-node ((t (:foreground "blue4" :background "yellow2" :size "14" :family "times" :bold t))))
- '(html-helper-italic-face ((t (:family "helvetica" :italic t))))
- '(dictionary-word-entry-face ((((type x)) (:foreground "green4" :size "16" :family "arial"))))
- '(html-helper-bold-face ((t (:background "white" :family "helvetica" :bold t))))
- '(arial ((t (:foreground "blue4" :size "14" :family "arial"))) t)
- '(paren-face-no-match ((((class color)) (:foreground "blue4" :background "coral" :size "16" :family "helvetica")))))
-</programlisting>
-
-    <para>Spend some time doing the tutorials, it is time very well spent. In the meantime:
-      Right clicking on things usually gives you some useful options. A buffer is a file
-      living in memory only.</para>
-    <para>Now I have either saved you a LOT of time or confused you hopelessly. In the
-      latter case I am very sorry. Restore the above files form your saved copies of the
-      originals... you did that right :) and start xemacs again.</para>
-    <para>Explore the GUI and buffer interfaces to the configuration settings,
-      they really are quite extensive (you can enter your latitude and longitude
-      and have your sunrise sunset and day lengths for example, you can have yourself
-      psychoanalysed and play games, write mail, etc etc... Emacsen are designed
-      to run on a X powered graphical interface or from a real console (or even a
-      virtual terminal, they take full advantage of Unix protocols and services... you
-      may never need another application :) They are also huge and daunting interfaces,
-      that can use lots of system resources if poorly configured. How far you take it
-      is of course up to you.</para>
-    <para>Oh on the Vi emacs war? I use both, so there :) Sometimes Xemacs is just
-      plain overkill.</para>
-  </section>
-</section>
-   <!-- these should all be standalone files ?? perhaps at article level
-	Michael: we can move them when they have grown.
-          perhaps the example files from the previous section could go to their
-          own files -->
-    </chapter>
-    <chapter>
-      <title>Validating TEI format files</title>
-      <para>Validating TEI files requires an installed version of the TEI DTD
-        and a validating XML parser. It is assumed you have <application>sp</application>
-        or <application>opensp</application> installed. These make the commands
-        <command>nsgmls</command> respective <command>onsgmls</command> available.</para>
-
-      <para>Validation should be available as a target in the Makefile of each
-        dictionary module. Try <command>make validation</command> for the
-        dictionary module you want to validate (<command>cd</command> to it first).</para>
-
-      <para>The makefile target itself is simple. It sets some environment variables,
-        so that nsgmls can find the DTDs, tells it to handle XML data and then
-        calls it.</para>
-
-      <para>This is what is done:
-        <programlisting>
+    <para>This is what is done:
+      <programlisting>
         test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
         export SP_ENCODING=XML
         export SP_CHARSET_FIXED=YES
         export SGML_CATALOG_FILES="$(XMLSOC):$(CATALOGS)"
         nsgmls -s -E 10 $(LANGUAGE).tei
-        </programlisting>
-        </para>                                  
-    </chapter>
+      </programlisting>
+    </para>                                  
+  </chapter>
 
-    <chapter id="x2tei">
-      <title>Converting into TEI format</title>
-      <para>Some converters for this task are available. They can be found in the
-	<ulink url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/">tools
-         module</ulink> in the CVS repository of the FreeDict project. Unfortunately,
-	 many translation database/wordlist projects use their own unstandardised
-	 format and so require their own converter. It is an aim of FreeDict to
-	 lead to some kind of standardisation of data with the TEI format.
-	 Also we hope that upstream projects (ie the projects where actual dictionary
-         data comes from) make their data available in TEI XML format or
-	 even directly use TEI XML as their primary data format.</para>
+  <chapter id="x2tei">
+    <title>Converting into TEI format</title>
+    <para>Unfortunately, many translation database/wordlist projects use their
+      own format and so require their a specialized converter.  Some adhere to
+      standards, but mostly their own. A problem with standards is that you
+      have too many to choose from. It is an aim of FreeDict to lead to some
+      kind of standardisation of data with the TEI format.  Also we hope that
+      upstream projects (ie. the projects where actual dictionary data comes
+      from) make their data available in TEI XML format or even directly use
+      TEI XML as their primary data format.</para>
 
-      <para>
-        <itemizedlist>
-          <listitem>
-            <para><command>ding2tei.pl</command> - conversion of the
-	     <ulink url="http://dict.tu-chemnitz.de/help.html#download">ding database</ulink>
-	     (English/German) into TEI format</para>
-          </listitem>
-          <listitem>
-	    <para><command>hd2tei.pl</command> - conversion of the "hd" format (which
-            <application>dictfmt</application> also understands) into TEI format</para>
-          </listitem>
-          <listitem>
-            <para><command>tab2tei.pl</command> - conversion of tab delimited plain text file into TEI format</para>
-          </listitem>
-          <listitem>
-           <para><command>dict2tei.py</command> -  conversion of an already formatted dictd
-             database into TEI format</para>
-          </listitem>
-        </itemizedlist>
-      </para>
-    </chapter>
+    <para>
+      <itemizedlist>
+	<listitem>
+	  <para><command>ding2tei.pl</command> - conversion of the <ulink
+	      url="http://dict.tu-chemnitz.de/help.html#download">ding
+	      database</ulink> (English/German) into TEI format</para>
+	</listitem>
+	<listitem>
+	  <para><command>hd2tei.pl</command> - conversion of the "hd" format
+	    (which <application>dictfmt</application> also understands) into
+	    TEI format</para>
+	</listitem>
+	<listitem>
+	  <para><command>tab2tei.pl</command> - conversion of tab delimited
+	    plain text file into TEI format</para> </listitem>
+	<listitem>
+	  <para><command>dict2tei.py</command> -  conversion of an already
+	    formatted dictd database into TEI format</para>
+	</listitem>
+      </itemizedlist>
+    </para>
+  </chapter>
 
-    <chapter id="platforms">
-      <title>Supported and Unsupported Platforms</title>
+  <chapter id="platforms">
+    <title>Supported and Unsupported Platforms</title>
 
-      <note>
-	<para>This section is incomplete. Actually, the whole HOWTO should be restructured
-	  to reflect information flow better.</para> 
-      </note>
+    <para>This chapter explains how conversion from TEI format into different
+      other formats works - for supported platforms - or would work - for
+      unsupported platforms.</para>
+
+    <note>
+      <para>This chapter is incomplete. Actually, the whole HOWTO should be
+	restructured to reflect information flow better.</para> 
+    </note>
       
-      <section id="tei2dict">
-	<title>Converting TEI format into dictd database format</title>
-	<para>For this task, two ways are viable.</para>
+    <section id="tei2dict">
+      <title>Dictd Database Format</title>
+      <para>For this task two ways are viable. Both supports multiple headwords
+	for a single entry, ie. multiple <sgmltag>orth</sgmltag> elements
+	inside a single entry.  This is useful to give alternate spellings.
+	Another feature is generation of an inverse index. With this, the
+	direction of translation of the dictionary can be reversed, ie. an
+	English-Arabic dictionary would become queryable Arabic-English.</para>
 
-	<para>First, using XSLT stylesheets and <command>dictfmt -c5</command>.
+      <section>
+	<title>Using c5 style</title>
+	<para>This process uses an XSLT stylesheet and <command>dictfmt -c5</command>.
 	  The stylesheet needs to be applied to the TEI file. Any XSLT processor
 	  should do the work. Using
 	  <ulink url="http://www.gingerall.com/charlie/ga/xml/p_sab.xml">Sablotron</ulink>,
 	  the command to give would be</para>
 
-	<para><userinput>sabcmd xsl/tei2c5.xsl <replaceable>la1-la2</replaceable>.tei ><replaceable>la1-la2</replaceable>.c5</userinput></para>
+	<para><userinput>sabcmd xsl/tei2c5.xsl
+	    <replaceable>la1-la2</replaceable>.tei
+	    ><replaceable>la1-la2</replaceable>.c5</userinput></para>
 
-	<para>Using xsltproc from <ulink url="http://xmlsoft.org/XSLT/">libxslt</ulink>,
-	  you would say</para>
+	<para>Using xsltproc from <ulink
+	    url="http://xmlsoft.org/XSLT/">libxslt</ulink>, you would
+	  say</para>
 
-	<para><userinput>xsltproc xsl/tei2c5.xsl la1-la2.tei >la1-la2.c5</userinput></para>
+	<para><userinput>xsltproc xsl/tei2c5.xsl
+	    <replaceable>la1-la2</replaceable>.tei
+	    ><replaceable>la1-la2</replaceable>.c5</userinput></para>
 
-	<para>Next, <command>dictfmt</command> has to be called to create the final
-	  dictd database files:</para>
+	<para>Next, <command>dictfmt</command> has to be called to create the
+	  final dictd database files:</para>
 
-	<para><userinput>dictfmt -t --headword-separator %%% <replaceable>la1-la2</replaceable> &lt;<replaceable>la1-la2</replaceable>.c5</userinput></para>
+	<para><userinput>dictfmt -t --headword-separator %%%
+	    <replaceable>la1-la2</replaceable>
+	    &lt;<replaceable>la1-la2</replaceable>.c5</userinput></para>
+      </section>
 
-	<para>Second, using <command>xmltei2xmldict.pl</command>. This is the
-	  conversion utility developed by the FreeDict project itself. Is converts
-	  the TEI file into dictd database format without producing intermediate
-	  files. Also it supports multiple headwords for a single entry, ie. multiple
-	  &lt;orth&gt;-Elements inside a single entry, eg. for alternate spellings.
-	  Another feature is generation of an inverse index. With this, the direction
-	  of translation of the dictionary can be reversed, ie. an English-Arabic dictionary
-	  would become queryable Arabic-English.
-	  Its disadvantage is, that it depends on the FreeDict project for the conversion
-	  to be successful, because the dictd database format is still subject to changes
-	  and cannot be as well understood as <command>dictfmt</command> does, which comes
-	  from the dictd project itself. For the software dependencies, please read the <ulink
+      <section>
+	<title>Using <command>xmltei2xmldict.pl</command></title>
+	<para>Second, using <command>xmltei2xmldict.pl</command>. This is a
+	  conversion utility developed by the FreeDict project itself. It
+	  converts the TEI file into dictd database format without producing
+	  intermediate files.  Its disadvantage is that it depends on the
+	  FreeDict project for the conversion to be successful, because the
+	  dictd database format is still subject to changes and cannot be as
+	  well understood as <command>dictfmt</command> does, which comes from
+	  the dictd project itself. For the software dependencies, please read
+	  the <ulink
 	    url="http://cvs.sourceforge.net/viewcvs.py/freedict/tools/README?rev=1.4&amp;view=markup"><filename>README</filename></ulink>.</para>
 
-	<para>An example command line would be:
-	  <userinput>xmltei2xmldict.pl -f <replaceable>la1-la2</replaceable>.tei -t xsl/tei2txt.xsl</userinput></para>
+	<para>An example command line would be:</para>
 
+	<para><userinput>xmltei2xmldict.pl -f
+	    <replaceable>la1-la2</replaceable>.tei -t
+	    xsl/tei2txt.xsl</userinput></para>
+      </section>
+
+      <para>The c5 style is faster but needs more memory, since it loads the
+	entire TEI file before applying the XSLT stylesheet.  The
+	<command>xmltei2xmldict.pl</command> style instead uses the SAX API,
+	converting the dictionary by applying an XSLT stylesheet entrywise.
+	For example to convert the file <filename>deu-eng.tei</filename>,
+	which contains about 81000 entries, using my 550 MHz / 128 MB machine
+	took the following times:</para>
+
+      <table frame="none">
+	<title>Timing comparison of c5 and <command>xmltei2xmldict.pl</command> conversion styles</title>
+	<tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry><command>xmltei2xmldict.pl</command></entry>
+	      <entry>c5 style</entry>
+              </row>
+            </thead> 
+            <tbody>
+              <row>
+		<entry><computeroutput><literallayout>
+real    38m8.771s
+user    24m54.358s
+sys     0m37.752s</literallayout></computeroutput>
+	        </entry>
+		<entry><computeroutput><literallayout>
+real    27m14.123s
+user    1m53.763s
+sys     0m38.618s</literallayout></computeroutput>
+	        </entry>
+	      </row>
+	    </tbody>
+          </tgroup>
+        </table>
+
+        <para>It should be noted that my machine has not enough memory for c5 style,
+    	  so it spent 25 of the 27 minutes in swapping.</para>
       </section>
       
       <section id="bedic">
-	<title>bedic</title>
+	<title>Bedic</title>
 	<para>The <ulink url="http://bedic.sf.net/">bedic project</ulink>
 	  maintains the library <application>libbedic</application> and the
 	  application <application>zbedic</application>, which are designed to
@@ -797,18 +323,87 @@ xcalendar.*editorTitle*Background: DarkSlateGray1
 	    tilde in fra-eng pronunciations.</para>
 	</section>
       </section>
+      
+      <section>
+	<title>Evolutionary Dictionary</title>
 
+	<para>The FreeDict dictionaries are available for the shareware program
+	  "Evolutionary Dictionary" from <ulink
+	    url="http://www.evolutionary.net/dict-info.htm">http://www.evolutionary.net/dict-info.htm</ulink>.</para>
+
+	<para>The dictionary files for this platform must be created with the
+	  Win32 Apllication 'Dictionary.exe', available from <ulink
+	    url="http://www.evolutionary.net/dict-info1.htm"
+	    >http://www.evolutionary.net/dict-info1.htm</ulink>. 
+	  It currently does not run in the Windows Emulator 'wine'.</para>
+
+	<para>According to its documentation 'Dictionary.exe' can import:</para>
+
+	<itemizedlist>
+	  <listitem>
+	    <para>VOK files, a format specifically made for MakeDict (see next section)
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>Ergane format, used by the free PC translation program "Ergane".
+	      They say to make sure you export from Ergane in type 2 format (either 2a
+	      or 2b).  The program and free modules can be obtained from the web site -
+	      <ulink
+		url="http://www.travlang.com/Ergane/">http://www.travlang.com/Ergane/</ulink>.
+	      But the downloadable ergane _cannot_ export anything!</para>
+	  </listitem>
+	  <listitem><para>"Mr Honey - English-German" (no format description available)</para>
+	  </listitem>
+	  <listitem><para>WordNet (again, no format description available)</para>
+	  </listitem>
+	</itemizedlist>
+
+	<section>
+	  <title>VOK file format</title>
+
+	  <para>This is a plain text file format in Windows-1252 encoding (this last
+	    fact is not documented in the Online Help of
+	    <application>Dictionary.exe</application>!). It looks like this:</para>
+
+	  <programlisting>
+[words]
+word/translated-word
+word2a;word2b/translated-word2a;translated-word2b
+    .
+    .
+
+[phrases]
+>category-name
+phrase/translated-phrase
+    .
+    .
+>category-name
+phrase/translated-phrase
+    .
+    .
+[notes]
+&lt;any-text&gt;</programlisting>
+  
+	  <para>There should not be spaces around the '/' character.  In the
+	    [words] or [phrases] section, you may have ';' characters on either
+	    side of the '/' to indicate multiple translations of a word.
+	    eg.</para>
+	  <programlisting>ability/Faehigkeit;Begabung</programlisting>
+
+	</section>
+      </section>
     </chapter>
 
     <chapter id="stylesheets">
       <title>Stylesheets</title>
-      <para>For conversion of XML data, the XSLT language was devised.
-	In FreeDict, stylesheets written in XSLT are employed
-	to describe the transformation of entries into plain text. Using stylesheets
-	we hope to make the conversion process open and adjustable by users to their
-	needs, because now "only" the stylesheets need to be adjusted
-	in order to adjust the arrangement of information inside entries, no more
-	knowledge of converter programming should be required.</para>
+      <para>In FreeDict stylesheets written in the XSLT language are employed
+	to describe the transformation of entries into other formats.  XSLT was
+	devised for conversion of XML data and as such is very well adapted to
+	it.  Using stylesheets we hope to make the conversion process open and
+	adjustable by users to their needs, because now "only" the stylesheets
+	need to be adjusted in order to adjust the arrangement of information
+	inside entries, no more knowledge of converter programming should be
+	required.</para>
 
       <para>In practice though, it turns out that XSLT itself is no more
 	easier than a programming language. In fact, because of its different

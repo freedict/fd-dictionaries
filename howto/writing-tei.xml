@@ -4,11 +4,12 @@
 <chapter id="writing">
   <title>Writing a FreeDict Dictionary</title>
   <abstract>
-    <para>This chapter deals with the process of building
-      a FreeDict format file from your gathered sources. We cover installation,
-      SGML and XML system configuration, some introductory level XML, final formats
-      and a couple of shortcuts.</para>
+    <para>This chapter deals with the process of building a FreeDict format
+      file from your gathered sources. We cover installation, SGML and XML
+      system configuration, some introductory level XML, final formats and a
+      couple of shortcuts.</para>
   </abstract>
+  
   <section>
     <title>Introduction</title>
     <para>What we don't deal with here is the actual process of collating a
@@ -37,9 +38,10 @@
 	</para>
       </listitem>
       <listitem>
-	<para>If you are starting from scratch and writing your dictionary mostly by hand,
-          please consider using a template, and an XML editor like (X)emacs. These make the
-          process much less error prone and tedious. See the <link linkend="tools">tools section</link>
+	<para>If you are starting from scratch and writing your dictionary
+	  mostly by hand, please consider using a template, and an XML editor
+	  like (X)emacs. These make the process much less error prone and
+	  tedious. See the <link linkend="tools">tools section</link>
           for more information.
 	  <indexterm>
             <primary>XML</primary>
@@ -60,39 +62,121 @@
         </para>
       </listitem>
     </orderedlist>
+  </section>
+
+  <section>
+    <title>The FreeDict Entry Format</title>
+    <abstract><para>Though we claim to adhere to TEI P4 XML, Chapter 12 "Print Dictionaries",
+	additional rules and restrictions apply.</para>
+    </abstract>
+
+    <para>At first sight the TEI guidelines are very complex. At second sight
+      they are still, but it is important to notice that they were written
+      under the primary assumption to encode as much existing text as
+      possible by tagging it up to a reasonable level of details. The wide
+      variety of exisiting text makes the TEI tagset very permissible,
+      allowing almost any tags to be used inside any other.</para>
+
+    <para>This permissibility makes it difficult to process "pure TEI" with
+      software to reformat TEI into other formats such as TeX, Formatting
+      Objects or text.</para>
+
+    <para>Besides being too permissible, the TEI Guidelines are incomplete
+      for our needs, because they do not define any typologies. Typologies
+      are needed for encoding different things in our dictionaries:</para>
+
+    <itemizedlist>
+      <listitem><para>the Part of Speech of headwords, ie. the contents of
+	  <sgmltag>pos</sgmltag> elements. Should verbs be marked as 'v',
+	  'verb' or 'Verb'?</para></listitem>
+      <listitem><para>the Usage Domain of entry meanings - technology,
+	  botanics etc.</para></listitem>
+      <listitem><para>the type of Cross References - whether the reference
+	  points to a synonym, an alternative spelling, a derived word
+	  etc.</para></listitem>
+    </itemizedlist>
+
+    <para>Of course, these typologies should be used for many dictionaries,
+      allowing us to keep the processing software simple. If required, they
+      can be localized before being presented to a dictionary user.</para>
+
+    <para>For these reasons, it is part of FreeDict's agenda to develop
+      language neutral typologies for above mentioned things.</para>
+
+    <table frame="all">
+      <title>Contents of the <sgmltag>pos</sgmltag> element</title>
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>Element Content</entry>
+	    <entry>Meaning</entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row><entry>n</entry><entry>noun</entry></row>
+	  <row><entry>v</entry><entry>verb</entry></row>
+	  <row><entry>vt</entry><entry>transitive verb</entry></row>
+	  <row><entry>vi</entry><entry>intransitive verb</entry></row>
+	  <row><entry>vti</entry><entry>transitive and intransitive verb</entry></row>
+	  <row><entry>ajv</entry><entry>adverb</entry></row>
+	  <row><entry>adj</entry><entry>adjective</entry></row>
+	  <row><entry>conj</entry><entry>conjunction</entry></row>
+	  <row><entry>prep</entry><entry>preposition</entry></row>
+	  <row><entry>int</entry><entry>interjection</entry></row>
+	  <row><entry>pron</entry><entry>pronoun</entry></row>
+	  <row><entry>art</entry><entry>article</entry></row>
+	</tbody>
+      </tgroup>
+    </table>
+
+    <para>It has been suggested to extend the TEI DTD with additional attributes
+      to entries such as:</para>
+
+    <programlisting>
+      dictionary - which dictionary is the word in (eg.
+                   eng-deu - so entries can be distributed on their own)
+      author     - who edited the word last - it's nice to know who did the work
+      version    - which version of the word
+      date       - the time the word was last edited
+      quality    - how good do we think that the translation is
+                   this would give a hint about what words should be worked on next
+      frequency  - how frequent is the word in the language (should also be present in sense?)
+    </programlisting>
+
+    <para>XXX compare with other terminological DTDs, link to this mail in archive</para>
+
+    <para>Since TEI XML does not currently limit us, its extension is not
+      actively pursued.</para>
 
     <section>
-      <title>The FreeDict Entry Format</title>
-      <abstract><para>Though we claim to adhere to TEI P4 XML, Chapter 12 "Print Dictionaries",
-          additional rules and restrictions apply.</para>
-      </abstract>
-      
-      <para>At first sight the TEI guidelines are very complex. At second sight they are still,
-        but it is important to notice that they were written under the primary assumption to
-	encode existing text by tagging it up to a reasonable level of details. The wide variety
-	of exisiting text makes the TEI tagset very permissible, allowing almost any tags
-	to be used insidy any other.</para>
-	
-      <para>This permissibility makes is difficult to process "pure TEI" with software, eg. software
-        to reformat TEI into other formats such as TeX, Formatting Objects or text.</para>
-	
-	tei is not complete - need our own typologies
-	why uniform/lang independent encoding?
+      <title>Best Practices</title>
+      <itemizedlist>
+	<listitem><para>Avoid to use more than one <sgmltag>orth</sgmltag>
+	    element per entry.  Instead create separate entries and link them
+	    to each other.</para></listitem>
+	<listitem><para>Put question marks into <sgmltag>note</sgmltag>
+	    elements of to be reviewed entries. Using this convention, other
+	    editers will be able to find those entries
+	    easily.</para></listitem>
+      </itemizedlist>
     </section>
-    <section>
-      <title>Two Approaches</title>
+  </section>
 
-      <para>There are at least two approaches you might take to building a FreeDict format dictionary.
-        <link linkend="write-tei">Approach One</link> is to use the Text Encoding Initiative DTD from
-        the beginning. This gives you the most flexibility.</para>
-      <para><link linkend="dictd">Approach Two</link> involves producing a simply (and accurately)
-        formatted plain file that you then process with some command lines tools (and will probably
-        have to touch up). This can be quicker if you are comfortable with it, but may limit your
-        options for lexicographic information.</para>
-      <para>You may of course combine these or find any number of others, after all, it's your
-        dictionary we just need it in a certain format :)
-	<indexterm>
-	  <primary>lexicographic</primary>
+  <section>
+    <title>Two Approaches</title>
+    <para>There are at least two approaches you might take to building a
+      FreeDict format dictionary.  <link linkend="write-tei">Approach
+	One</link> is to use the Text Encoding Initiative DTD from the
+      beginning. This gives you the most flexibility.</para>
+    <para><link linkend="dictd">Approach Two</link> involves producing a
+      simply (and accurately) formatted plain file that you then process with
+      some command lines tools (and will probably have to touch up). This can
+      be quicker if you are comfortable with it, but may limit your options
+      for lexicographic information.</para>
+    <para>You may of course combine these or find any number of others, after
+      all, it's your dictionary we just need it in a certain format :)
+      <indexterm>
+	<primary>lexicographic</primary>
 	  <secondary>flexibility</secondary>
 	</indexterm>
         <indexterm>
@@ -104,7 +188,6 @@
 	</indexterm>
       </para>
     </section>
-  </section>
 
 </chapter>
 
@@ -114,15 +197,16 @@
     <formalpara>
       <title>The Text Encoding Initiative</title>
       <para>
-        <quote>The TEI (Text Encoding Initiative) is an international research effort
-          established in 1987, intended to produce a community-based standard for encoding
-          and interchange of texts.</quote>
+	<quote>The TEI (Text Encoding Initiative) is an international research
+	  effort established in 1987, intended to produce a community-based
+	  standard for encoding and interchange of texts.</quote>
         <citation><ulink url="http://www.tei-c.org/Consortium/TEIcharter.html">http://www.tei-c.org/Consortium/TEIcharter.html</ulink></citation>
       </para>
     </formalpara>
-    <para>This section gives examples and explanations of using the TEI format to write and
-      deliver your dictionary. While it is not assumed you have the <link linkend="installTeiDTD">DTDs installed</link>,
-      it may be best if you did.
+    <para>This section gives examples and explanations of using the TEI format
+      to write and deliver your dictionary. While it is not assumed you have
+      the <link linkend="installTeiDTD">DTDs installed</link>, it may be best
+      if you did.
       <indexterm>
         <primary>TEI</primary>
 	<secondary>Text Encoding Initiative</secondary>
@@ -136,7 +220,7 @@
   <section id="overview-tei">
     <title>Overview of the TEI Organisation</title>
     <formalpara>
-      <title>In Brief:</title>
+      <title>In Brief</title>
       <para>
         <quote>In December of 2000, a new consortium was established to sustain
           and develop the Text Encoding Initiative (TEI). Initially launched in 1987,
@@ -151,12 +235,16 @@
       </para>
     </formalpara>
 
-    <para>For a full explanation of the history, objectives and approaches of the Text Encoding Initiative
-      it would be best if you visited them at <ulink url="&TEIUrl;">&TEIUrl;</ulink>. There you will find
-      links and information to all sorts of TEI related stuff. Of note are the <ulink url="&TEIguide;">Guidelines</ulink>.</para>
-    <para>The TEI consortium provides an approach to transcribing and creating documents in SGML (that was the old
-      version of the TEI Guidelines, up to P3) and XML (from P4 on), is as obsolescence proof as possible and allows free
-      exchange of content and ideas. We will only be using a very small subset of this system's capacity.
+    <para>For a full explanation of the history, objectives and approaches of
+      the Text Encoding Initiative it would be best if you visited them at
+      <ulink url="&TEIUrl;">&TEIUrl;</ulink>. There you will find links and
+      information to all sorts of TEI related stuff. Of note are the <ulink
+	url="&TEIguide;">Guidelines</ulink>.</para> <para>The TEI consortium
+      provides an approach to transcribing and creating documents in SGML (that
+      was the old version of the TEI Guidelines, up to P3) and XML (from P4
+      on), is as obsolescence proof as possible and allows free exchange of
+      content and ideas. We will only be using a very small subset of this
+      system's capacity.
       <indexterm>
 	<primary>obsolescence proof</primary>
       </indexterm>
@@ -590,29 +678,29 @@ information
 
     <para><sgmltag>orth</sgmltag> gives the orthography, ie. how the word is
       correctly written.  If there are several ways, you can use multiple
-      <sgmltag>orth</sgmltag> elements.
-      <sgmltag>pron</sgmltag> gives the pronunciation (sic!), ie how the word is spoken. In FreeDict
-      we use the IPA (International Phonetic Alphabet) that is also
-      contained in Unicode. There is nothing to support you
-      entering it here :) In a <emphasis>gramGrp</emphasis> element, all grammatical information
-      is grouped. You can give the part of speech (here <emphasis>n</emphasis> for noun),
-      the gender and also
-      the number (singular, plural) of the headword (Number is not given in this example).
-      Some time in the future we should suggest the possible parts of
-      speech to enter here, so that one doesn't write <emphasis>n</emphasis> and the other one
-      <emphasis>noun</emphasis> and the third one <emphasis>N</emphasis> or whatever.</para>
+      <sgmltag>orth</sgmltag> elements.  <sgmltag>pron</sgmltag> gives the
+      pronunciation (sic!), ie how the word is spoken. In FreeDict we use the
+      IPA (International Phonetic Alphabet) that is also contained in Unicode.
+      There is nothing to support you entering it here :) In a
+      <emphasis>gramGrp</emphasis> element, all grammatical information is
+      grouped. You can give the part of speech (here <emphasis>n</emphasis> for
+      noun), the gender and also the number (singular, plural) of the headword
+      (Number is not given in this example).  Some time in the future we should
+      suggest the possible parts of speech to enter here, so that one doesn't
+      write <emphasis>n</emphasis> and the other one <emphasis>noun</emphasis>
+      and the third one <emphasis>N</emphasis> or whatever.</para>
 
-    <para>You can group the different senses of homographs with <emphasis>sense</emphasis>.
-      The numbering is
-      optional. Translations are given in the <emphasis>tr</emphasis> element. Multiple
-      <emphasis>tr</emphasis>
-      elements may be given. For each grammatical information is optional.</para>
-    <para>With <emphasis>eg</emphasis> (exempla grata) you can give examples of usage and
-      optionally their translation.</para>
+    <para>You can group the different senses of homographs with
+      <emphasis>sense</emphasis>.  The numbering is optional. Translations are
+      given in the <emphasis>tr</emphasis> element. Multiple
+      <emphasis>tr</emphasis> elements may be given. For each grammatical
+      information is optional.</para> <para>With <emphasis>eg</emphasis>
+      (exempla grata) you can give examples of usage and optionally their
+      translation.</para>
 
-    <para>After formatting it might look as (pronunciation
-       and translation of the example were done away with, because
-       the stylesheet used for formatting needs to be fixed):
+    <para>After formatting it might look as (pronunciation and translation of
+      the example were done away with, because the stylesheet used for
+      formatting needs to be fixed):
       <screen>
 	    dog &lt;n.&gt;
 

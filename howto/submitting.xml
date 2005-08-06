@@ -6,20 +6,31 @@
 
 <chapter>
   <title>FreeDict Build System</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="build-system-overview.png" format="PNG"/>
-    </imageobject>
-    <imageobject>
-      <imagedata fileref="build-system-overview.svg" format="SVG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Overview of the FreeDict Build System</phrase>
-    </textobject>
-    <caption>
-      <para>This description is too short and there should be more text
-	explaining this image.</para> </caption>
-  </mediaobject>
+
+  <figure>
+    <title>Overview of the FreeDict Build System</title>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="build-system-overview.png" format="PNG"/>
+      </imageobject>
+      <imageobject>
+	<imagedata fileref="build-system-overview.svg" format="SVG"/>
+      </imageobject>
+      <textobject>
+	<phrase>Overview of the FreeDict Build System</phrase>
+      </textobject>
+      <caption>
+	<para>The data flow from the point of view of the FreeDict Build System
+	  originates in the FreeDict CVS repository. From there checkouts are
+	  made to two buildhosts, where the data is converted to the formats of
+	  the supported platforms and where the FreeDict website is generated.
+	  The most interesting metadata is collected in an XML file. That is used
+	  to build the download and details pages on the FreeDict website. Other
+	  projects may use that XML file to find out about major changes to the
+	  FreeDict databases.</para>
+      </caption>
+    </mediaobject>
+  </figure>
 
   <para>A strength of FreeDict is its support for different dictionary
     platforms. Once a dictionary is available in TEI format, it can be
@@ -70,10 +81,18 @@ include $(FREEDICTDIR)/tools/Makefile.common
       </listitem>
     </varlistentry>
     <varlistentry>
+      <term><literal>find-homographs</literal></term>
+      <listitem>
+	<para>Looks for "double-entries" in the TEI file of the dictionary
+	  module, ie. entries with headwords that follow the same
+	  orthography.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
       <term><literal>test</literal></term>
       <term><literal>test-reverse</literal></term>
       <listitem>
-	<para>tests, whether all words can be looked up from the dictionary
+	<para>tests whether all words can be looked up from the dictionary
 	  in dictd by extracting a list of headwords, starting a
 	  <application>dictd</application> server and looking up each headword
 	  in turn</para>
@@ -84,7 +103,8 @@ include $(FREEDICTDIR)/tools/Makefile.common
       <term><literal>release-dict-tgz-reverse</literal></term>
       <term><literal>release-dict-tbz2</literal></term>
       <term><literal>release-dict-tbz2-reverse</literal></term>
-      <term><literal>release-dict-bz2-c5-reverse</literal></term>
+      <term><literal>release-dict-tbz2-c5</literal></term>
+      <term><literal>release-dict-tbz2-c5-reverse</literal></term>
       <term><literal>release-evolutionary</literal></term>
       <term><literal>release-rpm</literal></term>
       <term><literal>release-bedic</literal></term>
@@ -137,8 +157,8 @@ include $(FREEDICTDIR)/tools/Makefile.common
       <varlistentry>
 	<term><literal>clean</literal></term>
 	<listitem>
-	  <para>removes the non-source files generated during building anything
-	    from the dictionary module.</para>
+	  <para>removes the non-source files generated during the build of
+	    anything from the dictionary module.</para>
 	</listitem>
       </varlistentry>
     </variablelist>

@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
  "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
 
- <!-- Why make all urls to entitites? entitties are only useful for recurring things (Michael) -->
+ <!-- Why make all urls to entitites? entities are only useful for recurring things (Michael) -->
  <!ENTITY fdictUrl "http://www.freedict.org/">
  <!ENTITY fdictsf "http://sourceforge.net/projects/freedict/">
  <!ENTITY fdictMail "freedict-beta@lists.sourceforge.net">
@@ -34,6 +34,7 @@
  <!ENTITY requirements SYSTEM "requirements.xml">
  <!ENTITY submit SYSTEM "submitting.xml">
  <!ENTITY tools SYSTEM "tools.xml">
+ <!ENTITY writing-texteditor SYSTEM "writing-texteditor.xml">
  ]>
 
 <book id="index">
@@ -168,6 +169,8 @@
         </note>
       </blockquote>
     </legalnotice>
+    <releaseinfo>Please see the <link linkend="about">Colophon</link> for more information
+      about this document.</releaseinfo>
   </bookinfo>
 
   <dedication>
@@ -230,17 +233,23 @@ Where shall I find a man who forgets about words, and have a word with him?
   <!-- Don't delete this element! It makes the index appear here. -->
   <index/>
   
-  <colophon>
+  <colophon id="about">
     <!-- Michael: this colophon part doesn't appear in the TOC. The "next"
          link from the index will show this information -->
     <title>About this document</title>
-    <para>This HOWTO was written using the <application>DocBook XML</application> set
-      of DTDs using <application>Xemacs</application> as an editor.</para>
-    <para>Conversion to XHTML was done using
-      <application><ulink url="http://cyberelk.net/tim/xmlto/">xmlto</ulink></application>
-      with the following command:
-      <command>xmlto -m customise-docbook.xsl -o xhtml xhtml freedicthowto.xml</command>.
-    </para>
+    <para>This HOWTO was written using the <application>DocBook
+	XML</application> set of DTDs using <application>Xemacs</application>
+      and <application>vi</application> as editors.</para>
+    <para>Conversion to XHTML was done using <application><ulink
+	  url="http://cyberelk.net/tim/xmlto/">xmlto</ulink></application> with
+      the following command:</para>
+    <para><command>xmlto -m customise-docbook.xsl -o xhtml xhtml
+	freedicthowto.xml</command></para>
+    <para>You find the newest version of this HOWTO at
+      <ulink url="http://freedict.org/howto/">http://freedict.org/howto</ulink>.
+      You can download an offline version of this HOWTO from the FreeDict File Releases
+      at SourceForge, when it is released there (it is currently too unstable for
+      such release).</para>
   </colophon>
  
 </book>

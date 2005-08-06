@@ -1,55 +1,52 @@
-<!--<?xml version='1.0'?>
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
                "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
 <!ENTITY fdictUrl "http://www.freedict.org">
-<!ENTITY fdictMail " freedict-beta@lists.sourceforge.net" >
-<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de" >
-<!ENTITY PeteEmail  "petergozz@users.sf.net">
-
-
- ]>-->
-<!-- COMMENT OUT EVERYTHING above HERE UP TO BUILD -->
+<!ENTITY fdictMail "freedict-beta@lists.sourceforge.net">
+<!ENTITY MichEmail "bunk@imn.htwk-leipzig.de">
+<!ENTITY PeteEmail "petergozz@users.sf.net">
+]>
+-->
 <chapter id="dictd">
-  <title>The dictd approach</title>
+  <title>The Dictd Approach</title>
   <abstract>
-    <para>This section explains how to build most of the TEI format
-      dictionary from a file formatted the same way as a dictd
-      compliant .dict file. But it should be noted, that the .index
-      file is not taken into consideration!</para>
-    <para>It relies on you laying out your dictionary with a very
-      simple format. You will still have to construct the TEI header
-      section, but most of the work will be done for with the actual
-      content of the dictionary.</para>
+    <para>This section explains how to build most of the TEI format dictionary
+      from a file formatted the same way as a dictd compliant .dict file.
+      Beware that the .index file is ignored!</para>
+    <para>It relies on you laying out your dictionary with a very simple
+      format. You will still have to construct the TEI header, but most of the
+      work will be done for the actual content of the dictionary.</para>
   </abstract>
+
   <section id="dictd-format">
-    <title>The Dictd.dict Format</title>
-    <para>If you have any dictd format dictionaries installed, you may of
-      course open one of the <filename>dictionary-name.dict.dz</filename>
-      files to have a look at the format and contents. You will need the
-      tool called <command>dictunzip</command> to do so, but it comes
-      along with the rest of dictd.</para>
-    <para>Beyond the dictd header section you will notice that the file
-      is a text file with a simple and predictable format.</para>
+    <title>The Dictd Database Format</title> <para>If you have any dictionaries
+      in dictd database format installed, you may open one of the
+      <filename>dictionary-name.dict.dz</filename> files to have a look at the
+      format and contents. You will need the tool <command>dictunzip</command>
+      that comes with dictd or <command>gunzip</command> to uncompress a .dz
+      file. The dictzip compression extends the gzip compression with special
+      data, so the uncompression can be done by gzip, where the header data 
+      is discarded.</para>
+    <para>Beyond the dictd header section you will notice that the file is a
+      text file with a simple and predictable format.</para>
     <para>When a dictd dictionary is built using <command>dictfmt</command>,
-      two files are created. One file, the one we are interested in here,
-      the dictionary-name.dict file, contains the data that is displayed
-      on the interface when a user asks for the translation of a word.
-      The second file, the dictionary-name.index file is a listing of the
-      position of everything in the first .dict file. Together they form an
-      indexed database of headwords and translations.
-      <indexterm><primary>interface</primary></indexterm>
-      <indexterm><primary>headwords</primary></indexterm>
-      <indexterm><primary>translations</primary></indexterm></para>
+      two files are created. The <filename>dictionary-name.dict</filename>
+      file, the one we are interested in here, contains the data that is
+      presented to the user when she asks for the translation or definition of
+      a word. The second file, <filename>dictionary-name.index</filename>, is a
+      listing of the position and length of the definitions in the .dict file.
+      Together they form an indexed database of headwords and definitions.
+      <indexterm><primary>headword</primary></indexterm>
+      <indexterm><primary>definition</primary></indexterm>
+      <indexterm><primary>translation</primary></indexterm></para>
 
-    <para>Here are some <emphasis>&lt;comment type="commented" &gt; snippets
-      from each</emphasis>. In this case the freedict-eng-lat.dict</para>
-
+    <para>Here is a <emphasis>&lt;comment/&gt;</emphasis> commented snippet
+	from the <filename>freedict-eng-lat.dict</filename> file.</para>
     <para><example id="eng-lat">
       <title>A freedict-eng-lat.dict snippet</title>
-      <warning><para>The pronunciation encoding is messed up
-        in this example!</para></warning>
       <screen>
-	  00-database-info        <lineannotation> &lt;comment /&gt; A formatted string Dictd knows about</lineannotation>
+	  00-database-info     <lineannotation>&lt;comment/&gt; A formatted string dictd knows about</lineannotation>
    3. Apr. 2000 Database was converted to TEI format and checked
    into CVS 9.Jan.2000Phonetics added (H.Ey) - machine generated
    from MBRODICT( http://tcts.fpms.ac.be/synthesis/mbrdico
@@ -67,65 +64,64 @@
    the GNU General Public License along with this program; if
    not, write to the Free Software Foundation, Inc., 59 Temple
    Place - Suite 330, Boston, MA 02111-1307, USA.
-<lineannotation> &lt;comment /&gt; A White Space (not TAB) indented info block</lineannotation>
-
+<lineannotation>&lt;comment/&gt; A space (not TAB) indented info block</lineannotation>
 
 00-database-short
-   English-Latin Freedict dictionary
-<lineannotation>  &lt;comment /&gt; The Dictionary name, not always the same as the file name</lineannotation>
+   English-Latin Freedict Dictionary
+<lineannotation>&lt;comment/&gt; The dictionary name, usually different than the file name</lineannotation>
 00-database-url
-   http://www.freedict.de
-<lineannotation> &lt;comment /&gt; The "canonical source" (home) of this dictionary</lineannotation>
+   http://www.freedict.org
+   <lineannotation>&lt;comment/&gt; The website of the origin of this dictionary</lineannotation>
 
-ABC
+ABC /eibiːsiː/
      abecedarium
 
-Abyssinian [&#201;bisini&#201;n]
+Abyssinian /əbisiniən/
      &#195;thiops
 
-Academy [&#201;k&#195;&#166;d&#201;mi &#203;]
+Academy /əkædəmiː/
      Academia
 
-Achaea [&#201;t&#116;i&#201;]
+Achaea /ətʃiə/
      Achaia
 
-Achaia [&#201;t&#116;i&#201;]
+Achaia  /ətʃiə/
      Achaia
 
-Acheron [&#201;t&#116;er&#201;n]
+Acheron /ətʃerən/
      Acheron
      
-Actium [&#195;&#166;k&#116;aim]
+Actium  /ækʃaim/
      Actium
 
-Adam [&#195;&#166;d&#201;m]
+Adam  /ædəm/
      Adam
 
-Adriatic [&#201;dri&#195;&#166;tik]
+Adriatic  /ədriætik/
      Hadria
 
-Adriatic Sea [&#201;dri&#195;&#166;tiksi&#201;]
+Adriatic Sea  /ədriætiksiə/
      Hadria
 
-Aeneas [&#201;ni &#203;]
+Aeneas  /əniːz/
      &#195;neas
 
-Aeolus [i &#203;]
+Aeolus  /iːələs/
      &#195;olus
 
-	  <lineannotation>&lt;comment /&gt; snipped</lineannotation>
+	  <lineannotation>&lt;comment/&gt; Snipped</lineannotation>
 
-zither [zi&#195;&#166;&#201;r]
+zither /ziðər/
      cithara
 
-zone [zoun]
+zone /zoun/
      zona
 
-	  <lineannotation>&lt;comment /&gt; Notice the clean empty line between each entry</lineannotation>
+	  <lineannotation>&lt;comment/&gt; Notice the empty lines between entries</lineannotation>
 	</screen>
 	<para>So, an entry has this format: Blank line above. Headword
           starts on the beginning of the line (column 0), the translation
-          starts on the next new line that is indented more than column 0.</para>
+          starts on the next line that is indented more than column 0.</para>
 
 	<para>Like so:
 	  <screen>
@@ -134,10 +130,8 @@ Headword
 
 Headword2
     Translation2
-
 	  </screen>
 	</para>
-
       </example>
     </para>
 
@@ -145,14 +139,13 @@ Headword2
       <example id="eng-lat-idx-eg">
 	<title>The dictd .index format</title>
 	<para>The corresponding .index file is built by the
-	  <application>dictfmt</application> tool
-          and looks like this:</para>
+	  <application>dictfmt</application> tool and looks like this:</para>
 	<para id="eng-lat-index">
 	  <screen>
 00-database-info        Q       QM
 00-database-short       Qd      3
 00-database-url RV      q
-	    abacus  BZv     3
+abacus  BZv     3
 abbess  Ban     e
 abbey   BbG     b
 abbot   Bbi     a
@@ -168,11 +161,8 @@ abhor   BiA     s</screen>
 	</para>
       </example>
     </para>
-
     <para>When running the dictd (or Serpento) dictionary server, these files
-      are used for matching queries with headwords. Strange, things can happen
-      if you edit one with out the other. There is nothing to stop you working
-      on copies though.
+      are used for matching queries with headwords.
       <indexterm>
 	<primary>database</primary>
 	<secondary>dictd</secondary>
@@ -187,47 +177,47 @@ abhor   BiA     s</screen>
 	<primary>00-database-url</primary>
       </indexterm>
     </para>
-    <section id="howto-process">
-      <title>Processing your dictd format file</title>
-
-      <para>Somehow you have your headwords and related translations
-        written in the <link linkend="eng-lat">simple format</link>
-        described above. You might need to process a spread sheet or
-        some other document into this format. As there are many many
-        possibilities I can not give you a simple method to do that.</para>
-      <para>Otherwise you may have an existing dictd dictionary file
-	or finally you may be starting from scratch. In that
-	case we recommend you to use a template as demonstrated later. If you
-	have much lexicographic, etymological or other information to add to
-	your dictionary, we strongly suggest you to use a template or a fully
-	fledged XML editor.</para>
-      <para>Download the <filename>dict2tei.py</filename> python script
-        from the FreeDict servers at Sourceforge.</para>
-      <para>Follow the instructions included in the package to install and
-	run with your file.</para>
-      <para>All you need to do is something like: <command>dict2tei.py
-	-f your-dict-format.dict -o same-working-name</command> and
-	the rest should happen automatically. 
-      </para>
-      <para>Now hopefully all you have to do is markup any extra
-	entries and add the TEI header information. Please see the
-        <link linkend="write-tei">Writing TEI</link> and
-        <link linkend="installTeiDTD">Installing TEI</link> sections.</para>
-    </section>
-    <section>
-      <title>Sorting a .index file</title>
- 
-      <para>Sometimes a match lists headwords that yield no entry when they
-        are looked up. In such case, it is likely that the index is sorted
-        incorrectly. For a word to be looked up, the way the index is sorted
-        and the way the dict server looks for entries have to be exactly
-        the same.</para>
-       <para>In such case, it can be sorted again, using a command such as
-        <command>LC_ALL=C sort -t $'\t' -k1,1 -bdf broken.index >working.index</command>.
-        Note the <literal>LC_ALL=C</literal>! Leaving it out can produce a broken index,
-        especially related to space characters. </para>
-
-    </section>
   </section>
+
+  <section id="howto-process">
+    <title>Converting dictd database format files into TEI</title>
+    <para>Somehow you have your headwords and related translations written in
+      the <link linkend="eng-lat">simple format</link> described above. You
+      might need to convert a spread sheet or some other document into this
+      format. As there are many possibilities we can not give you a description
+      to do that.</para>
+    <para>Otherwise you may have an existing dictd dictionary file
+      or finally you may be starting from scratch. In that
+      case we recommend you to use a template as demonstrated later. If you
+      have much lexicographic, etymological or other information to add to
+      your dictionary, we strongly suggest you to use a template or a fully
+      fledged XML editor.</para>
+    <para>Download the <filename>dict2tei.py</filename> python script
+      from the tools package at the FreeDict servers at Sourceforge.</para>
+    <para>Follow the instructions included in the package to install and
+      run with your file.</para>
+    <para>All you need to do is something like: <command>dict2tei.py
+	-f your-dict-format.dict -o same-working-name</command> and
+      the rest should happen automatically.</para>
+    <para>Now hopefully all you have to do is markup any extra
+      entries and add the TEI header information. Please see the
+      <link linkend="write-tei">Writing TEI</link> and
+      <link linkend="installTeiDTD">Installing TEI</link> sections.</para>
+  </section>
+
+  <section>
+    <title>Sorting a .index file</title>
+    <para>Sometimes a match lists headwords that yield no entry when they are
+      looked up. In such case, it is likely that the index is sorted
+      incorrectly. For a word to be looked up, the way the index is sorted and
+      the way the dict server looks for entries have to be exactly the
+      same.</para>
+    <para>In such case it can be sorted again, using a command such as:</para>
+    <para><command>LC_ALL=C sort -t $'\t' -k1,1 -bdf broken.index
+	>working.index</command></para>
+    <para>Note the <literal>LC_ALL=C</literal>: Leaving it out can produce a
+      broken index.</para>
+  </section>
+
 </chapter>
 
