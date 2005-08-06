@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
+  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+]>
+<TEI.2>
+
+  <teiHeader>
+
+    <fileDesc>
+      <titleStmt>
+        <title>Lonely Braces Testcases</title>
+	<author>Michael Bunk &lt;kleinerwurm@gmx.net&gt;</author>
+      </titleStmt>
+      <editionStmt>
+	<edition>0.1</edition>
+      </editionStmt>
+      <extent>only a handful of headwords</extent>
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability>
+	  <p>Copyright (C) 2005 Michael Bunk &lt;kleinerwurm@gmx.net&gt;</p>
+	  <p>GNU GENERAL PUBLIC LICENSE</p>
+	  <p>This program is free software; you can redistribute it and/or modify
+	    it under the terms of the GNU General Public License as published by
+	    the Free Software Foundation; either version 2 of the License, or
+	    (at your option) any later version.</p>
+	  <p>This program is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU General Public License for more details.</p>
+	  <p>You should have received a copy of the GNU General Public License
+	    along with this program; if not, write to the Free Software
+	    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</p>
+	</availability>
+	<date>2005</date>
+        <pubPlace>http://freedict.org/</pubPlace>	
+      </publicationStmt>
+
+      <seriesStmt>
+	<title>free dictionaries</title>
+      </seriesStmt>
+
+      <notesStmt>
+        <note type="status">testing</note>
+      </notesStmt>
+			    
+      <sourceDesc>
+	<p>Home: <xptr url="http://freedict.org/"/></p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you through nice people making it
+          available for free and for good. It is part of the FreeDict project,
+          http://www.freedict.org / http://freedict.de. This
+          project aims to make available many translating dictionaries
+          for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+      <change>
+	<date>2005-06-23</date>
+	<respStmt>
+	  <resp>FreeDict Maintainer</resp>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Wrote these testcases.</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+      <entry>
+        <form><orth>(</orth></form>
+	<trans><tr>This entry should be found.</tr></trans>
+      </entry>
+
+      <entry>
+        <form><orth>a { without counterpart</orth></form>
+	<trans><tr>This entry should be found as well.</tr></trans>
+      </entry>
+
+      <entry>
+        <form><orth>a valid headword</orth></form>
+	<trans><tr>But a broken translation. &lt;</tr></trans>
+      </entry>
+
+      <entry>
+        <form><orth>a valid headword</orth></form>
+	<trans><tr>But an as well broken translation. ></tr></trans>
+      </entry>
+
+      <entry>
+        <form><orth>valid headword without any braces</orth></form>
+	<trans><tr>This entry should not be found.</tr></trans>
+      </entry>
+
+      <entry>
+        <form><orth>valid headword (with allowed corresponding braces)</orth></form>
+	<trans><tr>This entry should not be found. But since braces should be avoided,
+	we could emit a warning...</tr></trans>
+      </entry>
+
+      <entry>
+        <form>
+	  <orth>This is a pathologic example (BTW, phrases as headwords are
+	    something disputable).</orth>
+	  <pron>The problem (with this element {content)} ist, that different
+	    brace types nest incorrectly.</pron>
+	</form>
+	<trans><tr>This entry should be found, but cannot.</tr></trans>
+      </entry>
+
+      <entry>
+        <form>
+	  <orth>Did I mention it would be nice (to</orth>
+	  <pron>be able to automatically determine) test success or failure?</pron>
+	</form>
+	<trans><tr>This entry should be found.</tr></trans>
+      </entry>
+
+      <entry>
+        <form>
+	  <orth>Many elements</orth>
+	</form>
+	<trans><tr>The</tr></trans>
+	<trans><tr>bug</tr></trans>
+	<trans><tr>can</tr></trans>
+	<trans><tr>be</tr></trans>
+	<trans><tr>found</tr></trans>
+	<trans><tr>only</tr></trans>
+	<trans><tr>in</tr></trans>
+	<trans><tr>the</tr></trans>
+	<trans><tr>last</tr></trans>
+	<trans><tr>"tr"</tr></trans>
+	<trans><tr>element {</tr></trans>
+      </entry>
+
+    </body>
+  </text>
+</TEI.2>
