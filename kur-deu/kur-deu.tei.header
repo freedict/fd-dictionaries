@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI Consortium//DTD TEI P4//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE">
+<!ENTITY % TEI.dictionaries "INCLUDE"> 
+<!ENTITY % TEI.linking	    "INCLUDE">
+<!ATTLIST xptr url CDATA #IMPLIED>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+<TEI.2>
+
+  <teiHeader>
+    <fileDesc>
+      <titleStmt> 
+	<title>Kurdish-German Ferheng/FreeDict Dictionary</title>
+	<respStmt> 
+	  <resp>Author</resp>
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
+	</respStmt> 
+	<respStmt> 
+	  <resp>Maintainer</resp>
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
+	</respStmt> 
+	<respStmt> 
+	  <resp>converted into TEI</resp>
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
+	</respStmt> 
+      </titleStmt>
+	      
+      <editionStmt>
+	<edition>0.1</edition>
+      </editionStmt>
+
+      <extent>about 22 000 headwords</extent>
+
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability> 
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p> 
+	</availability> 
+	<date>2005</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+      <seriesStmt>
+        <title>free dictionaries</title>
+      </seriesStmt>
+
+      <notesStmt>
+	<note type="status">stable</note>
+      </notesStmt>  
+
+      <sourceDesc>
+	<p>Home: <xptr url="http://ferheng.org/"/></p>
+	<p>This file was converted from another electronic document.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>     
+      <projectDesc>
+	<p>This dictionary comes to you through nice people making it
+	  available for free and for good. It is part of the FreeDict project,
+	  http://www.freedict.org / http://freedict.de. This
+	  project aims to make available many translating dictionaries
+	  for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+    
+    <revisionDesc>
+      <change>
+	<date>2005-08-01</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Imported this dictionary version 2005-07-29 into FreeDict by
+	  creating the initial Makefile.</item>
+      </change>
+    </revisionDesc>
+
+  </teiHeader>
+
+<text>
+  <body>
