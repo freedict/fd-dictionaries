@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Id: xmltei2xmldict.pl,v 1.6 2004-10-23 09:26:14 micha137 Exp $
+# $Id: xmltei2xmldict.pl,v 1.7 2005-08-14 10:41:05 micha137 Exp $
 
 # V1.4 5/2004 Michael Bunk
 #   * added option to generate 00-database-allchars header 
@@ -48,7 +48,7 @@ if (!defined $opt_f) {
  print STDERR " dictd database format keeping the xml in the <entry> elements\n\n";
  print STDERR " The TEI inputfile is expected as XML in TEI P4 format, see\n";
  print STDERR " http://www.tei-c.org/\n";
- print STDERR " Outputs .index and .dict file. The index is sorted with 'sort ...'\n";
+ print STDERR " Outputs .index and .dict file. The index is sorted with sort(1).\n";
  print STDERR " This help is outputted, because here was no tei file given.\n\n"; 
  print STDERR "Usage: $0 -f <teifile> [-sura] [-i <filtercmd>|-t <stylesheet.xsl>] [-l <locale>]\n";
  print STDERR " -s\t skip TEI header: do not treat it to generate\n";
@@ -60,11 +60,15 @@ if (!defined $opt_f) {
  print STDERR "   \t  ie. all characters are used in comparisons\n";
  print STDERR " -r\t generate reverse index (use <tr> instead of <orth>)\n";
  print STDERR " -a\t generate headword 00-database-allchars (but no change in index mangling!)\n";
+ print STDERR "   \t  This converter cannot generate the 00-database-alphabet entry, so -a is\n";
+ print STDERR "   \t  required for non-latin scripts. You should prefer to use dictfmt(1) then.\n";
  print STDERR " -i <filtercmd>\t execute filtercmd for each entry (eg. 'sabcmd style.xsl')\n";
  print STDERR " -t <stylesheet.xsl>\t use an XSLT stylesheet for filtering the entries\n";
  print STDERR "   \t  with the Sablotron library. Excludes -i.\n";
- print STDERR " -l <locale>\t call 'sort' using <locale>. If not given, 'C' locale\n";
- print STDERR "   \t  will be used ('C' locale for normal & utf-8 index)\n";
+# this option exists in error - only byte ordering (through setting locale to
+# 'C' is correct for .index files
+# print STDERR " -l <locale>\t call 'sort' using <locale>. If not given, 'C' locale\n";
+# print STDERR "   \t  will be used ('C' locale for normal & utf-8 index).\n";
  print STDERR " <teifile>\t name of tei inputfile\n\n";
  die;
  }

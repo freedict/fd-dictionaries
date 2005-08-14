@@ -210,14 +210,22 @@ validation: $(dictname).tei
 	if [ -x $(xmllint) ]; then \
 		$(xmllint) --noout --valid $(dictname).tei; fi
 
-test:
+test: $(dictname).index $(dictname).dict
 	$(toolsdir)/testing/test-database.pl -f $(dictname) \
  -l $(DICTD_LOCALE) |tee testresult-$(version).log
 
-test-reverse:
+test-reverse: $(rdictname).index $(rdictname).dict
 	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
  -l $(DICTD_LOCALE) |tee testresult-$(version)-reverse.log
- 
+
+test-c5: $(dictname).c5.index $(dictname).c5.dict.dz
+	$(toolsdir)/testing/test-database.pl -f $(dictname).c5 \
+ -l $(DICTD_LOCALE) |tee testresult-$(version)-c5.log
+
+test-reverse-c5: $(rdictname).c5.index $(rdictname).c5.dict
+	$(toolsdir)/testing/test-database.pl -f $(rdictname).c5 \
+ -l $(DICTD_LOCALE) |tee testresult-$(version)-c5-reverse.log
+
 commit: 
 	cvs -z3 commit
 
@@ -437,7 +445,8 @@ clean::
 	vok release-evolutionary \
 	bedic-precedence release-bedic release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
-	commit validation test test-reverse clean dist dbupdate \
+	commit clean dist dbupdate validation \
+	test test-reverse test-c5 test-c5-reverse \
 	find-homographs \
 	stardict release-stardict
 

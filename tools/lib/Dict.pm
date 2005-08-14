@@ -44,7 +44,7 @@ our ($headwords, $prev_word, $start_article, $head, $fill2, $end_article,
  @hwords, $text, $all_text, $utf8mode);
 
 # there is CPAN module MIME::Base64 for this! but anyway,
-# without it we are inpedendent
+# without it we are independent
 our $b64_list =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 sub b64_encode {
     my $val = shift @_;
