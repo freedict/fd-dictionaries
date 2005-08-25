@@ -1,3 +1,7 @@
+/** @file
+ * @brief Utility functions for the Graphical User Inferface
+ */
+
 #include "utils.h"
 
 // for PACKAGE_NAME

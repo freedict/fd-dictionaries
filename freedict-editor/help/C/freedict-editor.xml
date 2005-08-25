@@ -8,13 +8,6 @@
   <!ENTITY app "<application>FreeDict-Editor</application>">
   <!ENTITY appn "freedict-editor">
   <!ENTITY ipatable SYSTEM "ipa-table.xml">
-  <!--
-XXX The GDP Style Guide should be read. The
-Style Guide tells how to write documentation, ways to structure the documenta-
-tion, and technical writing techniques. The GDP Style Guide is located at
-http://developer.gnome.org/projects/gdp/styleguide.html.
-
- -->
 ]>
 
 <!-- 
@@ -138,7 +131,7 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
       <listitem>
 	<para>Partial support for the Text Encoding
 	  Initiative eXtensible Markup Language, Version 4, Chapter 12 "Print
-	  Dictionaries"  file format (TEI P4 XML).  The generated file is
+	  Dictionaries" file format (TEI P4 XML).  The generated file is
 	  always valid.</para> 
       </listitem> 
       <listitem>
@@ -161,22 +154,67 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
 	<para>When adding entries, the workflow ensures that
 	  double-entries of the same word are avoided.</para>
       </listitem> 
+      <listitem>
+	<para>Integration of sanity checks and a spell checker enable
+	  authoring of high quality.</para>
+      </listitem> 
+      <listitem>
+	<para>Ability to abort a never ending XPath evaluation (this is not a matter of course!).</para>
+      </listitem> 
     </itemizedlist>
   </sect1>
 
-<!-- =========== Getting Started ============================== -->
-<!-- Use the Getting Started section to describe the steps required
+  <sect1 id="freedict-editor-requirements">
+    <title>Requirements</title>
+    
+    <para>&app; has the following software requirements:</para>
+    <itemizedlist>
+      <listitem><para><ulink url="http://gnu.org/">GNU</ulink>/Linux operating system</para></listitem>
+      <listitem><para><ulink url="http://xmlsoft.org/">libxml2 &amp; libxslt</ulink></para></listitem>
+      <listitem><para><ulink url="http://gtk.org/">GTK+ >=2.2</ulink></para></listitem>
+      <listitem><para><ulink url="http://unknown XXX/">libgtkhtml</ulink> XXX find link</para></listitem>
+      <listitem><para>XXX what about libgnomeui-2.0 libbonoboui-2.0 gconf-2.0</para></listitem>
+    </itemizedlist>
+
+    <para>The following additional software is recommended, but a build should proceed without it:</para>
+    <itemizedlist>
+      <listitem><para><ulink url="http://aspell.net/">aspell >=0.60.3</ulink></para></listitem>
+    </itemizedlist>
+
+    <para>&app; requires a lot of memory. The virtual memory usage of a &app; process as shown by
+      the <command>ps</command> command is as follows:</para>
+
+    <table frame='all'>
+      <title>&app; Memory Usage</title>
+      <tgroup cols='2' align='right' colsep='1' rowsep='0'>
+       <thead>
+        <row>
+	 <entry align="right">Entries</entry>
+	 <entry>Virtual Memory Usage in MB</entry>
+        </row>
+       </thead>
+       <tbody>
+         <row><entry>0</entry><entry>11</entry></row>
+         <row><entry>8 000</entry><entry>30</entry></row>
+         <row><entry>80 000</entry><entry>140</entry></row>
+       </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+
+  <!-- =========== Getting Started ============================== -->
+  <!-- Use the Getting Started section to describe the steps required
      to start the application and to describe the user interface components
      of the application. If there is other information that it is important
      for readers to know before they start using the application, you should
      also include this information here. -->
 
-  <sect1 id="&appn;-getting-started"> 
+  <sect1 id="freedict-editor-getting-started"> 
     <title>Getting Started</title> 
 
     <para>This section mostly assumes that you have already started &app;.</para>
     
-    <sect2 id="&appn;-opening">
+    <sect2 id="freedict-editor-opening">
       <title>Opening a TEI dictionary</title>
       <para>Before you can work on a dictionary, you have to open one.  You can
 	open a TEI file in the following ways:</para> 
@@ -257,7 +295,7 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
       </variablelist>
     </sect2>
 
-    <sect2 id="&appn;-when-start">
+    <sect2 id="freedict-editor-when-start">
       <title>When You Start &app;</title>
       <para>When you start <application>&app;</application>, the following
 	window is displayed.</para>
@@ -401,7 +439,7 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
     </sect2> 
 
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="&appn;-special-chars"> 
+    <sect2 id="freedict-editor-special-chars"> 
       <title>How to Enter Special Characters</title> 
       <para>This functionality is not provided by &app; itself. But many languages
 	require accented and other special characters to be entered, hence this
@@ -410,7 +448,7 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
       <para>One way to enter special characters is to use GTK+ Input Methods.
 	In &app; this way is mainly used for entering IPA Characters, but it
         can be used to enter other characters as well. See
-	<xref linkend="&appn;-enter-ipa"/>.</para>
+	<xref linkend="freedict-editor-enter-ipa"/>.</para>
 
       <para>In the <ulink type="help" url="man:x"><application>X
 	    Window System</application></ulink>, the <firstterm>X Keyboard
@@ -557,21 +595,21 @@ http://developer.gnome.org/projects/gdp/styleguide.html.
       <tip>
 	<para>Another nice thing of XKB is its ability to show the current
 	  keyboard configuration using the current keyboard geometry. Enter the
-	  following command:</para>
+	  following command:
 
-	<userinput><ulink type="help" url="man:xkbprint">xkbprint</ulink>
-	  -color -lg <replaceable>group</replaceable> -ll
-	  <replaceable>shiftlevel</replaceable> :0 - | <ulink type="help"
-	    url="man:gv">gv</ulink> -seascape -</userinput>
+	  <userinput><ulink type="help" url="man:xkbprint">xkbprint</ulink>
+	    -color -lg <replaceable>group</replaceable> -ll
+	    <replaceable>shiftlevel</replaceable> :0 - | <ulink type="help"
+	      url="man:gv">gv</ulink> -seascape -</userinput>
 
-	<para><replaceable>group</replaceable> must be replaced by the keyboard
+	  <replaceable>group</replaceable> must be replaced by the keyboard
 	  group to be shown (1-4). <replaceable>shiftlevel</replaceable> must
 	  also be replaced by a number from 1-4  - out of which 1 (the default)
 	  and 3 are most useful. The first part of this command produces a
 	  PostScript file. To view it with the second part of this command, the
-	 <literal>gv</literal> command must be available, ie. the
-	 <application>ghostview</application> application must be
-	 installed.</para>
+	  <literal>gv</literal> command must be available, ie. the
+	  <application>ghostview</application> application must be
+	  installed.</para>
       </tip>
 
       <para>Another way of configuring the XKB extension is to specify the XKB
@@ -598,51 +636,58 @@ EndSection</programlisting>
       </sect3>
     </sect2> 
 
-    <!-- ================ Usage Subsection ================================ -
-    <sect2 id="freedict-editor-scroll-image"> 
-      <title>To Scroll an Image</title> 
-      <para>To scroll around an image that is larger than the image window or
-	full screen window, you can use the following methods:</para> 
-      <itemizedlist> 
-	<listitem> 
-	  <para>Use the arrow keys on the keyboard.</para> 
-	</listitem> 
-	<listitem> 
-	  <para>Drag the image in the opposite direction to the direction in
-	    which you want to scroll. For example, if you want to
-	      scroll down the image, 
-	    drag the image upwards in the window.</para> 
-	</listitem> 
-	<listitem> 
-	  <para>Use the scrollbars on the window.</para> 
-	</listitem> 
-      </itemizedlist> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="freedict-editor-select-entries"> 
+      <title>How to Select Entries</title> 
+      <para>Prior to editing entries, you have to select them from all the enties in the
+        currently open dictionary. To select entries you have to write an XPath expression
+	which the computer will evaluate. The result is a set of matching entries.</para>
+
+      <para> The XPath language is very powerful and because of that it can be complicated.</para>
+	
+      <para>&app; has two input fields to support you in entering XPath epressions for
+        selecting entries. The Input Field <guilabel>XPath Template</guilabel> lets you enter
+	the actual XPath expression. But in it you are allowed to write <literal>%s</literal>,
+	which will be replaced by the contents of the <guilabel>Select</guilabel> Input Field.
+	Normally you will modify the <guilabel>Select</guilabel> Input Field much more often than
+	the template.</para>
+
+      <para>WHwn an XPath evaluation takes too much time (this happens especially when you use
+        the <literal>//</literal> operator), you can abort it. For this just click on
+	the Button <guilabel>Abort XPath Evaluation</guilabel>.</para>
+
+      <para>&app; extends the functions available in XPath expressions. For this it uses the
+      namespace prefix <literal>fd</literal> for the namespace
+      <literal>http://freedict.org/freedict-editor</literal>.</para>
+      
+      <para>Currently only one XPath extension function exists:</para>
+      
+      <programlisting>bool unbalanced-braces(nodeset)</programlisting>
+      
+      <para>checks the string representation of each node in the nodeset                                       
+        and returns true() when any node's string representation is unbalanced</para>
+	
+      <para>It is used in the sanity check for unbalanced braces.</para>
+
     </sect2>
     
-    <!- ================ Usage Subsection ================================ ->
-    <sect2 id="freedict-editor-close-image"> 
-      <title>To Close an Image</title> 
-      <para>To close an image, choose 
-	<menuchoice> 
-	  <guimenu>File</guimenu> 
-	  <guimenuitem>Close This Window</guimenuitem> 
-	</menuchoice>. If the window is the last
-	&app; window open, the application exits. </para> 
-      <para>To quit &app; and close all of the
-	windows that you opened in the current session, choose 
-	<menuchoice> 
-	  <guimenu>File</guimenu> 
-	  <guimenuitem>Exit</guimenuitem> 
-	</menuchoice>. </para> 
-      <warning>
-      <para>This is a warning.</para>
-      </warning>
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="freedict-editor-spellcheck"> 
+      <title>How to Spell Check</title> 
+      <para>One might wonder what this function has lost in a dictionary
+	editor.  Most new dictionaries will be developed for languages which
+	don't have a spellchecking wordlist yet. But just consider the other
+	language of the dictionary. Mostly it will be English - for which good
+	spellchecking lists do exist! Also, you could generate a spellchecking
+	wordlist from the headwords and check the example sentences with
+	it!</para>
+      <para>So much for the motivation. Just a number: In my 2280 entries
+	Khasi-English dictionary I had 10 spelling mistakes.</para>
     </sect2>
-    --> 
   </sect1>
   
   <!-- ============= Customization ============================= -->
-  <sect1 id="&appn;-prefs"> 
+  <sect1 id="freedict-editor-prefs"> 
     <title>Settings</title> 
     <para>To configure &app;, choose 
       <menuchoice> 
@@ -654,63 +699,26 @@ EndSection</programlisting>
     <itemizedlist> 
       <listitem> 
 	<para> 
-	  <xref linkend="&appn;-prefs-general"/></para> 
+	  <xref linkend="freedict-editor-prefs-general"/></para> 
       </listitem> 
       <listitem> 
 	<para> 
-	  <xref linkend="&appn;-prefs-entry-editor"/></para> 
+	  <xref linkend="freedict-editor-prefs-entry-editor"/></para> 
       </listitem> 
     </itemizedlist>
     
     <!-- Use a new section to describe different tabbed sections on the
          Settings or Preferences dialog. -->
-    <sect2 id="&appn;-prefs-general">
+    <sect2 id="freedict-editor-prefs-general">
       <title>General</title> 
-      <!--
       <variablelist> 
 	<varlistentry> 
-	  <term> 
-	    <guilabel>Interpolation type</guilabel> </term> 
+	  <term><guilabel>(guilabel)</guilabel></term> 
 	  <listitem> 
-	    <para>Use this drop-down list box to specify the
-	      interpolation method that
-	      &app; uses when the
-	      application resizes images. Select one of the following
-	      options:</para>
-	    <itemizedlist> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Nearest neighbor</guilabel> </para> 
-		<para>This method of interpolation takes a location in the
-		  original image and replicates the pixel that is
-		  nearest to this location. When 
-		  you zoom in on an image, the pixels are
-		  replicated. When you zoom out of an 
-		  image, the image loses some of its detail. </para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Bilinear</guilabel> </para> 
-		<para>This is a simple and fast method of interpolation. When
-		  you zoom in on an image, &app; uses up to four
-		  adjacent pixels to compute the colors of the new
-		  pixels. When you zoom out of 
-		  an image, &app; averages regions of color in the
-		  existing image to compute the colors of the pixels. </para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Hyperbolic</guilabel> </para> 
-		<para>This is a high-quality, slow method of interpolation. The
-		  application performs interpolation on the image in
-		  the manner described in 
-		  Digital Image Warping by George Wolberg.</para> 
-	      </listitem> 
-	    </itemizedlist> 
-	    <para>Default: 
-	      <guilabel>Nearest neighbor</guilabel>.</para> 
+	    <para>(description)</para>
 	  </listitem> 
 	</varlistentry> 
+      <!--
 	<varlistentry> 
 	  <term> 
 	    <guilabel>Transparency type</guilabel> </term> 
@@ -835,25 +843,16 @@ EndSection</programlisting>
 	    <para>Default: unselected.</para> 
 	  </listitem> 
 	</varlistentry> 
-      </variablelist>
       --> 
+      </variablelist>
     </sect2>
     
-    <sect2 id="&appn;-prefs-entry-editor">
+    <sect2 id="freedict-editor-prefs-entry-editor">
       <title>Entry Editor</title>
 
+      <para>This section remains unwritten. This paragraph just keeps
+	DOCBOOK validators happy.</para> 
       <!--
-      <para>You can set the following viewer preferences: 
-	<itemizedlist> 
-	  <listitem> 
-	    <para> 
-	      <xref linkend="&appn;-viewer-prefs-image-window"/></para> 
-	  </listitem> 
-	  <listitem> 
-	    <para> 
-	      <xref linkend="&appn;-viewer-prefs-full-screen"/></para> 
-	  </listitem> 
-	</itemizedlist> </para> 
       <sect3 id="&appn;-viewer-prefs-image-window"> 
 	<title>Image Windows</title> 
 	<para>The 
@@ -1007,42 +1006,44 @@ EndSection</programlisting>
   </sect1>
 
   <!-- ============= Limitations =========================== -->
-  <sect1 id="&appn;-bugs">
+  <sect1 id="freedict-editor-bugs">
     <title>Known Bugs and Limitations</title>
 
     <para>
       <itemizedlist>
-	<listitem>Parameter Entities (ie. entities for use in DTDs)
-	  in the internal DTD subset are dereferenced (ie. replaced by their
-	  replacement text), you see the result after saving and
-	  reloading.</listitem>
-	<listitem>General Entities (ie. entities for use in the document
-	  content) are not handled transparently by XSLT. They are replaced by
-	  their replacement text and should be avoided from the
-	  beginning.</listitem>
-	<listitem>Memleaks are likely</listitem>
-	<listitem>Some deprecated and/or private fields/functions of GTK+,
-	  libgnomeui and libbonoboui are used</listitem>
+	<listitem><para>Parameter Entities (ie. entities for use in DTDs)
+	    in the internal DTD subset are dereferenced (ie. replaced by their
+	    replacement text), you see the result after saving and
+	    reloading.</para></listitem>
+	<listitem><para>General Entities (ie. entities for use in the document
+	    content) are not handled transparently by XSLT. They are replaced by
+	    their replacement text and should be avoided from the
+	    beginning.</para></listitem>
+	<listitem><para>Memleaks are likely</para></listitem>
+	<listitem><para>Some deprecated and/or private fields/functions of GTK+,
+	    libgnomeui and libbonoboui are used</para></listitem>
       </itemizedlist>
     </para>
   </sect1>
 
-  <!-- ============= Limitations =========================== -->
-  <sect1 id="&appn;-see-also">
+  <sect1 id="freedict-editor-see-also">
     <title>Links</title>
 
     <para>This section contains links to sources of further information.</para>
     
     <para>
       <itemizedlist>
-        <listitem>This document assumes that you are familiar with the
-	  <ulink type="http" url="http://freedict.org/howto/">FreeDict HOWTO</ulink>
+	<listitem><para>This document assumes that you are familiar with the
+	    <ulink type="http" url="http://freedict.org/howto/">FreeDict HOWTO</ulink></para>
 	</listitem>
-	<listitem>"Dictionary Editor and Browser" as presented in "Lexical Databases in XML"
+	<listitem><para>"Dictionary Editor and Browser" as presented in "Lexical Databases in XML"
 	  by Pavel Smrz and Martin Povolny, Faculty of Informatics, Masaryk University Brno,
           Botanicka, 68a, 602 00 Brno, Czech Republic, E-mail: {smrz,xpovolny}@fi.muni.cz
 	  (XXX add link) -  DEB is a system that might be more suited to large projects than
-	  &app;</listitem>
+	  &app;</para></listitem>
+	  
+	<listitem><para><ulink type="http" url="http://www.sil.org/computing/ddp/">SIL
+	  Dictionary Development Program</ulink> - XXX quote from its website</para></listitem>
       </itemizedlist>
     </para>
   </sect1>
@@ -1050,7 +1051,7 @@ EndSection</programlisting>
   <!-- This section contains info about the program (not docs), such as
   It is optional: primary place for this info is "About.." box of the program.
   Alternatively, you can put this information in the title page.-->
-  <sect1 id="&appn;-about"> 
+  <sect1 id="freedict-editor-about"> 
     <title>About &app;</title> 
     <para>&app; was written by Michael Bunk
       <email>micha@luetzschena.de</email>. To find more information, please

@@ -1,3 +1,7 @@
+/** @file
+ * @brief XML/XPath/XSLT Utility functions
+ */
+
 #include "xml.h"
 #include <gnome.h>
 #include <libxml/xpathInternals.h>
@@ -6,11 +10,12 @@
 // libxslt/XPath extension functions
 /////////////////////////////////////////////////////////////////////////
 
-// This extension function is desinged to be used in a sanity test with an
-// XPath expression like this:
-// "//entry[ fd:unbalanced-braces(.//orth | .//tr | .//note | .//def | .//q) ]"
-// Before its use, a namespace prefix like "fd" has to be bound to
-// FREEDICT_EDITOR_NAMESPACE
+/** This extension function is designed to be used in a sanity test with an
+ * XPath expression like this:
+ * "//entry[ fd:unbalanced-braces(.//orth | .//tr | .//note | .//def | .//q) ]"
+ * Before its use, a namespace prefix like "fd" has to be bound to
+ * FREEDICT_EDITOR_NAMESPACE.
+ */
 static void freedict_xpath_extension_unbalanced_braces(
 xmlXPathParserContextPtr ctxt, const int nargs)
 {
@@ -101,7 +106,7 @@ xmlXPathParserContextPtr ctxt, const int nargs)
 }   
 
 
-// call this on application startup
+/// Call this on application startup. Or not, since it is presently unused...
 void register_freedict_xpath_extension_functions(void)
 {
 
@@ -132,6 +137,7 @@ xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
   return doc;
 }
 
+// XXX report this fix
 // xmlXPatherror takes an XPath parser context, not a plain XPath context,
 // so this macro from the libxml2 source is incorrect, causing gcc to give a
 // "warning: passing arg 1 of `xmlXPatherror' from incompatible pointer type"
@@ -152,21 +158,22 @@ xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
         return(NULL);                                                   \
     }
 
+extern GMutex *find_nodeset_pcontext_mutex;
+
 /**
- * my_xmlXPathEvalExpression:
- * @str:  the XPath expression
- * @ctxt:  the XPath context
- * @pctxt: pointer to a XPath Parser context pointer
+ * @arg str the XPath expression
+ * @arg ctxt the XPath context
+ * @arg pctxt pointer to a XPath Parser context pointer
  *
- * Evaluate the XPath expression in the given context.
- * The XPath Parser context is saved in pctxt, so that it can be accessed
- * from another thread. Especially the error state is interesting, since
- * it can be used to stop a never ending evaluation.
+ * Evaluate the XPath expression in the given context.  The XPath Parser
+ * context is saved in pctxt, so that it can be accessed from another thread.
+ * Especially the error state is interesting, since it can be used to stop a
+ * never ending evaluation.
  *
  * Taken from xpath.c in libxml2-2.6.16.
  *
- * Returns the xmlXPathObjectPtr resulting from the evaluation or NULL.
- *         the caller has to free the object.
+ * @return the xmlXPathObjectPtr resulting from the evaluation or NULL.
+ *         The caller has to free the object.
  */
 xmlXPathObjectPtr
 my_xmlXPathEvalExpression(const xmlChar *str, xmlXPathContextPtr ctxt, xmlXPathParserContextPtr *pctxt) {
@@ -179,7 +186,11 @@ my_xmlXPathEvalExpression(const xmlChar *str, xmlXPathContextPtr ctxt, xmlXPathP
     // but the bad thing is that *pctxt normally is still NULL at this point
     CHECK_CONTEXT(ctxt,*pctxt)
 
+    g_mutex_lock(find_nodeset_pcontext_mutex);
+    //g_printerr("Allocating parser context\n");
     *pctxt = xmlXPathNewParserContext(str, ctxt);
+    g_mutex_unlock(find_nodeset_pcontext_mutex);
+    
     xmlXPathEvalExpr(*pctxt);
 
     if (*(*pctxt)->cur != 0) {
@@ -200,14 +211,24 @@ my_xmlXPathEvalExpression(const xmlChar *str, xmlXPathContextPtr ctxt, xmlXPathP
                 "xmlXPathEvalExpression: %d object left on the stack\n",
                 stack);
     }
+
+    g_mutex_lock(find_nodeset_pcontext_mutex);
     xmlXPathFreeParserContext(*pctxt);
     *pctxt = NULL;
+    //g_printerr("Freed parser context\n");
+    g_mutex_unlock(find_nodeset_pcontext_mutex);
+
     return(res);
 }
 
 
-/** the caller will have to free the NodeList
-  */
+/// Evaluate an XPath expression
+/**
+ * @arg xpath XPath expression to evaluate
+ * @doc document over which to evaluate
+ * @arg pctxt can be NULL
+ * @return list of matching nodes. The caller will have to free it using xmlXPathFreeNodeSet().
+ */
 xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathParserContextPtr *pctxt)
 {
   xmlXPathContextPtr ctxt = xmlXPathNewContext(doc);
@@ -261,8 +282,8 @@ xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathPars
   memcpy(nodes, xpobj->nodesetval, sizeof(xmlNodeSet));
 
   // I don't understand the naming of this function.  According to the
-  // documentation, it frees the xpathobject, but not the nodelist, if it
-  // contained one.
+  // documentation, it frees xpobj, but not its nodelist, if it
+  // contained one. So it should be called xmlXPathFreeObjectButNotNodeSetList().
   xmlXPathFreeNodeSetList(xpobj);
 
   return nodes; 
@@ -283,7 +304,8 @@ xmlNodePtr find_single_node(const char *xpath, const xmlDocPtr doc)
 }
 
 
-// attrs: list of allowed attribute names
+/** @arg attrs list of allowed attribute names
+ */
 gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char **attrs)
 {
   g_return_val_if_fail(n, FALSE);
@@ -337,15 +359,15 @@ gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char
 }
 
 
-// XXX merge with previous
-//gboolean has_only_text_children(const xmlNodePtr n)
-//{
-//  return has_only_text_children_and_allowed_attrs(n, NULL);
-//}
-
-
-// like below, but allows the attributes in attrs to exist
-// the unlinked node will still have to be freed with xmlFreeNode()
+/// Look for a matching leaf node
+/** This function evaluates an XPath expression. The result should be a single
+ * node with only text children and the attributes listed in @a attrs.  If such
+ * node exists, it is unlinked and returned.  If there is no such leaf, no
+ * unlinking is done and @a can is set to FALSE.
+ *
+ * @return The unlinked node. It has to be freed by the caller with xmlFreeNode().
+ * @retval NULL if no matching leaf node was found
+ */
 xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, const xmlDocPtr doc,
     gboolean *can)
 {
@@ -361,18 +383,6 @@ xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, con
 }
 
 
-// looks for a single node
-// returns NULL if it was not found
-// otherwise checks whether it is a leaf
-// if it is a leaf, unlinks it and returns pointer to it
-// if it is no leaf, no unlinking is done and can is set to FALSE
-//xmlNodePtr unlink_leaf_node(const char *xpath, const xmlDocPtr doc, gboolean *can)
-//{
-  // XXX merge with unlink_leaf_node_with_attr()
-//  return unlink_leaf_node_with_attr(xpath, NULL, doc, can);
-//}
-
-
 xmlNodePtr string2xmlNode(const xmlNodePtr parent, const gchar *before,
     const gchar *name, const gchar *content, const gchar *after)
 {
@@ -386,11 +396,13 @@ xmlNodePtr string2xmlNode(const xmlNodePtr parent, const gchar *before,
 }
 
 
-// n: entry node
-// len: size of *s in bytes
-// s: pointer where result will be saved,
-//    contains error string on failure
-// returns success
+/// Join orth elements of an entry with commas
+/** @arg n entry node
+ * @arg len size of @a *s in bytes
+ * @arg s pointer where result will be saved, error string on failure
+ * @retval TRUE on success
+ * @retval FALSE on error
+ */ 
 gboolean entry_orths_to_string(xmlNodePtr n, int len, char *s)
 {
   g_return_val_if_fail(n, FALSE);

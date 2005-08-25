@@ -49,28 +49,28 @@ static GnomeUIInfo edit1_menu_uiinfo[] =
     N_("Add New Entry"),
     (gpointer) on_add_new_entry1_activate, NULL, NULL,
     GNOME_APP_PIXMAP_STOCK, "gtk-add",
-    0, (GdkModifierType) 0, NULL
+    GDK_w, (GdkModifierType) GDK_MOD1_MASK, NULL
   },
   {
     GNOME_APP_UI_ITEM, N_("_Delete Entry"),
     N_("Delete Currently Edited Entry"),
     (gpointer) on_delete_entry1_activate, NULL, NULL,
     GNOME_APP_PIXMAP_STOCK, "gtk-remove",
-    0, (GdkModifierType) 0, NULL
+    GDK_d, (GdkModifierType) GDK_MOD1_MASK, NULL
   },
   {
     GNOME_APP_UI_ITEM, N_("Sa_ve Entry"),
     N_("Save Changes to Entry"),
     (gpointer) on_save_entry1_activate, NULL, NULL,
     GNOME_APP_PIXMAP_STOCK, "gtk-apply",
-    0, (GdkModifierType) 0, NULL
+    GDK_Return, (GdkModifierType) GDK_CONTROL_MASK, NULL
   },
   {
     GNOME_APP_UI_ITEM, N_("_Cancel Edit"),
     N_("Cancel Edit of Entry"),
     (gpointer) on_cancel_edit1_activate, NULL, NULL,
     GNOME_APP_PIXMAP_STOCK, "gtk-cancel",
-    0, (GdkModifierType) 0, NULL
+    GDK_Escape, (GdkModifierType) 0, NULL
   },
   GNOMEUIINFO_SEPARATOR,
   {
@@ -343,7 +343,7 @@ create_app1 (void)
                                 BONOBO_DOCK_ITEM_BEH_NEVER_VERTICAL,
                                 BONOBO_DOCK_TOP, 1, 1, 0);
 
-  xpath_template_label = gtk_label_new_with_mnemonic (_("XPath-T_emplate:"));
+  xpath_template_label = gtk_label_new_with_mnemonic (_("XPath-Template:"));
   gtk_widget_show (xpath_template_label);
   gtk_box_pack_start (GTK_BOX (hbox19), xpath_template_label, FALSE, FALSE, 2);
   gtk_label_set_justify (GTK_LABEL (xpath_template_label), GTK_JUSTIFY_LEFT);
@@ -391,7 +391,7 @@ create_app1 (void)
   new_entry_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
                                 GTK_TOOLBAR_CHILD_BUTTON,
                                 NULL,
-                                _("Ne_w Entry"),
+                                _("New Entry"),
                                 _("Add new Entry"), NULL,
                                 tmp_toolbar_icon, NULL, NULL);
   gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
@@ -401,7 +401,7 @@ create_app1 (void)
   delete_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
                                 GTK_TOOLBAR_CHILD_BUTTON,
                                 NULL,
-                                _("_Delete Entry"),
+                                _("Delete Entry"),
                                 _("Delete Entry"), NULL,
                                 tmp_toolbar_icon, NULL, NULL);
   gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
@@ -412,7 +412,7 @@ create_app1 (void)
   apply_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
                                 GTK_TOOLBAR_CHILD_BUTTON,
                                 NULL,
-                                _("Sa_ve Entry"),
+                                _("Save Entry"),
                                 _("Save changes to Entry"), NULL,
                                 tmp_toolbar_icon, NULL, NULL);
   gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
@@ -939,22 +939,28 @@ create_spellcheck_window (void)
   GtkWidget *replacement_label;
   GtkWidget *replacement_entry;
   GtkWidget *suggestions_label;
-  GtkWidget *label50;
-  GtkWidget *vbox7;
-  GtkWidget *spell_orth_checkbutton;
-  GtkWidget *spell_tr_checkbutton;
-  GtkWidget *spell_eg_checkbutton;
-  GtkWidget *spell_eg_tr_checkbutton;
+  GtkWidget *spell_progressbar;
+  GtkWidget *scrolledwindow5;
+  GtkWidget *suggestions_treeview;
+  GtkWidget *notebook2;
+  GtkWidget *vbox8;
   GtkWidget *hbox17;
   GtkWidget *spell_headwords_radiobutton;
   GSList *spell_headwords_radiobutton_group = NULL;
   GtkWidget *spell_translations_radiobutton;
-  GtkWidget *label49;
-  GtkWidget *scrolledwindow5;
-  GtkWidget *suggestions_treeview;
-  GtkWidget *spell_progressbar;
+  GtkWidget *spell_orth_checkbutton;
+  GtkWidget *spell_tr_checkbutton;
+  GtkWidget *spell_eg_checkbutton;
+  GtkWidget *spell_eg_tr_checkbutton;
+  GtkWidget *label61;
+  GtkWidget *table5;
+  GtkWidget *label50;
+  GtkWidget *accept_runtogether_checkbutton;
   GtkWidget *spell_dict_optionmenu;
   GtkWidget *menu4;
+  GtkWidget *label62;
+  GtkWidget *label63;
+  GtkWidget *replacements_counter_label;
   GtkWidget *vbuttonbox1;
   GtkWidget *spell_replace_button;
   GtkWidget *alignment7;
@@ -982,13 +988,13 @@ create_spellcheck_window (void)
   gtk_container_add (GTK_CONTAINER (spellcheck_window), hbox14);
   gtk_container_set_border_width (GTK_CONTAINER (hbox14), 7);
 
-  table2 = gtk_table_new (7, 2, FALSE);
+  table2 = gtk_table_new (6, 2, FALSE);
   gtk_widget_show (table2);
   gtk_box_pack_start (GTK_BOX (hbox14), table2, TRUE, TRUE, 0);
   gtk_table_set_row_spacings (GTK_TABLE (table2), 4);
   gtk_table_set_col_spacings (GTK_TABLE (table2), 4);
 
-  misspelled_word_label = gtk_label_new (_("Misspelled Word:"));
+  misspelled_word_label = gtk_label_new (_("Misspelled Word"));
   gtk_widget_show (misspelled_word_label);
   gtk_table_attach (GTK_TABLE (table2), misspelled_word_label, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
@@ -1005,7 +1011,7 @@ create_spellcheck_window (void)
   gtk_tooltips_set_tip (tooltips, misspelled_word_entry, _("A word that was not found in the spelling dictionary"), NULL);
   gtk_editable_set_editable (GTK_EDITABLE (misspelled_word_entry), FALSE);
 
-  replacement_label = gtk_label_new (_("Replacement:"));
+  replacement_label = gtk_label_new_with_mnemonic (_("R_eplacement"));
   gtk_widget_show (replacement_label);
   gtk_table_attach (GTK_TABLE (table2), replacement_label, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
@@ -1021,7 +1027,7 @@ create_spellcheck_window (void)
   gtk_tooltips_set_tip (tooltips, replacement_entry, _("The misspelled word will be replaced by this when you click on Replace"), NULL);
   gtk_entry_set_activates_default (GTK_ENTRY (replacement_entry), TRUE);
 
-  suggestions_label = gtk_label_new (_("Suggestions:"));
+  suggestions_label = gtk_label_new_with_mnemonic (_("_Suggestions"));
   gtk_widget_show (suggestions_label);
   gtk_table_attach (GTK_TABLE (table2), suggestions_label, 0, 1, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
@@ -1029,42 +1035,42 @@ create_spellcheck_window (void)
   gtk_label_set_justify (GTK_LABEL (suggestions_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (suggestions_label), 0, 0.5);
 
-  label50 = gtk_label_new (_("Spelling Dictionary:"));
-  gtk_widget_show (label50);
-  gtk_table_attach (GTK_TABLE (table2), label50, 0, 1, 5, 6,
+  spell_progressbar = gtk_progress_bar_new ();
+  gtk_widget_show (spell_progressbar);
+  gtk_table_attach (GTK_TABLE (table2), spell_progressbar, 0, 2, 4, 5,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (label50), GTK_JUSTIFY_LEFT);
-  gtk_misc_set_alignment (GTK_MISC (label50), 0, 0.5);
+  gtk_progress_bar_set_text (GTK_PROGRESS_BAR (spell_progressbar), _("Nodes checked"));
 
-  vbox7 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox7);
-  gtk_table_attach (GTK_TABLE (table2), vbox7, 1, 2, 4, 5,
-                    (GtkAttachOptions) (GTK_FILL),
+  scrolledwindow5 = gtk_scrolled_window_new (NULL, NULL);
+  gtk_widget_show (scrolledwindow5);
+  gtk_table_attach (GTK_TABLE (table2), scrolledwindow5, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), 0, 0);
+  gtk_widget_set_size_request (scrolledwindow5, 41, 140);
+  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow5), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow5), GTK_SHADOW_IN);
 
-  spell_orth_checkbutton = gtk_check_button_new_with_mnemonic (_("<orth> - Headwords"));
-  gtk_widget_show (spell_orth_checkbutton);
-  gtk_box_pack_start (GTK_BOX (vbox7), spell_orth_checkbutton, FALSE, FALSE, 0);
+  suggestions_treeview = gtk_tree_view_new ();
+  gtk_widget_show (suggestions_treeview);
+  gtk_container_add (GTK_CONTAINER (scrolledwindow5), suggestions_treeview);
+  gtk_tooltips_set_tip (tooltips, suggestions_treeview, _("Double-Click a suggestion to replace the misspelled word with it"), NULL);
+  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (suggestions_treeview), FALSE);
+  gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (suggestions_treeview), TRUE);
 
-  spell_tr_checkbutton = gtk_check_button_new_with_mnemonic (_("<tr> - Translations"));
-  gtk_widget_show (spell_tr_checkbutton);
-  gtk_box_pack_start (GTK_BOX (vbox7), spell_tr_checkbutton, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (spell_tr_checkbutton), TRUE);
-
-  spell_eg_checkbutton = gtk_check_button_new_with_mnemonic (_("<eg><q> - Quotes of Examples"));
-  gtk_widget_show (spell_eg_checkbutton);
-  gtk_box_pack_start (GTK_BOX (vbox7), spell_eg_checkbutton, FALSE, FALSE, 0);
-
-  spell_eg_tr_checkbutton = gtk_check_button_new_with_mnemonic (_("<eg><tr> - Translations of Examples"));
-  gtk_widget_show (spell_eg_tr_checkbutton);
-  gtk_box_pack_start (GTK_BOX (vbox7), spell_eg_tr_checkbutton, FALSE, FALSE, 0);
-
-  hbox17 = gtk_hbox_new (FALSE, 0);
-  gtk_widget_show (hbox17);
-  gtk_table_attach (GTK_TABLE (table2), hbox17, 1, 2, 3, 4,
+  notebook2 = gtk_notebook_new ();
+  gtk_widget_show (notebook2);
+  gtk_table_attach (GTK_TABLE (table2), notebook2, 0, 2, 3, 4,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (GTK_FILL), 0, 0);
+
+  vbox8 = gtk_vbox_new (FALSE, 0);
+  gtk_widget_show (vbox8);
+  gtk_container_add (GTK_CONTAINER (notebook2), vbox8);
+
+  hbox17 = gtk_hbox_new (TRUE, 0);
+  gtk_widget_show (hbox17);
+  gtk_box_pack_start (GTK_BOX (vbox8), hbox17, FALSE, FALSE, 0);
 
   spell_headwords_radiobutton = gtk_radio_button_new_with_mnemonic (NULL, _("_Headword Language"));
   gtk_widget_show (spell_headwords_radiobutton);
@@ -1079,41 +1085,52 @@ create_spellcheck_window (void)
   spell_headwords_radiobutton_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (spell_translations_radiobutton));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (spell_translations_radiobutton), TRUE);
 
-  label49 = gtk_label_new (_("Check:"));
-  gtk_widget_show (label49);
-  gtk_table_attach (GTK_TABLE (table2), label49, 0, 1, 3, 4,
+  spell_orth_checkbutton = gtk_check_button_new_with_mnemonic (_("<orth> - Headwords"));
+  gtk_widget_show (spell_orth_checkbutton);
+  gtk_box_pack_start (GTK_BOX (vbox8), spell_orth_checkbutton, FALSE, FALSE, 0);
+
+  spell_tr_checkbutton = gtk_check_button_new_with_mnemonic (_("<tr> - Translations"));
+  gtk_widget_show (spell_tr_checkbutton);
+  gtk_box_pack_start (GTK_BOX (vbox8), spell_tr_checkbutton, FALSE, FALSE, 0);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (spell_tr_checkbutton), TRUE);
+
+  spell_eg_checkbutton = gtk_check_button_new_with_mnemonic (_("<eg><q> - Quotes of Examples"));
+  gtk_widget_show (spell_eg_checkbutton);
+  gtk_box_pack_start (GTK_BOX (vbox8), spell_eg_checkbutton, FALSE, FALSE, 0);
+
+  spell_eg_tr_checkbutton = gtk_check_button_new_with_mnemonic (_("<eg><tr> - Translations of Examples"));
+  gtk_widget_show (spell_eg_tr_checkbutton);
+  gtk_box_pack_start (GTK_BOX (vbox8), spell_eg_tr_checkbutton, FALSE, FALSE, 0);
+
+  label61 = gtk_label_new_with_mnemonic (_("_What to check"));
+  gtk_widget_show (label61);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook2), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook2), 0), label61);
+  gtk_label_set_justify (GTK_LABEL (label61), GTK_JUSTIFY_LEFT);
+
+  table5 = gtk_table_new (2, 2, TRUE);
+  gtk_widget_show (table5);
+  gtk_container_add (GTK_CONTAINER (notebook2), table5);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook2), table5,
+                                      FALSE, FALSE, GTK_PACK_START);
+
+  label50 = gtk_label_new_with_mnemonic (_("Spelling _Dictionary:"));
+  gtk_widget_show (label50);
+  gtk_table_attach (GTK_TABLE (table5), label50, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (label49), GTK_JUSTIFY_LEFT);
-  gtk_misc_set_alignment (GTK_MISC (label49), 0, 0.5);
+  gtk_label_set_justify (GTK_LABEL (label50), GTK_JUSTIFY_LEFT);
+  gtk_misc_set_alignment (GTK_MISC (label50), 0, 0.5);
 
-  scrolledwindow5 = gtk_scrolled_window_new (NULL, NULL);
-  gtk_widget_show (scrolledwindow5);
-  gtk_table_attach (GTK_TABLE (table2), scrolledwindow5, 1, 2, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), 0, 0);
-  gtk_widget_set_size_request (scrolledwindow5, 41, 140);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow5), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow5), GTK_SHADOW_IN);
-
-  suggestions_treeview = gtk_tree_view_new ();
-  gtk_widget_show (suggestions_treeview);
-  gtk_container_add (GTK_CONTAINER (scrolledwindow5), suggestions_treeview);
-  gtk_tooltips_set_tip (tooltips, suggestions_treeview, _("Double-Click a suggestion to replace the misspelled word with it"), NULL);
-  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (suggestions_treeview), FALSE);
-  gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (suggestions_treeview), TRUE);
-
-  spell_progressbar = gtk_progress_bar_new ();
-  gtk_widget_show (spell_progressbar);
-  gtk_table_attach (GTK_TABLE (table2), spell_progressbar, 0, 2, 6, 7,
+  accept_runtogether_checkbutton = gtk_check_button_new_with_mnemonic (_("Acc_ept Run-Together Words"));
+  gtk_widget_show (accept_runtogether_checkbutton);
+  gtk_table_attach (GTK_TABLE (table5), accept_runtogether_checkbutton, 0, 2, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_progress_bar_set_text (GTK_PROGRESS_BAR (spell_progressbar), _("Nodes checked"));
 
   spell_dict_optionmenu = gtk_option_menu_new ();
   gtk_widget_show (spell_dict_optionmenu);
-  gtk_table_attach (GTK_TABLE (table2), spell_dict_optionmenu, 1, 2, 5, 6,
-                    (GtkAttachOptions) (GTK_FILL),
+  gtk_table_attach (GTK_TABLE (table5), spell_dict_optionmenu, 1, 2, 1, 2,
+                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_tooltips_set_tip (tooltips, spell_dict_optionmenu, _("What language to use for checking the words"), NULL);
 
@@ -1123,9 +1140,31 @@ create_spellcheck_window (void)
 
   gtk_option_menu_set_menu (GTK_OPTION_MENU (spell_dict_optionmenu), menu4);
 
+  label62 = gtk_label_new_with_mnemonic (_("Aspell _Options"));
+  gtk_widget_show (label62);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook2), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook2), 1), label62);
+  gtk_label_set_justify (GTK_LABEL (label62), GTK_JUSTIFY_LEFT);
+
+  label63 = gtk_label_new (_("Replacements made"));
+  gtk_widget_show (label63);
+  gtk_table_attach (GTK_TABLE (table2), label63, 1, 2, 5, 6,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_label_set_justify (GTK_LABEL (label63), GTK_JUSTIFY_LEFT);
+  gtk_misc_set_alignment (GTK_MISC (label63), 0, 0.5);
+
+  replacements_counter_label = gtk_label_new (_("0"));
+  gtk_widget_show (replacements_counter_label);
+  gtk_table_attach (GTK_TABLE (table2), replacements_counter_label, 0, 1, 5, 6,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_label_set_justify (GTK_LABEL (replacements_counter_label), GTK_JUSTIFY_LEFT);
+  gtk_misc_set_alignment (GTK_MISC (replacements_counter_label), 1, 0.5);
+
   vbuttonbox1 = gtk_vbutton_box_new ();
   gtk_widget_show (vbuttonbox1);
-  gtk_box_pack_start (GTK_BOX (hbox14), vbuttonbox1, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (hbox14), vbuttonbox1, FALSE, TRUE, 0);
+  gtk_button_box_set_layout (GTK_BUTTON_BOX (vbuttonbox1), GTK_BUTTONBOX_SPREAD);
 
   spell_replace_button = gtk_button_new ();
   gtk_widget_show (spell_replace_button);
@@ -1196,17 +1235,20 @@ create_spellcheck_window (void)
   gtk_container_add (GTK_CONTAINER (vbuttonbox1), spell_close_button);
   GTK_WIDGET_SET_FLAGS (spell_close_button, GTK_CAN_DEFAULT);
 
+  g_signal_connect ((gpointer) suggestions_treeview, "row_activated",
+                    G_CALLBACK (on_suggestions_treeview_row_activated),
+                    NULL);
+  g_signal_connect ((gpointer) suggestions_treeview, "cursor_changed",
+                    G_CALLBACK (on_suggestions_treeview_cursor_changed),
+                    NULL);
   g_signal_connect ((gpointer) spell_headwords_radiobutton, "toggled",
                     G_CALLBACK (on_spell_headwords_radiobutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) spell_translations_radiobutton, "toggled",
                     G_CALLBACK (on_spell_translations_radiobutton_toggled),
                     NULL);
-  g_signal_connect ((gpointer) suggestions_treeview, "row_activated",
-                    G_CALLBACK (on_suggestions_treeview_row_activated),
-                    NULL);
-  g_signal_connect ((gpointer) suggestions_treeview, "cursor_changed",
-                    G_CALLBACK (on_suggestions_treeview_cursor_changed),
+  g_signal_connect ((gpointer) accept_runtogether_checkbutton, "toggled",
+                    G_CALLBACK (on_accept_runtogether_checkbutton_toggled),
                     NULL);
   g_signal_connect ((gpointer) spell_replace_button, "clicked",
                     G_CALLBACK (on_spell_replace_button_clicked),
@@ -1227,6 +1269,10 @@ create_spellcheck_window (void)
                     G_CALLBACK (on_spell_close_button_clicked),
                     NULL);
 
+  gtk_label_set_mnemonic_widget (GTK_LABEL (replacement_label), replacement_entry);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (suggestions_label), scrolledwindow5);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label50), spell_dict_optionmenu);
+
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (spellcheck_window, spellcheck_window, "spellcheck_window");
   GLADE_HOOKUP_OBJECT (spellcheck_window, hbox14, "hbox14");
@@ -1236,21 +1282,27 @@ create_spellcheck_window (void)
   GLADE_HOOKUP_OBJECT (spellcheck_window, replacement_label, "replacement_label");
   GLADE_HOOKUP_OBJECT (spellcheck_window, replacement_entry, "replacement_entry");
   GLADE_HOOKUP_OBJECT (spellcheck_window, suggestions_label, "suggestions_label");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, label50, "label50");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, vbox7, "vbox7");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_progressbar, "spell_progressbar");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, scrolledwindow5, "scrolledwindow5");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, suggestions_treeview, "suggestions_treeview");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, notebook2, "notebook2");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, vbox8, "vbox8");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, hbox17, "hbox17");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_headwords_radiobutton, "spell_headwords_radiobutton");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_translations_radiobutton, "spell_translations_radiobutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_orth_checkbutton, "spell_orth_checkbutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_tr_checkbutton, "spell_tr_checkbutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_eg_checkbutton, "spell_eg_checkbutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_eg_tr_checkbutton, "spell_eg_tr_checkbutton");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, hbox17, "hbox17");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_headwords_radiobutton, "spell_headwords_radiobutton");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_translations_radiobutton, "spell_translations_radiobutton");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, label49, "label49");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, scrolledwindow5, "scrolledwindow5");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, suggestions_treeview, "suggestions_treeview");
-  GLADE_HOOKUP_OBJECT (spellcheck_window, spell_progressbar, "spell_progressbar");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, label61, "label61");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, table5, "table5");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, label50, "label50");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, accept_runtogether_checkbutton, "accept_runtogether_checkbutton");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_dict_optionmenu, "spell_dict_optionmenu");
   GLADE_HOOKUP_OBJECT (spellcheck_window, menu4, "menu4");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, label62, "label62");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, label63, "label63");
+  GLADE_HOOKUP_OBJECT (spellcheck_window, replacements_counter_label, "replacements_counter_label");
   GLADE_HOOKUP_OBJECT (spellcheck_window, vbuttonbox1, "vbuttonbox1");
   GLADE_HOOKUP_OBJECT (spellcheck_window, spell_replace_button, "spell_replace_button");
   GLADE_HOOKUP_OBJECT (spellcheck_window, alignment7, "alignment7");

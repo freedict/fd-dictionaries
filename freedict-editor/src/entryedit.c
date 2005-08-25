@@ -1,3 +1,7 @@
+/** @file
+ * @brief Implementation of the Entry Editor including entry parsing
+ */
+
 #include "entryedit.h"
 
 // for lookup_widget()
@@ -63,8 +67,9 @@ static gboolean open_menu_on_focus_in(GtkWidget *widget, GdkEventFocus *event,
 #endif // OPEN_OPTIONMENUS_ON_FOCUS
 
 
-// returns the value of the Values array that corresponds to index
-// returns NULL for out of bounds
+/// Return the value of the Values array that corresponds to index
+/** @retval NULL out of bounds
+ */
 static const gchar *index2value(const Values *values, const int index)
 {
   g_return_val_if_fail(values, NULL);
@@ -77,8 +82,9 @@ static const gchar *index2value(const Values *values, const int index)
 }
 
 
-// returns the index in the Values array that corresponds to value
-// returns -1 on unknown value
+/// Return the index in the Values array that corresponds to value
+/** @retval -1 unknown value
+ */
 static int value2index(const Values *values, const gchar *value)
 {
   g_return_val_if_fail(values, -1);
@@ -95,7 +101,7 @@ static int value2index(const Values *values, const gchar *value)
 }
 
 
-// fills an GtkOptionMenu with entries from a Values array
+/// Fill an GtkOptionMenu with entries from a Values array
 GtkWidget *create_menu(GtkOptionMenu *parent, const char *accel_path,
     const Values *v)
 {
@@ -146,10 +152,11 @@ const Values xr_values[] = {
 };
 
 
-// fill dropdown box of combo entry of a cross reference
-// with suggestions, ie. headwords from other entries that
-// match the existing prefix in the GtkEntry of the combo box
-// XXX see gtk-demos for correct entry completion
+/// Fill dropdown box of combo entry of a cross reference with suggestions
+/** Ie. headwords from other entries that match the existing prefix in the
+ * GtkEntry of the combo box
+ * XXX see gtk-demos for correct entry completion
+ */
 static void on_xr_combo_dropdown(GtkWidget *widget, gpointer user_data)
 {
   int both = GPOINTER_TO_INT(user_data);
@@ -186,8 +193,10 @@ static void on_xr_combo_dropdown(GtkWidget *widget, gpointer user_data)
 }
 
 
-// Append empty widgets for a cross reference to a sense. Returns NULL on
-// failure, otherwise a pointer to the new Sense_xr struct.
+/// Append empty widgets for a cross reference to a sense
+/** @retval NULL on failure
+ * @retval otherwise a pointer to the new Sense_xr struct
+ */
 static Sense_xr *sense_append_xr(const Sense *s)
 {
   g_return_val_if_fail(s, NULL);
@@ -373,7 +382,7 @@ const Values domain_values[] = {
 };
 
 
-// appends translation equivalent input fields to a sense of an entry
+/// Append translation equivalent input fields to a sense of an entry
 Sense_trans *sense_append_trans(const Sense *s)
 {
   g_return_val_if_fail(s, NULL);
@@ -432,7 +441,7 @@ Sense_trans *sense_append_trans(const Sense *s)
 }
 
 
-// chop the last trans widgets
+/// Chop the last trans widgets
 static void sense_remove_last_trans(const Sense *s)
 {
   g_return_if_fail(s);
@@ -473,10 +482,11 @@ on_tr_delete_button_clicked        (GtkButton       *button,
 }
 
 
-// Adds empty widgets for another sense to the currently edited entry.
-// Initially there are no widgets for translation equivalents. They can be
-// added with sense_append_trans(). Returns a pointer to the newly created
-// sense.
+/// Add empty widgets for another sense to the currently edited entry
+/** Initially there are no widgets for translation equivalents. They can be
+ * added with sense_append_trans(). Returns a pointer to the newly created
+ * sense.
+ */
 Sense *senses_append(GArray *senses)
 {
   g_return_if_fail(senses);
@@ -793,8 +803,8 @@ static void nodeContent2gtk_entry(const xmlNodePtr n, GtkEntry *e)
 }
 
 
-// returns whether the nodeContent could be put into the
-// optionmenu successfully
+/** retval TRUE nodeContent could be put into the optionmenu successfully
+ */
 static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
     const Values *values, const char *errormsg)
 {
@@ -814,8 +824,7 @@ static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
 }
 
 
-/** Frees xmlNodePtr p, if it is non-NULL. Nullifies it after freeing.
- */
+/// Free xmlNodePtr @a p, if it is non-NULL. Nullify it after freeing.
 void my_free_node(xmlNodePtr *p)
 {
   g_return_if_fail(p);
@@ -825,10 +834,10 @@ void my_free_node(xmlNodePtr *p)
 }
 
 
-/** Extracts contents of xml nodes and fills input fields with them.
- * @n: zero-based
- * returns whether extraction was successful (it may fail for invalid values
- * for the optionmenus)
+/// Extract contents of XML nodes and fills input fields with them
+/** @arg n zero-based
+ * @retval TRUE extraction was successful
+ * @retval FALSE extraction failed, eg. because there were invalid values for the optionmenus
  */
 static gboolean sense_dom2widgets(const GArray *senses, const int n)
 {
@@ -897,14 +906,15 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
 }
 
 
+/// Pointers to the nodes of a parsed entry
 struct Parsed_entry
 {
   xmlNodePtr orth, pron, pos, num, gen, noteRespTranslator;
 };
 
 
-/** Fill main form fields, parse optionmenu contents. Fields of the senses
- * of the entry are filled by sense_dom2widgets().
+/// Fill main form fields, parse optionmenu contents
+/** The fields of the senses* of the entry are filled by sense_dom2widgets().
  */
 static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
 {
@@ -982,12 +992,13 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   if(content) xmlFree(content);
 }
 
-/** Checks whether @entry is editable in our form. This presupposes is possible
- * only if @entry has only elements/attributes that we can handle with our
+/** Checks whether @a entry is editable in our form. This is possible
+ * only when @a entry has only elements/attributes that we can handle with our
  * form. We check this condition by first removing every node from the entry
  * tree that we handle (first attributes, then elements). Then we check whether
- * nothing remains from the tree. Returns whether parsing the entry tree was
- * successful.
+ * nothing remains from the tree.
+ * @retval TRUE parsing the entry tree was successful
+ * @retval FALSE otherwise
  */
 gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 {
@@ -997,7 +1008,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   xmlDocPtr entry_doc = copy_node_to_doc(entry);
 
   // abbreviate the coming source
-  // in the spirit of C++'s design avoid macros are avoided
+  // in the spirit of C++'s design macros are avoided
   xmlNodePtr inline my_unlink(const char *xpath)
   {
     return unlink_leaf_node_with_attr(xpath, NULL, entry_doc, &can);
@@ -1147,10 +1158,11 @@ static xmlNodePtr GtkEntry2xmlNode(const xmlNodePtr parent, const gchar *before,
 }
 
 
-// build XML entry as xmlNode with children from fields
-// XXX tried as xmlDocFragment before, hoping that entities
-// from the DTD would be usable or validation was done, but
-// it didn't work out
+/// Build XML entry as xmlNode with children from fields
+/** XXX tried as xmlDocFragment before, hoping that entities
+ * from the DTD would be usable or validation was done, but
+ * it didn't work out
+ */
 xmlNodePtr form2xml(const GArray *senses)
 {
   g_return_if_fail(teidoc);

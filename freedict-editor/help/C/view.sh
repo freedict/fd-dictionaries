@@ -1,1 +1,1 @@
-yelp ghelp:`pwd`/freedict-editor.xml 
+yelp ghelp:`pwd`/freedict-editor.xml &

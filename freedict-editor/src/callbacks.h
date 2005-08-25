@@ -444,3 +444,8 @@ on_cancel_edit1_activate               (GtkMenuItem     *menuitem,
 void
 on_stop_find_nodeset_clicked           (GtkButton       *button,
                                         gpointer         user_data);
+
+void
+on_accept_runtogether_checkbutton_toggled
+                                        (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
