@@ -5,8 +5,8 @@
   <title>Writing a FreeDict Dictionary</title>
   <abstract>
     <para>This chapter deals with the process of building a FreeDict format
-      file from your gathered sources. We cover installation, SGML and XML
-      system configuration, some introductory level XML, final formats and a
+      file from your gathered sources. We cover TEI DTD installation, SGML and XML
+      catalog configuration, some introductory level XML, final formats and a
       couple of shortcuts.</para>
   </abstract>
   
@@ -104,7 +104,7 @@
       language neutral typologies for above mentioned things.</para>
 
     <table frame="all">
-      <title>Contents of the <sgmltag>pos</sgmltag> element</title>
+      <title>Part fo Speech Typology (recommended contents of the <sgmltag>pos</sgmltag> element)</title>
       <tgroup cols="2">
 	<thead>
 	  <row>
@@ -114,11 +114,11 @@
 	</thead>
 	<tbody>
 	  <row><entry>n</entry><entry>noun</entry></row>
-	  <row><entry>v</entry><entry>verb</entry></row>
+	  <row><entry>v</entry><entry>verb (transitivity unknown)</entry></row>
 	  <row><entry>vt</entry><entry>transitive verb</entry></row>
 	  <row><entry>vi</entry><entry>intransitive verb</entry></row>
 	  <row><entry>vti</entry><entry>transitive and intransitive verb</entry></row>
-	  <row><entry>ajv</entry><entry>adverb</entry></row>
+	  <row><entry>adv</entry><entry>adverb</entry></row>
 	  <row><entry>adj</entry><entry>adjective</entry></row>
 	  <row><entry>conj</entry><entry>conjunction</entry></row>
 	  <row><entry>prep</entry><entry>preposition</entry></row>
@@ -170,8 +170,8 @@
       beginning. This gives you the most flexibility.</para>
     <para><link linkend="dictd">Approach Two</link> involves producing a
       simply (and accurately) formatted plain file that you then process with
-      some command lines tools (and will probably have to touch up). This can
-      be quicker if you are comfortable with it, but may limit your options
+      some command line tools (and will probably have to touch up). This can
+      be quicker if you are comfortable with it, but limits your options
       for lexicographic information.</para>
     <para>You may of course combine these or find any number of others, after
       all, it's your dictionary we just need it in a certain format :)
