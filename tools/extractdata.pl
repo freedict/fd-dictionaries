@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.7 $
+# $Revision: 1.8 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -13,7 +13,7 @@
 #  attributes:
 #   @name		language-combination, eg. eng-deu
 #   @edition		taken from TEI header, will be used as release version
-#   @headwords		`wc -l formatted-db.index`
+#   @headwords		`wc -l dictd-formatted-db.index`
 #   @date		last change of TEI file
 #   @status		contents of status note in TEI header, if available
 #   @sourceURL		URL in sourceDesc in TEI header (upstream project)
@@ -22,12 +22,13 @@
 #   @maintainerName     Maintainer name (without email) from
 #                       /TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
 #   @maintainerEmail    Email address of Maintainer from same place
+#   @unsupported	space separated list of platforms, eg. "evolutionary bedic"
 #
 # element: release
 #  children: none
 #  attributes:
 #   @platform		allowed values: dict-tgz, dict-tbz2, mobi,
-#			bedic, deb, rpm, gem, src
+#			bedic, deb, rpm, gem, src, evolutionary
 #   @version		version of the dictionary this is a release of
 #   @URL		URL where this release can be downloaded
 #			(additional click may be required by SourceForge)
@@ -125,7 +126,7 @@ sub fdict_extract_metadata
   ###################################################################
 
   my($headwords, $edition, $date, $status, $sourceURL, $maintainerName,
-    $maintainerEmail);
+    $maintainerEmail, $unsupported);
 
   my $indexfile = "$dirname/$entry/$entry.index";
   
@@ -200,6 +201,10 @@ sub fdict_extract_metadata
     }
 
   ###################################################################
+  
+    $unsupported = `cd $dirname/$entry;make --no-print-directory print-unsupported`;
+    
+  ###################################################################
   }
   else
   {
@@ -215,6 +220,15 @@ sub fdict_extract_metadata
   $d->setAttribute('sourceURL', $sourceURL);
   $d->setAttribute('maintainerName', $maintainerName);
   $d->setAttribute('maintainerEmail', $maintainerEmail);
+  
+  if($unsupported =~ /[^\s]/)
+  {
+    $d->setAttribute('unsupported', $unsupported);
+  }
+  else
+  {
+    $d->removeAttribute('unsupported');
+  }
 }
 
 sub fdict_extract_all_metadata

@@ -5,6 +5,8 @@ include $(toolsdir)/Makefile.config
 #### set some variables
 #######################
 
+available_platforms := dictd evolutionary bedic stardict aspell d4m fo
+
 xsldir := $(toolsdir)/xsl
 tei2dict := $(toolsdir)/xmltei2xmldict.pl
 xmllint := /usr/bin/xmllint
@@ -58,6 +60,11 @@ find-homographs: $(dictname).tei
 	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
 	uniq -i -d
 
+# prints what was used as Part-Of-Speech <pos> element content
+# with a number stating how often it was used
+pos-statistics: $(dictname).tei
+	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
+
 ##################################################
 #### create direcories where release files are put
 ##################################################
@@ -72,7 +79,7 @@ dirs:
 #### rules how to create dict database format in standard way
 #############################################################
 
-%.dict %.index: %.tei
+%.dict %.index: %.tei query-dictd
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
 	$(tei2dict) -f $< $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
 
@@ -116,7 +123,7 @@ reverse: $(dictname).tei
 $(dictname).c5: $(dictname).tei $(xsldir)/tei2c5.xsl \
        	$(xsldir)/inc/teientry2txt.xsl \
 	$(xsldir)/inc/teiheader2txt.xsl \
-	$(xsldir)/inc/indent.xsl
+	$(xsldir)/inc/indent.xsl query-dictd
 	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
 
 $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
@@ -148,7 +155,7 @@ release-dict-tbz2-c5-reverse: dirs \
 date=$(shell date +%G-%m-%d)
 
 $(FREEDICTDIR)/release/vok/%.vok: %.tei $(xsldir)/tei2vok.xsl \
-	$(xsldir)/inc/teiheader2txt.xsl $(xsldir)/inc/indent.xsl
+	$(xsldir)/inc/teiheader2txt.xsl $(xsldir)/inc/indent.xsl query-evolutionary
 	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
 	  mkdir $(FREEDICTDIR)/release/vok; fi
 	@if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
@@ -172,10 +179,12 @@ else
 	exit 1
 endif
 
-release-evolutionary: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
+freedict-$(dictname)-$(version).evolutionary.zip: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
 	(cd $(FREEDICTDIR)/release/vok/tld; \
-	 rm -f $(dictname)-$(version)-evolutionary.zip; \
-	 zip freedict-$(dictname)-$(version).evolutionary.zip $(dictname).tld)
+	 rm -f $@; \
+	 zip $@ $(dictname).tld)
+
+release-evolutionary: freedict-$(dictname)-$(version).evolutionary.zip
 
 clean::
 	rm -f $(FREEDICTDIR)/release/vok/$(dictname).vok \
@@ -231,6 +240,21 @@ commit:
 
 dbupdate:
 	$(toolsdir)/extractdata.pl -vfd $(dictname)
+
+# Query platform support status
+# This yields an exit status of
+# 0 for dict supported on this platform
+# 1 for dict unsupported on this platform
+# 2 for unknown platform
+query-%:
+	@if [ -z "$(findstring $*,$(available_platforms))" ]; then \
+	  echo "Unknown platform: $*"; exit 2; fi
+	@if [ -n "$(findstring $*,$(UNSUPPORTED_PLATFORMS))" ]; then \
+	  echo "Platform $* does not support this dictionary module."; exit 1; fi
+	@echo "Platform $* supports this dictionary module."
+
+print-unsupported:
+	@echo -n $(UNSUPPORTED_PLATFORMS)
 
 # this is a "double colon rule"
 # adding another "clean::" rule in your Makefile
@@ -432,7 +456,7 @@ clean::
 	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
 	$(stardict_prefix)$(dictname).dict.dz $(stardict_prefix)$(dictname).ifo \
 	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	dictd2dic.out authorresp.out
+	dictd2dic.out authorresp.out title.out
 
 #######################
 #### Makefile-technical
@@ -445,8 +469,8 @@ clean::
 	vok release-evolutionary \
 	bedic-precedence release-bedic release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
-	commit clean dist dbupdate validation \
+	commit clean dist dbupdate validation query-% print-unsupported \
 	test test-reverse test-c5 test-c5-reverse \
-	find-homographs \
+	find-homographs pos-statistics\
 	stardict release-stardict
 

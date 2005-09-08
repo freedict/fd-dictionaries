@@ -10,7 +10,7 @@
   <!-- Has to come from the shell, as XSLT/XPath provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.3 2005-08-06 08:20:43 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.4 2005-09-08 11:54:16 micha137 Exp $</xsl:param>
   
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->
@@ -46,12 +46,12 @@
   <xsl:value-of select="./publisher"/>
   <xsl:text>, </xsl:text>
   <xsl:value-of select="./date"/>
-  <xsl:text>&#xa;          at: </xsl:text>
+  <xsl:text>&#xa;at: </xsl:text>
   <xsl:value-of select="./pubPlace"/>
   
   <xsl:text>&#xa;&#xa;Availability:&#xa;&#xa;  </xsl:text>
   <xsl:call-template name="format">
-    <xsl:with-param name="txt" select="availability/*"/>
+    <xsl:with-param name="txt" select="normalize-space(availability)"/>
     <xsl:with-param name="width" select="$width"/>
     <xsl:with-param name="start" select="2"/>
   </xsl:call-template>
@@ -88,8 +88,13 @@ it will never be instantiated. -->
 </xsl:template>
 
 <xsl:template match="sourceDesc">
-  <xsl:text>Source(s):&#xa;&#xa;</xsl:text> 
-  <xsl:apply-templates/>
+  <xsl:text>Source(s):&#xa;&#xa;  </xsl:text> 
+  <xsl:variable name="sdtext"><xsl:apply-templates/></xsl:variable>
+    <xsl:call-template name="format">
+      <xsl:with-param name="txt" select="normalize-space($sdtext)"/>
+      <xsl:with-param name="width" select="$width"/>
+      <xsl:with-param name="start" select="2"/>
+    </xsl:call-template>
 </xsl:template>
 
 <xsl:template match="p">

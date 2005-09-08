@@ -14,7 +14,7 @@ use Getopt::Std;
 use strict;
 
 our ($interactive, $loglevel, $opt_v, $opt_n, $opt_a, $opt_h, $opt_i,
- $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m);
+ $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m, $opt_c);
 
 # scan tags for "rel-x-y-z"
 # returns tag for which x,y,z are highest
@@ -44,8 +44,19 @@ sub highest
 sub check_module
 {
   my $m = shift;# fetch module name
-  print "\tChecking status of module $m...\n" if $loglevel>1;
-  
+  print "Module $m:\n" if $loglevel>1;
+
+  if($_ !~ /\w\w\w-\w\w\w/)
+  {
+    print "\tIllegal name - skipping\n" if $loglevel>2;
+    return;
+  }
+  if(/eng-ger|ger-eng|spa-spa/)
+  {
+    print "\tIllegal module - skipping\n" if $loglevel>2;
+    return;
+  }
+
   # for checking status, the module has to be in the working directory
   # already. how to find existing tags without prior working directory?
   if(!-d "$testdir/$m/CVS")
@@ -87,8 +98,15 @@ sub check_module
       return;
     }
   }
-  
-  # later for speedup:
+ 
+  if($opt_c)
+  {
+    print "\tSkipping status check and eventual update\n"
+      if $loglevel>1;
+    return;
+  }
+
+  # XXX for speedup:
   #Cvs::Result::StatusList =
   #               $cvs->status("file1", "file2", {multiple => 1});
 		 
@@ -127,7 +145,7 @@ sub check_module
       {
 	print "\tModule needs update: working revision ($wr) < " .
 	  "tag revision ($tr)\n";
-	# do update to the tagged release
+	# XXX do update to the tagged release
       }
     }
     else
@@ -149,7 +167,7 @@ sub check_module
   }
   
   # mark this module as checked
-  `touch "$testdir/$m/CVS"`;
+  system 'touch', "$testdir/$m/CVS" || warn "touch: Returned status $?";
 }
 
 ##########################################################################
@@ -163,21 +181,10 @@ sub check_all
     ) or die $Cvs::ERROR;
 
   my @modules = $cvs->module_list;
-  print $#modules, " modules\n" if($loglevel>1);
+  print $#modules, " modules\n" if $loglevel>1;
 
   foreach(@modules)
   {
-    print "Module '$_': " if($loglevel>1);
-    if($_ !~ /\w\w\w-\w\w\w/)
-    {
-      print "\tIllegal name - skipping\n" if($loglevel>2);
-      next;
-    }
-    if(/eng-ger|ger-eng|spa-spa/)
-    {
-      print "\tIllegal module - skipping\n" if($loglevel>2);
-      next;
-    }
     check_module($_);
   }
 }
@@ -185,14 +192,14 @@ sub check_all
 ##########################################################################
 
 our $interactive = 1;
-our $loglevel = 1;
-# this will be the residence of the release tree
-our $testdir = '/home/micha/dict/CVS';
-our $cvsroot = ':ext:micha137@cvs.sourceforge.net:/cvsroot/freedict';
+our $loglevel = 2;
+# this will be the residence of the release tree - should be parameters :)
+our $testdir = $ENV{'FREEDICTDIR'} || '/home/micha/dict/CVS';
+our $cvsroot = $ENV{'CVSROOT'} || ':ext:micha137@cvs.sourceforge.net:/cvsroot/freedict';
 
-getopts('hnaiv:m:');
-$interactive = 0 if($opt_n);
-$loglevel = $opt_v if($opt_v);
+getopts('hnaicv:m:');
+$interactive = 0 if $opt_n;
+$loglevel = $opt_v if $opt_v;
 if($opt_h)
 {
   print <<EOT;
@@ -206,8 +213,9 @@ For checkout the latest revision tagged as releaseable is used, if available.
 For checking/remembering the day of the last update, the modification date
 of the "CVS" subdirectory of each module is checked/touched.
 
-$0 (-h | -a | -m la1-la2) [-v level] [-n] [-i]
+$0 -h | -a | -m la1-la2 [-v level] [-n] [-i] [-c]
   -a\t\tCheck all modules
+  -c\t\tDo `cvs checkout', but no `cvs update'
   -n\t\tNo interactive mode: No automatic checkouts, no questions.
   -v level\tSet debug level (0 = error, 1 = warn, 2 = info, 3 = verbose)
   -i ignore date of last CVS check and check anyway
@@ -223,8 +231,8 @@ if(!$opt_a && !$opt_m)
 }
   
 
-check_all() if($opt_a);
-check_module($opt_m) if($opt_m);
+check_all() if $opt_a;
+check_module($opt_m) if $opt_m;
 
 print "Finished.\n" if $loglevel>1;
 
