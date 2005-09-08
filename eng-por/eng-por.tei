@@ -4,14 +4,14 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>English-Portuguese Freedict Dictionary</title>
+        <title>English-Portuguese FreeDict Dictionary</title>
         <respStmt>
-          <resp>by</resp>
-          <name>Horst Eyermann, Horst@freedict.de</name>
+	  <resp>by</resp> <name>Horst Eyermann &lt;Horst@freedict.de></name>
+	  <resp>Maintainer</resp> <name>Raul Fernandes &lt;rgf@ieg.com.br&gt;</name>
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.1</edition>
+        <edition>0.2</edition>
       </editionStmt>
       <extent>more than 15000 headwords</extent>
       <publicationStmt>
@@ -21,23 +21,22 @@
           <p>Available under the terms of the GNU General Public
             Licence.</p>
         </availability>
-        <date>2004</date>
+        <date>2004-2005</date>
         <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
       <notesStmt>
         <note type="status" >too small</note>
       </notesStmt>
       <sourceDesc>
-        <p>Home: <xptr url="http://freedict.de/" />
-        </p>
-        <p>This Database was generated from ergane, http://www.travlang.com.</p>
-        <p>Other contributors: Raul Fernandes &lt;rgfbr@yahoo.com.br></p>
-        <p>Thanks!</p>
+	<p>Home: <xptr url="http://www.travlang.com/"/></p>
+        <p>This Database was generated from Ergane.</p>
+	<p>Other contributors: Raul Fernandes &lt;rgf@ieg.com.br&gt;</p>
+	<p>Thanks!</p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
       <projectDesc>
-        <p>This dictionary comes to you trough nice people making it
+        <p>This dictionary comes to you through nice people making it
           available for free and for good. It is part of the FreeDict project,
           http://www.freedict.org / http://freedict.de. This
           project aims to make available many translating dictionaries
@@ -45,6 +44,13 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change>
+        <date>2005-09-07</date>
+        <respStmt>
+          <name>Raul Fernandes</name>
+        </respStmt>
+	<item>Added about 3500 entries, fixed missing spaces in translation equivalents</item>
+      </change>
       <change>
         <date>2005-02-11</date>
         <respStmt>
@@ -64,8 +70,7 @@
         <respStmt>
           <name>Horst Eyermann</name>
         </respStmt>
-        <item>This Database was generated from ergane,
-	  http://www.travlang.com - Thanks!</item>
+        <item>Database generated from Ergane - Thanks!</item>
       </change>
     </revisionDesc>
   </teiHeader>
