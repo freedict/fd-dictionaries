@@ -26,7 +26,7 @@
        indendation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.4 2005-09-08 11:54:16 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.5 2005-09-23 14:52:48 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -46,6 +46,7 @@
       
   <xsl:param name="translate-from">;/&#x2010;&#x15f;ĞğİıŞş</xsl:param>
   <xsl:param name="translate-to">,+-sGgIiSs</xsl:param>
+  <xsl:param name="remove-chars"></xsl:param>
 
   <!-- something like the main function -->
   <xsl:template match="/">
@@ -85,7 +86,9 @@
       </xsl:when>
       <xsl:otherwise>
 	<xsl:for-each select="form/orth">
-	  <xsl:value-of select="translate(normalize-space(.), $translate-from, $translate-to)" />
+	  <xsl:call-template name="normalize-word">
+	    <xsl:with-param name="word" select="."/>
+	  </xsl:call-template>
 	  <xsl:if test="not(position()=last())">;</xsl:if>
 	</xsl:for-each>
 
@@ -113,15 +116,70 @@
 	  </xsl:message>
         </xsl:if>
 
-	<!-- We could as well warn of semicolons being translated to commas... -->	
 	<xsl:for-each select="$trs[16>position()]">
-	  <xsl:value-of select="translate(normalize-space(.), $translate-from, $translate-to)" />
+	  <xsl:call-template name="normalize-word">
+	    <xsl:with-param name="word" select="."/>
+	  </xsl:call-template>
 	  <xsl:if test="position()!=last()">;</xsl:if>
 	</xsl:for-each>
 
 	<xsl:text>&#xA;</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="normalize-word">
+    <xsl:param name="word"/>
+
+    <xsl:variable name="word1">
+      <xsl:call-template name="substring-replace">
+	<xsl:with-param name="string" select="$word"/>
+	<!-- LATIN CAPITAL LIGATURE IJ -->
+	<xsl:with-param name="what" select="'&#x132;'"/>
+	<xsl:with-param name="by" select="'IJ'"/>
+      </xsl:call-template>
+    </xsl:variable>
+
+    <xsl:variable name="word2">
+      <xsl:call-template name="substring-replace">
+	<xsl:with-param name="string" select="$word1"/>
+	<!-- LATIN SMALL LIGATURE IJ -->
+	<xsl:with-param name="what" select="'&#x133;'"/>
+	<xsl:with-param name="by" select="'ij'"/>
+      </xsl:call-template>
+    </xsl:variable>
+    
+    <!-- We could warn of semicolons being translated to commas -->	
+    <xsl:value-of select="translate(translate(normalize-space($word2), $translate-from, $translate-to), $remove-chars, '')"/>
+  </xsl:template>
+
+  <xsl:template name="substring-replace">
+    <xsl:param name="string"/>
+    <xsl:param name="what"/>
+    <xsl:param name="by"/>
+    <xsl:if test="string-length($string)>0">
+      <xsl:choose>
+	<xsl:when test="substring($string,1,string-length($what))=$what">
+	  <!-- replace found substring -->
+	  <xsl:value-of select="$by"/>
+	  <xsl:call-template name="substring-replace">
+	    <xsl:with-param name="string" select="substring($string,1+string-length($what))"/>
+	    <xsl:with-param name="what" select="$what"/>
+	    <xsl:with-param name="by" select="$by"/>
+	  </xsl:call-template>
+
+	</xsl:when>
+	<xsl:otherwise>
+	  <!-- copy current char -->
+	  <xsl:value-of select="substring($string,1,1)"/>
+	  <xsl:call-template name="substring-replace">
+	    <xsl:with-param name="string" select="substring($string,2)"/>
+	    <xsl:with-param name="what" select="$what"/>
+	    <xsl:with-param name="by" select="$by"/>
+	  </xsl:call-template>
+	</xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>
