@@ -1,6 +1,7 @@
 FREEDICTDIR ?= ..
 DISTFILES = COPYING eng-ara.tei Makefile README ChangeLog
 include $(FREEDICTDIR)/tools/Makefile.common
+UNSUPPORTED_PLATFORMS = evolutionary
 
 clean::
 	-rm -f ara-eng.c5 ara-eng.c5.index ara-eng.c5.dict
