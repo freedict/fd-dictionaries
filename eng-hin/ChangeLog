@@ -1,3 +1,7 @@
+2005-08-08 Michael Bunk
+
+	* corrected encoding of examples by using "<eg><q>" instead of "<usg>"
+
 2004-12-26 Michael Bunk
 
 	* switched to Makefile.common style 
@@ -5,10 +9,10 @@
 2004-05-30 Michael Bunk
 
 	* made new target "reverse" work for dictd
-	
+
 	  the index is generated with the "allchars" option.
 	  for this xmltei2xmldict.pl was adapted.
-	  
+
 2004-05-12 Michael Bunk <kleinerwurm@gmx.net>
 
 	* moved from TEI P3 (SGML) to TEI P4 (XML)

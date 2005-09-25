@@ -4,6 +4,7 @@ DISTFILES = COPYING Makefile README ChangeLog AUTHORS \
 	 ehconv.yy eng-hin.tei.header
 TEI2DICTFLAGS = -a
 include $(FREEDICTDIR)/tools/Makefile.common
+UNSUPPORTED_PLATFORMS = evolutionary bedic
 
 # these are eng-hin specific targets
 ehconv.c: ehconv.yy

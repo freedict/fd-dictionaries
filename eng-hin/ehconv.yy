@@ -331,10 +331,10 @@ WHITESPACE	[ \t]*
 <DE1>\"{WHITESPACE}{OPTCOMMENT}/\n{WHITESPACE}\n	BEGIN(EX1);
 
 <EXAMPLE>[^\n]+			{
-		printf("  <usg>");
+		printf("  <eg><q>");
 	        /* special chars like " and & also get encoded! */
 		printfIscii2Utf8(yytext);
-		printf("</usg>\n"); BEGIN(EX1);
+		printf("</q></eg>\n"); BEGIN(EX1);
 		}
 
 <EX1>\n--\"[1-9]\.		{

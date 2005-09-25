@@ -3,6 +3,7 @@
   "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML 'INCLUDE'> 
   <!ENTITY % TEI.dictionaries 'INCLUDE'>
+  <!-- for &lsquo; entities -->
   <!ENTITY % ISOnum PUBLIC
     "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" "/usr/share/sgml/xmlcharent/iso-num.ent">
   %ISOnum;
@@ -14,14 +15,18 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>English-Hindi Freedict Dictionary</title>
+        <title>English-Hindi FreeDict Dictionary</title>
+        <respStmt>
+          <resp>Maintainer</resp>
+          <name>Michael Bunk &lt;micha@luetzschena.de></name>
+        </respStmt>
         <respStmt>
           <resp>Author of Converter Text-XML</resp>
           <name>Michael Bunk, micha@luetzschena.de</name>
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>1.3</edition>
+        <edition>1.4</edition>
       </editionStmt>
       <extent>about 25 600 headwords</extent>
       <publicationStmt>
@@ -92,6 +97,8 @@ See the website for:&#x0a;
 &#x0a;
 Your Valuable Feedback can be sent to dipti@iiit.net&#x0a;
 </note>
+	<note>The POS element contents do not follow the typology given in the
+	  FreeDict HOWTO.</note>
       </notesStmt>
       <sourceDesc>
 	<p>Home: <xptr url="http://www.iiit.net/ltrc/Dictionaries/Dict_Frame.html"/></p>
@@ -99,14 +106,21 @@ Your Valuable Feedback can be sent to dipti@iiit.net&#x0a;
     </fileDesc>
     <encodingDesc>
         <projectDesc>
-              <p>This dictionary comes to you trough nice people making it
-                available for free and for good. It is part of the FreeDict project,
-          http://www.freedict.org / http://freedict.de. This
-          project aims to make available many translating dictionaries
-          for free. Your contributions are welcome!</p>
+	  <p>This dictionary comes to you through nice people making it
+	    available for free and for good. It is part of the FreeDict
+	    project, http://www.freedict.org / http://freedict.de. This project
+	    aims to make available many translating dictionaries for free. Your
+	    contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change>
+        <date>2005-08-08</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Correct encoding of examples using &lt;eg>&lt;q></item>
+      </change>
       <change>
         <date>2004-12-28</date>
         <respStmt>
