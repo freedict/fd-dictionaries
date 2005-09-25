@@ -5,6 +5,8 @@ include $(toolsdir)/Makefile.config
 #### set some variables
 #######################
 
+SHELL=bash
+
 available_platforms := dictd evolutionary bedic stardict aspell d4m fo
 
 xsldir := $(toolsdir)/xsl

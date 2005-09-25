@@ -177,7 +177,7 @@ sub check_all
   print "Getting module list..." if $loglevel>1;
   my $cvs = new Cvs($testdir, cvsroot => $cvsroot,
     # password => '',
-    # debug => 1
+     debug => 1
     ) or die $Cvs::ERROR;
 
   my @modules = $cvs->module_list;
@@ -194,8 +194,9 @@ sub check_all
 our $interactive = 1;
 our $loglevel = 2;
 # this will be the residence of the release tree - should be parameters :)
-our $testdir = $ENV{'FREEDICTDIR'} || '/home/micha/dict/CVS';
-our $cvsroot = $ENV{'CVSROOT'} || ':ext:micha137@cvs.sourceforge.net:/cvsroot/freedict';
+our $testdir = $ENV{'FREEDICTDIR'} || '~/freedict';
+our $cvsroot = ($ENV{'CVSROOT'} =~ /freedict/) ? $ENV{'CVSROOT'} :
+  ':pserver:anonymous@cvs.sourceforge.net:/cvsroot/freedict';
 
 getopts('hnaicv:m:');
 $interactive = 0 if $opt_n;

@@ -26,26 +26,30 @@
        indendation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.5 2005-09-23 14:52:48 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.6 2005-09-25 12:35:16 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
   is replaced by a simple 0x2d HYPHEN MINUS, othwerwise we get problems
   with the output encoding.
 
-  Some characters with diacritical marks used in Turkish/Kurdish
+  Some characters with diacritical marks used in Turkish/Kurdish/Croatian
   languages are replaced by base characters without diacritical marks:
 
+  0x107 ć	LATIN SMALL LETTER C WITH ACUTE
+  0x10d č	LATIN SMALL LETTER C WITH CARON
+  0x111 đ	LATIN SMALL LETTER D WITH STROKE
   0x11e	Ğ	LATIN CAPITAL LETTER G WITH BREVE
   0x11f	ğ	LATIN SMALL LETTER G WITH BREVE
   0x130	İ	LATIN CAPITAL LETTER I WITH DOT ABOVE
   0x131	ı	LATIN SMALL LETTER DOTLESS I
+  0x159	ř	LATIN SMALL LETTER R WITH CARON
   0x15e Ş	LATIN CAPITAL LETTER S WITH CEDILLA
   0x15f	ş	LATIN SMALL LETTER S WITH CEDILLA
   -->
       
-  <xsl:param name="translate-from">;/&#x2010;&#x15f;ĞğİıŞş</xsl:param>
-  <xsl:param name="translate-to">,+-sGgIiSs</xsl:param>
+  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđř</xsl:param>
+  <xsl:param name="translate-to">,+-GgIiSsccdr</xsl:param>
   <xsl:param name="remove-chars"></xsl:param>
 
   <!-- something like the main function -->
