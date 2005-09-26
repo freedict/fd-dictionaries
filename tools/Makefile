@@ -30,4 +30,7 @@ uninstall:
 dbupdate:
 	$(BUILD)
 
-.PHONY: install uninstall dbupdate commit release-% all vok
+clean:
+	$(BUILD)
+
+.PHONY: install uninstall dbupdate commit release-% all vok clean

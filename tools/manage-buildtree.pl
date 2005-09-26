@@ -177,7 +177,7 @@ sub check_all
   print "Getting module list..." if $loglevel>1;
   my $cvs = new Cvs($testdir, cvsroot => $cvsroot,
     # password => '',
-     debug => 1
+    #debug => 1
     ) or die $Cvs::ERROR;
 
   my @modules = $cvs->module_list;
