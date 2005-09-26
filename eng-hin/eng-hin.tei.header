@@ -3,10 +3,13 @@
   "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML 'INCLUDE'> 
   <!ENTITY % TEI.dictionaries 'INCLUDE'>
-  <!-- for &lsquo; entities -->
-  <!ENTITY % ISOnum PUBLIC
-    "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" "/usr/share/sgml/xmlcharent/iso-num.ent">
-  %ISOnum;
+  <!-- Previously, the &lsquo; entity was taken from
+         <!ENTITY % ISOnum PUBLIC
+           "-//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML"
+	   "/usr/share/sgml/xmlcharent/iso-num.ent">
+         %ISOnum;
+       But defining it here directly makes us more independent aka portable. -->
+  <!ENTITY lsquo  "&#x2018;">
   <!ENTITY % TEI.linking      "INCLUDE" >
   <!ATTLIST xptr url CDATA #IMPLIED >
   <!ATTLIST xref url CDATA #IMPLIED >
@@ -114,6 +117,14 @@ Your Valuable Feedback can be sent to dipti@iiit.net&#x0a;
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change>
+        <date>2005-09-26</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Avoid including -//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML for
+	 the lsquo entity only. We define it ourselves in the internal subset now.</item>
+      </change>
       <change>
         <date>2005-08-08</date>
         <respStmt>
