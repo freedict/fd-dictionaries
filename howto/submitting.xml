@@ -22,11 +22,11 @@
       <caption>
 	<para>The data flow from the point of view of the FreeDict Build System
 	  originates in the FreeDict CVS repository. From there checkouts are
-	  made to two buildhosts, where the data is converted to the formats of
+	  made to buildhosts, where the data is converted to the formats of
 	  the supported platforms and where the FreeDict website is generated.
 	  The most interesting metadata is collected in an XML file. That is used
 	  to build the download and details pages on the FreeDict website. Other
-	  projects may use that XML file to find out about major changes to the
+	  projects may use that XML file to find out about new releases of the
 	  FreeDict databases.</para>
       </caption>
     </mediaobject>
@@ -36,9 +36,9 @@
     platforms. Once a dictionary is available in TEI format, it can be
     converted to many other formats, to be used with dictionary applications,
     spell checkers (for this only the headwords or translation equivalents are taken),
-    for printing a book etc.</para>
+    for printing a book using XSL-FO etc.</para>
   <note>
-    <para>Support for spell checkers and XSL-FO is still a wish.</para>
+    <para>Support for aspell and XSL-FO is still a wish.</para>
   </note>
   <para>This is enabled by two factors. First, XML is purposely very flexible.
     Second, the tools for converting the TEI files are kept in one place
@@ -54,14 +54,18 @@
 
   <programlisting>FREEDICTDIR ?= ..
 
-# adjust per dictionary variables like DISTFILES, TEI2DICTFLAGS, DICTFMTFLAGS etc.
+# Adjust per dictionary variables like DISTFILES, TEI2DICTFLAGS, DICTFMTFLAGS etc.
 DISTFILES = la1-la2.tei README Makefile NEWS
 
 include $(FREEDICTDIR)/tools/Makefile.common
 
-# add targets specific for this dictionary module,
+# Optional, space separated list of platform identifiers:
+# Default: all supported
+# UNSUPPORTED_PLATFORMS = evolutionary bedic
+
+# Add targets specific for this dictionary module,
 # eg. instructions how to create the TEI file from
-# another source format
+# another source format.
 </programlisting>
 
   <para>In the first line, <envar>FREEDICTDIR</envar> is per default set to the
@@ -113,6 +117,20 @@ include $(FREEDICTDIR)/tools/Makefile.common
 	<para>puts a release file for the specified platform into the
 	  corresponding directory of <filename>$(FREEDICTDIR)/release</filename>.
 	</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term><literal>query-<replaceable>PLATFORM</replaceable></literal></term>
+      <listitem>
+	Make will exit with an error message and an exit status of 1 if the
+	<replaceable>PLATFORM</replaceable> in question is not supported by
+	this dictionary module. Which platforms are supported is determined by
+	the <literal>UNSUPPORTED_PLATFORMS</literal> variable. This target is
+	used by the
+	<literal>release-<replaceable>PLATFORM</replaceable></literal> targets
+	as a guard to prevent builds for unsupported platforms. The support
+	status information is also saved in
+	<filename>freedict-database.xml</filename>
       </listitem>
     </varlistentry>
     <varlistentry>

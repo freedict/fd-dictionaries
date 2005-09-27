@@ -25,7 +25,7 @@
       dictionary module you want to validate (<command>cd</command> to it
       first).</para>
 
-    <para>The makefile target itself is simple. It sets some environment
+    <para>The Makefile target itself is simple. It sets some environment
       variables, so that nsgmls can find the DTDs, tells it to handle XML data
       and then calls it.</para>
 
@@ -205,7 +205,7 @@ sys     0m38.618s</literallayout></computeroutput>
 
 	<para>To convert dictionaries into the bedic format, you can give the
 	  command <command>make release-bedic</command> from the directory of the
-	  res[ective dictionary module. The resulting file should be found in
+	  respective dictionary module. The resulting file should be found in
 	  <filename>$FREEDICTDIR/release/dic</filename>.</para>
 
 	<para>The conversion process follows these steps:</para>
@@ -328,33 +328,36 @@ sys     0m38.618s</literallayout></computeroutput>
 	<title>Evolutionary Dictionary</title>
 
 	<para>The FreeDict dictionaries are available for the shareware program
-	  "Evolutionary Dictionary" from <ulink
+	  <application>Evolutionary Dictionary</application> from <ulink
 	    url="http://www.evolutionary.net/dict-info.htm">http://www.evolutionary.net/dict-info.htm</ulink>.</para>
 
 	<para>The dictionary files for this platform must be created with the
-	  Win32 Apllication 'Dictionary.exe', available from <ulink
-	    url="http://www.evolutionary.net/dict-info1.htm"
+	  Win32 GUI-only Application <application>Dictionary.exe</application>,
+	  available from <ulink url="http://www.evolutionary.net/dict-info1.htm"
 	    >http://www.evolutionary.net/dict-info1.htm</ulink>. 
-	  It currently does not run in the Windows Emulator 'wine'.</para>
+	  It currently does not run in the Windows Emulator <application>wine</application>.</para>
 
-	<para>According to its documentation 'Dictionary.exe' can import:</para>
+	<para>According to its documentation <application>Dictionary.exe</application>
+	  can import:</para>
 
 	<itemizedlist>
 	  <listitem>
-	    <para>VOK files, a format specifically made for MakeDict (see next section)
-	    </para>
+	    <para>VOK files, a format specifically made for
+	      <application>Dictionary.exe</application> (see next section)</para>
 	  </listitem>
 	  <listitem>
-	    <para>Ergane format, used by the free PC translation program "Ergane".
+	    <para>Ergane format, used by the free PC translation program
+	      <application>Ergane</application>.
 	      They say to make sure you export from Ergane in type 2 format (either 2a
 	      or 2b).  The program and free modules can be obtained from the web site -
 	      <ulink
 		url="http://www.travlang.com/Ergane/">http://www.travlang.com/Ergane/</ulink>.
-	      But the downloadable ergane _cannot_ export anything!</para>
+	      But the downloadable Ergane _cannot_ export anything!</para>
 	  </listitem>
 	  <listitem><para>"Mr Honey - English-German" (no format description available)</para>
 	  </listitem>
-	  <listitem><para>WordNet (again, no format description available)</para>
+	  <listitem><para><ulink url="http://www.cogsci.princeton.edu/~wn/">WordNet</ulink>
+	    (again, no format description available here)</para>
 	  </listitem>
 	</itemizedlist>
 
@@ -389,6 +392,29 @@ phrase/translated-phrase
 	    side of the '/' to indicate multiple translations of a word.
 	    eg.</para>
 	  <programlisting>ability/Faehigkeit;Begabung</programlisting>
+
+	  <para>The dictionaries built with this program have certain limits:</para>
+
+	  <programlisting>Max Word Size - 128 characters
+Max Words per entry - 16
+Max Entry Size - 1024
+
+Max Words - 1,048,576 - Not entries
+Max Word Data - 16Mb characters - Uncompressed (Compressed approx twice that amount)
+
+Max Phrase Categories - 64
+Data per Category - 64Kb characters - Uncompressed (Compressed approx twice that amount)
+
+Notes - 64Kb characters - Uncompressed</programlisting>
+
+	  <para>There is no limit to the number of entries, as such. There is a
+	    limit to the number of total words in all entries (i.e. between
+	    each semicolon) and the space used for all entries.</para>
+
+	  <para>Supplemental Entries - 64Kb - Words added or edited on a
+	    handheld are stored in a supplemental record. When the dictionary
+	    is saved by this program the words are re-indexed and the
+	    supplemental record is cleared.</para>
 
 	</section>
       </section>
