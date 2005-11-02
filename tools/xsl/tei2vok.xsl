@@ -26,7 +26,7 @@
        indendation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.7 2005-11-02 12:25:41 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.8 2005-11-02 22:41:59 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -44,17 +44,23 @@
   0x10d č	LATIN SMALL LETTER C WITH CARON
   0x110 Đ	LATIN CAPITAL LETTER D WITH STROKE
   0x111 đ	LATIN SMALL LETTER D WITH STROKE
+  0x113 ē	LATIN SMALL LETTER E WITH MACRON
   0x11e	Ğ	LATIN CAPITAL LETTER G WITH BREVE
   0x11f	ğ	LATIN SMALL LETTER G WITH BREVE
   0x130	İ	LATIN CAPITAL LETTER I WITH DOT ABOVE
   0x131	ı	LATIN SMALL LETTER DOTLESS I
+  0x14c Ō	LATIN CAPITAL LETTER O WITH MACRON
+  0x14d ō	LATIN SMALL LETTER O WITH MACRON
   0x159	ř	LATIN SMALL LETTER R WITH CARON
   0x15e Ş	LATIN CAPITAL LETTER S WITH CEDILLA
   0x15f	ş	LATIN SMALL LETTER S WITH CEDILLA
+  0x16d ŭ	LATIN SMALL LETTER U WITH BREVE
+  0x175 ŵ	LATIN SMALL LETTER W WITH CIRCUMFLEX
+  0x177 ŷ	LATIN SMALL LETTER Y WITH CIRCUMFLEX
   -->
 
-  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđřăČąĆĐ</xsl:param>
-  <xsl:param name="translate-to">,+-GgIiSsccdraCaCD</xsl:param>
+  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđřăČąĆĐŭŵŷŌōē</xsl:param>
+  <xsl:param name="translate-to">,+-GgIiSsccdraCaCDuwyOoe</xsl:param>
 
   <!-- These chars are removed:
 
