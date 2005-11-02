@@ -348,20 +348,25 @@ $(dictname).escaped.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
 # Charlint - A Character Normalization Tool
 # http://www.w3.org/International/charlint/
 #
-# This might have to adapted for you:
-#unicodedata = /usr/lib/perl5/5.8.5/unicore/UnicodeData.txt
-# or
+# You may want to adapt this:
 #unicodedata = $(toolsdir)/UnicodeData.txt
-#$(unicodedata):
-#	wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+unicodedata = /usr/lib/perl5/5.8.1/unicore/UnicodeData.txt
 #
-#$(CHARLINT_DATA): $(unicodedata)
-#	$(CHARLINT) -f $< -S $@ -d -D
-#$(CHARLINT):
-#	wget http://www.w3.org/International/charlint/charlint.pl
+$(toolsdir)/UnicodeData.txt:
+	cd $(toolsdir) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+#
+charlint_url = http://dev.w3.org/cvsweb/~checkout~/charlint/charlint.pl?rev=1.27&content-type=text/plain&only_with_tag=HEAD
+$(toolsdir)/charlint.pl::
+	@if [ ! -x $@ ]; then\
+	cd $(toolsdir) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
+#
+$(CHARLINT_DATA): $(unicodedata)
+	$(CHARLINT) -f $< -S $@ -d -D
+#
+$(CHARLINT):: $(CHARLINT_DATA)
 
 # generate NFC (Canonical Decomposition followed by Canonical Composition)
-$(dictname).normalized.dic: $(dictname).escaped.dic
+$(dictname).normalized.dic: $(dictname).escaped.dic $(CHARLINT)
 	$(CHARLINT) -s $(CHARLINT_DATA) <$< >$@
 
 $(dictname).unxeroxed.dic: $(dictname).normalized.dic

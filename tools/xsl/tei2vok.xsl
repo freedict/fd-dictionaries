@@ -26,7 +26,7 @@
        indendation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.6 2005-09-25 12:35:16 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.7 2005-11-02 12:25:41 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -36,8 +36,13 @@
   Some characters with diacritical marks used in Turkish/Kurdish/Croatian
   languages are replaced by base characters without diacritical marks:
 
+  0x103 ă	LATIN SMALL LETTER A WITH BREVE
+  0x105 ą	LATIN SMALL LETTER A WITH OGONEK
+  0x106 Ć	LATIN CAPITAL LETTER C WITH ACUTE
   0x107 ć	LATIN SMALL LETTER C WITH ACUTE
+  0x10c Č	LATIN CAPITAL LETTER C WITH CARON
   0x10d č	LATIN SMALL LETTER C WITH CARON
+  0x110 Đ	LATIN CAPITAL LETTER D WITH STROKE
   0x111 đ	LATIN SMALL LETTER D WITH STROKE
   0x11e	Ğ	LATIN CAPITAL LETTER G WITH BREVE
   0x11f	ğ	LATIN SMALL LETTER G WITH BREVE
@@ -47,10 +52,16 @@
   0x15e Ş	LATIN CAPITAL LETTER S WITH CEDILLA
   0x15f	ş	LATIN SMALL LETTER S WITH CEDILLA
   -->
-      
-  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđř</xsl:param>
-  <xsl:param name="translate-to">,+-GgIiSsccdr</xsl:param>
-  <xsl:param name="remove-chars"></xsl:param>
+
+  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđřăČąĆĐ</xsl:param>
+  <xsl:param name="translate-to">,+-GgIiSsccdraCaCD</xsl:param>
+
+  <!-- These chars are removed:
+
+  0x2d9 ˙	DOT ABOVE
+  -->
+
+  <xsl:param name="remove-chars">˙</xsl:param>
 
   <!-- something like the main function -->
   <xsl:template match="/">
