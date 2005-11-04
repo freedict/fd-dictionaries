@@ -26,7 +26,7 @@
        indendation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.8 2005-11-02 22:41:59 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.9 2005-11-04 18:53:01 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -40,27 +40,43 @@
   0x105 ą	LATIN SMALL LETTER A WITH OGONEK
   0x106 Ć	LATIN CAPITAL LETTER C WITH ACUTE
   0x107 ć	LATIN SMALL LETTER C WITH ACUTE
+  0x108 Ĉ	LATIN CAPITAL LETTER C WITH CIRCUMFLEX
+  0x109 ĉ	LATIN SMALL LETTER C WITH CIRCUMFLEX
   0x10c Č	LATIN CAPITAL LETTER C WITH CARON
   0x10d č	LATIN SMALL LETTER C WITH CARON
+  0x10f ď	LATIN SMALL LETTER D WITH CARON
   0x110 Đ	LATIN CAPITAL LETTER D WITH STROKE
   0x111 đ	LATIN SMALL LETTER D WITH STROKE
   0x113 ē	LATIN SMALL LETTER E WITH MACRON
+  0x11b ě	LATIN SMALL LETTER E WITH CARON
+  0x11c Ĝ	LATIN CAPITAL LETTER G WITH CIRCUMFLEX
+  0x11d ĝ	LATIN SMALL LETTER G WITH CIRCUMFLEX
   0x11e	Ğ	LATIN CAPITAL LETTER G WITH BREVE
   0x11f	ğ	LATIN SMALL LETTER G WITH BREVE
+  0x125 ĥ	LATIN SMALL LETTER H WITH CIRCUMFLEX
   0x130	İ	LATIN CAPITAL LETTER I WITH DOT ABOVE
+  0x135 ĵ	LATIN SMALL LETTER J WITH CIRCUMFLEX
   0x131	ı	LATIN SMALL LETTER DOTLESS I
+  0x13e ľ	LATIN SMALL LETTER L WITH CARON
+  0x148 ň	LATIN SMALL LETTER N WITH CARON
   0x14c Ō	LATIN CAPITAL LETTER O WITH MACRON
   0x14d ō	LATIN SMALL LETTER O WITH MACRON
+  0x158 Ř	LATIN CAPITAL LETTER R WITH CARON
   0x159	ř	LATIN SMALL LETTER R WITH CARON
+  0x15d ŝ	LATIN SMALL LETTER S WITH CIRCUMFLEX
   0x15e Ş	LATIN CAPITAL LETTER S WITH CEDILLA
   0x15f	ş	LATIN SMALL LETTER S WITH CEDILLA
+  0x165 ť	LATIN SMALL LETTER T WITH CARON
   0x16d ŭ	LATIN SMALL LETTER U WITH BREVE
+  0x16f ů	LATIN SMALL LETTER U WITH RING ABOVE
   0x175 ŵ	LATIN SMALL LETTER W WITH CIRCUMFLEX
   0x177 ŷ	LATIN SMALL LETTER Y WITH CIRCUMFLEX
+  0x219 ș	LATIN SMALL LETTER S WITH COMMA BELOW
+  0x21b ț	LATIN SMALL LETTER T WITH COMMA BELOW
   -->
 
-  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđřăČąĆĐŭŵŷŌōē</xsl:param>
-  <xsl:param name="translate-to">,+-GgIiSsccdraCaCDuwyOoe</xsl:param>
+  <xsl:param name="translate-from">;/&#x2010;ĞğİıŞşćčđřăČąĆĐŭŵŷŌōēĈĉďěĜĝĥĵľňŘŝťůșț</xsl:param>
+  <xsl:param name="translate-to">,+-GgIiSsccdraCaCDuwyOoeCcdeGghjlnRstust</xsl:param>
 
   <!-- These chars are removed:
 
