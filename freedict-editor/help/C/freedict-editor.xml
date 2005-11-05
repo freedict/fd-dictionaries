@@ -111,9 +111,8 @@
       <para>To report a bug or make a suggestion regarding the &app;
 	application or this manual, use the <ulink
 	  url="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419">FreeDict
-	  Bug Tracking System</ulink>, provided by SourceForge. Please use the
-	category FreeDict-Editor (XXX setup category, include it in
-	the link).</para>
+	  Bug Tracking System</ulink>, provided by SourceForge, using the
+	category <literal>FreeDict-Editor</literal>.</para>
       <!-- Translators may also add here feedback address for translations -->
     </legalnotice> 
   </articleinfo> 
@@ -172,8 +171,8 @@
       <listitem><para><ulink url="http://gnu.org/">GNU</ulink>/Linux operating system</para></listitem>
       <listitem><para><ulink url="http://xmlsoft.org/">libxml2 &amp; libxslt</ulink></para></listitem>
       <listitem><para><ulink url="http://gtk.org/">GTK+ >=2.2</ulink></para></listitem>
-      <listitem><para><ulink url="http://unknown XXX/">libgtkhtml</ulink> XXX find link</para></listitem>
-      <listitem><para>XXX what about libgnomeui-2.0 libbonoboui-2.0 gconf-2.0</para></listitem>
+      <listitem><para><ulink url="http://ftp.gnome.org/pub/GNOME/sources/libgtkhtml/">libgtkhtml</ulink> (it doesn't seem to have its own homepage)</para></listitem>
+      <listitem><para>libgnomeui-2.0, libbonoboui-2.0 and gconf-2.0 - these are all <ulink url="http://gnome.org/">GNOME</ulink> libraries</para></listitem>
     </itemizedlist>
 
     <para>The following additional software is recommended, but a build should proceed without it:</para>
