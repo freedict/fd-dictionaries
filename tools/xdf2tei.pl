@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: xdf2tei.pl,v 1.3 2005-07-27 06:26:02 micha137 Exp $
+# $Id: xdf2tei.pl,v 1.4 2005-11-09 21:06:11 micha137 Exp $
 # (c) Oct 2004 - July 2005 Michael Bunk
 # This is GPL software.
 #
@@ -112,7 +112,11 @@ while(<>)
   s/\r\n//;
 
   # remove Unicode Byte Order Mark
-  s/\xef\xbb\xbf//;
+  if(/\xef\xbb\xbf/)
+  {
+    print STDERR "removing Byte Order Mark\n";
+    s/\xef\xbb\xbf//;
+  }
 
   if(/^\s*#(.*)/)
   {

@@ -28,7 +28,7 @@ rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 # so spaces are substituted by underscores
 empty:=
 space:= $(empty) $(empty)
-version1 = $(shell sed -e '30q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
+version1 = $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
 	   $(dictname).tei)
 version = $(subst $(space),_,$(version1))
 
@@ -36,7 +36,7 @@ version = $(subst $(space),_,$(version1))
 # default target
 ################
 
-all:	$(dictname).dict $(dictname).index	
+all:	$(dictname).dict $(dictname).index
 
 ##################################################
 #### targets to extract information from TEI files
@@ -53,8 +53,8 @@ status: $(dictname).tei
 	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)"
 
 sourceURL: $(dictname).tei
-	@echo -n "$(shell grep -m 1 -o -P -e \
-	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)"
+	@echo -n $(shell grep -m 1 -o -P -e \
+	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
 
 maintainer: $(dictname).tei $(xsldir)/getmaintainer.xsl
 	@$(XSLTPROCESSOR) $(xsldir)/getmaintainer.xsl $<
@@ -143,7 +143,7 @@ $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 
 release-dict-tbz2-c5: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
-	
+
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.c5.dict.dz $(dictname)-reverse.c5.index
 	cd .. && \
