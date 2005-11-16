@@ -13,7 +13,7 @@ xsldir := $(toolsdir)/xsl
 tei2dict := $(toolsdir)/xmltei2xmldict.pl
 xmllint := /usr/bin/xmllint
 
-dictname := $(shell basename $(shell pwd))
+dictname := $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 # Extracting the tiny edition element contents per XSLT is
@@ -173,20 +173,22 @@ vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
 $(FREEDICTDIR)/release/vok/tld/%.tld: $(FREEDICTDIR)/release/vok/%.vok
 	@if [ ! -d $(FREEDICTDIR)/release/vok/tld ]; then \
 		mkdir $(FREEDICTDIR)/release/vok/tld; fi
-ifdef EVOLUTIONARY_WINE
-	$(EVOLUTIONARY_WINE) $<
+ifdef EVOLUTIONARY_MAKEDICT
+	cd $(dir $<) && $(EVOLUTIONARY_MAKEDICT) $(notdir $<)
 else
 	@echo "To convert from '.vok' to '.tld' requires manual invervention,"
 	@echo "because the 'Dictionary.exe' tool for it is a Win32 Application."
-	@echo "Fortunately, it runs in the Windows Emulator 'Wine'."
-	@echo "Please define EVOLUTIONARY_WINE in $(toolsdir)/Makefile.config"
+	@echo "When you build on Cygwin and have Dictionary.exe installed, "
+	@echo "it will be started automatically."
+	@echo "Unfortunately, it currently does not run in the Windows Emulator 'Wine'."
+	@echo "Please define EVOLUTIONARY_MAKEDICT in $(toolsdir)/Makefile.config"
 	exit 1
 endif
 
 freedict-$(dictname)-$(version).evolutionary.zip: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
-	(cd $(FREEDICTDIR)/release/vok/tld; \
-	 rm -f $@; \
-	 zip $@ $(dictname).tld)
+	(cd '$(FREEDICTDIR)/release/vok/tld'; \
+	 rm -f '$@'; \
+	 zip '$@' '$(dictname).tld')
 
 release-evolutionary: freedict-$(dictname)-$(version).evolutionary.zip
 
