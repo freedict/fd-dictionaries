@@ -6,9 +6,9 @@
 
      Limitations:
 
-     * The maximum word length of 128 characters is not checked. Importing a
-       .vok file with MakeDict can lead to 'word too long' errors (eg. with
-       deu-kur dictionary).
+     * The checking for maximum 'word' length of 128 characters is not done
+       correctly. Importing a .vok file with MakeDict can stille lead to
+       'word too long' errors because of concatenated pos/genus information.
 
      -->
 
@@ -23,10 +23,10 @@
   <xsl:strip-space elements="entry orth tr"/>
 
   <!-- The width of PDA displays is limited. This parameter governs
-       indendation and wrapping. -->
+       indentation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.9 2005-11-04 18:53:01 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.10 2005-11-16 21:19:31 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -129,6 +129,9 @@
 	  <xsl:if test="not(position()=last())">;</xsl:if>
 	</xsl:for-each>
 
+	<!-- Add part-of-speech or genus for nouns to the
+	     word. Actually, these should count against the
+	     word length -->
 	<xsl:if test="count(gramGrp/pos)>0">
 	  <xsl:text> {</xsl:text>
 	  <xsl:choose>
@@ -187,9 +190,21 @@
     </xsl:variable>
     
     <!-- We could warn of semicolons being translated to commas -->	
-    <xsl:value-of select="translate(translate(normalize-space($word2), $translate-from, $translate-to), $remove-chars, '')"/>
+    <xsl:variable name="translated" select="translate(translate(normalize-space($word2), $translate-from, $translate-to), $remove-chars, '')"/>
+
+    <!-- Maximum length of a word is 127 - not the 128 as documented --> 
+    <xsl:if test="string-length(substring($translated,128,1))>0">
+      <xsl:message>Warning: Truncating to 127 characters:
+        <xsl:value-of select="$translated"/>
+Result:
+        <xsl:value-of select="substring($translated, 1, 127)"/>
+      </xsl:message>
+    </xsl:if>
+
+    <xsl:value-of select="substring($translated, 1, 127)"/>
   </xsl:template>
 
+  <!-- Doing this in a template is very inefficient. -->
   <xsl:template name="substring-replace">
     <xsl:param name="string"/>
     <xsl:param name="what"/>
