@@ -220,7 +220,7 @@ validation: $(dictname).tei
 	export SP_ENCODING=XML; \
 	export SP_CHARSET_FIXED=YES; \
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
-	nsgmls -s -E 10 $(dictname).tei
+	nsgmls -wxml -s -E 10 $(dictname).tei
 	# way 2
 	if [ -x $(xmllint) ]; then \
 		$(xmllint) --noout --valid $(dictname).tei; fi
@@ -244,7 +244,7 @@ test-reverse-c5: $(rdictname).c5.index $(rdictname).c5.dict
 commit: 
 	cvs -z3 commit
 
-dbupdate:
+dbupdate: $(dictname).tei
 	$(toolsdir)/extractdata.pl -vfd $(dictname)
 
 # Query platform support status

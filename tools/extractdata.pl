@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.8 $
+# $Revision: 1.9 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -254,25 +254,6 @@ sub fdict_extract_releases
   my $doc = shift;
   my $docel = $doc->getDocumentElement();
 
-  # one package looks (looked?!) like:
-  #
-  #<tr bgcolor="#FFFFFF">
-  #<td colspan="3">
-  #<h3>Afrikaans - English [<a href="showfiles.php?group_id=1419&amp;package_id=2664">show only this package</a>]</h3>
-  #</td>
-  #<td colspan="4">&nbsp;</td>
-  #</tr>
-  #<tr bgcolor="#FFFFFF">
-  #<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="shownotes.php?release_id=65175"><IMG src="http://images.sourceforge.net/images/ic/manual16c.png" alt="Release Notes" border="0" width="15" height="15"> 0.0.1</a></b> [<a href="showfiles.php?group_id=1419&amp;package_id=2664&amp;release_id=65175">show only this release</a>]</td>
-  #<td colspan="4" align="middle"><b>2001-12-11 11:03</b></td></tr>
-  #<tr bgcolor="#FFFFFF">
-  #<td colspan="3"><dd><a href="http://prdownloads.sourceforge.net/freedict/afr-eng.tar.gz?download">afr-eng.tar.gz</a></td>
-  #<td align="right">99947 </td>
-  #<td align="right">119 </td>
-  #<td>Any</td>
-  #<td>Source .gz</td>
-  #</tr>
-
   my $file = *STDIN;
   if($opt_r ne '-')
   {
@@ -290,37 +271,36 @@ sub fdict_extract_releases
   my($packages, $filename, $size, $downloads, $URL);
 
   # for all packages
-  while($line =~ /(show only this package)/cg)
+  while($line =~ /<tr class="package">/cg)
   {
     my $myredo;
     $packages++;# counts packages
     warn "   cannot find release number"
-      if($line !~ /height="15"> ([\d\.]+)<\/a>/cg);
+      if($line !~ /id="pkg\d+_\d+rel\d+_\d+">([\d\.]+)<\/a>/cg);
     my $release_version = $1;
     warn "   cannot find release date"
-      if($line !~ /middle"><b>([\d\- :]+)<\/b>/cg);
+      if($line !~ /otes<\/a>\] \(([\d\- :]+)\) <\/small>/cg);
     my $release_date = $1;
     printd "\n   package $packages: release_number: '$release_version' " .
       "release_date: '$release_date'\n";
 
     # for all files of a release
-    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">Download ([^<]*)<\/a><\/td>|(show only this package)/cg)
+    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">([^<]+)<\/a>/cg)
     {
       #print "1: $1 2: $2 3:$3\n";
-      if($3 and $3 eq "show only this package") { $myredo=1;last; }
-
+      #if($3 and $3 eq "show only this package") { $myredo=1;last; }
       #warn "cannot find filename" if($line !~ /\?download">([^<]*)<\/a><\/td>/cg);
       $filename = $2;
       $URL = $1;
 
       $size = -1;
       warn "   cannot find size"
-        if($line !~ /<td align="right">(\d*) <\/td>/cg);
+        if($line !~ /<td >(\d+)<\/td>/cg);
       $size = $1;
       
       $downloads = -1;
       warn "   cannot find downloads"
-        if($line !~ /<td align="right"><a href="[^"]+">(\d*)<\/a><\/td>/cg);
+        if($line !~ /">(\d*)<\/a><\/td>/cg);
       $downloads = $1;
  
       printd "\tfilename: $filename size: $size\n";
@@ -378,6 +358,10 @@ sub fdict_extract_releases
       elsif($ssfn =~ /\.ipk/)
       # eg. freedict-kha-deu-0.0.1.ipk
       { $platform = 'zbedic'; }
+ 
+      elsif($ssfn =~ /\.evolutionary\.zip/)
+      # eg. freedict-afr-eng-0.1.evolutionary.zip
+      { $platform = 'evolutionary'; }
       
       elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
       { $platform = 'src'; }
