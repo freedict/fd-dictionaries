@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
-  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML 'INCLUDE'> 
   <!ENTITY % TEI.dictionaries 'INCLUDE'>
   <!-- Previously, the &lsquo; entity was taken from
@@ -25,7 +25,7 @@
         </respStmt>
         <respStmt>
           <resp>Author of Converter Text-XML</resp>
-          <name>Michael Bunk, micha@luetzschena.de</name>
+          <name>Michael Bunk &lt;micha@luetzschena.de></name>
         </respStmt>
       </titleStmt>
       <editionStmt>
@@ -70,7 +70,7 @@ needs to be further improved. The idea here is to provide a basic
 electronic lexical data base for English- Hindi which the users can
 further improve and develop according to their needs.&#x0a;
 
-This dictionary is being released under the General Public Licence(GPL).
+This dictionary is being released under the General Public Licence (GPL).
 This licence allows you to make copies of the dictionary and distribute
 freely. It also allows you to build on top of this dictionary or a part
 thereof and redistribute the resulting work. However, essentially, there
