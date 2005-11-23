@@ -14,14 +14,14 @@ sub escape
 while(<E>)
 {
   $e = $_;
-  $e =~ tr/\x{FEFF}//;# remove Byte Order Mark
+  $e =~ tr/\x{FEFF}//d;# remove Byte Order Mark
   $e =~ s/\s*\r\n//;# remove trailing space & newline
 
   $t = <T>;
   # `ingtur-tur.utf' contains an invalid unicode character, which
   # leads to `make validation` complaining, if it stays unreplaced:
   # > nsgmls:eng-tur.tei:136233:13:E: non SGML character number 149
-  $t =~ tr/\x{95}\x{FEFF}/'/;# remove Byte Order Mark
+  $t =~ tr/\x{95}\x{FEFF}/'/d;# remove Byte Order Mark
   $t =~ s/\s*\r\n//;
   $t =~ s/^\s*//;# remove leading space
 
