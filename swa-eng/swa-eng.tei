@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-
-<!-- Why isn't it standalone="yes"? - micha137 -->
+<?xml version="1.0" encoding="utf-8"?>
 
 <!-- this file was partially generated
   on Mon Jun 21 12:22:26 2004
@@ -22,7 +20,9 @@
 
 -->
 
-<!DOCTYPE  TEI.2  PUBLIC "-//TEI Consortium//DTD TEI P4//EN"  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [ 
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [ 
 <!ENTITY % TEI.XML          "INCLUDE" >
 <!ENTITY % TEI.dictionaries "INCLUDE" > 
 <!ENTITY % TEI.linking	    "INCLUDE" >
@@ -53,7 +53,7 @@
       <titleStmt> 
 	<title>Swahili-English xFried/FreeDict Dictionary</title>
 	<respStmt> 
-	  <resp>compiled by</resp> <name>Beata Wojtowicz, wierzchob@wp.pl</name> 
+	  <resp>Compiled by</resp> <name>Beata Wojtowicz &lt;wierzchob@wp.pl></name> 
 	</respStmt> 
       </titleStmt>
 	      
@@ -92,7 +92,7 @@
 
     <encodingDesc>     
       <projectDesc>
-	<p>This dictionary comes to you trough nice people making it
+	<p>This dictionary comes to you through nice people making it
 	  available for free and for good. It is part of the FreeDict project,
 	  http://www.freedict.org / http://freedict.de. This
 	  project aims to make available many translating dictionaries
