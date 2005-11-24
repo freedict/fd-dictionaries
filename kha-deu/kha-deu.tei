@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN"
-  "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML		'INCLUDE' >
   <!ENTITY % TEI.dictionaries	'INCLUDE'>
   <!ENTITY % ISOLat1 PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN"
@@ -19,8 +19,8 @@
       <titleStmt>
         <title>Khasi-German FreeDict Dictionary</title>
         <respStmt>
-          <resp>Khasi Databases Maintainer</resp>
-          <name>Michael Bunk, micha@luetzschena.de</name>
+          <resp>Maintainer</resp>
+          <name>Michael Bunk &lt;micha@luetzschena.de></name>
         </respStmt>
       </titleStmt>
       <editionStmt>
@@ -54,7 +54,7 @@
     </fileDesc>
     <encodingDesc>
         <projectDesc>
-          <p>This dictionary comes to you trough nice people making it
+          <p>This dictionary comes to you through nice people making it
           available for free and for good. It is part of the FreeDict project,
           http://www.freedict.org / http://freedict.de. This
           project aims to make available many translating dictionaries
@@ -62,6 +62,14 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change>
+	<date>2005-Nov-24</date>
+        <respStmt>
+          <name>Michael Bunk</name>
+        </respStmt>
+        <item>Note that this version is quite final. I concentrate on
+	  the Khasi-English dictionary now.</item>
+      </change>
       <change>
 	<date>2003-05-01</date>
         <respStmt>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
 <!ENTITY % TEI.dictionaries "INCLUDE">
 <!ENTITY % TEI.XML "INCLUDE">
 <!ENTITY % TEI.linking "INCLUDE">
@@ -23,7 +25,7 @@
       <editionStmt>
 	<edition>0.2</edition>
       </editionStmt>
-      <extent>at least 2000 headwords</extent>
+      <extent>at least 2200 headwords</extent>
       <publicationStmt>
 	<publisher>FreeDict</publisher>
 	<availability>
@@ -36,7 +38,7 @@
 	<title>free dictionaries</title>
       </seriesStmt>
      <notesStmt>
-       <note type="status">presently growing (Jul 05)</note>
+       <note type="status">growth stalled (Nov 05)</note>
        <note>Thanks go to Pyndap for her patience during
          all the hours that I spent on this project!</note>
      </notesStmt>
@@ -54,6 +56,12 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change>
+	<date>2005-08-30</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Reached 2260 entries, corrected 10 spelling mistakes in English words,
+	  found with the current FreeDict-Editor</item>
+      </change>
       <change>
 	<date>2005-05-04</date>
 	<respStmt><name>Michael Bunk</name></respStmt>
@@ -2115,7 +2123,7 @@
     <trans><tr>keep</tr></trans>
   </sense>  <sense>
     <trans><tr>station</tr></trans>
-    <eg><q>La lah buh ia ki nongap ha ka khyrdop.</q>      <trans><tr>The guards could have been stationed at the gate.</tr></trans>
+    <eg><q>La lah buh ïa ki nongap ha ka khyrdop.</q>      <trans><tr>The guards could have been stationed at the gate.</tr></trans>
 </eg>
   </sense>  <sense>
     <trans><tr>place</tr></trans>
@@ -2198,10 +2206,10 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>ieng</orth>
+    <orth>ïeng</orth>
   </form>
   <gramGrp>
-    <pos>v</pos>
+    <pos>vi</pos>
   </gramGrp>
   <sense>
     <trans><tr>stand</tr></trans>
@@ -2369,7 +2377,7 @@
   <sense>
     <trans><tr>brother</tr></trans>
     <def>older brother</def>
-    <eg><q>Ki masi i bah ki ieng hangtai.</q></eg>
+    <eg><q>Ki masi i bah ki ïeng hangtai.</q></eg>
   </sense>
 </entry><entry>
   <form>
@@ -4434,7 +4442,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>baiap</orth>
+    <orth>baïap</orth>
   </form>
   <gramGrp>
     <pos>adj</pos>
@@ -10225,7 +10233,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>diengiap</orth>
+    <orth>diengïap</orth>
   </form>
   <gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -10781,7 +10789,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>bajan iap</orth>
+    <orth>bajan ïap</orth>
   </form>
   <gramGrp>
     <pos>adj</pos>
@@ -12584,13 +12592,14 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>baiapher</orth>
+    <orth>baïapher</orth>
   </form>
   <gramGrp>
     <pos>adj</pos>
   </gramGrp>
   <sense>
     <trans><tr>different</tr></trans>
+    <xr type="der"><ref>ïapher</ref></xr>
   </sense>
 </entry><entry>
   <form>
@@ -12876,7 +12885,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iapher</orth>
+    <orth>ïapher</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -13852,7 +13861,7 @@
   </sense>
 </entry><entry>
   <form>
-    <orth>iap</orth>
+    <orth>ïap</orth>
   </form>
   <gramGrp>
     <pos>v</pos>
@@ -24962,6 +24971,18 @@
     <trans><tr>be young</tr></trans>
     <eg><q>I kmie jong ki i la ïap mynba ki dang rit eh.</q>      <trans><tr>Their mother died when they were very young.</tr></trans>
 </eg>
+  </sense>
+</entry><entry>
+  <form>
+    <orth>sohïong</orth>
+  </form>
+  <gramGrp>
+    <pos>n</pos><gen>m</gen>
+  </gramGrp>
+  <sense>
+    <usg type="dom">bot</usg>
+    <trans><tr>prunus nepalensis</tr></trans>
+    <note>a black fruit similar in look and size to grapes</note>
   </sense>
 </entry></body>
   </text>
