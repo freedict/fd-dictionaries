@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.9 $
+# $Revision: 1.10 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -270,11 +270,14 @@ sub fdict_extract_releases
   # tackle it with regexps
   my($packages, $filename, $size, $downloads, $URL);
 
+  my @packs = split /<tr class="package">/, $line;
+  shift @packs;# throw away garbage before first package
+
   # for all packages
-  while($line =~ /<tr class="package">/cg)
+  foreach(@packs)
   {
-    my $myredo;
     $packages++;# counts packages
+    $line = $_;
     warn "   cannot find release number"
       if($line !~ /id="pkg\d+_\d+rel\d+_\d+">([\d\.]+)<\/a>/cg);
     my $release_version = $1;
@@ -285,22 +288,21 @@ sub fdict_extract_releases
       "release_date: '$release_date'\n";
 
     # for all files of a release
-    while($line =~ /<a href="(http:\/\/prdownloads[^\?]*\?download)">([^<]+)<\/a>/cg)
+    while($line =~ /<a href="(http:\/\/prdownloads\.sourceforge\.net\/freedict\/[^\?]{5,50}\?download)">([^<]{5,50})<\/a>/cg)
     {
-      #print "1: $1 2: $2 3:$3\n";
-      #if($3 and $3 eq "show only this package") { $myredo=1;last; }
+      #printd "1: $1 2: $2"\n";
       #warn "cannot find filename" if($line !~ /\?download">([^<]*)<\/a><\/td>/cg);
       $filename = $2;
       $URL = $1;
 
       $size = -1;
       warn "   cannot find size"
-        if($line !~ /<td >(\d+)<\/td>/cg);
-      $size = $1;
+        if($line !~ /<td (class="even")?>(\d+)<\/td>/cg) or
+      $size = $2;
       
       $downloads = -1;
       warn "   cannot find downloads"
-        if($line !~ /">(\d*)<\/a><\/td>/cg);
+        if($line !~ /\">(\d*)<\/a><\/td>/cg);
       $downloads = $1;
  
       printd "\tfilename: $filename size: $size\n";
@@ -415,7 +417,6 @@ sub fdict_extract_releases
       $r->setAttribute('date', substr($release_date,0,10));
       
     } # while
-    if($myredo) { $myredo=0;redo; printd "redoing..."; }
   } # while
 }
 ##################################################################
