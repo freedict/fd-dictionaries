@@ -33,4 +33,8 @@ dbupdate:
 clean:
 	$(BUILD)
 
-.PHONY: install uninstall dbupdate commit release-% all vok clean
+update:
+	for file in $(FREEDICTDIR)/???-???; do cd $$file && cvs -z3 update; done
+
+.PHONY: install uninstall dbupdate commit release-% all vok clean update
+
