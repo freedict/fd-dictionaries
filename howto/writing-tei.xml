@@ -298,7 +298,7 @@
     <section id="doctypeTEI">
       <title>The DOCTYPE Declaration</title>
     <para><programlisting>&lt;!DOCTYPE TEI.2 PUBLIC "&TEIsys;"
-"http://www.tei-c.org/P4X/DTD/tei2.dtd" [
+"http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
  &lt;!ENTITY % TEI.XML          "INCLUDE" &gt;
  &lt;!ENTITY % TEI.dictionaries "INCLUDE" &gt;
       ]&gt;</programlisting></para>
@@ -375,7 +375,7 @@
       </note>
     </section>
     <section id="TEIsystemid">
-      <title>"http://www.tei-c.org/P4X/DTD/tei2.dtd"</title>
+      <title>"http://www.tei-c.org/Guidelines/DTD/tei2.dtd"</title>
       <para>This next string must be a URI (Universal Resource Identifier, RFC 1630).
         In this case it is in URL (Uniform Resource Locator, RFC 1738) format. Here
 	it functions as a portable System Identifier to the DTD. By convention it is
