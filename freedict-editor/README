@@ -1,6 +1,28 @@
 TODO
 ----
 
+> I like the program. The only caveat is that it depends
+> too much on gnome. If
+> you can remove this dependence...
+
+I can try to make some Gnome libs optional (thinking of gconf and libgtkhtml presently).
+
+
+* Package name    : lablgtksourceview                                                               
+  Version         : 0.0.1                                                                           
+  Upstream Author : Stefano Zacchiroli <zack@cs.unibo.it>                                           
+* URL             : http://helm.cs.unibo.it/software/lablgtksourceview/                             
+* License         : LGPL                                                                            
+  Description     : OCaml bindings for GtkSourceView                                                
+                                                                                                    
+  LablGtkSourceView are the OCaml bindings for GtkSourceView, a GTK widget                            
+  which extends the standard GTK text widgets implementing syntax                                     
+  highlighting, automatic indentation, and other typical features of                                  
+  source editors.                                                                                     
+                                                                                                      
+  Using LablGtkSourceView you can instantiate and use GtkSourceView                                   
+  widgets in OCaml programs which use GTK through the LablGtk interface.                              
+                                         
 sanity
  trimmable spaces                                                                                         
  entry with only form child(ren)
