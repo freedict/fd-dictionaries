@@ -220,8 +220,7 @@ PUBLIC "-//TEI P4//ELEMENTS Default Text Structure//EN" "/usr/local/share/xml/te
 PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Certainty and Responsibility//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teicert2.dtd"
 PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Language Corpora//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teicorp2.dtd"
 PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Print Dictionaries//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teidict2.dtd"
-PUBLIC "-//TEI P4//ENTITIES Element Classes
-for Print Dictionaries//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teidict2.ent"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Print Dictionaries//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teidict2.ent"
 PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Drama 2001-12//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teidram2.dtd"
 PUBLIC "-//TEI P4//ENTITIES Element Classes for Drama//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teidram2.ent"
 PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Tables, Formulae, and Graphics//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teifig2.dtd"
@@ -229,7 +228,7 @@ PUBLIC "-//TEI P4//ENTITIES Formulae Notations and Contents//EN" "/usr/local/sha
 PUBLIC "-//TEI P4//DTD Auxiliary Document Type:  Feature System Declaration//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teifsd2.dtd"
 PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Feature Structure Annotation//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teifs2.dtd"
 PUBLIC "-//TEI P4//ELEMENTS General Base Element Set//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teigen2.dtd"
-PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/tei2.dtd"
+PUBLIC "-//TEI P4//DTD Main Document Type//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/tei2.dtd"
 PUBLIC "-//TEI P4//ENTITIES Generic Identifiers//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teigis2.ent"
 PUBLIC "-//TEI P4//ENTITIES TEI Keywords//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teikey2.ent"
 PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Linking, Segmentation, and Alignment//EN" "/usr/local/share/xml/tei2/p4/schema/dtd/teilink2.dtd"
@@ -338,6 +337,7 @@ CATALOG /etc/sgml/tei2.cat
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"/&gt;
 &lt;delegatePublic publicIdStartString="&TEIsys;" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml"/&gt;
 &lt;delegateSystem systemIdStartString="http://www.tei-c.org/P4X/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
+&lt;delegateSystem systemIdStartString="http://www.tei-c.org/Guidelines/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
 &lt;/catalog&gt;
 	</programlisting>
       </example>
@@ -364,6 +364,7 @@ CATALOG /etc/sgml/tei2.cat
 
 &lt;delegatePublic publicIdStartString="&TEIsys;" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml"/&gt;
 &lt;delegateSystem systemIdStartString="http://www.tei-c.org/P4X/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
+&lt;delegateSystem systemIdStartString="http://www.tei-c.org/Guidelines/DTD/tei2.dtd" catalog="file:///usr/local/share/xml/tei2/p4/schema/dtd/catalog.xml" /&gt;
 &lt;/catalog&gt;
 	  </programlisting>
 	</example>

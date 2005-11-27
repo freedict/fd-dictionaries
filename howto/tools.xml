@@ -291,7 +291,7 @@ sys     0m38.618s</literallayout></computeroutput>
 	  <para>To compile zbedic for the x86 architecture, you have to issue a
 	    command like <command>ARCH=x86 make</command> in the libbedic and
 	    zbedic source directories. Most likely you will also have to edit the
-	    Makefiles to point to you qpe source directory.</para>
+	    Makefiles to point to your qpe source directory.</para>
 	  <para>Since the qpe package manager cannot run from the qpe image
 	    directory because it uses absolute paths, you cannot install zbedic
 	    from the <filename>.ipk</filename> file and have to install its
