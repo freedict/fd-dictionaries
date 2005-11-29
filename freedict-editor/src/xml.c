@@ -137,7 +137,13 @@ xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
   return doc;
 }
 
-// XXX report this fix
+// Th error code XPATH_INVALID_CTXT exists only since libxml2 2.6.0, so
+// we define it if we use an earlier version
+#if LIBXML_VERSION < 20600
+#define XPATH_INVALID_CTXT XPATH_EXPR_ERROR
+#endif
+
+// XXX report the fillowing fix
 // xmlXPatherror takes an XPath parser context, not a plain XPath context,
 // so this macro from the libxml2 source is incorrect, causing gcc to give a
 // "warning: passing arg 1 of `xmlXPatherror' from incompatible pointer type"

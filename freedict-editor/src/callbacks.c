@@ -1499,7 +1499,6 @@ gchar *iso88591text;
   if (aspell_config_error(config) != 0) {                         \
     g_printerr("Error: %s\n", aspell_config_error_message(config));   \
   }    
-#endif
 
 static void set_replacements_made(unsigned int value)
 {
@@ -1520,6 +1519,7 @@ static void set_spell_current_node_idx(unsigned int value)
       (gdouble) spell_current_node_idx /
       (gdouble) xmlXPathNodeSetGetLength(spell_nodes));
 }
+#endif
 
 static void spell_getsuggestions(char *word)
 {
@@ -1755,6 +1755,7 @@ gboolean spell_handle_current_node(void)
 
 void get_new_checker_speller()
 {
+#ifdef HAVE_LIBASPELL
   g_return_if_fail(scw);
   g_return_if_fail(c);
 
@@ -1816,6 +1817,7 @@ void get_new_checker_speller()
     g_printerr(" (default: %s)\n", keyi->def);
   }
   delete_aspell_key_info_enumeration(keyis);
+#endif
 #endif
 }
 
@@ -1904,6 +1906,7 @@ void spell_continue_check()
 
 void spell_query_nodes()
 {
+#ifdef HAVE_LIBASPELL
   // build XPath query
   gboolean orth = gtk_toggle_button_get_active(
       GTK_TOGGLE_BUTTON(lookup_widget(scw, "spell_orth_checkbutton")));
@@ -1941,6 +1944,7 @@ void spell_query_nodes()
   in_node = FALSE;
 
   g_return_if_fail(xmlXPathNodeSetGetLength(spell_nodes));
+#endif
 }
 
 
@@ -2227,6 +2231,7 @@ void
 on_spell_headwords_radiobutton_toggled (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+#ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
 	lookup_widget(scw, "spell_orth_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
@@ -2236,6 +2241,7 @@ on_spell_headwords_radiobutton_toggled (GtkToggleButton *togglebutton,
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
 	lookup_widget(scw, "spell_eg_tr_checkbutton")), FALSE);
   spell_query_nodes();
+#endif
 }
 
 
@@ -2244,6 +2250,7 @@ on_spell_translations_radiobutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+#ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
 	lookup_widget(scw, "spell_orth_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
@@ -2253,6 +2260,7 @@ on_spell_translations_radiobutton_toggled
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
 	lookup_widget(scw, "spell_eg_tr_checkbutton")), TRUE);
   spell_query_nodes();
+#endif
 }
 
 
@@ -2282,6 +2290,7 @@ void
 on_suggestions_treeview_cursor_changed (GtkTreeView     *treeview,
                                         gpointer         user_data)
 {
+#ifdef HAVE_LIBASPELL
   // get currently selected entry
   g_return_if_fail(treeview);
   GtkTreePath *path;
@@ -2303,6 +2312,7 @@ on_suggestions_treeview_cursor_changed (GtkTreeView     *treeview,
   // put selected suggestion into replacement entry
   GtkWidget *entry = lookup_widget(scw, "replacement_entry");
   gtk_entry_set_text(GTK_ENTRY(entry), sugg);
+#endif
 }
 
 
