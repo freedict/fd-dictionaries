@@ -12,3 +12,4 @@ dist-hook: app-dist-hook
 XMLTO_OPTS = -m customise-docbook.xsl
 html: freedict-editor.xml
 	xmlto $(XMLTO_OPTS) -o html html freedict-editor.xml
+	perl -pi -e 's/index\.html#/#/g;' html/index.html
