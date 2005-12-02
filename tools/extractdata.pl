@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.10 $
+# $Revision: 1.11 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -132,7 +132,8 @@ sub fdict_extract_metadata
   
   if(!-r $indexfile)
   {
-    system "cd $dirname/$entry; make $entry.index";
+    system "cd $dirname/$entry && make $entry.index"
+      or print STDERR "  ERROR: Failed to remake $entry.index\n";
   }
   
   if(-r $indexfile)
@@ -152,6 +153,12 @@ sub fdict_extract_metadata
   ###################################################################
 
   my $teifile = "$dirname/$entry/$entry.tei";
+  
+  if(!-r $teifile)
+  {
+    system "cd $dirname/$entry && make $teifile"
+      or print STDERR "  ERROR: Failed to remake $teifile\n";
+  }
   
   if(-r $teifile)
   {
@@ -202,7 +209,8 @@ sub fdict_extract_metadata
 
   ###################################################################
   
-    $unsupported = `cd $dirname/$entry;make --no-print-directory print-unsupported`;
+    $unsupported = `cd $dirname/$entry && make --no-print-directory print-unsupported`;
+    printd "  Failed to get info on unsupported platforms: $! $?\n" if(!defined $unsupported);
     
   ###################################################################
   }
@@ -221,7 +229,7 @@ sub fdict_extract_metadata
   $d->setAttribute('maintainerName', $maintainerName);
   $d->setAttribute('maintainerEmail', $maintainerEmail);
   
-  if($unsupported =~ /[^\s]/)
+  if(defined $unsupported && $unsupported =~ /[^\s]/)
   {
     $d->setAttribute('unsupported', $unsupported);
   }
@@ -404,7 +412,7 @@ sub fdict_extract_releases
         $r->setAttribute('platform', $platform);
       }
 
-      # if $r refers to a older release than available in the database,
+      # if $r refers to an older release than available in the database,
       # don't update the database
 #      $release_version = "0.0.1" if($release_version eq "");
 #      next if($r->getAttribute('version') ge $release_version);
@@ -464,5 +472,7 @@ if($opt_l)
 # Write out freedict-database.xml
 `cp $dbfile $dbfile.bak` if(-s $dbfile);
 printd "Writing $dbfile\n";
+$SIG{INT} = 'IGNORE';
 $doc->printToFile ($dbfile);
+$SIG{INT} = 'DEFAULT';
 
