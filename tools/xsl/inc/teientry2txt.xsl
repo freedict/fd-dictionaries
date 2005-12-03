@@ -5,14 +5,13 @@
 
   <xsl:include href="indent.xsl"/> 
   
-  <xsl:strip-space elements="form sense trans def usg tr"/>
-
+  <xsl:strip-space elements="entry form gramGrp sense trans eg"/>
 
   <!-- TEI entry specific templates -->
   <xsl:template match="entry">
     <xsl:apply-templates select="form | gramGrp"/>
     <xsl:text>&#xa;</xsl:text>
-    <xsl:apply-templates select="sense | trans"/>
+    <xsl:apply-templates select="sense | trans | def | note"/>
   </xsl:template>  
   
   <xsl:template match="form">
@@ -69,7 +68,7 @@
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
 
-    <xsl:apply-templates select="name() != 'usg' and name() != 'trans' and name() != 'def' and name() != 'eg' and name() != 'xr'"/>
+    <xsl:apply-templates select="*[name() != 'usg' and name() != 'trans' and name() != 'def' and name() != 'eg' and name() != 'xr']"/>
 
   </xsl:template>
 
