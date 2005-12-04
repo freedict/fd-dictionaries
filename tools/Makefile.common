@@ -128,10 +128,16 @@ $(dictname).c5: $(dictname).tei $(xsldir)/tei2c5.xsl \
        	$(xsldir)/inc/teientry2txt.xsl \
 	$(xsldir)/inc/teiheader2txt.xsl \
 	$(xsldir)/inc/indent.xsl query-dictd
-	$(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< >$@
+	if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
+	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2c5.xsl $< >$@; \
+	  else \
+	  $(XSLTPROCESSOR) $(xsldir)/tei2c5.xsl $< \$$current-date=$(date) >$@; fi
 
 $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
-	$(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< >$@
+	@if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
+	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2c5-reverse.xsl $< >$@; \
+	  else \
+	  $(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< \$$current-date=$(date) >$@; fi
 
 %.c5.dict %.c5.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
@@ -166,7 +172,7 @@ $(FREEDICTDIR)/release/vok/%.vok: %.tei $(xsldir)/tei2vok.xsl \
 	  echo "Warning! xsltproc does not warn of invalid chars in output encoding."; \
 	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2vok.xsl $< >$@; \
 	  else \
-	  $(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< \$current-date=$(date) >$@; fi
+	  $(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< \$$current-date=$(date) >$@; fi
 
 vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
 

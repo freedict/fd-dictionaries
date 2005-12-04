@@ -11,7 +11,19 @@
   <xsl:template match="entry">
     <xsl:apply-templates select="form | gramGrp"/>
     <xsl:text>&#xa;</xsl:text>
-    <xsl:apply-templates select="sense | trans | def | note"/>
+    <xsl:apply-templates select="sense"/>
+
+    <!-- For simple entries without separate senses and old FreeDict databases -->
+    <xsl:for-each select="trans | def | note">
+      <xsl:text> </xsl:text>
+      <xsl:if test="not(last()=1)">
+	<xsl:number value="position()"/>
+	<xsl:text>. </xsl:text>
+      </xsl:if>
+      <xsl:apply-templates select="."/>
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:for-each>
+
   </xsl:template>  
   
   <xsl:template match="form">
@@ -90,7 +102,7 @@
 
   <xsl:template match="def">
     <xsl:call-template name="format">
-      <xsl:with-param name="txt" select="."/>
+      <xsl:with-param name="txt" select="normalize-space()"/>
       <xsl:with-param name="width" select="75"/>
       <xsl:with-param name="start" select="4"/>
     </xsl:call-template>
@@ -100,7 +112,7 @@
   <xsl:template match="eg">
     <xsl:text>&quot;</xsl:text>
     <xsl:call-template name="format">
-      <xsl:with-param name="txt" select="concat(q,'&quot;')"/>
+      <xsl:with-param name="txt" select="concat(normalize-space(q), '&quot;')"/>
       <xsl:with-param name="width" select="75"/>
       <xsl:with-param name="start" select="4"/>
     </xsl:call-template>

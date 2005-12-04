@@ -10,7 +10,7 @@
   <!-- Has to come from the shell, as XSLT/XPath provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.4 2005-09-08 11:54:16 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.5 2005-12-04 11:14:36 micha137 Exp $</xsl:param>
   
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->
@@ -95,6 +95,7 @@ it will never be instantiated. -->
       <xsl:with-param name="width" select="$width"/>
       <xsl:with-param name="start" select="2"/>
     </xsl:call-template>
+  <xsl:text>&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="p">
