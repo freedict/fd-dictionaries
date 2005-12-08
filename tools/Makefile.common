@@ -80,12 +80,12 @@ dirs:
 		mkdir $(FREEDICTDIR)/release/dict-tbz2; fi
 
 #############################################################
-#### rules how to create dict database format in standard way
+#### rules how to create dict database format in old way
 #############################################################
 
-%.dict %.index: %.tei query-dictd
+%-oldstyle.dict %-oldstyle.index: %.tei query-dictd
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
-	$(tei2dict) -f $< $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
+	$(tei2dict) -f $<-oldstyle $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
 
 %.dz: %
 	dictzip -k $<
@@ -102,7 +102,7 @@ release-dict-tgz: $(dictname).tar.gz dirs
 
 release-dict-tgz-reverse: $(rdictname).tar.gz dirs
 	cp $(rdictname).tar.gz \
-	$(FREEDICTDIR)/release/dict-tgz/freedict-$(rdictname)-$(version).tar.gz
+	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version)-reverse.tar.gz
 
 release-dict-tbz2: $(dictname).tar.bz2 dirs
 	cp $(dictname).tar.bz2 \
@@ -110,9 +110,9 @@ release-dict-tbz2: $(dictname).tar.bz2 dirs
 
 release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
 	cp $(rdictname).tar.bz2 \
-	$(FREEDICTDIR)/release/dict-bz2/freedict-$(rdictname)-$(version).tar.bz2
+	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
-reverse: $(dictname).tei
+reverse-oldstyle: $(dictname).tei
 	@echo "Will generate $(rdictname):"
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
 	$(tei2dict) -f $< -r $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
@@ -139,23 +139,23 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 	  else \
 	  $(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< \$$current-date=$(date) >$@; fi
 
-%.c5.dict %.c5.index: %.c5
-	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $*.c5 <$<
+%.dict %.index: %.c5
+	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
-	$(dictname).c5.dict.dz $(dictname).c5.index
+	$(dictname).dict.dz $(dictname).index
 	cd .. && \
 	tar -cvjf $@ $(addprefix $(dictname)/, $^)
 
-release-dict-tbz2-c5: dirs \
+release-dict-tbz2: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
-	$(dictname)-reverse.c5.dict.dz $(dictname)-reverse.c5.index
+	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
 	cd .. && \
 	tar -cvjf $@ $(addprefix $(dictname)/, $^)
 
-release-dict-tbz2-c5-reverse: dirs \
+release-dict-tbz2-reverse: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
 ######################################
