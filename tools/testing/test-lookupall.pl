@@ -17,7 +17,10 @@ die "This program is for testing indices, not search strategies\n".
  "Otherwise it means the server was unable to find those headwords.\n".
  "Assuming the wordlist used was generated out of a dict index file,\n".
  "this could mean the index is incorrectly sorted or there is something\n".
- "wrong with the server.\n" if ($#ARGV != 3);
+ "wrong with the server.\n".
+ "This program exits with an exit status of 0 in case there is at least\n".
+ "one match for each query. An exit status of 1 is given, when there was\n".
+ "at least one query without any match.\n" if ($#ARGV != 3);
 
 my $port = $ARGV[3];
 my $host = $ARGV[0];print "Using host:port: $host:$port\n";
@@ -82,4 +85,6 @@ for(sort {$a <=> $b} keys %counters)
 {
   printf "%10d | %5d\n", $counters{$_}, $_;
 }
+
+exit 1 if $counters{0} > 0;
 

@@ -96,19 +96,19 @@ dirs:
 %.tar.bz2: %.dict.dz %.index
 	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
-release-dict-tgz: $(dictname).tar.gz dirs
+release-dict-tgz-oldstyle: $(dictname)-oldstyle.tar.gz dirs
 	cp $(dictname).tar.gz \
 	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
-release-dict-tgz-reverse: $(rdictname).tar.gz dirs
+release-dict-tgz-reverse-oldstyle: $(rdictname)-oldstyle.tar.gz dirs
 	cp $(rdictname).tar.gz \
 	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version)-reverse.tar.gz
 
-release-dict-tbz2: $(dictname).tar.bz2 dirs
+release-dict-tbz2-oldstyle: $(dictname)-oldstyle.tar.bz2 dirs
 	cp $(dictname).tar.bz2 \
 	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
 
-release-dict-tbz2-reverse: $(rdictname).tar.bz2 dirs
+release-dict-tbz2-reverse-oldstyle: $(rdictname)-oldstyle.tar.bz2 dirs
 	cp $(rdictname).tar.bz2 \
 	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
@@ -138,6 +138,8 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2c5-reverse.xsl $< >$@; \
 	  else \
 	  $(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< \$$current-date=$(date) >$@; fi
+
+reverse: $(dictname)-reverse.c5
 
 %.dict %.index: %.c5
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
@@ -220,7 +222,7 @@ uninstall:
 #### maintenance targets
 ########################
 
-validation: $(dictname).tei
+valid.stamp: $(dictname).tei
 	# way 1
 	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
 	export SP_ENCODING=XML; \
@@ -230,24 +232,31 @@ validation: $(dictname).tei
 	# way 2
 	if [ -x $(xmllint) ]; then \
 		$(xmllint) --noout --valid $(dictname).tei; fi
+	echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
 
-test: $(dictname).index $(dictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(dictname) \
- -l $(DICTD_LOCALE) |tee testresult-$(version).log
+validation: valid.stamp
 
-test-reverse: $(rdictname).index $(rdictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(rdictname) \
- -l $(DICTD_LOCALE) |tee testresult-$(version)-reverse.log
+testresult-$(version).log: $(dictname).index $(dictname).dict
+	$(toolsdir)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@
 
-test-c5: $(dictname).c5.index $(dictname).c5.dict.dz
-	$(toolsdir)/testing/test-database.pl -f $(dictname).c5 \
- -l $(DICTD_LOCALE) |tee testresult-$(version)-c5.log
+test: testresult-$(version).log
 
-test-reverse-c5: $(rdictname).c5.index $(rdictname).c5.dict
-	$(toolsdir)/testing/test-database.pl -f $(rdictname).c5 \
- -l $(DICTD_LOCALE) |tee testresult-$(version)-c5-reverse.log
+testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
+	$(toolsdir)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@
 
-commit: 
+test-reverse: testresult-$(version)-reverse.log
+	
+test-oldstyle: $(dictname).oldstyle.index $(dictname).oldstyle.dict.dz
+	$(toolsdir)/testing/test-database.pl -f $(dictname).oldstyle \
+ -l $(DICTD_LOCALE) |tee testresult-$(version)-oldstyle.log
+
+test-reverse-oldstyle: $(rdictname).oldstyle.index $(rdictname).oldstyle.dict
+	$(toolsdir)/testing/test-database.pl -f $(rdictname).oldstyle \
+ -l $(DICTD_LOCALE) |tee testresult-$(version)-oldstyle-reverse.log
+
+tests: valid.stamp testresult-$(version).log
+
+commit:
 	cvs -z3 commit
 
 dbupdate: $(dictname).dict $(dictname).index
@@ -279,6 +288,7 @@ print-unsupported:
 clean::
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
+	rm -f valid.stamp
 	rm -f $(FREEDICTDIR)/release/dict-bz2/$(dictname).tar.bz2
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
 
@@ -479,15 +489,15 @@ clean::
 #### Makefile-technical
 #######################
 
-.PHONY: all version status sourceURL maintainer dirs install uninstall reverse \
-	release-dict-tbz2-c5 release-dict-tbz2-c5-reverse \
-	release-dict-tgz release-dict-tgz-reverse \
+.PHONY: all version status sourceURL maintainer dirs install uninstall reverse reverse-oldstyle \
+	release-dict-tbz2-oldstyle release-dict-tbz2-reverse-oldstyle \
+	release-dict-tgz-oldstyle release-dict-tgz-reverse-oldstyle \
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	vok release-evolutionary \
 	bedic-precedence release-bedic release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
 	commit clean dist dbupdate validation query-% print-unsupported \
-	test test-reverse test-c5 test-c5-reverse \
-	find-homographs pos-statistics\
+	test test-reverse test-oldstyle test-reverse-oldstyle tests \
+	find-homographs pos-statistics \
 	stardict release-stardict
 

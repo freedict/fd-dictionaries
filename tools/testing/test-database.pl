@@ -4,6 +4,8 @@
 # by starting a dictd with an extra generated config file to serve
 # this database and then looking up every headword from the index,
 # reporting the missing headwords
+# Should exit with an exit value of 0 if tests were completed successfully,
+# something >0 otherwise
 
 use strict;
 use Getopt::Std;
@@ -91,9 +93,12 @@ print "Child has pid $pid.\n";
 
 # lookup all headwords and report missing ones
 $cmdline = "$FindBin::Bin/test-lookupall.pl 127.0.0.1 test $wordlist $port";
-system $cmdline || die "Could not run '$cmdline': $!";
+my $ret = system $cmdline;
 
 # terminate dictd
 print "Terminating $pid\n";
 kill "TERM", $pid;
+
+die "Could not run '$cmdline': $!" if $ret==-1;
+exit $ret;# return exit status of test program
 
