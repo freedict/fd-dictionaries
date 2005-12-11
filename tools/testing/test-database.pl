@@ -92,13 +92,27 @@ sleep 3;
 print "Child has pid $pid.\n";
 
 # lookup all headwords and report missing ones
-$cmdline = "$FindBin::Bin/test-lookupall.pl 127.0.0.1 test $wordlist $port";
-my $ret = system $cmdline;
+$cmdline = "perl -d:DProf $FindBin::Bin/test-lookupall.pl 127.0.0.1 test $wordlist $port";
+system $cmdline;
 
 # terminate dictd
 print "Terminating $pid\n";
 kill "TERM", $pid;
 
-die "Could not run '$cmdline': $!" if $ret==-1;
-exit $ret;# return exit status of test program
+if($? == -1)
+{
+  print "failed to execute '$cmdline': $!\n";
+  exit 2;
+}
+
+if($? & 127)
+{
+  printf "child died with signal %d, %s coredump\n",
+  ($? & 127),  ($? & 128) ? 'with' : 'without';
+  exit 2;
+}
+
+my $exitval = $? >> 8;
+print "Test " . (!$exitval ? "succeeded" : "failed with exit status $exitval") . "\n";
+exit $exitval;# return exit status of test program
 

@@ -49,7 +49,8 @@ while (<$f>) {
   chop;
 
   # actually we should check for repeating headwords
-  # and expect as many definitions
+  # and expect as many definitions, but that does not take
+  # aequivalencies introduced by dictd into account
 
   # use 'define' strategy
   my $h = $dict->define($_);
@@ -64,7 +65,7 @@ while (<$f>) {
     {
       print "Will not print further missing headwords.\n";
     }
-    print "Headword without definition: '$_'\n" if($counters{0}<10);
+    print "Headword #$words without definition: '$_'\n" if($counters{0}<10);
   }
  
   $words++;
@@ -86,5 +87,10 @@ for(sort {$a <=> $b} keys %counters)
   printf "%10d | %5d\n", $counters{$_}, $_;
 }
 
-exit 1 if $counters{0} > 0;
+if($counters{0} > 0)
+{
+  print "Test failed.\n";
+  exit 1;
+}
+print "Test succeeded.\n";
 

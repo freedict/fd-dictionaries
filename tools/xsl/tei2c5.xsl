@@ -55,7 +55,11 @@
 	 otherwise an XML parser considers them as sgml comment end. for
 	 calling dictfmt you have to omit that space.)  -->
     <xsl:for-each select="form/orth">
-      <xsl:value-of select="." />
+      <xsl:if test="1>string-length()">
+	<xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position(../..)"/>
+	</xsl:message>
+      </xsl:if>
+      <xsl:value-of select="."/>
       <xsl:if test="not(position()=last())">%%%</xsl:if>
     </xsl:for-each>
     <xsl:text>&#x0A;</xsl:text>

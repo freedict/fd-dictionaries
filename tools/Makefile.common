@@ -237,12 +237,14 @@ valid.stamp: $(dictname).tei
 validation: valid.stamp
 
 testresult-$(version).log: $(dictname).index $(dictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@
+	$(toolsdir)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
+	&& exit $${PIPESTATUS[0]}
 
 test: testresult-$(version).log
 
 testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@
+	$(toolsdir)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
+	&& exit $${PIPESTATUS[0]}
 
 test-reverse: testresult-$(version)-reverse.log
 	

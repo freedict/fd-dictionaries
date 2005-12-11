@@ -36,6 +36,12 @@ clean:
 tests:
 	$(BUILD)
 
+test:
+	$(BUILD)
+
+validation:
+	$(BUILD)
+
 update:
 	for file in $(FREEDICTDIR)/???-???; do cd $$file && cvs -z3 update; done
 
