@@ -2468,7 +2468,7 @@ enum
 struct sanity_check
 {
   const char *title;///< Title to display
-  const char *select;///< XPath expression that returns a set of <entry> elements
+  const char *select;///< XPath expression that returns a set of &lt;entry> elements
 };
 
 /*

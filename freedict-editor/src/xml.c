@@ -383,8 +383,13 @@ xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, con
   xmlNodePtr n = find_single_node(xpath, doc);
   if(!n) return NULL;
 
-  if(!has_only_text_children_and_allowed_attrs(n, attrs)) *can = FALSE;
-  else xmlUnlinkNode(n);
+  if(!has_only_text_children_and_allowed_attrs(n, attrs)) 
+  {
+    *can = FALSE;
+    return NULL;
+  }
+  
+  xmlUnlinkNode(n);
   return n;
 }
 

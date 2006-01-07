@@ -489,7 +489,7 @@ on_tr_delete_button_clicked        (GtkButton       *button,
  */
 Sense *senses_append(GArray *senses)
 {
-  g_return_if_fail(senses);
+  g_return_val_if_fail(senses, NULL);
 
   Sense s;
   memset(&s, 0, sizeof(s));
@@ -968,8 +968,11 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
       nameS = g_strchomp(nameS);
 	
       GDate date;
-      //g_date_clear(&date, 1); 
+      g_date_clear(&date, 1); 
 
+      // XXX find something better like
+      // char * strptime (const char *s, const char *fmt, struct tm *tp) 
+      // file:/usr/share/doc/glibc-doc/html/libc_21.html#SEC429
       g_date_set_parse(&date, dateS);
       *can = *can && g_date_valid(&date);
       if(!*can) g_printerr("Invalid date: '%s'\n", dateS);
@@ -1013,6 +1016,12 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   {
     return unlink_leaf_node_with_attr(xpath, NULL, entry_doc, &can);
   }
+ 
+  void inline my_unlink_free(const char *xpath)
+  {
+    xmlNodePtr *n = my_unlink(xpath);
+    if(n) xmlFreeNode(n);
+  }
   
   struct Parsed_entry pe;
   memset(&pe, 0, sizeof(pe));
@@ -1021,16 +1030,14 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   pe.pron = my_unlink("/entry/form/pron[1]");
   
   // <form> should be empty now and without attribute nodes
-  xmlNodePtr f = unlink_leaf_node_with_attr("/entry/form", NULL, entry_doc, &can);
-  if(f) xmlFreeNode(f);
+  my_unlink_free("/entry/form");
 
   if(find_single_node("/entry/gramGrp[1]", entry_doc))
   {
     pe.pos = my_unlink("/entry/gramGrp/pos");
     pe.num = my_unlink("/entry/gramGrp/num");
     pe.gen = my_unlink("/entry/gramGrp/gen");
-    f = unlink_leaf_node_with_attr("/entry/gramGrp", NULL, entry_doc, &can);
-    if(f) xmlFreeNode(f);
+    my_unlink_free("/entry/gramGrp");
   }
 
   senses_clear(senses);
@@ -1052,8 +1059,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
       t->xTr = my_unlink("/entry/trans[1]/tr[1]");
     }
 
-    f = my_unlink("/entry/trans[1]");
-    if(f) xmlFreeNode(f);
+    my_unlink_free("/entry/trans[1]");
     sense_dom2widgets(senses, 0);
   }
   else
@@ -1079,8 +1085,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
         t->xTr  = my_unlink("/entry/sense[1]/trans[1]/tr[1]");
         t->xGen = my_unlink("/entry/sense[1]/trans[1]/gen[1]");
         t->xPos = my_unlink("/entry/sense[1]/trans[1]/pos[1]");
-        f = my_unlink("/entry/sense[1]/trans[1]");
-	if(f) xmlFreeNode(f);
+        my_unlink_free("/entry/sense[1]/trans[1]");
       } // while trans
 
       // def
@@ -1092,8 +1097,8 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
       // ex (quote and translation)
       s->xEx   = my_unlink("/entry/sense[1]/eg[1]/q[1]");
       s->xExTr = my_unlink("/entry/sense[1]/eg[1]/trans[1]/tr[1]");
-      my_unlink("/entry/sense[1]/eg[1]/trans[1]");
-      my_unlink("/entry/sense[1]/eg[1]");
+      my_unlink_free("/entry/sense[1]/eg[1]/trans[1]");
+      my_unlink_free("/entry/sense[1]/eg[1]");
 
       // xr
       while(can && find_single_node("/entry/sense[1]/xr[1]", entry_doc))
@@ -1103,22 +1108,20 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 	xr->xRef = my_unlink("/entry/sense[1]/xr[1]/ref[1]");
 	// @type
 	xr->xType = my_unlink("/entry/sense[1]/xr[1]/@type");
-	f = my_unlink("/entry/sense[1]/xr[1]");
-	if(f) xmlFreeNode(f);
+	my_unlink_free("/entry/sense[1]/xr[1]");
       }
       
-      f = my_unlink("/entry/sense[1]");
-      if(f) xmlFreeNode(f);
+      my_unlink_free("/entry/sense[1]");
       can = can && sense_dom2widgets(senses, senses->len-1);
     } // while sense
     //g_printerr("Finished parsing complex entry\n");
   } // complex entry
  
+  const char *allow_resp_attr[] = { "resp", NULL };
   pe.noteRespTranslator = unlink_leaf_node_with_attr("/entry/note[@resp='translator'][1]",
-      NULL, entry_doc, &can);
+      allow_resp_attr, entry_doc, &can);
   
-  f = unlink_leaf_node_with_attr("/entry", NULL, entry_doc, &can);
-  if(f) xmlFreeNode(f);
+  my_unlink_free("/entry");
 
   // fill main Widgets
   parsed_entry2widgets(&pe, &can);
@@ -1145,7 +1148,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 static xmlNodePtr GtkEntry2xmlNode(const xmlNodePtr parent, const gchar *before, const gchar *name,
     GtkEntry *e, const gchar *after)
 {
-  g_return_if_fail(name);
+  g_return_val_if_fail(name, NULL);
 
   const gchar *select = e ? gtk_entry_get_text(e) : NULL;
   if(!strlen(select)) return NULL;
