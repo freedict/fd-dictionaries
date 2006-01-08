@@ -36,3 +36,5 @@ dist-hook:
 	  done \
 	fi
 
+deb:
+	fakeroot dpkg-buildpackage
