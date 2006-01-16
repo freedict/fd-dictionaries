@@ -1034,13 +1034,14 @@ void on_view_toolbar_toggled(GtkCheckMenuItem *item, gpointer user_data)
 }
 
 
-// remember state, so new entry editor widgets can be set visible or not
-// XXX save state with gconf
+// remember state, so new entry editor labels can be set visible or not
 gboolean labels_visible;
 
-void on_view_labels_toggled(GtkCheckMenuItem *item, gpointer user_data)
+void set_view_labels_visible(gboolean visible)
 {
-  labels_visible = gtk_check_menu_item_get_active(item);
+  if(visible==labels_visible) return;
+
+  labels_visible = visible;
   my_widget_set_visible(lookup_widget(app1, "select_label"), labels_visible);
   my_widget_set_visible(lookup_widget(app1, "xpath_template_label"), labels_visible);
   my_widget_set_visible(lookup_widget(app1, "orth_label"), labels_visible);
@@ -1065,6 +1066,17 @@ void on_view_labels_toggled(GtkCheckMenuItem *item, gpointer user_data)
     my_widget_set_visible(s.xr_add_label, labels_visible);
     my_widget_set_visible(s.xr_delete_label, labels_visible);
   }
+
+  // save state with gconf
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "show_labels");
+  gconf_client_set_bool(gc_client, key, labels_visible, NULL);
+  g_free(key);
+}
+ 
+  
+void on_view_labels_toggled(GtkCheckMenuItem *item, gpointer user_data)
+{
+  set_view_labels_visible(gtk_check_menu_item_get_active(item));
 }
 
 
@@ -1107,13 +1119,10 @@ void
 on_app1_show                           (GtkWidget       *widget,
                                         gpointer         user_data)
 {
-
-  //gconf_init(argc, argv, NULL);// XXX not reqd?
-  gc_client = gconf_client_get_default();
-
   find_nodeset_mutex = g_mutex_new();
   find_nodeset_pcontext_mutex = g_mutex_new();
 
+  gc_client = gconf_client_get_default();
   char* freedictkeypath = gnome_gconf_get_app_settings_relative(NULL, NULL);
   gconf_client_add_dir(gc_client, freedictkeypath,
                        GCONF_CLIENT_PRELOAD_RECURSIVE,
@@ -1146,6 +1155,11 @@ on_app1_show                           (GtkWidget       *widget,
     else g_printerr(_("Using stylesheet filename from gconf: %s\n"), stylesheetfn);
   }
 
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "show_labels");
+  // XXX error handling! default?
+  set_view_labels_visible(gconf_client_get_bool(gc_client, key, NULL));
+  g_free(key);
+  
   if(!entry_template_doc)
   {
     xmlDoValidityCheckingDefaultValue = 0;
@@ -1447,12 +1461,26 @@ on_view_keyboard_layout_activate       (GtkMenuItem     *menuitem,
   // XXX get group and shift level from a dialog
   
   gchar *xkbprintpath = g_find_program_in_path("xkbprint");
+  if(!xkbprintpath)
+  {
+    mystatus(_("Failed to find 'xkbprint' in path."));
+    return;
+  }
   gchar *gvpath = g_find_program_in_path("gv");
+  if(!xkbprintpath)
+  {
+    mystatus(_("Failed to find 'gv' in path."));
+    return;
+  }
 
   const char commandline[] =
-    "xkbprint -color -lg 1 -ll 1 :0 - | gv -seascape -";
-  if(gnome_execute_terminal_shell(NULL, commandline) != -1) return;
-  mystatus(_("Failed to show keyboard layout."));
+    "xkbprint -color -lg 1 -ll 1 :0 - | gv --orientation=seascape -";
+  if(gnome_execute_terminal_shell(NULL, commandline) == -1)
+  {
+    mystatus(_("Failed to show keyboard layout with command: %s"), commandline);
+    return;
+  }
+  mystatus(_("Done: %s"), commandline);
 }
 
 
@@ -1753,6 +1781,7 @@ gboolean spell_handle_current_node(void)
 }
 
 
+// XXX fde crashes if aspell installed but no dict
 void get_new_checker_speller()
 {
 #ifdef HAVE_LIBASPELL
@@ -2650,7 +2679,7 @@ void sanity_perform_check(const struct sanity_check *check, gboolean enabled)
 
   // for first 50 matching entries
   int j = 0;
-  xmlNodePtr *n, *n2;
+  xmlNodePtr *n;
   for(j=0, n=matches->nodeTab; *n && j<matches->nodeNr && j<50; n++, j++)
   {
     char headwords[100];
@@ -2683,7 +2712,6 @@ void on_sanity_check_column_toggled(GtkCellRendererToggle *cell_renderer,
   GtkTreePath *path = gtk_tree_path_new_from_string(path_string);
   gboolean ret = gtk_tree_model_get_iter(GTK_TREE_MODEL(sanity_store), &iter, path);
   g_return_if_fail(ret);
-  xmlNodePtr e;
   gboolean enabled;
   struct sanity_check *check;
   gtk_tree_model_get(GTK_TREE_MODEL(sanity_store), &iter,
