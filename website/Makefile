@@ -1,14 +1,29 @@
+all: freedict.po editordoc.html howto freedict-database.xml flags-bedic.php \
+	flags-evolutionary.php freedict.pot de kha ru ku
+
 freedict.po: freedict.pot
 	msgmerge -U locale/de_DE/LC_MESSAGES/freedict.po freedict.pot
 	msgmerge -U locale/kha_IN/LC_MESSAGES/freedict.po freedict.pot
 	msgmerge -U locale/ru_RU/LC_MESSAGES/freedict.po freedict.pot
 	msgmerge -U locale/ku_TR/LC_MESSAGES/freedict.po freedict.pot
 
-~/dict/CVS/freedict-editor/help/C/html/index.html:
-	$(MAKE) -C ~/dict/CVS/freedict-editor/help/C html
+../freedict-editor/help/C/html/index.html:
+	$(MAKE) -C ../freedict-editor/help/C html
 
-editordoc.html: ~/dict/CVS/freedict-editor/help/C/html/index.html
-	ln -s $< $@
+editordoc.html: ../freedict-editor/help/C/html/index.html
+	test ! -e $@ && ln -s $< $@
+
+howto:
+	ln -s ../howto/xhtml $@
+
+freedict-database.xml:
+	ln -s ../$@
+
+flags-bedic.php:
+	ln -s flags-dict-tgz.php $@
+	
+flags-evolutionary.php:
+	ln -s flags-dict-tgz.php $@
 
 freedict.pot: *.php inc/*.php
 	xgettext -o freedict.pot -j *.php inc/*.php
@@ -24,4 +39,12 @@ ru: locale/ru_RU/LC_MESSAGES/freedict.mo
 
 ku: locale/ku_TR/LC_MESSAGES/freedict.mo
 
-.PHONY: freedict.po ~/dict/CVS/freedict-editor/help/C/html/index.html
+clean:
+	-rm -f locale/ru_RU/LC_MESSAGES/freedict.mo \
+	locale/ku_TR/LC_MESSAGES/freedict.mo \
+	locale/kha_IN/LC_MESSAGES/freedict.mo \
+	locale/de_DE/LC_MESSAGES/freedict.mo
+	
+.PHONY: all freedict.po ~/dict/CVS/freedict-editor/help/C/html/index.html \
+	de kha ru ku
+
