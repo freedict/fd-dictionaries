@@ -15,26 +15,26 @@
 
   <!-- "main()" function -->
   <xsl:template match="/">
-    <xsl:call-template name="00-database-info"/>
-    <xsl:call-template name="00-database-short"/>
-    <xsl:call-template name="00-database-url"/>
+    <xsl:call-template name="t00-database-info"/>
+    <xsl:call-template name="t00-database-short"/>
+    <xsl:call-template name="t00-database-url"/>
     <xsl:apply-templates select="//entry" mode="c5"/>
   </xsl:template>
 
-  <xsl:template name="00-database-info">
+  <xsl:template name="t00-database-info">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-info&#x0A;</xsl:text>
     <xsl:apply-templates select="TEI.2/teiHeader"/>
   </xsl:template>
 
-  <xsl:template name="00-database-short">
+  <xsl:template name="t00-database-short">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-short&#x0A;</xsl:text>
     <xsl:value-of select="TEI.2/teiHeader/fileDesc/titleStmt/title"/>
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
-  <xsl:template name="00-database-url">
+  <xsl:template name="t00-database-url">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-url&#x0A;</xsl:text>
     <xsl:value-of select="TEI.2/teiHeader/fileDesc/sourceDesc//xptr/@url"/>
