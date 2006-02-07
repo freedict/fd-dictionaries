@@ -14,7 +14,7 @@
 <h1><?php echo _('Data Flow') ?></h1>
 
 <a href="<?php echo fdict_url('images/dataflow.png') ?>" target="_top"><img
- src="<?php echo fdict_url('images/dataflow.png') ?>" width="100%"
+ src="<?php echo fdict_url('images/dataflow.png') ?>" width="100%" style="background-color: white"
 border=0 alt="<?php printf("%2.0f", filesize('images/dataflow.png')/1024)
  ?> kB"></a>
 

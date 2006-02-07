@@ -41,19 +41,30 @@ include "inc/links.php";
 
 function cmp($a, $b)
 {
-  $na = $a->get_attribute('name');
-  $nb = $b->get_attribute('name');
+  global $get_attr;
+  $na = $a->$get_attr('name');
+  $nb = $b->$get_attr('name');
   if($na == $nb) return 0;
   return ($na < $nb) ? -1 : 1;
 }
 
+function nodelist2array($nodelist)
+{
+  $r = array();
+  foreach($nodelist as $n) array_push($r, $n);
+  return $r;
+}
+
 $ds = ($have_php5) ?
- $freedict_database->getElementsByTagName('dictionary') :
+ nodelist2array($freedict_database->getElementsByTagName('dictionary')) :
  $fddb_docel->get_elements_by_tagname('dictionary');
 
-usort ($ds, "cmp");
+usort($ds, "cmp");
+$dscount = 0;
+$hwsum = 0;
 foreach($ds as $d)
 {
+  $dscount++;
   list($l1, $l2) = split('-', $d->$get_attr('name'));
 
   $status = $d->$get_attr('status');  
@@ -70,6 +81,7 @@ foreach($ds as $d)
   if($maintainer=='') $maintainer='-';
   echo '<td>'. $maintainer .'</td>';
   echo '<td align=right>'. $d->$get_attr('headwords') .'</td>';
+  $hwsum += $d->$get_attr('headwords');
   echo '<td>'. $d->$get_attr('edition') .'</td>';
   echo '<td>'. $d->$get_attr('date') .'</td>';
   echo '<td><small>'. $status .'</small></td>';
@@ -81,8 +93,10 @@ foreach($ds as $d)
 
   echo '</tr>';
 }
-
 ?>
-
 </table>
-<?php include 'inc/legend.php' ?>
+
+<?php
+echo "$dscount dictionaries, $hwsum headwords<br>";
+
+include 'inc/legend.php' ?>

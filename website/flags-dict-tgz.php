@@ -6,7 +6,7 @@ include_once 'inc/langcodes.php';
 include_once 'inc/links.php';
 
 $platform = substr(basename($_SERVER['PHP_SELF']), 6);
-if(substr($platform,-4) =='.php') $platform= substr($platform,0 , -4);
+if(substr($platform,-4) =='.php') $platform= substr($platform, 0, -4);
 
 $platformStrings = array(
   'dict-tgz' => '<a href="http://sourceforge.net/project/showfiles.php?group_id=605" target="_top">'.
@@ -39,7 +39,12 @@ $platformStrings = array(
 
 
 <?php
-  if($platform == 'bedic')
+  if(strpos($platform, 'dict-') !== false)
+  {
+    printf(_('Another application understanding this file format is %1sWordtrans%2s, a KDE application.'),
+      '<a target="_parent" href="http://www.escomposlinux.org/rvm/wordtrans/">', '</a>');
+  }
+  else if($platform == 'bedic')
   {
     echo '<p>';
     echo _('BEDic has two frontends: ZBEDic, which runs on the Zaurus

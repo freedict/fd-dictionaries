@@ -21,6 +21,8 @@ below the English translations and email the file to
 
 <p style="align: center"><a href="<?php echo fdict_url('freedict.pot') ?>">freedict.pot</a></p>
 
-<p><?php echo _('If you want to update an existing translation, probably because
-it leaves some part of the website untranslated, you will have to ask me to
-finally put the website source into CVS.') ?></p>
+<p><?php echo _('If you want to update an existing translation, probably
+because it leaves some part of the website untranslated, you can get the
+<tt>.mo</tt> file from CVS:') ?></p>
+
+<blockquote><a href="http://cvs.sourceforge.net/viewcvs.py/freedict/website/locale/">http://cvs.sourceforge.net/viewcvs.py/freedict/website/locale/</a></blockquote>
