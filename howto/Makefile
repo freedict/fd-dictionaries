@@ -1,5 +1,8 @@
 XMLTO_OPTS = -m inc/customise-docbook.xsl
-DOCBOOKIMAGES = /usr/share/sgml/docbook/docbook-xsl-stylesheets-1.61.3/images
+# when you use Debian and the docbook-xsl package:
+DOCBOOKIMAGES = /usr/share/doc/docbook-xsl/images
+# when you use SuSE 9.0 and the docbook-xsl-stylesheets package:
+#DOCBOOKIMAGES = /usr/share/sgml/docbook/docbook-xsl-stylesheets-1.61.3/images
 HOWTO_VERSION = 0.0.8
 
 # these files have to reside in the "inc" subdir

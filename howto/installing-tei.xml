@@ -68,7 +68,7 @@
 	  </caution>
 	</para>
 	<para><userinput>&cmdp; cd TEI</userinput></para>
-	<para><userinput>&cmdp; unzip ../dtd.zip</userinput></para>
+	<para><userinput>&cmdp; unzip ../tei-0.3.1.zip</userinput></para>
 	<para>You should get a directory full of files that looks much like this:
 	  <screen>
 catalog.local   teiclas2.ent  teigen2.dtd   teind2.ent    teite2n.dtd
@@ -85,7 +85,7 @@ teicatalog.xml  teifs2.dtd    teimix2.dtd   teitc2.ent
 teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
 	</screen>
       </para>
-      <para>You have now installed them. Move the original <filename>dtd.zip</filename>
+      <para>You have now installed them. Move the original <filename>tei-0.3.1.zip</filename>
         away for archiving and you are done. The file <filename>index.html</filename> has
         some reading for later...</para>
       <note>
@@ -128,10 +128,10 @@ teicert2.dtd    teifsd2.dtd   teind2.dtd    teite2f.dtd
       <example>
         <title>Administrator install</title>
         <para><userinput>mkdir -p /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
-        <para><userinput>cp dtd.zip /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
+        <para><userinput>cp tei-0.3.1.zip /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
         <para><userinput>cd /usr/local/share/xml/tei2/p4/schema/dtd/</userinput></para>
-        <para><userinput>unzip dtd.zip</userinput></para>
-        <para><userinput>rm dtd.zip</userinput></para>
+        <para><userinput>unzip tei-0.3.1.zip</userinput></para>
+        <para><userinput>rm tei-0.3.1.zip</userinput></para>
       </example>
       <para>OK. Now everybody may access the TEI DTDs. Especially if the catalogs are set up as well...
         You may also symlink to the appropriate place under /usr/local/share/sgml/ or elsewhere.
