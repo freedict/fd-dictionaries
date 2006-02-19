@@ -4,9 +4,6 @@
                 xmlns="http://www.w3.org/TR/xhtml1/transitional"
                 exclude-result-prefixes="#default">
 
-<!-- Makes <programlisting> (but not <literallayout>) have a shade -->
-<xsl:param name="shade.verbatim" select="1"/>
-
 <!-- Images for warnings, notes etc. -->
 <xsl:param name="admon.graphics" select="1"/>
 
