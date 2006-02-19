@@ -1,0 +1,13 @@
+Source: freedict-editor
+Section: unknown
+Priority: optional
+Maintainer: Michael M. Bunk <micha@luetzschena.de>
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, libgnomeui-dev,
+ libxml2-dev, libxslt-dev, libgtkhtml2-dev
+Standards-Version: 3.6.2
+
+Package: freedict-editor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Gnome2 Application to edit Text Encoding Initiative XML
+ TEI XML is used in the FreeDict project to store bilingual dictionary data.

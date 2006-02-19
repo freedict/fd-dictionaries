@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-17 18:34+0530\n"
+"POT-Creation-Date: 2006-01-30 16:47+0100\n"
 "PO-Revision-Date: 2006-01-08 11:42+0100\n"
 "Last-Translator: Michael Bunk <kleinerwurm@gmx.net>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -24,559 +24,691 @@ msgstr "_Neu"
 msgid "New TEI File"
 msgstr ""
 
-#: src/interface.c:47
-msgid "_Edit TEI Header"
-msgstr ""
-
 #: src/interface.c:48
-msgid "Edit information about the dictionary"
+msgid "Ne_w Entry"
 msgstr ""
 
-#: src/interface.c:54
-msgid "_Spell Check..."
+#: src/interface.c:49
+msgid "Add New Entry"
 msgstr ""
 
-#: src/interface.c:61
-msgid "S_anity Checks..."
+#: src/interface.c:55
+msgid "_Delete Entry"
+msgstr ""
+
+#: src/interface.c:56
+msgid "Delete Currently Edited Entry"
 msgstr ""
 
 #: src/interface.c:62
+msgid "Sa_ve Entry"
+msgstr ""
+
+#: src/interface.c:63
+msgid "Save Changes to Entry"
+msgstr ""
+
+#: src/interface.c:69 src/interface.c:428
+msgid "_Cancel Edit"
+msgstr ""
+
+#: src/interface.c:70 src/interface.c:429
+msgid "Cancel Edit of Entry"
+msgstr ""
+
+#: src/interface.c:77
+msgid "_Edit TEI Header"
+msgstr ""
+
+#: src/interface.c:78
+msgid "Edit information about the dictionary"
+msgstr ""
+
+#: src/interface.c:84
+msgid "_Spell Check..."
+msgstr ""
+
+#: src/interface.c:91
+msgid "S_anity Checks..."
+msgstr ""
+
+#: src/interface.c:92
 msgid "Find Entries with missing Information"
 msgstr ""
 
-#: src/interface.c:75
+#: src/interface.c:105
 msgid "Lock _Dockitems"
 msgstr ""
 
-#: src/interface.c:82
+#: src/interface.c:112
 msgid "_Labels"
 msgstr ""
 
-#: src/interface.c:83
+#: src/interface.c:113
 msgid "Toggle whether Labels are shown before Input fields"
 msgstr ""
 
-#: src/interface.c:89
+#: src/interface.c:119
 msgid "_Toolbar"
 msgstr ""
 
-#: src/interface.c:90
+#: src/interface.c:120
 msgid "Toggle Display of Toolbar"
 msgstr ""
 
-#: src/interface.c:96
+#: src/interface.c:126
 msgid "_HTML Preview"
 msgstr ""
 
-#: src/interface.c:97
+#: src/interface.c:127
 msgid "Toggle Display of HTML Preview Area"
 msgstr ""
 
-#: src/interface.c:103
+#: src/interface.c:133
 msgid "_Keyboard Layout"
 msgstr ""
 
-#: src/interface.c:104
+#: src/interface.c:134
 msgid "Calls xkbprint to display current keyboard layout"
 msgstr ""
 
-#: src/interface.c:116
-msgid "Bonobo Experiment"
-msgstr ""
-
-#: src/interface.c:143 src/interface.c:176
+#: src/interface.c:166 src/interface.c:199
 msgid "_None"
 msgstr ""
 
-#: src/interface.c:150
+#: src/interface.c:173
 msgid "_Singular"
 msgstr ""
 
-#: src/interface.c:157
+#: src/interface.c:180
 msgid "_Dual"
 msgstr ""
 
-#: src/interface.c:164
+#: src/interface.c:187
 msgid "_Plural"
 msgstr ""
 
-#: src/interface.c:183
+#: src/interface.c:206
 msgid "_Masculine"
 msgstr ""
 
-#: src/interface.c:190
+#: src/interface.c:213
 msgid "_Feminine"
 msgstr ""
 
-#: src/interface.c:197
+#: src/interface.c:220
 msgid "_Neuter"
 msgstr ""
 
-#: src/interface.c:276
+#: src/interface.c:300
 msgid "FreeDict-Editor"
 msgstr ""
 
-#: src/interface.c:305
+#: src/interface.c:327
 msgid "Se_lect:"
 msgstr ""
 
-#: src/interface.c:316
+#: src/interface.c:338
 #, c-format
 msgid "This string will replace the %s in the XPath-Template."
 msgstr ""
 
-#: src/interface.c:324
-msgid "XPath-T_emplate:"
+#: src/interface.c:346
+msgid "XPath-Template:"
 msgstr ""
 
-#: src/interface.c:335
+#: src/interface.c:357
 #, c-format
 msgid ""
 "Enter an XPath expression. It may contain one %s, which will be filled by "
 "the contents of the \"Select\" input field."
 msgstr ""
 
-#: src/interface.c:336
+#: src/interface.c:358
 #, c-format
 msgid "/TEI.2/text/body/entry[position()>0 and contains(form/orth,'%s')]"
 msgstr ""
 
-#: src/interface.c:372
-msgid "Ne_w Entry"
+#: src/interface.c:394
+msgid "New Entry"
 msgstr ""
 
-#: src/interface.c:373
+#: src/interface.c:395
 msgid "Add new Entry"
 msgstr ""
 
-#: src/interface.c:382
-msgid "_Delete Entry"
-msgstr ""
-
-#: src/interface.c:383
+#: src/interface.c:404 src/interface.c:405
 msgid "Delete Entry"
 msgstr ""
 
-#: src/interface.c:393
-msgid "Sa_ve Entry"
+#: src/interface.c:415
+msgid "Save Entry"
 msgstr ""
 
-#: src/interface.c:394
+#: src/interface.c:416
 msgid "Save changes to Entry"
 msgstr ""
 
-#: src/interface.c:406
-msgid "_Cancel Edit"
-msgstr ""
-
-#: src/interface.c:407
-msgid "Cancel Edit of Entry"
-msgstr ""
-
-#: src/interface.c:438
+#: src/interface.c:468
 msgid "Entries that match the select expression"
 msgstr ""
 
-#: src/interface.c:443
+#: src/interface.c:473
 msgid "En_tries"
 msgstr ""
 
-#: src/interface.c:464
+#: src/interface.c:494
 msgid "XML View"
 msgstr ""
 
-#: src/interface.c:469
+#: src/interface.c:499
 msgid ""
 "The XML edit mode is selected of the entry cannot be edited with the "
 "formular."
 msgstr ""
 
-#: src/interface.c:471
+#: src/interface.c:501
 msgid "_XML"
 msgstr ""
 
-#: src/interface.c:492
+#: src/interface.c:522
 msgid "_Orthography"
 msgstr ""
 
-#: src/interface.c:505
+#: src/interface.c:535
 msgid "How the word is written"
 msgstr ""
 
-#: src/interface.c:507
+#: src/interface.c:537
 msgid "_Pronunciation"
 msgstr ""
 
-#: src/interface.c:520
+#: src/interface.c:550
 msgid ""
 "Please enter Unicode encoded characters of the International Phonetic "
 "Alphabet"
 msgstr ""
 
-#: src/interface.c:528
+#: src/interface.c:558
 msgid "Part of _Speech"
 msgstr ""
 
-#: src/interface.c:536
+#: src/interface.c:566
 msgid "Part of Speech"
 msgstr ""
 
-#: src/interface.c:544
+#: src/interface.c:574
 msgid "_Number"
 msgstr ""
 
-#: src/interface.c:552
+#: src/interface.c:582
 msgid "Number"
 msgstr ""
 
-#: src/interface.c:563
+#: src/interface.c:593
 msgid "_Genus"
 msgstr ""
 
-#: src/interface.c:571
+#: src/interface.c:601
 msgid "Genus"
 msgstr ""
 
-#: src/interface.c:579
+#: src/interface.c:609
 msgid "Headword(s)"
 msgstr ""
 
-#: src/interface.c:611
+#: src/interface.c:641
 msgid "Append new Sense to Entry"
 msgstr ""
 
-#: src/interface.c:617
+#: src/interface.c:647
 msgid "Remove last Sense from Entry"
 msgstr ""
 
-#: src/interface.c:619
+#: src/interface.c:649
 msgid "Sense(s)"
 msgstr ""
 
-#: src/interface.c:624
+#: src/interface.c:654
 msgid "For_m"
 msgstr ""
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/interface.c:823
+#: src/interface.c:862
 msgid "translator_credits"
 msgstr ""
 
-#: src/interface.c:830
+#: src/interface.c:869
 msgid "FreeDict Project, freedict.org, 2005"
 msgstr ""
 
-#: src/interface.c:857
+#: src/interface.c:896
 msgid "Select File"
 msgstr ""
 
-#: src/interface.c:934
+#: src/interface.c:984
 msgid "Spell Check"
 msgstr ""
 
-#: src/interface.c:948
-msgid "Misspelled word:"
+#: src/interface.c:997
+msgid "Misspelled Word"
 msgstr ""
 
-#: src/interface.c:962
+#: src/interface.c:1011
 msgid "A word that was not found in the spelling dictionary"
 msgstr ""
 
-#: src/interface.c:965
-msgid "Replacement:"
+#: src/interface.c:1014
+msgid "R_eplacement"
 msgstr ""
 
-#: src/interface.c:980
-msgid "Suggestions:"
+#: src/interface.c:1027
+msgid "The misspelled word will be replaced by this when you click on Replace"
 msgstr ""
 
-#: src/interface.c:988
-msgid "Spelling Dictionary:"
+#: src/interface.c:1030
+msgid "_Suggestions"
 msgstr ""
 
-#: src/interface.c:1007
-msgid "What lnagugae to use for checking the words"
-msgstr ""
-
-#: src/interface.c:1016
-msgid "<orth> - Headwords"
-msgstr ""
-
-#: src/interface.c:1020
-msgid "<tr> - Translations"
-msgstr ""
-
-#: src/interface.c:1025
-msgid "<eg><q> - Quotes of Examples"
-msgstr ""
-
-#: src/interface.c:1029
-msgid "<eg><tr> - Translations of Examples"
-msgstr ""
-
-#: src/interface.c:1039
-msgid "_Headword Language"
-msgstr ""
-
-#: src/interface.c:1045
-msgid "_Translation Language"
-msgstr ""
-
-#: src/interface.c:1052
-msgid "Check:"
-msgstr ""
-
-#: src/interface.c:1072
-msgid "Double-Click to replace the misspelled word with a suggestion"
-msgstr ""
-
-#: src/interface.c:1081
+#: src/interface.c:1043
 msgid "Nodes checked"
 msgstr ""
 
-#: src/interface.c:1091
-msgid "Replace misspelled word with replacement or suggestion"
+#: src/interface.c:1057
+msgid "Double-Click a suggestion to replace the misspelled word with it"
+msgstr ""
+
+#: src/interface.c:1075
+msgid "_Headword Language"
+msgstr ""
+
+#: src/interface.c:1081
+msgid "_Translation Language"
+msgstr ""
+
+#: src/interface.c:1088
+msgid "<orth> - Headwords"
+msgstr ""
+
+#: src/interface.c:1092
+msgid "<tr> - Translations"
+msgstr ""
+
+#: src/interface.c:1097
+msgid "<eg><q> - Quotes of Examples"
+msgstr ""
+
+#: src/interface.c:1101
+msgid "<eg><tr> - Translations of Examples"
 msgstr ""
 
 #: src/interface.c:1105
-msgid "_Replace"
+msgid "_What to check"
 msgstr ""
 
-#: src/interface.c:1110
-msgid "Replace _All"
+#: src/interface.c:1116
+msgid "Spelling _Dictionary:"
 msgstr ""
 
-#: src/interface.c:1114
-msgid ""
-"Replace all occurences of the misspelled word with replacement or selected "
-"suggestion"
+#: src/interface.c:1124
+msgid "Acc_ept Run-Together Words"
 msgstr ""
 
-#: src/interface.c:1120
-msgid "Ignore the occurence of a misspelled word"
-msgstr ""
-
-#: src/interface.c:1134
-msgid "_Ignore"
-msgstr ""
-
-#: src/interface.c:1139
-msgid "I_gnore All"
+#: src/interface.c:1135
+msgid "What language to use for checking the words"
 msgstr ""
 
 #: src/interface.c:1143
-msgid "Ignore all occurences of this misspelled word"
+msgid "Aspell _Options"
 msgstr ""
 
-#: src/interface.c:1149
-msgid "Add this word to the personal word list of this language"
+#: src/interface.c:1148
+msgid "Replacements made"
 msgstr ""
 
-#: src/interface.c:1279
+#: src/interface.c:1156
+msgid "0"
+msgstr ""
+
+#: src/interface.c:1173
+msgid "Replace misspelled word with current Replacement"
+msgstr ""
+
+#: src/interface.c:1187
+msgid "_Replace"
+msgstr ""
+
+#: src/interface.c:1192
+msgid "Replace _All"
+msgstr ""
+
+#: src/interface.c:1196
+msgid "Replace all occurences of the misspelled word with current Replacement"
+msgstr ""
+
+#: src/interface.c:1202
+msgid "Ignore current occurence of the misspelled word"
+msgstr ""
+
+#: src/interface.c:1216
+msgid "_Ignore"
+msgstr ""
+
+#: src/interface.c:1221
+msgid "I_gnore All"
+msgstr ""
+
+#: src/interface.c:1225
+msgid "Ignore all occurences of the misspelled word"
+msgstr ""
+
+#: src/interface.c:1231
+msgid ""
+"Add misspelled word to the personal GNU aspell word list of this language"
+msgstr ""
+
+#: src/interface.c:1374
 msgid "FreeDict-Editor Preferences"
 msgstr ""
 
-#: src/interface.c:1291
+#: src/interface.c:1386
 msgid "Use Default Value:"
 msgstr ""
 
-#: src/interface.c:1299
+#: src/interface.c:1394
 msgid "Use Custom Value"
 msgstr ""
 
-#: src/interface.c:1307
+#: src/interface.c:1402
 msgid "label57"
 msgstr ""
 
-#: src/interface.c:1317
+#: src/interface.c:1412
 msgid "Select XSLT-Stylesheet"
 msgstr ""
 
-#: src/interface.c:1327
+#: src/interface.c:1422
 msgid "_XSLT-Stylesheet for HTML Preview"
 msgstr ""
 
-#: src/interface.c:1335
+#: src/interface.c:1430
 msgid "_General"
 msgstr ""
 
-#: src/interface.c:1344
+#: src/interface.c:1439
 msgid ""
 "POS-, Num-, Gen-, XRef-Types\n"
 "+\n"
 "Descriptions"
 msgstr ""
 
-#: src/interface.c:1355
+#: src/interface.c:1450
 msgid "This information is automatically added to every edited entry"
 msgstr ""
 
-#: src/interface.c:1357
+#: src/interface.c:1452
 msgid "Use Default Name:"
 msgstr ""
 
-#: src/interface.c:1365
+#: src/interface.c:1460
 msgid "Use Custom Name:"
 msgstr ""
 
-#: src/interface.c:1373
+#: src/interface.c:1468
 msgid "editer_default_name_label"
 msgstr ""
 
-#: src/interface.c:1390
+#: src/interface.c:1485
 msgid "Entry _Template"
 msgstr ""
 
-#: src/interface.c:1398
+#: src/interface.c:1493
 msgid "Use Custom Value:"
 msgstr ""
 
-#: src/interface.c:1406
+#: src/interface.c:1501
 msgid "Use Default:"
 msgstr ""
 
-#: src/interface.c:1423
+#: src/interface.c:1518
 msgid "template_default_label"
 msgstr ""
 
-#: src/interface.c:1433
+#: src/interface.c:1528
 msgid "Add _Author/Editor to Edited Entries"
 msgstr ""
 
-#: src/interface.c:1439
+#: src/interface.c:1534
 msgid "Use Custom Email:"
 msgstr ""
 
-#: src/interface.c:1447
+#: src/interface.c:1542
 msgid "Use Default Email:"
 msgstr ""
 
-#: src/interface.c:1455
+#: src/interface.c:1550
 msgid "editer_default_email_label"
 msgstr ""
 
-#: src/interface.c:1471
+#: src/interface.c:1566
 msgid "Add _Source Reference to Edited Entries"
 msgstr ""
 
-#: src/interface.c:1485
+#: src/interface.c:1580
 msgid ""
 "Source Document that justifies inclusion of an entry. Automatically added to "
 "edited entries."
 msgstr ""
 
-#: src/interface.c:1495
+#: src/interface.c:1590
 msgid "_Entry Editor"
 msgstr ""
 
-#: src/interface.c:1504
+#: src/interface.c:1599
 msgid "_Sanity Checks"
 msgstr ""
 
-#: src/interface.c:1584
+#: src/interface.c:1678
 msgid "Check Sanity"
 msgstr ""
 
-#: src/callbacks.c:61
-msgid "Failed to load file!"
-msgstr ""
-
-#: src/callbacks.c:68
-msgid "No Context!"
-msgstr ""
-
-#: src/callbacks.c:73
-msgid "No XPathObject!"
-msgstr ""
-
-#: src/callbacks.c:76
+#: src/callbacks.c:206
 #, c-format
-msgid "Entries: %2.0f"
+msgid "Failed to load %s!"
 msgstr ""
 
-#: src/callbacks.c:140
+#: src/callbacks.c:289
 msgid "File modified. Save?"
 msgstr ""
 
-#: src/callbacks.c:378 src/callbacks.c:386
+#: src/callbacks.c:555 src/callbacks.c:563
 #, c-format
 msgid "Malformed XPath-Template. Only one %%s and many %%%% allowed."
 msgstr ""
 
-#: src/callbacks.c:395
+#: src/callbacks.c:584
 msgid "No matches."
 msgstr ""
 
-#: src/callbacks.c:398
+#: src/callbacks.c:587
 #, c-format
 msgid "%i matching nodes"
 msgstr ""
 
-#: src/callbacks.c:457
-msgid "Edited entry accepted."
+#: src/callbacks.c:662
+msgid "Edit accepted."
 msgstr ""
 
-#: src/callbacks.c:490
+#: src/callbacks.c:695
 msgid "Edited XML is not well formed! Can't save it!"
 msgstr ""
 
-#: src/callbacks.c:504 src/callbacks.c:634
+#: src/callbacks.c:709 src/callbacks.c:880
 msgid "Edited XML is not valid! Won't save it!"
 msgstr ""
 
-#: src/callbacks.c:542
+#: src/callbacks.c:747
 msgid "xmlAddChild(bodyNode, newEntry) failed!"
 msgstr ""
 
-#: src/callbacks.c:598
+#: src/callbacks.c:803
 #, c-format
 msgid "New entry created and editable. Speed: %2.1f entries/hour"
 msgstr ""
 
-#: src/callbacks.c:679
+#: src/callbacks.c:923
 msgid "Cannot handle entry with form :("
 msgstr ""
 
-#: src/callbacks.c:690
+#: src/callbacks.c:934
+#, c-format
 msgid "Saving form contents as XML failed :("
 msgstr ""
 
-#: src/callbacks.c:896
+#: src/callbacks.c:1153
+#, c-format
+msgid "Key was empty. Using default: %s\n"
+msgstr ""
+
+#: src/callbacks.c:1155
+#, c-format
+msgid "Using stylesheet filename from gconf: %s\n"
+msgstr ""
+
+#: src/callbacks.c:1169
 #, c-format
 msgid "Could not load %s!"
 msgstr ""
 
-#: src/callbacks.c:905
+#: src/callbacks.c:1178
 #, c-format
 msgid "Could not load entry stylesheet %s. HTML Preview won't work!"
 msgstr ""
 
-#: src/callbacks.c:996 src/callbacks.c:1010
+#: src/callbacks.c:1269
 msgid "Error converting entry to HTML!"
 msgstr ""
 
 #. save contents of form
-#: src/callbacks.c:1033
+#: src/callbacks.c:1308
+#, c-format
 msgid "Saving form contents as XML failed."
 msgstr ""
 
-#: src/callbacks.c:1178
+#: src/callbacks.c:1388
 msgid "No Drops accepted while unsaved changes in memory."
 msgstr ""
 
-#: src/callbacks.c:1198
+#: src/callbacks.c:1408
 #, c-format
 msgid "Did not recognize URI in Drop (no \\r\\n): %s\n"
 msgstr ""
 
-#: src/callbacks.c:1201
+#: src/callbacks.c:1411
 #, c-format
 msgid "Did not recognize file-URI in Drop: %s\n"
 msgstr ""
 
-#: src/callbacks.c:1512
+#: src/callbacks.c:1466
+msgid "Failed to find 'xkbprint' in path."
+msgstr ""
+
+#: src/callbacks.c:1472
+msgid "Failed to find 'gv' in path."
+msgstr ""
+
+#: src/callbacks.c:1480
+#, c-format
+msgid "Failed to show keyboard layout with command: %s"
+msgstr ""
+
+#: src/callbacks.c:1483
+#, c-format
+msgid "Done: %s"
+msgstr ""
+
+#: src/callbacks.c:1931
+msgid "Finished Spellcheck."
+msgstr ""
+
+#: src/callbacks.c:2029
 #, c-format
 msgid "%s, size=%s"
+msgstr ""
+
+#: src/callbacks.c:2060
+msgid "This binary of FreeDict-Editor was compiled without aspell support."
+msgstr ""
+
+#: src/callbacks.c:2100
+#, c-format
+msgid "There is no use in replacing a misspelled word with itself.\n"
+msgstr ""
+
+#: src/callbacks.c:2514
+msgid "Missing Part-of-Speech"
+msgstr ""
+
+#: src/callbacks.c:2516
+msgid "Nouns without Gender"
+msgstr ""
+
+#: src/callbacks.c:2518
+msgid "Notes with Question Marks"
+msgstr ""
+
+#: src/callbacks.c:2520
+msgid "Empty Headwords"
+msgstr ""
+
+#: src/callbacks.c:2522
+msgid "Empty Body"
+msgstr ""
+
+#. too slow
+#: src/callbacks.c:2526
+msgid "Homographs of same Part-of-Speech"
+msgstr ""
+
+#: src/callbacks.c:2531
+msgid "Broken Cross-References"
+msgstr ""
+
+#: src/callbacks.c:2536
+msgid "Multiple Headwords"
+msgstr ""
+
+#: src/callbacks.c:2538
+msgid "\"to \" before verbs (only useful for English, checks tr)"
+msgstr ""
+
+#: src/callbacks.c:2540
+msgid "\"to \" before verbs (only useful for English, checks orth)"
+msgstr ""
+
+#: src/callbacks.c:2542
+msgid "Unbalanced braces"
+msgstr ""
+
+#: src/callbacks.c:2667
+#, c-format
+msgid "%1$s (%2$i matches)"
+msgstr ""
+
+#: src/callbacks.c:2756
+msgid "Sanity checks performed."
+msgstr ""
+
+#: src/callbacks.c:2798
+msgid "Check Enabled?"
+msgstr ""
+
+#: src/callbacks.c:2807
+msgid "Check Name"
+msgstr ""
+
+#: src/callbacks.c:2813
+msgid "Matching Entries"
 msgstr ""
 
 #: src/support.c:60 src/support.c:85
@@ -584,3 +716,20 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
+#: src/utils.c:89
+msgid ""
+"1. Open a TEI file\n"
+"2. Modify the XPath select expression to match\n"
+"\tthe entries you desire to edit\n"
+"3. Double-click on an entry headword in the list\n"
+"\tof matching entries to the right!"
+msgstr ""
+
+#: src/utils.c:140
+#, c-format
+msgid "Saving to %s failed."
+msgstr ""
+
+#: src/utils.c:146
+msgid "Saved."
+msgstr ""

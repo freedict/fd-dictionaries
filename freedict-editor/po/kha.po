@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-06 00:20+0100\n"
+"POT-Creation-Date: 2006-01-30 16:47+0100\n"
 "PO-Revision-Date: 2006-01-08 11:40+0100\n"
 "Last-Translator: Michael Bunk <kleinerwurm@gmx.net>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -403,7 +403,8 @@ msgid "Ignore all occurences of the misspelled word"
 msgstr ""
 
 #: src/interface.c:1231
-msgid "Add misspelled word to the personal GNU aspell word list of this language"
+msgid ""
+"Add misspelled word to the personal GNU aspell word list of this language"
 msgstr ""
 
 #: src/interface.c:1374
@@ -560,136 +561,153 @@ msgid "Cannot handle entry with form :("
 msgstr ""
 
 #: src/callbacks.c:934
+#, c-format
 msgid "Saving form contents as XML failed :("
 msgstr ""
 
-#: src/callbacks.c:1144
+#: src/callbacks.c:1153
 #, c-format
 msgid "Key was empty. Using default: %s\n"
 msgstr ""
 
-#: src/callbacks.c:1146
+#: src/callbacks.c:1155
 #, c-format
 msgid "Using stylesheet filename from gconf: %s\n"
 msgstr ""
 
-#: src/callbacks.c:1155
+#: src/callbacks.c:1169
 #, c-format
 msgid "Could not load %s!"
 msgstr ""
 
-#: src/callbacks.c:1164
+#: src/callbacks.c:1178
 #, c-format
 msgid "Could not load entry stylesheet %s. HTML Preview won't work!"
 msgstr ""
 
-#: src/callbacks.c:1255
+#: src/callbacks.c:1269
 msgid "Error converting entry to HTML!"
 msgstr ""
 
 #. save contents of form
-#: src/callbacks.c:1294
+#: src/callbacks.c:1308
+#, c-format
 msgid "Saving form contents as XML failed."
 msgstr ""
 
-#: src/callbacks.c:1374
+#: src/callbacks.c:1388
 msgid "No Drops accepted while unsaved changes in memory."
 msgstr ""
 
-#: src/callbacks.c:1394
+#: src/callbacks.c:1408
 #, c-format
 msgid "Did not recognize URI in Drop (no \\r\\n): %s\n"
 msgstr ""
 
-#: src/callbacks.c:1397
+#: src/callbacks.c:1411
 #, c-format
 msgid "Did not recognize file-URI in Drop: %s\n"
 msgstr ""
 
-#: src/callbacks.c:1455
-msgid "Failed to show keyboard layout."
+#: src/callbacks.c:1466
+msgid "Failed to find 'xkbprint' in path."
 msgstr ""
 
-#: src/callbacks.c:1902
+#: src/callbacks.c:1472
+msgid "Failed to find 'gv' in path."
+msgstr ""
+
+#: src/callbacks.c:1480
+#, c-format
+msgid "Failed to show keyboard layout with command: %s"
+msgstr ""
+
+#: src/callbacks.c:1483
+#, c-format
+msgid "Done: %s"
+msgstr ""
+
+#: src/callbacks.c:1931
 msgid "Finished Spellcheck."
 msgstr ""
 
-#: src/callbacks.c:2000
+#: src/callbacks.c:2029
 #, c-format
 msgid "%s, size=%s"
 msgstr ""
 
-#: src/callbacks.c:2031
+#: src/callbacks.c:2060
 msgid "This binary of FreeDict-Editor was compiled without aspell support."
 msgstr ""
 
-#: src/callbacks.c:2071
+#: src/callbacks.c:2100
+#, c-format
 msgid "There is no use in replacing a misspelled word with itself.\n"
 msgstr ""
 
-#: src/callbacks.c:2485
+#: src/callbacks.c:2514
 msgid "Missing Part-of-Speech"
 msgstr ""
 
-#: src/callbacks.c:2487
+#: src/callbacks.c:2516
 msgid "Nouns without Gender"
 msgstr ""
 
-#: src/callbacks.c:2489
+#: src/callbacks.c:2518
 msgid "Notes with Question Marks"
 msgstr ""
 
-#: src/callbacks.c:2491
+#: src/callbacks.c:2520
 msgid "Empty Headwords"
 msgstr ""
 
-#: src/callbacks.c:2493
+#: src/callbacks.c:2522
 msgid "Empty Body"
 msgstr ""
 
 #. too slow
-#: src/callbacks.c:2497
+#: src/callbacks.c:2526
 msgid "Homographs of same Part-of-Speech"
 msgstr ""
 
-#: src/callbacks.c:2502
+#: src/callbacks.c:2531
 msgid "Broken Cross-References"
 msgstr ""
 
-#: src/callbacks.c:2507
+#: src/callbacks.c:2536
 msgid "Multiple Headwords"
 msgstr ""
 
-#: src/callbacks.c:2509
+#: src/callbacks.c:2538
 msgid "\"to \" before verbs (only useful for English, checks tr)"
 msgstr ""
 
-#: src/callbacks.c:2511
+#: src/callbacks.c:2540
 msgid "\"to \" before verbs (only useful for English, checks orth)"
 msgstr ""
 
-#: src/callbacks.c:2513
+#: src/callbacks.c:2542
 msgid "Unbalanced braces"
 msgstr ""
 
-#: src/callbacks.c:2638
+#: src/callbacks.c:2667
 #, c-format
 msgid "%1$s (%2$i matches)"
 msgstr ""
 
-#: src/callbacks.c:2728
+#: src/callbacks.c:2756
 msgid "Sanity checks performed."
 msgstr ""
 
-#: src/callbacks.c:2770
+#: src/callbacks.c:2798
 msgid "Check Enabled?"
 msgstr ""
 
-#: src/callbacks.c:2779
+#: src/callbacks.c:2807
 msgid "Check Name"
 msgstr ""
 
-#: src/callbacks.c:2785
+#: src/callbacks.c:2813
 msgid "Matching Entries"
 msgstr ""
 
@@ -715,4 +733,3 @@ msgstr ""
 #: src/utils.c:146
 msgid "Saved."
 msgstr ""
-
