@@ -22,7 +22,9 @@ $platformStrings = array(
   'rpm' => '<a href="http://redhat.com/" target="_top">RedHat</a> or <a href="http://suse.com/" target="_top">SuSE</a> Linux',
   'gem' => '<a href="http://rocklinux.org/" target="_top">ROCK Linux</a>');
 
-?><html>
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
  <title><?php echo _('Download / Matrix View - FreeDict') ?></title>
  <META http-equiv="Content-Type" content="text/html;charset=utf-8">
