@@ -19,8 +19,6 @@
 static void freedict_xpath_extension_unbalanced_braces(
 xmlXPathParserContextPtr ctxt, const int nargs)
 {
-  xmlChar *haystack, *regexp_middle, *regexp, *flagstr;
-  int rc = 0, flags, global, ovector[3];
   
   if(nargs != 1)
   {
@@ -129,8 +127,8 @@ void register_freedict_xpath_extension_functions(void)
 
 xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
 {
-  g_return_if_fail(node);
-  xmlDocPtr doc = xmlNewDoc(XML_DEFAULT_VERSION);
+  g_return_val_if_fail(node, NULL);
+  xmlDocPtr doc = xmlNewDoc((xmlChar *) XML_DEFAULT_VERSION);
   xmlNodePtr root = xmlDocCopyNode(node, doc, 1);// copies recursively
   xmlDocSetRootElement(doc, root); 
   g_assert(doc);
@@ -244,20 +242,20 @@ xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathPars
     return NULL;
   }
 
-  if(xmlXPathRegisterNs(ctxt, FREEDICT_EDITOR_NAMESPACE_PREFIX, FREEDICT_EDITOR_NAMESPACE))
+  if(xmlXPathRegisterNs(ctxt, (xmlChar *) FREEDICT_EDITOR_NAMESPACE_PREFIX, (xmlChar *) FREEDICT_EDITOR_NAMESPACE))
   {
     g_printerr("Warning: Unable to register XSLT-Namespace prefix \"%s\""
 	" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE_PREFIX, FREEDICT_EDITOR_NAMESPACE); 
   }            
 
-  if(xmlXPathRegisterFuncNS(ctxt, "unbalanced-braces",
-	FREEDICT_EDITOR_NAMESPACE, freedict_xpath_extension_unbalanced_braces))
+  if(xmlXPathRegisterFuncNS(ctxt, (xmlChar *) "unbalanced-braces",
+	(xmlChar *) FREEDICT_EDITOR_NAMESPACE, freedict_xpath_extension_unbalanced_braces))
     g_printerr("Warning: Unable to register XPath extension function "
 	"\"unbalanced-braces\" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE); 
 
   xmlXPathParserContextPtr pctxt2;
   if(!pctxt) pctxt = &pctxt2;
-  xmlXPathObjectPtr xpobj = my_xmlXPathEvalExpression(xpath, ctxt, pctxt);
+  xmlXPathObjectPtr xpobj = my_xmlXPathEvalExpression((xmlChar *) xpath, ctxt, pctxt);
   if(!xpobj)
   {
     g_printerr(G_STRLOC ": No XPathObject!\n");
@@ -342,7 +340,8 @@ gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char
         {
 	  // if allowed node exists
           //g_printerr("checking allowed attr '%s': ", *attr);
-	  if(!strcmp(nattrs->name, *attr)) { allowed = TRUE; break; }
+	  if(!strcmp((char *) nattrs->name, (char *) *attr))
+	  { allowed = TRUE; break; }
           attr++;
 	}
         //g_printerr("%i ", allowed);
@@ -397,11 +396,11 @@ xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, con
 xmlNodePtr string2xmlNode(const xmlNodePtr parent, const gchar *before,
     const gchar *name, const gchar *content, const gchar *after)
 {
-  g_return_if_fail(name);
+  g_return_val_if_fail(name, NULL);
 
-  xmlNodeAddContent(parent, before); 
-  xmlNodePtr newNode = xmlNewChild(parent, NULL, name, content);
-  xmlNodeAddContent(parent, after); 
+  xmlNodeAddContent(parent, (xmlChar *) before); 
+  xmlNodePtr newNode = xmlNewChild(parent, NULL, (xmlChar *) name, (xmlChar *) content);
+  xmlNodeAddContent(parent, (xmlChar *) after); 
 
   return newNode;
 }
@@ -447,7 +446,7 @@ gboolean entry_orths_to_string(xmlNodePtr n, int len, char *s)
     int l = strlen(e);
     if(l) g_strlcat(e, ", ", len);
     if(!content) g_strlcat(e, "(null)", len);
-    else g_strlcat(e, content, len);
+    else g_strlcat(e, (gchar *) content, len);
     if(content) xmlFree(content);
   }
 

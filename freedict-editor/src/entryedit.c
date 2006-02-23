@@ -798,7 +798,7 @@ static void nodeContent2gtk_entry(const xmlNodePtr n, GtkEntry *e)
     return;
   }
   xmlChar* content = xmlNodeGetContent(n);
-  gtk_entry_set_text(e, content ? content : ((xmlChar*) ""));
+  gtk_entry_set_text(e, content ? (char *) content : "");
   if(content) xmlFree(content);
 }
 
@@ -810,7 +810,7 @@ static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
 {
   g_return_val_if_fail(om, FALSE); 
   xmlChar* content = xmlNodeGetContent(n);
-  guint index_ = value2index(values, content);
+  guint index_ = value2index(values, (char *) content);
   if(index_==-1)
   {
     g_printerr(_("Unknown <%s> content: '%s'\n"), errormsg, content);
@@ -949,12 +949,12 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   if(!content) return;
   char *nameS = NULL, *emailS = NULL;
   char dateS[100];
-  if(strlen(content)>0)
+  if(strlen((char *) content)>0)
   {
     // %as =  match a string, malloc it
     // &a[^>] = match a string, malloc it, all chars allowed except '>'
     // XXX might not be robust
-    int ret = sscanf(content, "%a[^<]<%a[^>]>  %[a-zA-Z0-9 .,-]",
+    int ret = sscanf((char *) content, "%a[^<]<%a[^>]>  %[a-zA-Z0-9 .,-]",
 	&nameS, &emailS, &dateS);
 
     if(ret != 3)
@@ -1019,7 +1019,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
  
   void inline my_unlink_free(const char *xpath)
   {
-    xmlNodePtr *n = my_unlink(xpath);
+    xmlNodePtr n = my_unlink(xpath);
     if(n) xmlFreeNode(n);
   }
   
@@ -1153,9 +1153,9 @@ static xmlNodePtr GtkEntry2xmlNode(const xmlNodePtr parent, const gchar *before,
   const gchar *select = e ? gtk_entry_get_text(e) : NULL;
   if(!strlen(select)) return NULL;
 
-  xmlNodeAddContent(parent, before); 
-  xmlNodePtr newNode = xmlNewChild(parent, NULL, name, select);
-  xmlNodeAddContent(parent, after); 
+  xmlNodeAddContent(parent, (xmlChar *) before); 
+  xmlNodePtr newNode = xmlNewChild(parent, NULL, (xmlChar *) name, (xmlChar *) select);
+  xmlNodeAddContent(parent, (xmlChar *) after); 
 
   return newNode;
 }
@@ -1168,9 +1168,9 @@ static xmlNodePtr GtkEntry2xmlNode(const xmlNodePtr parent, const gchar *before,
  */
 xmlNodePtr form2xml(const GArray *senses)
 {
-  g_return_if_fail(teidoc);
+  g_return_val_if_fail(teidoc, NULL);
 
-  xmlNodePtr entryNode = xmlNewDocNode(teidoc, NULL, "entry", "\n");
+  xmlNodePtr entryNode = xmlNewDocNode(teidoc, NULL, (xmlChar *) "entry", (xmlChar *) "\n");
   xmlNodePtr formNode = string2xmlNode(entryNode, "  ", "form", "\n", "\n");
 
   // orth
@@ -1180,7 +1180,7 @@ xmlNodePtr form2xml(const GArray *senses)
   // pron
   GtkEntry2xmlNode(formNode, "    ", "pron",
       GTK_ENTRY(lookup_widget(app1, "entry2")), "\n");
-  xmlNodeAddContent(formNode, "  "); 
+  xmlNodeAddContent(formNode, (xmlChar *) "  "); 
 
   // gramGrp
   gint pindex = gtk_option_menu_get_history(GTK_OPTION_MENU(
@@ -1198,16 +1198,16 @@ xmlNodePtr form2xml(const GArray *senses)
       string2xmlNode(gramGrpNode, NULL, "gen", index2value(gen_values, gindex), NULL);
     if(nindex)
       string2xmlNode(gramGrpNode, NULL, "num", index2value(num_values, nindex), NULL);
-    xmlNodeAddContent(gramGrpNode, "\n  "); 
+    xmlNodeAddContent(gramGrpNode, (xmlChar *) "\n  "); 
   }
   
   // sense
   int i;
   for(i=0; i < senses->len; i++)
   {
-    xmlNodeAddContent(entryNode, "  "); 
+    xmlNodeAddContent(entryNode, (xmlChar *) "  "); 
     Sense *s = &g_array_index(senses, Sense, i);
-    xmlNodePtr senseNode = xmlNewChild(entryNode, NULL, "sense", "\n");
+    xmlNodePtr senseNode = xmlNewChild(entryNode, NULL, (xmlChar *) "sense", (xmlChar *) "\n");
 
     // domain
     gint dindex = gtk_option_menu_get_history(GTK_OPTION_MENU(s->domain_optionmenu));
@@ -1216,7 +1216,7 @@ xmlNodePtr form2xml(const GArray *senses)
     {
       xmlNodePtr usgNode = string2xmlNode(senseNode, "    ", "usg",
 	  index2value(domain_values, dindex), "\n");
-      xmlNewProp(usgNode, "type", "dom");
+      xmlNewProp(usgNode, (xmlChar *) "type", (xmlChar *) "dom");
     }
 
     // trans
@@ -1279,14 +1279,14 @@ xmlNodePtr form2xml(const GArray *senses)
 	    GTK_OPTION_MENU(xr->type_optionmenu));
 	// if anything other than 'None' was selected in optionmenu
 	if(index)
-	  xmlNewProp(xrNode, "type", index2value(xr_values, index));
+	  xmlNewProp(xrNode, (xmlChar *) "type", (xmlChar *) index2value(xr_values, index));
 	
 	GtkEntry2xmlNode(xrNode, NULL, "ref", GTK_ENTRY(xr->combo_entry), NULL);
       } // if
     } // xr
-    xmlNodeAddContent(senseNode, "  "); 
+    xmlNodeAddContent(senseNode, (xmlChar *) "  "); 
   } // sense
-  xmlNodeAddContent(entryNode, "\n"); 
+  xmlNodeAddContent(entryNode, (xmlChar *) "\n"); 
 
   // XXX add <note resp='translator>Name <Email>  Date</note>
 

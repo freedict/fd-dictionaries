@@ -37,13 +37,16 @@ void show_in_textview1(const xmlNodePtr n)
   GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
 
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
-  gtk_text_buffer_set_text(b, xmlBufferContent(buf), -1);
+  gtk_text_buffer_set_text(b, (char *) xmlBufferContent(buf), -1);
   xmlBufferFree(buf); 
   gtk_text_buffer_set_modified(b, FALSE);
 
   // XXX make sure notebook1 shows page 0 (XML view)
 }
 
+
+void on_file_modified_changed();
+void on_form_modified_changed();
 
 // side effect: changes the edit mode (XML or Form)
 // maybe we should try form mode only when option "Always try Form mode" enabled
@@ -53,7 +56,7 @@ void set_edited_node(const xmlNodePtr n)
   GtkWidget *nb1 = lookup_widget(app1, "notebook1");
   gtk_widget_set_sensitive(nb1, n!=NULL);
 
-  gboolean is_entry = n && !strcmp(n->name, "entry");
+  gboolean is_entry = n && !strcmp((char *) n->name, "entry");
   gtk_widget_set_sensitive(lookup_widget(app1, "delete_button"), is_entry);
 
   // XXX maybe we should refuse to set a new edited_node when

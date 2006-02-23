@@ -554,7 +554,7 @@ gboolean on_select_timeout(gpointer data)
 	{
 	  mystatus(_("Malformed XPath-Template. Only one %%s and "
 		"many %%%% allowed."));
-	  return;
+	  return FALSE;
 	}
       case '%':
 	fscan = perc+2;
@@ -562,7 +562,7 @@ gboolean on_select_timeout(gpointer data)
       default:
 	mystatus(_("Malformed XPath-Template. Only one %%s and "
 	      "many %%%% allowed."));
-	return;
+	return FALSE;
     }
   }
 
@@ -587,7 +587,7 @@ gboolean on_select_timeout(gpointer data)
     mystatus(_("%i matching nodes"), nodes->nodeNr);
 
     GtkTreeIter i;
-    xmlNodePtr *n, *n2;
+    xmlNodePtr *n;
     int j = 0;
     for(n = nodes->nodeTab; *n && j<nodes->nodeNr && j<50; n++, j++)
     {
@@ -639,6 +639,8 @@ on_treeview1_row_activated             (GtkTreeView     *treeview,
   set_edited_node(e);
 }
 
+
+int sanity_treeview_remove_entry_pointers(xmlNodePtr n);
 
 void replace_edited_node(xmlNodePtr new_node)
 {
@@ -724,6 +726,10 @@ on_save_button_clicked                 (GtkButton       *button,
 }
 
 
+// for gettimeofday()
+#include <sys/time.h>
+#include <time.h>
+
 void
 on_new_entry_button_clicked            (GtkButton       *button,
                                         gpointer         user_data)
@@ -749,7 +755,7 @@ on_new_entry_button_clicked            (GtkButton       *button,
     }
   }
   else // way 2: empty entry node (invalidates teidoc!)
-    new_entry = xmlNewChild(bodyNode, NULL, "entry", "\n");	   
+    new_entry = xmlNewChild(bodyNode, NULL, (xmlChar *) "entry", (xmlChar *) "\n");	   
 
   // show in edit area
   set_edited_node(new_entry);
@@ -812,7 +818,7 @@ on_delete_button_clicked               (GtkButton       *button,
   g_return_if_fail(edited_node);
   
   // don't delete things that are no entries
-  g_return_if_fail(!strcmp(edited_node->name, "entry"));
+  g_return_if_fail(!strcmp((char *) edited_node->name, "entry"));
   
   xmlUnlinkNode(edited_node);
   sanity_treeview_remove_entry_pointers(edited_node);
@@ -1172,7 +1178,7 @@ on_app1_show                           (GtkWidget       *widget,
   if(!entry_stylesheet)
   {
     entry_stylesheet =
-      xsltParseStylesheetFile(stylesheetfn);
+      xsltParseStylesheetFile((xmlChar *) stylesheetfn);
     if(!entry_stylesheet)
     {
       mystatus(_("Could not load entry stylesheet %s. HTML Preview won't work!"),
@@ -1197,7 +1203,7 @@ on_app1_show                           (GtkWidget       *widget,
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
 
   // XXX ugly
-  GtkTextTag *tag = gtk_text_buffer_create_tag(b, "instructions",
+  gtk_text_buffer_create_tag(b, "instructions",
 //      "foreground", "blue", 
 //      "scale", PANGO_SCALE_X_LARGE,
       "wrap-mode", GTK_WRAP_WORD,
@@ -1285,7 +1291,7 @@ void show_html_preview(xmlNodePtr entry)
 
   if(bytes == -1 || !txt)
     html_document_write_stream(htdoc, _(err), sizeof(_(err)));
-  else html_document_write_stream(htdoc, txt, len);
+  else html_document_write_stream(htdoc, (char *) txt, len);
   if(txt) xmlFree(txt);
   html_document_close_stream(htdoc);
   xmlFreeDoc(html_entry);
@@ -1391,14 +1397,14 @@ on_app1_drag_data_received             (GtkWidget       *widget,
     
   //g_print("Got: %s\n",data->data);
 
-  if(!strncmp(data->data, "file://", 7))
+  if(!strncmp((char *) data->data, "file://", 7))
   {
     static char myfilename[200];
-    char *end = strstr(data->data + 7, "\r\n");
+    char *end = strstr((char *) data->data + 7, "\r\n");
     if(end)
     {
       *end = 0;
-      strncpy(myfilename, data->data + 7, sizeof(myfilename));
+      strncpy(myfilename, (char *) data->data + 7, sizeof(myfilename));
       //g_print("Trying to load '%s'\n", myfilename);
       selected_filename = myfilename;
 
@@ -1467,7 +1473,7 @@ on_view_keyboard_layout_activate       (GtkMenuItem     *menuitem,
     return;
   }
   gchar *gvpath = g_find_program_in_path("gv");
-  if(!xkbprintpath)
+  if(!gvpath)
   {
     mystatus(_("Failed to find 'gv' in path."));
     return;
@@ -1568,7 +1574,7 @@ static void spell_getsuggestions(char *word)
   const AspellWordList *suggestions = aspell_speller_suggest(s, word, -1); 
   AspellStringEnumeration *elements = aspell_word_list_elements(suggestions); 
   const char *sugg; 
-  while(sugg = aspell_string_enumeration_next(elements))
+  while((sugg = aspell_string_enumeration_next(elements)))
   {
     // XXX remove this... ISO-8859-1 -> UTF-8
     gchar *utf8text;
@@ -1683,7 +1689,7 @@ gboolean spell_handle_current_word()
   // show entry containing the misspelling in html preview
   // look for an entry ancestor
   xmlNodePtr n = spell_current_node;
-  while(n && n->name && strcmp(n->name, "entry"))
+  while(n && n->name && strcmp((char *) n->name, "entry"))
    n = n->parent;
   if(n && n->type==XML_ELEMENT_NODE)
   {
@@ -1724,10 +1730,10 @@ gboolean spell_handle_current_node(void)
     
     // UTF-8 -> ISO-8859-1
     // XXX also convert things for session/personal dict
-    gsize length = strlen(spell_current_content);
+    gsize length = strlen((char *) spell_current_content);
     GError *error = NULL;
 
-    char *iso88591text = g_convert(spell_current_content, length, "ISO-8859-1",
+    char *iso88591text = g_convert((char *) spell_current_content, length, "ISO-8859-1",
        	"UTF-8", NULL, NULL, &error);
     if(error != NULL)
     {
@@ -1761,7 +1767,7 @@ gboolean spell_handle_current_node(void)
   {
     xmlChar *old_content = xmlNodeGetContent(spell_current_node);
     g_print("Node content: old='%s' new='%s'\n", old_content, spell_content);
-    xmlNodeSetContent(spell_current_node, spell_content);
+    xmlNodeSetContent(spell_current_node, (xmlChar *) spell_content);
  }
   in_node = FALSE;
 #else
