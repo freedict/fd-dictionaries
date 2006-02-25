@@ -41,6 +41,12 @@ main (int argc, char *argv[])
 		        PACKAGE_DATA_DIR "/pixmaps/" PACKAGE "/freedict.png",
                       NULL);
 
+  // these functions are provided by libbonobo
+  bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+  textdomain(GETTEXT_PACKAGE);
+
+
   g_object_get(G_OBJECT(app), GNOME_PARAM_POPT_CONTEXT, &con, NULL);
   extern char *selected_filename;
   selected_filename = (char *) poptGetArg(con);

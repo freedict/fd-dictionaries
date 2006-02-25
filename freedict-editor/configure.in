@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(FreeDict Editor, 0.1, [freedict-beta@lists.sourceforge.net])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip])
-AC_REVISION($Revision: 1.4 $)
+AC_REVISION($Revision: 1.5 $)
 
 AM_MAINTAINER_MODE
 AM_CONFIG_HEADER(config.h)
@@ -19,13 +19,11 @@ AC_SUBST(PACKAGE_LIBS)
 
 AC_CHECK_LIB(aspell,new_aspell_config,,[AC_MSG_WARN([Some version of aspell, preferably >=0.50.3 is recommended])])
 
-# since i removed acconfig.h, autoheader wants this:
-AC_DEFINE([GETTEXT_PACKAGE], [freedict-editor], [i don't know what is this])
-# this is reqd, otherwise the .mo files are not installed properly
-GETTEXT_PACKAGE=freedict-editor
+AC_PROG_INTLTOOL([0.23])
 
+GETTEXT_PACKAGE=freedict-editor
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [A parameter for bindtextdomain () & co])
 ALL_LINGUAS="kha de zh"
 AM_GLIB_GNU_GETTEXT
 

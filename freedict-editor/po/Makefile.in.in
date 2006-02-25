@@ -11,6 +11,11 @@
 #
 # - Modified by jacob berkman <jacob@ximian.com> to install
 #   Makefile.in.in and po2tbl.sed.in for use with glib-gettextize
+#
+# - Modified by Rodney Dawes <dobey@novell.com> for use with intltool
+#
+# We have the following line for use by intltoolize:
+# INTLTOOL_MAKEFILE
 
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 PACKAGE = @PACKAGE@
@@ -21,27 +26,33 @@ SHELL = /bin/sh
 
 srcdir = @srcdir@
 top_srcdir = @top_srcdir@
+top_builddir = ..
 VPATH = @srcdir@
 
 prefix = @prefix@
 exec_prefix = @exec_prefix@
 datadir = @datadir@
+datarootdir = @datarootdir@
 libdir = @libdir@
 localedir = $(libdir)/locale
 gnulocaledir = $(datadir)/locale
 gettextsrcdir = $(datadir)/glib-2.0/gettext/po
 subdir = po
+install_sh = @install_sh@
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
-MKINSTALLDIRS = $(top_srcdir)/@MKINSTALLDIRS@
 
 CC = @CC@
 GENCAT = @GENCAT@
 GMSGFMT = @GMSGFMT@
 MSGFMT = @MSGFMT@
 XGETTEXT = @XGETTEXT@
-MSGMERGE = msgmerge
+INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
+INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+MSGMERGE = INTLTOOL_EXTRACT=$(INTLTOOL_EXTRACT) srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --dist
+GENPOT   = INTLTOOL_EXTRACT=$(INTLTOOL_EXTRACT) srcdir=$(srcdir) $(INTLTOOL_UPDATE) --gettext-package $(GETTEXT_PACKAGE) --pot
 
 DEFS = @DEFS@
 CFLAGS = @CFLAGS@
@@ -54,8 +65,9 @@ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
 SOURCES = 
 POFILES = @POFILES@
 GMOFILES = @GMOFILES@
-DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(GETTEXT_PACKAGE).pot \
-$(POFILES) $(GMOFILES) $(SOURCES)
+DISTFILES = ChangeLog Makefile.in.in POTFILES.in \
+$(POFILES) $(SOURCES)
+EXTRA_DISTFILES = POTFILES.skip Makevars LINGUAS
 
 POTFILES = \
 
@@ -71,14 +83,14 @@ INSTOBJEXT = @INSTOBJEXT@
 
 .po.pox:
 	$(MAKE) $(GETTEXT_PACKAGE).pot
-	$(MSGMERGE) $< $(srcdir)/$(GETTEXT_PACKAGE).pot -o $*.pox
+	$(MSGMERGE) $< $(GETTEXT_PACKAGE).pot -o $*.pox
 
 .po.mo:
 	$(MSGFMT) -o $@ $<
 
 .po.gmo:
-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
-	  && rm -f $$file && $(GMSGFMT) -c -o $$file $<
+	file=`echo $* | sed 's,.*/,,'`.gmo \
+	  && rm -f $$file && $(GMSGFMT) -o $$file $<
 
 .po.cat:
 	sed -f ../intl/po2msg.sed < $< > $*.msg \
@@ -90,35 +102,15 @@ all: all-@USE_NLS@
 all-yes: $(CATALOGS)
 all-no:
 
-$(srcdir)/$(GETTEXT_PACKAGE).pot: $(POTFILES)
-	$(XGETTEXT) --default-domain=$(GETTEXT_PACKAGE) --directory=$(top_srcdir) \
-	  --add-comments --keyword=_ --keyword=N_ \
-          --flag=g_strdup_printf:1:c-format \
-          --flag=g_string_printf:2:c-format \
-          --flag=g_string_append_printf:2:c-format \
-          --flag=g_error_new:3:c-format \
-          --flag=g_set_error:4:c-format \
-          --flag=g_markup_printf_escaped:1:c-format \
-          --flag=g_log:3:c-format \
-          --flag=g_print:1:c-format \
-          --flag=g_printerr:1:c-format \
-          --flag=g_printf:1:c-format \
-          --flag=g_fprintf:2:c-format \
-          --flag=g_sprintf:2:c-format \
-          --flag=g_snprintf:3:c-format \
-          --flag=g_scanner_error:2:c-format \
-          --flag=g_scanner_warn:2:c-format \
-	  --files-from=$(srcdir)/POTFILES.in \
-	&& test ! -f $(GETTEXT_PACKAGE).po \
-	   || ( rm -f $(srcdir)/$(GETTEXT_PACKAGE).pot \
-		&& mv $(GETTEXT_PACKAGE).po $(srcdir)/$(GETTEXT_PACKAGE).pot )
+$(GETTEXT_PACKAGE).pot: $(POTFILES)
+	$(GENPOT)
 
 install: install-exec install-data
 install-exec:
 install-data: install-data-@USE_NLS@
 install-data-no: all
 install-data-yes: all
-	if test -r "$(MKINSTALLDIRS)"; then \
+	if test -n "$(MKINSTALLDIRS)"; then \
 	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
 	else \
 	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
@@ -132,7 +124,7 @@ install-data-yes: all
 	  esac; \
 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
 	  dir=$(DESTDIR)$$destdir/$$lang/LC_MESSAGES; \
-	  if test -r "$(MKINSTALLDIRS)"; then \
+	  if test -n "$(MKINSTALLDIRS)"; then \
 	    $(MKINSTALLDIRS) $$dir; \
 	  else \
 	    $(SHELL) $(top_srcdir)/mkinstalldirs $$dir; \
@@ -160,7 +152,7 @@ install-data-yes: all
 	  fi; \
 	done
 	if test "$(PACKAGE)" = "glib"; then \
-	  if test -r "$(MKINSTALLDIRS)"; then \
+	  if test -n "$(MKINSTALLDIRS)"; then \
 	    $(MKINSTALLDIRS) $(DESTDIR)$(gettextsrcdir); \
 	  else \
 	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(gettextsrcdir); \
@@ -188,27 +180,33 @@ uninstall:
 	  rm -f $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
 	fi
 
-check: all
+check: all $(GETTEXT_PACKAGE).pot
 
 dvi info tags TAGS ID:
 
 mostlyclean:
-	rm -f core core.* *.pox $(GETTEXT_PACKAGE).po *.old.po cat-id-tbl.tmp
+	rm -f core core.* *.pox $(GETTEXT_PACKAGE).pot *.old.po cat-id-tbl.tmp
 	rm -fr *.o
+	rm -f .intltool-merge-cache
 
 clean: mostlyclean
 
 distclean: clean
-	rm -f Makefile Makefile.in POTFILES *.mo *.msg *.cat *.cat.m
+	rm -f Makefile Makefile.in POTFILES
+	rm -f *.mo *.msg *.cat *.cat.m $(GMOFILES)
 
 maintainer-clean: distclean
 	@echo "This command is intended for maintainers to use;"
 	@echo "it deletes files that may require special tools to rebuild."
-	rm -f $(GMOFILES)
+	rm -f Makefile.in.in
 
 distdir = ../$(GETTEXT_PACKAGE)-$(VERSION)/$(subdir)
-dist distdir: update-po $(DISTFILES)
+dist distdir: $(DISTFILES)
 	dists="$(DISTFILES)"; \
+	extra_dists="$(EXTRA_DISTFILES)"; \
+	for file in $$extra_dists; do \
+	  test -f $$file && dists="$$dists $$file"; \
+	done; \
 	for file in $$dists; do \
 	  ln $(srcdir)/$$file $(distdir) 2> /dev/null \
 	    || cp -p $(srcdir)/$$file $(distdir); \
@@ -217,14 +215,14 @@ dist distdir: update-po $(DISTFILES)
 update-po: Makefile
 	$(MAKE) $(GETTEXT_PACKAGE).pot
 	tmpdir=`pwd`; \
-	cd $(srcdir); \
 	catalogs='$(CATALOGS)'; \
 	for cat in $$catalogs; do \
 	  cat=`basename $$cat`; \
 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
 	  echo "$$lang:"; \
-	  if $(MSGMERGE) $$lang.po $(GETTEXT_PACKAGE).pot -o $$tmpdir/$$lang.new.po; then \
-	    if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+	  result="`$(MSGMERGE) -o $$tmpdir/$$lang.new.po $$lang`"; \
+	  if $$result; then \
+	    if cmp $(srcdir)/$$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
 	      rm -f $$tmpdir/$$lang.new.po; \
             else \
 	      if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
@@ -245,17 +243,13 @@ update-po: Makefile
 # and Intltool tags (enclosed in square brackets), and appending a full
 # relative path to them
 POTFILES: POTFILES.in
-	( if test 'x$(srcdir)' != 'x.'; then \
-	    posrcprefix='$(top_srcdir)/'; \
-	  else \
-	    posrcprefix="../"; \
-	  fi; \
+	( posrcprefix='$(top_srcdir)/'; \
 	  rm -f $@-t $@ \
-	    && (sed -e '/^#/d' 						\
-		    -e "s/^\[.*\] +//" 					\
-		    -e '/^[ 	]*$$/d' 				\
-		    -e "s@.*@	$$posrcprefix& \\\\@" < $(srcdir)/$@.in	\
-		| sed -e '$$s/\\$$//') > $@-t \
+	    && (sed -e '/^#/d' 					\
+		    -e 's/^[[].*] *//' 				\
+		    -e '/^[ 	]*$$/d' 			\
+		    -e "s@^@	$$posrcprefix@" $(srcdir)/$@.in	\
+		| sed -e '$$!s/$$/ \\/') > $@-t \
 	    && chmod a-w $@-t \
 	    && mv $@-t $@ )
 
