@@ -241,14 +241,17 @@ create_app1 (void)
   GtkWidget *entry4;
   GtkWidget *xpath_entry;
   GtkWidget *toolbar1;
+  GtkIconSize tmp_toolbar_icon_size;
   GtkWidget *new_file_button;
   GtkWidget *openbutton;
   GtkWidget *save_button;
-  GtkWidget *tmp_toolbar_icon;
+  GtkWidget *separatortoolitem1;
+  GtkWidget *tmp_image;
   GtkWidget *new_entry_button;
   GtkWidget *delete_button;
   GtkWidget *apply_button;
   GtkWidget *cancel_edit_button;
+  GtkWidget *separatortoolitem2;
   GtkWidget *stop_find_nodeset;
   GtkWidget *hpaned1;
   GtkWidget *frame1;
@@ -327,7 +330,6 @@ create_app1 (void)
   select_label = gtk_label_new_with_mnemonic (_("Se_lect:"));
   gtk_widget_show (select_label);
   gtk_box_pack_start (GTK_BOX (hbox18), select_label, FALSE, FALSE, 2);
-  gtk_label_set_justify (GTK_LABEL (select_label), GTK_JUSTIFY_LEFT);
 
   entry3 = gnome_entry_new ("Select");
   gtk_widget_show (entry3);
@@ -346,7 +348,6 @@ create_app1 (void)
   xpath_template_label = gtk_label_new_with_mnemonic (_("XPath-Template:"));
   gtk_widget_show (xpath_template_label);
   gtk_box_pack_start (GTK_BOX (hbox19), xpath_template_label, FALSE, FALSE, 2);
-  gtk_label_set_justify (GTK_LABEL (xpath_template_label), GTK_JUSTIFY_LEFT);
 
   entry4 = gnome_entry_new ("XPath-Template");
   gtk_widget_show (entry4);
@@ -366,78 +367,67 @@ create_app1 (void)
   gtk_container_set_border_width (GTK_CONTAINER (toolbar1), 2);
   gtk_toolbar_set_style (GTK_TOOLBAR (toolbar1), GTK_TOOLBAR_ICONS);
   gtk_toolbar_set_orientation (GTK_TOOLBAR (toolbar1), GTK_ORIENTATION_VERTICAL);
+  tmp_toolbar_icon_size = gtk_toolbar_get_icon_size (GTK_TOOLBAR (toolbar1));
 
-  new_file_button = gtk_toolbar_insert_stock (GTK_TOOLBAR (toolbar1),
-                                "gtk-new",
-                                "gtk-new",
-                                NULL, NULL, NULL, -1);
+  new_file_button = (GtkWidget*) gtk_tool_button_new_from_stock ("gtk-new");
   gtk_widget_show (new_file_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), new_file_button);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (new_file_button), tooltips, _("New TEI Dictionary File"), NULL);
 
-  openbutton = gtk_toolbar_insert_stock (GTK_TOOLBAR (toolbar1),
-                                "gtk-open",
-                                "gtk-open",
-                                NULL, NULL, NULL, -1);
+  openbutton = (GtkWidget*) gtk_tool_button_new_from_stock ("gtk-open");
   gtk_widget_show (openbutton);
+  gtk_container_add (GTK_CONTAINER (toolbar1), openbutton);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (openbutton), tooltips, _("Open TEI Dictionary File"), NULL);
 
-  save_button = gtk_toolbar_insert_stock (GTK_TOOLBAR (toolbar1),
-                                "gtk-save",
-                                "gtk-save",
-                                NULL, NULL, NULL, -1);
+  save_button = (GtkWidget*) gtk_tool_button_new_from_stock ("gtk-save");
   gtk_widget_show (save_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), save_button);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (save_button), tooltips, _("Save TEI Dictionary File"), NULL);
 
-  gtk_toolbar_append_space (GTK_TOOLBAR (toolbar1));
+  separatortoolitem1 = (GtkWidget*) gtk_separator_tool_item_new ();
+  gtk_widget_show (separatortoolitem1);
+  gtk_container_add (GTK_CONTAINER (toolbar1), separatortoolitem1);
 
-  tmp_toolbar_icon = gtk_image_new_from_stock ("gtk-add", gtk_toolbar_get_icon_size (GTK_TOOLBAR (toolbar1)));
-  new_entry_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
-                                GTK_TOOLBAR_CHILD_BUTTON,
-                                NULL,
-                                _("New Entry"),
-                                _("Add new Entry"), NULL,
-                                tmp_toolbar_icon, NULL, NULL);
-  gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
+  tmp_image = gtk_image_new_from_stock ("gtk-add", tmp_toolbar_icon_size);
+  gtk_widget_show (tmp_image);
+  new_entry_button = (GtkWidget*) gtk_tool_button_new (tmp_image, _("New Entry"));
   gtk_widget_show (new_entry_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), new_entry_button);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (new_entry_button), tooltips, _("Add new Entry"), NULL);
 
-  tmp_toolbar_icon = gtk_image_new_from_stock ("gtk-remove", gtk_toolbar_get_icon_size (GTK_TOOLBAR (toolbar1)));
-  delete_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
-                                GTK_TOOLBAR_CHILD_BUTTON,
-                                NULL,
-                                _("Delete Entry"),
-                                _("Delete Entry"), NULL,
-                                tmp_toolbar_icon, NULL, NULL);
-  gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
+  tmp_image = gtk_image_new_from_stock ("gtk-remove", tmp_toolbar_icon_size);
+  gtk_widget_show (tmp_image);
+  delete_button = (GtkWidget*) gtk_tool_button_new (tmp_image, _("Delete Entry"));
   gtk_widget_show (delete_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), delete_button);
   gtk_widget_set_sensitive (delete_button, FALSE);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (delete_button), tooltips, _("Delete Entry"), NULL);
 
-  tmp_toolbar_icon = gtk_image_new_from_stock ("gtk-apply", gtk_toolbar_get_icon_size (GTK_TOOLBAR (toolbar1)));
-  apply_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
-                                GTK_TOOLBAR_CHILD_BUTTON,
-                                NULL,
-                                _("Save Entry"),
-                                _("Save changes to Entry"), NULL,
-                                tmp_toolbar_icon, NULL, NULL);
-  gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
+  tmp_image = gtk_image_new_from_stock ("gtk-apply", tmp_toolbar_icon_size);
+  gtk_widget_show (tmp_image);
+  apply_button = (GtkWidget*) gtk_tool_button_new (tmp_image, _("Save Entry"));
   gtk_widget_show (apply_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), apply_button);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (apply_button), tooltips, _("Save changes to Entry"), NULL);
   gtk_widget_add_accelerator (apply_button, "activate", accel_group,
-                              GDK_Return, GDK_CONTROL_MASK,
+                              GDK_Return, (GdkModifierType) GDK_CONTROL_MASK,
                               GTK_ACCEL_VISIBLE);
 
-  tmp_toolbar_icon = gtk_image_new_from_stock ("gtk-cancel", gtk_toolbar_get_icon_size (GTK_TOOLBAR (toolbar1)));
-  cancel_edit_button = gtk_toolbar_append_element (GTK_TOOLBAR (toolbar1),
-                                GTK_TOOLBAR_CHILD_BUTTON,
-                                NULL,
-                                _("_Cancel Edit"),
-                                _("Cancel Edit of Entry"), NULL,
-                                tmp_toolbar_icon, NULL, NULL);
-  gtk_label_set_use_underline (GTK_LABEL (((GtkToolbarChild*) (g_list_last (GTK_TOOLBAR (toolbar1)->children)->data))->label), TRUE);
+  tmp_image = gtk_image_new_from_stock ("gtk-cancel", tmp_toolbar_icon_size);
+  gtk_widget_show (tmp_image);
+  cancel_edit_button = (GtkWidget*) gtk_tool_button_new (tmp_image, _("_Cancel Edit"));
   gtk_widget_show (cancel_edit_button);
+  gtk_container_add (GTK_CONTAINER (toolbar1), cancel_edit_button);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (cancel_edit_button), tooltips, _("Cancel Edit of Entry"), NULL);
 
-  gtk_toolbar_append_space (GTK_TOOLBAR (toolbar1));
+  separatortoolitem2 = (GtkWidget*) gtk_separator_tool_item_new ();
+  gtk_widget_show (separatortoolitem2);
+  gtk_container_add (GTK_CONTAINER (toolbar1), separatortoolitem2);
 
-  stop_find_nodeset = gtk_toolbar_insert_stock (GTK_TOOLBAR (toolbar1),
-                                "gtk-stop",
-                                "gtk-stop",
-                                NULL, NULL, NULL, -1);
+  stop_find_nodeset = (GtkWidget*) gtk_tool_button_new_from_stock ("gtk-stop");
   gtk_widget_show (stop_find_nodeset);
+  gtk_container_add (GTK_CONTAINER (toolbar1), stop_find_nodeset);
+  gtk_tool_item_set_tooltip (GTK_TOOL_ITEM (stop_find_nodeset), tooltips, _("Stop current XPath-Match"), NULL);
 
   hpaned1 = gtk_hpaned_new ();
   gtk_widget_show (hpaned1);
@@ -473,7 +463,6 @@ create_app1 (void)
   label4 = gtk_label_new_with_mnemonic (_("En_tries"));
   gtk_widget_show (label4);
   gtk_frame_set_label_widget (GTK_FRAME (frame1), label4);
-  gtk_label_set_justify (GTK_LABEL (label4), GTK_JUSTIFY_LEFT);
 
   vpaned1 = gtk_vpaned_new ();
   gtk_widget_show (vpaned1);
@@ -490,18 +479,16 @@ create_app1 (void)
   scrolledwindow4 = gtk_scrolled_window_new (NULL, NULL);
   gtk_widget_show (scrolledwindow4);
   gtk_container_add (GTK_CONTAINER (notebook1), scrolledwindow4);
-  gtk_notebook_set_menu_label_text (GTK_NOTEBOOK (notebook1), scrolledwindow4,
-                                    _("XML View"));
+  gtk_notebook_set_menu_label_text (GTK_NOTEBOOK (notebook1), scrolledwindow4, _("XML View"));
 
   textview1 = gtk_text_view_new ();
   gtk_widget_show (textview1);
   gtk_container_add (GTK_CONTAINER (scrolledwindow4), textview1);
-  gtk_tooltips_set_tip (tooltips, textview1, _("The XML edit mode is selected of the entry cannot be edited with the formular."), NULL);
+  gtk_tooltips_set_tip (tooltips, textview1, _("The XML edit mode is selected or the entry cannot be edited with the formular."), NULL);
 
   xml_view_label = gtk_label_new_with_mnemonic (_("_XML"));
   gtk_widget_show (xml_view_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 0), xml_view_label);
-  gtk_label_set_justify (GTK_LABEL (xml_view_label), GTK_JUSTIFY_LEFT);
 
   vbox4 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox4);
@@ -524,7 +511,6 @@ create_app1 (void)
   gtk_table_attach (GTK_TABLE (table1), orth_label, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (orth_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (orth_label), 0, 0.5);
 
   entry1 = gtk_entry_new ();
@@ -539,7 +525,6 @@ create_app1 (void)
   gtk_table_attach (GTK_TABLE (table1), pron_label, 2, 3, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (pron_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (pron_label), 0, 0.5);
 
   entry2 = gtk_entry_new ();
@@ -558,7 +543,6 @@ create_app1 (void)
   pos_label = gtk_label_new_with_mnemonic (_("Part of _Speech"));
   gtk_widget_show (pos_label);
   gtk_box_pack_start (GTK_BOX (hbox13), pos_label, FALSE, FALSE, 0);
-  gtk_label_set_justify (GTK_LABEL (pos_label), GTK_JUSTIFY_LEFT);
 
   pos_optionmenu = gtk_option_menu_new ();
   gtk_widget_show (pos_optionmenu);
@@ -567,33 +551,31 @@ create_app1 (void)
 
   menu1 = gtk_menu_new ();
   gnome_app_fill_menu (GTK_MENU_SHELL (menu1), menu1_uiinfo,
-                       NULL, FALSE, 0);
+                       accel_group, FALSE, 0);
 
   gtk_option_menu_set_menu (GTK_OPTION_MENU (pos_optionmenu), menu1);
 
   num_label = gtk_label_new_with_mnemonic (_("_Number"));
   gtk_widget_show (num_label);
   gtk_box_pack_start (GTK_BOX (hbox13), num_label, FALSE, FALSE, 0);
-  gtk_label_set_justify (GTK_LABEL (num_label), GTK_JUSTIFY_LEFT);
 
   num_optionmenu = gtk_option_menu_new ();
   gtk_widget_show (num_optionmenu);
   gtk_box_pack_start (GTK_BOX (hbox13), num_optionmenu, TRUE, FALSE, 0);
   gtk_tooltips_set_tip (tooltips, num_optionmenu, _("Number"), NULL);
   gtk_widget_add_accelerator (num_optionmenu, "activate", accel_group,
-                              GDK_s, GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK,
+                              GDK_s, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK,
                               GTK_ACCEL_VISIBLE);
 
   menu2 = gtk_menu_new ();
   gnome_app_fill_menu (GTK_MENU_SHELL (menu2), menu2_uiinfo,
-                       NULL, FALSE, 0);
+                       accel_group, FALSE, 0);
 
   gtk_option_menu_set_menu (GTK_OPTION_MENU (num_optionmenu), menu2);
 
   gen_label = gtk_label_new_with_mnemonic (_("_Genus"));
   gtk_widget_show (gen_label);
   gtk_box_pack_start (GTK_BOX (hbox13), gen_label, FALSE, FALSE, 0);
-  gtk_label_set_justify (GTK_LABEL (gen_label), GTK_JUSTIFY_LEFT);
 
   gen_optionmenu = gtk_option_menu_new ();
   gtk_widget_show (gen_optionmenu);
@@ -602,14 +584,13 @@ create_app1 (void)
 
   menu3 = gtk_menu_new ();
   gnome_app_fill_menu (GTK_MENU_SHELL (menu3), menu3_uiinfo,
-                       NULL, FALSE, 0);
+                       accel_group, FALSE, 0);
 
   gtk_option_menu_set_menu (GTK_OPTION_MENU (gen_optionmenu), menu3);
 
   label12 = gtk_label_new (_("Headword(s)"));
   gtk_widget_show (label12);
   gtk_frame_set_label_widget (GTK_FRAME (frame4), label12);
-  gtk_label_set_justify (GTK_LABEL (label12), GTK_JUSTIFY_LEFT);
 
   frame6 = gtk_frame_new (NULL);
   gtk_widget_show (frame6);
@@ -649,12 +630,10 @@ create_app1 (void)
   label11 = gtk_label_new (_("Sense(s)"));
   gtk_widget_show (label11);
   gtk_frame_set_label_widget (GTK_FRAME (frame6), label11);
-  gtk_label_set_justify (GTK_LABEL (label11), GTK_JUSTIFY_LEFT);
 
   form_view_label = gtk_label_new_with_mnemonic (_("For_m"));
   gtk_widget_show (form_view_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 1), form_view_label);
-  gtk_label_set_justify (GTK_LABEL (form_view_label), GTK_JUSTIFY_LEFT);
 
   appbar1 = gnome_appbar_new (FALSE, TRUE, GNOME_PREFERENCES_NEVER);
   gtk_widget_show (appbar1);
@@ -789,10 +768,12 @@ create_app1 (void)
   GLADE_HOOKUP_OBJECT (app1, new_file_button, "new_file_button");
   GLADE_HOOKUP_OBJECT (app1, openbutton, "openbutton");
   GLADE_HOOKUP_OBJECT (app1, save_button, "save_button");
+  GLADE_HOOKUP_OBJECT (app1, separatortoolitem1, "separatortoolitem1");
   GLADE_HOOKUP_OBJECT (app1, new_entry_button, "new_entry_button");
   GLADE_HOOKUP_OBJECT (app1, delete_button, "delete_button");
   GLADE_HOOKUP_OBJECT (app1, apply_button, "apply_button");
   GLADE_HOOKUP_OBJECT (app1, cancel_edit_button, "cancel_edit_button");
+  GLADE_HOOKUP_OBJECT (app1, separatortoolitem2, "separatortoolitem2");
   GLADE_HOOKUP_OBJECT (app1, stop_find_nodeset, "stop_find_nodeset");
   GLADE_HOOKUP_OBJECT (app1, hpaned1, "hpaned1");
   GLADE_HOOKUP_OBJECT (app1, frame1, "frame1");
@@ -872,6 +853,7 @@ create_about2 (void)
                         documenters,
                         translators,
                         NULL);
+  gtk_container_set_border_width (GTK_CONTAINER (about2), 5);
   gtk_window_set_destroy_with_parent (GTK_WINDOW (about2), TRUE);
   about2_icon_pixbuf = create_pixbuf ("freedict-editor/freedict.gif");
   if (about2_icon_pixbuf)
@@ -879,6 +861,7 @@ create_about2 (void)
       gtk_window_set_icon (GTK_WINDOW (about2), about2_icon_pixbuf);
       gdk_pixbuf_unref (about2_icon_pixbuf);
     }
+  gtk_window_set_type_hint (GTK_WINDOW (about2), GDK_WINDOW_TYPE_HINT_DIALOG);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (about2, about2, "about2");
@@ -896,6 +879,7 @@ create_fileselection1 (void)
   fileselection1 = gtk_file_selection_new (_("Select File"));
   gtk_container_set_border_width (GTK_CONTAINER (fileselection1), 10);
   gtk_window_set_modal (GTK_WINDOW (fileselection1), TRUE);
+  gtk_window_set_type_hint (GTK_WINDOW (fileselection1), GDK_WINDOW_TYPE_HINT_DIALOG);
 
   ok_button1 = GTK_FILE_SELECTION (fileselection1)->ok_button;
   gtk_widget_show (ok_button1);
@@ -976,9 +960,12 @@ create_spellcheck_window (void)
   GtkWidget *spell_ignore_all_button;
   GtkWidget *spell_add_button;
   GtkWidget *spell_close_button;
+  GtkAccelGroup *accel_group;
   GtkTooltips *tooltips;
 
   tooltips = gtk_tooltips_new ();
+
+  accel_group = gtk_accel_group_new ();
 
   spellcheck_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (spellcheck_window), _("Spell Check"));
@@ -999,7 +986,6 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table2), misspelled_word_label, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (misspelled_word_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (misspelled_word_label), 0, 0.5);
 
   misspelled_word_entry = gtk_entry_new ();
@@ -1016,7 +1002,6 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table2), replacement_label, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (replacement_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (replacement_label), 0, 0.5);
 
   replacement_entry = gtk_entry_new ();
@@ -1032,7 +1017,6 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table2), suggestions_label, 0, 1, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (suggestions_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (suggestions_label), 0, 0.5);
 
   spell_progressbar = gtk_progress_bar_new ();
@@ -1105,7 +1089,6 @@ create_spellcheck_window (void)
   label61 = gtk_label_new_with_mnemonic (_("_What to check"));
   gtk_widget_show (label61);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook2), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook2), 0), label61);
-  gtk_label_set_justify (GTK_LABEL (label61), GTK_JUSTIFY_LEFT);
 
   table5 = gtk_table_new (2, 2, TRUE);
   gtk_widget_show (table5);
@@ -1118,7 +1101,6 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table5), label50, 0, 1, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (label50), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (label50), 0, 0.5);
 
   accept_runtogether_checkbutton = gtk_check_button_new_with_mnemonic (_("Acc_ept Run-Together Words"));
@@ -1136,21 +1118,19 @@ create_spellcheck_window (void)
 
   menu4 = gtk_menu_new ();
   gnome_app_fill_menu (GTK_MENU_SHELL (menu4), menu4_uiinfo,
-                       NULL, FALSE, 0);
+                       accel_group, FALSE, 0);
 
   gtk_option_menu_set_menu (GTK_OPTION_MENU (spell_dict_optionmenu), menu4);
 
   label62 = gtk_label_new_with_mnemonic (_("Aspell _Options"));
   gtk_widget_show (label62);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook2), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook2), 1), label62);
-  gtk_label_set_justify (GTK_LABEL (label62), GTK_JUSTIFY_LEFT);
 
   label63 = gtk_label_new (_("Replacements made"));
   gtk_widget_show (label63);
   gtk_table_attach (GTK_TABLE (table2), label63, 1, 2, 5, 6,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (label63), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (label63), 0, 0.5);
 
   replacements_counter_label = gtk_label_new (_("0"));
@@ -1158,7 +1138,6 @@ create_spellcheck_window (void)
   gtk_table_attach (GTK_TABLE (table2), replacements_counter_label, 0, 1, 5, 6,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (replacements_counter_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (replacements_counter_label), 1, 0.5);
 
   vbuttonbox1 = gtk_vbutton_box_new ();
@@ -1187,7 +1166,6 @@ create_spellcheck_window (void)
   label47 = gtk_label_new_with_mnemonic (_("_Replace"));
   gtk_widget_show (label47);
   gtk_box_pack_start (GTK_BOX (hbox15), label47, FALSE, FALSE, 0);
-  gtk_label_set_justify (GTK_LABEL (label47), GTK_JUSTIFY_LEFT);
 
   spell_replace_all_button = gtk_button_new_with_mnemonic (_("Replace _All"));
   gtk_widget_show (spell_replace_all_button);
@@ -1216,7 +1194,6 @@ create_spellcheck_window (void)
   label48 = gtk_label_new_with_mnemonic (_("_Ignore"));
   gtk_widget_show (label48);
   gtk_box_pack_start (GTK_BOX (hbox16), label48, FALSE, FALSE, 0);
-  gtk_label_set_justify (GTK_LABEL (label48), GTK_JUSTIFY_LEFT);
 
   spell_ignore_all_button = gtk_button_new_with_mnemonic (_("I_gnore All"));
   gtk_widget_show (spell_ignore_all_button);
@@ -1321,6 +1298,8 @@ create_spellcheck_window (void)
   GLADE_HOOKUP_OBJECT_NO_REF (spellcheck_window, tooltips, "tooltips");
 
   gtk_widget_grab_default (spell_replace_button);
+  gtk_window_add_accel_group (GTK_WINDOW (spellcheck_window), accel_group);
+
   return spellcheck_window;
 }
 
@@ -1405,7 +1384,6 @@ create_propertybox1 (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   GTK_WIDGET_SET_FLAGS (default_stylesheetfn, GTK_CAN_FOCUS);
-  gtk_label_set_justify (GTK_LABEL (default_stylesheetfn), GTK_JUSTIFY_LEFT);
   gtk_label_set_selectable (GTK_LABEL (default_stylesheetfn), TRUE);
   gtk_misc_set_alignment (GTK_MISC (default_stylesheetfn), 0, 0.5);
 
@@ -1424,13 +1402,11 @@ create_propertybox1 (void)
   gtk_table_attach (GTK_TABLE (table3), label54, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (label54), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (label54), 0, 0.5);
 
   general_tab_label = gtk_label_new_with_mnemonic (_("_General"));
   gtk_widget_show (general_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (preferences_notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (preferences_notebook), 0), general_tab_label);
-  gtk_label_set_justify (GTK_LABEL (general_tab_label), GTK_JUSTIFY_LEFT);
 
   table4 = gtk_table_new (8, 3, FALSE);
   gtk_widget_show (table4);
@@ -1441,6 +1417,7 @@ create_propertybox1 (void)
   gtk_table_attach (GTK_TABLE (table4), label56, 0, 1, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
+  gtk_label_set_justify (GTK_LABEL (label56), GTK_JUSTIFY_CENTER);
 
   editer_entry = gtk_entry_new ();
   gtk_widget_show (editer_entry);
@@ -1471,7 +1448,6 @@ create_propertybox1 (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   GTK_WIDGET_SET_FLAGS (editer_default_name_label, GTK_CAN_FOCUS);
-  gtk_label_set_justify (GTK_LABEL (editer_default_name_label), GTK_JUSTIFY_LEFT);
   gtk_label_set_selectable (GTK_LABEL (editer_default_name_label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (editer_default_name_label), 0, 0.5);
 
@@ -1487,7 +1463,6 @@ create_propertybox1 (void)
   gtk_table_attach (GTK_TABLE (table4), entry_template_label, 0, 1, 6, 7,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_label_set_justify (GTK_LABEL (entry_template_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment (GTK_MISC (entry_template_label), 0, 0.5);
 
   template_radiobutton2 = gtk_radio_button_new_with_mnemonic (NULL, _("Use Custom Value:"));
@@ -1521,7 +1496,6 @@ create_propertybox1 (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   GTK_WIDGET_SET_FLAGS (template_default_label, GTK_CAN_FOCUS);
-  gtk_label_set_justify (GTK_LABEL (template_default_label), GTK_JUSTIFY_LEFT);
   gtk_label_set_selectable (GTK_LABEL (template_default_label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (template_default_label), 0, 0.5);
 
@@ -1553,7 +1527,6 @@ create_propertybox1 (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   GTK_WIDGET_SET_FLAGS (editer_default_email__label, GTK_CAN_FOCUS);
-  gtk_label_set_justify (GTK_LABEL (editer_default_email__label), GTK_JUSTIFY_LEFT);
   gtk_label_set_selectable (GTK_LABEL (editer_default_email__label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (editer_default_email__label), 0, 0.5);
 
@@ -1590,7 +1563,6 @@ create_propertybox1 (void)
   entry_editor_tab_label = gtk_label_new_with_mnemonic (_("_Entry Editor"));
   gtk_widget_show (entry_editor_tab_label);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (preferences_notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (preferences_notebook), 1), entry_editor_tab_label);
-  gtk_label_set_justify (GTK_LABEL (entry_editor_tab_label), GTK_JUSTIFY_LEFT);
 
   empty_notebook_page = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (empty_notebook_page);
@@ -1599,7 +1571,6 @@ create_propertybox1 (void)
   label60 = gtk_label_new_with_mnemonic (_("_Sanity Checks"));
   gtk_widget_show (label60);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (preferences_notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (preferences_notebook), 2), label60);
-  gtk_label_set_justify (GTK_LABEL (label60), GTK_JUSTIFY_LEFT);
 
   g_signal_connect ((gpointer) propertybox1, "apply",
                     G_CALLBACK (on_propertybox1_apply),

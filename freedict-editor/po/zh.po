@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict-editor 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-17 18:34+0530\n"
+"POT-Creation-Date: 2006-02-26 13:01+0100\n"
 "PO-Revision-Date: 2006-02-22 21:51+0800\n"
 "Last-Translator: farm <textwiki@gmail.com>\n"
 "Language-Team: Chinese/Simplified <i18n-translation@lists.linux.net.cn>\n"
@@ -15,571 +15,1071 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/interface.c:31
+#: ../src/interface.c:31
 msgid "_New"
 msgstr "新建(_N)"
 
-#: src/interface.c:31
+#: ../src/interface.c:31
 msgid "New TEI File"
 msgstr "新建 TEI 文件"
 
-#: src/interface.c:47
+#: ../src/interface.c:48
+msgid "Ne_w Entry"
+msgstr "新建条目(_w)"
+
+#: ../src/interface.c:49
+#, fuzzy
+msgid "Add New Entry"
+msgstr "增加新条目"
+
+#: ../src/interface.c:55
+msgid "_Delete Entry"
+msgstr "删除条目(_D)"
+
+#: ../src/interface.c:56
+msgid "Delete Currently Edited Entry"
+msgstr ""
+
+#: ../src/interface.c:62
+msgid "Sa_ve Entry"
+msgstr "保存条目(_v)"
+
+#: ../src/interface.c:63
+#, fuzzy
+msgid "Save Changes to Entry"
+msgstr "保存对条目的修改"
+
+#: ../src/interface.c:69 ../src/interface.c:428
+msgid "_Cancel Edit"
+msgstr "取消编辑(_C)"
+
+#: ../src/interface.c:70 ../src/interface.c:429
+msgid "Cancel Edit of Entry"
+msgstr "取消对条目的编辑"
+
+#: ../src/interface.c:77
 msgid "_Edit TEI Header"
 msgstr "编辑 TEI 头部"
 
-#: src/interface.c:48
+#: ../src/interface.c:78
 msgid "Edit information about the dictionary"
 msgstr "关于此字典的编辑信息"
 
-#: src/interface.c:54
+#: ../src/interface.c:84
 msgid "_Spell Check..."
 msgstr "拼写检查..."
 
-#: src/interface.c:61
+#: ../src/interface.c:91
 msgid "S_anity Checks..."
 msgstr "健全检查(_a)..."
 
-#: src/interface.c:62
+#: ../src/interface.c:92
 msgid "Find Entries with missing Information"
 msgstr "查找缺失信息的条目"
 
-#: src/interface.c:75
+#: ../src/interface.c:105
 msgid "Lock _Dockitems"
 msgstr "锁住Dockitems(_D)"
 
-#: src/interface.c:82
+#: ../src/interface.c:112
 msgid "_Labels"
 msgstr "标记(_L)"
 
-#: src/interface.c:83
+#: ../src/interface.c:113
 msgid "Toggle whether Labels are shown before Input fields"
 msgstr "输入域前是否显示标记"
 
-#: src/interface.c:89
+#: ../src/interface.c:119
 msgid "_Toolbar"
 msgstr "工具栏(_T)"
 
-#: src/interface.c:90
+#: ../src/interface.c:120
 msgid "Toggle Display of Toolbar"
 msgstr "是否显示工具栏"
 
-#: src/interface.c:96
+#: ../src/interface.c:126
 msgid "_HTML Preview"
 msgstr "HTML预览"
 
-#: src/interface.c:97
+#: ../src/interface.c:127
 msgid "Toggle Display of HTML Preview Area"
 msgstr "是否显示HTML预览区域"
 
-#: src/interface.c:103
+#: ../src/interface.c:133
 msgid "_Keyboard Layout"
 msgstr "键盘布局(_K)"
 
-#: src/interface.c:104
+#: ../src/interface.c:134
 msgid "Calls xkbprint to display current keyboard layout"
 msgstr "调用 xkbprint 以显示当前的键盘布局"
 
-#: src/interface.c:116
-msgid "Bonobo Experiment"
-msgstr "Bonobo实验"
-
-#: src/interface.c:143
-#: src/interface.c:176
+#: ../src/interface.c:166 ../src/interface.c:199
 msgid "_None"
 msgstr "无(_N)"
 
-#: src/interface.c:150
+#: ../src/interface.c:173 ../src/entryedit.c:334
 msgid "_Singular"
 msgstr "单数(_S)"
 
-#: src/interface.c:157
+#: ../src/interface.c:180
 msgid "_Dual"
 msgstr "双重(_D)"
 
-#: src/interface.c:164
+#: ../src/interface.c:187
 msgid "_Plural"
 msgstr "复数(_P)"
 
-#: src/interface.c:183
+#: ../src/interface.c:206
 msgid "_Masculine"
 msgstr "阳性(_M)"
 
-#: src/interface.c:190
+#: ../src/interface.c:213 ../src/entryedit.c:323
 msgid "_Feminine"
 msgstr "阴性(_F)"
 
-#: src/interface.c:197
+#: ../src/interface.c:220
 msgid "_Neuter"
 msgstr "中性(_N)"
 
-#: src/interface.c:276
+#: ../src/interface.c:300
 msgid "FreeDict-Editor"
 msgstr ""
 
-#: src/interface.c:305
+#: ../src/interface.c:327
 msgid "Se_lect:"
 msgstr "选择(_l)："
 
-#: src/interface.c:316
+#: ../src/interface.c:338
 #, c-format
 msgid "This string will replace the %s in the XPath-Template."
 msgstr "该字符串将会取代 XPath-Template 中的%s。"
 
-#: src/interface.c:324
-msgid "XPath-T_emplate:"
+#: ../src/interface.c:346
+#, fuzzy
+msgid "XPath-Template:"
 msgstr "XPath-T_emplate："
 
-#: src/interface.c:335
+#: ../src/interface.c:357
 #, c-format
-msgid "Enter an XPath expression. It may contain one %s, which will be filled by the contents of the \"Select\" input field."
+msgid ""
+"Enter an XPath expression. It may contain one %s, which will be filled by "
+"the contents of the \"Select\" input field."
 msgstr "输入一个 XPath 表达式。其中可能含有 %s ，会被“选择”输入域中的内容填补"
 
-#: src/interface.c:336
+#: ../src/interface.c:358
 #, c-format
 msgid "/TEI.2/text/body/entry[position()>0 and contains(form/orth,'%s')]"
 msgstr ""
 
-#: src/interface.c:372
-msgid "Ne_w Entry"
+#: ../src/interface.c:394
+#, fuzzy
+msgid "New Entry"
 msgstr "新建条目(_w)"
 
-#: src/interface.c:373
+#: ../src/interface.c:395
 msgid "Add new Entry"
 msgstr "增加新条目"
 
-#: src/interface.c:382
-msgid "_Delete Entry"
-msgstr "删除条目(_D)"
-
-#: src/interface.c:383
+#: ../src/interface.c:404 ../src/interface.c:405
 msgid "Delete Entry"
 msgstr "删除条目"
 
-#: src/interface.c:393
-msgid "Sa_ve Entry"
+#: ../src/interface.c:415
+#, fuzzy
+msgid "Save Entry"
 msgstr "保存条目(_v)"
 
-#: src/interface.c:394
+#: ../src/interface.c:416
 msgid "Save changes to Entry"
 msgstr "保存对条目的修改"
 
-#: src/interface.c:406
-msgid "_Cancel Edit"
-msgstr "取消编辑(_C)"
-
-#: src/interface.c:407
-msgid "Cancel Edit of Entry"
-msgstr "取消对条目的编辑"
-
-#: src/interface.c:438
+#: ../src/interface.c:468
 msgid "Entries that match the select expression"
 msgstr "匹配被选表达式的条目"
 
-#: src/interface.c:443
+#: ../src/interface.c:473
 msgid "En_tries"
 msgstr "条目(_t)"
 
-#: src/interface.c:464
+#: ../src/interface.c:494
 msgid "XML View"
 msgstr "XML 浏览"
 
-#: src/interface.c:469
-msgid "The XML edit mode is selected of the entry cannot be edited with the formular."
+#: ../src/interface.c:499
+msgid ""
+"The XML edit mode is selected of the entry cannot be edited with the "
+"formular."
 msgstr "XML模式用于编辑在固定模式下无法编辑的条目"
 
-#: src/interface.c:471
+#: ../src/interface.c:501
 msgid "_XML"
 msgstr "XML(_X)"
 
-#: src/interface.c:492
+#: ../src/interface.c:522
 msgid "_Orthography"
 msgstr "正字(_O)"
 
-#: src/interface.c:505
+#: ../src/interface.c:535
 msgid "How the word is written"
 msgstr "如何写该单词"
 
-#: src/interface.c:507
+#: ../src/interface.c:537
 msgid "_Pronunciation"
 msgstr "发音(_P)"
 
-#: src/interface.c:520
-msgid "Please enter Unicode encoded characters of the International Phonetic Alphabet"
+#: ../src/interface.c:550
+msgid ""
+"Please enter Unicode encoded characters of the International Phonetic "
+"Alphabet"
 msgstr "请输入 Unicode 编码下的国际音标的注音字符"
 
-#: src/interface.c:528
+#: ../src/interface.c:558
 msgid "Part of _Speech"
 msgstr "词性(_S)"
 
-#: src/interface.c:536
+#: ../src/interface.c:566 ../src/entryedit.c:410
 msgid "Part of Speech"
 msgstr "词型"
 
-#: src/interface.c:544
+#: ../src/interface.c:574
 msgid "_Number"
 msgstr "数词(_N)"
 
-#: src/interface.c:552
+#: ../src/interface.c:582
 msgid "Number"
 msgstr "数量"
 
-#: src/interface.c:563
+#: ../src/interface.c:593
 msgid "_Genus"
 msgstr "词性(_G)"
 
-#: src/interface.c:571
+#: ../src/interface.c:601 ../src/entryedit.c:424
 msgid "Genus"
 msgstr "词性"
 
-#: src/interface.c:579
+#: ../src/interface.c:609
 msgid "Headword(s)"
 msgstr "标题字"
 
-#: src/interface.c:611
+#: ../src/interface.c:641
 msgid "Append new Sense to Entry"
 msgstr "对该条目增加字义"
 
-#: src/interface.c:617
+#: ../src/interface.c:647
 msgid "Remove last Sense from Entry"
 msgstr "从该条目删除最近的字义"
 
-#: src/interface.c:619
+#: ../src/interface.c:649
 msgid "Sense(s)"
 msgstr "字义"
 
-#: src/interface.c:624
+#: ../src/interface.c:654
 msgid "For_m"
 msgstr "固定格式(_m)"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/interface.c:823
+#: ../src/interface.c:862
 msgid "translator_credits"
 msgstr "译者致谢(_c)"
 
-#: src/interface.c:830
+#: ../src/interface.c:869
 msgid "FreeDict Project, freedict.org, 2005"
 msgstr "FreeDict 项目，freedict.org，2005年"
 
-#: src/interface.c:857
+#: ../src/interface.c:896
 msgid "Select File"
 msgstr "选择文件"
 
-#: src/interface.c:934
+#: ../src/interface.c:984
 msgid "Spell Check"
 msgstr "拼写检查"
 
-#: src/interface.c:948
-msgid "Misspelled word:"
+#: ../src/interface.c:997
+#, fuzzy
+msgid "Misspelled Word"
 msgstr "拼写错误的单词："
 
-#: src/interface.c:962
+#: ../src/interface.c:1011
 msgid "A word that was not found in the spelling dictionary"
 msgstr "在拼写词典中找不到的单词"
 
-#: src/interface.c:965
-msgid "Replacement:"
+#: ../src/interface.c:1014
+#, fuzzy
+msgid "R_eplacement"
 msgstr "替换："
 
-#: src/interface.c:980
-msgid "Suggestions:"
+#: ../src/interface.c:1027
+msgid "The misspelled word will be replaced by this when you click on Replace"
+msgstr ""
+
+#: ../src/interface.c:1030
+#, fuzzy
+msgid "_Suggestions"
 msgstr "建议："
 
-#: src/interface.c:988
-msgid "Spelling Dictionary:"
-msgstr "拼写词典："
-
-#: src/interface.c:1007
-msgid "What lnagugae to use for checking the words"
-msgstr "用何种语言来检查单词"
-
-#: src/interface.c:1016
-msgid "<orth> - Headwords"
-msgstr "<orth> - 标题字"
-
-#: src/interface.c:1020
-msgid "<tr> - Translations"
-msgstr "<tr> - 翻译"
-
-#: src/interface.c:1025
-msgid "<eg><q> - Quotes of Examples"
-msgstr "<eg><q> - 引用的例子"
-
-#: src/interface.c:1029
-msgid "<eg><tr> - Translations of Examples"
-msgstr "<eg><tr> - 翻译的例子"
-
-#: src/interface.c:1039
-msgid "_Headword Language"
-msgstr "标题字的语言"
-
-#: src/interface.c:1045
-msgid "_Translation Language"
-msgstr "翻译的语言(_T)"
-
-#: src/interface.c:1052
-msgid "Check:"
-msgstr "检查："
-
-#: src/interface.c:1072
-msgid "Double-Click to replace the misspelled word with a suggestion"
-msgstr "双击以将拼错的单词按照建议进行替换"
-
-#: src/interface.c:1081
+#: ../src/interface.c:1043
 msgid "Nodes checked"
 msgstr "节点检查"
 
-#: src/interface.c:1091
-msgid "Replace misspelled word with replacement or suggestion"
+#: ../src/interface.c:1057
+#, fuzzy
+msgid "Double-Click a suggestion to replace the misspelled word with it"
+msgstr "双击以将拼错的单词按照建议进行替换"
+
+#: ../src/interface.c:1075
+msgid "_Headword Language"
+msgstr "标题字的语言"
+
+#: ../src/interface.c:1081
+msgid "_Translation Language"
+msgstr "翻译的语言(_T)"
+
+#: ../src/interface.c:1088
+msgid "<orth> - Headwords"
+msgstr "<orth> - 标题字"
+
+#: ../src/interface.c:1092
+msgid "<tr> - Translations"
+msgstr "<tr> - 翻译"
+
+#: ../src/interface.c:1097
+msgid "<eg><q> - Quotes of Examples"
+msgstr "<eg><q> - 引用的例子"
+
+#: ../src/interface.c:1101
+msgid "<eg><tr> - Translations of Examples"
+msgstr "<eg><tr> - 翻译的例子"
+
+#: ../src/interface.c:1105
+msgid "_What to check"
+msgstr ""
+
+#: ../src/interface.c:1116
+#, fuzzy
+msgid "Spelling _Dictionary:"
+msgstr "拼写词典："
+
+#: ../src/interface.c:1124
+msgid "Acc_ept Run-Together Words"
+msgstr ""
+
+#: ../src/interface.c:1135
+#, fuzzy
+msgid "What language to use for checking the words"
+msgstr "用何种语言来检查单词"
+
+#: ../src/interface.c:1143
+msgid "Aspell _Options"
+msgstr ""
+
+#: ../src/interface.c:1148
+#, fuzzy
+msgid "Replacements made"
+msgstr "替换："
+
+#: ../src/interface.c:1156
+msgid "0"
+msgstr ""
+
+#: ../src/interface.c:1173
+#, fuzzy
+msgid "Replace misspelled word with current Replacement"
 msgstr "将拼错的单词按照建议或者替换方案进行替换"
 
-#: src/interface.c:1105
+#: ../src/interface.c:1187
 msgid "_Replace"
 msgstr "替换(_R)"
 
-#: src/interface.c:1110
+#: ../src/interface.c:1192
 msgid "Replace _All"
 msgstr "全部替换(_A)"
 
-#: src/interface.c:1114
-msgid "Replace all occurences of the misspelled word with replacement or selected suggestion"
+#: ../src/interface.c:1196
+#, fuzzy
+msgid "Replace all occurences of the misspelled word with current Replacement"
 msgstr "将该拼错的单词按照替换方案，或者选中的建议进行替换"
 
-#: src/interface.c:1120
-msgid "Ignore the occurence of a misspelled word"
+#: ../src/interface.c:1202
+#, fuzzy
+msgid "Ignore current occurence of the misspelled word"
 msgstr "忽略一个拼错的单词"
 
-#: src/interface.c:1134
+#: ../src/interface.c:1216
 msgid "_Ignore"
 msgstr "忽略(_I)"
 
-#: src/interface.c:1139
+#: ../src/interface.c:1221
 msgid "I_gnore All"
 msgstr "全部忽略(_g)"
 
-#: src/interface.c:1143
-msgid "Ignore all occurences of this misspelled word"
+#: ../src/interface.c:1225
+#, fuzzy
+msgid "Ignore all occurences of the misspelled word"
 msgstr "忽略所有该拼错的单词"
 
-#: src/interface.c:1149
-msgid "Add this word to the personal word list of this language"
+#: ../src/interface.c:1231
+#, fuzzy
+msgid ""
+"Add misspelled word to the personal GNU aspell word list of this language"
 msgstr "将该单词添加到该语言的个人单词列表中"
 
-#: src/interface.c:1279
+#: ../src/interface.c:1374
 msgid "FreeDict-Editor Preferences"
 msgstr "FreeDict-Editor 首选项"
 
-#: src/interface.c:1291
+#: ../src/interface.c:1386
 msgid "Use Default Value:"
 msgstr "采用默认值："
 
-#: src/interface.c:1299
+#: ../src/interface.c:1394
 msgid "Use Custom Value"
 msgstr "采用定制值"
 
-#: src/interface.c:1307
+#: ../src/interface.c:1402
 msgid "label57"
 msgstr ""
 
-#: src/interface.c:1317
+#: ../src/interface.c:1412
 msgid "Select XSLT-Stylesheet"
 msgstr "选择 XSLT-Stylesheet"
 
-#: src/interface.c:1327
+#: ../src/interface.c:1422
 msgid "_XSLT-Stylesheet for HTML Preview"
 msgstr "XSLT-Stylesheet的 HTML 预览 (_X)"
 
-#: src/interface.c:1335
+#: ../src/interface.c:1430
 msgid "_General"
 msgstr "一般(_G)"
 
-#: src/interface.c:1344
+#: ../src/interface.c:1439
 msgid ""
 "POS-, Num-, Gen-, XRef-Types\n"
 "+\n"
 "Descriptions"
 msgstr ""
 
-#: src/interface.c:1355
+#: ../src/interface.c:1450
 msgid "This information is automatically added to every edited entry"
 msgstr "该信息将自动加入到每则被编辑的条目"
 
-#: src/interface.c:1357
+#: ../src/interface.c:1452
 msgid "Use Default Name:"
 msgstr "使用默认的名字："
 
-#: src/interface.c:1365
+#: ../src/interface.c:1460
 msgid "Use Custom Name:"
 msgstr "使用定制的名字："
 
-#: src/interface.c:1373
+#: ../src/interface.c:1468
 msgid "editer_default_name_label"
 msgstr ""
 
-#: src/interface.c:1390
+#: ../src/interface.c:1485
 msgid "Entry _Template"
 msgstr ""
 
-#: src/interface.c:1398
+#: ../src/interface.c:1493
 msgid "Use Custom Value:"
 msgstr "使用定制值："
 
-#: src/interface.c:1406
+#: ../src/interface.c:1501
 msgid "Use Default:"
 msgstr "使用默认："
 
-#: src/interface.c:1423
+#: ../src/interface.c:1518
 msgid "template_default_label"
 msgstr ""
 
-#: src/interface.c:1433
+#: ../src/interface.c:1528
 msgid "Add _Author/Editor to Edited Entries"
 msgstr "对被编辑条目增加作者/编辑者"
 
-#: src/interface.c:1439
+#: ../src/interface.c:1534
 msgid "Use Custom Email:"
 msgstr "使用定制的电子邮件："
 
-#: src/interface.c:1447
+#: ../src/interface.c:1542
 msgid "Use Default Email:"
 msgstr "使用默认的电子邮件："
 
-#: src/interface.c:1455
+#: ../src/interface.c:1550
 msgid "editer_default_email_label"
 msgstr ""
 
-#: src/interface.c:1471
+#: ../src/interface.c:1566
 msgid "Add _Source Reference to Edited Entries"
 msgstr "增加被编辑条目的源引用(_S)"
 
-#: src/interface.c:1485
-msgid "Source Document that justifies inclusion of an entry. Automatically added to edited entries."
+#: ../src/interface.c:1580
+msgid ""
+"Source Document that justifies inclusion of an entry. Automatically added to "
+"edited entries."
 msgstr ""
 
-#: src/interface.c:1495
+#: ../src/interface.c:1590
 msgid "_Entry Editor"
 msgstr "条目编辑者(_E)"
 
-#: src/interface.c:1504
+#: ../src/interface.c:1599
 msgid "_Sanity Checks"
 msgstr "健全检查(_S)"
 
-#: src/interface.c:1584
+#: ../src/interface.c:1678
 msgid "Check Sanity"
 msgstr "检查健全性"
 
-#: src/callbacks.c:61
-msgid "Failed to load file!"
+#: ../src/callbacks.c:206
+#, fuzzy, c-format
+msgid "Failed to load %s!"
 msgstr "载入文件失败！"
 
-#: src/callbacks.c:68
-msgid "No Context!"
-msgstr "无上下文！"
-
-#: src/callbacks.c:73
-msgid "No XPathObject!"
-msgstr "无 XPathObject！"
-
-#: src/callbacks.c:76
-#, fuzzy, c-format
-msgid "Entries: %2.0f"
-msgstr "条目：%2.Of"
-
-#: src/callbacks.c:140
+#: ../src/callbacks.c:289
 msgid "File modified. Save?"
 msgstr "文件已修改，保存吗？"
 
-#: src/callbacks.c:378
-#: src/callbacks.c:386
+#: ../src/callbacks.c:555 ../src/callbacks.c:563
 #, c-format
 msgid "Malformed XPath-Template. Only one %%s and many %%%% allowed."
 msgstr ""
 
-#: src/callbacks.c:395
+#: ../src/callbacks.c:584
 msgid "No matches."
 msgstr "无匹配。"
 
-#: src/callbacks.c:398
+#: ../src/callbacks.c:587
 #, c-format
 msgid "%i matching nodes"
 msgstr "%i 个匹配的节点"
 
-#: src/callbacks.c:457
-msgid "Edited entry accepted."
+#: ../src/callbacks.c:664
+#, fuzzy
+msgid "Edit accepted."
 msgstr "编辑的条目已被接受。"
 
-#: src/callbacks.c:490
+#: ../src/callbacks.c:697
 msgid "Edited XML is not well formed! Can't save it!"
 msgstr "编辑的XML格式部队！无法保存！"
 
-#: src/callbacks.c:504
-#: src/callbacks.c:634
+#: ../src/callbacks.c:711 ../src/callbacks.c:886
 msgid "Edited XML is not valid! Won't save it!"
 msgstr "不能编辑直接XML！编辑了也不能保存！"
 
-#: src/callbacks.c:542
+#: ../src/callbacks.c:753
 msgid "xmlAddChild(bodyNode, newEntry) failed!"
 msgstr "xmlAddChild(bodyNode, newEntry) 失败！"
 
-#: src/callbacks.c:598
+#: ../src/callbacks.c:809
 #, c-format
 msgid "New entry created and editable. Speed: %2.1f entries/hour"
 msgstr ""
 
-#: src/callbacks.c:679
+#: ../src/callbacks.c:929
 msgid "Cannot handle entry with form :("
 msgstr "无法按照格式处理条目 :("
 
-#: src/callbacks.c:690
+#: ../src/callbacks.c:940
 msgid "Saving form contents as XML failed :("
 msgstr "将内容存为XML时失败 :("
 
-#: src/callbacks.c:896
+#: ../src/callbacks.c:1159
+#, c-format
+msgid "Key was empty. Using default: %s\n"
+msgstr ""
+
+#: ../src/callbacks.c:1161
+#, c-format
+msgid "Using stylesheet filename from gconf: %s\n"
+msgstr ""
+
+#: ../src/callbacks.c:1175
 #, c-format
 msgid "Could not load %s!"
 msgstr "无法载入 %s！"
 
-#: src/callbacks.c:905
+#: ../src/callbacks.c:1184
 #, c-format
 msgid "Could not load entry stylesheet %s. HTML Preview won't work!"
 msgstr ""
 
-#: src/callbacks.c:996
-#: src/callbacks.c:1010
+#: ../src/callbacks.c:1275
 msgid "Error converting entry to HTML!"
 msgstr "将条目转换成 HTML 时出错！"
 
 #. save contents of form
-#: src/callbacks.c:1033
+#: ../src/callbacks.c:1314
 msgid "Saving form contents as XML failed."
 msgstr "将格式化的内容保存为XML失败"
 
-#: src/callbacks.c:1178
-#, fuzzy
+#: ../src/callbacks.c:1394
 msgid "No Drops accepted while unsaved changes in memory."
 msgstr ""
 
-#: src/callbacks.c:1198
+#: ../src/callbacks.c:1414
 #, fuzzy, c-format
-msgid ""
-"Did not recognize URI in Drop (no \\r\\n"
-"): %s\n"
-msgstr ""
-"没有识别下拉的文件URI (无\\r\\n"
-")：%s\n"
+msgid "Did not recognize URI in Drop (no \\r\\n): %s\n"
+msgstr "没有识别下拉的文件URI (无\\r\\n)：%s\n"
 
-#: src/callbacks.c:1201
+#: ../src/callbacks.c:1417
 #, fuzzy, c-format
 msgid "Did not recognize file-URI in Drop: %s\n"
 msgstr "没有识别下拉的文件URI：%s\n"
 
-#: src/callbacks.c:1512
+#: ../src/callbacks.c:1472
+msgid "Failed to find 'xkbprint' in path."
+msgstr ""
+
+#: ../src/callbacks.c:1478
+msgid "Failed to find 'gv' in path."
+msgstr ""
+
+#: ../src/callbacks.c:1486
+#, c-format
+msgid "Failed to show keyboard layout with command: %s"
+msgstr ""
+
+#: ../src/callbacks.c:1489
+#, c-format
+msgid "Done: %s"
+msgstr ""
+
+#: ../src/callbacks.c:1937
+msgid "Finished Spellcheck."
+msgstr ""
+
+#: ../src/callbacks.c:2035
 #, c-format
 msgid "%s, size=%s"
 msgstr ""
 
-#: src/support.c:60
-#: src/support.c:85
+#: ../src/callbacks.c:2066
+msgid "This binary of FreeDict-Editor was compiled without aspell support."
+msgstr ""
+
+#: ../src/callbacks.c:2106
+msgid "There is no use in replacing a misspelled word with itself.\n"
+msgstr ""
+
+#: ../src/callbacks.c:2520
+#, fuzzy
+msgid "Missing Part-of-Speech"
+msgstr "词型"
+
+#: ../src/callbacks.c:2522
+msgid "Nouns without Gender"
+msgstr ""
+
+#: ../src/callbacks.c:2524
+msgid "Notes with Question Marks"
+msgstr ""
+
+#: ../src/callbacks.c:2526
+#, fuzzy
+msgid "Empty Headwords"
+msgstr "标题字"
+
+#: ../src/callbacks.c:2528
+msgid "Empty Body"
+msgstr ""
+
+#. too slow
+#: ../src/callbacks.c:2532
+msgid "Homographs of same Part-of-Speech"
+msgstr ""
+
+#: ../src/callbacks.c:2537
+msgid "Broken Cross-References"
+msgstr ""
+
+#: ../src/callbacks.c:2542
+#, fuzzy
+msgid "Multiple Headwords"
+msgstr "标题字"
+
+#: ../src/callbacks.c:2544
+msgid "\"to \" before verbs (only useful for English, checks tr)"
+msgstr ""
+
+#: ../src/callbacks.c:2546
+msgid "\"to \" before verbs (only useful for English, checks orth)"
+msgstr ""
+
+#: ../src/callbacks.c:2548
+msgid "Unbalanced braces"
+msgstr ""
+
+#: ../src/callbacks.c:2673
+#, c-format
+msgid "%1$s (%2$i matches)"
+msgstr ""
+
+#: ../src/callbacks.c:2762
+#, fuzzy
+msgid "Sanity checks performed."
+msgstr "健全检查(_a)..."
+
+#: ../src/callbacks.c:2804
+msgid "Check Enabled?"
+msgstr ""
+
+#: ../src/callbacks.c:2813
+#, fuzzy
+msgid "Check Name"
+msgstr "检查健全性"
+
+#: ../src/callbacks.c:2819
+#, fuzzy
+msgid "Matching Entries"
+msgstr "%i 个匹配的节点"
+
+#: ../src/support.c:60 ../src/support.c:85
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "无法找到pixmap文件：%s"
 
+#: ../src/utils.c:92
+msgid ""
+"1. Open a TEI file\n"
+"2. Modify the XPath select expression to match\n"
+"\tthe entries you desire to edit\n"
+"3. Double-click on an entry headword in the list\n"
+"\tof matching entries to the right!"
+msgstr ""
+
+#: ../src/utils.c:143
+#, fuzzy, c-format
+msgid "Saving to %s failed."
+msgstr "将格式化的内容保存为XML失败"
+
+#: ../src/utils.c:149
+msgid "Saved."
+msgstr ""
+
+#: ../src/entryedit.c:145
+msgid "Undetermined"
+msgstr ""
+
+#: ../src/entryedit.c:146
+msgid "Antonym"
+msgstr ""
+
+#: ../src/entryedit.c:147
+msgid "Hypernym"
+msgstr ""
+
+#: ../src/entryedit.c:148
+msgid "Hyponym"
+msgstr ""
+
+#: ../src/entryedit.c:149
+msgid "Synonym"
+msgstr ""
+
+#: ../src/entryedit.c:150
+msgid "Derived from"
+msgstr ""
+
+#: ../src/entryedit.c:187
+msgid "(nothing)"
+msgstr ""
+
+#. show label "No cross-references exist."
+#. XXX care for this label when creating a new sense and adding the first xr
+#: ../src/entryedit.c:264
+msgid "No Cross-References exist."
+msgstr ""
+
+#: ../src/entryedit.c:303 ../src/entryedit.c:321 ../src/entryedit.c:333
+#, fuzzy
+msgid "None"
+msgstr "无(_N)"
+
+#: ../src/entryedit.c:304
+msgid "Verb"
+msgstr ""
+
+#: ../src/entryedit.c:305
+msgid "Transitive Verb"
+msgstr ""
+
+#: ../src/entryedit.c:306
+msgid "Intransitive Verb"
+msgstr ""
+
+#: ../src/entryedit.c:307
+msgid "Adverb"
+msgstr ""
+
+#: ../src/entryedit.c:308
+#, fuzzy
+msgid "_Noun"
+msgstr "无(_N)"
+
+#: ../src/entryedit.c:309
+msgid "Pronoun"
+msgstr ""
+
+#: ../src/entryedit.c:310
+msgid "_Adjective"
+msgstr ""
+
+#: ../src/entryedit.c:311
+#, fuzzy
+msgid "_Preposition"
+msgstr "发音(_P)"
+
+#: ../src/entryedit.c:312
+#, fuzzy
+msgid "Conjunction"
+msgstr "发音(_P)"
+
+#: ../src/entryedit.c:313
+msgid "_Interjection"
+msgstr ""
+
+#: ../src/entryedit.c:314
+msgid "Imitative"
+msgstr ""
+
+#: ../src/entryedit.c:315
+msgid "Abbreviation"
+msgstr ""
+
+#: ../src/entryedit.c:316
+msgid "Phrase"
+msgstr ""
+
+#: ../src/entryedit.c:322
+#, fuzzy
+msgid "Masculine"
+msgstr "阳性(_M)"
+
+#: ../src/entryedit.c:324
+#, fuzzy
+msgid "Neuter"
+msgstr "中性(_N)"
+
+#: ../src/entryedit.c:325
+msgid "Common"
+msgstr ""
+
+#: ../src/entryedit.c:326
+msgid "Masc. & Fem."
+msgstr ""
+
+#: ../src/entryedit.c:327
+msgid "Masc., Fem. & Neut."
+msgstr ""
+
+#: ../src/entryedit.c:335
+#, fuzzy
+msgid "Dual"
+msgstr "双重(_D)"
+
+#: ../src/entryedit.c:336
+#, fuzzy
+msgid "Plural"
+msgstr "复数(_P)"
+
+#. in German: "Sachgebiete"
+#. taken from fdicts.com
+#: ../src/entryedit.c:345
+msgid "Agriculture"
+msgstr ""
+
+#: ../src/entryedit.c:346
+msgid "Astronomy"
+msgstr ""
+
+#: ../src/entryedit.c:347
+msgid "Automobile"
+msgstr ""
+
+#: ../src/entryedit.c:348
+msgid "_Biology"
+msgstr ""
+
+#: ../src/entryedit.c:349
+msgid "Botany"
+msgstr ""
+
+#: ../src/entryedit.c:350
+msgid "Chemistry"
+msgstr ""
+
+#: ../src/entryedit.c:351
+msgid "Electrotechnics"
+msgstr ""
+
+#: ../src/entryedit.c:352
+#, fuzzy
+msgid "Finance"
+msgstr "阴性(_F)"
+
+#: ../src/entryedit.c:353
+#, fuzzy
+msgid "Geography"
+msgstr "正字(_O)"
+
+#: ../src/entryedit.c:354
+msgid "Geology"
+msgstr ""
+
+#: ../src/entryedit.c:355
+msgid "Grammar"
+msgstr ""
+
+#: ../src/entryedit.c:356
+msgid "History"
+msgstr ""
+
+#: ../src/entryedit.c:357
+msgid "Information Technology"
+msgstr ""
+
+#: ../src/entryedit.c:358
+msgid "Law"
+msgstr ""
+
+#: ../src/entryedit.c:359
+msgid "Mathematics"
+msgstr ""
+
+#: ../src/entryedit.c:360
+msgid "Medicine"
+msgstr ""
+
+#: ../src/entryedit.c:361
+msgid "Military"
+msgstr ""
+
+#: ../src/entryedit.c:362
+msgid "Music"
+msgstr ""
+
+#: ../src/entryedit.c:363
+msgid "Mythology"
+msgstr ""
+
+#: ../src/entryedit.c:364
+msgid "Physics"
+msgstr ""
+
+#: ../src/entryedit.c:365
+msgid "Politics"
+msgstr ""
+
+#: ../src/entryedit.c:366
+msgid "Religion"
+msgstr ""
+
+#: ../src/entryedit.c:367
+msgid "Sexual"
+msgstr ""
+
+#: ../src/entryedit.c:368
+msgid "Sport"
+msgstr ""
+
+#: ../src/entryedit.c:369
+msgid "_Technology"
+msgstr ""
+
+#: ../src/entryedit.c:405
+#, fuzzy
+msgid "Translation Equivalent"
+msgstr "翻译的语言(_T)"
+
+#: ../src/entryedit.c:507
+#, fuzzy, c-format
+msgid "Sense %i"
+msgstr "字义"
+
+#. domain label
+#: ../src/entryedit.c:516
+msgid "Domain"
+msgstr ""
+
+#: ../src/entryedit.c:537
+msgid "Domain of use"
+msgstr ""
+
+#. translations label
+#: ../src/entryedit.c:542
+#, fuzzy
+msgid "Translation(s)"
+msgstr "<tr> - 翻译"
+
+#: ../src/entryedit.c:574
+msgid "Add new Translation Equivalent"
+msgstr ""
+
+#: ../src/entryedit.c:596
+#, fuzzy
+msgid "Remove last Translation Equivalent"
+msgstr "从该条目删除最近的字义"
+
+#: ../src/entryedit.c:630
+msgid "Definition of this Sense"
+msgstr ""
+
+#: ../src/entryedit.c:646
+msgid "Freestyle Note"
+msgstr ""
+
+#: ../src/entryedit.c:677
+msgid "Add new Cross-Reference to another Headword in this Dictionary"
+msgstr ""
+
+#: ../src/entryedit.c:700
+#, fuzzy
+msgid "Remove last Cross-Reference"
+msgstr "从该条目删除最近的字义"
+
+#. example
+#: ../src/entryedit.c:718
+msgid "Example"
+msgstr ""
+
+#: ../src/entryedit.c:732
+msgid "Example phrase or sentence where the Headword is used in this Sense"
+msgstr ""
+
+#: ../src/entryedit.c:742
+#, fuzzy
+msgid "Optional Translation of the Example"
+msgstr "<eg><tr> - 翻译的例子"
+
+#: ../src/entryedit.c:816
+#, c-format
+msgid "Unknown <%s> content: '%s'\n"
+msgstr ""
+
+#: ../src/entryedit.c:1136
+#, c-format
+msgid "Remaining content in entry: '%s'.\n"
+msgstr ""
+
+#: ../src/xml.c:302
+#, c-format
+msgid "%s: %i matching nodes (only 1 expected). Taking first.\n"
+msgstr ""
+
+#: ../src/xml.c:429
+msgid "No nodes (form/orth)!"
+msgstr ""
+
+#~ msgid "Bonobo Experiment"
+#~ msgstr "Bonobo实验"
+
+#~ msgid "Check:"
+#~ msgstr "检查："
+
+#~ msgid "No Context!"
+#~ msgstr "无上下文！"
+
+#~ msgid "No XPathObject!"
+#~ msgstr "无 XPathObject！"
+
+#, fuzzy
+#~ msgid "Entries: %2.0f"
+#~ msgstr "条目：%2.Of"

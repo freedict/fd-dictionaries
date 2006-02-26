@@ -16,6 +16,13 @@
   <property name="resizable">True</property>
   <property name="destroy_with_parent">True</property>
   <property name="icon">freedict.png</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <property name="enable_layout_config">True</property>
   <signal name="delete_event" handler="on_app1_delete_event" last_modification_time="Mon, 10 Jan 2005 04:36:31 GMT"/>
   <signal name="show" handler="on_app1_show" last_modification_time="Wed, 12 Jan 2005 06:28:59 GMT"/>
@@ -33,6 +40,8 @@
 
 	  <child>
 	    <widget class="GtkMenuBar" id="menubar1">
+	      <property name="pack_direction">GTK_PACK_DIRECTION_LTR</property>
+	      <property name="child_pack_direction">GTK_PACK_DIRECTION_LTR</property>
 
 	      <child>
 		<widget class="GtkMenuItem" id="file1">
@@ -458,6 +467,10 @@
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
 		  <property name="mnemonic_widget">select_entry</property>
+		  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		  <property name="width_chars">-1</property>
+		  <property name="single_line_mode">False</property>
+		  <property name="angle">0</property>
 		</widget>
 		<packing>
 		  <property name="padding">2</property>
@@ -483,7 +496,7 @@
 		      <property name="max_length">0</property>
 		      <property name="text" translatable="yes"></property>
 		      <property name="has_frame">True</property>
-		      <property name="invisible_char" translatable="yes">*</property>
+		      <property name="invisible_char">*</property>
 		      <property name="activates_default">False</property>
 		      <signal name="changed" handler="on_select_entry_changed" last_modification_time="Mon, 07 Feb 2005 11:06:08 GMT"/>
 		    </widget>
@@ -532,6 +545,10 @@
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
 		  <property name="mnemonic_widget">xpath_entry</property>
+		  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		  <property name="width_chars">-1</property>
+		  <property name="single_line_mode">False</property>
+		  <property name="angle">0</property>
 		</widget>
 		<packing>
 		  <property name="padding">2</property>
@@ -556,7 +573,7 @@
 		      <property name="max_length">0</property>
 		      <property name="text" translatable="yes">/TEI.2/text/body/entry[position()&gt;0 and contains(form/orth,'%s')]</property>
 		      <property name="has_frame">True</property>
-		      <property name="invisible_char" translatable="yes">*</property>
+		      <property name="invisible_char">*</property>
 		      <property name="activates_default">False</property>
 		      <property name="width_chars">64</property>
 		    </widget>
@@ -592,98 +609,169 @@
 	      <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
 	      <property name="toolbar_style">GTK_TOOLBAR_ICONS</property>
 	      <property name="tooltips">True</property>
+	      <property name="show_arrow">True</property>
 
 	      <child>
-		<widget class="button" id="new_file_button">
+		<widget class="GtkToolButton" id="new_file_button">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">New TEI Dictionary File</property>
-		  <property name="label">gtk-new</property>
-		  <property name="use_stock">True</property>
+		  <property name="stock_id">gtk-new</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_new_file_button_clicked" last_modification_time="Mon, 18 Apr 2005 07:42:22 GMT"/>
 		</widget>
-	      </child>
-
-	      <child>
-		<widget class="button" id="openbutton">
-		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">Open TEI Dictionary File</property>
-		  <property name="label">gtk-open</property>
-		  <property name="use_stock">True</property>
-		  <signal name="clicked" handler="on_openbutton_clicked" last_modification_time="Sat, 08 Jan 2005 04:31:11 GMT"/>
-		</widget>
-	      </child>
-
-	      <child>
-		<widget class="button" id="save_button">
-		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">Save TEI Dictionary File</property>
-		  <property name="label">gtk-save</property>
-		  <property name="use_stock">True</property>
-		  <signal name="clicked" handler="on_save_button_clicked" last_modification_time="Mon, 10 Jan 2005 07:50:00 GMT"/>
-		</widget>
-	      </child>
-
-	      <child>
-		<widget class="button" id="new_entry_button">
-		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">Add new Entry</property>
-		  <property name="label" translatable="yes">New Entry</property>
-		  <property name="use_underline">True</property>
-		  <property name="stock_pixmap">gtk-add</property>
-		  <property name="new_group">True</property>
-		  <signal name="clicked" handler="on_new_entry_button_clicked" last_modification_time="Mon, 10 Jan 2005 08:11:30 GMT"/>
-		</widget>
 		<packing>
-		  <property name="new_group">True</property>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
 		</packing>
 	      </child>
 
 	      <child>
-		<widget class="button" id="delete_button">
+		<widget class="GtkToolButton" id="openbutton">
+		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Open TEI Dictionary File</property>
+		  <property name="stock_id">gtk-open</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
+		  <signal name="clicked" handler="on_openbutton_clicked" last_modification_time="Sat, 08 Jan 2005 04:31:11 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="save_button">
+		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Save TEI Dictionary File</property>
+		  <property name="stock_id">gtk-save</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
+		  <signal name="clicked" handler="on_save_button_clicked" last_modification_time="Mon, 10 Jan 2005 07:50:00 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkSeparatorToolItem" id="separatortoolitem1">
+		  <property name="visible">True</property>
+		  <property name="draw">True</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">False</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="new_entry_button">
+		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Add new Entry</property>
+		  <property name="label" translatable="yes">New Entry</property>
+		  <property name="use_underline">True</property>
+		  <property name="stock_id">gtk-add</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
+		  <signal name="clicked" handler="on_new_entry_button_clicked" last_modification_time="Mon, 10 Jan 2005 08:11:30 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="delete_button">
 		  <property name="visible">True</property>
 		  <property name="sensitive">False</property>
 		  <property name="tooltip" translatable="yes">Delete Entry</property>
 		  <property name="label" translatable="yes">Delete Entry</property>
 		  <property name="use_underline">True</property>
-		  <property name="stock_pixmap">gtk-remove</property>
+		  <property name="stock_id">gtk-remove</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_delete_button_clicked" last_modification_time="Mon, 10 Jan 2005 08:11:23 GMT"/>
 		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
 	      </child>
 
 	      <child>
-		<widget class="button" id="apply_button">
+		<widget class="GtkToolButton" id="apply_button">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Save changes to Entry</property>
 		  <property name="label" translatable="yes">Save Entry</property>
 		  <property name="use_underline">True</property>
-		  <property name="stock_pixmap">gtk-apply</property>
+		  <property name="stock_id">gtk-apply</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_apply_button_clicked" last_modification_time="Fri, 28 Jan 2005 14:54:41 GMT"/>
 		  <accelerator key="Return" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
 	      </child>
 
 	      <child>
-		<widget class="button" id="cancel_edit_button">
+		<widget class="GtkToolButton" id="cancel_edit_button">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Cancel Edit of Entry</property>
 		  <property name="label" translatable="yes">_Cancel Edit</property>
 		  <property name="use_underline">True</property>
-		  <property name="stock_pixmap">gtk-cancel</property>
+		  <property name="stock_id">gtk-cancel</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_cancel_edit_button_clicked" last_modification_time="Sun, 30 Jan 2005 05:02:20 GMT"/>
 		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
 	      </child>
 
 	      <child>
-		<widget class="button" id="stop_find_nodeset">
+		<widget class="GtkSeparatorToolItem" id="separatortoolitem2">
+		  <property name="visible">True</property>
+		  <property name="draw">True</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">False</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="stop_find_nodeset">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Stop current XPath-Match</property>
-		  <property name="label">gtk-stop</property>
-		  <property name="use_stock">True</property>
-		  <property name="new_group">True</property>
+		  <property name="stock_id">gtk-stop</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_stop_find_nodeset_clicked" last_modification_time="Tue, 05 Jul 2005 10:56:03 GMT"/>
 		</widget>
 		<packing>
-		  <property name="new_group">True</property>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
 		</packing>
 	      </child>
 	    </widget>
@@ -743,6 +831,9 @@
 			      <property name="rules_hint">True</property>
 			      <property name="reorderable">True</property>
 			      <property name="enable_search">True</property>
+			      <property name="fixed_height_mode">False</property>
+			      <property name="hover_selection">False</property>
+			      <property name="hover_expand">False</property>
 			      <signal name="row_activated" handler="on_treeview1_row_activated" last_modification_time="Sun, 09 Jan 2005 05:49:05 GMT"/>
 			      <signal name="cursor_changed" handler="on_treeview1_cursor_changed" last_modification_time="Fri, 04 Feb 2005 11:15:19 GMT"/>
 			    </widget>
@@ -768,6 +859,10 @@
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
 		  <property name="mnemonic_widget">treeview1</property>
+		  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		  <property name="width_chars">-1</property>
+		  <property name="single_line_mode">False</property>
+		  <property name="angle">0</property>
 		</widget>
 		<packing>
 		  <property name="type">label_item</property>
@@ -810,9 +905,11 @@
 		      <child>
 			<widget class="GtkTextView" id="textview1">
 			  <property name="visible">True</property>
-			  <property name="tooltip" translatable="yes">The XML edit mode is selected of the entry cannot be edited with the formular.</property>
+			  <property name="tooltip" translatable="yes">The XML edit mode is selected or the entry cannot be edited with the formular.</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
+			  <property name="overwrite">False</property>
+			  <property name="accepts_tab">True</property>
 			  <property name="justification">GTK_JUSTIFY_LEFT</property>
 			  <property name="wrap_mode">GTK_WRAP_NONE</property>
 			  <property name="cursor_visible">True</property>
@@ -846,6 +943,10 @@
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
 		      <property name="ypad">0</property>
+		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		      <property name="width_chars">-1</property>
+		      <property name="single_line_mode">False</property>
+		      <property name="angle">0</property>
 		    </widget>
 		    <packing>
 		      <property name="type">tab</property>
@@ -890,6 +991,10 @@
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
 				  <property name="mnemonic_widget">entry1</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
 				</widget>
 				<packing>
 				  <property name="left_attach">0</property>
@@ -911,7 +1016,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				  <signal name="changed" handler="on_form_entry_changed" last_modification_time="Fri, 28 Jan 2005 15:44:07 GMT"/>
 				</widget>
@@ -938,6 +1043,10 @@
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
 				  <property name="mnemonic_widget">entry2</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
 				</widget>
 				<packing>
 				  <property name="left_attach">2</property>
@@ -959,7 +1068,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				  <signal name="changed" handler="on_form_entry_changed" last_modification_time="Sat, 29 Jan 2005 13:08:51 GMT"/>
 				  <signal name="focus_in_event" handler="on_entry2_focus_in_event" object="entry2" last_modification_time="Thu, 31 Mar 2005 07:17:24 GMT"/>
@@ -994,6 +1103,10 @@
 				      <property name="xpad">0</property>
 				      <property name="ypad">0</property>
 				      <property name="mnemonic_widget">pos_optionmenu</property>
+				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				      <property name="width_chars">-1</property>
+				      <property name="single_line_mode">False</property>
+				      <property name="angle">0</property>
 				    </widget>
 				    <packing>
 				      <property name="padding">0</property>
@@ -1036,6 +1149,10 @@
 				      <property name="xpad">0</property>
 				      <property name="ypad">0</property>
 				      <property name="mnemonic_widget">num_optionmenu</property>
+				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				      <property name="width_chars">-1</property>
+				      <property name="single_line_mode">False</property>
+				      <property name="angle">0</property>
 				    </widget>
 				    <packing>
 				      <property name="padding">0</property>
@@ -1114,6 +1231,10 @@
 				      <property name="xpad">0</property>
 				      <property name="ypad">0</property>
 				      <property name="mnemonic_widget">gen_optionmenu</property>
+				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				      <property name="width_chars">-1</property>
+				      <property name="single_line_mode">False</property>
+				      <property name="angle">0</property>
 				    </widget>
 				    <packing>
 				      <property name="padding">0</property>
@@ -1201,6 +1322,10 @@
 			      <property name="yalign">0.5</property>
 			      <property name="xpad">0</property>
 			      <property name="ypad">0</property>
+			      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			      <property name="width_chars">-1</property>
+			      <property name="single_line_mode">False</property>
+			      <property name="angle">0</property>
 			    </widget>
 			    <packing>
 			      <property name="type">label_item</property>
@@ -1256,6 +1381,7 @@
 					      <property name="label">gtk-add</property>
 					      <property name="use_stock">True</property>
 					      <property name="relief">GTK_RELIEF_NORMAL</property>
+					      <property name="focus_on_click">True</property>
 					      <signal name="clicked" handler="on_add_sense_button_clicked" last_modification_time="Wed, 19 Jan 2005 08:41:31 GMT"/>
 					    </widget>
 					  </child>
@@ -1269,6 +1395,7 @@
 					      <property name="label">gtk-remove</property>
 					      <property name="use_stock">True</property>
 					      <property name="relief">GTK_RELIEF_NORMAL</property>
+					      <property name="focus_on_click">True</property>
 					      <signal name="clicked" handler="on_remove_sense_button_clicked" last_modification_time="Wed, 19 Jan 2005 08:42:06 GMT"/>
 					    </widget>
 					  </child>
@@ -1300,6 +1427,10 @@
 			      <property name="yalign">0.5</property>
 			      <property name="xpad">0</property>
 			      <property name="ypad">0</property>
+			      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			      <property name="width_chars">-1</property>
+			      <property name="single_line_mode">False</property>
+			      <property name="angle">0</property>
 			    </widget>
 			    <packing>
 			      <property name="type">label_item</property>
@@ -1332,6 +1463,10 @@
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
 		      <property name="ypad">0</property>
+		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		      <property name="width_chars">-1</property>
+		      <property name="single_line_mode">False</property>
+		      <property name="angle">0</property>
 		    </widget>
 		    <packing>
 		      <property name="type">tab</property>
@@ -1378,9 +1513,16 @@
 </widget>
 
 <widget class="GnomeAbout" id="about2">
+  <property name="border_width">5</property>
   <property name="visible">True</property>
   <property name="destroy_with_parent">True</property>
   <property name="icon">freedict.gif</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
   <property name="copyright" translatable="yes">FreeDict Project, freedict.org, 2005</property>
   <property name="authors">Michael Bunk &lt;micha@luetzschena.de&gt;</property>
   <property name="translator_credits" translatable="yes">translator_credits</property>
@@ -1395,6 +1537,13 @@
   <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <property name="show_fileops">True</property>
   <signal name="close" handler="gtk_widget_destroy" last_modification_time="Sat, 08 Jan 2005 06:44:45 GMT"/>
 
@@ -1404,6 +1553,7 @@
       <property name="can_default">True</property>
       <property name="can_focus">True</property>
       <property name="relief">GTK_RELIEF_NORMAL</property>
+      <property name="focus_on_click">True</property>
       <signal name="clicked" handler="on_cancel_button1_clicked" last_modification_time="Sat, 08 Jan 2005 07:40:15 GMT"/>
     </widget>
   </child>
@@ -1414,6 +1564,7 @@
       <property name="can_default">True</property>
       <property name="can_focus">True</property>
       <property name="relief">GTK_RELIEF_NORMAL</property>
+      <property name="focus_on_click">True</property>
       <signal name="clicked" handler="on_ok_button1_clicked" last_modification_time="Sat, 08 Jan 2005 06:43:47 GMT"/>
     </widget>
   </child>
@@ -1427,6 +1578,13 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
 
   <child>
     <widget class="GtkHBox" id="hbox14">
@@ -1457,6 +1615,10 @@
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1479,7 +1641,7 @@
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes"></property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	    </widget>
 	    <packing>
@@ -1505,6 +1667,10 @@
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
 	      <property name="mnemonic_widget">replacement_entry</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1526,7 +1692,7 @@
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes"></property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">True</property>
 	    </widget>
 	    <packing>
@@ -1552,6 +1718,10 @@
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
 	      <property name="mnemonic_widget">scrolledwindow5</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1568,8 +1738,9 @@
 	      <property name="visible">True</property>
 	      <property name="orientation">GTK_PROGRESS_LEFT_TO_RIGHT</property>
 	      <property name="fraction">0</property>
-	      <property name="pulse_step">0.1</property>
+	      <property name="pulse_step">0.10000000149</property>
 	      <property name="text" translatable="yes">Nodes checked</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1601,6 +1772,9 @@
 		  <property name="rules_hint">True</property>
 		  <property name="reorderable">False</property>
 		  <property name="enable_search">True</property>
+		  <property name="fixed_height_mode">False</property>
+		  <property name="hover_selection">False</property>
+		  <property name="hover_expand">False</property>
 		  <signal name="row_activated" handler="on_suggestions_treeview_row_activated" last_modification_time="Tue, 05 Apr 2005 08:27:25 GMT"/>
 		  <signal name="cursor_changed" handler="on_suggestions_treeview_cursor_changed" last_modification_time="Wed, 06 Apr 2005 12:01:23 GMT"/>
 		</widget>
@@ -1643,6 +1817,7 @@
 			  <property name="label" translatable="yes">_Headword Language</property>
 			  <property name="use_underline">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
+			  <property name="focus_on_click">True</property>
 			  <property name="active">False</property>
 			  <property name="inconsistent">False</property>
 			  <property name="draw_indicator">True</property>
@@ -1662,6 +1837,7 @@
 			  <property name="label" translatable="yes">_Translation Language</property>
 			  <property name="use_underline">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
+			  <property name="focus_on_click">True</property>
 			  <property name="active">True</property>
 			  <property name="inconsistent">False</property>
 			  <property name="draw_indicator">True</property>
@@ -1689,6 +1865,7 @@
 		      <property name="label" translatable="yes">&lt;orth&gt; - Headwords</property>
 		      <property name="use_underline">True</property>
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
+		      <property name="focus_on_click">True</property>
 		      <property name="active">False</property>
 		      <property name="inconsistent">False</property>
 		      <property name="draw_indicator">True</property>
@@ -1707,6 +1884,7 @@
 		      <property name="label" translatable="yes">&lt;tr&gt; - Translations</property>
 		      <property name="use_underline">True</property>
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
+		      <property name="focus_on_click">True</property>
 		      <property name="active">True</property>
 		      <property name="inconsistent">False</property>
 		      <property name="draw_indicator">True</property>
@@ -1725,6 +1903,7 @@
 		      <property name="label" translatable="yes">&lt;eg&gt;&lt;q&gt; - Quotes of Examples</property>
 		      <property name="use_underline">True</property>
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
+		      <property name="focus_on_click">True</property>
 		      <property name="active">False</property>
 		      <property name="inconsistent">False</property>
 		      <property name="draw_indicator">True</property>
@@ -1743,6 +1922,7 @@
 		      <property name="label" translatable="yes">&lt;eg&gt;&lt;tr&gt; - Translations of Examples</property>
 		      <property name="use_underline">True</property>
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
+		      <property name="focus_on_click">True</property>
 		      <property name="active">False</property>
 		      <property name="inconsistent">False</property>
 		      <property name="draw_indicator">True</property>
@@ -1773,6 +1953,10 @@
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
+		  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		  <property name="width_chars">-1</property>
+		  <property name="single_line_mode">False</property>
+		  <property name="angle">0</property>
 		</widget>
 		<packing>
 		  <property name="type">tab</property>
@@ -1802,6 +1986,10 @@
 		      <property name="xpad">0</property>
 		      <property name="ypad">0</property>
 		      <property name="mnemonic_widget">spell_dict_optionmenu</property>
+		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		      <property name="width_chars">-1</property>
+		      <property name="single_line_mode">False</property>
+		      <property name="angle">0</property>
 		    </widget>
 		    <packing>
 		      <property name="left_attach">0</property>
@@ -1820,6 +2008,7 @@
 		      <property name="label" translatable="yes">Acc_ept Run-Together Words</property>
 		      <property name="use_underline">True</property>
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
+		      <property name="focus_on_click">True</property>
 		      <property name="active">False</property>
 		      <property name="inconsistent">False</property>
 		      <property name="draw_indicator">True</property>
@@ -1876,6 +2065,10 @@
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
+		  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		  <property name="width_chars">-1</property>
+		  <property name="single_line_mode">False</property>
+		  <property name="angle">0</property>
 		</widget>
 		<packing>
 		  <property name="type">tab</property>
@@ -1905,6 +2098,10 @@
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">1</property>
@@ -1929,6 +2126,10 @@
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1961,6 +2162,7 @@
 	      <property name="has_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_replace_button_clicked" last_modification_time="Tue, 05 Apr 2005 03:51:52 GMT"/>
 
 	      <child>
@@ -1970,6 +2172,10 @@
 		  <property name="yalign">0.5</property>
 		  <property name="xscale">0</property>
 		  <property name="yscale">0</property>
+		  <property name="top_padding">0</property>
+		  <property name="bottom_padding">0</property>
+		  <property name="left_padding">0</property>
+		  <property name="right_padding">0</property>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox15">
@@ -2007,6 +2213,10 @@
 			  <property name="yalign">0.5</property>
 			  <property name="xpad">0</property>
 			  <property name="ypad">0</property>
+			  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			  <property name="width_chars">-1</property>
+			  <property name="single_line_mode">False</property>
+			  <property name="angle">0</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
@@ -2030,6 +2240,7 @@
 	      <property name="label" translatable="yes">Replace _All</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_replace_all_button_clicked" last_modification_time="Tue, 05 Apr 2005 03:54:48 GMT"/>
 	    </widget>
 	  </child>
@@ -2041,6 +2252,7 @@
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_ignore_button_clicked" last_modification_time="Tue, 05 Apr 2005 03:54:55 GMT"/>
 
 	      <child>
@@ -2050,6 +2262,10 @@
 		  <property name="yalign">0.5</property>
 		  <property name="xscale">0</property>
 		  <property name="yscale">0</property>
+		  <property name="top_padding">0</property>
+		  <property name="bottom_padding">0</property>
+		  <property name="left_padding">0</property>
+		  <property name="right_padding">0</property>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox16">
@@ -2087,6 +2303,10 @@
 			  <property name="yalign">0.5</property>
 			  <property name="xpad">0</property>
 			  <property name="ypad">0</property>
+			  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			  <property name="width_chars">-1</property>
+			  <property name="single_line_mode">False</property>
+			  <property name="angle">0</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
@@ -2110,6 +2330,7 @@
 	      <property name="label" translatable="yes">I_gnore All</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_ignore_all_button_clicked" last_modification_time="Tue, 05 Apr 2005 03:55:00 GMT"/>
 	    </widget>
 	  </child>
@@ -2123,6 +2344,7 @@
 	      <property name="label">gtk-add</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_add_button_clicked" last_modification_time="Tue, 05 Apr 2005 03:55:07 GMT"/>
 	    </widget>
 	  </child>
@@ -2135,6 +2357,7 @@
 	      <property name="label">gtk-close</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <signal name="clicked" handler="on_spell_close_button_clicked" last_modification_time="Tue, 05 Apr 2005 05:19:18 GMT"/>
 	    </widget>
 	  </child>
@@ -2156,6 +2379,13 @@
   <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">True</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <signal name="apply" handler="on_propertybox1_apply" last_modification_time="Tue, 26 Apr 2005 09:05:05 GMT"/>
   <signal name="help" handler="on_propertybox1_help" last_modification_time="Tue, 26 Apr 2005 09:05:10 GMT"/>
   <signal name="close" handler="on_propertybox1_close" last_modification_time="Tue, 26 Apr 2005 13:09:13 GMT"/>
@@ -2186,6 +2416,7 @@
 	      <property name="label" translatable="yes">Use Default Value:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2207,6 +2438,7 @@
 	      <property name="label" translatable="yes">Use Custom Value</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2236,6 +2468,10 @@
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">2</property>
@@ -2254,6 +2490,8 @@
 	      <property name="browse_dialog_title" translatable="yes">Select XSLT-Stylesheet</property>
 	      <property name="directory_entry">False</property>
 	      <property name="modal">True</property>
+	      <property name="use_filechooser">False</property>
+	      <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
 	      <signal name="changed" handler="on_gtkeditable_changed" last_modification_time="Tue, 10 May 2005 14:24:33 GMT"/>
 
 	      <child internal-child="entry">
@@ -2265,7 +2503,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		</widget>
 	      </child>
@@ -2293,6 +2531,10 @@
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
 	      <property name="mnemonic_widget">combo-entry1</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -2323,6 +2565,10 @@
 	  <property name="yalign">0.5</property>
 	  <property name="xpad">0</property>
 	  <property name="ypad">0</property>
+	  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	  <property name="width_chars">-1</property>
+	  <property name="single_line_mode">False</property>
+	  <property name="angle">0</property>
 	</widget>
 	<packing>
 	  <property name="type">tab</property>
@@ -2353,6 +2599,10 @@ Descriptions</property>
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -2374,7 +2624,7 @@ Descriptions</property>
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes"></property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	      <signal name="changed" handler="on_gtkeditable_changed" last_modification_time="Tue, 10 May 2005 14:24:51 GMT"/>
 	    </widget>
@@ -2394,6 +2644,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Default Name:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2415,6 +2666,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Custom Name:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2444,6 +2696,10 @@ Descriptions</property>
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">2</property>
@@ -2490,6 +2746,10 @@ Descriptions</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
 	      <property name="mnemonic_widget">combo-entry3</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -2508,6 +2768,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Custom Value:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2529,6 +2790,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Default:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2549,6 +2811,8 @@ Descriptions</property>
 	      <property name="max_saved">10</property>
 	      <property name="directory_entry">False</property>
 	      <property name="modal">False</property>
+	      <property name="use_filechooser">False</property>
+	      <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
 	      <signal name="changed" handler="on_gtkeditable_changed" last_modification_time="Tue, 10 May 2005 14:25:23 GMT"/>
 
 	      <child internal-child="entry">
@@ -2560,7 +2824,7 @@ Descriptions</property>
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		</widget>
 	      </child>
@@ -2588,6 +2852,10 @@ Descriptions</property>
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">2</property>
@@ -2606,6 +2874,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Add _Author/Editor to Edited Entries</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2627,6 +2896,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Custom Email:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2649,6 +2919,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Use Default Email:</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2678,6 +2949,10 @@ Descriptions</property>
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">2</property>
@@ -2698,7 +2973,7 @@ Descriptions</property>
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes"></property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	    </widget>
 	    <packing>
@@ -2717,6 +2992,7 @@ Descriptions</property>
 	      <property name="label" translatable="yes">Add _Source Reference to Edited Entries</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
@@ -2747,7 +3023,7 @@ Descriptions</property>
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		</widget>
 	      </child>
@@ -2769,6 +3045,9 @@ Descriptions</property>
 	      <property name="rules_hint">True</property>
 	      <property name="reorderable">True</property>
 	      <property name="enable_search">True</property>
+	      <property name="fixed_height_mode">False</property>
+	      <property name="hover_selection">False</property>
+	      <property name="hover_expand">False</property>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">1</property>
@@ -2797,6 +3076,10 @@ Descriptions</property>
 	  <property name="yalign">0.5</property>
 	  <property name="xpad">0</property>
 	  <property name="ypad">0</property>
+	  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	  <property name="width_chars">-1</property>
+	  <property name="single_line_mode">False</property>
+	  <property name="angle">0</property>
 	</widget>
 	<packing>
 	  <property name="type">tab</property>
@@ -2820,6 +3103,10 @@ Descriptions</property>
 	  <property name="yalign">0.5</property>
 	  <property name="xpad">0</property>
 	  <property name="ypad">0</property>
+	  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	  <property name="width_chars">-1</property>
+	  <property name="single_line_mode">False</property>
+	  <property name="angle">0</property>
 	</widget>
 	<packing>
 	  <property name="type">tab</property>
@@ -2845,6 +3132,13 @@ Descriptions</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">True</property>
   <property name="icon">freedict.png</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <signal name="show" handler="on_sanity_window_show" last_modification_time="Wed, 04 May 2005 10:21:26 GMT"/>
 
   <child>
@@ -2866,6 +3160,9 @@ Descriptions</property>
 	  <property name="rules_hint">True</property>
 	  <property name="reorderable">True</property>
 	  <property name="enable_search">True</property>
+	  <property name="fixed_height_mode">False</property>
+	  <property name="hover_selection">False</property>
+	  <property name="hover_expand">False</property>
 	  <signal name="row_activated" handler="on_sanity_treeview_row_activated" last_modification_time="Wed, 04 May 2005 08:57:31 GMT"/>
 	  <signal name="cursor_changed" handler="on_sanity_treeview_cursor_changed" last_modification_time="Wed, 04 May 2005 08:57:47 GMT"/>
 	</widget>
