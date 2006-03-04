@@ -27,11 +27,13 @@ main (int argc, char *argv[])
   // g_thread_supported() should be renamed to g_thread_initialized()
   if(!g_thread_supported())
   {
-    //g_printerr("Initializing thread system\n");
     g_thread_init(NULL);
   }
   
-  //gdk_threads_init();
+  // these functions are provided by libbonobo
+  bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+  textdomain(GETTEXT_PACKAGE);
 
   poptContext con;
   GnomeProgram *app = gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
@@ -40,12 +42,6 @@ main (int argc, char *argv[])
 		      LIBGNOMEUI_PARAM_DEFAULT_ICON,
 		        PACKAGE_DATA_DIR "/pixmaps/" PACKAGE "/freedict.png",
                       NULL);
-
-  // these functions are provided by libbonobo
-  bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
-  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-  textdomain(GETTEXT_PACKAGE);
-
 
   g_object_get(G_OBJECT(app), GNOME_PARAM_POPT_CONTEXT, &con, NULL);
   extern char *selected_filename;
@@ -59,9 +55,7 @@ main (int argc, char *argv[])
   extern void myload(const char *filename);
   if(selected_filename) myload(selected_filename);
 
-  //gdk_threads_enter();
   gtk_main();
-  //gdk_threads_leave();
 
   return 0;
 }

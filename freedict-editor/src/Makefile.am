@@ -18,3 +18,8 @@ freedict_editor_SOURCES = \
 
 freedict_editor_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 
+main.c: interface.h support.h
+
+interface.c interface.h support.c support.h: ../freedict-editor.glade
+	cd .. && glade-2 --write-source freedict-editor.glade
+

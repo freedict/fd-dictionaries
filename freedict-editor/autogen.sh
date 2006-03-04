@@ -157,3 +157,7 @@ if test x$NOCONFIGURE = x; then
 else
   echo Skipping configure process.
 fi
+
+# generate src/config|support.[ch]
+glade-2 --write-source freedict-editor.glade
+
