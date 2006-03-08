@@ -13,11 +13,11 @@
   <!-- something like the main function -->
   <xsl:template match="/">
     <xsl:apply-templates select="*//teiHeader" />
-    <xsl:call-template name="00-database-short" />
+    <xsl:call-template name="t00-database-short" />
     <xsl:apply-templates select="//entry" />
   </xsl:template>
 
-  <xsl:template name="00-database-short">
+  <xsl:template name="t00-database-short">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-short&#x0A;</xsl:text>
     <xsl:value-of select="//title" />
