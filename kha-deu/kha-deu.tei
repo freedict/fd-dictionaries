@@ -3,12 +3,6 @@
   "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
   <!ENTITY % TEI.XML		'INCLUDE' >
   <!ENTITY % TEI.dictionaries	'INCLUDE'>
-  <!ENTITY % ISOLat1 PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN"
-    "/usr/share/sgml/xmlcharent/isolat1.ent">
-  %ISOLat1;
-  <!ENTITY % ISOnum PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN"
-    "/usr/share/sgml/xmlcharent/isonum.ent">
-  %ISOnum;
   <!ENTITY % TEI.linking      "INCLUDE" >
   <!ATTLIST xptr url CDATA #IMPLIED >
   <!ATTLIST xref url CDATA #IMPLIED >
