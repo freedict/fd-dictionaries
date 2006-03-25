@@ -15,7 +15,7 @@
 
   <!--xsl:strip-space elements="entry orth tr"/-->
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2ding.xsl,v 1.1 2006-03-24 22:00:20 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2ding.xsl,v 1.2 2006-03-25 21:36:16 micha137 Exp $</xsl:param>
 
   <!-- something like the main function -->
   <xsl:template match="/">
@@ -50,7 +50,8 @@
 	  <xsl:if test="count(../../gramGrp/pos)>0">
 	    <xsl:text> {</xsl:text>
 	    <xsl:choose>
-	      <xsl:when test="../../gramGrp/pos='n' and (../../gramGrp/gen='m' or ../../gramGrp/gen='f' or ../../gramGrp/gen='mf')">
+	      <!-- when genus is given, we assume the headword is a noun -->
+	      <xsl:when test="../../gramGrp/gen">
 		<xsl:value-of select="../../gramGrp/gen"/>
 	      </xsl:when>
 	      <xsl:otherwise>
