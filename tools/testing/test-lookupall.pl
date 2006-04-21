@@ -30,6 +30,9 @@ open my $f,$ARGV[2] or die $!;
 my $words = 0;
 my $dict = Net::Dict->new($host, "Port", $port) or die $!;
 
+# TCP_NODELAY = 1
+$dict->sockopt(1, 1);
+
 my %dbhash = $dict->dbs();
 print "Available dictionaries:\n";
 while ((my $db, my $title) = each %dbhash)
