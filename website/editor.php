@@ -26,8 +26,8 @@ You can do an anonymous check out the <tt>freedict-editor</tt>
 module from %sCVS%s and try compiling it yourself:"),
 '<a href="http://sourceforge.net/cvs/?group_id=1419">', '</a>') ?></p>
 
-<blockquote cite="http://sourceforge.net/cvs/?group_id=1419"><small><tt>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/freedict login<br>
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/freedict co -P freedict-editor</tt></small></blockquote>
+<blockquote cite="http://sourceforge.net/cvs/?group_id=1419"><small><tt>cvs -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict login<br>
+cvs -z3 -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict co -P freedict-editor</tt></small></blockquote>
 
 <p><?php printf(_("For the %srequirements%s, please also refer to the documentation."),
   '<a href="editordoc.html#freedict-editor-requirements">', '</a>') ?></p>
