@@ -187,7 +187,7 @@ include $(FREEDICTDIR)/tools/Makefile.common
     <para>The <ulink url="http://sourceforge.net/cvs/?group_id=1419">FreeDict CVS
       Repository</ulink> is provided by <ulink url="http://sourceforge.net/">SourceForge</ulink>.
       The repository name as specified to the <command>cvs</command> command is
-      <literal>cvs.sourceforge.net:/cvsroot/freedict</literal>. SourceForge provides two
+      <literal>freedict.cvs.sourceforge.net:/cvsroot/freedict</literal>. SourceForge provides two
       different access methods, <literal>ext</literal> (using SSH) for developers and
       <literal>pserver</literal> for anonymous read-only access.</para>
       
@@ -236,7 +236,7 @@ include $(FREEDICTDIR)/tools/Makefile.common
 	  not the directory itself) - so please be careful!</para>
       </warning>
 
-      <para><userinput>cvs -z3 -d:ext:<replaceable>developername</replaceable>@cvs.sourceforge.net:/cvsroot/freedict import <replaceable>la1</replaceable>-<replaceable>la2</replaceable> <replaceable>vendortag</replaceable> <replaceable>releasetag</replaceable></userinput></para>
+      <para><userinput>cvs -z3 -d:ext:<replaceable>developername</replaceable>@freedict.cvs.sourceforge.net:/cvsroot/freedict import <replaceable>la1</replaceable>-<replaceable>la2</replaceable> <replaceable>vendortag</replaceable> <replaceable>releasetag</replaceable></userinput></para>
 
       <para>If your dictionary doesn't come from another place, you can invent dummy values
 	for <replaceable>vendortag</replaceable> and <replaceable>releasetag</replaceable>.
