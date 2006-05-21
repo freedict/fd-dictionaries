@@ -10,7 +10,7 @@
   <!-- Has to come from the shell, as XSLT/XPath provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.5 2005-12-04 11:14:36 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.6 2006-05-21 12:57:18 micha137 Exp $</xsl:param>
   
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->
@@ -126,7 +126,7 @@ it will never be instantiated. -->
     <xsl:value-of select="$current-date"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="$stylesheet-cvsid"/>
-    <xsl:text>:&#xa;   Converted TEI file into .vok format&#xa;&#xa;</xsl:text>
+    <xsl:text>:&#xa;   Converted TEI file into text format&#xa;&#xa;</xsl:text>
   </xsl:if>
   <xsl:apply-templates/>
 </xsl:template>
