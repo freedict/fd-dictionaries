@@ -1,11 +1,12 @@
 all: freedict.po editordoc.html howto freedict-database.xml flags-bedic.php \
-	flags-evolutionary.php freedict.pot de kha ru ku
+	flags-evolutionary.php freedict.pot de kha ru ku fr
 
 freedict.po: freedict.pot
-	msgmerge -U locale/de_DE/LC_MESSAGES/freedict.po freedict.pot
-	msgmerge -U locale/kha_IN/LC_MESSAGES/freedict.po freedict.pot
-	msgmerge -U locale/ru_RU/LC_MESSAGES/freedict.po freedict.pot
-	msgmerge -U locale/ku_TR/LC_MESSAGES/freedict.po freedict.pot
+	msgmerge -U locale/de_DE/LC_MESSAGES/freedict.po $<
+	msgmerge -U locale/kha_IN/LC_MESSAGES/freedict.po $<
+	msgmerge -U locale/ru_RU/LC_MESSAGES/freedict.po $<
+	msgmerge -U locale/ku_TR/LC_MESSAGES/freedict.po $<
+	msgmerge -U locale/fr_FR/LC_MESSAGES/freedict.po $<
 
 ../freedict-editor/help/C/html/index.html:
 	$(MAKE) -C ../freedict-editor/help/C html
@@ -39,12 +40,15 @@ ru: locale/ru_RU/LC_MESSAGES/freedict.mo
 
 ku: locale/ku_TR/LC_MESSAGES/freedict.mo
 
+fr: locale/fr_FR/LC_MESSAGES/freedict.mo
+
 clean:
 	-rm -f locale/ru_RU/LC_MESSAGES/freedict.mo \
+	locale/fr_FR/LC_MESSAGES/freedict.mo \
 	locale/ku_TR/LC_MESSAGES/freedict.mo \
 	locale/kha_IN/LC_MESSAGES/freedict.mo \
 	locale/de_DE/LC_MESSAGES/freedict.mo
 	
 .PHONY: all freedict.po ~/dict/CVS/freedict-editor/help/C/html/index.html \
-	de kha ru ku
+	de kha ru ku fr
 

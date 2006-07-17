@@ -24,6 +24,7 @@
  $twoletters2threeletters = array(
   'de' => 'deu',
   'en' => 'eng',
+  'fr' => 'fra',
   'ku' => 'kur',
   'ru' => 'rus');
   
@@ -31,6 +32,7 @@
  global $langtag2locale;
  $langtag2locale = array(
   'de' => 'de_DE',
+  'fr' => 'fr_FR',
   'kha' => 'kha_IN',
   'ku' => 'ku_TR',
   'ru' => 'ru_RU',
