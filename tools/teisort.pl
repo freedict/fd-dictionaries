@@ -16,7 +16,7 @@
 #      outputting until </entry>)
 #  * maybe dict.py in the tools-directory of freedict.sf.net could do the same
 #    but i don't know python and there is less documentation and it
-#    need a tei.header - uncomfortable...
+#    needs a tei.header - uncomfortable...
 #  * we could try DB_File (see manpage), but let's try simple hash first
 #     key: <orth>-characters
 #     value: struct <entry>-offset
@@ -25,14 +25,14 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software 
+# along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 use strict;
@@ -40,30 +40,30 @@ use strict;
 sub by_dict_sort {
  my $x = $a;
  my $y = $b;
- 
+
  $x =~ s/[^\d\w\s]//gi; # remove all non-alphanumeric and non-whitespace
  $x =~ s/(.*)/\L$1/gi;  # turn lowercase
 
  $y =~ s/[^\d\w\s]//gi; # remove all non-alphanumeric and non-whitespace
  $y =~ s/(.*)/\L$1/gi;  # turn lowercase
 
- $x cmp $y;
+ $x cmp $y
  }
 
 my $file = shift;
 
-if (!defined $file) {
+unless(defined $file) {
  print STDERR "\nteisort - sort tei file without using any xml parser (not safe)\n";
  print STDERR "\n The inputfile is expected in XML or SGML TEI format, see http://www.tei-c.org/\n";
- print STDERR " Output is on stdout.\n\n"; 
+ print STDERR " Output is on stdout.\n\n";
  print STDERR " Usage: teisort <teifile>\n";
  print STDERR " <teifile> : name of tei inputfile\n\n";
- die;
+ die
  }
 
 die "Can't find file \"$file\"" unless -r $file;
 
-open(HANDLE, "<".$file);
+open HANDLE, "<".$file;
 
 print STDERR "Generating index in memory...\n";
 my ($headend, $footstart, $offset, $entry, %orths, $orth, $counter,
@@ -71,7 +71,7 @@ my ($headend, $footstart, $offset, $entry, %orths, $orth, $counter,
 
 # when we find "<entry" then we keep on reading until "</entry>",
 # but save everything inside a $entry (we could keep the whole text
-# in the hash!!! [this is was just a notice for future reference
+# in the hash!!! [this is just a notice for future reference
 # for myself]). then we look for the "<orth*>$1</orth>" and use
 # $1 as key
 my $todo = "";
@@ -87,60 +87,60 @@ my $searchmode = 0;
 
 readfile: while (<HANDLE>) {
  $tell_lastline = $tell_now;
- $tell_now = tell();
+ $tell_now = tell;
  $todo .= $_;
- 
+
  while ($todo ne "") {
- 
+
   # find end of header
   if (($searchmode == 0) && ($todo =~ /<entry/i)) { #i for case insensitivity
    $searchmode = 1;
 
-   my $eoffset = index("<entry", $todo);
-   $headend = $tell_lastline + $eoffset; warn "headoffset: $headend\n";
+   my $eoffset = index "<entry", $todo;
+   $headend = $tell_lastline + $eoffset; print STDERR "headoffset: $headend\n";
 
    $offsetOnLine -= $eoffset;
-   $todo = substr($todo,0,$eoffset);
-   next;
+   $todo = substr $todo, 0, $eoffset;
+   next
    }
-  
+
   # find beginning of entry
   if (($searchmode == 1) && ($todo =~ /<entry/i)) {
    $searchmode = 2;
-   
-   my $eoffset = index("<entry", $todo);
+
+   my $eoffset = index "<entry", $todo;
    $offset = $tell_lastline + $eoffset;
 
-   $entry = substr($todo, $eoffset);
+   $entry = substr $todo, $eoffset;
 
-   $counter++; if ($counter % 100 == 0) { print STDERR " $counter entrys\n" }
+   $counter++; if ($counter % 100 == 0) { print STDERR " $counter entries\n" }
 
    $offsetOnLine -= $eoffset;
-   $todo = substr($todo,0,$eoffset);
-   next;
+   $todo = substr $todo, 0, $eoffset;
+   next
   }
-  
+
   # find footer
   if (($searchmode == 1) && ($todo =~ /<\/body>/i)) {
    $searchmode = 3;
-   
+
    my $eoffset = index("<\/body>", $todo);
-   $footstart = $tell_lastline + $eoffset; warn "footoffset: $footstart\n";
+   $footstart = $tell_lastline + $eoffset; print STDERR "footoffset: $footstart\n";
    #$offsetOnLine -= $eoffset;
    $todo = "";#substr($todo,0,$eoffset);
-   last readfile;#exit that loop
+   last readfile #exit that loop
   }
-  
+
   # find end of entry
   if (($searchmode == 2) && ($todo =~ /<\/entry>/i)) {
    $searchmode = 1;
-   
-   my $eoffset = index("<\/entry>", $todo);
+
+   my $eoffset = index "</entry>", $todo;
    $entry .= substr($todo, 0, 8+$eoffset) . "\n";
 
    $offsetOnLine -= $eoffset;
-   $todo = substr($todo,0,$eoffset);
-   
+   $todo = substr $todo, 0, $eoffset;
+
    # find orth
    # /s modifies to treat $entry as single line
    if ($entry =~ /<orth.*>(.*)<\/orth>/s) {
@@ -149,49 +149,49 @@ readfile: while (<HANDLE>) {
     }
    else {
     #print STDERR ".";
-    warn "no orth found in entry!!! there is something wrong! Entry is <$entry>";
+    warn "no orth found in entry!!! there is something wrong! Entry is <$entry>"
     }
 
    # we may not overwrite any pair in the hash that we already have
    # but since the entry-elements are read from the tei file again,
    # the " *" is never seen in the output :)
    while(defined $orths{$orth}) { $orth .= " " }
-   
-   # save in hash 
+
+   # save in hash
    $orths{$orth}=$offset;
-   
-   next;
-   };
+
+   next
+   }
 
   # else
   $entry .= $todo;
   $todo = "";
-  $offsetOnLine = 0;
+  $offsetOnLine = 0
   }
  }
 
-print STDERR " $counter entrys\n";
+print STDERR " $counter entries\n";
 
 ###############################################################
-   
-print STDERR "Outputting sorted entrys...\n";
+
+print STDERR "Outputting sorted entries...\n";
 
 # output header
 my $header;
-if(!sysseek HANDLE,0,0) { die }
+die unless sysseek HANDLE, 0, 0;
 sysread HANDLE, $header, $headend;
 print $header;
 
 $counter = 0;
 
 # this one simple sort call does the keywork!
-foreach $orth (sort by_dict_sort keys %orths) { 
+foreach $orth (sort by_dict_sort keys %orths) {
 
- $counter++; if ($counter % 100 == 0) { print STDERR " $counter entrys\n" }
- 
+ $counter++; if ($counter % 100 == 0) { print STDERR " $counter entries\n" }
+
  $offset = $orths{$orth};
  #print STDERR "offset: $offset\n";
- 
+
  sysseek HANDLE, $offset, 0;
 
  # output until </entry>
@@ -205,20 +205,17 @@ foreach $orth (sort by_dict_sort keys %orths) {
   if ($c eq substr($stopword, $stopwordpos, 1)) { $stopwordpos++ }
   else { $stopwordpos = 0 }
   }
- until ($stopwordpos == $stopwordlength);
- 
- } # foreach
- 
-# output footer 
-my $footer;
-if(!sysseek HANDLE,$footstart,0) { die }
+ until $stopwordpos == $stopwordlength;
 
-my @stats = stat HANDLE;if (!@stats) { die } # fetch tei filesize
-sysread HANDLE, $footer, $stats[7]-$footstart;
+ } # foreach
+
+# output footer
+my $footer;
+die unless sysseek HANDLE, $footstart, 0;
+my @stats = stat HANDLE;# fetch tei filesize
+die unless @stats;
+sysread(HANDLE, $footer, $stats[7]-$footstart);
 print $footer;
 
-print STDERR " $counter entrys\n";
- 
-close HANDLE;
-
-# EOF
+print STDERR " $counter entries\n";
+close HANDLE

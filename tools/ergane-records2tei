@@ -36,17 +36,28 @@ sub xmlEscape
 }
 
 # For the hash values see also The FreeDict HOWTO, Table 5.1. Part of Speech
-# Typology.
+# Typology.  The Ergane typology is more fine grained.
 my %t2p =
 (
   0 => 'n', # Nomen
-  1 => 'v', # Verb
+  1 => 'adj', # Adjective
   2 => 'adv', # Adverb
-  3 => 'v', # Verb (what is the difference to 1? transitive/intransitive?)
-#  4 => 'v', # Numeral
+  3 => 'v', # Verb
+  4 => 'num', # Numeral
+  5 => 'prep', # Preposition
+  6 => 'interj', # Interjection
+  7 => 'pron', # Relative Pronoun
+  8 => 'conj', # Conjunction
   10 => 'pron', # Pronoun
+  11 => 'art', # Article
+  12 => 'pron', # Personal Pronoun
+  13 => 'pron', # Demonstrative Pronoun
+  14 => 'pron', # Indefinite Pronoun
+  15 => 'pron', # Reflexive Pronoun
+  16 => 'pron', # Possesive Pronoun
+  17 => 'num', # Ordinal Number
+  20 => 'pron', # Interrogative Pronoun
   23 => 'n', # Nomen Proprium
-  # vt vi vti adj conj prep interj pron art num
 );
 
 sub Type2Pos
@@ -77,10 +88,10 @@ sub formatEntry
   my $orth = xmlEscape($XEntry);
   $TypesCount{$Type}++;
   my $pos = Type2Pos($Type);
-  print STDERR "Line $.: Unknown Type $Type ('$XEntry')"
-    unless defined $pos || $TypesCount{$Type}>1;
+  print STDERR "Line $.: Unknown Type $Type ('$XEntry')\n"
+    unless defined $pos;# || $TypesCount{$Type}>1;
   my $gramGrp = (defined $pos) ?
-    "\n<gramGrp><pos>$pos</pos></gramGrp>" : '';
+    "\n  <gramGrp><pos>$pos</pos></gramGrp>" : '';
   print <<"END";
 <entry>
   <form><orth>$orth</orth></form>$gramGrp
@@ -108,7 +119,7 @@ while(<>)
   $xXEntry =~ s/\s+$//;
   #print STDERR "Line $.: wXEntry='$wXEntry' xXEntry='$xXEntry'\n";
   # collect <orth>, <pron>, <tr>s by <trans> and <sense>s
-  if(undef $XEntry || $wXEntry ne $XEntry || $wType ne $Type)
+  if(not(defined($XEntry)) || $wXEntry ne $XEntry || $wType ne $Type)
   {
     if(defined $XEntry)
     {

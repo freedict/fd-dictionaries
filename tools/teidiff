@@ -1,0 +1,544 @@
+#!/usr/bin/perl
+# $Revision: 1.1 $
+
+use warnings;
+use strict;
+use Getopt::Long;
+use Pod::Usage;
+use XML::DOM;
+use Text::Diff;
+
+my ($verbose, $help);
+my $count = 1;
+my $base;
+my $output;
+GetOptions (
+  "verbose"  => \$verbose,
+  "help|?"  => \$help,
+  "count" => \$count,
+  "base=s"   => \$base,
+  "output=s"   => \$output) or exit 1;
+
+pod2usage(-exitval => 1, -verbose => 2) if $help;
+
+if (scalar @ARGV != 2)
+{
+  print STDERR
+    "I need exactly 2 filenames to operate.  For help use --help.\n";
+  exit 1
+}
+
+if (defined $output)
+{
+  $output = uc $output;
+  unless ($output =~
+    /^FILES|UNMODIFIED|ADDED|DELETED|MODIFIED_(LA1|LA2|MULTIMATCH)$/)
+  {
+    print STDERR "Invalid category: $output\n";
+    exit 1
+  }
+}
+
+my $parser = new XML::DOM::Parser;
+print STDERR "Parsing $ARGV[0]... " if $verbose;
+my $doc1 = $parser->parsefile ($ARGV[0]);
+my @entries1 = $doc1->getElementsByTagName ("entry");
+print STDERR scalar @entries1, " nodes\nParsing $ARGV[1]... " if $verbose;
+my $doc2 = $parser->parsefile ($ARGV[1]);
+my @entries2 = $doc2->getElementsByTagName ("entry");
+print STDERR scalar @entries2, " nodes\n" if $verbose;
+
+sub pretty_print
+{
+  my ($node, $indent) = @_;
+  my $type = $node->getNodeType;
+  return $node->getNodeValue if $type == TEXT_NODE;
+  if ($type == ELEMENT_NODE)
+  {
+    $indent = 0 unless defined $indent;
+    my $contents = undef;
+    for my $c ($node->getChildNodes)
+    {
+      my $cpp = pretty_print ($c, $indent+2);
+      if (defined $contents) { $contents .= $cpp; next }
+      $contents = $cpp
+    }
+    my $attrs = '';
+    for my $a ($node->getAttributes->getValues)
+    {
+      $attrs .= ' ' . $a->getNodeName . '=' . $a->getNodeValue
+    }
+
+    return ' ' x $indent
+      . '<' . $node->getNodeName . $attrs . '/>' unless defined $contents;
+    return ' ' x $indent
+      . '<' . $node->getNodeName . $attrs . '>'
+      . ($node->getFirstChild->getNodeType == ELEMENT_NODE ? "\n" : '')
+      . $contents
+      . ($node->getLastChild->getNodeType == ELEMENT_NODE ? ' ' x $indent : '')
+      . '</' . $node->getNodeName . ">\n"
+  }
+  die "Unhandled node type: ", $node->getNodeType
+}
+
+my (@unmodified, @added, @deleted, @modified_form, @modified_senses,
+   @modified_multimatch, %entry2form, %entry2senses, %entry2complete,
+   %complete2entry1, %form2entry1, %senses2entry1,
+   %complete2entry2, %form2entry2, %senses2entry2);
+
+# adds an entry to an arrayref
+sub put
+{
+  my ($hashref, $index, $entry) = @_;
+  if (exists $hashref->{$index})
+  { push @{ $hashref->{$index} }, $entry }
+  else
+  { $hashref->{$index} = [ $entry ] }
+}
+
+# deletes an entry from an arrayref
+# the entry may occur only once
+sub remove
+{
+  my ($hashref, $index, $entry) = @_;
+  die join ' ', caller unless defined $hashref && defined $index;
+  return unless exists $hashref->{$index};
+  my @entries = @{ $hashref->{$index} };
+  my $count = scalar @entries;
+  if ($count == 1)
+  {
+    return unless $entries[$#entries] eq $entry;
+    delete $hashref->{$index};
+    return
+  }
+  for (my $i=0; $i <= $count ; $i++)
+  {
+    next unless exists $entries[$i];
+    next unless $entries[$i] == $entry;
+    delete $entries[$i];
+    return
+  }
+  warn "No entry removed";
+}
+
+# Removes the entries in $entry2arrayref from the $x2entryhashrefs given.
+# Each $x2entryhashref argument must be followed by an $entry2xhashref.
+sub removeall
+{
+  my $entryarrayref = shift;
+  while(my $x2entryhashref = shift)
+  {
+    my $entry2x = shift;
+    die unless defined $entry2x;
+    for my $entry (@$entryarrayref)
+    { remove $x2entryhashref, $entry2x->{$entry}, $entry }
+  }
+}
+
+sub find_unmodified_or_modified
+{
+  my $found = 0;
+
+  for (keys %complete2entry1)
+  {
+    next if 1 < scalar @{ $complete2entry1{$_} };
+    next unless exists $complete2entry2{$_};
+    next if 1 != scalar @{ $complete2entry2{$_} };
+    my $entry1 = $complete2entry1{$_}->[0];
+    my $entry2 = $complete2entry2{$_}->[0];
+
+    push @unmodified, $entry1;
+    delete $complete2entry1{$_};
+    delete $complete2entry2{$_};
+    remove \%form2entry1, $entry2form{$entry1}, $entry1;
+    remove \%form2entry2, $entry2form{$entry1}, $entry2;
+    remove \%senses2entry1, $entry2senses{$entry1}, $entry1;
+    remove \%senses2entry2, $entry2senses{$entry1}, $entry2;
+    $found++
+  }
+
+  for (keys %form2entry1)
+  {
+    next if 1 < scalar @{ $form2entry1{$_} };
+    next unless exists $form2entry2{$_};
+    next if 1 != scalar @{ $form2entry2{$_} };
+    my $entry1 = $form2entry1{$_}->[0];
+    my $entry2 = $form2entry2{$_}->[0];
+
+    push @modified_senses, [ $entry1, $entry2 ] ;
+
+    remove \%complete2entry1, $entry2complete{$entry1}, $entry1;
+    remove \%complete2entry2, $entry2complete{$entry2}, $entry2;
+    delete $form2entry1{$_};
+    delete $form2entry2{$_};
+    remove \%senses2entry1, $entry2senses{$entry1}, $entry1;
+    remove \%senses2entry2, $entry2senses{$entry2}, $entry2;
+    $found++
+  }
+
+  for (keys %senses2entry1)
+  {
+    next if 1 < scalar @{ $senses2entry1{$_} };
+    next unless exists $senses2entry2{$_};
+    next if 1 != scalar @{ $senses2entry2{$_} };
+    my $entry1 = $senses2entry1{$_}->[0];
+    my $entry2 = $senses2entry2{$_}->[0];
+
+    push @modified_form, [ $entry1, $entry2 ] ;
+
+    remove \%complete2entry1, $entry2complete{$entry1}, $entry1;
+    remove \%complete2entry2, $entry2complete{$entry2}, $entry2;
+    remove \%form2entry1, $entry2form{$entry1}, $entry1;
+    remove \%form2entry2, $entry2form{$entry2}, $entry2;
+    delete $senses2entry1{$_};
+    delete $senses2entry2{$_};
+    $found++
+  }
+
+  print STDERR "$found nodes matched\n" if $verbose;
+  return $found
+}
+
+sub find_added_deleted
+{
+  # an entry was deleted/added when no match
+  # for it exists in the other file
+  # since single matches should be sorted out by now,
+  # only multimatches remain to be skipped
+  for (keys %complete2entry1)
+  {
+    # the next line should never apply
+    next if exists $complete2entry2{$_};
+    my $skip = 0;
+    for my $entry1 (@{ $complete2entry1{$_} })
+    {
+      next unless exists $form2entry2{ $entry2form{$entry1} }
+               || exists $senses2entry2{ $entry2senses{$entry1} };
+      $skip = 1;
+      last
+    }
+    next if $skip;
+
+    push @deleted, @{ $complete2entry1{$_} };
+    removeall $complete2entry1{$_},
+      \%form2entry1, \%entry2form,
+      \%senses2entry1, \%entry2senses;
+    delete $complete2entry1{$_}
+  }
+  for (keys %complete2entry2)
+  {
+    next if exists $complete2entry1{$_};
+    my $skip = 0;
+    for my $entry2 (@{ $complete2entry2{$_} })
+    {
+      next unless exists $form2entry1{ $entry2form{$entry2} }
+               || exists $senses2entry1{ $entry2senses{$entry2} };
+      $skip = 1;
+      last
+    }
+    next if $skip;
+
+    push @added, @{ $complete2entry2{$_} };
+    removeall $complete2entry2{$_},
+      \%form2entry2, \%entry2form,
+      \%senses2entry2, \%entry2senses;
+    delete $complete2entry2{$_}
+  }
+}
+
+# Actually there is nothing more to find.  We just put together the remains
+# of the lists.
+sub find_modified_multimatch
+{
+  my (@from1, @from2);
+  for (values %complete2entry1)
+  { push @from1, @$_ }
+  for (values %complete2entry2)
+  { push @from2, @$_ }
+  push @modified_multimatch, [ @from1 ], [ @from2 ]
+}
+
+sub cache_toStrings
+{
+  my ($entries, $complete2entry, $form2entry, $senses2entry) = @_;
+  for (@$entries)
+  {
+    # a complete comparison key is easy (if canonicalised XML is used)
+    my $scomplete = $_->toString ();
+    put $complete2entry, $scomplete, $_;
+    $entry2complete{$_} = $scomplete;
+    # comparison key for form: concat <form> and <gramGrp> child nodes
+    # comparison key for senses: concatenate all other child nodes
+    my @children = $_->getChildNodes ();
+    my $ssenses = my $sforms = '';
+    for my $child (@children)
+    {
+      if ($child->getTagName () =~ /^form|gramGrp$/)
+      {
+	$sforms .= $child->toString ();
+	next
+      }
+      $ssenses .= $child->toString ()
+    }
+    put $form2entry, $sforms, $_;
+    $entry2form{$_} = $sforms;
+    put $senses2entry, $ssenses, $_;
+    $entry2senses{$_} = $ssenses
+  }
+}
+
+print STDERR "Caching results of toString()..." if $verbose;
+cache_toStrings \@entries1,
+  \%complete2entry1, \%form2entry1, \%senses2entry1;
+cache_toStrings \@entries2,
+  \%complete2entry2, \%form2entry2, \%senses2entry2;
+print STDERR "\n" if $verbose;
+
+my $i = 1;
+do
+{
+  print STDERR "Comparison iteration ", $i, "... " if $verbose;
+  $i++
+}
+while find_unmodified_or_modified;
+
+find_added_deleted;
+find_modified_multimatch;
+
+print STDERR "\nFinished comparison.\n" if $verbose;
+
+if ($count)
+{
+  my $unmodified = scalar @unmodified;
+  my $added = scalar @added;
+  my $deleted = scalar @deleted;
+  my $modified_form = scalar @modified_form;
+  my $modified_senses = scalar @modified_senses;
+  my $mm1 = scalar @{ $modified_multimatch[0] };
+  my $mm2 = scalar @{ $modified_multimatch[1] };
+  print "Unmodified:\t\t$unmodified\n";
+  print "Added:\t\t\t$added\n";
+  print "Deleted:\t\t$deleted\n";
+  print "Modified <form>:\t$modified_form\n";
+  print "Modified <sense>s:\t$modified_senses\n";
+  print "Modified multimatch:\t$mm1 + $mm2\n";
+  my $sum1 =
+    $unmodified + $deleted + $modified_form + $modified_senses + $mm1;
+  my $sum2 =
+    $unmodified + $added + $modified_form + $modified_senses + $mm2;
+  print STDERR "file1: unmod + del + mod_form + mod_sense + mm1 = ", $sum1,
+    ($sum1 == scalar @entries1 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
+  print STDERR "file2: unmod + add + mod_form + mod_sense + mm2 = ", $sum2,
+    ($sum2 == scalar @entries2 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
+}
+
+sub print_category_fh
+{
+  my ($fh, $category) = @_;
+  if ($category eq 'UNMODIFIED')
+  {
+    print $fh pretty_print $_ for (@unmodified);
+    return
+  }
+  if ($category eq 'ADDED')
+  {
+    print $fh pretty_print $_ for (@added);
+    return
+  }
+  if ($category eq 'DELETED')
+  {
+    print $fh pretty_print $_ for (@deleted);
+    return
+  }
+  if ($category eq 'MODIFIED_LA1')
+  {
+    for (@modified_form)
+    {
+      my $pretty1 = pretty_print $_->[0];
+      my $pretty2 = pretty_print $_->[1];
+      my %options = ();
+      my $diff = diff \$pretty1, \$pretty2, \%options;
+      print $fh $diff
+    }
+    return
+  }
+  if ($category eq 'MODIFIED_LA2')
+  {
+    for (@modified_senses)
+    {
+      my $pretty1 = pretty_print $_->[0];
+      my $pretty2 = pretty_print $_->[1];
+      my %options = ();
+      my $diff = diff \$pretty1, \$pretty2, \%options;
+      print $fh $diff
+    }
+    return
+  }
+  if ($category eq 'MODIFIED_MULTIMATCH')
+  {
+    # output entry sets
+    print $fh "<file1>\n";
+    print $fh pretty_print $_ for (@{ $modified_multimatch[0] });
+    print $fh "</file1>\n<file2>\n";
+    print $fh pretty_print $_ for (@{ $modified_multimatch[1] });
+    print $fh "</file2>\n";
+    return
+  }
+  warn "Invalid category: $category"
+}
+
+sub print_category_file
+{
+  my ($filename, $category) = @_;
+  my $fh;
+  unless (open $fh, '>:utf8', $filename)
+  {
+    print STDERR "Could not open $filename for writing: $!\n";
+    return
+  }
+  print STDERR "Writing $filename... " if $verbose;
+  print_category_fh $fh, $category;
+  close $fh;
+  print STDERR "OK\n" if $verbose
+}
+
+exit unless defined $output;
+$base = $ARGV[0] . '-' . $ARGV[1] unless defined $base;
+if ($output eq 'FILES')
+{
+  print_category_file $base . '-unmodified.teipart', 'UNMODIFIED';
+  print_category_file $base . '-added.teipart', 'ADDED';
+  print_category_file $base . '-deleted.teipart', 'DELETED';
+  print_category_file $base . '-modified_la1.udiff', 'MODIFIED_LA1';
+  print_category_file $base . '-modified_la2.udiff', 'MODIFIED_LA2';
+  print_category_file $base . '-modified_multimatch.xml',
+    'MODIFIED_MULTIMATCH';
+  exit
+}
+
+# print only category in $output to STDOUT
+open my $fh, '>:utf8',' -' or die;
+print_category_fh $fh, $output;
+close $fh;
+
+# __DATA__, keep a file1 and a file2 and the outfiles
+# XXX testcases, call with a commandline switch
+
+__END__
+
+=head1 NAME
+
+teidiff - Compare the entries in two TEI XML dictionary files
+
+=head1 SYNOPSIS
+
+teidiff [options] file1 file2
+
+ Options:
+   --base	Basename for output files
+   --[no]count	Print number of added/modified/deleted entries to STDOUT
+   --help	This manual page
+   --output	Entry category to print to STDOUT
+   --verbose	Tell what I'm doing
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--base BASENAME>
+
+Basename of output files.  Default: F<file1-file2>
+
+=item B<--[no]count>
+
+Print number of added/modified/deleted entries to STDOUT. Default: on.
+
+=item B<--help>
+
+Print this manual page and exit.
+
+=item B<--verbose>
+
+Print information about the current work performed to STDERR.
+
+=item B<--output CATEGORY>
+
+Can be set to the string "FILES" or a category of entries to output to
+STDOUT.  By default nothing is output.  If "FILES" is used, the
+filenames will follow the scheme F<BASENAME-CATEGORY.(diff|teipart)>
+
+The following categories are allowed:
+
+=over 4
+
+=item UNMODIFIED
+
+Unmodified entries.  They appear exactly the same in both versions of
+the dictionary.
+
+=item ADDED
+
+Entries not present in file1, but in file2.  They were added in
+F<file2>.
+
+=item DELETED
+
+Entries present in file1, but not in file2.  They were deleted in
+F<file2>.
+
+=item MODIFIED_LA1
+
+Entries where the contents of the <form> element were modified, but
+the contents of the <sense> elements are unmodified.
+
+=item MODIFIED_LA2
+
+Entries where the contents of the <sense> element(s) were modified,
+but the contents of the <form> elements are unmodified.
+
+=item MODIFIED_MULTIMATCH
+
+Entries where the contents of the <form> or <sense> elements were modified (but
+not both at the same time), but a corresponding entry was not found, because
+multiple matches exist ("multimatch").
+
+This category is output as two sets - the entries from file1 and the entries
+from file2.  One could build finer sets, consisting of only the entries
+between which the multimatch relationship exists.  But this information is
+not useful enough for implementation currently.
+
+=back
+
+=back
+
+=head1 DESCRIPTION
+
+This program parses the given input files and compares the entries
+in them, putting them in B<categories>.  One or all categories can be
+output.
+
+=head1 NOTES
+
+Normally ignorable blank space should not account for differences.
+C<xmllint> can be used as a filter to drop ignorable blank spaces:
+
+  xmllint --noblanks infile.xml >outfile.xml
+
+C<xmllint> also comes with a C<--c14n> option, but using it is unadvisable,
+because it adds default attributes, bloating the file submerging
+relevant differences in a sea of explicitness.
+
+=head1 TODO
+
+Integrating the functionality of this command line tool into
+FreeDict-Editor would facilitate comfortable browsing of the
+differences.
+
+=head1 AUTHOR AND LICENCE
+
+Author: Michael Bunk, 2006
+
+This is free software, licensed under GPL.
+
+=cut
+
