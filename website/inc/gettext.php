@@ -26,6 +26,7 @@
   'en' => 'eng',
   'fr' => 'fra',
   'ku' => 'kur',
+  'ar' => 'ara',
   'ru' => 'rus');
   
  // the following also defines which locales we offer
@@ -35,6 +36,7 @@
   'fr' => 'fr_FR',
   'kha' => 'kha_IN',
   'ku' => 'ku_TR',
+  'ar' => 'ar_EG',
   'ru' => 'ru_RU',
   );
  arsort($langtag2Q);
