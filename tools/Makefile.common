@@ -214,7 +214,7 @@ install: $(dictname).dict.dz $(dictname).index
 	install -m 644 $^ $(DESTDIR)
 	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
 
-uninstall: 
+uninstall:
 	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
 	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
 

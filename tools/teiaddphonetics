@@ -1,0 +1,543 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+use Getopt::Long;
+use Pod::Usage;
+use XML::DOM;
+use FileHandle;
+use IPC::Open3;
+use Cwd;
+
+my $revision='$Revision: 1.1 $';
+my $verbose = 0;
+my ($help, $input, $slang, $list_slang, $mbrdico_path);
+my $gra2pho_path;
+my $output = '-';
+my $overwrite = 0;
+my $count = 1;
+GetOptions (
+  "verbose+"  => \$verbose,
+  "help|?"  => \$help,
+  "source-language=s" => \$slang,
+  "list-source-languages" => \$list_slang,
+  "mbrdico-path=s" => \$mbrdico_path,
+  "overwrite" => \$overwrite,
+  "count"   => \$count,
+  "input=s"   => \$input,
+  "output=s"   => \$output) or exit 1;
+
+pod2usage(-exitval => 1, -verbose => 2) if $help;
+
+print STDERR "Revision: $revision\n" if $verbose;
+
+if ($list_slang)
+{
+  print "ara eng fra nld spa deu\n";
+  exit
+}
+
+unless ($input)
+{
+  print STDERR "--input required\n";
+  exit 2
+}
+
+unless ($slang)
+{
+  if ($input !~ /([a-z]{3})-([a-z]{3})[^\/]*$/)
+  {
+    print STDERR "Cannot guess source language.  Please specify --slang.\n";
+    exit 2
+  }
+  $slang = $1;
+  print STDERR "Guessed source language: $slang\n" if $verbose
+}
+
+my $gra2pho;
+if ($slang =~ /^ara|eng|fra|nld|spa$/)
+{
+  my %slang2ini = (
+    ara => 'arabic',
+    eng => 'british',
+    fra => 'french',
+    nld => 'dutch',
+    spa => 'spanish');
+  my %slang2env = (
+    ara => 'ar1',
+    eng => 'en1',
+    fra => 'fr1',
+    nld => 'nl1',
+    spa => 'sp1');
+  $gra2pho = 'mbrdico ' . $slang2ini{$slang} . '.ini';
+  $gra2pho_path = $mbrdico_path if $mbrdico_path;
+  $ENV{$slang2env{$slang}} = 'cat >/dev/null'
+}
+elsif ($slang eq 'deu')
+{ $gra2pho = 'txt2pho' }
+else
+{
+  print STDERR "No grapheme-to-phoneme filter known for source language '$slang'.\n";
+  exit 2
+}
+print STDERR "Selected grapheme-to-phoneme filter: $gra2pho\n" if $verbose;
+
+my ($gra2pho_pid);
+$SIG{PIPE} = sub
+{
+  print STDERR "Got sigpipe from $gra2pho, aborting:\n";
+  print STDERR <PHO>;
+  exit 2
+};
+
+eval
+{
+  my $oldcwd = cwd();
+  if (defined $gra2pho_path and not chdir $gra2pho_path)
+  {
+    print STDERR "$!: $gra2pho_path";
+    exit 2
+  }
+  my $exec = $gra2pho;
+  $exec = "./$exec" if $gra2pho_path;
+  $gra2pho_pid = open3 \*GRA, \*PHO, 0, $exec;
+  chdir $oldcwd || die if defined $gra2pho_path;
+};
+die $@ if $@;
+print STDERR "$gra2pho: pid=$gra2pho_pid\n" if $verbose;
+
+if ($gra2pho =~ /^mbrdico/)
+{
+  my $l = <PHO>;
+  die "mbrdico init failed: $l" unless $l eq "Wait while loading data\n";
+  $l = <PHO>;
+  die "mbrdico init failed: $l" unless $l eq "Ready:\n";
+}
+
+my $parser = new XML::DOM::Parser;
+print STDERR "Parsing $input... " if $verbose;
+my $doc = $parser->parsefile ($input);
+my $entries = $doc->getElementsByTagName ("entry");
+print STDERR $entries->getLength, " nodes\n" if $verbose;
+
+my %sampa2unicode =
+(
+  'I' => 'i',
+  'e' => 'e',
+  '{' => 'æ',
+  'V' => 'ʌ',
+  'Q' => 'ɔ',
+  'U' => 'u',
+  '@' => 'ə',
+
+  'i:' => 'iː',
+  'A:' => 'ɑː',
+  'O:' => 'ɔː',
+  'u:' => 'uː',
+  '3:' => 'əː',
+
+  'eI' => 'ei',
+  'aI' => 'ai',
+  'OI' => 'ɔi',
+  '@U' => 'ou',
+  'aU' => 'au',
+  'I@' => 'iə',
+  'e@' => 'ɛə',
+  'U@' => 'eə',
+
+  'p' => 'p',
+  't' => 't',
+  'k' => 'k',
+
+  'b' => 'b',
+  'd' => 'd',
+  'g' => 'g',
+
+  'v' => 'v',
+  'z' => 'z',
+  'Z' => 'ʒ',
+
+  'f' => 'f',
+  's' => 's',
+  'S' => 'ʃ',
+
+  'tS' => 'tʃ',
+  'dZ' => 'dʒ',
+  'T' => 'θ',
+  'D' => 'ð',
+
+  'h' => 'h',
+
+  'm' => 'm',
+  'n' => 'n',
+  'N' => 'ŋ',
+
+  'l' => 'l',
+
+  'r' => 'r',
+  'w' => 'w',
+  'j' => 'j',
+
+#  'tj' => '',
+  'dj' => 'ʒ',
+  'x' => 'x',
+  'G' => 'ɤ°',
+#  'nj' => '',
+#  'L' => '',
+#  'R' => '',
+#  'W' => '',
+#  'J' => '',
+  'Y' => 'ɵ',
+  'E' => 'ɛ',
+  'A' => 'ɑ',
+  'O' => 'ɔ',
+  'i' => 'i',
+  'y' => 'y',
+  '2' => 'ø',
+  'a' => 'a',
+  'u' => 'u',
+  'o' => 'o',
+  'Ei' => 'ɛi˘',
+  '9y' => 'əʏ',
+  'Au' => 'ɑu',
+#  'I:' => '',
+#  'Y:' => '',
+#  'O:' => '',
+#  'E~' => '',
+#  'Y~' => '',
+#  'A~' => '',
+#  'O~' => '',
+
+# Extras for French:
+  'R' => 'r',
+  'e~' => 'ɛ̃',
+  'a~' => 'ã',
+  'o~' => 'õ',
+  '9~' => 'œ̃',
+  '9' => 'œ',
+  'H' => 'ɥ',
+
+# Extras for German:
+  'o:' => 'oː',
+  'a:' => 'aː',
+  'e:' => 'eː',
+  'E:' => 'ɛː',
+  'C' => 'ç',
+  'OY' => 'ɔi',
+  '9:' => 'œ̃',
+  '2:' => 'øː',
+  'a^' => 'ã',
+  'o^' => 'õ',
+  'E^' => 'ɛ̃',
+  'y' => 'y',
+  'y:' => 'yː',
+  '6' => 'r', # I don´t know what it should be
+
+  # ignore these
+  ':' => '',
+  "'" => ''
+);
+
+# convert Sampa (ASCII) encoded phonetics into Unicode phonetics
+# takes a list of SAMPA codes as input, returns a string
+sub sampa2unicode
+{
+  my $unicode = '';
+  while ($_ = shift)
+  {
+    print STDERR $_ if $verbose>2;
+    if (defined $sampa2unicode{$_})
+    {
+      $unicode .= $sampa2unicode{$_};
+      next
+    }
+    #next if ($_ eq ":" or $_ eq "'";
+    $sampa2unicode{$_} = '?';# die only once per unknown sampa code
+    die "Unknown Sampa code \"$_\""
+  }
+  return $unicode
+}
+
+binmode STDERR, ':utf8';
+binmode STDOUT, ':utf8';
+binmode GRA, ':utf8';
+my %count;
+for (my $i=0; $i<$entries->getLength; $i++)
+{
+  if ($i % 100 == 0)
+  {
+    unless (kill 0 => $gra2pho_pid)
+    {
+      warn "$gra2pho exited or changed its UID"
+    }
+    printf STDERR "%2.0f%% completed\r", $i/$entries->getLength*100
+      if $verbose;
+  }
+  my $entry = $entries->item($i);
+  my @orths = $entry->getElementsByTagName ("orth");
+  unless (1 == scalar @orths)
+  {
+    print STDERR "Skipping entry with multiple <orth> elements\n"
+      if $verbose;
+    next
+  }
+  my $gra = $orths[0]->getFirstChild()->getNodeValue();
+
+  my $verb_or_not = '';
+  if ($gra2pho =~ /^mbrdico /)
+  {
+    # prefix \N?VERB (mainly for French) for cases where the pronunciation is
+    # not defined just by the grapheme
+    my @poss = $entry->getElementsByTagName ("pos");
+    if (1 == scalar @poss)
+    {
+      my $pos = $poss[0]->getFirstChild()->getNodeValue();
+      if ($pos =~ /^v(i|t|ti)?$/)
+      { $verb_or_not = '\VERB ' }
+      elsif ($pos =~ /^n|adj|adv|conj|prep|pron|art|num|int$/)
+      { $verb_or_not = '\NVERB ' }
+      else
+      {
+	print STDERR "Unknown part-of-speech tag: ", $pos, "\n"
+	  if $verbose
+      }
+      print STDERR $verb_or_not . $gra . " $pos\n" if $verbose>1
+    }
+    elsif (1 < scalar @poss)
+    {
+      print STDERR "Entry contains >1 <pos> elements: $gra\n"
+        if $verbose
+    }
+  }
+  print GRA $verb_or_not . $gra . "\n";
+
+  # Extract SAMPA encoded phonetics from lines into a list
+  my @sampa = ();
+  my $proso = "";# to carry over a line to the next
+  local $_;
+  my $end = $gra2pho =~ /^mbrdico / ? '^#\n$' : '^_ 483  ';
+  print STDERR "end: $end\n" if $verbose>1;
+  while (($_ = <PHO>) !~ /$end/)
+  {
+    print STDERR "line: $_" if $verbose>1;
+
+    next if /^; Target/;
+    if (/^; Proso (.+)\n$/)
+    { $proso =  $1; next }
+    next if /^(\n$)|_/;
+    if (/\w+/)
+    {
+      #s/^\s+//;
+      push @sampa, "'" if $proso eq '1';
+      push @sampa, '"' if $proso eq '0';
+
+      /^\s*(\S+)/;
+      push @sampa, $+;
+      push @sampa, ":" if $proso eq ':';
+      $proso = "";
+      next
+    }
+    die "Unknown line: '$_'";
+  }
+  print STDERR "sampa: @sampa\n" if $verbose>1;
+  my $unicode;
+  eval
+  {
+    $unicode = sampa2unicode @sampa;
+    print STDERR "unicode: $unicode\n" if $verbose>1
+  };
+  if ($@) { print STDERR "$gra: @sampa: $@\n"; redo }
+
+  my @prons = $entry->getElementsByTagName ("pron");
+  if(0 == scalar @prons)
+  {
+    my @forms = $entry->getElementsByTagName ("form");
+    die unless 1 == scalar @forms;
+    my $pron = $forms[0]->appendChild ($doc->createElement ("pron"));
+    $pron->addText ($unicode);
+    $count{added}++;
+    next
+  }
+  if(1 == scalar @prons)
+  {
+    my $pron = $prons[0]->getFirstChild()->getNodeValue();
+    if ($pron eq $unicode)
+    { $count{already_there}++; next }
+    if ($overwrite)
+    { $count{overwritten}++; next }
+    $count{kept}++; next
+  }
+  if(1 < scalar @prons)
+  {
+    print STDERR "Skipping entry with multiple <pron> elements\n";
+    next
+  }
+}
+
+print STDERR "\rGot all phonetics\n" if $verbose;
+close GRA;
+close PHO;
+
+if ($count)
+{
+  for (keys %count)
+  { print "$_:", ' ' x (15-length($_)), $count{$_}, " entries\n" }
+}
+
+# prepend a <change> element to <change>s in TEI <revisionDesc>
+my @revisionDescs = $doc->getElementsByTagName ("revisionDesc");
+die unless 1 == scalar @revisionDescs;
+if(0 == scalar @revisionDescs)
+{
+  print STDERR "Creating <revisionDesc>\n" if $verbose;
+  my @teiHeaders = $doc->getElementsByTagName ("teiHeader");
+  die unless 1 == scalar @teiHeaders;
+  push @revisionDescs, $teiHeaders[0]->appendChild
+    ($doc->createElement ("revisionDesc"));
+}
+my $change = $revisionDescs[0]->insertBefore($doc->createElement ("change"),
+  $revisionDescs[0]->getFirstChild());
+$change->addText ("\n  ");
+my $date = $change->appendChild($doc->createElement ("date"));
+$change->addText ("\n  ");
+my $respStmt = $change->appendChild($doc->createElement ("respStmt"));
+$change->addText ("\n  ");
+my $item = $change->appendChild($doc->createElement ("item"));
+$change->addText ("\n  ");
+my $name = $respStmt->appendChild($doc->createElement ("name"));
+$date->addText (scalar localtime);
+$name->addText ("$0 $revision");
+$item->addText ("Phonetics imported from $gra2pho");
+
+# save new .tei
+if ($output eq '-') { $doc->print (\*STDOUT) }
+else
+{
+  # doesn't understand utf8: $doc->printToFile ($output)
+  # so do it another way
+  my $f = new FileHandle ($output, "w");
+  binmode $f, ':utf8';
+  $doc->printToFileHandle ($f);
+}
+
+__END__
+
+=head1 NAME
+
+teiaddphonetics - Add pronunciation information to a dictionary
+
+=head1 SYNOPSIS
+
+teiaddphonetics [options] --input F<INPUT> | --list-source-languages
+
+=head1 DESCRIPTION
+
+This tool adds pronunciation information to the entries of a Text Encoding
+Initiative XML file.  The contents of the <orth> elements are fed to a
+grapheme-to-phoneme filter.  The output of the filter is converted into
+IPA Unicode and inserted as <pron> element into the entry.
+
+After adding phonectics an entry is prepended to the TEI <revisionDesc> in the
+<teiHeader> and the resulting XML is written to STDOUT or a file.
+
+We know two filters currently.  Both are components written for the MBROLA
+project, see L<http://tcts.fpms.ac.be/synthesis/mbrola.html>.  Their output
+uses the SAMPA encoding, see
+L<http://www.phon.ucl.ac.uk/home/sampa/index.html>.
+
+=over 4
+
+=item F<txt2pho>
+
+Language: deu
+
+Homepage: L<http://www.ikp.uni-bonn.de/dt/forsch/phonetik/hadifix/HADIFIXforMBROLA.html>
+
+=item F<mbrdico>
+
+Languages: ara eng fra nld spa
+
+Homepage: L<http://www.tcts.fpms.ac.be/synthesis/mbrdico/>
+
+=back
+
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--nocount>
+
+Don't print informational counters for the numbers of entries to STDOUT.
+The meaning of the counters are:
+
+=over 2
+
+=item * B<added>: pronunciation information was added
+
+=item * B<already_there>: same pronunciation information existed already
+
+=item * B<modified>: different pronunciation information existed and was overwritten
+
+=item * B<kept>: different pronunciation information existed and was not overwritten
+
+=back
+
+The default is to print the counter values.
+
+=item B<--help>
+
+Print this manual page and exit.
+
+=item B<--input F<INPUT>>
+
+Name of the input file.  Required.
+
+=item B<--list-source-languages>
+
+Print the codes of the supported languages to STDOUT and exit.
+
+=item B<--mbrdico-path> F<PATH>
+
+Chdir into F<PATH> before starting B<mbrdico>.  This way mbdico can find its
+files where it expects them.  Only relevant if mbrdico is used as
+grapheme-to-phoneme converter.
+
+=item B<--source-language I<LAN>>
+
+Code of the source language, if it cannot be guessed from the input filename.
+The source language is the language of the headwords of the dictionary.  For
+guessing, the input filename has to be of the form F<I<la1>-I<la2>.tei>, where
+I<la1> will be used as source language.  Optional.
+
+=item B<--output F<OUTPUT>>
+
+Filename of the output file.  Output is printed to STDOUT if this is F<->.
+Default: Write to STDOUT.
+
+=item B<--overwrite>
+
+Replace eventually existing pronunciation information.
+
+=item B<--verbose>
+
+Tell what I'm doing and print warnings.  Can be given twice for more verbosity.
+Messages are printed to STDERR.
+
+=back
+
+=head1 HISTORY
+
+A predecessor of this tool was F<teiaddphon.pl> from Horst Eyermann.  But
+it had limitations, because it worked on the text level (not the XML level),
+needed a prepared input file (we call the filter on the fly) and only knew
+about F<txt2pho>.
+
+=head1 AUTHOR AND LICENCE
+
+Author: Michael Bunk, 2006
+
+This is free software, licensed under the GPL.
+
+=cut
+
