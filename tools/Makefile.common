@@ -228,7 +228,7 @@ valid.stamp: $(dictname).tei
 	export SP_ENCODING=XML; \
 	export SP_CHARSET_FIXED=YES; \
 	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
-	nsgmls -wxml -s -E 10 $(dictname).tei
+	$(NSGMLS) -wxml -s -E 10 $(XMLDECLARATION) $(dictname).tei
 	# way 2
 	if [ -x $(xmllint) ]; then \
 		$(xmllint) --noout --valid $(dictname).tei; fi

@@ -1,3 +1,14 @@
+Most of the documentation can be found in the FreeDict HOWTO at
+
+	http://freedict.org/howto
+
+The following lines may get you started on some requirements:
+
+The "blessed" conversion process from .tei to DICT database format
+is now based on XSLT stylesheets, an XSLT processor and dictfmt.
+It is still possible to use xmltei2xmldict.pl though, but the DICT
+compatibility may suffer.
+
 xmltei2xmldict.pl requires:
 
 - nsgmls from SP 1.3.4 from http://www.jclark.com/jade/
@@ -14,7 +25,31 @@ CATALOG.iso_ent"
 - Sablotron library and Perl module:
   http://www.gingerall.com/charlie/ga/xml/p_sab.xml
 
+
+In order to build source release files (freedict-*-*-*.src.tar.bz2,
+containing *-*.tei), run:
+
+ cd tools
+ mkdir -p ../../release/src
+ make dist
+
+In order to build binary release files (freedict-*-*-*.tar.bz2,
+containing *-*.dict.dz and *-*.index), run:
+
+ cd tools
+ mkdir -p ../../release/dict-tbz2
+ make release-dict-tbz2
+
+In order to create eng-deu.{dict,index} from
+freedict-eng-deu-0.3.src.tar.bz2, run:
+
+ tar jxf freedict-eng-deu-0.3.src.tar.bz2
+ cd eng-deu
+ FREEDICTDIR=path/to/cvs/freedict make
+
+where path/to/cvs/freedict should contain tools/Makefile.common.
+
 hope this helps get you started :)
 
-Micha, April 2004
+Michael Bunk, November 2006
 
