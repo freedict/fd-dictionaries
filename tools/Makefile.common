@@ -488,6 +488,23 @@ clean::
 	dictd2dic.out authorresp.out title.out
 
 #######################
+#### Phonetics import
+#######################
+
+supported_phonetics = $(shell $(toolsdir)/teiaddphonetics -li)
+
+la1 := $(shell export V=$(dictname); echo $${V:0:3})
+#la2 := $(shell export V=$(dictname); echo $${V:4:3})
+
+ifneq (,$(findstring $(la1),$(supported_phonetics)))
+
+$(dictname).tei: $(dictname)-nophon.tei
+	$(toolsdir)/teiaddphonetics -i $< -ou $@ -mbrdico-path $(MBRDICO_PATH)
+
+endif
+
+
+#######################
 #### Makefile-technical
 #######################
 
