@@ -1,0 +1,63 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+use Win32::GuiTest qw(:ALL);
+
+# TODO: accept 3 args (infile outfile) as used in Makefile.inc
+# check $O whether we run under cygwin
+# alternatively: does access run in wine?
+unless(defined $ARGV[0])
+{
+  die <<"END";
+Usage: $0 <FILENAME.MDB>
+
+Will convert FILENAME.MDB into FILENAME-jet4.MDB using M\$ Access.
+Tested with a German Access 2000.
+
+END
+}
+die "File not found: $ARGV[0]" unless -f $ARGV[0];
+
+my $mdb = `cygpath -wa "$ARGV[0]"`;
+chomp $mdb;
+die "Filename does not end in .mdb" unless $mdb =~ /(.*)\.mdb$/;
+my $jet4 = "$1-jet4.mdb";
+my $jet4_quoted = quotemeta $jet4;
+my $jet4_cygwin = `cygpath -u $jet4_quoted`;
+chomp $jet4_cygwin;
+if(-f $jet4_cygwin)
+{
+  print "$jet4 already exists - exit\n";
+  exit;
+}
+print "Will convert $mdb into $jet4 ($jet4_cygwin)\n";
+
+system 'start msaccess.exe';
+sleep 2;
+my @ws = FindWindowLike undef, 'Microsoft Access';
+die "No window 'Microsoft Access' found" unless @ws;
+
+my $OMain;
+foreach (@ws)
+{
+  my $c = GetClassName($_);
+  print "window handle: $_ class: $c\n";
+  $OMain = $_ if($c eq 'OMain');
+  if($c eq '#32770')
+  {
+    SendKeys("~$mdb~");
+    my $convertOrOpen = WaitWindow /^(Datenbank konvertieren\/öffnen)$/, 2;
+    die "Could not find dialog whether convert or open" unless $convertOrOpen;
+    SendKeys "{PAUSE}~{PAUSE}$jet4~";
+    sleep 9;
+    #MenuSelect '&Datei|&Beenden';
+    #MenuSelect "&Schließen", 0, GetSystemMenu($OMain, 0);
+    SendKeys '%DB';
+    print "Access controlled successfully\n";
+    exit 0
+  }
+}
+
+die "Access controlling failed"
+
