@@ -60,7 +60,7 @@ sub check_module
   # for checking status, the module has to be in the working directory
   # already. how to find existing tags without prior working directory?
   if(!-d "$testdir/$m/CVS")
-  {    
+  {
     my $checkout_this = $checkout_all ? 1 : 0;
     $checkout_this = $checkout_none ? 0 : $checkout_this;
     if($interactive && !$checkout_all && !$checkout_none)
@@ -72,7 +72,7 @@ sub check_module
       elsif($answer =~ /^N$/) { $checkout_none=1; }
       else { print "assuming 'no'. "; }
     }
-      
+
     if(!$checkout_this) { print "skipping\n" if($loglevel>1); return; }
 
     print "\tCheckout..." if $loglevel>1;
@@ -98,7 +98,7 @@ sub check_module
       return;
     }
   }
- 
+
   if($opt_c)
   {
     print "\tSkipping status check and eventual update\n"
@@ -109,7 +109,7 @@ sub check_module
   # XXX for speedup:
   #Cvs::Result::StatusList =
   #               $cvs->status("file1", "file2", {multiple => 1});
-		 
+
   my $cvs1 = new Cvs($testdir . "/$m", debug=>0, cvsroot => $cvsroot)
     or die $Cvs::ERROR;
   push @{$cvs1->{args}}, '-z3';
@@ -117,7 +117,7 @@ sub check_module
   #print "working_directory: ", $cvs->working_directory, "\n";
   #mkdir($cvs->working_directory . "/$m");
 
-  my $status = $cvs1->status("$m.tei") or die $Cvs::ERROR;  
+  my $status = $cvs1->status("$m.tei") or die $Cvs::ERROR;
   if($status->error)
   {
     print "Error: ", $status->error, ". Skipping module!\n";
@@ -196,7 +196,7 @@ our $loglevel = 2;
 # this will be the residence of the release tree - should be parameters :)
 our $testdir = $ENV{'FREEDICTDIR'} || '~/freedict';
 our $cvsroot = ($ENV{'CVSROOT'} =~ /freedict/) ? $ENV{'CVSROOT'} :
-  ':pserver:anonymous@cvs.sourceforge.net:/cvsroot/freedict';
+  ':pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict';
 
 getopts('hnaicv:m:');
 $interactive = 0 if $opt_n;
@@ -220,7 +220,7 @@ $0 -h | -a | -m la1-la2 [-v level] [-n] [-i] [-c]
   -n\t\tNo interactive mode: No automatic checkouts, no questions.
   -v level\tSet debug level (0 = error, 1 = warn, 2 = info, 3 = verbose)
   -i ignore date of last CVS check and check anyway
-  
+
 EOT
   exit;
 }
@@ -230,7 +230,7 @@ if(!$opt_a && !$opt_m)
   print "You must give at least one of -a, -m or -h.\n";
   exit;
 }
-  
+
 
 check_all() if $opt_a;
 check_module($opt_m) if $opt_m;

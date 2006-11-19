@@ -69,9 +69,9 @@ find-homographs: $(dictname).tei
 pos-statistics: $(dictname).tei
 	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
 
-##################################################
-#### create direcories where release files are put
-##################################################
+###################################################
+#### create directories where release files are put
+###################################################
 
 dirs:
 	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \

@@ -60,10 +60,18 @@ my %t2p =
   23 => 'n', # Nomen Proprium
 );
 
-sub Type2Pos
+sub posType2Pos
 {
   my $Type = shift;
   return $t2p{$Type} if exists $t2p{$Type};
+  return undef
+}
+
+sub genType2Gen
+{
+  my $Type = shift;
+  return $Type if $Type eq 'm' or $Type eq 'f' or $Type eq 'n';
+  print STDERR "Unknown GType: '$Type'\n" unless defined($Type) and $Type eq '';
   return undef
 }
 
@@ -71,7 +79,7 @@ my %TypesCount;
 
 sub formatEntry
 {
-  my($XEntry, $Type, @senses) = @_;
+  my($XEntry, $POSType, $genType, @senses) = @_;
   my $senses = '';
   foreach (@senses)
   {
@@ -85,13 +93,20 @@ sub formatEntry
     }
     $senses .= "  <sense>\n" . join('', @transs) ."  </sense>\n"
   }
-  my $orth = xmlEscape($XEntry);
-  $TypesCount{$Type}++;
-  my $pos = Type2Pos($Type);
-  print STDERR "Line $.: Unknown Type $Type ('$XEntry')\n"
-    unless defined $pos;# || $TypesCount{$Type}>1;
-  my $gramGrp = (defined $pos) ?
-    "\n  <gramGrp><pos>$pos</pos></gramGrp>" : '';
+  my $orth = xmlEscape $XEntry;
+  $TypesCount{$POSType}++;
+  my $pos = posType2Pos $POSType;
+  my $gen = genType2Gen $genType;
+  print STDERR "Line $.: Unknown Part-of-Speed-Type $POSType ('$XEntry')\n"
+    unless defined $pos;# || $TypesCount{$POSType}>1;
+  my $gramGrp = '';
+  if (defined($pos) or defined($gen))
+  {
+    $gramGrp = "\n  <gramGrp>";
+    $gramGrp .= "<pos>$pos</pos>" if defined $pos;
+    $gramGrp .= "<pos>$gen</pos>" if defined $gen;
+    $gramGrp .= "</gramGrp>"
+  }
   print <<"END";
 <entry>
   <form><orth>$orth</orth></form>$gramGrp
@@ -99,7 +114,7 @@ $senses</entry>
 END
 }
 
-my($XEntry, $Type, %currentSense, @senses);
+my($XEntry, $POSType, $genType, %currentSense, @senses);
 while(<>)
 {
   # get all the columns
@@ -117,19 +132,23 @@ while(<>)
   }
   $wXEntry =~ s/\s+$//;# mdb-sql exports with lots of trailing space
   $xXEntry =~ s/\s+$//;
+  $wGType =~ s/\s+$//;
   #print STDERR "Line $.: wXEntry='$wXEntry' xXEntry='$xXEntry'\n";
   # collect <orth>, <pron>, <tr>s by <trans> and <sense>s
-  if(not(defined($XEntry)) || $wXEntry ne $XEntry || $wType ne $Type)
+  if(not(defined($XEntry)) || $wXEntry ne $XEntry
+			   || $wType ne $POSType
+			   || $wGType ne $genType)
   {
     if(defined $XEntry)
     {
       push @senses, { %currentSense };
       # output an <entry>
-      formatEntry($XEntry, $Type, @senses);
+      formatEntry $XEntry, $POSType, $genType, @senses
     }
     # collect line for a new <entry>
     $XEntry = $wXEntry;
-    $Type = $wType;
+    $POSType = $wType;
+    $genType = $wGType;
     @senses = ();
     $currentSense{'EspKey'} = $wEspKey;
     $currentSense{'transs'} = [ $xXEntry ]
@@ -153,10 +172,10 @@ while(<>)
 
 # output last <entry>
 push @senses, { %currentSense };
-formatEntry($XEntry, $Type, @senses);
+formatEntry $XEntry, $POSType, $genType, @senses;
 
-# Output $Type statistics
-print STDERR "Type\tCount\n----------------\n";
+# Output $POSType statistics
+print STDERR "POSType\tCount\n----------------\n";
 foreach (sort keys %TypesCount)
 { print STDERR "$_\t", $TypesCount{$_}, "\n" }
 
