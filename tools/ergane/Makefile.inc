@@ -10,10 +10,11 @@ else
 erganeexport_extension ?= -nophon
 endif
 
-$(erganetoolsdir)/zip/???.zip:
+$(erganetoolsdir)/zip/%.zip:
 	@if [ ! -d $(erganetoolsdir)/zip ]; then \
 	  mkdir -p $(erganetoolsdir)/zip; fi
-	wget --timestamping http://download.travlang.com/files/???.zip
+	cd $(erganetoolsdir)/zip && \
+	wget --timestamping http://download.travlang.com/files/$*.zip
 
 $(erganetoolsdir)/unzip/%.mdb: $(erganetoolsdir)/zip/%.zip
 	@if [ ! -d $(erganetoolsdir)/unzip ]; then \
