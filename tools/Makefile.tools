@@ -2,6 +2,9 @@
 # installing the tools, especially to keep things needed for rpm and deb
 # packaging in one place.
 
+FREEDICTDIR ?= .
+include Makefile.config
+
 VERSION = 0.2
 PREFIX ?= usr/local
 INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
@@ -9,7 +12,7 @@ INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
 dirs = ergane lib teimerge testing xsl/inc
 absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
-dist:
+$(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
 	$(MAKE) -f Makefile.common clean
 	cd .. && tar --totals --exclude="*/CVS*" --exclude="*/.*" \
 	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
@@ -17,7 +20,9 @@ dist:
 	  --exclude="*/ergane/jet4/*" \
 	  --exclude="*/ergane/unzip/*" \
 	  --exclude="*/ergane/zip/*" \
-	  -cvjf freedict-tools-$(VERSION).tar.bz2 tools
+	  -cvjf $@ tools
+
+dist: $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2
 
 install:
 	install -d $(absdirs)
@@ -44,5 +49,19 @@ install:
 	install -m 644 xsl/inc/*.xsl \
 	  $(INSTALLDIR)/tools/xsl/inc
 
-.PHONY: dist install
+release-rpm-freedict-tools: freedict-tools.spec \
+	$(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2
+	@if [ ! -d /usr/src/rpm/RPMS/noarch ]; then \
+	  mkdir -p /usr/src/rpm/RPMS/noarch; fi
+	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+	  ln -s /usr/src/rpm/RPMS/noarch \
+	  $(FREEDICTDIR)/release/rpm; fi
+	@if [ ! -d /usr/src/rpm/SOURCES ]; then \
+	  mkdir -p /usr/src/rpm/SOURCES; fi
+	if [ ! -r /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2 ]; then \
+	  ln -s $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2 \
+	    /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2; fi
+	rpmbuild --target=noarch -ba freedict-tools.spec
+
+.PHONY: dist install release-rpm-freedict-tools
 

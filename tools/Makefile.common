@@ -318,15 +318,6 @@ release-rpm: freedict-$(dictname).spec dist
 release-rpm-reverse:
 
 
-release-rpm-freedict-tools:
-	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
-		ln -s /usr/src/packages/RPMS/noarch \
-		$(FREEDICTDIR)/release/rpm; fi
-	(cd $(FREEDICTDIR); \
-	 tar cjf /usr/src/packages/SOURCES/freedict-tools.tbz2 \
-		--exclude=CVS tools/*)
-	rpmbuild --target=noarch -ba freedict-tools.spec
-
 ############################################
 #### targets for (z)bedic on zaurus platform
 ############################################
