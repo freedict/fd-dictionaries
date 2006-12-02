@@ -1,0 +1,48 @@
+# This Makefile is only for generating a distributable tarball and
+# installing the tools, especially to keep things needed for rpm and deb
+# packaging in one place.
+
+VERSION = 0.2
+PREFIX ?= usr/local
+INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
+
+dirs = ergane lib teimerge testing xsl/inc
+absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
+
+dist:
+	$(MAKE) -f Makefile.common clean
+	cd .. && tar --totals --exclude="*/CVS*" --exclude="*/.*" \
+	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
+	  --exclude="*/dictd2dic" \
+	  --exclude="*/ergane/jet4/*" \
+	  --exclude="*/ergane/unzip/*" \
+	  --exclude="*/ergane/zip/*" \
+	  -cvjf freedict-tools-$(VERSION).tar.bz2 tools
+
+install:
+	install -d $(absdirs)
+	install *.pl *.py *.sh \
+	  ergane-records2tei teiaddphonetics teidiff \
+	  $(INSTALLDIR)/tools
+	install -m 644 Makefile Makefile.common Makefile.config \
+	  $(INSTALLDIR)/tools
+	install ergane/convert-with-access-to-jet4 \
+	  $(INSTALLDIR)/tools/ergane
+	install -m 644 $(addprefix ergane/, Makefile.inc dan.schema.diff \
+	  default.tei.header newtei2oldtei.xsl) \
+	  $(INSTALLDIR)/tools/ergane
+	install -m 644 lib/*.pm \
+	  $(INSTALLDIR)/tools/lib
+	install teimerge/teimerge.pl $(INSTALLDIR)/tools/teimerge
+	install -m 644 $(addprefix teimerge/, TEIMergeMainHandler.pm \
+	  TEIMergeOtherHandler.pm) \
+	  $(INSTALLDIR)/tools/teimerge
+	install testing/*.pl \
+	  $(INSTALLDIR)/tools/testing
+	install -m 644 xsl/*.xsl \
+	  $(INSTALLDIR)/tools/xsl
+	install -m 644 xsl/inc/*.xsl \
+	  $(INSTALLDIR)/tools/xsl/inc
+
+.PHONY: dist install
+

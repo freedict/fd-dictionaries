@@ -9,11 +9,11 @@ Packager:	Michael Bunk <micha@luetzschena.de>
 Group:		Applications/Dictionaries
 Group(de):	Applikationen/Wörterbücher
 Group(pl):	Aplikacje/S³owniki
-Source0:	%{name}.tbz2
+Source0:	%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	perl
 Requires:	sablot
-#Requires:	dictd
+#Requires:	dictfmt
 # dictdconfig is from the debian package of dictd, somebody
 # still would have to make an rpm for it
 #Requires:	dictdconfig
@@ -32,17 +32,7 @@ echo "This rpm is experimental! Use at your own risk and report bugs"
 echo "to freedict-beta@lists.sourceforge.net!"
 
 %install
-mkdir -p $RPM_BUILD_ROOT/usr/src/freedict/tools/lib
-mkdir -p $RPM_BUILD_ROOT/usr/src/freedict/tools/xsl
-mkdir -p $RPM_BUILD_ROOT/usr/src/freedict/tools/testing
-cp  -r xsl/* $RPM_BUILD_ROOT/usr/src/freedict/tools/xsl
-cp  lib/* $RPM_BUILD_ROOT/usr/src/freedict/tools/lib
-cp  testing/* $RPM_BUILD_ROOT/usr/src/freedict/tools/testing
-cp ergane2tei.pl extractdata.pl teisort.pl add-freedict.sh \
-tab2tei.pl txt2wb.pl hd2tei.pl xdf2tei.pl dict2tei.py tei2wb.pl \
-xmltei2xmldict.pl dict-configure.sh Makefile tei2webster.pl dict.py \
-Makefile.common tei2zbdic.py ding2tei.pl Makefile.config teiaddphon.pl \
-$RPM_BUILD_ROOT/usr/src/freedict/tools
+make -f Makefile.tools install DESTDIR=$RPM_BUILD_ROOT PREFIX=usr
 
 %post
 
