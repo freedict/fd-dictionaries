@@ -45,7 +45,7 @@ my %t2p =
   3 => 'v', # Verb
   4 => 'num', # Numeral
   5 => 'prep', # Preposition
-  6 => 'interj', # Interjection
+  6 => 'int', # Interjection
   7 => 'pron', # Relative Pronoun
   8 => 'conj', # Conjunction
   10 => 'pron', # Pronoun
@@ -69,13 +69,12 @@ sub posType2Pos
 
 sub genType2Gen
 {
-  my $Type = shift;
+  my $Type = lc shift;# assume case doesn't matter (dut.mdb contains M F N)
   return $Type if $Type eq 'm' or $Type eq 'f' or $Type eq 'n';
-  print STDERR "Unknown GType: '$Type'\n" unless defined($Type) and $Type eq '';
   return undef
 }
 
-my %TypesCount;
+my (%POSTypesCount, %genTypesCount);
 
 sub formatEntry
 {
@@ -94,17 +93,20 @@ sub formatEntry
     $senses .= "  <sense>\n" . join('', @transs) ."  </sense>\n"
   }
   my $orth = xmlEscape $XEntry;
-  $TypesCount{$POSType}++;
+  $POSTypesCount{$POSType}++;
+  $genTypesCount{$genType}++;
   my $pos = posType2Pos $POSType;
   my $gen = genType2Gen $genType;
-  print STDERR "Line $.: Unknown Part-of-Speed-Type $POSType ('$XEntry')\n"
-    unless defined $pos;# || $TypesCount{$POSType}>1;
+  print STDERR "Line $.: Unknown Part-of-Speech type $POSType ('$XEntry')\n"
+    unless defined $pos || $POSTypesCount{$POSType}>1;
+  print STDERR "Line $.: Unknown Genus type $genType ('$XEntry')\n"
+    unless defined $gen || $genTypesCount{$genType}>1;
   my $gramGrp = '';
   if (defined($pos) or defined($gen))
   {
     $gramGrp = "\n  <gramGrp>";
     $gramGrp .= "<pos>$pos</pos>" if defined $pos;
-    $gramGrp .= "<pos>$gen</pos>" if defined $gen;
+    $gramGrp .= "<gen>$gen</gen>" if defined $gen;
     $gramGrp .= "</gramGrp>"
   }
   print <<"END";
@@ -174,8 +176,12 @@ while(<>)
 push @senses, { %currentSense };
 formatEntry $XEntry, $POSType, $genType, @senses;
 
-# Output $POSType statistics
-print STDERR "POSType\tCount\n----------------\n";
-foreach (sort keys %TypesCount)
-{ print STDERR "$_\t", $TypesCount{$_}, "\n" }
+# Output $POSType and $genType statistics
+print STDERR "POSType\tCount\tName\n----------------------\n";
+foreach (sort keys %POSTypesCount)
+{ print STDERR "$_\t", $POSTypesCount{$_}, "\t", $t2p{$_} || 'unknown', "\n" }
+
+print STDERR "genType\tCount\n------------------\n";
+foreach (sort keys %genTypesCount)
+{ print STDERR "$_\t", $genTypesCount{$_}, "\n" }
 
