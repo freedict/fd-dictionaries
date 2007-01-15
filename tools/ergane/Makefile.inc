@@ -13,8 +13,23 @@ endif
 $(erganetoolsdir)/zip/%.zip:
 	@if [ ! -d $(erganetoolsdir)/zip ]; then \
 	  mkdir -p $(erganetoolsdir)/zip; fi
-	cd $(erganetoolsdir)/zip && \
 	wget --timestamping http://download.travlang.com/files/$*.zip
+
+# ISO639-2 gives two codes for Czech adn Swedish
+$(erganetoolsdir)/zip/cze.zip: $(erganetoolsdir)/zip/ces.zip
+	ln -s ces.zip $@
+
+$(erganetoolsdir)/zip/swe.zip: $(erganetoolsdir)/zip/sve.zip
+	ln -s sve.zip $@
+
+# FreeDict doesn't adhere to ISO639-2 here
+$(erganetoolsdir)/zip/nld.zip: $(erganetoolsdir)/zip/dut.zip
+	ln -s dut.zip $@
+
+# FreeDict uses "sco" instead of "gae" - a mistake
+# "gla" was also suggested - but it is not in ISO639-2
+$(erganetoolsdir)/zip/sco.zip: $(erganetoolsdir)/zip/gae.zip
+	ln -s gae.zip $@
 
 $(erganetoolsdir)/unzip/%.mdb: $(erganetoolsdir)/zip/%.zip
 	@if [ ! -d $(erganetoolsdir)/unzip ]; then \
@@ -105,12 +120,13 @@ new.tei: new-oldtei.tei
 	xmllint --noblanks $< >$@
 
 diff: old.tei new.tei
-	$(toolsdir)/teidiff old.tei new.tei -o files
+	$(toolsdir)/teidiff $(TEIDIFF) old.tei new.tei -o files
 
 clean::
 	rm -f $(erganetoolsdir)/*.schema $(erganetoolsdir)/*.sql \
 	$(erganetoolsdir)/*.postgresql $(erganetoolsdir)/*.csv \
-	$(dictname).tei new.tei old.tei old.tei-new.tei-* new-oldtei.tei
+	$(dictname).tei $(dictname)-nophon.tei  new.tei old.tei \
+	old.tei-new.tei-* new-oldtei.tei
 	if [ -r $(erganetoolsdir)/stamps/tables-created ] ; then \
 	  echo "DROP TABLE Woordenboek, VersieInfo, altspellings, vfilter" | \
 	  $(psql) && rm $(erganetoolsdir)/stamps/tables-created \
