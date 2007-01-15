@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Revision: 1.1 $
+# $Revision: 1.2 $
 
 use warnings;
 use strict;
@@ -43,10 +43,13 @@ my $parser = new XML::DOM::Parser;
 print STDERR "Parsing $ARGV[0]... " if $verbose;
 my $doc1 = $parser->parsefile ($ARGV[0]);
 my @entries1 = $doc1->getElementsByTagName ("entry");
-print STDERR scalar @entries1, " nodes\nParsing $ARGV[1]... " if $verbose;
+my $entries1 = scalar @entries1;
+print STDERR $entries1, " entries\nParsing $ARGV[1]... " if $verbose;
 my $doc2 = $parser->parsefile ($ARGV[1]);
+undef $parser;
 my @entries2 = $doc2->getElementsByTagName ("entry");
-print STDERR scalar @entries2, " nodes\n" if $verbose;
+my $entries2 = scalar @entries2;
+print STDERR $entries2, " entries\n" if $verbose;
 
 sub pretty_print
 {
@@ -195,12 +198,13 @@ sub find_unmodified_or_modified
     $found++
   }
 
-  print STDERR "$found nodes matched\n" if $verbose;
+  print STDERR "$found entries matched\n" if $verbose;
   return $found
 }
 
 sub find_added_deleted
 {
+  print STDERR "Finding added and deleted entries... " if $verbose;
   # an entry was deleted/added when no match
   # for it exists in the other file
   # since single matches should be sorted out by now,
@@ -244,18 +248,21 @@ sub find_added_deleted
       \%senses2entry2, \%entry2senses;
     delete $complete2entry2{$_}
   }
+  print STDERR "\n" if $verbose;
 }
 
 # Actually there is nothing more to find.  We just put together the remains
 # of the lists.
 sub find_modified_multimatch
 {
+  print STDERR "Collecting the multimatches... " if $verbose;
   my (@from1, @from2);
   for (values %complete2entry1)
   { push @from1, @$_ }
   for (values %complete2entry2)
   { push @from2, @$_ }
-  push @modified_multimatch, [ @from1 ], [ @from2 ]
+  push @modified_multimatch, [ @from1 ], [ @from2 ];
+  print STDERR "\n" if $verbose;
 }
 
 sub cache_toStrings
@@ -290,8 +297,10 @@ sub cache_toStrings
 print STDERR "Caching results of toString()..." if $verbose;
 cache_toStrings \@entries1,
   \%complete2entry1, \%form2entry1, \%senses2entry1;
+undef @entries1;
 cache_toStrings \@entries2,
   \%complete2entry2, \%form2entry2, \%senses2entry2;
+undef @entries2;
 print STDERR "\n" if $verbose;
 
 my $i = 1;
@@ -305,7 +314,14 @@ while find_unmodified_or_modified;
 find_added_deleted;
 find_modified_multimatch;
 
-print STDERR "\nFinished comparison.\n" if $verbose;
+print STDERR "Finished comparison.\n" if $verbose;
+
+undef %complete2entry1;
+undef %form2entry1;
+undef %senses2entry1;
+undef %complete2entry2;
+undef %form2entry2;
+undef %senses2entry2;
 
 if ($count)
 {
@@ -327,30 +343,28 @@ if ($count)
   my $sum2 =
     $unmodified + $added + $modified_form + $modified_senses + $mm2;
   print STDERR "file1: unmod + del + mod_form + mod_sense + mm1 = ", $sum1,
-    ($sum1 == scalar @entries1 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
+    ($sum1 == $entries1 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
   print STDERR "file2: unmod + add + mod_form + mod_sense + mm2 = ", $sum2,
-    ($sum2 == scalar @entries2 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
+    ($sum2 == $entries2 ? ' OK' : ' MISMATCH') . " \n" if $verbose;
 }
 
 sub print_category_fh
 {
   my ($fh, $category) = @_;
+  print STDERR "Outputting category $category... " if defined $verbose and $verbose>1;
   if ($category eq 'UNMODIFIED')
   {
-    print $fh pretty_print $_ for (@unmodified);
-    return
+    print $fh pretty_print $_ for (@unmodified)
   }
-  if ($category eq 'ADDED')
+  elsif ($category eq 'ADDED')
   {
-    print $fh pretty_print $_ for (@added);
-    return
+    print $fh pretty_print $_ for (@added)
   }
-  if ($category eq 'DELETED')
+  elsif ($category eq 'DELETED')
   {
-    print $fh pretty_print $_ for (@deleted);
-    return
+    print $fh pretty_print $_ for (@deleted)
   }
-  if ($category eq 'MODIFIED_LA1')
+  elsif ($category eq 'MODIFIED_LA1')
   {
     for (@modified_form)
     {
@@ -360,9 +374,8 @@ sub print_category_fh
       my $diff = diff \$pretty1, \$pretty2, \%options;
       print $fh $diff
     }
-    return
   }
-  if ($category eq 'MODIFIED_LA2')
+  elsif ($category eq 'MODIFIED_LA2')
   {
     for (@modified_senses)
     {
@@ -372,19 +385,20 @@ sub print_category_fh
       my $diff = diff \$pretty1, \$pretty2, \%options;
       print $fh $diff
     }
-    return
   }
-  if ($category eq 'MODIFIED_MULTIMATCH')
+  elsif ($category eq 'MODIFIED_MULTIMATCH')
   {
     # output entry sets
     print $fh "<file1>\n";
+    print STDERR "file1... " if $verbose;
     print $fh pretty_print $_ for (@{ $modified_multimatch[0] });
     print $fh "</file1>\n<file2>\n";
+    print STDERR "file2... " if $verbose;
     print $fh pretty_print $_ for (@{ $modified_multimatch[1] });
-    print $fh "</file2>\n";
-    return
+    print $fh "</file2>\n"
   }
-  warn "Invalid category: $category"
+  else { warn "Invalid category: $category" }
+  print STDERR "done.\n" if defined $verbose and $verbose>1
 }
 
 sub print_category_file
@@ -407,10 +421,15 @@ $base = $ARGV[0] . '-' . $ARGV[1] unless defined $base;
 if ($output eq 'FILES')
 {
   print_category_file $base . '-unmodified.teipart', 'UNMODIFIED';
+  undef @unmodified;
   print_category_file $base . '-added.teipart', 'ADDED';
+  undef @added;
   print_category_file $base . '-deleted.teipart', 'DELETED';
+  undef @deleted;
   print_category_file $base . '-modified_la1.udiff', 'MODIFIED_LA1';
+  undef @modified_form;
   print_category_file $base . '-modified_la2.udiff', 'MODIFIED_LA2';
+  undef @modified_senses;
   print_category_file $base . '-modified_multimatch.xml',
     'MODIFIED_MULTIMATCH';
   exit
