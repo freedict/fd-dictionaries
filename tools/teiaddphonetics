@@ -8,8 +8,8 @@ use XML::DOM;
 use FileHandle;
 use IPC::Open3;
 use Cwd;
-
-my $revision='$Revision: 1.1 $';
+use constant { MBRDICO => 0, TXT2PHO => 1 };
+my $revision='$Revision: 1.2 $';
 my $verbose = 0;
 my ($help, $input, $slang, $list_slang, $mbrdico_path);
 my $gra2pho_path;
@@ -17,15 +17,15 @@ my $output = '-';
 my $overwrite = 0;
 my $count = 1;
 GetOptions (
-  "verbose+"  => \$verbose,
-  "help|?"  => \$help,
+  "verbose+" => \$verbose,
+  "help|?" => \$help,
   "source-language=s" => \$slang,
   "list-source-languages" => \$list_slang,
   "mbrdico-path=s" => \$mbrdico_path,
   "overwrite" => \$overwrite,
-  "count"   => \$count,
-  "input=s"   => \$input,
-  "output=s"   => \$output) or exit 1;
+  "count"  => \$count,
+  "input=s" => \$input,
+  "output=s" => \$output) or exit 1;
 
 pod2usage(-exitval => 1, -verbose => 2) if $help;
 
@@ -54,7 +54,7 @@ unless ($slang)
   print STDERR "Guessed source language: $slang\n" if $verbose
 }
 
-my $gra2pho;
+my($gra2pho, $gra2pho_id);
 if ($slang =~ /^ara|eng|fra|nld|spa$/)
 {
   my %slang2ini = (
@@ -66,15 +66,16 @@ if ($slang =~ /^ara|eng|fra|nld|spa$/)
   my %slang2env = (
     ara => 'ar1',
     eng => 'en1',
-    fra => 'fr1',
-    nld => 'nl1',
-    spa => 'sp1');
+    fra => 'fr3',
+    nld => 'nl2',
+    spa => 'es1');
   $gra2pho = 'mbrdico ' . $slang2ini{$slang} . '.ini';
+  $gra2pho_id = MBRDICO;
   $gra2pho_path = $mbrdico_path if $mbrdico_path;
   $ENV{$slang2env{$slang}} = 'cat >/dev/null'
 }
 elsif ($slang eq 'deu')
-{ $gra2pho = 'txt2pho' }
+{ $gra2pho = 'txt2pho'; $gra2pho_id = TXT2PHO }
 else
 {
   print STDERR "No grapheme-to-phoneme filter known for source language '$slang'.\n";
@@ -92,7 +93,7 @@ $SIG{PIPE} = sub
 
 eval
 {
-  my $oldcwd = cwd();
+  my $oldcwd = cwd;
   if (defined $gra2pho_path and not chdir $gra2pho_path)
   {
     print STDERR "$!: $gra2pho_path";
@@ -106,7 +107,7 @@ eval
 die $@ if $@;
 print STDERR "$gra2pho: pid=$gra2pho_pid\n" if $verbose;
 
-if ($gra2pho =~ /^mbrdico/)
+if ($gra2pho_id == MBRDICO)
 {
   my $l = <PHO>;
   die "mbrdico init failed: $l" unless $l eq "Wait while loading data\n";
@@ -117,8 +118,10 @@ if ($gra2pho =~ /^mbrdico/)
 my $parser = new XML::DOM::Parser;
 print STDERR "Parsing $input... " if $verbose;
 my $doc = $parser->parsefile ($input);
+undef $parser;
+print STDERR "getting entries... " if $verbose;
 my $entries = $doc->getElementsByTagName ("entry");
-print STDERR $entries->getLength, " nodes\n" if $verbose;
+print STDERR $entries->getLength, " entries\n" if $verbose;
 
 my %sampa2unicode =
 (
@@ -251,7 +254,6 @@ sub sampa2unicode
       $unicode .= $sampa2unicode{$_};
       next
     }
-    #next if ($_ eq ":" or $_ eq "'";
     $sampa2unicode{$_} = '?';# die only once per unknown sampa code
     die "Unknown Sampa code \"$_\""
   }
@@ -284,7 +286,7 @@ for (my $i=0; $i<$entries->getLength; $i++)
   my $gra = $orths[0]->getFirstChild()->getNodeValue();
 
   my $verb_or_not = '';
-  if ($gra2pho =~ /^mbrdico /)
+  if ($gra2pho_id == MBRDICO)
   {
     # prefix \N?VERB (mainly for French) for cases where the pronunciation is
     # not defined just by the grapheme
@@ -313,33 +315,59 @@ for (my $i=0; $i<$entries->getLength; $i++)
 
   # Extract SAMPA encoded phonetics from lines into a list
   my @sampa = ();
-  my $proso = "";# to carry over a line to the next
-  local $_;
-  my $end = $gra2pho =~ /^mbrdico / ? '^#\n$' : '^_ 483  ';
-  print STDERR "end: $end\n" if $verbose>1;
-  while (($_ = <PHO>) !~ /$end/)
+  eval
   {
-    print STDERR "line: $_" if $verbose>1;
-
-    next if /^; Target/;
-    if (/^; Proso (.+)\n$/)
-    { $proso =  $1; next }
-    next if /^(\n$)|_/;
-    if (/\w+/)
+    my $proso = "";# to carry over a line to the next
+    local $_;
+    my $end = $gra2pho_id == MBRDICO ? '^#\n$' : '^_ 483  ';
+    print STDERR "end: $end\n" if $verbose>1;
+    # guard loop with a timeout
+    alarm 10;
+    local $SIG{'ALRM'} = sub { die 'alarm' };
+    while (($_ = <PHO>) !~ /$end/)
     {
-      #s/^\s+//;
-      push @sampa, "'" if $proso eq '1';
-      push @sampa, '"' if $proso eq '0';
+      print STDERR "line: $_" if $verbose>1;
 
-      /^\s*(\S+)/;
-      push @sampa, $+;
-      push @sampa, ":" if $proso eq ':';
-      $proso = "";
+      next if /^; Target/;
+      if (/^; Proso (.+)\n$/) { $proso =  $1; next }
+      next if /^(\n$)|_/;
+      # mbrdico has a bug when transforming the Dutch
+      # word "afleidingsmanoeuvre" to phonetics
+      last if $_ eq "Unknown Phoneme\n";
+      if (/^[\w'\@:{]{1,2}[\d \,.\(\)]*\n$/)
+      {
+	#s/^\s+//;
+	push @sampa, "'" if $proso eq '1';
+	push @sampa, '"' if $proso eq '0';
+
+	/^\s*(\S+)/;
+	push @sampa, $+;
+	push @sampa, ":" if $proso eq ':';
+	$proso = "";
+	next
+      }
+      die "Unknown line: '$_'"
+    }
+    alarm 0;
+    print STDERR "sampa: @sampa\n" if $verbose>1
+  };
+  if($@)
+  {
+    if($@ eq 'alarm')
+    {
+      $count{no_phonetics}++;
+      print STDERR "Skipping entry because of timeout: $gra\n";
       next
     }
-    die "Unknown line: '$_'";
+    die "Unknown exception while getting phonetics for $gra: $@"
   }
-  print STDERR "sampa: @sampa\n" if $verbose>1;
+
+  if(0 == scalar @sampa)
+  {
+    $count{no_phonetics}++;
+    print STDERR "Skipping entry without phonetics output from gra2pho: $gra\n";
+    next
+  }
   my $unicode;
   eval
   {
@@ -373,6 +401,7 @@ for (my $i=0; $i<$entries->getLength; $i++)
     next
   }
 }
+undef $entries;
 
 print STDERR "\rGot all phonetics\n" if $verbose;
 close GRA;
@@ -384,9 +413,10 @@ if ($count)
   { print "$_:", ' ' x (15-length($_)), $count{$_}, " entries\n" }
 }
 
-# prepend a <change> element to <change>s in TEI <revisionDesc>
-my @revisionDescs = $doc->getElementsByTagName ("revisionDesc");
-die unless 1 == scalar @revisionDescs;
+print STDERR "Pushing a <change> element into <revisionDesc>\n" if $verbose;
+my $tei2 = $doc->getDocumentElement or die;
+my $teiHeader = @{$tei2->getElementsByTagName("teiHeader", 0)} [0] or die;
+my @revisionDescs = $teiHeader->getElementsByTagName("revisionDesc", 0) or die;
 if(0 == scalar @revisionDescs)
 {
   print STDERR "Creating <revisionDesc>\n" if $verbose;
@@ -405,11 +435,12 @@ $change->addText ("\n  ");
 my $item = $change->appendChild($doc->createElement ("item"));
 $change->addText ("\n  ");
 my $name = $respStmt->appendChild($doc->createElement ("name"));
+# XXX use correct format yyy-mm-dd
 $date->addText (scalar localtime);
 $name->addText ("$0 $revision");
 $item->addText ("Phonetics imported from $gra2pho");
 
-# save new .tei
+print STDERR "Saving to $output... " if $verbose;
 if ($output eq '-') { $doc->print (\*STDOUT) }
 else
 {
@@ -419,6 +450,7 @@ else
   binmode $f, ':utf8';
   $doc->printToFileHandle ($f);
 }
+print STDERR " Finish.\n" if $verbose;
 
 __END__
 
