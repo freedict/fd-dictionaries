@@ -23,20 +23,30 @@ rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 #	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
 
 # So we use grep to extract the edition.
-# if $(version) contains spaces: 
+# if $(version) contains spaces:
 # Makefile.common:235: *** mixed implicit and normal rules.  Stop.
 # so spaces are substituted by underscores
 empty:=
 space:= $(empty) $(empty)
-version1 = $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
+version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
 	   $(dictname).tei)
-version = $(subst $(space),_,$(version1))
+version := $(subst $(space),_,$(version1))
 
 ################
 # default target
 ################
 
-all:	$(dictname).dict $(dictname).index
+all:
+	$(MAKE) dist
+	$(MAKE) release-tei-tbz2
+	$(MAKE) release-dict-tbz2
+	-$(MAKE) release-evolutionary
+	$(MAKE) release-bedic
+	$(MAKE) release-stardict
+	-$(MAKE) release-aspell
+	-$(MAKE) release-d4m
+	-$(MAKE) release-fo
+
 
 ##################################################
 #### targets to extract information from TEI files
@@ -127,7 +137,7 @@ reverse-oldstyle: $(dictname).tei
 $(dictname).c5: $(dictname).tei $(xsldir)/tei2c5.xsl \
        	$(xsldir)/inc/teientry2txt.xsl \
 	$(xsldir)/inc/teiheader2txt.xsl \
-	$(xsldir)/inc/indent.xsl query-dictd
+	$(xsldir)/inc/indent.xsl
 	if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
 	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2c5.xsl $< >$@; \
 	  else \
@@ -141,7 +151,7 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 
 reverse: $(dictname)-reverse.c5
 
-%.dict %.index: %.c5
+%.dict %.index: %.c5 query-dictd
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
@@ -188,17 +198,21 @@ else
 	@echo "because the 'Dictionary.exe' tool for it is a Win32 Application."
 	@echo "When you build on Cygwin and have Dictionary.exe installed, "
 	@echo "it will be started automatically."
-	@echo "Unfortunately, it currently does not run in the Windows Emulator 'Wine'."
+	@echo "If you had the Windows Emulator Wine installed, Dictionary.exe"
+	@echo "would also be started automatically (you have to install it before!)."
+	@echo "Be aware the Dicionary.exe does not work in all Wine versions"
+	@echo "(20041201 didn't work for me)."
 	@echo "Please define EVOLUTIONARY_MAKEDICT in $(toolsdir)/Makefile.config"
 	exit 1
 endif
 
-freedict-$(dictname)-$(version).evolutionary.zip: $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
-	(cd '$(FREEDICTDIR)/release/vok/tld'; \
-	 rm -f '$@'; \
-	 zip '$@' '$(dictname).tld')
+$(FREEDICTDIR)/release/vok/tld/freedict-$(dictname)-$(version).evolutionary.zip: \
+  $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
+	cd '$(FREEDICTDIR)/release/vok/tld' && \
+	 rm -f '$@' && \
+	 zip '$@' '$(dictname).tld'
 
-release-evolutionary: freedict-$(dictname)-$(version).evolutionary.zip
+release-evolutionary: $(FREEDICTDIR)/release/vok/tld/freedict-$(dictname)-$(version).evolutionary.zip
 
 clean::
 	rm -f $(FREEDICTDIR)/release/vok/$(dictname).vok \
@@ -286,7 +300,7 @@ print-unsupported:
 # for example:
 #
 # clean::
-#	-rm delete_this_file.too
+#	-rm -f delete_this_file.too
 clean::
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
@@ -294,13 +308,28 @@ clean::
 	rm -f $(FREEDICTDIR)/release/dict-bz2/$(dictname).tar.bz2
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
 
-dist:
+# put all sources of a dictionary module into a tarball for release
+# ("distribution").  this only includes the .tei file if it doesn't have to be
+# generated from other sources
+$(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFILES)
 	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
-		mkdir $(FREEDICTDIR)/release/src; fi
-	(cd $(shell pwd)/..; \
-	tar -cvjf $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
+		mkdir -p $(FREEDICTDIR)/release/src; fi
+	cd .. && tar -cvjf $@ \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
-		$(addprefix $(dictname)/, $(DISTFILES)))
+		$(addprefix $(dictname)/, $(DISTFILES))
+
+dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
+
+# the following two targets work like "dist", but include the .tei file
+# unconditionally
+$(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
+	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
+		mkdir -p $(FREEDICTDIR)/release/tei; fi
+	cd .. && tar cvjf $@ \
+		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+		$(addprefix $(dictname)/, $(DISTFILES) $(dictname).tei)
+
+release-tei-tbz2: $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
 
 #############################
 #### targets for rpm packages
@@ -360,15 +389,16 @@ $(dictname).escaped.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
 # http://www.w3.org/International/charlint/
 #
 # You may want to adapt this:
-#unicodedata = $(toolsdir)/UnicodeData.txt
-unicodedata = /usr/lib/perl5/5.8.1/unicore/UnicodeData.txt
+unicodedata = $(toolsdir)/UnicodeData.txt
+#unicodedata = /usr/lib/perl5/5.8.1/unicore/UnicodeData.txt
+#unicodedata = /usr/share/perl/5.8.8/unicore/UnicodeData.txt
 #
 $(toolsdir)/UnicodeData.txt:
 	cd $(toolsdir) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
 #
 charlint_url = http://dev.w3.org/cvsweb/~checkout~/charlint/charlint.pl?rev=1.27&content-type=text/plain&only_with_tag=HEAD
 $(toolsdir)/charlint.pl::
-	@if [ ! -x $@ ]; then\
+	@if [ ! -x $@ ]; then \
 	cd $(toolsdir) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
 #
 $(CHARLINT_DATA): $(unicodedata)
@@ -414,8 +444,7 @@ clean::
 ##################################
 
 # This tool comes with stardict
-# I have a symbolic link in my tools directory to the actual location
-DICTD2DIC = $(toolsdir)/dictd2dic
+DICTD2DIC ?= dictd2dic
 
 # This is hardcoded into dictd2dic :(
 stardict_prefix = dictd_www.freedict.de_
@@ -489,8 +518,9 @@ la1 := $(shell export V=$(dictname); echo $${V:0:3})
 
 ifneq (,$(findstring $(la1),$(supported_phonetics)))
 
+# TEIADDPHONETICS ?= -v
 $(dictname).tei: $(dictname)-nophon.tei
-	$(toolsdir)/teiaddphonetics -i $< -ou $@ -mbrdico-path $(MBRDICO_PATH)
+	$(toolsdir)/teiaddphonetics $(TEIADDPHONETICS) -i $< -ou $@ -mbrdico-path $(MBRDICO_PATH)
 
 endif
 
@@ -509,5 +539,5 @@ endif
 	commit clean dist dbupdate validation query-% print-unsupported \
 	test test-reverse test-oldstyle test-reverse-oldstyle tests \
 	find-homographs pos-statistics \
-	stardict release-stardict
+	stardict release-stardict release-tei-tbz2
 
