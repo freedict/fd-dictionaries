@@ -1,5 +1,6 @@
 FREEDICTDIR ?= ..
-DISTFILES = hun-eng.tei Makefile ChangeLog README SZOTAR.ZIP hun-eng.tei.header szotar-dbf2tei.pl
+DISTFILES = Makefile ChangeLog README SZOTAR.ZIP \
+	    hun-eng.tei.header szotar-dbf2tei.pl
 include $(FREEDICTDIR)/tools/Makefile.common
 
 dbview_in_path := $(shell which dbview 2>/dev/null)
@@ -9,13 +10,16 @@ ifeq ($(dbview_in_path),)
 	@echo "To get the data out of the dBase database, we require the tool"
 	@echo "\`dbview' from Martin Schulze aka Joey."
 	@echo "Try to get it from http://packages.debian.org/stable/misc/dbview"
-	false
-else 
-	@if [ ! -f SZOTAR.DBF ]; then unzip SZOTAR.ZIP SZOTAR.DBF; fi
-	./szotar-dbf2tei.pl
+	@false
+else
+	cp $< $@
+	./szotar-dbf2tei.pl >> $@
 endif
 
 SZOTAR.DBF: SZOTAR.ZIP
+	unzip $< $@
+	touch $@
 
 clean::
-	-rm SZOTAR.DBF
+	rm -f SZOTAR.DBF
+
