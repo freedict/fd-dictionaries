@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" >
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+]>
+
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>Dutch-French FreeDict Dictionary</title>
+	<respStmt>
+	  <resp>by</resp> <name>Horst Eyermann &lt;orst@freedict.de></name>
+	</respStmt>
+      </titleStmt>
+
+      <editionStmt>
+	<edition>0.2</edition>
+      </editionStmt>
+
+      <extent>about 17 900 headwords</extent>
+
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability>
+	  <p>Copyright (C) 2000 Horst Eyermann, horst@freedict.de</p>
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p>
+	</availability>
+	<date>2004-2006</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+	<note type="status">too small</note>
+      </notesStmt>
+
+      <sourceDesc>
+	<p>Home: <xptr url="http://download.travlang.com/"/></p>
+	<p>This Database was generated from Ergane.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+	<p>This dictionary comes to you through nice people making it
+	  available for free and for good. It is part of the FreeDict project,
+	  http://www.freedict.org / http://freedict.de. This
+	  project aims to make available many translating dictionaries
+	  for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+      <change>
+	<date>2006-12-21</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Re-Import from Ergane: fra.mdb from 2005-Sep-14, dut.mdb from
+	  2006-Feb-01.  Part of speech and gender information now included.
+	  teidiff gave the following output: Unmodified 1021, Added 6692,
+	  Deleted 6213, Modified &lt;form> 2849, Modified &lt;sense>s 534,
+	  Modified multimatch 6153 + 6794.</item>
+      </change>
+      <change>
+	<date>2005-02-11</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Converted file to TEI P4</item>
+      </change>
+      <change>
+	<date>2000-04-30</date>
+	<respStmt>
+	  <name>Horst Eyermann</name>
+	</respStmt>
+	<item>Database was converted to TEI format and checked into CVS</item>
+      </change>
+      <change>
+	<date>2000-01-09</date>
+	<respStmt>
+	  <name>Horst Eyermann</name>
+	</respStmt>
+	<item>Phonetics added - machine generated from MBRDICO,
+	  http://tcts.fpms.ac.be/synthesis/mbrdico</item>
+      </change>
+      <change>
+	<date>2000-01-01</date>
+	<respStmt>
+	  <name>Horst Eyermann</name>
+	</respStmt>
+	<item>This Database was generated from Ergane - Thanks!</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+

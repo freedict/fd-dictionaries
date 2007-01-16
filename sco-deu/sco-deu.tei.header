@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TEI.2
+  PUBLIC "-//TEI P4//DTD Main Document Type//EN"
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" >
+<!ENTITY % TEI.linking      "INCLUDE" >
+<!ATTLIST xptr url CDATA #IMPLIED >
+<!ATTLIST xref url CDATA #IMPLIED >
+]>
+
+<TEI.2>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>Gaelic-German FreeDict Dictionary</title>
+	<respStmt>
+	  <resp>by</resp> <name>Horst Eyermann &lt;horst@freedict.de></name>
+	</respStmt>
+      </titleStmt>
+
+      <editionStmt>
+	<edition>0.2</edition>
+      </editionStmt>
+
+      <extent>about 260 headwords</extent>
+
+      <publicationStmt>
+	<publisher>FreeDict</publisher>
+	<availability>
+	  <p>Copyright (C) 2000 Horst Eyermann, horst@freedict.de</p>
+	  <p>Available under the terms of the GNU General Public
+	    Licence.</p>
+	</availability>
+	<date>2004-2006</date>
+	<pubPlace>http://freedict.org/</pubPlace>
+      </publicationStmt>
+
+      <notesStmt>
+	<note type="status">too small</note>
+	<note>This dictionary module is named incorrectly. Instead of
+	  'sco-deu' it should be named 'gla-deu' (or 'gae-deu').</note>
+      </notesStmt>
+
+      <sourceDesc>
+	<p>Home: <xptr url="http://download.travlang.com/"/></p>
+	<p>This Database was generated from Ergane.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+	<p>This dictionary comes to you through nice people making it
+	  available for free and for good. It is part of the FreeDict project,
+	  http://www.freedict.org / http://freedict.de. This
+	  project aims to make available many translating dictionaries
+	  for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+
+    <revisionDesc>
+      <change>
+	<date>2006-11-22</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Re-Import from Ergane: gae.mdb from 2004-Jul-15, deu.mdb from
+	  2006-Mar-25.  Part of speech information now included.
+	  teidiff gave the following output: Unmodified 140, Added 423,
+	  Deleted 7, Modified &lt;form> 3, Modified &lt;sense>s 104,
+	  Modified multimatch 3 + 5.</item>
+      </change>
+      <change>
+	<date>2005-07-19</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Following Debian Bug#318025, retitled the dictionary from 'Scottish-German'
+	  to 'Gaelic-German'.</item>
+      </change>
+      <change>
+	<date>2005-02-12</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Converted file to TEI P4</item>
+      </change>
+      <change>
+	<date>2000-04-30</date>
+	<respStmt>
+	  <name>Horst Eyermann</name>
+	</respStmt>
+	<item>Database was converted to TEI format and checked into CVS</item>
+      </change>
+      <change>
+	<date>2000-01-01</date>
+	<respStmt>
+	  <name>Horst Eyermann</name>
+	</respStmt>
+	<item>This Database was generated from Ergane - Thanks!</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
