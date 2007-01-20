@@ -9,11 +9,11 @@ SHELL=bash
 
 available_platforms := dictd evolutionary bedic stardict aspell d4m fo
 
-xsldir := $(toolsdir)/xsl
+xsldir ?= $(toolsdir)/xsl
 tei2dict := $(toolsdir)/xmltei2xmldict.pl -n $(NSGMLS) -d $(XMLDECLARATION)
 xmllint := /usr/bin/xmllint
 
-dictname := $(shell basename "$(shell pwd)")
+dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 # Extracting the tiny edition element contents per XSLT is
