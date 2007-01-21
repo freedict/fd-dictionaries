@@ -5,12 +5,16 @@ include $(toolsdir)/Makefile.config
 #### set some variables
 #######################
 
+# let the tools from $(toolsdir) override tools
+# from /usr/bin
+PATH := $(toolsdir):$(PATH)
+
 SHELL=bash
 
 available_platforms := dictd evolutionary bedic stardict aspell d4m fo
 
 xsldir ?= $(toolsdir)/xsl
-tei2dict := $(toolsdir)/xmltei2xmldict.pl -n $(NSGMLS) -d $(XMLDECLARATION)
+tei2dict := xmltei2xmldict.pl -n $(NSGMLS) -d $(XMLDECLARATION)
 xmllint := /usr/bin/xmllint
 
 dictname ?= $(shell basename "$(shell pwd)")
@@ -29,7 +33,7 @@ rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 empty:=
 space:= $(empty) $(empty)
 version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
-	   $(dictname).tei)
+	   $(dictname).tei*)
 version := $(subst $(space),_,$(version1))
 
 ################
@@ -276,7 +280,7 @@ commit:
 	cvs -z3 commit
 
 dbupdate: $(dictname).dict $(dictname).index
-	$(toolsdir)/extractdata.pl -vfd $(dictname)
+	extractdata.pl -vfd $(dictname)
 
 # Query platform support status
 # This yields an exit status of
@@ -415,7 +419,7 @@ $(dictname).unxeroxed.dic: $(dictname).normalized.dic
 
 # old style:
 #%.unxeroxed.dic: %.tei
-#	$(toolsdir)/tei2dic.py $< $*.unxeroxed.dic
+#	tei2dic.py $< $*.unxeroxed.dic
 
 $(FREEDICTDIR)/release/dic/freedict-%-$(version).dic: %.unxeroxed.dic
 	@if [ ! -d $(FREEDICTDIR)/release/dic ]; then \
@@ -428,7 +432,7 @@ release-bedic: $(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
 $(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
 	@if [ ! -d $(FREEDICTDIR)/release/ipk ]; then \
 		mkdir $(FREEDICTDIR)/release/ipk; fi
-	cd $(FREEDICTDIR)/release/ipk && ln -s `$(toolsdir)/dic2ipk.sh $<` $@
+	cd $(FREEDICTDIR)/release/ipk && ln -s `dic2ipk.sh $<` $@
 
 # optional
 release-zaurus: $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
@@ -511,7 +515,7 @@ clean::
 #### Phonetics import
 #######################
 
-supported_phonetics = $(shell $(toolsdir)/teiaddphonetics -li)
+supported_phonetics = $(shell PATH=$(toolsdir):$(PATH) teiaddphonetics -li)
 
 la1 := $(shell export V=$(dictname); echo $${V:0:3})
 #la2 := $(shell export V=$(dictname); echo $${V:4:3})
@@ -520,7 +524,7 @@ ifneq (,$(findstring $(la1),$(supported_phonetics)))
 
 # TEIADDPHONETICS ?= -v
 $(dictname).tei: $(dictname)-nophon.tei
-	$(toolsdir)/teiaddphonetics $(TEIADDPHONETICS) -i $< -ou $@ -mbrdico-path $(MBRDICO_PATH)
+	teiaddphonetics $(TEIADDPHONETICS) -i $< -ou $@ -mbrdico-path $(MBRDICO_PATH)
 
 endif
 

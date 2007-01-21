@@ -13,7 +13,8 @@ endif
 $(erganetoolsdir)/zip/%.zip:
 	@if [ ! -d $(erganetoolsdir)/zip ]; then \
 	  mkdir -p $(erganetoolsdir)/zip; fi
-	wget --timestamping http://download.travlang.com/files/$*.zip
+	cd $(erganetoolsdir)/zip && \
+	  wget --timestamping http://download.travlang.com/files/$*.zip
 
 # ISO639-2 gives two codes for Czech adn Swedish
 $(erganetoolsdir)/zip/cze.zip: $(erganetoolsdir)/zip/ces.zip
@@ -85,7 +86,8 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 	  $(psql)
 	touch $@
 
-.PRECIOUS: $(erganetoolsdir)/stamps/%-is-in-postgres $(erganetoolsdir)/%.csv
+.PRECIOUS: $(erganetoolsdir)/stamps/%-is-in-postgres $(erganetoolsdir)/%.csv \
+	$(erganetoolsdir)/zip/%.zip
 
 # this is the target to build the actual .tei file
 %$(erganeexport_extension).tei: LA1=$(shell export LS="$*" && echo "$${LS:0:3}")
@@ -100,7 +102,7 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 	WHERE w.language='$(LA1)' AND x.language='$(LA2)' \
 	AND w.espkey=x.espkey ORDER BY w.xentry, w.type, w.gtype" \
 	| psql --no-align --tuples-only --field-separator '	' | \
-	$(toolsdir)/ergane-records2tei >>$@
+	ergane-records2tei >>$@
 	# Footer
 	echo '</body></text></TEI.2>' >>$@
 
@@ -120,7 +122,7 @@ new.tei: new-oldtei.tei
 	xmllint --noblanks $< >$@
 
 diff: old.tei new.tei
-	$(toolsdir)/teidiff $(TEIDIFF) old.tei new.tei -o files
+	teidiff $(TEIDIFF) old.tei new.tei -o files
 
 clean::
 	rm -f $(erganetoolsdir)/*.schema $(erganetoolsdir)/*.sql \
