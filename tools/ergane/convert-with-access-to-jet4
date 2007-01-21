@@ -2,8 +2,8 @@
 
 use warnings;
 use strict;
-use Win32::GuiTest qw(:ALL);
-
+# predeclare subs because we use Win32::GuiTest not during BEGIN
+use subs qw(SendKeys FindWindowLike WaitWindow);
 # TODO: accept 3 args (infile outfile) as used in Makefile.inc
 # check $O whether we run under cygwin
 # alternatively: does access run in wine?
@@ -15,9 +15,22 @@ Usage: $0 <FILENAME.MDB>
 Will convert FILENAME.MDB into FILENAME-jet4.MDB using M\$ Access.
 Tested with a German Access 2000.
 
+This script only runs under the POSIX emulation layer Cygwin under Windows.
+
 END
 }
 die "File not found: $ARGV[0]" unless -f $ARGV[0];
+
+if($^O ne 'Cywgin')
+{
+  print STDERR "This script only runs under the "
+    . "POSIX emulation layer Cygwin under Windows.\n";
+  exit 2
+}
+
+# do this now only to allow to start and print help even without this module
+eval 'use Win32::GuiTest qw(:ALL)';
+die $@ if $@;
 
 my $mdb = `cygpath -wa "$ARGV[0]"`;
 chomp $mdb;
