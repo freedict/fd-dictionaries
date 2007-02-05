@@ -160,16 +160,14 @@ reverse: $(dictname)-reverse.c5
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
-	cd .. && \
-	tar -cvjf $@ $(addprefix $(dictname)/, $^)
+	tar -C .. cvjf $@ $(addprefix $(dictname)/, $^)
 
 release-dict-tbz2: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
-	cd .. && \
-	tar -cvjf $@ $(addprefix $(dictname)/, $^)
+	tar -C .. cvjf $@ $(addprefix $(dictname)/, $^)
 
 release-dict-tbz2-reverse: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
@@ -318,7 +316,7 @@ clean::
 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFILES)
 	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
 		mkdir -p $(FREEDICTDIR)/release/src; fi
-	cd .. && tar -cvjf $@ \
+	tar -C .. -cvjf $@ \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES))
 
@@ -329,7 +327,7 @@ dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
 $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
 	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
 		mkdir -p $(FREEDICTDIR)/release/tei; fi
-	cd .. && tar cvjf $@ \
+	tar -C .. cvjf $@ \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES) $(dictname).tei)
 
@@ -498,7 +496,7 @@ $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
 	$(stardict_prefix)$(dictname).idx.gz
 	@if [ ! -d $(FREEDICTDIR)/release/stardict ]; then \
 		mkdir $(FREEDICTDIR)/release/stardict; fi
-	cd .. && tar -cvjf \
+	tar -C .. cvjf \
 	  $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	  $(addprefix $(dictname)/, $^)
 
@@ -515,7 +513,7 @@ clean::
 #### Phonetics import
 #######################
 
-supported_phonetics = $(shell PATH=$(toolsdir):$(PATH) teiaddphonetics -li)
+supported_phonetics = $(shell PATH="$(toolsdir):$(PATH)" teiaddphonetics -li)
 
 la1 := $(shell export V=$(dictname); echo $${V:0:3})
 #la2 := $(shell export V=$(dictname); echo $${V:4:3})
