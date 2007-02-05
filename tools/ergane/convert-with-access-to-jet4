@@ -21,7 +21,7 @@ END
 }
 die "File not found: $ARGV[0]" unless -f $ARGV[0];
 
-if($^O ne 'Cywgin')
+if($^O ne 'cywgin')
 {
   print STDERR "This script only runs under the "
     . "POSIX emulation layer Cygwin under Windows.\n";
