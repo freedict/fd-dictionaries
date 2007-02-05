@@ -1,3 +1,4 @@
+FREEDICTDIR ?= $(shell realpath ../..)
 erganetoolsdir = $(FREEDICTDIR)/tools/ergane
 
 ifeq (,$(findstring $(la1),$(supported_phonetics)))
@@ -16,7 +17,7 @@ $(erganetoolsdir)/zip/%.zip:
 	cd $(erganetoolsdir)/zip && \
 	  wget --timestamping http://download.travlang.com/files/$*.zip
 
-# ISO639-2 gives two codes for Czech adn Swedish
+# ISO639-2 gives two codes for Czech and Swedish
 $(erganetoolsdir)/zip/cze.zip: $(erganetoolsdir)/zip/ces.zip
 	ln -s ces.zip $@
 
@@ -42,7 +43,7 @@ $(erganetoolsdir)/unzip/%.mdb: $(erganetoolsdir)/zip/%.zip
 $(erganetoolsdir)/jet4/%-jet4.mdb: $(erganetoolsdir)/unzip/%.mdb
 	@if [ ! -d $(erganetoolsdir)/jet4 ]; then \
 	  mkdir -p $(erganetoolsdir)/jet4; fi
-	$(erganetoolsdir)/convert-with-access-to-jet4 $< $@
+	$(erganetoolsdir)/convert-with-access-to-jet4 "$<" "$@"
 
 # name of the postgresql database into which to import the data
 #PSQLFLAGS += -d $(USERNAME)
@@ -106,10 +107,24 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 	# Footer
 	echo '</body></text></TEI.2>' >>$@
 
+ergane-zip-all:
+	cd $(erganetoolsdir)/zip && \
+	  wget --timestamping --recursive --level 1 --accept "???.zip" \
+	    --no-directories http://download.travlang.com/files/
+
 ergane-zip-update:
 	cd $(erganetoolsdir)/zip && for i in ???.zip; do \
 	  wget --timestamping http://download.travlang.com/files/$$i; \
 	  done
+
+ergane-jet4-update: ergane-zip-update
+	for i in $(erganetoolsdir)/zip/???.zip; do \
+	  trimbegin=$${i##$(erganetoolsdir)/zip/} && \
+	  trimend=$${trimbegin%%.zip} && \
+	  $(MAKE) $(erganetoolsdir)/jet4/$$trimend-jet4.mdb; \
+	  done
+
+ergane-jet4-all: ergane-zip-all ergane-jet4-update
 
 # for teidiff
 old.tei: $(old)

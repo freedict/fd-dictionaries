@@ -2,18 +2,19 @@
 
 use warnings;
 use strict;
+
 # predeclare subs because we use Win32::GuiTest not during BEGIN
 use subs qw(SendKeys FindWindowLike WaitWindow);
-# TODO: accept 3 args (infile outfile) as used in Makefile.inc
-# check $O whether we run under cygwin
-# alternatively: does access run in wine?
-unless(defined $ARGV[0])
+
+# TODO does access run in wine?
+
+unless(defined($ARGV[0]) && defined($ARGV[1]))
 {
   die <<"END";
-Usage: $0 <FILENAME.MDB>
+Usage: $0 <INPUT-FILENAME.MDB> <OUTPUT-FILENBAME.MDB>
 
-Will convert FILENAME.MDB into FILENAME-jet4.MDB using M\$ Access.
-Tested with a German Access 2000.
+Convert INPUT-FILENAME.MDB into OUTPUT-FILENAME.MDB using M\$ Access.
+Tested with a German Access 2000 under Win98 and Win2k.
 
 This script only runs under the POSIX emulation layer Cygwin under Windows.
 
@@ -21,32 +22,54 @@ END
 }
 die "File not found: $ARGV[0]" unless -f $ARGV[0];
 
-if($^O ne 'cywgin')
+if($^O ne 'cygwin')
 {
   print STDERR "This script only runs under the "
     . "POSIX emulation layer Cygwin under Windows.\n";
   exit 2
 }
 
-# do this now only to allow to start and print help even without this module
-eval 'use Win32::GuiTest qw(:ALL)';
+# Do this now only to allow to start and print help even without this module.
+# A version number of 1.50.5 gives an error - it is invalid.
+# So we can't test the version here completely.
+eval 'use Win32::GuiTest 1.50 qw(:ALL)';
 die $@ if $@;
+
+if($Win32::GuiTest::VERSION lt '1.50.5')
+{
+  warn <<"END";
+WaitWindow() doesn't exist in Win32::GuiTest 1.50.3, which you get from CPAN
+currently.  Get 1.50.5 from
+http://sourceforge.net/project/showfiles.php?group_id=104592 and apply the
+patch to build in Cygwin from
+http://sourceforge.net/tracker/index.php?func=detail&aid=1446410&group_id=104592&atid=638614
+END
+}
 
 my $mdb = `cygpath -wa "$ARGV[0]"`;
 chomp $mdb;
-die "Filename does not end in .mdb" unless $mdb =~ /(.*)\.mdb$/;
-my $jet4 = "$1-jet4.mdb";
+warn "Filename does not end in .mdb" unless $mdb =~ /(.*)\.mdb$/;
+my $jet4 = $ARGV[1];
 my $jet4_quoted = quotemeta $jet4;
 my $jet4_cygwin = `cygpath -u $jet4_quoted`;
 chomp $jet4_cygwin;
 if(-f $jet4_cygwin)
 {
   print "$jet4 already exists - exit\n";
-  exit;
+  exit
 }
 print "Will convert $mdb into $jet4 ($jet4_cygwin)\n";
 
+# in Win98 'start' is a separate program in PATH, found by bash
 system 'start msaccess.exe';
+if($? == -1)
+{
+  # in Win2k start is integrated into cmd.exe
+  system 'cmd /c start msaccess.exe';
+}
+die "Failed to start msaccess.exe" if $? == -1;
+die "msaccess.exe died with exit status ".($?&127) if $? & 127;
+
 sleep 2;
 my @ws = FindWindowLike undef, 'Microsoft Access';
 die "No window 'Microsoft Access' found" unless @ws;
@@ -60,8 +83,10 @@ foreach (@ws)
   if($c eq '#32770')
   {
     SendKeys("~$mdb~");
+    # This string makes us fail with non German accesses
     my $convertOrOpen = WaitWindow /^(Datenbank konvertieren\/öffnen)$/, 2;
-    die "Could not find dialog whether convert or open" unless $convertOrOpen;
+    die "Could not find the dialog which asks whether convert or open"
+      unless $convertOrOpen;
     SendKeys "{PAUSE}~{PAUSE}$jet4~";
     sleep 9;
     #MenuSelect '&Datei|&Beenden';
