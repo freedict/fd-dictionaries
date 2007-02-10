@@ -2,8 +2,8 @@
 <!DOCTYPE TEI.2
   PUBLIC "-//TEI P4//DTD Main Document Type//EN"
   "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
-<!ENTITY % TEI.XML          "INCLUDE">
-<!ENTITY % TEI.dictionaries "INCLUDE"> 
+<!ENTITY % TEI.XML	    "INCLUDE">
+<!ENTITY % TEI.dictionaries "INCLUDE">
 <!ENTITY % TEI.linking	    "INCLUDE">
 <!ATTLIST xptr url CDATA #IMPLIED>
 <!ATTLIST xref url CDATA #IMPLIED>
@@ -13,44 +13,44 @@
 
   <teiHeader>
     <fileDesc>
-      <titleStmt> 
+      <titleStmt>
 	<title>German-Turkish Ferheng/FreeDict Dictionary</title>
-	<respStmt> 
+	<respStmt>
 	  <resp>Author</resp>
-	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
-	</respStmt> 
-	<respStmt> 
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name>
+	</respStmt>
+	<respStmt>
 	  <resp>Maintainer</resp>
-	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
-	</respStmt> 
-	<respStmt> 
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name>
+	</respStmt>
+	<respStmt>
 	  <resp>converted into TEI</resp>
-	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name> 
-	</respStmt> 
+	  <name>Erdal Ronahi &lt;erdal.ronahi@gmail.com></name>
+	</respStmt>
       </titleStmt>
-	      
+
       <editionStmt>
-	<edition>0.1</edition>
+	<edition>0.2</edition>
       </editionStmt>
 
       <extent>about 38 000 headwords</extent>
 
       <publicationStmt>
 	<publisher>FreeDict</publisher>
-	<availability> 
+	<availability>
 	  <p>Available under the terms of the GNU General Public
-	    Licence.</p> 
-	</availability> 
+	    Licence.</p>
+	</availability>
 	<date>2005</date>
 	<pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
       <seriesStmt>
-        <title>free dictionaries</title>
+	<title>free dictionaries</title>
       </seriesStmt>
 
       <notesStmt>
 	<note type="status">stable</note>
-      </notesStmt>  
+      </notesStmt>
 
       <sourceDesc>
 	<p>Home: <xptr url="http://ferheng.org/"/></p>
@@ -58,7 +58,7 @@
       </sourceDesc>
     </fileDesc>
 
-    <encodingDesc>     
+    <encodingDesc>
       <projectDesc>
 	<p>This dictionary comes to you through nice people making it
 	  available for free and for good. It is part of the FreeDict project,
@@ -67,8 +67,13 @@
 	  for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
-    
+
     <revisionDesc>
+      <change>
+	<date>2007-02-10</date>
+	<respStmt><name>Michael Bunk</name></respStmt>
+	<item>Enabled phonetics.</item>
+      </change>
       <change>
 	<date>2005-07-23</date>
 	<respStmt><name>Michael Bunk</name></respStmt>
