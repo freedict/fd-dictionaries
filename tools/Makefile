@@ -2,7 +2,7 @@
 
 include Makefile.config
 
-BUILD = for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file $@; done
+BUILD = set -e && for file in $(FREEDICTDIR)/???-???; do $(MAKE) -C $$file $@; done
 
 # Calls default target for each dictionary module.
 # Note: This is a conflict if you wanted to call

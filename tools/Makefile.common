@@ -33,7 +33,7 @@ rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 empty:=
 space:= $(empty) $(empty)
 version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
-	   $(dictname).tei*)
+	   $(wildcard $(dictname).tei*) $(dictname)-nophon.tei)
 version := $(subst $(space),_,$(version1))
 
 ################
@@ -513,7 +513,7 @@ clean::
 #### Phonetics import
 #######################
 
-supported_phonetics = $(shell PATH="$(toolsdir):$(PATH)" teiaddphonetics -li)
+supported_phonetics ?= $(shell PATH="$(toolsdir):$(PATH)" teiaddphonetics -li)
 
 la1 := $(shell export V=$(dictname); echo $${V:0:3})
 #la2 := $(shell export V=$(dictname); echo $${V:4:3})
