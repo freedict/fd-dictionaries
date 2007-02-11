@@ -160,14 +160,14 @@ reverse: $(dictname)-reverse.c5
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
-	tar -C .. cvjf $@ $(addprefix $(dictname)/, $^)
+	tar -C .. -cvjf $@ $(addprefix $(dictname)/, $^)
 
 release-dict-tbz2: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
-	tar -C .. cvjf $@ $(addprefix $(dictname)/, $^)
+	tar -C .. -cvjf $@ $(addprefix $(dictname)/, $^)
 
 release-dict-tbz2-reverse: dirs \
 	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
@@ -327,7 +327,7 @@ dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
 $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
 	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
 		mkdir -p $(FREEDICTDIR)/release/tei; fi
-	tar -C .. cvjf $@ \
+	tar -C .. -cvjf $@ \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(dictname)/, $(DISTFILES) $(dictname).tei)
 
@@ -496,7 +496,7 @@ $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
 	$(stardict_prefix)$(dictname).idx.gz
 	@if [ ! -d $(FREEDICTDIR)/release/stardict ]; then \
 		mkdir $(FREEDICTDIR)/release/stardict; fi
-	tar -C .. cvjf \
+	tar -C .. -cvjf \
 	  $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	  $(addprefix $(dictname)/, $^)
 
