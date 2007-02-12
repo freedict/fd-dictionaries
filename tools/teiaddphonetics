@@ -4,12 +4,14 @@ use warnings;
 use strict;
 use Getopt::Long;
 use Pod::Usage;
-use XML::DOM;
+use XML::LibXML::Reader;
 use FileHandle;
 use IPC::Open3;
 use Cwd;
 use constant { MBRDICO => 0, TXT2PHO => 1 };
-my $revision='$Revision: 1.4 $';
+use utf8;
+
+my $revision='$Revision: 1.5 $';
 my $verbose = 0;
 my ($help, $input, $slang, $list_slang, $mbrdico_path);
 my $gra2pho_path;
@@ -27,7 +29,7 @@ GetOptions (
   "input=s" => \$input,
   "output=s" => \$output) or exit 1;
 
-pod2usage(-exitval => 1, -verbose => 2) if $help;
+pod2usage (-exitval => 1, -verbose => 2) if $help;
 
 print STDERR "Revision: $revision\n" if $verbose;
 
@@ -54,7 +56,7 @@ unless ($slang)
   print STDERR "Guessed source language: $slang\n" if $verbose
 }
 
-my($gra2pho, $gra2pho_id);
+my ($gra2pho, $gra2pho_id);
 if ($slang =~ /^ara|eng|fra|nld|spa$/)
 {
   my %slang2ini = (
@@ -100,13 +102,13 @@ eval
     exit 2
   }
   my $exec = $gra2pho;
-  if($gra2pho_path)
+  if ($gra2pho_path)
   {
-    if(exists $ENV{'PATH'}) { $ENV{'PATH'} .= ":$gra2pho_path" }
+    if (exists $ENV{'PATH'}) { $ENV{'PATH'} .= ":$gra2pho_path" }
     else { $ENV{'PATH'} = $gra2pho_path }
   }
   $gra2pho_pid = open3 \*GRA, \*PHO, 0, $exec;
-  chdir $oldcwd || die if defined $gra2pho_path;
+  chdir $oldcwd || die if defined $gra2pho_path
 };
 die $@ if $@;
 print STDERR "$gra2pho: pid=$gra2pho_pid\n" if $verbose;
@@ -118,14 +120,6 @@ if ($gra2pho_id == MBRDICO)
   $l = <PHO>;
   die "mbrdico init failed: $l" unless $l eq "Ready:\n";
 }
-
-my $parser = new XML::DOM::Parser;
-print STDERR "Parsing $input... " if $verbose;
-my $doc = $parser->parsefile ($input);
-undef $parser;
-print STDERR "getting entries... " if $verbose;
-my $entries = $doc->getElementsByTagName ("entry");
-print STDERR $entries->getLength, " entries\n" if $verbose;
 
 my %sampa2unicode =
 (
@@ -264,30 +258,20 @@ sub sampa2unicode
   return $unicode
 }
 
-binmode STDERR, ':utf8';
-binmode STDOUT, ':utf8';
-binmode GRA, ':utf8';
 my %count;
-for (my $i=0; $i<$entries->getLength; $i++)
+
+sub addPronToEntry
 {
-  if ($i % 100 == 0)
-  {
-    unless (kill 0 => $gra2pho_pid)
-    {
-      warn "$gra2pho exited or changed its UID"
-    }
-    printf STDERR "%2.0f%% completed\r", $i/$entries->getLength*100
-      if $verbose;
-  }
-  my $entry = $entries->item($i);
+  my $entry = shift;
+  redo:
   my @orths = $entry->getElementsByTagName ("orth");
   unless (1 == scalar @orths)
   {
     print STDERR "Skipping entry with multiple <orth> elements\n"
       if $verbose;
-    next
+    return
   }
-  my $gra = $orths[0]->getFirstChild()->getNodeValue();
+  my $gra = $orths[0]->getFirstChild->data;
 
   my $verb_or_not = '';
   if ($gra2pho_id == MBRDICO)
@@ -297,7 +281,7 @@ for (my $i=0; $i<$entries->getLength; $i++)
     my @poss = $entry->getElementsByTagName ("pos");
     if (1 == scalar @poss)
     {
-      my $pos = $poss[0]->getFirstChild()->getNodeValue();
+      my $pos = $poss[0]->getFirstChild->data;
       if ($pos =~ /^v(i|t|ti)?$/)
       { $verb_or_not = '\VERB ' }
       elsif ($pos =~ /^n|adj|adv|conj|prep|pron|art|num|int$/)
@@ -355,22 +339,22 @@ for (my $i=0; $i<$entries->getLength; $i++)
     alarm 0;
     print STDERR "sampa: @sampa\n" if $verbose>1
   };
-  if($@)
+  if ($@)
   {
-    if($@ =~ '^alarm')
+    if ($@ =~ '^alarm')
     {
       $count{no_phonetics}++;
       print STDERR "Skipping entry because of timeout: '$gra'\n";
-      next
+      return
     }
     die "Unknown exception while getting phonetics for '$gra': $@"
   }
 
-  if(0 == scalar @sampa)
+  if (0 == scalar @sampa)
   {
     $count{no_phonetics}++;
     print STDERR "Skipping entry without phonetics output from gra2pho: $gra\n";
-    next
+    return
   }
   my $unicode;
   eval
@@ -378,34 +362,138 @@ for (my $i=0; $i<$entries->getLength; $i++)
     $unicode = sampa2unicode @sampa;
     print STDERR "unicode: $unicode\n" if $verbose>1
   };
-  if ($@) { print STDERR "$gra: @sampa: $@\n"; redo }
+  if ($@) { print STDERR "$gra: @sampa: $@\n"; goto redo }
 
   my @prons = $entry->getElementsByTagName ("pron");
-  if(0 == scalar @prons)
+  if (0 == scalar @prons)
   {
     my @forms = $entry->getElementsByTagName ("form");
     die unless 1 == scalar @forms;
-    my $pron = $forms[0]->appendChild ($doc->createElement ("pron"));
-    $pron->addText ($unicode);
+    $forms[0]->appendTextChild ("pron", $unicode);
     $count{added}++;
-    next
+    return
   }
-  if(1 == scalar @prons)
+  if (1 == scalar @prons)
   {
-    my $pron = $prons[0]->getFirstChild()->getNodeValue();
+    my $pron = $prons[0]->getFirstChild->getNodeValue;
     if ($pron eq $unicode)
-    { $count{already_there}++; next }
+    { $count{already_there}++; return }
     if ($overwrite)
-    { $count{overwritten}++; next }
-    $count{kept}++; next
+    { $count{overwritten}++; return }
+    $count{kept}++; return
   }
-  if(1 < scalar @prons)
+  if (1 < scalar @prons)
+  { print STDERR "Skipping entry with multiple <pron> elements\n" }
+}
+
+# From XML::Handler::CanonXMLWriter
+# For escaping special chars in HTML/XML/SGML
+my %char_entities = (
+    '&' => '&amp;',
+    '<' => '&lt;',
+    '>' => '&gt;',
+    '"' => '&quot;',
+    );
+
+sub escape
+{
+  my $string = shift;
+  $string =~ s/([&<>\"])/$char_entities{$1}/ge;
+  return $string
+}
+
+binmode STDERR, ':utf8';
+binmode STDOUT, ':utf8';
+binmode GRA, ':utf8';
+
+my $reader = new XML::LibXML::Reader (location => $input,
+ expand_entities => 0, load_ext_dtd => 0)
+  or die "Cannot read $input\n";
+my $out;
+open $out, ">$output"
+  or die "Failed to open $output for writing: $!";
+binmode $out, ':utf8';
+
+my $i = 0;
+my $success = $reader->read;
+while ($success)
+{
+  if ($reader->nodeType == XML_READER_TYPE_ELEMENT &&
+     $reader->localName eq 'entry')
   {
-    print STDERR "Skipping entry with multiple <pron> elements\n";
-    next
+    $i++;
+    if ($i % 100 == 0)
+    {
+      unless (kill 0 => $gra2pho_pid)
+      { warn "$gra2pho exited or changed its UID" }
+      print STDERR $i, " entries completed\r" if $verbose
+    }
+    my $entry = $reader->copyCurrentNode (1);
+    addPronToEntry $entry;
+    # XXX this requires the document to use unicode encoding?
+    print $out $entry->toString;
+    $success = $reader->next
+  }
+  elsif ($reader->nodeType == XML_READER_TYPE_ELEMENT &&
+    $reader->localName eq 'teiHeader')
+  {
+    my $teiHeader = $reader->copyCurrentNode (1);
+    print STDERR "Pushing a <change> element into <revisionDesc>\n" if $verbose;
+    my @revisionDescs = $teiHeader->getElementsByTagName ("revisionDesc", 0) or die;
+    if (0 == scalar @revisionDescs)
+    {
+      print STDERR "Creating <revisionDesc>\n" if $verbose;
+      push @revisionDescs, $teiHeader->appendChild ("revisionDesc")
+    }
+    my $change = XML::LibXML::Element->new ('change');
+    $revisionDescs[0]->insertBefore ($change,
+      $revisionDescs[0]->getFirstChild);
+    $change->appendText ("\n  ");
+    # XXX use correct format yyyy-mm-dd
+    $change->appendTextChild ("date", scalar localtime);
+    $change->appendText ("\n  ");
+    my $respStmt = XML::LibXML::Element->new ('respStmt');
+    $change->appendChild ($respStmt);
+    $change->appendText ("\n  ");
+    $change->appendTextChild ("item", "Phonetics imported from $gra2pho");
+    $change->appendText ("\n  ");
+    $respStmt->appendTextChild ("name", "$0 $revision");
+
+    print $out $teiHeader->toString;
+    $success = $reader->next
+  }
+  else
+  {
+    # output xml nodes verbatim
+    my $type = $reader->nodeType;
+    if ($type == XML_READER_TYPE_TEXT
+      or $type == XML_READER_TYPE_SIGNIFICANT_WHITESPACE)
+    { print $out escape $reader->value }
+    elsif ($type == XML_READER_TYPE_ELEMENT)
+    {
+      print $out '<', $reader->name;
+      my $a = $reader->attributeCount;
+      for (my $aa=0; $aa<$a; $aa++)
+      {
+	$reader->moveToNextAttribute or die;
+	print $out ' ', $reader->name;
+	print $out '="', $reader->value, '"' if $reader->value
+      }
+      print $out '>'
+    }
+    elsif ($type == XML_READER_TYPE_END_ELEMENT)
+    { print $out '</', $reader->name, '>' }
+    elsif($type == XML_READER_TYPE_DOCUMENT_TYPE)
+    {
+      my $d = $reader->copyCurrentNode (1);
+      # toString will also print the internal subset
+      print $out $d->toString;
+    }
+    else { die "Unhandled XML_READER_TYPE: ", $type }
+    $success = $reader->read
   }
 }
-undef $entries;
+die "Error from reader->read" unless $success == 0;
 
 print STDERR "\rGot all phonetics\n" if $verbose;
 close GRA;
@@ -417,44 +505,6 @@ if ($count)
   { print "$_:", ' ' x (15-length($_)), $count{$_}, " entries\n" }
 }
 
-print STDERR "Pushing a <change> element into <revisionDesc>\n" if $verbose;
-my $tei2 = $doc->getDocumentElement or die;
-my $teiHeader = @{$tei2->getElementsByTagName("teiHeader", 0)} [0] or die;
-my @revisionDescs = $teiHeader->getElementsByTagName("revisionDesc", 0) or die;
-if(0 == scalar @revisionDescs)
-{
-  print STDERR "Creating <revisionDesc>\n" if $verbose;
-  my @teiHeaders = $doc->getElementsByTagName ("teiHeader");
-  die unless 1 == scalar @teiHeaders;
-  push @revisionDescs, $teiHeaders[0]->appendChild
-    ($doc->createElement ("revisionDesc"));
-}
-my $change = $revisionDescs[0]->insertBefore($doc->createElement ("change"),
-  $revisionDescs[0]->getFirstChild());
-$change->addText ("\n  ");
-my $date = $change->appendChild($doc->createElement ("date"));
-$change->addText ("\n  ");
-my $respStmt = $change->appendChild($doc->createElement ("respStmt"));
-$change->addText ("\n  ");
-my $item = $change->appendChild($doc->createElement ("item"));
-$change->addText ("\n  ");
-my $name = $respStmt->appendChild($doc->createElement ("name"));
-# XXX use correct format yyy-mm-dd
-$date->addText (scalar localtime);
-$name->addText ("$0 $revision");
-$item->addText ("Phonetics imported from $gra2pho");
-
-print STDERR "Saving to $output... " if $verbose;
-if ($output eq '-') { $doc->print (\*STDOUT) }
-else
-{
-  # doesn't understand utf8: $doc->printToFile ($output)
-  # so do it another way
-  my $f = new FileHandle ($output, "w")
-    or die "Failed to open $output for writing: $!";
-  binmode $f, ':utf8';
-  $doc->printToFileHandle ($f);
-}
 print STDERR " Finish.\n" if $verbose;
 
 __END__
@@ -572,7 +622,7 @@ about F<txt2pho>.
 
 =head1 AUTHOR AND LICENCE
 
-Author: Michael Bunk, 2006
+Author: Michael Bunk, 2006-2007
 
 This is free software, licensed under the GPL.
 
