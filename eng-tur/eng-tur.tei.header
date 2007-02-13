@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TEI.2
   PUBLIC "-//TEI P4//DTD Main Document Type//EN"
-  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [ 
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
 <!ENTITY % TEI.XML          "INCLUDE" >
-<!ENTITY % TEI.dictionaries "INCLUDE" > 
+<!ENTITY % TEI.dictionaries "INCLUDE" >
 <!ENTITY % TEI.linking	    "INCLUDE" >
 <!ATTLIST xptr url CDATA #IMPLIED >
 <!ATTLIST xref url CDATA #IMPLIED >
@@ -13,32 +13,32 @@
 
   <teiHeader>
     <fileDesc>
-      <titleStmt> 
+      <titleStmt>
 	<title>English-Turkish FreeDict Dictionary</title>
-	<respStmt> 
-	  <resp>converted by</resp> <name>Michael Bunk &lt;micha@luetzschena.de></name> 
-	</respStmt> 
+	<respStmt>
+	  <resp>converted by</resp> <name>Michael Bunk &lt;micha@luetzschena.de></name>
+	</respStmt>
       </titleStmt>
-	      
+
       <editionStmt>
-	<edition>0.1</edition>
+	<edition>0.2</edition>
       </editionStmt>
 
       <extent>about 36500 headwords</extent>
 
       <publicationStmt>
 	<publisher>FreeDict</publisher>
-	<availability> 
+	<availability>
 	  <p>Available under the terms of the GNU General Public
-	    Licence.</p> 
-	</availability> 
+	    Licence.</p>
+	</availability>
 	<date>2004</date>
 	<pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
 
       <notesStmt>
 	<note type="status">unknown</note><!-- descriptive adjective, eg. "stable" -->
-      </notesStmt>  
+      </notesStmt>
 
       <sourceDesc>
 	<p>Home: <xptr url="http://www.linuxprogramlama.com/index.php?sayfa=gtksozluk2.htm"/></p>
@@ -46,7 +46,7 @@
       </sourceDesc>
     </fileDesc>
 
-    <encodingDesc>     
+    <encodingDesc>
       <projectDesc>
 	<p>This dictionary comes to you through nice people making it
 	  available for free and for good. It is part of the FreeDict project,
@@ -55,8 +55,16 @@
 	  for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
-    
-</teiHeader>
+    <revisionDesc>
+      <change>
+	<date>2007-02-13</date>
+	<respStmt>
+	  <name>Michael Bunk</name>
+	</respStmt>
+	<item>Enabled phonetics import</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
 
 <text>
   <body>
