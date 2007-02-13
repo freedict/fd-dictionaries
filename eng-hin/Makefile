@@ -13,13 +13,10 @@ ehconv.c: ehconv.yy
 ehconv: ehconv.c
 	gcc ehconv.c -lfl -oehconv
 
-eng-hin.tei.end: ehconv English-Hindi-Dictionary_2.isc
-	./ehconv <English-Hindi-Dictionary_2.isc >eng-hin.tei.end
-
-eng-hin.tei: eng-hin.tei.header eng-hin.tei.end
-	cat eng-hin.tei.header eng-hin.tei.end >eng-hin.tei
+eng-hin-nophon.tei: eng-hin.tei.header ehconv English-Hindi-Dictionary_2.isc
+	cp eng-hin.tei.header $@
+	./ehconv <English-Hindi-Dictionary_2.isc >>$@
 
 clean::
-	-rm -f ehconv.c eng-hin.index eng-hin.dict eng-hin.tei \
-	eng-hin.tei.end ehconv
+	rm -f ehconv.c eng-hin.tei eng-hin-nophon.tei ehconv
 
