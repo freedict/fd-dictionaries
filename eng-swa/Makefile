@@ -1,3 +1,3 @@
 FREEDICTDIR ?= ..
-DISTFILES = eng-swa.tei Makefile README
+DISTFILES = eng-swa-nophon.tei Makefile README
 include $(FREEDICTDIR)/tools/Makefile.common

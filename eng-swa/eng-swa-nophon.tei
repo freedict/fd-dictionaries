@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--this file partially auto generated on   Mon Jun 21 12:22:26 2004   by dict2tei.py-0.1.1 --> 
+<!--this file partially auto generated on   Mon Jun 21 12:22:26 2004   by dict2tei.py-0.1.1 -->
 
 <!-- English-Swahili xFried Dictionary
-	
+
 	This document is free software; you can redistribute it and/or modifyit
 	under the terms of the GNU General Public License as published by the
-	Free Software Foundation. 
+	Free Software Foundation.
         This program is distributed in the hope that it will be useful, but
 	WITHOUT ANY WARRANTY; without even the implied 	warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
         See the GNU General Public License for more details.You should
 	have received a copy of the GNU General Public License along
 	with this program; if not,	write to the Free Software
@@ -19,63 +19,72 @@
 
 <!DOCTYPE TEI.2
   PUBLIC "-//TEI P4//DTD Main Document Type//EN"
-  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [ 
-<!ENTITY % TEI.XML            "INCLUDE" >
-<!ENTITY % TEI.dictionaries "INCLUDE" > 
+  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML          "INCLUDE" >
+<!ENTITY % TEI.dictionaries "INCLUDE" >
 ]>
 
 <TEI.2>
 
 <teiHeader>
   <fileDesc>
-    <titleStmt> 
+    <titleStmt>
       <title>English-Swahili xFried/FreeDict Dictionary</title>
-      <respStmt> 
+      <respStmt>
 	<resp>Author</resp>
 	<name>Beata Wojtowicz &lt;wierzchob@wp.pl></name>
-      </respStmt> 
-      <respStmt> 
+      </respStmt>
+      <respStmt>
 	<resp>Maintainer</resp>
 	<name>Beata Wojtowicz &lt;wierzchob@wp.pl></name>
-      </respStmt> 
+      </respStmt>
     </titleStmt>
-	      
+
     <editionStmt>
-      <edition>0.1</edition>
+      <edition>0.2</edition>
     </editionStmt>
 
     <extent>about 1500 headwords</extent>
-      
+
     <publicationStmt>
       <publisher>FreeDict</publisher>
-      <availability> 
+      <availability>
 	<p>Available under the terms of the GNU General Public
-	  Licence.</p> 
-      </availability> 
+	  Licence.</p>
+      </availability>
       <date>2004</date>
       <pubPlace>http://freedict.org/</pubPlace>
     </publicationStmt>
 
-        <sourceDesc> 
-	 <p>This file was compiled from other
-	  electronic documents. It is based on Swahili-Kiswahili to English
-    	  Translation Program by Morris Fried available from
-    	  http://www.dict.org/links.html, which has been supplemented by
-    	  entries from Freedict Swahili-English Dictionary created by
-    	  Horst Eyermann (http://www.freedict.de) from the
-    	  Swahili-Esperanto and Esperanto-English Ergane
-    	  dictionaries, available from http://www.travlang.com.</p>
-	</sourceDesc>
-    </fileDesc>
+    <sourceDesc>
+      <p>This file was compiled from other
+	electronic documents. It is based on Swahili-Kiswahili to English
+	Translation Program by Morris Fried available from
+	http://www.dict.org/links.html, which has been supplemented by
+	entries from Freedict Swahili-English Dictionary created by
+	Horst Eyermann (http://www.freedict.de) from the
+	Swahili-Esperanto and Esperanto-English Ergane
+	dictionaries, available from http://www.travlang.com.</p>
+    </sourceDesc>
+  </fileDesc>
 
-    <encodingDesc>     
-      <projectDesc>
-       <p>This dictionary comes to you through nice people making it
-         available for free and for good. It is part of the FreeDict project,
-         http://www.freedict.de / http://freedict.org .</p>
-      </projectDesc>
-    </encodingDesc>
+  <encodingDesc>
+    <projectDesc>
+      <p>This dictionary comes to you through nice people making it
+	available for free and for good. It is part of the FreeDict project,
+	http://www.freedict.de / http://freedict.org .</p>
+    </projectDesc>
+  </encodingDesc>
 
+  <revisionDesc>
+    <change>
+      <date>2007-02-13</date>
+      <respStmt>
+	<name>Michael Bunk</name>
+      </respStmt>
+      <item>Enabled phonetics import</item>
+    </change>
+  </revisionDesc>
 </teiHeader>
 
 
