@@ -1,11 +1,12 @@
 FREEDICTDIR ?= ..
-DISTFILES = ChangeLog eng-cze.tei Makefile eng-cze.tei.header general.footer
+DISTFILES = ChangeLog English-Czech.xdf Makefile \
+	eng-cze.tei.header general.footer
 include $(FREEDICTDIR)/tools/Makefile.common
 
-eng-cze.tei: $(toolsdir)/xdf2tei.pl eng-cze.tei.header general.footer
-	cat eng-cze.tei.header >eng-cze.tei
-	$(toolsdir)/xdf2tei.pl <English-Czech.xdf >>eng-cze.tei
-	cat general.footer >>eng-cze.tei
+eng-cze-nophon.tei: $(toolsdir)/xdf2tei.pl eng-cze.tei.header general.footer
+	cat eng-cze.tei.header >$@
+	$(toolsdir)/xdf2tei.pl <English-Czech.xdf >>$@
+	cat general.footer >>$@
 
 clean::
-	-rm eng-cze.tei
+	rm -f eng-cze.tei eng-cze-nophon.tei
