@@ -4,5 +4,5 @@ DISTFILES = AUTHORS ChangeLog COPYING eng-scr.tei \
 # Clear this variable, because currently the .tei file already contains
 # phonetics information.
 supported_phonetics =
-iinclude $(FREEDICTDIR)/tools/Makefile.common
+include $(FREEDICTDIR)/tools/Makefile.common
 UNSUPPORTED_PLATFORMS = evolutionary
