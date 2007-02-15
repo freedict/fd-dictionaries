@@ -11,7 +11,7 @@ use Cwd;
 use constant { MBRDICO => 0, TXT2PHO => 1 };
 use utf8;
 
-my $revision='$Revision: 1.6 $';
+my $revision='$Revision: 1.7 $';
 my $verbose = 0;
 my ($help, $input, $slang, $list_slang, $mbrdico_path);
 my $gra2pho_path;
@@ -322,7 +322,7 @@ sub addPronToEntry
       # mbrdico has a bug when transforming the Dutch
       # word "afleidingsmanoeuvre" to phonetics
       last if $_ eq "Unknown Phoneme\n";
-      if (/^[\w'\@:{^]{1,2}[\d \,.\(\)]*\n$/)
+      if (/^[\w'\@:{^~]{1,2}[\d \,.\(\)]*\n$/)
       {
 	#s/^\s+//;
 	push @sampa, "'" if $proso eq '1';
