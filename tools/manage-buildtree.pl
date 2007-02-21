@@ -12,18 +12,20 @@
 use Cvs;
 use Getopt::Std;
 use strict;
+use warnings;
 
 our ($interactive, $loglevel, $opt_v, $opt_n, $opt_a, $opt_h, $opt_i,
  $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m, $opt_c);
 
 # scan tags for "rel-x-y-z"
 # returns tag for which x,y,z are highest
+# returns undef if no tag matches
 sub highest
 {
-  my $h;
+  my ($h, $hx, $hy, $hz);
   foreach(@_)
   {
-    my @parts = split /-/, $_,;
+    my @parts = split /-/, $_;
     #print "parts: ", join('#', @parts), " #:", $#parts, "\n";
     next if($parts[0] ne 'rel') ||
            ($#parts != 3);
@@ -31,12 +33,11 @@ sub highest
     my $y = $parts[2]; $y =~ s/\D//g;
     my $z = $parts[3]; $z =~ s/\D//g;
     next if $x ne $parts[1] || $y ne $parts[2] || $z ne $parts[3];
-    my ($hx, $hy, $hz);
-    next if $x < $hx || $y < $hy || $z < $hz;
+    next if defined($hx) && ($x < $hx || $y < $hy || $z < $hz);
     $hx = $x; $hy = $y; $hz = $z;
-    $h = $_;
+    $h = $_
   }
-  return $h;
+  return $h
 }
 
 ##########################################################################
@@ -49,12 +50,12 @@ sub check_module
   if($_ !~ /\w\w\w-\w\w\w/)
   {
     print "\tIllegal name - skipping\n" if $loglevel>2;
-    return;
+    return
   }
   if(/eng-ger|ger-eng|spa-spa/)
   {
     print "\tIllegal module - skipping\n" if $loglevel>2;
-    return;
+    return
   }
 
   # for checking status, the module has to be in the working directory
@@ -67,26 +68,26 @@ sub check_module
     {
       print "\tModule $m not checked out. Checkout (y/Y/n/N, default n)? ";
       my $answer = <STDIN>;
-      if($answer =~ /^y$/) { $checkout_this=1; }
-      elsif($answer =~ /^Y$/) { $checkout_all=1; $checkout_this=1; }
-      elsif($answer =~ /^N$/) { $checkout_none=1; }
-      else { print "assuming 'no'. "; }
+      if($answer =~ /^y$/) { $checkout_this=1 }
+      elsif($answer =~ /^Y$/) { $checkout_all=1; $checkout_this=1 }
+      elsif($answer =~ /^N$/) { $checkout_none=1 }
+      else { print "assuming 'no'. " }
     }
 
-    if(!$checkout_this) { print "skipping\n" if($loglevel>1); return; }
+    if(!$checkout_this) { print "skipping\n" if $loglevel>1; return }
 
     print "\tCheckout..." if $loglevel>1;
     my $cvs1 = new Cvs($testdir . "/$m", debug=>0, cvsroot => $cvsroot)
       or die $Cvs::ERROR;
     push @{$cvs1->{args}}, '-z3';
     $cvs1->checkout($m);
-    print "\n" if $loglevel>1;
+    print "\n" if $loglevel>1
   }
   elsif(!$opt_i)
   {
     print "\tChecking modification date... " if $loglevel>2;
     my @s = stat "$testdir/$m/CVS";
-    if(!@s) { warn "stat failed on $testdir/$m/CVS"; return; }
+    if(!@s) { warn "stat failed on $testdir/$m/CVS"; return }
     my $mtime = $s[9];
     #print "mtime=", $mtime, "\n";
     #print "time=", time, "\n";
@@ -95,7 +96,7 @@ sub check_module
     {
       print "\t'CVS' subdir is less than 24 h old. Skipping module!\n"
         if $loglevel>1;
-      return;
+      return
     }
   }
 
@@ -103,7 +104,7 @@ sub check_module
   {
     print "\tSkipping status check and eventual update\n"
       if $loglevel>1;
-    return;
+    return
   }
 
   # XXX for speedup:
@@ -121,39 +122,39 @@ sub check_module
   if($status->error)
   {
     print "Error: ", $status->error, ". Skipping module!\n";
-    return;
+    return
   }
 
-  my $h = "";
+  my $h;
   if($status->success)
   {
     print "\tTags: ", join(' ', $status->tags), "\n" if $loglevel>2;
-    $h = highest($status->tags);
-    print "\tHighest Release Tag: $h\n" if $loglevel>1 && $h;
+    $h = highest $status->tags;
+    print "\tHighest Release Tag: $h\n" if $loglevel>1 && defined $h
   }
 
-  if($h ne "")
+  if(defined $h)
   {
     my $tr = $status->tag_revision($h);
-    my $wr = $status->working_revision;
+    my $wr = $status->working_revision || '';
     if($tr ne $wr)
     {
-      print "\tTag revision does not match revision of file in " .
+      print "\t$m: Tag revision does not match revision of file in " .
         "working directory.\n";
-      print "\ttr<wr: this shouldn't happen! " if($tr < $wr);
-      if($tr > $wr)
+      print "\ttr<wr: this shouldn't happen! " if $tr lt $wr;
+      if($tr gt $wr)
       {
-	print "\tModule needs update: working revision ($wr) < " .
+	print "\t$m: Module needs update: working revision ($wr) < " .
 	  "tag revision ($tr)\n";
 	# XXX do update to the tagged release
       }
     }
     else
     {
-      print "\tWorking revision is consistent with tagged release.\n";
+      print "\tWorking revision is consistent with tagged release.\n"
     }
 
-    # check whether that release was already made (released/built)
+    # XXX check whether that release was already made (released/built)
 
     # if not made yet
     # build (don't do if we don't trust sources)
@@ -162,12 +163,10 @@ sub check_module
     # (email if we are run from cron)
   }
   else
-  {
-    print "\tNo release tagged! Nothing to do for me.\n" if $loglevel>1;
-  }
-  
+  { print "\tNo release tagged! Nothing to do for me.\n" if $loglevel>1 }
+
   # mark this module as checked
-  system 'touch', "$testdir/$m/CVS" || warn "touch: Returned status $?";
+  system 'touch', "$testdir/$m/CVS" || warn "touch: Returned status $?"
 }
 
 ##########################################################################
@@ -177,28 +176,36 @@ sub check_all
   print "Getting module list..." if $loglevel>1;
   my $cvs = new Cvs($testdir, cvsroot => $cvsroot,
     # password => '',
-    #debug => 1
+    debug => $loglevel>1
     ) or die $Cvs::ERROR;
 
   my @modules = $cvs->module_list;
   print $#modules, " modules\n" if $loglevel>1;
-
-  foreach(@modules)
+  if ($#modules<50 && $cvsroot !~ /^:pserver:anonymous/)
   {
-    check_module($_);
+    print STDERR "Warning: If you use developer access via SSH,\n"
+      . "make sure you did ssh-add to enable automatic\n"
+      . "public key authentication.\n";
+    exit 1
   }
+
+  foreach(@modules) { check_module $_ }
 }
 
 ##########################################################################
 
-our $interactive = 1;
-our $loglevel = 2;
+$interactive = 1;
+my $default_loglevel = 1;
+$loglevel = $default_loglevel;
 # this will be the residence of the release tree - should be parameters :)
-our $testdir = $ENV{'FREEDICTDIR'} || '~/freedict';
-our $cvsroot = ($ENV{'CVSROOT'} =~ /freedict/) ? $ENV{'CVSROOT'} :
+$testdir = $ENV{'FREEDICTDIR'} || die "Set FREEDICTDIR first";
+$cvsroot = ($ENV{'CVSROOT'} =~ /freedict/) ? $ENV{'CVSROOT'} :
   ':pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict';
 
-getopts('hnaicv:m:');
+print STDERR "Warning: IPC::Run::IO depends on at least one English language string.\n"
+  . "Better set LANG=C before calling me.\n" if $ENV{'LANG'} and $ENV{'LANG'} ne 'C';
+
+getopts 'hnaicv:m:';
 $interactive = 0 if $opt_n;
 $loglevel = $opt_v if $opt_v;
 if($opt_h)
@@ -219,21 +226,22 @@ $0 -h | -a | -m la1-la2 [-v level] [-n] [-i] [-c]
   -c\t\tDo `cvs checkout', but no `cvs update'
   -n\t\tNo interactive mode: No automatic checkouts, no questions.
   -v level\tSet debug level (0 = error, 1 = warn, 2 = info, 3 = verbose)
-  -i ignore date of last CVS check and check anyway
+\t\tDefault: $default_loglevel
+  -i\t\tIgnore date of last CVS check and check anyway
 
 EOT
-  exit;
+  exit
 }
 
 if(!$opt_a && !$opt_m)
 {
   print "You must give at least one of -a, -m or -h.\n";
-  exit;
+  exit
 }
 
 
-check_all() if $opt_a;
-check_module($opt_m) if $opt_m;
+check_all if $opt_a;
+check_module $opt_m if $opt_m;
 
 print "Finished.\n" if $loglevel>1;
 

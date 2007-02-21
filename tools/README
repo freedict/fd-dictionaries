@@ -49,7 +49,29 @@ freedict-eng-deu-0.3.src.tar.bz2, run:
 
 where path/to/cvs/freedict should contain tools/Makefile.common.
 
+
+If you use Debian, you will need these packages (and some more):
+
+   * perl
+   * dictfmt
+   * realpath
+   * dbview
+   * flex
+   * cvs
+   * libcvs-perl (in testing only)
+   * mdbtools
+   * patch
+   * postgresql or postgresql-8.1
+   * tei (inofficial packet from FreeDict debian repository)
+   * txt2pho (inofficial packet from FreeDict debian repository, non-free)
+   * mbrdico (inofficial packet from FreeDict debian repository)
+
+Also, teiaddphonetics requires XML::LibXML::Reader, which is not even
+in libxml-libxml-perl in unstable, so you need to do as root:
+
+	cpan XML::LibXML
+
 hope this helps get you started :)
 
-Michael Bunk, November 2006
+Michael Bunk, February 2007
 

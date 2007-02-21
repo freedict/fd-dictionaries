@@ -1,5 +1,5 @@
 FREEDICTDIR ?= $(shell realpath ../..)
-erganetoolsdir = $(FREEDICTDIR)/tools/ergane
+erganetoolsdir = $(shell realpath $(FREEDICTDIR)/tools/ergane)
 
 ifeq (,$(findstring $(la1),$(supported_phonetics)))
 # phonetics for language $(la1) not supported - generate final .tei file
@@ -146,10 +146,11 @@ clean::
 	old.tei-new.tei-* new-oldtei.tei
 	if [ -r $(erganetoolsdir)/stamps/tables-created ] ; then \
 	  echo "DROP TABLE Woordenboek, VersieInfo, altspellings, vfilter" | \
-	  $(psql) && rm $(erganetoolsdir)/stamps/tables-created \
+	  $(psql) && rm -f $(erganetoolsdir)/stamps/tables-created \
 	  $(erganetoolsdir)/stamps/*-is-in-postgres; fi
 
 .PHONY: clean ergane-zip-update diff
+.PRECIOUS: $(erganetoolsdir)/zip/%.zip $(erganetoolsdir)/unzip/%.mdb
 
 # vim:filetype=make:
 
