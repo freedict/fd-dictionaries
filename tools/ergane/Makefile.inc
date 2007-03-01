@@ -58,14 +58,23 @@ $(erganetoolsdir)/%.schema: $(erganetoolsdir)/jet4/%-jet4.mdb
 	mdb-schema $< postgres >$@
 
 $(erganetoolsdir)/%.schema.postgresql: $(erganetoolsdir)/%.schema \
-        $(erganetoolsdir)/dan.schema.diff
+	$(erganetoolsdir)/dan.schema.diff
 	cp $< $@
 	cd $(erganetoolsdir) && patch -p1 <$(erganetoolsdir)/dan.schema.diff
 
-$(erganetoolsdir)/stamps/tables-created: $(erganetoolsdir)/dan.schema.postgresql
+$(erganetoolsdir)/talen.schema.postgresql: $(erganetoolsdir)/jet4/epo-jet4.mdb
+	mdb-schema -T Talen $< postgres >$@
+
+$(erganetoolsdir)/kb_map.schema.postgresql: $(erganetoolsdir)/jet4/epo-jet4.mdb
+	mdb-schema -T KB_Map $< postgres >$@
+
+$(erganetoolsdir)/stamps/tables-created: \
+	$(erganetoolsdir)/dan.schema.postgresql \
+	$(erganetoolsdir)/talen.schema.postgresql \
+	$(erganetoolsdir)/kb_map.schema.postgresql
 	if [ ! -d $(erganetoolsdir)/stamps ]; then \
 	  mkdir -p $(erganetoolsdir)/stamps; fi
-	$(psql) <$<
+	cat $^ | $(psql)
 	touch $@
 
 $(erganetoolsdir)/%.csv: $(erganetoolsdir)/jet4/%-jet4.mdb
@@ -87,6 +96,24 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 	  $(psql)
 	touch $@
 
+$(erganetoolsdir)/stamps/talen-is-in-postgres: \
+	$(erganetoolsdir)/jet4/epo-jet4.mdb \
+	$(erganetoolsdir)/stamps/tables-created
+	echo "SELECT * FROM Talen" | \
+	mdb-sql -HFp $< | \
+	grep -v "^$$" | \
+	$(psql) -c "COPY Talen (TaalCode, TekstNr, Schrift) FROM STDIN NULL ''"
+	touch $@
+
+$(erganetoolsdir)/stamps/kb_map-is-in-postgres: \
+	$(erganetoolsdir)/jet4/epo-jet4.mdb \
+	$(erganetoolsdir)/stamps/tables-created
+	echo "SELECT * FROM KB_Map" | \
+	mdb-sql -HFp $< | \
+	grep -v "^$$" | \
+	$(psql) -c "COPY KB_Map (Schrift, KeyASCII, UnicodeVal) FROM STDIN NULL ''"
+	touch $@
+
 .PRECIOUS: $(erganetoolsdir)/stamps/%-is-in-postgres $(erganetoolsdir)/%.csv \
 	$(erganetoolsdir)/zip/%.zip
 
@@ -94,8 +121,11 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 %$(erganeexport_extension).tei: LA1=$(shell export LS="$*" && echo "$${LS:0:3}")
 %$(erganeexport_extension).tei: LA2=$(shell export LS="$*" && echo "$${LS:4:3}")
 .SECONDEXPANSION:
-%$(erganeexport_extension).tei: $(erganetoolsdir)/stamps/$$(LA1)-is-in-postgres \
-       $(erganetoolsdir)/stamps/$$(LA2)-is-in-postgres
+%$(erganeexport_extension).tei: \
+	$(erganetoolsdir)/stamps/$$(LA1)-is-in-postgres \
+	$(erganetoolsdir)/stamps/$$(LA2)-is-in-postgres \
+	$(erganetoolsdir)/stamps/talen-is-in-postgres \
+	$(erganetoolsdir)/stamps/kb_map-is-in-postgres
 	if [ -r $(LA1)-$(LA2).tei.header ] ; then \
 		cp $(LA1)-$(LA2).tei.header $@; \
 	else cp $(erganetoolsdir)/default.tei.header $@.tei; fi
@@ -103,8 +133,8 @@ $(erganetoolsdir)/stamps/%-is-in-postgres: $(erganetoolsdir)/%.csv \
 	WHERE w.language='$(LA1)' AND x.language='$(LA2)' \
 	AND w.espkey=x.espkey ORDER BY w.xentry, w.type, w.gtype" \
 	| psql --no-align --tuples-only --field-separator '	' | \
-	ergane-records2tei >>$@
-	# Footer
+	ergane-records2tei -v --source-language $(LA1) \
+	  --destination-language $(LA2) >>$@ && \
 	echo '</body></text></TEI.2>' >>$@
 
 ergane-zip-all:
