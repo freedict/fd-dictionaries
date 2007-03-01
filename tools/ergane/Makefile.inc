@@ -51,8 +51,10 @@ $(erganetoolsdir)/jet4/%-jet4.mdb: $(erganetoolsdir)/unzip/%.mdb
 psql = psql $(PSQLFLAGS)
 
 #tables_exist = $(shell psql -c "\\d woordenboek" 2>/dev/null)
+# Th columns "SortKey" and "Uitspraak" are missing here, because the
+# Woordenboek table of jap.mdb lacks them and we don't need them.
 columns = KeyNo, EspKey, XEntry, Type, GType, FType, Omschr, Freq, Volgorde, \
-Opm, Opm2, SortKey, Uitspraak
+Opm, Opm2
 
 $(erganetoolsdir)/%.schema: $(erganetoolsdir)/jet4/%-jet4.mdb
 	mdb-schema $< postgres >$@
