@@ -1,6 +1,6 @@
 FREEDICTDIR ?= ..
 DISTFILES = Makefile COPYING INSTALL NEWS README ChangeLog \
-	    eng-nld.tei
+	    eng-nld.tei.header
 include $(FREEDICTDIR)/tools/Makefile.common
 include $(toolsdir)/ergane/Makefile.inc
 

@@ -2,7 +2,7 @@ FREEDICTDIR ?= ..
 hedir ?= $(FREEDICTDIR)/hun-eng
 VPATH += $(hedir)
 include $(hedir)/Makefile
-DISTFILES = eng-hun.tei Makefile ChangeLog
+DISTFILES = eng-hun.tei.header Makefile ChangeLog
 
 eng-hun-nophon.tei: eng-hun.tei.header SZOTAR.DBF szotar-dbf2tei.pl
 ifeq ($(dbview_in_path),)
