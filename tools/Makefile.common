@@ -531,6 +531,9 @@ endif
 #### Makefile-technical
 #######################
 
+# should be default, but is not for make-historic reasons
+.DELETE_ON_ERROR:
+
 .PHONY: all version status sourceURL maintainer dirs install uninstall reverse reverse-oldstyle \
 	release-dict-tbz2-oldstyle release-dict-tbz2-reverse-oldstyle \
 	release-dict-tgz-oldstyle release-dict-tgz-reverse-oldstyle \

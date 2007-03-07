@@ -136,7 +136,7 @@ $(erganetoolsdir)/stamps/kb_map-is-in-postgres: \
 	AND w.espkey=x.espkey ORDER BY w.xentry, w.type, w.gtype" \
 	| psql --no-align --tuples-only --field-separator '	' | \
 	ergane-records2tei -v --source-language $(LA1) \
-	  --destination-language $(LA2) >>$@ && \
+	  --destination-language $(LA2) >>$@
 	echo '</body></text></TEI.2>' >>$@
 
 ergane-zip-all:

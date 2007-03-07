@@ -7,7 +7,7 @@ use Pod::Usage;
 use DBI;
 use charnames ':full';
 
-my $revision='$Revision: 1.6 $';
+my $revision='$Revision: 1.7 $';
 my $verbose = 0;
 my ($help, $slang, $dlang);
 
@@ -157,8 +157,18 @@ my $dbh = DBI->connect("dbi:Pg:dbname=$ENV{USER}",
 sub get_schrift
 {
   my $lang = shift;
+  # exceptions...
+  $lang = 'ces' if $lang eq 'cze';
+  $lang = 'dut' if $lang eq 'nld';
+  $lang = 'gae' if $lang eq 'sco';
+  $lang = 'sve' if $lang eq 'swe';
   my ($Schrift1) = $dbh->selectrow_array(
     "SELECT Schrift FROM Talen WHERE TaalCode='$lang'");
+  unless(defined $Schrift1)
+  {
+    print STDERR "$lang Schrift index not in 'Talen' table.  Setting it to 0.\n";
+    $Schrift1 = 0
+  }
   print STDERR "$lang Schrift index: $Schrift1\n" if $verbose;
   my $Schrift_numeric = $dbh->selectall_hashref(
     "SELECT keyascii, UnicodeVal FROM KB_Map " .
