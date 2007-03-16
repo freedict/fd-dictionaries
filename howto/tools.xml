@@ -12,7 +12,7 @@
 
   &writing-texteditor;
 
-  <chapter>
+  <chapter id="validation">
     <title>Validating TEI format files</title>
     <para>Validating TEI files requires an installed version of the TEI DTD and
       a validating XML parser. It is assumed you have
@@ -73,7 +73,7 @@
       </itemizedlist>
     </para>
 
-    <section>
+    <section id="ergane">
       <title>Technical notes on the Ergane databases</title>
       <para>Ergane 5.0, which was the source for the first FreeDict databases,
 	had an export function.  Back then it was easy to use its output and
@@ -96,8 +96,8 @@
 	is not really necessary.  The Ergane database just contains some special tables,
 	but they are not special to Esperanto.</para>
 
-      <table>
-	<title>The 'Woodenboek' table structure</title>
+      <table id="ergane-woordenboek">
+	<title>The 'Woordenboek' table structure</title>
 	<tgroup cols="3">
 	  <thead>
 	    <row>
@@ -203,7 +203,7 @@
 	direction of translation of the dictionary can be reversed, ie. an
 	English-Arabic dictionary would become queryable Arabic-English.</para>
 
-      <section>
+      <section id="tei2dict-c5">
 	<title>Using c5 style</title>
 	<para>This process uses an XSLT stylesheet and <command>dictfmt -c5</command>.
 	  The stylesheet needs to be applied to the TEI file. Any XSLT processor
@@ -231,7 +231,7 @@
 	    &lt;<replaceable>la1-la2</replaceable>.c5</userinput></para>
       </section>
 
-      <section>
+      <section id="tei2dict-perl">
 	<title>Using <command>xmltei2xmldict.pl</command></title>
 	<para>Second, using <command>xmltei2xmldict.pl</command>. This is a
 	  conversion utility developed by the FreeDict project itself. It
@@ -259,7 +259,7 @@
 	which contains about 81000 entries, using my 550 MHz / 128 MB machine
 	took the following times:</para>
 
-      <table frame="none">
+      <table frame="none" id="tei2dict-timing">
 	<title>Timing comparison of c5 and <command>xmltei2xmldict.pl</command> conversion styles</title>
 	<tgroup cols="2">
 	  <thead>
@@ -375,7 +375,7 @@ sys     0m38.618s</literallayout></computeroutput>
 	  </listitem>
 	</orderedlist>
 
-	<section>
+	<section id="bedic-testing">
 	  <title>Testing in an emulated environment</title>
 	  <para>This is an important step, especially for a developer who does
 	    not have a Zaurus device available. Qt/Embedded (qte), QTopia (qpe) and zbedic
@@ -432,7 +432,7 @@ sys     0m38.618s</literallayout></computeroutput>
 	</section>
       </section>
 
-      <section>
+      <section id="evolutionary">
 	<title>Evolutionary Dictionary</title>
 
 	<para>The FreeDict dictionaries are available for the shareware program
@@ -469,7 +469,7 @@ sys     0m38.618s</literallayout></computeroutput>
 	  </listitem>
 	</itemizedlist>
 
-	<section>
+	<section id="evolutionary-vok">
 	  <title>VOK file format</title>
 
 	  <para>This is a plain text file format in Windows-1252 encoding (this last
