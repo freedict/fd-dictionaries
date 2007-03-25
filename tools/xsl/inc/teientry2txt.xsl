@@ -4,6 +4,8 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <xsl:include href="indent.xsl"/>
+  <!-- if gender exists, do not print pos element (default: off) -->
+  <xsl:param name="no-pos-if-noun" select="false()"/>
 
   <xsl:strip-space elements="entry form gramGrp sense trans eg"/>
 
@@ -42,16 +44,23 @@
 
   <xsl:template match="gramGrp">
     <xsl:text> &lt;</xsl:text>
-    <!-- if gender exists, do not print pos element (must be a noun then) -->
     <xsl:choose>
-      <xsl:when test="gen">
-        <xsl:apply-templates select="gen"/>
-      </xsl:when>
-      <xsl:when test="num">
-        <xsl:apply-templates select="num"/>
+      <xsl:when test="pos='n' and gen and $no-pos-if-noun">
+	<!-- if gender exists, do not print pos element -->
+	<xsl:for-each select="num | gen">
+	  <xsl:apply-templates select="."/>
+	  <xsl:if test="position()!=last()">
+	    <xsl:text>, </xsl:text>
+	  </xsl:if>
+	</xsl:for-each>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:apply-templates select="pos"/>
+	<xsl:for-each select="pos | num | gen">
+	  <xsl:apply-templates select="."/>
+	  <xsl:if test="position()!=last()">
+	    <xsl:text>, </xsl:text>
+	  </xsl:if>
+	</xsl:for-each>
       </xsl:otherwise>
     </xsl:choose>
     <xsl:text>></xsl:text>
@@ -127,13 +136,13 @@
   <xsl:template match="xr">
     <xsl:choose>
       <xsl:when test="not(@type)">
-        <xsl:text>See also</xsl:text>
+	<xsl:text>See also</xsl:text>
       </xsl:when>
       <xsl:when test="@type='syn'">
-        <xsl:text>Synonym</xsl:text>
+	<xsl:text>Synonym</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="@type"/>
+	<xsl:value-of select="@type"/>
       </xsl:otherwise>
     </xsl:choose>
     <xsl:text>: {</xsl:text>

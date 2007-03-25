@@ -18,7 +18,7 @@
         specific "see also" instead of "synonyms:", "antonym(s):" etc.
         (typing could be added easily)
 
-      *	 We don't have an escaping mechanism for literal backslashes.
+      * We don't have an escaping mechanism for literal backslashes.
 
 
   V0.1 Horst Eyermann 2002
