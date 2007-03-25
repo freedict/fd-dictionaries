@@ -16,7 +16,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <xsl:import href="inc/teiheader2txt.xsl"/>
-  
+
   <!-- MakeDict expects the windows-1252 encoding (without it being documented) -->
   <xsl:output method="text" omit-xml-declaration="yes" encoding="Windows-1252"/>
 
@@ -26,7 +26,7 @@
        indentation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.10 2005-11-16 21:19:31 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.11 2007-03-25 11:13:31 micha137 Exp $</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character
@@ -89,10 +89,10 @@
   <xsl:template match="/">
     <xsl:text>[words]&#xA;</xsl:text>
     <xsl:apply-templates select="TEI.2/text//entry"/>
-  
+
     <xsl:text>[phrases]&#xA;</xsl:text>
     <!-- we have no phrases -->
-    
+
     <xsl:text>[notes]&#xA;</xsl:text>
     <xsl:apply-templates select="*//teiHeader"/>
 
@@ -100,9 +100,9 @@
 
   <xsl:template match="entry">
     <!-- In vok format we have
-    
+
 	    word/translated-word
-	    
+
 	 Also, we may have ';' characters on either side of the '/'
 	 to indicate multiple translations of a word. eg.
 
@@ -188,11 +188,11 @@
 	<xsl:with-param name="by" select="'ij'"/>
       </xsl:call-template>
     </xsl:variable>
-    
-    <!-- We could warn of semicolons being translated to commas -->	
+
+    <!-- We could warn of semicolons being translated to commas -->
     <xsl:variable name="translated" select="translate(translate(normalize-space($word2), $translate-from, $translate-to), $remove-chars, '')"/>
 
-    <!-- Maximum length of a word is 127 - not the 128 as documented --> 
+    <!-- Maximum length of a word is 127 - not the 128 as documented -->
     <xsl:if test="string-length(substring($translated,128,1))>0">
       <xsl:message>Warning: Truncating to 127 characters:
         <xsl:value-of select="$translated"/>

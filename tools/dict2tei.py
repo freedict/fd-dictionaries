@@ -6,7 +6,7 @@
 ## todo GPL 2+ ##
 ##### THIS IS ALPHA LEVEL NOT FOR PRODUCTION USE ###########
 ####### Requires Python2.3 or later ###########################
-##  TODO will need TEI header > proper tei stuff too !! 
+##  TODO will need TEI header > proper tei stuff too !!
 ##	d2X_write_tei_header() (not here)
 ## TODO add detect for .dz files and uncompress
 ## (if tools on board if not .. explore the gzip modules :)
@@ -36,7 +36,7 @@ start_time = time.asctime()
 #
 rex_hdwd = re.compile('^\w.*$') #Headword  starts with anything not a white space
 rex_descpt = re.compile('^\s\s+.*$') #Description starts with more than one white space
-## TODO add matches for parts of speech pronounciation etc. here hmm more command line options ... 
+## TODO add matches for parts of speech pronounciation etc. here hmm more command line options ...
 
 ## TODO add matches for file names here (to autogen out names)
 
@@ -44,7 +44,7 @@ rex_descpt = re.compile('^\s\s+.*$') #Description starts with more than one whit
 def d2x_getInput():
 	d2x_usage = '%prog -f dictfile [options]\n\n Defaults are provided for _everything_ except the dictfmt FILE to read from '
 	cl_parser = OptionParser(d2x_usage, version="%prog"+VERSION )
-	
+
 	cl_parser.add_option("-f", "--file", type="string", action="store",  dest="readfile",  help="read dictfmt file  from FILENAME" )
 	cl_parser.add_option("-v", "--verbose", action="store_true", dest="verbose",  help="Tell me whats going on.  ")
 	cl_parser.add_option("-o", "--out", type="string", action="store", dest="writefile", default="dicttei.xml",  help="write TEI/XML format file to FILENAME" )
@@ -54,7 +54,7 @@ def d2x_getInput():
 	groupDocT.add_option("-t", "--dtdtype", type="string", action="store", dest="DTDtype", default="TEI.2", help="set non default DOCTYPE [TEI.2] " )
 	cl_parser.add_option_group( groupDocT )
 	groupXML = OptionGroup( cl_parser, "Advanced options for altering the default XML header.", "Use these if you need to change the defaults. There are no single switch options for these." )
-	
+
 	groupXML.add_option("--xmlver" , type="string", action="store", dest="XMLver", default='1.0', help="Set XML version attribute. [\"1.0\" ]" )
 	groupXML.add_option("--xmllang", type="string", action="store", dest="XMLlang", default='en', help="set the XML code language attribute. [en]")
 	groupXML.add_option("--xmlstand", type="string", action="store", dest="XMLstand", default='no', help="set the XML \"standalone\"  attribute. [no]")
@@ -62,7 +62,7 @@ def d2x_getInput():
 	cl_parser.add_option_group( groupXML )
 	## TODO a really quiet option and a logging option and a dotfile prefs section and group the options so they don't scare the crap out of innocent bystanders.
 	(cl_options, cl_args)  = cl_parser.parse_args()
-	
+
 	#pull the exports out of the "getopt"
 	dictFileIN = cl_options.readfile
 	teiFileOut = cl_options.writefile
@@ -74,7 +74,7 @@ def d2x_getInput():
 	xml_lang = cl_options.XMLlang
 	xml_stand = cl_options.XMLstand
 	xml_enc = cl_options.XMLenc
-	
+
 	# catch-me's here
 	if len(cl_args) << 1: ## this still broken i will fix later
 		cl_parser.error("We need at least one thing to do.\n\n Have you supplied a file name for reading ?\n <::For help type::> "+ app +" -h")
@@ -85,10 +85,10 @@ def d2x_getInput():
 	else:
 		print app +"        Reading from:::> "+ dictFileIN + "  <::\n"
 		print app +"        Writing to:  ::> "+ teiFileOut +" <::\n"
-	
+
 	#Test for verbosity
 	# (damm and blast this is clunky)
-	
+
 	print app+" REMINDER ::> This is Alpha level software ! <::"
 	print app+ VERSION +" !!!!!!!!!!!!  not for production use !!!!!!!!!!!!!!!!"
 	if chat == True :
@@ -100,7 +100,7 @@ def d2x_getInput():
 		print app +" Chat mode off"
 
 
-		
+
 	#
 	#Now get to work
 	#call the workhorses up
@@ -115,28 +115,28 @@ def d2x_write_prolog( this_app, fout, doc_t,  doc_type_pub, doc_type_sys,  xml_v
 		print "entered write prolog function"
 
 	xmlfile = file(fout, "w+")
-	
+
 	if chatty == "Y":
 		print "Writing to ::> ", xmlfile
 
-	
+
 	# prolog is just a concat of all the following:
-	doc_type =  '<!DOCTYPE  '+ doc_t+ '  PUBLIC \"'+ doc_type_pub +'\"  \"' + doc_type_sys +'\" [ \n<!ENTITY % TEI.XML            "INCLUDE" >\n<!ENTITY % TEI.dictionaries \"INCLUDE\" > \n]>\n<!--this file  auto generated on   ' +start_time +'   by ' + this_app + VERSION +' \n     please edit and rename  --> ' 
+	doc_type =  '<!DOCTYPE  '+ doc_t+ '  PUBLIC \"'+ doc_type_pub +'\"  \"' + doc_type_sys +'\" [ \n<!ENTITY % TEI.XML            "INCLUDE" >\n<!ENTITY % TEI.dictionaries \"INCLUDE\" > \n]>\n<!--this file  auto generated on   ' +start_time +'   by ' + this_app + VERSION +' \n     please edit and rename  --> '
 	xml_head = '<?xml version=\"'+xml_v+'\"  encoding=\"'+xml_enc+'\"  lang =\"'+xml_lang+'\" standalone=\"'+xml_stand+'\" ?>'
 	#
-	#So putting it all together we get 
+	#So putting it all together we get
 	#
 	prolog = xml_head+'\n'+doc_type+'\n\n'
 	if chatty == "Y" :
 		print(prolog)
-				
+
 	xmlfile.write( prolog )
 	xmlfile.close() # this seems safer and dumps the buffer (we need a lot of ram for big files)
-	
-	
+
+
 def d2x_format_xml(fin, fout, chatty ) :
-	"""d2x_format_xml()	
-	
+	"""d2x_format_xml()
+
 	takes a dictd format file and wraps it in TEI print dictionary xml tags.
 	Command line options exist for most sgml, XML attributes and file in and out names.
 	Defaults are supplied for all but the file in name.
@@ -151,9 +151,9 @@ def d2x_format_xml(fin, fout, chatty ) :
 	##TODO break into 100 line (+/- 8K) blocks use seek to increment through the whole file?
 	# now split the buffer by "2 or more new lines"
 	dictarray = dictlist.split('\n\n')
-		
+
 	# TODO make a spinner or % readout(after you improve cache and speed)
-	
+
 	for record in dictarray:
 		recSub1 = re.sub('^\n', "" , record)#tidy any leading newlines
 		recSub2  = re.sub('\t', '    ', recSub1) # replace tabs with 4 spaces
@@ -167,28 +167,28 @@ def d2x_format_xml(fin, fout, chatty ) :
 		for field in sub_string:
 			if chatty == "Y":
 				print "found field"
-				
+
 			match_H =  rex_hdwd.match( field )
 			match_D =  rex_descpt.match( field )
 			match_End = re.search('</entry>', field)
 			if  match_H :
 				if chatty == "Y":
 					print 'Headword Match found: ', match_H.group()
-					
+
 				xmlfile.write('\n<form><orth>' )
 				xmlfile.write(match_H.group())
 				xmlfile.write('</orth></form>')
 			elif match_D :
 				if chatty == "Y":
 					print 'Description Match found: ',  match_D.group()
-					
+
 				xmlfile.write( '\n<def>')
 				xmlfile.write( match_D.group() )
 				xmlfile.write ('</def>')
 			elif match_End :
 				if chatty == "Y":
 					print 'end entry'
-					
+
 				xmlfile.write ('\n</entry>')
 			else:
 				if chatty == "Y":

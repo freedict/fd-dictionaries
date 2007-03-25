@@ -1,13 +1,13 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.11 $
+# $Revision: 1.12 $
 
 # the produced freedict-database.xml has the following schema:
 #
 # document element: FreeDictDatabase
 #  attributes: none
 #  children: dictionary*
-# 
+#
 # element: dictionary
 #  children: release*
 #  attributes:
@@ -59,7 +59,7 @@ if($opt_h)
 {
   print <<EOT;
 $0 [options] (-a | -d <la1-la2>) [-r [<file>]]
-  
+
 Gather metadata from TEI files in FreeDict file tree
 and save it in the XML file $dbfile.
 
@@ -116,10 +116,10 @@ sub fdict_extract_metadata
   if(!defined $d)
   {
     printd "  Dictionary not found in database. Inserting it.\n";
-    $docel->appendChild( $doc->createTextNode("  ") ); 
-    $d = $doc->createElement('dictionary');   
-    $docel->appendChild($d); 
-    $docel->appendChild( $doc->createTextNode("\n") ); 
+    $docel->appendChild( $doc->createTextNode("  ") );
+    $d = $doc->createElement('dictionary');
+    $docel->appendChild($d);
+    $docel->appendChild( $doc->createTextNode("\n") );
     $d->setAttribute('name', $entry);
   }
 
@@ -129,13 +129,13 @@ sub fdict_extract_metadata
     $maintainerEmail, $unsupported);
 
   my $indexfile = "$dirname/$entry/$entry.index";
-  
+
   if(!-r $indexfile)
   {
     system "cd $dirname/$entry && make $entry.index"
       or print STDERR "  ERROR: Failed to remake $entry.index\n";
   }
-  
+
   if(-r $indexfile)
   {
     my @a = split ' ', `wc -l "$indexfile"`;
@@ -153,13 +153,13 @@ sub fdict_extract_metadata
   ###################################################################
 
   my $teifile = "$dirname/$entry/$entry.tei";
-  
+
   if(!-r $teifile)
   {
     system "cd $dirname/$entry && make $teifile"
       or print STDERR "  ERROR: Failed to remake $teifile\n";
   }
-  
+
   if(-r $teifile)
   {
 
@@ -172,7 +172,7 @@ sub fdict_extract_metadata
       printd "  Skipping time consuming extraction steps for update (try -f).\n";
       return;
     }
-    
+
   ###################################################################
 
     #$edition = `sabcmd xsl/getedition.xsl "$teifile"`;
@@ -208,10 +208,10 @@ sub fdict_extract_metadata
     }
 
   ###################################################################
-  
+
     $unsupported = `cd $dirname/$entry && make --no-print-directory print-unsupported`;
     printd "  Failed to get info on unsupported platforms: $! $?\n" if(!defined $unsupported);
-    
+
   ###################################################################
   }
   else
@@ -228,7 +228,7 @@ sub fdict_extract_metadata
   $d->setAttribute('sourceURL', $sourceURL);
   $d->setAttribute('maintainerName', $maintainerName);
   $d->setAttribute('maintainerEmail', $maintainerEmail);
-  
+
   if(defined $unsupported && $unsupported =~ /[^\s]/)
   {
     $d->setAttribute('unsupported', $unsupported);
@@ -307,16 +307,16 @@ sub fdict_extract_releases
       warn "   cannot find size"
         if($line !~ /<td (class="even")?>(\d+)<\/td>/cg) or
       $size = $2;
-      
+
       $downloads = -1;
       warn "   cannot find downloads"
         if($line !~ /\">(\d*)<\/a><\/td>/cg);
       $downloads = $1;
- 
+
       printd "\tfilename: $filename size: $size\n";
 
       ################################################################
-      
+
       # find old dictionary element -> update
       my $name;
       if($filename =~ /^freedict-/) { $name = substr($filename, 9,7) }
@@ -327,7 +327,7 @@ sub fdict_extract_releases
 	printd "Invalid dictionary name '$name'. Skipping release.\n";
 	next;
       }
-      
+
       my $d = contains_dictionary($doc,  $name);
       if(!$d)
       {
@@ -342,53 +342,53 @@ sub fdict_extract_releases
       # cut prefix "freedict-" if available
       if($filename =~ /^freedict-/) { $sfn = substr($filename, 9); }
       else { $sfn = $filename; }
-      
+
       # cut language combination
       $ssfn = substr($sfn, 7);
-     
-      # cut a minus sign. if available 
+
+      # cut a minus sign. if available
       if($ssfn =~ /^-/) { $ssfn = substr($ssfn, 1); }
 
       if($ssfn =~ /^\.tar\.gz/)
-      { $platform = 'dict-tgz'; } 
-      
+      { $platform = 'dict-tgz'; }
+
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.gz/)
-      { $platform = 'dict-tgz'; } 
-      
+      { $platform = 'dict-tgz'; }
+
       elsif($ssfn =~ /^\.tar\.bz2/)
       { $platform = 'dict-tbz2'; }
-      
+
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.bz2/)
-      { $platform = 'dict-tbz2'; } 
+      { $platform = 'dict-tbz2'; }
 
       elsif($ssfn =~ /\.dic\.dz/)
       # eg. freedict-kha-deu-0.0.1.dic.dz
-      { $platform = 'bedic'; } 
-      
+      { $platform = 'bedic'; }
+
       elsif($ssfn =~ /\.ipk/)
       # eg. freedict-kha-deu-0.0.1.ipk
       { $platform = 'zbedic'; }
- 
+
       elsif($ssfn =~ /\.evolutionary\.zip/)
       # eg. freedict-afr-eng-0.1.evolutionary.zip
       { $platform = 'evolutionary'; }
-      
+
       elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
       { $platform = 'src'; }
-      
+
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.noarch\.rpm/)
       # eg. freedict-kha-deu-0.0.1-1.noarch.rpm
       { $platform = 'rpm'; }
 
       elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.[\w\.]+/)
       { $platform = $2; }
-      
+
       else
       {
 	print "Cannot make sense of filename '$filename'. Skip.\n";
 	next;
       }
-      
+
 
       # find old release element
       my $r;
@@ -399,16 +399,16 @@ sub fdict_extract_releases
 	  $r = $kid; last;# found
 	}
       }
-      
+
       # create new release element if no previous found
       if(!$r)
       {
         print "+\tRelease not found in database. Inserting it.\n";
         $d->appendChild( $doc->createTextNode("\n") ) if( ! @{ ($d->getChildNodes) } );
-        $d->appendChild( $doc->createTextNode("    ") ); 
-        $r = $doc->createElement('release');   
-        $d->appendChild($r); 
-        $d->appendChild( $doc->createTextNode("\n") ); 
+        $d->appendChild( $doc->createTextNode("    ") );
+        $r = $doc->createElement('release');
+        $d->appendChild($r);
+        $d->appendChild( $doc->createTextNode("\n") );
         $r->setAttribute('platform', $platform);
       }
 
@@ -416,14 +416,14 @@ sub fdict_extract_releases
       # don't update the database
 #      $release_version = "0.0.1" if($release_version eq "");
 #      next if($r->getAttribute('version') ge $release_version);
-      
+
       printd "+\tUpdating release for $platform platform. Old: '" .
         $r->getAttribute('version') . "' New: '$release_version'\n";
       $r->setAttribute('version', $release_version);
       $r->setAttribute('URL', $URL);
       $r->setAttribute('size', $size);
       $r->setAttribute('date', substr($release_date,0,10));
-      
+
     } # while
   } # while
 }
@@ -456,7 +456,7 @@ else
 {
   printd "Creating new database.\n";
   $doc = new XML::DOM::Document;
-  $doc->appendChild( $doc->createElement('FreeDictDatabase') );   
+  $doc->appendChild( $doc->createElement('FreeDictDatabase') );
 }
 
 fdict_extract_metadata($FREEDICTDIR, $opt_d, $doc) if $opt_d;

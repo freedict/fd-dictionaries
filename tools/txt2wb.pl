@@ -14,7 +14,7 @@ while(<>) {
 
 $zeile[0] = substr $zeile[0], 0, $max_src;
 print $zeile[0];
-  for ($i=0;$i<=$max_src - length( $zeile[0]) ;$i++) { print chr(0)}; 
+  for ($i=0;$i<=$max_src - length( $zeile[0]) ;$i++) { print chr(0)};
 
 $zeile[1] = substr $zeile[1], 0, $max_dest;
 print $zeile[1];

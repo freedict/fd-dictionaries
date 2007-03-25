@@ -2,7 +2,7 @@
 <!-- This stylesheet converts a TEI dictionary file
      into the ding format that ding.tu-chenitz.de
      first used.
-     
+
      You can use this format with ding clients and
      it is used for importing into
      http://www.ego4u.de/de/lingodict.
@@ -15,7 +15,7 @@
 
   <!--xsl:strip-space elements="entry orth tr"/-->
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2ding.xsl,v 1.2 2006-03-25 21:36:16 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id: tei2ding.xsl,v 1.3 2007-03-25 11:13:31 micha137 Exp $</xsl:param>
 
   <!-- something like the main function -->
   <xsl:template match="/">
@@ -24,10 +24,10 @@
 
   <xsl:template match="entry">
     <!-- The format layout is (split to two lines for readability):
-    
+
     headword1 {pos | gen for nouns}, headword2 :: \
     translated-word1, translated-word2 [domain.]
-	    
+
      -->
 
      <xsl:variable name="trs" select=".//tr[not(../../../eg)] | .//def"/>
@@ -63,7 +63,7 @@
 
 	  <xsl:if test="not(position()=last())">; </xsl:if>
 	</xsl:for-each>
-	
+
 	<xsl:text> :: </xsl:text>
 
 	<xsl:for-each select="$trs">

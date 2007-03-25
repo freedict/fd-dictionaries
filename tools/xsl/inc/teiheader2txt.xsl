@@ -10,8 +10,8 @@
   <!-- Has to come from the shell, as XSLT/XPath provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.6 2006-05-21 12:57:18 micha137 Exp $</xsl:param>
-  
+  <xsl:param name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.7 2007-03-25 11:13:31 micha137 Exp $</xsl:param>
+
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->
   <xsl:strip-space elements="teiHeader fileDesc titleStmt respStmt editionStmt publicationStmt seriesStmt notesStmt revisionDesc TEI.2 p sourceDesc availability encodingDesc"/>
@@ -24,7 +24,7 @@
     <xsl:for-each select="respStmt">
       <xsl:value-of select="resp"/>: <xsl:value-of select="name"/>
       <xsl:text>&#xa;</xsl:text>
-    </xsl:for-each>  
+    </xsl:for-each>
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
@@ -48,20 +48,20 @@
   <xsl:value-of select="./date"/>
   <xsl:text>&#xa;at: </xsl:text>
   <xsl:value-of select="./pubPlace"/>
-  
+
   <xsl:text>&#xa;&#xa;Availability:&#xa;&#xa;  </xsl:text>
   <xsl:call-template name="format">
     <xsl:with-param name="txt" select="normalize-space(availability)"/>
     <xsl:with-param name="width" select="$width"/>
     <xsl:with-param name="start" select="2"/>
   </xsl:call-template>
-  <xsl:text>&#xa;</xsl:text>  
+  <xsl:text>&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="seriesStmt">
   <xsl:text>Series: </xsl:text>
   <xsl:value-of select="./title"/>
-  <xsl:text>&#xa;&#xa;</xsl:text>  
+  <xsl:text>&#xa;&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="notesStmt">
@@ -88,7 +88,7 @@ it will never be instantiated. -->
 </xsl:template>
 
 <xsl:template match="sourceDesc">
-  <xsl:text>Source(s):&#xa;&#xa;  </xsl:text> 
+  <xsl:text>Source(s):&#xa;&#xa;  </xsl:text>
   <xsl:variable name="sdtext"><xsl:apply-templates/></xsl:variable>
     <xsl:call-template name="format">
       <xsl:with-param name="txt" select="normalize-space($sdtext)"/>

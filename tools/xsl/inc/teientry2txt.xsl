@@ -3,8 +3,8 @@
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-  <xsl:include href="indent.xsl"/> 
-  
+  <xsl:include href="indent.xsl"/>
+
   <xsl:strip-space elements="entry form gramGrp sense trans eg"/>
 
   <!-- TEI entry specific templates -->
@@ -24,8 +24,8 @@
       <xsl:text>&#xa;</xsl:text>
     </xsl:for-each>
 
-  </xsl:template>  
-  
+  </xsl:template>
+
   <xsl:template match="form">
     <xsl:for-each select="orth">
       <xsl:value-of select="."/>
@@ -63,17 +63,17 @@
       <xsl:number value="position()"/>
       <xsl:text>. </xsl:text>
     </xsl:if>
-    
+
     <xsl:if test="count(usg | trans | def)>0">
       <xsl:apply-templates select="usg | trans | def"/>
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
-    
+
     <xsl:if test="count(eg)>0">
       <xsl:text>    </xsl:text>
       <xsl:apply-templates select="eg"/>
     </xsl:if>
-    
+
     <xsl:if test="count(xr)>0">
       <xsl:text>    </xsl:text>
       <xsl:apply-templates select="xr"/>
@@ -108,7 +108,7 @@
     </xsl:call-template>
     <xsl:if test="not(position()=last())">&#xa;     </xsl:if>
   </xsl:template>
-    
+
   <xsl:template match="eg">
     <xsl:text>&quot;</xsl:text>
     <xsl:call-template name="format">
@@ -135,7 +135,7 @@
       <xsl:otherwise>
         <xsl:value-of select="@type"/>
       </xsl:otherwise>
-    </xsl:choose>  
+    </xsl:choose>
     <xsl:text>: {</xsl:text>
     <xsl:value-of select="ref"/>
     <xsl:text>}</xsl:text>

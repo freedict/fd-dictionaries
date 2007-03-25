@@ -25,7 +25,7 @@
 
 	* This stylesheet was named tei2bedic.xsl, but not used
 	  in favor of `tei2dic.py'.
-	
+
 	* A limitation of XML is that it cannot represent NUL characters
 	  (NULL bytes). Even in XSLT/XPath no function to that end exists.
 	  So this stylesheet was essentially worthless and `tei2dic.py' was
@@ -40,13 +40,13 @@
           script. We should have done that from V0.1:
 
 	  perl -pi -e 's/\\0/\x00/gm; s/\\e/\e/gm;' <input.escapes >output.dic
- 
+
           Due to the limitation of XML 1.0 not to be able to represent NUL and
 	  ESC characters and due to XSLT/XPath/EXSLT providing no function
 	  to output them, the perl code has to do the following translations
 	  (XML 1.1 allows ESC. But then xsltproc using libxml 20510
 	  doesn't support XML 1.1 yet):
-	  
+
 	  <\><0> -> <NUL>
 	  <\><e> -> <ESC>
 
@@ -63,7 +63,7 @@
 
         * TEI <usg type="dom"> (domain) will be translated into
           bedic {ct} (category).
-	
+
         * In case no char-precedence exists for a language, the
 	  Wikipedia-char-precedence coming with libbedic 0.9.6
 	  is used, modified by having the non-accented lowercase
@@ -94,12 +94,12 @@
 
 	 To be complete, we should have an escaping mechanism for
 	 literal backslashes in place. But we do not.
-    --> 
+    -->
     <xsl:text>\en</xsl:text>
   </xsl:template>
-  
+
   <!-- Counter for commentXX. Has to be a global variable,
-       so we can bind more frequently --> 
+       so we can bind more frequently -->
   <xsl:variable name="n" select="2"/>
 
   <xsl:template match="/TEI.2/teiHeader">
@@ -139,7 +139,7 @@
     <xsl:text>maintainer=</xsl:text>
     <xsl:value-of select="fileDesc/titleStmt/respStmt/name[../resp='Maintainer']"/>
     <xsl:text>&#10;</xsl:text>
- 
+
     <xsl:text>copyright=Publisher: </xsl:text>
     <xsl:value-of select="fileDesc/publicationStmt/publisher"/>
     <xsl:text> Year: </xsl:text>
@@ -161,7 +161,7 @@
     <xsl:text>comment02=Stylesheet used for TEI->bedic conversion: V</xsl:text>
     <xsl:value-of select="$version"/>
     <xsl:text>&#10;</xsl:text>
-    
+
     <xsl:for-each select="fileDesc/notesStmt/note">
       <xsl:text>comment</xsl:text>
       <xsl:value-of select="format-number($n+position(), '00')"/>
@@ -170,7 +170,7 @@
       <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
     <xsl:variable name="n" select="$n+count(fileDesc/notesStmt/note)"/>
-    
+
     <!-- Changelog -->
     <xsl:for-each select="revisionDesc/change">
       <xsl:text>comment</xsl:text>
@@ -183,7 +183,7 @@
       <xsl:value-of select="normalize-space(translate(item,'&#10;', ' '))"/>
       <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
-   
+
     <!-- End Mark of Header Section. This \0 has to be translated into
          NUL by a perl one-liner. -->
     <xsl:text>\0</xsl:text>
@@ -211,7 +211,7 @@
 	<xsl:apply-templates select="hom"/>
 
 	<!-- for entries without grouped senses (old-style FreeDict)
-	     as well as entries without <hom> --> 
+	     as well as entries without <hom> -->
         <xsl:if test="count(gramGrp | sense | trans | def | eg | xr | note)>0">
 	  <xsl:call-template name="format-homograph">
 	    <xsl:with-param name="input" select="form | gramGrp | sense | trans | def | eg | xr | note"/>
@@ -241,7 +241,7 @@
       <xsl:otherwise>
 	<xsl:text>{s}</xsl:text>
 	<xsl:apply-templates select="$input[name()='gramGrp']"/>
-    
+
 	<xsl:apply-templates select="$input/pron"/>
 
 	<!-- for entries with grouped senses -->
@@ -256,7 +256,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="gramGrp">
     <xsl:text>{ps}</xsl:text>
     <xsl:value-of select="pos"/>
@@ -274,7 +274,7 @@
   <xsl:template match="pron">
     <xsl:text>{pr}</xsl:text><xsl:apply-templates/><xsl:text>{/pr}</xsl:text>
   </xsl:template>
- 
+
   <xsl:template match="sense">
     <xsl:call-template name="format-sense">
       <xsl:with-param name="input" select="*"/>
@@ -287,18 +287,18 @@
     <xsl:param name="input" select="*"/>
     <xsl:if test="$input[name()='usg' or name()='trans' or name()='def' or name()='eg' or name()='xr' or name()='note']">
       <xsl:text>{ss}</xsl:text>
-      
+
       <xsl:apply-templates select="$input[name()='usg']"/>
-      
+
       <xsl:apply-templates select="$input[name()='trans' or name()='def']"/>
-      
+
       <xsl:apply-templates select="$input[name()='note']"/>
-      
+
       <xsl:if test="$input[name()='eg']">
 	<xsl:text> -- </xsl:text>
         <xsl:apply-templates select="$input[name()='eg']"/>
       </xsl:if>
-    
+
       <xsl:if test="count($input[name()='xr'])>0">
 	<xsl:text> -- See also: </xsl:text>
 	<xsl:for-each select="$input[name()='xr']">
@@ -308,11 +308,11 @@
 	  </xsl:if>
 	</xsl:for-each>
       </xsl:if>
-      
+
       <xsl:text>{/ss}</xsl:text>
     </xsl:if>
   </xsl:template>
-  
+
   <xsl:template match="usg[@type='dom']">
     <xsl:text>{ct}</xsl:text>
     <xsl:value-of select="."/>
@@ -330,7 +330,7 @@
       <xsl:value-of select="."/>
       <xsl:if test="not(position()=last())">, </xsl:if>
     </xsl:for-each>
-      
+
     <!-- the gender of nouns in the destination language might be of interest
          (not in English, but in German, French etc.) -->
     <xsl:if test="gen"> (<xsl:value-of select="gen"/>)</xsl:if>
@@ -372,7 +372,7 @@
       </xsl:otherwise>
     </xsl:choose>
     <xsl:text>"</xsl:text>
-    
+
     <xsl:if test="trans">
       <xsl:text> (</xsl:text>
       <xsl:value-of select="trans/tr"/>
@@ -386,6 +386,6 @@
     <xsl:value-of select="ref"/>
     <xsl:text>{/sa}</xsl:text>
   </xsl:template>
-    
+
 </xsl:stylesheet>
 

@@ -68,7 +68,7 @@ class TEISplit(xml.sax.handler.ContentHandler):
 
         self._elementnamestack = []
         self._wordcount = 0
-        
+
     def writeHeader(self):
         # _id: title of the dictionary
 
@@ -94,17 +94,17 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	# line can have arbitrary length.
 	if(self._copyright != ""):
            self._write.write("copyright=%s\n" % self._copyright)
-	
+
 	# We don't set "commentXX" as it is too hard to fill them
 	# nicely with a SAX based converter. An XSLT stylesheet would
 	# be better suited for this.
-	
+
 	# We do not use char-precedence, as it could
 	# be extracted from libc locale descriptions
 	# (LC_COLLATE property). But actually we should
 	# do that extraction, as we are the ones who
 	# know the language of the words in the index...
-	
+
 	# Additional properties will be added by the xerox tool:
 	# builddate, compression-method, dict-size,
 	# max-entry-length, max-word-length, index, items,
@@ -112,14 +112,14 @@ class TEISplit(xml.sax.handler.ContentHandler):
 
 	# end of header
         self._write.write("\000")
-     
+
     def skippedEntity(name):
       print >> sys.stderr, \
 	  "Warning: Skipped entity %s." % name
-	  
-    def startElement(self, name, attrs):        
+
+    def startElement(self, name, attrs):
         # save element name for use in characters()
-        self._elementnamestack.append(name) 
+        self._elementnamestack.append(name)
 
         if (name == "tr" or name == "def"):
           self._tran += "{ss}"
@@ -135,7 +135,7 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	  self._homographs = []
 	  self._ex = ""
           return
-	  
+
         if (name == "gramGrp"):
 	  self._pos = "{ps}"
 	  return
@@ -143,11 +143,11 @@ class TEISplit(xml.sax.handler.ContentHandler):
         if (name == "orth"):
 	  self._hw1 = ""
           return
-	  
+
         if (name == "ref"):
 	    self._seealso1 = ""
 	    return
-	  
+
         if (name == "hom"):
 	    self._pos = ""
 	    self._tran = ""
@@ -157,18 +157,18 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	if (name == "resp"):
             self._resp = ""
 	    return
-            
+
         if (name == "name"):
             self._respName = ""
 	    return
-	  
+
         if (name == "title"):
             self._title = ""
 	    return
-	  
+
     def endElement(self, name):
         self._elementnamestack.pop()
-	
+
         if (name == "tr" or name == "def"):
             self._tran += "{/ss}"
 	    return
@@ -177,7 +177,7 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	  if(self._hw1 == ""): return
 	  self._hw.append(self._hw1)
 	  return
-	  
+
         if (name == "gramGrp"):
             self._pos += "{/ps}"
             return
@@ -194,11 +194,11 @@ class TEISplit(xml.sax.handler.ContentHandler):
             hom += "{ss}{ex}" + self._ex.encode("utf-8") + "{/ex}{/ss}"
 	  self._homographs.append(hom)
 	  return
-	  
+
         if (name == "ref"):
 	    self._seealso.append(self._seealso1)
 	    return
-	  
+
         if (name == "entry"):
 	    self._wordcount += 1
 	    if(self._wordcount % 100 == 0):
@@ -255,7 +255,7 @@ class TEISplit(xml.sax.handler.ContentHandler):
 	  if("titleStmt" in self._elementnamestack):
             self._id = self._title
 	  return
-	  
+
 	if (name == "teiHeader"):
 	    self.writeHeader()
 	    return
@@ -272,11 +272,11 @@ class TEISplit(xml.sax.handler.ContentHandler):
 
         if (name == "orth"):
             self._hw1 += content
-           
+
         # XXX not entity reference safe!
         if ((name == "pron") & (self._pron == "")):
             self._pron = "{pr}%s{/pr}" % content
-            
+
         if (name == "pos"):
 	  if(self._pos == ""): self._pos += " "
           self._pos += content + "."
@@ -284,11 +284,11 @@ class TEISplit(xml.sax.handler.ContentHandler):
         if (name == "num"):
             self._pos += " " + content + "."
 	    return
-            
+
         if (name == "gen"):
             self._pos += " " + content + "."
 	    return
-            
+
         if (name == "q" and "eg" in self._elementnamestack):
 	    self._ex += content
 	    return
@@ -296,19 +296,19 @@ class TEISplit(xml.sax.handler.ContentHandler):
         if (name == "ref"):
 	    self._seealso1 += content
 	    return
-	  
+
         if (name == "resp"):
             self._resp += content
 	    return
-            
+
         if (name == "name"):
             self._respName += content
 	    return
-            
+
         if (name == "title"):
             self._title += content
 	    return
-            
+
         if (name == "p" and "availability" in self._elementnamestack):
             self._copyright += content
 	    return
@@ -320,17 +320,17 @@ if __name__ == '__main__':
       print >> sys.stderr, \
        "Call me as: %s <teifilename> <dicfilename>" % sys.argv[0]
       sys.exit(1)
-      
+
     # create a parser
     parser = xml.sax.make_parser()
     #print "Parse external general entitites: " + \
     # str(parser.getFeature(xml.sax.handler.feature_external_ges))
     parser.setFeature(xml.sax.handler.feature_external_ges, 0)
-    
+
     # ceate a content handler
     write = open(sys.argv[2], "wb")
     gen = TEISplit(write)
     parser.setContentHandler(gen)
-    
+
     parser.parse(sys.argv[1])
 

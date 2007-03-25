@@ -50,7 +50,7 @@
 	 line. headwords in that line will be put into the .index file by
 	 dictfmt. they are separated by %%%, so you will have to call dictfmt
 	 as 'dictfmt - -headword-separator %%%'
-         
+
 	 (those two minus signs are separated by a space here, because
 	 otherwise an XML parser considers them as sgml comment end. for
 	 calling dictfmt you have to omit that space.)  -->

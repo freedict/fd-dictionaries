@@ -12,29 +12,29 @@
   <xsl:variable name="Separate">::</xsl:variable>
 
 
-  
+
   <xsl:template name="format">
-    <xsl:param name="txt"/> 
-    <xsl:param name="width"/> 
+    <xsl:param name="txt"/>
+    <xsl:param name="width"/>
     <xsl:param name="start"/>
 
     <xsl:if test="$txt">
       <xsl:variable name="real-width">
         <xsl:call-template name="tune-width">
-          <xsl:with-param select="$txt" name="txt"/> 
-          <xsl:with-param select="($width - $start)" name="width"/> 
-          <xsl:with-param select="($width - $start)" name="def"/> 
+          <xsl:with-param select="$txt" name="txt"/>
+          <xsl:with-param select="($width - $start)" name="width"/>
+          <xsl:with-param select="($width - $start)" name="def"/>
         </xsl:call-template>
       </xsl:variable>
 
-      <xsl:value-of select="substring('                                                    ', 1, $start)"/> 
-      <xsl:value-of select="substring($txt, 1, $real-width)"/> 
-      
-      <xsl:text>&#10;</xsl:text> 
+      <xsl:value-of select="substring('                                                    ', 1, $start)"/>
+      <xsl:value-of select="substring($txt, 1, $real-width)"/>
+
+      <xsl:text>&#10;</xsl:text>
 
       <xsl:call-template name="format">
-        <xsl:with-param select="substring($txt,$real-width + 1)" name="txt"/> 
-        <xsl:with-param select="$width" name="width"/> 
+        <xsl:with-param select="substring($txt,$real-width + 1)" name="txt"/>
+        <xsl:with-param select="$width" name="width"/>
         <xsl:with-param select="$start" name="start"/>
       </xsl:call-template>
 
@@ -43,26 +43,26 @@
 
 
   <xsl:template name="tune-width">
-    <xsl:param name="txt"/> 
-    <xsl:param name="width"/> 
+    <xsl:param name="txt"/>
+    <xsl:param name="width"/>
 
 
-    <xsl:param name="def"/> 
+    <xsl:param name="def"/>
 
     <xsl:choose>
       <xsl:when test="$width = 0">
-        <xsl:value-of select="$def"/> 
+        <xsl:value-of select="$def"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
           <xsl:when test="substring($txt, $width, 1 ) = ' '">
-            <xsl:value-of select="$width"/> 
+            <xsl:value-of select="$width"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:call-template name="tune-width">
-              <xsl:with-param select="$txt" name="txt"/> 
-              <xsl:with-param select="$width - 1" name="width"/> 
-              <xsl:with-param select="$def" name="def"/> 
+              <xsl:with-param select="$txt" name="txt"/>
+              <xsl:with-param select="$width - 1" name="width"/>
+              <xsl:with-param select="$def" name="def"/>
             </xsl:call-template>
           </xsl:otherwise>
         </xsl:choose>
@@ -74,7 +74,7 @@
   <xsl:template match="text()">
     <xsl:param name="start"/>
     <xsl:call-template name="format">
-      <xsl:with-param select="." name="txt"/> 
+      <xsl:with-param select="." name="txt"/>
       <xsl:with-param name="width">40</xsl:with-param>
       <xsl:with-param name="start">0</xsl:with-param>
     </xsl:call-template>
@@ -94,7 +94,7 @@
   <xsl:template match="orth">
     <xsl:param name="start"/>
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
     <xsl:text>  </xsl:text>
     <xsl:value-of select='$Separate'/>
@@ -104,7 +104,7 @@
     <xsl:param name="start"/>
 
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -117,7 +117,7 @@
     <xsl:param name="start"/>
 
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -126,7 +126,7 @@
     <xsl:text> (</xsl:text>
 
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
     <xsl:text>) </xsl:text>
   </xsl:template>
@@ -140,7 +140,7 @@
     <xsl:param name="start"/>
 
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -148,7 +148,7 @@
     <xsl:param name="start"/>
 
     <xsl:apply-templates>
-      <xsl:with-param select="$start" name="start"/> 
+      <xsl:with-param select="$start" name="start"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -167,7 +167,7 @@
     </xsl:if>
 
   <xsl:apply-templates>
-      <xsl:with-param select="." name="txt"/> 
+      <xsl:with-param select="." name="txt"/>
       <xsl:with-param name="width">40</xsl:with-param>
       <xsl:with-param name="start">2</xsl:with-param>
     </xsl:apply-templates>

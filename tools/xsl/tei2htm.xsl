@@ -59,20 +59,20 @@
 
     <!-- all trans, comma separated; then the def(s), semicolon separated -->
     <xsl:apply-templates select="trans"/>
-    
+
     <xsl:if test="trans and def">
       <xsl:text>; </xsl:text>
     </xsl:if>
-    
+
     <xsl:apply-templates select="def"/>
-  
+
     <xsl:apply-templates select="note|eg"/>
 
     <xsl:if test="xr">
-      <br/>See also: 
+      <br/>See also:
       <xsl:apply-templates select="xr"/>
     </xsl:if>
-  </blockquote> 
+  </blockquote>
 </xsl:template>
 
 <xsl:template match="usg[@type='dom']">

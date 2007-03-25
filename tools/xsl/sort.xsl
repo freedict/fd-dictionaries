@@ -3,10 +3,10 @@
 
   <!--
 
-  $Revision: 1.2 $
+  $Revision: 1.3 $
 
   This stylesheet sorts the entries of a TEI file using <xsl:sort>.
-  
+
   The sorted dictionary can be further processed by
   `group-homographs-sorted.xsl', which presupposes this
   sorting.
@@ -21,11 +21,11 @@
   -->
 
   <!--
-  
+
   Using the doctype-public and doctype-system attributes here is in vain,
   since TEI needs an internal subset to include optional portions of the
   TEI DTD.
-  
+
    -->
   <xsl:output method="xml" encoding="UTF-8"/>
 
@@ -36,11 +36,11 @@
       </xsl:apply-templates>
     </body>
   </xsl:template>
-  
+
   <!-- if no other template matches,
        copy the encountered attributes and elements -->
-  <xsl:template match='@* | node()'>                                              
-    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>                
+  <xsl:template match='@* | node()'>
+    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>
   </xsl:template>
 
 </xsl:stylesheet>

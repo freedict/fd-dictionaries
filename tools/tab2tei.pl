@@ -32,8 +32,8 @@ sub erkenne_artikel_deu {
      #		  $2 - Referenz auf TEI-Ausgabestring, ist "", wenn kein
      #		       Artikel erkannt wurde
      my $wortref = shift;
-     my $artikelerkanntref = shift;  
-     
+     my $artikelerkanntref = shift;
+
      if(${$wortref} =~ /, *(der|die|das) */) {
        if (${$wortref} =~ /der */) { ${$artikelerkanntref}="  <gen>m</gen>\n";}
        elsif (${$wortref} =~ /die */) { ${$artikelerkanntref}="  <gen>f</gen>\n";}
@@ -49,8 +49,8 @@ sub erkenne_artikel_kha {
      #		  $2 - Referenz auf TEI-Ausgabestring, ist "", wenn kein
      #		       Artikel erkannt wurde
      my $wortref = shift;
-     my $artikelerkanntref = shift;  
-     
+     my $artikelerkanntref = shift;
+
      if(${$wortref} =~ /, *(u|ka) */) {
        if (${$wortref} =~ /u */) { ${$artikelerkanntref}="  <gen>m</gen>\n";}
        elsif (${$wortref} =~ /ka */) { ${$artikelerkanntref}="  <gen>f</gen>\n";}
@@ -98,7 +98,7 @@ print "<text><body>\n";
 for(@zeilen) {
      chomp;# \n entf.
      s/\r\Z//;# evtl. CR entfernen (DOS-Datei)
-     
+
      if(/\t/) {
        @felder = split(/\t/,$_,2);
 
@@ -111,11 +111,11 @@ for(@zeilen) {
        }
 
      if ($FIRST_LANG eq "deu") {
-       erkenne_artikel_deu(\$felder[0],\$artikelerkannt);  
+       erkenne_artikel_deu(\$felder[0],\$artikelerkannt);
        erkenne_artikel_kha(\$felder[1],\$artikeltrerkannt);
        }
      else {
-       erkenne_artikel_deu(\$felder[1],\$artikeltrerkannt);  
+       erkenne_artikel_deu(\$felder[1],\$artikeltrerkannt);
        erkenne_artikel_kha(\$felder[0],\$artikelerkannt);
        }
 
@@ -135,23 +135,23 @@ for(@zeilen) {
 	 }
        print    $artikelerkannt;
        print "  </gramgrp>\n";
-       
+
        # give german plural form
        if($sgplur[1] ne "") {
         print " <form type=infl>\n";
         print "  <orth>",$sgplur[1],"</orth>\n";
         print "  </form>\n";
 	}
-	     
+
        print " <trans>\n";
        print "  <tr>",$felder[1],"</tr>\n";
        print    $artikeltrerkannt;
-       print "  </trans>\n </entry>\n"; 
+       print "  </trans>\n </entry>\n";
        next;
        };
      print stderr "Zeile ohne TAB: ".$_."\n";
      }
- 
+
 print "</body></text></tei.2>\n";
 
 close(TABHANDLE);

@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.2 $
+  $Revision: 1.3 $
 
   This stylesheet converts a TEI dictionary where homographs are not
   necessarily grouped with <hom> elements into a TEI file, where this
@@ -22,7 +22,7 @@
   having to look more than one entry backward for homographs.
   This variant is worlds faster than the variant without sorting.
 
-  <gramGrp> elements become children of the respective <hom> elements.  
+  <gramGrp> elements become children of the respective <hom> elements.
 
   Limitations:
 
@@ -47,16 +47,16 @@
   -->
 
   <!--
-  
+
   Using the doctype-public and doctype-system attributes here is in vain,
   since TEI needs an internal subset to include optional portions of the
   TEI DTD
-  
+
    -->
   <xsl:output method="xml" encoding="UTF-8"/>
-  
+
   <!--
- 
+
   Since XSLT 1.1 provides no way of outputting an internal DTD subset, we use
   a wrapper script as suggested in the XSLT Recommendation,
   16.1 XML Output Method. The wrapper contains the FreeDict default of an
@@ -71,16 +71,16 @@
        (replace each + by minus signs):
 
           xmllint ++noent tei-wrapper.xml >unwrapped.tei
-  
+
   -->
-  
+
   <!--
 
     The 'verbose' parameter determines, whether to output informational messages
     or not. It is off by default. To switch it on using Sablotron, use:
 
       sabcmd group-homographs.xsl infile.tei >grouped.tei '$verbose=1'
-      
+
     Though not required, you can explicitly switch it off for example by calling
     the stylesheet with the Sablotron XSLT processor this way:
 
@@ -88,10 +88,10 @@
 
     As the parameter is always handed over as a string, only the empty string will
     be interpreted as a boolean 'false'.
-    
+
   -->
   <xsl:param name="verbose" select="''"/>
-  
+
   <!-- Do no output the TEI.2 element -->
   <xsl:template match="/TEI.2">
     <xsl:apply-templates/>
@@ -104,7 +104,7 @@
       </xsl:apply-templates>
     </body>
   </xsl:template>
-  
+
   <xsl:template match="entry">
     <xsl:variable name="myorth" select="form/orth"/>
 
@@ -112,16 +112,16 @@
     <xsl:if test="$verbose and (position() mod 100)=0">
       <xsl:message terminate="no">Processing entry <xsl:value-of select="position()"/></xsl:message>
     </xsl:if>
-	
+
     <xsl:choose>
 
       <!--
-      
+
       If an entry has a preceding homograph, skip it,
       as it has already been processed. In this place, since
       the entry node list is sorted, it is enough to check
       just the first preceding entry.
-      
+
       We use the preceding/following-sibling axises here.
       Note that they refer to the entries of the document in
       document order. If we did the sorting in this stylesheet,
@@ -143,10 +143,10 @@
       </xsl:when>
 
       <!--
-      
+
       If the immediately following entry is not a homograph, then
       the current entry has no homographs and can be copied.
-      
+
       -->
       <xsl:when test="following-sibling::entry[1]/form/orth != $myorth">
 	<entry>
@@ -159,7 +159,7 @@
 
 	<entry><xsl:text>&#xa;</xsl:text>
 	  <xsl:text>&#xa;        </xsl:text>
-	  
+
           <xsl:if test="$verbose">
 	    <xsl:message terminate="no">
 	      <xsl:text>Transforming using &lt;hom>: '</xsl:text>
@@ -169,7 +169,7 @@
 	      <xsl:text>? homographs.</xsl:text>
 	    </xsl:message>
 	  </xsl:if>
-	  
+
 	  <xsl:if test="count($myorth) > 1">
 	    <xsl:message terminate="no">
 	      <xsl:text>Warning: Can't handle multiple &lt;orth> elements: </xsl:text>
@@ -191,13 +191,13 @@
 	    <xsl:text>&#xa;        </xsl:text>
 	  </hom>
 	  <xsl:text>&#xa;        </xsl:text>
-	
+
 	  <!-- copy the following homographs -->
 	  <xsl:call-template name="recursive-following-homograps-into-hom">
 	    <xsl:with-param name="orth-of-first-homograph" select="$myorth"/>
 	    <xsl:with-param name="current" select="."/>
 	  </xsl:call-template>
-	
+
 	  <xsl:text>&#xa;      </xsl:text>
 	</entry>
       </xsl:otherwise>
@@ -218,7 +218,7 @@
 	<xsl:text>&#xa;        </xsl:text>
       </hom>
       <xsl:text>&#xa;        </xsl:text>
-  
+
       <!-- Look forward recursively until we came across the first non-homograph
 
       eng-spa, 5910 entries
@@ -232,7 +232,7 @@
       real    0m10.815s
       user    0m7.035s
       sys     0m0.388s
-      
+
       -->
       <xsl:call-template name="recursive-following-homograps-into-hom">
 	<xsl:with-param name="orth-of-first-homograph" select="$orth-of-first-homograph"/>
@@ -241,10 +241,10 @@
 
     </xsl:if>
   </xsl:template>
-    
+
   <!-- if no other template matches, copy the encountered attributes and elements -->
-  <xsl:template match='@* | node()'>                                              
-    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>                
+  <xsl:template match='@* | node()'>
+    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>
   </xsl:template>
 
 </xsl:stylesheet>

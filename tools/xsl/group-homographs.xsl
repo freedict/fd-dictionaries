@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.2 $
+  $Revision: 1.3 $
 
   This stylesheet converts a TEI file where homographs are not necessarily
   grouped by using the 'hom' element into a TEI file, where this grouping exists.
@@ -22,13 +22,13 @@
 
   -->
 
-  
+
   <!-- Using the doctype-public and doctype-system properties here is in vain,
        since TEI needs an internal subset to include optional portions of the TEI DTD -->
   <xsl:output method="xml" encoding="UTF-8"/>
-  
+
   <!--
- 
+
   Since XSL provides no way of outputting an internal DTD subset, we use a wrapper script
   as suggested in the XSLT Recommendation, 16.1 XML Output Method, which contains the
   default internal subset and includes the output of this stylesheet via an entity reference:
@@ -39,16 +39,16 @@
   2. Optionally, unwrapping to a single file can be done like this (replace each + by minus signs):
 
           xmllint ++noent tei-wrapper.xml >unwrapped.tei
-  
+
   -->
-  
+
   <!--
 
     The 'verbose' parameter determines, whether to output informational messages
     or not. It is off by default. To switch it on using Sablotron, use:
 
       sabcmd group-homographs.xsl infile.tei >grouped.tei '$verbose=1'
-      
+
     Though not required, you can explicitly switch it off for example by calling
     the stylesheet with the Sablotron XSLT processor this way:
 
@@ -56,10 +56,10 @@
 
     As the parameter is always handed over as a string, only the empty string will
     be interpreted as a boolean 'false'.
-    
+
   -->
   <xsl:param name="verbose" select="''"/>
-  
+
   <!-- Do no output the TEI.2 element -->
   <xsl:template match="/TEI.2">
     <xsl:apply-templates/>
@@ -80,13 +80,13 @@
 	  </xsl:message>
 	</xsl:if>
       </xsl:when>
-      
+
       <!-- if this entry has homographs after it, group them using the
            hom element -->
       <xsl:when test="count($myfollowinghomographs) > 0">
 	<entry><xsl:text>&#xa;</xsl:text>
 	  <xsl:text>&#xa;        </xsl:text>
-	  
+
           <xsl:if test="$verbose">
 	    <xsl:message terminate="no">
 	      <xsl:text>Transforming using &lt;hom>: '</xsl:text>
@@ -96,7 +96,7 @@
 	      <xsl:text> homographs.</xsl:text>
 	    </xsl:message>
 	  </xsl:if>
-	  
+
 	  <xsl:if test="count($myorth) > 1">
 	    <xsl:message terminate="yes">
 	      <xsl:text>Can't handle multiple &lt;orth> elements (yet?): </xsl:text>
@@ -117,7 +117,7 @@
 	    <xsl:text>&#xa;        </xsl:text>
 	  </hom>
 	  <xsl:text>&#xa;        </xsl:text>
-	
+
 	  <!-- copy the following homographs -->
 	  <xsl:for-each select="$myfollowinghomographs">
 	    <xsl:text>&#xa;        </xsl:text>
@@ -143,8 +143,8 @@
   </xsl:template>
 
   <!-- if no other template matches, copy the encountered attributes and elements -->
-  <xsl:template match='@* | node()'>                                              
-    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>                
+  <xsl:template match='@* | node()'>
+    <xsl:copy><xsl:apply-templates select='@* | node()'/></xsl:copy>
   </xsl:template>
 
 </xsl:stylesheet>

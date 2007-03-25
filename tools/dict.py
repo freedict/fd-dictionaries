@@ -1,17 +1,17 @@
 #!/usr/bin/python
 
 # TODO: convert this to use a dictionary, in memory, as the primary data
-# structure. Write a second routine to iterate through that dictionary 
+# structure. Write a second routine to iterate through that dictionary
 # and re-produce the xml output.
 # Add routines to use this dictionary to do the following:
 # * check for doubled words in definitions
 # * check for doubled words.
-# * check the spelling of the english translations; if they are wrong, 
+# * check the spelling of the english translations; if they are wrong,
 #   keep a record of them. Then again, there could be a lot of these.
 # * read in and out an editable usable form for editing the words with a
 #   text editor.
 
-# And the biggy.. write something which will take a text and check every 
+# And the biggy.. write something which will take a text and check every
 # word with the dictionary.
 
 import string
@@ -19,7 +19,7 @@ import sys
 
 print """
 This file is a hack. It does not use any proper XML libraries and
-assumes far too much about the structure of the file. It's also 
+assumes far too much about the structure of the file. It's also
 very slow.
 
 Please read the code first and use it directly
@@ -32,14 +32,14 @@ class Dict:
 
     def __init__(self):
 	self.__dict = {}   # this is _it_ - a python dict that stores all.
-	
+
 	self.line = ""
 	self.lineptr = 0
 	self.tags = []
 	self.word = ""
 	self.definitions = []
 	self.state = ""
-    
+
 	self.tagstack = [] # a stack of tags.
 
 	# used for writing tei files.
@@ -50,11 +50,11 @@ class Dict:
 	self.buffered_lines = []
 
 	self.output = None # output file for writing.
-	
+
 ##    def p_head(self):
 ##	"Parses the header. Basically, just ignore it."
 ##	depth = 0
-##	
+##
 ##	# Kick-start
 ##	c = self.input.read(1)
 ##	if c == '<':
@@ -62,7 +62,7 @@ class Dict:
 ##	else:
 ##	    print "Error: document doesn't start with a '<'"
 ##	    assert 0
-##	
+##
 ##	# and just keep reading < or >'s until we run out.
 ##	while depth > 0:
 ##	    c = self.input.read(1)
@@ -73,10 +73,10 @@ class Dict:
 
     def import_tei(self, filename):
 	# imports a tei file, provided that it's very basic.
-	
+
 	input = open(filename, 'r')
 
-	
+
 	#This skips past the header of a tei file.
 	depth = 0
 	c = input.read(1)
@@ -85,7 +85,7 @@ class Dict:
 	else:
 	    print "Error: document doesn't start with a '<'"
 	    assert 0
-	
+
 	# and just keep reading < or >'s until we run out.
 	while depth > 0:
 	    c = input.read(1)
@@ -94,14 +94,14 @@ class Dict:
 	    elif c == '>':
 		depth = depth-1
 	self.state = "text"
-	
+
 
 	# Read the first line to get started.
 	line = input.readline()
 	#print "Parsing first line:", line
 	sptr = 0
 	notEOF = 1
-	
+
 	while notEOF: # for the whole file.
 	    # Parse one line.
 	    while sptr < len(line) and sptr >= 0:
@@ -130,7 +130,7 @@ class Dict:
 			# it wasn't found.. so maybe it's on the next line.
 			self.p_data(line[sptr:])
 			sptr = len(line) # which does the next iteration.
-		
+
 	    # Get a new line
 	    line = input.readline()
 	    # This code ignores blank lines while watching for
@@ -148,9 +148,9 @@ class Dict:
 			line = string.strip(line)
 	    #print "Parsing now line:", line
 	    sptr = 0
-	    
+
 	input.close()
-	
+
     def p_endtag(self, tag):
 	end = self.tags.pop()
 	#if tag != end:
@@ -169,7 +169,7 @@ class Dict:
 		self.__dict[self.word] = self.definitions
 	    self.word = ""
 	    self.definitions = []
-	    
+
     def p_data(self, data):
 	if len(self.tags) < 1:
 	    return
@@ -181,7 +181,7 @@ class Dict:
 		self.definitions.append(data)
 	    else:
 		print "Warning: duplicate definition: ", self.word, "/", data
-		
+
     def update_tei(self, teifile):
 	# puts changes back to the tei file.
 	# Note that this will merge multiple translations;
@@ -192,7 +192,7 @@ class Dict:
 	input = open(teifile, 'r')
 	self.output = open(teifile+".changed", 'w')
         self.translating = 0
-	
+
 	# retain the header.
 	depth = 0
 	c = input.read(1)
@@ -211,14 +211,14 @@ class Dict:
 	    elif c == '>':
 		depth = depth-1
 	self.state = "text"
-	
 
-	# This is to check if there are new words. If there are, 
+
+	# This is to check if there are new words. If there are,
 	# they need to be added.
 	self.allwords = self.__dict.keys()
 	self.allwords.sort()
 	self.allwords_counter = 0
-	
+
 	# Read the first line to get started.
 	rawline = input.readline()
 	# This line is probably not of parsing importance:
@@ -227,7 +227,7 @@ class Dict:
 	#print "Parsing first line:", line
 	sptr = 0
 	notEOF = 1
-	
+
 	while notEOF: # for the whole file.
 	    # Parse one line.
 	    while sptr < len(line) and sptr >= 0:
@@ -256,7 +256,7 @@ class Dict:
 			# it wasn't found.. so maybe it's on the next line.
 			self.w_data(line[sptr:])
 			sptr = len(line) # which does the next iteration.
-	    
+
 	    if not self.translating:
 		self.buffered_lines.append(rawline)
 	    elif not self.translated:
@@ -270,7 +270,7 @@ class Dict:
                 self.discard_buffer = 0
             elif self.flush_buffer:
                 self.__flush_buffer()
-    
+
 	    # Get a new line
 	    rawline = input.readline()
 	    line = rawline
@@ -301,7 +301,7 @@ class Dict:
 	    self.translating = 1
         elif tag == 'body':
             self.flush_buffer = 1
-    
+
     def w_endtag(self, tag):
 	end = self.tags.pop()
 	#if tag != end:
@@ -317,7 +317,7 @@ class Dict:
 		self.translated = 0
 		self.translating = 0
 		return
-	    
+
 	    print "DEBUG: word:", current_word, " from file:", self.word
 	    if self.word < current_word:
 		# Case one: word missing.
@@ -341,7 +341,7 @@ class Dict:
 	    self.definitions = []
 	    self.translated = 0
 	    self.translating = 0
-	    
+
     def w_data(self, data):
 	if len(self.tags) < 1:
  	    return
@@ -379,7 +379,7 @@ class Dict:
 	    return_me.append(indentation+"  <tr>"+d+"</tr>\n")
 	return_me.append(indentation+"</trans>\n")
         return return_me
-        
+
     def import_voc(self, filename):
 	# imports an eddict file and merges the changes
 	input = open(filename)
@@ -400,20 +400,20 @@ class Dict:
 		    if c not in definitions:
 			definitions.append(c)
 	    self.__dict[word]=definitions
-		
+
 	input.close()
-	    
+
     def export_voc(self, filename):
 	# Exports to an eddict file.
 
-	# A voc file is a file that will be accepted by the 
+	# A voc file is a file that will be accepted by the
 	# "dictionary" program for the palmpilot; http://www.evolutionary.net.
 	# I've purchased this program and it does the job. Use the convertion
 	# program at their website to build your .pdb file.
-	
+
 	# The structure of the file is as follows (from the help file):
     	##[words]
-    	##    word/translated-word 
+    	##    word/translated-word
     	##    word2/translated-word2
     	##        .
     	##        .
@@ -434,7 +434,7 @@ class Dict:
     	##
     	##  NOTE: do NOT put spaces around the '/' character.
 
-        # You can list a series of words by seperating them 
+        # You can list a series of words by seperating them
 	# with semicolons, e.g. "dag;goede dag/hello;hi"
 	#
 	# ***** There can only be 16 translations max for each entry. *****
@@ -442,7 +442,7 @@ class Dict:
 	# Words must be less than 128 chars (not worth checking.)
 	# Entries must be less than 1024 chars.
 	# And you can only have up to 1 million words.
-	
+
 	outputfile = open(filename, 'w')
 	outputfile.write("[words]\n")
 
@@ -470,8 +470,8 @@ class Dict:
 ##    state = "inputfilename"
 ##    inputfilename = ""
 ##    outputfilename = ""
-##    
-##    for arg in sys.argv[1:]: # btw.. next time don't forget the [1:].. 
+##
+##    for arg in sys.argv[1:]: # btw.. next time don't forget the [1:]..
 ##                             # otherwise you lose your source code.
 ##	# I love turing machines..
 ##	if arg == "-o":
@@ -485,13 +485,13 @@ class Dict:
 ##	    elif state == "outputfilename":
 ##		outputfilename = arg
 ##		state = "inputfilename"
-##    
+##
 ##    if len(inputfilename) < 1:
 ##	print "Usage: tei2editable <input>"
 ##	sys.exit(0)
 ##    if len(outputfilename) < 1:
 ##	outputfilename = inputfilename + ".eddict"
-##		
+##
 ##    p = tei2eddict()
 ##    p.go(inputfilename, outputfilename)
 ##    print "Output in ", outputfilename
@@ -503,7 +503,7 @@ def make_voc(filename):
     print "Exporting.."
     d.export_voc(filename+".voc")
     print "Done."
-    
+
 def change_tei(filename):
     d = Dict()
     print "Importing tei.."

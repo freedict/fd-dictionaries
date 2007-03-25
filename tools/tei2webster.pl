@@ -1,20 +1,20 @@
 #!/usr/bin/perl -w
-# 
+#
 
 # Copyright (C) 2000 Horst Eyermann <horst@freedict.de>
-#  
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software 
+# along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 use XML::ESISParser;
@@ -35,7 +35,7 @@ sub open_dict{
      $this = shift @_;
      $name = shift @_;
     open DATA, ">$name.web";
-    print "\nopend: $name.web\n";    
+    print "\nopend: $name.web\n";
     $headwords = 0;
     $all_text = "";
 
@@ -51,7 +51,7 @@ sub add_text{
 }
 
 
-sub write_text{  
+sub write_text{
     $columns = 80;
 #    print DATA fill("", "", $all_text);
     print DATA $all_text;
@@ -62,7 +62,7 @@ sub write_text{
 }
 
 
-sub write_direct{  
+sub write_direct{
     $text = shift @_;
     print DATA $text;
 }
@@ -81,7 +81,7 @@ sub set_file_name {
 
 sub new {
     my ($type) = @_;
-    $file_name =~ s/^(\w*\/)+//g;         
+    $file_name =~ s/^(\w*\/)+//g;
     $file_name =~ s/(\S*)\.\w*/$1/;
     dict->open_dict($file_name);
     return bless {}, $type;
@@ -113,7 +113,7 @@ sub start_element {
 	dict::write_direct("<HW>") if ( $part eq "ORTH");
 
 	dict::write_direct("<PR> [")  if ($part eq "PRON");
-	
+
 	dict::write_direct("<SD> </SD><DEF>") if (($part eq "TRANS"));
 
 	dict::write_direct("<DEF>") if (($part eq "DEF"));
@@ -128,7 +128,7 @@ sub start_element {
 
 sub end_element {
     my ($self, $element) = @_;
-  
+
     $part  = $element->{Name};
 
   dict::write_text  if ($part ne "TEIHEADER");
@@ -146,16 +146,16 @@ sub end_element {
 	}
 
       dict::write_direct( "\n")    if ($part eq "ENTRY");
-	
+
 	dict::write_direct("]</PR>")  if ($part eq "PRON");
-		
+
 	dict::write_direct("</USG>") if ($part eq "USG");
-	
+
 	dict::write_direct("</P>")  if ($part eq "P");
         dict::write_direct("</DEF>") if ($part eq "TRANS");
         dict::write_direct("</DEF>") if ($part eq "DEF");
-	
-	$aword = (($part eq "TR") ? 1 : 0); 
+
+	$aword = (($part eq "TR") ? 1 : 0);
     }
 }
 

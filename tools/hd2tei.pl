@@ -45,7 +45,7 @@ for(@zeilen) {
      chop;
      if(/^%h/) {
        if ($openentry == 1) {
-         print "</tr></trans></entry>\n"; 
+         print "</tr></trans></entry>\n";
          $openentry = 0;
          }
        print "<entry><form><orth>".substr($_,3)."</orth></form>\n <trans><tr>";
@@ -54,12 +54,12 @@ for(@zeilen) {
      if(/^%d/) {
        $openentry = 1;
        next;
-       } 
+       }
      if ($openentry == 1) {
        print $_;}
      else { print stderr "Unsinn: ".$_."\n";}
      }
- 
+
 print "</body></text></tei.2>\n";
 
 close(HDHANDLE);

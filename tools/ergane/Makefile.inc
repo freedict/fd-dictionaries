@@ -1,5 +1,5 @@
-FREEDICTDIR ?= $(shell realpath ../..)
-erganetoolsdir = $(shell realpath $(FREEDICTDIR)/tools/ergane)
+FREEDICTDIR ?= $(realpath ../..)
+erganetoolsdir = $(realpath $(FREEDICTDIR)/tools/ergane)
 
 ifeq (,$(findstring $(la1),$(supported_phonetics)))
 # phonetics for language $(la1) not supported - generate final .tei file

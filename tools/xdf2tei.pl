@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: xdf2tei.pl,v 1.4 2005-11-09 21:06:11 micha137 Exp $
+# $Id: xdf2tei.pl,v 1.5 2007-03-25 11:13:30 micha137 Exp $
 # (c) Oct 2004 - July 2005 Michael Bunk
 # This is GPL software.
 #
@@ -74,17 +74,17 @@ $note1 is further analyzed:
  $note2 -> <note>
  $translator -> <note resp="$translator">
 
-<entry>                                                                
-  <form>                                                                   
-    <orth>dog</orth>                                   
-  </form>                                                          
-  <gramGrp><pos>note1a</pos></gramGrp>            
-  <trans>                                                                  
+<entry>
+  <form>
+    <orth>dog</orth>
+  </form>
+  <gramGrp><pos>note1a</pos></gramGrp>
+  <trans>
     <usg type="dom">note1b</usg>
     <tr>word2</tr>
-  </trans>                                                                
-  <note resp="translator">note2</note> 
-</entry>       
+  </trans>
+  <note resp="translator">note2</note>
+</entry>
 ENDOFDOCS
   exit 0;
 }
@@ -139,7 +139,7 @@ while(<>)
     mywarn '', "Empty translation (word2). Skipping.";
     next;
   }
-  
+
   my($pos, $number);
   undef $pos;
   my $domain = "";
@@ -180,16 +180,16 @@ while(<>)
       mywarn $word1, "Unmatched part of note1: '$_'";
     }
   }
-  
+
   my $pos1 = ""; my $number1 = ""; my $gen1= "";
   $pos1 = "<pos>$pos</pos>" if $pos;
   $number1 = "<number>$number</number>" if $number;
   $gen1 = "<gen>$genus</gen>" if $genus;
-  
-  print "  <entry>\n";                                                        
-  print "     <form>\n";                                                       
-  print "       <orth>". htmlencode($word1) ."</orth>\n";                                    
-  print "     </form>\n";                               
+
+  print "  <entry>\n";
+  print "     <form>\n";
+  print "       <orth>". htmlencode($word1) ."</orth>\n";
+  print "     </form>\n";
   print "     <gramGrp>$pos1$gen1$number1</gramGrp>\n" if $pos || $number || $genus;
   print "     <trans>\n";
   print "       <usg type=\"dom\">$domain</usg>\n" if $domain;
