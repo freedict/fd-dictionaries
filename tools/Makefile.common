@@ -327,9 +327,15 @@ dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
 $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
 	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
 		mkdir -p $(FREEDICTDIR)/release/tei; fi
-	tar -C .. -cvjf $@ \
-		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
-		$(addprefix $(notdir $(realpath .))/, $(DISTFILES) $(dictname).tei)
+	if (echo "$(DISTFILES)" | grep "$(dictname).tei " > /dev/null); then \
+		tar -C .. -cvjf $@ \
+			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+			$(addprefix $(notdir $(realpath .))/, $(DISTFILES)); \
+	else \
+		tar -C .. -cvjf $@ \
+			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+			$(addprefix $(notdir $(realpath .))/, $(DISTFILES) $(dictname).tei); \
+	fi
 
 release-tei-tbz2: $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
 
