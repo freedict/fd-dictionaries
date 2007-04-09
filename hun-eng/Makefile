@@ -13,7 +13,9 @@ ifeq ($(dbview_in_path),)
 	@false
 else
 	cp $< $@
-	./szotar-dbf2tei.pl >> $@
+	./szotar-dbf2tei.pl >> $@ 
+	sed 's/ô/ő/g; s/û/ű/g;' $@ > tmp.tei
+	mv -T tmp.tei $@ 
 endif
 
 SZOTAR.DBF: SZOTAR.ZIP
@@ -22,4 +24,3 @@ SZOTAR.DBF: SZOTAR.ZIP
 
 clean::
 	rm -f SZOTAR.DBF
-

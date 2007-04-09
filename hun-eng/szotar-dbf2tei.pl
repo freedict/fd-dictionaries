@@ -5,7 +5,7 @@ use strict;
 use Getopt::Long;
 use Pod::Usage;
 
-my $revision='$Revision: 1.2 $';
+my $revision='$Revision: 1.3 $';
 my $verbose = 0;
 my $reverse = 0;
 my $help;
@@ -24,7 +24,7 @@ if ($verbose)
   "Mode: ", $reverse ? 'eng-hun' : 'hun-eng', "\n"
 }
 
-my $cmd = 'dbview SZOTAR.DBF | iconv -f cp437 -t latin1';
+my $cmd = 'dbview SZOTAR.DBF | iconv -f cp437 -t utf8';
 open(DB, "$cmd|") or die "Can't do '$cmd': $!";
 
 # the first two entries look like
