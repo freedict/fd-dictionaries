@@ -27,7 +27,8 @@
   'fr' => 'fra',
   'ku' => 'kur',
   'ar' => 'ara',
-  'ru' => 'rus');
+  'ru' => 'rus',
+  'bg' => 'bul');
   
  // the following also defines which locales we offer
  global $langtag2locale;
@@ -38,6 +39,7 @@
   'ku' => 'ku_TR',
   'ar' => 'ar_EG',
   'ru' => 'ru_RU',
+  'bg' => 'bg_BG.UTF-8',
   );
  arsort($langtag2Q);
  global $content_language;

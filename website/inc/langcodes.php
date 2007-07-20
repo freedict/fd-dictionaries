@@ -7,6 +7,7 @@ $Langcode2english = array(
  'ckb' => _('Sorani'),
  'cro' => _('Croatian'),
  'cze' => _('Czech'),
+ 'bul' => _('Bulgarian'),
  'dan' => _('Danish'),
  'nld' => _('Dutch'),
  'eng' => _('English'),

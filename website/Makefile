@@ -1,5 +1,5 @@
 all: freedict.po editordoc.html howto freedict-database.xml flags-bedic.php \
-	flags-evolutionary.php freedict.pot de kha ru ku fr ar
+	flags-evolutionary.php freedict.pot de kha ru ku fr ar bg
 
 freedict.po: freedict.pot
 	msgmerge -U locale/ar_EG/LC_MESSAGES/freedict.po $<
@@ -8,6 +8,7 @@ freedict.po: freedict.pot
 	msgmerge -U locale/ru_RU/LC_MESSAGES/freedict.po $<
 	msgmerge -U locale/ku_TR/LC_MESSAGES/freedict.po $<
 	msgmerge -U locale/fr_FR/LC_MESSAGES/freedict.po $<
+	msgmerge -U locale/bg_BG/LC_MESSAGES/freedict.po $<
 
 ../freedict-editor/help/C/html/index.html:
 	$(MAKE) -C ../freedict-editor/help/C html
@@ -45,14 +46,17 @@ fr: locale/fr_FR/LC_MESSAGES/freedict.mo
 
 ar: locale/ar_EG/LC_MESSAGES/freedict.mo
 
+bg: locale/bg_BG/LC_MESSAGES/freedict.mo
+
 clean:
 	-rm -f locale/ru_RU/LC_MESSAGES/freedict.mo \
 	locale/fr_FR/LC_MESSAGES/freedict.mo \
 	locale/ku_TR/LC_MESSAGES/freedict.mo \
 	locale/kha_IN/LC_MESSAGES/freedict.mo \
 	locale/ar_EG/LC_MESSAGES/freedict.mo \
-	locale/de_DE/LC_MESSAGES/freedict.mo
-	
+	locale/de_DE/LC_MESSAGES/freedict.mo \
+	locale/bg_BG/LC_MESSAGES/freedict.mo
+
 .PHONY: all freedict.po ~/dict/CVS/freedict-editor/help/C/html/index.html \
-	de kha ru ku fr ar
+	de kha ru ku fr ar bg
 

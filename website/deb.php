@@ -20,7 +20,7 @@ $platform = 'deb';
   to download the packages, but rather to select the packages you want to
   install, only the following command is what you have to remember:'),
   '<a href="http://debian.org/" target="_top">', '</a>') ?></p>
-  
+
   <pre>apt-get install dict-freedict-<i>la1-la2</i></pre>
 
   <p><?php printf(_('Here %1$s and %2$s are the 3-letter language codes from
@@ -30,11 +30,16 @@ $platform = 'deb';
 
   <p><?php echo _('You can find out what FreeDict packages are available in
   Debian by visiting') ?></p>
-  
+
   <blockquote><p><a href="http://packages.debian.org/testing/text/dict-freedict"
   target="_top">http://packages.debian.org/testing/text/dict-freedict</a></p></blockquote>
-  
+
   <p><?php printf(_('The %1$sFreeDict pages in the
   Debian Bug Tracking System%2$s might also be of interest.'),
   '<a href="http://bugs.debian.org/cgi-bin/pkgreport.cgi?src=freedict" target="_top">',
   '</a>') ?></p>
+
+  <p><?php printf(_('This page might as well be of interest: %1$sDebian FreeDict Packages team%2$s.'),
+  '<a href="http://pkg-freedict.alioth.debian.org/" target="_top">',
+  '</a>') ?></p>
+
