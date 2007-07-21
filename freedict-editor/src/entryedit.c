@@ -13,7 +13,7 @@
 #include "xml.h"
 
 // This feature is useful only if the optionmenus can be left with tab key as
-// well. Otherwise is is hard to skip an optionemnu.
+// well. Otherwise is is hard to skip an optionmenu.
 //#define OPEN_OPTIONMENUS_ON_FOCUS 0
 #undef OPEN_OPTIONMENUS_ON_FOCUS
 
@@ -297,20 +297,22 @@ on_xr_delete_button_clicked        (GtkButton       *button,
 }
 
 
-// XXX these should be configurable
-// but how to load/save them easily while staying(?) portable? is gconf portable?
+// XXX these should be configurable - use gconf
 const Values pos_values[] = {
   { N_("None"), "" },
+  { N_("_Noun"), "n" },
   { N_("Verb"), "v" },
   { N_("Transitive Verb"), "vt" },
   { N_("Intransitive Verb"), "vi" },
+  { N_("Transitive and intransitive Verb"), "vti" },
   { N_("Adverb"), "adv" },
-  { N_("_Noun"), "n" },
-  { N_("Pronoun"), "pron" },
   { N_("_Adjective"), "adj" },
-  { N_("_Preposition"), "prep" },
   { N_("Conjunction"), "conj" },
+  { N_("_Preposition"), "prep" },
   { N_("_Interjection"), "interj" },
+  { N_("Pronoun"), "pron" },
+  { N_("Article"), "art" },
+  { N_("Numeral"), "num" },  
   { N_("Imitative"), "imit" },
   { N_("Abbreviation"), "abbr" },
   { N_("Phrase"), "phra" },
