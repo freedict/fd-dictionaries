@@ -1056,21 +1056,24 @@ void set_view_labels_visible(gboolean visible)
   my_widget_set_visible(lookup_widget(app1, "num_label"), labels_visible);
   my_widget_set_visible(lookup_widget(app1, "gen_label"), labels_visible);
 
-  // for all senses
-  int i;
-  for(i = 0; i < senses->len; i++)
+  if(senses)
   {
-    Sense s = g_array_index(senses, Sense, i);
-    my_widget_set_visible(s.domain_label, labels_visible);
-    my_widget_set_visible(s.tr_label, labels_visible);
-    my_widget_set_visible(s.tr_add_label, labels_visible);
-    my_widget_set_visible(s.tr_delete_label, labels_visible);
-    my_widget_set_visible(s.def_label, labels_visible);
-    my_widget_set_visible(s.note_label, labels_visible);
-    my_widget_set_visible(s.example_label, labels_visible);
-    my_widget_set_visible(s.xr_label, labels_visible);
-    my_widget_set_visible(s.xr_add_label, labels_visible);
-    my_widget_set_visible(s.xr_delete_label, labels_visible);
+    // for all senses
+    int i;
+    for(i = 0; i < senses->len; i++)
+    {
+      Sense s = g_array_index(senses, Sense, i);
+      my_widget_set_visible(s.domain_label, labels_visible);
+      my_widget_set_visible(s.tr_label, labels_visible);
+      my_widget_set_visible(s.tr_add_label, labels_visible);
+      my_widget_set_visible(s.tr_delete_label, labels_visible);
+      my_widget_set_visible(s.def_label, labels_visible);
+      my_widget_set_visible(s.note_label, labels_visible);
+      my_widget_set_visible(s.example_label, labels_visible);
+      my_widget_set_visible(s.xr_label, labels_visible);
+      my_widget_set_visible(s.xr_add_label, labels_visible);
+      my_widget_set_visible(s.xr_delete_label, labels_visible);
+    }
   }
 
   // save state with gconf
