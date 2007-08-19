@@ -35,7 +35,7 @@ clean:
 	dh_testroot
 	rm -f build-stamp 
 
-	-$(MAKE) distclean
+	[ ! -f Makefile ] || $(MAKE) distclean
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
 	rm config.sub
 	cp -f /usr/share/misc/config.sub config.sub
@@ -45,7 +45,6 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
 
-
 	dh_clean 
 
 install: build
@@ -54,7 +53,6 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/freedict-editor
-
 
 binary-indep: build install
 

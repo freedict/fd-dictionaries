@@ -13,7 +13,10 @@ EXTRA_DIST = \
 	help/C/imipa.c \
 	help/C/make-ipatable.pl \
 	help/C/make-ipatable.sh \
-	help/C/view.sh
+	help/C/view.sh \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in
 
 install-data-local:
 	@$(NORMAL_INSTALL)
