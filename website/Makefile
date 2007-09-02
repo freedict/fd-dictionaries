@@ -1,6 +1,8 @@
 all: freedict.po editordoc.html howto freedict-database.xml flags-bedic.php \
 	flags-evolutionary.php freedict.pot de kha ru ku fr ar bg
 
+sources = $(wildcard *.php) $(wildcard inc/*.php)
+
 freedict.po: freedict.pot
 	msgmerge -U locale/ar_EG/LC_MESSAGES/freedict.po $<
 	msgmerge -U locale/de_DE/LC_MESSAGES/freedict.po $<
@@ -28,8 +30,9 @@ flags-bedic.php:
 flags-evolutionary.php:
 	ln -s flags-dict-tgz.php $@
 
-freedict.pot: *.php inc/*.php
-	xgettext -o freedict.pot -j *.php inc/*.php
+freedict.pot: $(sources)
+	xgettext -o $@ --copyright-holder="freedict.org" \
+	  --msgid-bugs-address="freedict-beta@lists.sf.net" *.php inc/*.php
 
 locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
 	msgfmt -c --statistics -o $@ $<

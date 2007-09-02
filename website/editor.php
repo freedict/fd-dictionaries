@@ -32,8 +32,9 @@ cvs -z3 -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict co -
 <p><?php printf(_("For the %srequirements%s, please also refer to the documentation."),
   '<a href="editordoc.html#freedict-editor-requirements">', '</a>') ?></p>
 
-<p><?php printf(_("If you use %sDebian%s unstable, you can add this to your %s:"),
+<p><?php printf(_("If you use %sDebian%s etch or unstable, you can add this to your %s (replace <i>etch</i> by <i>unstable</i> if you use unstable):"),
   '<a href="http://debian.org/">', '</a>', '<tt>/etc/apt/sources.list</tt>') ?></p>
 
-<blockquote><small><tt>deb <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> binary/<br>
-deb-src <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> source/</tt></small></blockquote>
+<blockquote><small><tt>deb <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main<br>
+deb-src <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main</tt></small></blockquote>
+
