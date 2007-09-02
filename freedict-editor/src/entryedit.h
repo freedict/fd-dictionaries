@@ -1,6 +1,6 @@
 #include <gnome.h>
 #include <libxml/parser.h>
-
+#include "values.h"
 
 typedef struct _Sense_trans Sense_trans;
 typedef struct _Sense_xr Sense_xr;
@@ -48,24 +48,11 @@ struct _Sense
   xmlNodePtr xSense, xDef, xNote, xUsg, xEx, xExTr;
 };
 
-// a type for option menu contents
-typedef struct _Values Values;
-
-struct _Values
-{
-  char *label;
-  char *value;
-};
-
-
 // global variables
 
 // senses of the currently edited entry in Form view
 extern GArray *senses;
 extern gboolean form_modified;
-
-// export these variables, so it can be used in callbacks.c
-extern const Values pos_values[], num_values[];
 
 GtkWidget   *create_menu(GtkOptionMenu *parent, const char *accel_path,
 		    const Values *v);

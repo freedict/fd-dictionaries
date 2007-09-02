@@ -29,7 +29,7 @@ main (int argc, char *argv[])
   {
     g_thread_init(NULL);
   }
-  
+
   // these functions are provided by libbonobo
   bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
   bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
@@ -46,9 +46,9 @@ main (int argc, char *argv[])
   g_object_get(G_OBJECT(app), GNOME_PARAM_POPT_CONTEXT, &con, NULL);
   extern char *selected_filename;
   selected_filename = (char *) poptGetArg(con);
- 
+
   poptFreeContext(con);
-  
+
   app1 = create_app1();
   gtk_widget_show_all(app1);
 

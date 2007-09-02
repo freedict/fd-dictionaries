@@ -14,7 +14,8 @@ freedict_editor_SOURCES = \
 	utils.c utils.h \
 	xml.c xml.h \
 	callbacks.c callbacks.h \
-	entryedit.c entryedit.h
+	entryedit.c entryedit.h \
+	values.c values.h
 
 freedict_editor_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

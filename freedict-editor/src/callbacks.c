@@ -1119,6 +1119,28 @@ static void on_link_clicked(HtmlDocument *doc, const gchar *url, gpointer data)
   gtk_tree_path_free(path);
 }
 
+Values *load_values_from_gconf(const char *relative_key,
+    const Values *default_values)
+{
+  g_return_if_fail(relative_key && default_values);
+  char *key = gnome_gconf_get_app_settings_relative(NULL, relative_key);
+  GSList *list = gconf_client_get_list(gc_client,
+      key, GCONF_VALUE_STRING, NULL);
+  g_free(key);
+  Values *v;
+  if(list && g_slist_length(list)>0)
+  {
+    v = GSList2Values(list);
+    g_printerr(_("Loaded %s from GConf.\n"), relative_key);
+    my_g_slist_free_all(list);
+  }
+  else
+  {
+    v = (Values *) default_values;
+    g_printerr(_("Using builtin default %s.\n"), relative_key);
+  }
+  return v;
+}
 
 // forward declaration
 static void on_gconf_client_notify(GConfClient *client, guint cnxn_id,
@@ -1169,6 +1191,13 @@ on_app1_show                           (GtkWidget       *widget,
   set_view_labels_visible(gconf_client_get_bool(gc_client, key, NULL));
   g_free(key);
 
+  pos_values = load_values_from_gconf("pos_values", pos_values_default);
+  num_values = load_values_from_gconf("num_values", num_values_default);
+  domain_values = load_values_from_gconf("domain_values",
+      domain_values_default);
+  xr_values = load_values_from_gconf("xr_values", xr_values_default);
+  gen_values = load_values_from_gconf("gen_values", gen_values_default);
+
   if(!entry_template_doc)
   {
     xmlDoValidityCheckingDefaultValue = 0;
@@ -1214,7 +1243,7 @@ on_app1_show                           (GtkWidget       *widget,
 
   // we could connect to this signal in glade-2 by entering the signal name
   // manually, but glade-2 should offer it in its "Select Signal" dialog
-  // XXX fix glade-2, but glade.gnome.org they work on glade3 :(
+  // XXX fix glade-2, but glade.gnome.org says they work on glade3 :(
   g_signal_connect((gpointer) b, "modified-changed",
       G_CALLBACK(on_textview1_modified_changed), NULL);
 
@@ -2416,6 +2445,13 @@ static void on_gconf_client_notify(GConfClient *client, guint cnxn_id,
 {
   g_return_if_fail(entry);
   g_printerr("on_gconf_client_notify for key %s\n", entry->key);
+  if(!strcmp(entry->key, "/apps/freedict-editor/pos_values"))
+  {
+    my_free_values_array(&pos_values);
+    pos_values = load_values_from_gconf("pos_values", pos_values_default);
+    return;
+  }
+  // the following code is for demonstration purposes only
   if(!gconf_entry_get_value(entry))
   {
     g_printerr("key was unset\n");
