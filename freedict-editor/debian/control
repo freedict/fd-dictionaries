@@ -10,6 +10,17 @@ Standards-Version: 3.7.2
 Package: freedict-editor
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: yelp
 Suggests: tei
-Description: Gnome2 Application to edit Text Encoding Initiative XML
+Description: Editor for Text Encoding Initiative XML dictionaries
+ Entries are made from a subset of the format defined by TEI, Version 4,
+ Chapter 12 "Print Dictionaries".  Supports
+  * online validation
+  * XPath to flexibly select entries to be edited
+  * easy, user friendly Form View to edit entries
+  * fallback to plain XML editing
+  * entering pronunciation in IPA characters
+  * HTML preview of formatted entries
+  * sanity checks and a spell checker
+ .
  TEI XML is used in the FreeDict project to store bilingual dictionary data.
