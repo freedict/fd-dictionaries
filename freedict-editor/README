@@ -9,9 +9,9 @@ I can try to make some Gnome libs optional (thinking of gconf and libgtkhtml pre
 gtksourceview
   a GTK widget which extends the standard GTK text widgets implementing syntax
   highlighting, automatic indentation, and other typical features of source
-  editors.  Using LablGtkSourceView you can instantiate and use GtkSourceView
-  widgets in OCaml programs which use GTK through the LablGtk interface.
-
+  editors.
+  dpkg -l "*gtksource*"
+ 
 sanity
  trimmable spaces
  entry with only form child(ren)
@@ -28,11 +28,11 @@ additional optionmenu <form type="">
  (phrase, abbreviation, wrong spelling?)
  phrase subtype: idiom
 
-DB Backend(s)
- xml-db
-  Apache Xindice
-  exist
-  pgxml
+XML DBs as Backend(s) inste4ad of file in memory
+  Apache Xindice: Java, slow
+  exist: same
+  pgxml: didn't try yet, postgres is promising
+  db2: proprietary
 
 create & install a .desktop file to appear in windowmanager menus
 integrate mime-info files nicely
@@ -63,3 +63,4 @@ check: only allowed chars in headwords (no c!)
    starts with
      jing should be fem noun
      pyn should be verb and have a xr to verb without pyn
+ -> configurable Xpath expressions for the sanity checks

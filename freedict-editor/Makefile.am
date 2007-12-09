@@ -28,6 +28,7 @@ install-data-local:
 	    fi \
 	  done \
 	fi
+	$(INSTALL_DATA) freedict-editor.glade $(DESTDIR)$(datadir)/$(PACKAGE)
 
 dist-hook:
 	if test -d pixmaps; then \
@@ -40,4 +41,4 @@ dist-hook:
 	fi
 
 deb:
-	fakeroot dpkg-buildpackage
+	fakeroot debuild

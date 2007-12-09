@@ -7,6 +7,7 @@
 #endif
 
 #include <gnome.h>
+#include <glade/glade.h>
 #include <libgtkhtml/gtkhtml.h>
 #include <gconf/gconf-client.h>
 
@@ -16,11 +17,12 @@
 #include <libxml/threads.h>
 
 #include "callbacks.h"
-#include "interface.h"
-#include "support.h"
 #include "utils.h"
 #include "xml.h"
 #include "entryedit.h"
+
+/// GladeXML object of the application to access widgets
+extern GladeXML *my_glade_xml;
 
 /// Currently open dictionary
 xmlDocPtr teidoc;
@@ -37,7 +39,7 @@ xsltStylesheetPtr entry_stylesheet;
 /// HTML Document for entry preview
 HtmlDocument *htdoc;
 
-GtkWidget *fileselection1, *html_view, *propertybox;
+GtkWidget *html_view, *propertybox;
 GtkListStore *store;
 GtkCellRenderer *renderer;
 GtkTreeViewColumn *column;
@@ -47,7 +49,7 @@ GConfClient *gc_client;
 char *stylesheetfn;
 
 /// Filename of the curently opened dictionary
-const gchar *selected_filename;
+char *selected_filename;
 
 /// If 1, the program will ask for a filename before saving the currently open dictionary
 gboolean save_as_mode;
@@ -153,10 +155,11 @@ on_stop_find_nodeset_clicked           (GtkButton       *button,
 
 xmlNodeSetPtr find_node_set_threaded(const char *xpath, const xmlDocPtr doc)
 {
+  g_debug("find_node_set_threaded()");
   // return while an xpath match from another thread is being processed
   if(!g_mutex_trylock(find_nodeset_mutex)) return NULL;
 
-  GtkWidget *stop = lookup_widget(app1, "stop_find_nodeset");
+  GtkWidget *stop =  glade_xml_get_widget(my_glade_xml, "stop_find_nodeset");
   gtk_widget_set_sensitive(stop, TRUE);
 
   finish_gui_update_thread = 0;
@@ -168,18 +171,19 @@ xmlNodeSetPtr find_node_set_threaded(const char *xpath, const xmlDocPtr doc)
     {
       if(gtk_main_iteration()) finish_gui_update_thread++;
     }
-    //g_printerr("next round... finish_gui_update_thread=%i\n", finish_gui_update_thread);
+    g_debug("next round... finish_gui_update_thread=%i",
+	finish_gui_update_thread);
     g_thread_yield();
   }
 
-  //g_printerr(" joining find_node_set thread...\n");
+  g_debug(" joining find_node_set thread");
   xmlNodeSetPtr result = g_thread_join(thread);
 
   gtk_widget_set_sensitive(stop, FALSE);
 
   g_mutex_unlock(find_nodeset_mutex);
 
-  //g_printerr("finished find_nodeset_threaded\n");
+  g_debug("finished find_nodeset_threaded");
   return result;
 }
 
@@ -208,7 +212,7 @@ void myload(const char *filename)
   }
 
   setTeidoc(d);
-  g_printerr("Finished loading.\n");
+  g_debug("Finished loading.");
   on_select_entry_changed(NULL, NULL);
 }
 
@@ -221,16 +225,35 @@ void
 on_new1_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-  myload(PACKAGE_DATA_DIR "/" PACKAGE "/la1-la2.template.tei");
+  const char *location1 = PACKAGE_DATA_DIR "/" PACKAGE "/la1-la2.template.tei";
+  const char *location2 = "data/la1-la2.template.tei";
+  const char *location3 = "../data/la1-la2.template.tei";
+  if(g_file_test(location1, G_FILE_TEST_EXISTS))
+    myload(location1);
+  else if(g_file_test(location2, G_FILE_TEST_EXISTS))
+    myload(location2);
+  else if(g_file_test(location3, G_FILE_TEST_EXISTS))
+    myload(location3);
+  else
+  {
+    GtkWidget *dialog = gtk_message_dialog_new (GTK_WINDOW(app1),
+	GTK_DIALOG_DESTROY_WITH_PARENT,
+	GTK_MESSAGE_ERROR,
+	GTK_BUTTONS_CLOSE,
+	_("Couldn't find dictionary template.  Checked locations: "
+	  "'%s', '%s' and %s"), location1, location2, location3);
+    gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_destroy (dialog);
+    return;
+  }
+  if(selected_filename) g_free(selected_filename);
   selected_filename = NULL;
-  //setTeidoc(teidoc);// get the title reset
 }
 
 
 /// Toolbar callback to create a new file.
 
 /// Activates the corresponding menu entry.
-///
 void
 on_new_file_button_clicked             (GtkButton       *button,
                                         gpointer         user_data)
@@ -239,17 +262,42 @@ on_new_file_button_clicked             (GtkButton       *button,
 }
 
 
+void add_tei_file_filters_to_file_chooser(GtkFileChooser *f)
+{
+  GtkFileFilter *teifilter = gtk_file_filter_new();
+  GtkFileFilter *nofilter = gtk_file_filter_new();
+  gtk_file_filter_set_name(teifilter, _("TEI Files"));
+  gtk_file_filter_set_name(nofilter, _("All Files"));
+  gtk_file_filter_add_pattern(teifilter, "*.tei");
+  gtk_file_filter_add_pattern(nofilter, "*");
+  gtk_file_chooser_add_filter(f, teifilter);
+  gtk_file_chooser_add_filter(f, nofilter);
+}
+
+
 /// Menu callback
 void
 on_open1_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-  save_as_mode = 0;
-  if(!fileselection1) fileselection1 = create_fileselection1();
-  gtk_widget_show_all(fileselection1);
+  GtkWidget *dialog = gtk_file_chooser_dialog_new (_("Open File"),
+      GTK_WINDOW(app1),
+      GTK_FILE_CHOOSER_ACTION_OPEN,
+      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+      GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+      NULL);
+  add_tei_file_filters_to_file_chooser(GTK_FILE_CHOOSER(dialog));
+  if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+  {
+    selected_filename = gtk_file_chooser_get_filename
+      (GTK_FILE_CHOOSER (dialog));
+    myload(selected_filename);
+  }
+  gtk_widget_destroy (dialog);
 }
 
 
+/// Callback for menu entry.  Saves file if it already has a name.
 void
 on_save1_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
@@ -260,13 +308,39 @@ on_save1_activate                      (GtkMenuItem     *menuitem,
 }
 
 
+/// Callback for manu entry.  Opens save dialog.
 void
 on_save_as1_activate                   (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-  save_as_mode = 1;
-  if(!fileselection1) fileselection1 = create_fileselection1();
-  gtk_widget_show_all(fileselection1);
+  GtkWidget *dialog = gtk_file_chooser_dialog_new (_("Save File"),
+      GTK_WINDOW(app1),
+      GTK_FILE_CHOOSER_ACTION_SAVE,
+      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+      NULL);
+  gtk_file_chooser_set_do_overwrite_confirmation
+    (GTK_FILE_CHOOSER (dialog), TRUE);
+  add_tei_file_filters_to_file_chooser(GTK_FILE_CHOOSER(dialog));
+
+  if(!selected_filename || !strlen(selected_filename))
+  {
+    // user_edited_a_new_document
+    gtk_file_chooser_set_current_name
+      (GTK_FILE_CHOOSER (dialog), _("New Dictionary.tei"));
+  }
+  else
+    gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (dialog),
+	selected_filename);
+
+  if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+  {
+    if(selected_filename) g_free(selected_filename);
+    selected_filename = gtk_file_chooser_get_filename
+      (GTK_FILE_CHOOSER (dialog));
+    mysave();
+  }
+  gtk_widget_destroy (dialog);
 }
 
 
@@ -311,9 +385,8 @@ on_app1_delete_event                   (GtkWidget       *widget,
   if(!sure) return TRUE;
 
   // cleanup
-  g_mutex_free(find_nodeset_mutex);
-  g_mutex_free(find_nodeset_pcontext_mutex);
-  if(fileselection1) gtk_widget_destroy(fileselection1);
+  if(find_nodeset_mutex) g_mutex_free(find_nodeset_mutex);
+  if(find_nodeset_pcontext_mutex) g_mutex_free(find_nodeset_pcontext_mutex);
   gtk_main_quit();
   if(entry_stylesheet) xsltFreeStylesheet(entry_stylesheet);
   if(stylesheetfn) g_free(stylesheetfn);
@@ -392,7 +465,7 @@ void
 on_clear1_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-  g_printerr("Not implemented.");
+  g_debug("Not implemented.");
 }
 
 
@@ -400,49 +473,18 @@ void
 on_about1_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-  GtkWidget* about2 = create_about2();
+  GtkWidget* about2 =
+    glade_xml_get_widget(my_glade_xml, "about2");
   gtk_widget_show_all(about2);
 }
 
 
+// Toolbar callback.  Forwards to menu entry callback.
 void
 on_openbutton_clicked                  (GtkButton       *button,
                                         gpointer         user_data)
 {
-  // show file selection dialog
-  save_as_mode = 0;
-  if(!fileselection1) fileselection1 = create_fileselection1();
-  gtk_widget_show_all(fileselection1);
-}
-
-
-/// File selection dialog callback for the OK button.
-void
-on_ok_button1_clicked                  (GtkButton       *button,
-                                        gpointer         user_data)
-{
-  selected_filename = gtk_file_selection_get_filename(
-    GTK_FILE_SELECTION(fileselection1));
-  gtk_widget_hide(fileselection1);
-
-  if(save_as_mode)
-  {
-    save_as_mode = 0;
-    mysave();
-    return;
-  }
-
-  myload(selected_filename);
-}
-
-
-/// File selection dialog callback for the cancel button
-void
-on_cancel_button1_clicked              (GtkButton       *button,
-                                        gpointer         user_data)
-{
-  save_as_mode = 0;
-  gtk_widget_hide(fileselection1);
+  on_open1_activate(NULL, NULL);
 }
 
 
@@ -454,7 +496,8 @@ on_cancel_button1_clicked              (GtkButton       *button,
  */
 gboolean set_global_im_gtk_context_id(char *new_context_id)
 {
-   GtkEntry *e = GTK_ENTRY(lookup_widget(app1, "entry2"));
+   GtkEntry *e = GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2"));
+
   // bad, since actually im_context is private!
   GtkIMMulticontext *m = GTK_IM_MULTICONTEXT(e->im_context);
 
@@ -482,7 +525,7 @@ gboolean set_global_im_gtk_context_id(char *new_context_id)
 
 /// Finds the currently active global GTK+ Input Method ID
 /** The follwoing was an alternative approach:
- *	GtkEntry *e = GTK_ENTRY(lookup_widget(app1, "entry2"));
+ *	GtkEntry *e = GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2"));
  *	GtkIMMulticontext *m = GTK_IM_MULTICONTEXT(e->im_context);
  * Strangely, the following always printed gtk-im-context-simple, ie.  reports
  * the default IM would be used - which was not true:
@@ -494,7 +537,7 @@ gboolean set_global_im_gtk_context_id(char *new_context_id)
  */
 char *find_global_im_gtk_context_id(void)
 {
-  GtkEntry *e = GTK_ENTRY(lookup_widget(app1, "entry2"));
+  GtkEntry *e = GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2"));
   // bad, since actually im_context is private!
   GtkIMMulticontext *m = GTK_IM_MULTICONTEXT(e->im_context);
 
@@ -527,17 +570,17 @@ char *find_global_im_gtk_context_id(void)
 
 int timeout_id = -1;
 
-/** If the match takes too long, this func could be called several times.  That
- * is why the timeout is removed upon entering the callback.
+/** If the matching takes too long, this function could be called several
+ * times.  That is why the timeout is removed upon entering the callback.
  */
 gboolean on_select_timeout(gpointer data)
 {
-  //g_printerr("on_select_timeout()\n");
+  g_debug("on_select_timeout()");
   gtk_timeout_remove(timeout_id);
   timeout_id = -1;
 
   const gchar* template = gtk_entry_get_text(GTK_ENTRY(
-	lookup_widget(app1, "xpath_entry")));
+    glade_xml_get_widget(my_glade_xml, "xpath_entry")));
 
   // format string check: only one %s and many %% allowed
   const char *fscan = template;
@@ -565,16 +608,18 @@ gboolean on_select_timeout(gpointer data)
 	return FALSE;
     }
   }
+  g_debug("XPath template passed check.");
 
   const gchar* select1 = gtk_entry_get_text(GTK_ENTRY(
-	lookup_widget(app1, "select_entry")));
+	glade_xml_get_widget(my_glade_xml, "select_entry")));
   char select[400];
   g_snprintf(select, sizeof(select), template, select1);
 
   if(!store)
   {
     store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_POINTER);
-    gtk_tree_view_set_model(GTK_TREE_VIEW(lookup_widget(app1, "treeview1")),
+    gtk_tree_view_set_model(GTK_TREE_VIEW(
+	glade_xml_get_widget(my_glade_xml, "treeview1")),
 	GTK_TREE_MODEL(store));
   }
   else gtk_list_store_clear(store);
@@ -605,18 +650,24 @@ gboolean on_select_timeout(gpointer data)
   column = gtk_tree_view_column_new_with_attributes("Matching Nodes",
       renderer, "text", 0, NULL);
   gtk_tree_view_append_column(GTK_TREE_VIEW(
-	lookup_widget(app1, "treeview1")), column);
+	glade_xml_get_widget(my_glade_xml, "treeview1")), column);
 
   return FALSE;
 }
 
 
 /// "Select" Input Field callback
+/* The "Select" Input Field is there for the user to enter a string which will
+ * be used in an XPath match to select the entries to be listed in Treeview1.
+ * Since it doesn't make sense to start the expensive match operation after
+ * every entered char, we wait for 500 ms and hope the user doesn't need more
+ * time to find the next key :)
+ */
 void
 on_select_entry_changed                (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-  //g_printerr("on_select_entry_changed\n");
+  g_debug("on_select_entry_changed");
   if(timeout_id!=-1) gtk_timeout_remove(timeout_id);
   timeout_id = gtk_timeout_add(500, on_select_timeout, NULL);
 }
@@ -668,7 +719,8 @@ void replace_edited_node(xmlNodePtr new_node)
 // returns success
 gboolean save_textview1()
 {
-  GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
+  GtkTextView *textview1 = GTK_TEXT_VIEW(
+      glade_xml_get_widget(my_glade_xml, "textview1"));
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
   if(!gtk_text_buffer_get_modified(b)) return TRUE;
 
@@ -761,12 +813,12 @@ on_new_entry_button_clicked            (GtkButton       *button,
   set_edited_node(new_entry);
 
   if(gtk_notebook_get_current_page(
-	GTK_NOTEBOOK(lookup_widget(app1, "notebook1"))) == 1)
+	GTK_NOTEBOOK(glade_xml_get_widget(my_glade_xml, "notebook1"))) == 1)
   {
     // copy text from "select" input field into orth field of new entry
-    GtkWidget *entry1 = lookup_widget(app1, "entry1");
+    GtkWidget *entry1 = glade_xml_get_widget(my_glade_xml, "entry1");
     const gchar* select1 = gtk_entry_get_text(GTK_ENTRY(
-	  lookup_widget(app1, "select_entry")));
+	  glade_xml_get_widget(my_glade_xml, "select_entry")));
     gtk_entry_set_text(GTK_ENTRY(entry1), select1);
 
     gtk_widget_grab_focus(entry1);
@@ -783,8 +835,8 @@ on_new_entry_button_clicked            (GtkButton       *button,
     // save timestamps in milliseconds
     new_entry_timestamps[current_new_entry_timestamp_index] =
       tv.tv_sec*1e3 + tv.tv_usec/1e3;
-    //g_printerr("msec=%lli\n",
-    //   	new_entry_timestamps[current_new_entry_timestamp_index]);
+    g_debug("msec=%lli\n",
+	new_entry_timestamps[current_new_entry_timestamp_index]);
     current_new_entry_timestamp_index++;
     if(current_new_entry_timestamp_index>=MAX_NEW_ENTRY_TIMESTAMPS)
       current_new_entry_timestamp_index = 0;
@@ -800,8 +852,8 @@ on_new_entry_button_clicked            (GtkButton       *button,
 	if(cur < lowest) lowest = cur;
       }
     }
-    //g_printerr("sum of timestamps=%f valid=%i lowest=%lli\n",
-    //   	speed, valid, lowest);
+    g_debug("sum of timestamps=%f valid=%i lowest=%lli\n",
+	speed, valid, lowest);
     if(valid>1) speed = 60*60*1000.0 / (speed/(gdouble)valid - lowest);
     else speed = 0;
   }
@@ -894,9 +946,9 @@ gboolean save_form()
 
 void on_form_modified_changed()
 {
-  gtk_widget_set_sensitive(lookup_widget(app1, "apply_button"),
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "apply_button"),
       teidoc && form_modified);
-  gtk_widget_set_sensitive(lookup_widget(app1, "cancel_edit_button"),
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit_button"),
       teidoc && form_modified);
 }
 
@@ -937,7 +989,7 @@ on_notebook1_switch_page               (GtkNotebook     *notebook,
   {
     // save contents of form
     if(edited_node && !save_form())
-      g_printerr(_("Saving form contents as XML failed :("));
+      mystatus(_("Saving form contents as XML failed :("));
 
     // fill textview1
     show_in_textview1(edited_node);
@@ -969,9 +1021,9 @@ void on_textview1_modified_changed(GtkTextBuffer *textbuffer,
 {
   g_return_if_fail(textbuffer);
   gboolean sensitive = teidoc && gtk_text_buffer_get_modified(textbuffer);
-  gtk_widget_set_sensitive(lookup_widget(app1, "apply_button"),
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "apply_button"),
       sensitive);
-  gtk_widget_set_sensitive(lookup_widget(app1, "cancel_edit_button"),
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit_button"),
       sensitive);
 }
 
@@ -982,7 +1034,7 @@ void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
 
   // the docking classes are not documented in the libbonoboui docs
   // because the api is considered as unstable
-  BonoboDock *bonobodock1 = BONOBO_DOCK(lookup_widget(app1, "bonobodock1"));
+  BonoboDock *bonobodock1 = BONOBO_DOCK(glade_xml_get_widget(my_glade_xml, "bonobodock1"));
 
   void on_lock_dockitems_list_callback2(gpointer data, gpointer user_data)
   {
@@ -993,7 +1045,7 @@ void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
     item = BONOBO_DOCK_ITEM(child->widget);
     g_return_if_fail(item);
 
-    //g_printerr("Name of this bonobo dock item: '%s'\n", item->name);
+    g_debug("Name of this bonobo dock item: '%s'\n", item->name);
 
     // bonobo_dock_item_set_locked() is private, actually
     // /opt/gnome/include/libbonoboui-2.0/bonobo/bonobo-dock.h
@@ -1033,8 +1085,11 @@ void on_view_html_toggled(GtkCheckMenuItem *item, gpointer user_data)
 
 void on_view_toolbar_toggled(GtkCheckMenuItem *item, gpointer user_data)
 {
-  BonoboDockItem *i = bonobo_dock_get_item_by_name(
-      BONOBO_DOCK(lookup_widget(app1, "bonobodock1")),
+  BonoboDock *d = BONOBO_DOCK(
+      glade_xml_get_widget(my_glade_xml, "bonobodock1"));
+  // XXX is bonobo_dock_get_item_by_name() broken?
+  // at least in Debian packages libbonoboui2* 2.18.0-5 i is always NULL
+  BonoboDockItem *i = bonobo_dock_get_item_by_name(d,
       "toolbar1", NULL, NULL, NULL, NULL);
   my_widget_set_visible(GTK_WIDGET(i), gtk_check_menu_item_get_active(item));
 }
@@ -1048,13 +1103,13 @@ void set_view_labels_visible(gboolean visible)
   if(visible==labels_visible) return;
 
   labels_visible = visible;
-  my_widget_set_visible(lookup_widget(app1, "select_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "xpath_template_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "orth_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "pron_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "pos_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "num_label"), labels_visible);
-  my_widget_set_visible(lookup_widget(app1, "gen_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "select_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "xpath_template_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "orth_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "pron_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "pos_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "num_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "gen_label"), labels_visible);
 
   if(senses)
   {
@@ -1094,7 +1149,7 @@ void on_view_labels_toggled(GtkCheckMenuItem *item, gpointer user_data)
  */
 static void on_link_clicked(HtmlDocument *doc, const gchar *url, gpointer data)
 {
-  g_printerr("on_link_clicked: url='%s'\n", url);
+  g_debug("on_link_clicked: url='%s'", url);
   g_return_if_fail(url);
 
   // decode url
@@ -1104,18 +1159,13 @@ static void on_link_clicked(HtmlDocument *doc, const gchar *url, gpointer data)
 
   // XXX better: find exact matches only
   gtk_entry_set_text(GTK_ENTRY(
-	  lookup_widget(app1, "select_entry")), str_url);
+	  glade_xml_get_widget(my_glade_xml, "select_entry")), str_url);
 
   g_free(str_url);
 
-  // XXX exhibits a SEGFAULT, gdb said
-  // in css_matcher_get_style () from /opt/gnome/lib/libgtkhtml-2.so.0
-  // -> use newer libgtkhtml (at least libgtkhtml-2.6.2 is out)
   GtkTreePath *path = gtk_tree_path_new_first();
-  g_printerr("have first path\n");
-  gtk_tree_view_set_cursor(GTK_TREE_VIEW(lookup_widget(app1, "treeview1")),
+  gtk_tree_view_set_cursor(GTK_TREE_VIEW(glade_xml_get_widget(my_glade_xml, "treeview1")),
       path, NULL, FALSE);
-  g_printerr("freeing path\n");
   gtk_tree_path_free(path);
 }
 
@@ -1150,6 +1200,7 @@ void
 on_app1_show                           (GtkWidget       *widget,
                                         gpointer         user_data)
 {
+  g_debug("on_app1_show()");
   find_nodeset_mutex = g_mutex_new();
   find_nodeset_pcontext_mutex = g_mutex_new();
 
@@ -1164,7 +1215,7 @@ on_app1_show                           (GtkWidget       *widget,
                           NULL, NULL);
   g_free(freedictkeypath);
 
-  // XXX load settings
+  // load settings
   if(!stylesheetfn)
   {
     char* stylesheetkey = gnome_gconf_get_app_settings_relative(NULL, "stylesheet");
@@ -1201,10 +1252,28 @@ on_app1_show                           (GtkWidget       *widget,
   if(!entry_template_doc)
   {
     xmlDoValidityCheckingDefaultValue = 0;
-    const char fname[] = PACKAGE_DATA_DIR "/" PACKAGE "/entry-template.xml";
-    entry_template_doc = xmlParseFile(fname);
+    const char *fname1 = PACKAGE_DATA_DIR "/" PACKAGE "/entry-template.xml";
+    const char *fname2 = "data/entry-template.xml";
+    const char *fname3 = "../data/entry-template.xml";
+    if(g_file_test(fname1, G_FILE_TEST_EXISTS))
+      entry_template_doc = xmlParseFile(fname1);
+    else if(g_file_test(fname2, G_FILE_TEST_EXISTS))
+      entry_template_doc = xmlParseFile(fname2);
+    else if(g_file_test(fname3, G_FILE_TEST_EXISTS))
+      entry_template_doc = xmlParseFile(fname3);
+    else
+    {
+      GtkWidget *dialog = gtk_message_dialog_new (GTK_WINDOW(app1),
+	  GTK_DIALOG_DESTROY_WITH_PARENT,
+	  GTK_MESSAGE_ERROR,
+	  GTK_BUTTONS_CLOSE,
+	  _("Couldn't find entry template.  Checked locations: "
+	    "'%s', '%s' and %s"), fname1, fname2, fname3);
+      gtk_dialog_run (GTK_DIALOG (dialog));
+      gtk_widget_destroy (dialog);
+    }
     if(!entry_template_doc)
-      mystatus(_("Could not load %s!"), fname);
+      mystatus(_("Failed to parse entry template!"));
   }
 
   if(!entry_stylesheet)
@@ -1219,7 +1288,7 @@ on_app1_show                           (GtkWidget       *widget,
     else
     {
       html_view = html_view_new();
-      gtk_paned_pack2 (GTK_PANED (lookup_widget(app1, "vpaned1")),
+      gtk_paned_pack2 (GTK_PANED (glade_xml_get_widget(my_glade_xml, "vpaned1")),
 	  html_view, FALSE, TRUE);
       htdoc = html_document_new();
       g_signal_connect((gpointer) htdoc, "link_clicked",
@@ -1231,7 +1300,7 @@ on_app1_show                           (GtkWidget       *widget,
 
   if(!senses) senses = g_array_new(FALSE, TRUE, sizeof(Sense));
 
-  GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
+  GtkTextView *textview1 = GTK_TEXT_VIEW(glade_xml_get_widget(my_glade_xml, "textview1"));
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
 
   // XXX ugly
@@ -1249,13 +1318,13 @@ on_app1_show                           (GtkWidget       *widget,
 
   // the following signal handlers are not connected by glade-2,
   // even though the signal handler can be set in the property editor
-  g_signal_connect ((gpointer) lookup_widget(app1, "view_html"), "toggled",
+  g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_html"), "toggled",
       G_CALLBACK (on_view_html_toggled), NULL);
-  g_signal_connect ((gpointer) lookup_widget(app1, "lock_dockitems"), "toggled",
+  g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "lock_dockitems"), "toggled",
       G_CALLBACK (on_lock_dockitems_toggled), NULL);
-  g_signal_connect ((gpointer) lookup_widget(app1, "view_labels"), "toggled",
+  g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_labels"), "toggled",
       G_CALLBACK (on_view_labels_toggled), NULL);
-  g_signal_connect ((gpointer) lookup_widget(app1, "view_toolbar"), "toggled",
+  g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_toolbar"), "toggled",
       G_CALLBACK (on_view_toolbar_toggled), NULL);
 
   setTeidoc(NULL);
@@ -1264,13 +1333,13 @@ on_app1_show                           (GtkWidget       *widget,
   // maybe we just have to make menus with accelerators???
   // how to make an accel configuration dialog?
   create_menu(
-      GTK_OPTION_MENU(lookup_widget(app1, "pos_optionmenu")),
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "pos_optionmenu")),
       "<" PACKAGE ">/Headword/pos",
       pos_values);
 
   //  gtk_menu_set_accel_path(
 //      GTK_MENU(gtk_option_menu_get_menu(
-//	  GTK_OPTION_MENU(lookup_widget(app1, "num_optionmenu")))),
+//	  GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "num_optionmenu")))),
 //      "<" PACKAGE ">/num_optionmenu");
 
   // enable drops
@@ -1335,7 +1404,7 @@ on_apply_button_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
   switch(gtk_notebook_get_current_page(GTK_NOTEBOOK(
-	  lookup_widget(app1, "notebook1"))))
+	  glade_xml_get_widget(my_glade_xml, "notebook1"))))
   {
     case 0:
       save_textview1();
@@ -1343,8 +1412,8 @@ on_apply_button_clicked                (GtkButton       *button,
 
     case 1:
       // save contents of form
-      if(!save_form()) g_printerr(_("Saving form contents as XML failed."));
-      else gtk_widget_grab_focus(lookup_widget(app1, "select_entry"));
+      if(!save_form()) mystatus(_("Saving form contents as XML failed."));
+      else gtk_widget_grab_focus(glade_xml_get_widget(my_glade_xml, "select_entry"));
       break;
 
     default:
@@ -1389,10 +1458,10 @@ on_treeview1_cursor_changed            (GtkTreeView     *treeview,
 {
   // return if HTML preview off
   if(!gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(
-	  lookup_widget(app1, "view_html")))) return;
+	  glade_xml_get_widget(my_glade_xml, "view_html")))) return;
 
   // get currently selected entry
-  GtkTreeView *tv = GTK_TREE_VIEW(lookup_widget(app1, "treeview1"));
+  GtkTreeView *tv = GTK_TREE_VIEW(glade_xml_get_widget(my_glade_xml, "treeview1"));
   g_return_if_fail(tv);
   GtkTreePath *path;
   GtkTreeViewColumn *dummycol;
@@ -1436,10 +1505,9 @@ on_app1_drag_data_received             (GtkWidget       *widget,
     if(end)
     {
       *end = 0;
-      strncpy(myfilename, (char *) data->data + 7, sizeof(myfilename));
-      //g_print("Trying to load '%s'\n", myfilename);
-      selected_filename = myfilename;
-
+      if(selected_filename) g_free(selected_filename);
+      selected_filename = g_strdup((char *) data->data + 7);
+      g_debug("Trying to load '%s'", myfilename);
       myload(selected_filename);
     }
     else
@@ -1513,12 +1581,24 @@ on_view_keyboard_layout_activate       (GtkMenuItem     *menuitem,
 
   const char commandline[] =
     "xkbprint -color -lg 1 -ll 1 :0 - | gv --orientation=seascape -";
-  if(gnome_execute_terminal_shell(NULL, commandline) == -1)
+  if(gnome_execute_shell(NULL, commandline) == -1)
   {
     mystatus(_("Failed to show keyboard layout with command: %s"), commandline);
     return;
   }
   mystatus(_("Done: %s"), commandline);
+}
+
+void
+on_help_menuitem_activate (GtkMenuItem     *menuitem,
+    gpointer         user_data)
+{
+  GError *error;
+  if(gnome_help_display(PACKAGE ".xml", NULL,  &error)) return;
+
+  // display error
+  g_printerr(G_STRLOC ": gnome_help_display() failed: %s\n",
+      error->message);
 }
 
 
@@ -1572,7 +1652,7 @@ static void set_replacements_made(unsigned int value)
   replacements_made = value;
   char str[40];
   g_snprintf(str, sizeof(str), "%i", value);
-  gtk_label_set_text(GTK_LABEL(lookup_widget(scw, "replacements_counter_label")), str);
+  gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml, "replacements_counter_label")), str);
 }
 
 static void set_spell_current_node_idx(unsigned int value)
@@ -1581,7 +1661,7 @@ static void set_spell_current_node_idx(unsigned int value)
 
   // update progressbar
   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(
-	lookup_widget(scw, "spell_progressbar")),
+	glade_xml_get_widget(my_glade_xml, "spell_progressbar")),
       (gdouble) spell_current_node_idx /
       (gdouble) xmlXPathNodeSetGetLength(spell_nodes));
 }
@@ -1591,7 +1671,7 @@ static void spell_getsuggestions(char *word)
 {
 #ifdef HAVE_LIBASPELL
   GtkTreeView *sugg_treeview = GTK_TREE_VIEW(
-      lookup_widget(scw, "suggestions_treeview"));
+      glade_xml_get_widget(my_glade_xml, "suggestions_treeview"));
 
   if(!spell_sugg_store)
   {
@@ -1663,10 +1743,10 @@ gboolean spell_handle_current_word()
 
   // display current misspelling
   word_begin = spell_content + token.offset + diff;
-//  g_printerr("%.*s*%.*s*%s\n",
-//      (int)(token.offset + diff), spell_content,
-//      (int)token.len, word_begin,
-//      word_begin + token.len);
+  g_debug("%.*s*%.*s*%s",
+      (int)(token.offset + diff), spell_content,
+      (int)token.len, word_begin,
+      word_begin + token.len);
 
   snprintf(misspelled_token_str, sizeof(misspelled_token_str), "%.*s", (int)token.len, word_begin);
 
@@ -1676,11 +1756,11 @@ gboolean spell_handle_current_word()
   if(replace_all_replacement)
   {
     // XXX
-    g_printerr("Found replacement: %s\n", replace_all_replacement);
+    g_debug("Found replacement: %s", replace_all_replacement);
     // return FALSE;
   }
 
-  gtk_entry_set_text(GTK_ENTRY(lookup_widget(scw, "misspelled_word_entry")),
+  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "misspelled_word_entry")),
       misspelled_token_str);
   spell_getsuggestions(misspelled_token_str);
 #else
@@ -1713,7 +1793,7 @@ gboolean spell_handle_current_word()
 
   g_print("Incorrect: word %i %s\n", spell_current_word_idx, w);
 
-  gtk_entry_set_text(GTK_ENTRY(lookup_widget(scw, "misspelled_word_entry")),
+  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "misspelled_word_entry")),
       spell_current_words[spell_current_word_idx]);
   spell_getsuggestions(spell_current_words[spell_current_word_idx]);
 #endif // NOCKR
@@ -1831,7 +1911,7 @@ void get_new_checker_speller()
 
   char *true_false = "false";
   if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "accept_runtogether_checkbutton")))) true_false = "true";
+	glade_xml_get_widget(my_glade_xml, "accept_runtogether_checkbutton")))) true_false = "true";
   aspell_config_replace(c, "run-together", true_false);
   check_for_config_error(c);
 
@@ -1892,12 +1972,12 @@ void get_new_checker_speller()
 void on_spell_dict_menu_selection_done(GtkMenuShell *menushell, gpointer user_data)
 {
 #ifdef HAVE_LIBASPELL
-  //g_printerr("on_spell_dict_menu_selection_done()\n");
+  g_debug("on_spell_dict_menu_selection_done()");
   g_return_if_fail(c);// AspellConfig
 
   // in case we got called from spell_continue_check()
   if(!menushell) menushell = GTK_MENU_SHELL(gtk_option_menu_get_menu(
-	GTK_OPTION_MENU(lookup_widget(scw, "spell_dict_optionmenu"))));
+	GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu"))));
 
   GtkWidget* l = gtk_menu_get_active(GTK_MENU(menushell));
 
@@ -1939,7 +2019,7 @@ void spell_continue_check()
 
     if(!xmlNodeIsText(spell_current_node))
     {
-      g_printerr("Node %i is no text node. Skip.", spell_current_node_idx);
+      g_debug("Node %i is no text node. Skip.", spell_current_node_idx);
       set_spell_current_node_idx(spell_current_node_idx+1);
       continue;
     }
@@ -1950,21 +2030,21 @@ void spell_continue_check()
   }
 
   // inactivate all widgets except "close" button
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_replace_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_replace_all_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_ignore_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_ignore_all_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_add_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "suggestions_treeview"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "replacement_entry"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_headwords_radiobutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_translations_radiobutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_orth_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_tr_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_eg_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_eg_tr_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "spell_dict_optionmenu"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(scw, "accept_runtogether_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_replace_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_replace_all_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_ignore_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_ignore_all_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_add_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "suggestions_treeview"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "replacement_entry"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_headwords_radiobutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_translations_radiobutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "accept_runtogether_checkbutton"), FALSE);
 
   mystatus(_("Finished Spellcheck."));
 #endif
@@ -1976,13 +2056,13 @@ void spell_query_nodes()
 #ifdef HAVE_LIBASPELL
   // build XPath query
   gboolean orth = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(lookup_widget(scw, "spell_orth_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")));
   gboolean tr = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(lookup_widget(scw, "spell_tr_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")));
   gboolean eg = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(lookup_widget(scw, "spell_eg_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")));
   gboolean eg_tr = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(lookup_widget(scw, "spell_eg_tr_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")));
 
   char query[100] = "";
   if(orth)
@@ -2026,7 +2106,7 @@ on_spell_check1_activate               (GtkMenuItem     *menuitem,
     return;
   }
 
-  scw = create_spellcheck_window();
+  scw = glade_xml_get_widget(my_glade_xml, "spellcheck_window");
   g_signal_connect(scw, "destroy", G_CALLBACK (gtk_widget_destroyed), &scw);
   gtk_widget_show_all(scw);
 
@@ -2084,10 +2164,10 @@ on_spell_check1_activate               (GtkMenuItem     *menuitem,
     if(!strcmp(d->code,   c_lang) &&
        !strcmp(d->jargon, c_jargon) &&
        !strcmp(d->size_str, c_size)) gtk_option_menu_set_history(
-	 GTK_OPTION_MENU(lookup_widget(scw, "spell_dict_optionmenu")), i);
+	 GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu")), i);
  }
   delete_aspell_dict_info_enumeration(e);
-  gtk_option_menu_set_menu(GTK_OPTION_MENU(lookup_widget(scw,
+  gtk_option_menu_set_menu(GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml,
 	  "spell_dict_optionmenu")), spell_dict_menu);
 
   spell_query_nodes();
@@ -2110,7 +2190,7 @@ on_spell_replace_button_clicked        (GtkButton       *button,
   g_return_if_fail(spell_current_words && spell_current_words[spell_current_word_idx]);
 #endif
 
-  GtkWidget *entry = lookup_widget(scw, "replacement_entry");
+  GtkWidget *entry = glade_xml_get_widget(my_glade_xml, "replacement_entry");
   char *replacement = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry)));
   g_return_if_fail(replacement);
 
@@ -2170,7 +2250,7 @@ on_spell_replace_all_button_clicked    (GtkButton       *button,
                                         gpointer         user_data)
 {
 #ifdef HAVE_LIBASPELL
-  GtkWidget *entry = lookup_widget(scw, "replacement_entry");
+  GtkWidget *entry = glade_xml_get_widget(my_glade_xml, "replacement_entry");
   char *replacement = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry)));
   g_return_if_fail(replacement);
 
@@ -2300,13 +2380,13 @@ on_spell_headwords_radiobutton_toggled (GtkToggleButton *togglebutton,
 {
 #ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_orth_checkbutton")), TRUE);
+	glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_tr_checkbutton")), FALSE);
+	glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_eg_checkbutton")), TRUE);
+	glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_eg_tr_checkbutton")), FALSE);
+	glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")), FALSE);
   spell_query_nodes();
 #endif
 }
@@ -2319,13 +2399,13 @@ on_spell_translations_radiobutton_toggled
 {
 #ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_orth_checkbutton")), FALSE);
+	glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_tr_checkbutton")), TRUE);
+	glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_eg_checkbutton")), FALSE);
+	glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	lookup_widget(scw, "spell_eg_tr_checkbutton")), TRUE);
+	glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")), TRUE);
   spell_query_nodes();
 #endif
 }
@@ -2377,7 +2457,7 @@ on_suggestions_treeview_cursor_changed (GtkTreeView     *treeview,
   }
 
   // put selected suggestion into replacement entry
-  GtkWidget *entry = lookup_widget(scw, "replacement_entry");
+  GtkWidget *entry = glade_xml_get_widget(my_glade_xml, "replacement_entry");
   gtk_entry_set_text(GTK_ENTRY(entry), sugg);
 #endif
 }
@@ -2415,22 +2495,22 @@ on_preferences1_activate               (GtkMenuItem     *menuitem,
 {
   if(!propertybox)
   {
-    propertybox = create_propertybox1();
+    propertybox = glade_xml_get_widget(my_glade_xml, "propertybox1");
 
     // XXX checkbox to use default or not
 
     // populate fields by taking the current variable values and
     // putting them into the input fields
     gnome_file_entry_set_filename(
-	GNOME_FILE_ENTRY(lookup_widget(GTK_WIDGET(propertybox),
+	GNOME_FILE_ENTRY(glade_xml_get_widget(my_glade_xml,
 	    "stylesheet_fileentry")),
 	stylesheetfn);
     // XXX make input field insensitive if key not writable
 
-    gtk_label_set_text(GTK_LABEL(lookup_widget(GTK_WIDGET(propertybox),
+    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml,
 	    "editer_default_name_label")), g_get_real_name());
 
-    gtk_label_set_text(GTK_LABEL(lookup_widget(GTK_WIDGET(propertybox),
+    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml,
 	    "editer_default_email_label")), g_get_user_name());
     // XXX ++ @localhost
   }
@@ -2480,8 +2560,8 @@ on_propertybox1_apply                  (GnomePropertyBox *propertybox,
   g_printerr("on_propertybox1_apply\n");
 
   char* new_stylesheetfn = gnome_file_entry_get_full_path(
-      GNOME_FILE_ENTRY(lookup_widget(GTK_WIDGET(propertybox), "stylesheet_fileentry")),
-      TRUE); // file must exist
+      GNOME_FILE_ENTRY(glade_xml_get_widget(my_glade_xml,
+	  "stylesheet_fileentry")), TRUE); // file must exist
   char* stylesheetkey = gnome_gconf_get_app_settings_relative(NULL, "stylesheet");
   if(new_stylesheetfn)
     gconf_client_set_string(gc_client, stylesheetkey, new_stylesheetfn, NULL);
@@ -2504,8 +2584,8 @@ on_propertybox1_help                   (GnomePropertyBox *propertybox,
   if(gnome_help_display(PACKAGE ".xml", PACKAGE "-prefs",  &error)) return;
 
   // display error
-  g_printerr(G_STRLOC ": gnome_help_display() failed. If you want to "
-      "know more, ask the programmer to display error->message\n");
+  g_printerr(G_STRLOC ": gnome_help_display() failed: %s\n",
+      error->message);
 }
 
 
@@ -2665,7 +2745,7 @@ on_sanity_treeview_cursor_changed      (GtkTreeView     *treeview,
 {
   // return if HTML preview off
   if(!gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(
-	  lookup_widget(app1, "view_html")))) return;
+	  glade_xml_get_widget(my_glade_xml, "view_html")))) return;
 
   // get currently selected entry
   g_return_if_fail(treeview);
@@ -2813,11 +2893,12 @@ on_sanity_check_activate               (GtkMenuItem     *menuitem,
     return;
   }
 
-  sanity_window = create_sanity_window();
+  sanity_window = glade_xml_get_widget(my_glade_xml, "sanity_window");
   // NULL window variable when sanity_window is closed
   g_signal_connect(sanity_window, "destroy", G_CALLBACK (gtk_widget_destroyed), &sanity_window);
 
-  GtkTreeView *sanity_tree_view = GTK_TREE_VIEW(lookup_widget(sanity_window, "sanity_treeview"));
+  GtkTreeView *sanity_tree_view = GTK_TREE_VIEW(
+      glade_xml_get_widget(my_glade_xml, "sanity_treeview"));
   if(!sanity_store)
   {
     sanity_store = gtk_tree_store_new(

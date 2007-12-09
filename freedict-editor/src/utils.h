@@ -4,7 +4,7 @@
 extern GtkWidget* app1;
 extern xmlDocPtr teidoc, entry_template_doc;
 extern xmlNodePtr edited_node;
-extern const gchar *selected_filename;
+extern char *selected_filename;
 extern int save_as_mode;
 extern gboolean file_modified;
 

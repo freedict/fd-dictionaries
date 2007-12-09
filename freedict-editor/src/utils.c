@@ -7,8 +7,9 @@
 // for PACKAGE_NAME
 #include "config.h"
 
-// for lookup_widget()
-#include "support.h"
+#include <glade/glade.h>
+/// GladeXML object of the application to access widgets
+extern GladeXML *my_glade_xml;
 
 // for fill_form()
 #include "entryedit.h"
@@ -21,7 +22,7 @@ void mystatus(const char *format, ...)
   gchar buffer[200];
   va_start(args, format);
   g_vsnprintf(buffer, 200, format, args);
-  gnome_appbar_set_status(GNOME_APPBAR(lookup_widget(app1, "appbar1")), buffer);
+  gnome_appbar_set_status(GNOME_APPBAR(glade_xml_get_widget(my_glade_xml, "appbar1")), buffer);
   va_end(args);
 }
 
@@ -34,7 +35,7 @@ void show_in_textview1(const xmlNodePtr n)
   g_assert(ret2 != -1);
 
   // XXX make textview1 global var to save lookups
-  GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
+  GtkTextView *textview1 = GTK_TEXT_VIEW(glade_xml_get_widget(my_glade_xml, "textview1"));
 
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
   gtk_text_buffer_set_text(b, (char *) xmlBufferContent(buf), -1);
@@ -53,11 +54,11 @@ void on_form_modified_changed();
 void set_edited_node(const xmlNodePtr n)
 {
   // XXX nb1 could be a global var inited at startup
-  GtkWidget *nb1 = lookup_widget(app1, "notebook1");
+  GtkWidget *nb1 = glade_xml_get_widget(my_glade_xml, "notebook1");
   gtk_widget_set_sensitive(nb1, n!=NULL);
 
   gboolean is_entry = n && !strcmp((char *) n->name, "entry");
-  gtk_widget_set_sensitive(lookup_widget(app1, "delete_button"), is_entry);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "delete_button"), is_entry);
 
   // XXX maybe we should refuse to set a new edited_node when
   // the currently edited one is not saved yet (or try to auto-save it)
@@ -70,7 +71,7 @@ void set_edited_node(const xmlNodePtr n)
   edited_node = NULL;
 
   // en-/disable switching to Form View
-  gtk_widget_set_sensitive(lookup_widget(app1, "form_view_label"), is_entry);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "form_view_label"), is_entry);
   
   if(n)
   {
@@ -84,7 +85,7 @@ void set_edited_node(const xmlNodePtr n)
   }
   else
   {
-    GtkTextView *textview1 = GTK_TEXT_VIEW(lookup_widget(app1, "textview1"));
+    GtkTextView *textview1 = GTK_TEXT_VIEW(glade_xml_get_widget(my_glade_xml, "textview1"));
     GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
     // XXX make a wizard out of this?
     // should show only "No XML chunk currently edited."
@@ -108,10 +109,10 @@ void set_edited_node(const xmlNodePtr n)
 
 void on_file_modified_changed()
 {   
-  gtk_widget_set_sensitive(lookup_widget(app1, "save_button"),
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_button"),
       file_modified);
-  gtk_widget_set_sensitive(lookup_widget(app1, "save1"), file_modified);
-  gtk_widget_set_sensitive(lookup_widget(app1, "save_as1"), file_modified);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save1"), file_modified);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_as1"), file_modified);
 }
 
 
@@ -119,14 +120,14 @@ void setTeidoc(const xmlDocPtr t)
 {
   gboolean sensitive = t ? TRUE : FALSE;
   file_modified = FALSE;
-  gtk_widget_set_sensitive(lookup_widget(app1, "save_button"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(app1, "save1"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(app1, "save_as1"), FALSE);
-  gtk_widget_set_sensitive(lookup_widget(app1, "new_entry_button"), sensitive);
-  gtk_widget_set_sensitive(lookup_widget(app1, "select_entry"), sensitive);
-  gtk_widget_set_sensitive(lookup_widget(app1, "spell_check1"), sensitive);
-  gtk_widget_set_sensitive(lookup_widget(app1, "new_file_button"), !t);
-  gtk_widget_set_sensitive(lookup_widget(app1, "new1"), !t);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save1"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_as1"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "new_entry_button"), sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "select_entry"), sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_check1"), sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "new_file_button"), !t);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "new1"), !t);
   gtk_window_set_title(GTK_WINDOW(app1),
       (t && selected_filename) ? selected_filename : PACKAGE_NAME);
   teidoc = t;

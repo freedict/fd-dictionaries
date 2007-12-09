@@ -4,8 +4,9 @@
 
 #include "entryedit.h"
 
-// for lookup_widget()
-#include "support.h"
+#include <glade/glade.h>
+/// GladeXML object of the application to access widgets
+extern GladeXML *my_glade_xml;
 
 // for teidoc
 #include "utils.h"
@@ -270,7 +271,7 @@ Sense_trans *sense_append_trans(const Sense *s)
       G_CALLBACK(on_form_entry_changed), NULL);
 
   GtkTooltips *tooltips;
-  tooltips = GTK_TOOLTIPS(lookup_widget(app1, "tooltips"));
+  tooltips = GTK_TOOLTIPS(glade_xml_get_widget(my_glade_xml, "tooltips"));
   gtk_tooltips_set_tip(tooltips, t.entry, _("Translation Equivalent"), NULL);
 
   // pos
@@ -368,7 +369,7 @@ Sense *senses_append(GArray *senses)
   // all senses are kept in vbox6
   // the "add/remove sense" buttonbox is always last in vbox6, since it has
   // "pack_start" set to false
-  GtkBox *vbox6 = GTK_BOX(lookup_widget(app1, "vbox6"));
+  GtkBox *vbox6 = GTK_BOX(glade_xml_get_widget(my_glade_xml, "vbox6"));
   gtk_box_pack_start(vbox6, s.frame, TRUE, TRUE, 0);
 
   // sense number label
@@ -388,7 +389,7 @@ Sense *senses_append(GArray *senses)
 		    (GtkAttachOptions) (0), 0, 0);
 
   GtkTooltips *tooltips;
-  tooltips = GTK_TOOLTIPS(lookup_widget(app1, "tooltips"));
+  tooltips = GTK_TOOLTIPS(glade_xml_get_widget(my_glade_xml, "tooltips"));
 
   // domain optionmenu
   s.domain_optionmenu = gtk_option_menu_new();
@@ -617,12 +618,12 @@ Sense *senses_append(GArray *senses)
   // area, but we do not want that.  I don't know whether GtkViewport exhibits
   // a bug when gtk_widget_queue_resize() is not called, since even though it
   // seems to get extended, its scrollbars are not shown.
-  gtk_widget_queue_resize(lookup_widget(app1, "viewport2"));
+  gtk_widget_queue_resize(glade_xml_get_widget(my_glade_xml, "viewport2"));
 
   gtk_widget_show_all(s.frame);
   g_array_append_val(senses, s);
 
-  GtkWidget *remove_sense_button = lookup_widget(app1, "remove_sense_button");
+  GtkWidget *remove_sense_button = glade_xml_get_widget(my_glade_xml, "remove_sense_button");
   gtk_widget_set_sensitive(remove_sense_button, TRUE);
 
   // return newly created Sense
@@ -647,7 +648,7 @@ void senses_remove_last(GArray *senses)
   // since we always remove the last element, the fast function
   // is fine
   g_array_remove_index_fast(senses, senses->len-1);
-  GtkWidget *remove_sense_button = lookup_widget(app1, "remove_sense_button");
+  GtkWidget *remove_sense_button = glade_xml_get_widget(my_glade_xml, "remove_sense_button");
   g_assert(remove_sense_button);
   gtk_widget_set_sensitive(remove_sense_button, senses->len);
 }
@@ -790,23 +791,23 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   g_return_if_fail(pe && can);
 
   // orth
-  nodeContent2gtk_entry(pe->orth, GTK_ENTRY(lookup_widget(app1, "entry1")));
+  nodeContent2gtk_entry(pe->orth, GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry1")));
   my_free_node(&(pe->orth));
 
   // pron
-  nodeContent2gtk_entry(pe->pron, GTK_ENTRY(lookup_widget(app1, "entry2")));
+  nodeContent2gtk_entry(pe->pron, GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2")));
   my_free_node(&(pe->pron));
 
   *can = *can && nodeContent2optionmenu(pe->pos,
-      GTK_OPTION_MENU(lookup_widget(app1, "pos_optionmenu")), pos_values, "pos");
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "pos_optionmenu")), pos_values, "pos");
   my_free_node(&(pe->pos));
 
   *can = *can && nodeContent2optionmenu(pe->num,
-      GTK_OPTION_MENU(lookup_widget(app1, "num_optionmenu")), num_values, "num");
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "num_optionmenu")), num_values, "num");
   my_free_node(&(pe->num));
 
   *can = *can && nodeContent2optionmenu(pe->gen,
-      GTK_OPTION_MENU(lookup_widget(app1, "gen_optionmenu")), gen_values, "gen");
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "gen_optionmenu")), gen_values, "gen");
   my_free_node(&(pe->gen));
 
   // parse '<note resp="translator">Translator Name <email address>[two spaces]date</note>'
@@ -1044,20 +1045,20 @@ xmlNodePtr form2xml(const GArray *senses)
 
   // orth
   GtkEntry2xmlNode(formNode, "	  ", "orth",
-      GTK_ENTRY(lookup_widget(app1, "entry1")), "\n");
+      GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry1")), "\n");
 
   // pron
   GtkEntry2xmlNode(formNode, "	  ", "pron",
-      GTK_ENTRY(lookup_widget(app1, "entry2")), "\n");
+      GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2")), "\n");
   xmlNodeAddContent(formNode, (xmlChar *) "  ");
 
   // gramGrp
   gint pindex = gtk_option_menu_get_history(GTK_OPTION_MENU(
-	lookup_widget(app1, "pos_optionmenu")));
+	glade_xml_get_widget(my_glade_xml, "pos_optionmenu")));
   gint gindex = gtk_option_menu_get_history(GTK_OPTION_MENU(
-	lookup_widget(app1, "gen_optionmenu")));
+	glade_xml_get_widget(my_glade_xml, "gen_optionmenu")));
   gint nindex = gtk_option_menu_get_history(GTK_OPTION_MENU(
-	lookup_widget(app1, "num_optionmenu")));
+	glade_xml_get_widget(my_glade_xml, "num_optionmenu")));
   if(pindex || gindex || nindex)
   {
     xmlNodePtr gramGrpNode = string2xmlNode(entryNode, "  ", "gramGrp", "\n    ", "\n");
