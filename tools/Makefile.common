@@ -515,6 +515,16 @@ clean::
 	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	dictd2dic.out authorresp.out title.out
 
+#####################
+#### targets for ding
+#####################
+
+%.ding: %.tei $(xsldir)/tei2ding.xsl
+	$(XSLTPROCESSOR) $(xsldir)/tei2ding.xsl $< >$@
+
+clean::
+	rm -f *.ding
+
 #######################
 #### Phonetics import
 #######################
