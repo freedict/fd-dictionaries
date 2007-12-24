@@ -171,8 +171,8 @@ xmlNodeSetPtr find_node_set_threaded(const char *xpath, const xmlDocPtr doc)
     {
       if(gtk_main_iteration()) finish_gui_update_thread++;
     }
-    g_debug("next round... finish_gui_update_thread=%i",
-	finish_gui_update_thread);
+    //g_debug("next round... finish_gui_update_thread=%i",
+	//finish_gui_update_thread);
     g_thread_yield();
   }
 
@@ -1152,16 +1152,22 @@ static void on_link_clicked(HtmlDocument *doc, const gchar *url, gpointer data)
   g_debug("on_link_clicked: url='%s'", url);
   g_return_if_fail(url);
 
-  // decode url
+  // get url
   GnomeVFSURI* vfs_uri = gnome_vfs_uri_new(url);
   gchar *str_url = gnome_vfs_uri_to_string(vfs_uri, GNOME_VFS_URI_HIDE_TOPLEVEL_METHOD);
+  g_debug("on_link_clicked: str_url='%s'", str_url);
   gnome_vfs_uri_unref(vfs_uri);
+
+  // decode url
+  char *unesc_str_url = xmlURIUnescapeString(str_url, 0, NULL);
+  g_free(str_url);
+  g_debug("on_link_clicked: unesc_str_url='%s'", unesc_str_url);
 
   // XXX better: find exact matches only
   gtk_entry_set_text(GTK_ENTRY(
-	  glade_xml_get_widget(my_glade_xml, "select_entry")), str_url);
+	  glade_xml_get_widget(my_glade_xml, "select_entry")), unesc_str_url);
 
-  g_free(str_url);
+  xmlFree(unesc_str_url);
 
   GtkTreePath *path = gtk_tree_path_new_first();
   gtk_tree_view_set_cursor(GTK_TREE_VIEW(glade_xml_get_widget(my_glade_xml, "treeview1")),
