@@ -1,6 +1,8 @@
 TODO
 ----
 
+scrollkeeper-update in debian/postinst & postrm
+
 > I like the program. The only caveat is that it depends
 > too much on gnome. If you can remove this dependence...
 I can try to make some Gnome libs optional (thinking of gconf and libgtkhtml presently).
@@ -59,8 +61,7 @@ put into teiHeader or front/back matter
  use of ï and ñ, n g
 
 check: only allowed chars in headwords (no c!)
- everything that
-   starts with
-     jing should be fem noun
-     pyn should be verb and have a xr to verb without pyn
+ everything that starts with
+    jing should be fem noun
+    pyn should be verb and have a xr to verb without pyn
  -> configurable Xpath expressions for the sanity checks

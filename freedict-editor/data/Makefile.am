@@ -1,3 +1,5 @@
-pkgdata_DATA = entry-template.xml la1-la2.template.tei freedict.keys freedict.mime
+dist_pkgdata_DATA = entry-template.xml la1-la2.template.tei
 
-# freedict.keys and freedict.mime should into /opt/gnome/share/mime-info/ or similar
+mimeinfodir = $(datarootdir)/mime-info
+dist_mimeinfo_DATA = freedict.keys freedict.mime
+

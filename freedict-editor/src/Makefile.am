@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
@@ -16,3 +16,4 @@ freedict_editor_SOURCES = \
 	values.c values.h
 
 freedict_editor_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+freedict_editor_LDFLAGS = -export-dynamic

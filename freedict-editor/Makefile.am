@@ -4,12 +4,7 @@ SUBDIRS = src po data help
 
 EXTRA_DIST = \
 	autogen.sh \
-	freedict-editor.glade \
 	freedict-editor.gladep \
-	data/entry-template.xml \
-	data/freedict.keys \
-	data/freedict.mime \
-	data/la1-la2.template.tei \
 	help/C/imipa.c \
 	help/C/make-ipatable.pl \
 	help/C/make-ipatable.sh \
@@ -17,6 +12,10 @@ EXTRA_DIST = \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
+
+DISTCLEANFILES = po/stamp-it intltool-extract intltool-merge intltool-update
+
+dist_pkgdata_DATA = freedict-editor.glade
 
 install-data-local:
 	@$(NORMAL_INSTALL)
@@ -28,7 +27,6 @@ install-data-local:
 	    fi \
 	  done \
 	fi
-	$(INSTALL_DATA) freedict-editor.glade $(DESTDIR)$(datadir)/$(PACKAGE)
 
 dist-hook:
 	if test -d pixmaps; then \
