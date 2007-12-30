@@ -15,6 +15,7 @@
 #pragma error "libxml2 needs to have threads enabled!"
 #endif
 #include <libxml/threads.h>
+#include <libxml/uri.h>
 
 #include "callbacks.h"
 #include "utils.h"
@@ -196,7 +197,7 @@ void myload(const char *filename)
 {
   g_return_if_fail(filename);
   int subs = xmlSubstituteEntitiesDefault(1);
-  //fprintf(stderr, "Substitution of external entities was %i.\n", subs);
+  g_debug("Substitution of external entities was %i.\n", subs);
   //int vali = xmlDoValidityCheckingDefaultValue;
   xmlDoValidityCheckingDefaultValue = 1;
   //fprintf(stderr, "Validity checking was %i.\n", vali);
@@ -1178,7 +1179,7 @@ static void on_link_clicked(HtmlDocument *doc, const gchar *url, gpointer data)
 Values *load_values_from_gconf(const char *relative_key,
     const Values *default_values)
 {
-  g_return_if_fail(relative_key && default_values);
+  g_return_val_if_fail(relative_key && default_values, NULL);
   char *key = gnome_gconf_get_app_settings_relative(NULL, relative_key);
   GSList *list = gconf_client_get_list(gc_client,
       key, GCONF_VALUE_STRING, NULL);
@@ -2672,7 +2673,7 @@ static struct sanity_check sanity_checks[] = {
     "//entry[ starts-with(gramGrp/pos, 'v') and starts-with(form/orth, 'to ') ]" },
   { N_("Unbalanced braces"),
     "//entry[ fd:unbalanced-braces(.//orth | .//tr | .//note | .//def | .//q) ]" },
-  NULL };
+  { NULL } };
 
 GtkWidget* sanity_window;
 GtkTreeStore *sanity_store;

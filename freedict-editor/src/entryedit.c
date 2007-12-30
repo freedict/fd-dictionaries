@@ -817,14 +817,13 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   xmlChar *content = xmlNodeGetContent(pe->noteRespTranslator);
   my_free_node(&(pe->noteRespTranslator));
   if(!content) return;
-  char *nameS = NULL, *emailS = NULL;
-  char dateS[100];
+  char *nameS = NULL, *emailS = NULL, *dateS = NULL;
   if(strlen((char *) content)>0)
   {
     // %as =  match a string, malloc it
     // &a[^>] = match a string, malloc it, all chars allowed except '>'
     // XXX might not be robust
-    int ret = sscanf((char *) content, "%a[^<]<%a[^>]>	%[a-zA-Z0-9 .,-]",
+    int ret = sscanf((char *) content, "%a[^<]<%a[^>]>	%a[a-zA-Z0-9 .,-]",
 	&nameS, &emailS, &dateS);
 
     if(ret != 3)
@@ -862,6 +861,7 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   }
   if(nameS) free(nameS);
   if(emailS) free(emailS);
+  if(dateS) free(dateS);
   if(content) xmlFree(content);
 }
 

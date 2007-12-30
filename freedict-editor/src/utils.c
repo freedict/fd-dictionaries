@@ -39,7 +39,7 @@ void show_in_textview1(const xmlNodePtr n)
 
   GtkTextBuffer* b = gtk_text_view_get_buffer(textview1);
   gtk_text_buffer_set_text(b, (char *) xmlBufferContent(buf), -1);
-  xmlBufferFree(buf); 
+  xmlBufferFree(buf);
   gtk_text_buffer_set_modified(b, FALSE);
 
   // XXX make sure notebook1 shows page 0 (XML view)
@@ -63,16 +63,16 @@ void set_edited_node(const xmlNodePtr n)
   // XXX maybe we should refuse to set a new edited_node when
   // the currently edited one is not saved yet (or try to auto-save it)
   // this should ease the problem of on_notebook1_switch_page()
-  // that it has to prevent switching if auto-save fails. 
+  // that it has to prevent switching if auto-save fails.
   // but then, how to handle the user switching to the other view?
-  
+
   // temporarily set edited_node to NULL so on_notebook1_switch_page()
   // doesn't disturb us
   edited_node = NULL;
 
   // en-/disable switching to Form View
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "form_view_label"), is_entry);
-  
+ 
   if(n)
   {
     if(!is_entry || !xml2form(n, senses))
@@ -90,25 +90,25 @@ void set_edited_node(const xmlNodePtr n)
     // XXX make a wizard out of this?
     // should show only "No XML chunk currently edited."
     char text[] =
-       	N_("1. Open a TEI file\n\
-2. Modify the XPath select expression to match\n\
-\tthe entries you desire to edit\n\
-3. Double-click on an entry headword in the list\n\
-\tof matching entries to the right!");
+      N_("1. Open a TEI file\n"
+	  "2. Modify the XPath select expression to match\n"
+	  "\tthe entries you desire to edit\n"
+	  "3. Double-click on an entry headword in the list\n"
+	  "\tof matching entries to the right!");
     gtk_text_buffer_set_text(b, _(text), -1);
     GtkTextIter start, end;
     gtk_text_buffer_get_iter_at_offset(b, &start, 0);
     gtk_text_buffer_get_iter_at_offset(b, &end, sizeof(text));
     gtk_text_buffer_apply_tag_by_name(b, "instructions", &start, &end);
   }
-  
+
   edited_node = n;
   if(form_modified) { form_modified = FALSE; on_form_modified_changed(); }
 }
 
 
 void on_file_modified_changed()
-{   
+{
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_button"),
       file_modified);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save1"), file_modified);
@@ -134,14 +134,14 @@ void setTeidoc(const xmlDocPtr t)
   set_edited_node(NULL);
 }
 
-    
+
 void mysave(void)
 {
   g_return_if_fail(teidoc);
   int ret = xmlSaveFile(selected_filename, teidoc);
   if(ret==-1)
   {
-    mystatus(_("Saving to %s failed."), selected_filename); 
+    mystatus(_("Saving to %s failed."), selected_filename);
   }
 
   if(file_modified)

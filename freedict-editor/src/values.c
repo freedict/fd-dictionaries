@@ -160,7 +160,7 @@ const Values xr_values_default[] = {
   { N_("Hyponym"), "hypo" },
   { N_("Synonym"), "syn" },
   { N_("Derived from"), "der" },
-  NULL
+  { NULL }
 };
 
 
@@ -182,7 +182,7 @@ const Values pos_values_default[] = {
   { N_("Imitative"), "imit" },
   { N_("Abbreviation"), "abbr" },
   { N_("Phrase"), "phra" },
-  NULL
+  { NULL }
 };
 
 const Values gen_values_default[] = {
@@ -193,7 +193,7 @@ const Values gen_values_default[] = {
   { N_("Common"), "i" },
   { N_("Masc. & Fem."), "mf" },
   { N_("Masc., Fem. & Neut."), "mfn" },
-  NULL
+  { NULL }
 };
 
 
@@ -202,7 +202,7 @@ const Values num_values_default[] = {
   { N_("_Singular"), "sg" },
   { N_("Dual"), "du" },
   { N_("Plural"), "pl" },
-  NULL
+  { NULL }
 };
 
 const Values domain_values_default[] = {
@@ -246,6 +246,6 @@ const Values domain_values_default[] = {
 //  { "Colloquial", "col" },
 //  { "Slang", "slang" },// same as colloquial?
 //  { "Vulgar", "vulg" },// same as colloquial?
-  NULL
+  { NULL }
 };
 
