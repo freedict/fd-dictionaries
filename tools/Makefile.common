@@ -455,22 +455,23 @@ clean::
 DICTD2DIC ?= dictd2dic
 
 # This is hardcoded into dictd2dic :(
-stardict_prefix = dictd_www.freedict.de_
+stardict_prefix = dictd_www.dict.org_
 
 # idxhead is required to preexist by dictd2dic. The reason is not documented.
 $(dictname).idxhead:
 	echo -n "" > $@
 
-$(stardict_prefix)$(dictname).idx.gz $(stardict_prefix)$(dictname).dict.dz \
+$(stardict_prefix)$(dictname).idx $(stardict_prefix)$(dictname).dict.dz \
 	dictd2dic.out: $(dictname).index $(dictname).dict $(dictname).idxhead
 	$(DICTD2DIC) $(dictname) >dictd2dic.out
+	gzip -9 $(stardict_prefix)$(dictname).idx
 
 # $(wordcount) and $(idxfilesize) are a target-specific variables
 $(stardict_prefix)$(dictname).ifo: \
 	wordcount=$(word 2, $(shell tail -n1 dictd2dic.out))
 
 $(stardict_prefix)$(dictname).ifo: \
-	idxfilesize=$(strip $(shell zcat $(stardict_prefix)$(dictname).idx.gz | wc -c))
+	idxfilesize=$(strip $(shell zcat $(stardict_prefix)$(dictname).idx | wc -c))
 
 authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
 	$(XSLTPROCESSOR) $(xsldir)/getauthor.xsl $< >$@
@@ -478,8 +479,11 @@ authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
 title.out: $(dictname).tei $(xsldir)/gettitle.xsl
 	$(XSLTPROCESSOR) $(xsldir)/gettitle.xsl $< >$@
 
-$(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx.gz \
-	dictd2dic.out authorresp.out title.out
+sourceurl.out: $(dictname).tei $(xsldir)/getsourceurl.xsl
+	$(XSLTPROCESSOR) $(xsldir)/getsourceurl.xsl $< >$@
+
+$(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx \
+	dictd2dic.out authorresp.out title.out sourceurl.out
 	@echo "Generating $@..."
 	@echo "StarDict's dict ifo file" > $@
 	@echo "version=2.4.2" >> $@
@@ -488,7 +492,7 @@ $(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx.gz \
 	@echo "bookname=$(shell cat title.out)" >> $@
 	@echo "author=$(shell sed -e "s/ <.*>//" <authorresp.out)" >> $@
 	@echo "email=$(shell sed -e "s/.* <\(.*\)>/\1/" <authorresp.out)" >> $@
-	@echo "website=$(shell $(MAKE) sourceURL)" >> $@
+	@echo "website=$(shell cat sourceurl.out)" >> $@
 	@echo "description=Converted to StarDict format by freedict.org" >> $@
 	@echo "date=$(shell date +%G.%m.%d)" >> $@
 	@echo "sametypesequence=m" >> $@
@@ -513,7 +517,7 @@ clean::
 	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
 	$(stardict_prefix)$(dictname).dict.dz $(stardict_prefix)$(dictname).ifo \
 	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	dictd2dic.out authorresp.out title.out
+	dictd2dic.out authorresp.out title.out sourceurl.out
 
 #####################
 #### targets for ding

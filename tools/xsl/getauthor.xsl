@@ -7,7 +7,7 @@
 <xsl:output method="text"/>
 
 <xsl:template match="/">
-  <xsl:value-of select="TEI.2/teiHeader/fileDesc/titleStmt/respStmt/name[../resp = 'Author']"/>
+  <xsl:value-of select="TEI.2/teiHeader/fileDesc/titleStmt/respStmt/name"/>
 </xsl:template>
 
 </xsl:stylesheet>
