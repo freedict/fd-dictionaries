@@ -23,4 +23,4 @@ SZOTAR.DBF: SZOTAR.ZIP
 	touch $@
 
 clean::
-	rm -f SZOTAR.DBF
+	rm -f SZOTAR.DBF hun-eng.tei
