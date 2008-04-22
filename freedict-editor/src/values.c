@@ -1,5 +1,8 @@
 /** @file
- * @brief Implementation of a list of string labels and corresponding string values
+ * @brief Implementation of a list of string labels and corresponding string
+ * values
+ *
+ * These lists are to be used as option menu contents and TEI typologies.
  */
 
 #include "values.h"
@@ -8,6 +11,7 @@
 Values *pos_values,
        *num_values,
        *domain_values,
+       *register_values,
        *xr_values,
        *gen_values;
 
@@ -163,7 +167,6 @@ const Values xr_values_default[] = {
   { NULL }
 };
 
-
 const Values pos_values_default[] = {
   { N_("None"), "" },
   { N_("_Noun"), "n" },
@@ -196,7 +199,6 @@ const Values gen_values_default[] = {
   { NULL }
 };
 
-
 const Values num_values_default[] = {
   { N_("None"), "" },
   { N_("_Singular"), "sg" },
@@ -205,47 +207,66 @@ const Values num_values_default[] = {
   { NULL }
 };
 
+// TEI 12.3.5.2 Usage Information and Other Labels
+// Encoded as <usg type="dom">agr</usg>
+// in German: "Sachgebiete"
 const Values domain_values_default[] = {
-  { "None", "" },
+  { N_("_None"), "" },
 
-  // in German: "Sachgebiete"
   // taken from fdicts.com
-  { N_("Agriculture"), "agr" },
+  { N_("_Agriculture"), "agr" },
   { N_("Astronomy"), "astr" },
   { N_("Automobile"), "aut" },
   { N_("_Biology"), "bio" },
-  { N_("Botany"), "bot" },
-  { N_("Chemistry"), "chem" },
-  { N_("Electrotechnics"), "el" },
-  { N_("Finance"), "fin" },
-  { N_("Geography"), "geo" },
-  { N_("Geology"), "geol" },
+  { N_("B_otany"), "bot" },
+  { N_("_Chemistry"), "chem" },
+  { N_("_Electrotechnics"), "el" },
+  { N_("_Finance"), "fin" },
+  { N_("_Geography"), "geo" },
+  { N_("Geolog_y"), "geol" },
   { N_("Grammar"), "gram" },
-  { N_("History"), "hist" },
-  { N_("Information Technology"), "it" },
-  { N_("Law"), "law" },
-  { N_("Mathematics"), "math" },
-  { N_("Medicine"), "med" },
+  { N_("_History"), "hist" },
+  { N_("_Information Technology"), "it" },
+  { N_("_Law"), "law" },
+  { N_("_Mathematics"), "math" },
+  { N_("Me_dicine"), "med" },
   { N_("Military"), "mil" },
-  { N_("Music"), "mus" },
-  { N_("Mythology"), "myt" },
-  { N_("Physics"), "phy" },
+  { N_("M_usic"), "mus" },
+  { N_("Myth_ology"), "myt" },
+  { N_("_Physics"), "phy" },
   { N_("Politics"), "pol" },
-  { N_("Religion"), "rel" },
-  { N_("Sexual"), "sex" },
+  { N_("_Religion"), "rel" },
+  { N_("_Sexual"), "sex" },
   { N_("Sport"), "sport" },
   { N_("_Technology"), "tech" },
+  { NULL }
+};
 
-  // XXX these are a bit different and should have
-  // usg[@type='reg'] for "register"
-  // TEI 12.3.5.2 Usage Information and Other Labels
-  // suggests slang, formal, taboo, ironic, facetious
-//  { "_Official", "official" },
-//  { "_Formal", "formal" }, // same as official?
-//  { "Children Speech", "chil" },
-//  { "Colloquial", "col" },
-//  { "Slang", "slang" },// same as colloquial?
-//  { "Vulgar", "vulg" },// same as colloquial?
+// Encoded as <usg type="reg">official</usg>
+// these are a bit arbitrary
+const Values register_values_default[] = {
+  { N_("_None"), "" },
+  // the word is used in official communication
+  { N_("_Official"), "official" },
+  // same as official, maybe a bit less, suggested by TEI 12.3.5.2
+  { N_("_Formal"), "formal" },
+  // the word is used to communicate with small children and by them
+  { N_("Ch_ildren Speech"), "chil" },
+  // the word is used in informal context, like at home
+  { N_("_Colloquial"), "col" },
+  // the word is used by certain groups of society only,
+  // suggested by TEI 12.3.5.2
+  { N_("_Slang"), "slang" },
+  // ithe word is used by uneducated people
+  { N_("_Vulgar"), "vulg" },
+  // the word should not be used?, suggested by TEI 12.3.5.2
+  { N_("_Taboo"), "taboo" },
+  // the word is used mainly in ironic remarks?,
+  // suggested by TEI 12.3.5.2
+  { N_("_Ironic"), "ironic" },
+  // the word is used mainly in funny context eg. jokes?,
+  // suggested by TEI 12.3.5.2
+  { N_("_Facetious"), "facetious" },
   { NULL }
 };
 

@@ -29,6 +29,7 @@ struct _Sense
   GtkWidget *frame, *table, *label,
 
     *domain_label, *domain_optionmenu,
+    *register_label, *register_optionmenu,
 
     *tr_label, *tr_vbox,
     *tr_hbuttonbox, *tr_add_button, *tr_add_alignment, *tr_add_hbox,
@@ -45,7 +46,7 @@ struct _Sense
 
   GArray *trans, *xr;
 
-  xmlNodePtr xSense, xDef, xNote, xUsg, xEx, xExTr;
+  xmlNodePtr xSense, xDef, xNote, xUsg, xRegister, xEx, xExTr;
 };
 
 // global variables

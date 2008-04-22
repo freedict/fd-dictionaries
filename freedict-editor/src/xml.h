@@ -10,9 +10,8 @@
 xmlDocPtr copy_node_to_doc(const xmlNodePtr node);
 xmlNodePtr find_single_node(const char *xpath, const xmlDocPtr doc);
 xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathParserContextPtr *pctxt);
-gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n,
-    const char **attrs);
-xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs,
+xmlNodePtr unlink_leaf_node_with_attr(const char *xpath,
+    const char **attrs, const char **attr_contents,
     const xmlDocPtr doc, gboolean *can);
 xmlNodePtr string2xmlNode(const xmlNodePtr parent, const char *before,
     const char *name, const char *content, const char *after);

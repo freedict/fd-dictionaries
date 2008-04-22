@@ -13,11 +13,13 @@ struct _Values
 extern const Values pos_values_default[],
        num_values_default[],
        domain_values_default[],
+       register_values_default[],
        xr_values_default[],
        gen_values_default[];
 extern Values *pos_values,
        *num_values,
        *domain_values,
+       *register_values,
        *xr_values,
        *gen_values;
 

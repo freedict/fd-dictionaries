@@ -197,7 +197,7 @@ void myload(const char *filename)
 {
   g_return_if_fail(filename);
   int subs = xmlSubstituteEntitiesDefault(1);
-  g_debug("Substitution of external entities was %i.\n", subs);
+  g_debug("Substitution of external entities was %i.", subs);
   //int vali = xmlDoValidityCheckingDefaultValue;
   xmlDoValidityCheckingDefaultValue = 1;
   //fprintf(stderr, "Validity checking was %i.\n", vali);
@@ -511,7 +511,8 @@ gboolean set_global_im_gtk_context_id(char *new_context_id)
   {
     char *context_id = (char *) g_object_get_data(G_OBJECT(widget), "gtk-context-id");
 
-    if(strcmp(context_id, new_context_id)) return;
+    if(!context_id || !new_context_id ||
+	strcmp(context_id, new_context_id)) return;
 
     // requested context id found
     gtk_menu_item_activate(GTK_MENU_ITEM(widget));
@@ -648,7 +649,7 @@ gboolean on_select_timeout(gpointer data)
   if(renderer) return FALSE;
 
   renderer = gtk_cell_renderer_text_new();
-  column = gtk_tree_view_column_new_with_attributes("Matching Nodes",
+  column = gtk_tree_view_column_new_with_attributes(_("Matching Nodes"),
       renderer, "text", 0, NULL);
   gtk_tree_view_append_column(GTK_TREE_VIEW(
 	glade_xml_get_widget(my_glade_xml, "treeview1")), column);
@@ -668,7 +669,7 @@ void
 on_select_entry_changed                (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-  g_debug("on_select_entry_changed");
+  g_debug("on_select_entry_changed()");
   if(timeout_id!=-1) gtk_timeout_remove(timeout_id);
   timeout_id = gtk_timeout_add(500, on_select_timeout, NULL);
 }
@@ -921,7 +922,7 @@ on_cancel_edit1_activate               (GtkMenuItem     *menuitem,
 // returns whether saving was successful
 gboolean save_form()
 {
-  g_return_val_if_fail(form_modified, TRUE);
+  if(!form_modified) return TRUE;
   xmlNodePtr modified_entry = form2xml(senses);
 
   //g_printerr("Dump of modified_entry:\n");
@@ -1029,13 +1030,12 @@ void on_textview1_modified_changed(GtkTextBuffer *textbuffer,
 }
 
 
-void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
+void set_lock_dockitems_state(gboolean locked)
 {
-  gboolean locked = gtk_check_menu_item_get_active(item);
-
   // the docking classes are not documented in the libbonoboui docs
   // because the api is considered as unstable
-  BonoboDock *bonobodock1 = BONOBO_DOCK(glade_xml_get_widget(my_glade_xml, "bonobodock1"));
+  BonoboDock *bonobodock1 = BONOBO_DOCK(
+      glade_xml_get_widget(my_glade_xml, "bonobodock1"));
 
   void on_lock_dockitems_list_callback2(gpointer data, gpointer user_data)
   {
@@ -1046,7 +1046,7 @@ void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
     item = BONOBO_DOCK_ITEM(child->widget);
     g_return_if_fail(item);
 
-    g_debug("Name of this bonobo dock item: '%s'\n", item->name);
+    //g_debug("Name of this bonobo dock item: '%s'\n", item->name);
 
     // bonobo_dock_item_set_locked() is private, actually
     // /opt/gnome/include/libbonoboui-2.0/bonobo/bonobo-dock.h
@@ -1063,10 +1063,26 @@ void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
 
   // traverse GList *top_bands, *bottom_bands, *right_bands, *left_bands,
   // but maybe not GList *floating_children, so you can still move them
-  g_list_foreach(bonobodock1->top_bands, on_lock_dockitems_list_callback, NULL);
-  g_list_foreach(bonobodock1->bottom_bands, on_lock_dockitems_list_callback, NULL);
-  g_list_foreach(bonobodock1->right_bands, on_lock_dockitems_list_callback, NULL);
-  g_list_foreach(bonobodock1->left_bands, on_lock_dockitems_list_callback, NULL);
+  g_list_foreach(bonobodock1->top_bands,
+      on_lock_dockitems_list_callback, NULL);
+  g_list_foreach(bonobodock1->bottom_bands,
+      on_lock_dockitems_list_callback, NULL);
+  g_list_foreach(bonobodock1->right_bands,
+      on_lock_dockitems_list_callback, NULL);
+  g_list_foreach(bonobodock1->left_bands,
+      on_lock_dockitems_list_callback, NULL);
+}
+
+void on_lock_dockitems_toggled(GtkCheckMenuItem *item, gpointer user_data)
+{
+  gboolean locked = gtk_check_menu_item_get_active(item);
+  // save state with gconf
+  //
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "lock_dockitems");
+  gconf_client_set_bool(gc_client, key, locked, NULL);
+  g_free(key);
+
+  // gconf will notify us in turn
 }
 
 
@@ -1079,38 +1095,51 @@ void my_widget_set_visible(GtkWidget *w, gboolean visible)
 
 void on_view_html_toggled(GtkCheckMenuItem *item, gpointer user_data)
 {
-  my_widget_set_visible(GTK_WIDGET(html_view),
-      gtk_check_menu_item_get_active(item));
+  gboolean new_state = gtk_check_menu_item_get_active(item);
+
+  // save state with gconf
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "hide_html_preview");
+  gconf_client_set_bool(gc_client, key, !new_state, NULL);
+  g_free(key);
+
+  // gconf will notify us in turn
 }
 
 
 void on_view_toolbar_toggled(GtkCheckMenuItem *item, gpointer user_data)
 {
-  BonoboDock *d = BONOBO_DOCK(
-      glade_xml_get_widget(my_glade_xml, "bonobodock1"));
-  // XXX is bonobo_dock_get_item_by_name() broken?
-  // at least in Debian packages libbonoboui2* 2.18.0-5 i is always NULL
-  BonoboDockItem *i = bonobo_dock_get_item_by_name(d,
-      "toolbar1", NULL, NULL, NULL, NULL);
-  my_widget_set_visible(GTK_WIDGET(i), gtk_check_menu_item_get_active(item));
+  gboolean new_state = gtk_check_menu_item_get_active(item);
+
+  // save state with gconf
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "hide_toolbar");
+  gconf_client_set_bool(gc_client, key, !new_state, NULL);
+  g_free(key);
+
+  // gconf will notify us in turn
 }
 
 
 // remember state, so new entry editor labels can be set visible or not
-gboolean labels_visible;
+gboolean labels_visible = TRUE;
 
+// this is normally called by our gconf notification handler
 void set_view_labels_visible(gboolean visible)
 {
-  if(visible==labels_visible) return;
-
   labels_visible = visible;
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "select_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "xpath_template_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "orth_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "pron_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "pos_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "num_label"), labels_visible);
-  my_widget_set_visible(glade_xml_get_widget(my_glade_xml, "gen_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"select_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"xpath_template_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"orth_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"pron_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"pos_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"num_label"), labels_visible);
+  my_widget_set_visible(glade_xml_get_widget(my_glade_xml,
+	"gen_label"), labels_visible);
 
   if(senses)
   {
@@ -1120,6 +1149,7 @@ void set_view_labels_visible(gboolean visible)
     {
       Sense s = g_array_index(senses, Sense, i);
       my_widget_set_visible(s.domain_label, labels_visible);
+      my_widget_set_visible(s.register_label, labels_visible);
       my_widget_set_visible(s.tr_label, labels_visible);
       my_widget_set_visible(s.tr_add_label, labels_visible);
       my_widget_set_visible(s.tr_delete_label, labels_visible);
@@ -1131,17 +1161,20 @@ void set_view_labels_visible(gboolean visible)
       my_widget_set_visible(s.xr_delete_label, labels_visible);
     }
   }
-
-  // save state with gconf
-  char* key = gnome_gconf_get_app_settings_relative(NULL, "show_labels");
-  gconf_client_set_bool(gc_client, key, labels_visible, NULL);
-  g_free(key);
 }
 
 
 void on_view_labels_toggled(GtkCheckMenuItem *item, gpointer user_data)
 {
-  set_view_labels_visible(gtk_check_menu_item_get_active(item));
+  gboolean new_state = gtk_check_menu_item_get_active(item);
+  if(labels_visible == new_state) return;
+
+  // save state with gconf
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "hide_labels");
+  gconf_client_set_bool(gc_client, key, !new_state, NULL);
+  g_free(key);
+
+  // gconf will notify us in turn
 }
 
 
@@ -1244,15 +1277,28 @@ on_app1_show                           (GtkWidget       *widget,
     else g_printerr(_("Using stylesheet filename from gconf: %s\n"), stylesheetfn);
   }
 
-  char* key = gnome_gconf_get_app_settings_relative(NULL, "show_labels");
-  // XXX error handling! default?
-  set_view_labels_visible(gconf_client_get_bool(gc_client, key, NULL));
+  char* key = gnome_gconf_get_app_settings_relative(NULL, "hide_labels");
+  gconf_client_notify(gc_client, key);
+  g_free(key);
+
+  key = gnome_gconf_get_app_settings_relative(NULL, "hide_toolbar");
+  gconf_client_notify(gc_client, key);
+  g_free(key);
+
+  key = gnome_gconf_get_app_settings_relative(NULL, "lock_dockitems");
+  gconf_client_notify(gc_client, key);
+  g_free(key);
+
+  key = gnome_gconf_get_app_settings_relative(NULL, "hide_html_preview");
+  gconf_client_notify(gc_client, key);
   g_free(key);
 
   pos_values = load_values_from_gconf("pos_values", pos_values_default);
   num_values = load_values_from_gconf("num_values", num_values_default);
   domain_values = load_values_from_gconf("domain_values",
       domain_values_default);
+  register_values = load_values_from_gconf("register_values",
+      register_values_default);
   xr_values = load_values_from_gconf("xr_values", xr_values_default);
   gen_values = load_values_from_gconf("gen_values", gen_values_default);
 
@@ -1295,8 +1341,8 @@ on_app1_show                           (GtkWidget       *widget,
     else
     {
       html_view = html_view_new();
-      gtk_paned_pack2 (GTK_PANED (glade_xml_get_widget(my_glade_xml, "vpaned1")),
-	  html_view, FALSE, TRUE);
+      gtk_paned_pack2 (GTK_PANED (glade_xml_get_widget(
+	      my_glade_xml, "editor_preview_vpaned")), html_view, FALSE, TRUE);
       htdoc = html_document_new();
       g_signal_connect((gpointer) htdoc, "link_clicked",
 	  G_CALLBACK(on_link_clicked), NULL);
@@ -1325,7 +1371,8 @@ on_app1_show                           (GtkWidget       *widget,
 
   // the following signal handlers are not connected by glade-2,
   // even though the signal handler can be set in the property editor
-  g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_html"), "toggled",
+/*
+   g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_html"), "toggled",
       G_CALLBACK (on_view_html_toggled), NULL);
   g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "lock_dockitems"), "toggled",
       G_CALLBACK (on_lock_dockitems_toggled), NULL);
@@ -1333,7 +1380,7 @@ on_app1_show                           (GtkWidget       *widget,
       G_CALLBACK (on_view_labels_toggled), NULL);
   g_signal_connect ((gpointer) glade_xml_get_widget(my_glade_xml, "view_toolbar"), "toggled",
       G_CALLBACK (on_view_toolbar_toggled), NULL);
-
+*/
   setTeidoc(NULL);
 
   // XXX the accel paths don't work :(
@@ -1343,6 +1390,16 @@ on_app1_show                           (GtkWidget       *widget,
       GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "pos_optionmenu")),
       "<" PACKAGE ">/Headword/pos",
       pos_values);
+
+  create_menu(
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "num_optionmenu")),
+      "<" PACKAGE ">/Headword/num",
+      num_values);
+
+  create_menu(
+      GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "gen_optionmenu")),
+      "<" PACKAGE ">/Headword/gen",
+      gen_values);
 
   //  gtk_menu_set_accel_path(
 //      GTK_MENU(gtk_option_menu_get_menu(
@@ -1366,7 +1423,7 @@ on_app1_show                           (GtkWidget       *widget,
 }
 
 
-void show_html_preview(xmlNodePtr entry)
+void update_html_preview(xmlNodePtr entry)
 {
   g_return_if_fail(entry);
   g_return_if_fail(entry_stylesheet);
@@ -1427,7 +1484,7 @@ on_apply_button_clicked                (GtkButton       *button,
       g_assert_not_reached();
   }
 
-  show_html_preview(edited_node);
+  update_html_preview(edited_node);
 }
 
 
@@ -1482,7 +1539,7 @@ on_treeview1_cursor_changed            (GtkTreeView     *treeview,
 
   g_return_if_fail(e);
   // show it in HTML preview area
-  show_html_preview(e);
+  update_html_preview(e);
 }
 
 
@@ -1812,7 +1869,7 @@ gboolean spell_handle_current_word()
    n = n->parent;
   if(n && n->type==XML_ELEMENT_NODE)
   {
-    show_html_preview(n);
+    update_html_preview(n);
     // XXX mark misspelled_token_str in preview
   }
 
@@ -2531,28 +2588,66 @@ static void on_gconf_client_notify(GConfClient *client, guint cnxn_id,
     GConfEntry *entry, gpointer user_data)
 {
   g_return_if_fail(entry);
-  g_printerr("on_gconf_client_notify for key %s\n", entry->key);
+  g_debug("on_gconf_client_notify for key %s\n", entry->key);
   if(!strcmp(entry->key, "/apps/freedict-editor/pos_values"))
   {
     my_free_values_array(&pos_values);
     pos_values = load_values_from_gconf("pos_values", pos_values_default);
     return;
   }
+  if(!strcmp(entry->key, "/apps/freedict-editor/hide_labels"))
+  {
+    gboolean show = !gconf_client_get_bool(gc_client, entry->key, NULL);
+    GtkCheckMenuItem *item = GTK_CHECK_MENU_ITEM(
+	glade_xml_get_widget(my_glade_xml, "view_labels"));
+    gtk_check_menu_item_set_active(item, show);
+    set_view_labels_visible(show);
+    return;
+  }
+  if(!strcmp(entry->key, "/apps/freedict-editor/hide_toolbar"))
+  {
+    gboolean show = !gconf_client_get_bool(gc_client, entry->key, NULL);
+    GtkCheckMenuItem *item = GTK_CHECK_MENU_ITEM(
+	glade_xml_get_widget(my_glade_xml, "view_toolbar"));
+    gtk_check_menu_item_set_active(item, show);
+    GtkWidget *toolbar_bonobodockitem =
+      glade_xml_get_widget(my_glade_xml, "toolbar_bonobodockitem");
+    my_widget_set_visible(toolbar_bonobodockitem, show);
+    return;
+  }
+  if(!strcmp(entry->key, "/apps/freedict-editor/lock_dockitems"))
+  {
+    gboolean lock = gconf_client_get_bool(gc_client, entry->key, NULL);
+    GtkCheckMenuItem *item = GTK_CHECK_MENU_ITEM(
+	glade_xml_get_widget(my_glade_xml, "lock_dockitems"));
+    gtk_check_menu_item_set_active(item, lock);
+    set_lock_dockitems_state(lock);
+    return;
+  }
+  if(!strcmp(entry->key, "/apps/freedict-editor/hide_html_preview"))
+  {
+    gboolean show = !gconf_client_get_bool(gc_client, entry->key, NULL);
+    GtkCheckMenuItem *item = GTK_CHECK_MENU_ITEM(
+	glade_xml_get_widget(my_glade_xml, "view_html"));
+    gtk_check_menu_item_set_active(item, show);
+    my_widget_set_visible(GTK_WIDGET(html_view), show);
+    return;
+  }
   // the following code is for demonstration purposes only
   if(!gconf_entry_get_value(entry))
   {
-    g_printerr("key was unset\n");
+    g_debug("key was unset\n");
   }
   else
   {
     if(gconf_entry_get_value(entry)->type == GCONF_VALUE_STRING)
     {
-      g_printerr("STRING: %s\n",
+      g_debug("STRING: %s\n",
 	  gconf_value_get_string(gconf_entry_get_value(entry)));
     }
     else
     {
-      g_printerr("Not STRING type\n");
+      g_debug("Not STRING type\n");
     }
   }
 }
@@ -2770,7 +2865,7 @@ on_sanity_treeview_cursor_changed      (GtkTreeView     *treeview,
   if(!e) return;
 
   // show entry in HTML preview area
-  show_html_preview(e);
+  update_html_preview(e);
 }
 
 

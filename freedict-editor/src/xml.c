@@ -17,9 +17,9 @@
  * FREEDICT_EDITOR_NAMESPACE.
  */
 static void freedict_xpath_extension_unbalanced_braces(
-xmlXPathParserContextPtr ctxt, const int nargs)
+    xmlXPathParserContextPtr ctxt, const int nargs)
 {
-  
+
   if(nargs != 1)
   {
     xmlXPathSetArityError(ctxt);
@@ -79,14 +79,14 @@ xmlXPathParserContextPtr ctxt, const int nargs)
       c++;
     }
     while(*c);
-   
-    // braces left open? 
+
+    // braces left open?
     if(cub_pop()!='E') return TRUE;
 
     // this string is well formed in regard of braces
     return FALSE;
-  } 
-    
+  }
+
   int result = FALSE;
   int i;
   for(i=0; i < xmlXPathNodeSetGetLength(ns); i++)
@@ -97,11 +97,11 @@ xmlXPathParserContextPtr ctxt, const int nargs)
     result = contains_unbalanced_braces(c);
     xmlFree(c);
     if(result) break;
-  } 
+  }
 
   if(ns) xmlXPathFreeNodeSet(ns);
   xmlXPathReturnBoolean(ctxt, result);
-}   
+}
 
 
 /// Call this on application startup. Or not, since it is presently unused...
@@ -130,7 +130,7 @@ xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
   g_return_val_if_fail(node, NULL);
   xmlDocPtr doc = xmlNewDoc((xmlChar *) XML_DEFAULT_VERSION);
   xmlNodePtr root = xmlDocCopyNode(node, doc, 1);// copies recursively
-  xmlDocSetRootElement(doc, root); 
+  xmlDocSetRootElement(doc, root);
   g_assert(doc);
   return doc;
 }
@@ -194,7 +194,7 @@ my_xmlXPathEvalExpression(const xmlChar *str, xmlXPathContextPtr ctxt, xmlXPathP
     //g_printerr("Allocating parser context\n");
     *pctxt = xmlXPathNewParserContext(str, ctxt);
     g_mutex_unlock(find_nodeset_pcontext_mutex);
-    
+
     xmlXPathEvalExpr(*pctxt);
 
     if (*(*pctxt)->cur != 0) {
@@ -245,13 +245,13 @@ xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathPars
   if(xmlXPathRegisterNs(ctxt, (xmlChar *) FREEDICT_EDITOR_NAMESPACE_PREFIX, (xmlChar *) FREEDICT_EDITOR_NAMESPACE))
   {
     g_printerr("Warning: Unable to register XSLT-Namespace prefix \"%s\""
-	" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE_PREFIX, FREEDICT_EDITOR_NAMESPACE); 
-  }            
+	" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE_PREFIX, FREEDICT_EDITOR_NAMESPACE);
+  }
 
   if(xmlXPathRegisterFuncNS(ctxt, (xmlChar *) "unbalanced-braces",
 	(xmlChar *) FREEDICT_EDITOR_NAMESPACE, freedict_xpath_extension_unbalanced_braces))
     g_printerr("Warning: Unable to register XPath extension function "
-	"\"unbalanced-braces\" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE); 
+	"\"unbalanced-braces\" for URI \"%s\"\n", FREEDICT_EDITOR_NAMESPACE);
 
   xmlXPathParserContextPtr pctxt2;
   if(!pctxt) pctxt = &pctxt2;
@@ -270,7 +270,7 @@ xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathPars
     xmlXPathFreeContext(ctxt);
     return NULL;
   }
-  
+
   if(!(xpobj->nodesetval->nodeNr))
   {
     //g_printerr("0 nodes!\n");
@@ -290,7 +290,7 @@ xmlNodeSetPtr find_node_set(const char *xpath, const xmlDocPtr doc, xmlXPathPars
   // contained one. So it should be called xmlXPathFreeObjectButNotNodeSetList().
   xmlXPathFreeNodeSetList(xpobj);
 
-  return nodes; 
+  return nodes;
 }
 
 
@@ -301,58 +301,72 @@ xmlNodePtr find_single_node(const char *xpath, const xmlDocPtr doc)
   if(nodes->nodeNr>1)
     g_printerr(_("%s: %i matching nodes (only 1 expected). Taking first.\n"),
       G_STRLOC, nodes->nodeNr);
-      
+
   xmlNodePtr bodyNode = *(nodes->nodeTab);
   xmlXPathFreeNodeSet(nodes);
   return bodyNode;
 }
 
 
-/** @arg attrs list of allowed attribute names
+/** Checks whether @a n has only allowed attrbutes and attr contents,
+ * as well as only children of type TEXT
+ *
+ * @arg attrs list of allowed attribute names
+ * @arg attr_contents list of allowed attribute contents
+ *      (if an entry is NULL, any contetn is allowed)
  */
-gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char **attrs)
+gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n,
+    const char **attrs, const char **attr_contents)
 {
   g_return_val_if_fail(n, FALSE);
 
   // elements may have only the mentioned attributes
   if(n->type==XML_ELEMENT_NODE)
   {
-    //g_printerr("checking elem '%s'...", n->name);
+    //g_debug("checking elem '%s'...", n->name);
     // if there are attributes
-    if(n->properties!=NULL) 
+    if(n->properties)
     {
-      //g_printerr("checking element with attrs... ");
+      g_debug("checking element with attrs... ");
       // if there are no attributes allowed
       if(!attrs) return FALSE;
-      //g_printerr("certain attrs are allowed. ");
-      
+      g_debug("certain attrs are allowed. ");
+
       // for all attributes of the element
       xmlAttr *nattrs = n->properties;
       while(nattrs)
       {
 	g_return_val_if_fail(nattrs->name, FALSE);
-        //g_printerr("element attr '%s': ", nattrs->name);
 
         // check whether attribute is in list of allowed attribute names
         gboolean allowed = FALSE;
         const char **attr = attrs;
+        const char **attr_content = attr_contents;
+	xmlChar *attr_value = xmlNodeGetContent(nattrs->children);
+        g_debug("element attr '%s': value='%s'", nattrs->name, attr_value);
         while(*attr)
         {
 	  // if allowed node exists
-          //g_printerr("checking allowed attr '%s': ", *attr);
-	  if(!strcmp((char *) nattrs->name, (char *) *attr))
+          g_debug("checking allowed attr '%s': attr_content='%s' ", *attr,
+	      *attr_content);
+	  if(!strcmp((char *) nattrs->name, (char *) *attr) &&
+	      (!attr_content ||
+	     !strcmp((char *) attr_value, (char *) *attr_content)))
 	  { allowed = TRUE; break; }
           attr++;
+          if(attr_content) attr_content++;
 	}
-        //g_printerr("%i ", allowed);
+        g_debug("%i ", allowed);
+	xmlFree(attr_value);
 	if(!allowed) return FALSE;
 	nattrs = nattrs->next;
       }
     }
-    //g_printerr("elem passed allowed attr check.\n");
+    //g_debug("elem passed allowed attr check.\n");
   }
 
-  // element has only allowed attributes
+  // if we reach here, element has only allowed attributes:
+  // check that it has only text children
   xmlNodePtr n2 = n->children;
   while(n2)
   {
@@ -365,7 +379,7 @@ gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char
 
 
 /// Look for a matching leaf node
-/** This function evaluates an XPath expression. The result should be a single
+/** This function evaluates an XPath expression.  The result should be a single
  * node with only text children and the attributes listed in @a attrs.  If such
  * node exists, it is unlinked and returned.  If there is no such leaf, no
  * unlinking is done and @a can is set to FALSE.
@@ -373,8 +387,9 @@ gboolean has_only_text_children_and_allowed_attrs(const xmlNodePtr n, const char
  * @return The unlinked node. It has to be freed by the caller with xmlFreeNode().
  * @retval NULL if no matching leaf node was found
  */
-xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, const xmlDocPtr doc,
-    gboolean *can)
+xmlNodePtr unlink_leaf_node_with_attr(const char *xpath,
+    const char **attrs, const char **attr_contents,
+    const xmlDocPtr doc, gboolean *can)
 {
 
   g_return_val_if_fail(xpath && doc && can, NULL);
@@ -382,12 +397,12 @@ xmlNodePtr unlink_leaf_node_with_attr(const char *xpath, const char **attrs, con
   xmlNodePtr n = find_single_node(xpath, doc);
   if(!n) return NULL;
 
-  if(!has_only_text_children_and_allowed_attrs(n, attrs)) 
+  if(!has_only_text_children_and_allowed_attrs(n, attrs, attr_contents))
   {
     *can = FALSE;
     return NULL;
   }
-  
+
   xmlUnlinkNode(n);
   return n;
 }
@@ -398,9 +413,10 @@ xmlNodePtr string2xmlNode(const xmlNodePtr parent, const gchar *before,
 {
   g_return_val_if_fail(name, NULL);
 
-  xmlNodeAddContent(parent, (xmlChar *) before); 
-  xmlNodePtr newNode = xmlNewChild(parent, NULL, (xmlChar *) name, (xmlChar *) content);
-  xmlNodeAddContent(parent, (xmlChar *) after); 
+  xmlNodeAddContent(parent, (xmlChar *) before);
+  xmlNodePtr newNode = xmlNewChild(parent, NULL,
+      (xmlChar *) name, (xmlChar *) content);
+  xmlNodeAddContent(parent, (xmlChar *) after);
 
   return newNode;
 }
@@ -412,18 +428,18 @@ xmlNodePtr string2xmlNode(const xmlNodePtr parent, const gchar *before,
  * @arg s pointer where result will be saved, error string on failure
  * @retval TRUE on success
  * @retval FALSE on error
- */ 
+ */
 gboolean entry_orths_to_string(xmlNodePtr n, int len, char *s)
 {
   g_return_val_if_fail(n, FALSE);
   g_return_val_if_fail(s, FALSE);
   g_return_val_if_fail(len>0, FALSE);
-  
+
   xmlDocPtr doc = copy_node_to_doc(n);
 
   // find the orth children of the current entry
   xmlNodeSetPtr set = find_node_set("/entry/form/orth", doc, NULL);
- 
+
   if(!set || !set->nodeNr)
   {
     g_strlcpy(s, _("No nodes (form/orth)!"), len);
@@ -451,7 +467,7 @@ gboolean entry_orths_to_string(xmlNodePtr n, int len, char *s)
   }
 
   xmlXPathFreeNodeSet(set);
-  
+
   // copy again, caring for utf8 chars longer than 1 byte
   g_utf8_strncpy(s, e, len/2);
 

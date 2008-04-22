@@ -1,5 +1,6 @@
 /** @file
- * @brief Implementation of the Entry Editor including entry parsing
+ * @brief Implementation of the Form Entry Editor including entry parsing
+ *        from XML into initialized widgets.
  */
 
 #include "entryedit.h"
@@ -72,6 +73,7 @@ static gboolean open_menu_on_focus_in(GtkWidget *widget, GdkEventFocus *event,
 GtkWidget *create_menu(GtkOptionMenu *parent, const char *accel_path,
     const Values *v)
 {
+  g_return_val_if_fail(v, NULL);
   GnomeUIInfo menu_item[] =
   {
     {
@@ -269,15 +271,12 @@ Sense_trans *sense_append_trans(const Sense *s)
   gtk_box_pack_start(GTK_BOX(t.hbox), t.entry, TRUE, TRUE, 0);
   g_signal_connect((gpointer) t.entry, "changed",
       G_CALLBACK(on_form_entry_changed), NULL);
-
-  GtkTooltips *tooltips;
-  tooltips = GTK_TOOLTIPS(glade_xml_get_widget(my_glade_xml, "tooltips"));
-  gtk_tooltips_set_tip(tooltips, t.entry, _("Translation Equivalent"), NULL);
+  gtk_widget_set_tooltip_text(t.entry, _("Translation Equivalent"));
 
   // pos
   t.pos_optionmenu = gtk_option_menu_new();
   gtk_box_pack_start(GTK_BOX(t.hbox), t.pos_optionmenu, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip(tooltips, t.pos_optionmenu, _("Part of Speech"), NULL);
+  gtk_widget_set_tooltip_text(t.pos_optionmenu, _("Part of Speech"));
   create_menu(GTK_OPTION_MENU(t.pos_optionmenu), NULL, pos_values);
   g_signal_connect((gpointer) t.pos_optionmenu, "changed",
       G_CALLBACK(on_form_optionmenu_changed), NULL);
@@ -291,7 +290,7 @@ Sense_trans *sense_append_trans(const Sense *s)
   // gen
   t.gen_optionmenu = gtk_option_menu_new();
   gtk_box_pack_start(GTK_BOX(t.hbox), t.gen_optionmenu, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip(tooltips, t.gen_optionmenu, _("Genus"), NULL);
+  gtk_widget_set_tooltip_text(t.gen_optionmenu, _("Genus"));
   create_menu(GTK_OPTION_MENU(t.gen_optionmenu), NULL, gen_values);
   g_signal_connect((gpointer) t.gen_optionmenu, "changed",
       G_CALLBACK(on_form_optionmenu_changed), NULL);
@@ -379,21 +378,19 @@ Sense *senses_append(GArray *senses)
   gtk_frame_set_label_widget(GTK_FRAME(s.frame), s.label);
 
   // use a table for aligning all input fields nicely
-  s.table = gtk_table_new(7, 3, FALSE);
+  s.table = gtk_table_new(8, 3, FALSE);
   gtk_container_add(GTK_CONTAINER(s.frame), s.table);
+  short int row = 0;
 
   // domain label
   s.domain_label = gtk_label_new(_("Domain"));
-  gtk_table_attach(GTK_TABLE(s.table), s.domain_label, 0, 1, 0, 1,
+  gtk_table_attach(GTK_TABLE(s.table), s.domain_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
 
-  GtkTooltips *tooltips;
-  tooltips = GTK_TOOLTIPS(glade_xml_get_widget(my_glade_xml, "tooltips"));
-
   // domain optionmenu
   s.domain_optionmenu = gtk_option_menu_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.domain_optionmenu, 1, 3, 0, 1,
+  gtk_table_attach(GTK_TABLE(s.table), s.domain_optionmenu, 1, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   create_menu(GTK_OPTION_MENU(s.domain_optionmenu), NULL, domain_values);
@@ -404,13 +401,36 @@ Sense *senses_append(GArray *senses)
   g_signal_connect((gpointer) s.domain_optionmenu, "focus-in-event",
       G_CALLBACK(open_menu_on_focus_in), NULL);
 #endif
-  gtk_tooltips_set_tip(tooltips, s.domain_optionmenu, _("Domain of use"), NULL);
+  gtk_widget_set_tooltip_text(s.domain_optionmenu, _("Domain of use"));
 
   s.trans = g_array_new(FALSE, TRUE, sizeof(Sense_trans));
 
+  row++;
+  // register label
+  s.register_label = gtk_label_new(_("Register"));
+  gtk_table_attach(GTK_TABLE(s.table), s.register_label, 0, 1, row, row+1,
+		    (GtkAttachOptions) (GTK_FILL),
+		    (GtkAttachOptions) (0), 0, 0);
+
+  // register optionmenu
+  s.register_optionmenu = gtk_option_menu_new();
+  gtk_table_attach(GTK_TABLE(s.table), s.register_optionmenu, 1, 3, row, row+1,
+		    (GtkAttachOptions) (GTK_FILL),
+		    (GtkAttachOptions) (0), 0, 0);
+  create_menu(GTK_OPTION_MENU(s.register_optionmenu), NULL, register_values);
+  // "changed" callback will enable "save entry" button
+  g_signal_connect((gpointer) s.register_optionmenu, "changed",
+      G_CALLBACK(on_form_optionmenu_changed), NULL);
+#ifdef OPEN_OPTIONMENUS_ON_FOCUS
+  g_signal_connect((gpointer) s.register_optionmenu, "focus-in-event",
+      G_CALLBACK(open_menu_on_focus_in), NULL);
+#endif
+  gtk_widget_set_tooltip_text(s.register_optionmenu, _("Usage context"));
+
+  row++;
   // translations label
   s.tr_label = gtk_label_new(_("Translation(s)"));
-  gtk_table_attach(GTK_TABLE(s.table), s.tr_label, 0, 1, 1, 2,
+  gtk_table_attach(GTK_TABLE(s.table), s.tr_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify(GTK_LABEL(s.tr_label), GTK_JUSTIFY_LEFT);
@@ -418,13 +438,13 @@ Sense *senses_append(GArray *senses)
 
   // a vbox to hold all trans hboxes
   s.tr_vbox = gtk_vbox_new(FALSE, 0);
-  gtk_table_attach(GTK_TABLE(s.table), s.tr_vbox, 1, 2, 1, 2,
+  gtk_table_attach(GTK_TABLE(s.table), s.tr_vbox, 1, 2, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND),
 		    (GtkAttachOptions) (GTK_FILL), 0, 0);
 
   // add/remove trans buttonbox
   s.tr_hbuttonbox = gtk_hbutton_box_new();
-  gtk_table_attach(GTK_TABLE (s.table), s.tr_hbuttonbox, 2, 3, 1, 2,
+  gtk_table_attach(GTK_TABLE (s.table), s.tr_hbuttonbox, 2, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND),
 		    (GtkAttachOptions) (GTK_FILL), 0, 0);
   gtk_button_box_set_layout(GTK_BUTTON_BOX (s.tr_hbuttonbox),
@@ -440,8 +460,8 @@ Sense *senses_append(GArray *senses)
   // variable s, as their addresses can change!
   g_signal_connect((gpointer) s.tr_add_button, "clicked",
       G_CALLBACK(on_tr_add_button_clicked), GINT_TO_POINTER(senses->len));
-  gtk_tooltips_set_tip(tooltips, s.tr_add_button,
-      _("Add new Translation Equivalent"), NULL);
+  gtk_widget_set_tooltip_text(s.tr_add_button,
+      _("Add new Translation Equivalent"));
 
   s.tr_add_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
   gtk_container_add(GTK_CONTAINER(s.tr_add_button), s.tr_add_alignment);
@@ -452,7 +472,7 @@ Sense *senses_append(GArray *senses)
   s.tr_add_image = gtk_image_new_from_stock("gtk-add", GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start(GTK_BOX(s.tr_add_hbox), s.tr_add_image, FALSE, FALSE, 0);
 
-  s.tr_add_label = gtk_label_new_with_mnemonic("Add");
+  s.tr_add_label = gtk_label_new_with_mnemonic(_("Add"));
   gtk_box_pack_start(GTK_BOX(s.tr_add_hbox), s.tr_add_label, FALSE, FALSE, 0);
   gtk_label_set_justify(GTK_LABEL(s.tr_add_label), GTK_JUSTIFY_LEFT);
 
@@ -462,8 +482,8 @@ Sense *senses_append(GArray *senses)
   GTK_WIDGET_SET_FLAGS(s.tr_delete_button, GTK_CAN_DEFAULT);
   g_signal_connect((gpointer) s.tr_delete_button, "clicked",
       G_CALLBACK(on_tr_delete_button_clicked), GINT_TO_POINTER(senses->len));
-  gtk_tooltips_set_tip(tooltips, s.tr_delete_button,
-      _("Remove last Translation Equivalent"), NULL);
+  gtk_widget_set_tooltip_text(s.tr_delete_button,
+      _("Remove last Translation Equivalent"));
   gtk_widget_set_sensitive(s.tr_delete_button, FALSE);
 
   s.tr_delete_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
@@ -477,49 +497,52 @@ Sense *senses_append(GArray *senses)
   gtk_box_pack_start(GTK_BOX(s.tr_delete_hbox), s.tr_delete_image,
       FALSE, FALSE, 0);
 
-  s.tr_delete_label = gtk_label_new_with_mnemonic("Remove");
+  s.tr_delete_label = gtk_label_new_with_mnemonic(_("Remove"));
   gtk_box_pack_start(GTK_BOX(s.tr_delete_hbox), s.tr_delete_label,
       FALSE, FALSE, 0);
   gtk_label_set_justify(GTK_LABEL(s.tr_delete_label), GTK_JUSTIFY_LEFT);
 
+  row++;
   // def
   s.def_label = gtk_label_new("Definition");
-  gtk_table_attach(GTK_TABLE(s.table), s.def_label, 0, 1, 2, 3,
+  gtk_table_attach(GTK_TABLE(s.table), s.def_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify(GTK_LABEL(s.def_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment(GTK_MISC(s.def_label), 0, 0.5);
 
   s.def_entry = gtk_entry_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.def_entry, 1, 3, 2, 3,
+  gtk_table_attach(GTK_TABLE(s.table), s.def_entry, 1, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   g_signal_connect((gpointer) s.def_entry, "changed",
       G_CALLBACK(on_form_entry_changed), NULL);
-  gtk_tooltips_set_tip(tooltips, s.def_entry,
-      _("Definition of this Sense"), NULL);
+  gtk_widget_set_tooltip_text(s.def_entry,
+      _("Definition of this Sense"));
 
+  row++;
   // note
   s.note_label = gtk_label_new("Note");
-  gtk_table_attach(GTK_TABLE(s.table), s.note_label, 0, 1, 3, 4,
+  gtk_table_attach(GTK_TABLE(s.table), s.note_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify(GTK_LABEL(s.note_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment(GTK_MISC(s.note_label), 0, 0.5);
 
   s.note_entry = gtk_entry_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.note_entry, 1, 3, 3, 4,
+  gtk_table_attach(GTK_TABLE(s.table), s.note_entry, 1, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   g_signal_connect((gpointer) s.note_entry, "changed",
       G_CALLBACK(on_form_entry_changed), NULL);
-  gtk_tooltips_set_tip(tooltips, s.note_entry, _("Freestyle Note"), NULL);
+  gtk_widget_set_tooltip_text(s.note_entry, _("Freestyle Note"));
 
+  row++;
   // xr label
   s.xr = g_array_new(FALSE, TRUE, sizeof(Sense_xr));
 
   s.xr_label = gtk_label_new("Cross-References");
-  gtk_table_attach(GTK_TABLE(s.table), s.xr_label, 0, 1, 4, 5,
+  gtk_table_attach(GTK_TABLE(s.table), s.xr_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify(GTK_LABEL (s.xr_label), GTK_JUSTIFY_LEFT);
@@ -527,13 +550,13 @@ Sense *senses_append(GArray *senses)
 
   // a table to hold widgets for all xrs
   s.xr_table = gtk_table_new(0, 2, FALSE);
-  gtk_table_attach(GTK_TABLE(s.table), s.xr_table, 1, 2, 4, 5,
+  gtk_table_attach(GTK_TABLE(s.table), s.xr_table, 1, 2, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
 
   // xr buttonbox
   s.xr_hbuttonbox = gtk_hbutton_box_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.xr_hbuttonbox, 2, 3, 4, 5,
+  gtk_table_attach(GTK_TABLE(s.table), s.xr_hbuttonbox, 2, 3, row, row+1,
 		    (GtkAttachOptions) (0),
 		    (GtkAttachOptions) (GTK_FILL), 0, 0);
 
@@ -543,9 +566,8 @@ Sense *senses_append(GArray *senses)
   GTK_WIDGET_SET_FLAGS(s.xr_add_button, GTK_CAN_DEFAULT);
   g_signal_connect((gpointer) s.xr_add_button, "clicked",
       G_CALLBACK(on_xr_add_button_clicked), GINT_TO_POINTER(senses->len));
-  gtk_tooltips_set_tip(tooltips, s.xr_add_button,
-      _("Add new Cross-Reference to another Headword in this Dictionary"),
-      NULL);
+  gtk_widget_set_tooltip_text(s.xr_add_button,
+      _("Add new Cross-Reference to another Headword in this Dictionary"));
 
   s.xr_add_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
   gtk_container_add(GTK_CONTAINER(s.xr_add_button), s.xr_add_alignment);
@@ -556,7 +578,7 @@ Sense *senses_append(GArray *senses)
   s.xr_add_image = gtk_image_new_from_stock("gtk-add", GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start(GTK_BOX(s.xr_add_hbox), s.xr_add_image, FALSE, FALSE, 0);
 
-  s.xr_add_label = gtk_label_new_with_mnemonic("Add");
+  s.xr_add_label = gtk_label_new_with_mnemonic(_("Add"));
   gtk_box_pack_start(GTK_BOX(s.xr_add_hbox), s.xr_add_label, FALSE, FALSE, 0);
   gtk_label_set_justify(GTK_LABEL(s.xr_add_label), GTK_JUSTIFY_LEFT);
 
@@ -566,8 +588,8 @@ Sense *senses_append(GArray *senses)
   GTK_WIDGET_SET_FLAGS(s.xr_delete_button, GTK_CAN_DEFAULT);
   g_signal_connect((gpointer) s.xr_delete_button, "clicked",
       G_CALLBACK(on_xr_delete_button_clicked), GINT_TO_POINTER(senses->len));
-  gtk_tooltips_set_tip(tooltips, s.xr_delete_button,
-      _("Remove last Cross-Reference"), NULL);
+  gtk_widget_set_tooltip_text(s.xr_delete_button,
+      _("Remove last Cross-Reference"));
   gtk_widget_set_sensitive(s.xr_delete_button, FALSE);
 
   s.xr_delete_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
@@ -580,37 +602,37 @@ Sense *senses_append(GArray *senses)
       GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start(GTK_BOX(s.xr_hbox), s.xr_delete_image, FALSE, FALSE, 0);
 
-  s.xr_delete_label = gtk_label_new_with_mnemonic("Remove");
+  s.xr_delete_label = gtk_label_new_with_mnemonic(_("Remove"));
   gtk_box_pack_start(GTK_BOX(s.xr_hbox), s.xr_delete_label, FALSE, FALSE, 0);
   gtk_label_set_justify(GTK_LABEL(s.xr_delete_label), GTK_JUSTIFY_LEFT);
 
+  row++;
   // example
   s.example_label = gtk_label_new(_("Example"));
-  gtk_table_attach(GTK_TABLE(s.table), s.example_label, 0, 1, 6, 7,
+  gtk_table_attach(GTK_TABLE(s.table), s.example_label, 0, 1, row, row+1,
 		    (GtkAttachOptions) (GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_justify(GTK_LABEL(s.example_label), GTK_JUSTIFY_LEFT);
   gtk_misc_set_alignment(GTK_MISC(s.example_label), 0, 0.5);
 
   s.example_entry = gtk_entry_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.example_entry, 1, 3, 6, 7,
+  gtk_table_attach(GTK_TABLE(s.table), s.example_entry, 1, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   g_signal_connect((gpointer) s.example_entry, "changed",
       G_CALLBACK(on_form_entry_changed), NULL);
-  gtk_tooltips_set_tip(tooltips, s.example_entry,
-      _("Example phrase or sentence where the Headword is used in this Sense"),
-      NULL);
+  gtk_widget_set_tooltip_text(s.example_entry,
+      _("Example phrase or sentence where the Headword is used in this Sense"));
 
+  row++;
   s.example_tr_entry = gtk_entry_new();
-  gtk_table_attach(GTK_TABLE(s.table), s.example_tr_entry, 1, 3, 7, 8,
+  gtk_table_attach(GTK_TABLE(s.table), s.example_tr_entry, 1, 3, row, row+1,
 		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
 		    (GtkAttachOptions) (0), 0, 0);
   g_signal_connect((gpointer) s.example_tr_entry, "changed",
       G_CALLBACK(on_form_entry_changed), NULL);
-  gtk_tooltips_set_tip(tooltips, s.example_tr_entry,
-      _("Optional Translation of the Example"),
-      NULL);
+  gtk_widget_set_tooltip_text(s.example_tr_entry,
+      _("Optional Translation of the Example"));
 
   s.nr = senses->len;
 
@@ -625,6 +647,8 @@ Sense *senses_append(GArray *senses)
 
   GtkWidget *remove_sense_button = glade_xml_get_widget(my_glade_xml, "remove_sense_button");
   gtk_widget_set_sensitive(remove_sense_button, TRUE);
+  extern gboolean labels_visible;
+  set_view_labels_visible(labels_visible);
 
   // return newly created Sense
   return &g_array_index(senses, Sense, senses->len-1);
@@ -673,12 +697,17 @@ static void nodeContent2gtk_entry(const xmlNodePtr n, GtkEntry *e)
 }
 
 
-/** retval TRUE nodeContent could be put into the optionmenu successfully
+/**
+ * Select Option in option menu according to string referred to by n.  The
+ * option menhu must have been generated according to the contents of values.
+ *
+ * retval TRUE nodeContent could be put into the optionmenu successfully
  */
 static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
     const Values *values, const char *errormsg)
 {
   g_return_val_if_fail(om, FALSE);
+  g_return_val_if_fail(values, FALSE);
   xmlChar* content = xmlNodeGetContent(n);
   guint index_ = value2index(values, (char *) content);
   if(index_==-1)
@@ -688,6 +717,7 @@ static gboolean nodeContent2optionmenu(const xmlNodePtr n, GtkOptionMenu *om,
     gtk_option_menu_set_history(om, 0);
     return FALSE;
   }
+  //g_debug(_("Valid <%s> content: '%s'\n"), errormsg, content);
   if(content) xmlFree(content);
   gtk_option_menu_set_history(om, index_);
   return TRUE;
@@ -704,7 +734,7 @@ void my_free_node(xmlNodePtr *p)
 }
 
 
-/// Extract contents of XML nodes and fills input fields with them
+/// Extract contents of XML nodes and fill input fields with them
 /** @arg n zero-based
  * @retval TRUE extraction was successful
  * @retval FALSE extraction failed, eg. because there were invalid values for the optionmenus
@@ -718,10 +748,15 @@ static gboolean sense_dom2widgets(const GArray *senses, const int n)
   g_return_val_if_fail(s->trans, FALSE);
   //g_printerr("sense_dom2widgets senses.len=%i n=%i\n", senses.len, n);
 
-  // domain
+  // usage domain
   gboolean can = nodeContent2optionmenu(s->xUsg,
       GTK_OPTION_MENU(s->domain_optionmenu), domain_values, "usg type=\"dom\"");
   my_free_node(&(s->xUsg));
+
+  // usage register
+  can &= nodeContent2optionmenu(s->xRegister,
+      GTK_OPTION_MENU(s->register_optionmenu), register_values, "usg type=\"reg\"");
+  my_free_node(&(s->xRegister));
 
   // for all trans
   int i;
@@ -786,9 +821,9 @@ struct Parsed_entry
 /// Fill main form fields, parse optionmenu contents
 /** The fields of the senses* of the entry are filled by sense_dom2widgets().
  */
-static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
+static gboolean parsed_entry2widgets(struct Parsed_entry *pe)
 {
-  g_return_if_fail(pe && can);
+  g_return_val_if_fail(pe, FALSE);
 
   // orth
   nodeContent2gtk_entry(pe->orth, GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry1")));
@@ -798,25 +833,25 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   nodeContent2gtk_entry(pe->pron, GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "entry2")));
   my_free_node(&(pe->pron));
 
-  *can = *can && nodeContent2optionmenu(pe->pos,
+  gboolean can = nodeContent2optionmenu(pe->pos,
       GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "pos_optionmenu")), pos_values, "pos");
   my_free_node(&(pe->pos));
 
-  *can = *can && nodeContent2optionmenu(pe->num,
+  can = can && nodeContent2optionmenu(pe->num,
       GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "num_optionmenu")), num_values, "num");
   my_free_node(&(pe->num));
 
-  *can = *can && nodeContent2optionmenu(pe->gen,
+  can = can && nodeContent2optionmenu(pe->gen,
       GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "gen_optionmenu")), gen_values, "gen");
   my_free_node(&(pe->gen));
 
   // parse '<note resp="translator">Translator Name <email address>[two spaces]date</note>'
   // the contents of this <note> are similar to the last line of a debian changelog entry
-  if(!pe->noteRespTranslator) return;
+  if(!pe->noteRespTranslator) return can;
 
   xmlChar *content = xmlNodeGetContent(pe->noteRespTranslator);
   my_free_node(&(pe->noteRespTranslator));
-  if(!content) return;
+  if(!content) return can;
   char *nameS = NULL, *emailS = NULL, *dateS = NULL;
   if(strlen((char *) content)>0)
   {
@@ -828,7 +863,7 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
 
     if(ret != 3)
     {
-      *can = FALSE;
+      can = FALSE;
       g_printerr("sscanf() = %i\n", ret);
     }
     else
@@ -843,16 +878,16 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
       // char * strptime (const char *s, const char *fmt, struct tm *tp)
       // file:/usr/share/doc/glibc-doc/html/libc_21.html#SEC429
       g_date_set_parse(&date, dateS);
-      *can = *can && g_date_valid(&date);
-      if(!*can) g_printerr("Invalid date: '%s'\n", dateS);
+      can = can && g_date_valid(&date);
+      if(!can) g_printerr("Invalid date: '%s'\n", dateS);
     }
   }
   else
   {
-    *can = FALSE;
+    can = FALSE;
   }
 
-  if(!*can)
+  if(!can)
     g_printerr("note resp=translator: content='%s' name='%s' "
 	"email='%s' dateS='%s'\n", content, nameS, emailS, dateS);
   else
@@ -863,6 +898,7 @@ static void parsed_entry2widgets(struct Parsed_entry *pe, gboolean *can)
   if(emailS) free(emailS);
   if(dateS) free(dateS);
   if(content) xmlFree(content);
+  return can;
 }
 
 /** Checks whether @a entry is editable in our form. This is possible
@@ -884,7 +920,7 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
   // in the spirit of C++'s design macros are avoided
   xmlNodePtr inline my_unlink(const char *xpath)
   {
-    return unlink_leaf_node_with_attr(xpath, NULL, entry_doc, &can);
+    return unlink_leaf_node_with_attr(xpath, NULL, NULL, entry_doc, &can);
   }
 
   void inline my_unlink_free(const char *xpath)
@@ -941,10 +977,16 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
       // parse a sense
       Sense *s = senses_append(senses);
 
-      // domain
+      // usage domain
       const char *allowedattrs[] = { "type", NULL };
-      s->xUsg = unlink_leaf_node_with_attr("/entry/sense[1]/usg[1][@type='dom']",
-	  allowedattrs, entry_doc, &can);
+      const char *allowedattr_dom[] = { "dom", NULL };
+      s->xUsg = unlink_leaf_node_with_attr("/entry/sense[1]/usg[@type='dom']",
+	  allowedattrs, allowedattr_dom, entry_doc, &can);
+
+      // usage register
+      const char *allowedattr_reg[] = { "reg", NULL };
+      s->xRegister = unlink_leaf_node_with_attr("/entry/sense[1]/usg[@type='reg']",
+	  allowedattrs, allowedattr_reg, entry_doc, &can);
 
       // for all trans
       while(can && find_single_node("/entry/sense[1]/trans[1]", entry_doc))
@@ -989,12 +1031,12 @@ gboolean xml2form(const xmlNodePtr entry, GArray *senses)
 
   const char *allow_resp_attr[] = { "resp", NULL };
   pe.noteRespTranslator = unlink_leaf_node_with_attr("/entry/note[@resp='translator'][1]",
-      allow_resp_attr, entry_doc, &can);
+      allow_resp_attr, NULL, entry_doc, &can);
 
   my_unlink_free("/entry");
 
   // fill main Widgets
-  parsed_entry2widgets(&pe, &can);
+  can = can && parsed_entry2widgets(&pe);
 
   // doc was successfully parsed if root element was unlinked
   if(xmlDocGetRootElement(entry_doc))
@@ -1079,7 +1121,7 @@ xmlNodePtr form2xml(const GArray *senses)
     Sense *s = &g_array_index(senses, Sense, i);
     xmlNodePtr senseNode = xmlNewChild(entryNode, NULL, (xmlChar *) "sense", (xmlChar *) "\n");
 
-    // domain
+    // usage domain
     gint dindex = gtk_option_menu_get_history(GTK_OPTION_MENU(s->domain_optionmenu));
     // if anything other than 'None' was selected in optionmenu
     if(dindex)
@@ -1087,6 +1129,16 @@ xmlNodePtr form2xml(const GArray *senses)
       xmlNodePtr usgNode = string2xmlNode(senseNode, "	  ", "usg",
 	  index2value(domain_values, dindex), "\n");
       xmlNewProp(usgNode, (xmlChar *) "type", (xmlChar *) "dom");
+    }
+
+    // usage register
+    dindex = gtk_option_menu_get_history(GTK_OPTION_MENU(s->register_optionmenu));
+    // if anything other than 'None' was selected in optionmenu
+    if(dindex)
+    {
+      xmlNodePtr usgNode = string2xmlNode(senseNode, "	  ", "usg",
+	  index2value(register_values, dindex), "\n");
+      xmlNewProp(usgNode, (xmlChar *) "type", (xmlChar *) "reg");
     }
 
     // trans
