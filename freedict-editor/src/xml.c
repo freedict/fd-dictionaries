@@ -147,13 +147,13 @@ xmlDocPtr copy_node_to_doc(const xmlNodePtr node)
 // "warning: passing arg 1 of `xmlXPatherror' from incompatible pointer type"
 // (since a parser context has no "doc" member, the macro actually is
 // for checking a plain context!)
-//#define CHECK_CONTEXT(ctxt)                                             \
+/*#define CHECK_CONTEXT(ctxt)                                             \
     if ((ctxt == NULL) || (ctxt->doc == NULL) ||                        \
         (ctxt->doc->children == NULL)) {                                \
         xmlXPatherror(ctxt, __FILE__, __LINE__, XPATH_INVALID_CTXT);    \
         return(NULL);                                                   \
     }
-
+*/
 // therefore I have extended it with another parameter
 #define CHECK_CONTEXT(ctxt, pctxt)                                      \
     if ((ctxt == NULL) || (ctxt->doc == NULL) ||                        \

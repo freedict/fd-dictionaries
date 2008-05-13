@@ -17,6 +17,8 @@
 #include <libxml/threads.h>
 #include <libxml/uri.h>
 
+#include <bonobo/bonobo-dock-item.h>
+
 #include "callbacks.h"
 #include "utils.h"
 #include "xml.h"

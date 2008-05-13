@@ -9,6 +9,8 @@
 #include <gnome.h>
 #include <glade/glade.h>
 
+#include "callbacks.h"
+
 GladeXML *my_glade_xml;
 GtkWidget* app1;
 
@@ -27,7 +29,7 @@ main (int argc, char *argv[])
       argc, argv,
       GNOME_PARAM_APP_DATADIR, PACKAGE_DATA_DIR,
       LIBGNOMEUI_PARAM_DEFAULT_ICON,
-      PACKAGE_DATA_DIR "/pixmaps/" PACKAGE "/freedict.png",
+      PACKAGE_DATA_DIR "/" PACKAGE "/freedict.png",
       NULL);
 
   // set selected_filename with name of file to open on start
@@ -38,9 +40,9 @@ main (int argc, char *argv[])
   poptFreeContext(con);
 
   glade_gnome_init();
-  if(g_file_test(PACKAGE_DATA_DIR "/freedict-editor.glade", G_FILE_TEST_EXISTS))
+  if(g_file_test(PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade", G_FILE_TEST_EXISTS))
     my_glade_xml =
-      glade_xml_new(PACKAGE_DATA_DIR "/freedict-editor.glade", NULL, NULL);
+      glade_xml_new(PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade", NULL, NULL);
   else if(g_file_test("freedict-editor.glade", G_FILE_TEST_EXISTS))
     my_glade_xml = glade_xml_new("freedict-editor.glade", NULL, NULL);
   else if(g_file_test("../freedict-editor.glade", G_FILE_TEST_EXISTS))
@@ -49,7 +51,7 @@ main (int argc, char *argv[])
   {
     fprintf(stderr, _("Failed to load glade interface description.  "
 	  "I tried '%s', '%s' and '%s'.\n"),
-	PACKAGE_DATA_DIR "/freedict-editor.glade",
+	PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade",
 	"freedict-editor.glade",
 	"../freedict-editor.glade");
     return 1;

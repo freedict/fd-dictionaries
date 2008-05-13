@@ -5,6 +5,8 @@
 
 #include "entryedit.h"
 
+#include "callbacks.h"
+
 #include <glade/glade.h>
 /// GladeXML object of the application to access widgets
 extern GladeXML *my_glade_xml;

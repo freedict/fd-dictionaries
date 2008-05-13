@@ -2,10 +2,10 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT([FreeDict Editor],[0.2],[freedict-beta@lists.sourceforge.net])
 AM_INIT_AUTOMAKE([-Wall dist-bzip2 no-dist-gzip])
-AC_REVISION($Revision: 1.8 $)
+AC_REVISION($Revision: 1.9 $)
 
 AM_MAINTAINER_MODE
-AC_CONFIG_HEADERS(config.h)
+AM_CONFIG_HEADER(config.h)
 
 AC_ISC_POSIX
 AC_PROG_CC(colorgcc)
@@ -18,7 +18,7 @@ AC_SUBST(PACKAGE_LIBS)
 
 AC_CHECK_LIB(aspell,new_aspell_config,,[AC_MSG_WARN([Some version of aspell, preferably >=0.50.3 is recommended])])
 
-IT_PROG_INTLTOOL([0.23])
+AC_PROG_INTLTOOL([0.23])
 
 GETTEXT_PACKAGE=freedict-editor
 AC_SUBST(GETTEXT_PACKAGE)
@@ -38,12 +38,13 @@ AC_HEADER_TIME
 AC_STRUCT_TM
 AC_C_INLINE
 
-AC_CONFIG_FILES([
+AC_OUTPUT([
 Makefile
 src/Makefile
 po/Makefile.in
 data/Makefile
 help/Makefile
 help/C/Makefile
+pixmaps/Makefile
 ])
-AC_OUTPUT
+

@@ -43,10 +43,11 @@ on_paste1_activate                     (GtkMenuItem     *menuitem,
 void
 on_clear1_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
-
+/*
 void
 on_properties1_activate                (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
+*/
 
 void
 on_preferences1_activate               (GtkMenuItem     *menuitem,
@@ -449,3 +450,7 @@ void
 on_accept_runtogether_checkbutton_toggled
                                         (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+set_view_labels_visible			(gboolean visible);
+
