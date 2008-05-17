@@ -59,6 +59,7 @@ void set_edited_node(const xmlNodePtr n)
 
   gboolean is_entry = n && !strcmp((char *) n->name, "entry");
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "delete_button"), is_entry);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "delete_entry1"), is_entry);
 
   // XXX maybe we should refuse to set a new edited_node when
   // the currently edited one is not saved yet (or try to auto-save it)
@@ -121,9 +122,11 @@ void setTeidoc(const xmlDocPtr t)
   gboolean sensitive = t ? TRUE : FALSE;
   file_modified = FALSE;
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_entry1"), FALSE);    
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save1"), FALSE);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_as1"), FALSE);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "new_entry_button"), sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "add_new_entry1"), sensitive);    
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "select_entry"), sensitive);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_check1"), sensitive);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "new_file_button"), !t);

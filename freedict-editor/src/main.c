@@ -11,6 +11,7 @@
 
 #include "callbacks.h"
 
+const char *glade_filename;
 GladeXML *my_glade_xml;
 GtkWidget* app1;
 
@@ -41,24 +42,24 @@ main (int argc, char *argv[])
 
   glade_gnome_init();
   if(g_file_test(PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade", G_FILE_TEST_EXISTS))
-    my_glade_xml =
-      glade_xml_new(PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade", NULL, NULL);
+		glade_filename = PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade";	
   else if(g_file_test("freedict-editor.glade", G_FILE_TEST_EXISTS))
-    my_glade_xml = glade_xml_new("freedict-editor.glade", NULL, NULL);
+		glade_filename = "freedict-editor.glade";	
   else if(g_file_test("../freedict-editor.glade", G_FILE_TEST_EXISTS))
-    my_glade_xml = glade_xml_new("../freedict-editor.glade", NULL, NULL);
-  if(!my_glade_xml)
-  {
-    fprintf(stderr, _("Failed to load glade interface description.  "
-	  "I tried '%s', '%s' and '%s'.\n"),
-	PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade",
-	"freedict-editor.glade",
-	"../freedict-editor.glade");
-    return 1;
-  }
+    glade_filename = "../freedict-editor.glade";
+
+  my_glade_xml = glade_xml_new(glade_filename, NULL, NULL);
+    if(!my_glade_xml) {
+      fprintf(stderr, _("Failed to load glade interface description.  "
+                        "I tried '%s', '%s' and '%s'.\n"),
+                        PACKAGE_DATA_DIR "/" PACKAGE "/freedict-editor.glade",
+                        "freedict-editor.glade",
+                        "../freedict-editor.glade");
+      return 1;
+    }
 
   glade_xml_signal_autoconnect(my_glade_xml);
-
+    
   app1 = glade_xml_get_widget(my_glade_xml, "app1");
   gtk_widget_show_all(app1);
   on_app1_show(NULL, NULL);// XXX this event handler is not called by show_all?

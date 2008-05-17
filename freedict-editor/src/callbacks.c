@@ -26,6 +26,8 @@
 
 /// GladeXML object of the application to access widgets
 extern GladeXML *my_glade_xml;
+extern const char *glade_filename;
+GladeXML *scw_xml, *pref_xml;
 
 /// Currently open dictionary
 xmlDocPtr teidoc;
@@ -952,8 +954,12 @@ void on_form_modified_changed()
 {
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "apply_button"),
       teidoc && form_modified);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_entry1"),
+      teidoc && form_modified);    
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit_button"),
       teidoc && form_modified);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit1"),
+      teidoc && form_modified);    
 }
 
 
@@ -1027,8 +1033,12 @@ void on_textview1_modified_changed(GtkTextBuffer *textbuffer,
   gboolean sensitive = teidoc && gtk_text_buffer_get_modified(textbuffer);
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "apply_button"),
       sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "save_entry1"),
+      sensitive);    
   gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit_button"),
       sensitive);
+  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "cancel_edit1"),
+      sensitive);    
 }
 
 
@@ -1718,7 +1728,7 @@ static void set_replacements_made(unsigned int value)
   replacements_made = value;
   char str[40];
   g_snprintf(str, sizeof(str), "%i", value);
-  gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml, "replacements_counter_label")), str);
+  gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(scw_xml, "replacements_counter_label")), str);
 }
 
 static void set_spell_current_node_idx(unsigned int value)
@@ -1727,7 +1737,7 @@ static void set_spell_current_node_idx(unsigned int value)
 
   // update progressbar
   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(
-	glade_xml_get_widget(my_glade_xml, "spell_progressbar")),
+	glade_xml_get_widget(scw_xml, "spell_progressbar")),
       (gdouble) spell_current_node_idx /
       (gdouble) xmlXPathNodeSetGetLength(spell_nodes));
 }
@@ -1737,7 +1747,7 @@ static void spell_getsuggestions(char *word)
 {
 #ifdef HAVE_LIBASPELL
   GtkTreeView *sugg_treeview = GTK_TREE_VIEW(
-      glade_xml_get_widget(my_glade_xml, "suggestions_treeview"));
+      glade_xml_get_widget(scw_xml, "suggestions_treeview"));
 
   if(!spell_sugg_store)
   {
@@ -1826,7 +1836,7 @@ gboolean spell_handle_current_word()
     // return FALSE;
   }
 
-  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "misspelled_word_entry")),
+  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(scw_xml, "misspelled_word_entry")),
       misspelled_token_str);
   spell_getsuggestions(misspelled_token_str);
 #else
@@ -1859,7 +1869,7 @@ gboolean spell_handle_current_word()
 
   g_print("Incorrect: word %i %s\n", spell_current_word_idx, w);
 
-  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(my_glade_xml, "misspelled_word_entry")),
+  gtk_entry_set_text(GTK_ENTRY(glade_xml_get_widget(scw_xml, "misspelled_word_entry")),
       spell_current_words[spell_current_word_idx]);
   spell_getsuggestions(spell_current_words[spell_current_word_idx]);
 #endif // NOCKR
@@ -1977,7 +1987,7 @@ void get_new_checker_speller()
 
   char *true_false = "false";
   if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "accept_runtogether_checkbutton")))) true_false = "true";
+	glade_xml_get_widget(scw_xml, "accept_runtogether_checkbutton")))) true_false = "true";
   aspell_config_replace(c, "run-together", true_false);
   check_for_config_error(c);
 
@@ -2043,7 +2053,7 @@ void on_spell_dict_menu_selection_done(GtkMenuShell *menushell, gpointer user_da
 
   // in case we got called from spell_continue_check()
   if(!menushell) menushell = GTK_MENU_SHELL(gtk_option_menu_get_menu(
-	GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu"))));
+	GTK_OPTION_MENU(glade_xml_get_widget(scw_xml, "spell_dict_optionmenu"))));
 
   GtkWidget* l = gtk_menu_get_active(GTK_MENU(menushell));
 
@@ -2096,21 +2106,21 @@ void spell_continue_check()
   }
 
   // inactivate all widgets except "close" button
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_replace_button"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_replace_all_button"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_ignore_button"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_ignore_all_button"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_add_button"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "suggestions_treeview"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "replacement_entry"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_headwords_radiobutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_translations_radiobutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu"), FALSE);
-  gtk_widget_set_sensitive(glade_xml_get_widget(my_glade_xml, "accept_runtogether_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_replace_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_replace_all_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_ignore_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_ignore_all_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_add_button"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "suggestions_treeview"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "replacement_entry"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_headwords_radiobutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_translations_radiobutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_orth_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_tr_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_eg_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_eg_tr_checkbutton"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "spell_dict_optionmenu"), FALSE);
+  gtk_widget_set_sensitive(glade_xml_get_widget(scw_xml, "accept_runtogether_checkbutton"), FALSE);
 
   mystatus(_("Finished Spellcheck."));
 #endif
@@ -2122,13 +2132,13 @@ void spell_query_nodes()
 #ifdef HAVE_LIBASPELL
   // build XPath query
   gboolean orth = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(scw_xml, "spell_orth_checkbutton")));
   gboolean tr = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(scw_xml, "spell_tr_checkbutton")));
   gboolean eg = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(scw_xml, "spell_eg_checkbutton")));
   gboolean eg_tr = gtk_toggle_button_get_active(
-      GTK_TOGGLE_BUTTON(glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")));
+      GTK_TOGGLE_BUTTON(glade_xml_get_widget(scw_xml, "spell_eg_tr_checkbutton")));
 
   char query[100] = "";
   if(orth)
@@ -2172,7 +2182,10 @@ on_spell_check1_activate               (GtkMenuItem     *menuitem,
     return;
   }
 
-  scw = glade_xml_get_widget(my_glade_xml, "spellcheck_window");
+  scw_xml = glade_xml_new (glade_filename, "spellcheck_window", NULL);
+  scw = glade_xml_get_widget(scw_xml, "spellcheck_window");
+  glade_xml_signal_autoconnect(scw_xml);
+
   g_signal_connect(scw, "destroy", G_CALLBACK (gtk_widget_destroyed), &scw);
   gtk_widget_show_all(scw);
 
@@ -2230,10 +2243,10 @@ on_spell_check1_activate               (GtkMenuItem     *menuitem,
     if(!strcmp(d->code,   c_lang) &&
        !strcmp(d->jargon, c_jargon) &&
        !strcmp(d->size_str, c_size)) gtk_option_menu_set_history(
-	 GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml, "spell_dict_optionmenu")), i);
+	 GTK_OPTION_MENU(glade_xml_get_widget(scw_xml, "spell_dict_optionmenu")), i);
  }
   delete_aspell_dict_info_enumeration(e);
-  gtk_option_menu_set_menu(GTK_OPTION_MENU(glade_xml_get_widget(my_glade_xml,
+  gtk_option_menu_set_menu(GTK_OPTION_MENU(glade_xml_get_widget(scw_xml,
 	  "spell_dict_optionmenu")), spell_dict_menu);
 
   spell_query_nodes();
@@ -2256,7 +2269,7 @@ on_spell_replace_button_clicked        (GtkButton       *button,
   g_return_if_fail(spell_current_words && spell_current_words[spell_current_word_idx]);
 #endif
 
-  GtkWidget *entry = glade_xml_get_widget(my_glade_xml, "replacement_entry");
+  GtkWidget *entry = glade_xml_get_widget(scw_xml, "replacement_entry");
   char *replacement = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry)));
   g_return_if_fail(replacement);
 
@@ -2316,7 +2329,7 @@ on_spell_replace_all_button_clicked    (GtkButton       *button,
                                         gpointer         user_data)
 {
 #ifdef HAVE_LIBASPELL
-  GtkWidget *entry = glade_xml_get_widget(my_glade_xml, "replacement_entry");
+  GtkWidget *entry = glade_xml_get_widget(scw_xml, "replacement_entry");
   char *replacement = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry)));
   g_return_if_fail(replacement);
 
@@ -2446,13 +2459,13 @@ on_spell_headwords_radiobutton_toggled (GtkToggleButton *togglebutton,
 {
 #ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")), TRUE);
+	glade_xml_get_widget(scw_xml, "spell_orth_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")), FALSE);
+	glade_xml_get_widget(scw_xml, "spell_tr_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")), TRUE);
+	glade_xml_get_widget(scw_xml, "spell_eg_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")), FALSE);
+	glade_xml_get_widget(scw_xml, "spell_eg_tr_checkbutton")), FALSE);
   spell_query_nodes();
 #endif
 }
@@ -2465,13 +2478,13 @@ on_spell_translations_radiobutton_toggled
 {
 #ifdef HAVE_LIBASPELL
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_orth_checkbutton")), FALSE);
+	glade_xml_get_widget(scw_xml, "spell_orth_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_tr_checkbutton")), TRUE);
+	glade_xml_get_widget(scw_xml, "spell_tr_checkbutton")), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_eg_checkbutton")), FALSE);
+	glade_xml_get_widget(scw_xml, "spell_eg_checkbutton")), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-	glade_xml_get_widget(my_glade_xml, "spell_eg_tr_checkbutton")), TRUE);
+	glade_xml_get_widget(scw_xml, "spell_eg_tr_checkbutton")), TRUE);
   spell_query_nodes();
 #endif
 }
@@ -2561,8 +2574,10 @@ on_preferences1_activate               (GtkMenuItem     *menuitem,
 {
   if(!propertybox)
   {
-    propertybox = glade_xml_get_widget(my_glade_xml, "propertybox1");
-
+    pref_xml = glade_xml_new (glade_filename, "propertybox1", NULL);
+    propertybox = glade_xml_get_widget(pref_xml, "propertybox1");
+    glade_xml_signal_autoconnect(pref_xml);		
+      
     // XXX checkbox to use default or not
 
     // populate fields by taking the current variable values and
@@ -2573,15 +2588,16 @@ on_preferences1_activate               (GtkMenuItem     *menuitem,
 	stylesheetfn);
     // XXX make input field insensitive if key not writable
 
-    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml,
+    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(pref_xml,
 	    "editer_default_name_label")), g_get_real_name());
 
-    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(my_glade_xml,
+    gtk_label_set_text(GTK_LABEL(glade_xml_get_widget(pref_xml,
 	    "editer_default_email_label")), g_get_user_name());
     // XXX ++ @localhost
   }
 
   gtk_widget_show_all(propertybox);
+  if(pref_xml) g_object_unref(G_OBJECT(pref_xml));
 }
 
 
@@ -2664,7 +2680,7 @@ on_propertybox1_apply                  (GnomePropertyBox *propertybox,
   g_printerr("on_propertybox1_apply\n");
 
   char* new_stylesheetfn = gnome_file_entry_get_full_path(
-      GNOME_FILE_ENTRY(glade_xml_get_widget(my_glade_xml,
+      GNOME_FILE_ENTRY(glade_xml_get_widget(pref_xml,
 	  "stylesheet_fileentry")), TRUE); // file must exist
   char* stylesheetkey = gnome_gconf_get_app_settings_relative(NULL, "stylesheet");
   if(new_stylesheetfn)
@@ -2991,18 +3007,22 @@ void
 on_sanity_check_activate               (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
+  GladeXML *sanity_xml;    
+    
   if(sanity_window)
   {
     gtk_window_present(GTK_WINDOW(sanity_window));
     return;
   }
 
-  sanity_window = glade_xml_get_widget(my_glade_xml, "sanity_window");
+  sanity_xml = glade_xml_new (glade_filename, "sanity_window", NULL);
+  sanity_window = glade_xml_get_widget(sanity_xml, "sanity_window");
+  glade_xml_signal_autoconnect(sanity_xml);		  
   // NULL window variable when sanity_window is closed
   g_signal_connect(sanity_window, "destroy", G_CALLBACK (gtk_widget_destroyed), &sanity_window);
 
   GtkTreeView *sanity_tree_view = GTK_TREE_VIEW(
-      glade_xml_get_widget(my_glade_xml, "sanity_treeview"));
+      glade_xml_get_widget(sanity_xml, "sanity_treeview"));
   if(!sanity_store)
   {
     sanity_store = gtk_tree_store_new(
@@ -3043,6 +3063,8 @@ on_sanity_check_activate               (GtkMenuItem     *menuitem,
       _("Matching Entries"), renderer, "text", HEADWORDS_COLUMN, NULL);
   gtk_tree_view_append_column(sanity_tree_view, column);
 
+  gtk_widget_show_all(sanity_window);
+  if(sanity_xml) g_object_unref(G_OBJECT(sanity_xml));
   // XXX gtk_tree_view_unset_rows_drag_dest(sanity_tree_view);
 }
 
