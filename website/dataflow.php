@@ -25,5 +25,4 @@ border=0 alt="<?php printf("%2.0f", filesize('images/dataflow.png')/1024)
 <a href="http://www.adobe.com/svg/viewer/install/main.html"
 target="_parent"><?php echo _("Adbobe's") ?></a>]
 
-</body>
-</html>
+<? require 'inc/footer.php';

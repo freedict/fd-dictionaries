@@ -62,7 +62,7 @@
  global $SKIP_SETLOCALE;
  if(!isset($SKIP_SETLOCALE))
  {
-   $ret = setlocale(LC_ALL, $l);
+   $ret = setlocale(LC_MESSAGES, $l);
    if(!$ret) echo "setlocale to '$l' failed<br>";
    //else echo "setlocale to '$l' succeeded: $ret<br>";
    $ret = bindtextdomain('freedict', 'locale');

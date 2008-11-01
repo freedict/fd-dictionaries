@@ -51,5 +51,4 @@ are a compilation of various free sources. Please consult the
 respective TEI headers, READMEs and 00-database-info entries.
 The first databases were derived from Ergane.') ?></p>
 
-</body>
-</html>
+<? require 'inc/footer.php';

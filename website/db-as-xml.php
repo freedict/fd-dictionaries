@@ -20,3 +20,5 @@ To access that data easily, eg. for use in a program as
 <a href="http://stardict.sf.net/" target="_top">Stardict</a>, you can use this URL:') ?></p>
 
 <p style="align: center"><a href="<?php echo fdict_url('freedict-database.xml') ?>">freedict-database.xml</a></p>
+
+<? require 'inc/footer.php';

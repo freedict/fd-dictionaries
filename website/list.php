@@ -100,4 +100,6 @@ foreach($ds as $d)
 <?php
 echo "$dscount dictionaries, $hwsum headwords<br>";
 
-include 'inc/legend.php' ?>
+include 'inc/legend.php';
+require 'inc/footer.php';
+ ?>

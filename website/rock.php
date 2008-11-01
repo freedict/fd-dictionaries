@@ -50,3 +50,4 @@ in the 2.0 release of Rock Linux.') ?></p>
   <p><?php echo _('Please note that the project fork "t2" does not include any
     freedict-* packages.') ?></p>
 
+<? require 'inc/footer.php';

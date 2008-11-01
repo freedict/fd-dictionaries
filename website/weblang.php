@@ -26,4 +26,6 @@ below the English translations and email the file to
 because it leaves some part of the website untranslated, you can get the
 <tt>.mo</tt> file from CVS:') ?></p>
 
-<blockquote><a href="http://cvs.sourceforge.net/viewcvs.py/freedict/website/locale/">http://cvs.sourceforge.net/viewcvs.py/freedict/website/locale/</a></blockquote>
+<blockquote><a href="http://freedict.cvs.sourceforge.net/viewvc/freedict/website/locale/">http://freedict.cvs.sourceforge.net/viewvc/freedict/website/locale/</a></blockquote>
+
+<? require 'inc/footer.php';

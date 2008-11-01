@@ -93,7 +93,7 @@
 </td></tr>
 
 <tr><td class="menuNObg" align="center">
- &copy; 2004-2005 <?php echo _('FreeDict Project') ?>
+ &copy; 2004-2008 <?php echo _('FreeDict Project') ?>
 </td></tr>
 </table>
 <?php

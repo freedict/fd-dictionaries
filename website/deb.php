@@ -43,3 +43,4 @@ $platform = 'deb';
   '<a href="http://pkg-freedict.alioth.debian.org/" target="_top">',
   '</a>') ?></p>
 
+<? require 'inc/footer.php';

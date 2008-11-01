@@ -15,7 +15,7 @@ $platformStrings = array(
     _('DICT servers') .'</a> ' ._('on Windows/Linux'),
   'mobipocket' => '<a href="http://www.mobipocket.com/en/DownloadSoft/DownLoadReaderStep1.asp" target="_top">'.
     _('Mobipocket') .'</a> '. _('on WinCE/Palm'),
-  'evolutionary' => '<a href="http://www.evolutionary.net/dict-info.htm" target="_top">Evolutionary Dictionary</a> '.
+  'evolutionary' => '<a href="http://www.mrhoney.de/y/1/html/evolutio.htm" target="_top">Evolutionary Dictionary</a> '.
     _('on WinCE/Palm'),
   'bedic' => '<a href="http://bedic.sourceforge.net/" target="_top">BEDic</a> '.
     _('on Zaurus/Qt'),
@@ -159,6 +159,6 @@ foreach($Langcode2english as $l2 => $english2)
 Download Mirror selection page. Right-Click and Save-As will not work
 from here!') ?></p>
 
-<?php include 'inc/legend.php' ?>
-
-</body></html>
+<?php
+require 'inc/legend.php';
+require 'inc/footer.php';

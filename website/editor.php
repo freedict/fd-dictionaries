@@ -38,3 +38,4 @@ cvs -z3 -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict co -
 <blockquote><small><tt>deb <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main<br>
 deb-src <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main</tt></small></blockquote>
 
+<? require 'inc/footer.php';
