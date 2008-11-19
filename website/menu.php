@@ -75,7 +75,7 @@
 </td></tr>
 
 <tr><td class="menu">
- <a href="<?php echo fdict_url('howto/index.html') ?>" target="_parent">HOWTO</a>
+ <a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=FreeDict_HOWTO_-_TOC" target="_parent">HOWTO</a>
 </td></tr>
 
 <tr><td class="menu"><a href="http://sourceforge.net/projects/freedict/"
@@ -87,6 +87,8 @@
   target="_parent"><?php echo _('Mailinglists') ?></a><br></small>
  <li><small><a href="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419"
   target="_parent"><?php echo _('Bugs') ?></a><br></small>
+ <li><small><a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=Main_Page"
+  target="_parent"><?php echo _('Wiki') ?></a><br></small>
 </ul></td>
 <tr><td class="menu"><a href="<?php echo fdict_url('weblang.php') ?>" target="main"><?php echo _('Translate this Website') ?></a>
 <tr><td class="menu"><a href="<?php echo fdict_url('db-as-xml.php') ?>" target="main"><?php echo _('Database as XML') ?></a>
