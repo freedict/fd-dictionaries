@@ -1,6 +1,23 @@
-Swahili-English and English-Swahili xFried Dictionary
+Swahili-English xFried/FreeDict Dictionary
 
-This Dictionary is based on Swahili-Kiswahili to English 
+Version 0.3 by Piotr Bañski and Beata Wójtowicz (30-dec-2008) is a thorough 
+upgrade from version 0.0.2 -- the dictionary got cleaned, extended and 
+marked up in TEI P5. Many lexicographic features have been introduced, 
+for details refer to the dictionary header.
+
+The dictionary forms a package together with:
+
+* the TEI ODD (One-Document-Doesitall) file freedict_swa-eng.xml, from 
+which schemas and documentation can be derived, by feeding the file 
+into the Roma utility at http://www.tei-c.org/Roma/
+
+* a CSS file freedict-dictionary.css that makes the raw dictionary look more pleasant
+
+* two schema files, RNG and DTD, derived from the ODD but supplied here
+in case access to Roma is not available.
+
+
+Version 0.0.2 by Beata Wójtowicz was based on Swahili-Kiswahili to English 
 Translation Program by Morris Fried (www.dict.org/links.html), 
 which has been supplemented by entries from an older version
 of the Freedict Swahili-English Dictionary
@@ -10,15 +27,12 @@ The conversion of Fried's dictionary to DICT format and merging
 it with Eyermann's Ergane-based dictionary
 has been done, with some help of Computer Science colleagues,
 by Beata Wojtowicz (wierzchob@wp.pl) in June 2004. 
+The part of speech information for version 0.0.2 was taken from the Swahili-Kiswahili 
+to English Translation Program and added to the entries from Freedict 
+Swahili-English Dictionary.
 
-This program is free software; you can redistribute it and/or modifyit under the
-terms of the GNU General Public License as published by the
-Free Software Foundation. 
 
-The original data is available from http://www.mimuw.edu.pl/~jsbien/BW/Swa-Eng-xFried
+This program is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software Foundation. 
 
-The Swahili-English Dictionary has 1550 entries.
-The English-Swahili Dictionary has 1472 entries.
-The part of speech information was taken from the Swahili-Kiswahili to English 
-Translation Program and added to the entries from Freedict Swahili-English Dictionary.
-
+The Swahili-English xFried/FreeDict Dictionary has 2060 headwords and 4139 tokens in definitions.
