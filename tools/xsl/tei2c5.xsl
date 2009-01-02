@@ -56,7 +56,7 @@
 	 calling dictfmt you have to omit that space.)  -->
     <xsl:for-each select="form/orth">
       <xsl:if test="1>string-length()">
-	<xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position(../..)"/>
+	<xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position()"/>
 	</xsl:message>
       </xsl:if>
       <xsl:value-of select="."/>
