@@ -11,7 +11,9 @@
 
   <!-- TEI entry specific templates -->
   <xsl:template match="entry">
-    <xsl:apply-templates select="form | gramGrp"/>
+    <!--<xsl:apply-templates select="form | gramGrp"/>-->
+    <xsl:apply-templates select="form"/> <!-- force form before gramGrp -->
+    <xsl:apply-templates select="gramGrp"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="sense"/>
 
@@ -29,6 +31,12 @@
   </xsl:template>
 
   <xsl:template match="form">
+    <xsl:variable name="paren" select="count(parent::form) = 1 or @type='infl'"/>
+    <!-- parenthesised if nested or (ad hoc) if @type="infl" -->
+    <xsl:if test="$paren">
+      <xsl:text> (</xsl:text>
+    </xsl:if>
+    <xsl:apply-templates select="usg"/>     <!-- added to handle usg info in nested <form>s -->
     <xsl:for-each select="orth">
       <xsl:value-of select="."/>
       <xsl:if test="position() != last()">
@@ -36,7 +44,24 @@
       </xsl:if>
     </xsl:for-each>
     <xsl:apply-templates select="pron"/>
+  <xsl:if test="$paren">
+      <xsl:text>)</xsl:text>
+    </xsl:if>
+    <xsl:apply-templates select="form"/>
+    <xsl:if test="following-sibling::form and following-sibling::form[1][not(@type='infl')]">
+      <xsl:text>, </xsl:text>
+      <!-- cosmetics: no comma before parens  -->
+    </xsl:if>
   </xsl:template>
+
+  <xsl:template match="orth">
+    <xsl:value-of select="."/>
+    <xsl:if test="position() != last()">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
+    <xsl:apply-templates select="pron"/>
+  </xsl:template>
+
 
   <xsl:template match="pron">
     <xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>
