@@ -1,5 +1,5 @@
 /* CSS for the Swahili-English FreeDict dictionary, by Piotr Bański (bansp in the domain of o2.pl) */
-/* Date: 30 December 2008. License: CC BY 3.0 */
+/* Version: 0.3, 15 February 2009. License: Creative Commons BY 3.0 */
 
 /*************** the header part ***************/
 title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
@@ -11,7 +11,10 @@ titleStmt > title {font-size:larger; text-align:center}
 
 p title, p name, change title, change name {font-weight:inherit; display:inline}
 
-edition > date {margin-left: 1em}
+/* edition > date {margin-left: 1em} */
+/* not needed for now, <edition/> is used for version numbering */
+
+edition:before {content: "Version ";  font-weight:bold}
 
 p, list {display:block}
 list {margin-left: 1em}
@@ -45,32 +48,50 @@ foreign {font-style:italic}
 teiHeader {border-bottom:solid black 1px} 
 
 /*************** dictionary body ***************/
-entry, dicteg, sense, cit, re, note {display:block}
+entry, sense, cit, re, note {display:block}
 
 form, gramGrp, xr, quote, bibl, gloss {display: inline}
 
-gramGrp, /* usg,*/ q, quote {font-style: italic}
+gramGrp, /* usg,*/ quote {font-style: italic}
 
 gramGrp {color:brown}
+
+q:before {content:open-quote}
+q:after {content:close-quote}
 
 /* hiding untyped <note> elements 
 note {display:none}
 note[type] {display:block}
 */
 
-note[type='style'], note[type='hint'] {display:inline}
-note[type='style']:before, note[type='hint']:before {content: "("; color:black; font-weight:normal}
-note[type='style']:after, note[type='hint']:after {content: ")"; color:black; font-weight:normal}
-
+note[type='style'], note[type='infl-base'], note[type='hint'], note[type='num'], note[type='gram'] {display:inline}
+note[type='style']:before, note[type='infl-base']:before, 
+note[type='hint']:before, note[type='num']:before, note[type='gram']:before {content: "("; color:black; font-weight:normal}
+note[type='style']:after, note[type='infl-base']:after, 
+note[type='hint']:after, note[type='num']:after, note[type='gram']:after {content: ")"; color:black; font-weight:normal}
+note[type='cl-agr']:before {content: "(agrees with cl. ";color:navy; font-weight:normal}
+note[type='cl-agr']:after {content: ")"; color:navy; font-weight:normal}
 
 note[type='plural-sense'] {color: black}
-note[type='plural-form'] {display:inline; color: black}
 note[type='plural-sense']:before {content:""}
+
+note[type='plural-form'] {display:inline; color: black}
 note[type='plural-form']:before {content:""}
+
+note[type='def'] {color: blue} /* diagnostic, these are temporary, kept in version 0.4 of the dictionary */
+note[type='def']:before{ content:"def: "; color: blue; font-weight:normal}
+
+/* status -- in the header */
+note[type='status']:before {content:"Status: "; color:black}
 
 note {color: navy}
 note:before {content: "NOTE: "; color: orange; font-weight:bold}
 
+
+/* hiding note/@type="editor" elements */
+note[type='editor'] {display:none}
+
+/* note[type='editor'] {color: red}  hidden in the production dictionary */
 
 entry {margin:2em}
 
@@ -78,6 +99,7 @@ sense {margin-left: 1em}
 sense[n]:before {content:attr(n) "."}
 sense:before {content:"• "}
 
+form[type='N']:after {content: " [sg=pl]"}
 
 entry > form > orth {font-weight: bold}
 re > form > orth {font-weight: bold}
@@ -95,9 +117,20 @@ entry[n='4'] > form > orth:first-child:after {content:"4"; font-size: 0.7em;
 orth[type=variant]:before {content: "(also ";font-weight:normal}
 orth[type=variant]:after {content: ")";font-weight:normal}
 
+/* this is plain ugly. but it works...*/
+form+xr[type=plural-form]:before {content:"(pl: "}
+form+xr[type=plural-form]:after {content:")"}
+xr[type=plural-form]>ref + ref:before {content:", "}
+
 def+xr[type=plural-sense] {display:block}
 def+xr[type=plural-sense]:before {content:"· "}
 xr[type=plural-sense]:after {content:":"}
+
+cit[type='trans'] {display:inline}
+cit[type='dicteg'] {display:block}
+
+cit[type='trans'] > quote {display:inline}
+cit[type='trans'] > quote + note {display:inline}
 
 xr[type=cf] {display:block}
 
@@ -107,8 +140,14 @@ ref+ref:before {content:"· "; text-decoration: none;}
 
 def+def:before {content:"· "}
 
+hi[rend='it'] {font-style: italic}
 
 /*********** ERRORS ***********/
 entry > xr[type=syn] { color: red; font-weight: bold; font-size: larger }
  /* synonyms always for a particular sense */
+ 
+ [rend='red'] {color: red}
+ [rend='red']:before {content: "ERROR: "; color: red} /* sometimes the rend can appear on an empty element */
+ 
+ note[type='dunno'] {color: green}
  
