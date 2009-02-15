@@ -37,7 +37,7 @@
                <name>Piotr Bański</name>
             </respStmt>
          </editionStmt>
-         <extent>2629 headwords, 5021 tokens in definitions</extent>
+         <extent>2629 headwords, 5027 tokens in definitions</extent>
          <!-- KEEP THIS UP TO DATE --><publicationStmt>
             <publisher>FreeDict</publisher>
             <availability>
@@ -90,7 +90,7 @@
                <item>Many POS and subcategorization changes; for example, 'expr' now indicates "portmanteau" (cumulative) grammatical words, some conjunctions and interjections have been identified</item>
                <item>Changed/introduced some header elements for compatibility with the Freedict build system (indicated in comments)</item>
                <item>The accompanying CSS stylesheet has been modified to provide a work view of the dictionary</item>
-               <item>2612 entries, 2629 headwords, 5021 tokens in definitions, computed by sum(for $txt in //def | //sense/note[@type ne 'editor'] return count(tokenize(normalize-space($txt),' ')))</item>
+               <item>2612 entries, 2629 headwords, 5027 tokens in definitions, computed by sum(for $txt in //def | //sense/note[@type ne 'editor'] return count(tokenize(normalize-space($txt),' ')))</item>
                <item>Some of the development of this dictionary and the Freedict project has been described in a paper entitled <q>A repository of free lexical resources for African languages: the project and the method</q> by <name>Piotr Bański</name> and <name>Beata Wójtowicz</name>, accepted for the <name>AfLaT-2009</name> (<name>Language Technologies for African Languages</name>) workshop, part of the 12th meeting of the <name>European Association for Computational Linguistics</name> (<name>EACL</name>).</item>
                <item>TO DO:
             <list type="bulleted">
