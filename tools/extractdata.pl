@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.12 $
+# $Revision: 1.13 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -19,9 +19,9 @@
 #   @sourceURL		URL in sourceDesc in TEI header (upstream project)
 #   @notes		unused
 #   @HEADorRelease	in CVS, unused
-#   @maintainerName     Maintainer name (without email) from
-#                       /TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
-#   @maintainerEmail    Email address of Maintainer from same place
+#   @maintainerName	Maintainer name (without email) from
+#			/TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
+#   @maintainerEmail	Email address of Maintainer from same place
 #   @unsupported	space separated list of platforms, eg. "evolutionary bedic"
 #
 # element: release
@@ -40,17 +40,21 @@ use Getopt::Std;
 use XML::DOM;
 use File::stat;
 use strict;
+use WWW::Mechanize;
+use HTML::TreeBuilder;
 
 our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l);
-getopts('vhald:fr:');
+getopts('vhald:fr');
 
 sub printd
 {
-  return if !$opt_v;
-  print @_;
+  return unless $opt_v;
+  print @_
 }
 
+my $sfurl = 'http://sourceforge.net/project/showfiles.php?group_id=1419';
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
+
 printd "Using FREEDICTDIR=$FREEDICTDIR\n";
 
 my $dbfile = "$FREEDICTDIR/freedict-database.xml";
@@ -58,10 +62,11 @@ my $dbfile = "$FREEDICTDIR/freedict-database.xml";
 if($opt_h)
 {
   print <<EOT;
-$0 [options] (-a | -d <la1-la2>) [-r [<file>]]
+$0 [options] (-a | -d <la1-la2> | -r)
 
 Gather metadata from TEI files in FreeDict file tree
-and save it in the XML file $dbfile.
+and save it in the XML file $dbfile.  Also collect information about
+available file releases from SourceForge download pages.
 
 The location is taken from the environment variable
 FREEDICTDIR or, if that is not set, the parent directory
@@ -77,13 +82,11 @@ Options:
 -f	force update of extracted data from TEI file,
 	even if its modification time is less than the last update
 -l	leave $dbfile untouched
--r	extract released packages from a SourceForge file release
-	HTML page. Uses STDIN if '-' given as filename.
-	For FreeDict download:
-	http://sourceforge.net/project/showfiles.php?group_id=1419
+-r	extract released packages from the SourceForge file release pages
+	at $sfurl
 
 EOT
-  exit;
+  exit
 }
 
 sub contains_dictionary
@@ -97,9 +100,9 @@ sub contains_dictionary
     my $node = $nodes->item($i);
     my $name = $node->getAttributeNode("name");
     next unless $name;
-    return $node if($name->getValue eq $entry);
+    return $node if $name->getValue eq $entry
   }
-  return undef;
+  return undef
 }
 
 sub fdict_extract_metadata
@@ -107,20 +110,19 @@ sub fdict_extract_metadata
   my($dirname, $entry, $doc) = @_;
   printd " Getting metadata from dictionary in '$dirname/$entry'\n";
 
-  my $docel = $doc->getDocumentElement();
-
   # find old dictionary element -> update
   my $d = contains_dictionary($doc,  $entry);
 
   # else create new dictionary element
-  if(!defined $d)
+  unless(defined $d)
   {
     printd "  Dictionary not found in database. Inserting it.\n";
+    my $docel = $doc->getDocumentElement();
     $docel->appendChild( $doc->createTextNode("  ") );
     $d = $doc->createElement('dictionary');
     $docel->appendChild($d);
     $docel->appendChild( $doc->createTextNode("\n") );
-    $d->setAttribute('name', $entry);
+    $d->setAttribute('name', $entry)
   }
 
   ###################################################################
@@ -130,22 +132,22 @@ sub fdict_extract_metadata
 
   my $indexfile = "$dirname/$entry/$entry.index";
 
-  if(!-r $indexfile)
+  unless(-r $indexfile)
   {
     system "cd $dirname/$entry && make $entry.index"
-      or print STDERR "  ERROR: Failed to remake $entry.index\n";
+      or print STDERR "  ERROR: Failed to remake $entry.index\n"
   }
 
   if(-r $indexfile)
   {
     my @a = split ' ', `wc -l "$indexfile"`;
     $headwords = (shift @a) - 8;# substract /00-?database.*/ entries
-    printd "  $headwords headwords\n";
+    printd "  $headwords headwords\n"
   }
   else
   {
     print STDERR "  Where is file '$indexfile'?\n";
-    $headwords = "ERROR: Could not find $indexfile";
+    $headwords = "ERROR: Could not find $indexfile"
   }
 
   $d->setAttribute('headwords', $headwords);
@@ -154,10 +156,10 @@ sub fdict_extract_metadata
 
   my $teifile = "$dirname/$entry/$entry.tei";
 
-  if(!-r $teifile)
+  unless(-r $teifile)
   {
     system "cd $dirname/$entry && make $teifile"
-      or print STDERR "  ERROR: Failed to remake $teifile\n";
+      or print STDERR "  ERROR: Failed to remake $teifile\n"
   }
 
   if(-r $teifile)
@@ -169,8 +171,8 @@ sub fdict_extract_metadata
 
     if($date le $d->getAttribute('date') and !$opt_f)
     {
-      printd "  Skipping time consuming extraction steps for update (try -f).\n";
-      return;
+      printd "	Skipping time consuming extraction steps for update (try -f).\n";
+      return
     }
 
   ###################################################################
@@ -203,14 +205,14 @@ sub fdict_extract_metadata
     }
     else
     {
-      printd "  Could not extract maintainer name or email from:\n" .
-        "\t$maintainer\n";
+      printd "	Could not extract maintainer name or email from:\n" .
+	"\t$maintainer\n"
     }
 
   ###################################################################
 
     $unsupported = `cd $dirname/$entry && make --no-print-directory print-unsupported`;
-    printd "  Failed to get info on unsupported platforms: $! $?\n" if(!defined $unsupported);
+    printd "  Failed to get info on unsupported platforms: $! $?\n" unless defined $unsupported;
 
   ###################################################################
   }
@@ -219,7 +221,7 @@ sub fdict_extract_metadata
     $edition = "ERROR: $teifile not readable";
     $date = $edition;
     $status = $edition;
-    $sourceURL = $edition;
+    $sourceURL = $edition
   }
 
   $d->setAttribute('edition', $edition);
@@ -231,11 +233,11 @@ sub fdict_extract_metadata
 
   if(defined $unsupported && $unsupported =~ /[^\s]/)
   {
-    $d->setAttribute('unsupported', $unsupported);
+    $d->setAttribute('unsupported', $unsupported)
   }
   else
   {
-    $d->removeAttribute('unsupported');
+    $d->removeAttribute('unsupported')
   }
 }
 
@@ -248,231 +250,176 @@ sub fdict_extract_all_metadata
   opendir $dir, $dirname;
   while($entry = readdir($dir))
   {
-    next if(! -d $dirname.'/'.$entry);
-    next if($entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$');
-
-    fdict_extract_metadata($dirname, $entry, $doc);
+    next unless -d $dirname.'/'.$entry;
+    next if $entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$';
+    fdict_extract_metadata $dirname, $entry, $doc
   }
 }
 
 ##################################################################
 
+sub update_database
+{
+  my($doc, $URL, $size, $release_date) = @_;
+
+  unless($URL =~ qr"^http://downloads.sourceforge.net/freedict/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([\w\.]+)\?")
+  { printd "filename in URL '$URL' not recognized"; return }
+  my $beginning = $1;
+  my $la1la2 = $2;
+  my $version = $3;
+  my $extension = $4;
+  unless($beginning eq 'freedict-')
+  { printd "beginning '$beginning' not recognized"; return }
+
+  my $d = contains_dictionary $doc, $la1la2;
+  unless($d)
+  {
+    printd "$la1la2: Not in our database. Skipping.\n";
+    return
+  }
+
+  # find platform from extension
+  # platforms: dict-tgz, dict-tbz2, mobi, bedic, deb, rpm, gem, src
+  my %ext2platform =
+  (
+    'tar.gz' => 'dict-tgz',
+    'tar.bz2' => 'dict-tbz2',
+    'dic.dz' => 'bedic',
+    'ipk' => 'zbedic',
+    'evolutionary.zip' => 'evolutionary',
+    'src.tar.bz2' => 'src',
+    'noarch.rpm' => 'rpm'
+  );
+  my $platform = $ext2platform{$extension};
+  unless(defined $platform)
+  { printd "Cannot make sense of filename '$extension'. Skip.\n"; next }
+
+  # find old release element
+  my $r;
+  for my $kid ($d->getElementsByTagName('release'))
+  {
+    next if $kid->getAttribute('platform') ne $platform;
+    $r = $kid; last # found
+  }
+
+  # create new release element if no previous found
+  unless($r)
+  {
+    printd "$la1la2: Release not found in database. Inserting it.\n";
+    $d->appendChild( $doc->createTextNode("\n") )
+      if( ! @{ ($d->getChildNodes) } );
+    $d->appendChild( $doc->createTextNode("    ") );
+    $r = $doc->createElement('release');
+    $d->appendChild($r);
+    $d->appendChild( $doc->createTextNode("\n") );
+    $r->setAttribute('platform', $platform);
+    return
+  }
+
+  # if $version is older release than available in the database,
+  # don't update the database
+  return if $r->getAttribute('version') ge $version;
+
+  printd "$la1la2: Updating release for $platform platform. Old: '" .
+  $r->getAttribute('version') . "' New: '$version'\n";
+  $r->setAttribute('version', $version);
+  $r->setAttribute('URL', $URL);
+  $r->setAttribute('size', $size);
+  $r->setAttribute('date', substr($release_date,0,10))
+}
+
 sub fdict_extract_releases
 {
   my $doc = shift;
-  my $docel = $doc->getDocumentElement();
 
-  my $file = *STDIN;
-  if($opt_r ne '-')
+  my $mech = WWW::Mechanize->new;
+  $mech->get($sfurl);
+  my @package_links = $mech->find_all_links(url_regex =>
+    qr"^/project/showfiles.php\?group_id=1419&package_id=");
+  printd "Found ", scalar(@package_links), " packages\n";
+
+  foreach(@package_links)
   {
-    if(!open($file,'<', $opt_r))
+    # Get a page like
+    # http://sf.net/project/showfiles.php?group_id=1419&package_id=304800
+    $mech->get($_->url);
+    my $tree = HTML::TreeBuilder->new_from_content($mech->content);
+    for my $release_tbody ($tree->look_down(
+	'_tag', 'tbody',
+	sub { defined $_[0]->attr('id') and $_[0]->attr('id') =~ /^pkg\d+_\d+$/ }
+      ))
     {
-      print "Cannot read file '$opt_r'\n";
-      exit;
-    };
-  };
-  my @lines = <$file>;
-  chomp foreach(@lines);
-  my $line = join '', @lines;
-
-  # tackle it with regexps
-  my($packages, $filename, $size, $downloads, $URL);
-
-  my @packs = split /<tr class="package">/, $line;
-  shift @packs;# throw away garbage before first package
-
-  # for all packages
-  foreach(@packs)
-  {
-    $packages++;# counts packages
-    $line = $_;
-    warn "   cannot find release number"
-      if($line !~ /id="pkg\d+_\d+rel\d+_\d+">([\d\.]+)<\/a>/cg);
-    my $release_version = $1;
-    warn "   cannot find release date"
-      if($line !~ /otes<\/a>\] \(([\d\- :]+)\) <\/small>/cg);
-    my $release_date = $1;
-    printd "\n   package $packages: release_number: '$release_version' " .
-      "release_date: '$release_date'\n";
-
-    # for all files of a release
-    while($line =~ /<a href="(http:\/\/prdownloads\.sourceforge\.net\/freedict\/[^\?]{5,50}\?download)">([^<]{5,50})<\/a>/cg)
-    {
-      #printd "1: $1 2: $2"\n";
-      #warn "cannot find filename" if($line !~ /\?download">([^<]*)<\/a><\/td>/cg);
-      $filename = $2;
-      $URL = $1;
-
-      $size = -1;
-      warn "   cannot find size"
-        if($line !~ /<td (class="even")?>(\d+)<\/td>/cg) or
-      $size = $2;
-
-      $downloads = -1;
-      warn "   cannot find downloads"
-        if($line !~ /\">(\d*)<\/a><\/td>/cg);
-      $downloads = $1;
-
-      printd "\tfilename: $filename size: $size\n";
-
-      ################################################################
-
-      # find old dictionary element -> update
-      my $name;
-      if($filename =~ /^freedict-/) { $name = substr($filename, 9,7) }
-      else { $name = substr($filename,0,7); }
-
-      if($name !~ /^\w{3}-\w{3}$/)
-      {
-	printd "Invalid dictionary name '$name'. Skipping release.\n";
-	next;
-      }
-
-      my $d = contains_dictionary($doc,  $name);
-      if(!$d)
-      {
-        print "  Dictionary '$name' not in our database. Skipping release.\n";
-        next;
-      }
-
-      # find platform by extracting it from filename
-      # allowed values: dict-tgz, dict-tbz2, mobi, bedic, deb, rpm, gem, src
-      my($platform, $fileversion, $sfn, $ssfn);
-
-      # cut prefix "freedict-" if available
-      if($filename =~ /^freedict-/) { $sfn = substr($filename, 9); }
-      else { $sfn = $filename; }
-
-      # cut language combination
-      $ssfn = substr($sfn, 7);
-
-      # cut a minus sign. if available
-      if($ssfn =~ /^-/) { $ssfn = substr($ssfn, 1); }
-
-      if($ssfn =~ /^\.tar\.gz/)
-      { $platform = 'dict-tgz'; }
-
-      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.gz/)
-      { $platform = 'dict-tgz'; }
-
-      elsif($ssfn =~ /^\.tar\.bz2/)
-      { $platform = 'dict-tbz2'; }
-
-      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?\.tar\.bz2/)
-      { $platform = 'dict-tbz2'; }
-
-      elsif($ssfn =~ /\.dic\.dz/)
-      # eg. freedict-kha-deu-0.0.1.dic.dz
-      { $platform = 'bedic'; }
-
-      elsif($ssfn =~ /\.ipk/)
-      # eg. freedict-kha-deu-0.0.1.ipk
-      { $platform = 'zbedic'; }
-
-      elsif($ssfn =~ /\.evolutionary\.zip/)
-      # eg. freedict-afr-eng-0.1.evolutionary.zip
-      { $platform = 'evolutionary'; }
-
-      elsif($ssfn =~ /\d{1,3}\.\d{1,3}(\.\d{1,3})?\.src(\.tar)?\.bz2/)
-      { $platform = 'src'; }
-
-      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.noarch\.rpm/)
-      # eg. freedict-kha-deu-0.0.1-1.noarch.rpm
-      { $platform = 'rpm'; }
-
-      elsif($ssfn =~ /^\d{1,3}\.\d{1,3}(\.\d{1,3})?-(\w+)\.[\w\.]+/)
-      { $platform = $2; }
-
-      else
-      {
-	print "Cannot make sense of filename '$filename'. Skip.\n";
-	next;
-      }
-
-
-      # find old release element
-      my $r;
-      for my $kid ($d->getElementsByTagName('release'))
-      {
-	if($kid->getAttribute('platform') eq $platform)
+      # find $releasedate, $size, $URL
+      my $a = $release_tbody->look_down(
+	'_tag', 'a',
+	sub
 	{
-	  $r = $kid; last;# found
+	  $_[0]->attr('href') =~
+	  qr"^http://downloads.sourceforge.net/freedict/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)\?"
 	}
-      }
-
-      # create new release element if no previous found
-      if(!$r)
-      {
-        print "+\tRelease not found in database. Inserting it.\n";
-        $d->appendChild( $doc->createTextNode("\n") ) if( ! @{ ($d->getChildNodes) } );
-        $d->appendChild( $doc->createTextNode("    ") );
-        $r = $doc->createElement('release');
-        $d->appendChild($r);
-        $d->appendChild( $doc->createTextNode("\n") );
-        $r->setAttribute('platform', $platform);
-      }
-
-      # if $r refers to an older release than available in the database,
-      # don't update the database
-#      $release_version = "0.0.1" if($release_version eq "");
-#      next if($r->getAttribute('version') ge $release_version);
-
-      printd "+\tUpdating release for $platform platform. Old: '" .
-        $r->getAttribute('version') . "' New: '$release_version'\n";
-      $r->setAttribute('version', $release_version);
-      $r->setAttribute('URL', $URL);
-      $r->setAttribute('size', $size);
-      $r->setAttribute('date', substr($release_date,0,10));
-
-    } # while
-  } # while
+      );
+      next unless defined $a;
+      my $URL = $a->attr('href');
+      unless($URL)
+      { printd "No URL?"; next }
+      my $small = $release_tbody->look_down(
+	'_tag', 'small',
+	sub
+	{ $_[0]->as_text =~ /^\(\d\d\d\d-\d\d-\d\d \d\d:\d\d\) $/ }
+	);
+      next unless defined $small;
+      my $rdtext = $small->as_text;
+      $rdtext =~ /^\((\d\d\d\d-\d\d-\d\d) /;
+      my $release_date = $1;
+      my $td = $release_tbody->look_down(
+	'_tag', 'td',
+	sub
+	{ $_[0]->as_text =~ /^\d+$/ }
+      );
+      next unless defined $td;
+      my $size = $td->as_text;
+      #printd "\n\t$URL $size $release_date\n";
+      update_database $doc, $URL, $size, $release_date
+    }
+    $tree->delete
+  } # foreach(@package_links)
 }
 ##################################################################
 
 if($opt_d && $opt_a)
-{
-  print STDERR "Only one of -d and -a may be given at the same time.\n";
-  exit;
-}
+{ print STDERR "Only one of -d and -a may be given at the same time.\n"; exit }
 
 if(!$opt_d && !$opt_a && !$opt_r)
-{
-  print STDERR "One of -h, -d, -a or -r must be given.\n";
-  exit;
-}
+{ print STDERR "One of -h, -d, -a or -r must be given.\n"; exit }
 
 my $parser = new XML::DOM::Parser;
 
 my $doc;
 if(-s $dbfile)
 {
-  $doc = $parser->parsefile ($dbfile);
+  $doc = $parser->parsefile($dbfile);
   printd "Successfully read $dbfile.\n";
   my $nodes = $doc->getElementsByTagName("dictionary");
   my $n = $nodes->getLength;
-  printd "$n dictionary/-ies in my database.\n";
+  printd "$n dictionary/-ies in my database.\n"
 }
 else
 {
   printd "Creating new database.\n";
   $doc = new XML::DOM::Document;
-  $doc->appendChild( $doc->createElement('FreeDictDatabase') );
+  $doc->appendChild( $doc->createElement('FreeDictDatabase') )
 }
 
-fdict_extract_metadata($FREEDICTDIR, $opt_d, $doc) if $opt_d;
-fdict_extract_all_metadata($FREEDICTDIR, $doc) if $opt_a;
-fdict_extract_releases($doc) if $opt_r;
+fdict_extract_metadata $FREEDICTDIR, $opt_d, $doc if $opt_d;
+fdict_extract_all_metadata $FREEDICTDIR, $doc if $opt_a;
+fdict_extract_releases $doc if $opt_r;
 
 if($opt_l)
-{
-  printd "Leaving $dbfile untouched.\n";
-  exit(0);
-}
+{ printd "Leaving $dbfile untouched.\n"; exit }
 
 # Write out freedict-database.xml
-`cp $dbfile $dbfile.bak` if(-s $dbfile);
+`cp $dbfile $dbfile.bak` if -s $dbfile;
 printd "Writing $dbfile\n";
 $SIG{INT} = 'IGNORE';
-$doc->printToFile ($dbfile);
-$SIG{INT} = 'DEFAULT';
-
+$doc->printToFile($dbfile);
+$SIG{INT} = 'DEFAULT'
