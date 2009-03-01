@@ -199,12 +199,18 @@ my $default_loglevel = 1;
 $loglevel = $default_loglevel;
 # this will be the residence of the release tree - should be parameters :)
 $testdir = $ENV{'FREEDICTDIR'} || die "Set FREEDICTDIR first";
-$cvsroot = ($ENV{'CVSROOT'} =~ /freedict/) ? $ENV{'CVSROOT'} :
+$cvsroot =
   ':pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict';
+$cvsroot = $ENV{'CVSROOT'} if defined $ENV{'CVSROOT'} and
+  $ENV{'CVSROOT'} =~ /freedict/;
 
-print STDERR "Warning: IPC::Run::IO depends on at least one English language string.\n"
-  . "Better set LANG=C before calling me.\n" if $ENV{'LANG'} and $ENV{'LANG'} ne 'C';
+if($Cvs::VERSION <= 0.07)
+{
+  print STDERR "The Cvs Perl Module till including Version 0.07 is broken.  "
+    . "Did you apply the patch from http://rt.cpan.org/Public/Bug/Display.html?id=25057 ?\n"
+}
 
+my @ARGV_SAVED = @ARGV;
 getopts 'hnaicv:m:';
 $interactive = 0 if $opt_n;
 $loglevel = $opt_v if $opt_v;
@@ -239,9 +245,18 @@ if(!$opt_a && !$opt_m)
   exit
 }
 
+if($ENV{'LANG'} and $ENV{'LANG'} ne 'C')
+{
+  print STDERR "Warning: IPC::Run::IO depends on at least one "
+    . "English language string. "
+    . "Compare http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=450663 "
+    . "Reexecuting myself with LANG=C.\n" if $loglevel;
+  $ENV{'LANG'} = 'C';
+  exit system($0, @ARGV_SAVED) >> 8
+}
 
 check_all if $opt_a;
 check_module $opt_m if $opt_m;
 
-print "Finished.\n" if $loglevel>1;
+print "Finished.\n" if $loglevel>1
 
