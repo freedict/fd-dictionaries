@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css"
-            href="freedict-dictionary.css"?><!DOCTYPE TEI
-  SYSTEM "freedict_swa-eng.dtd">
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     version="5.0">
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
+<!DOCTYPE TEI SYSTEM "freedict_swa-eng.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" version="5.0">
    <teiHeader type="text">
       <fileDesc>
          <titleStmt>
@@ -25,25 +22,24 @@
                <name>P. Bański, B. Wójtowicz</name>
             </respStmt>
          </titleStmt>
-         <editionStmt><!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  --><edition>0.4</edition>
-            <!-- editionStmt is processed by FreeDict scripts, so until the scripts are reset to 
-               use the @n attribute, let this one be conformant
-               <edition n="0.4">version 0.4<date when="2009-02-15">15 February 2009</date></edition>--><respStmt>
-               <resp>verification and correction of entries, addition of new entries (among others, complete sg-pl pairing)</resp>
+         <editionStmt><!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  --><edition n="0.4.1">version 0.4.1, <date when="2009-03-28">28 March 2009</date>
+            </edition>
+            <respStmt>
+               <resp>minor fixes and POS corrections, entries for -<foreign>enye</foreign> and the locative copulas; </resp>
                <name>Beata Wójtowicz</name>
             </respStmt>
             <respStmt>
-               <resp>more explicit XML structure, lexicographic consultation, fixes/additions, mostly in the English part</resp>
+               <resp>minor header changes wrt to the updated FreeDict scripts, lexicographic consultation, minor fixes in equivalents</resp>
                <name>Piotr Bański</name>
             </respStmt>
          </editionStmt>
-         <extent>2629 headwords, 5027 tokens in definitions</extent>
+         <extent>2674 headwords, 5303 tokens in definitions</extent>
          <!-- KEEP THIS UP TO DATE --><publicationStmt>
             <publisher>FreeDict</publisher>
             <availability>
-               <p>Available under the terms of the GNU General Public Licence, version 2.0 or later.</p>
+               <p>Available under the terms of the GNU General Public License, version 2.0 or later.</p>
             </availability>
-            <date when="2009-02-15">15 February 2009</date>
+            <date when="2009-03-28">28 March 2009</date>
             <pubPlace>http://freedict.org/</pubPlace>
          </publicationStmt>
          <!-- notesStmt is read by FreeDict scripts --><notesStmt>
@@ -51,7 +47,7 @@
          </notesStmt>
          <sourceDesc>
             <p>This file in version 0.0.2 was compiled by <name>Beata Wójtowicz</name> from other electronic documents. It was based on <title>Swahili-Kiswahili to English Translation Program</title> by <name>Morris Fried</name> available from http://www.dict.org/links.html, which has been supplemented by entries from Freedict Swahili-English Dictionary (version 0.0.1) created by <name>Horst Eyermann</name> (http://www.freedict.de) from the Swahili-Esperanto and Esperanto-English Ergane dictionaries, available from http://www.travlang.com/.</p>
-            <p>The December 2008 version (0.3) has been fixed syntactically, verified lexicographically and converted to the basic TEI P5 XML schema for dictionaries. The number of entries and the definitional parts have been extended.</p>
+            <p>The December 2008 version (0.3) has been fixed syntactically, verified lexicographically and converted to the basic TEI P5 XML schema for dictionaries. The number of entries and the definitional parts have been extended. See the revisionDesc for subsequent changes.</p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -60,6 +56,13 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.4.1" when="2009-03-15" who="#bansp #wierzchob">
+            <list type="bulleted">
+               <head>Version 0.4.1, <date>28 March 2009</date>. Changes by <name>Piotr Bański</name> and <name>Beata Wójtowicz</name>.</head>
+               <item>This is largely a maintenance release with minor fixes and additions.</item>
+               <item>New subcategories of locatives: unspec for "unspecified" (-<foreign>ko</foreign>), spec for "specified" (-<foreign>po</foreign>), in for "within" (-<foreign>mo</foreign>)</item>
+            </list>
+         </change>
          <change n="0.4" when="2009-02-15" who="#bansp #wierzchob">
             <list type="bulleted">
                <head>Version 0.4, <date>15 February 2009</date>. Changes by <name>Piotr Bański</name> and <name>Beata Wójtowicz</name>.</head>
@@ -67,8 +70,7 @@
                <item>Nouns of class 9 (the 'N class') are marked as 'type="N"' on their &lt;form&gt; element. This is used to signal that their plural forms (class 10) are identical to the respective singulars.</item>
                <item>Plural forms added in all applicable cases and identified the sg=pl pairs (= class N). Plurals are essentially back-references to singulars (citing their content), although in some cases, a specific "plural" (collective, mass) meaning is also provided. Note that e.g. the information on <foreign>benki</foreign> as seen in the browser view ("benki [sg=pl] (pl: mabenki)") signals that <foreign>benki</foreign> is ambiguous between class 9 (no plural marking) and class 5 (plural in ma-).</item>
                <item>Some classes of vocabulary added/expanded (e.g. names of countries and their inhabitants; the present-tense irregular paradigm of <foreign>wa na</foreign> added)</item>
-               <item>No more parentheses inside &lt;def&gt; elements, more types of notes:
-            <list type="bulleted">
+               <item>No more parentheses inside &lt;def&gt; elements, more types of notes: <list type="bulleted">
                      <item>hint - the most general and generic</item>
                      <item>gram - grammatical information (valency, POS of the equivalent, etc.)</item>
                      <item>def - the real definition, it will become the &lt;def&gt; element in the next version</item>
@@ -77,8 +79,7 @@
                      <item>num - (abused, could be 'gram') holds information on the number of "you/your/yours" in English equivalents</item>
                   </list>
                </item>
-               <item>Many more references - types of &lt;xr&gt; elements:
-            <list type="bulleted">
+               <item>Many more references - types of &lt;xr&gt; elements: <list type="bulleted">
                      <item>cf - 'see also', generic</item>
                      <item>syn - points at synonyms</item>
                      <item>imp-form - points at an (irregular) imperative form, could be made more generic ('inflection')</item>
@@ -92,8 +93,7 @@
                <item>The accompanying CSS stylesheet has been modified to provide a work view of the dictionary</item>
                <item>2612 entries, 2629 headwords, 5027 tokens in definitions, computed by sum(for $txt in //def | //sense/note[@type ne 'editor'] return count(tokenize(normalize-space($txt),' ')))</item>
                <item>Some of the development of this dictionary and the Freedict project has been described in a paper entitled <q>A repository of free lexical resources for African languages: the project and the method</q> by <name>Piotr Bański</name> and <name>Beata Wójtowicz</name>, accepted for the <name>AfLaT-2009</name> (<name>Language Technologies for African Languages</name>) workshop, part of the 12th meeting of the <name>European Association for Computational Linguistics</name> (<name>EACL</name>).</item>
-               <item>TO DO:
-            <list type="bulleted">
+               <item>TO DO: <list type="bulleted">
                      <item>whatever is mentioned in the previous todo list and not done here</item>
                      <item>introduce more robust grammatical description in &lt;gramGrp&gt;, taking over the content of some &lt;note&gt; elements; split complex &lt;subc&gt; elements</item>
                      <item>add many more verbs and adjectives; add more cycles of function words</item>
@@ -102,6 +102,13 @@
                      <item>describe the markup</item>
                      <item>add usage examples (in the cit/quote system)</item>
                      <item>consider using &lt;gramGrp&gt; (or even &lt;form&gt;, for capitalization, see e.g. <foreign>msahafu</foreign>) within particular &lt;sense&gt;s, where appropriate.</item>
+                  </list>
+               </item>
+               <item>From editionStmt for version 0.4: <list type="bulleted">
+                     <item>
+                        <name>Beata Wójtowicz</name>: verification and correction of entries, addition of new entries (among others, complete sg-pl pairing)</item>
+                     <item>
+                        <name>Piotr Bański</name>: more explicit XML structure, lexicographic consultation, fixes/additions, mostly in the English part</item>
                   </list>
                </item>
             </list>
@@ -171,7 +178,6 @@
             </gramGrp>
             <sense>
                <def>passenger</def>
-               <note type="editor">the only purpose of this very note is to make sure that editor notes get hidden in the CSS before the dictionary is released</note>
             </sense>
          </entry>
          <entry xml:id="abudu">
@@ -2746,8 +2752,11 @@
             <gramGrp>
                <pos>n</pos>
             </gramGrp>
-            <sense>
+            <sense xml:id="chakula.1" n="1">
                <def>food</def>
+            </sense>
+            <sense xml:id="chakula.2" n="2">
+               <def>meal</def>
             </sense>
          </entry>
          <entry xml:id="chama">
@@ -3083,7 +3092,7 @@
                <pos>n</pos>
             </gramGrp>
             <sense>
-               <def>small money</def>
+               <def>small money, change</def>
             </sense>
          </entry>
          <entry xml:id="chenu">
@@ -3097,6 +3106,20 @@
             <sense>
                <def>your <note type="num">pl.</note>, yours <note type="num">pl.</note>
                </def>
+               <note type="cl-agr">7</note>
+            </sense>
+         </entry>
+         <entry xml:id="chenye">
+            <form>
+               <orth>chenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
                <note type="cl-agr">7</note>
             </sense>
          </entry>
@@ -3525,17 +3548,6 @@
             </gramGrp>
             <sense>
                <def>frog</def>
-            </sense>
-         </entry>
-         <entry xml:id="daa">
-            <form>
-               <orth>daa</orth>
-            </form>
-            <gramGrp>
-               <pos>v</pos>
-            </gramGrp>
-            <sense>
-               <def>claim, demand</def>
             </sense>
          </entry>
          <entry xml:id="dada">
@@ -4274,11 +4286,12 @@
             </form>
             <gramGrp>
                <pos>adj</pos>
+               <note>do zmiany... cop? pron?</note>
             </gramGrp>
             <sense>
                <def>having</def>
                <def>with</def>
-            <note type="gram">displays pronominal agreement</note>
+               <note type="gram">displays pronominal agreement</note>
             </sense>
          </entry>
          <entry xml:id="enye_akili">
@@ -6597,7 +6610,7 @@
                <pos>n</pos>
             </gramGrp>
             <sense>
-               <def>earing</def>
+               <def>earring</def>
             </sense>
          </entry>
          <entry xml:id="heri">
@@ -7436,6 +7449,20 @@
                <def>if, provided that</def>
             </sense>
          </entry>
+         <entry xml:id="iko">
+            <form>
+               <orth>iko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">4,9</note>
+            </sense>
+         </entry>
          <entry xml:id="ila">
             <form>
                <orth>ila</orth>
@@ -7515,6 +7542,20 @@
             </gramGrp>
             <sense>
                <def>sing</def>
+            </sense>
+         </entry>
+         <entry xml:id="imo">
+            <form>
+               <orth>imo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">4,9</note>
             </sense>
          </entry>
          <entry xml:id="ina">
@@ -7688,6 +7729,20 @@
             </gramGrp>
             <sense>
                <def>fly</def>
+            </sense>
+         </entry>
+         <entry xml:id="ipo">
+            <form>
+               <orth>ipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">4,9</note>
             </sense>
          </entry>
          <entry xml:id="isha">
@@ -8021,6 +8076,8 @@
             </gramGrp>
             <sense>
                <def>how</def>
+               <note>do modyfikacji</note>
+               <note type="editor">we need examples for the various uses (as a particle or pronoun)</note>
             </sense>
          </entry>
          <entry xml:id="jela">
@@ -8968,17 +9025,6 @@
                <def>rope</def>
             </sense>
          </entry>
-         <entry xml:id="kambo">
-            <form type="N">
-               <orth>kambo</orth>
-            </form>
-            <gramGrp>
-               <pos>n</pos>
-            </gramGrp>
-            <sense>
-               <def>step-</def>
-            </sense>
-         </entry>
          <entry xml:id="kamili-1" n="1">
             <form>
                <orth>kamili</orth>
@@ -9265,11 +9311,11 @@
             </gramGrp>
             <sense>
                <def>Welcome!</def>
-               <def>reply to 'Hodi!'</def>
-               <xr type="cf">See also: <ref target="#hodi">hodi</ref>
-                  <!-- ideally, the reference should be inside the definition, but the DICT format forces this kind of arrangement -->
-          </xr>
-            </sense>
+               <def>reply to '<ref target="#hodi">Hodi!</ref>'</def>
+               <!--<xr type="cf">See also: <ref target="#hodi">hodi</ref>
+                   ideally, the reference should be inside the definition, but the DICT format forces this kind of arrangement;
+                   well, let me try curly brackets for refs           </xr>-->
+        </sense>
          </entry>
          <entry xml:id="kasa">
             <form>
@@ -10239,18 +10285,32 @@
                <def>feminine</def>
             </sense>
          </entry>
-         <entry xml:id="kiko">
+         <entry xml:id="kiko-1" n="1">
             <form>
                <orth>kiko</orth>
             </form>
             <xr type="plural-form">
-               <ref target="#viko">viko</ref>
+               <ref target="#viko-1">viko</ref>
             </xr>
             <gramGrp>
                <pos>n</pos>
             </gramGrp>
             <sense>
                <def>pipe</def>
+            </sense>
+         </entry>
+         <entry xml:id="kiko-2" n="2">
+            <form>
+               <orth>kiko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">7</note>
             </sense>
          </entry>
          <entry xml:id="kikohozi">
@@ -10501,6 +10561,20 @@
                <def>glitter</def>
             </sense>
          </entry>
+         <entry xml:id="kimo">
+            <form>
+               <orth>kimo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">7</note>
+            </sense>
+         </entry>
          <entry xml:id="kimya-1" n="1">
             <form>
                <orth>kimya</orth>
@@ -10716,6 +10790,20 @@
             <sense>
                <def>period</def>
                <def>extent of time</def>
+            </sense>
+         </entry>
+         <entry xml:id="kipo">
+            <form>
+               <orth>kipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">7</note>
             </sense>
          </entry>
          <entry xml:id="kipofu">
@@ -12240,12 +12328,18 @@
                <orth>kwenye</orth>
             </form>
             <gramGrp>
-               <pos>prep</pos>
+               <pos>cop</pos>
+               <subc>poss</subc>
             </gramGrp>
             <sense>
                <def>in</def>
                <def>at</def>
-               <note type="editor">consider linking to -enye when its forms are introduced</note>
+               <note type="gram">this is a form of <ref target="#enye">enye</ref>, lexicalized in a prepositional/locative function</note>
+            </sense>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">15,17</note>
             </sense>
          </entry>
          <entry xml:id="kwetu">
@@ -12546,6 +12640,20 @@
                <note type="cl-agr">5</note>
             </sense>
          </entry>
+         <entry xml:id="lenye">
+            <form>
+               <orth>lenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">5</note>
+            </sense>
+         </entry>
          <entry xml:id="leo">
             <form type="N">
                <orth>leo</orth>
@@ -12648,6 +12756,20 @@
                <def>vacation</def>
             </sense>
          </entry>
+         <entry xml:id="liko">
+            <form>
+               <orth>liko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">5</note>
+            </sense>
+         </entry>
          <entry xml:id="lile">
             <form>
                <orth>lile</orth>
@@ -12685,6 +12807,20 @@
             </gramGrp>
             <sense>
                <def>lemon</def>
+            </sense>
+         </entry>
+         <entry xml:id="limo">
+            <form>
+               <orth>limo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">5</note>
             </sense>
          </entry>
          <entry xml:id="lina">
@@ -12736,7 +12872,7 @@
                <def>pay</def>
             </sense>
          </entry>
-         <entry xml:id="lipo">
+         <entry xml:id="lipo-1" n="1">
             <form>
                <orth>lipo</orth>
             </form>
@@ -12748,6 +12884,20 @@
             </gramGrp>
             <sense>
                <def>payment</def>
+            </sense>
+         </entry>
+         <entry xml:id="lipo-2" n="2">
+            <form>
+               <orth>lipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">5</note>
             </sense>
          </entry>
          <entry xml:id="lisha">
@@ -14741,7 +14891,7 @@
                <pos>n</pos>
             </gramGrp>
             <sense>
-               <xr type="plural-sense">Plural of <ref target="#lipo">lipo</ref>
+               <xr type="plural-sense">Plural of <ref target="#lipo-1">lipo</ref>
                </xr>
                <def>payment</def>
             </sense>
@@ -15158,20 +15308,7 @@
             </gramGrp>
             <sense>
                <def>frequently, often, regularly</def>
-               <!--
-               <note> czy jednak nyingi nie moglibyśmy załatwić refem do ingi też? na zasadzie
-                  wyjątku, bo się pojawia ta forma w
-               słowniku?</note>
-               <note>nie rozumiem, znaczy jak by� chcia� opisa� znaczenie? to wtedy
-               by trzeba wszystkie formy ingi odes�a� do tego g��wnego
-               has�a? chodzi o wengi, mengi, nyingi, vingi..</note>
-               <note>no bo jedna ze strategii 'wyjątkowych' to
-               opisanie wszystkich pojedynczych słów, które
-               występują w multi-word headwords; czyli
-               hasło dla nyingi z odsyłaczem do ingi, tak
-               sobie myślałem (?</note>)
-<note>nie ma co</note> -->
-        </sense>
+            </sense>
          </entry>
          <entry xml:id="maradhi">
             <form>
@@ -18472,6 +18609,19 @@
                <def>fugitive</def>
             </sense>
          </entry>
+         <entry xml:id="mko">
+            <form>
+               <orth>mko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">pl.</note> are</def>
+               <note type="hint">in an unspecified place</note>
+            </sense>
+         </entry>
          <entry xml:id="mkoa">
             <form>
                <orth>mkoa</orth>
@@ -18752,6 +18902,19 @@
                <def>plant</def>
             </sense>
          </entry>
+         <entry xml:id="mmo">
+            <form>
+               <orth>mmo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">pl.</note> are</def>
+               <note type="hint">within, in there</note>
+            </sense>
+         </entry>
          <entry xml:id="mna-1" n="1">
             <form>
                <orth>mna</orth>
@@ -18997,6 +19160,19 @@
             </gramGrp>
             <sense>
                <def>cook</def>
+            </sense>
+         </entry>
+         <entry xml:id="mpo">
+            <form>
+               <orth>mpo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">pl.</note> are</def>
+               <note type="hint">in a specified place</note>
             </sense>
          </entry>
          <entry xml:id="mpunga">
@@ -20445,6 +20621,20 @@
                <note type="cl-agr">18</note>
             </sense>
          </entry>
+         <entry xml:id="mwenye">
+            <form>
+               <orth>mwenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">1,18</note>
+            </sense>
+         </entry>
          <entry xml:id="mwenyeji">
             <form>
                <orth>mwenyeji</orth>
@@ -21618,6 +21808,19 @@
                <def>aim, purpose</def>
             </sense>
          </entry>
+         <entry xml:id="niko">
+            <form>
+               <orth>niko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>am</def>
+               <note type="hint">in an unspecified place</note>
+            </sense>
+         </entry>
          <entry xml:id="nimeshapoa">
             <form>
                <orth>nimeshapoa</orth>
@@ -21633,6 +21836,19 @@
                </note>
                <note type="def">
                   <note type="hint">literally</note> I have already recovered</note>
+            </sense>
+         </entry>
+         <entry xml:id="nimo">
+            <form>
+               <orth>nimo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>am</def>
+               <note type="hint">within, in there</note>
             </sense>
          </entry>
          <entry xml:id="nina">
@@ -21659,6 +21875,19 @@
             </gramGrp>
             <sense>
                <def>what</def>
+            </sense>
+         </entry>
+         <entry xml:id="nipo">
+            <form>
+               <orth>nipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>am</def>
+               <note type="hint">in a specified place</note>
             </sense>
          </entry>
          <entry xml:id="njaa">
@@ -22072,7 +22301,7 @@
                <orth>nyote</orth>
             </form>
             <gramGrp>
-               <pos>expr</pos>
+               <pos>pron</pos>
             </gramGrp>
             <sense>
                <def>all of you</def>
@@ -22561,11 +22790,11 @@
                <orth>ote</orth>
             </form>
             <gramGrp>
-               <pos>adj</pos>
+               <pos>pron</pos>
+               <note>zmieniłem pos</note>
             </gramGrp>
             <sense>
                <def>all, whole</def>
-               <note type="gram">displays pronominal agreement</note>
                <note type="editor">we list the individual forms as well</note>
             </sense>
          </entry>
@@ -23242,6 +23471,20 @@
             </gramGrp>
             <sense>
                <def>penetrate</def>
+            </sense>
+         </entry>
+         <entry xml:id="penye">
+            <form>
+               <orth>penye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">16</note>
             </sense>
          </entry>
          <entry xml:id="pepo-1" n="1">
@@ -25752,7 +25995,7 @@
                <orth>sote</orth>
             </form>
             <gramGrp>
-               <pos>expr</pos>
+               <pos>pron</pos>
             </gramGrp>
             <sense>
                <def>all of us</def>
@@ -26966,6 +27209,19 @@
                <def>repent</def>
             </sense>
          </entry>
+         <entry xml:id="tuko">
+            <form>
+               <orth>tuko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>we are</def>
+               <note type="hint">in an unspecified place</note>
+            </sense>
+         </entry>
          <entry xml:id="tuliza">
             <form>
                <orth>tuliza</orth>
@@ -27083,6 +27339,19 @@
                <def>be used</def>
             </sense>
          </entry>
+         <entry xml:id="tumo">
+            <form>
+               <orth>tumo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>we are</def>
+               <note type="hint">within, in there</note>
+            </sense>
+         </entry>
          <entry xml:id="tuna">
             <form>
                <orth>tuna</orth>
@@ -27181,6 +27450,19 @@
             </gramGrp>
             <sense>
                <def>throw</def>
+            </sense>
+         </entry>
+         <entry xml:id="tupo">
+            <form>
+               <orth>tupo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>we are</def>
+               <note type="hint">in a specified place</note>
             </sense>
          </entry>
          <entry xml:id="tupu">
@@ -27773,6 +28055,33 @@
                <def>leather strap</def>
             </sense>
          </entry>
+         <entry xml:id="uko-1" n="1">
+            <form>
+               <orth>uko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">sg.</note> are</def>
+               <note type="hint">in an unspecified place</note>
+            </sense>
+         </entry>
+         <entry xml:id="uko-2" n="2">
+            <form>
+               <orth>uko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">3, 11</note>
+            </sense>
+         </entry>
          <entry xml:id="ukope">
             <form>
                <orth>ukope</orth>
@@ -28041,6 +28350,33 @@
                <def>pain</def>
             </sense>
          </entry>
+         <entry xml:id="umo-1" n="1">
+            <form>
+               <orth>umo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">sg.</note> are</def>
+               <note type="hint">within, in there</note>
+            </sense>
+         </entry>
+         <entry xml:id="umo-2" n="2">
+            <form>
+               <orth>umo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">3,11</note>
+            </sense>
+         </entry>
          <entry xml:id="umoja">
             <form>
                <orth>umoja</orth>
@@ -28285,6 +28621,33 @@
             </gramGrp>
             <sense>
                <def>quickly</def>
+            </sense>
+         </entry>
+         <entry xml:id="upo-1" n="1">
+            <form>
+               <orth>upo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>you <note type="num">sg.</note> are</def>
+               <note type="hint">in a specified place</note>
+            </sense>
+         </entry>
+         <entry xml:id="upo-2" n="2">
+            <form>
+               <orth>upo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>is</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">3, 11</note>
             </sense>
          </entry>
          <entry xml:id="upole">
@@ -29082,7 +29445,7 @@
                <def>basket</def>
             </sense>
          </entry>
-         <entry xml:id="viko">
+         <entry xml:id="viko-1" n="1">
             <form>
                <orth>viko</orth>
             </form>
@@ -29090,9 +29453,23 @@
                <pos>n</pos>
             </gramGrp>
             <sense>
-               <xr type="plural-sense">Plural of <ref target="#kiko">kiko</ref>
+               <xr type="plural-sense">Plural of <ref target="#kiko-1">kiko</ref>
                </xr>
                <def>pipe</def>
+            </sense>
+         </entry>
+         <entry xml:id="viko-2" n="2">
+            <form>
+               <orth>viko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">8</note>
             </sense>
          </entry>
          <entry xml:id="vikohozi">
@@ -29252,6 +29629,20 @@
                <def>brightness</def>
                <def>shine</def>
                <def>glitter</def>
+            </sense>
+         </entry>
+         <entry xml:id="vimo">
+            <form>
+               <orth>vimo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">8</note>
             </sense>
          </entry>
          <entry xml:id="vina">
@@ -29428,6 +29819,20 @@
                </xr>
                <def>period</def>
                <def>extent of time</def>
+            </sense>
+         </entry>
+         <entry xml:id="vipo">
+            <form>
+               <orth>vipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">8</note>
             </sense>
          </entry>
          <entry xml:id="vipofu">
@@ -30102,6 +30507,7 @@
                <xr type="plural-sense">Plural of <ref target="#chakula">chakula</ref>
                </xr>
                <def>food</def>
+               <def>meal</def>
             </sense>
          </entry>
          <entry xml:id="vyama">
@@ -30168,6 +30574,20 @@
             <sense>
                <def>your <note type="num">pl.</note>, yours <note type="num">pl.</note>
                </def>
+               <note type="cl-agr">8</note>
+            </sense>
+         </entry>
+         <entry xml:id="vyenye">
+            <form>
+               <orth>vyenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
                <note type="cl-agr">8</note>
             </sense>
          </entry>
@@ -30879,7 +31299,7 @@
                <def>fugitive</def>
             </sense>
          </entry>
-         <entry xml:id="wako">
+         <entry xml:id="wako-1" n="1">
             <form>
                <orth>wako</orth>
             </form>
@@ -30891,6 +31311,20 @@
                <def>your <note type="num">sg.</note>, yours <note type="num">sg.</note>
                </def>
                <note type="cl-agr">1,2,3,11</note>
+            </sense>
+         </entry>
+         <entry xml:id="wako-2" n="2">
+            <form>
+               <orth>wako</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>they are</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">2</note>
             </sense>
          </entry>
          <entry xml:id="wakristo">
@@ -31072,6 +31506,20 @@
                <def>American</def>
             </sense>
          </entry>
+         <entry xml:id="wamo">
+            <form>
+               <orth>wamo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>they are</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">2</note>
+            </sense>
+         </entry>
          <entry xml:id="wana-1" n="1">
             <form>
                <orth>wana</orth>
@@ -31242,6 +31690,20 @@
                <xr type="plural-sense">Plural of <ref target="#mpishi">mpishi</ref>
                </xr>
                <def>cook</def>
+            </sense>
+         </entry>
+         <entry xml:id="wapo">
+            <form>
+               <orth>wapo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>they are</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">2</note>
             </sense>
          </entry>
          <entry xml:id="wapwa">
@@ -31958,6 +32420,20 @@
                <note type="cl-agr">1,2,3,11</note>
             </sense>
          </entry>
+         <entry xml:id="wenye">
+            <form>
+               <orth>wenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">2,3,11</note>
+            </sense>
+         </entry>
          <entry xml:id="wenyeji">
             <form>
                <orth>wenyeji</orth>
@@ -32176,7 +32652,7 @@
                <def>theft, robbery</def>
             </sense>
          </entry>
-         <entry xml:id="wote-1">
+         <entry xml:id="wote-1" n="1">
             <form>
                <orth>wote</orth>
             </form>
@@ -32188,15 +32664,15 @@
                <note type="cl-agr">3,11</note>
             </sense>
          </entry>
-         <entry xml:id="wote-2">
+         <entry xml:id="wote-2" n="2">
             <form>
                <orth>wote</orth>
             </form>
             <gramGrp>
-               <pos>expr</pos>
+               <pos>pron</pos>
             </gramGrp>
             <sense>
-               <def>all of them </def>
+               <def>all of them</def>
             </sense>
          </entry>
          <entry xml:id="ya">
@@ -32251,7 +32727,7 @@
                <note type="cl-agr">4,6,9</note>
             </sense>
          </entry>
-         <entry xml:id="yako">
+         <entry xml:id="yako-1" n="1">
             <form>
                <orth>yako</orth>
             </form>
@@ -32265,6 +32741,20 @@
                <note type="cl-agr">4,6,9</note>
             </sense>
          </entry>
+         <entry xml:id="yako-2" n="2">
+            <form>
+               <orth>yako</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">6</note>
+            </sense>
+         </entry>
          <entry xml:id="yale">
             <form>
                <orth>yale</orth>
@@ -32276,6 +32766,20 @@
             <sense>
                <def>those, yonder, those over there <note type="hint">distant from both the speaker and the hearer</note>
                </def>
+               <note type="cl-agr">6</note>
+            </sense>
+         </entry>
+         <entry xml:id="yamo">
+            <form>
+               <orth>yamo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">within, in there</note>
                <note type="cl-agr">6</note>
             </sense>
          </entry>
@@ -32320,6 +32824,20 @@
                <note type="cl-agr">4,6,9</note>
             </sense>
          </entry>
+         <entry xml:id="yapo">
+            <form>
+               <orth>yapo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">6</note>
+            </sense>
+         </entry>
          <entry xml:id="yenu">
             <form>
                <orth>yenu</orth>
@@ -32331,6 +32849,20 @@
             <sense>
                <def>your <note type="num">pl.</note>, yours <note type="num">pl.</note>
                </def>
+               <note type="cl-agr">4,6,9</note>
+            </sense>
+         </entry>
+         <entry xml:id="yenye">
+            <form>
+               <orth>yenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
                <note type="cl-agr">4,6,9</note>
             </sense>
          </entry>
@@ -32377,6 +32909,19 @@
                <note type="cl-agr">4,6,9</note>
             </sense>
          </entry>
+         <entry xml:id="yuko">
+            <form>
+               <orth>yuko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>he is, she is, it is</def>
+               <note type="hint">in an unspecified place</note>
+            </sense>
+         </entry>
          <entry xml:id="yule">
             <form>
                <orth>yule</orth>
@@ -32389,6 +32934,32 @@
                <def>that, yonder, the one over there <note type="hint">distant from both the speaker and the hearer</note>
                </def>
                <note type="cl-agr">1</note>
+            </sense>
+         </entry>
+         <entry xml:id="yumo">
+            <form>
+               <orth>yumo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>he is, she is, it is</def>
+               <note type="hint">within, in there</note>
+            </sense>
+         </entry>
+         <entry xml:id="yupo">
+            <form>
+               <orth>yupo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>he is, she is, it is</def>
+               <note type="hint">in a specified place</note>
             </sense>
          </entry>
          <entry xml:id="za">
@@ -32584,6 +33155,20 @@
                <note type="cl-agr">10</note>
             </sense>
          </entry>
+         <entry xml:id="zenye">
+            <form>
+               <orth>zenye</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>poss</subc>
+            </gramGrp>
+            <sense>
+               <def>having</def>
+               <def>with</def>
+               <note type="cl-agr">10</note>
+            </sense>
+         </entry>
          <entry xml:id="zetu">
             <form>
                <orth>zetu</orth>
@@ -32642,6 +33227,20 @@
                <def>multiply</def>
             </sense>
          </entry>
+         <entry xml:id="ziko">
+            <form>
+               <orth>ziko</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc unspec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in an unspecified place</note>
+               <note type="cl-agr">10</note>
+            </sense>
+         </entry>
          <entry xml:id="zile">
             <form>
                <orth>zile</orth>
@@ -32689,6 +33288,20 @@
                <def>faint</def>
             </sense>
          </entry>
+         <entry xml:id="zimo">
+            <form>
+               <orth>zimo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc in</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">within, in there</note>
+               <note type="cl-agr">10</note>
+            </sense>
+         </entry>
          <entry xml:id="zina">
             <form>
                <orth>zina</orth>
@@ -32702,6 +33315,20 @@
                <note type="cl-agr">10</note>
                <xr type="cf">See also: <ref target="#wa_na">wa na</ref>
                </xr>
+            </sense>
+         </entry>
+         <entry xml:id="zipo">
+            <form>
+               <orth>zipo</orth>
+            </form>
+            <gramGrp>
+               <pos>cop</pos>
+               <subc>loc spec</subc>
+            </gramGrp>
+            <sense>
+               <def>are</def>
+               <note type="hint">in a specified place</note>
+               <note type="cl-agr">10</note>
             </sense>
          </entry>
          <entry xml:id="zito">
