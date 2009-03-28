@@ -1,5 +1,5 @@
 /* CSS for the Swahili-English FreeDict dictionary, by Piotr Bański (bansp in the domain of o2.pl) */
-/* Version: 0.3, 15 February 2009. License: Creative Commons BY 3.0 */
+/* Version: 0.3.1, 28 March 2009. License: Creative Commons BY 3.0 */
 
 /*************** the header part ***************/
 title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
@@ -14,7 +14,7 @@ p title, p name, change title, change name {font-weight:inherit; display:inline}
 /* edition > date {margin-left: 1em} */
 /* not needed for now, <edition/> is used for version numbering */
 
-edition:before {content: "Version ";  font-weight:bold}
+/*edition:before {content: "Version ";  font-weight:bold}*/
 
 p, list {display:block}
 list {margin-left: 1em}
@@ -117,10 +117,9 @@ entry[n='4'] > form > orth:first-child:after {content:"4"; font-size: 0.7em;
 orth[type=variant]:before {content: "(also ";font-weight:normal}
 orth[type=variant]:after {content: ")";font-weight:normal}
 
-/* this is plain ugly. but it works...*/
 form+xr[type=plural-form]:before {content:"(pl: "}
 form+xr[type=plural-form]:after {content:")"}
-xr[type=plural-form]>ref + ref:before {content:", "}
+xr[type=plural-form]>ref + ref:before {content:", "; color:black}
 
 def+xr[type=plural-sense] {display:block}
 def+xr[type=plural-sense]:before {content:"· "}
@@ -136,11 +135,11 @@ xr[type=cf] {display:block}
 
 ref {color: teal; text-decoration: none}
 xr[type=tail_infl] > ref {color: green; }
-ref+ref:before {content:"· "; text-decoration: none;}
+/* ref+ref:before {content:"· "; text-decoration: none;} */
 
 def+def:before {content:"· "}
 
-hi[rend='it'] {font-style: italic}
+/*hi[rend='it'] {font-style: italic}*/
 
 /*********** ERRORS ***********/
 entry > xr[type=syn] { color: red; font-weight: bold; font-size: larger }
