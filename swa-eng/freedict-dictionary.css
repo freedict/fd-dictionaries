@@ -14,7 +14,7 @@ p title, p name, change title, change name {font-weight:inherit; display:inline}
 /* edition > date {margin-left: 1em} */
 /* not needed for now, <edition/> is used for version numbering */
 
-/*edition:before {content: "Version ";  font-weight:bold}*/
+edition:before {content: "Version ";  font-weight:bold}
 
 p, list {display:block}
 list {margin-left: 1em}
