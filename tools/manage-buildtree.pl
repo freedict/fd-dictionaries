@@ -15,7 +15,7 @@ use strict;
 use warnings;
 
 our ($interactive, $loglevel, $opt_v, $opt_n, $opt_a, $opt_h, $opt_i,
- $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m, $opt_c);
+ $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m, $opt_c, $opt_u);
 
 # scan tags for "rel-x-y-z"
 # returns tag for which x,y,z are highest
@@ -77,7 +77,7 @@ sub check_module
     if(!$checkout_this) { print "skipping\n" if $loglevel>1; return }
 
     print "\tCheckout..." if $loglevel>1;
-    my $cvs1 = new Cvs($testdir . "/$m", debug=>0, cvsroot => $cvsroot)
+    my $cvs1 = new Cvs($testdir . "/$m", debug => $loglevel>2, cvsroot => $cvsroot)
       or die $Cvs::ERROR;
     push @{$cvs1->{args}}, '-z3';
     $cvs1->checkout($m);
@@ -110,10 +110,35 @@ sub check_module
   # XXX for speedup:
   #Cvs::Result::StatusList =
   #               $cvs->status("file1", "file2", {multiple => 1});
-
-  my $cvs1 = new Cvs($testdir . "/$m", debug=>0, cvsroot => $cvsroot)
+  my $cvs1 = new Cvs($testdir . "/$m", debug => $loglevel>2, cvsroot => $cvsroot)
     or die $Cvs::ERROR;
   push @{$cvs1->{args}}, '-z3';
+
+  if($opt_u)
+  {
+    print " Updating, because -u given.\n" if $loglevel>2;
+    my $result = $cvs1->update;
+    # can't just use %Cvs::Result::Update::types, because it is
+    # my() scoped.
+    my @types = (
+      'conflict',
+      'added',
+      'patched',
+      'modified',
+      'gone',
+      'unknown',
+      'removed',
+      'updated'
+    );
+    for (@types)
+    {
+      my $files = $result->{$_};
+      next if scalar(@$files) <= 0;
+      print "  $_: ", join(', ', @$files), "\n" if $loglevel>1
+    }
+    print "  Error: ", $Cvs::ERROR, "\n" if $result->error;
+    return
+  }
 
   #print "working_directory: ", $cvs->working_directory, "\n";
   #mkdir($cvs->working_directory . "/$m");
@@ -124,7 +149,6 @@ sub check_module
     print "Error: ", $status->error, ". Skipping module!\n";
     return
   }
-
   my $h;
   if($status->success)
   {
@@ -211,7 +235,7 @@ if($Cvs::VERSION <= 0.07)
 }
 
 my @ARGV_SAVED = @ARGV;
-getopts 'hnaicv:m:';
+getopts 'hnaicuv:m:';
 $interactive = 0 if $opt_n;
 $loglevel = $opt_v if $opt_v;
 if($opt_h)
@@ -227,13 +251,14 @@ For checkout the latest revision tagged as releaseable is used, if available.
 For checking/remembering the day of the last update, the modification date
 of the "CVS" subdirectory of each module is checked/touched.
 
-$0 -h | -a | -m la1-la2 [-v level] [-n] [-i] [-c]
+$0 -h | -a | -m la1-la2 [-v level] [-n] [-i] [-c] [-u]
   -a\t\tCheck all modules
   -c\t\tDo `cvs checkout', but no `cvs update'
   -n\t\tNo interactive mode: No automatic checkouts, no questions.
   -v level\tSet debug level (0 = error, 1 = warn, 2 = info, 3 = verbose)
 \t\tDefault: $default_loglevel
   -i\t\tIgnore date of last CVS check and check anyway
+  -u\t\tUpdate modules to newest revision, ignoring any tags
 
 EOT
   exit
