@@ -9,7 +9,7 @@
   <!-- Has to come from the shell, as XSLT/XPath 1.0 provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:variable name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.8 2009-03-14 01:46:21 bansp Exp $</xsl:variable>
+  <xsl:variable name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.9 2009-04-13 01:19:43 bansp Exp $</xsl:variable>
 
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->
@@ -31,10 +31,22 @@
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="edition | tei:edition">
+<!-- editionStmt consists of <edition/> followed by (respStmt)* -->
+  <xsl:template match="editionStmt | tei:editionStmt">
     <xsl:text>Edition: </xsl:text>
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="edition | tei:edition"/>
     <xsl:text>&#xa;</xsl:text>
+    
+    <xsl:if test="respStmt | tei:respStmt">
+      <xsl:for-each select="respStmt | tei:respStmt">
+        <xsl:call-template name="format">
+          <xsl:with-param name="txt" select="normalize-space(concat(name | tei:name, ': ', resp | tei:resp))"/>
+          <xsl:with-param name="width" select="$width"/>
+          <xsl:with-param name="start" select="string-length(name | tei:name) + 3"/>
+        </xsl:call-template>
+      </xsl:for-each>
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="extent | tei:extent">
@@ -140,11 +152,11 @@ it will never be instantiated. -->
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="change | tei:change">
+  <xsl:template match="change">
     <xsl:text> * </xsl:text>
-    <xsl:value-of select="date | tei:date"/>
+    <xsl:value-of select="date"/>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="respStmt/name | tei:respStmt/tei:name"/>
+    <xsl:value-of select="respStmt/name"/>
     <xsl:text>:&#xa;   </xsl:text>
     <xsl:call-template name="format">
       <xsl:with-param name="txt" select="normalize-space(item | tei:item)"/>
@@ -152,6 +164,65 @@ it will never be instantiated. -->
       <xsl:with-param name="start" select="3"/>
     </xsl:call-template>
     <xsl:text>&#xa;</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="tei:change">
+    <xsl:text> * </xsl:text>
+    <xsl:value-of select="@when"/>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="@who"/>
+    <!-- this should retrieve the reference, which is non-trivial, 
+      given all the possibilities of locating it; @who is IDREFS -->
+    <xsl:text>:&#xa;   </xsl:text>
+    
+    <xsl:choose>
+      <xsl:when test="count(tei:list)">
+        <xsl:apply-templates select="*"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="format">
+          <xsl:with-param name="txt" select="normalize-space(.)"/>
+          <xsl:with-param name="width" select="$width"/>
+          <xsl:with-param name="start" select="3"/>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:text>&#xa;</xsl:text>
+  </xsl:template>
+  
+  <!-- process a list; if a sublist happens, a -->
+  <xsl:template match="tei:list">
+    <xsl:variable name="indent" select="count(ancestor-or-self::tei:list)*3"/>
+    <xsl:if test="tei:head">
+      <xsl:call-template name="format">
+        <xsl:with-param name="txt" select="normalize-space(tei:head)"/>
+        <xsl:with-param name="width" select="$width"/>
+        <xsl:with-param name="start" select="$indent"/>
+      </xsl:call-template>
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:if>
+    <xsl:for-each select="tei:item">
+      <xsl:variable name="item-content">
+        <xsl:choose>
+          <xsl:when test="tei:list">
+            <xsl:apply-templates select="tei:list/preceding-sibling::tei:*|text()"/>
+            <!-- this is obviously a kludge: I assume that a nested <list/> is always the last element in an <item/> -->
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates select="tei:*|text()"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:call-template name="format">
+        <xsl:with-param name="txt" select="concat(substring('                   ', 1, $indent),'* ',$item-content)"/>
+        <xsl:with-param name="width" select="$width"/>
+        <xsl:with-param name="start" select="$indent+2"/>
+      </xsl:call-template>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:if test="tei:list">
+        <xsl:apply-templates select="tei:list"/>
+      </xsl:if>
+    </xsl:for-each>
   </xsl:template>
 
 </xsl:stylesheet>
