@@ -2,7 +2,7 @@
 <!-- This stylesheet converts a TEI dictionary file
      into the c5 format suitable to be processed
      by 'dictfmt -c5' -->
-<!-- $Id: tei2c5.xsl,v 1.14 2009-03-14 01:40:26 bansp Exp $ -->
+<!-- $Id: tei2c5.xsl,v 1.15 2009-04-13 01:17:10 bansp Exp $ -->
 
 <!-- the addition of P5 stuff relies on the absolute complementarity between
   null-spaced elements (P4) and elements in the TEI namespace (P5) -->
@@ -35,8 +35,11 @@
   <xsl:template name="t00-database-short">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-short&#x0A;</xsl:text>
-    <xsl:value-of select="TEI.2/teiHeader/fileDesc/titleStmt/title | 
-          tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
+    <xsl:value-of select="concat(TEI.2/teiHeader/fileDesc/titleStmt/title | 
+      tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title,
+      ' ver. ',
+      tei:TEI/tei:teiHeader/tei:fileDesc/tei:editionStmt/tei:edition | 
+      TEI.2/teiHeader/fileDesc/editionStmt/edition)"/>
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
