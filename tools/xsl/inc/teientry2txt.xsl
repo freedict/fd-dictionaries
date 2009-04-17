@@ -6,7 +6,7 @@
 
   <xsl:include href="indent.xsl"/>
    <!--<xsl:variable name="stylesheet-cvsid">
-     $Id: teientry2txt.xsl,v 1.13 2009-04-13 01:34:47 bansp Exp $
+     $Id: teientry2txt.xsl,v 1.14 2009-04-17 08:57:26 bansp Exp $
      </xsl:variable>
    added the variable but then uncommented it, because it would get priority 
    over the one defined in the header module; not sure if that was indended -->
@@ -77,7 +77,8 @@
       <xsl:text>)</xsl:text>
     </xsl:if>
     <xsl:apply-templates select="form | tei:form"/>
-    <xsl:if test="(following-sibling::form and following-sibling::form[1][not(@type='infl')]) or (following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')])">
+    <xsl:if test="(following-sibling::form and following-sibling::form[1][not(@type='infl')]) or
+            (following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')])">
       <xsl:text>, </xsl:text>
       <!-- cosmetics: no comma before parens  -->
     </xsl:if>
@@ -97,27 +98,35 @@
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
-    <xsl:template match="gramGrp | tei:gramGrp">
-        <xsl:text> &lt;</xsl:text>
-      <xsl:for-each select="pos | tei:pos | subc | tei:subc | num | tei:num | gen | tei:gen">
-            <xsl:apply-templates select="."/>
-            <xsl:if test="position()!=last()">
-                <xsl:text>, </xsl:text>
-            </xsl:if>
-        </xsl:for-each>
-        <xsl:text>></xsl:text>
-      <xsl:if test="count(preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or @type='past-form' or @type='infl-form'])">
-        <xsl:text> </xsl:text>
-      <xsl:apply-templates select="preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or @type='past-form' or @type='infl-form']"/>
+  <xsl:template match="gramGrp | tei:gramGrp">
+    <xsl:if test="count(ancestor::tei:gramGrp)=0"><xsl:text> &lt;</xsl:text></xsl:if>
+    <xsl:for-each select="pos | tei:pos | subc | tei:subc | num | tei:num | gen | tei:gen | tei:gramGrp | tei:iType | tei:gram">
+      <xsl:apply-templates select="."/>
+      <xsl:if test="position()!=last()">
+        <xsl:text>, </xsl:text>
       </xsl:if>
-      <!-- horribly project-specific, will be overridden by project-specific imports later on -->
-      <xsl:if test="preceding-sibling::tei:form/@type='N'">
-        <xsl:text> [sg=pl]</xsl:text>
-      </xsl:if>
-    </xsl:template>
+    </xsl:for-each>
+    <xsl:if test="count(ancestor::tei:gramGrp)=0"><xsl:text>></xsl:text></xsl:if>
+
+    <!-- <xr> elements are not allowed inside <form> or <gramGrp>, so reach out and grab them... -->
+    <xsl:if test="count(preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
+                    @type='past-form' or @type='infl-form'])">
+      <xsl:text> </xsl:text>
+      <xsl:apply-templates select="preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
+                                   @type='past-form' or @type='infl-form']"/>
+    </xsl:if>
+    <!-- horribly project-specific, will be overridden by project-specific imports later on; 
+      OTOH, we might make this a project feature, too, if there is a need -->
+    <xsl:if test="preceding-sibling::tei:form/@type='N'">
+      <xsl:text> [sg=pl]</xsl:text>
+    </xsl:if>
+  </xsl:template>
+
+<xsl:template match="tei:gram[@type='cl-agr']">
+  <xsl:value-of select="concat('agr: ',.)"/>
+</xsl:template>
 
   <xsl:template match="sense">
-    <xsl:if test="self::tei:sense and preceding-sibling::tei:sense"><xsl:text>&#xa;</xsl:text></xsl:if>
     <xsl:text> </xsl:text>
     <xsl:if test="not(last()=1)">
       <xsl:choose>
@@ -131,26 +140,23 @@
       <xsl:text>. </xsl:text>
     </xsl:if>
 
-    <xsl:if test="count(usg | trans | def | tei:usg | tei:def | tei:note)>0">
-      <xsl:apply-templates select="usg | tei:usg | trans | def | tei:def | tei:note"/>
-      <!--         <xsl:text>&#xa;</xsl:text>-->
+    <xsl:if test="count(usg | trans | def)>0">
+      <xsl:apply-templates select="usg | trans | def"/>
+      <xsl:text>&#xa;</xsl:text>
     </xsl:if>
 
     <xsl:if test="count(eg)>0">
-      <!-- P4 -->
       <xsl:text>    </xsl:text>
       <xsl:apply-templates select="eg"/>
     </xsl:if>
 
-    <xsl:if test="count(xr | tei:xr)>0">
+    <xsl:if test="count(xr)>0">
       <xsl:text>    </xsl:text>
-      <xsl:apply-templates select="xr | tei:xr"/>
+      <xsl:apply-templates select="xr"/>
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
 
-    <xsl:apply-templates select="*[local-name() != 'usg' and name() != 'trans' and local-name() != 'def' and name() != 'eg' and local-name() != 'xr' and local-name() != 'note']"/>
-    <!-- this should be optimized! -->
-
+    <xsl:apply-templates select="*[name() != 'usg' and name() != 'trans' and name() != 'def' and name() != 'eg' and name() != 'xr']"/>
   </xsl:template>
   
   <xsl:template match="tei:sense">
@@ -198,9 +204,7 @@
   </xsl:template>
 
   <xsl:template match="tei:def">
-    <xsl:variable name="stuff">
-      <xsl:apply-templates select="child::node()"/>
-    </xsl:variable>
+    <xsl:variable name="stuff"><xsl:apply-templates select="*|text()"/></xsl:variable>
     <!-- first question: am I abused? Do I hold a translation equivalent 
     within a <sense>, or am I a real definition within a <cit>? -->
     <xsl:choose>
@@ -264,12 +268,12 @@
       <xsl:otherwise>
         <xsl:choose>
           <xsl:when test="not(@type) or @type='cf'">
-            <xsl:text>&#xa; See also: </xsl:text>
+            <xsl:text>&#xa;   See also: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
           <xsl:when test="@type='syn'">
-            <xsl:text>&#xa;</xsl:text>
+            <xsl:text>&#xa;   </xsl:text>
             <xsl:choose>
               <xsl:when test="count(tei:ref) &gt; 1"><xsl:text>Synonyms: </xsl:text></xsl:when>
               <xsl:otherwise><xsl:text>Synonym: </xsl:text></xsl:otherwise>
@@ -278,7 +282,7 @@
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
           <xsl:when test="@type='ant'">
-            <xsl:text>&#xa;</xsl:text>
+            <xsl:text>&#xa;   </xsl:text>
             <xsl:choose>
               <xsl:when test="count(tei:ref) &gt; 1"><xsl:text>Antonyms: </xsl:text></xsl:when>
               <xsl:otherwise><xsl:text>Antonym: </xsl:text></xsl:otherwise>
@@ -286,6 +290,17 @@
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
+          <xsl:when test="@type='infl-base'"> <!-- inflectional base -->
+            <xsl:text>&#xa; Inflection of: </xsl:text>
+            <xsl:apply-templates select="tei:ref"/>
+            <xsl:text>&#xa;</xsl:text>
+          </xsl:when>
+          <xsl:when test="@type='deriv-base'"> <!-- derivational/compound base -->
+            <xsl:text>&#xa; Derived from: </xsl:text>
+            <xsl:apply-templates select="tei:ref"/>
+            <xsl:text>&#xa;</xsl:text>
+          </xsl:when>
+          <!-- the <xr>s below are positioned inline -->
           <xsl:when test="@type='imp-form'"> <!-- imperative -->
             <xsl:text>(imp: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
@@ -306,18 +321,9 @@
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>)</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='infl-base'"> <!-- inflectional base -->
-            <xsl:text>&#xa; Inflection of: </xsl:text>
-            <xsl:apply-templates select="tei:ref"/>
-            <xsl:text>&#xa;</xsl:text>
-          </xsl:when>
-          <xsl:when test="@type='deriv-base'"> <!-- derivational/compound base -->
-            <xsl:text>&#xa; Derived from: </xsl:text>
-            <xsl:apply-templates select="tei:ref"/>
-            <xsl:text>&#xa;</xsl:text>
-          </xsl:when>
           <xsl:otherwise>
-            <xsl:text>&#xa;</xsl:text>
+            <!-- unknown type: print the value and set it on a separate line -->
+            <xsl:text>&#xa; </xsl:text>
             <xsl:value-of select="concat(@type,': ')"/>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
@@ -325,8 +331,6 @@
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
-    
-
   </xsl:template>
   
   <xsl:template match="tei:ref">
@@ -338,16 +342,35 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="entry//note | tei:entry//tei:note">
+  <xsl:template match="entry//note">
+    <xsl:choose>
+      <xsl:when test="@resp='translator'">
+        <xsl:text>&#xa;         Entry edited by: </xsl:text>
+        <xsl:value-of select="."/>
+        <xsl:text>&#xa;</xsl:text>
+      </xsl:when>
+      <xsl:when test="text()">
+        <xsl:text>&#xa;         Note: </xsl:text>
+        <xsl:value-of select="text()"/>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="tei:note[@type='editor']" priority="1"/>
+
+  <xsl:template match="tei:entry//tei:note">
+    <xsl:variable name="stuff"><xsl:apply-templates/></xsl:variable>
     <xsl:variable name="spc">
-      <xsl:choose><!-- type='num' may be very project-dependent, I'm not sure it should be here -->
-        <xsl:when test="@rend='noindent' or type='num'"><xsl:value-of select="''"/></xsl:when>
+      <xsl:choose>
+        <xsl:when test="(count(preceding-sibling::node())=0) or @rend='noindent'">
+          <xsl:value-of select="''"/>
+        </xsl:when>
         <xsl:otherwise><xsl:value-of select="' '"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
       <xsl:when test="count(@*)=0">
-        <xsl:value-of select="concat('&#xa;         Note: ',.)"/>
+        <xsl:value-of select="concat('&#xa;         Note: ',$stuff)"/>
       </xsl:when>
       <xsl:when test="@resp='translator'">
         <xsl:text>&#xa;         Entry edited by: </xsl:text>
@@ -361,7 +384,7 @@
       <xsl:when test="@type='gram'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="concat(' Note (gram.): ',normalize-space())"/>
+          <xsl:with-param name="txt" select="concat(' Note (gram.): ',normalize-space($stuff))"/>
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -369,7 +392,7 @@
       <xsl:when test="@type='usage'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="concat(' Usage: ',normalize-space())"/>
+          <xsl:with-param name="txt" select="concat(' Usage: ',normalize-space($stuff))"/>
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -377,19 +400,24 @@
       <xsl:when test="@type='def'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="concat(' Def.: ',normalize-space())"/>
+          <!--<xsl:with-param name="txt" select="concat(' Def.: ',normalize-space())"/>-->
+          <xsl:with-param name="txt" select="concat(' ',normalize-space($stuff))"/>
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="concat($spc,'(',.,')')"/>
+        <xsl:value-of select="concat($spc,'(',$stuff,')')"/>
       </xsl:otherwise>
       <!--<xsl:when test="text()">
         <xsl:text>&#xa;         Note: </xsl:text>
         <xsl:value-of select="text()"/>
       </xsl:when>-->
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="tei:q">
+    <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
   </xsl:template>
 
 </xsl:stylesheet>
