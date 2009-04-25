@@ -13,6 +13,7 @@ use Cvs;
 use Getopt::Std;
 use strict;
 use warnings;
+use FindBin;
 
 our ($interactive, $loglevel, $opt_v, $opt_n, $opt_a, $opt_h, $opt_i,
  $testdir, $checkout_all, $checkout_none, $cvsroot, $opt_m, $opt_c, $opt_u);
@@ -221,8 +222,6 @@ sub check_all
 $interactive = 1;
 my $default_loglevel = 1;
 $loglevel = $default_loglevel;
-# this will be the residence of the release tree - should be parameters :)
-$testdir = $ENV{'FREEDICTDIR'} || die "Set FREEDICTDIR first";
 $cvsroot =
   ':pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict';
 $cvsroot = $ENV{'CVSROOT'} if defined $ENV{'CVSROOT'} and
@@ -279,6 +278,10 @@ if($ENV{'LANG'} and $ENV{'LANG'} ne 'C')
   $ENV{'LANG'} = 'C';
   exit system($0, @ARGV_SAVED) >> 8
 }
+
+# this will be the residence of the release tree
+$testdir = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
+print "Using FREEDICTDIR=$testdir" if $loglevel>1;
 
 check_all if $opt_a;
 check_module $opt_m if $opt_m;
