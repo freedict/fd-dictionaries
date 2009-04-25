@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.13 $
+# $Revision: 1.14 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -205,8 +205,9 @@ sub fdict_extract_metadata
     }
     else
     {
-      printd "	Could not extract maintainer name or email from:\n" .
-	"\t$maintainer\n"
+      printd "	Could not parse maintainer name and email from:\n" .
+	"\t$maintainer\nUsing the whole as maintainer name.";
+      $maintainerName = $maintainer
     }
 
   ###################################################################
@@ -248,12 +249,15 @@ sub fdict_extract_all_metadata
 
   printd "Getting metadata of all databases\n";
   opendir $dir, $dirname;
+  my @entries;
   while($entry = readdir($dir))
   {
     next unless -d $dirname.'/'.$entry;
     next if $entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$';
-    fdict_extract_metadata $dirname, $entry, $doc
+    push @entries, $entry
   }
+  foreach $entry (sort @entries)
+  { fdict_extract_metadata $dirname, $entry, $doc }
 }
 
 ##################################################################
@@ -262,19 +266,16 @@ sub update_database
 {
   my($doc, $URL, $size, $release_date) = @_;
 
-  unless($URL =~ qr"^http://downloads.sourceforge.net/freedict/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([\w\.]+)\?")
+  unless($URL =~ qr"^http://sourceforge.net/project/downloading\.php\?group_id=1419&filename=(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([\w\.]+)")
   { printd "filename in URL '$URL' not recognized"; return }
-  my $beginning = $1;
   my $la1la2 = $2;
   my $version = $3;
   my $extension = $4;
-  unless($beginning eq 'freedict-')
-  { printd "beginning '$beginning' not recognized"; return }
 
   my $d = contains_dictionary $doc, $la1la2;
   unless($d)
   {
-    printd "$la1la2: Not in our database. Skipping.\n";
+    printd "$la1la2: Not in our database. Run '$0 -d $la1la2'. Skipping.\n";
     return
   }
 
@@ -292,7 +293,7 @@ sub update_database
   );
   my $platform = $ext2platform{$extension};
   unless(defined $platform)
-  { printd "Cannot make sense of filename '$extension'. Skip.\n"; next }
+  { printd "Cannot make sense of filename '$extension'. Skip.\n"; return }
 
   # find old release element
   my $r;
@@ -305,7 +306,7 @@ sub update_database
   # create new release element if no previous found
   unless($r)
   {
-    printd "$la1la2: Release not found in database. Inserting it.\n";
+    printd "$la1la2: Release version $version for platform $platform not found in database. Inserting it.\n";
     $d->appendChild( $doc->createTextNode("\n") )
       if( ! @{ ($d->getChildNodes) } );
     $d->appendChild( $doc->createTextNode("    ") );
@@ -335,39 +336,55 @@ sub fdict_extract_releases
   my $mech = WWW::Mechanize->new;
   $mech->get($sfurl);
   my @package_links = $mech->find_all_links(url_regex =>
-    qr"^/project/showfiles.php\?group_id=1419&package_id=");
-  printd "Found ", scalar(@package_links), " packages\n";
+    qr"^/project/showfiles.php\?group_id=1419&package_id=",
+    text_regex => qr" - ");
+  printd "Found ", scalar(@package_links), " packages on SourceForge.\n";
 
   foreach(@package_links)
   {
-    # Get a page like
+    printd "Getting file releases of ", $_->text, "\n";
+    my $releasecount = 0;
     # http://sf.net/project/showfiles.php?group_id=1419&package_id=304800
     $mech->get($_->url);
     my $tree = HTML::TreeBuilder->new_from_content($mech->content);
-    for my $release_tbody ($tree->look_down(
+    my @release_tbodies = $tree->look_down(
 	'_tag', 'tbody',
 	sub { defined $_[0]->attr('id') and $_[0]->attr('id') =~ /^pkg\d+_\d+$/ }
-      ))
+      );
+    print "I didn't find the table with the file releases.  Bad!"
+      unless scalar @release_tbodies;
+    for my $release_tbody (@release_tbodies)
     {
       # find $releasedate, $size, $URL
       my $a = $release_tbody->look_down(
 	'_tag', 'a',
 	sub
 	{
+	  #print $_[0]->attr('href'), "\n";
 	  $_[0]->attr('href') =~
-	  qr"^http://downloads.sourceforge.net/freedict/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)\?"
+	  qr"/project/downloading\.php\?group_id=1419&filename=freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)"
 	}
       );
-      next unless defined $a;
+      unless(defined $a)
+      {
+	#printd "Did not find a released file with a matching name.\n";
+        next
+      }
       my $URL = $a->attr('href');
       unless($URL)
       { printd "No URL?"; next }
+      $URL = "http://sourceforge.net" . $URL
+        if $URL =~ "^/project/downloading\.php";
       my $small = $release_tbody->look_down(
 	'_tag', 'small',
 	sub
 	{ $_[0]->as_text =~ /^\(\d\d\d\d-\d\d-\d\d \d\d:\d\d\) $/ }
 	);
-      next unless defined $small;
+      unless(defined $small)
+      {
+	printd "Did not find release date.\n";
+	next
+      }
       my $rdtext = $small->as_text;
       $rdtext =~ /^\((\d\d\d\d-\d\d-\d\d) /;
       my $release_date = $1;
@@ -378,9 +395,11 @@ sub fdict_extract_releases
       );
       next unless defined $td;
       my $size = $td->as_text;
+      $releasecount++;
       #printd "\n\t$URL $size $release_date\n";
       update_database $doc, $URL, $size, $release_date
     }
+    printd " $releasecount release(s)\n";
     $tree->delete
   } # foreach(@package_links)
 }
