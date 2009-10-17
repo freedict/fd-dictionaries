@@ -1,0 +1,751 @@
+# French translation for the Freedict-Editor
+# Copyright (C) 2009 The Freedict Project
+# This file is distributed under the same license as the Freedict-Editor package.
+# Denis ARNAUD <denisarnuad@yahoo.fr>, 2009.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Freedict-Editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-30 16:47+0100\n"
+"PO-Revision-Date: 2009-10-08 13:45+0100\n"
+"Last-Translator: Denis\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/interface.c:31
+msgid "_New"
+msgstr "_Nouveau"
+
+#: src/interface.c:31
+msgid "New TEI File"
+msgstr "Nouveau fichier TEI"
+
+#: src/interface.c:48
+msgid "Ne_w Entry"
+msgstr "Nou_velle entrée"
+
+#: src/interface.c:49
+msgid "Add New Entry"
+msgstr "Ajouter une nouvelle entrée"
+
+#: src/interface.c:55
+msgid "_Delete Entry"
+msgstr "_Enlever cette entrée"
+
+#: src/interface.c:56
+msgid "Delete Currently Edited Entry"
+msgstr "Enlever l'entrée en cours d'édition"
+
+#: src/interface.c:62
+msgid "Sa_ve Entry"
+msgstr "En_registrer cette entrée"
+
+#: src/interface.c:63
+msgid "Save Changes to Entry"
+msgstr "Enregistrer les changements de cette entrée"
+
+#: src/interface.c:69
+#: src/interface.c:428
+msgid "_Cancel Edit"
+msgstr "Ann_uler les modifications"
+
+#: src/interface.c:70
+#: src/interface.c:429
+msgid "Cancel Edit of Entry"
+msgstr "Annuler les modifications de cette entrée"
+
+#: src/interface.c:77
+msgid "_Edit TEI Header"
+msgstr "Modifi_er l'en-tête TEI"
+
+#: src/interface.c:78
+msgid "Edit information about the dictionary"
+msgstr "Modifier les informations de ce dictionnaire"
+
+#: src/interface.c:84
+msgid "_Spell Check..."
+msgstr "_Vérifier l'orthographe..."
+
+#: src/interface.c:91
+msgid "S_anity Checks..."
+msgstr "Vérific_ations sanitaires..."
+
+#: src/interface.c:92
+msgid "Find Entries with missing Information"
+msgstr "Chercher les entrées aux informations manquantes"
+
+#: src/interface.c:105
+#, fuzzy
+msgid "Lock _Dockitems"
+msgstr "Vérouiller le _dockitems"
+
+#: src/interface.c:112
+msgid "_Labels"
+msgstr "É_tiquettes"
+
+#: src/interface.c:113
+msgid "Toggle whether Labels are shown before Input fields"
+msgstr "Afficher les étiquettes avant ou après les champs de saisie"
+
+#: src/interface.c:119
+msgid "_Toolbar"
+msgstr "Barre d'ou_tils"
+
+#: src/interface.c:120
+msgid "Toggle Display of Toolbar"
+msgstr "Afficher/Cacher la barre d'outils"
+
+#: src/interface.c:126
+msgid "_HTML Preview"
+msgstr "Aperçu _HTML"
+
+#: src/interface.c:127
+msgid "Toggle Display of HTML Preview Area"
+msgstr "Afficher/Cacher l'aperçu HTML"
+
+#: src/interface.c:133
+msgid "_Keyboard Layout"
+msgstr "A_gencement du clavier"
+
+#: src/interface.c:134
+msgid "Calls xkbprint to display current keyboard layout"
+msgstr "Appeler xkbprint pour afficher l'agencement actuel du clavier"
+
+#: src/interface.c:166
+#: src/interface.c:199
+msgid "_None"
+msgstr "Aucu_n"
+
+#: src/interface.c:173
+msgid "_Singular"
+msgstr "_Singulier"
+
+#: src/interface.c:180
+msgid "_Dual"
+msgstr "_Duel"
+
+#: src/interface.c:187
+msgid "_Plural"
+msgstr "_Pluriel"
+
+#: src/interface.c:206
+msgid "_Masculine"
+msgstr "_Masculin"
+
+#: src/interface.c:213
+msgid "_Feminine"
+msgstr "_Féminin"
+
+#: src/interface.c:220
+msgid "_Neuter"
+msgstr "_Neutre"
+
+#: src/interface.c:300
+msgid "FreeDict-Editor"
+msgstr "Éditeur Freedict"
+
+#: src/interface.c:327
+msgid "Se_lect:"
+msgstr "Sé_lectionne :"
+
+#: src/interface.c:338
+#, c-format
+msgid "This string will replace the %s in the XPath-Template."
+msgstr "Cette chaine remplacera le %s dans le Xpath-Template."
+
+#: src/interface.c:346
+msgid "XPath-Template:"
+msgstr "Xpath-Template :"
+
+#: src/interface.c:357
+#, c-format
+msgid "Enter an XPath expression. It may contain one %s, which will be filled by the contents of the \"Select\" input field."
+msgstr "Entrer une expression XPath. Elle doit contenir un %s, qui sera remplacé par le contenu du champ « Sélectionne »."
+
+#: src/interface.c:358
+#, c-format
+msgid "/TEI.2/text/body/entry[position()>0 and contains(form/orth,'%s')]"
+msgstr "/TEI.2/text/body/entry[position()>0 and contains(form/orth,'%s')]"
+
+#: src/interface.c:394
+msgid "New Entry"
+msgstr "Nouvelle entrée"
+
+#: src/interface.c:395
+msgid "Add new Entry"
+msgstr "Ajouter une nouvelle entrée"
+
+#: src/interface.c:404
+#: src/interface.c:405
+msgid "Delete Entry"
+msgstr "Enlever l'entrée"
+
+#: src/interface.c:415
+msgid "Save Entry"
+msgstr "Enregistrer l'entrée"
+
+#: src/interface.c:416
+msgid "Save changes to Entry"
+msgstr "Enregistrer les modifications de l'entrée"
+
+#: src/interface.c:468
+msgid "Entries that match the select expression"
+msgstr "Entrées qui correspondent à l'expression sectionnée"
+
+#: src/interface.c:473
+msgid "En_tries"
+msgstr "En_trées"
+
+#: src/interface.c:494
+msgid "XML View"
+msgstr "Vue XML"
+
+#: src/interface.c:499
+msgid "The XML edit mode is selected of the entry cannot be edited with the formular."
+msgstr "Le mode Modification du XML est sélectionné car l'entrée ne peut être modifiée par le formulaire."
+
+#: src/interface.c:501
+msgid "_XML"
+msgstr "_XML"
+
+#: src/interface.c:522
+msgid "_Orthography"
+msgstr "_Orthographe"
+
+#: src/interface.c:535
+msgid "How the word is written"
+msgstr "Comment s'écrit le mot"
+
+#: src/interface.c:537
+msgid "_Pronunciation"
+msgstr "_Prononciation"
+
+#: src/interface.c:550
+msgid "Please enter Unicode encoded characters of the International Phonetic Alphabet"
+msgstr "Entrez des caractères Unicode de l'alphabet phonétique international"
+
+#: src/interface.c:558
+msgid "Part of _Speech"
+msgstr "Natu_re"
+
+#: src/interface.c:566
+msgid "Part of Speech"
+msgstr "Nature"
+
+#: src/interface.c:574
+msgid "_Number"
+msgstr "_Nombre"
+
+#: src/interface.c:582
+msgid "Number"
+msgstr "Nombre"
+
+#: src/interface.c:593
+msgid "_Genus"
+msgstr "_Genre"
+
+#: src/interface.c:601
+msgid "Genus"
+msgstr "Genre"
+
+#: src/interface.c:609
+msgid "Headword(s)"
+msgstr "Mot(s)"
+
+#: src/interface.c:641
+msgid "Append new Sense to Entry"
+msgstr "Ajouter un nouveau sens à l'entrée"
+
+#: src/interface.c:647
+msgid "Remove last Sense from Entry"
+msgstr "Enlever le dernier sens de l'entrée"
+
+#: src/interface.c:649
+msgid "Sense(s)"
+msgstr "Sens"
+
+#: src/interface.c:654
+msgid "For_m"
+msgstr "For_me"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/interface.c:862
+msgid "translator_credits"
+msgstr "Denis ARNAUD <denisarnuad@yahoo.fr>"
+
+#: src/interface.c:869
+msgid "FreeDict Project, freedict.org, 2005"
+msgstr "FreeDict Project, freedict.org, 2005"
+
+#: src/interface.c:896
+msgid "Select File"
+msgstr "Sélectionnez un fichier"
+
+#: src/interface.c:984
+msgid "Spell Check"
+msgstr "Vérification d'orthographe"
+
+#: src/interface.c:997
+msgid "Misspelled Word"
+msgstr "Mot mal orthographié"
+
+#: src/interface.c:1011
+msgid "A word that was not found in the spelling dictionary"
+msgstr "Un mot qui n'a pas été trouvé dans le dictionnnaire de vérification"
+
+#: src/interface.c:1014
+msgid "R_eplacement"
+msgstr "R_emplacement"
+
+#: src/interface.c:1027
+msgid "The misspelled word will be replaced by this when you click on Replace"
+msgstr "Ce par quoi sera remplacé le mot quand vous cliquez sur Remplacer "
+
+#: src/interface.c:1030
+msgid "_Suggestions"
+msgstr "_Suggestions"
+
+#: src/interface.c:1043
+msgid "Nodes checked"
+msgstr "Entrées vérifiées"
+
+#: src/interface.c:1057
+msgid "Double-Click a suggestion to replace the misspelled word with it"
+msgstr "Double-cliquer sur une suggestion remplacera le mot par celle-ci"
+
+#: src/interface.c:1075
+msgid "_Headword Language"
+msgstr "Lang_ue du mot d'entrée"
+
+#: src/interface.c:1081
+msgid "_Translation Language"
+msgstr "Langue de sor_tie"
+
+#: src/interface.c:1088
+msgid "<orth> - Headwords"
+msgstr "<orth> - Mots d'entrée"
+
+#: src/interface.c:1092
+msgid "<tr> - Translations"
+msgstr "<tr> - Traduction"
+
+#: src/interface.c:1097
+msgid "<eg><q> - Quotes of Examples"
+msgstr "<eg><q> - Citations d'exemples"
+
+#: src/interface.c:1101
+msgid "<eg><tr> - Translations of Examples"
+msgstr "<eg><tr> - Traduction d'exemples"
+
+#: src/interface.c:1105
+msgid "_What to check"
+msgstr "_Quoi vérifier"
+
+#: src/interface.c:1116
+msgid "Spelling _Dictionary:"
+msgstr "_Dictionnaire d'orthographe :"
+
+#: src/interface.c:1124
+msgid "Acc_ept Run-Together Words"
+msgstr ""
+
+#: src/interface.c:1135
+msgid "What language to use for checking the words"
+msgstr "Quel langue utiliser pour la vérification des mots"
+
+#: src/interface.c:1143
+msgid "Aspell _Options"
+msgstr "_Options Aspell"
+
+#: src/interface.c:1148
+msgid "Replacements made"
+msgstr "Remplacements effectués"
+
+#: src/interface.c:1156
+msgid "0"
+msgstr "0"
+
+#: src/interface.c:1173
+msgid "Replace misspelled word with current Replacement"
+msgstr ""
+
+#: src/interface.c:1187
+msgid "_Replace"
+msgstr "_Remplacer"
+
+#: src/interface.c:1192
+msgid "Replace _All"
+msgstr "Tout rempl_acer"
+
+#: src/interface.c:1196
+#, fuzzy
+msgid "Replace all occurences of the misspelled word with current Replacement"
+msgstr "Remplacer toutes les occurences du mot par ce mot"
+
+#: src/interface.c:1202
+#, fuzzy
+msgid "Ignore current occurence of the misspelled word"
+msgstr "Ignorer la présente occurence du mot"
+
+#: src/interface.c:1216
+msgid "_Ignore"
+msgstr "_Ignorer"
+
+#: src/interface.c:1221
+msgid "I_gnore All"
+msgstr "Tout i_gnorer"
+
+#: src/interface.c:1225
+#, fuzzy
+msgid "Ignore all occurences of the misspelled word"
+msgstr "Ignorer toutes les occurences du mot "
+
+#: src/interface.c:1231
+msgid "Add misspelled word to the personal GNU aspell word list of this language"
+msgstr "Ajouter ce mot à mon dictionnaire GNU aspell pour cette langue"
+
+#: src/interface.c:1374
+msgid "FreeDict-Editor Preferences"
+msgstr "Préférences de l'éditeur Freedict"
+
+#: src/interface.c:1386
+msgid "Use Default Value:"
+msgstr "Utiliser la valeur par défaut :"
+
+#: src/interface.c:1394
+msgid "Use Custom Value"
+msgstr "Utiliser la valeur personnalisée"
+
+#: src/interface.c:1402
+msgid "label57"
+msgstr "label57"
+
+#: src/interface.c:1412
+msgid "Select XSLT-Stylesheet"
+msgstr "Sélectionner la feuille de style XSLT"
+
+#: src/interface.c:1422
+msgid "_XSLT-Stylesheet for HTML Preview"
+msgstr "Feuille de style _XSLT pour l'aperçu HTML"
+
+#: src/interface.c:1430
+msgid "_General"
+msgstr "_Général"
+
+#: src/interface.c:1439
+msgid ""
+"POS-, Num-, Gen-, XRef-Types\n"
+"+\n"
+"Descriptions"
+msgstr ""
+"POS-, Num-, Gen-, XRef-Types\n"
+"+\n"
+"Descriptions"
+
+#: src/interface.c:1450
+msgid "This information is automatically added to every edited entry"
+msgstr "Cette information est ajoutée automatiquement à chaque entrée modifiée"
+
+#: src/interface.c:1452
+msgid "Use Default Name:"
+msgstr "Utiliser le nom par défaut :"
+
+#: src/interface.c:1460
+msgid "Use Custom Name:"
+msgstr "Utiliser un nom personnalisé :"
+
+#: src/interface.c:1468
+msgid "editer_default_name_label"
+msgstr "nom_per_défaut_de_l_éditeur"
+
+#: src/interface.c:1485
+msgid "Entry _Template"
+msgstr "_Trame de saisie pour une entrée"
+
+#: src/interface.c:1493
+msgid "Use Custom Value:"
+msgstr "Utiliser la valeur personnalisée :"
+
+#: src/interface.c:1501
+msgid "Use Default:"
+msgstr "Utiliser la valeur par défaut :"
+
+#: src/interface.c:1518
+msgid "template_default_label"
+msgstr "trame_par_défaut"
+
+#: src/interface.c:1528
+msgid "Add _Author/Editor to Edited Entries"
+msgstr "Ajouter _Auteur/Modificateur aux entrées modifiées"
+
+#: src/interface.c:1534
+msgid "Use Custom Email:"
+msgstr "Utiliser une adresse de courriel personnalisée :"
+
+#: src/interface.c:1542
+msgid "Use Default Email:"
+msgstr "Utiliser l'adresse de courriel par défaut :"
+
+#: src/interface.c:1550
+msgid "editer_default_email_label"
+msgstr "courriel_de_l_éditeur_par_défaut"
+
+#: src/interface.c:1566
+msgid "Add _Source Reference to Edited Entries"
+msgstr "Ajouter une référence aux entrées modifiées"
+
+#: src/interface.c:1580
+msgid "Source Document that justifies inclusion of an entry. Automatically added to edited entries."
+msgstr ""
+
+#: src/interface.c:1590
+msgid "_Entry Editor"
+msgstr "Éditeur de l'_entrée"
+
+#: src/interface.c:1599
+msgid "_Sanity Checks"
+msgstr "Vérifications _sanitaires"
+
+#: src/interface.c:1678
+#, fuzzy
+msgid "Check Sanity"
+msgstr "Vérifier la santé"
+
+#: src/callbacks.c:206
+#, c-format
+msgid "Failed to load %s!"
+msgstr "Erreur pendant le chargement de %s !"
+
+#: src/callbacks.c:289
+msgid "File modified. Save?"
+msgstr "Le fichier a été modifié. L'enregistrer ?"
+
+#: src/callbacks.c:555
+#: src/callbacks.c:563
+#, c-format
+msgid "Malformed XPath-Template. Only one %%s and many %%%% allowed."
+msgstr "XPath-Template mal formé. Ne sont permis qu'un %%s et plusieurs %%%%."
+
+#: src/callbacks.c:584
+msgid "No matches."
+msgstr "Pas de correspondances."
+
+#: src/callbacks.c:587
+#, c-format
+msgid "%i matching nodes"
+msgstr "%i entrées correspondantes"
+
+#: src/callbacks.c:662
+msgid "Edit accepted."
+msgstr "Modification acceptée."
+
+#: src/callbacks.c:695
+msgid "Edited XML is not well formed! Can't save it!"
+msgstr "Le XML modifié est mal formé ! Impossible de l'enregistrer !"
+
+#: src/callbacks.c:709
+#: src/callbacks.c:880
+msgid "Edited XML is not valid! Won't save it!"
+msgstr "La modification du XML n'est pas valide ! Il ne sera pas enregistré !"
+
+#: src/callbacks.c:747
+msgid "xmlAddChild(bodyNode, newEntry) failed!"
+msgstr "xmlAddChild(bodyNode, newEntry) a échoué !"
+
+#: src/callbacks.c:803
+#, c-format
+msgid "New entry created and editable. Speed: %2.1f entries/hour"
+msgstr "La nouvelle entrée est créée et modifiable. Vitesse : %2.1f entrées/heure"
+
+#: src/callbacks.c:923
+#, fuzzy
+msgid "Cannot handle entry with form :("
+msgstr "Ne peut atteindre l'entrée par le formulaire :("
+
+#: src/callbacks.c:934
+#, c-format
+msgid "Saving form contents as XML failed :("
+msgstr "L'enregistremnt du contenu du formulaire comme XML a échoué :("
+
+#: src/callbacks.c:1153
+#, c-format
+msgid "Key was empty. Using default: %s\n"
+msgstr "La clef était vide. %s est utilisé par défaut\n"
+
+#: src/callbacks.c:1155
+#, c-format
+msgid "Using stylesheet filename from gconf: %s\n"
+msgstr "Gconf indique d'utiliser la feuille de style : %s\n"
+
+#: src/callbacks.c:1169
+#, c-format
+msgid "Could not load %s!"
+msgstr "Impossibilité à charger %s !"
+
+#: src/callbacks.c:1178
+#, c-format
+msgid "Could not load entry stylesheet %s. HTML Preview won't work!"
+msgstr ""
+
+#: src/callbacks.c:1269
+msgid "Error converting entry to HTML!"
+msgstr "Erreur lors de la conversion de l'entrée en HTML !"
+
+#. save contents of form
+#: src/callbacks.c:1308
+#, c-format
+msgid "Saving form contents as XML failed."
+msgstr "L'enregistremnt du contenu du formulire comme XML a échoué."
+
+#: src/callbacks.c:1388
+#, fuzzy
+msgid "No Drops accepted while unsaved changes in memory."
+msgstr "Les 'lâchers' ne sont possibles tant que des changements non enregistrés sont en mémoire."
+
+#: src/callbacks.c:1408
+#, c-format
+msgid ""
+"Did not recognize URI in Drop (no \\r\\n"
+"): %s\n"
+msgstr ""
+
+#: src/callbacks.c:1411
+#, c-format
+msgid "Did not recognize file-URI in Drop: %s\n"
+msgstr ""
+
+#: src/callbacks.c:1466
+msgid "Failed to find 'xkbprint' in path."
+msgstr ""
+
+#: src/callbacks.c:1472
+msgid "Failed to find 'gv' in path."
+msgstr ""
+
+#: src/callbacks.c:1480
+#, c-format
+msgid "Failed to show keyboard layout with command: %s"
+msgstr "Erreur à l'affichage de l'agencement du clavier avec la commande  :%s"
+
+#: src/callbacks.c:1483
+#, fuzzy, c-format
+msgid "Done: %s"
+msgstr "Avancée : %s"
+
+#: src/callbacks.c:1931
+msgid "Finished Spellcheck."
+msgstr "Vérification d'orthographe finie."
+
+#: src/callbacks.c:2029
+#, c-format
+msgid "%s, size=%s"
+msgstr "%s, taille = %s"
+
+#: src/callbacks.c:2060
+msgid "This binary of FreeDict-Editor was compiled without aspell support."
+msgstr "Ce binaire de l'éditeur Freedict a été compilé sans le support d'Aspell."
+
+#: src/callbacks.c:2100
+#, c-format
+msgid "There is no use in replacing a misspelled word with itself.\n"
+msgstr "Il est inutile de remplacer un mot mal orthographié par lui-même.\n"
+
+#: src/callbacks.c:2514
+msgid "Missing Part-of-Speech"
+msgstr "Nature manquante"
+
+#: src/callbacks.c:2516
+msgid "Nouns without Gender"
+msgstr "Noms sans genre"
+
+#: src/callbacks.c:2518
+msgid "Notes with Question Marks"
+msgstr "Notes avec des mentions Question"
+
+#: src/callbacks.c:2520
+msgid "Empty Headwords"
+msgstr "Mots vides"
+
+#: src/callbacks.c:2522
+msgid "Empty Body"
+msgstr "Contenu vide"
+
+#. too slow
+#: src/callbacks.c:2526
+msgid "Homographs of same Part-of-Speech"
+msgstr "Homographe de même nature"
+
+#: src/callbacks.c:2531
+msgid "Broken Cross-References"
+msgstr "La référence interne est cassée."
+
+#: src/callbacks.c:2536
+msgid "Multiple Headwords"
+msgstr "Mots d'entrées multiples"
+
+#: src/callbacks.c:2538
+msgid "\"to \" before verbs (only useful for English, checks tr)"
+msgstr "« to » avant les verbes (seulement utilisé pour l'anglais, vérifiez tr)"
+
+#: src/callbacks.c:2540
+msgid "\"to \" before verbs (only useful for English, checks orth)"
+msgstr "« to » avant les verbes (seulement utilisé pour l'anglais, vérifiez orth)"
+
+#: src/callbacks.c:2542
+msgid "Unbalanced braces"
+msgstr "Accolades non refermées"
+
+#: src/callbacks.c:2667
+#, c-format
+msgid "%1$s (%2$i matches)"
+msgstr "%1$s (%2$i correspondances)"
+
+#: src/callbacks.c:2756
+msgid "Sanity checks performed."
+msgstr "Les vérifications sanitaires ont été faites."
+
+#: src/callbacks.c:2798
+msgid "Check Enabled?"
+msgstr ""
+
+#: src/callbacks.c:2807
+msgid "Check Name"
+msgstr "Vérifier le nom"
+
+#: src/callbacks.c:2813
+msgid "Matching Entries"
+msgstr "Entrées correspondantes"
+
+#: src/support.c:60
+#: src/support.c:85
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Impossible de trouver le fichier pixmap :%s"
+
+#: src/utils.c:89
+msgid ""
+"1. Open a TEI file\n"
+"2. Modify the XPath select expression to match\n"
+"\tthe entries you desire to edit\n"
+"3. Double-click on an entry headword in the list\n"
+"\tof matching entries to the right!"
+msgstr ""
+"1. Ouvrir un fichier TEI\n"
+"2. Modifier l'expression de sélection XPath afin que correspondent\n"
+"\tles entrées que vous souhaitez modifier\n"
+"3. Double-cliquez sur le mot de l'entrée dans la liste à droite\n"
+"\tdes entrées correspondantes !"
+
+#: src/utils.c:140
+#, c-format
+msgid "Saving to %s failed."
+msgstr "L'enregistrement vers %s a échoué."
+
+#: src/utils.c:146
+msgid "Saved."
+msgstr "Enregistré."
+
