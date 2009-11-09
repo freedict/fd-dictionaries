@@ -6,7 +6,7 @@
 
   <xsl:include href="indent.xsl"/>
    <!--<xsl:variable name="stylesheet-cvsid">
-     $Id: teientry2txt.xsl,v 1.14 2009-04-17 08:57:26 bansp Exp $
+     $Id: teientry2txt.xsl,v 1.15 2009-11-09 03:47:52 bansp Exp $
      </xsl:variable>
    added the variable but then uncommented it, because it would get priority 
    over the one defined in the header module; not sure if that was indended -->
@@ -98,15 +98,19 @@
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
+<!-- allow for empty <pos/>; make it a condition for the presence of angled brackets, too 
+  the weird "(self::gramGrp or count(tei:pos/text())" 
+      means "you're either P4 or <pos> in P5 is non-empty"
+-->
   <xsl:template match="gramGrp | tei:gramGrp">
-    <xsl:if test="count(ancestor::tei:gramGrp)=0"><xsl:text> &lt;</xsl:text></xsl:if>
-    <xsl:for-each select="pos | tei:pos | subc | tei:subc | num | tei:num | gen | tei:gen | tei:gramGrp | tei:iType | tei:gram">
+    <xsl:if test="count(ancestor::tei:gramGrp)=0 and (self::gramGrp or count(tei:pos/text()))"><xsl:text> &lt;</xsl:text></xsl:if>
+    <xsl:for-each select="pos | tei:pos[text()] | subc | tei:subc | num | tei:num | gen | tei:gen | tei:gramGrp | tei:iType | tei:gram">
       <xsl:apply-templates select="."/>
       <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
       </xsl:if>
     </xsl:for-each>
-    <xsl:if test="count(ancestor::tei:gramGrp)=0"><xsl:text>></xsl:text></xsl:if>
+    <xsl:if test="count(ancestor::tei:gramGrp)=0 and (self::gramGrp or count(tei:pos/text()))"><xsl:text>></xsl:text></xsl:if>
 
     <!-- <xr> elements are not allowed inside <form> or <gramGrp>, so reach out and grab them... -->
     <xsl:if test="count(preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
@@ -378,7 +382,7 @@
         <xsl:text>&#xa;</xsl:text>
       </xsl:when>
       <!-- a subset of values from the TEI Guidelines -->
-      <xsl:when test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn'">
+      <xsl:when test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc'">
         <xsl:value-of select="concat($spc,'(',.,')')"/>
       </xsl:when>
       <xsl:when test="@type='gram'">
