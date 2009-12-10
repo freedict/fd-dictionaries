@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Freedict-Editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-01-30 16:47+0100\n"
-"PO-Revision-Date: 2009-10-08 13:45+0100\n"
-"Last-Translator: Denis\n"
+"PO-Revision-Date: 2009-11-26 10:19+0100\n"
+"Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -350,8 +350,9 @@ msgid "Spelling _Dictionary:"
 msgstr "_Dictionnaire d'orthographe :"
 
 #: src/interface.c:1124
+#, fuzzy
 msgid "Acc_ept Run-Together Words"
-msgstr ""
+msgstr "Tolér_er les mots "
 
 #: src/interface.c:1135
 msgid "What language to use for checking the words"
@@ -371,7 +372,7 @@ msgstr "0"
 
 #: src/interface.c:1173
 msgid "Replace misspelled word with current Replacement"
-msgstr ""
+msgstr "Remplacer le mot mal orthographié par le présent remplaçant"
 
 #: src/interface.c:1187
 msgid "_Replace"
@@ -382,14 +383,12 @@ msgid "Replace _All"
 msgstr "Tout rempl_acer"
 
 #: src/interface.c:1196
-#, fuzzy
 msgid "Replace all occurences of the misspelled word with current Replacement"
-msgstr "Remplacer toutes les occurences du mot par ce mot"
+msgstr "Remplacer toutes les occurences du mot mal orthographié par ce mot"
 
 #: src/interface.c:1202
-#, fuzzy
 msgid "Ignore current occurence of the misspelled word"
-msgstr "Ignorer la présente occurence du mot"
+msgstr "Ignorer la présente occurence du mot mal orthographié"
 
 #: src/interface.c:1216
 msgid "_Ignore"
@@ -400,9 +399,8 @@ msgid "I_gnore All"
 msgstr "Tout i_gnorer"
 
 #: src/interface.c:1225
-#, fuzzy
 msgid "Ignore all occurences of the misspelled word"
-msgstr "Ignorer toutes les occurences du mot "
+msgstr "Ignorer toutes les occurences du mot mal orthographié"
 
 #: src/interface.c:1231
 msgid "Add misspelled word to the personal GNU aspell word list of this language"
@@ -500,7 +498,7 @@ msgstr "Ajouter une référence aux entrées modifiées"
 
 #: src/interface.c:1580
 msgid "Source Document that justifies inclusion of an entry. Automatically added to edited entries."
-msgstr ""
+msgstr "Document source qui justifie l'inclusion d'une entrée. Ajouté automatiquement aux entrées modifiées."
 
 #: src/interface.c:1590
 msgid "_Entry Editor"
@@ -511,9 +509,8 @@ msgid "_Sanity Checks"
 msgstr "Vérifications _sanitaires"
 
 #: src/interface.c:1678
-#, fuzzy
 msgid "Check Sanity"
-msgstr "Vérifier la santé"
+msgstr "Vérifier l'état sanitaire"
 
 #: src/callbacks.c:206
 #, c-format
@@ -562,7 +559,6 @@ msgid "New entry created and editable. Speed: %2.1f entries/hour"
 msgstr "La nouvelle entrée est créée et modifiable. Vitesse : %2.1f entrées/heure"
 
 #: src/callbacks.c:923
-#, fuzzy
 msgid "Cannot handle entry with form :("
 msgstr "Ne peut atteindre l'entrée par le formulaire :("
 
@@ -584,12 +580,12 @@ msgstr "Gconf indique d'utiliser la feuille de style : %s\n"
 #: src/callbacks.c:1169
 #, c-format
 msgid "Could not load %s!"
-msgstr "Impossibilité à charger %s !"
+msgstr "Impossible de charger %s !"
 
 #: src/callbacks.c:1178
 #, c-format
 msgid "Could not load entry stylesheet %s. HTML Preview won't work!"
-msgstr ""
+msgstr "Impossible de charger la feuille de style des entrées %s. L'aperçu HTML ne fonctionnera pas !"
 
 #: src/callbacks.c:1269
 msgid "Error converting entry to HTML!"
@@ -602,29 +598,30 @@ msgid "Saving form contents as XML failed."
 msgstr "L'enregistremnt du contenu du formulire comme XML a échoué."
 
 #: src/callbacks.c:1388
-#, fuzzy
 msgid "No Drops accepted while unsaved changes in memory."
-msgstr "Les 'lâchers' ne sont possibles tant que des changements non enregistrés sont en mémoire."
+msgstr "Les déposers ne sont pas possibles tant que des changements non enregistrés sont en mémoire."
 
 #: src/callbacks.c:1408
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Did not recognize URI in Drop (no \\r\\n"
 "): %s\n"
 msgstr ""
+"L'URI de destination n'a pas été reconnue (Il n'y a pas de\\r\\n"
+"): %s\n"
 
 #: src/callbacks.c:1411
-#, c-format
+#, fuzzy, c-format
 msgid "Did not recognize file-URI in Drop: %s\n"
-msgstr ""
+msgstr "L'URI du fichier de destination n'a pas été reconnue : %s\n"
 
 #: src/callbacks.c:1466
 msgid "Failed to find 'xkbprint' in path."
-msgstr ""
+msgstr "'kbprint' n'a pas été trouvé à l'emplacement indiqué."
 
 #: src/callbacks.c:1472
 msgid "Failed to find 'gv' in path."
-msgstr ""
+msgstr "'gv n'a pas été trouvé à l'emplacement indiqué."
 
 #: src/callbacks.c:1480
 #, c-format
@@ -632,7 +629,7 @@ msgid "Failed to show keyboard layout with command: %s"
 msgstr "Erreur à l'affichage de l'agencement du clavier avec la commande  :%s"
 
 #: src/callbacks.c:1483
-#, fuzzy, c-format
+#, c-format
 msgid "Done: %s"
 msgstr "Avancée : %s"
 
@@ -710,7 +707,7 @@ msgstr "Les vérifications sanitaires ont été faites."
 
 #: src/callbacks.c:2798
 msgid "Check Enabled?"
-msgstr ""
+msgstr "La vérification est-elle activée ?"
 
 #: src/callbacks.c:2807
 msgid "Check Name"
