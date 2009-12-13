@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 <?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
 <!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
@@ -6,28 +6,30 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Swahili-Polish SSSP/Freedict Dictionary</title>
+        <title xml:lang="en">Swahili-Polish SSSP/Freedict Dictionary</title>
         <title xml:lang="pl">Studencki Słownik Suahilijsko-Polski</title>
         <respStmt>
-          <resp>przygotowanie haseł</resp>
+          <resp xml:lang="pl">przygotowanie haseł</resp>
+          <resp xml:lang="en">compilation of the original entry set</resp>
           <name xml:id="apytluk">Anna Pytluk</name>
         </respStmt>
         <respStmt>
-          <resp>redakcja merytoryczna</resp>
-          <name xml:id="wierzchob">Pani Beatka</name>
+          <resp xml:lang="pl">redakcja merytoryczna</resp>
+          <resp xml:lang="en">editing, corrections, maintenance</resp>
+          <name xml:id="wierzchob">Beata Wójtowicz</name>
         </respStmt>
         <respStmt>
-          <resp>converted to TEI by</resp>
-          <name>Piotr Bański</name>
+          <resp>converted to TEI P5 by</resp>
+          <name xml:id="bansp">Piotr Bański</name>
         </respStmt>
         <respStmt>
           <!-- for the freedict database -->
           <resp>Maintainer</resp>
-          <name xml:id="bansp">Beata Wójtowicz</name>
+          <name ref="#wierzchob">Beata Wójtowicz</name>
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.1</edition>
+        <edition>0.2</edition>
         <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
         <!--<respStmt>
           <resp>converted from postscript</resp>
@@ -41,7 +43,7 @@
         <availability>
           <p>Original dictionary contents available under the GNU Free Documentation License, ver. 1.1 and later. XML application together with the content is available under the terms of the GNU General Public Licence, version 3.0 or any later version.</p>
         </availability>
-        <date when="2009-11-30">30 November 2009</date>
+        <date when="2009-12-13">13 December 2009</date>
         <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
       <notesStmt>
@@ -58,9 +60,17 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2" who="#wierzchob" when="2009-12-13">
+        <list type="bulleted">
+          <head>Version 0.1, <date>13 December 2009</date>. <name ref="#wierzchob">Beata Wójtowicz</name>
+          </head>
+          <item>Corrections in translations</item>
+          <item>(and Piotr rearranged some XML bits)</item>
+        </list>
+      </change>
       <change n="0.1" who="#bansp" when="2009-11-30">
         <list type="bulleted">
-          <head>Version 0.1, <date>30 November 2009</date>. <name>Piotr Bański</name>
+          <head>Version 0.1, <date>30 November 2009</date>. <name ref="#bansp">Piotr Bański</name>
           </head>
           <item>Created version 0.1, converted from postscript into TEI P5 XML for the Freedict project.</item>
         </list>
@@ -402,7 +412,7 @@
           <pos>adj A1P</pos>
         </gramGrp>
         <sense>
-          <def>jego</def>
+          <def>jego, jej</def>
         </sense>
       </entry>
       <entry>
@@ -424,7 +434,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>państwo</def>
+          <def>grupa ludzi o podobnych cechach</def>
         </sense>
       </entry>
       <entry>
@@ -523,7 +533,7 @@
           <pos>v V2</pos>
         </gramGrp>
         <sense>
-          <def>mówić</def>
+          <def>mówić, powiedzieć</def>
         </sense>
       </entry>
       <entry>
@@ -589,7 +599,7 @@
           <pos>v V1W</pos>
         </gramGrp>
         <sense>
-          <def>towarzyszyć sobie</def>
+          <def>towarzyszyć sobie, iść razem; iść jeden za drugim</def>
         </sense>
       </entry>
       <entry>
@@ -644,7 +654,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>spaść</def>
+          <def>spaść, upaść, przewrócić się</def>
         </sense>
       </entry>
       <entry>
@@ -1282,7 +1292,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>pukać do drzwi okrzykiem</def>
+          <def>pukać do drzwi (okrzykiem)</def>
         </sense>
       </entry>
       <entry>
@@ -1348,7 +1358,7 @@
           <pos>adj A2</pos>
         </gramGrp>
         <sense>
-          <def>wspaniały</def>
+          <def>wspaniały; lepszy</def>
         </sense>
       </entry>
       <entry>
@@ -1370,7 +1380,7 @@
           <pos>n N5</pos>
         </gramGrp>
         <sense>
-          <def>pająk; czarna płachta do obwiązywania się</def>
+          <def>pająk; ubranie kobiet muzułmańskich, czador</def>
         </sense>
       </entry>
       <entry>
@@ -1436,7 +1446,7 @@
           <pos>n N5/1</pos>
         </gramGrp>
         <sense>
-          <def>pan,mężczyzna; mąż</def>
+          <def>pan, mężczyzna; mąż</def>
         </sense>
       </entry>
       <entry>
@@ -2811,7 +2821,7 @@
           <pos>adj A1</pos>
         </gramGrp>
         <sense>
-          <def>niski</def>
+          <def>niski, krótki</def>
         </sense>
       </entry>
       <entry>
@@ -2987,7 +2997,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>upaść</def>
+          <def>uderzyć, wpaść na coś</def>
         </sense>
       </entry>
       <entry>
@@ -3050,10 +3060,10 @@
           <orth>hai</orth>
         </form>
         <gramGrp>
-          <pos>v V3</pos>
+         <pos>adj A2</pos>
         </gramGrp>
         <sense>
-          <def>być żywym; przeżyć</def>
+          <def>żyjący, ożywiony</def>
         </sense>
       </entry>
       <entry>
@@ -3493,7 +3503,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>usługi</def>
+          <def>usługi; obsługa, pomoc</def>
         </sense>
       </entry>
       <entry>
@@ -3691,7 +3701,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>wypracowanie</def>
+          <def>wypracowanie; esej</def>
         </sense>
       </entry>
       <entry>
@@ -4417,7 +4427,7 @@
           <pos>adv P1</pos>
         </gramGrp>
         <sense>
-          <def>po</def>
+          <def>przed</def>
         </sense>
       </entry>
       <entry>
@@ -4604,7 +4614,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>sukienka męska</def>
+          <def>ubranie męskie, długa męska koszula</def>
         </sense>
       </entry>
       <entry>
@@ -4626,7 +4636,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>impreza</def>
+          <def>impreza, przyjęcie</def>
         </sense>
       </entry>
       <entry>
@@ -4692,18 +4702,18 @@
           <pos>interj</pos>
         </gramGrp>
         <sense>
-          <def>proszę; blisko, prawie; przybliżać (się)</def>
+          <def>proszę, zapraszam</def>
         </sense>
       </entry>
       <entry>
         <form>
-          <orth>karibu na</orth>
+          <orth>karibu</orth>
         </form>
         <gramGrp>
           <pos>adv P3</pos>
         </gramGrp>
         <sense>
-          <def>blisko</def>
+          <def>blisko; prawie</def>
         </sense>
       </entry>
       <entry>
@@ -5335,7 +5345,7 @@
       </entry>
       <entry>
         <form>
-          <orth>kiniozi</orth>
+          <orth>kinyozi</orth>
         </form>
         <gramGrp>
           <pos>n N7/1</pos>
@@ -5396,7 +5406,7 @@
           <pos>n N7</pos>
         </gramGrp>
         <sense>
-          <def>lekcja</def>
+          <def>okres czasu, moment</def>
         </sense>
       </entry>
       <entry>
@@ -5484,7 +5494,7 @@
           <pos>n N7</pos>
         </gramGrp>
         <sense>
-          <def>chustka; obrus</def>
+          <def>chusta; obrus; materiał</def>
         </sense>
       </entry>
       <entry>
@@ -5792,11 +5802,11 @@
           <pos>n N5</pos>
         </gramGrp>
         <sense>
-          <def>rzęsa</def>
+          <def>rzęsa, brew; pożyczka</def>
         </sense>
       </entry>
       <entry>
-        <form>
+        <form> 
           <orth>kosa</orth>
         </form>
         <gramGrp>
@@ -6494,7 +6504,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>ferie</def>
+          <def>ferie, wakacje</def>
         </sense>
       </entry>
       <entry>
@@ -6678,7 +6688,7 @@
           <orth>maiti</orth>
         </form>
         <gramGrp>
-          <pos>n N5</pos>
+          <pos>n N6</pos>
         </gramGrp>
         <sense>
           <def>martwe ciało</def>
@@ -6994,7 +7004,7 @@
       </entry>
       <entry>
         <form>
-          <orth>marukufu</orth>
+          <orth>marufuku</orth>
         </form>
         <gramGrp>
           <pos>adj A2</pos>
@@ -7327,7 +7337,7 @@
           <orth>mbuga</orth>
         </form>
         <gramGrp>
-          <pos>n N3</pos>
+          <pos>n N9</pos>
         </gramGrp>
         <sense>
           <def>park; sawanna</def>
@@ -7341,7 +7351,7 @@
           <pos>n N3</pos>
         </gramGrp>
         <sense>
-          <def>park</def>
+          <def>rodzaj akacji</def>
         </sense>
       </entry>
       <entry>
@@ -7473,7 +7483,7 @@
           <pos>n N1</pos>
         </gramGrp>
         <sense>
-          <def>nanony</def>
+          <def>narzeczony</def>
         </sense>
       </entry>
       <entry>
@@ -9106,7 +9116,7 @@
       </entry>
       <entry>
         <form>
-          <orth>ndini</orth>
+          <orth>dini</orth>
         </form>
         <gramGrp>
           <pos>n N9</pos>
@@ -9464,7 +9474,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>deszczyć</def>
+          <def>padać (o deszczu)</def>
         </sense>
       </entry>
       <entry>
@@ -9761,7 +9771,7 @@
           <pos>v V2K</pos>
         </gramGrp>
         <sense>
-          <def>dołożyć</def>
+          <def>dołożyć, zwiększyć</def>
         </sense>
       </entry>
       <entry>
@@ -12093,7 +12103,7 @@
           <pos>n N9</pos>
         </gramGrp>
         <sense>
-          <def>wygląd</def>
+          <def>wygląd; twarz</def>
         </sense>
       </entry>
       <entry>
@@ -12329,7 +12339,7 @@
       </entry>
       <entry>
         <form>
-          <orth>talizo</orth>
+          <orth>tatizo</orth>
         </form>
         <gramGrp>
           <pos>n N5</pos>
@@ -12830,7 +12840,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>stać</def>
+          <def>osiąść</def>
         </sense>
       </entry>
       <entry>
@@ -12951,7 +12961,7 @@
           <pos>adj A1</pos>
         </gramGrp>
         <sense>
-          <def>niegnny</def>
+          <def>uparty; zuchwały</def>
         </sense>
       </entry>
       <entry>
@@ -14359,7 +14369,7 @@
           <pos>v V1</pos>
         </gramGrp>
         <sense>
-          <def>chwiać się</def>
+          <def>chwiać się; wahać się</def>
         </sense>
       </entry>
       <entry>
