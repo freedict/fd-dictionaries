@@ -316,7 +316,7 @@ clean::
 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFILES)
 	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
 		mkdir -p $(FREEDICTDIR)/release/src; fi
-	tar -C .. -cvjf $@ \
+	tar -C .. -cvjhf $@ \
 		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 		$(addprefix $(notdir $(realpath .))/, $(DISTFILES))
 
@@ -328,11 +328,11 @@ $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(di
 	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
 		mkdir -p $(FREEDICTDIR)/release/tei; fi
 	if (echo "$(DISTFILES)" | grep "$(dictname).tei " > /dev/null); then \
-		tar -C .. -cvjf $@ \
+		tar -C .. -cvjhf $@ \
 			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 			$(addprefix $(notdir $(realpath .))/, $(DISTFILES)); \
 	else \
-		tar -C .. -cvjf $@ \
+		tar -C .. -cvjhf $@ \
 			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
 			$(addprefix $(notdir $(realpath .))/, $(DISTFILES) $(dictname).tei); \
 	fi
