@@ -1,0 +1,102 @@
+2009-12-30 Beata Wójtowicz, Piotr Bañski [0.4.3]
+	* little fixes in equivalents, corrected plural entries with both 
+	  derived and non-derived senses (cf. mifugo) 
+
+2009-04-17 Piotr Bañski [0.4.2]
+	* technical changes against the extension of Freedict scripts converting 
+	  TEI *P5* to c5; the header is converted properly at last, so from now on, 
+	  its contents will be pasted into this file:
+   * Technical changes vis-a-vis Freedict TEI-to-DICT scripts: 
+     looking for the balance between project-specific and Freedict-wide 
+     properties
+
+      * Split kwenye in two (preposition + copula) - this is a 
+        technical move, to unify the nesting level of <note> elements with 
+        @type="cl-agr", but it's also in agreement with our POS strategy 
+        for this stage of the present dictionary: one entry per POS, and 
+        kwenye appears to have lexicalised from whatever -enye is into an 
+        uninflected preposition.
+
+      * Moved class agreement information from the abused <note> 
+        elements into <gramGrp>, nested inside the regular <gramGrp>; this 
+        is another feature carried over from our Swahili-Polish-Swahili 
+        project. Unfortunately, <gramGrp> may not carry the @type 
+        argument. I could use a <gram> element for this without nesting 
+        gramGrps, but the nested gramGrp is intended as a feature 
+        structure that holds all agreement information in a single 
+        package.
+
+      * All generated plural entries are now @type="pl" (by 
+        script). There are 522 such entries in this version.
+
+      * xr/@type="plural-sense" is gone and replaced with the 
+        (abused) note/@type="def". This is to make sure that the content 
+        of generated plurals will be treated as single definitions later 
+        on.
+
+      * note/@type="num" is augmented by @rend="noindent"; this is 
+        project-specific and pertains to the way the DICT databases are 
+        created. This is not meant to be filled by hand, a script does 
+        that when converting the editable dictionary into the final form.
+
+      * The "tokens in definitions" count rose sharply because of 
+        the extra words "Plural of" repeated 522 times (they used to be 
+        part of <xr>) and also colons or sense numbers in some of the 
+        definitions of plurals. This may suggest a change of the formula 
+        for this count (or dropping it altogether). OTOH, ignoring plural 
+        entries from this count does not seem fair, given that they are by 
+        all means informative. The code is now "sum(for $txt in 
+        (/TEI/text/body/entry/sense//def/descendant::text() | 
+        /TEI/text/body/entry/sense/note[@type ne 
+        'editor']/descendant::text()) return 
+        count(tokenize(normalize-space($txt),' ')))" - I have fixed it to 
+        catch all text nodes, which the previous counts didn't.
+
+   * The intended simplicity of encoding and incremental building of 
+     Freedict dictionaries relies to some extent on bordering on tag 
+     abuse. Instead of distinguishing between <usg> and <note> elements, 
+     I'd rather use more kinds of notes. Added: 
+
+      * @type="lbl" for notes within (definitional) notes - 
+        currently only labelling literal translations,
+
+      * @type="usage" for notes describing the usage of the given 
+        headword/sense.
+
+      * @type="dom" for crude characteristics of the domain of 
+        usage; includes hypernyms (date-fruit).
+
+      * @type="obj" for typical object (most of these values come 
+        straight from the Guidelines).
+
+   * Rule: all <note> elements that precede the given equivalent 
+     should be inside its <def> (for ease of transformation into c5 and 
+     CSS rendering only).
+
+   * Things that should eventually get beautified/modified (while 
+     keeping an eye on the balance between project-"neutral" tools and 
+     project-specific demands: 
+
+      * benki <n> (pl: {mabenki}) [sg=pl] - mark the lexical 
+        (class) ambiguity of the noun (or wait until class info is 
+        provided explicitly)
+
+      * in some contexts, some elements are rendered in c5 with a 
+        preceding blank line. This is due to legacy code that doesn't 
+        really harm, so I do not intend to fix that for now
+
+
+2009-03-28 Beata Wójtowicz, Piotr Bañski [0.4.1]
+	* maintenance release: minor fixes, minor additions, crude .dict database available
+
+2009-02-15 Beata Wójtowicz, Piotr Bañski  [0.4]
+	* expanded, more explicit XML structure
+	* more detailed change log is available in the dictionary header
+
+2008-12-30 Beata Wójtowicz, Piotr Bañski  [0.3]
+	* thorough review and upgrade to TEI P5
+	* more detailed change log is available in the dictionary header
+
+2004-06-24 Beata Wójtowicz  [0.0.2]
+	* merging of old FreeDict version with xFried dictionary
+	* the TEI P4 (XML)
