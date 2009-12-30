@@ -1,5 +1,5 @@
 /* CSS for the Swahili-English FreeDict dictionary, by Piotr Bański (bansp in the domain of o2.pl) */
-/* Version: 0.3.1, 28 March 2009. License: Creative Commons BY 3.0 */
+/* Version: 0.3.3, 17 April 2009. License: Creative Commons BY 3.0 */
 
 /*************** the header part ***************/
 title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
@@ -48,13 +48,19 @@ foreign {font-style:italic}
 teiHeader {border-bottom:solid black 1px} 
 
 /*************** dictionary body ***************/
-entry, sense, cit, re, note {display:block}
+entry, sense, cit, re {display:block}
 
-form, gramGrp, xr, quote, bibl, gloss {display: inline}
+form, gramGrp, xr, quote, bibl, gloss, note[type] {display: inline}
 
 gramGrp, /* usg,*/ quote {font-style: italic}
 
 gramGrp {color:brown}
+
+gramGrp > gramGrp {font-style:normal; color:black}
+gramGrp > gramGrp:before {content:"(agrees with "}
+gramGrp > gramGrp:after {content:")"}
+
+gramGrp > gram[type='cl-agr']:before {content: "cl. "}
 
 q:before {content:open-quote}
 q:after {content:close-quote}
@@ -64,27 +70,31 @@ note {display:none}
 note[type] {display:block}
 */
 
-note[type='style'], note[type='infl-base'], note[type='hint'], note[type='num'], note[type='gram'] {display:inline}
-note[type='style']:before, note[type='infl-base']:before, 
+note[type]:before {content: "("; color:black; font-weight:normal}
+note[type]:after {content: ")"; color:black; font-weight:normal}
+
+/*note[type='style'], note[type='infl-base'], note[type='hint'], note[type='num'], note[type='gram'] {display:inline}*/
+/*note[type='style']:before, note[type='infl-base']:before, 
 note[type='hint']:before, note[type='num']:before, note[type='gram']:before {content: "("; color:black; font-weight:normal}
-note[type='style']:after, note[type='infl-base']:after, 
+*/
+/*note[type='style']:after, note[type='infl-base']:after, 
 note[type='hint']:after, note[type='num']:after, note[type='gram']:after {content: ")"; color:black; font-weight:normal}
-note[type='cl-agr']:before {content: "(agrees with cl. ";color:navy; font-weight:normal}
-note[type='cl-agr']:after {content: ")"; color:navy; font-weight:normal}
+*/
 
-note[type='plural-sense'] {color: black}
-note[type='plural-sense']:before {content:""}
-
-note[type='plural-form'] {display:inline; color: black}
-note[type='plural-form']:before {content:""}
-
+note[type='def'], note[type='status'], note[type='gram'], note[type='usage'] {display:block}
 note[type='def'] {color: blue} /* diagnostic, these are temporary, kept in version 0.4 of the dictionary */
-note[type='def']:before{ content:"def: "; color: blue; font-weight:normal}
+note[type='def']:before { content:""; color: blue; font-weight:normal}
+
+note[type='gram']:before {content:"Usage (gram.): "; color: blue; font-weight:normal}
+note[type='usage']:before {content:"Usage: "; color: blue; font-weight:normal}
+
+note[type='def']:after, note[type='status']:after, note[type='gram']:after, 
+note[type='usage']:after { content:""}
 
 /* status -- in the header */
 note[type='status']:before {content:"Status: "; color:black}
 
-note {color: navy}
+note {color: navy; display:block}
 note:before {content: "NOTE: "; color: orange; font-weight:bold}
 
 
