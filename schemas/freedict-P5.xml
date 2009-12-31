@@ -4,24 +4,38 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict Swahili-English xFried Dictionary, version 0.3</title>
+            <title>TEI Customization for the FreeDict project (basic), version 0.4</title>
             <author xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</author>
          </titleStmt>
          <publicationStmt>
             <availability status="free">
-               <p>This file is released as part of the FreeDict package (http://freedict.org/). It is licensed under the GNU Public License  version 2.0 or later.</p>
+               <p>This file is released as part of the FreeDict package (http://freedict.org/). It is licensed under the GNU Public License version 2.0 or later.</p>
             </availability>
          </publicationStmt>
          <sourceDesc>
             <p>Initial version created with Roma, the ODD generator, version 3.6.</p>
+            <p>This file was initially used for the Swahili-English dictionary. Later on, it got
+               generalised as the basic schema for Freedict dictionaries encoded in TEI P5.</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <text>
       <body>
-         <head>ODD for the swa-eng dictionary for FreeDict</head>
-         <p>This is the ODD schema for generating schemas for the Swahili-English FreeDict dictionary by Beata Wójtowicz and Piotr Bański. It is meant as a prototype for the future FreeDict dictionary schemas (see http://freedict.org/).</p>
+         <head>ODD for FreeDict dictionaries, basic level of conformance.</head>
+         <p>This is the ODD driver for generating schemas and documentation for dictionaries in the
+            FreeDict project (see http://freedict.org/). It is meant primarily for dictionaries with
+            very basic structure, but until higher-level ODDs are created, it will serve all TEI P5
+            dictionaries. For details, see a TEI Conference and Members' Meeting presentation by
+            Piotr Bański and Beata Wójtowicz, which should be available from
+            http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
+            <item><label>Version 0.4, 31 December 2009 by <name>Piotr Bański</name></label> 
+               <list type="bulleted">
+                  <item>Commited to the Freedict CVS (still in version 0.3).</item>
+                  <item>Properly re-titled and described.</item>
+                  <item>Added the "figures" module, for tables in the front matter.</item>
+               </list>
+            </item>
             <item><label>Version 0.3, 30 December 2008 by <name>Piotr Bański</name></label> 
                <list type="bulleted">
                   <item>Removed <gi>dictScrap</gi> and <gi>entryFree</gi> and the mysterious header elements that cause Sanity Checker warnings.</item>
@@ -29,12 +43,13 @@
                </list>
             </item>
          </list>
-         <schemaSpec ident="freedict_swa-eng" docLang="en" prefix="tei_">
+         <schemaSpec ident="freedict-P5" docLang="en" prefix="tei_">
             <moduleRef key="core"/>
             <moduleRef key="tei"/>
             <moduleRef key="header"/>
             <moduleRef key="textstructure"/>
             <moduleRef key="dictionaries"/>
+            <moduleRef key="figures"/>
             <elementSpec module="core" ident="teiCorpus" mode="delete"/>
             <elementSpec module="header" ident="handNote" mode="delete"/>
             <elementSpec module="header" ident="typeNote" mode="delete"/>
