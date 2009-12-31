@@ -1,0 +1,39 @@
+You should be able to see the contents of the dictionary thanks 
+to the schema files (DTD and RNG) and the style sheet (CSS).
+This is only a working view, with some of the text supplied by the CSS
+ -- that's why copying from the browser won't yield the results you'd
+expect.
+
+One way to access the dictionary properly is to use the DICT database 
+generated from the TEI source. The database is offered in a separate 
+download and it can be accessed online, e.g. at
+
+* http://dict.uni-leipzig.de/dictd (official Freedict WWW front-end)
+
+* http://www.dict.org/bin/Dict (official DICT WWW front-end)
+
+(make sure to check the version of the dictionary: these online 
+repositories may offer earlier versions!)
+
+You can also download a desktop/plugin client, see 
+
+* http://www.dict.org/w/software/software for a long list, and
+* https://sourceforge.net/apps/mediawiki/freedict/index.php?title=DICT_clients for a short one.
+
+Very often, you will have to tell the client which DICT server it 
+should use; look for "Freedict" in the server description. The relatively
+current list of Freedict servers that identified themselves to us is
+available at http://luetzschena-stahmeln.de/dictd/index.php?freedictonly
+
+Apart from using DICT databases online, you can also access them on your own 
+computer. To do that, you will generally need to run a server (don't worry, 
+they are small programs; see the list at http://www.dict.org/w/software/software or
+https://sourceforge.net/apps/mediawiki/freedict/index.php?title=DICT_servers and 
+choose something suitable for your platform) and set the client to use the localhost,
+rather than an online server.
+
+
+--
+Written up by Piotr Banski on 31-dec-09. If you notice that this information 
+appears to be outdated, please post on a Freedict bug tracker or mail 
+freedict-beta@lists.sourceforge.net. Thanks!
