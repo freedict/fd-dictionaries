@@ -9,7 +9,7 @@
         <title xml:lang="en">Swahili-Polish SSSP/Freedict Dictionary</title>
         <title xml:lang="pl">Studencki Słownik Suahilijsko-Polski</title>
         <respStmt>
-          <resp xml:lang="pl">przygotowanie haseł</resp>
+          <resp xml:lang="pl">przygotowanie początkowego zbioru haseł</resp>
           <resp xml:lang="en">compilation of the original entry set</resp>
           <name xml:id="apytluk">Anna Pytluk</name>
         </respStmt>
@@ -19,7 +19,7 @@
           <name xml:id="wierzchob">Beata Wójtowicz</name>
         </respStmt>
         <respStmt>
-          <resp>converted to TEI P5 by</resp>
+          <resp>conversion to TEI P5 by</resp>
           <name xml:id="bansp">Piotr Bański</name>
         </respStmt>
         <respStmt>
@@ -29,40 +29,60 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.2</edition>
+        <edition>0.2.1</edition>
         <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
         <!--<respStmt>
-          <resp>converted from postscript</resp>
-          <name>Piotr Bański</name>
+          <resp>xxx</resp>
+          <name>yyy</name>
         </respStmt>-->
       </editionStmt>
       <!-- KEEP THIS UP TO DATE -->
-      <extent>1320 headwords</extent>
+      <extent>1319 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability>
-          <p>Original dictionary contents available under the GNU Free Documentation License, ver. 1.1 and later. XML application together with the content is available under the terms of the GNU General Public Licence, version 3.0 or any later version.</p>
+          <p>Original dictionary contents available under the GNU Free Documentation License, ver. 1.1 and later. XML application together with the content is available under the terms of the GNU General Public License, version 3.0 or any later version.</p>
         </availability>
-        <date when="2009-12-13">13 December 2009</date>
-        <pubPlace>http://freedict.org/</pubPlace>
+        <date when="2009-12-31">31 December 2009</date>
+        <pubPlace><ptr target="http://freedict.org/"/></pubPlace>
       </publicationStmt>
       <notesStmt>
         <note type="status">small</note>
       </notesStmt>
-      <sourceDesc>
-        <p>Created from the Postscript version of the dictionary available at <ref target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/">http://www.mimuw.edu.pl/~jsbien/BW/SSSP/</ref>, dated 20.05.2003, published electronically on pages belonging to the University of Warsaw.</p>
+      <sourceDesc xml:lang="en">
+        <p>Created from the Postscript version of the dictionary available at <ptr target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/"/>, dated 20.05.2003, published electronically on pages belonging to the University of Warsaw.</p>
         <p>Converted from postscript by Open Office Writer, post-edited in oXygen.</p>
+      </sourceDesc>
+      <sourceDesc xml:lang="pl">
+        <p>Oryginalny opis wersji z 2003 r.: 
+          Niniejszy Studencki słownik suahilijsko-polski powstał na podstawie haseł opracowanych
+          i wprowadzonych do komputera (za pomocą programu MS Access)
+          przez Annę Pytluk, studentkę Zakładu Języków i Kultur Afryki Instytutu
+          Orientalistycznego Uniwersytetu Warszawskiego; do składu i łamania wykorzystano
+          system LaTeX2e. Obecnie słownik zawiera 1320 haseł obejmujących
+          zakres materiału z pierwszego roku nauki języka suahili. Słownik jest dostępny
+          na zasadach licencji GNU FDL1 m.in. w formacie PDF pod adresem
+          <ptr target="http://www.orient.uw.edu.pl/~jsbien/BW/SSSP/"/> i jest replikowany pod adresem
+          <ptr target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/"/>.</p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
       <projectDesc>
-        <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
+        <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ptr target="http://www.freedict.org"/>. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2.1" who="#bansp" when="2009-12-31">
+        <list type="bulleted">
+          <head>Version 0.2.1, <date>31 December 2009</date>. <name ref="#bansp">Piotr Bański</name>
+          </head>
+          <item>Front matter, more work on the header, some CSS changes.</item>
+          <item>The first source release.</item>
+        </list>
+      </change>
       <change n="0.2" who="#wierzchob" when="2009-12-13">
         <list type="bulleted">
-          <head>Version 0.1, <date>13 December 2009</date>. <name ref="#wierzchob">Beata Wójtowicz</name>
+          <head>Version 0.2, <date>13 December 2009</date>. <name ref="#wierzchob">Beata Wójtowicz</name>
           </head>
           <item>Corrections in translations</item>
           <item>(and Piotr rearranged some XML bits)</item>
@@ -78,78 +98,60 @@
     </revisionDesc>
   </teiHeader>
   <text>
-<!-- 
-  Niniejszy Studencki słownik suahilijsko-polski powstał na podstawie haseł opracowanych
-  i wprowadzonych do komputera (za pomocą programu MS Access)
-  przez Annę Pytluk, studentkę Zakładu Języków i Kultur Afryki Instytutu
-  Orientalistycznego Uniwersytetu Warszawskiego; do składu i łamania wykorzystano
-  system LATEX2". Obecnie słownik zawiera 1320 haseł obejmujących
-  zakres materiału z pierwszego roku nauki języka suahili. Słownik jest dostępny
-  na zasadach licencji GNU FDL1 m.in. w formacie PDF pod adresem
-  http://www.orient.uw.edu.pl/~jsbien/BW/SSSP/ i jest replikowany pod adresem
-  http://www.mimuw.edu.pl/~jsbien/BW/SSSP/.
--->
-<!-- 
-  Objaśnienie skrótów stosowanych przez autorkę haseł
-  Skrót Opis Przykład
-  V0 czasowniki jednosylabowe i nieregularne ja
-  V1 czasowniki regularne zakończone samogłoską
-  a; formy podstawowe
-  soma
-  V2 czasowniki zakończone w formie podstawowej
-  2 samogłoskami
-  chukua
-  V3 czasowniki zakończone na i fikiri
-  V4 czasowniki zakończone na u husu
-  W czasowniki w formie wzajemnej onana
-  D czasowniki w formie kierunkowej pikia
-  K czasowniki w formie kauzatywnej somesha
-  S czasowniki w formie statywnej vunjika
-  Z czasowniki w stronie zwrotnej jifunza
-  B czasowniki w stronie biernej andikwa
-  N1 rzeczowniki w klasie 1 mające liczbę mnogą
-  w klasie 2
-  mjomba / wajomba
-  N3 rzeczowniki w klasie 3 mające liczbę mnogą
-  w klasie 4
-  mti / miti
-  N5 rzeczowniki w klasie 5 mające liczbę mnogą
-  w klasie 6
-  debe / madebe
-  N6 rzeczowniki będące zazwyczaj tylko w klasie
-  6
-  maji
-  N7 rzeczowniki w klasie 7 mające liczbę mnogą
-  w klasie 8
-  kijiko / vijiko
-  N9 rzeczowniki w klasie 9 mające liczbę mnogą
-  w klasie 10
-  ajili / ajili
-  N11/14 rzeczowniki w klasie 11/14; lp jak kl.3, lm
-  jak kl.10
-  ukuta / kuta; unywele / nywele
-  N5/1 rzeczowniki w klasie 5, ale odmieniające się
-  jak klasa 1
-  bwana / mabwana
-  N7/1 rzeczowniki w klasie 7, ale odmieniające się
-  jak klasa 1
-  kijana / vijana
-  N9/1 rzeczowniki w klasie 9, ale odmieniające się
-  jak klasa 1
-  ndege / ndege
-  A1 przymiotniki uzgadniajace się z rzeczownikiem
-  (rodzime)
-  embamba
-  A2 przymiotniki nieuzgadniające się z rzeczownikiem
-  ( zapożyczenia )
-  maalumu
-  A3 przymiotniki składające się z wyrażenia
-  (wielowyrazowe)
-  aina kwa aina
-  P1 przysłówki jednowyrazowe karibu
-  P2 przysłówki składające się z wyrażenia (wielowyrazowe)
-  hivi karibuni
--->
+    <front xml:lang="pl">
+      
+      <div type="preface">
+        <p>Niniejszy Studencki Słownik Suahilijsko-Polski powstał na podstawie haseł opracowanych i
+          wprowadzonych do komputera (za pomocą programu MS Access) przez Annę Pytluk, studentkę
+          Zakładu Języków i Kultur Afryki Instytutu Orientalistycznego Uniwersytetu Warszawskiego.
+          Został on wybrany jako najlepszy spośród kilku podobnych słowników studenckich oraz
+          przejrzany i skorygowany przez Beatę Wójtowicz, doktorantkę IO, która następnie dokonała
+          składu i łamania słownika z wykorzystaniem systemu LATEX2e. Słownik w takiej formie został
+          w roku 2003 opublikowany elektronicznie na licencji GNU FDL 1.1, m.in. w formacie PDF, pod
+          adresem <ptr target="http://www.orient.uw.edu.pl/~jsbien/BW/SSSP/"/> oraz <ptr
+            target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/"/>.</p>
+
+        <p>Oryginalna wersja słownika zawierała 1320 haseł, obejmujących zakres materiału z
+          pierwszego roku nauki języka suahili. W roku 2009 słownik został skonwertowany na język
+          znaczników XML wg. schematu TEI P5, a następnie opublikowany w projekcie <ref
+            target="http://freedict.org/">Freedict</ref>, na licencji GNU Public License 3.0.</p>
+      </div>
+
+      <div type="abbreviations">
+        <p>Objaśnienie skrótów stosowanych przez autorkę haseł</p>
+        <p>
+          <table rend="boxed" cols="3">
+            <row><cell role="label">Skrót</cell><cell role="label">Opis</cell><cell role="label">Przykład</cell></row>
+            <row><cell>V0</cell><cell>czasowniki jednosylabowe i nieregularne</cell><cell>ja</cell></row>
+            <row><cell>V1</cell><cell>czasowniki regularne zakończone samogłoską a; formy podstawowe</cell><cell>soma</cell></row>
+            <row><cell>V2</cell><cell>czasowniki zakończone w formie podstawowej 2 samogłoskami</cell><cell>chukua</cell></row>
+            <row><cell>V3</cell><cell>czasowniki zakończone na i</cell><cell>fikiri</cell></row>
+            <row><cell>V4</cell><cell>czasowniki zakończone na u</cell><cell>husu</cell></row>
+            <row><cell>W</cell><cell>czasowniki w formie wzajemnej</cell><cell>onana</cell></row>
+            <row><cell>D</cell><cell>czasowniki w formie kierunkowej</cell><cell>pikia</cell></row>
+            <row><cell>K</cell><cell>czasowniki w formie kauzatywnej</cell><cell>somesha</cell></row>
+            <row><cell>S</cell><cell>czasowniki w formie statywnej</cell><cell>vunjika</cell></row>
+            <row><cell>Z</cell><cell>czasowniki w stronie zwrotnej</cell><cell>jifunza</cell></row>
+            <row><cell>B</cell><cell>czasowniki w stronie biernej</cell><cell>andikwa</cell></row>
+            <row><cell>N1</cell><cell>rzeczowniki w klasie 1 mające liczbę mnogą w klasie 2</cell><cell>mjomba / wajomba</cell></row>
+            <row><cell>N3</cell><cell>rzeczowniki w klasie 3 mające liczbę mnogą w klasie 4</cell><cell>mti / miti</cell></row>
+            <row><cell>N5</cell><cell>rzeczowniki w klasie 5 mające liczbę mnogą w klasie 6</cell><cell>debe / madebe</cell></row>
+            <row><cell>N6</cell><cell>rzeczowniki będące zazwyczaj tylko w klasie 6</cell><cell>maji</cell></row>
+            <row><cell>N7</cell><cell>rzeczowniki w klasie 7 mające liczbę mnogą w klasie 8</cell><cell>kijiko / vijiko</cell></row>
+            <row><cell>N9</cell><cell>rzeczowniki w klasie 9 mające liczbę mnogą w klasie 10</cell><cell>ajili / ajili</cell></row>
+            <row><cell>N11/14</cell><cell>rzeczowniki w klasie 11/14; lp jak kl.3, lm jak kl.10</cell><cell>ukuta / kuta; unywele / nywele</cell></row>
+            <row><cell>N5/1</cell><cell>rzeczowniki w klasie 5, ale odmieniające się jak klasa 1</cell><cell>bwana / mabwana</cell></row>
+            <row><cell>N7/1</cell><cell>rzeczowniki w klasie 7, ale odmieniające się jak klasa 1</cell><cell>kijana / vijana</cell></row>
+            <row><cell>N9/1</cell><cell>rzeczowniki w klasie 9, ale odmieniające się jak klasa 1</cell><cell>ndege / ndege</cell></row>
+            <row><cell>A1</cell><cell>przymiotniki uzgadniajace się z rzeczownikiem (rodzime)</cell><cell>embamba</cell></row>
+            <row><cell>A2</cell><cell>przymiotniki nieuzgadniające się z rzeczownikiem (zapożyczenia)</cell><cell>maalumu</cell></row>
+            <row><cell>A3</cell><cell>przymiotniki składające się z wyrażenia (wielowyrazowe) </cell><cell>aina kwa aina</cell></row>
+            <row><cell>P1</cell><cell>przysłówki jednowyrazowe</cell><cell>karibu</cell></row>
+            <row><cell>P2</cell><cell>przysłówki składające się z wyrażenia (wielowyrazowe)</cell><cell>hivi karibuni</cell></row>
+          </table>
+        </p>
+      </div>
+    </front>
     <body>
       <entry>
         <form>
