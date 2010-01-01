@@ -1,8 +1,12 @@
-You should be able to see the contents of the dictionary thanks 
-to the schema files (DTD and RNG) and the style sheet (CSS).
-This is only a working view, with some of the text supplied by the CSS
- -- that's why copying from the browser won't yield the results you'd
-expect.
+[If this text appears garbled on a Windows system, use Wordpad to open it]
+
+You should be able to see the contents of the dictionary in your browser 
+(Firefox and Opera have no problem with it; IE 8.0 doesn't work perfectly), 
+thanks to the CSS style sheet (make sure that the DTD file is also present 
+in the same directory/folder; sometimes, you may have to rename the .tei file 
+to .xml). The browser view is merely a working view, with some of the text 
+supplied by the CSS  -- that's why copying from the browser won't yield the 
+results you'd expect.
 
 One way to access the dictionary properly is to use the DICT database 
 generated from the TEI source. The database is offered in a separate 
@@ -13,7 +17,7 @@ download and it can be accessed online, e.g. at
 * http://www.dict.org/bin/Dict (official DICT WWW front-end)
 
 (make sure to check the version of the dictionary: these online 
-repositories may offer earlier versions!)
+repositories may sometimes offer earlier versions!)
 
 You can also download a desktop/plugin client, see 
 
@@ -32,8 +36,8 @@ https://sourceforge.net/apps/mediawiki/freedict/index.php?title=DICT_servers and
 choose something suitable for your platform) and set the client to use the localhost,
 rather than an online server.
 
-
 --
-Written up by Piotr Banski on 31-dec-09. If you notice that this information 
-appears to be outdated, please post on a Freedict bug tracker or mail 
-freedict-beta@lists.sourceforge.net. Thanks!
+Written up by Piotr Banski on 01-jan-2010. If you notice that this information 
+appears to be outdated, *please* post on the Support Requests tracker 
+( https://sourceforge.net/tracker/?group_id=1419&atid=201419 ) 
+or mail freedict-beta@lists.sourceforge.net. Thanks!
