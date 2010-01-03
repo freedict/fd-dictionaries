@@ -73,6 +73,7 @@ sourceURL: $(dictname).tei
 maintainer: $(dictname).tei $(xsldir)/getmaintainer.xsl
 	@$(XSLTPROCESSOR) $(xsldir)/getmaintainer.xsl $<
 
+
 find-homographs: $(dictname).tei
 	@cat $< | grep orth | \
 	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
@@ -307,8 +308,11 @@ clean::
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
 	rm -f valid.stamp
-	rm -f $(FREEDICTDIR)/release/dict-bz2/$(dictname).tar.bz2
-	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname).tar.gz
+	rm -f $(FREEDICTDIR)/release/dict-tbz2/$(dictname)-$(version).tar.bz2
+	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname)-$(version).tar.gz
+	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 
+	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
+	rm -f $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
 
 # put all sources of a dictionary module into a tarball for release
 # ("distribution").  this only includes the .tei file if it doesn't have to be
@@ -317,10 +321,14 @@ $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFI
 	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
 		mkdir -p $(FREEDICTDIR)/release/src; fi
 	tar -C .. -cvjhf $@ \
-		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=freedict-*.zip --exclude=.* \
 		$(addprefix $(notdir $(realpath .))/, $(DISTFILES))
 
-dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
+$(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
+	cd .. && zip -9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
+      -x $(dictname)/CVS/* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
+
+dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
 
 # the following two targets work like "dist", but include the .tei file
 # unconditionally
