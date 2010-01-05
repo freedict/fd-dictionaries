@@ -1,0 +1,97 @@
+TEI {	width:80%;
+	margin:auto;
+	padding-bottom:70px;
+	font-family: sans-serif;
+	/*display:none; */
+}
+
+title {	display:block;
+	margin:10px;
+	color:blue;
+	font-size:x-large;
+}
+
+teiHeader {display:none;}
+
+front {	display:block;}
+
+back { 	display:block;
+	margin-top :50px;
+}
+/* GENERAL */
+p {
+	display:block;
+	text-align:justify;
+}
+
+quote {	display:block;
+	margin-left:30px;
+	font-style:italic;
+}
+/* LISTES */
+list {	display:block;}
+
+item{	display:block;
+	text-align:center;}
+
+xr,date,head {display:block;}
+
+head { 	font-weight:bold;
+	text-transform:uppercase;
+}
+
+/* DICO */
+entry {	display:block;}
+
+entry > form {	display:block;}
+
+/* sense {	display:block;
+	margin-left:50px} */
+sense:before {content:""; margin-left:50px;}
+sense {display:block;}
+
+
+orth {	font-weight:bold;}
+
+cit[type="translation"] {color:blue;}
+cit[type="translation"] >q:before {content:" ↪ ";}
+cit[type="translation"] >q {display:inline;}
+
+cit[type="example"]:before {content:"•"; margin-left:75px;}
+cit[type="example"] {display:block;}
+
+cit[type="example"] > q {display:inline;}
+cit[type="example"] > cit[type="translation"] {display:inline;
+}
+cit[type="example"] > cit[type="translation"] > q:before {content:" ";}
+cit[type="example"] > cit[type="translation"] > q {	display:inline;}
+
+form[type="infl"] {display: inline;}
+form[type="infl"]:before {content:" ("}
+form[type="infl"]:after {content:")"}
+
+def{}
+
+note{}
+
+lbl:before {	content: " (";}
+lbl {}
+lbl:after {	content: ")";}
+
+usg:before {content:" ["; font-weight:bold; color:purple;}
+usg {font-weight:bold;color:purple;}
+usg:after {content:"]"; font-weight:bold;color:purple;}
+
+gen:before {content :" "}
+gen {color:#CC6666;}
+gen:after {content :""}
+
+num:before {content :" "}
+num {color:#CC6666;}
+
+pos:before {content: " ";}
+pos {	display:inline; color:#FF2222;}
+
+hi {font-weight:bold;}
+
+/*⇗↳↪• */
