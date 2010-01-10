@@ -21,7 +21,7 @@ dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 # Extracting the tiny edition element contents per XSLT is
-# overdimensioned.
+# inefficient.
 # version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
 #version1 = $(shell grep -m 1 -o -P -e \
 #	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
@@ -307,10 +307,12 @@ print-unsupported:
 clean::
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
+	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
+	rm -f $(dictname)-reverse.index
 	rm -f valid.stamp
 	rm -f $(FREEDICTDIR)/release/dict-tbz2/$(dictname)-$(version).tar.bz2
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname)-$(version).tar.gz
-	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 
+	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
 	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
 	rm -f $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
 

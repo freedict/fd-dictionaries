@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.15 $
+# $Revision: 1.16 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -418,5 +418,10 @@ if($opt_l)
 `cp $dbfile $dbfile.bak` if -s $dbfile;
 printd "Writing $dbfile\n";
 $SIG{INT} = 'IGNORE';
-$doc->printToFile($dbfile);
+my $fh = new FileHandle ($dbfile, "w") ||
+  die "Can't open output file $dbfile: $!";
+$fh->binmode(':utf8');
+#$doc->printToFileHandle($fh);
+$doc->print($fh);
+$fh->close();
 $SIG{INT} = 'DEFAULT'
