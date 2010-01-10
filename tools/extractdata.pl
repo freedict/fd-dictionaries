@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.14 $
+# $Revision: 1.15 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -52,7 +52,7 @@ sub printd
   print @_
 }
 
-my $sfurl = 'http://sourceforge.net/project/showfiles.php?group_id=1419';
+my $sfurl = 'http://sourceforge.net/projects/freedict/files/';
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
 
 printd "Using FREEDICTDIR=$FREEDICTDIR\n";
@@ -266,8 +266,8 @@ sub update_database
 {
   my($doc, $URL, $size, $release_date) = @_;
 
-  unless($URL =~ qr"^http://sourceforge.net/project/downloading\.php\?group_id=1419&filename=(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([\w\.]+)")
-  { printd "filename in URL '$URL' not recognized"; return }
+  unless($URL =~ qr"^http://sourceforge.net/projects/freedict/files/[^/]+/[^/]+/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([^/]+)/download")
+  { printd "filename in URL '$URL' not recognized\n"; return }
   my $la1la2 = $2;
   my $version = $3;
   my $extension = $4;
@@ -293,7 +293,7 @@ sub update_database
   );
   my $platform = $ext2platform{$extension};
   unless(defined $platform)
-  { printd "Cannot make sense of filename '$extension'. Skip.\n"; return }
+  { printd "Cannot make sense of extension '$extension' of filename in URL $URL. Skip.\n"; return }
 
   # find old release element
   my $r;
@@ -319,10 +319,11 @@ sub update_database
 
   # if $version is older release than available in the database,
   # don't update the database
-  return if $r->getAttribute('version') ge $version;
+  return if $r->getAttribute('version') gt $version;
 
-  printd "$la1la2: Updating release for $platform platform. Old: '" .
-  $r->getAttribute('version') . "' New: '$version'\n";
+  printd "$la1la2: New release for $platform platform. Old: '" .
+    $r->getAttribute('version') . "' New: '$version'\n"
+    if $r->getAttribute('version') gt $version;
   $r->setAttribute('version', $version);
   $r->setAttribute('URL', $URL);
   $r->setAttribute('size', $size);
@@ -333,75 +334,52 @@ sub fdict_extract_releases
 {
   my $doc = shift;
 
+  # Probably WWW::Mechanize is overkill now, LWP might be enough
   my $mech = WWW::Mechanize->new;
+  printd "Getting $sfurl\n";
   $mech->get($sfurl);
-  my @package_links = $mech->find_all_links(url_regex =>
-    qr"^/project/showfiles.php\?group_id=1419&package_id=",
-    text_regex => qr" - ");
-  printd "Found ", scalar(@package_links), " packages on SourceForge.\n";
+  my $tree = HTML::TreeBuilder->new_from_content($mech->content);
 
-  foreach(@package_links)
+  my @tablerows = $tree->look_down('_tag', 'tr');
+  printd scalar(@tablerows), " <tr> elements in web page.\n";
+  for my $tr (@tablerows)
   {
-    printd "Getting file releases of ", $_->text, "\n";
-    my $releasecount = 0;
-    # http://sf.net/project/showfiles.php?group_id=1419&package_id=304800
-    $mech->get($_->url);
-    my $tree = HTML::TreeBuilder->new_from_content($mech->content);
-    my @release_tbodies = $tree->look_down(
-	'_tag', 'tbody',
-	sub { defined $_[0]->attr('id') and $_[0]->attr('id') =~ /^pkg\d+_\d+$/ }
-      );
-    print "I didn't find the table with the file releases.  Bad!"
-      unless scalar @release_tbodies;
-    for my $release_tbody (@release_tbodies)
-    {
-      # find $releasedate, $size, $URL
-      my $a = $release_tbody->look_down(
-	'_tag', 'a',
-	sub
-	{
-	  #print $_[0]->attr('href'), "\n";
-	  $_[0]->attr('href') =~
-	  qr"/project/downloading\.php\?group_id=1419&filename=freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)"
-	}
-      );
-      unless(defined $a)
+    # find $releasedate, $size, $URL
+    my $a = $tr->look_down(
+      '_tag', 'a',
+      sub
       {
-	#printd "Did not find a released file with a matching name.\n";
-        next
+	#print $_[0]->attr('href'), "\n";
+	$_[0]->attr('href') =~
+	qr"^/projects/freedict/files/[^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)/download"
       }
-      my $URL = $a->attr('href');
-      unless($URL)
-      { printd "No URL?"; next }
-      $URL = "http://sourceforge.net" . $URL
-        if $URL =~ "^/project/downloading\.php";
-      my $small = $release_tbody->look_down(
-	'_tag', 'small',
-	sub
-	{ $_[0]->as_text =~ /^\(\d\d\d\d-\d\d-\d\d \d\d:\d\d\) $/ }
-	);
-      unless(defined $small)
-      {
-	printd "Did not find release date.\n";
-	next
-      }
-      my $rdtext = $small->as_text;
-      $rdtext =~ /^\((\d\d\d\d-\d\d-\d\d) /;
-      my $release_date = $1;
-      my $td = $release_tbody->look_down(
-	'_tag', 'td',
-	sub
-	{ $_[0]->as_text =~ /^\d+$/ }
-      );
-      next unless defined $td;
-      my $size = $td->as_text;
-      $releasecount++;
-      #printd "\n\t$URL $size $release_date\n";
-      update_database $doc, $URL, $size, $release_date
-    }
-    printd " $releasecount release(s)\n";
-    $tree->delete
-  } # foreach(@package_links)
+    );
+    next unless defined $a;
+    my $URL = "http://sourceforge.net" . $a->attr('href');
+    #printd "Got URL: $URL\n";
+
+    my $date_td = $tr->look_down(
+      '_tag', 'td',
+      sub { $_[0]->as_text =~ /^\d\d\d\d-\d\d-\d\d$/ }
+    );
+    unless(defined $date_td)
+    { printd "Did not find release date.\n"; next }
+    my $release_date = $date_td->as_text;
+    #printd "Got release date: $release_date\n";
+
+    my $size_td = $tr->look_down(
+      '_tag', 'td',
+      sub { $_[0]->as_text =~ /^[\d.]+ [KM]B$/ }
+    );
+    next unless defined $size_td;
+    my $s = $size_td->as_text;
+    $s =~ /^([\d.]+) ([KM])B$/;
+    my $size = int($1 * ($2 eq 'K' ? 1024 : 1024*1024));
+
+    #printd "\n\t$URL $size $release_date\n";
+    update_database $doc, $URL, $size, $release_date
+  } # foreach(@links)
+  $tree->delete
 }
 ##################################################################
 
