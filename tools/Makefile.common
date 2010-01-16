@@ -68,7 +68,7 @@ status: $(dictname).tei
 
 sourceURL: $(dictname).tei
 	@echo -n $(shell grep -m 1 -o -P -e \
-	"(?<=<xptr url=\").+(?=\"\/>)" $(dictname).tei)
+	"(?<=<xptr url=\")|(?<=<ptr target=\").+(?=\"\/>)" $(dictname).tei)
 
 maintainer: $(dictname).tei $(xsldir)/getmaintainer.xsl
 	@$(XSLTPROCESSOR) $(xsldir)/getmaintainer.xsl $<

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.16 $
+# $Revision: 1.17 $
 
 # the produced freedict-database.xml has the following schema:
 #
@@ -196,7 +196,8 @@ sub fdict_extract_metadata
   ###################################################################
 
     #my $maintainer = `sabcmd xsl/getmaintainer.xsl "$teifile"`;
-    my $maintainer = `cd $dirname/$entry;make --no-print-directory maintainer`;
+    use Encode;
+    my $maintainer = decode_utf8(`cd $dirname/$entry;make --no-print-directory maintainer`);
     if($maintainer =~ /^([^<]+)\s<(.*)>$/)
     {
       $maintainerName = $1;
@@ -206,7 +207,7 @@ sub fdict_extract_metadata
     else
     {
       printd "	Could not parse maintainer name and email from:\n" .
-	"\t$maintainer\nUsing the whole as maintainer name.";
+	"\t$maintainer\nUsing the whole as maintainer name.\n";
       $maintainerName = $maintainer
     }
 
