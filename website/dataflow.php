@@ -2,12 +2,12 @@
  include 'inc/links.php';
  include 'inc/gettext.php'
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
  <title><?php echo _('Data Flow') ?> - FreeDict</title>
- <META http-equiv="Content-Type" content="text/html;charset=utf-8">
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>">
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
 </head>
 
 <body>
@@ -16,12 +16,12 @@
 
 <a href="<?php echo fdict_url('images/dataflow.png') ?>" target="_top"><img
  src="<?php echo fdict_url('images/dataflow.png') ?>" width="100%" style="background-color: white"
-border=0 alt="<?php printf("%2.0f", filesize('images/dataflow.png')/1024)
- ?> kB"></a>
+border="0" alt="<?php printf("%2.0f", filesize('images/dataflow.png')/1024)
+ ?> kB" /></a>
 
 [<a href="<?php echo fdict_url('images/dataflow.svgz') ?>" type="image/svg+xml">SVG Version</a>,
 <?php printf("%2.0f", filesize('images/dataflow.svgz')/1024) ?> kB,
-<?php echo _('possibly plugin needed, eg.') ?> 
+<?php echo _('possibly plugin needed, eg.') ?>
 <a href="http://www.adobe.com/svg/viewer/install/main.html"
 target="_parent"><?php echo _("Adbobe's") ?></a>]
 

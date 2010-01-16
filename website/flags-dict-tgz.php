@@ -23,12 +23,12 @@ $platformStrings = array(
   'gem' => '<a href="http://rocklinux.org/" target="_top">ROCK Linux</a>');
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
  <title><?php echo _('Download / Matrix View - FreeDict') ?></title>
- <META http-equiv="Content-Type" content="text/html;charset=utf-8">
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>">
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
 </head>
 
 <body>
@@ -53,17 +53,17 @@ $platformStrings = array(
      Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is
      similar to stardict as it doesn\'t use a client/server
      approach like') .
-     ' <a href=' . fdict_url('flags-dict-tgz.php') . '>dictd</a>.</p>';
+     ' <a href="' . fdict_url('flags-dict-tgz.php') . '">dictd</a>.</p>';
   }
 ?>
 
 <table summary="<?php echo _('Select your language combination!') ?>">
  <tr bgcolor="#eeeeee">
-  <th colspan=<?php echo count($Langcode2english)+1 .">".
+  <th colspan="<?php echo count($Langcode2english)+1 ."\">".
     _('Source Language / Size in MB') ?></th>
  </tr>
  <tr bgcolor="#eeeeee">
-  <th><?php echo _('Destination<br>Language') ?></th>
+  <th><?php echo _('Destination<br />Language') ?></th>
 
 <?php
   foreach($Langcode2english as $code => $english)
@@ -72,16 +72,16 @@ $platformStrings = array(
     // or no release for this plattform available
     global $fddb_docel, $have_php5;
     $appears = false;
-    foreach(getElementsByTagname(($have_php5) ? $freedict_database : $fddb_docel, 'dictionary') as $d)             
-    {                                                                             
+    foreach(getElementsByTagname(($have_php5) ? $freedict_database : $fddb_docel, 'dictionary') as $d)
+    {
       if(substr($d->$get_attr('name'),0,3) == $code)
       {
-        $r = find_release($d, $platform);
-        if(isset($r))
-        {
-          $appears = true; break;
+	$r = find_release($d, $platform);
+	if(isset($r))
+	{
+	  $appears = true; break;
 	}
-      }                       
+      }
     }
     if(!$appears) continue;
 
@@ -90,7 +90,7 @@ $platformStrings = array(
     echo '<th>';
     $i = langcode2image($code);
     if(isset($i)) echo '<img src="'. fdict_url($i) .'" alt="'.
-      _($english). '" title="'. _($english). '">';
+      _($english). '" title="'. _($english). '" />';
     else echo _($english);
     echo "</th>\n";
   }
@@ -121,7 +121,7 @@ foreach($Langcode2english as $l2 => $english2)
   echo "<tr>\n<th bgcolor=\"#eeeeee\">";
   $i = langcode2image($l2);
   if(isset($i)) echo "<img src=\"". fdict_url($i) ."\" alt=\"".
-      _($english2). "\" title=\"". _($english2). "\">";
+      _($english2). "\" title=\"". _($english2). "\" />";
     else echo _($english2);
     echo "</th>\n";
 
@@ -142,11 +142,11 @@ foreach($Langcode2english as $l2 => $english2)
     }
 
     $alt = 'Headwords: '. $d->$get_attr('headwords').
-           ' Version: '. $d->$get_attr('version').
-           ' Last change: '. $d->$get_attr('date').
-           ' Status: '. $d->$get_attr('status');
+	   ' Version: '. $d->$get_attr('version').
+	   ' Last change: '. $d->$get_attr('date').
+	   ' Status: '. $d->$get_attr('status');
 
-    linkcell($d, $r, $platform, $alt); 
+    linkcell($d, $r, $platform, $alt);
   }
 
   echo "</tr>\n";

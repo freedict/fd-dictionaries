@@ -5,17 +5,18 @@
  global $menu_nohead;
  if(!isset($menu_nohead))
  {
-   echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+   echo '
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
    <html><head><title>FreeDict</title>
-     <META http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
      <link rel="stylesheet" type="text/css" href="' . fdict_url('s.css') .
-     '"></head><body>';
+     '" /></head>';
  }
 ?>
-
+<body>
 <table cellspacing="1" cellpadding="0" summary="<?php echo _('Menu') ?>">
 
-<tr><td align="center"><img src="<?php echo fdict_url('images/freedict.gif') ?>" alt="FreeDict Logo"></td></tr>
+<tr><td align="center"><img src="<?php echo fdict_url('images/freedict.gif') ?>" alt="FreeDict Logo" /></td></tr>
 
 <tr><td class="menu"><?php
  global $XFreeDict;
@@ -25,7 +26,7 @@
 <tr><td class="menu"><a href="<?php echo fdict_url('overview.php') ?>" target="main"><?php echo _('Overview') ?></a></td></tr>
 <tr><td class="menu"><a href="<?php echo fdict_url('dataflow.php') ?>" target="main"><?php echo _('Data Flow') ?></a></td></tr>
 
-<tr><td class="menuNObg" align="center"><?php echo _('Download databases') ?>:<br>
+<tr><td class="menuNObg" align="center"><?php echo _('Download databases') ?>:<br/>
  <table style="font-size: 9;" width="95%" cellspacing="1" summary="Choose Platform">
   <tr style="background-color:#eeeeee">
    <th><?php echo _('Platform') ?></th>
@@ -34,12 +35,12 @@
 
   <tr style="background-color: #f0f0f0">
    <td><?php echo _('Windows &amp; Linux') ?></td>
-   <td><a href="<?php echo fdict_url('flags-dict-tgz.php') ?>" target="main"><?php echo _('DICT servers (tgz)') ?></a>
+   <td><a href="<?php echo fdict_url('flags-dict-tgz.php') ?>" target="main"><?php echo _('DICT servers (tgz)') ?></a></td>
   </tr>
 
   <tr style="background-color: #f0f0f0">
    <td><a href="<?php echo fdict_url('deb.php') ?>" target="main"><?php echo _('Debian Linux') ?></a></td>
-   <td><?php echo _('dictd') ?>
+   <td><?php echo _('dictd') ?></td>
   </tr>
 
   <tr style="background-color: #f0f0f0">
@@ -71,7 +72,7 @@
 </td></tr>
 
 <tr><td class="menu">
- <a href="<?php echo fdict_url('editor.php') ?>" target=main>FreeDict-Editor</a>
+ <a href="<?php echo fdict_url('editor.php') ?>" target="main">FreeDict-Editor</a>
 </td></tr>
 
 <tr><td class="menu">
@@ -82,23 +83,24 @@
  target="_parent"><?php echo _('SourceForge Project Page') ?></a></td></tr>
 <tr><td class="menu"><ul>
  <li><small><a href="http://sourceforge.net/cvs/?group_id=1419"
-  target="_parent">CVS</a><br></small>
+  target="_parent">CVS</a><br /></small></li>
  <li><small><a href="http://sourceforge.net/mail/?group_id=1419"
-  target="_parent"><?php echo _('Mailinglists') ?></a><br></small>
+  target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
  <li><small><a href="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419"
-  target="_parent"><?php echo _('Bugs') ?></a><br></small>
+  target="_parent"><?php echo _('Bugs') ?></a><br /></small></li>
  <li><small><a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=Main_Page"
-  target="_parent"><?php echo _('Wiki') ?></a><br></small>
+  target="_parent"><?php echo _('Wiki') ?></a><br /></small></li>
 </ul></td>
-<tr><td class="menu"><a href="<?php echo fdict_url('weblang.php') ?>" target="main"><?php echo _('Translate this Website') ?></a>
+</tr>
+<tr><td class="menu"><a href="<?php echo fdict_url('weblang.php') ?>" target="main"><?php echo _('Translate this Website') ?></a></td></tr>
 <tr><td class="menu"><a href="<?php echo fdict_url('db-as-xml.php') ?>" target="main"><?php echo _('Database as XML') ?></a>
 </td></tr>
 
 <tr><td class="menuNObg" align="center">
  &copy; 2004-2010 <?php echo _('FreeDict Project') ?>
 </td></tr>
-</table>
+</table></body>
 <?php
  if(!isset($menu_nohead))
- { echo '</body></html>'; }
+ { echo '</html>'; }
 ?>

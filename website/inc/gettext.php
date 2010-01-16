@@ -19,7 +19,7 @@
     //echo "langtag2Q[$langtag]= $Q<br>";
   }
  }
- 
+
  global $twoletters2threeletters;
  $twoletters2threeletters = array(
   'de' => 'deu',
@@ -29,7 +29,7 @@
   'ar' => 'ara',
   'ru' => 'rus',
   'bg' => 'bul');
-  
+
  // the following also defines which locales we offer
  global $langtag2locale;
  $langtag2locale = array(
@@ -45,7 +45,7 @@
  global $content_language;
  $content_language = 'en';
  $l = 'en_GB';
- 
+
  foreach($langtag2Q as $langtag => $Q)
  {
    //echo "Trying $langtag...";
@@ -71,16 +71,16 @@
    $ret = textdomain('freedict');
    //echo "textdomain: $ret<br>";
  }
-  
+
  function languagemenu()
  {
    include_once 'langcodes.php';
    global $langtag2locale, $Langcode2english, $twoletters2threeletters,
      $content_language;
    $r =
-    '<form action="../" method="GET">' .
+    '<form action="../" method="get">' .
     _("Website Language: ") .
-        '<select name="l" onChange="parent.location.href=\'../\'+l.value">' . "\n" .
+        '<select name="l" onchange="parent.location.href=\'../\'+l.value">' . "\n" .
         '  <option value="en">' . _('English') . "</option>\n";
    foreach($langtag2locale as $lt => $loc)
    {
@@ -90,7 +90,7 @@
      if($lt == $content_language) $r .= ' selected';
      $r .= '>' . langcode2english($lt2) . "</option>\n";
    }
-   return $r . '</select><input type="submit" value="!"></form>';
+   return $r . '</select><input type="submit" value="!" /></form>';
  }
- 
+
 ?>

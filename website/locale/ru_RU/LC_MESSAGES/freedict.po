@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2009-04-25 21:14+0200\n"
+"POT-Creation-Date: 2010-01-16 21:23+0100\n"
 "PO-Revision-Date: 2007-12-13 20:09+MET\n"
 "Last-Translator: Alexey Konyshev <alexey@polyglotexpert.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: dataflow.php:8 dataflow.php:15 menu.php:26
+#: dataflow.php:8 dataflow.php:15 menu.php:27
 msgid "Data Flow"
 msgstr "Поток данных"
 
@@ -28,7 +28,7 @@ msgstr "Возможно плугин необходим"
 msgid "Adbobe's"
 msgstr ""
 
-#: db-as-xml.php:8 db-as-xml.php:15 menu.php:94
+#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
 msgid "Database as XML"
 msgstr "Данные как XML"
 
@@ -179,7 +179,8 @@ msgid "Source Language / Size in MB"
 msgstr "Исходный язык / Размер в МВ"
 
 #: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
-msgid "Destination<br>Language"
+#, fuzzy
+msgid "Destination<br />Language"
 msgstr "Результирующий язык"
 
 #: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
@@ -227,75 +228,75 @@ msgstr "Статус"
 msgid "Version for / Size in MB"
 msgstr "Версия для / Размер в МВ"
 
-#: menu.php:16
+#: menu.php:17
 msgid "Menu"
 msgstr "Меню"
 
-#: menu.php:25 overview.php:8
+#: menu.php:26 overview.php:8
 msgid "Overview"
 msgstr "Обозрение"
 
-#: menu.php:28
+#: menu.php:29
 msgid "Download databases"
 msgstr "Загрузка баз данных"
 
-#: menu.php:31
+#: menu.php:32
 msgid "Platform"
 msgstr "Платформа"
 
-#: menu.php:32
+#: menu.php:33
 msgid "Application"
 msgstr "Использование"
 
-#: menu.php:36
+#: menu.php:37
 msgid "Windows &amp; Linux"
 msgstr ""
 
-#: menu.php:37
+#: menu.php:38
 msgid "DICT servers (tgz)"
 msgstr ""
 
-#: menu.php:41
+#: menu.php:42
 msgid "Debian Linux"
 msgstr ""
 
-#: menu.php:42
+#: menu.php:43
 msgid "dictd"
 msgstr ""
 
-#: menu.php:46
+#: menu.php:47
 msgid "WinCE &amp; Palm"
 msgstr ""
 
-#: menu.php:61
+#: menu.php:62
 msgid "Detailed List"
 msgstr "Текущий список"
 
-#: menu.php:70
+#: menu.php:71
 msgid "FreeDict Online Servers"
 msgstr "FreeDict онлайн сервер"
 
-#: menu.php:82
+#: menu.php:83
 msgid "SourceForge Project Page"
 msgstr "Страница проекта SourceForge"
 
-#: menu.php:87
+#: menu.php:88
 msgid "Mailinglists"
 msgstr "Почтовый список"
 
-#: menu.php:89
+#: menu.php:90
 msgid "Bugs"
 msgstr "Ошибки"
 
-#: menu.php:91
+#: menu.php:92
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:8 weblang.php:15
+#: menu.php:95 weblang.php:8 weblang.php:15
 msgid "Translate this Website"
 msgstr "Переведите эту Web-страницу"
 
-#: menu.php:98
+#: menu.php:100
 msgid "FreeDict Project"
 msgstr "FreeDict проект"
 
@@ -309,17 +310,6 @@ msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr ""
 
 #: overview.php:21
-#, fuzzy
-msgid ""
-"This website is the successor of freedict.de. It is under development.\n"
-"Some contents might be unavailable. In this case please send an email to the "
-"freedict-beta mailing list."
-msgstr ""
-"Эта Web-страница  улучшается. Доступ невозможен. Вы можете посетить старую "
-"Web-страницу по адресу: <a target=_parent href=http://freedict.de/>freedict."
-"de</a>"
-
-#: overview.php:24
 msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
@@ -330,7 +320,7 @@ msgstr ""
 "они доступны по лицензии GNU General Public Licence, или даже менее строгой. "
 "Чтобы уточнить, проверяйте лицензию каждой базы. "
 
-#: overview.php:29
+#: overview.php:26
 #, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -340,7 +330,7 @@ msgstr ""
 "Базы данных доступны в формате XML. Мы поддерживаем использование баз "
 "FreeDict с помощью %1$sdictd – сервера словарей DICT%2$s, и других подобных."
 
-#: overview.php:33
+#: overview.php:30
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
@@ -351,7 +341,7 @@ msgstr ""
 "их как списки слов в системах проверки правописания, создания языковых "
 "наборов для переноса в собственную базу, и даже для печати их с XSL-FO."
 
-#: overview.php:38
+#: overview.php:35
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -361,7 +351,7 @@ msgstr ""
 "проекту! Ваша помощь востребована и необходима, в том числе и для улучшения "
 "качества существующих словарей."
 
-#: overview.php:45
+#: overview.php:42
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -370,7 +360,7 @@ msgstr ""
 "Большинство ресурсов размещены на хостинге SourceForge. Без SourceForge "
 "FreeDict не развился бы так хорошо."
 
-#: overview.php:49
+#: overview.php:46
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -432,7 +422,7 @@ msgstr ""
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.mo</tt> file from CVS:"
+"<tt>.po</tt> file from CVS:"
 msgstr ""
 
 #: inc/gettext.php:82
@@ -478,105 +468,109 @@ msgid "Dutch"
 msgstr "Голандский"
 
 #: inc/langcodes.php:14
+msgid "Modern Greek"
+msgstr ""
+
+#: inc/langcodes.php:15
 msgid "French"
 msgstr "Французский"
 
-#: inc/langcodes.php:15 inc/langcodes.php:19
+#: inc/langcodes.php:16 inc/langcodes.php:20
 msgid "Irish"
 msgstr "Ирландский"
 
-#: inc/langcodes.php:16
+#: inc/langcodes.php:17
 msgid "German"
 msgstr "Немецкий"
 
-#: inc/langcodes.php:17
+#: inc/langcodes.php:18
 msgid "Hindi"
 msgstr "Хинди"
 
-#: inc/langcodes.php:18
+#: inc/langcodes.php:19
 msgid "Hungarian"
 msgstr "Венгерский"
 
-#: inc/langcodes.php:20
+#: inc/langcodes.php:21
 msgid "Italian"
 msgstr "Итальянский"
 
-#: inc/langcodes.php:21
+#: inc/langcodes.php:22
 msgid "Khasi"
 msgstr "Кхази"
 
-#: inc/langcodes.php:22
+#: inc/langcodes.php:23
 msgid "Kurmanji"
 msgstr ""
 
-#: inc/langcodes.php:23
+#: inc/langcodes.php:24
 #, fuzzy
 msgid "Kurdish"
 msgstr "Турецкий"
 
-#: inc/langcodes.php:24
+#: inc/langcodes.php:25
 msgid "Latin"
 msgstr "Латинский"
 
-#: inc/langcodes.php:25
+#: inc/langcodes.php:26
 msgid "Lithuanian"
 msgstr ""
 
-#: inc/langcodes.php:26
+#: inc/langcodes.php:27
 msgid "Japanese"
 msgstr "Японский"
 
-#: inc/langcodes.php:27
+#: inc/langcodes.php:28
 #, fuzzy
 msgid "Polish"
 msgstr "Английский"
 
-#: inc/langcodes.php:28
+#: inc/langcodes.php:29
 msgid "Portuguese"
 msgstr "Португальский"
 
-#: inc/langcodes.php:29
+#: inc/langcodes.php:30
 msgid "Romanian"
 msgstr "Румынский"
 
-#: inc/langcodes.php:30
+#: inc/langcodes.php:31
 msgid "Russian"
 msgstr "Русский"
 
-#: inc/langcodes.php:31
+#: inc/langcodes.php:32
 msgid "Sanskrit"
 msgstr "Санскрит"
 
-#: inc/langcodes.php:32
+#: inc/langcodes.php:33
 #, fuzzy
 msgid "Gaelic Scottish"
 msgstr "Шотландский"
 
-#: inc/langcodes.php:33
+#: inc/langcodes.php:34
 msgid "Serbo-Croatian"
 msgstr "Сербо-Хорватский"
 
-#: inc/langcodes.php:34
+#: inc/langcodes.php:35
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: inc/langcodes.php:35
+#: inc/langcodes.php:36
 msgid "Spanish"
 msgstr "Испанский"
 
-#: inc/langcodes.php:36
+#: inc/langcodes.php:37 inc/langcodes.php:38
 msgid "Swahili"
 msgstr "Суахили"
 
-#: inc/langcodes.php:37
+#: inc/langcodes.php:39
 msgid "Swedish"
 msgstr "Шведский"
 
-#: inc/langcodes.php:38
+#: inc/langcodes.php:40
 msgid "Turkish"
 msgstr "Турецкий"
 
-#: inc/langcodes.php:39
+#: inc/langcodes.php:41
 msgid "Welsh"
 msgstr "Уэльский"
 
@@ -629,6 +623,16 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "This website is the successor of freedict.de. It is under development.\n"
+#~ "Some contents might be unavailable. In this case please send an email to "
+#~ "the freedict-beta mailing list."
+#~ msgstr ""
+#~ "Эта Web-страница  улучшается. Доступ невозможен. Вы можете посетить "
+#~ "старую Web-страницу по адресу: <a target=_parent href=http://freedict.de/"
+#~ ">freedict.de</a>"
 
 #~ msgid ""
 #~ "For the source files, please see the SourceForge project page.\n"

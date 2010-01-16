@@ -2,12 +2,12 @@
  include 'inc/gettext.php';
  include 'inc/links.php'
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
  <title><?php echo _('Overview') ?> - FreeDict</title>
- <META http-equiv="Content-Type" content="text/html;charset=utf-8">
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>">
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
 </head>
 
 <body>
@@ -25,7 +25,7 @@ licence. Check with the licence of the respective database!') ?></p>
 
 <p><?php printf(_('The databases are available in XML. We support to use the
 FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and other
-similar servers.'), '<A href="http://www.dict.org/" target="_parent">', '</a>') ?></p>
+similar servers.'), '<a href="http://www.dict.org/" target="_parent">', '</a>') ?></p>
 
 <p><?php echo _('But there are other applications for our databases as well. You could use
 them to generate wordlists for spellcheckers and new dictionaries,
@@ -36,9 +36,9 @@ database and even to print your own dictionary with XSL-FO.') ?></p>
 please read the HOWTO and join this project! Your help is appreciated
 and needed, also for improving the quality of the databases.') ?></p>
 
-<p><A href="http://sourceforge.net/" target="_parent">
-<IMG src="http://sourceforge.net/sflogo.php?group_id=1419&amp;type=1" 
-width="88" height="31" border="0" align="left" alt="SourceForge Logo"></A>
+<p><a href="http://sourceforge.net/" target="_parent">
+<img src="http://sourceforge.net/sflogo.php?group_id=1419&amp;type=1"
+width="88" height="31" border="0" align="left" alt="SourceForge Logo" /></a>
 <?php echo _('Most resources are hosted by SourceForge:
 Please support them also. Without SourceForge, FreeDict would
 not have come so far!') ?></p>

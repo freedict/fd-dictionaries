@@ -49,7 +49,7 @@ global $Langcode2image;
 $Langcode2image = array(
  'lat' => 'images/flags/lat.png'
  );
- 
+
 function langcode2english($code)
 {
   global $Langcode2english;

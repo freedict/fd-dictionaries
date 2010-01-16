@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2009-04-25 21:14+0200\n"
+"POT-Creation-Date: 2010-01-16 21:23+0100\n"
 "PO-Revision-Date: 2007-09-02 16:00+0100\n"
 "Last-Translator: Michael Bunk <micha@luetzschena.de>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: dataflow.php:8 dataflow.php:15 menu.php:26
+#: dataflow.php:8 dataflow.php:15 menu.php:27
 msgid "Data Flow"
 msgstr "Datenfluß"
 
@@ -29,7 +29,7 @@ msgstr "möglicherweise wird ein Plugin gebraucht, z.B."
 msgid "Adbobe's"
 msgstr "Adobes"
 
-#: db-as-xml.php:8 db-as-xml.php:15 menu.php:94
+#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
 msgid "Database as XML"
 msgstr "Datenbank als XML"
 
@@ -65,7 +65,6 @@ msgstr ""
 "Herunterladen von Paketen.  Als Administrator hat man weniger mit dem "
 "Herunterladen und Installieren von Paketen zu tun, als mit der Auswahl zu "
 "installierender Pakete.  Deshalb muß man sich nur folgendes Kommando merken:"
-"</p>"
 
 #: deb.php:26 rock.php:41
 #, php-format
@@ -207,7 +206,8 @@ msgid "Source Language / Size in MB"
 msgstr "Quellsprache / Größe in MB"
 
 #: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
-msgid "Destination<br>Language"
+#, fuzzy
+msgid "Destination<br />Language"
 msgstr "Zielsprache"
 
 #: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
@@ -255,75 +255,75 @@ msgstr "Status"
 msgid "Version for / Size in MB"
 msgstr "Version für / Größe in MB"
 
-#: menu.php:16
+#: menu.php:17
 msgid "Menu"
 msgstr "Menü"
 
-#: menu.php:25 overview.php:8
+#: menu.php:26 overview.php:8
 msgid "Overview"
 msgstr "Überblick"
 
-#: menu.php:28
+#: menu.php:29
 msgid "Download databases"
 msgstr "Download"
 
-#: menu.php:31
+#: menu.php:32
 msgid "Platform"
 msgstr "Plattform"
 
-#: menu.php:32
+#: menu.php:33
 msgid "Application"
 msgstr "Anwendung"
 
-#: menu.php:36
+#: menu.php:37
 msgid "Windows &amp; Linux"
 msgstr "Windows &amp; Linux"
 
-#: menu.php:37
+#: menu.php:38
 msgid "DICT servers (tgz)"
 msgstr "DICT-Server (tgz)"
 
-#: menu.php:41
+#: menu.php:42
 msgid "Debian Linux"
 msgstr "Debian Linux"
 
-#: menu.php:42
+#: menu.php:43
 msgid "dictd"
 msgstr "dictd"
 
-#: menu.php:46
+#: menu.php:47
 msgid "WinCE &amp; Palm"
 msgstr "WinCE &amp; Palm"
 
-#: menu.php:61
+#: menu.php:62
 msgid "Detailed List"
 msgstr "Detailliste"
 
-#: menu.php:70
+#: menu.php:71
 msgid "FreeDict Online Servers"
 msgstr "FreeDict Online-Server (en)"
 
-#: menu.php:82
+#: menu.php:83
 msgid "SourceForge Project Page"
 msgstr "SourceForge-Projektseite (en)"
 
-#: menu.php:87
+#: menu.php:88
 msgid "Mailinglists"
 msgstr "Mailinglisten (en)"
 
-#: menu.php:89
+#: menu.php:90
 msgid "Bugs"
 msgstr "Fehler"
 
-#: menu.php:91
+#: menu.php:92
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:8 weblang.php:15
+#: menu.php:95 weblang.php:8 weblang.php:15
 msgid "Translate this Website"
 msgstr "Übersetzen sie diese Webseite!"
 
-#: menu.php:98
+#: menu.php:100
 msgid "FreeDict Project"
 msgstr "FreeDict-Projekt"
 
@@ -338,15 +338,6 @@ msgstr "Horst Eyermann, Michael Bunk und %1$sviele weitere%2$s"
 
 #: overview.php:21
 msgid ""
-"This website is the successor of freedict.de. It is under development.\n"
-"Some contents might be unavailable. In this case please send an email to the "
-"freedict-beta mailing list."
-msgstr ""
-"Diese Webseite ist der Nachfolger von freedict.de. Einige Inhalte können "
-"fehlen. In diesem Falle treten sie bitte mit uns in Kontakt."
-
-#: overview.php:24
-msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
@@ -357,7 +348,7 @@ msgstr ""
 "Public Licence oder einer freieren Lizenz. Bitte die Lizenz der jeweiligen "
 "Datenbank prüfen!"
 
-#: overview.php:29
+#: overview.php:26
 #, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -366,10 +357,10 @@ msgid ""
 msgstr ""
 "Die Datenbanken sind in einem speziellen XML-Format erhältlich. Wir "
 "unterstützen ihre Verwendung mit %1$sdictd,\n"
-"dem Wörterbuchserver%2$s, welcher das DICT-Protokoll implementiert</a>, und "
+"dem Wörterbuchserver%2$s, welcher das DICT-Protokoll implementiert, und "
 "anderen ähnlichen Servern."
 
-#: overview.php:33
+#: overview.php:30
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
@@ -382,7 +373,7 @@ msgstr ""
 "andere terminologische Datenbanken importieren. Man kann sie mittels XSL-FO "
 "auch in echte gedruckte Wörterbücher verwandeln."
 
-#: overview.php:38
+#: overview.php:35
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -392,7 +383,7 @@ msgstr ""
 "und schließen sie sich dem Projekt an! Ihre Hilfe ist willkommen und "
 "notwendig, auch um die Qualität der Datenbanken zu verbessern."
 
-#: overview.php:45
+#: overview.php:42
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -401,7 +392,7 @@ msgstr ""
 "Die meisten Ressourcen werden uns von SourceForge zur Verfügung gestellt. "
 "Bitte achten sie das! Ohne SourceForge wären wir nicht da, wo wir sind."
 
-#: overview.php:49
+#: overview.php:46
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -471,10 +462,11 @@ msgstr ""
 "\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:25
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.mo</tt> file from CVS:"
+"<tt>.po</tt> file from CVS:"
 msgstr ""
 "Wenn sie eine vorhandene Übersetzung aktualisieren wollen - evtl. weil Teile "
 "dieser Webseite nicht übersetzt werden, können sie die <tt>.mo</tt>-Datei "
@@ -521,103 +513,107 @@ msgid "Dutch"
 msgstr "Niederländisch"
 
 #: inc/langcodes.php:14
+msgid "Modern Greek"
+msgstr ""
+
+#: inc/langcodes.php:15
 msgid "French"
 msgstr "Französisch"
 
-#: inc/langcodes.php:15 inc/langcodes.php:19
+#: inc/langcodes.php:16 inc/langcodes.php:20
 msgid "Irish"
 msgstr "Irisch"
 
-#: inc/langcodes.php:16
+#: inc/langcodes.php:17
 msgid "German"
 msgstr "Deutsch"
 
-#: inc/langcodes.php:17
+#: inc/langcodes.php:18
 msgid "Hindi"
 msgstr "Hindi"
 
-#: inc/langcodes.php:18
+#: inc/langcodes.php:19
 msgid "Hungarian"
 msgstr "Ungarisch"
 
-#: inc/langcodes.php:20
+#: inc/langcodes.php:21
 msgid "Italian"
 msgstr "Italienisch"
 
-#: inc/langcodes.php:21
+#: inc/langcodes.php:22
 msgid "Khasi"
 msgstr "Khasi"
 
-#: inc/langcodes.php:22
+#: inc/langcodes.php:23
 msgid "Kurmanji"
 msgstr "Kurmanji"
 
-#: inc/langcodes.php:23
+#: inc/langcodes.php:24
 msgid "Kurdish"
 msgstr "Kurdisch"
 
-#: inc/langcodes.php:24
+#: inc/langcodes.php:25
 msgid "Latin"
 msgstr "Lateinisch"
 
-#: inc/langcodes.php:25
+#: inc/langcodes.php:26
 msgid "Lithuanian"
 msgstr ""
 
-#: inc/langcodes.php:26
+#: inc/langcodes.php:27
 msgid "Japanese"
 msgstr "Japanisch"
 
-#: inc/langcodes.php:27
+#: inc/langcodes.php:28
 #, fuzzy
 msgid "Polish"
 msgstr "Englisch"
 
-#: inc/langcodes.php:28
+#: inc/langcodes.php:29
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: inc/langcodes.php:29
+#: inc/langcodes.php:30
 msgid "Romanian"
 msgstr "Rumänisch"
 
-#: inc/langcodes.php:30
+#: inc/langcodes.php:31
 msgid "Russian"
 msgstr "Russisch"
 
-#: inc/langcodes.php:31
+#: inc/langcodes.php:32
 msgid "Sanskrit"
 msgstr "Sanskrit"
 
-#: inc/langcodes.php:32
+#: inc/langcodes.php:33
 msgid "Gaelic Scottish"
 msgstr "Gälisch/Schottisch"
 
-#: inc/langcodes.php:33
+#: inc/langcodes.php:34
 msgid "Serbo-Croatian"
 msgstr "Serbokroatisch"
 
-#: inc/langcodes.php:34
+#: inc/langcodes.php:35
 msgid "Slovak"
 msgstr "Slovakisch"
 
-#: inc/langcodes.php:35
+#: inc/langcodes.php:36
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: inc/langcodes.php:36
+#: inc/langcodes.php:37 inc/langcodes.php:38
 msgid "Swahili"
 msgstr "Suaheli"
 
-#: inc/langcodes.php:37
+#: inc/langcodes.php:39
 msgid "Swedish"
 msgstr "Schwedisch"
 
-#: inc/langcodes.php:38
+#: inc/langcodes.php:40
 msgid "Turkish"
 msgstr "Türkisch"
 
-#: inc/langcodes.php:39
+#: inc/langcodes.php:41
 msgid "Welsh"
 msgstr "Walisisch"
 
@@ -681,6 +677,14 @@ msgid ""
 msgstr ""
 "Das liegt derzeit stets daran, daß die bestimmte Zeichen des Wörterbuchs auf "
 "dieser Plattform nicht kodier- oder darstellbar sind."
+
+#~ msgid ""
+#~ "This website is the successor of freedict.de. It is under development.\n"
+#~ "Some contents might be unavailable. In this case please send an email to "
+#~ "the freedict-beta mailing list."
+#~ msgstr ""
+#~ "Diese Webseite ist der Nachfolger von freedict.de. Einige Inhalte können "
+#~ "fehlen. In diesem Falle treten sie bitte mit uns in Kontakt."
 
 #~ msgid "on Zaurus"
 #~ msgstr "auf Zaurus"
