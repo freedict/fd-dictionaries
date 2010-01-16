@@ -1,7 +1,7 @@
 <?php
  include_once 'inc/gettext.php';
  include_once 'inc/links.php';
- 
+
  global $menu_nohead;
  if(!isset($menu_nohead))
  {
@@ -18,7 +18,7 @@
 <tr><td align="center"><img src="<?php echo fdict_url('images/freedict.gif') ?>" alt="FreeDict Logo"></td></tr>
 
 <tr><td class="menu"><?php
- global $XFreeDict;                                                                           
+ global $XFreeDict;
  if(strstr($XFreeDict,'staticlinks')) { echo languagemenu(); }
  ?></td></tr>
 
@@ -31,12 +31,12 @@
    <th><?php echo _('Platform') ?></th>
    <th><?php echo _('Application') ?></th>
   </tr>
- 
+
   <tr style="background-color: #f0f0f0">
    <td><?php echo _('Windows &amp; Linux') ?></td>
    <td><a href="<?php echo fdict_url('flags-dict-tgz.php') ?>" target="main"><?php echo _('DICT servers (tgz)') ?></a>
   </tr>
- 
+
   <tr style="background-color: #f0f0f0">
    <td><a href="<?php echo fdict_url('deb.php') ?>" target="main"><?php echo _('Debian Linux') ?></a></td>
    <td><?php echo _('dictd') ?>
@@ -51,7 +51,7 @@
     <a href="<?php echo fdict_url('flags-evolutionary.php') ?>" target="main">Evolutionary Dictionary</a>
    </td>
   </tr>
- 
+
   <tr style="background-color: #f0f0f0">
    <td>Zaurus/Qt</td>
    <td><a href="<?php echo fdict_url('flags-bedic.php') ?>" target="main">BEDic</a></td>
@@ -60,7 +60,7 @@
   <tr style="background-color: #f0f0f0"><td colspan="2" align="center">
    <a href="<?php echo fdict_url('list.php') ?>" target="main"><?php echo _('Detailed List') ?></a>
   </td></tr>
- 
+
  </table>
 </td></tr>
 
@@ -95,7 +95,7 @@
 </td></tr>
 
 <tr><td class="menuNObg" align="center">
- &copy; 2004-2009 <?php echo _('FreeDict Project') ?>
+ &copy; 2004-2010 <?php echo _('FreeDict Project') ?>
 </td></tr>
 </table>
 <?php

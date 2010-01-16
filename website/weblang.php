@@ -24,7 +24,7 @@ below the English translations and email the file to
 
 <p><?php echo _('If you want to update an existing translation, probably
 because it leaves some part of the website untranslated, you can get the
-<tt>.mo</tt> file from CVS:') ?></p>
+<tt>.po</tt> file from CVS:') ?></p>
 
 <blockquote><a href="http://freedict.cvs.sourceforge.net/viewvc/freedict/website/locale/">http://freedict.cvs.sourceforge.net/viewvc/freedict/website/locale/</a></blockquote>
 

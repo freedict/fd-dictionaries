@@ -16,7 +16,7 @@ freedict.po: freedict.pot
 	$(MAKE) -C ../freedict-editor/help/C html
 
 editordoc.html: ../freedict-editor/help/C/html/index.html
-	test ! -e $@ && ln -s $< $@
+	test -e $@ || ln -s $< $@
 
 howto:
 	ln -s ../howto/xhtml $@

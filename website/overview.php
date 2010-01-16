@@ -18,9 +18,6 @@
  '<a target="_top" href="http://sourceforge.net/project/memberlist.php?group_id=1419">',
  '</a>') ?></h2>
 
-<p style="color: red"><?php echo _('This website is the successor of freedict.de. It is under development.
-Some contents might be unavailable. In this case please send an email to the freedict-beta mailing list.') ?></p>
-
 <p><?php echo _('On this page you find translating dictionary databases.
 The databases are free. That means they are available
 under the GNU General Public Licence or a less restrictive
