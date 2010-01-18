@@ -60,6 +60,6 @@ clean:
 	locale/de_DE/LC_MESSAGES/freedict.mo \
 	locale/bg_BG/LC_MESSAGES/freedict.mo
 
-.PHONY: all freedict.po ~/dict/CVS/freedict-editor/help/C/html/index.html \
+.PHONY: all freedict.po ../freedict-editor/help/C/html/index.html \
 	de kha ru ku fr ar bg
 

@@ -87,7 +87,7 @@
      if(strlen($lt)==2 && isset($twoletters2threeletters[$lt]))
        $lt2 = $twoletters2threeletters[$lt];else $lt2 = $lt;
      $r .= '  <option value="' . $lt . '"';
-     if($lt == $content_language) $r .= ' selected';
+     if($lt == $content_language) $r .= ' selected="selected"';
      $r .= '>' . langcode2english($lt2) . "</option>\n";
    }
    return $r . '</select><input type="submit" value="!" /></form>';

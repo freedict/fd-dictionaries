@@ -45,9 +45,9 @@ freedict-eng-deu-0.3.src.tar.bz2, run:
 
  tar jxf freedict-eng-deu-0.3.src.tar.bz2
  cd eng-deu
- FREEDICTDIR=path/to/cvs/freedict make
+ FREEDICTDIR=path/to/freedict make
 
-where path/to/cvs/freedict should contain tools/Makefile.common.
+where path/to/freedict should contain tools/Makefile.common.
 
 
 Creating the Postgresql databases for Ergane Import
@@ -74,8 +74,7 @@ If you use Debian, you will need these packages (and some more):
    * dictfmt
    * dbview
    * flex
-   * cvs
-   * libcvs-perl (in testing only)
+   * svn
    * mdbtools
    * patch
    * postgresql or postgresql-8.1

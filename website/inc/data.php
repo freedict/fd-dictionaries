@@ -1,7 +1,7 @@
 <?php
 
 global $freedict_database, $fddb_docel, $get_attr, $have_php5;
-define(DB_FILENAME, '../../CVS/freedict-database.xml');
+define(DB_FILENAME, '../freedict-database.xml');
 // php4 uses the domxml extension, php5 the dom extension
 $have_php5 = version_compare(PHP_VERSION, '5', '>=');
 
@@ -30,17 +30,17 @@ $dicts = ($have_php5) ?
 
 $get_attr = ($have_php5) ? 'getAttribute' : 'get_attribute';
 $set_attr = ($have_php5) ? 'setAttribute' : 'set_attribute';
- 
+
 foreach($dicts as $d)
 {
-  
+
   $status = $d->$get_attr('status');
   $headwords = $d->$get_attr('headwords');
-  // set interesting status                                                                    
-  if($status=='unknown' && ($headwords > 10000))                                               
-    $status='big enough to be useful';                                                         
-  if($status=='unknown' && ($headwords < 1000))                                                
-    $status='too small';                                                                       
+  // set interesting status
+  if($status=='unknown' && ($headwords > 10000))
+    $status='big enough to be useful';
+  if($status=='unknown' && ($headwords < 1000))
+    $status='too small';
   $d->$set_attr('status', $status);
 }
 
@@ -57,7 +57,7 @@ function status2color($status)
 }
 
 function linkcell($dictionary, $release, $platform, $alt = '')
-{  
+{
   global $get_attr;
   if(!$release)
   {
@@ -66,7 +66,7 @@ function linkcell($dictionary, $release, $platform, $alt = '')
     else echo '<td>-</td>';
     return;
   }
-  
+
   $url = $release->$get_attr('URL');
   echo '<td bgcolor="'. status2color($dictionary->$get_attr('status'))
     .'"><a href="'. $url .'" target="_top"';

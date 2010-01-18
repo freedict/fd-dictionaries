@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appversion "0.1">
   <!ENTITY manrevision "0.1">
   <!ENTITY date "March 2005">
-  <!ENTITY app "<application>FreeDict-Editor</application>">
+  <!ENTITY appcap "FreeDict-Editor">
+  <!ENTITY app "<application>&appcap;</application>">
   <!ENTITY appn "freedict-editor">
   <!ENTITY ipatable SYSTEM "ipa-table.xml">
 ]>
 
-<!-- 
+<!--
   Do not remove this comment block!
   Maintained by the GNOME Documentation Project
   http://developer.gnome.org/projects/gdp
@@ -22,16 +23,16 @@
 <article id="index" lang="en">
 <!-- please do not change the id; for translations, change lang -->
 
-  <articleinfo> 
+  <articleinfo>
     <title>&app; Manual V&manrevision;</title>
-    <!-- <copyright> 
-      <year>2005</year> 
-      <year>2006</year> 
-      <holder>DOCUMENTATION WRITER 2</holder> 
+    <!-- <copyright>
+      <year>2005</year>
+      <year>2006</year>
+      <holder>DOCUMENTATION WRITER 2</holder>
     </copyright> -->
-    <copyright> 
-      <year>2005</year> 
-      <holder>Michael Bunk &lt;micha@luetzschena.de&gt;</holder> 
+    <copyright>
+      <year>2005</year>
+      <holder>Michael Bunk &lt;micha@luetzschena.de&gt;</holder>
     </copyright>
 
     <!-- translators: uncomment this: <copyright>
@@ -39,35 +40,35 @@
       <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
     </copyright>
     -->
-    <publisher> 
-      <publishername>FreeDict</publishername> 
+    <publisher>
+      <publishername>FreeDict</publishername>
     </publisher>
     &legal;
-    <authorgroup> 
-      <!-- <author> 
-	<firstname>Documentation</firstname> 
-	<surname>Writer 2</surname> 
-	<affiliation> 
-	  <orgname>GNOME Documentation Project</orgname> 
-	  <address> <email>doc-writer2@gnome.org</email> </address> 
-	</affiliation> 
+    <authorgroup>
+      <!-- <author>
+	<firstname>Documentation</firstname>
+	<surname>Writer 2</surname>
+	<affiliation>
+	  <orgname>GNOME Documentation Project</orgname>
+	  <address> <email>doc-writer2@gnome.org</email> </address>
+	</affiliation>
       </author> -->
-      <author> 
-	<firstname>Michael</firstname> 
-	<surname>Bunk</surname> 
-	<affiliation> 
-	  <orgname>FreeDict</orgname> 
-	  <address> <email>micha@luetzschena.de</email> </address> 
-	</affiliation> 
-      </author> 
+      <author>
+	<firstname>Michael</firstname>
+	<surname>Bunk</surname>
+	<affiliation>
+	  <orgname>FreeDict</orgname>
+	  <address> <email>micha@luetzschena.de</email> </address>
+	</affiliation>
+      </author>
 
       <!-- place for other contributors: translators, maintainers etc.
       <othercredit role="translator">
-	<firstname>Latin</firstname> 
-	<surname>Translator 1</surname> 
-	<affiliation> 
-	  <orgname>Latin Translation Team</orgname> 
-	  <address> <email>translator@gnome.org</email> </address> 
+	<firstname>Latin</firstname>
+	<surname>Translator 1</surname>
+	<affiliation>
+	  <orgname>Latin Translation Team</orgname>
+	  <address> <email>translator@gnome.org</email> </address>
 	</affiliation>
 	<contrib>Latin translation</contrib>
       </othercredit> -->
@@ -81,45 +82,45 @@
     For example, if the GNOME desktop release is V2.x, the first version of the manual that
     is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc.
     When the desktop release version changes to V3.x, the revision number of the manual changes
-    to V3.0, and so on. -->  
+    to V3.0, and so on. -->
     <revhistory>
-      <!-- <revision> 
-	<revnumber>&app; Manual V&manrevision;</revnumber> 
-	<date>&date;</date> 
-	<revdescription> 
+      <!-- <revision>
+	<revnumber>&app; Manual V&manrevision;</revnumber>
+	<date>&date;</date>
+	<revdescription>
 	  <para role="author">Documentation Writer 2
 	    <email>docwriter2@gnome.org</email>
 	  </para>
 	  <para role="publisher">GNOME Documentation Project</para>
-	</revdescription> 
+	</revdescription>
       </revision> -->
-      <revision> 
-	<revnumber>&app; Manual V0.1</revnumber> 
-	<date>2005-03-22</date> 
-	<revdescription> 
+      <revision>
+	<revnumber>&appcap; Manual V0.1</revnumber>
+	<date>2005-03-22</date>
+	<revdescription>
 	  <para role="author">Michael Bunk
 	    <email>micha@luetzschena.de</email>
 	  </para>
 	  <para role="publisher">FreeDict</para>
-	</revdescription> 
-      </revision> 
-    </revhistory> 
+	</revdescription>
+      </revision>
+    </revhistory>
 
-    <releaseinfo>This manual describes version &appversion; of &app;.</releaseinfo> 
-    <legalnotice> 
-      <title>Feedback</title> 
+    <releaseinfo>This manual describes version &appversion; of &appcap;.</releaseinfo>
+    <legalnotice>
+      <title>Feedback</title>
       <para>To report a bug or make a suggestion regarding the &app;
 	application or this manual, use the <ulink
 	  url="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419">FreeDict
 	  Bug Tracking System</ulink>, provided by SourceForge, using the
 	category <literal>FreeDict-Editor</literal>.</para>
       <!-- Translators may also add here feedback address for translations -->
-    </legalnotice> 
-  </articleinfo> 
+    </legalnotice>
+  </articleinfo>
 
-  <indexterm zone="index"> 
-    <primary>&app;</primary> 
-  </indexterm> 
+  <indexterm zone="index">
+    <primary>&app;</primary>
+  </indexterm>
 
   <!-- ============= Document Body ============================= -->
   <sect1 id="freedict-editor-introduction">
@@ -131,41 +132,41 @@
 	<para>Partial support for the Text Encoding
 	  Initiative eXtensible Markup Language, Version 4, Chapter 12 "Print
 	  Dictionaries" file format (TEI P4 XML).  The generated file is
-	  always valid.</para> 
-      </listitem> 
+	  always valid.</para>
+      </listitem>
       <listitem>
 	<para>XPath support to flexibly select entries to be edited.</para>
-      </listitem> 
-      <listitem> 
+      </listitem>
+      <listitem>
 	<para>Easy, user friendly Form View to edit entries, fallback to
 	  plain XML for entries that do not match the structure of the
 	  Form.</para>
-      </listitem> 
-      <listitem> 
+      </listitem>
+      <listitem>
 	<para>Support for entering pronunciation in IPA characters as well
 	  as some hints on entering special characters under X11.</para>
       </listitem>
-      <listitem> 
+      <listitem>
 	<para>HTML preview of a formatted entry using a user-configurable
 	  XSLT stylesheet.</para>
-      </listitem> 
+      </listitem>
       <listitem>
 	<para>When adding entries, the workflow ensures that
 	  double-entries of the same word are avoided.</para>
-      </listitem> 
+      </listitem>
       <listitem>
 	<para>Integration of sanity checks and a spell checker enable
 	  authoring of high quality.</para>
-      </listitem> 
+      </listitem>
       <listitem>
 	<para>Ability to abort a never ending XPath evaluation (this is not a matter of course!).</para>
-      </listitem> 
+      </listitem>
     </itemizedlist>
   </sect1>
 
   <sect1 id="freedict-editor-requirements">
     <title>Requirements</title>
-    
+
     <para>&app; has the following software requirements:</para>
     <itemizedlist>
       <listitem><para><ulink url="http://www.gnu.org/">GNU</ulink>/Linux operating system</para></listitem>
@@ -208,16 +209,16 @@
      for readers to know before they start using the application, you should
      also include this information here. -->
 
-  <sect1 id="freedict-editor-getting-started"> 
-    <title>Getting Started</title> 
+  <sect1 id="freedict-editor-getting-started">
+    <title>Getting Started</title>
 
     <para>This section mostly assumes that you have already started &app;.</para>
-    
+
     <sect2 id="freedict-editor-opening">
       <title>Opening a TEI dictionary</title>
       <para>Before you can work on a dictionary, you have to open one.  You can
-	open a TEI file in the following ways:</para> 
-      
+	open a TEI file in the following ways:</para>
+
       <variablelist>
 	<varlistentry>
 	  <term>Open File Dialog</term>
@@ -231,14 +232,14 @@
 	      others (eg. those from KDE or M$ Windoze) for lack of favorite locations
 	      and cumbersome directory traversal. But this feature outweighs
 	      this lack a bit.</para>
-	
+
 	    <note>
 	      <para>From GTK+ 2.4 GtkFileChooser is available, which supports
 	        favorite locations.</para>
 	    </note>
 	  </listitem>
 	</varlistentry>
-	
+
 	<varlistentry>
 	  <term>Command line</term>
 	  <listitem>
@@ -246,27 +247,27 @@
 	      from a command line, type the following command, then press
 	      <keycap>Return</keycap>:</para>
 
-	    <para> 
-	      <command>&appn;</command> 
+	    <para>
+	      <command>&appn;</command>
 	      <replaceable>filename.tei</replaceable>
-	    </para> 
+	    </para>
 
 	    <para>where <replaceable>filename.tei</replaceable> is the name of
 	      the dictionary file you want to open. You can specify only one
 	      file to open.</para>
-	    
+
 	    <tip>
 	      <para>The following line might come in handy in your
 		<filename>~/.bashrc</filename>, because it enables filename
 		completion of TEI files when you have already entered the
 		command <command>freedict-editor</command>:</para>
-	      
+
 	      <para><literal>complete -G '*.tei' -X '!&amp;*'
 		  freedict-editor</literal></para>
 	    </tip>
 	  </listitem>
 	</varlistentry>
-	
+
 	<varlistentry>
 	  <term>Drag-And-Drop</term>
 	  <listitem>
@@ -274,13 +275,13 @@
 	      a file manager like <ulink type="help"
 		url="ghelp:user-guide#gosnautilus-1"><application>Nautilus</application></ulink>
 	      to the &app; window to open it.</para>
-	    
+
 	    <warning>
 	      <para>Do not drop it on the list of matching entries, it
-		doesn't like it! This is a bug that should be fixed.</para> 
+		doesn't like it! This is a bug that should be fixed.</para>
 	    </warning>
 	  </listitem>
-	</varlistentry>	
+	</varlistentry>
 
 	<varlistentry>
 	  <term>Doubleclick</term>
@@ -290,7 +291,7 @@
 	      <application>Nautilus</application> file manager should default
 	      to open it with &app;.</para>
 	  </listitem>
-	</varlistentry>	
+	</varlistentry>
       </variablelist>
     </sect2>
 
@@ -300,19 +301,19 @@
 	window is displayed.</para>
 
       <!-- ==== Figure ====
-      <figure id="mainwindow-fig"> 
-	<title>&app; Start Up Window</title> 
-	<screenshot> 
-	  <mediaobject> 
+      <figure id="mainwindow-fig">
+	<title>&app; Start Up Window</title>
+	<screenshot>
+	  <mediaobject>
 	    <imageobject><imagedata fileref="figures/myapp_start_window.png"
 		format="PNG"/></imageobject>
-	    <textobject> 
+	    <textobject>
 	      <phrase>Shows main window. Contains titlebar, menubar, toolbar,
 		display area, and scrollbars. Menubar contains File, View,
-		Settings, and Help menus.</phrase> 
-	    </textobject> 
-	  </mediaobject> 
-	</screenshot> 
+		Settings, and Help menus.</phrase>
+	    </textobject>
+	  </mediaobject>
+	</screenshot>
       </figure>
       <!- ==== End of Figure ==== -->
 
@@ -362,19 +363,19 @@
 
   <!-- ================ Usage ================================ -->
   <!-- How to use the application to perform the tasks for which it was designed. -->
-  <sect1 id="freedict-editor-usage"> 
-    <title>Usage</title> 
-    
+  <sect1 id="freedict-editor-usage">
+    <title>Usage</title>
+
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="freedict-editor-enter-ipa"> 
-      <title>How to Enter IPA Characters</title> 
+    <sect2 id="freedict-editor-enter-ipa">
+      <title>How to Enter IPA Characters</title>
       <para>To enter characters of the International Phonetic Alphabet, the
 	<firstterm>IPA Input Method</firstterm> of GTK+ can be used. The global
 	GTK+ Input Method is automatically switched to IPA Mode when then
 	<guilabel>Pronunciation</guilabel> field is entered. The user's
 	previously selected input method is restored, when the
 	<guilabel>Pronunciation</guilabel> field is left.</para>
-     
+
       <para>To manually choose a GTK+ Input Method,
 	<mousebutton>Right-Click</mousebutton> on any input field except the
 	Pronunciation field (since that is handled automatically), eg. the
@@ -420,14 +421,14 @@
 	  <filename>/usr/share/yudit/src/ASCII-IPA.kmap</filename> and
 	  <filename>/usr/share/xemacs/mule-packages/etc/mule-ucs/reldata/uipa.el</filename>
 	  for inspiration in case the GTK+ IPA Input Method lacks any character.</para>
-	  
+
 	  <para>The ultimative reference regarding IPA Characters is the Unicode Standard,
 	   especially the Character Range 0x250-0x2af covers at least 85 characters, so
 	   some might be missing here! You can look at the
 	   <ulink type="http" url="http://www.unicode.org/charts/symbols.html#PhoneticSymbols">Unicode
 	     Code Charts for Symbols</ulink>.</para>
       </note>
-      
+
       <tip>
 	<para>In <filename>gtk/gtkimcontextsimple.c</filename> it is documented
 	  that you can enter Unicode characters by holding down Shift + Control
@@ -435,14 +436,14 @@
 	  to enter.</para>
       </tip>
 
-    </sect2> 
+    </sect2>
 
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="freedict-editor-special-chars"> 
-      <title>How to Enter Special Characters</title> 
+    <sect2 id="freedict-editor-special-chars">
+      <title>How to Enter Special Characters</title>
       <para>This functionality is not provided by &app; itself. But many languages
 	require accented and other special characters to be entered, hence this
-	word of advice.</para> 
+	word of advice.</para>
 
       <para>One way to enter special characters is to use GTK+ Input Methods.
 	In &app; this way is mainly used for entering IPA Characters, but it
@@ -556,12 +557,12 @@
 	  url="man:setxkbmap"><command>setxkbmap</command></ulink> command can
 	be used to configure XKB.  For example, enter the
 	following command into an xterm:</para>
-      
+
       <para>
 	<userinput>setxkbmap latin,de -option compose:ralt -option
 	  grp:alt_shift_toggle</userinput>
       </para>
-	    
+
       <para>The <literal>compose:ralt</literal> option puts the compose
 	function on the right <keycap>Alt</keycap> key.  That key will produce
 	the <keysym>LevelThree</keysym> keysym, which will be interpreted
@@ -574,7 +575,7 @@
 	  is is possible to switch permanently between the two layouts. The
 	  permanently here means the layout switched to is enabled even when
 	  the toggle keys are left.</para>
-       
+
 	<para>An alternative to toggling is to switch between layouts only
 	  temporarily.  The <keysym>Mode_switch</keysym> key can do this by
 	  selecting the next group while it is pressed. Thus, it acts like
@@ -633,17 +634,17 @@ Section "InputDevice"
   Option       "XKbOptions" "grp:alt_shift_toggle,grp:switch"
 EndSection</programlisting>
       </sect3>
-    </sect2> 
+    </sect2>
 
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="freedict-editor-select-entries"> 
-      <title>How to Select Entries</title> 
+    <sect2 id="freedict-editor-select-entries">
+      <title>How to Select Entries</title>
       <para>Prior to editing entries, you have to select them from all the enties in the
         currently open dictionary. To select entries you have to write an XPath expression
 	which the computer will evaluate. The result is a set of matching entries.</para>
 
       <para> The XPath language is very powerful and because of that it can be complicated.</para>
-	
+
       <para>&app; has two input fields to support you in entering XPath epressions for
         selecting entries. The Input Field <guilabel>XPath Template</guilabel> lets you enter
 	the actual XPath expression. But in it you are allowed to write <literal>%s</literal>,
@@ -658,21 +659,21 @@ EndSection</programlisting>
       <para>&app; extends the functions available in XPath expressions. For this it uses the
       namespace prefix <literal>fd</literal> for the namespace
       <literal>http://freedict.org/freedict-editor</literal>.</para>
-      
+
       <para>Currently only one XPath extension function exists:</para>
-      
+
       <programlisting>bool unbalanced-braces(nodeset)</programlisting>
-      
-      <para>checks the string representation of each node in the nodeset                                       
+
+      <para>checks the string representation of each node in the nodeset
         and returns true() when any node's string representation is unbalanced</para>
-	
+
       <para>It is used in the sanity check for unbalanced braces.</para>
 
     </sect2>
-    
+
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="freedict-editor-spellcheck"> 
-      <title>How to Spell Check</title> 
+    <sect2 id="freedict-editor-spellcheck">
+      <title>How to Spell Check</title>
       <para>One might wonder what this function has lost in a dictionary
 	editor.  Most new dictionaries will be developed for languages which
 	don't have a spellchecking wordlist yet. But just consider the other
@@ -684,152 +685,152 @@ EndSection</programlisting>
 	Khasi-English dictionary I had 10 spelling mistakes.</para>
     </sect2>
   </sect1>
-  
+
   <!-- ============= Customization ============================= -->
-  <sect1 id="freedict-editor-prefs"> 
-    <title>Settings</title> 
-    <para>To configure &app;, choose 
-      <menuchoice> 
-	<guimenu>Edit</guimenu> 
-	<guimenuitem>Preferences</guimenuitem> 
-      </menuchoice>. The 
+  <sect1 id="freedict-editor-prefs">
+    <title>Settings</title>
+    <para>To configure &app;, choose
+      <menuchoice>
+	<guimenu>Edit</guimenu>
+	<guimenuitem>Preferences</guimenuitem>
+      </menuchoice>. The
       <guilabel>Preferences</guilabel> dialog contains the following tabbed
-      sections:</para> 
-    <itemizedlist> 
-      <listitem> 
-	<para> 
-	  <xref linkend="freedict-editor-prefs-general"/></para> 
-      </listitem> 
-      <listitem> 
-	<para> 
-	  <xref linkend="freedict-editor-prefs-entry-editor"/></para> 
-      </listitem> 
+      sections:</para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <xref linkend="freedict-editor-prefs-general"/></para>
+      </listitem>
+      <listitem>
+	<para>
+	  <xref linkend="freedict-editor-prefs-entry-editor"/></para>
+      </listitem>
     </itemizedlist>
-    
+
     <!-- Use a new section to describe different tabbed sections on the
          Settings or Preferences dialog. -->
     <sect2 id="freedict-editor-prefs-general">
-      <title>General</title> 
-      <variablelist> 
-	<varlistentry> 
-	  <term><guilabel>(guilabel)</guilabel></term> 
-	  <listitem> 
+      <title>General</title>
+      <variablelist>
+	<varlistentry>
+	  <term><guilabel>(guilabel)</guilabel></term>
+	  <listitem>
 	    <para>(description)</para>
-	  </listitem> 
-	</varlistentry> 
+	  </listitem>
+	</varlistentry>
       <!--
-	<varlistentry> 
-	  <term> 
-	    <guilabel>Transparency type</guilabel> </term> 
-	  <listitem> 
+	<varlistentry>
+	  <term>
+	    <guilabel>Transparency type</guilabel> </term>
+	  <listitem>
 	    <para>Use this drop-down list box to specify how
 	      &app; displays transparent or partially opaque
-	      backgrounds in images. Select one of the following options:</para> 
-	    <itemizedlist> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Dark checks</guilabel> </para> 
-		<para>This option displays black and dark gray checks.</para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Midtone checks</guilabel> </para> 
+	      backgrounds in images. Select one of the following options:</para>
+	    <itemizedlist>
+	      <listitem>
+		<para>
+		  <guilabel>Dark checks</guilabel> </para>
+		<para>This option displays black and dark gray checks.</para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Midtone checks</guilabel> </para>
 		<para>This option displays dark gray and light gray
-		  checks.</para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Light checks</guilabel> </para> 
-		<para>This option displays light gray and white checks.</para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Black only</guilabel> </para> 
-		<para>This option displays solid black.</para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Gray only</guilabel> </para> 
-		<para>This option displays solid gray.</para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>White only</guilabel> </para> 
-		<para>This option displays solid white.</para> 
-	      </listitem> 
-	    </itemizedlist> 
-	    <para>Default: 
-	      <guilabel>Dark checks</guilabel>.</para> 
-	  </listitem> 
-	</varlistentry> 
-	<varlistentry> 
-	  <term> 
-	    <guilabel>Check size</guilabel> </term> 
-	  <listitem> 
+		  checks.</para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Light checks</guilabel> </para>
+		<para>This option displays light gray and white checks.</para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Black only</guilabel> </para>
+		<para>This option displays solid black.</para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Gray only</guilabel> </para>
+		<para>This option displays solid gray.</para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>White only</guilabel> </para>
+		<para>This option displays solid white.</para>
+	      </listitem>
+	    </itemizedlist>
+	    <para>Default:
+	      <guilabel>Dark checks</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>
+	    <guilabel>Check size</guilabel> </term>
+	  <listitem>
 	    <para>Use this drop-down list box to specify the size of the checks
 	      to use to display transparent or partially opaque
-	      backgrounds in images. This 
-	      option is only relevant if you choose 
-	      <guilabel>Dark checks</guilabel>, 
-	      <guilabel>Midtone checks</guilabel>, or 
-	      <guilabel>Light checks</guilabel> from the 
+	      backgrounds in images. This
+	      option is only relevant if you choose
+	      <guilabel>Dark checks</guilabel>,
+	      <guilabel>Midtone checks</guilabel>, or
+	      <guilabel>Light checks</guilabel> from the
 	      <guilabel>Transparency type</guilabel> drop-down list box.
-	      Select one of the following options:</para> 
-	    <itemizedlist> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Small</guilabel></para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Medium</guilabel></para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Large</guilabel></para> 
-	      </listitem> 
-	    </itemizedlist> 
-	    <para>Default: 
-	      <guilabel>Small</guilabel>.</para> 
-	  </listitem> 
-	</varlistentry> 
-	<varlistentry> 
-	  <term> 
-	    <guilabel>Dither type</guilabel> </term> 
-	  <listitem> 
+	      Select one of the following options:</para>
+	    <itemizedlist>
+	      <listitem>
+		<para>
+		  <guilabel>Small</guilabel></para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Medium</guilabel></para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Large</guilabel></para>
+	      </listitem>
+	    </itemizedlist>
+	    <para>Default:
+	      <guilabel>Small</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>
+	    <guilabel>Dither type</guilabel> </term>
+	  <listitem>
 	    <para>Use this drop-down list box to specify the dithering method
 	      to use to display images. Dithering is a technique that
-	      is used to simulate 
+	      is used to simulate
 	      colors in the original image file but that your system
-	      can not display. Select 
-	      one of the following options:</para> 
-	    <itemizedlist> 
-	      <listitem> 
-		<para> 
-		  <guilabel>None</guilabel> </para> 
-		<para>This option does not use dithering. </para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Normal (pseudocolor)</guilabel> </para> 
+	      can not display. Select
+	      one of the following options:</para>
+	    <itemizedlist>
+	      <listitem>
+		<para>
+		  <guilabel>None</guilabel> </para>
+		<para>This option does not use dithering. </para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Normal (pseudocolor)</guilabel> </para>
 		<para>This option performs dithering on pseudocolor displays,
-		  which use a limited palette of colors. </para> 
-	      </listitem> 
-	      <listitem> 
-		<para> 
-		  <guilabel>Maximum (high color)</guilabel> </para> 
+		  which use a limited palette of colors. </para>
+	      </listitem>
+	      <listitem>
+		<para>
+		  <guilabel>Maximum (high color)</guilabel> </para>
 		<para>This option performs dithering on pseudocolor and high
-		  color displays. </para> 
-	      </listitem> 
-	    </itemizedlist> 
-	    <para>Default: 
-	      <guilabel>None</guilabel>.</para> 
-	  </listitem> 
-	</varlistentry> 
-	<varlistentry> 
-	  <term> 
-	    <guilabel>Two-pass scrolling</guilabel> </term> 
-	  <listitem> 
+		  color displays. </para>
+	      </listitem>
+	    </itemizedlist>
+	    <para>Default:
+	      <guilabel>None</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term>
+	    <guilabel>Two-pass scrolling</guilabel> </term>
+	  <listitem>
 	    <para>Select this option to render an image in two passes
 	      when you scroll the image quickly. The first pass
 	      renders a low quality version of the image. The second
@@ -837,146 +838,146 @@ EndSection</programlisting>
 	      the low quality version. Two-pass scrolling enables you
 	      to view at least a low quality version of the image at
 	      all times regardless of how quickly you scroll the
-	      image. 
+	      image.
 	    </para>
-	    <para>Default: unselected.</para> 
-	  </listitem> 
-	</varlistentry> 
-      --> 
+	    <para>Default: unselected.</para>
+	  </listitem>
+	</varlistentry>
+      -->
       </variablelist>
     </sect2>
-    
+
     <sect2 id="freedict-editor-prefs-entry-editor">
       <title>Entry Editor</title>
 
       <para>This section remains unwritten. This paragraph just keeps
-	DOCBOOK validators happy.</para> 
+	DOCBOOK validators happy.</para>
       <!--
-      <sect3 id="&appn;-viewer-prefs-image-window"> 
-	<title>Image Windows</title> 
-	<para>The 
+      <sect3 id="&appn;-viewer-prefs-image-window">
+	<title>Image Windows</title>
+	<para>The
 	  <guilabel>Image Windows</guilabel> group contains the preferences
-	  that you can set to view images in image windows.</para> 
-	<variablelist> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Use scrollbars</guilabel> </term> 
-	    <listitem> 
+	  that you can set to view images in image windows.</para>
+	<variablelist>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Use scrollbars</guilabel> </term>
+	    <listitem>
 	      <para>Use this drop-down list box to specify when to use
 		scrollbars to scroll through an image. Select one of
-		the following options:</para> 
-	      <itemizedlist> 
-		<listitem> 
-		  <para> 
-		    <guilabel>Never</guilabel> </para> 
+		the following options:</para>
+	      <itemizedlist>
+		<listitem>
+		  <para>
+		    <guilabel>Never</guilabel> </para>
 		  <para>This option never displays scrollbars. You can use the
 		    arrow keys on the keyboard or the mouse to scroll
-		    through the image. </para>  
-		</listitem> 
-		<listitem> 
-		  <para> 
-		    <guilabel>Only if image does not fit</guilabel> </para> 
+		    through the image. </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    <guilabel>Only if image does not fit</guilabel> </para>
 		  <para>This option displays scrollbars when the image is
-		    larger than the image window.</para> 
-		</listitem> 
-	      </itemizedlist> 
-	      <para>Default: 
-		<guilabel>Never</guilabel>.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
+		    larger than the image window.</para>
+		</listitem>
+	      </itemizedlist>
+	      <para>Default:
+		<guilabel>Never</guilabel>.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
 	      <guilabel>Pick window size and zoom factor
-		automatically</guilabel> </term> 
-	    <listitem> 
+		automatically</guilabel> </term>
+	    <listitem>
 	      <para>Select this option to resize the image window to fit the
 		image or to resize the image to fit the image
-		window. If the image is small, 
+		window. If the image is small,
 		&app; resizes the image window to fit the image. If
 		the image is large, &app; resizes the image to fit
-		the image window. </para> 
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Open images in a new window</guilabel> </term> 
-	    <listitem> 
+		the image window. </para>
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Open images in a new window</guilabel> </term>
+	    <listitem>
 	      <para>Select this option to open a new
 		&app; window each time you open an image. If you do
 		not select this option, &app; replaces the existing
-		image with the new image when you open an image. </para> 
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	</variablelist> 
-      </sect3> 
-      <sect3 id="&appn;-viewer-prefs-full-screen"> 
-	<title>Full Screen</title> 
-	<para>The 
+		image with the new image when you open an image. </para>
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect3>
+      <sect3 id="&appn;-viewer-prefs-full-screen">
+	<title>Full Screen</title>
+	<para>The
 	  <guilabel>Full Screen</guilabel> group contains the preferences that
-	  you can set to view images in full screen mode.</para> 
-	<variablelist> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Use scrollbars</guilabel> </term> 
-	    <listitem> 
+	  you can set to view images in full screen mode.</para>
+	<variablelist>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Use scrollbars</guilabel> </term>
+	    <listitem>
 	      <para>Use this drop-down list box to specify when to use
 		scrollbars to scroll through an image. Select one of the following
-		options:</para> 
-	      <itemizedlist> 
-		<listitem> 
-		  <para> 
-		    <guilabel>Never</guilabel> </para> 
+		options:</para>
+	      <itemizedlist>
+		<listitem>
+		  <para>
+		    <guilabel>Never</guilabel> </para>
 		  <para>This option never displays scrollbars. You can use the
 		    arrow keys on the keyboard or the mouse to scroll
-		    through the image. </para>  
-		</listitem> 
-		<listitem> 
-		  <para> 
-		    <guilabel>Only if image does not fit</guilabel> </para> 
+		    through the image. </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    <guilabel>Only if image does not fit</guilabel> </para>
 		  <para>This option displays scrollbars when the image is
-		    larger than the full screen. </para> 
-		</listitem> 
-	      </itemizedlist> 
-	      <para>Default: 
-		<guilabel>Never</guilabel>.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Use 1:1 zoom factor</guilabel> </term> 
-	    <listitem> 
+		    larger than the full screen. </para>
+		</listitem>
+	      </itemizedlist>
+	      <para>Default:
+		<guilabel>Never</guilabel>.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Use 1:1 zoom factor</guilabel> </term>
+	    <listitem>
 	      <para>Select this option to use the 1:1 zoom factor when you open
 		an image. The 1:1 zoom factor displays the image at
-		its actual size. </para>  
-	      <para>Default: selected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
+		its actual size. </para>
+	      <para>Default: selected.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
 	      <guilabel>Use same zoom factor as image window</guilabel> </term>
-	    
-	    <listitem> 
+
+	    <listitem>
 	      <para>Select this option to use the same zoom factor that the
 		application uses to display the image in an image
-	      window. </para>  
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Fit all images to screen</guilabel> </term> 
-	    <listitem> 
+	      window. </para>
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Fit all images to screen</guilabel> </term>
+	    <listitem>
 	      <para>Select this option to resize images to fill the full screen
-		when you open the images in full screen mode. </para> 
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
-	      <guilabel>Fit standard-sized images to screen</guilabel> </term> 
-	    <listitem> 
+		when you open the images in full screen mode. </para>
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
+	      <guilabel>Fit standard-sized images to screen</guilabel> </term>
+	    <listitem>
 	      <para>Select this option to automatically resize images
 		that are the same size as standard screens so that the
 		images fill the full screen when you open them in full
@@ -985,23 +986,23 @@ EndSection</programlisting>
 		open an image that is the same size as a standard
 		screen.  Examples of standard screen sizes are 640 x
 		480 pixels, 1024 x 768 pixels, and so on. </para>
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
-	  <varlistentry> 
-	    <term> 
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>
 	      <guilabel>Put a bevel around the edge of the screen</guilabel>
-	    </term> 
-	    <listitem> 
+	    </term>
+	    <listitem>
 	      <para>Select this option to display a 3D beveled border around
-		the full screen view of an image. </para> 
-	      <para>Default: unselected.</para> 
-	    </listitem> 
-	  </varlistentry> 
+		the full screen view of an image. </para>
+	      <para>Default: unselected.</para>
+	    </listitem>
+	  </varlistentry>
 	</variablelist>
-      </sect3> 
+      </sect3>
       -->
-    </sect2> 
+    </sect2>
   </sect1>
 
   <!-- ============= Limitations =========================== -->
@@ -1029,7 +1030,7 @@ EndSection</programlisting>
     <title>Links</title>
 
     <para>This section contains links to sources of further information.</para>
-    
+
     <para>
       <itemizedlist>
 	<listitem><para>This document assumes that you are familiar with the
@@ -1040,7 +1041,7 @@ EndSection</programlisting>
           Botanicka, 68a, 602 00 Brno, Czech Republic, E-mail: {smrz,xpovolny}@fi.muni.cz
 	  (XXX add link) -  DEB is a system that might be more suited to large projects than
 	  &app;</para></listitem>
-	  
+
 	<listitem><para><ulink type="http" url="http://www.sil.org/computing/ddp/">SIL
 	  Dictionary Development Program</ulink> - XXX quote from its website</para></listitem>
       </itemizedlist>
@@ -1050,22 +1051,22 @@ EndSection</programlisting>
   <!-- This section contains info about the program (not docs), such as
   It is optional: primary place for this info is "About.." box of the program.
   Alternatively, you can put this information in the title page.-->
-  <sect1 id="freedict-editor-about"> 
-    <title>About &app;</title> 
+  <sect1 id="freedict-editor-about">
+    <title>About &app;</title>
     <para>&app; was written by Michael Bunk
       <email>micha@luetzschena.de</email>. To find more information, please
       visit <ulink url="http://freedict.org/"
 	type="http">freedict.org</ulink>.</para> <para>To report a bug or make
       a suggestion regarding this application or this manual, follow the
       directions in the Feedback paragraph (XXX link to releaseinfo/legalnotice
-      - but that legal notice astually only belongs to this doc).</para>
-   
+      - but that legal notice actually only belongs to this doc).</para>
+
     <para>This program is distributed under the terms of the GNU General Public
       license as published by the Free Software Foundation; either version 2 of
       the License, or (at your option) any later version. A copy of this
       license can be found at this <ulink url="ghelp:gpl"
 	type="help">link</ulink>, or in the file COPYING included with the
       source code of this program.</para>
-  </sect1> 
+  </sect1>
 </article>
 

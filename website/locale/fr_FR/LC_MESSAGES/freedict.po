@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2009-04-25 21:14+0200\n"
+"POT-Creation-Date: 2010-01-18 20:23+0100\n"
 "PO-Revision-Date: 2009-11-26 09:55+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -15,9 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: dataflow.php:8
-#: dataflow.php:15
-#: menu.php:26
+#: dataflow.php:8 dataflow.php:15 menu.php:27
 msgid "Data Flow"
 msgstr "Flux de données"
 
@@ -29,9 +27,7 @@ msgstr "un plugin peut être nécessaire, par exemple."
 msgid "Adbobe's"
 msgstr "Adbobe's"
 
-#: db-as-xml.php:8
-#: db-as-xml.php:15
-#: menu.php:94
+#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
 msgid "Database as XML"
 msgstr "Base de donnée XML"
 
@@ -39,11 +35,14 @@ msgstr "Base de donnée XML"
 msgid ""
 "The Download Tables are generated from an XML file.\n"
 "To access that data easily, eg. for use in a program as\n"
-"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can use this URL:"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
+"use this URL:"
 msgstr ""
 "Les tables de téléchargement sont générés depuis un fichier XML.\n"
-"Pour accéder facilement à ces données, par exemple pour les utiliser dans un programme comme :\n"
-"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, vous pouvez utiliser ce lien :"
+"Pour accéder facilement à ces données, par exemple pour les utiliser dans un "
+"programme comme :\n"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, vous "
+"pouvez utiliser ce lien :"
 
 #: deb.php:9
 msgid "Debian Packages - FreeDict"
@@ -61,20 +60,24 @@ msgid ""
 "  to download the packages, but rather to select the packages you want to\n"
 "  install, only the following command is what you have to remember:"
 msgstr ""
-"La distribution Linux %1$sDebian%2$s a son propre système de miroirs de téléchargement. En tant qu'administrateur  vous n'êtes pas trop concerné par le téléchargement des paquets, mais plutôt\n"
-" par la sélection des paquets que vous voulez installer, la prochaine instruction\n"
+"La distribution Linux %1$sDebian%2$s a son propre système de miroirs de "
+"téléchargement. En tant qu'administrateur  vous n'êtes pas trop concerné par "
+"le téléchargement des paquets, mais plutôt\n"
+" par la sélection des paquets que vous voulez installer, la prochaine "
+"instruction\n"
 " est la seule instruction que vous avez besoin de vous rappeler :</p>"
 
-#: deb.php:26
-#: rock.php:41
+#: deb.php:26 rock.php:41
 #, php-format
 msgid ""
 "Here %1$s and %2$s are the 3-letter language codes from\n"
 "  ISO 639-2 of the languages of the dictionary you require. Of course, that\n"
 "  language combination has to be available in FreeDict."
 msgstr ""
-"Les codes %1$s and %2$s sont les codes de language en 3 lettres de l'ISO 639-2 des \n"
-" langues du dictionnaire que vous voulez. Bien sûr, cette combination  de langues doit\n"
+"Les codes %1$s and %2$s sont les codes de language en 3 lettres de l'ISO 639-"
+"2 des \n"
+" langues du dictionnaire que vous voulez. Bien sûr, cette combination  de "
+"langues doit\n"
 "être disponible sur FreeDict"
 
 #: deb.php:31
@@ -96,8 +99,12 @@ msgstr ""
 
 #: deb.php:42
 #, php-format
-msgid "This page might as well be of interest: %1$sDebian FreeDict Packages team%2$s."
-msgstr "Cette page peut vous interesser aussi : %1$sDebian FreeDict Packages team%2$s."
+msgid ""
+"This page might as well be of interest: %1$sDebian FreeDict Packages team%2"
+"$s."
+msgstr ""
+"Cette page peut vous interesser aussi : %1$sDebian FreeDict Packages team%2"
+"$s."
 
 #: editor.php:8
 msgid "FreeDict-Editor"
@@ -113,93 +120,76 @@ msgstr ""
 " des caractéristiques dans l'%sintroduction%s."
 
 #: editor.php:24
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
 "You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sCVS%s and try compiling it yourself:"
+"module from %sSVN%s and try compiling it yourself:"
 msgstr ""
 "Aucune version de l' Editeur-FreeDict n'a été compilée pour le moment.\n"
 "Vous pouvez récupérer le module <tt>freedict-editor</tt>\n"
 "du %sCVS%s et essayer de le compiler vous même :"
 
-#: editor.php:32
+#: editor.php:33
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Pour les %spré-requis%s, veuillez vous référer à la documentation"
 
-#: editor.php:35
+#: editor.php:36
 #, php-format
-msgid "If you use %sDebian%s etch or unstable, you can add this to your %s (replace <i>etch</i> by <i>unstable</i> if you use unstable):"
-msgstr "Si vous utilisez %sDebian%s etch ou instable, vous pouvez ajouter ceci à votre %s (remplacez <i>etch</i> par <i>unstable</i> si vous utilisez la version instable) :"
+msgid ""
+"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
+"<i>etch</i> by <i>unstable</i> if you use unstable):"
+msgstr ""
+"Si vous utilisez %sDebian%s etch ou instable, vous pouvez ajouter ceci à "
+"votre %s (remplacez <i>etch</i> par <i>unstable</i> si vous utilisez la "
+"version instable) :"
 
-#: flags-bedic.php:13
-#: flags-bedic.php:15
-#: flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15
-#: flags-evolutionary.php:13
-#: flags-evolutionary.php:15
+#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
+#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
 msgid "DICT servers"
 msgstr "serveurs DICT"
 
-#: flags-bedic.php:13
-#: flags-bedic.php:15
-#: flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15
-#: flags-evolutionary.php:13
-#: flags-evolutionary.php:15
+#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
+#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
 msgid "on Windows/Linux"
 msgstr "sur Windows/Linux"
 
-#: flags-bedic.php:17
-#: flags-dict-tgz.php:17
-#: flags-evolutionary.php:17
+#: flags-bedic.php:17 flags-dict-tgz.php:17 flags-evolutionary.php:17
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:17
-#: flags-bedic.php:19
-#: flags-dict-tgz.php:17
-#: flags-dict-tgz.php:19
-#: flags-evolutionary.php:17
-#: flags-evolutionary.php:19
+#: flags-bedic.php:17 flags-bedic.php:19 flags-dict-tgz.php:17
+#: flags-dict-tgz.php:19 flags-evolutionary.php:17 flags-evolutionary.php:19
 msgid "on WinCE/Palm"
 msgstr "sur WinCE/Palm"
 
-#: flags-bedic.php:21
-#: flags-dict-tgz.php:21
-#: flags-evolutionary.php:21
+#: flags-bedic.php:21 flags-dict-tgz.php:21 flags-evolutionary.php:21
 msgid "on Zaurus/Qt"
 msgstr "sur Zaurus/Qt"
 
-#: flags-bedic.php:29
-#: flags-dict-tgz.php:29
-#: flags-evolutionary.php:29
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
 msgid "Download / Matrix View - FreeDict"
 msgstr "Télécharger / Vue Matrice - FreeDict"
 
-#: flags-bedic.php:36
-#: flags-dict-tgz.php:36
-#: flags-evolutionary.php:36
+#: flags-bedic.php:36 flags-dict-tgz.php:36 flags-evolutionary.php:36
 msgid "Download / Matrix View"
 msgstr "Télécharger / Vue Matrice"
 
-#: flags-bedic.php:39
-#: flags-dict-tgz.php:39
-#: flags-evolutionary.php:39
+#: flags-bedic.php:39 flags-dict-tgz.php:39 flags-evolutionary.php:39
 msgid "All downloads are for platform"
 msgstr "Tous les téléchargements sont pour la plateforme"
 
-#: flags-bedic.php:46
-#: flags-dict-tgz.php:46
-#: flags-evolutionary.php:46
+#: flags-bedic.php:46 flags-dict-tgz.php:46 flags-evolutionary.php:46
 #, php-format
-msgid "Another application understanding this file format is %1sWordtrans%2s, a KDE application."
-msgstr "Une autre application comprenant ce format de fichier est %1sWordtrans%2s, une application KDE."
+msgid ""
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
+msgstr ""
+"Une autre application comprenant ce format de fichier est %1sWordtrans%2s, "
+"une application KDE."
 
-#: flags-bedic.php:52
-#: flags-dict-tgz.php:52
-#: flags-evolutionary.php:52
+#: flags-bedic.php:52 flags-dict-tgz.php:52 flags-evolutionary.php:52
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -210,34 +200,28 @@ msgstr ""
 "     Linux PDA de Sharp, et QBEDic, qui tourne sur Linux/Qt. BEDic est\n"
 "     semblable à stardict car il n'a pas une approche client/serveur"
 
-#: flags-bedic.php:60
-#: flags-dict-tgz.php:60
-#: flags-evolutionary.php:60
+#: flags-bedic.php:60 flags-dict-tgz.php:60 flags-evolutionary.php:60
 msgid "Select your language combination!"
 msgstr "Choisissez votre combinaison de langues !"
 
-#: flags-bedic.php:63
-#: flags-dict-tgz.php:63
-#: flags-evolutionary.php:63
+#: flags-bedic.php:63 flags-dict-tgz.php:63 flags-evolutionary.php:63
 msgid "Source Language / Size in MB"
 msgstr "Langage source / Taille en Mo"
 
-#: flags-bedic.php:66
-#: flags-dict-tgz.php:66
-#: flags-evolutionary.php:66
-msgid "Destination<br>Language"
+#: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
+#, fuzzy
+msgid "Destination<br />Language"
 msgstr "Langue de<br> destination"
 
-#: flags-bedic.php:158
-#: flags-dict-tgz.php:158
-#: flags-evolutionary.php:158
+#: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
 "from here!"
 msgstr ""
 "Veuillez cliquer sur les liens pour accéder à SourceForge\n"
-"Sélection de pages de téléchargement mirroir. Clique-droit et Sauvegarder sous\n"
+"Sélection de pages de téléchargement mirroir. Clique-droit et Sauvegarder "
+"sous\n"
 "ne marcheront pas de là!!"
 
 #: list.php:10
@@ -276,78 +260,75 @@ msgstr "Statut"
 msgid "Version for / Size in MB"
 msgstr "Version pour / Taille en Mo"
 
-#: menu.php:16
+#: menu.php:17
 msgid "Menu"
 msgstr "Menu"
 
-#: menu.php:25
-#: overview.php:8
+#: menu.php:26 overview.php:8
 msgid "Overview"
 msgstr "Aperçu"
 
-#: menu.php:28
+#: menu.php:29
 msgid "Download databases"
 msgstr "Télécharger des dictionnaires"
 
-#: menu.php:31
+#: menu.php:32
 msgid "Platform"
 msgstr "Plateforme"
 
-#: menu.php:32
+#: menu.php:33
 msgid "Application"
 msgstr "Application"
 
-#: menu.php:36
+#: menu.php:37
 msgid "Windows &amp; Linux"
 msgstr "Windows &amp; Linux"
 
-#: menu.php:37
+#: menu.php:38
 msgid "DICT servers (tgz)"
 msgstr "Serveurs DICT (tgz)"
 
-#: menu.php:41
+#: menu.php:42
 msgid "Debian Linux"
 msgstr "Linux Debian"
 
-#: menu.php:42
+#: menu.php:43
 msgid "dictd"
 msgstr "dictd"
 
-#: menu.php:46
+#: menu.php:47
 msgid "WinCE &amp; Palm"
 msgstr "WinCE &amp; Palm"
 
-#: menu.php:61
+#: menu.php:62
 msgid "Detailed List"
 msgstr "Liste détaillée"
 
-#: menu.php:70
+#: menu.php:71
 msgid "FreeDict Online Servers"
 msgstr "Serveurs FreeDict en ligne"
 
-#: menu.php:82
+#: menu.php:83
 msgid "SourceForge Project Page"
 msgstr "Page du projet sur SourceForge"
 
-#: menu.php:87
+#: menu.php:88
 msgid "Mailinglists"
 msgstr "Listes de diffusion"
 
-#: menu.php:89
+#: menu.php:90
 msgid "Bugs"
 msgstr "Bugs"
 
-#: menu.php:91
+#: menu.php:92
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:93
-#: weblang.php:8
-#: weblang.php:15
+#: menu.php:95 weblang.php:8 weblang.php:15
 msgid "Translate this Website"
 msgstr "Traduire ce site"
 
-#: menu.php:98
+#: menu.php:100
 msgid "FreeDict Project"
 msgstr "Projet FreeDict"
 
@@ -362,14 +343,6 @@ msgstr "Horst Eyermann, Michael Bunk et %1$sbeaucoup d'autres%2$s"
 
 #: overview.php:21
 msgid ""
-"This website is the successor of freedict.de. It is under development.\n"
-"Some contents might be unavailable. In this case please send an email to the freedict-beta mailing list."
-msgstr ""
-"Ce site web succède à freedict.de. Il est en développement.\n"
-"Certains contenus sont susceptibles d'être indisponibles. Dans ce cas, envoyez un courriel à la list de diffusion freedict-beta."
-
-#: overview.php:24
-msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
@@ -380,7 +353,7 @@ msgstr ""
 "sous licence GNU (General Public Licence) ou une licence moins restrictive.\n"
 "Vérifiez la licence de la base de donnée qui vous intéresse!"
 
-#: overview.php:29
+#: overview.php:26
 #, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -388,22 +361,27 @@ msgid ""
 "similar servers."
 msgstr ""
 "Les bases de données sont disponibles en XML. Nous supportons l'utilisation\n"
-" des bases de données FreeDict avec %1$sdictd, le serveur de dictionnaires  DICT%2$s et d'autres\n"
+" des bases de données FreeDict avec %1$sdictd, le serveur de dictionnaires  "
+"DICT%2$s et d'autres\n"
 " serveurs similaires."
 
-#: overview.php:33
+#: overview.php:30
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
 "to build language corpora, to import them into your own terminological\n"
 "database and even to print your own dictionary with XSL-FO."
 msgstr ""
-"Mais il y a aussi d'autres applications pour nos base de données. Vous pouvez les\n"
-"utiliser pour générer des listes de mots pour des correcteurs orthographiques\n"
-"et des nouveaux dictionnaires, pour créer des corpora linguistiques, pour les importer\n"
-"dans votre propre base de données de termes et même imprimer votre propre dictionnaire avec XSL-FO."
+"Mais il y a aussi d'autres applications pour nos base de données. Vous "
+"pouvez les\n"
+"utiliser pour générer des listes de mots pour des correcteurs "
+"orthographiques\n"
+"et des nouveaux dictionnaires, pour créer des corpora linguistiques, pour "
+"les importer\n"
+"dans votre propre base de données de termes et même imprimer votre propre "
+"dictionnaire avec XSL-FO."
 
-#: overview.php:38
+#: overview.php:35
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -411,9 +389,10 @@ msgid ""
 msgstr ""
 "Si vous voulez voir d'autres langues,\n"
 "lisez le HOWTO et rejoignez le projet ! Votre aide est très appréciable\n"
-"et nécessaire. Elle l'est aussi pour améliorer la qualité des bases de données."
+"et nécessaire. Elle l'est aussi pour améliorer la qualité des bases de "
+"données."
 
-#: overview.php:45
+#: overview.php:42
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -423,7 +402,7 @@ msgstr ""
 "Encouragez-les aussi. Sans SourceForge, FreeDict ne serait\n"
 "pas allé si loin!"
 
-#: overview.php:49
+#: overview.php:46
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -448,26 +427,32 @@ msgstr "Paquets pour Linux Rock"
 msgid ""
 "The %1$sRock Linux%2$s Distribution Build Kit includes a\n"
 "dictd package as well as packages of the FreeDict dictionaries in the dictd\n"
-"database format. For Rock 2.0, when dictd/FreeDict packages were not yet part\n"
+"database format. For Rock 2.0, when dictd/FreeDict packages were not yet "
+"part\n"
 "of the proper distribution, you have to get their .desc files from the\n"
-"subversion repository and build the packages (which will install the files at\n"
+"subversion repository and build the packages (which will install the files "
+"at\n"
 "the same time):"
 msgstr ""
 "La distribution %1sLinux Rock%2s inclut un\n"
 "paquet dictd et des dictionnaires Freedict au format dictd.\n"
 "Pour Rock 2.0, quand les paquets dictd/Freedict n'étaient pas encore partie\n"
-" intégrante de la distribution, vous devez récupérer leur fichier .desc sur le\n"
-" dépôt subversion et compiler les paquets (ce qui installera les paquets par la\n"
+" intégrante de la distribution, vous devez récupérer leur fichier .desc sur "
+"le\n"
+" dépôt subversion et compiler les paquets (ce qui installera les paquets par "
+"la\n"
 " même occasion) :"
 
 #: rock.php:46
 msgid ""
 "Using the stone tool you can activate dictionaries for use\n"
-"with dictd. The stone script is included in the dictd package, but was not included\n"
+"with dictd. The stone script is included in the dictd package, but was not "
+"included\n"
 "in the 2.0 release of Rock Linux."
 msgstr ""
 "En utilisant l'outil stone vous pouvez activez des dictionnaires\n"
-" à utiliser avec dictd. Le script stone est inclus dans le paquet dictd, mais n'est pas inclut\n"
+" à utiliser avec dictd. Le script stone est inclus dans le paquet dictd, "
+"mais n'est pas inclut\n"
 " dans la version 2.0 de Linux Rock."
 
 #: rock.php:50
@@ -491,10 +476,11 @@ msgstr ""
 ":<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:25
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.mo</tt> file from CVS:"
+"<tt>.po</tt> file from SVN:"
 msgstr ""
 "Si vous voulez mettre à jour une traduction existante, probablement\n"
 "parce qu'il reste quelques parties de ce site non traduites, vous pouvez\n"
@@ -504,8 +490,7 @@ msgstr ""
 msgid "Website Language: "
 msgstr "Langue du site:"
 
-#: inc/gettext.php:84
-#: inc/langcodes.php:13
+#: inc/gettext.php:84 inc/langcodes.php:13
 msgid "English"
 msgstr "Anglais"
 
@@ -542,109 +527,116 @@ msgid "Dutch"
 msgstr "Hollandais"
 
 #: inc/langcodes.php:14
+msgid "Modern Greek"
+msgstr ""
+
+#: inc/langcodes.php:15
 msgid "French"
 msgstr "Français"
 
-#: inc/langcodes.php:15
-#: inc/langcodes.php:19
+#: inc/langcodes.php:16 inc/langcodes.php:20
 msgid "Irish"
 msgstr "Irlandais"
 
-#: inc/langcodes.php:16
+#: inc/langcodes.php:17
 msgid "German"
 msgstr "Allemand"
 
-#: inc/langcodes.php:17
+#: inc/langcodes.php:18
 msgid "Hindi"
 msgstr "Hindou"
 
-#: inc/langcodes.php:18
+#: inc/langcodes.php:19
 msgid "Hungarian"
 msgstr "Hongrois"
 
-#: inc/langcodes.php:20
+#: inc/langcodes.php:21
 msgid "Italian"
 msgstr "Italien"
 
-#: inc/langcodes.php:21
+#: inc/langcodes.php:22
 msgid "Khasi"
 msgstr "Khasi"
 
-#: inc/langcodes.php:22
+#: inc/langcodes.php:23
 msgid "Kurmanji"
 msgstr "Kurmanji"
 
-#: inc/langcodes.php:23
+#: inc/langcodes.php:24
 msgid "Kurdish"
 msgstr "Kurde"
 
-#: inc/langcodes.php:24
+#: inc/langcodes.php:25
 msgid "Latin"
 msgstr "Latin"
 
-#: inc/langcodes.php:25
+#: inc/langcodes.php:26
 msgid "Lithuanian"
 msgstr "Lithuanien"
 
-#: inc/langcodes.php:26
+#: inc/langcodes.php:27
 msgid "Japanese"
 msgstr "Japonais"
 
-#: inc/langcodes.php:27
+#: inc/langcodes.php:28
 msgid "Polish"
 msgstr "Polonais"
 
-#: inc/langcodes.php:28
+#: inc/langcodes.php:29
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: inc/langcodes.php:29
+#: inc/langcodes.php:30
 msgid "Romanian"
 msgstr "Roumain"
 
-#: inc/langcodes.php:30
+#: inc/langcodes.php:31
 msgid "Russian"
 msgstr "Russe"
 
-#: inc/langcodes.php:31
+#: inc/langcodes.php:32
 msgid "Sanskrit"
 msgstr "Sanskrit"
 
-#: inc/langcodes.php:32
+#: inc/langcodes.php:33
 msgid "Gaelic Scottish"
 msgstr "Gaëlique d'Ecosse"
 
-#: inc/langcodes.php:33
+#: inc/langcodes.php:34
 msgid "Serbo-Croatian"
 msgstr "Serbo-Croate"
 
-#: inc/langcodes.php:34
+#: inc/langcodes.php:35
 msgid "Slovak"
 msgstr "Slovaque"
 
-#: inc/langcodes.php:35
+#: inc/langcodes.php:36
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: inc/langcodes.php:36
+#: inc/langcodes.php:37 inc/langcodes.php:38
 msgid "Swahili"
 msgstr "Swahili"
 
-#: inc/langcodes.php:37
+#: inc/langcodes.php:39
 msgid "Swedish"
 msgstr "Suédois"
 
-#: inc/langcodes.php:38
+#: inc/langcodes.php:40
 msgid "Turkish"
 msgstr "Turc"
 
-#: inc/langcodes.php:39
+#: inc/langcodes.php:41
 msgid "Welsh"
 msgstr "Gallois"
 
 #: inc/legend.php:1
-msgid "List of table cells with differing background colours representing examplary dictionary states"
-msgstr "Liste des cellules au fond de couleurs différentes représentant des états de dictionnaires"
+msgid ""
+"List of table cells with differing background colours representing examplary "
+"dictionary states"
+msgstr ""
+"Liste des cellules au fond de couleurs différentes représentant des états de "
+"dictionnaires"
 
 #: inc/legend.php:5
 msgid "Color Legend"
@@ -655,12 +647,17 @@ msgid "Dictionary Status was marked as 'stable'"
 msgstr "Le dictionnaire a été décrit comme  'stable'"
 
 #: inc/legend.php:16
-msgid "Dictionary Status was marked as 'big enough to be useful' (from 10000 entries on)"
-msgstr "Le dictionnairea été décrit comme  'assez gros pour être utile' (plus de 10 000 entrées)"
+msgid ""
+"Dictionary Status was marked as 'big enough to be useful' (from 10000 "
+"entries on)"
+msgstr ""
+"Le dictionnairea été décrit comme  'assez gros pour être utile' (plus de 10 "
+"000 entrées)"
 
 #: inc/legend.php:18
 msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
-msgstr "Le dictionnaire a été décrit comme 'trop petit' (moins de 1 000 entrées)"
+msgstr ""
+"Le dictionnaire a été décrit comme 'trop petit' (moins de 1 000 entrées)"
 
 #: inc/legend.php:20
 msgid "Dictionary Status was marked as 'low quality'"
@@ -694,8 +691,18 @@ msgstr ""
 "Le fait que certains dictionnaires ne soient pas affichables sur cette\n"
 " plate-forme est dû à leur encodage."
 
+#~ msgid ""
+#~ "This website is the successor of freedict.de. It is under development.\n"
+#~ "Some contents might be unavailable. In this case please send an email to "
+#~ "the freedict-beta mailing list."
+#~ msgstr ""
+#~ "Ce site web succède à freedict.de. Il est en développement.\n"
+#~ "Certains contenus sont susceptibles d'être indisponibles. Dans ce cas, "
+#~ "envoyez un courriel à la list de diffusion freedict-beta."
+
 #~ msgid "on Zaurus"
 #~ msgstr "sur Zaurus"
+
 #~ msgid ""
 #~ "For the source files, please see the SourceForge project page.\n"
 #~ "From there you can download a source archive or find details\n"
@@ -705,12 +712,16 @@ msgstr ""
 #~ "De là vous pouvez télécharger une archive des sources ou trouver des "
 #~ "détails\n"
 #~ "sur comment faire un checkout du CVS."
+
 #~ msgid "Plans / Join us!"
 #~ msgstr "Plans / Rejoingez nous!"
+
 #~ msgid "Links"
 #~ msgstr "Liens"
+
 #~ msgid "Other DICT Databases"
 #~ msgstr "Autres base de données DICT"
+
 #~ msgid ""
 #~ "Horst Eyermann, Michael Bunk and <a target=_top\n"
 #~ "href=\"http://sourceforge.net/project/memberlist.php?group_id=1419"
@@ -721,6 +732,7 @@ msgstr ""
 #~ "href=\"http://sourceforge.net/project/memberlist.php?group_id=1419"
 #~ "\">beaucoup\n"
 #~ "plus"
+
 #~ msgid ""
 #~ "The databases are available in XML. We support to use the\n"
 #~ "FreeDict databases with <A href=\"http://www.dict.org/\">dictd,\n"
@@ -730,6 +742,7 @@ msgstr ""
 #~ "l'utilisationdes bases de données FreeDict avec <A href=\"http://www.dict."
 #~ "org/\">dictd,\n"
 #~ "the DICT dictionary server</a> ou d'un serveur similaire."
+
 #~ msgid ""
 #~ "If you would like to see any other language included,     \n"
 #~ "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -739,8 +752,10 @@ msgstr ""
 #~ "lisez le HOWTO et rejoignez le projet! Votre aide est très appréciable\n"
 #~ "et nécessaire. Elle l'est aussi pour améliorer la qualité des bases de "
 #~ "données."
+
 #~ msgid "Scottish"
 #~ msgstr "Ecossais"
+
 #~ msgid ""
 #~ "This website is under development.\n"
 #~ "Some contents might be unavailable. In this case please visit the old\n"
@@ -750,6 +765,7 @@ msgstr ""
 #~ "Certain contenu peut ne pas être disponible. Dans ce cas visiter "
 #~ "l'ancien\n"
 #~ "site web: <a target=_parent href=http://freedict.de/>freedict.de</a>"
+
 #~ msgid ""
 #~ "To make this website available in another language,\n"
 #~ "please download the file below, add the translations for your language\n"
@@ -760,6 +776,7 @@ msgstr ""
 #~ "télécharger le fichier ci-bas, ajouter les traductions pour votre langue\n"
 #~ "en bas des traductions anglaises et envoyer le fichier à:\n"
 #~ "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>"
+
 #~ msgid ""
 #~ "The Download Tables are generated from an XML file.\n"
 #~ "To access that data easily, eg. for use in a program as\n"
@@ -770,6 +787,7 @@ msgstr ""
 #~ "dans un programme comme <a href=\"http://stardict.sf.net/\">Stardict</"
 #~ "a>,\n"
 #~ " vous pouvez utiliser cette URL:"
+
 #~ msgid ""
 #~ "The <a href=\"http://debian.org/\" target=_top>Debian</a> Linux "
 #~ "Distribution\n"
@@ -834,12 +852,14 @@ msgstr ""
 #~ "  \n"
 #~ "  <p>Les packages FreeDict de Debian sont actuellement orphelins\n"
 #~ "Cela signifie qu'ils n'ont pas de mainteneur<p>"
+
 #~ msgid ""
 #~ "Please note that the FreeDict packages in Debian are\n"
 #~ "  currently orphaned. That means they don't have a maintainer."
 #~ msgstr ""
 #~ "Les packages FreeDict de Debian sont actuellement orphelins\n"
 #~ "Cela signifie qu'ils n'ont pas de mainteneur"
+
 #~ msgid ""
 #~ "This website is under development.\n"
 #~ "Some contents might be unavailable. In this case please visit the old\n"
@@ -849,4 +869,3 @@ msgstr ""
 #~ "Certain contenu peut ne pas être disponible. Dans ce case visitez "
 #~ "l'ancien site\n"
 #~ "web à : %s"
-

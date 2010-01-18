@@ -23,11 +23,12 @@ of features in the %sintroduction%s."), '<a href="editordoc.html">', '</a>',
 
 <p><?php printf(_("No release of the FreeDict-Editor has been made yet.
 You can do an anonymous check out the <tt>freedict-editor</tt>
-module from %sCVS%s and try compiling it yourself:"),
-'<a href="http://sourceforge.net/cvs/?group_id=1419">', '</a>') ?></p>
+module from %sSVN%s and try compiling it yourself:"),
+'<a href="http://sourceforge.net/scm/?type=svn&amp;group_id=1419">', '</a>') ?></p>
 
-<blockquote cite="http://sourceforge.net/cvs/?group_id=1419"><small><tt>cvs -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict login<br />
-cvs -z3 -d:pserver:anonymous@freedict.cvs.sourceforge.net:/cvsroot/freedict co -P freedict-editor</tt></small></blockquote>
+<blockquote cite="http://sourceforge.net/scm/?type=svn&amp;group_id=1419">
+  <small><tt>svn co <a href="https://freedict.svn.sourceforge.net/svnroot/freedict/trunk/freedict-editor">https://freedict.svn.sourceforge.net/svnroot/freedict/trunk/freedict-editor</a> freedict-editor</tt></small>
+</blockquote>
 
 <p><?php printf(_("For the %srequirements%s, please also refer to the documentation."),
   '<a href="editordoc.html#freedict-editor-requirements">', '</a>') ?></p>

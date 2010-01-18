@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2009-04-25 21:14+0200\n"
+"POT-Creation-Date: 2010-01-18 20:23+0100\n"
 "PO-Revision-Date: 2006-08-31 03:02+0300\n"
 "Last-Translator: Amr Gharbeia <amr@gharbeia.net>\n"
 "Language-Team: Arabic <en@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: dataflow.php:8 dataflow.php:15 menu.php:26
+#: dataflow.php:8 dataflow.php:15 menu.php:27
 msgid "Data Flow"
 msgstr "سير البيانات"
 
@@ -28,7 +28,7 @@ msgstr "قد تحتاج إلى تركيبة، مثلا."
 msgid "Adbobe's"
 msgstr "أدوب"
 
-#: db-as-xml.php:8 db-as-xml.php:15 menu.php:94
+#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
 msgid "Database as XML"
 msgstr "قاعدة البيانات في صيغة إكس.إم.إل"
 
@@ -101,15 +101,15 @@ msgstr ""
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
 "You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sCVS%s and try compiling it yourself:"
+"module from %sSVN%s and try compiling it yourself:"
 msgstr ""
 
-#: editor.php:32
+#: editor.php:33
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr ""
 
-#: editor.php:35
+#: editor.php:36
 #, php-format
 msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
@@ -175,7 +175,8 @@ msgid "Source Language / Size in MB"
 msgstr "لغة المصدر/الحجم بالميجابايت"
 
 #: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
-msgid "Destination<br>Language"
+#, fuzzy
+msgid "Destination<br />Language"
 msgstr "اللغة<br>الهدف"
 
 #: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
@@ -221,75 +222,75 @@ msgstr "الحالة"
 msgid "Version for / Size in MB"
 msgstr "الإصدارة"
 
-#: menu.php:16
+#: menu.php:17
 msgid "Menu"
 msgstr "قائمة"
 
-#: menu.php:25 overview.php:8
+#: menu.php:26 overview.php:8
 msgid "Overview"
 msgstr "عرض عام"
 
-#: menu.php:28
+#: menu.php:29
 msgid "Download databases"
 msgstr "قواعد البيانات المنزلة"
 
-#: menu.php:31
+#: menu.php:32
 msgid "Platform"
 msgstr "المنصة"
 
-#: menu.php:32
+#: menu.php:33
 msgid "Application"
 msgstr "التطبيق"
 
-#: menu.php:36
+#: menu.php:37
 msgid "Windows &amp; Linux"
 msgstr "وندوز &amp; لينكس"
 
-#: menu.php:37
+#: menu.php:38
 msgid "DICT servers (tgz)"
 msgstr "خادومات دكت (أرشيفات tgz)"
 
-#: menu.php:41
+#: menu.php:42
 msgid "Debian Linux"
 msgstr "لينكس دبيان"
 
-#: menu.php:42
+#: menu.php:43
 msgid "dictd"
 msgstr ""
 
-#: menu.php:46
+#: menu.php:47
 msgid "WinCE &amp; Palm"
 msgstr "وندوز.سي.إي &amp; بالم"
 
-#: menu.php:61
+#: menu.php:62
 msgid "Detailed List"
 msgstr "قائمة مفصلة"
 
-#: menu.php:70
+#: menu.php:71
 msgid "FreeDict Online Servers"
 msgstr "خادومات فري.دكت عالخط"
 
-#: menu.php:82
+#: menu.php:83
 msgid "SourceForge Project Page"
 msgstr "صفحة مشروع سورس.فورج"
 
-#: menu.php:87
+#: menu.php:88
 msgid "Mailinglists"
 msgstr "القوائم البريدية"
 
-#: menu.php:89
+#: menu.php:90
 msgid "Bugs"
 msgstr "بقات"
 
-#: menu.php:91
+#: menu.php:92
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:8 weblang.php:15
+#: menu.php:95 weblang.php:8 weblang.php:15
 msgid "Translate this Website"
 msgstr "ترجم هذا الموقع"
 
-#: menu.php:98
+#: menu.php:100
 msgid "FreeDict Project"
 msgstr "مشروع فري.دكت"
 
@@ -304,13 +305,6 @@ msgstr "هورشت أيرمان، وميشائيل بونك، و%1$sآخرين%2
 
 #: overview.php:21
 msgid ""
-"This website is the successor of freedict.de. It is under development.\n"
-"Some contents might be unavailable. In this case please send an email to the "
-"freedict-beta mailing list."
-msgstr ""
-
-#: overview.php:24
-msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
@@ -322,7 +316,7 @@ msgstr ""
 "85%D9%88%D9%85%D9%8A%D8%A9\">برخصة جنو للوثائق الحرة</a>، أو برخص أقل "
 "تقييدا. راجع رخصة قاعدة البيانات التي تستخدمها!"
 
-#: overview.php:29
+#: overview.php:26
 #, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -330,7 +324,7 @@ msgid ""
 "similar servers."
 msgstr ""
 
-#: overview.php:33
+#: overview.php:30
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
@@ -338,21 +332,21 @@ msgid ""
 "database and even to print your own dictionary with XSL-FO."
 msgstr ""
 
-#: overview.php:38
+#: overview.php:35
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
 "and needed, also for improving the quality of the databases."
 msgstr ""
 
-#: overview.php:45
+#: overview.php:42
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
 "not have come so far!"
 msgstr ""
 
-#: overview.php:49
+#: overview.php:46
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -407,11 +401,14 @@ msgstr ""
 "\">micha@luetzschena.demicha@luetzschena.de</a>."
 
 #: weblang.php:25
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.mo</tt> file from CVS:"
+"<tt>.po</tt> file from SVN:"
 msgstr ""
+"إذا أردت أن تحدِّث ترجمة حالية، ربما بسبب أجزاء في الموقع غير مترجمة إلى الآن، "
+"سيتعين عليك أن تطلب مني أن أضع مصدر الموقع على سي.في.إس."
 
 #: inc/gettext.php:82
 msgid "Website Language: "
@@ -455,103 +452,107 @@ msgid "Dutch"
 msgstr "هولندية"
 
 #: inc/langcodes.php:14
+msgid "Modern Greek"
+msgstr ""
+
+#: inc/langcodes.php:15
 msgid "French"
 msgstr "فرنسية"
 
-#: inc/langcodes.php:15 inc/langcodes.php:19
+#: inc/langcodes.php:16 inc/langcodes.php:20
 msgid "Irish"
 msgstr "أيرلندية"
 
-#: inc/langcodes.php:16
+#: inc/langcodes.php:17
 msgid "German"
 msgstr "ألمانية"
 
-#: inc/langcodes.php:17
+#: inc/langcodes.php:18
 msgid "Hindi"
 msgstr "هندية"
 
-#: inc/langcodes.php:18
+#: inc/langcodes.php:19
 msgid "Hungarian"
 msgstr "مجرية"
 
-#: inc/langcodes.php:20
+#: inc/langcodes.php:21
 msgid "Italian"
 msgstr "إيطالية"
 
-#: inc/langcodes.php:21
+#: inc/langcodes.php:22
 msgid "Khasi"
 msgstr "خاسية"
 
-#: inc/langcodes.php:22
+#: inc/langcodes.php:23
 msgid "Kurmanji"
 msgstr "كرمانجي"
 
-#: inc/langcodes.php:23
+#: inc/langcodes.php:24
 msgid "Kurdish"
 msgstr "كردي"
 
-#: inc/langcodes.php:24
+#: inc/langcodes.php:25
 msgid "Latin"
 msgstr "لاتينية"
 
-#: inc/langcodes.php:25
+#: inc/langcodes.php:26
 msgid "Lithuanian"
 msgstr ""
 
-#: inc/langcodes.php:26
+#: inc/langcodes.php:27
 msgid "Japanese"
 msgstr "يابانية"
 
-#: inc/langcodes.php:27
+#: inc/langcodes.php:28
 #, fuzzy
 msgid "Polish"
 msgstr "إنجليزية"
 
-#: inc/langcodes.php:28
+#: inc/langcodes.php:29
 msgid "Portuguese"
 msgstr "برتغالية"
 
-#: inc/langcodes.php:29
+#: inc/langcodes.php:30
 msgid "Romanian"
 msgstr "رومانية"
 
-#: inc/langcodes.php:30
+#: inc/langcodes.php:31
 msgid "Russian"
 msgstr "روسية"
 
-#: inc/langcodes.php:31
+#: inc/langcodes.php:32
 msgid "Sanskrit"
 msgstr "سنسكريتية"
 
-#: inc/langcodes.php:32
+#: inc/langcodes.php:33
 msgid "Gaelic Scottish"
 msgstr "اسكتلدني جالي"
 
-#: inc/langcodes.php:33
+#: inc/langcodes.php:34
 msgid "Serbo-Croatian"
 msgstr "صرب-كرواتية"
 
-#: inc/langcodes.php:34
+#: inc/langcodes.php:35
 msgid "Slovak"
 msgstr "سلوفاكية"
 
-#: inc/langcodes.php:35
+#: inc/langcodes.php:36
 msgid "Spanish"
 msgstr "أسبانية"
 
-#: inc/langcodes.php:36
+#: inc/langcodes.php:37 inc/langcodes.php:38
 msgid "Swahili"
 msgstr "سواحيلية"
 
-#: inc/langcodes.php:37
+#: inc/langcodes.php:39
 msgid "Swedish"
 msgstr "سويدية"
 
-#: inc/langcodes.php:38
+#: inc/langcodes.php:40
 msgid "Turkish"
 msgstr "تركية"
 
-#: inc/langcodes.php:39
+#: inc/langcodes.php:41
 msgid "Welsh"
 msgstr "ولزية"
 
@@ -675,12 +676,3 @@ msgstr ""
 #~ "الموقع لا يزال في طور الإنشاء.\n"
 #~ "إذا لم يمكنك الحصول على كل محتوة الموقع، قد ترغب في زيارة الموقع القديم "
 #~ "على %s "
-
-#~ msgid ""
-#~ "If you want to update an existing translation, probably because\n"
-#~ "it leaves some part of the website untranslated, you will have to ask me "
-#~ "to\n"
-#~ "finally put the website source into CVS."
-#~ msgstr ""
-#~ "إذا أردت أن تحدِّث ترجمة حالية، ربما بسبب أجزاء في الموقع غير مترجمة إلى "
-#~ "الآن، سيتعين عليك أن تطلب مني أن أضع مصدر الموقع على سي.في.إس."

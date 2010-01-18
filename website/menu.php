@@ -82,8 +82,8 @@
 <tr><td class="menu"><a href="http://sourceforge.net/projects/freedict/"
  target="_parent"><?php echo _('SourceForge Project Page') ?></a></td></tr>
 <tr><td class="menu"><ul>
- <li><small><a href="http://sourceforge.net/cvs/?group_id=1419"
-  target="_parent">CVS</a><br /></small></li>
+ <li><small><a href="http://sourceforge.net/scm/?type=svn&amp;group_id=1419"
+  target="_parent">SVN</a><br /></small></li>
  <li><small><a href="http://sourceforge.net/mail/?group_id=1419"
   target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
  <li><small><a href="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419"
