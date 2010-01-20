@@ -39,7 +39,7 @@
   'ku' => 'ku_TR',
   'ar' => 'ar_EG',
   'ru' => 'ru_RU',
-  'bg' => 'bg_BG.UTF-8',
+  'bg' => 'bg_BG',
   );
  arsort($langtag2Q);
  global $content_language;
@@ -62,7 +62,7 @@
  global $SKIP_SETLOCALE;
  if(!isset($SKIP_SETLOCALE))
  {
-   $ret = setlocale(LC_MESSAGES, $l);
+   $ret = setlocale(LC_MESSAGES, "$l.utf8");
    if(!$ret) echo "setlocale to '$l' failed<br>";
    //else echo "setlocale to '$l' succeeded: $ret<br>";
    $ret = bindtextdomain('freedict', 'locale');

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-18 20:23+0100\n"
+"POT-Creation-Date: 2010-01-20 22:31+0100\n"
 "PO-Revision-Date: 2009-11-26 09:55+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -252,7 +252,7 @@ msgstr "Version"
 msgid "Last Changed"
 msgstr "Dernière modification"
 
-#: list.php:26
+#: list.php:26 weblang.php:36
 msgid "Status"
 msgstr "Statut"
 
@@ -324,7 +324,7 @@ msgstr "Bugs"
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:95 weblang.php:8 weblang.php:15
+#: menu.php:95 weblang.php:9 weblang.php:16
 msgid "Translate this Website"
 msgstr "Traduire ce site"
 
@@ -463,7 +463,7 @@ msgstr ""
 "Notez que le projet dérivé \"t2\" n'inclut aucun\n"
 "   paquet freedict-*."
 
-#: weblang.php:18
+#: weblang.php:19
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -475,7 +475,7 @@ msgstr ""
 "sous les traductions anglaises et envoyer le ficher à\n"
 ":<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
-#: weblang.php:25
+#: weblang.php:26
 #, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
@@ -485,6 +485,15 @@ msgstr ""
 "Si vous voulez mettre à jour une traduction existante, probablement\n"
 "parce qu'il reste quelques parties de ce site non traduites, vous pouvez\n"
 "récupérer le fichier <tt>.po</tt> à partir du CVS :"
+
+#: weblang.php:32
+msgid "Translation status for the website languages"
+msgstr ""
+
+#: weblang.php:35
+#, fuzzy
+msgid "Language"
+msgstr "Langue du site:"
 
 #: inc/gettext.php:82
 msgid "Website Language: "

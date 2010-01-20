@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-18 20:23+0100\n"
+"POT-Creation-Date: 2010-01-20 22:31+0100\n"
 "PO-Revision-Date: 2007-07-24 13:33+MET\n"
 "Last-Translator: Emanoil Kotsev <a9706152@unet.univie.ac.at>\n"
 "Language-Team: Bulgarian <freedict-beta@lists.sourceforge.net>\n"
@@ -242,7 +242,7 @@ msgstr "версия"
 msgid "Last Changed"
 msgstr "Последна промяна"
 
-#: list.php:26
+#: list.php:26 weblang.php:36
 msgid "Status"
 msgstr "Статус"
 
@@ -314,7 +314,7 @@ msgstr "Бъгове"
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:95 weblang.php:8 weblang.php:15
+#: menu.php:95 weblang.php:9 weblang.php:16
 msgid "Translate this Website"
 msgstr "Преведи този уеб сайт"
 
@@ -444,7 +444,7 @@ msgstr ""
 "Моля обърнете внимание, че проектът fork \"t2\" не включва \n"
 "     каквито и да е пакети freedict-*."
 
-#: weblang.php:18
+#: weblang.php:19
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -455,7 +455,7 @@ msgstr ""
 "моля изтеглете английския превод и пратете преведения файл на>\n"
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>"
 
-#: weblang.php:25
+#: weblang.php:26
 #, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
@@ -464,6 +464,15 @@ msgid ""
 msgstr ""
 "Ако сикате да разширите съществъващ превод, вероятно\n"
 "защото части от сайта не се преведени, може да изтеглите <tt>.mo</tt> от CVS:"
+
+#: weblang.php:32
+msgid "Translation status for the website languages"
+msgstr ""
+
+#: weblang.php:35
+#, fuzzy
+msgid "Language"
+msgstr "Език на сайта: "
 
 #: inc/gettext.php:82
 msgid "Website Language: "
