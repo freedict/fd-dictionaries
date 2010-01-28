@@ -38,9 +38,12 @@ $(addprefix xhtml/,$(linkfiles)): $(addprefix inc/,$(linkfiles))
 	for i in $(linkfiles); do if [ ! -L $@ ]; then ln -s ../inc/$$i xhtml/; fi; done
 
 # targets for output formats
-xhtml: *.xml inc/customise-docbook.xsl $(addprefix xhtml/,$(linkfiles))
+xhtml: xhtml-folder *.xml inc/customise-docbook.xsl $(addprefix xhtml/,$(linkfiles))
 	@if [ ! -L xhtml/images ]; then ln -s $(DOCBOOKIMAGES) xhtml/images; fi
 	xmlto $(XMLTO_OPTS) -o xhtml xhtml freedicthowto.xml
+
+xhtml-folder:
+	mkdir xhtml
 
 xhtml-nochunks: *.xml inc/customise-docbook.xsl $(addprefix xhtml/,$(linkfiles))
 	@if [ ! -L xhtml/images ]; then ln -s $(DOCBOOKIMAGES) xhtml/images; fi
@@ -71,4 +74,4 @@ freedict-howto-$(HOWTO_VERSION).xhtml.tar.bz2: xhtml
 
 release-xhtml: freedict-howto-$(HOWTO_VERSION).xhtml.tar.bz2
 
-.PHONY: all xhtml xhtml-nochunks html clean commit dist release-xhtml
+.PHONY: all xhtml xhtml-folder xhtml-nochunks html clean commit dist release-xhtml

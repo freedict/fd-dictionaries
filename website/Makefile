@@ -1,33 +1,40 @@
-all: freedict.po editordoc.html howto freedict-database.xml flags-bedic.php \
-	flags-evolutionary.php freedict.pot de kha ru ku fr ar bg lt
+LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT
+POS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES)))
+MOS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES)))
+
+all: editordoc.html howto freedict-database.xml flags-bedic.php \
+	flags-evolutionary.php freedict.pot $(MOS)
 
 sources = $(wildcard *.php) $(wildcard inc/*.php)
 
-freedict.po: freedict.pot
-	msgmerge -U locale/ar_EG/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/de_DE/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/kha_IN/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/ru_RU/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/ku_TR/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/fr_FR/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/bg_BG/LC_MESSAGES/freedict.po $<
-	msgmerge -U locale/lt_LT/LC_MESSAGES/freedict.po $<
+locale/%/LC_MESSAGES/freedict.po: freedict.pot
+	msgmerge -U locale/$*/LC_MESSAGES/freedict.po $<
+	touch $@ # because msgmerge doesn't do this if the .po didn't change
 
-../freedict-editor/help/C/html/index.html:
+../freedict-editor/configure: ../freedict-editor/autogen.sh
+	cd ../freedict-editor && ./autogen.sh
+
+../freedict-editor/Makefile: ../freedict-editor/configure
+	cd ../freedict-editor && ./configure
+
+../freedict-editor/help/C/html/index.html: ../freedict-editor/Makefile
 	$(MAKE) -C ../freedict-editor/help/C html
 
 editordoc.html: ../freedict-editor/help/C/html/index.html
 	test -e $@ || ln -s $< $@
 
-howto:
-	ln -s ../howto/xhtml $@
+../howto/xhtml:
+	$(MAKE) -C ../howto xhtml
+
+howto: ../howto/xhtml
+	ln -s $< $@
 
 freedict-database.xml:
 	ln -s ../$@
 
 flags-bedic.php:
 	ln -s flags-dict-tgz.php $@
-	
+
 flags-evolutionary.php:
 	ln -s flags-dict-tgz.php $@
 
@@ -38,32 +45,7 @@ freedict.pot: $(sources)
 locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
 	msgfmt -c --statistics -o $@ $<
 
-de: locale/de_DE/LC_MESSAGES/freedict.mo
-
-kha: locale/kha_IN/LC_MESSAGES/freedict.mo
-
-ru: locale/ru_RU/LC_MESSAGES/freedict.mo
-
-ku: locale/ku_TR/LC_MESSAGES/freedict.mo
-
-fr: locale/fr_FR/LC_MESSAGES/freedict.mo
-
-ar: locale/ar_EG/LC_MESSAGES/freedict.mo
-
-bg: locale/bg_BG/LC_MESSAGES/freedict.mo
-
-lt: locale/lt_LT/LC_MESSAGES/freedict.mo
-
 clean:
-	-rm -f locale/ru_RU/LC_MESSAGES/freedict.mo \
-	locale/fr_FR/LC_MESSAGES/freedict.mo \
-	locale/ku_TR/LC_MESSAGES/freedict.mo \
-	locale/kha_IN/LC_MESSAGES/freedict.mo \
-	locale/ar_EG/LC_MESSAGES/freedict.mo \
-	locale/de_DE/LC_MESSAGES/freedict.mo \
-	locale/bg_BG/LC_MESSAGES/freedict.mo \
-	locale/lt_LT/LC_MESSAGES/freedict.mo
+	-rm -f $(MOS)
 
-.PHONY: all freedict.po ../freedict-editor/help/C/html/index.html \
-	de kha ru ku fr ar bg lt
-
+.PHONY: all

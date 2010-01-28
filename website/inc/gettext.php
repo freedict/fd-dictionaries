@@ -65,7 +65,11 @@
  if(!isset($SKIP_SETLOCALE))
  {
    $ret = setlocale(LC_MESSAGES, "$l.utf8");
-   if(!$ret) echo "setlocale to '$l' failed<br>";
+   if(!$ret)
+   {
+     header("HTTP/1.0 500 Internal Server Error: setlocale to '$l' failed");
+     die("setlocale to '$l' failed<br>");
+   }
    //else echo "setlocale to '$l' succeeded: $ret<br>";
    $ret = bindtextdomain('freedict', 'locale');
    //echo "bindtextdomain: $ret<br>";
