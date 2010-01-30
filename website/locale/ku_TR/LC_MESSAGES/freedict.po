@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-26 23:14+0100\n"
+"POT-Creation-Date: 2010-01-30 10:50+0100\n"
 "PO-Revision-Date: 2005-12-08 10:50+0100\n"
 "Last-Translator: Michael Bunk <kleinerwurm@gmx.net>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: dataflow.php:8 dataflow.php:15 menu.php:27
+#: dataflow.php:4 dataflow.php:8 menu.php:20
 msgid "Data Flow"
 msgstr "Herikina daneyan"
 
-#: dataflow.php:24
+#: dataflow.php:17
 msgid "possibly plugin needed, eg."
 msgstr ""
 
-#: dataflow.php:26
+#: dataflow.php:19
 msgid "Adbobe's"
 msgstr ""
 
-#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
 msgid "Database as XML"
 msgstr "Danegir wekî XML"
 
-#: db-as-xml.php:18
+#: db-as-xml.php:11
 msgid ""
 "The Download Tables are generated from an XML file.\n"
 "To access that data easily, eg. for use in a program as\n"
@@ -41,15 +41,11 @@ msgid ""
 "use this URL:"
 msgstr ""
 
-#: deb.php:9
-msgid "Debian Packages - FreeDict"
-msgstr ""
-
-#: deb.php:16
+#: deb.php:4 deb.php:9
 msgid "Debian Packages"
 msgstr ""
 
-#: deb.php:18
+#: deb.php:11
 #, php-format
 msgid ""
 "The %1$sDebian%2$s Linux Distribution has its own system\n"
@@ -58,7 +54,7 @@ msgid ""
 "  install, only the following command is what you have to remember:"
 msgstr ""
 
-#: deb.php:26 rock.php:41
+#: deb.php:19 rock.php:30
 #, php-format
 msgid ""
 "Here %1$s and %2$s are the 3-letter language codes from\n"
@@ -66,38 +62,38 @@ msgid ""
 "  language combination has to be available in FreeDict."
 msgstr ""
 
-#: deb.php:31
+#: deb.php:24
 msgid ""
 "You can find out what FreeDict packages are available in\n"
 "  Debian by visiting"
 msgstr ""
 
-#: deb.php:37
+#: deb.php:30
 #, php-format
 msgid ""
 "The %1$sFreeDict pages in the\n"
 "  Debian Bug Tracking System%2$s might also be of interest."
 msgstr ""
 
-#: deb.php:42
+#: deb.php:35
 #, php-format
 msgid ""
 "This page might as well be of interest: %1$sDebian FreeDict Packages team%2"
 "$s."
 msgstr ""
 
-#: editor.php:8
+#: editor.php:4
 msgid "FreeDict-Editor"
 msgstr ""
 
-#: editor.php:20
+#: editor.php:13
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
 "of features in the %sintroduction%s."
 msgstr ""
 
-#: editor.php:24
+#: editor.php:17
 #, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
@@ -105,61 +101,58 @@ msgid ""
 "module from %sSVN%s and try compiling it yourself:"
 msgstr ""
 
-#: editor.php:33
+#: editor.php:26
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr ""
 
-#: editor.php:36
+#: editor.php:29
 #, php-format
 msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
 "<i>etch</i> by <i>unstable</i> if you use unstable):"
 msgstr ""
 
-#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "DICT servers"
 msgstr ""
 
-#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "on Windows/Linux"
 msgstr ""
 
-#: flags-bedic.php:17 flags-dict-tgz.php:17 flags-evolutionary.php:17
+#: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
 msgid "Mobipocket"
 msgstr ""
 
-#: flags-bedic.php:17 flags-bedic.php:19 flags-dict-tgz.php:17
-#: flags-dict-tgz.php:19 flags-evolutionary.php:17 flags-evolutionary.php:19
+#: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
+#: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
 msgid "on WinCE/Palm"
 msgstr ""
 
-#: flags-bedic.php:21 flags-dict-tgz.php:21 flags-evolutionary.php:21
+#: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
 msgid "on Zaurus/Qt"
 msgstr ""
 
-#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
-msgid "Download / Matrix View - FreeDict"
-msgstr ""
-
-#: flags-bedic.php:36 flags-dict-tgz.php:36 flags-evolutionary.php:36
+#: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
+#: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
 msgid "Download / Matrix View"
 msgstr ""
 
-#: flags-bedic.php:39 flags-dict-tgz.php:39 flags-evolutionary.php:39
+#: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30
 msgid "All downloads are for platform"
 msgstr ""
 
-#: flags-bedic.php:46 flags-dict-tgz.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
 
-#: flags-bedic.php:52 flags-dict-tgz.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -167,144 +160,144 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-bedic.php:60 flags-dict-tgz.php:60 flags-evolutionary.php:60
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Select your language combination!"
 msgstr ""
 
-#: flags-bedic.php:63 flags-dict-tgz.php:63 flags-evolutionary.php:63
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Source Language / Size in MB"
 msgstr ""
 
-#: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
+#: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "Zimanên vê sîteyê: "
 
-#: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
+#: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
 "from here!"
 msgstr ""
 
-#: list.php:10
+#: list.php:6
 msgid "Download / List View"
 msgstr ""
 
-#: list.php:17
+#: list.php:10
 msgid "Detailed Dictionary Overview"
 msgstr ""
 
-#: list.php:21
+#: list.php:14
 msgid "Language &amp; Project"
 msgstr ""
 
-#: list.php:22
+#: list.php:15
 msgid "Maintainer"
 msgstr ""
 
-#: list.php:23
+#: list.php:16
 msgid "Headwords"
 msgstr ""
 
-#: list.php:24
+#: list.php:17
 msgid "Version"
 msgstr ""
 
-#: list.php:25
+#: list.php:18
 msgid "Last Changed"
 msgstr ""
 
-#: list.php:26 weblang.php:36
+#: list.php:19 weblang.php:29
 msgid "Status"
 msgstr ""
 
-#: list.php:27
+#: list.php:20
 msgid "Version for / Size in MB"
 msgstr ""
 
-#: menu.php:17
+#: menu.php:7 menu.php:10
 msgid "Menu"
 msgstr ""
 
-#: menu.php:26 overview.php:8
+#: menu.php:19 overview.php:4
 msgid "Overview"
 msgstr "Kurte"
 
-#: menu.php:29
+#: menu.php:22
 msgid "Download databases"
 msgstr "Daxistin"
 
-#: menu.php:32
+#: menu.php:25
 msgid "Platform"
 msgstr ""
 
-#: menu.php:33
+#: menu.php:26
 msgid "Application"
 msgstr "Bername"
 
-#: menu.php:37
+#: menu.php:30
 msgid "Windows &amp; Linux"
 msgstr ""
 
-#: menu.php:38
+#: menu.php:31
 msgid "DICT servers (tgz)"
 msgstr ""
 
-#: menu.php:42
+#: menu.php:35
 msgid "Debian Linux"
 msgstr ""
 
-#: menu.php:43
+#: menu.php:36
 msgid "dictd"
 msgstr ""
 
-#: menu.php:47
+#: menu.php:40
 msgid "WinCE &amp; Palm"
 msgstr ""
 
-#: menu.php:62
+#: menu.php:55
 msgid "Detailed List"
 msgstr "Lîsteya hûragahiyan"
 
-#: menu.php:71
+#: menu.php:64
 msgid "FreeDict Online Servers"
 msgstr ""
 
-#: menu.php:83
+#: menu.php:76
 msgid "SourceForge Project Page"
 msgstr "Rûpela projeyê ya SourceForge (en)"
 
-#: menu.php:88
+#: menu.php:81
 msgid "Mailinglists"
 msgstr ""
 
-#: menu.php:90
+#: menu.php:83
 msgid "Bugs"
 msgstr "Çewtî"
 
-#: menu.php:92
+#: menu.php:85
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:95 weblang.php:9 weblang.php:16
+#: menu.php:88 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Vê rûpelê biwergerîne!"
 
-#: menu.php:100
+#: menu.php:93
 msgid "FreeDict Project"
 msgstr "Projeya FreeDict"
 
-#: overview.php:15
+#: overview.php:8
 msgid "free bilingual dictionaries"
 msgstr "Ferhengên dûzimanî yên azad"
 
-#: overview.php:17
+#: overview.php:10
 #, php-format
 msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr "Horst Eyermann, Michael Bunk û %1$sgelek kesên din%2$s"
 
-#: overview.php:21
+#: overview.php:14
 msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
@@ -315,7 +308,7 @@ msgstr ""
 "azad in. Wateya vê ev e: Bin lîsansa GNU General Public Licence an lîsanseke "
 "azadtir in. Ji kerema xwe lîsansa her danegirê kontrol bike."
 
-#: overview.php:26
+#: overview.php:19
 #, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -325,7 +318,7 @@ msgstr ""
 "Danegir di formata XML de hene. Em ji bo bikaranîna danegirên FreeDict bi %1"
 "$sdictd, pêşkêşkara ferhengan a DICT%2$s û pêşkêşkarên din wekî wê."
 
-#: overview.php:30
+#: overview.php:23
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
@@ -337,14 +330,14 @@ msgstr ""
 "dikare wekî <i>seed</i> ji bo <i>corpora</i> zimanan an ji bo danegirên "
 "termînolojîk bi kar bîne. Yek dikare ji wan bi XSL-FO ferhengên çapkirî çêke."
 
-#: overview.php:35
+#: overview.php:28
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
 "and needed, also for improving the quality of the databases."
 msgstr ""
 
-#: overview.php:42
+#: overview.php:35
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -353,7 +346,7 @@ msgstr ""
 "Piraniya îmkanan ji aliyê SourceForge tê pêşkêşkirin. Ji kerema xwe vê ji "
 "bîr nekin! Bê SourceForge ev proje ne gengaz be."
 
-#: overview.php:46
+#: overview.php:39
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -367,15 +360,11 @@ msgstr ""
 "Ronahi yê projeya <a href=\"http://www.ferheng.org\" target=\"_top\">Ferheng."
 "org</a> hat amade kirin."
 
-#: rock.php:13
-msgid "Rock Linux Packages - FreeDict"
-msgstr ""
-
-#: rock.php:20
+#: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
 msgstr ""
 
-#: rock.php:22
+#: rock.php:11
 #, php-format
 msgid ""
 "The %1$sRock Linux%2$s Distribution Build Kit includes a\n"
@@ -388,7 +377,7 @@ msgid ""
 "the same time):"
 msgstr ""
 
-#: rock.php:46
+#: rock.php:35
 msgid ""
 "Using the stone tool you can activate dictionaries for use\n"
 "with dictd. The stone script is included in the dictd package, but was not "
@@ -396,13 +385,13 @@ msgid ""
 "in the 2.0 release of Rock Linux."
 msgstr ""
 
-#: rock.php:50
+#: rock.php:39
 msgid ""
 "Please note that the project fork \"t2\" does not include any\n"
 "    freedict-* packages."
 msgstr ""
 
-#: weblang.php:19
+#: weblang.php:12
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -410,18 +399,18 @@ msgid ""
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 msgstr ""
 
-#: weblang.php:26
+#: weblang.php:19
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
 "<tt>.po</tt> file from SVN:"
 msgstr ""
 
-#: weblang.php:32
+#: weblang.php:25
 msgid "Translation status for the website languages"
 msgstr ""
 
-#: weblang.php:35
+#: weblang.php:28
 #, fuzzy
 msgid "Language"
 msgstr "Zimanên vê sîteyê: "

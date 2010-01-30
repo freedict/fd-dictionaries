@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-26 23:14+0100\n"
+"POT-Creation-Date: 2010-01-30 10:50+0100\n"
 "PO-Revision-Date: 2004-12-27 13:09+0530\n"
 "Last-Translator: Michael Bunk <kleinerwurm@gmx.net>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: dataflow.php:8 dataflow.php:15 menu.php:27
+#: dataflow.php:4 dataflow.php:8 menu.php:20
 msgid "Data Flow"
 msgstr "ki dak saphriang"
 
-#: dataflow.php:24
+#: dataflow.php:17
 msgid "possibly plugin needed, eg."
 msgstr "badonkam plugin ban thep ngi dei"
 
-#: dataflow.php:26
+#: dataflow.php:19
 msgid "Adbobe's"
 msgstr "jong Adobe"
 
-#: db-as-xml.php:8 db-as-xml.php:15 menu.php:96
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
 msgid "Database as XML"
 msgstr ""
 
-#: db-as-xml.php:18
+#: db-as-xml.php:11
 msgid ""
 "The Download Tables are generated from an XML file.\n"
 "To access that data easily, eg. for use in a program as\n"
@@ -41,15 +41,11 @@ msgid ""
 "use this URL:"
 msgstr ""
 
-#: deb.php:9
-msgid "Debian Packages - FreeDict"
-msgstr ""
-
-#: deb.php:16
+#: deb.php:4 deb.php:9
 msgid "Debian Packages"
 msgstr ""
 
-#: deb.php:18
+#: deb.php:11
 #, php-format
 msgid ""
 "The %1$sDebian%2$s Linux Distribution has its own system\n"
@@ -58,7 +54,7 @@ msgid ""
 "  install, only the following command is what you have to remember:"
 msgstr ""
 
-#: deb.php:26 rock.php:41
+#: deb.php:19 rock.php:30
 #, php-format
 msgid ""
 "Here %1$s and %2$s are the 3-letter language codes from\n"
@@ -66,38 +62,38 @@ msgid ""
 "  language combination has to be available in FreeDict."
 msgstr ""
 
-#: deb.php:31
+#: deb.php:24
 msgid ""
 "You can find out what FreeDict packages are available in\n"
 "  Debian by visiting"
 msgstr ""
 
-#: deb.php:37
+#: deb.php:30
 #, php-format
 msgid ""
 "The %1$sFreeDict pages in the\n"
 "  Debian Bug Tracking System%2$s might also be of interest."
 msgstr ""
 
-#: deb.php:42
+#: deb.php:35
 #, php-format
 msgid ""
 "This page might as well be of interest: %1$sDebian FreeDict Packages team%2"
 "$s."
 msgstr ""
 
-#: editor.php:8
+#: editor.php:4
 msgid "FreeDict-Editor"
 msgstr ""
 
-#: editor.php:20
+#: editor.php:13
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
 "of features in the %sintroduction%s."
 msgstr ""
 
-#: editor.php:24
+#: editor.php:17
 #, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
@@ -105,61 +101,58 @@ msgid ""
 "module from %sSVN%s and try compiling it yourself:"
 msgstr ""
 
-#: editor.php:33
+#: editor.php:26
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr ""
 
-#: editor.php:36
+#: editor.php:29
 #, php-format
 msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
 "<i>etch</i> by <i>unstable</i> if you use unstable):"
 msgstr ""
 
-#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "DICT servers"
 msgstr "DICT servers"
 
-#: flags-bedic.php:13 flags-bedic.php:15 flags-dict-tgz.php:13
-#: flags-dict-tgz.php:15 flags-evolutionary.php:13 flags-evolutionary.php:15
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "on Windows/Linux"
 msgstr "ha Windows/Linux"
 
-#: flags-bedic.php:17 flags-dict-tgz.php:17 flags-evolutionary.php:17
+#: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:17 flags-bedic.php:19 flags-dict-tgz.php:17
-#: flags-dict-tgz.php:19 flags-evolutionary.php:17 flags-evolutionary.php:19
+#: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
+#: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
 msgid "on WinCE/Palm"
 msgstr "ha WinCE/Palm"
 
-#: flags-bedic.php:21 flags-dict-tgz.php:21 flags-evolutionary.php:21
+#: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
 msgid "on Zaurus/Qt"
 msgstr "ha Zaurus"
 
-#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
-msgid "Download / Matrix View - FreeDict"
-msgstr "Download / Matrix jingi - FreeDict"
-
-#: flags-bedic.php:36 flags-dict-tgz.php:36 flags-evolutionary.php:36
+#: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
+#: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
 msgid "Download / Matrix View"
 msgstr "Download / Matrix jingi"
 
-#: flags-bedic.php:39 flags-dict-tgz.php:39 flags-evolutionary.php:39
+#: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30
 msgid "All downloads are for platform"
 msgstr "Baroh ki download ki bynta balah buh platform"
 
-#: flags-bedic.php:46 flags-dict-tgz.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
 
-#: flags-bedic.php:52 flags-dict-tgz.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -167,144 +160,144 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-bedic.php:60 flags-dict-tgz.php:60 flags-evolutionary.php:60
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Select your language combination!"
 msgstr ""
 
-#: flags-bedic.php:63 flags-dict-tgz.php:63 flags-evolutionary.php:63
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Source Language / Size in MB"
 msgstr "rukom ktien / jingheh-jingrit MB"
 
-#: flags-bedic.php:66 flags-dict-tgz.php:66 flags-evolutionary.php:66
+#: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "ktien baar"
 
-#: flags-bedic.php:158 flags-dict-tgz.php:158 flags-evolutionary.php:158
+#: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
 "from here!"
 msgstr "Sngewbha kdew ha ki bynta ban ioh ia ka SourceForge Download Iit "
 
-#: list.php:10
+#: list.php:6
 msgid "Download / List View"
 msgstr "download / jingi jied"
 
-#: list.php:17
+#: list.php:10
 msgid "Detailed Dictionary Overview"
 msgstr "kum ka jingthoh dictionary jingi baroh"
 
-#: list.php:21
+#: list.php:14
 msgid "Language &amp; Project"
 msgstr "ktien &amp; projek"
 
-#: list.php:22
+#: list.php:15
 msgid "Maintainer"
 msgstr ""
 
-#: list.php:23
+#: list.php:16
 msgid "Headwords"
 msgstr "ktien baheh duh"
 
-#: list.php:24
+#: list.php:17
 msgid "Version"
 msgstr "jinglong"
 
-#: list.php:25
+#: list.php:18
 msgid "Last Changed"
 msgstr "bujli khatduh"
 
-#: list.php:26 weblang.php:36
+#: list.php:19 weblang.php:29
 msgid "Status"
 msgstr "bynta"
 
-#: list.php:27
+#: list.php:20
 msgid "Version for / Size in MB"
 msgstr "bynta ia / jingheh MB"
 
-#: menu.php:17
+#: menu.php:7 menu.php:10
 msgid "Menu"
 msgstr ""
 
-#: menu.php:26 overview.php:8
+#: menu.php:19 overview.php:4
 msgid "Overview"
 msgstr "ka ktien lamphrang"
 
-#: menu.php:29
+#: menu.php:22
 msgid "Download databases"
 msgstr "download dak ki ktien"
 
-#: menu.php:32
+#: menu.php:25
 msgid "Platform"
 msgstr "platform"
 
-#: menu.php:33
+#: menu.php:26
 msgid "Application"
 msgstr "ki shithi"
 
-#: menu.php:37
+#: menu.php:30
 msgid "Windows &amp; Linux"
 msgstr "Windows &amp; Linux"
 
-#: menu.php:38
+#: menu.php:31
 msgid "DICT servers (tgz)"
 msgstr "DICT servers (tgz)"
 
-#: menu.php:42
+#: menu.php:35
 msgid "Debian Linux"
 msgstr "Debian Linux"
 
-#: menu.php:43
+#: menu.php:36
 msgid "dictd"
 msgstr ""
 
-#: menu.php:47
+#: menu.php:40
 msgid "WinCE &amp; Palm"
 msgstr "WinCE &amp; Palm"
 
-#: menu.php:62
+#: menu.php:55
 msgid "Detailed List"
 msgstr "la thoh pathik"
 
-#: menu.php:71
+#: menu.php:64
 msgid "FreeDict Online Servers"
 msgstr "FreeDict Online Servers"
 
-#: menu.php:83
+#: menu.php:76
 msgid "SourceForge Project Page"
 msgstr "SourceForge Project Page"
 
-#: menu.php:88
+#: menu.php:81
 msgid "Mailinglists"
 msgstr "Mailinglists"
 
-#: menu.php:90
+#: menu.php:83
 msgid "Bugs"
 msgstr "kiei kiei ba lah ban pynkhien"
 
-#: menu.php:92
+#: menu.php:85
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:95 weblang.php:9 weblang.php:16
+#: menu.php:88 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Kylla kane ka sla"
 
-#: menu.php:100
+#: menu.php:93
 msgid "FreeDict Project"
 msgstr "FreeDict projek"
 
-#: overview.php:15
+#: overview.php:8
 msgid "free bilingual dictionaries"
 msgstr "ki dictionary pyllait ia ki ktien"
 
-#: overview.php:17
+#: overview.php:10
 #, php-format
 msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr ""
 
-#: overview.php:21
+#: overview.php:14
 msgid ""
 "On this page you find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
@@ -315,7 +308,7 @@ msgstr ""
 "laid lud. Ka mut ba lah don hapoh ka GNU General Public Licence ne ka "
 "licence bymkhang. Wad da ka licence jong ka jingngeit dak!"
 
-#: overview.php:26
+#: overview.php:19
 #, fuzzy, php-format
 msgid ""
 "The databases are available in XML. We support to use the\n"
@@ -326,7 +319,7 @@ msgstr ""
 "<A href=\"http://www.dict.org/\">dictd,\n"
 "ka DICT dictionary server</a> bad kiwei pat ki server."
 
-#: overview.php:30
+#: overview.php:23
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
 "them to generate wordlists for spellcheckers and new dictionaries,\n"
@@ -338,7 +331,7 @@ msgstr ""
 "ia ki kyntien bakhleh lang ban rah ne ai la ki jong ha dak terminological "
 "bad ruh ban print ia la ka jong ka dictionary da XSL-FO."
 
-#: overview.php:35
+#: overview.php:28
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -348,7 +341,7 @@ msgstr ""
 "HOWTO ban bteng ia ka projek! Ngi sngewnguh bad ngi donkam ia ka jingiarap "
 "jong phi, bad ruh ban kham pynbha ia ka projek."
 
-#: overview.php:42
+#: overview.php:35
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -357,7 +350,7 @@ msgstr ""
 "Lah jan baroh ki resources la ai da ka SourceForge. Sngewbha ban iarap ia ki "
 "ruh. Khlem ka SourceForge ka FreeDict kam nym mih!"
 
-#: overview.php:46
+#: overview.php:39
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -368,15 +361,11 @@ msgstr ""
 "na shibun ki jaka baioh ei. Sngewbha ban kylli na ki TEI header, ki README "
 "bad ki ktien 00-database-info. Ki dak banyngkong la dep ioh na Ergane."
 
-#: rock.php:13
-msgid "Rock Linux Packages - FreeDict"
-msgstr ""
-
-#: rock.php:20
+#: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
 msgstr ""
 
-#: rock.php:22
+#: rock.php:11
 #, php-format
 msgid ""
 "The %1$sRock Linux%2$s Distribution Build Kit includes a\n"
@@ -389,7 +378,7 @@ msgid ""
 "the same time):"
 msgstr ""
 
-#: rock.php:46
+#: rock.php:35
 msgid ""
 "Using the stone tool you can activate dictionaries for use\n"
 "with dictd. The stone script is included in the dictd package, but was not "
@@ -397,13 +386,13 @@ msgid ""
 "in the 2.0 release of Rock Linux."
 msgstr ""
 
-#: rock.php:50
+#: rock.php:39
 msgid ""
 "Please note that the project fork \"t2\" does not include any\n"
 "    freedict-* packages."
 msgstr ""
 
-#: weblang.php:19
+#: weblang.php:12
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -411,18 +400,18 @@ msgid ""
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 msgstr ""
 
-#: weblang.php:26
+#: weblang.php:19
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
 "<tt>.po</tt> file from SVN:"
 msgstr ""
 
-#: weblang.php:32
+#: weblang.php:25
 msgid "Translation status for the website languages"
 msgstr ""
 
-#: weblang.php:35
+#: weblang.php:28
 msgid "Language"
 msgstr ""
 
@@ -620,6 +609,9 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+
+#~ msgid "Download / Matrix View - FreeDict"
+#~ msgstr "Download / Matrix jingi - FreeDict"
 
 #~ msgid "on Zaurus"
 #~ msgstr "ha Zaurus"

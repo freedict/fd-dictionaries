@@ -69,7 +69,7 @@ function linkcell($dictionary, $release, $platform, $alt = '')
 
   $url = $release->$get_attr('URL');
   echo '<td bgcolor="'. status2color($dictionary->$get_attr('status'))
-    .'"><a href="'. $url .'" target="_top"';
+    .'"><a href="'. htmlentities($url) .'" target="_top"';
   if(isset($alt)) echo ' title="'. $alt .'"';
   echo '>';
   printf("%2.2f", $release->$get_attr('size') / pow(2, 20));

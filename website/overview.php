@@ -1,15 +1,8 @@
 <?php
- include 'inc/gettext.php';
- include 'inc/links.php'
+require_once 'inc/links.php';
+require_once 'inc/gettext.php';
+$title = _('Overview'); require_once 'inc/head.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Overview') ?> - FreeDict</title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1>FreeDict - <?php echo _('free bilingual dictionaries') ?></h1>
@@ -48,4 +41,4 @@ are a compilation of various free sources. Please consult the
 respective TEI headers, READMEs and 00-database-info entries.
 The first databases were derived from Ergane.') ?></p>
 
-<? require 'inc/footer.php';
+<? require_once 'inc/footer.php';

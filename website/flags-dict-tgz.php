@@ -1,10 +1,4 @@
 <?php
-
-include_once 'inc/data.php';
-include_once 'inc/gettext.php';
-include_once 'inc/langcodes.php';
-include_once 'inc/links.php';
-
 $platform = substr(basename($_SERVER['PHP_SELF']), 6);
 if(substr($platform,-4) =='.php') $platform= substr($platform, 0, -4);
 
@@ -22,15 +16,12 @@ $platformStrings = array(
   'rpm' => '<a href="http://redhat.com/" target="_top">RedHat</a> or <a href="http://suse.com/" target="_top">SuSE</a> Linux',
   'gem' => '<a href="http://rocklinux.org/" target="_top">ROCK Linux</a>');
 
+require_once 'inc/data.php';
+require_once 'inc/langcodes.php';
+require_once "inc/gettext.php";
+require_once "inc/links.php";
+$title = _('Download / Matrix View'); require_once 'inc/head.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Download / Matrix View - FreeDict') ?></title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1><?php echo _('Download / Matrix View') ?></h1>
@@ -161,4 +152,4 @@ from here!') ?></p>
 
 <?php
 require 'inc/legend.php';
-require 'inc/footer.php';
+require_once 'inc/footer.php';

@@ -1,17 +1,10 @@
 <?php
-include "inc/data.php";
-include "inc/langcodes.php";
-include "inc/gettext.php";
-include "inc/links.php";
+require_once "inc/data.php";
+require_once "inc/langcodes.php";
+require_once 'inc/links.php';
+require_once 'inc/gettext.php';
+$title = _('Download / List View'); require_once 'inc/head.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Download / List View') ?> - FreeDict</title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1><?php echo _('Detailed Dictionary Overview') ?></h1>
@@ -68,16 +61,16 @@ foreach($ds as $d)
   $dscount++;
   list($l1, $l2) = split('-', $d->$get_attr('name'));
 
-  $status = $d->$get_attr('status');  
+  $status = $d->$get_attr('status');
   echo '<tr bgcolor="'. status2color($status) .'">';
 
   echo '<td>';
   $source = $d->$get_attr('sourceURL');
-  if($source) echo '<a href="'. $source .'" target="_top">';
+  if($source) echo '<a href="'. htmlentities($source) .'" target="_top">';
   echo _(langcode2english($l1)) .' -&gt; '. _(langcode2english($l2));
   if($source) echo '</a>';
   echo '</td>';
-  
+
   $maintainer = $d->$get_attr('maintainerName');
   if($maintainer=='') $maintainer='-';
   echo '<td>'. $maintainer .'</td>';
@@ -100,6 +93,6 @@ foreach($ds as $d)
 <?php
 echo "$dscount dictionaries, $hwsum headwords<br />";
 
-include 'inc/legend.php';
-require 'inc/footer.php';
+require_once 'inc/legend.php';
+require_once 'inc/footer.php';
  ?>

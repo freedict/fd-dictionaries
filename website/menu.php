@@ -1,17 +1,10 @@
 <?php
- include_once 'inc/gettext.php';
- include_once 'inc/links.php';
+require_once 'inc/links.php';
+require_once 'inc/gettext.php';
 
  global $menu_nohead;
  if(!isset($menu_nohead))
- {
-   echo '
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-   <html><head><title>FreeDict</title>
-     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-     <link rel="stylesheet" type="text/css" href="' . fdict_url('s.css') .
-     '" /></head>';
- }
+ { $title = _('Menu'); require_once 'inc/head.php'; }
 ?>
 <body>
 <table cellspacing="1" cellpadding="0" summary="<?php echo _('Menu') ?>">

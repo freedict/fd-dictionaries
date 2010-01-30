@@ -1,15 +1,8 @@
 <?php
-include "inc/gettext.php";
-include "inc/links.php";
+require_once "inc/gettext.php";
+require_once "inc/links.php";
+$title = _('Database as XML'); require_once 'inc/head.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Database as XML') ?> - FreeDict</title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1><?php echo _('Database as XML') ?></h1>
@@ -21,4 +14,4 @@ To access that data easily, eg. for use in a program as
 
 <p style="align: center"><a href="<?php echo fdict_url('freedict-database.xml') ?>">freedict-database.xml</a></p>
 
-<? require 'inc/footer.php';
+<? require_once 'inc/footer.php';

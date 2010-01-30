@@ -2,15 +2,8 @@
 require_once "inc/gettext.php";
 require_once "inc/links.php";
 require_once "inc/langcodes.php";
+$title = _('Translate this Website'); require_once 'inc/head.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Translate this Website') ?> - FreeDict</title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1><?php echo _('Translate this Website') ?></h1>
@@ -53,4 +46,4 @@ because it leaves some part of the website untranslated, you can get the
  </tbody>
 </table>
 
-<? require 'inc/footer.php';
+<?php require_once 'inc/footer.php';

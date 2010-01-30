@@ -1,16 +1,9 @@
 <?php
-include "inc/gettext.php";
-include "inc/links.php";
+require_once "inc/gettext.php";
+require_once "inc/links.php";
+$title = _('Debian Packages'); require_once 'inc/head.php';
 $platform = 'deb';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('Debian Packages - FreeDict') ?></title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
 <body>
 
 <h1><?php echo _('Debian Packages') ?></h1>
@@ -43,4 +36,4 @@ $platform = 'deb';
   '<a href="http://pkg-freedict.alioth.debian.org/" target="_top">',
   '</a>') ?></p>
 
-<? require 'inc/footer.php';
+<? require_once 'inc/footer.php';

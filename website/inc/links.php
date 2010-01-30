@@ -5,7 +5,7 @@
  // php-less version of the freedict website
  global $XFreeDict;
  $XFreeDict = '';
- 
+
  $headers = apache_request_headers();
  if(isset($headers['X-FreeDict']))
   $XFreeDict = $headers['X-FreeDict'];
@@ -17,24 +17,24 @@
  function fdict_url($url)
  {
   list($path, $query) = preg_split('/\?/', $url);
-  
+
   // split url
   $parts = pathinfo($path);
-  
+
   // no dot for current dir
   if($parts["dirname"]=='.') $parts["dirname"] = '';
   // strip extension from basename
   if(strlen($parts["extension"]))
    $parts["basename"] = substr($parts["basename"], 0,
     -1-strlen($parts["extension"]));
-  
+
   global $XFreeDict;
   if(strstr($XFreeDict,'staticlinks'))
   {
-  
+
    // no php in this version
    if($parts["extension"]=='php') $parts["extension"] = 'html';
-   
+
    // images are one level up
    if(strncmp($parts["dirname"], 'images', 6) == 0)
     $parts["dirname"] = '../' . $parts["dirname"];
@@ -48,7 +48,7 @@
    // the howto exists only once in english
    if(strncmp($parts["dirname"], 'howto', 5) == 0)
     $parts["dirname"] = '../' . $parts["dirname"];
-   
+
    $url = (strlen($parts["dirname"]) ? ($parts["dirname"] . '/') : '') .
           $parts["basename"] .
 	  '.' . $parts["extension"];
@@ -57,7 +57,7 @@
   {
    $url = (strlen($parts["dirname"]) ? ($parts["dirname"] . '/') : '') .
    $parts["basename"];
-   
+
    if($parts["extension"]=='svgz' ||
       $parts["extension"]=='png')
     $url .= '.' . $parts["extension"];
@@ -65,7 +65,7 @@
    if($query) $url .= "?$query";
 
   }
-  
+
   return $url;
  }
 

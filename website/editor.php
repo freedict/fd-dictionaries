@@ -1,15 +1,8 @@
 <?php
- include_once 'inc/gettext.php';
- include_once 'inc/links.php'
- ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
- <title><?php echo _('FreeDict-Editor') ?></title>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
- <link rel="stylesheet" type="text/css" href="<?php echo fdict_url('s.css') ?>" />
-</head>
-
+require_once "inc/gettext.php";
+require_once "inc/links.php";
+$title = _('FreeDict-Editor'); require_once 'inc/head.php';
+?>
 <body>
 
 <h1>FreeDict-Editor</h1>
@@ -39,4 +32,4 @@ module from %sSVN%s and try compiling it yourself:"),
 <blockquote><small><tt>deb <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main<br />
 deb-src <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main</tt></small></blockquote>
 
-<? require 'inc/footer.php';
+<? require_once 'inc/footer.php';
