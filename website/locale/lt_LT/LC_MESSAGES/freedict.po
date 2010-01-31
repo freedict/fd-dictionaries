@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: FreeDict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
 "POT-Creation-Date: 2010-01-30 10:50+0100\n"
-"PO-Revision-Date: 2010-01-25 01:10+0200\n"
+"PO-Revision-Date: 2010-01-31 20:40+0200\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -85,6 +85,8 @@ msgid ""
 "The %1$sFreeDict pages in the\n"
 "  Debian Bug Tracking System%2$s might also be of interest."
 msgstr ""
+" %1$sDebian'o riktų sekimo sistema FreeDict paketams%2$s  taip pat gali būti "
+"įdomi."
 
 #: deb.php:35
 #, php-format
@@ -92,10 +94,12 @@ msgid ""
 "This page might as well be of interest: %1$sDebian FreeDict Packages team%2"
 "$s."
 msgstr ""
+"Šis puslapis taip pat gali Jus sudominti: %1$sDebian'o FreeDict paketų "
+"komanda%2$s."
 
 #: editor.php:4
 msgid "FreeDict-Editor"
-msgstr ""
+msgstr "FreeDict-Redaktorius"
 
 #: editor.php:13
 #, php-format
@@ -103,6 +107,8 @@ msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
 "of features in the %sintroduction%s."
 msgstr ""
+"Kartu su šia programa pateikiamos %sdokumentacos%s, skyriuje\n"
+"%sĮvadas%s išdėstytas jos savybių sąrašas."
 
 #: editor.php:17
 #, php-format
@@ -111,11 +117,14 @@ msgid ""
 "You can do an anonymous check out the <tt>freedict-editor</tt>\n"
 "module from %sSVN%s and try compiling it yourself:"
 msgstr ""
+"Dar nėra išleista jokia šio redaktoriaus laida.\n"
+"Jūs galite anonimiškai atsisiųsti <tt>freedict-editor</tt> modulį\n"
+"iš %sSVN%s repozitorijos ir pabandyti susikompiliuoti ji patys:"
 
 #: editor.php:26
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
-msgstr ""
+msgstr "Dėl %sreikalavimų%s, prašome taip pat remtis dokumentacija."
 
 #: editor.php:29
 #, php-format
@@ -123,6 +132,9 @@ msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
 "<i>etch</i> by <i>unstable</i> if you use unstable):"
 msgstr ""
+"Jei naudojate %sDebian%s etch ar nestabilią laidą, Jūs galite įdėti šis "
+"eilutes  į savo %s failą (pakeiskite <i>etch</i> į <i>unstable</i>, jei Jūs "
+"naudojate nestabilią Debian laidą):"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
@@ -132,7 +144,7 @@ msgstr "DICT serveriai"
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "on Windows/Linux"
-msgstr ""
+msgstr "Windows/Linux sistemose"
 
 #: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
 msgid "Mobipocket"
@@ -141,20 +153,20 @@ msgstr ""
 #: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
 #: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
 msgid "on WinCE/Palm"
-msgstr ""
+msgstr "WinCE/Palm sistemose"
 
 #: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
 msgid "on Zaurus/Qt"
-msgstr ""
+msgstr "Zaurus/Qt sistemose"
 
 #: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
 #: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
 msgid "Download / Matrix View"
-msgstr ""
+msgstr "Atsisiuntimai / Matricinis vaizdas"
 
 #: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30
 msgid "All downloads are for platform"
-msgstr ""
+msgstr "Visi atsisiuntimai skirti platformai"
 
 #: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
 #, php-format
@@ -162,6 +174,7 @@ msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
+"Kita programa, suprantanti šį formatą, yra KDE programa %1sWordtrans%2s."
 
 #: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
 msgid ""
@@ -181,7 +194,7 @@ msgstr "Šaltinio kalba / Dydis MB'ais"
 
 #: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
 msgid "Destination<br />Language"
-msgstr "Rezultato<br />kalba"
+msgstr "Pageidaujama<br />kalba"
 
 #: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
 msgid ""
@@ -189,18 +202,21 @@ msgid ""
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
 "from here!"
 msgstr ""
+"Kad atsidarytų SourceForge atsisiuntimo veidrodžių pasirinkimo puslapis, \n"
+"straktelėkite nuorodą. Šioje vietoje, pasirinkimas „Išsaugoti kaip...“ "
+"paspaudus dešinįjį pelės klavišą, neveiks!"
 
 #: list.php:6
 msgid "Download / List View"
-msgstr ""
+msgstr "Atsisiuntimai / Sąrašo peržiūra"
 
 #: list.php:10
 msgid "Detailed Dictionary Overview"
-msgstr "Detali žodyno apžvalga"
+msgstr "Detali žodynų apžvalga"
 
 #: list.php:14
 msgid "Language &amp; Project"
-msgstr ""
+msgstr "Kalba &amp; Projektas"
 
 #: list.php:15
 msgid "Maintainer"
@@ -224,7 +240,7 @@ msgstr "Būsena"
 
 #: list.php:20
 msgid "Version for / Size in MB"
-msgstr ""
+msgstr "Dydis MB'ais"
 
 #: menu.php:7 menu.php:10
 msgid "Menu"
@@ -236,19 +252,19 @@ msgstr "Apžvalga"
 
 #: menu.php:22
 msgid "Download databases"
-msgstr ""
+msgstr "Duomenų bazės atsisiuntimui"
 
 #: menu.php:25
 msgid "Platform"
-msgstr ""
+msgstr "Platforma"
 
 #: menu.php:26
 msgid "Application"
-msgstr ""
+msgstr "Programa"
 
 #: menu.php:30
 msgid "Windows &amp; Linux"
-msgstr ""
+msgstr "Windows &amp; Linux"
 
 #: menu.php:31
 msgid "DICT servers (tgz)"
@@ -264,7 +280,7 @@ msgstr "dictd"
 
 #: menu.php:40
 msgid "WinCE &amp; Palm"
-msgstr ""
+msgstr "WinCE &amp; Palm"
 
 #: menu.php:55
 msgid "Detailed List"
@@ -272,7 +288,7 @@ msgstr "Detalus sąrašas"
 
 #: menu.php:64
 msgid "FreeDict Online Servers"
-msgstr ""
+msgstr "FreeDict tiesioginiai serveriai"
 
 #: menu.php:76
 msgid "SourceForge Project Page"
@@ -317,7 +333,7 @@ msgstr ""
 "Šiame puslapyje Jūs rasite vertimo žodynų duomenų bazes.\n"
 "Jos yra laisvos. Tai reiškia, kad visi žodynai leidžiami pagal\n"
 "GNU bendrąją viešąją (GPL) licenciją arba dar mažiau ribojančiąją\n"
-"licenciją. Pasitikslinimui, pasitarkite su atitinkamos duomenų bazės\n"
+"licenciją. Pasitikslinimui, pasitikrinkite atitinkamos duomenų bazės\n"
 "licenciją!"
 
 #: overview.php:19
@@ -328,7 +344,7 @@ msgid ""
 "similar servers."
 msgstr ""
 "Duomenų bazės yra prieinamos XML formate.  Mes palaikome FreeDict \n"
-"duomenų bazių naudojimą su %1$sdictd, DICT žodynų serveriu%2$s ir\n"
+"duomenų bazių naudojimą su %1$sdictd, DICT žodynų serveriu,%2$s ir\n"
 "kitais panašiais serveriais."
 
 #: overview.php:23
@@ -349,8 +365,8 @@ msgid ""
 "please read the HOWTO and join this project! Your help is appreciated\n"
 "and needed, also for improving the quality of the databases."
 msgstr ""
-"Jei norite pamatyti bet kokią kitą kalbą įtrauktą į šį projektą?\n"
-"Atidžiai perskaitykite HOWTO ir prisijunkite prie šio projekto! Jūsų "
+"Jei norite pamatyti bet kokią kitą kalbą įtrauktą į šį projektą,\n"
+"atidžiai perskaitykite HOWTO ir prisijunkite prie šio projekto! Jūsų "
 "pagalba\n"
 "pageidautina ir reikalinga, tame tarpe ir esamų žodynų kokybės pagerinimui."
 
@@ -379,7 +395,7 @@ msgstr ""
 
 #: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
-msgstr ""
+msgstr "Rock Linux paketai"
 
 #: rock.php:11
 #, php-format
@@ -590,47 +606,50 @@ msgstr ""
 
 #: inc/legend.php:5
 msgid "Color Legend"
-msgstr ""
+msgstr "Spalvų aprašas"
 
 #: inc/legend.php:14
 msgid "Dictionary Status was marked as 'stable'"
-msgstr ""
+msgstr "Žodyno būsena pažymėta kaip „stabilus“"
 
 #: inc/legend.php:16
 msgid ""
 "Dictionary Status was marked as 'big enough to be useful' (from 10000 "
 "entries on)"
-msgstr ""
+msgstr "Žodyno būsena pažymėta kaip „pakankamai didelis“ (virš 10000 žodžių)"
 
 #: inc/legend.php:18
 msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
-msgstr ""
+msgstr "Žodyno būsena pažymėta kaip „per mažas“ (mažiau kaip 1000 žodžių)"
 
 #: inc/legend.php:20
 msgid "Dictionary Status was marked as 'low quality'"
-msgstr ""
+msgstr "Žodyno būsena pažymėta kaip „žemos kokybės“"
 
 #: inc/legend.php:22
 msgid "Dictionary Status was not given or is 'unknown'"
-msgstr ""
+msgstr "Žodyno būsena nepateikta arba „nežinoma“"
 
 #: inc/legend.php:26
 msgid ""
 "The numbers for the platform downloads represent the download\n"
 "  sizes in Megabytes."
 msgstr ""
+"Skaičiai atsisiuntimų nuorodose atspindi duomenų bazių dydį Megabaitais."
 
 #: inc/legend.php:27
 msgid ""
 "A small 'u' instead of a download link means\n"
 "  that the respective dictionary is not supported on that platform."
 msgstr ""
+"Simbolis 'u' vietoje atsisiuntimų nuorodos reiškia, kad atitinkamas žodynas "
+"nepalaikomas šiai platformai."
 
 #: inc/legend.php:29
 msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+"Tai daugumoje atvejų yra dėl to, kad tose platformose nėra arba \n"
+"negali būti atspindėti tam tikri simboliai."
 
-#~ msgid "Debian Packages - FreeDict"
-#~ msgstr "Debian'o paketai - FreeDict"
