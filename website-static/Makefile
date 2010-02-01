@@ -34,7 +34,9 @@ generate-static: ~$(USER)/public_html/freedict-dynamic symlinks $(addprefix gene
 ~$(USER)/public_html/freedict-dynamic: $(DYNAMICPATH)
 	ln -s $< $@
 
-symlinks: static static/images static/howto static/debian-repository static/s.css static/freedict.pot static/freedict-database.xml static/index.html
+symlinks: static static/images static/howto static/debian-repository \
+          static/s.css static/freedict.pot static/freedict-database.xml \
+          static/index.html static/.htaccess
 
 static:
 	mkdir -p static
@@ -63,6 +65,9 @@ static/index.html:
 	# if [ ! -e static/index.php ]; then ln -s ../index-freedict.org.php static/index.php; fi
 	# otherwise only plain html:
 	ln -s ../index.html $@
+
+static/.htaccess:
+	ln -s $(DYNAMICPATH)/.htaccess $@
 
 generate-%: symlinks
 	mkdir -p static/$*
