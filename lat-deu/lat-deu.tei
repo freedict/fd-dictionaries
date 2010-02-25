@@ -7,7 +7,7 @@
          <titleStmt>
             <title>Latin - German FreeDict dictionary</title>
             <respStmt>
-               <resp>converted by Sebastian Humenda</resp>
+               <resp>converted by</resp>
                <name>Sebastian Humenda shumenda@gmx.de</name>
             </respStmt>
             <respStmt>
@@ -17,14 +17,14 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.12</edition>
+            <edition>0.1.2</edition>
          <!-- KEEP THIS UP TO DATE -->
             </editionStmt>
          <extent>about 500 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability>
-               <p>Available under the terms of the GNU General Public Licence, version 3 </p>
+               <p>Available under the terms of the GNU General Public Licence, version 3</p>
             </availability>
             <date when="2010-01-07">07 January 2010</date>
             <pubPlace>http://freedict.org/</pubPlace>
@@ -59,7 +59,7 @@
    </teiHeader>
    <text xml:lang="de">
       <body>
-  <entry id="uterus">
+  <entry xml:id="uterus">
   <form xml:lang="lat">
     <orth>uterus</orth>
     <form type="infl">
@@ -74,7 +74,7 @@
     <def>Unterleib; Bauch</def>
   </sense>
 </entry>
-  <entry id="uber">
+  <entry xml:id="uber">
   <form xml:lang="lat">
     <orth>uber</orth>
     <form type="infl">
@@ -89,7 +89,7 @@
     <def>Brust</def>
   </sense>
 </entry>
-  <entry id="coporatura">
+  <entry xml:id="coporatura">
   <form xml:lang="lat">
     <orth>coporatura</orth>
     <form type="infl">
@@ -101,10 +101,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Körperbau; Statur</def>
+    <def>Kï¿½rperbau; Statur</def>
   </sense>
 </entry>
-  <entry id="turpitudo">
+  <entry xml:id="turpitudo">
   <form xml:lang="lat">
     <orth>turpitudo</orth>
     <form type="infl">
@@ -119,7 +119,7 @@
     <def>Geschlechtsteile; Scham</def>
   </sense>
 </entry>
-  <entry id="annotatio">
+  <entry xml:id="annotatio">
   <form xml:lang="lat">
     <orth>annotatio</orth>
     <form type="infl">
@@ -131,10 +131,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Erwähnung</def>
+    <def>Erwï¿½hnung</def>
   </sense>
 </entry>
-  <entry id="canus">
+  <entry xml:id="canus">
   <form xml:lang="lat">
     <orth>canus</orth>
     <form type="infl">
@@ -149,7 +149,7 @@
     <def>alter Mann</def>
   </sense>
 </entry>
-  <entry id="praesul">
+  <entry xml:id="praesul">
   <form xml:lang="lat">
     <orth>praesul</orth>
     <form type="infl">
@@ -161,10 +161,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Präsul (hoher kirchlicher Amtsinhaber</def>
+    <def>Prï¿½sul (hoher kirchlicher Amtsinhaber</def>
   </sense>
 </entry>
-  <entry id="decanus">
+  <entry xml:id="decanus">
   <form xml:lang="lat">
     <orth>decanus</orth>
     <form type="infl">
@@ -176,10 +176,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Vorgesetzter von zehn Mann; Dekan (mittlerer kirchlicher Amtsinhaber); Vorstehr der Kurfürsten</def>
+    <def>Vorgesetzter von zehn Mann; Dekan (mittlerer kirchlicher Amtsinhaber); Vorstehr der Kurfï¿½rsten</def>
   </sense>
 </entry>
-  <entry id="taberna">
+  <entry xml:id="taberna">
   <form xml:lang="lat">
     <orth>taberna</orth>
     <form type="infl">
@@ -194,7 +194,7 @@
     <def>Kneipe; Wirtshaus; Laden; Werkstatt</def>
   </sense>
 </entry>
-  <entry id="Bacchus">
+  <entry xml:id="Bacchus">
   <form xml:lang="lat">
     <orth>Bacchus</orth>
     <form type="infl">
@@ -206,10 +206,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>Römischer Gott des Weins</def>
+    <def>Rï¿½mischer Gott des Weins</def>
   </sense>
 </entry>
-  <entry id="frons">
+  <entry xml:id="frons">
   <form xml:lang="lat">
     <orth>frons</orth>
     <form type="infl">
@@ -224,7 +224,7 @@
     <def>Stirn (-seite); Front</def>
   </sense>
 </entry>
-  <entry id="audacia">
+  <entry xml:id="audacia">
   <form xml:lang="lat">
     <orth>audacia</orth>
     <form type="infl">
@@ -236,10 +236,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Mut; Kühnheit</def>
+    <def>Mut; Kï¿½hnheit</def>
   </sense>
 </entry>
-  <entry id="immortales">
+  <entry xml:id="immortales">
   <form xml:lang="lat">
     <orth>immortales</orth>
     <form type="infl">
@@ -251,10 +251,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Götter; Unsterbliche</def>
+    <def>Gï¿½tter; Unsterbliche</def>
   </sense>
 </entry>
-  <entry id="universum">
+  <entry xml:id="universum">
   <form xml:lang="lat">
     <orth>universum</orth>
     <form type="infl">
@@ -269,7 +269,7 @@
     <def>Weltall</def>
   </sense>
 </entry>
-  <entry id="moles">
+  <entry xml:id="moles">
   <form xml:lang="lat">
     <orth>moles</orth>
     <form type="infl">
@@ -284,7 +284,7 @@
     <def>Masse; Anstrengung; Last</def>
   </sense>
 </entry>
-  <entry id="actus">
+  <entry xml:id="actus">
   <form xml:lang="lat">
     <orth>actus</orth>
     <form type="infl">
@@ -299,7 +299,7 @@
     <def>Verfahren; Handlung</def>
   </sense>
 </entry>
-  <entry id="maiestas">
+  <entry xml:id="maiestas">
   <form xml:lang="lat">
     <orth>maiestas</orth>
     <form type="infl">
@@ -311,10 +311,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Hoheit; Größe; Erhabenheit</def>
+    <def>Hoheit; Grï¿½ï¿½e; Erhabenheit</def>
   </sense>
 </entry>
-  <entry id="cupido">
+  <entry xml:id="cupido">
   <form xml:lang="lat">
     <orth>cupido</orth>
     <form type="infl">
@@ -329,7 +329,7 @@
     <def>Verlangen; Begierde</def>
   </sense>
 </entry>
-  <entry id="iuventus">
+  <entry xml:id="iuventus">
   <form xml:lang="lat">
     <orth>iuventus</orth>
     <form type="infl">
@@ -344,7 +344,7 @@
     <def>Jugend</def>
   </sense>
 </entry>
-  <entry id="partes">
+  <entry xml:id="partes">
   <form xml:lang="lat">
     <orth>partes</orth>
     <form type="infl">
@@ -359,7 +359,7 @@
     <def>(politische) Partei; Aufgabe</def>
   </sense>
 </entry>
-  <entry id="nubes">
+  <entry xml:id="nubes">
   <form xml:lang="lat">
     <orth>nubes</orth>
     <form type="infl">
@@ -374,7 +374,7 @@
     <def>Wolke</def>
   </sense>
 </entry>
-  <entry id="licentia">
+  <entry xml:id="licentia">
   <form xml:lang="lat">
     <orth>licentia</orth>
     <form type="infl">
@@ -386,10 +386,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Freiheit; Willkür; Zügellosigkeit</def>
+    <def>Freiheit; Willkï¿½r; Zï¿½gellosigkeit</def>
   </sense>
 </entry>
-  <entry id="deditio">
+  <entry xml:id="deditio">
   <form xml:lang="lat">
     <orth>deditio</orth>
     <form type="infl">
@@ -401,10 +401,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Übergabe; Kapitulation</def>
+    <def>ï¿½bergabe; Kapitulation</def>
   </sense>
 </entry>
-  <entry id="procella">
+  <entry xml:id="procella">
   <form xml:lang="lat">
     <orth>procella</orth>
     <form type="infl">
@@ -419,7 +419,7 @@
     <def>Unwetter</def>
   </sense>
 </entry>
-  <entry id="coruscatio">
+  <entry xml:id="coruscatio">
   <form xml:lang="lat">
     <orth>coruscatio</orth>
     <form type="infl">
@@ -434,7 +434,7 @@
     <def>Blitz</def>
   </sense>
 </entry>
-  <entry id="tonitruum">
+  <entry xml:id="tonitruum">
   <form xml:lang="lat">
     <orth>tonitruum</orth>
     <form type="infl">
@@ -449,7 +449,7 @@
     <def>Donner</def>
   </sense>
 </entry>
-  <entry id="passus">
+  <entry xml:id="passus">
   <form xml:lang="lat">
     <orth>passus</orth>
     <form type="infl">
@@ -464,7 +464,7 @@
     <def>Schritt; Doppelschritt (1,48 m)</def>
   </sense>
 </entry>
-  <entry id="habitus">
+  <entry xml:id="habitus">
   <form xml:lang="lat">
     <orth>habitus</orth>
     <form type="infl">
@@ -479,7 +479,7 @@
     <def>Zustand; Kleidung; Aussehen</def>
   </sense>
 </entry>
-  <entry id="contractus">
+  <entry xml:id="contractus">
   <form xml:lang="lat">
     <orth>contractus</orth>
     <form type="infl">
@@ -494,7 +494,7 @@
     <def>Zusammengezogenheit; Festigkeit</def>
   </sense>
 </entry>
-  <entry id="meridies">
+  <entry xml:id="meridies">
   <form xml:lang="lat">
     <orth>meridies</orth>
     <form type="infl">
@@ -506,10 +506,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Mittag; Süden</def>
+    <def>Mittag; Sï¿½den</def>
   </sense>
 </entry>
-  <entry id="angulus">
+  <entry xml:id="angulus">
   <form xml:lang="lat">
     <orth>angulus</orth>
     <form type="infl">
@@ -524,7 +524,7 @@
     <def>Ecke; Winkel</def>
   </sense>
 </entry>
-  <entry id="auster">
+  <entry xml:id="auster">
   <form xml:lang="lat">
     <orth>auster</orth>
     <form type="infl">
@@ -536,10 +536,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Südwind (auch Süden)</def>
+    <def>Sï¿½dwind (auch Sï¿½den)</def>
   </sense>
 </entry>
-  <entry id="dominatio">
+  <entry xml:id="dominatio">
   <form xml:lang="lat">
     <orth>dominatio</orth>
     <form type="infl">
@@ -554,7 +554,7 @@
     <def>Alleinherrschaft</def>
   </sense>
 </entry>
-  <entry id="magnitudo">
+  <entry xml:id="magnitudo">
   <form xml:lang="lat">
     <orth>magnitudo</orth>
     <form type="infl">
@@ -566,10 +566,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Größe; Bedeutung</def>
+    <def>Grï¿½ï¿½e; Bedeutung</def>
   </sense>
 </entry>
-  <entry id="pondus">
+  <entry xml:id="pondus">
   <form xml:lang="lat">
     <orth>pondus</orth>
     <form type="infl">
@@ -584,7 +584,7 @@
     <def>Gewicht</def>
   </sense>
 </entry>
-  <entry id="artifex">
+  <entry xml:id="artifex">
   <form xml:lang="lat">
     <orth>artifex</orth>
     <form type="infl">
@@ -596,10 +596,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Künstler</def>
+    <def>Kï¿½nstler</def>
   </sense>
 </entry>
-  <entry id="corona">
+  <entry xml:id="corona">
   <form xml:lang="lat">
     <orth>corona</orth>
     <form type="infl">
@@ -614,7 +614,7 @@
     <def>Krone; Kranz</def>
   </sense>
 </entry>
-  <entry id="liberalitas">
+  <entry xml:id="liberalitas">
   <form xml:lang="lat">
     <orth>liberalitas</orth>
     <form type="infl">
@@ -629,7 +629,7 @@
     <def>edle Gesinnung; Freigebigkeit</def>
   </sense>
 </entry>
-  <entry id="lapis">
+  <entry xml:id="lapis">
   <form xml:lang="lat">
     <orth>lapis</orth>
     <form type="infl">
@@ -644,7 +644,7 @@
     <def>Stein</def>
   </sense>
 </entry>
-  <entry id="ambitio">
+  <entry xml:id="ambitio">
   <form xml:lang="lat">
     <orth>ambitio</orth>
     <form type="infl">
@@ -659,7 +659,7 @@
     <def>Bewerbung; Ehrgeiz</def>
   </sense>
 </entry>
-  <entry id="distinguere">
+  <entry xml:id="distinguere">
   <form xml:lang="lat">
     <orth>distinguo</orth>
     <form type="infl">
@@ -675,7 +675,7 @@
     <def>unterscheiden; trennen; gliedern</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth>evigilare</orth>
     <form type="infl">
@@ -691,7 +691,7 @@
     <def>aufwachen</def>
   </sense>
 </entry>
-  <entry id="procus">
+  <entry xml:id="procus">
   <form xml:lang="lat">
     <orth>procus</orth>
     <form type="infl">
@@ -706,7 +706,7 @@
     <def>Freier</def>
   </sense>
 </entry>
-  <entry id="templum">
+  <entry xml:id="templum">
   <form xml:lang="lat">
     <orth>templum</orth>
     <form type="infl">
@@ -721,7 +721,7 @@
     <def>Tempel</def>
   </sense>
 </entry>
-  <entry id="tuba">
+  <entry xml:id="tuba">
   <form xml:lang="lat">
     <orth>tuba</orth>
     <form type="infl">
@@ -736,7 +736,7 @@
     <def>Tuba; Trompete</def>
   </sense>
 </entry>
-  <entry id="fabula">
+  <entry xml:id="fabula">
   <form xml:lang="lat">
     <orth>fabula</orth>
     <form type="infl">
@@ -748,10 +748,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Märchen; Erzählung; Geschichte; Theaterstück</def>
+    <def>Mï¿½rchen; Erzï¿½hlung; Geschichte; Theaterstï¿½ck</def>
   </sense>
 </entry>
-  <entry id="proficisci_">
+  <entry xml:id="proficisci_">
   <form xml:lang="lat">
     <orth>proficiscor</orth>
     <form type="infl">
@@ -767,7 +767,7 @@
     <def>aufbrechen; (ab)reisen</def>
   </sense>
 </entry>
-  <entry id="sollicitudo">
+  <entry xml:id="sollicitudo">
   <form xml:lang="lat">
     <orth>sollicitudo</orth>
     <form type="infl">
@@ -782,7 +782,7 @@
     <def>Besorgnis; Sorge</def>
   </sense>
 </entry>
-  <entry id="progressio">
+  <entry xml:id="progressio">
   <form xml:lang="lat">
     <orth>progressio</orth>
     <form type="infl">
@@ -797,7 +797,7 @@
     <def>Fortschritt; Wachstum</def>
   </sense>
 </entry>
-  <entry id="formo">
+  <entry xml:id="formo">
   <form xml:lang="lat">
     <orth>formo</orth>
     <form type="infl">
@@ -812,7 +812,7 @@
     <def>formen; verfertigen</def>
   </sense>
 </entry>
-  <entry id="amplitudo">
+  <entry xml:id="amplitudo">
   <form xml:lang="lat">
     <orth>amplitudo</orth>
     <form type="infl">
@@ -824,10 +824,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Größe</def>
+    <def>Grï¿½ï¿½e</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth>ad ... pertinere</orth>
     <form type="infl">
@@ -840,10 +840,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zu etw. gehören</def>
+    <def>zu etw. gehï¿½ren</def>
   </sense>
 </entry>
-  <entry id="medicina">
+  <entry xml:id="medicina">
   <form xml:lang="lat">
     <orth>medicina</orth>
     <form type="infl">
@@ -858,7 +858,7 @@
     <def>Medizin; Medizinstudium</def>
   </sense>
 </entry>
-  <entry id="convivere">
+  <entry xml:id="convivere">
   <form xml:lang="lat">
     <orth>convivo</orth>
     <form type="infl">
@@ -874,7 +874,7 @@
     <def>miteinander leben</def>
   </sense>
 </entry>
-  <entry id="cor">
+  <entry xml:id="cor">
   <form xml:lang="lat">
     <orth>cor</orth>
     <form type="infl">
@@ -889,7 +889,7 @@
     <def>Herz</def>
   </sense>
 </entry>
-  <entry id="facies">
+  <entry xml:id="facies">
   <form xml:lang="lat">
     <orth>facies</orth>
     <form type="infl">
@@ -904,7 +904,7 @@
     <def>Aussehen; Gesicht</def>
   </sense>
 </entry>
-  <entry type="pl" id="fines">
+  <entry type="pl" xml:id="fines">
   <form xml:lang="lat">
     <orth>fines</orth>
     <form type="infl">
@@ -919,7 +919,7 @@
     <def>Gebiet</def>
   </sense>
 </entry>
-  <entry id="proconsul">
+  <entry xml:id="proconsul">
   <form xml:lang="lat">
     <orth>proconsul</orth>
     <form type="infl">
@@ -934,7 +934,7 @@
     <def>Prokonsul; Statthalter</def>
   </sense>
 </entry>
-  <entry id="recusare">
+  <entry xml:id="recusare">
   <form xml:lang="lat">
     <orth>recuso</orth>
     <form type="infl">
@@ -950,7 +950,7 @@
     <def>sich weigern; ablehnen</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth>animadverto</orth>
     <form type="infl">
@@ -966,7 +966,7 @@
     <def>bemerken; bestrafen; tadeln</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth>facultas</orth>
     <form type="infl">
@@ -979,10 +979,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>Möglichkeit; Fähigkeit</def>
+    <def>Mï¿½glichkeit; Fï¿½higkeit</def>
   </sense>
 </entry>
-  <entry id="iniquitas">
+  <entry xml:id="iniquitas">
   <form xml:lang="lat">
     <orth>iniquitas</orth>
     <form type="infl">
@@ -997,7 +997,7 @@
     <def>Unrecht; Schwierigkeit</def>
   </sense>
 </entry>
-  <entry id="offero">
+  <entry xml:id="offero">
   <form xml:lang="lat">
     <orth>offero</orth>
     <form type="infl">
@@ -1009,10 +1009,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>anbieten; gewähren</def>
+    <def>anbieten; gewï¿½hren</def>
   </sense>
 </entry>
-  <entry id="ritus">
+  <entry xml:id="ritus">
   <form xml:lang="lat">
     <orth>ritus</orth>
     <form type="infl">
@@ -1027,7 +1027,7 @@
     <def>Brauch; Gewohnheit; Ritus</def>
   </sense>
 </entry>
-  <entry id="recitare">
+  <entry xml:id="recitare">
   <form xml:lang="lat">
     <orth>recito</orth>
     <form type="infl">
@@ -1043,7 +1043,7 @@
     <def>vorlesen; vortragen</def>
   </sense>
 </entry>
-  <entry id="deretum">
+  <entry xml:id="deretum">
   <form xml:lang="lat">
     <orth>deretum</orth>
     <form type="infl">
@@ -1058,7 +1058,7 @@
     <def>Beschluss; Anordnung</def>
   </sense>
 </entry>
-  <entry id="deliberatio">
+  <entry xml:id="deliberatio">
   <form xml:lang="lat">
     <orth>deliberatio</orth>
     <form type="infl">
@@ -1070,10 +1070,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Überlegung</def>
+    <def>ï¿½berlegung</def>
   </sense>
 </entry>
-  <entry id="spatium">
+  <entry xml:id="spatium">
   <form xml:lang="lat">
     <orth>spatium</orth>
     <form type="infl">
@@ -1088,7 +1088,7 @@
     <def>Raum; Zeitraum; Strecke; Weg; Zwischenraum; Entfernung</def>
   </sense>
 </entry>
-  <entry id="sacrum">
+  <entry xml:id="sacrum">
   <form xml:lang="lat">
     <orth>sacrum</orth>
     <form type="infl">
@@ -1103,7 +1103,7 @@
     <def>Heiligtum; Gottesdienst</def>
   </sense>
 </entry>
-  <entry id="supplicare">
+  <entry xml:id="supplicare">
   <form xml:lang="lat">
     <orth>supplico</orth>
     <form type="infl">
@@ -1119,7 +1119,7 @@
     <def>beten</def>
   </sense>
 </entry>
-  <entry id="sequi">
+  <entry xml:id="sequi">
   <form xml:lang="lat">
     <orth>sequor</orth>
     <form type="infl">
@@ -1135,7 +1135,7 @@
     <def>jmd folgen; etw. befolgen</def>
   </sense>
 </entry>
-  <entry id="medicus">
+  <entry xml:id="medicus">
   <form xml:lang="lat">
     <orth>medicus</orth>
     <form type="infl">
@@ -1150,7 +1150,7 @@
     <def>Arzt</def>
   </sense>
 </entry>
-  <entry id="genus">
+  <entry xml:id="genus">
   <form xml:lang="lat">
     <orth>genus</orth>
     <form type="infl">
@@ -1165,7 +1165,7 @@
     <def>Art; Geschlecht</def>
   </sense>
 </entry>
-  <entry id="benevolentia">
+  <entry xml:id="benevolentia">
   <form xml:lang="lat">
     <orth>benevolentia</orth>
     <form type="infl">
@@ -1180,7 +1180,7 @@
     <def>Wohlwollen</def>
   </sense>
 </entry>
-  <entry id="ludere">
+  <entry xml:id="ludere">
   <form xml:lang="lat">
     <orth>ludo</orth>
     <form type="infl">
@@ -1196,7 +1196,7 @@
     <def>spielen</def>
   </sense>
 </entry>
-  <entry id="legatus">
+  <entry xml:id="legatus">
   <form xml:lang="lat">
     <orth>legatus</orth>
     <form type="infl">
@@ -1211,7 +1211,7 @@
     <def>Gesandter; Legat; Unterfeldherr</def>
   </sense>
 </entry>
-  <entry id="natura">
+  <entry xml:id="natura">
   <form xml:lang="lat">
     <orth>natura</orth>
     <form type="infl">
@@ -1226,7 +1226,7 @@
     <def>Natur; Wesen</def>
   </sense>
 </entry>
-  <entry id="philosophia">
+  <entry xml:id="philosophia">
   <form xml:lang="lat">
     <orth>philosophia</orth>
     <form type="infl">
@@ -1241,7 +1241,7 @@
     <def>Philosophie</def>
   </sense>
 </entry>
-  <entry id="maleficium">
+  <entry xml:id="maleficium">
   <form xml:lang="lat">
     <orth>maleficium</orth>
     <form type="infl">
@@ -1253,10 +1253,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Übeltat</def>
+    <def>ï¿½beltat</def>
   </sense>
 </entry>
-  <entry id="calamitas">
+  <entry xml:id="calamitas">
   <form xml:lang="lat">
     <orth>calamitas</orth>
     <form type="infl">
@@ -1271,7 +1271,7 @@
     <def>Unheil; Verlust; Schaden</def>
   </sense>
 </entry>
-  <entry id="humanitas">
+  <entry xml:id="humanitas">
   <form xml:lang="lat">
     <orth>humanitas</orth>
     <form type="infl">
@@ -1286,7 +1286,7 @@
     <def>Menschlichkeit; Bildung</def>
   </sense>
 </entry>
-  <entry id="nomen">
+  <entry xml:id="nomen">
   <form xml:lang="lat">
     <orth>nomen</orth>
     <form type="infl">
@@ -1301,7 +1301,7 @@
     <def>Benennung; Name; Begriff</def>
   </sense>
 </entry>
-  <entry id="ornare">
+  <entry xml:id="ornare">
   <form xml:lang="lat">
     <orth>orno</orth>
     <form type="infl">
@@ -1314,10 +1314,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>ausstatten; schmücken</def>
+    <def>ausstatten; schmï¿½cken</def>
   </sense>
 </entry>
-  <entry id="damnare">
+  <entry xml:id="damnare">
   <form xml:lang="lat">
     <orth>damno</orth>
     <form type="infl">
@@ -1330,10 +1330,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>verurteilen; büßen lassen</def>
+    <def>verurteilen; bï¿½ï¿½en lassen</def>
   </sense>
 </entry>
-  <entry id="bestia">
+  <entry xml:id="bestia">
   <form xml:lang="lat">
     <orth>bestia</orth>
     <form type="infl">
@@ -1348,7 +1348,7 @@
     <def>Raubtier; (wildes) Tier</def>
   </sense>
 </entry>
-  <entry id="gamma">
+  <entry xml:id="gamma">
   <form xml:lang="lat">
     <orth>gamma</orth>
     <form type="infl">
@@ -1363,7 +1363,7 @@
     <def>Edelstein</def>
   </sense>
 </entry>
-  <entry id="crimen">
+  <entry xml:id="crimen">
   <form xml:lang="lat">
     <orth>crimen</orth>
     <form type="infl">
@@ -1378,7 +1378,7 @@
     <def>Anklage; Vorwurf; Verbrechen</def>
   </sense>
 </entry>
-  <entry id="implorare">
+  <entry xml:id="implorare">
   <form xml:lang="lat">
     <orth>imploro</orth>
     <form type="infl">
@@ -1394,7 +1394,7 @@
     <def>erflehen; anflehen</def>
   </sense>
 </entry>
-  <entry id="trepidare">
+  <entry xml:id="trepidare">
   <form xml:lang="lat">
     <orth>trepido</orth>
     <form type="infl">
@@ -1407,10 +1407,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>sich ängstigen; ängstlich auf und ab laufen</def>
+    <def>sich ï¿½ngstigen; ï¿½ngstlich auf und ab laufen</def>
   </sense>
 </entry>
-  <entry id="furor">
+  <entry xml:id="furor">
   <form xml:lang="lat">
     <orth>furor</orth>
     <form type="infl">
@@ -1425,7 +1425,7 @@
     <def>Raserei; Wahnsinn; Toben</def>
   </sense>
 </entry>
-  <entry id="opera">
+  <entry xml:id="opera">
   <form xml:lang="lat">
     <orth>opera</orth>
     <form type="infl">
@@ -1437,10 +1437,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Mühe; Arbeit; Anstrengung</def>
+    <def>Mï¿½he; Arbeit; Anstrengung</def>
   </sense>
 </entry>
-  <entry id="cursus">
+  <entry xml:id="cursus">
   <form xml:lang="lat">
     <orth>cursus</orth>
     <form type="infl">
@@ -1455,7 +1455,7 @@
     <def>Kurs; Lauf</def>
   </sense>
 </entry>
-  <entry id="impetus">
+  <entry xml:id="impetus">
   <form xml:lang="lat">
     <orth>impetus</orth>
     <form type="infl">
@@ -1470,7 +1470,7 @@
     <def>Trieb; Ansturm; Schwung; Angriff</def>
   </sense>
 </entry>
-  <entry id="luxus">
+  <entry xml:id="luxus">
   <form xml:lang="lat">
     <orth>luxus</orth>
     <form type="infl">
@@ -1482,10 +1482,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Üppigkeit; Verschwendung; Ausschweifung</def>
+    <def>ï¿½ppigkeit; Verschwendung; Ausschweifung</def>
   </sense>
 </entry>
-  <entry id="magistratus">
+  <entry xml:id="magistratus">
   <form xml:lang="lat">
     <orth>magistratus</orth>
     <form type="infl">
@@ -1497,10 +1497,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Beamter; Behörde; Amt</def>
+    <def>Beamter; Behï¿½rde; Amt</def>
   </sense>
 </entry>
-  <entry id="tumultus">
+  <entry xml:id="tumultus">
   <form xml:lang="lat">
     <orth>tumultus</orth>
     <form type="infl">
@@ -1512,10 +1512,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Unruhe; Aufruhr; Getöse</def>
+    <def>Unruhe; Aufruhr; Getï¿½se</def>
   </sense>
 </entry>
-  <entry id="manare">
+  <entry xml:id="manare">
   <form xml:lang="lat">
     <orth>mano</orth>
     <form type="infl">
@@ -1528,10 +1528,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>strömen; fließen</def>
+    <def>strï¿½men; flieï¿½en</def>
   </sense>
 </entry>
-  <entry id="aer">
+  <entry xml:id="aer">
   <form xml:lang="lat">
     <orth>aer</orth>
     <form type="infl">
@@ -1546,7 +1546,7 @@
     <def>Luft</def>
   </sense>
 </entry>
-  <entry id="fiducia">
+  <entry xml:id="fiducia">
   <form xml:lang="lat">
     <orth>fiducia</orth>
     <form type="infl">
@@ -1558,10 +1558,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Zuverlässigkeit; Vertrauen</def>
+    <def>Zuverlï¿½ssigkeit; Vertrauen</def>
   </sense>
 </entry>
-  <entry id="captare">
+  <entry xml:id="captare">
   <form xml:lang="lat">
     <orth>capto</orth>
     <form type="infl">
@@ -1577,7 +1577,7 @@
     <def>zu fangen suchen; fangen; jagen</def>
   </sense>
 </entry>
-  <entry id="explicare">
+  <entry xml:id="explicare">
   <form xml:lang="lat">
     <orth>explico</orth>
     <form type="infl">
@@ -1590,10 +1590,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>entwickeln; erklären</def>
+    <def>entwickeln; erklï¿½ren</def>
   </sense>
 </entry>
-  <entry id="arena">
+  <entry xml:id="arena">
   <form xml:lang="lat">
     <orth>arena</orth>
     <form type="infl">
@@ -1608,7 +1608,7 @@
     <def>Sand; Kampfplatz; Arena</def>
   </sense>
 </entry>
-  <entry id="immolare">
+  <entry xml:id="immolare">
   <form xml:lang="lat">
     <orth>immolo</orth>
     <form type="infl">
@@ -1624,7 +1624,7 @@
     <def>opfern</def>
   </sense>
 </entry>
-  <entry id="poeta">
+  <entry xml:id="poeta">
   <form xml:lang="lat">
     <orth>poeta</orth>
     <form type="infl">
@@ -1639,7 +1639,7 @@
     <def>Dichter</def>
   </sense>
 </entry>
-  <entry id="carmen">
+  <entry xml:id="carmen">
   <form xml:lang="lat">
     <orth>carmen</orth>
     <form type="infl">
@@ -1654,7 +1654,7 @@
     <def>Lied; Gedicht</def>
   </sense>
 </entry>
-  <entry id="temptare">
+  <entry xml:id="temptare">
   <form xml:lang="lat">
     <orth>tempto</orth>
     <form type="infl">
@@ -1670,7 +1670,7 @@
     <def>versuchen</def>
   </sense>
 </entry>
-  <entry id="fugare">
+  <entry xml:id="fugare">
   <form xml:lang="lat">
     <orth>fugo</orth>
     <form type="infl">
@@ -1686,7 +1686,7 @@
     <def>verjagen; vertreiben</def>
   </sense>
 </entry>
-  <entry id="industria">
+  <entry xml:id="industria">
   <form xml:lang="lat">
     <orth>industria</orth>
     <form type="infl">
@@ -1698,10 +1698,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Fleiß, Betriebsamkeit</def>
+    <def>Fleiï¿½, Betriebsamkeit</def>
   </sense>
 </entry>
-  <entry id="superbia">
+  <entry xml:id="superbia">
   <form xml:lang="lat">
     <orth>superbia</orth>
     <form type="infl">
@@ -1713,10 +1713,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Stolz; Hochmut; Übermut</def>
+    <def>Stolz; Hochmut; ï¿½bermut</def>
   </sense>
 </entry>
-  <entry id="censere">
+  <entry xml:id="censere">
   <form xml:lang="lat">
     <orth>conseo</orth>
     <form type="infl">
@@ -1729,10 +1729,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>der Ansicht sein; meinen; schätzen</def>
+    <def>der Ansicht sein; meinen; schï¿½tzen</def>
   </sense>
 </entry>
-  <entry id="spoliare">
+  <entry xml:id="spoliare">
   <form xml:lang="lat">
     <orth>spolio</orth>
     <form type="infl">
@@ -1745,10 +1745,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>berauben; plündern</def>
+    <def>berauben; plï¿½ndern</def>
   </sense>
 </entry>
-  <entry id="dictator">
+  <entry xml:id="dictator">
   <form xml:lang="lat">
     <orth>dictator</orth>
     <form type="infl">
@@ -1763,7 +1763,7 @@
     <def>Diktator</def>
   </sense>
 </entry>
-  <entry id="ultio">
+  <entry xml:id="ultio">
   <form xml:lang="lat">
     <orth>ultio</orth>
     <form type="infl">
@@ -1778,7 +1778,7 @@
     <def>Vergeltung</def>
   </sense>
 </entry>
-  <entry id="texere">
+  <entry xml:id="texere">
   <form xml:lang="lat">
     <orth>texeo</orth>
     <form type="infl">
@@ -1794,7 +1794,7 @@
     <def>weben</def>
   </sense>
 </entry>
-  <entry id="retexere">
+  <entry xml:id="retexere">
   <form xml:lang="lat">
     <orth>retexeo</orth>
     <form type="infl">
@@ -1807,10 +1807,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>wieder auflösen</def>
+    <def>wieder auflï¿½sen</def>
   </sense>
 </entry>
-  <entry type="pl" id="divitiae">
+  <entry type="pl" xml:id="divitiae">
   <form xml:lang="lat">
     <orth>divitiae</orth>
     <form type="infl">
@@ -1822,10 +1822,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Reichtum, Schätze</def>
+    <def>Reichtum, Schï¿½tze</def>
   </sense>
 </entry>
-  <entry id="iuvare">
+  <entry xml:id="iuvare">
   <form xml:lang="lat">
     <orth>iuvo</orth>
     <form type="infl">
@@ -1838,10 +1838,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>erfreuen, unterstützen</def>
+    <def>erfreuen, unterstï¿½tzen</def>
   </sense>
 </entry>
-  <entry id="novus">
+  <entry xml:id="novus">
   <form xml:lang="lat">
     <orth>novus</orth>
     <form type="infl">
@@ -1858,7 +1858,7 @@
     <def>neu</def>
   </sense>
 </entry>
-  <entry id="claudere">
+  <entry xml:id="claudere">
   <form xml:lang="lat">
     <orth>claudo</orth>
     <form type="infl">
@@ -1871,10 +1871,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>schließen; einschließen</def>
+    <def>schlieï¿½en; einschlieï¿½en</def>
   </sense>
 </entry>
-  <entry id="fluere">
+  <entry xml:id="fluere">
   <form xml:lang="lat">
     <orth>fluo</orth>
     <form type="infl">
@@ -1887,10 +1887,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>fließen</def>
+    <def>flieï¿½en</def>
   </sense>
 </entry>
-  <entry id="amoenus">
+  <entry xml:id="amoenus">
   <form xml:lang="lat">
     <orth>amoenus</orth>
     <form type="infl">
@@ -1907,7 +1907,7 @@
     <def>lieblich; reizvoll</def>
   </sense>
 </entry>
-  <entry id="electio">
+  <entry xml:id="electio">
   <form xml:lang="lat">
     <orth>electio</orth>
     <form type="infl">
@@ -1922,7 +1922,7 @@
     <def>Auswahl; Wahl</def>
   </sense>
 </entry>
-  <entry id="rarus">
+  <entry xml:id="rarus">
   <form xml:lang="lat">
     <orth>rarus</orth>
     <form type="infl">
@@ -1939,7 +1939,7 @@
     <def>selten; vereinzelt</def>
   </sense>
 </entry>
-  <entry id="similitudo">
+  <entry xml:id="similitudo">
   <form xml:lang="lat">
     <orth>similitudo</orth>
     <form type="infl">
@@ -1951,10 +1951,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Ebenbild; Ähnlichkeit</def>
+    <def>Ebenbild; ï¿½hnlichkeit</def>
   </sense>
 </entry>
-  <entry id="proprius">
+  <entry xml:id="proprius">
   <form xml:lang="lat">
     <orth>proprius</orth>
     <form type="infl">
@@ -1966,10 +1966,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>eigentümlich; eigen; speziell; typisch; charakteristisch</def>
+    <def>eigentï¿½mlich; eigen; speziell; typisch; charakteristisch</def>
   </sense>
 </entry>
-  <entry id="obstare">
+  <entry xml:id="obstare">
   <form xml:lang="lat">
     <orth>obsto</orth>
     <form type="infl">
@@ -1985,7 +1985,7 @@
     <def>entgegenstehen; hindern</def>
   </sense>
 </entry>
-  <entry id="augere">
+  <entry xml:id="augere">
   <form xml:lang="lat">
     <orth>augeo</orth>
     <form type="infl">
@@ -1998,10 +1998,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>vermehren; vergrößern</def>
+    <def>vermehren; vergrï¿½ï¿½ern</def>
   </sense>
 </entry>
-  <entry id="discrimen">
+  <entry xml:id="discrimen">
   <form xml:lang="lat">
     <orth>discrimen</orth>
     <form type="infl">
@@ -2016,22 +2016,7 @@
     <def>Unterschied; Entscheidung; Gefahr</def>
   </sense>
 </entry>
-  <entry id="discrimen">
-  <form xml:lang="lat">
-    <orth>discrimen</orth>
-    <form type="infl">
-      <orth type="gen">discriminis</orth>
-    </form>
-  </form>
-  <gramGrp>
-    <pos>n</pos>
-    <gen>n</gen>
-  </gramGrp>
-  <sense>
-    <def>Unterschied; Entscheidung; Gefahr</def>
-  </sense>
-</entry>
-  <entry id="adversarius">
+  <entry xml:id="adversarius">
   <form xml:lang="lat">
     <orth>adversarius</orth>
     <form type="infl">
@@ -2046,7 +2031,7 @@
     <def>Widersacher; Gegner; Feind</def>
   </sense>
 </entry>
-  <entry id="plaga">
+  <entry xml:id="plaga">
   <form xml:lang="lat">
     <orth>plaga</orth>
     <form type="infl">
@@ -2058,10 +2043,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Hieb; Stoß; Schlag; Gegend; Netz; Stich; Gegend</def>
+    <def>Hieb; Stoï¿½; Schlag; Gegend; Netz; Stich; Gegend</def>
   </sense>
 </entry>
-  <entry id="vestigium">
+  <entry xml:id="vestigium">
   <form xml:lang="lat">
     <orth>vestigium</orth>
     <form type="infl">
@@ -2073,10 +2058,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Grab; Fuß, Fußstapf; Stelle; schritt; Zeitpunkt; Merkmal; Fußspur; Spur; Stätte</def>
+    <def>Grab; Fuï¿½, Fuï¿½stapf; Stelle; schritt; Zeitpunkt; Merkmal; Fuï¿½spur; Spur; Stï¿½tte</def>
   </sense>
 </entry>
-  <entry id="inventum">
+  <entry xml:id="inventum">
   <form xml:lang="lat">
     <orth>inventum</orth>
     <form type="infl">
@@ -2091,7 +2076,7 @@
     <def>Entdeckung; Erfindung</def>
   </sense>
 </entry>
-  <entry id="pactum">
+  <entry xml:id="pactum">
   <form xml:lang="lat">
     <orth>pactum</orth>
     <form type="infl">
@@ -2106,7 +2091,7 @@
     <def>Abmachung; Vertrag; Art; Weise; Entschluss; Vereinbarung</def>
   </sense>
 </entry>
-  <entry id="pactus">
+  <entry xml:id="pactus">
   <form xml:lang="lat">
     <orth>pactus</orth>
     <form type="infl">
@@ -2123,7 +2108,7 @@
     <def>vereinbart; verlobt; versprochen</def>
   </sense>
 </entry>
-  <entry id="immemor">
+  <entry xml:id="immemor">
   <form xml:lang="lat">
     <orth>immemor</orth>
     <form type="infl">
@@ -2135,10 +2120,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>uneingedenk; ohne (an etwas) zu denken; sich nicht erinnern; vergessen; unbekümmert; ohne rücksicht auf</def>
+    <def>uneingedenk; ohne (an etwas) zu denken; sich nicht erinnern; vergessen; unbekï¿½mmert; ohne rï¿½cksicht auf</def>
   </sense>
 </entry>
-  <entry id="agmen">
+  <entry xml:id="agmen">
   <form xml:lang="lat">
     <orth>agmen</orth>
     <form type="infl">
@@ -2153,7 +2138,7 @@
     <def>Trupp; Heereszug; Schar</def>
   </sense>
 </entry>
-  <entry id="iacere">
+  <entry xml:id="iacere">
   <form xml:lang="lat">
     <orth>iaceo</orth>
     <form type="infl">
@@ -2169,7 +2154,7 @@
     <def>liegen</def>
   </sense>
 </entry>
-  <entry id="lucrum">
+  <entry xml:id="lucrum">
   <form xml:lang="lat">
     <orth>lucrum</orth>
     <form type="infl">
@@ -2184,7 +2169,7 @@
     <def>Gewinn; Vorteil</def>
   </sense>
 </entry>
-  <entry id="campus">
+  <entry xml:id="campus">
   <form xml:lang="lat">
     <orth>campus</orth>
     <form type="infl">
@@ -2199,7 +2184,7 @@
     <def>Feld</def>
   </sense>
 </entry>
-  <entry id="altus">
+  <entry xml:id="altus">
   <form xml:lang="lat">
     <orth>altus</orth>
     <form type="infl">
@@ -2216,7 +2201,7 @@
     <def>hoch; tief</def>
   </sense>
 </entry>
-  <entry id="equitare">
+  <entry xml:id="equitare">
   <form xml:lang="lat">
     <orth>equito</orth>
     <form type="infl">
@@ -2232,7 +2217,7 @@
     <def>reiten</def>
   </sense>
 </entry>
-  <entry id="mordere">
+  <entry xml:id="mordere">
   <form xml:lang="lat">
     <orth>mordeo</orth>
     <form type="infl">
@@ -2245,10 +2230,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>kränken; beißen</def>
+    <def>krï¿½nken; beiï¿½en</def>
   </sense>
 </entry>
-  <entry id="morsus">
+  <entry xml:id="morsus">
   <form xml:lang="lat">
     <orth>morsus</orth>
     <form type="infl">
@@ -2263,7 +2248,7 @@
     <def>Biss</def>
   </sense>
 </entry>
-  <entry id="mitigare">
+  <entry xml:id="mitigare">
   <form xml:lang="lat">
     <orth>mitigo</orth>
     <form type="infl">
@@ -2276,10 +2261,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>besänftigen</def>
+    <def>besï¿½nftigen</def>
   </sense>
 </entry>
-  <entry id="taeter">
+  <entry xml:id="taeter">
   <form xml:lang="lat">
     <orth>taeter</orth>
     <form type="infl">
@@ -2293,10 +2278,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>abscheulich; grässlich; scheusslich; hässlich; abstoßend</def>
+    <def>abscheulich; grï¿½sslich; scheusslich; hï¿½sslich; abstoï¿½end</def>
   </sense>
 </entry>
-  <entry id="ara">
+  <entry xml:id="ara">
   <form xml:lang="lat">
     <orth>ara</orth>
     <form type="infl">
@@ -2311,7 +2296,7 @@
     <def>Altar</def>
   </sense>
 </entry>
-  <entry id="diligentia">
+  <entry xml:id="diligentia">
   <form xml:lang="lat">
     <orth>diligentia</orth>
     <form type="infl">
@@ -2326,7 +2311,7 @@
     <def>Gewissenhaftigkeit; Sorgfalt; Aufmerksamkeit</def>
   </sense>
 </entry>
-  <entry id="irridere">
+  <entry xml:id="irridere">
   <form xml:lang="lat">
     <orth>irrideo</orth>
     <form type="infl">
@@ -2339,10 +2324,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>verlachen/auslachen; verspotten; verhöhnen</def>
+    <def>verlachen/auslachen; verspotten; verhï¿½hnen</def>
   </sense>
 </entry>
-  <entry id="iocus">
+  <entry xml:id="iocus">
   <form xml:lang="lat">
     <orth>iocus</orth>
     <form type="infl">
@@ -2354,10 +2339,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Scherz, Spaß</def>
+    <def>Scherz, Spaï¿½</def>
   </sense>
 </entry>
-  <entry id="eloquentia">
+  <entry xml:id="eloquentia">
   <form xml:lang="lat">
     <orth>eloquentia</orth>
     <form type="infl">
@@ -2369,10 +2354,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Beredsamkeit; Geschwätzigkeit</def>
+    <def>Beredsamkeit; Geschwï¿½tzigkeit</def>
   </sense>
 </entry>
-  <entry id="notus">
+  <entry xml:id="notus">
   <form xml:lang="lat">
     <orth>notus</orth>
     <form type="infl">
@@ -2389,7 +2374,7 @@
     <def>bekannt</def>
   </sense>
 </entry>
-  <entry id="modestia">
+  <entry xml:id="modestia">
   <form xml:lang="lat">
     <orth>modestia</orth>
     <form type="infl">
@@ -2401,10 +2386,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Mäßigung; Bescheidenheit; Besonnenheit</def>
+    <def>Mï¿½ï¿½igung; Bescheidenheit; Besonnenheit</def>
   </sense>
 </entry>
-  <entry id="peregrinus">
+  <entry xml:id="peregrinus">
   <form xml:lang="lat">
     <orth>peregrinus</orth>
     <form type="infl">
@@ -2418,10 +2403,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>fremd; ausländisch</def>
+    <def>fremd; auslï¿½ndisch</def>
   </sense>
 </entry>
-  <entry id="misericordia">
+  <entry xml:id="misericordia">
   <form xml:lang="lat">
     <orth>misericordia</orth>
     <form type="infl">
@@ -2436,7 +2421,7 @@
     <def>Mitleid; Barmherzigkeit</def>
   </sense>
 </entry>
-  <entry id="vitium">
+  <entry xml:id="vitium">
   <form xml:lang="lat">
     <orth>vitium</orth>
     <form type="infl">
@@ -2451,7 +2436,7 @@
     <def>Fehler; Laster; schlechte Eigenschaft</def>
   </sense>
 </entry>
-  <entry id="perniciosus">
+  <entry xml:id="perniciosus">
   <form xml:lang="lat">
     <orth>perniciosus</orth>
     <form type="infl">
@@ -2465,10 +2450,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>verderblich; schädlich</def>
+    <def>verderblich; schï¿½dlich</def>
   </sense>
 </entry>
-  <entry id="incendium">
+  <entry xml:id="incendium">
   <form xml:lang="lat">
     <orth>incendium</orth>
     <form type="infl">
@@ -2483,7 +2468,7 @@
     <def>Brand; Feuer; Brandstiftung</def>
   </sense>
 </entry>
-  <entry id="victor">
+  <entry xml:id="victor">
   <form xml:lang="lat">
     <orth>victor</orth>
     <form type="infl">
@@ -2498,7 +2483,7 @@
     <def>Sieger</def>
   </sense>
 </entry>
-  <entry id="armare">
+  <entry xml:id="armare">
   <form xml:lang="lat">
     <orth>armo</orth>
     <form type="infl">
@@ -2511,10 +2496,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>ausrüsten; bewaffnen; rüsten</def>
+    <def>ausrï¿½sten; bewaffnen; rï¿½sten</def>
   </sense>
 </entry>
-  <entry id="admonere">
+  <entry xml:id="admonere">
   <form xml:lang="lat">
     <orth>admoneo</orth>
     <form type="infl">
@@ -2530,7 +2515,7 @@
     <def>erinnern; ermahnen</def>
   </sense>
 </entry>
-  <entry id="tectum">
+  <entry xml:id="tectum">
   <form xml:lang="lat">
     <orth>tectum</orth>
     <form type="infl">
@@ -2545,7 +2530,7 @@
     <def>Dach; Haus; Zimmerdecke; Wohnung</def>
   </sense>
 </entry>
-  <entry id="sustinere">
+  <entry xml:id="sustinere">
   <form xml:lang="lat">
     <orth>sustineo</orth>
     <form type="infl">
@@ -2558,10 +2543,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>aushalten; aufhalten; ertragen; anhalten; herauszögern</def>
+    <def>aushalten; aufhalten; ertragen; anhalten; herauszï¿½gern</def>
   </sense>
 </entry>
-  <entry id="saltare">
+  <entry xml:id="saltare">
   <form xml:lang="lat">
     <orth>salto</orth>
     <form type="infl">
@@ -2577,7 +2562,7 @@
     <def>tanzen; springen</def>
   </sense>
 </entry>
-  <entry id="contumelia">
+  <entry xml:id="contumelia">
   <form xml:lang="lat">
     <orth>contumelia</orth>
     <form type="infl">
@@ -2592,7 +2577,7 @@
     <def>Schmach; Beleidigung; Schande</def>
   </sense>
 </entry>
-  <entry id="oppidum">
+  <entry xml:id="oppidum">
   <form xml:lang="lat">
     <orth>oppidum</orth>
     <form type="infl">
@@ -2607,7 +2592,7 @@
     <def>Festung; Stadt</def>
   </sense>
 </entry>
-  <entry id="quietus">
+  <entry xml:id="quietus">
   <form xml:lang="lat">
     <orth>quietus</orth>
     <form type="infl">
@@ -2624,7 +2609,7 @@
     <def>ruhig; gelassen</def>
   </sense>
 </entry>
-  <entry id="schola">
+  <entry xml:id="schola">
   <form xml:lang="lat">
     <orth>schola</orth>
     <form type="infl">
@@ -2639,7 +2624,7 @@
     <def>Schule</def>
   </sense>
 </entry>
-  <entry id="fuga">
+  <entry xml:id="fuga">
   <form xml:lang="lat">
     <orth>fuga</orth>
     <form type="infl">
@@ -2654,7 +2639,7 @@
     <def>Flucht; Verbannung</def>
   </sense>
 </entry>
-  <entry id="maestus">
+  <entry xml:id="maestus">
   <form xml:lang="lat">
     <orth>maestus</orth>
     <form type="infl">
@@ -2668,10 +2653,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>traurig; betrübt</def>
+    <def>traurig; betrï¿½bt</def>
   </sense>
 </entry>
-  <entry id="comparare">
+  <entry xml:id="comparare">
   <form xml:lang="lat">
     <orth>comparo</orth>
     <form type="infl">
@@ -2687,7 +2672,7 @@
     <def>zusammenbringen; erwerben; beschaffen; vergleichen</def>
   </sense>
 </entry>
-  <entry id="transportare">
+  <entry xml:id="transportare">
   <form xml:lang="lat">
     <orth>transporto</orth>
     <form type="infl">
@@ -2700,10 +2685,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>hinüberschaffen; hinüberbringen</def>
+    <def>hinï¿½berschaffen; hinï¿½berbringen</def>
   </sense>
 </entry>
-  <entry id="servitium">
+  <entry xml:id="servitium">
   <form xml:lang="lat">
     <orth>servitium</orth>
     <form type="infl">
@@ -2718,7 +2703,7 @@
     <def>Sklaverei; Knechtschaft</def>
   </sense>
 </entry>
-  <entry id="asper">
+  <entry xml:id="asper">
   <form xml:lang="lat">
     <orth>asper</orth>
     <form type="infl">
@@ -2735,7 +2720,7 @@
     <def>rauh; bitter; herb</def>
   </sense>
 </entry>
-  <entry id="constantia">
+  <entry xml:id="constantia">
   <form xml:lang="lat">
     <orth>constantia</orth>
     <form type="infl">
@@ -2747,10 +2732,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Standhaftigkeit; Beständigkeit</def>
+    <def>Standhaftigkeit; Bestï¿½ndigkeit</def>
   </sense>
 </entry>
-  <entry id="diuturnus">
+  <entry xml:id="diuturnus">
   <form xml:lang="lat">
     <orth>diuturnus</orth>
     <form type="infl">
@@ -2767,7 +2752,7 @@
     <def>langdauernd</def>
   </sense>
 </entry>
-  <entry id="condicio">
+  <entry xml:id="condicio">
   <form xml:lang="lat">
     <orth>condicio</orth>
     <form type="infl">
@@ -2782,7 +2767,7 @@
     <def>Bedingung; Lage; Verabredung</def>
   </sense>
 </entry>
-  <entry id="fortitudo">
+  <entry xml:id="fortitudo">
   <form xml:lang="lat">
     <orth>fortitudo</orth>
     <form type="infl">
@@ -2797,7 +2782,7 @@
     <def>Tapferkeit; Mut</def>
   </sense>
 </entry>
-  <entry id="multitudo">
+  <entry xml:id="multitudo">
   <form xml:lang="lat">
     <orth>multitudo</orth>
     <form type="infl">
@@ -2812,7 +2797,7 @@
     <def>Vielzahl; Menge</def>
   </sense>
 </entry>
-  <entry id="auctoritas">
+  <entry xml:id="auctoritas">
   <form xml:lang="lat">
     <orth>auctoritas</orth>
     <form type="infl">
@@ -2827,7 +2812,7 @@
     <def>Ansehen; Einfluss</def>
   </sense>
 </entry>
-  <entry id="aequus">
+  <entry xml:id="aequus">
   <form xml:lang="lat">
     <orth>aequus</orth>
     <form type="infl">
@@ -2841,10 +2826,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>gleich; gleichmütig; gerecht</def>
+    <def>gleich; gleichmï¿½tig; gerecht</def>
   </sense>
 </entry>
-  <entry id="lumen">
+  <entry xml:id="lumen">
   <form xml:lang="lat">
     <orth>lumen</orth>
     <form type="infl">
@@ -2859,7 +2844,7 @@
     <def>Licht; Glanz; Leuchte</def>
   </sense>
 </entry>
-  <entry id="omen">
+  <entry xml:id="omen">
   <form xml:lang="lat">
     <orth>omen</orth>
     <form type="infl">
@@ -2874,7 +2859,7 @@
     <def>Vorzeichen; Vorbedeutung</def>
   </sense>
 </entry>
-  <entry id="praedicare">
+  <entry xml:id="praedicare">
   <form xml:lang="lat">
     <orth>praedico</orth>
     <form type="infl">
@@ -2887,10 +2872,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>rühmen; öffentlich bekannt machen</def>
+    <def>rï¿½hmen; ï¿½ffentlich bekannt machen</def>
   </sense>
 </entry>
-  <entry id="avaritia">
+  <entry xml:id="avaritia">
   <form xml:lang="lat">
     <orth>avaritia</orth>
     <form type="infl">
@@ -2905,7 +2890,7 @@
     <def>Habsucht; Geiz</def>
   </sense>
 </entry>
-  <entry id="inopia">
+  <entry xml:id="inopia">
   <form xml:lang="lat">
     <orth>inopia</orth>
     <form type="infl">
@@ -2920,7 +2905,7 @@
     <def>Mangel; Not</def>
   </sense>
 </entry>
-  <entry id="luxuria">
+  <entry xml:id="luxuria">
   <form xml:lang="lat">
     <orth>luxuria</orth>
     <form type="infl">
@@ -2932,10 +2917,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Üppigkeit; Verschwendungssucht</def>
+    <def>ï¿½ppigkeit; Verschwendungssucht</def>
   </sense>
 </entry>
-  <entry id="occasio">
+  <entry xml:id="occasio">
   <form xml:lang="lat">
     <orth>occasio</orth>
     <form type="infl">
@@ -2950,7 +2935,7 @@
     <def>Gelegenheit</def>
   </sense>
 </entry>
-  <entry id="appellare">
+  <entry xml:id="appellare">
   <form xml:lang="lat">
     <orth>appello</orth>
     <form type="infl">
@@ -2966,7 +2951,7 @@
     <def>anreden; (be)nennen</def>
   </sense>
 </entry>
-  <entry id="aestas">
+  <entry xml:id="aestas">
   <form xml:lang="lat">
     <orth>aestas</orth>
     <form type="infl">
@@ -2981,7 +2966,7 @@
     <def>Sommer</def>
   </sense>
 </entry>
-  <entry id="necessitas">
+  <entry xml:id="necessitas">
   <form xml:lang="lat">
     <orth>necessitas</orth>
     <form type="infl">
@@ -2996,7 +2981,7 @@
     <def>Notwendigkeit Notlage</def>
   </sense>
 </entry>
-  <entry id="ver">
+  <entry xml:id="ver">
   <form xml:lang="lat">
     <orth>ver</orth>
     <form type="infl">
@@ -3008,10 +2993,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Frühling</def>
+    <def>Frï¿½hling</def>
   </sense>
 </entry>
-  <entry id="avus">
+  <entry xml:id="avus">
   <form xml:lang="lat">
     <orth>avus</orth>
     <form type="infl">
@@ -3023,10 +3008,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Großvater</def>
+    <def>Groï¿½vater</def>
   </sense>
 </entry>
-  <entry id="incertus">
+  <entry xml:id="incertus">
   <form xml:lang="lat">
     <orth>incertus</orth>
     <form type="infl">
@@ -3043,7 +3028,7 @@
     <def>ungewiss; unsicher</def>
   </sense>
 </entry>
-  <entry id="agitare">
+  <entry xml:id="agitare">
   <form xml:lang="lat">
     <orth>agito</orth>
     <form type="infl">
@@ -3059,7 +3044,7 @@
     <def>treiben; jagen; hetzen; betreiben</def>
   </sense>
 </entry>
-  <entry id="consuetudo">
+  <entry xml:id="consuetudo">
   <form xml:lang="lat">
     <orth>consuetudo</orth>
     <form type="infl">
@@ -3074,7 +3059,7 @@
     <def>Gewohnheit; Brauch</def>
   </sense>
 </entry>
-  <entry id="preces">
+  <entry xml:id="preces">
   <form xml:lang="lat">
     <orth>preces</orth>
     <form type="infl">
@@ -3089,7 +3074,7 @@
     <def>Bitten; Gebet</def>
   </sense>
 </entry>
-  <entry id="celsus">
+  <entry xml:id="celsus">
   <form xml:lang="lat">
     <orth>celsus</orth>
     <form type="infl">
@@ -3106,7 +3091,7 @@
     <def>hoch; erhaben; aufragend</def>
   </sense>
 </entry>
-  <entry id="exigere">
+  <entry xml:id="exigere">
   <form xml:lang="lat">
     <orth>exigo</orth>
     <form type="infl">
@@ -3122,7 +3107,7 @@
     <def>vollenden; beenden; herausfordern; verlangen; verbringen; zuende gehen; beaufsichtigen; genau untersuchen; errichten</def>
   </sense>
 </entry>
-  <entry id="simulacrum">
+  <entry xml:id="simulacrum">
   <form xml:lang="lat">
     <orth>simulacrum</orth>
     <form type="infl">
@@ -3134,10 +3119,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Götterbild; Abbild</def>
+    <def>Gï¿½tterbild; Abbild</def>
   </sense>
 </entry>
-  <entry id="classis">
+  <entry xml:id="classis">
   <form xml:lang="lat">
     <orth>classis</orth>
     <form type="infl">
@@ -3152,7 +3137,7 @@
     <def>Flotte; Abteilung; Klasse</def>
   </sense>
 </entry>
-  <entry type="pl" id="moenia">
+  <entry type="pl" xml:id="moenia">
   <form xml:lang="lat">
     <orth>moenia</orth>
     <form type="infl">
@@ -3167,7 +3152,7 @@
     <def>Stadtmauer</def>
   </sense>
 </entry>
-  <entry id="adhibere">
+  <entry xml:id="adhibere">
   <form xml:lang="lat">
     <orth>adhibero</orth>
     <form type="infl">
@@ -3183,7 +3168,7 @@
     <def>anwenden; heranziehen</def>
   </sense>
 </entry>
-  <entry id="senex">
+  <entry xml:id="senex">
   <form xml:lang="lat">
     <orth>senex</orth>
     <form type="infl">
@@ -3198,7 +3183,7 @@
     <def>alter Mann; Greis</def>
   </sense>
 </entry>
-  <entry id="arcere">
+  <entry xml:id="arcere">
   <form xml:lang="lat">
     <orth>arceo</orth>
     <form type="infl">
@@ -3214,7 +3199,7 @@
     <def>abhalten; fernhalten, abwehren; hindern</def>
   </sense>
 </entry>
-  <entry id="flamma">
+  <entry xml:id="flamma">
   <form xml:lang="lat">
     <orth>flamma</orth>
     <form type="infl">
@@ -3229,7 +3214,7 @@
     <def>Flamme; Feuer; Glut</def>
   </sense>
 </entry>
-  <entry id="crinis">
+  <entry xml:id="crinis">
   <form xml:lang="lat">
     <orth>crinis</orth>
     <form type="infl">
@@ -3244,7 +3229,7 @@
     <def>Haar</def>
   </sense>
 </entry>
-  <entry id="lacerare">
+  <entry xml:id="lacerare">
   <form xml:lang="lat">
     <orth>lacero</orth>
     <form type="infl">
@@ -3257,10 +3242,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zerreißen; zerfleischen</def>
+    <def>zerreiï¿½en; zerfleischen</def>
   </sense>
 </entry>
-  <entry id="terribilis">
+  <entry xml:id="terribilis">
   <form xml:lang="lat">
     <orth>terribilis</orth>
     <form type="infl">
@@ -3274,10 +3259,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>schrecklich; furchterregend; angsteinflößend</def>
+    <def>schrecklich; furchterregend; angsteinflï¿½ï¿½end</def>
   </sense>
 </entry>
-  <entry id="otium">
+  <entry xml:id="otium">
   <form xml:lang="lat">
     <orth>otium</orth>
     <form type="infl">
@@ -3289,10 +3274,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Muße; Freizeit; Ruhe</def>
+    <def>Muï¿½e; Freizeit; Ruhe</def>
   </sense>
 </entry>
-  <entry id="dignitas">
+  <entry xml:id="dignitas">
   <form xml:lang="lat">
     <orth>dignitas</orth>
     <form type="infl">
@@ -3304,10 +3289,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Ansehen; Rang; Würde</def>
+    <def>Ansehen; Rang; Wï¿½rde</def>
   </sense>
 </entry>
-  <entry id="fidelis">
+  <entry xml:id="fidelis">
   <form xml:lang="lat">
     <orth>fidelis</orth>
     <form type="infl">
@@ -3321,10 +3306,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>treu; gläubig; zuverlässig; fest; sicher; gewissenhaft</def>
+    <def>treu; glï¿½ubig; zuverlï¿½ssig; fest; sicher; gewissenhaft</def>
   </sense>
 </entry>
-  <entry id="immanis">
+  <entry xml:id="immanis">
   <form xml:lang="lat">
     <orth>immanis</orth>
     <form type="infl">
@@ -3341,7 +3326,7 @@
     <def>ungeheuer; entsetzlich; ungeheuerlich; riesig; tierisch; unmenglisch</def>
   </sense>
 </entry>
-  <entry id="potens">
+  <entry xml:id="potens">
   <form xml:lang="lat">
     <orth>potens</orth>
     <form type="infl">
@@ -3355,10 +3340,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>mächtig; einflussreich; stark; fähig; etwas beherrschend</def>
+    <def>mï¿½chtig; einflussreich; stark; fï¿½hig; etwas beherrschend</def>
   </sense>
 </entry>
-  <entry id="prudens">
+  <entry xml:id="prudens">
   <form xml:lang="lat">
     <orth>prudens</orth>
     <form type="infl">
@@ -3375,7 +3360,7 @@
     <def>klug; umsichtig; erfahren; gescheit</def>
   </sense>
 </entry>
-  <entry id="carcer">
+  <entry xml:id="carcer">
   <form xml:lang="lat">
     <orth>carcer</orth>
     <form type="infl">
@@ -3387,10 +3372,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Kerker; Gefängnis</def>
+    <def>Kerker; Gefï¿½ngnis</def>
   </sense>
 </entry>
-  <entry id="bicarium">
+  <entry xml:id="bicarium">
   <form xml:lang="lat">
     <orth>bicarium</orth>
     <form type="infl">
@@ -3405,7 +3390,7 @@
     <def>Becher</def>
   </sense>
 </entry>
-  <entry id="cerasa">
+  <entry xml:id="cerasa">
   <form xml:lang="lat">
     <orth>cerasa</orth>
     <form type="infl">
@@ -3420,7 +3405,7 @@
     <def>Kirschen</def>
   </sense>
 </entry>
-  <entry id="pirum">
+  <entry xml:id="pirum">
   <form xml:lang="lat">
     <orth>pirum</orth>
     <form type="infl">
@@ -3435,7 +3420,7 @@
     <def>Birnen</def>
   </sense>
 </entry>
-  <entry id="asparagus">
+  <entry xml:id="asparagus">
   <form xml:lang="lat">
     <orth>asparagus</orth>
     <form type="infl">
@@ -3450,7 +3435,7 @@
     <def>Spargel</def>
   </sense>
 </entry>
-  <entry id="radix">
+  <entry xml:id="radix">
   <form xml:lang="lat">
     <orth>radix</orth>
     <form type="infl">
@@ -3465,7 +3450,7 @@
     <def>Raddischen</def>
   </sense>
 </entry>
-  <entry id="plastrum">
+  <entry xml:id="plastrum">
   <form xml:lang="lat">
     <orth>plastrum</orth>
     <form type="infl">
@@ -3480,7 +3465,7 @@
     <def>Pflaster</def>
   </sense>
 </entry>
-  <entry id="cista">
+  <entry xml:id="cista">
   <form xml:lang="lat">
     <orth>cista</orth>
     <form type="infl">
@@ -3495,7 +3480,7 @@
     <def>Kiste</def>
   </sense>
 </entry>
-  <entry id="facinus">
+  <entry xml:id="facinus">
   <form xml:lang="lat">
     <orth>facinus</orth>
     <form type="infl">
@@ -3510,7 +3495,7 @@
     <def>Tat; Untat; Verbrechen</def>
   </sense>
 </entry>
-  <entry id="sperare">
+  <entry xml:id="sperare">
   <form xml:lang="lat">
     <orth>spero</orth>
     <form type="infl">
@@ -3526,7 +3511,7 @@
     <def>hoffen; erhoffen</def>
   </sense>
 </entry>
-  <entry id="avarus">
+  <entry xml:id="avarus">
   <form xml:lang="lat">
     <orth>avarus</orth>
     <form type="infl">
@@ -3538,10 +3523,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>habsüchtig; geizig</def>
+    <def>habsï¿½chtig; geizig</def>
   </sense>
 </entry>
-  <entry id="perturbare">
+  <entry xml:id="perturbare">
   <form xml:lang="lat">
     <orth>perturbo</orth>
     <form type="infl">
@@ -3554,10 +3539,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>(völlig) verwirren; beunruhigen; stören</def>
+    <def>(vï¿½llig) verwirren; beunruhigen; stï¿½ren</def>
   </sense>
 </entry>
-  <entry id="similis">
+  <entry xml:id="similis">
   <form xml:lang="lat">
     <orth>similis</orth>
     <form type="infl">
@@ -3571,10 +3556,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>ähnlich; gleich; gleichartig</def>
+    <def>ï¿½hnlich; gleich; gleichartig</def>
   </sense>
 </entry>
-  <entry id="praetor">
+  <entry xml:id="praetor">
   <form xml:lang="lat">
     <orth>praetor</orth>
     <form type="infl">
@@ -3586,10 +3571,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Prätor</def>
+    <def>Prï¿½tor</def>
   </sense>
 </entry>
-  <entry id="flagitium">
+  <entry xml:id="flagitium">
   <form xml:lang="lat">
     <orth>flagitium</orth>
     <form type="infl">
@@ -3601,10 +3586,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Schandtat; Niederträchtigkeit</def>
+    <def>Schandtat; Niedertrï¿½chtigkeit</def>
   </sense>
 </entry>
-  <entry id="tristis">
+  <entry xml:id="tristis">
   <form xml:lang="lat">
     <orth>tristis</orth>
     <form type="infl">
@@ -3621,7 +3606,7 @@
     <def>traurig; schmerzlich</def>
   </sense>
 </entry>
-  <entry id="parum_succedit">
+  <entry xml:id="parum_succedit">
   <form xml:lang="lat">
     <orth>parum succedit</orth>
   </form>
@@ -3629,7 +3614,7 @@
     <def>es gelingt nicht recht</def>
   </sense>
 </entry>
-  <entry id="sextus">
+  <entry xml:id="sextus">
   <form xml:lang="lat">
     <orth>sextus</orth>
     <form type="infl">
@@ -3646,7 +3631,7 @@
     <def>der sechste</def>
   </sense>
 </entry>
-  <entry id="cohors">
+  <entry xml:id="cohors">
   <form xml:lang="lat">
     <orth>cohors</orth>
     <form type="infl">
@@ -3661,7 +3646,7 @@
     <def>10. Teil einer Legion</def>
   </sense>
 </entry>
-  <entry id="septimus">
+  <entry xml:id="septimus">
   <form xml:lang="lat">
     <orth>septimus</orth>
     <form type="infl">
@@ -3678,7 +3663,7 @@
     <def>der siebte</def>
   </sense>
 </entry>
-  <entry id="nonus">
+  <entry xml:id="nonus">
   <form xml:lang="lat">
     <orth>nonus</orth>
     <form type="infl">
@@ -3695,7 +3680,7 @@
     <def>der neunte</def>
   </sense>
 </entry>
-  <entry id="decimus">
+  <entry xml:id="decimus">
   <form xml:lang="lat">
     <orth>decimus</orth>
     <form type="infl">
@@ -3712,7 +3697,7 @@
     <def>der zehnte</def>
   </sense>
 </entry>
-  <entry id="visitare">
+  <entry xml:id="visitare">
   <form xml:lang="lat">
     <orth>visito</orth>
     <form type="infl">
@@ -3728,7 +3713,7 @@
     <def>besuchen</def>
   </sense>
 </entry>
-  <entry id="senator">
+  <entry xml:id="senator">
   <form xml:lang="lat">
     <orth>senator</orth>
     <form type="infl">
@@ -3743,7 +3728,7 @@
     <def>Senator; Senatsmitglied</def>
   </sense>
 </entry>
-  <entry id="curia">
+  <entry xml:id="curia">
   <form xml:lang="lat">
     <orth>curia</orth>
     <form type="infl">
@@ -3758,7 +3743,7 @@
     <def>Kurier; Rathaus</def>
   </sense>
 </entry>
-  <entry id="forum">
+  <entry xml:id="forum">
   <form xml:lang="lat">
     <orth>forum</orth>
     <form type="infl">
@@ -3773,15 +3758,15 @@
     <def>Forum; Marktplatz</def>
   </sense>
 </entry>
-  <entry id="se_male_habere">
+  <entry xml:id="se_male_habere">
   <form xml:lang="lat">
     <orth>se male habere</orth>
   </form>
   <sense>
-    <def>sich schlecht fühlen</def>
+    <def>sich schlecht fï¿½hlen</def>
   </sense>
 </entry>
-  <entry id="numeros_annorum_expleverimus">
+  <entry xml:id="numeros_annorum_expleverimus">
   <form xml:lang="lat">
     <orth>numeros annorum expleverimus</orth>
   </form>
@@ -3789,15 +3774,15 @@
     <def>wir haben die Zahl unserer Lebensjahre vollendet</def>
   </sense>
 </entry>
-  <entry id="rege_orbatum">
+  <entry xml:id="rege_orbatum">
   <form xml:lang="lat">
     <orth>rege orbatum</orth>
   </form>
   <sense>
-    <def>des Königs beraubt</def>
+    <def>des Kï¿½nigs beraubt</def>
   </sense>
 </entry>
-  <entry id="fidem_praestare">
+  <entry xml:id="fidem_praestare">
   <form xml:lang="lat">
     <orth>fidem praestare</orth>
   </form>
@@ -3805,7 +3790,7 @@
     <def>die Treue halten</def>
   </sense>
 </entry>
-  <entry id="dies_natalis">
+  <entry xml:id="dies_natalis">
   <form xml:lang="lat">
     <orth>dies natalis</orth>
   </form>
@@ -3813,15 +3798,15 @@
     <def>Geburtstag</def>
   </sense>
 </entry>
-  <entry id="quaerere_de">
+  <entry xml:id="quaerere_de">
   <form xml:lang="lat">
     <orth>quaerere de</orth>
   </form>
   <sense>
-    <def>Untersuchung anstellen über</def>
+    <def>Untersuchung anstellen ï¿½ber</def>
   </sense>
 </entry>
-  <entry id="argentum">
+  <entry xml:id="argentum">
   <form xml:lang="lat">
     <orth>argentum</orth>
     <form type="infl">
@@ -3836,7 +3821,7 @@
     <def>Silber</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth/>
   </form>
@@ -3844,7 +3829,7 @@
     <def>aber; und dennoch nicht</def>
   </sense>
 </entry>
-  <entry id="moderatus">
+  <entry xml:id="moderatus">
   <form xml:lang="lat">
     <orth>moderatus</orth>
     <form type="infl">
@@ -3858,10 +3843,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>maßvoll; besonnen</def>
+    <def>maï¿½voll; besonnen</def>
   </sense>
 </entry>
-  <entry id="bracchia_plumbo_onerata">
+  <entry xml:id="bracchia_plumbo_onerata">
   <form xml:lang="lat">
     <orth>bracchia plumbo onerata</orth>
   </form>
@@ -3869,7 +3854,7 @@
     <def>mit Bleigewichten beschwerte Arme</def>
   </sense>
 </entry>
-  <entry id="studiosus">
+  <entry xml:id="studiosus">
   <form xml:lang="lat">
     <orth>studiosus</orth>
     <form type="infl">
@@ -3883,10 +3868,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>eifrig; bemüht</def>
+    <def>eifrig; bemï¿½ht</def>
   </sense>
 </entry>
-  <entry id="tardus">
+  <entry xml:id="tardus">
   <form xml:lang="lat">
     <orth>tardus</orth>
     <form type="infl">
@@ -3900,18 +3885,18 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>langsam; träge</def>
+    <def>langsam; trï¿½ge</def>
   </sense>
 </entry>
-  <entry id="herbarum_radices">
+  <entry xml:id="herbarum_radices">
   <form xml:lang="lat">
     <orth>herbarum radices</orth>
   </form>
   <sense>
-    <def>Kräuterwurzeln</def>
+    <def>Krï¿½uterwurzeln</def>
   </sense>
 </entry>
-  <entry id="adversa_valetudo">
+  <entry xml:id="adversa_valetudo">
   <form xml:lang="lat">
     <orth>adversa valetudo</orth>
   </form>
@@ -3919,15 +3904,15 @@
     <def>Krankheit</def>
   </sense>
 </entry>
-  <entry id="caducus">
+  <entry xml:id="caducus">
   <form xml:lang="lat">
     <orth>caducus</orth>
   </form>
   <sense>
-    <def>hängend</def>
+    <def>hï¿½ngend</def>
   </sense>
 </entry>
-  <entry id="carnosus">
+  <entry xml:id="carnosus">
   <form xml:lang="lat">
     <orth>carnosus</orth>
     <form type="infl">
@@ -3944,7 +3929,7 @@
     <def>fleischig; etwas beleibt</def>
   </sense>
 </entry>
-  <entry id="mundus">
+  <entry xml:id="mundus">
   <form xml:lang="lat">
     <orth>mundus</orth>
     <form type="infl">
@@ -3961,7 +3946,7 @@
     <def>sauber</def>
   </sense>
 </entry>
-  <entry id="libidinosus">
+  <entry xml:id="libidinosus">
   <form xml:lang="lat">
     <orth>libidinosus</orth>
     <form type="infl">
@@ -3975,10 +3960,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>wollüstig; 	  genusssüchtig, ausschweifend</def>
+    <def>wollï¿½stig; 	  genusssï¿½chtig, ausschweifend</def>
   </sense>
 </entry>
-  <entry id="integer">
+  <entry xml:id="integer">
   <form xml:lang="lat">
     <orth>integer</orth>
     <form type="infl">
@@ -3992,10 +3977,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>unversehrt; untadelig, anständig</def>
+    <def>unversehrt; untadelig, anstï¿½ndig</def>
   </sense>
 </entry>
-  <entry id="cultus">
+  <entry xml:id="cultus">
   <form xml:lang="lat">
     <orth>cultus</orth>
     <form type="infl">
@@ -4010,7 +3995,7 @@
     <def>Umgang, Gebrauch; Nutzen</def>
   </sense>
 </entry>
-  <entry id="victus">
+  <entry xml:id="victus">
   <form xml:lang="lat">
     <orth>victus</orth>
     <form type="infl">
@@ -4025,15 +4010,7 @@
     <def>Lebensunterhalt; Lebensweise</def>
   </sense>
 </entry>
-  <entry id="sine_dubio">
-  <form xml:lang="lat">
-    <orth>sine dubio</orth>
-  </form>
-  <sense>
-    <def>ohne Zweifel</def>
-  </sense>
-</entry>
-  <entry id="creber">
+  <entry xml:id="creber">
   <form xml:lang="lat">
     <orth>creber</orth>
     <form type="infl">
@@ -4047,10 +4024,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>häufig; zahlreich</def>
+    <def>hï¿½ufig; zahlreich</def>
   </sense>
 </entry>
-  <entry id="singuli">
+  <entry xml:id="singuli">
   <form xml:lang="lat">
     <orth>singuli</orth>
     <form type="infl">
@@ -4067,7 +4044,7 @@
     <def>je einer; einzeln</def>
   </sense>
 </entry>
-  <entry id="principium">
+  <entry xml:id="principium">
   <form xml:lang="lat">
     <orth>principium</orth>
     <form type="infl">
@@ -4082,7 +4059,7 @@
     <def>Anfang, Grundlage</def>
   </sense>
 </entry>
-  <entry id="favor">
+  <entry xml:id="favor">
   <form xml:lang="lat">
     <orth>favor</orth>
     <form type="infl">
@@ -4097,7 +4074,7 @@
     <def>Gunst; Zuneigung</def>
   </sense>
 </entry>
-  <entry id="supremus">
+  <entry xml:id="supremus">
   <form xml:lang="lat">
     <orth>supremus</orth>
     <form type="infl">
@@ -4111,10 +4088,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>der oberste; höchste, letzte</def>
+    <def>der oberste; hï¿½chste, letzte</def>
   </sense>
 </entry>
-  <entry id="in_hoc_discrimine_rerum">
+  <entry xml:id="in_hoc_discrimine_rerum">
   <form xml:lang="lat">
     <orth>in hoc discrimine rerum</orth>
   </form>
@@ -4122,7 +4099,7 @@
     <def>in dieser entscheidenden Lage</def>
   </sense>
 </entry>
-  <entry id="veniam_dare">
+  <entry xml:id="veniam_dare">
   <form xml:lang="lat">
     <orth>veniam do</orth>
     <form type="infl">
@@ -4138,7 +4115,7 @@
     <def>verzeihen; nachsichtig sein</def>
   </sense>
 </entry>
-  <entry id="cessare">
+  <entry xml:id="cessare">
   <form xml:lang="lat">
     <orth>cesso</orth>
     <form type="infl">
@@ -4151,10 +4128,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zögern; säumen; rasten</def>
+    <def>zï¿½gern; sï¿½umen; rasten</def>
   </sense>
 </entry>
-  <entry id="indicare">
+  <entry xml:id="indicare">
   <form xml:lang="lat">
     <orth>indico</orth>
     <form type="infl">
@@ -4170,7 +4147,7 @@
     <def>anzeigen; verraten</def>
   </sense>
 </entry>
-  <entry id="provocare">
+  <entry xml:id="provocare">
   <form xml:lang="lat">
     <orth>provoco</orth>
     <form type="infl">
@@ -4186,7 +4163,7 @@
     <def>herausfordern; (zum Kampf) herausfordern; Berufung einlegen</def>
   </sense>
 </entry>
-  <entry id="volare">
+  <entry xml:id="volare">
   <form xml:lang="lat">
     <orth>volo</orth>
     <form type="infl">
@@ -4202,7 +4179,7 @@
     <def>eilen; fliegen</def>
   </sense>
 </entry>
-  <entry id="votum">
+  <entry xml:id="votum">
   <form xml:lang="lat">
     <orth>votum</orth>
     <form type="infl">
@@ -4214,10 +4191,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Gelübde; Wunsch</def>
+    <def>Gelï¿½bde; Wunsch</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth/>
     <form type="infl">
@@ -4229,10 +4206,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Fleisch; Fleischstück</def>
+    <def>Fleisch; Fleischstï¿½ck</def>
   </sense>
 </entry>
-  <entry id="piscis">
+  <entry xml:id="piscis">
   <form xml:lang="lat">
     <orth>piscis</orth>
     <form type="infl">
@@ -4247,7 +4224,7 @@
     <def>Fisch</def>
   </sense>
 </entry>
-  <entry id="oppugnare">
+  <entry xml:id="oppugnare">
   <form xml:lang="lat">
     <orth>oppugno</orth>
     <form type="infl">
@@ -4260,10 +4237,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>bestürmen; belagern</def>
+    <def>bestï¿½rmen; belagern</def>
   </sense>
 </entry>
-  <entry id="telum">
+  <entry xml:id="telum">
   <form xml:lang="lat">
     <orth>telum</orth>
     <form type="infl">
@@ -4275,10 +4252,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Wurfgeschoß; Waffe</def>
+    <def>Wurfgeschoï¿½; Waffe</def>
   </sense>
 </entry>
-  <entry id="sidus">
+  <entry xml:id="sidus">
   <form xml:lang="lat">
     <orth>sidus</orth>
     <form type="infl">
@@ -4293,15 +4270,15 @@
     <def>Gestirn; Sternbild</def>
   </sense>
 </entry>
-  <entry id="ac_profecto">
+  <entry xml:id="ac_profecto">
   <form xml:lang="lat">
     <orth>ac profecto</orth>
   </form>
   <sense>
-    <def>und in der Tat; und tatsächlich</def>
+    <def>und in der Tat; und tatsï¿½chlich</def>
   </sense>
 </entry>
-  <entry id="sciptor">
+  <entry xml:id="sciptor">
   <form xml:lang="lat">
     <orth>sciptor</orth>
     <form type="infl">
@@ -4316,7 +4293,7 @@
     <def>Schriftsteller</def>
   </sense>
 </entry>
-  <entry id="morbus">
+  <entry xml:id="morbus">
   <form xml:lang="lat">
     <orth>morbus</orth>
     <form type="infl">
@@ -4331,7 +4308,7 @@
     <def>Krankheit</def>
   </sense>
 </entry>
-  <entry id="benificium">
+  <entry xml:id="benificium">
   <form xml:lang="lat">
     <orth>benificium</orth>
     <form type="infl">
@@ -4346,7 +4323,7 @@
     <def>Wohltat; Auszeichnung</def>
   </sense>
 </entry>
-  <entry id="remedium">
+  <entry xml:id="remedium">
   <form xml:lang="lat">
     <orth>remedium</orth>
     <form type="infl">
@@ -4361,7 +4338,7 @@
     <def>Heilmittel; Mittel</def>
   </sense>
 </entry>
-  <entry id="expedire">
+  <entry xml:id="expedire">
   <form xml:lang="lat">
     <orth>expedio</orth>
     <form type="infl">
@@ -4377,7 +4354,7 @@
     <def>frei machen; bereitmachen</def>
   </sense>
 </entry>
-  <entry id="rana">
+  <entry xml:id="rana">
   <form xml:lang="lat">
     <orth>rana</orth>
     <form type="infl">
@@ -4392,7 +4369,7 @@
     <def>Frosch</def>
   </sense>
 </entry>
-  <entry id="bos">
+  <entry xml:id="bos">
   <form xml:lang="lat">
     <orth>bos</orth>
     <form type="infl">
@@ -4407,7 +4384,7 @@
     <def>Ochse</def>
   </sense>
 </entry>
-  <entry id="conspicere">
+  <entry xml:id="conspicere">
   <form xml:lang="lat">
     <orth>conspicio</orth>
     <form type="infl">
@@ -4423,7 +4400,7 @@
     <def>beobachten</def>
   </sense>
 </entry>
-  <entry id="hircus">
+  <entry xml:id="hircus">
   <form xml:lang="lat">
     <orth>hircus</orth>
     <form type="infl">
@@ -4438,7 +4415,7 @@
     <def>Ziegenbock</def>
   </sense>
 </entry>
-  <entry id="decedere">
+  <entry xml:id="decedere">
   <form xml:lang="lat">
     <orth>decedo</orth>
     <form type="infl">
@@ -4454,7 +4431,7 @@
     <def>fallen</def>
   </sense>
 </entry>
-  <entry id="nixus">
+  <entry xml:id="nixus">
   <form xml:lang="lat">
     <orth>nixus</orth>
     <form type="infl">
@@ -4468,10 +4445,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>gestützt</def>
+    <def>gestï¿½tzt</def>
   </sense>
 </entry>
-  <entry id="vadum">
+  <entry xml:id="vadum">
   <form xml:lang="lat">
     <orth>vadum</orth>
     <form type="infl">
@@ -4486,7 +4463,7 @@
     <def>Grund; tiefer Grund</def>
   </sense>
 </entry>
-  <entry id="apertus">
+  <entry xml:id="apertus">
   <form xml:lang="lat">
     <orth>apertus</orth>
     <form type="infl">
@@ -4500,10 +4477,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>geöffnet; offen</def>
+    <def>geï¿½ffnet; offen</def>
   </sense>
 </entry>
-  <entry id="copiosus">
+  <entry xml:id="copiosus">
   <form xml:lang="lat">
     <orth>copiosus</orth>
     <form type="infl">
@@ -4520,7 +4497,7 @@
     <def>reichlich</def>
   </sense>
 </entry>
-  <entry id="liquor">
+  <entry xml:id="liquor">
   <form xml:lang="lat">
     <orth>liquor</orth>
     <form type="infl">
@@ -4535,7 +4512,7 @@
     <def>Wasser</def>
   </sense>
 </entry>
-  <entry id="devenire">
+  <entry xml:id="devenire">
   <form xml:lang="lat">
     <orth>devenio</orth>
     <form type="infl">
@@ -4551,7 +4528,7 @@
     <def>ankommen</def>
   </sense>
 </entry>
-  <entry id="gladium_expedire">
+  <entry xml:id="gladium_expedire">
   <form xml:lang="lat">
     <orth>gladium expedire</orth>
   </form>
@@ -4559,7 +4536,7 @@
     <def>das Schwert ziehen</def>
   </sense>
 </entry>
-  <entry id="rogare">
+  <entry xml:id="rogare">
   <form xml:lang="lat">
     <orth>rogo</orth>
     <form type="infl">
@@ -4575,7 +4552,7 @@
     <def>fragen</def>
   </sense>
 </entry>
-  <entry id="ictus">
+  <entry xml:id="ictus">
   <form xml:lang="lat">
     <orth>ictus</orth>
     <form type="infl">
@@ -4587,10 +4564,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Hieb; Schuss; Stoß</def>
+    <def>Hieb; Schuss; Stoï¿½</def>
   </sense>
 </entry>
-  <entry id="incidere">
+  <entry xml:id="incidere">
   <form xml:lang="lat">
     <orth>incido</orth>
     <form type="infl">
@@ -4606,7 +4583,7 @@
     <def>treffen; begegnen</def>
   </sense>
 </entry>
-  <entry id="deridere">
+  <entry xml:id="deridere">
   <form xml:lang="lat">
     <orth>dedido</orth>
     <form type="infl">
@@ -4622,7 +4599,7 @@
     <def>verspotten</def>
   </sense>
 </entry>
-  <entry id="superbus">
+  <entry xml:id="superbus">
   <form xml:lang="lat">
     <orth>superbus</orth>
     <form type="infl">
@@ -4636,10 +4613,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>hochmütig; stolz</def>
+    <def>hochmï¿½tig; stolz</def>
   </sense>
 </entry>
-  <entry id="proelium_committere">
+  <entry xml:id="proelium_committere">
   <form xml:lang="lat">
     <orth>proelium committere</orth>
   </form>
@@ -4647,15 +4624,15 @@
     <def>eine Schlacht beginnen</def>
   </sense>
 </entry>
-  <entry id="se_superbe_gerere">
+  <entry xml:id="se_superbe_gerere">
   <form xml:lang="lat">
     <orth>se superbe gerere</orth>
   </form>
   <sense>
-    <def>sich hochmütig zeigen; sich hochmütig verhalten</def>
+    <def>sich hochmï¿½tig zeigen; sich hochmï¿½tig verhalten</def>
   </sense>
 </entry>
-  <entry id="conciliare">
+  <entry xml:id="conciliare">
   <form xml:lang="lat">
     <orth>concilio</orth>
     <form type="infl">
@@ -4671,7 +4648,7 @@
     <def>gewinnen; vermitteln</def>
   </sense>
 </entry>
-  <entry id="arcessere">
+  <entry xml:id="arcessere">
   <form xml:lang="lat">
     <orth>arcesso</orth>
     <form type="infl">
@@ -4687,7 +4664,7 @@
     <def>herbeiholen; kommen lassen; herbei holen</def>
   </sense>
 </entry>
-  <entry id="decernere">
+  <entry xml:id="decernere">
   <form xml:lang="lat">
     <orth>decerno</orth>
     <form type="infl">
@@ -4700,10 +4677,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>beschließen; anordnern; zuerkennen; zuteilen</def>
+    <def>beschlieï¿½en; anordnern; zuerkennen; zuteilen</def>
   </sense>
 </entry>
-  <entry id="requirere">
+  <entry xml:id="requirere">
   <form xml:lang="lat">
     <orth>requiro</orth>
     <form type="infl">
@@ -4719,7 +4696,7 @@
     <def>aufsuchen; fragen; verlangen</def>
   </sense>
 </entry>
-  <entry id="sollertia">
+  <entry xml:id="sollertia">
   <form xml:lang="lat">
     <orth>sollertia</orth>
     <form type="infl">
@@ -4734,7 +4711,7 @@
     <def>Geschicklichkeit; Kunstfertigkeit</def>
   </sense>
 </entry>
-  <entry id="coniurare">
+  <entry xml:id="coniurare">
   <form xml:lang="lat">
     <orth>coniuro</orth>
     <form type="infl">
@@ -4747,10 +4724,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>sich verschwören</def>
+    <def>sich verschwï¿½ren</def>
   </sense>
 </entry>
-  <entry id="noscere">
+  <entry xml:id="noscere">
   <form xml:lang="lat">
     <orth>nosco</orth>
     <form type="infl">
@@ -4766,7 +4743,7 @@
     <def>anerkennen; untersuchen; wissen; erkennen; kennenlernen; kennen</def>
   </sense>
 </entry>
-  <entry id="avia">
+  <entry xml:id="avia">
   <form xml:lang="lat">
     <orth>avia</orth>
     <form type="infl">
@@ -4778,10 +4755,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Großmutter</def>
+    <def>Groï¿½mutter</def>
   </sense>
 </entry>
-  <entry id="conscientia">
+  <entry xml:id="conscientia">
   <form xml:lang="lat">
     <orth>conscientia</orth>
     <form type="infl">
@@ -4796,7 +4773,7 @@
     <def>Mitwissen; Bewusstsein; Gewissen</def>
   </sense>
 </entry>
-  <entry id="saevitia">
+  <entry xml:id="saevitia">
   <form xml:lang="lat">
     <orth>saevitia</orth>
     <form type="infl">
@@ -4811,7 +4788,7 @@
     <def>Wut; Grausamkeit</def>
   </sense>
 </entry>
-  <entry id="paulo_ante">
+  <entry xml:id="paulo_ante">
   <form xml:lang="lat">
     <orth>paulo ante</orth>
   </form>
@@ -4819,7 +4796,7 @@
     <def>kurz vorher; kurz davor</def>
   </sense>
 </entry>
-  <entry id="occultare">
+  <entry xml:id="occultare">
   <form xml:lang="lat">
     <orth>occulto</orth>
     <form type="infl">
@@ -4835,7 +4812,7 @@
     <def>verbergen; verstecken</def>
   </sense>
 </entry>
-  <entry id="serere">
+  <entry xml:id="serere">
   <form xml:lang="lat">
     <orth>sero</orth>
     <form type="infl">
@@ -4851,7 +4828,7 @@
     <def>aneinanderreihen</def>
   </sense>
 </entry>
-  <entry id="ordo">
+  <entry xml:id="ordo">
   <form xml:lang="lat">
     <orth>ordo</orth>
     <form type="infl">
@@ -4866,7 +4843,7 @@
     <def>Reihe; Ordnung; Stand</def>
   </sense>
 </entry>
-  <entry id="status">
+  <entry xml:id="status">
   <form xml:lang="lat">
     <orth>status</orth>
     <form type="infl">
@@ -4881,15 +4858,15 @@
     <def>Zustand; Lage; Verfassung</def>
   </sense>
 </entry>
-  <entry id="non_ita_magnus">
+  <entry xml:id="non_ita_magnus">
   <form xml:lang="lat">
     <orth>non ita magnus</orth>
   </form>
   <sense>
-    <def>nicht gerade groß</def>
+    <def>nicht gerade groï¿½</def>
   </sense>
 </entry>
-  <entry id="adducere">
+  <entry xml:id="adducere">
   <form xml:lang="lat">
     <orth>adduco</orth>
     <form type="infl">
@@ -4902,10 +4879,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>heranführen; veranlassen</def>
+    <def>heranfï¿½hren; veranlassen</def>
   </sense>
 </entry>
-  <entry id="imus">
+  <entry xml:id="imus">
   <form xml:lang="lat">
     <orth>imus</orth>
     <form type="infl">
@@ -4922,7 +4899,7 @@
     <def>der unterste; der niedrigste; der geringst</def>
   </sense>
 </entry>
-  <entry id="funus">
+  <entry xml:id="funus">
   <form xml:lang="lat">
     <orth>funus</orth>
     <form type="infl">
@@ -4934,10 +4911,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Leichenzug; Todesfall; Begräbnis; Bestattung</def>
+    <def>Leichenzug; Todesfall; Begrï¿½bnis; Bestattung</def>
   </sense>
 </entry>
-  <entry id="nemus">
+  <entry xml:id="nemus">
   <form xml:lang="lat">
     <orth>nemus</orth>
     <form type="infl">
@@ -4952,7 +4929,7 @@
     <def>Hain; Wald</def>
   </sense>
 </entry>
-  <entry id="sternerere">
+  <entry xml:id="sternerere">
   <form xml:lang="lat">
     <orth>sterno</orth>
     <form type="infl">
@@ -4968,7 +4945,7 @@
     <def>hinwerfen; hinstrecken; niederwerfen; hin; sich legen, hinstreuen, zersteuen</def>
   </sense>
 </entry>
-  <entry id="diem_supremum_obire">
+  <entry xml:id="diem_supremum_obire">
   <form xml:lang="lat">
     <orth>diem supremum obire</orth>
   </form>
@@ -4976,7 +4953,7 @@
     <def>sterben</def>
   </sense>
 </entry>
-  <entry id="sibi_proponere">
+  <entry xml:id="sibi_proponere">
   <form xml:lang="lat">
     <orth>sibi propono</orth>
     <form type="infl">
@@ -4992,7 +4969,7 @@
     <def>sich vornehmen</def>
   </sense>
 </entry>
-  <entry id="cremare">
+  <entry xml:id="cremare">
   <form xml:lang="lat">
     <orth>cremo</orth>
     <form type="infl">
@@ -5008,7 +4985,7 @@
     <def>verbrennen</def>
   </sense>
 </entry>
-  <entry id="erigere">
+  <entry xml:id="erigere">
   <form xml:lang="lat">
     <orth>erego</orth>
     <form type="infl">
@@ -5024,7 +5001,7 @@
     <def>aufrichten; erheben; ermutigen</def>
   </sense>
 </entry>
-  <entry id="crux">
+  <entry xml:id="crux">
   <form xml:lang="lat">
     <orth>crux</orth>
     <form type="infl">
@@ -5039,15 +5016,15 @@
     <def>Mater; Kreuz, Kreuzigung</def>
   </sense>
 </entry>
-  <entry id="viam_ducere">
+  <entry xml:id="viam_ducere">
   <form xml:lang="lat">
     <orth>viam ducere</orth>
   </form>
   <sense>
-    <def>eine Straße bauen</def>
+    <def>eine Straï¿½e bauen</def>
   </sense>
 </entry>
-  <entry id="idem,_qui">
+  <entry xml:id="idem_qui">
   <form xml:lang="lat">
     <orth>idem, qui</orth>
   </form>
@@ -5055,7 +5032,7 @@
     <def>derselbe wie</def>
   </sense>
 </entry>
-  <entry id="de_vita_cedere">
+  <entry xml:id="de_vita_cedere">
   <form xml:lang="lat">
     <orth>de vita cedere</orth>
   </form>
@@ -5063,7 +5040,7 @@
     <def>ableben; aus dem Leben scheiden; sterben</def>
   </sense>
 </entry>
-  <entry id="fidem_habere">
+  <entry xml:id="fidem_habere">
   <form xml:lang="lat">
     <orth>fidem habere</orth>
   </form>
@@ -5071,7 +5048,7 @@
     <def>Glauben schenken</def>
   </sense>
 </entry>
-  <entry id="onerare">
+  <entry xml:id="onerare">
   <form xml:lang="lat">
     <orth>onero</orth>
     <form type="infl">
@@ -5087,7 +5064,7 @@
     <def>belasten; beladen</def>
   </sense>
 </entry>
-  <entry id="concludere">
+  <entry xml:id="concludere">
   <form xml:lang="lat">
     <orth>concludo</orth>
     <form type="infl">
@@ -5100,10 +5077,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>einschließen; folgen</def>
+    <def>einschlieï¿½en; folgen</def>
   </sense>
 </entry>
-  <entry id="intercludere">
+  <entry xml:id="intercludere">
   <form xml:lang="lat">
     <orth>intercludo</orth>
     <form type="infl">
@@ -5116,10 +5093,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>abschließen, versperren</def>
+    <def>abschlieï¿½en, versperren</def>
   </sense>
 </entry>
-  <entry id="nauta">
+  <entry xml:id="nauta">
   <form xml:lang="lat">
     <orth>nauta</orth>
     <form type="infl">
@@ -5134,7 +5111,7 @@
     <def>Seemann; Matrose</def>
   </sense>
 </entry>
-  <entry id="severitas">
+  <entry xml:id="severitas">
   <form xml:lang="lat">
     <orth>severitas</orth>
     <form type="infl">
@@ -5149,7 +5126,7 @@
     <def>Strenge</def>
   </sense>
 </entry>
-  <entry id="cubiculum">
+  <entry xml:id="cubiculum">
   <form xml:lang="lat">
     <orth>cubiculum</orth>
     <form type="infl">
@@ -5164,7 +5141,7 @@
     <def>Schlafzimmer</def>
   </sense>
 </entry>
-  <entry id="stimulare">
+  <entry xml:id="stimulare">
   <form xml:lang="lat">
     <orth>stimulo</orth>
     <form type="infl">
@@ -5180,7 +5157,7 @@
     <def>antreiben</def>
   </sense>
 </entry>
-  <entry id="repugnare">
+  <entry xml:id="repugnare">
   <form xml:lang="lat">
     <orth>repugno</orth>
     <form type="infl">
@@ -5196,15 +5173,15 @@
     <def>sich wehren; Wiederstand leisten</def>
   </sense>
 </entry>
-  <entry id="nodus_virginitatis">
+  <entry xml:id="nodus_virginitatis">
   <form xml:lang="lat">
     <orth>nodus virginitatis</orth>
   </form>
   <sense>
-    <def>Unschuld; Jungfräulichkeit</def>
+    <def>Unschuld; Jungfrï¿½ulichkeit</def>
   </sense>
 </entry>
-  <entry id="mirari">
+  <entry xml:id="mirari">
   <form xml:lang="lat">
     <orth>miror</orth>
     <form type="infl">
@@ -5220,7 +5197,7 @@
     <def>sich wundern</def>
   </sense>
 </entry>
-  <entry id="velum">
+  <entry xml:id="velum">
   <form xml:lang="lat">
     <orth>velum</orth>
     <form type="infl">
@@ -5235,7 +5212,7 @@
     <def>Segel</def>
   </sense>
 </entry>
-  <entry id="aemulus">
+  <entry xml:id="aemulus">
   <form xml:lang="lat">
     <orth>aemulus</orth>
     <form type="infl">
@@ -5250,7 +5227,7 @@
     <def>Gegner; Widersacher; Nebenbuhler</def>
   </sense>
 </entry>
-  <entry id="praetermittere">
+  <entry xml:id="praetermittere">
   <form xml:lang="lat">
     <orth>praemitto</orth>
     <form type="infl">
@@ -5263,10 +5240,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>vorübergehen lassen; übergehen</def>
+    <def>vorï¿½bergehen lassen; ï¿½bergehen</def>
   </sense>
 </entry>
-  <entry id="latebra">
+  <entry xml:id="latebra">
   <form xml:lang="lat">
     <orth>latebra</orth>
     <form type="infl">
@@ -5281,7 +5258,7 @@
     <def>Schlupfwinkel; Versteck</def>
   </sense>
 </entry>
-  <entry id="pulvis">
+  <entry xml:id="pulvis">
   <form xml:lang="lat">
     <orth>pulvis</orth>
     <form type="infl">
@@ -5296,7 +5273,7 @@
     <def>Staub</def>
   </sense>
 </entry>
-  <entry id="divinus">
+  <entry xml:id="divinus">
   <form xml:lang="lat">
     <orth>divinus</orth>
     <form type="infl">
@@ -5310,10 +5287,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>göttlich</def>
+    <def>gï¿½ttlich</def>
   </sense>
 </entry>
-  <entry id="domare">
+  <entry xml:id="domare">
   <form xml:lang="lat">
     <orth>domo</orth>
     <form type="infl">
@@ -5326,10 +5303,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zähmen; bezwingen</def>
+    <def>zï¿½hmen; bezwingen</def>
   </sense>
 </entry>
-  <entry id="fama">
+  <entry xml:id="fama">
   <form xml:lang="lat">
     <orth>fama</orth>
     <form type="infl">
@@ -5341,10 +5318,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Gerücht; (guter/übler) Ruf</def>
+    <def>Gerï¿½cht; (guter/ï¿½bler) Ruf</def>
   </sense>
 </entry>
-  <entry id="natio">
+  <entry xml:id="natio">
   <form xml:lang="lat">
     <orth>natio</orth>
     <form type="infl">
@@ -5359,7 +5336,7 @@
     <def>Volksstamm; Volk</def>
   </sense>
 </entry>
-  <entry id="taciturnitas">
+  <entry xml:id="taciturnitas">
   <form xml:lang="lat">
     <orth>taciturnitas</orth>
     <form type="infl">
@@ -5374,7 +5351,7 @@
     <def>Schweigsamkkeit; Stillschweigen; Verschwiegenheit</def>
   </sense>
 </entry>
-  <entry id="generositas">
+  <entry xml:id="generositas">
   <form xml:lang="lat">
     <orth>generositas</orth>
     <form type="infl">
@@ -5389,7 +5366,7 @@
     <def>edle Art; edles Aussehen; Vortrefflichkeit</def>
   </sense>
 </entry>
-  <entry id="indicare">
+  <entry xml:id="indico">
   <form xml:lang="lat">
     <orth>indico</orth>
     <form type="infl">
@@ -5405,7 +5382,7 @@
     <def>anzeigen, zeigen; verraten</def>
   </sense>
 </entry>
-  <entry id="thesaurus">
+  <entry xml:id="thesaurus">
   <form xml:lang="lat">
     <orth>thesaurus</orth>
     <form type="infl">
@@ -5417,10 +5394,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Schatz; Vermögen; Besitz </def>
+    <def>Schatz; Vermï¿½gen; Besitz </def>
   </sense>
 </entry>
-  <entry id="lacrimas_effundere">
+  <entry xml:id="lacrimas_effundere">
   <form xml:lang="lat">
     <orth>lacrimas effundere</orth>
   </form>
@@ -5428,7 +5405,7 @@
     <def>weinen</def>
   </sense>
 </entry>
-  <entry id="maeror">
+  <entry xml:id="maeror">
   <form xml:lang="lat">
     <orth>maeror</orth>
     <form type="infl">
@@ -5440,10 +5417,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Trauer; Betrübnis</def>
+    <def>Trauer; Betrï¿½bnis</def>
   </sense>
 </entry>
-  <entry id="indulgentia">
+  <entry xml:id="indulgentia">
   <form xml:lang="lat">
     <orth>indulgentia</orth>
     <form type="infl">
@@ -5455,10 +5432,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Nachsicht; Güte</def>
+    <def>Nachsicht; Gï¿½te</def>
   </sense>
 </entry>
-  <entry id="autumnus">
+  <entry xml:id="autumnus">
   <form xml:lang="lat">
     <orth>autumnus</orth>
     <form type="infl">
@@ -5473,7 +5450,7 @@
     <def>Herbst</def>
   </sense>
 </entry>
-  <entry id="cupiditas">
+  <entry xml:id="cupiditas">
   <form xml:lang="lat">
     <orth>cupiditas</orth>
     <form type="infl">
@@ -5488,7 +5465,7 @@
     <def>Begierde, Verlangen; Leidenschaft</def>
   </sense>
 </entry>
-  <entry id="hiems">
+  <entry xml:id="hiems">
   <form xml:lang="lat">
     <orth>hiems</orth>
     <form type="infl">
@@ -5500,10 +5477,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Winter, Kälte; Sturm</def>
+    <def>Winter, Kï¿½lte; Sturm</def>
   </sense>
 </entry>
-  <entry id="excitare">
+  <entry xml:id="excitare">
   <form xml:lang="lat">
     <orth>excito</orth>
     <form type="infl">
@@ -5519,7 +5496,7 @@
     <def>aufwecken, erregen; verursachen</def>
   </sense>
 </entry>
-  <entry id="imber">
+  <entry xml:id="imber">
   <form xml:lang="lat">
     <orth>imber</orth>
     <form type="infl">
@@ -5534,7 +5511,7 @@
     <def>Regen; Regenguss</def>
   </sense>
 </entry>
-  <entry id="indulgere">
+  <entry xml:id="indulgere">
   <form xml:lang="lat">
     <orth>indulgeo</orth>
     <form type="infl">
@@ -5547,10 +5524,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>gewähren; Nachsicht schenken; nachgeben; nachgeben</def>
+    <def>gewï¿½hren; Nachsicht schenken; nachgeben; nachgeben</def>
   </sense>
 </entry>
-  <entry id="aetas">
+  <entry xml:id="aetas">
   <form xml:lang="lat">
     <orth>aetas</orth>
     <form type="infl">
@@ -5565,7 +5542,7 @@
     <def>Lebensalter, Lebenszeit; Zeitalter; Alter</def>
   </sense>
 </entry>
-  <entry id="fons">
+  <entry xml:id="fons">
   <form xml:lang="lat">
     <orth>fons</orth>
     <form type="infl">
@@ -5580,7 +5557,7 @@
     <def>Quelle; Ursprung</def>
   </sense>
 </entry>
-  <entry id="aquaeductus">
+  <entry xml:id="aquaeductus">
   <form xml:lang="lat">
     <orth>aquaeductus</orth>
     <form type="infl">
@@ -5592,10 +5569,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Wasserleitung; Aquädukt</def>
+    <def>Wasserleitung; Aquï¿½dukt</def>
   </sense>
 </entry>
-  <entry id="privatus">
+  <entry xml:id="privatus">
   <form xml:lang="lat">
     <orth>privatus</orth>
     <form type="infl">
@@ -5609,10 +5586,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>privat; persönlich</def>
+    <def>privat; persï¿½nlich</def>
   </sense>
 </entry>
-  <entry id="purus">
+  <entry xml:id="purus">
   <form xml:lang="lat">
     <orth>purus</orth>
     <form type="infl">
@@ -5629,7 +5606,7 @@
     <def>rein; klar</def>
   </sense>
 </entry>
-  <entry id="cubare">
+  <entry xml:id="cubare">
   <form xml:lang="lat">
     <orth>cubo</orth>
     <form type="infl">
@@ -5645,7 +5622,7 @@
     <def>liegen</def>
   </sense>
 </entry>
-  <entry id="sonare">
+  <entry xml:id="sonare">
   <form xml:lang="lat">
     <orth>sono</orth>
     <form type="infl">
@@ -5658,10 +5635,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>tönen; erklingen</def>
+    <def>tï¿½nen; erklingen</def>
   </sense>
 </entry>
-  <entry id="initium">
+  <entry xml:id="initium">
   <form xml:lang="lat">
     <orth>initium</orth>
     <form type="infl">
@@ -5676,7 +5653,7 @@
     <def>Anfang; Beginn</def>
   </sense>
 </entry>
-  <entry id="taedium">
+  <entry xml:id="taedium">
   <form xml:lang="lat">
     <orth>taedium</orth>
     <form type="infl">
@@ -5691,7 +5668,7 @@
     <def>Ekel; Abscheu</def>
   </sense>
 </entry>
-  <entry id="stultitia">
+  <entry xml:id="stultitia">
   <form xml:lang="lat">
     <orth>stultitia</orth>
     <form type="infl">
@@ -5706,7 +5683,7 @@
     <def>Dummheit; Torheit</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth/>
     <form type="infl">
@@ -5718,10 +5695,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Volk, (breite) Masse; Pöbel; menge</def>
+    <def>Volk, (breite) Masse; Pï¿½bel; menge</def>
   </sense>
 </entry>
-  <entry id="minimo_constare">
+  <entry xml:id="minimo_constare">
   <form xml:lang="lat">
     <orth>minimo constare</orth>
   </form>
@@ -5729,7 +5706,7 @@
     <def>sehr wenig kosten</def>
   </sense>
 </entry>
-  <entry id="veritas">
+  <entry xml:id="veritas">
   <form xml:lang="lat">
     <orth>veritas</orth>
     <form type="infl">
@@ -5744,15 +5721,15 @@
     <def>Wahrheit; Wahrhaftigkeit; Tatsache</def>
   </sense>
 </entry>
-  <entry id="re_vera">
+  <entry xml:id="re_vera">
   <form xml:lang="lat">
     <orth>re vera</orth>
   </form>
   <sense>
-    <def>in Wirklichkeit; tatsächlich</def>
+    <def>in Wirklichkeit; tatsï¿½chlich</def>
   </sense>
 </entry>
-  <entry id="post_Christum_natum">
+  <entry xml:id="post_Christum_natum">
   <form xml:lang="lat">
     <orth>post Christum natum</orth>
   </form>
@@ -5760,7 +5737,7 @@
     <def>nach Christi Geburt</def>
   </sense>
 </entry>
-  <entry id="praesidium">
+  <entry xml:id="praesidium">
   <form xml:lang="lat">
     <orth>praesidium</orth>
     <form type="infl">
@@ -5775,7 +5752,7 @@
     <def>Schutz; Posten; Besatzung</def>
   </sense>
 </entry>
-  <entry id="incitus">
+  <entry xml:id="incitus">
   <form xml:lang="lat">
     <orth>incitus</orth>
     <form type="infl">
@@ -5792,7 +5769,7 @@
     <def>ungern; widerwillig</def>
   </sense>
 </entry>
-  <entry id="obses">
+  <entry xml:id="obses">
   <form xml:lang="lat">
     <orth>obses</orth>
     <form type="infl">
@@ -5804,10 +5781,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Geisel; Bürge</def>
+    <def>Geisel; Bï¿½rge</def>
   </sense>
 </entry>
-  <entry id="salvus">
+  <entry xml:id="salvus">
   <form xml:lang="lat">
     <orth>salvus</orth>
     <form type="infl">
@@ -5824,7 +5801,7 @@
     <def>wohlbehalten; unverletzt</def>
   </sense>
 </entry>
-  <entry id="vallis">
+  <entry xml:id="vallis">
   <form xml:lang="lat">
     <orth>vallis</orth>
     <form type="infl">
@@ -5839,7 +5816,7 @@
     <def>Tal</def>
   </sense>
 </entry>
-  <entry id="origo">
+  <entry xml:id="origo">
   <form xml:lang="lat">
     <orth>origo</orth>
     <form type="infl">
@@ -5854,7 +5831,7 @@
     <def>Ursprung; Beginn; Quelle</def>
   </sense>
 </entry>
-  <entry id="coma">
+  <entry xml:id="coma">
   <form xml:lang="lat">
     <orth>coma</orth>
     <form type="infl">
@@ -5869,7 +5846,7 @@
     <def>Haar</def>
   </sense>
 </entry>
-  <entry id="liquidus">
+  <entry xml:id="liquidus">
   <form xml:lang="lat">
     <orth>liquidus</orth>
     <form type="infl">
@@ -5883,10 +5860,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>flüssig</def>
+    <def>flï¿½ssig</def>
   </sense>
 </entry>
-  <entry id="malum">
+  <entry xml:id="malum">
   <form xml:lang="lat">
     <orth>malum</orth>
     <form type="infl">
@@ -5898,10 +5875,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>(das) Übel; (das) Schlechte</def>
+    <def>(das) ï¿½bel; (das) Schlechte</def>
   </sense>
 </entry>
-  <entry id="sine_dubio">
+  <entry xml:id="sine_dubio">
   <form xml:lang="lat">
     <orth>sine dubio</orth>
   </form>
@@ -5909,7 +5886,7 @@
     <def>ohne Zweifel</def>
   </sense>
 </entry>
-  <entry id="tutus">
+  <entry xml:id="tutus">
   <form xml:lang="lat">
     <orth>tutus</orth>
     <form type="infl">
@@ -5921,10 +5898,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>geschützt; sicher</def>
+    <def>geschï¿½tzt; sicher</def>
   </sense>
 </entry>
-  <entry id="cognomen">
+  <entry xml:id="cognomen">
   <form xml:lang="lat">
     <orth>cognomen</orth>
     <form type="infl">
@@ -5939,7 +5916,7 @@
     <def>Beiname</def>
   </sense>
 </entry>
-  <entry id="testis">
+  <entry xml:id="testis">
   <form xml:lang="lat">
     <orth>testis</orth>
     <form type="infl">
@@ -5954,7 +5931,7 @@
     <def>Zeuge</def>
   </sense>
 </entry>
-  <entry id="callidus">
+  <entry xml:id="callidus">
   <form xml:lang="lat">
     <orth>callidus</orth>
     <form type="infl">
@@ -5971,7 +5948,7 @@
     <def>schlau; verschlagen</def>
   </sense>
 </entry>
-  <entry id="mea_causa">
+  <entry xml:id="mea_causa">
   <form xml:lang="lat">
     <orth>mea causa</orth>
   </form>
@@ -5979,7 +5956,7 @@
     <def>um meinetwillen; meinetwegen; wegen mir</def>
   </sense>
 </entry>
-  <entry id="quem_ad_modum">
+  <entry xml:id="quem_ad_modum">
   <form xml:lang="lat">
     <orth>quem ad modum</orth>
   </form>
@@ -5987,7 +5964,7 @@
     <def>auf welche Art und Weise auch immer</def>
   </sense>
 </entry>
-  <entry id="existimare">
+  <entry xml:id="existimare">
   <form xml:lang="lat">
     <orth>existimo</orth>
     <form type="infl">
@@ -6000,10 +5977,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>schätzen; urteilen; meinen</def>
+    <def>schï¿½tzen; urteilen; meinen</def>
   </sense>
 </entry>
-  <entry id="verberare">
+  <entry xml:id="verberare">
   <form xml:lang="lat">
     <orth>verbero</orth>
     <form type="infl">
@@ -6016,18 +5993,18 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>verprügeln</def>
+    <def>verprï¿½geln</def>
   </sense>
 </entry>
-  <entry id="res_adversae">
+  <entry xml:id="res_adversae">
   <form xml:lang="lat">
     <orth>res adversae</orth>
   </form>
   <sense>
-    <def>ungünstige Umstände; Unglück</def>
+    <def>ungï¿½nstige Umstï¿½nde; Unglï¿½ck</def>
   </sense>
 </entry>
-  <entry id="praeterire">
+  <entry xml:id="praeterire">
   <form xml:lang="lat">
     <orth>praetereo</orth>
     <form type="infl">
@@ -6040,10 +6017,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>vorbeigehen; übergehen</def>
+    <def>vorbeigehen; ï¿½bergehen</def>
   </sense>
 </entry>
-  <entry id="reire">
+  <entry xml:id="reire">
   <form xml:lang="lat">
     <orth/>
     <form type="infl">
@@ -6056,10 +6033,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zurückgehen; zurückkehren</def>
+    <def>zurï¿½ckgehen; zurï¿½ckkehren</def>
   </sense>
 </entry>
-  <entry id="intereo">
+  <entry xml:id="intereo">
   <form xml:lang="lat">
     <orth>intereo</orth>
     <form type="infl">
@@ -6074,7 +6051,7 @@
     <def>zugrunde gehen; umkommen</def>
   </sense>
 </entry>
-  <entry id="naufragus">
+  <entry xml:id="naufragus">
   <form xml:lang="lat">
     <orth>naufragus</orth>
     <form type="infl">
@@ -6086,10 +6063,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Schiffbrüchiger</def>
+    <def>Schiffbrï¿½chiger</def>
   </sense>
 </entry>
-  <entry id="paries">
+  <entry xml:id="paries">
   <form xml:lang="lat">
     <orth>paries</orth>
     <form type="infl">
@@ -6104,7 +6081,7 @@
     <def>Wand</def>
   </sense>
 </entry>
-  <entry type="pl" id="epulae">
+  <entry type="pl" xml:id="epulae">
   <form xml:lang="lat">
     <orth>epulae</orth>
     <form type="infl">
@@ -6119,7 +6096,7 @@
     <def>Essen; Speise, Speisen; Mahl, Festmahl</def>
   </sense>
 </entry>
-  <entry id="unda">
+  <entry xml:id="unda">
   <form xml:lang="lat">
     <orth>unda</orth>
     <form type="infl">
@@ -6134,7 +6111,7 @@
     <def>Welle; Woge</def>
   </sense>
 </entry>
-  <entry id="convertere">
+  <entry xml:id="convertere">
   <form xml:lang="lat">
     <orth>converto</orth>
     <form type="infl">
@@ -6150,7 +6127,7 @@
     <def>umwenden; umdrehen; umkehren</def>
   </sense>
 </entry>
-  <entry id="marmoreus">
+  <entry xml:id="marmoreus">
   <form xml:lang="lat">
     <orth>marmoreus</orth>
     <form type="infl">
@@ -6167,15 +6144,15 @@
     <def>aus Marmor; Marmor-</def>
   </sense>
 </entry>
-  <entry id="in_memoriam_redigere">
+  <entry xml:id="in_memoriam_redigere">
   <form xml:lang="lat">
     <orth>in memoriam redigere</orth>
   </form>
   <sense>
-    <def>ins Gedächtnis zurückrufen</def>
+    <def>ins Gedï¿½chtnis zurï¿½ckrufen</def>
   </sense>
 </entry>
-  <entry id="signum_marmoreum">
+  <entry xml:id="signum_marmoreum">
   <form xml:lang="lat">
     <orth>signum marmoreum</orth>
   </form>
@@ -6183,7 +6160,7 @@
     <def>Marmorstatue</def>
   </sense>
 </entry>
-  <entry id="frugifer">
+  <entry xml:id="frugifer">
   <form xml:lang="lat">
     <orth>frugifer</orth>
     <form type="infl">
@@ -6200,15 +6177,15 @@
     <def>fruchtbar</def>
   </sense>
 </entry>
-  <entry id="id_agere,_ut...">
+  <entry xml:id="id_agere_ut...">
   <form xml:lang="lat">
-    <orth>id agere, ut...</orth>
+    <orth>xml:id agere, ut...</orth>
   </form>
   <sense>
     <def>darauf hinarbeiten, dass...</def>
   </sense>
 </entry>
-  <entry id="coniuratio">
+  <entry xml:id="coniuratio">
   <form xml:lang="lat">
     <orth>coniuratio</orth>
     <form type="infl">
@@ -6220,10 +6197,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Verschwörung</def>
+    <def>Verschwï¿½rung</def>
   </sense>
 </entry>
-  <entry id="adventus">
+  <entry xml:id="adventus">
   <form xml:lang="lat">
     <orth>adventus</orth>
     <form type="infl">
@@ -6238,7 +6215,7 @@
     <def>Ankunft</def>
   </sense>
 </entry>
-  <entry id="uter">
+  <entry xml:id="uter">
   <form xml:lang="lat">
     <orth>uter</orth>
     <form type="infl">
@@ -6255,7 +6232,7 @@
     <def>welcher von beiden</def>
   </sense>
 </entry>
-  <entry id="neuter">
+  <entry xml:id="neuter">
   <form xml:lang="lat">
     <orth>neuter</orth>
     <form type="infl">
@@ -6272,7 +6249,7 @@
     <def>keiner von beiden</def>
   </sense>
 </entry>
-  <entry id="conservare">
+  <entry xml:id="conservare">
   <form xml:lang="lat">
     <orth>conservo</orth>
     <form type="infl">
@@ -6288,7 +6265,7 @@
     <def>bewahren; retten</def>
   </sense>
 </entry>
-  <entry id="desertare">
+  <entry xml:id="desertare">
   <form xml:lang="lat">
     <orth>deserto</orth>
     <form type="infl">
@@ -6301,10 +6278,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>bis zur Entscheidung kämpfen</def>
+    <def>bis zur Entscheidung kï¿½mpfen</def>
   </sense>
 </entry>
-  <entry id="idoneus">
+  <entry xml:id="idoneus">
   <form xml:lang="lat">
     <orth>idoneus</orth>
     <form type="infl">
@@ -6321,7 +6298,7 @@
     <def>geeignet; passend</def>
   </sense>
 </entry>
-  <entry id="evenit,_ut...">
+  <entry xml:id="evenit_ut...">
   <form xml:lang="lat">
     <orth>evenit, ut...</orth>
   </form>
@@ -6329,7 +6306,7 @@
     <def>es ereignet sich, dass...</def>
   </sense>
 </entry>
-  <entry id="pueritia">
+  <entry xml:id="pueritia">
   <form xml:lang="lat">
     <orth>pueritia</orth>
     <form type="infl">
@@ -6344,7 +6321,7 @@
     <def>Kindheit; Jugendalter</def>
   </sense>
 </entry>
-  <entry id="occidens">
+  <entry xml:id="occidens">
   <form xml:lang="lat">
     <orth>occidens</orth>
     <form type="infl">
@@ -6359,7 +6336,7 @@
     <def>Abendland; Westen</def>
   </sense>
 </entry>
-  <entry id="promunturium">
+  <entry xml:id="promunturium">
   <form xml:lang="lat">
     <orth>promunturium</orth>
     <form type="infl">
@@ -6374,7 +6351,7 @@
     <def>Vorgebirge</def>
   </sense>
 </entry>
-  <entry id="damnum">
+  <entry xml:id="damnum">
   <form xml:lang="lat">
     <orth>damnum</orth>
     <form type="infl">
@@ -6389,7 +6366,7 @@
     <def>Schaden, Verlust</def>
   </sense>
 </entry>
-  <entry id="confectus">
+  <entry xml:id="confectus">
   <form xml:lang="lat">
     <orth>confectus</orth>
     <form type="infl">
@@ -6403,10 +6380,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>beendet; aufgerieben; (tödlich) verwundet</def>
+    <def>beendet; aufgerieben; (tï¿½dlich) verwundet</def>
   </sense>
 </entry>
-  <entry id="extremus">
+  <entry xml:id="extremus">
   <form xml:lang="lat">
     <orth>extremus</orth>
     <form type="infl">
@@ -6420,10 +6397,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>der äußerste; der letzte</def>
+    <def>der ï¿½uï¿½erste; der letzte</def>
   </sense>
 </entry>
-  <entry id="decollo">
+  <entry xml:id="decollo">
   <form xml:lang="lat">
     <orth>decollo</orth>
     <form type="infl">
@@ -6435,25 +6412,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>köpfen</def>
+    <def>kï¿½pfen</def>
   </sense>
 </entry>
-  <entry id="fastigium">
-  <form xml:lang="lat">
-    <orth>fastigium</orth>
-    <form type="infl">
-      <orth type="gen">fastigii</orth>
-    </form>
-  </form>
-  <gramGrp>
-    <pos>n</pos>
-    <gen>n</gen>
-  </gramGrp>
-  <sense>
-    <def>Giebel</def>
-  </sense>
-</entry>
-  <entry id="suspendere">
+  <entry xml:id="suspendere">
   <form xml:lang="lat">
     <orth>suspendo</orth>
     <form type="infl">
@@ -6466,10 +6428,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>aufhängen</def>
+    <def>aufhï¿½ngen</def>
   </sense>
 </entry>
-  <entry id="contemnere">
+  <entry xml:id="contemnere">
   <form xml:lang="lat">
     <orth>contemno</orth>
     <form type="infl">
@@ -6485,7 +6447,7 @@
     <def>verachten</def>
   </sense>
 </entry>
-  <entry id="attingere">
+  <entry xml:id="attingere">
   <form xml:lang="lat">
     <orth>attingo</orth>
     <form type="infl">
@@ -6501,7 +6463,7 @@
     <def>erreichen; betreten</def>
   </sense>
 </entry>
-  <entry id="ingredi">
+  <entry xml:id="ingredi">
   <form xml:lang="lat">
     <orth>ingredior</orth>
     <form type="infl">
@@ -6517,7 +6479,7 @@
     <def>hineingehen; betreten</def>
   </sense>
 </entry>
-  <entry id="festinus">
+  <entry xml:id="festinus">
   <form xml:lang="lat">
     <orth>festinus</orth>
     <form type="infl">
@@ -6534,7 +6496,7 @@
     <def>eilend; hastig</def>
   </sense>
 </entry>
-  <entry id="oriri">
+  <entry xml:id="oriri">
   <form xml:lang="lat">
     <orth>orior</orth>
     <form type="infl">
@@ -6550,7 +6512,7 @@
     <def>sich erheben; aufgehen; entspringen</def>
   </sense>
 </entry>
-  <entry id="respicere">
+  <entry xml:id="respicere">
   <form xml:lang="lat">
     <orth>respicio</orth>
     <form type="infl">
@@ -6563,10 +6525,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zurückschauen; (hinter sich) erblicken</def>
+    <def>zurï¿½ckschauen; (hinter sich) erblicken</def>
   </sense>
 </entry>
-  <entry type="pl" id="nuptiae">
+  <entry type="pl" xml:id="nuptiae">
   <form xml:lang="lat">
     <orth>nuptiae</orth>
     <form type="infl">
@@ -6581,7 +6543,7 @@
     <def>Hochzeit; Ehe</def>
   </sense>
 </entry>
-  <entry id="nupta">
+  <entry xml:id="nupta">
   <form xml:lang="lat">
     <orth>nupta</orth>
     <form type="infl">
@@ -6596,7 +6558,7 @@
     <def>Braut</def>
   </sense>
 </entry>
-  <entry id="fastigium">
+  <entry xml:id="fastigium">
   <form xml:lang="lat">
     <orth>fastigium</orth>
     <form type="infl">
@@ -6611,7 +6573,7 @@
     <def>Erhebung; Giebel; Spitze</def>
   </sense>
 </entry>
-  <entry id="caro">
+  <entry xml:id="caro">
   <form xml:lang="lat">
     <orth>caro</orth>
     <form type="infl">
@@ -6626,7 +6588,7 @@
     <def>Fleisch</def>
   </sense>
 </entry>
-  <entry id="scrutari">
+  <entry xml:id="scrutari">
   <form xml:lang="lat">
     <orth>scrutor</orth>
     <form type="infl">
@@ -6642,7 +6604,7 @@
     <def>durchsuchen; untersuchen</def>
   </sense>
 </entry>
-  <entry id="mentiri">
+  <entry xml:id="mentiri">
   <form xml:lang="lat">
     <orth>mentior</orth>
     <form type="infl">
@@ -6655,10 +6617,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>lügen</def>
+    <def>lï¿½gen</def>
   </sense>
 </entry>
-  <entry id="intueri">
+  <entry xml:id="intueri">
   <form xml:lang="lat">
     <orth>intueor</orth>
     <form type="infl">
@@ -6674,7 +6636,7 @@
     <def>betrachten, ansehen</def>
   </sense>
 </entry>
-  <entry id="decollare">
+  <entry xml:id="decollare">
   <form xml:lang="lat">
     <orth>decollo</orth>
     <form type="infl">
@@ -6690,7 +6652,7 @@
     <def>enthaupten</def>
   </sense>
 </entry>
-  <entry id="caligo">
+  <entry xml:id="caligo">
   <form xml:lang="lat">
     <orth>caligo</orth>
     <form type="infl">
@@ -6705,7 +6667,7 @@
     <def>Elend; Fisternis, Dunkelheit</def>
   </sense>
 </entry>
-  <entry id="tranquillus">
+  <entry xml:id="tranquillus">
   <form xml:lang="lat">
     <orth>tranquillus</orth>
     <form type="infl">
@@ -6722,7 +6684,7 @@
     <def>ruhig</def>
   </sense>
 </entry>
-  <entry id="rector">
+  <entry xml:id="rector">
   <form xml:lang="lat">
     <orth>rector</orth>
     <form type="infl">
@@ -6737,7 +6699,7 @@
     <def>Beherrscher</def>
   </sense>
 </entry>
-  <entry id="pelagus">
+  <entry xml:id="pelagus">
   <form xml:lang="lat">
     <orth>pelagus</orth>
     <form type="infl">
@@ -6752,7 +6714,7 @@
     <def>Meer</def>
   </sense>
 </entry>
-  <entry id="discedere">
+  <entry xml:id="discedere">
   <form xml:lang="lat">
     <orth>discedo</orth>
     <form type="infl">
@@ -6769,7 +6731,7 @@
 	  entfernen</def>
   </sense>
 </entry>
-  <entry id="aliqui">
+  <entry xml:id="aliqui">
   <form xml:lang="lat">
     <orth>aliqui</orth>
     <form type="infl">
@@ -6786,7 +6748,7 @@
     <def>irgendein; irgendeine; irgendein</def>
   </sense>
 </entry>
-  <entry id="advenire">
+  <entry xml:id="advenire">
   <form xml:lang="lat">
     <orth>advenio</orth>
     <form type="infl">
@@ -6802,7 +6764,7 @@
     <def>ankommen</def>
   </sense>
 </entry>
-  <entry id="laetitia">
+  <entry xml:id="laetitia">
   <form xml:lang="lat">
     <orth>laetitia</orth>
     <form type="infl">
@@ -6814,10 +6776,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Freude; Heiterkeit, Fröhlichkeit</def>
+    <def>Freude; Heiterkeit, Frï¿½hlichkeit</def>
   </sense>
 </entry>
-  <entry id="mirus">
+  <entry xml:id="mirus">
   <form xml:lang="lat">
     <orth>mirus</orth>
     <form type="infl">
@@ -6834,7 +6796,7 @@
     <def>erstaunlich; bewundernswert</def>
   </sense>
 </entry>
-  <entry id="scindere">
+  <entry xml:id="scindere">
   <form xml:lang="lat">
     <orth>scindo</orth>
     <form type="infl">
@@ -6847,10 +6809,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zerreißen</def>
+    <def>zerreiï¿½en</def>
   </sense>
 </entry>
-  <entry id="hostem_fuga_intercludere">
+  <entry xml:id="hostem_fuga_intercludere">
   <form xml:lang="lat">
     <orth>hostem fuga intercludere</orth>
   </form>
@@ -6858,7 +6820,7 @@
     <def>den Feind an der Flucht hindern</def>
   </sense>
 </entry>
-  <entry type="pl" id="minae">
+  <entry type="pl" xml:id="minae">
   <form xml:lang="lat">
     <orth>minae</orth>
     <form type="infl">
@@ -6873,7 +6835,7 @@
     <def>Drohungen</def>
   </sense>
 </entry>
-  <entry id="conturbare">
+  <entry xml:id="conturbare">
   <form xml:lang="lat">
     <orth>conturbo</orth>
     <form type="infl">
@@ -6889,7 +6851,7 @@
     <def>verwirren</def>
   </sense>
 </entry>
-  <entry id="flamma_concupiscentiae">
+  <entry xml:id="flamma_concupiscentiae">
   <form xml:lang="lat">
     <orth>flamma concupiscentiae</orth>
   </form>
@@ -6897,7 +6859,7 @@
     <def>Leidenschaft</def>
   </sense>
 </entry>
-  <entry id="pius">
+  <entry xml:id="pius">
   <form xml:lang="lat">
     <orth>pius</orth>
     <form type="infl">
@@ -6914,7 +6876,7 @@
     <def>liebevoll; pflichtgetreu; fromm</def>
   </sense>
 </entry>
-  <entry id="ancora">
+  <entry xml:id="ancora">
   <form xml:lang="lat">
     <orth>ancora</orth>
     <form type="infl">
@@ -6929,7 +6891,7 @@
     <def>Anker</def>
   </sense>
 </entry>
-  <entry id="pirata">
+  <entry xml:id="pirata">
   <form xml:lang="lat">
     <orth>pirata</orth>
     <form type="infl">
@@ -6941,10 +6903,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Seeräuber, Pirat</def>
+    <def>Seerï¿½uber, Pirat</def>
   </sense>
 </entry>
-  <entry id="piscator">
+  <entry xml:id="piscator">
   <form xml:lang="lat">
     <orth>piscator</orth>
     <form type="infl">
@@ -6959,7 +6921,7 @@
     <def>Fischer</def>
   </sense>
 </entry>
-  <entry id="locupletare">
+  <entry xml:id="locupletare">
   <form xml:lang="lat">
     <orth>locupleto</orth>
     <form type="infl">
@@ -6975,7 +6937,7 @@
     <def>reich beschenken</def>
   </sense>
 </entry>
-  <entry id="comprobare">
+  <entry xml:id="comprobare">
   <form xml:lang="lat">
     <orth>comprobo</orth>
     <form type="infl">
@@ -6988,10 +6950,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>bestätigen</def>
+    <def>bestï¿½tigen</def>
   </sense>
 </entry>
-  <entry id="devotus">
+  <entry xml:id="devotus">
   <form xml:lang="lat">
     <orth>devotus</orth>
     <form type="infl">
@@ -7008,7 +6970,7 @@
     <def>treu ergeben</def>
   </sense>
 </entry>
-  <entry id="percipere">
+  <entry xml:id="percipere">
   <form xml:lang="lat">
     <orth>percipio</orth>
     <form type="infl">
@@ -7024,7 +6986,7 @@
     <def>empfangen</def>
   </sense>
 </entry>
-  <entry id="invidia">
+  <entry xml:id="invidia">
   <form xml:lang="lat">
     <orth>invidia</orth>
     <form type="infl">
@@ -7039,7 +7001,7 @@
     <def>der Neid</def>
   </sense>
 </entry>
-  <entry id="defatigatus">
+  <entry xml:id="defatigatus">
   <form xml:lang="lat">
     <orth>defatigatus</orth>
     <form type="infl">
@@ -7053,10 +7015,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>ganz erschöpft</def>
+    <def>ganz erschï¿½pft</def>
   </sense>
 </entry>
-  <entry id="defessus">
+  <entry xml:id="defessus">
   <form xml:lang="lat">
     <orth>defessus</orth>
     <form type="infl">
@@ -7070,10 +7032,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>erschöpft; matt</def>
+    <def>erschï¿½pft; matt</def>
   </sense>
 </entry>
-  <entry id="asinus">
+  <entry xml:id="asinus">
   <form xml:lang="lat">
     <orth>asinus</orth>
     <form type="infl">
@@ -7088,7 +7050,7 @@
     <def>Esel</def>
   </sense>
 </entry>
-  <entry id="donare">
+  <entry xml:id="donare">
   <form xml:lang="lat">
     <orth>dono</orth>
     <form type="infl">
@@ -7104,7 +7066,7 @@
     <def>spenden; schenken</def>
   </sense>
 </entry>
-  <entry id="laus">
+  <entry xml:id="laus">
   <form xml:lang="lat">
     <orth>laus</orth>
     <form type="infl">
@@ -7119,7 +7081,7 @@
     <def>Lob</def>
   </sense>
 </entry>
-  <entry id="exitus">
+  <entry xml:id="exitus">
   <form xml:lang="lat">
     <orth>exitus</orth>
     <form type="infl">
@@ -7134,7 +7096,7 @@
     <def>Ausgang</def>
   </sense>
 </entry>
-  <entry id="exire">
+  <entry xml:id="exire">
   <form xml:lang="lat">
     <orth>exeo</orth>
     <form type="infl">
@@ -7150,7 +7112,7 @@
     <def>rausgehen, herausgehen; ausgehen</def>
   </sense>
 </entry>
-  <entry id="custodia">
+  <entry xml:id="custodia">
   <form xml:lang="lat">
     <orth>custodia</orth>
     <form type="infl">
@@ -7162,10 +7124,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Wache, Wächter; Bewachung; Wachtposten</def>
+    <def>Wache, Wï¿½chter; Bewachung; Wachtposten</def>
   </sense>
 </entry>
-  <entry id="aditus">
+  <entry xml:id="aditus">
   <form xml:lang="lat">
     <orth>aditus</orth>
     <form type="infl">
@@ -7180,7 +7142,7 @@
     <def>Hingang; Eingang; Herangehen; Zugang; Zutritt</def>
   </sense>
 </entry>
-  <entry id="pacare">
+  <entry xml:id="pacare">
   <form xml:lang="lat">
     <orth>paco</orth>
     <form type="infl">
@@ -7196,7 +7158,7 @@
     <def>befrieden; Frieden bringen</def>
   </sense>
 </entry>
-  <entry id="flos">
+  <entry xml:id="flos">
   <form xml:lang="lat">
     <orth>flos</orth>
     <form type="infl">
@@ -7208,10 +7170,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>Blume; Blüte</def>
+    <def>Blume; Blï¿½te</def>
   </sense>
 </entry>
-  <entry id="stringere">
+  <entry xml:id="stringere">
   <form xml:lang="lat">
     <orth>stringo</orth>
     <form type="infl">
@@ -7224,10 +7186,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>streifen; leicht berühren</def>
+    <def>streifen; leicht berï¿½hren</def>
   </sense>
 </entry>
-  <entry id="nec..._nec">
+  <entry xml:id="nec..._nec">
   <form xml:lang="lat">
     <orth>nec... nec</orth>
   </form>
@@ -7235,7 +7197,7 @@
     <def>weder... noch</def>
   </sense>
 </entry>
-  <entry id="redigere">
+  <entry xml:id="redigere">
   <form xml:lang="lat">
     <orth>redigo</orth>
     <form type="infl">
@@ -7248,10 +7210,10 @@
     <pos>v</pos>
   </gramGrp>
   <sense>
-    <def>zurücktreiben; in einen Zustand versetzen</def>
+    <def>zurï¿½cktreiben; in einen Zustand versetzen</def>
   </sense>
 </entry>
-  <entry id="statua">
+  <entry xml:id="statua">
   <form xml:lang="lat">
     <orth>statua</orth>
     <form type="infl">
@@ -7266,7 +7228,7 @@
     <def>Standbild, Statue</def>
   </sense>
 </entry>
-  <entry id="aeneus">
+  <entry xml:id="aeneus">
   <form xml:lang="lat">
     <orth>aeneus</orth>
     <form type="infl">
@@ -7281,7 +7243,7 @@
     <def>ehern, aus Erz; aus Bronze</def>
   </sense>
 </entry>
-  <entry id="clima">
+  <entry xml:id="clima">
   <form xml:lang="lat">
     <orth>clima</orth>
     <form type="infl">
@@ -7296,7 +7258,7 @@
     <def>Zone</def>
   </sense>
 </entry>
-  <entry id="torridus">
+  <entry xml:id="torridus">
   <form xml:lang="lat">
     <orth>torridus</orth>
     <form type="infl">
@@ -7308,10 +7270,10 @@
     <gen/>
   </gramGrp>
   <sense>
-    <def>heiß</def>
+    <def>heiï¿½</def>
   </sense>
 </entry>
-  <entry id="vastus">
+  <entry xml:id="vastus">
   <form xml:lang="lat">
     <orth>vastus</orth>
     <form type="infl">
@@ -7325,10 +7287,10 @@
     <gen>m</gen>
   </gramGrp>
   <sense>
-    <def>öde; ungeheur (groß)</def>
+    <def>ï¿½de; ungeheur (groï¿½)</def>
   </sense>
 </entry>
-  <entry id="naufragium">
+  <entry xml:id="naufragium">
   <form xml:lang="lat">
     <orth>naufragium</orth>
     <form type="infl">
@@ -7343,7 +7305,7 @@
     <def>Schiffbruch</def>
   </sense>
 </entry>
-  <entry id="pluvia">
+  <entry xml:id="pluvia">
   <form xml:lang="lat">
     <orth>pluvia</orth>
     <form type="infl">
@@ -7358,7 +7320,7 @@
     <def>Regen</def>
   </sense>
 </entry>
-  <entry id="solitudo">
+  <entry xml:id="solitudo">
   <form xml:lang="lat">
     <orth>solitudo</orth>
     <form type="infl">
@@ -7370,10 +7332,10 @@
     <gen>f</gen>
   </gramGrp>
   <sense>
-    <def>Wüste; Einsamkeiti, Einöde</def>
+    <def>Wï¿½ste; Einsamkeiti, Einï¿½de</def>
   </sense>
 </entry>
-  <entry id="fabricare">
+  <entry xml:id="fabricare">
   <form xml:lang="lat">
     <orth>fabrico</orth>
     <form type="infl">
@@ -7389,7 +7351,7 @@
     <def>anfertigen; herstellen</def>
   </sense>
 </entry>
-  <entry id="">
+  <entry>
   <form xml:lang="lat">
     <orth/>
     <form type="infl">
@@ -7401,10 +7363,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Kälte; Frost</def>
+    <def>Kï¿½lte; Frost</def>
   </sense>
 </entry>
-  <entry id="nix">
+  <entry xml:id="nix">
   <form xml:lang="lat">
     <orth>nix</orth>
     <form type="infl">
@@ -7419,7 +7381,7 @@
     <def>Schnee</def>
   </sense>
 </entry>
-  <entry id="accidit,_ut...">
+  <entry xml:id="accidit_ut...">
   <form xml:lang="lat">
     <orth>accidit, ut...</orth>
   </form>
@@ -7427,7 +7389,7 @@
     <def>es ereignet sich, dass...</def>
   </sense>
 </entry>
-  <entry id="hodie_quoque">
+  <entry xml:id="hodie_quoque">
   <form xml:lang="lat">
     <orth>hodie quoque</orth>
   </form>
@@ -7435,7 +7397,7 @@
     <def>auch heute, heute noch</def>
   </sense>
 </entry>
-  <entry id="ornamentum">
+  <entry xml:id="ornamentum">
   <form xml:lang="lat">
     <orth>ornamentum</orth>
     <form type="infl">
@@ -7447,10 +7409,10 @@
     <gen>n</gen>
   </gramGrp>
   <sense>
-    <def>Ausrüstung; Schmuck</def>
+    <def>Ausrï¿½stung; Schmuck</def>
   </sense>
 </entry>
-  <entry id="poculum">
+  <entry xml:id="poculum">
   <form xml:lang="lat">
     <orth>poculum</orth>
     <form type="infl">
@@ -7465,7 +7427,7 @@
     <def>Becher; Trank</def>
   </sense>
 </entry>
-  <entry id="dens">
+  <entry xml:id="dens">
   <form xml:lang="lat">
     <orth>dens</orth>
     <form type="infl">
