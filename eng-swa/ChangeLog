@@ -1,0 +1,19 @@
+Changelog:
+
+ * 2010-02-25 $Id: teiheader2txt.xsl,v 1.9 2009-04-13 01:19:43 bansp Exp $:
+   Converted TEI file into text format
+
+ * 2010-02-25 :
+   Piotr Bański Upgraded to TEI P5, removed whitespace from equivalents,
+   sorted entries, sorted entry insides, wrapped <def> in <sense> and
+   added <gramGrp> with an empty <pos> in the entries that had no POS.
+   This is now an example of minimal TEI P5 conformance. Changed the
+   header very slightly. Added brackets around "plural" in headwords.
+
+ * 2007-02-13 :
+   Michael Bunk Enabled phonetics import.
+
+ * 2004 :
+   Beata Wójtowicz Compiled swa-eng from two sources (see the sourceDesc)
+   and got it reversed to create this one.
+
