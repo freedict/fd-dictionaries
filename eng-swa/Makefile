@@ -1,6 +1,4 @@
 FREEDICTDIR ?= ..
-DISTFILES = eng-swa-nophon.tei Makefile README
+DISTFILES = eng-swa.tei Makefile README
+supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
-
-clean::
-	-rm $(dictname).tei
