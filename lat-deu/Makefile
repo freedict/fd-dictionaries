@@ -1,6 +1,6 @@
 FREEDICTDIR ?= ..
 DISTFILES = AUTHORS ChangeLog COPYING lat-deu.tei.header \
-	    INSTALL Makefile NEWS README
+	    lat-deu.tei freedict-P5.dtd freedict-dictionary.css INSTALL Makefile NEWS README
 include $(FREEDICTDIR)/tools/Makefile.common
 include $(toolsdir)/ergane/Makefile.inc
 
