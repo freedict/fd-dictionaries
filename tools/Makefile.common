@@ -310,7 +310,7 @@ clean::
 	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
 	rm -f $(dictname)-reverse.index
 	rm -f valid.stamp
-	rm -f $(FREEDICTDIR)/release/dict-tbz2/$(dictname)-$(version).tar.bz2
+	rm -f $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname)-$(version).tar.gz
 	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
 	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
