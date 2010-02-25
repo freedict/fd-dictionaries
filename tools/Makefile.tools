@@ -14,7 +14,7 @@ absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
 $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
 	$(MAKE) -f Makefile.common clean
-	cd .. && tar --totals --exclude="*/CVS*" --exclude="*/.*" \
+	cd .. && tar --totals --exclude="*/.svn/*" --exclude="*/.*" \
 	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
 	  --exclude="*/dictd2dic" \
 	  --exclude="*/ergane/jet4/*" \

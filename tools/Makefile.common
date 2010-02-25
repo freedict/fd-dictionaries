@@ -276,7 +276,7 @@ test-reverse-oldstyle: $(rdictname).oldstyle.index $(rdictname).oldstyle.dict
 tests: valid.stamp testresult-$(version).log
 
 commit:
-	cvs -z3 commit
+	svn commit
 
 dbupdate: $(dictname).dict $(dictname).index
 	extractdata.pl -vfd $(dictname)
@@ -323,12 +323,12 @@ $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFI
 	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
 		mkdir -p $(FREEDICTDIR)/release/src; fi
 	tar -C .. -cvjhf $@ \
-		--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=freedict-*.zip --exclude=.* \
+		--exclude=.svn --exclude=freedict-*.tar.bz2 --exclude=freedict-*.zip --exclude=.* \
 		$(addprefix $(notdir $(realpath .))/, $(DISTFILES))
 
 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
 	cd .. && zip -9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
-      -x $(dictname)/CVS/* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
+      -x $(dictname)/.svn/* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
 dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
 
@@ -339,11 +339,11 @@ $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(di
 		mkdir -p $(FREEDICTDIR)/release/tei; fi
 	if (echo "$(DISTFILES)" | grep "$(dictname).tei " > /dev/null); then \
 		tar -C .. -cvjhf $@ \
-			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+			--exclude=.svn --exclude=freedict-*.tar.bz2 --exclude=.* \
 			$(addprefix $(notdir $(realpath .))/, $(DISTFILES)); \
 	else \
 		tar -C .. -cvjhf $@ \
-			--exclude=CVS --exclude=freedict-*.tar.bz2 --exclude=.* \
+			--exclude=.svn --exclude=freedict-*.tar.bz2 --exclude=.* \
 			$(addprefix $(notdir $(realpath .))/, $(DISTFILES) $(dictname).tei); \
 	fi
 
