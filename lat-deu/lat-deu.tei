@@ -1,0 +1,7502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
+<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" version="5.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Latin - German FreeDict dictionary</title>
+            <respStmt>
+               <resp>converted by Sebastian Humenda</resp>
+               <name>Sebastian Humenda shumenda@gmx.de</name>
+            </respStmt>
+            <respStmt>
+               <!-- for the freedict database -->
+               <resp>Maintainer</resp>
+			   <name xml:id="humenda">Sebastian Humenda</name>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <edition>0.12</edition>
+         <!-- KEEP THIS UP TO DATE -->
+            </editionStmt>
+         <extent>about 500 headwords</extent>
+         <publicationStmt>
+            <publisher>FreeDict</publisher>
+            <availability>
+               <p>Available under the terms of the GNU General Public Licence, version 3 </p>
+            </availability>
+            <date when="2010-01-07">07 January 2010</date>
+            <pubPlace>http://freedict.org/</pubPlace>
+         </publicationStmt>
+              <sourceDesc>
+			 <p>Created from scratch (from Sebastian Humenda's notes).</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+		  <change n="0.1.2" who="#humenda" when="2010-01-07">
+			  <list><item>500 Headwordsi: adjectives, nouns and verbs</item>
+				  <item>Main goal: First usable database, but a bit
+					  small</item></list>
+		  </change>
+		  <change n="0.1.1" who="#humenda" when="2009-12-20">
+			  <list><item>200 words written. Main goal was to get used to the
+					  way, dictionaries are written in xml.</item></list>
+         </change>
+         <change n="0.1" who="#humenda" when="2009-11-11">
+            <list type="bulleted">
+               <head>Version 0.1, <date>11 November 2009</date>. Just a test.
+               </head>
+               <item>This dictionary is bild out of my own notes to learn Latin.</item>
+            </list>
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text xml:lang="de">
+      <body>
+  <entry id="uterus">
+  <form xml:lang="lat">
+    <orth>uterus</orth>
+    <form type="infl">
+      <orth type="gen">uteri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Unterleib; Bauch</def>
+  </sense>
+</entry>
+  <entry id="uber">
+  <form xml:lang="lat">
+    <orth>uber</orth>
+    <form type="infl">
+      <orth type="gen">uberis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Brust</def>
+  </sense>
+</entry>
+  <entry id="coporatura">
+  <form xml:lang="lat">
+    <orth>coporatura</orth>
+    <form type="infl">
+      <orth type="gen">coporaturae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Körperbau; Statur</def>
+  </sense>
+</entry>
+  <entry id="turpitudo">
+  <form xml:lang="lat">
+    <orth>turpitudo</orth>
+    <form type="infl">
+      <orth type="gen">turpitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Geschlechtsteile; Scham</def>
+  </sense>
+</entry>
+  <entry id="annotatio">
+  <form xml:lang="lat">
+    <orth>annotatio</orth>
+    <form type="infl">
+      <orth type="gen">annotationis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Erwähnung</def>
+  </sense>
+</entry>
+  <entry id="canus">
+  <form xml:lang="lat">
+    <orth>canus</orth>
+    <form type="infl">
+      <orth type="gen">cani</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>alter Mann</def>
+  </sense>
+</entry>
+  <entry id="praesul">
+  <form xml:lang="lat">
+    <orth>praesul</orth>
+    <form type="infl">
+      <orth type="gen">praesulis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Präsul (hoher kirchlicher Amtsinhaber</def>
+  </sense>
+</entry>
+  <entry id="decanus">
+  <form xml:lang="lat">
+    <orth>decanus</orth>
+    <form type="infl">
+      <orth type="gen">decani</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Vorgesetzter von zehn Mann; Dekan (mittlerer kirchlicher Amtsinhaber); Vorstehr der Kurfürsten</def>
+  </sense>
+</entry>
+  <entry id="taberna">
+  <form xml:lang="lat">
+    <orth>taberna</orth>
+    <form type="infl">
+      <orth type="gen">tabernae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Kneipe; Wirtshaus; Laden; Werkstatt</def>
+  </sense>
+</entry>
+  <entry id="Bacchus">
+  <form xml:lang="lat">
+    <orth>Bacchus</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>Römischer Gott des Weins</def>
+  </sense>
+</entry>
+  <entry id="frons">
+  <form xml:lang="lat">
+    <orth>frons</orth>
+    <form type="infl">
+      <orth type="gen">frontis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Stirn (-seite); Front</def>
+  </sense>
+</entry>
+  <entry id="audacia">
+  <form xml:lang="lat">
+    <orth>audacia</orth>
+    <form type="infl">
+      <orth type="gen">audaciae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mut; Kühnheit</def>
+  </sense>
+</entry>
+  <entry id="immortales">
+  <form xml:lang="lat">
+    <orth>immortales</orth>
+    <form type="infl">
+      <orth type="gen">immortalium</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Götter; Unsterbliche</def>
+  </sense>
+</entry>
+  <entry id="universum">
+  <form xml:lang="lat">
+    <orth>universum</orth>
+    <form type="infl">
+      <orth type="gen">universi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Weltall</def>
+  </sense>
+</entry>
+  <entry id="moles">
+  <form xml:lang="lat">
+    <orth>moles</orth>
+    <form type="infl">
+      <orth type="gen">molis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Masse; Anstrengung; Last</def>
+  </sense>
+</entry>
+  <entry id="actus">
+  <form xml:lang="lat">
+    <orth>actus</orth>
+    <form type="infl">
+      <orth type="gen">actus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Verfahren; Handlung</def>
+  </sense>
+</entry>
+  <entry id="maiestas">
+  <form xml:lang="lat">
+    <orth>maiestas</orth>
+    <form type="infl">
+      <orth type="gen">maiestatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Hoheit; Größe; Erhabenheit</def>
+  </sense>
+</entry>
+  <entry id="cupido">
+  <form xml:lang="lat">
+    <orth>cupido</orth>
+    <form type="infl">
+      <orth type="gen">cupidinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Verlangen; Begierde</def>
+  </sense>
+</entry>
+  <entry id="iuventus">
+  <form xml:lang="lat">
+    <orth>iuventus</orth>
+    <form type="infl">
+      <orth type="gen">iuventutis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Jugend</def>
+  </sense>
+</entry>
+  <entry id="partes">
+  <form xml:lang="lat">
+    <orth>partes</orth>
+    <form type="infl">
+      <orth type="gen">partium</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>(politische) Partei; Aufgabe</def>
+  </sense>
+</entry>
+  <entry id="nubes">
+  <form xml:lang="lat">
+    <orth>nubes</orth>
+    <form type="infl">
+      <orth type="gen">nubis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wolke</def>
+  </sense>
+</entry>
+  <entry id="licentia">
+  <form xml:lang="lat">
+    <orth>licentia</orth>
+    <form type="infl">
+      <orth type="gen">licentiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Freiheit; Willkür; Zügellosigkeit</def>
+  </sense>
+</entry>
+  <entry id="deditio">
+  <form xml:lang="lat">
+    <orth>deditio</orth>
+    <form type="infl">
+      <orth type="gen">deditionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Übergabe; Kapitulation</def>
+  </sense>
+</entry>
+  <entry id="procella">
+  <form xml:lang="lat">
+    <orth>procella</orth>
+    <form type="infl">
+      <orth type="gen">procellae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Unwetter</def>
+  </sense>
+</entry>
+  <entry id="coruscatio">
+  <form xml:lang="lat">
+    <orth>coruscatio</orth>
+    <form type="infl">
+      <orth type="gen">coruscationis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Blitz</def>
+  </sense>
+</entry>
+  <entry id="tonitruum">
+  <form xml:lang="lat">
+    <orth>tonitruum</orth>
+    <form type="infl">
+      <orth type="gen">tonitrui</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Donner</def>
+  </sense>
+</entry>
+  <entry id="passus">
+  <form xml:lang="lat">
+    <orth>passus</orth>
+    <form type="infl">
+      <orth type="gen">passus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Schritt; Doppelschritt (1,48 m)</def>
+  </sense>
+</entry>
+  <entry id="habitus">
+  <form xml:lang="lat">
+    <orth>habitus</orth>
+    <form type="infl">
+      <orth type="gen">habitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Zustand; Kleidung; Aussehen</def>
+  </sense>
+</entry>
+  <entry id="contractus">
+  <form xml:lang="lat">
+    <orth>contractus</orth>
+    <form type="infl">
+      <orth type="gen">contractus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Zusammengezogenheit; Festigkeit</def>
+  </sense>
+</entry>
+  <entry id="meridies">
+  <form xml:lang="lat">
+    <orth>meridies</orth>
+    <form type="infl">
+      <orth type="gen">meridiei</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Mittag; Süden</def>
+  </sense>
+</entry>
+  <entry id="angulus">
+  <form xml:lang="lat">
+    <orth>angulus</orth>
+    <form type="infl">
+      <orth type="gen">anguli</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Ecke; Winkel</def>
+  </sense>
+</entry>
+  <entry id="auster">
+  <form xml:lang="lat">
+    <orth>auster</orth>
+    <form type="infl">
+      <orth type="gen">austri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Südwind (auch Süden)</def>
+  </sense>
+</entry>
+  <entry id="dominatio">
+  <form xml:lang="lat">
+    <orth>dominatio</orth>
+    <form type="infl">
+      <orth type="gen">dominationis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Alleinherrschaft</def>
+  </sense>
+</entry>
+  <entry id="magnitudo">
+  <form xml:lang="lat">
+    <orth>magnitudo</orth>
+    <form type="infl">
+      <orth type="gen">magnitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Größe; Bedeutung</def>
+  </sense>
+</entry>
+  <entry id="pondus">
+  <form xml:lang="lat">
+    <orth>pondus</orth>
+    <form type="infl">
+      <orth type="gen">ponderis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Gewicht</def>
+  </sense>
+</entry>
+  <entry id="artifex">
+  <form xml:lang="lat">
+    <orth>artifex</orth>
+    <form type="infl">
+      <orth type="gen">artificis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Künstler</def>
+  </sense>
+</entry>
+  <entry id="corona">
+  <form xml:lang="lat">
+    <orth>corona</orth>
+    <form type="infl">
+      <orth type="gen">coronae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Krone; Kranz</def>
+  </sense>
+</entry>
+  <entry id="liberalitas">
+  <form xml:lang="lat">
+    <orth>liberalitas</orth>
+    <form type="infl">
+      <orth type="gen">liberalitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>edle Gesinnung; Freigebigkeit</def>
+  </sense>
+</entry>
+  <entry id="lapis">
+  <form xml:lang="lat">
+    <orth>lapis</orth>
+    <form type="infl">
+      <orth type="gen">lapidis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Stein</def>
+  </sense>
+</entry>
+  <entry id="ambitio">
+  <form xml:lang="lat">
+    <orth>ambitio</orth>
+    <form type="infl">
+      <orth type="gen">ambitionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Bewerbung; Ehrgeiz</def>
+  </sense>
+</entry>
+  <entry id="distinguere">
+  <form xml:lang="lat">
+    <orth>distinguo</orth>
+    <form type="infl">
+      <orth type="inf">distinguere</orth>
+      <orth type="perf">distinxi</orth>
+      <orth type="sup">distinctus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>unterscheiden; trennen; gliedern</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth>evigilare</orth>
+    <form type="infl">
+      <orth type="inf"/>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufwachen</def>
+  </sense>
+</entry>
+  <entry id="procus">
+  <form xml:lang="lat">
+    <orth>procus</orth>
+    <form type="infl">
+      <orth type="gen">proci</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Freier</def>
+  </sense>
+</entry>
+  <entry id="templum">
+  <form xml:lang="lat">
+    <orth>templum</orth>
+    <form type="infl">
+      <orth type="gen">templi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Tempel</def>
+  </sense>
+</entry>
+  <entry id="tuba">
+  <form xml:lang="lat">
+    <orth>tuba</orth>
+    <form type="infl">
+      <orth type="gen">tubae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Tuba; Trompete</def>
+  </sense>
+</entry>
+  <entry id="fabula">
+  <form xml:lang="lat">
+    <orth>fabula</orth>
+    <form type="infl">
+      <orth type="gen">fabulae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Märchen; Erzählung; Geschichte; Theaterstück</def>
+  </sense>
+</entry>
+  <entry id="proficisci_">
+  <form xml:lang="lat">
+    <orth>proficiscor</orth>
+    <form type="infl">
+      <orth type="inf">proficisci </orth>
+      <orth type="perf"/>
+      <orth type="sup">profectus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufbrechen; (ab)reisen</def>
+  </sense>
+</entry>
+  <entry id="sollicitudo">
+  <form xml:lang="lat">
+    <orth>sollicitudo</orth>
+    <form type="infl">
+      <orth type="gen">sollicitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Besorgnis; Sorge</def>
+  </sense>
+</entry>
+  <entry id="progressio">
+  <form xml:lang="lat">
+    <orth>progressio</orth>
+    <form type="infl">
+      <orth type="gen">progressionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Fortschritt; Wachstum</def>
+  </sense>
+</entry>
+  <entry id="formo">
+  <form xml:lang="lat">
+    <orth>formo</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>formen; verfertigen</def>
+  </sense>
+</entry>
+  <entry id="amplitudo">
+  <form xml:lang="lat">
+    <orth>amplitudo</orth>
+    <form type="infl">
+      <orth type="gen">amplitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Größe</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth>ad ... pertinere</orth>
+    <form type="infl">
+      <orth type="inf"/>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zu etw. gehören</def>
+  </sense>
+</entry>
+  <entry id="medicina">
+  <form xml:lang="lat">
+    <orth>medicina</orth>
+    <form type="infl">
+      <orth type="gen">medicinae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Medizin; Medizinstudium</def>
+  </sense>
+</entry>
+  <entry id="convivere">
+  <form xml:lang="lat">
+    <orth>convivo</orth>
+    <form type="infl">
+      <orth type="inf">convivere</orth>
+      <orth type="perf">convixi</orth>
+      <orth type="sup">convictus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>miteinander leben</def>
+  </sense>
+</entry>
+  <entry id="cor">
+  <form xml:lang="lat">
+    <orth>cor</orth>
+    <form type="infl">
+      <orth type="gen">cordis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Herz</def>
+  </sense>
+</entry>
+  <entry id="facies">
+  <form xml:lang="lat">
+    <orth>facies</orth>
+    <form type="infl">
+      <orth type="gen">faciei</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Aussehen; Gesicht</def>
+  </sense>
+</entry>
+  <entry type="pl" id="fines">
+  <form xml:lang="lat">
+    <orth>fines</orth>
+    <form type="infl">
+      <orth type="gen">finium</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Gebiet</def>
+  </sense>
+</entry>
+  <entry id="proconsul">
+  <form xml:lang="lat">
+    <orth>proconsul</orth>
+    <form type="infl">
+      <orth type="gen">proconsulis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Prokonsul; Statthalter</def>
+  </sense>
+</entry>
+  <entry id="recusare">
+  <form xml:lang="lat">
+    <orth>recuso</orth>
+    <form type="infl">
+      <orth type="inf">recusare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich weigern; ablehnen</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth>animadverto</orth>
+    <form type="infl">
+      <orth type="inf"/>
+      <orth type="perf">animadverti</orth>
+      <orth type="sup">animadversus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>bemerken; bestrafen; tadeln</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth>facultas</orth>
+    <form type="infl">
+      <orth type="inf"/>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>Möglichkeit; Fähigkeit</def>
+  </sense>
+</entry>
+  <entry id="iniquitas">
+  <form xml:lang="lat">
+    <orth>iniquitas</orth>
+    <form type="infl">
+      <orth type="gen">iniquitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Unrecht; Schwierigkeit</def>
+  </sense>
+</entry>
+  <entry id="offero">
+  <form xml:lang="lat">
+    <orth>offero</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>anbieten; gewähren</def>
+  </sense>
+</entry>
+  <entry id="ritus">
+  <form xml:lang="lat">
+    <orth>ritus</orth>
+    <form type="infl">
+      <orth type="gen">ritus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Brauch; Gewohnheit; Ritus</def>
+  </sense>
+</entry>
+  <entry id="recitare">
+  <form xml:lang="lat">
+    <orth>recito</orth>
+    <form type="infl">
+      <orth type="inf">recitare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>vorlesen; vortragen</def>
+  </sense>
+</entry>
+  <entry id="deretum">
+  <form xml:lang="lat">
+    <orth>deretum</orth>
+    <form type="infl">
+      <orth type="gen">dereti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Beschluss; Anordnung</def>
+  </sense>
+</entry>
+  <entry id="deliberatio">
+  <form xml:lang="lat">
+    <orth>deliberatio</orth>
+    <form type="infl">
+      <orth type="gen">deliberationis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Überlegung</def>
+  </sense>
+</entry>
+  <entry id="spatium">
+  <form xml:lang="lat">
+    <orth>spatium</orth>
+    <form type="infl">
+      <orth type="gen">spatii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Raum; Zeitraum; Strecke; Weg; Zwischenraum; Entfernung</def>
+  </sense>
+</entry>
+  <entry id="sacrum">
+  <form xml:lang="lat">
+    <orth>sacrum</orth>
+    <form type="infl">
+      <orth type="gen">sacri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Heiligtum; Gottesdienst</def>
+  </sense>
+</entry>
+  <entry id="supplicare">
+  <form xml:lang="lat">
+    <orth>supplico</orth>
+    <form type="infl">
+      <orth type="inf">supplicare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>beten</def>
+  </sense>
+</entry>
+  <entry id="sequi">
+  <form xml:lang="lat">
+    <orth>sequor</orth>
+    <form type="infl">
+      <orth type="inf">sequi</orth>
+      <orth type="perf"/>
+      <orth type="sup">secutus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>jmd folgen; etw. befolgen</def>
+  </sense>
+</entry>
+  <entry id="medicus">
+  <form xml:lang="lat">
+    <orth>medicus</orth>
+    <form type="infl">
+      <orth type="gen">medici</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Arzt</def>
+  </sense>
+</entry>
+  <entry id="genus">
+  <form xml:lang="lat">
+    <orth>genus</orth>
+    <form type="infl">
+      <orth type="gen">generis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Art; Geschlecht</def>
+  </sense>
+</entry>
+  <entry id="benevolentia">
+  <form xml:lang="lat">
+    <orth>benevolentia</orth>
+    <form type="infl">
+      <orth type="gen">benevolentiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wohlwollen</def>
+  </sense>
+</entry>
+  <entry id="ludere">
+  <form xml:lang="lat">
+    <orth>ludo</orth>
+    <form type="infl">
+      <orth type="inf">ludere</orth>
+      <orth type="perf">lusi</orth>
+      <orth type="sup">lusus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>spielen</def>
+  </sense>
+</entry>
+  <entry id="legatus">
+  <form xml:lang="lat">
+    <orth>legatus</orth>
+    <form type="infl">
+      <orth type="gen">legati</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Gesandter; Legat; Unterfeldherr</def>
+  </sense>
+</entry>
+  <entry id="natura">
+  <form xml:lang="lat">
+    <orth>natura</orth>
+    <form type="infl">
+      <orth type="gen">naturae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Natur; Wesen</def>
+  </sense>
+</entry>
+  <entry id="philosophia">
+  <form xml:lang="lat">
+    <orth>philosophia</orth>
+    <form type="infl">
+      <orth type="gen">philosophiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Philosophie</def>
+  </sense>
+</entry>
+  <entry id="maleficium">
+  <form xml:lang="lat">
+    <orth>maleficium</orth>
+    <form type="infl">
+      <orth type="gen">maleficii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Übeltat</def>
+  </sense>
+</entry>
+  <entry id="calamitas">
+  <form xml:lang="lat">
+    <orth>calamitas</orth>
+    <form type="infl">
+      <orth type="gen">calamitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Unheil; Verlust; Schaden</def>
+  </sense>
+</entry>
+  <entry id="humanitas">
+  <form xml:lang="lat">
+    <orth>humanitas</orth>
+    <form type="infl">
+      <orth type="gen">humanitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Menschlichkeit; Bildung</def>
+  </sense>
+</entry>
+  <entry id="nomen">
+  <form xml:lang="lat">
+    <orth>nomen</orth>
+    <form type="infl">
+      <orth type="gen">nominis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Benennung; Name; Begriff</def>
+  </sense>
+</entry>
+  <entry id="ornare">
+  <form xml:lang="lat">
+    <orth>orno</orth>
+    <form type="infl">
+      <orth type="inf">ornare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>ausstatten; schmücken</def>
+  </sense>
+</entry>
+  <entry id="damnare">
+  <form xml:lang="lat">
+    <orth>damno</orth>
+    <form type="infl">
+      <orth type="inf">damnare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verurteilen; büßen lassen</def>
+  </sense>
+</entry>
+  <entry id="bestia">
+  <form xml:lang="lat">
+    <orth>bestia</orth>
+    <form type="infl">
+      <orth type="gen">bestiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Raubtier; (wildes) Tier</def>
+  </sense>
+</entry>
+  <entry id="gamma">
+  <form xml:lang="lat">
+    <orth>gamma</orth>
+    <form type="infl">
+      <orth type="gen">gammae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Edelstein</def>
+  </sense>
+</entry>
+  <entry id="crimen">
+  <form xml:lang="lat">
+    <orth>crimen</orth>
+    <form type="infl">
+      <orth type="gen">criminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Anklage; Vorwurf; Verbrechen</def>
+  </sense>
+</entry>
+  <entry id="implorare">
+  <form xml:lang="lat">
+    <orth>imploro</orth>
+    <form type="infl">
+      <orth type="inf">implorare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>erflehen; anflehen</def>
+  </sense>
+</entry>
+  <entry id="trepidare">
+  <form xml:lang="lat">
+    <orth>trepido</orth>
+    <form type="infl">
+      <orth type="inf">trepidare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich ängstigen; ängstlich auf und ab laufen</def>
+  </sense>
+</entry>
+  <entry id="furor">
+  <form xml:lang="lat">
+    <orth>furor</orth>
+    <form type="infl">
+      <orth type="gen">furoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Raserei; Wahnsinn; Toben</def>
+  </sense>
+</entry>
+  <entry id="opera">
+  <form xml:lang="lat">
+    <orth>opera</orth>
+    <form type="infl">
+      <orth type="gen">operae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mühe; Arbeit; Anstrengung</def>
+  </sense>
+</entry>
+  <entry id="cursus">
+  <form xml:lang="lat">
+    <orth>cursus</orth>
+    <form type="infl">
+      <orth type="gen">cursus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Kurs; Lauf</def>
+  </sense>
+</entry>
+  <entry id="impetus">
+  <form xml:lang="lat">
+    <orth>impetus</orth>
+    <form type="infl">
+      <orth type="gen">impetus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Trieb; Ansturm; Schwung; Angriff</def>
+  </sense>
+</entry>
+  <entry id="luxus">
+  <form xml:lang="lat">
+    <orth>luxus</orth>
+    <form type="infl">
+      <orth type="gen">luxus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Üppigkeit; Verschwendung; Ausschweifung</def>
+  </sense>
+</entry>
+  <entry id="magistratus">
+  <form xml:lang="lat">
+    <orth>magistratus</orth>
+    <form type="infl">
+      <orth type="gen">magistratus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Beamter; Behörde; Amt</def>
+  </sense>
+</entry>
+  <entry id="tumultus">
+  <form xml:lang="lat">
+    <orth>tumultus</orth>
+    <form type="infl">
+      <orth type="gen">tumultus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Unruhe; Aufruhr; Getöse</def>
+  </sense>
+</entry>
+  <entry id="manare">
+  <form xml:lang="lat">
+    <orth>mano</orth>
+    <form type="infl">
+      <orth type="inf">manare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>strömen; fließen</def>
+  </sense>
+</entry>
+  <entry id="aer">
+  <form xml:lang="lat">
+    <orth>aer</orth>
+    <form type="infl">
+      <orth type="gen">aeris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Luft</def>
+  </sense>
+</entry>
+  <entry id="fiducia">
+  <form xml:lang="lat">
+    <orth>fiducia</orth>
+    <form type="infl">
+      <orth type="gen">fiduciae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Zuverlässigkeit; Vertrauen</def>
+  </sense>
+</entry>
+  <entry id="captare">
+  <form xml:lang="lat">
+    <orth>capto</orth>
+    <form type="infl">
+      <orth type="inf">captare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zu fangen suchen; fangen; jagen</def>
+  </sense>
+</entry>
+  <entry id="explicare">
+  <form xml:lang="lat">
+    <orth>explico</orth>
+    <form type="infl">
+      <orth type="inf">explicare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>entwickeln; erklären</def>
+  </sense>
+</entry>
+  <entry id="arena">
+  <form xml:lang="lat">
+    <orth>arena</orth>
+    <form type="infl">
+      <orth type="gen">arenae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Sand; Kampfplatz; Arena</def>
+  </sense>
+</entry>
+  <entry id="immolare">
+  <form xml:lang="lat">
+    <orth>immolo</orth>
+    <form type="infl">
+      <orth type="inf">immolare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>opfern</def>
+  </sense>
+</entry>
+  <entry id="poeta">
+  <form xml:lang="lat">
+    <orth>poeta</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Dichter</def>
+  </sense>
+</entry>
+  <entry id="carmen">
+  <form xml:lang="lat">
+    <orth>carmen</orth>
+    <form type="infl">
+      <orth type="gen">carminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Lied; Gedicht</def>
+  </sense>
+</entry>
+  <entry id="temptare">
+  <form xml:lang="lat">
+    <orth>tempto</orth>
+    <form type="infl">
+      <orth type="inf">temptare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>versuchen</def>
+  </sense>
+</entry>
+  <entry id="fugare">
+  <form xml:lang="lat">
+    <orth>fugo</orth>
+    <form type="infl">
+      <orth type="inf">fugare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verjagen; vertreiben</def>
+  </sense>
+</entry>
+  <entry id="industria">
+  <form xml:lang="lat">
+    <orth>industria</orth>
+    <form type="infl">
+      <orth type="gen">industriae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Fleiß, Betriebsamkeit</def>
+  </sense>
+</entry>
+  <entry id="superbia">
+  <form xml:lang="lat">
+    <orth>superbia</orth>
+    <form type="infl">
+      <orth type="gen">superbiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Stolz; Hochmut; Übermut</def>
+  </sense>
+</entry>
+  <entry id="censere">
+  <form xml:lang="lat">
+    <orth>conseo</orth>
+    <form type="infl">
+      <orth type="inf">censere</orth>
+      <orth type="perf">censui</orth>
+      <orth type="sup">consitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>der Ansicht sein; meinen; schätzen</def>
+  </sense>
+</entry>
+  <entry id="spoliare">
+  <form xml:lang="lat">
+    <orth>spolio</orth>
+    <form type="infl">
+      <orth type="inf">spoliare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>berauben; plündern</def>
+  </sense>
+</entry>
+  <entry id="dictator">
+  <form xml:lang="lat">
+    <orth>dictator</orth>
+    <form type="infl">
+      <orth type="gen">dictatoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Diktator</def>
+  </sense>
+</entry>
+  <entry id="ultio">
+  <form xml:lang="lat">
+    <orth>ultio</orth>
+    <form type="infl">
+      <orth type="gen">ultionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Vergeltung</def>
+  </sense>
+</entry>
+  <entry id="texere">
+  <form xml:lang="lat">
+    <orth>texeo</orth>
+    <form type="infl">
+      <orth type="inf">texere</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>weben</def>
+  </sense>
+</entry>
+  <entry id="retexere">
+  <form xml:lang="lat">
+    <orth>retexeo</orth>
+    <form type="infl">
+      <orth type="inf">retexere</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>wieder auflösen</def>
+  </sense>
+</entry>
+  <entry type="pl" id="divitiae">
+  <form xml:lang="lat">
+    <orth>divitiae</orth>
+    <form type="infl">
+      <orth type="gen">divitarum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Reichtum, Schätze</def>
+  </sense>
+</entry>
+  <entry id="iuvare">
+  <form xml:lang="lat">
+    <orth>iuvo</orth>
+    <form type="infl">
+      <orth type="inf">iuvare</orth>
+      <orth type="perf">iuvi</orth>
+      <orth type="sup">iutus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>erfreuen, unterstützen</def>
+  </sense>
+</entry>
+  <entry id="novus">
+  <form xml:lang="lat">
+    <orth>novus</orth>
+    <form type="infl">
+      <orth type="f">nova</orth>
+      <orth type="n">novum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>neu</def>
+  </sense>
+</entry>
+  <entry id="claudere">
+  <form xml:lang="lat">
+    <orth>claudo</orth>
+    <form type="infl">
+      <orth type="inf">claudere</orth>
+      <orth type="perf">clausi</orth>
+      <orth type="sup">clausus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>schließen; einschließen</def>
+  </sense>
+</entry>
+  <entry id="fluere">
+  <form xml:lang="lat">
+    <orth>fluo</orth>
+    <form type="infl">
+      <orth type="inf">fluere</orth>
+      <orth type="perf">fluxi</orth>
+      <orth type="sup">fluxus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>fließen</def>
+  </sense>
+</entry>
+  <entry id="amoenus">
+  <form xml:lang="lat">
+    <orth>amoenus</orth>
+    <form type="infl">
+      <orth type="f">amoena</orth>
+      <orth type="n">amoenum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>lieblich; reizvoll</def>
+  </sense>
+</entry>
+  <entry id="electio">
+  <form xml:lang="lat">
+    <orth>electio</orth>
+    <form type="infl">
+      <orth type="gen">electionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Auswahl; Wahl</def>
+  </sense>
+</entry>
+  <entry id="rarus">
+  <form xml:lang="lat">
+    <orth>rarus</orth>
+    <form type="infl">
+      <orth type="f">rera</orth>
+      <orth type="n">rerum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>selten; vereinzelt</def>
+  </sense>
+</entry>
+  <entry id="similitudo">
+  <form xml:lang="lat">
+    <orth>similitudo</orth>
+    <form type="infl">
+      <orth type="gen">similitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Ebenbild; Ähnlichkeit</def>
+  </sense>
+</entry>
+  <entry id="proprius">
+  <form xml:lang="lat">
+    <orth>proprius</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>eigentümlich; eigen; speziell; typisch; charakteristisch</def>
+  </sense>
+</entry>
+  <entry id="obstare">
+  <form xml:lang="lat">
+    <orth>obsto</orth>
+    <form type="infl">
+      <orth type="inf">obstare</orth>
+      <orth type="perf">obstiti</orth>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>entgegenstehen; hindern</def>
+  </sense>
+</entry>
+  <entry id="augere">
+  <form xml:lang="lat">
+    <orth>augeo</orth>
+    <form type="infl">
+      <orth type="inf">augere</orth>
+      <orth type="perf">auxi</orth>
+      <orth type="sup">auctus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>vermehren; vergrößern</def>
+  </sense>
+</entry>
+  <entry id="discrimen">
+  <form xml:lang="lat">
+    <orth>discrimen</orth>
+    <form type="infl">
+      <orth type="gen">discriminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Unterschied; Entscheidung; Gefahr</def>
+  </sense>
+</entry>
+  <entry id="discrimen">
+  <form xml:lang="lat">
+    <orth>discrimen</orth>
+    <form type="infl">
+      <orth type="gen">discriminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Unterschied; Entscheidung; Gefahr</def>
+  </sense>
+</entry>
+  <entry id="adversarius">
+  <form xml:lang="lat">
+    <orth>adversarius</orth>
+    <form type="infl">
+      <orth type="gen">adversari</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Widersacher; Gegner; Feind</def>
+  </sense>
+</entry>
+  <entry id="plaga">
+  <form xml:lang="lat">
+    <orth>plaga</orth>
+    <form type="infl">
+      <orth type="gen">plagae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Hieb; Stoß; Schlag; Gegend; Netz; Stich; Gegend</def>
+  </sense>
+</entry>
+  <entry id="vestigium">
+  <form xml:lang="lat">
+    <orth>vestigium</orth>
+    <form type="infl">
+      <orth type="gen">vestigi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Grab; Fuß, Fußstapf; Stelle; schritt; Zeitpunkt; Merkmal; Fußspur; Spur; Stätte</def>
+  </sense>
+</entry>
+  <entry id="inventum">
+  <form xml:lang="lat">
+    <orth>inventum</orth>
+    <form type="infl">
+      <orth type="gen">inventi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Entdeckung; Erfindung</def>
+  </sense>
+</entry>
+  <entry id="pactum">
+  <form xml:lang="lat">
+    <orth>pactum</orth>
+    <form type="infl">
+      <orth type="gen">pacti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Abmachung; Vertrag; Art; Weise; Entschluss; Vereinbarung</def>
+  </sense>
+</entry>
+  <entry id="pactus">
+  <form xml:lang="lat">
+    <orth>pactus</orth>
+    <form type="infl">
+      <orth type="f">pacta</orth>
+      <orth type="n">pactum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>vereinbart; verlobt; versprochen</def>
+  </sense>
+</entry>
+  <entry id="immemor">
+  <form xml:lang="lat">
+    <orth>immemor</orth>
+    <form type="infl">
+      <orth type="gen">immemoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>uneingedenk; ohne (an etwas) zu denken; sich nicht erinnern; vergessen; unbekümmert; ohne rücksicht auf</def>
+  </sense>
+</entry>
+  <entry id="agmen">
+  <form xml:lang="lat">
+    <orth>agmen</orth>
+    <form type="infl">
+      <orth type="gen">agminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Trupp; Heereszug; Schar</def>
+  </sense>
+</entry>
+  <entry id="iacere">
+  <form xml:lang="lat">
+    <orth>iaceo</orth>
+    <form type="infl">
+      <orth type="inf">iacere</orth>
+      <orth type="perf">iacui</orth>
+      <orth type="sup">iactus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>liegen</def>
+  </sense>
+</entry>
+  <entry id="lucrum">
+  <form xml:lang="lat">
+    <orth>lucrum</orth>
+    <form type="infl">
+      <orth type="gen">lucri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Gewinn; Vorteil</def>
+  </sense>
+</entry>
+  <entry id="campus">
+  <form xml:lang="lat">
+    <orth>campus</orth>
+    <form type="infl">
+      <orth type="gen">campi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Feld</def>
+  </sense>
+</entry>
+  <entry id="altus">
+  <form xml:lang="lat">
+    <orth>altus</orth>
+    <form type="infl">
+      <orth type="f">alta</orth>
+      <orth type="n">altum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>hoch; tief</def>
+  </sense>
+</entry>
+  <entry id="equitare">
+  <form xml:lang="lat">
+    <orth>equito</orth>
+    <form type="infl">
+      <orth type="inf">equitare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>reiten</def>
+  </sense>
+</entry>
+  <entry id="mordere">
+  <form xml:lang="lat">
+    <orth>mordeo</orth>
+    <form type="infl">
+      <orth type="inf">mordere</orth>
+      <orth type="perf">momordi</orth>
+      <orth type="sup">morsus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>kränken; beißen</def>
+  </sense>
+</entry>
+  <entry id="morsus">
+  <form xml:lang="lat">
+    <orth>morsus</orth>
+    <form type="infl">
+      <orth type="gen">morsus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Biss</def>
+  </sense>
+</entry>
+  <entry id="mitigare">
+  <form xml:lang="lat">
+    <orth>mitigo</orth>
+    <form type="infl">
+      <orth type="inf">mitigare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>besänftigen</def>
+  </sense>
+</entry>
+  <entry id="taeter">
+  <form xml:lang="lat">
+    <orth>taeter</orth>
+    <form type="infl">
+      <orth type="f">taetra</orth>
+      <orth type="n">taetrum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>abscheulich; grässlich; scheusslich; hässlich; abstoßend</def>
+  </sense>
+</entry>
+  <entry id="ara">
+  <form xml:lang="lat">
+    <orth>ara</orth>
+    <form type="infl">
+      <orth type="gen">arae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Altar</def>
+  </sense>
+</entry>
+  <entry id="diligentia">
+  <form xml:lang="lat">
+    <orth>diligentia</orth>
+    <form type="infl">
+      <orth type="gen">diligentiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Gewissenhaftigkeit; Sorgfalt; Aufmerksamkeit</def>
+  </sense>
+</entry>
+  <entry id="irridere">
+  <form xml:lang="lat">
+    <orth>irrideo</orth>
+    <form type="infl">
+      <orth type="inf">irridere</orth>
+      <orth type="perf">irrisi</orth>
+      <orth type="sup">irrisus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verlachen/auslachen; verspotten; verhöhnen</def>
+  </sense>
+</entry>
+  <entry id="iocus">
+  <form xml:lang="lat">
+    <orth>iocus</orth>
+    <form type="infl">
+      <orth type="gen">ioci</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Scherz, Spaß</def>
+  </sense>
+</entry>
+  <entry id="eloquentia">
+  <form xml:lang="lat">
+    <orth>eloquentia</orth>
+    <form type="infl">
+      <orth type="gen">eloquentiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Beredsamkeit; Geschwätzigkeit</def>
+  </sense>
+</entry>
+  <entry id="notus">
+  <form xml:lang="lat">
+    <orth>notus</orth>
+    <form type="infl">
+      <orth type="f">nota</orth>
+      <orth type="n">notum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>bekannt</def>
+  </sense>
+</entry>
+  <entry id="modestia">
+  <form xml:lang="lat">
+    <orth>modestia</orth>
+    <form type="infl">
+      <orth type="gen">modestiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mäßigung; Bescheidenheit; Besonnenheit</def>
+  </sense>
+</entry>
+  <entry id="peregrinus">
+  <form xml:lang="lat">
+    <orth>peregrinus</orth>
+    <form type="infl">
+      <orth type="f">peregrina</orth>
+      <orth type="n">peregrinum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>fremd; ausländisch</def>
+  </sense>
+</entry>
+  <entry id="misericordia">
+  <form xml:lang="lat">
+    <orth>misericordia</orth>
+    <form type="infl">
+      <orth type="gen">misericordiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mitleid; Barmherzigkeit</def>
+  </sense>
+</entry>
+  <entry id="vitium">
+  <form xml:lang="lat">
+    <orth>vitium</orth>
+    <form type="infl">
+      <orth type="gen">vitii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Fehler; Laster; schlechte Eigenschaft</def>
+  </sense>
+</entry>
+  <entry id="perniciosus">
+  <form xml:lang="lat">
+    <orth>perniciosus</orth>
+    <form type="infl">
+      <orth type="f">perniciosa</orth>
+      <orth type="n">perniciosum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>verderblich; schädlich</def>
+  </sense>
+</entry>
+  <entry id="incendium">
+  <form xml:lang="lat">
+    <orth>incendium</orth>
+    <form type="infl">
+      <orth type="gen">incendii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Brand; Feuer; Brandstiftung</def>
+  </sense>
+</entry>
+  <entry id="victor">
+  <form xml:lang="lat">
+    <orth>victor</orth>
+    <form type="infl">
+      <orth type="gen">victoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Sieger</def>
+  </sense>
+</entry>
+  <entry id="armare">
+  <form xml:lang="lat">
+    <orth>armo</orth>
+    <form type="infl">
+      <orth type="inf">armare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>ausrüsten; bewaffnen; rüsten</def>
+  </sense>
+</entry>
+  <entry id="admonere">
+  <form xml:lang="lat">
+    <orth>admoneo</orth>
+    <form type="infl">
+      <orth type="inf">admonere</orth>
+      <orth type="perf">admonui</orth>
+      <orth type="sup">admonitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>erinnern; ermahnen</def>
+  </sense>
+</entry>
+  <entry id="tectum">
+  <form xml:lang="lat">
+    <orth>tectum</orth>
+    <form type="infl">
+      <orth type="gen">tecti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Dach; Haus; Zimmerdecke; Wohnung</def>
+  </sense>
+</entry>
+  <entry id="sustinere">
+  <form xml:lang="lat">
+    <orth>sustineo</orth>
+    <form type="infl">
+      <orth type="inf">sustinere</orth>
+      <orth type="perf">sustinui</orth>
+      <orth type="sup">sustentus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aushalten; aufhalten; ertragen; anhalten; herauszögern</def>
+  </sense>
+</entry>
+  <entry id="saltare">
+  <form xml:lang="lat">
+    <orth>salto</orth>
+    <form type="infl">
+      <orth type="inf">saltare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>tanzen; springen</def>
+  </sense>
+</entry>
+  <entry id="contumelia">
+  <form xml:lang="lat">
+    <orth>contumelia</orth>
+    <form type="infl">
+      <orth type="gen">contumeliae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schmach; Beleidigung; Schande</def>
+  </sense>
+</entry>
+  <entry id="oppidum">
+  <form xml:lang="lat">
+    <orth>oppidum</orth>
+    <form type="infl">
+      <orth type="gen">oppidi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Festung; Stadt</def>
+  </sense>
+</entry>
+  <entry id="quietus">
+  <form xml:lang="lat">
+    <orth>quietus</orth>
+    <form type="infl">
+      <orth type="f">quieta</orth>
+      <orth type="n">quietum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ruhig; gelassen</def>
+  </sense>
+</entry>
+  <entry id="schola">
+  <form xml:lang="lat">
+    <orth>schola</orth>
+    <form type="infl">
+      <orth type="gen">scholae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schule</def>
+  </sense>
+</entry>
+  <entry id="fuga">
+  <form xml:lang="lat">
+    <orth>fuga</orth>
+    <form type="infl">
+      <orth type="gen">fugae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Flucht; Verbannung</def>
+  </sense>
+</entry>
+  <entry id="maestus">
+  <form xml:lang="lat">
+    <orth>maestus</orth>
+    <form type="infl">
+      <orth type="f">maesta</orth>
+      <orth type="n">maestum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>traurig; betrübt</def>
+  </sense>
+</entry>
+  <entry id="comparare">
+  <form xml:lang="lat">
+    <orth>comparo</orth>
+    <form type="infl">
+      <orth type="inf">comparare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zusammenbringen; erwerben; beschaffen; vergleichen</def>
+  </sense>
+</entry>
+  <entry id="transportare">
+  <form xml:lang="lat">
+    <orth>transporto</orth>
+    <form type="infl">
+      <orth type="inf">transportare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>hinüberschaffen; hinüberbringen</def>
+  </sense>
+</entry>
+  <entry id="servitium">
+  <form xml:lang="lat">
+    <orth>servitium</orth>
+    <form type="infl">
+      <orth type="gen">servitii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Sklaverei; Knechtschaft</def>
+  </sense>
+</entry>
+  <entry id="asper">
+  <form xml:lang="lat">
+    <orth>asper</orth>
+    <form type="infl">
+      <orth type="f">aspera</orth>
+      <orth type="n">asperum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>rauh; bitter; herb</def>
+  </sense>
+</entry>
+  <entry id="constantia">
+  <form xml:lang="lat">
+    <orth>constantia</orth>
+    <form type="infl">
+      <orth type="gen">constantiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Standhaftigkeit; Beständigkeit</def>
+  </sense>
+</entry>
+  <entry id="diuturnus">
+  <form xml:lang="lat">
+    <orth>diuturnus</orth>
+    <form type="infl">
+      <orth type="f">diuturna</orth>
+      <orth type="n">diuturnum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>langdauernd</def>
+  </sense>
+</entry>
+  <entry id="condicio">
+  <form xml:lang="lat">
+    <orth>condicio</orth>
+    <form type="infl">
+      <orth type="gen">condicionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Bedingung; Lage; Verabredung</def>
+  </sense>
+</entry>
+  <entry id="fortitudo">
+  <form xml:lang="lat">
+    <orth>fortitudo</orth>
+    <form type="infl">
+      <orth type="gen">fortitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Tapferkeit; Mut</def>
+  </sense>
+</entry>
+  <entry id="multitudo">
+  <form xml:lang="lat">
+    <orth>multitudo</orth>
+    <form type="infl">
+      <orth type="gen">multitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Vielzahl; Menge</def>
+  </sense>
+</entry>
+  <entry id="auctoritas">
+  <form xml:lang="lat">
+    <orth>auctoritas</orth>
+    <form type="infl">
+      <orth type="gen">auctoritatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Ansehen; Einfluss</def>
+  </sense>
+</entry>
+  <entry id="aequus">
+  <form xml:lang="lat">
+    <orth>aequus</orth>
+    <form type="infl">
+      <orth type="f">aequa</orth>
+      <orth type="n">aequum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>gleich; gleichmütig; gerecht</def>
+  </sense>
+</entry>
+  <entry id="lumen">
+  <form xml:lang="lat">
+    <orth>lumen</orth>
+    <form type="infl">
+      <orth type="gen">luminis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Licht; Glanz; Leuchte</def>
+  </sense>
+</entry>
+  <entry id="omen">
+  <form xml:lang="lat">
+    <orth>omen</orth>
+    <form type="infl">
+      <orth type="gen">ominis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Vorzeichen; Vorbedeutung</def>
+  </sense>
+</entry>
+  <entry id="praedicare">
+  <form xml:lang="lat">
+    <orth>praedico</orth>
+    <form type="infl">
+      <orth type="inf">praedicare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>rühmen; öffentlich bekannt machen</def>
+  </sense>
+</entry>
+  <entry id="avaritia">
+  <form xml:lang="lat">
+    <orth>avaritia</orth>
+    <form type="infl">
+      <orth type="gen">avaritiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Habsucht; Geiz</def>
+  </sense>
+</entry>
+  <entry id="inopia">
+  <form xml:lang="lat">
+    <orth>inopia</orth>
+    <form type="infl">
+      <orth type="gen">inopiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mangel; Not</def>
+  </sense>
+</entry>
+  <entry id="luxuria">
+  <form xml:lang="lat">
+    <orth>luxuria</orth>
+    <form type="infl">
+      <orth type="gen">luxuriae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Üppigkeit; Verschwendungssucht</def>
+  </sense>
+</entry>
+  <entry id="occasio">
+  <form xml:lang="lat">
+    <orth>occasio</orth>
+    <form type="infl">
+      <orth type="gen">occasionis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Gelegenheit</def>
+  </sense>
+</entry>
+  <entry id="appellare">
+  <form xml:lang="lat">
+    <orth>appello</orth>
+    <form type="infl">
+      <orth type="inf">appellare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anreden; (be)nennen</def>
+  </sense>
+</entry>
+  <entry id="aestas">
+  <form xml:lang="lat">
+    <orth>aestas</orth>
+    <form type="infl">
+      <orth type="gen">aestatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Sommer</def>
+  </sense>
+</entry>
+  <entry id="necessitas">
+  <form xml:lang="lat">
+    <orth>necessitas</orth>
+    <form type="infl">
+      <orth type="gen">necessitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Notwendigkeit Notlage</def>
+  </sense>
+</entry>
+  <entry id="ver">
+  <form xml:lang="lat">
+    <orth>ver</orth>
+    <form type="infl">
+      <orth type="gen">veris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Frühling</def>
+  </sense>
+</entry>
+  <entry id="avus">
+  <form xml:lang="lat">
+    <orth>avus</orth>
+    <form type="infl">
+      <orth type="gen">avi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Großvater</def>
+  </sense>
+</entry>
+  <entry id="incertus">
+  <form xml:lang="lat">
+    <orth>incertus</orth>
+    <form type="infl">
+      <orth type="f">ncerta</orth>
+      <orth type="n">incertum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ungewiss; unsicher</def>
+  </sense>
+</entry>
+  <entry id="agitare">
+  <form xml:lang="lat">
+    <orth>agito</orth>
+    <form type="infl">
+      <orth type="inf">agitare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>treiben; jagen; hetzen; betreiben</def>
+  </sense>
+</entry>
+  <entry id="consuetudo">
+  <form xml:lang="lat">
+    <orth>consuetudo</orth>
+    <form type="infl">
+      <orth type="gen">consuetudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Gewohnheit; Brauch</def>
+  </sense>
+</entry>
+  <entry id="preces">
+  <form xml:lang="lat">
+    <orth>preces</orth>
+    <form type="infl">
+      <orth type="gen">precum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Bitten; Gebet</def>
+  </sense>
+</entry>
+  <entry id="celsus">
+  <form xml:lang="lat">
+    <orth>celsus</orth>
+    <form type="infl">
+      <orth type="f">celsa</orth>
+      <orth type="n">celsum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>hoch; erhaben; aufragend</def>
+  </sense>
+</entry>
+  <entry id="exigere">
+  <form xml:lang="lat">
+    <orth>exigo</orth>
+    <form type="infl">
+      <orth type="inf">exigere</orth>
+      <orth type="perf">exegi</orth>
+      <orth type="sup">exactus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>vollenden; beenden; herausfordern; verlangen; verbringen; zuende gehen; beaufsichtigen; genau untersuchen; errichten</def>
+  </sense>
+</entry>
+  <entry id="simulacrum">
+  <form xml:lang="lat">
+    <orth>simulacrum</orth>
+    <form type="infl">
+      <orth type="gen">simulacri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Götterbild; Abbild</def>
+  </sense>
+</entry>
+  <entry id="classis">
+  <form xml:lang="lat">
+    <orth>classis</orth>
+    <form type="infl">
+      <orth type="gen">classis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Flotte; Abteilung; Klasse</def>
+  </sense>
+</entry>
+  <entry type="pl" id="moenia">
+  <form xml:lang="lat">
+    <orth>moenia</orth>
+    <form type="infl">
+      <orth type="gen">moenium</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Stadtmauer</def>
+  </sense>
+</entry>
+  <entry id="adhibere">
+  <form xml:lang="lat">
+    <orth>adhibero</orth>
+    <form type="infl">
+      <orth type="inf">adhibere</orth>
+      <orth type="perf">adhibui</orth>
+      <orth type="sup">adhibitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anwenden; heranziehen</def>
+  </sense>
+</entry>
+  <entry id="senex">
+  <form xml:lang="lat">
+    <orth>senex</orth>
+    <form type="infl">
+      <orth type="gen">senis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>alter Mann; Greis</def>
+  </sense>
+</entry>
+  <entry id="arcere">
+  <form xml:lang="lat">
+    <orth>arceo</orth>
+    <form type="infl">
+      <orth type="inf">arcere</orth>
+      <orth type="perf">arcui</orth>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>abhalten; fernhalten, abwehren; hindern</def>
+  </sense>
+</entry>
+  <entry id="flamma">
+  <form xml:lang="lat">
+    <orth>flamma</orth>
+    <form type="infl">
+      <orth type="gen">flammae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Flamme; Feuer; Glut</def>
+  </sense>
+</entry>
+  <entry id="crinis">
+  <form xml:lang="lat">
+    <orth>crinis</orth>
+    <form type="infl">
+      <orth type="gen">crinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Haar</def>
+  </sense>
+</entry>
+  <entry id="lacerare">
+  <form xml:lang="lat">
+    <orth>lacero</orth>
+    <form type="infl">
+      <orth type="inf">lacerare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zerreißen; zerfleischen</def>
+  </sense>
+</entry>
+  <entry id="terribilis">
+  <form xml:lang="lat">
+    <orth>terribilis</orth>
+    <form type="infl">
+      <orth type="f">terribilis</orth>
+      <orth type="n">terribile</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>schrecklich; furchterregend; angsteinflößend</def>
+  </sense>
+</entry>
+  <entry id="otium">
+  <form xml:lang="lat">
+    <orth>otium</orth>
+    <form type="infl">
+      <orth type="gen">otii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Muße; Freizeit; Ruhe</def>
+  </sense>
+</entry>
+  <entry id="dignitas">
+  <form xml:lang="lat">
+    <orth>dignitas</orth>
+    <form type="infl">
+      <orth type="gen">dignitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Ansehen; Rang; Würde</def>
+  </sense>
+</entry>
+  <entry id="fidelis">
+  <form xml:lang="lat">
+    <orth>fidelis</orth>
+    <form type="infl">
+      <orth type="f">fidelis</orth>
+      <orth type="n">fidele</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>treu; gläubig; zuverlässig; fest; sicher; gewissenhaft</def>
+  </sense>
+</entry>
+  <entry id="immanis">
+  <form xml:lang="lat">
+    <orth>immanis</orth>
+    <form type="infl">
+      <orth type="f">immanis</orth>
+      <orth type="n">immane</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ungeheuer; entsetzlich; ungeheuerlich; riesig; tierisch; unmenglisch</def>
+  </sense>
+</entry>
+  <entry id="potens">
+  <form xml:lang="lat">
+    <orth>potens</orth>
+    <form type="infl">
+      <orth type="f"/>
+      <orth type="n"/>
+      <orth type="gen">potentis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>mächtig; einflussreich; stark; fähig; etwas beherrschend</def>
+  </sense>
+</entry>
+  <entry id="prudens">
+  <form xml:lang="lat">
+    <orth>prudens</orth>
+    <form type="infl">
+      <orth type="f"/>
+      <orth type="n"/>
+      <orth type="gen">prudentis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>klug; umsichtig; erfahren; gescheit</def>
+  </sense>
+</entry>
+  <entry id="carcer">
+  <form xml:lang="lat">
+    <orth>carcer</orth>
+    <form type="infl">
+      <orth type="gen">carceris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Kerker; Gefängnis</def>
+  </sense>
+</entry>
+  <entry id="bicarium">
+  <form xml:lang="lat">
+    <orth>bicarium</orth>
+    <form type="infl">
+      <orth type="gen">bicarii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Becher</def>
+  </sense>
+</entry>
+  <entry id="cerasa">
+  <form xml:lang="lat">
+    <orth>cerasa</orth>
+    <form type="infl">
+      <orth type="gen">cerasae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Kirschen</def>
+  </sense>
+</entry>
+  <entry id="pirum">
+  <form xml:lang="lat">
+    <orth>pirum</orth>
+    <form type="infl">
+      <orth type="gen">piri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Birnen</def>
+  </sense>
+</entry>
+  <entry id="asparagus">
+  <form xml:lang="lat">
+    <orth>asparagus</orth>
+    <form type="infl">
+      <orth type="gen">asparagi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Spargel</def>
+  </sense>
+</entry>
+  <entry id="radix">
+  <form xml:lang="lat">
+    <orth>radix</orth>
+    <form type="infl">
+      <orth type="gen">radicis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Raddischen</def>
+  </sense>
+</entry>
+  <entry id="plastrum">
+  <form xml:lang="lat">
+    <orth>plastrum</orth>
+    <form type="infl">
+      <orth type="gen">plastri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Pflaster</def>
+  </sense>
+</entry>
+  <entry id="cista">
+  <form xml:lang="lat">
+    <orth>cista</orth>
+    <form type="infl">
+      <orth type="gen">cistae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Kiste</def>
+  </sense>
+</entry>
+  <entry id="facinus">
+  <form xml:lang="lat">
+    <orth>facinus</orth>
+    <form type="infl">
+      <orth type="gen">facinoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Tat; Untat; Verbrechen</def>
+  </sense>
+</entry>
+  <entry id="sperare">
+  <form xml:lang="lat">
+    <orth>spero</orth>
+    <form type="infl">
+      <orth type="inf">sperare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>hoffen; erhoffen</def>
+  </sense>
+</entry>
+  <entry id="avarus">
+  <form xml:lang="lat">
+    <orth>avarus</orth>
+    <form type="infl">
+      <orth type="gen">avarum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>habsüchtig; geizig</def>
+  </sense>
+</entry>
+  <entry id="perturbare">
+  <form xml:lang="lat">
+    <orth>perturbo</orth>
+    <form type="infl">
+      <orth type="inf">perturbare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>(völlig) verwirren; beunruhigen; stören</def>
+  </sense>
+</entry>
+  <entry id="similis">
+  <form xml:lang="lat">
+    <orth>similis</orth>
+    <form type="infl">
+      <orth type="f">similis</orth>
+      <orth type="n">simile</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ähnlich; gleich; gleichartig</def>
+  </sense>
+</entry>
+  <entry id="praetor">
+  <form xml:lang="lat">
+    <orth>praetor</orth>
+    <form type="infl">
+      <orth type="gen">praetoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Prätor</def>
+  </sense>
+</entry>
+  <entry id="flagitium">
+  <form xml:lang="lat">
+    <orth>flagitium</orth>
+    <form type="infl">
+      <orth type="gen">flagitii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Schandtat; Niederträchtigkeit</def>
+  </sense>
+</entry>
+  <entry id="tristis">
+  <form xml:lang="lat">
+    <orth>tristis</orth>
+    <form type="infl">
+      <orth type="f">tristis</orth>
+      <orth type="n">triste</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>traurig; schmerzlich</def>
+  </sense>
+</entry>
+  <entry id="parum_succedit">
+  <form xml:lang="lat">
+    <orth>parum succedit</orth>
+  </form>
+  <sense>
+    <def>es gelingt nicht recht</def>
+  </sense>
+</entry>
+  <entry id="sextus">
+  <form xml:lang="lat">
+    <orth>sextus</orth>
+    <form type="infl">
+      <orth type="f">sexta</orth>
+      <orth type="n">sextum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der sechste</def>
+  </sense>
+</entry>
+  <entry id="cohors">
+  <form xml:lang="lat">
+    <orth>cohors</orth>
+    <form type="infl">
+      <orth type="gen">cohortis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>10. Teil einer Legion</def>
+  </sense>
+</entry>
+  <entry id="septimus">
+  <form xml:lang="lat">
+    <orth>septimus</orth>
+    <form type="infl">
+      <orth type="f">septima</orth>
+      <orth type="n">septimum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der siebte</def>
+  </sense>
+</entry>
+  <entry id="nonus">
+  <form xml:lang="lat">
+    <orth>nonus</orth>
+    <form type="infl">
+      <orth type="f">nona</orth>
+      <orth type="n">nonum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der neunte</def>
+  </sense>
+</entry>
+  <entry id="decimus">
+  <form xml:lang="lat">
+    <orth>decimus</orth>
+    <form type="infl">
+      <orth type="f">decima</orth>
+      <orth type="n">decimum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der zehnte</def>
+  </sense>
+</entry>
+  <entry id="visitare">
+  <form xml:lang="lat">
+    <orth>visito</orth>
+    <form type="infl">
+      <orth type="inf">visitare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>besuchen</def>
+  </sense>
+</entry>
+  <entry id="senator">
+  <form xml:lang="lat">
+    <orth>senator</orth>
+    <form type="infl">
+      <orth type="gen">senatorem</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Senator; Senatsmitglied</def>
+  </sense>
+</entry>
+  <entry id="curia">
+  <form xml:lang="lat">
+    <orth>curia</orth>
+    <form type="infl">
+      <orth type="gen">curiam</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Kurier; Rathaus</def>
+  </sense>
+</entry>
+  <entry id="forum">
+  <form xml:lang="lat">
+    <orth>forum</orth>
+    <form type="infl">
+      <orth type="gen">forum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Forum; Marktplatz</def>
+  </sense>
+</entry>
+  <entry id="se_male_habere">
+  <form xml:lang="lat">
+    <orth>se male habere</orth>
+  </form>
+  <sense>
+    <def>sich schlecht fühlen</def>
+  </sense>
+</entry>
+  <entry id="numeros_annorum_expleverimus">
+  <form xml:lang="lat">
+    <orth>numeros annorum expleverimus</orth>
+  </form>
+  <sense>
+    <def>wir haben die Zahl unserer Lebensjahre vollendet</def>
+  </sense>
+</entry>
+  <entry id="rege_orbatum">
+  <form xml:lang="lat">
+    <orth>rege orbatum</orth>
+  </form>
+  <sense>
+    <def>des Königs beraubt</def>
+  </sense>
+</entry>
+  <entry id="fidem_praestare">
+  <form xml:lang="lat">
+    <orth>fidem praestare</orth>
+  </form>
+  <sense>
+    <def>die Treue halten</def>
+  </sense>
+</entry>
+  <entry id="dies_natalis">
+  <form xml:lang="lat">
+    <orth>dies natalis</orth>
+  </form>
+  <sense>
+    <def>Geburtstag</def>
+  </sense>
+</entry>
+  <entry id="quaerere_de">
+  <form xml:lang="lat">
+    <orth>quaerere de</orth>
+  </form>
+  <sense>
+    <def>Untersuchung anstellen über</def>
+  </sense>
+</entry>
+  <entry id="argentum">
+  <form xml:lang="lat">
+    <orth>argentum</orth>
+    <form type="infl">
+      <orth type="gen">argenti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Silber</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth/>
+  </form>
+  <sense>
+    <def>aber; und dennoch nicht</def>
+  </sense>
+</entry>
+  <entry id="moderatus">
+  <form xml:lang="lat">
+    <orth>moderatus</orth>
+    <form type="infl">
+      <orth type="f">moderata</orth>
+      <orth type="n"/>
+      <orth type="gen">moderatum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>maßvoll; besonnen</def>
+  </sense>
+</entry>
+  <entry id="bracchia_plumbo_onerata">
+  <form xml:lang="lat">
+    <orth>bracchia plumbo onerata</orth>
+  </form>
+  <sense>
+    <def>mit Bleigewichten beschwerte Arme</def>
+  </sense>
+</entry>
+  <entry id="studiosus">
+  <form xml:lang="lat">
+    <orth>studiosus</orth>
+    <form type="infl">
+      <orth type="f">studiosa</orth>
+      <orth type="n">studiosum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>eifrig; bemüht</def>
+  </sense>
+</entry>
+  <entry id="tardus">
+  <form xml:lang="lat">
+    <orth>tardus</orth>
+    <form type="infl">
+      <orth type="f">tarda</orth>
+      <orth type="n">tardum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>langsam; träge</def>
+  </sense>
+</entry>
+  <entry id="herbarum_radices">
+  <form xml:lang="lat">
+    <orth>herbarum radices</orth>
+  </form>
+  <sense>
+    <def>Kräuterwurzeln</def>
+  </sense>
+</entry>
+  <entry id="adversa_valetudo">
+  <form xml:lang="lat">
+    <orth>adversa valetudo</orth>
+  </form>
+  <sense>
+    <def>Krankheit</def>
+  </sense>
+</entry>
+  <entry id="caducus">
+  <form xml:lang="lat">
+    <orth>caducus</orth>
+  </form>
+  <sense>
+    <def>hängend</def>
+  </sense>
+</entry>
+  <entry id="carnosus">
+  <form xml:lang="lat">
+    <orth>carnosus</orth>
+    <form type="infl">
+      <orth type="f">carnosa</orth>
+      <orth type="n">carnosum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>fleischig; etwas beleibt</def>
+  </sense>
+</entry>
+  <entry id="mundus">
+  <form xml:lang="lat">
+    <orth>mundus</orth>
+    <form type="infl">
+      <orth type="f">munda</orth>
+      <orth type="n">mundum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>sauber</def>
+  </sense>
+</entry>
+  <entry id="libidinosus">
+  <form xml:lang="lat">
+    <orth>libidinosus</orth>
+    <form type="infl">
+      <orth type="f">libidinosa</orth>
+      <orth type="n">libidinosum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>wollüstig; 	  genusssüchtig, ausschweifend</def>
+  </sense>
+</entry>
+  <entry id="integer">
+  <form xml:lang="lat">
+    <orth>integer</orth>
+    <form type="infl">
+      <orth type="f">integra</orth>
+      <orth type="n">integrum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>unversehrt; untadelig, anständig</def>
+  </sense>
+</entry>
+  <entry id="cultus">
+  <form xml:lang="lat">
+    <orth>cultus</orth>
+    <form type="infl">
+      <orth type="gen">cultus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Umgang, Gebrauch; Nutzen</def>
+  </sense>
+</entry>
+  <entry id="victus">
+  <form xml:lang="lat">
+    <orth>victus</orth>
+    <form type="infl">
+      <orth type="gen">victus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Lebensunterhalt; Lebensweise</def>
+  </sense>
+</entry>
+  <entry id="sine_dubio">
+  <form xml:lang="lat">
+    <orth>sine dubio</orth>
+  </form>
+  <sense>
+    <def>ohne Zweifel</def>
+  </sense>
+</entry>
+  <entry id="creber">
+  <form xml:lang="lat">
+    <orth>creber</orth>
+    <form type="infl">
+      <orth type="f">crebra</orth>
+      <orth type="n">crebrum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>häufig; zahlreich</def>
+  </sense>
+</entry>
+  <entry id="singuli">
+  <form xml:lang="lat">
+    <orth>singuli</orth>
+    <form type="infl">
+      <orth type="f">singulae</orth>
+      <orth type="n">singula</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>je einer; einzeln</def>
+  </sense>
+</entry>
+  <entry id="principium">
+  <form xml:lang="lat">
+    <orth>principium</orth>
+    <form type="infl">
+      <orth type="gen">principii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Anfang, Grundlage</def>
+  </sense>
+</entry>
+  <entry id="favor">
+  <form xml:lang="lat">
+    <orth>favor</orth>
+    <form type="infl">
+      <orth type="gen">favoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Gunst; Zuneigung</def>
+  </sense>
+</entry>
+  <entry id="supremus">
+  <form xml:lang="lat">
+    <orth>supremus</orth>
+    <form type="infl">
+      <orth type="f">suprema</orth>
+      <orth type="n">supremum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der oberste; höchste, letzte</def>
+  </sense>
+</entry>
+  <entry id="in_hoc_discrimine_rerum">
+  <form xml:lang="lat">
+    <orth>in hoc discrimine rerum</orth>
+  </form>
+  <sense>
+    <def>in dieser entscheidenden Lage</def>
+  </sense>
+</entry>
+  <entry id="veniam_dare">
+  <form xml:lang="lat">
+    <orth>veniam do</orth>
+    <form type="infl">
+      <orth type="inf">veniam dare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verzeihen; nachsichtig sein</def>
+  </sense>
+</entry>
+  <entry id="cessare">
+  <form xml:lang="lat">
+    <orth>cesso</orth>
+    <form type="infl">
+      <orth type="inf">cessare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zögern; säumen; rasten</def>
+  </sense>
+</entry>
+  <entry id="indicare">
+  <form xml:lang="lat">
+    <orth>indico</orth>
+    <form type="infl">
+      <orth type="inf">indicare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anzeigen; verraten</def>
+  </sense>
+</entry>
+  <entry id="provocare">
+  <form xml:lang="lat">
+    <orth>provoco</orth>
+    <form type="infl">
+      <orth type="inf">provocare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>herausfordern; (zum Kampf) herausfordern; Berufung einlegen</def>
+  </sense>
+</entry>
+  <entry id="volare">
+  <form xml:lang="lat">
+    <orth>volo</orth>
+    <form type="infl">
+      <orth type="inf">volare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>eilen; fliegen</def>
+  </sense>
+</entry>
+  <entry id="votum">
+  <form xml:lang="lat">
+    <orth>votum</orth>
+    <form type="infl">
+      <orth type="gen">voti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Gelübde; Wunsch</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth/>
+    <form type="infl">
+      <orth type="gen">carnis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Fleisch; Fleischstück</def>
+  </sense>
+</entry>
+  <entry id="piscis">
+  <form xml:lang="lat">
+    <orth>piscis</orth>
+    <form type="infl">
+      <orth type="gen">piscis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Fisch</def>
+  </sense>
+</entry>
+  <entry id="oppugnare">
+  <form xml:lang="lat">
+    <orth>oppugno</orth>
+    <form type="infl">
+      <orth type="inf">oppugnare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>bestürmen; belagern</def>
+  </sense>
+</entry>
+  <entry id="telum">
+  <form xml:lang="lat">
+    <orth>telum</orth>
+    <form type="infl">
+      <orth type="gen">teli</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Wurfgeschoß; Waffe</def>
+  </sense>
+</entry>
+  <entry id="sidus">
+  <form xml:lang="lat">
+    <orth>sidus</orth>
+    <form type="infl">
+      <orth type="gen">sideris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Gestirn; Sternbild</def>
+  </sense>
+</entry>
+  <entry id="ac_profecto">
+  <form xml:lang="lat">
+    <orth>ac profecto</orth>
+  </form>
+  <sense>
+    <def>und in der Tat; und tatsächlich</def>
+  </sense>
+</entry>
+  <entry id="sciptor">
+  <form xml:lang="lat">
+    <orth>sciptor</orth>
+    <form type="infl">
+      <orth type="gen">sciptoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Schriftsteller</def>
+  </sense>
+</entry>
+  <entry id="morbus">
+  <form xml:lang="lat">
+    <orth>morbus</orth>
+    <form type="infl">
+      <orth type="gen">morbi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Krankheit</def>
+  </sense>
+</entry>
+  <entry id="benificium">
+  <form xml:lang="lat">
+    <orth>benificium</orth>
+    <form type="infl">
+      <orth type="gen">benificii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Wohltat; Auszeichnung</def>
+  </sense>
+</entry>
+  <entry id="remedium">
+  <form xml:lang="lat">
+    <orth>remedium</orth>
+    <form type="infl">
+      <orth type="gen">remedii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Heilmittel; Mittel</def>
+  </sense>
+</entry>
+  <entry id="expedire">
+  <form xml:lang="lat">
+    <orth>expedio</orth>
+    <form type="infl">
+      <orth type="inf">expedire</orth>
+      <orth type="perf">expedivi</orth>
+      <orth type="sup">expeditus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>frei machen; bereitmachen</def>
+  </sense>
+</entry>
+  <entry id="rana">
+  <form xml:lang="lat">
+    <orth>rana</orth>
+    <form type="infl">
+      <orth type="gen">ranae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Frosch</def>
+  </sense>
+</entry>
+  <entry id="bos">
+  <form xml:lang="lat">
+    <orth>bos</orth>
+    <form type="infl">
+      <orth type="gen">bovis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Ochse</def>
+  </sense>
+</entry>
+  <entry id="conspicere">
+  <form xml:lang="lat">
+    <orth>conspicio</orth>
+    <form type="infl">
+      <orth type="inf">conspicere</orth>
+      <orth type="perf">conspexi</orth>
+      <orth type="sup">conspectus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>beobachten</def>
+  </sense>
+</entry>
+  <entry id="hircus">
+  <form xml:lang="lat">
+    <orth>hircus</orth>
+    <form type="infl">
+      <orth type="gen">hirci</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Ziegenbock</def>
+  </sense>
+</entry>
+  <entry id="decedere">
+  <form xml:lang="lat">
+    <orth>decedo</orth>
+    <form type="infl">
+      <orth type="inf">decedere</orth>
+      <orth type="perf">decedi</orth>
+      <orth type="sup">decessi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>fallen</def>
+  </sense>
+</entry>
+  <entry id="nixus">
+  <form xml:lang="lat">
+    <orth>nixus</orth>
+    <form type="infl">
+      <orth type="f">nixa</orth>
+      <orth type="n">nixum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>gestützt</def>
+  </sense>
+</entry>
+  <entry id="vadum">
+  <form xml:lang="lat">
+    <orth>vadum</orth>
+    <form type="infl">
+      <orth type="gen">vadi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Grund; tiefer Grund</def>
+  </sense>
+</entry>
+  <entry id="apertus">
+  <form xml:lang="lat">
+    <orth>apertus</orth>
+    <form type="infl">
+      <orth type="f">aperta</orth>
+      <orth type="n">apertum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>geöffnet; offen</def>
+  </sense>
+</entry>
+  <entry id="copiosus">
+  <form xml:lang="lat">
+    <orth>copiosus</orth>
+    <form type="infl">
+      <orth type="f">copiosa</orth>
+      <orth type="n">copiosum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>reichlich</def>
+  </sense>
+</entry>
+  <entry id="liquor">
+  <form xml:lang="lat">
+    <orth>liquor</orth>
+    <form type="infl">
+      <orth type="gen">liquoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wasser</def>
+  </sense>
+</entry>
+  <entry id="devenire">
+  <form xml:lang="lat">
+    <orth>devenio</orth>
+    <form type="infl">
+      <orth type="inf">devenire</orth>
+      <orth type="perf">deveni</orth>
+      <orth type="sup">deventus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>ankommen</def>
+  </sense>
+</entry>
+  <entry id="gladium_expedire">
+  <form xml:lang="lat">
+    <orth>gladium expedire</orth>
+  </form>
+  <sense>
+    <def>das Schwert ziehen</def>
+  </sense>
+</entry>
+  <entry id="rogare">
+  <form xml:lang="lat">
+    <orth>rogo</orth>
+    <form type="infl">
+      <orth type="inf">rogare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>fragen</def>
+  </sense>
+</entry>
+  <entry id="ictus">
+  <form xml:lang="lat">
+    <orth>ictus</orth>
+    <form type="infl">
+      <orth type="gen">ictus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Hieb; Schuss; Stoß</def>
+  </sense>
+</entry>
+  <entry id="incidere">
+  <form xml:lang="lat">
+    <orth>incido</orth>
+    <form type="infl">
+      <orth type="inf">incidere</orth>
+      <orth type="perf">incivi</orth>
+      <orth type="sup">incitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>treffen; begegnen</def>
+  </sense>
+</entry>
+  <entry id="deridere">
+  <form xml:lang="lat">
+    <orth>dedido</orth>
+    <form type="infl">
+      <orth type="inf">deridere</orth>
+      <orth type="perf">deresi</orth>
+      <orth type="sup">deresus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verspotten</def>
+  </sense>
+</entry>
+  <entry id="superbus">
+  <form xml:lang="lat">
+    <orth>superbus</orth>
+    <form type="infl">
+      <orth type="f">superba</orth>
+      <orth type="n">superbum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>hochmütig; stolz</def>
+  </sense>
+</entry>
+  <entry id="proelium_committere">
+  <form xml:lang="lat">
+    <orth>proelium committere</orth>
+  </form>
+  <sense>
+    <def>eine Schlacht beginnen</def>
+  </sense>
+</entry>
+  <entry id="se_superbe_gerere">
+  <form xml:lang="lat">
+    <orth>se superbe gerere</orth>
+  </form>
+  <sense>
+    <def>sich hochmütig zeigen; sich hochmütig verhalten</def>
+  </sense>
+</entry>
+  <entry id="conciliare">
+  <form xml:lang="lat">
+    <orth>concilio</orth>
+    <form type="infl">
+      <orth type="inf">conciliare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>gewinnen; vermitteln</def>
+  </sense>
+</entry>
+  <entry id="arcessere">
+  <form xml:lang="lat">
+    <orth>arcesso</orth>
+    <form type="infl">
+      <orth type="inf">arcessere</orth>
+      <orth type="perf">arcessivi</orth>
+      <orth type="sup">arcessitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>herbeiholen; kommen lassen; herbei holen</def>
+  </sense>
+</entry>
+  <entry id="decernere">
+  <form xml:lang="lat">
+    <orth>decerno</orth>
+    <form type="infl">
+      <orth type="inf">decernere</orth>
+      <orth type="perf">decrevi</orth>
+      <orth type="sup">decretus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>beschließen; anordnern; zuerkennen; zuteilen</def>
+  </sense>
+</entry>
+  <entry id="requirere">
+  <form xml:lang="lat">
+    <orth>requiro</orth>
+    <form type="infl">
+      <orth type="inf">requirere</orth>
+      <orth type="perf">requisivi</orth>
+      <orth type="sup">requisitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufsuchen; fragen; verlangen</def>
+  </sense>
+</entry>
+  <entry id="sollertia">
+  <form xml:lang="lat">
+    <orth>sollertia</orth>
+    <form type="infl">
+      <orth type="gen">sollertiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Geschicklichkeit; Kunstfertigkeit</def>
+  </sense>
+</entry>
+  <entry id="coniurare">
+  <form xml:lang="lat">
+    <orth>coniuro</orth>
+    <form type="infl">
+      <orth type="inf">coniurare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich verschwören</def>
+  </sense>
+</entry>
+  <entry id="noscere">
+  <form xml:lang="lat">
+    <orth>nosco</orth>
+    <form type="infl">
+      <orth type="inf">noscere</orth>
+      <orth type="perf">novi</orth>
+      <orth type="sup">notus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anerkennen; untersuchen; wissen; erkennen; kennenlernen; kennen</def>
+  </sense>
+</entry>
+  <entry id="avia">
+  <form xml:lang="lat">
+    <orth>avia</orth>
+    <form type="infl">
+      <orth type="gen">aviae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Großmutter</def>
+  </sense>
+</entry>
+  <entry id="conscientia">
+  <form xml:lang="lat">
+    <orth>conscientia</orth>
+    <form type="infl">
+      <orth type="gen">conscientiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mitwissen; Bewusstsein; Gewissen</def>
+  </sense>
+</entry>
+  <entry id="saevitia">
+  <form xml:lang="lat">
+    <orth>saevitia</orth>
+    <form type="infl">
+      <orth type="gen">saevitiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wut; Grausamkeit</def>
+  </sense>
+</entry>
+  <entry id="paulo_ante">
+  <form xml:lang="lat">
+    <orth>paulo ante</orth>
+  </form>
+  <sense>
+    <def>kurz vorher; kurz davor</def>
+  </sense>
+</entry>
+  <entry id="occultare">
+  <form xml:lang="lat">
+    <orth>occulto</orth>
+    <form type="infl">
+      <orth type="inf">occultare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verbergen; verstecken</def>
+  </sense>
+</entry>
+  <entry id="serere">
+  <form xml:lang="lat">
+    <orth>sero</orth>
+    <form type="infl">
+      <orth type="inf">serere</orth>
+      <orth type="perf">serui</orth>
+      <orth type="sup">sertus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aneinanderreihen</def>
+  </sense>
+</entry>
+  <entry id="ordo">
+  <form xml:lang="lat">
+    <orth>ordo</orth>
+    <form type="infl">
+      <orth type="gen">ordinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Reihe; Ordnung; Stand</def>
+  </sense>
+</entry>
+  <entry id="status">
+  <form xml:lang="lat">
+    <orth>status</orth>
+    <form type="infl">
+      <orth type="gen">status</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Zustand; Lage; Verfassung</def>
+  </sense>
+</entry>
+  <entry id="non_ita_magnus">
+  <form xml:lang="lat">
+    <orth>non ita magnus</orth>
+  </form>
+  <sense>
+    <def>nicht gerade groß</def>
+  </sense>
+</entry>
+  <entry id="adducere">
+  <form xml:lang="lat">
+    <orth>adduco</orth>
+    <form type="infl">
+      <orth type="inf">adducere</orth>
+      <orth type="perf">adduxi</orth>
+      <orth type="sup">adductus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>heranführen; veranlassen</def>
+  </sense>
+</entry>
+  <entry id="imus">
+  <form xml:lang="lat">
+    <orth>imus</orth>
+    <form type="infl">
+      <orth type="f">ima</orth>
+      <orth type="n">imum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der unterste; der niedrigste; der geringst</def>
+  </sense>
+</entry>
+  <entry id="funus">
+  <form xml:lang="lat">
+    <orth>funus</orth>
+    <form type="infl">
+      <orth type="gen">funeris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Leichenzug; Todesfall; Begräbnis; Bestattung</def>
+  </sense>
+</entry>
+  <entry id="nemus">
+  <form xml:lang="lat">
+    <orth>nemus</orth>
+    <form type="infl">
+      <orth type="gen">nemoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Hain; Wald</def>
+  </sense>
+</entry>
+  <entry id="sternerere">
+  <form xml:lang="lat">
+    <orth>sterno</orth>
+    <form type="infl">
+      <orth type="inf">sternerere</orth>
+      <orth type="perf">stravi</orth>
+      <orth type="sup">stratus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>hinwerfen; hinstrecken; niederwerfen; hin; sich legen, hinstreuen, zersteuen</def>
+  </sense>
+</entry>
+  <entry id="diem_supremum_obire">
+  <form xml:lang="lat">
+    <orth>diem supremum obire</orth>
+  </form>
+  <sense>
+    <def>sterben</def>
+  </sense>
+</entry>
+  <entry id="sibi_proponere">
+  <form xml:lang="lat">
+    <orth>sibi propono</orth>
+    <form type="infl">
+      <orth type="inf">sibi proponere</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich vornehmen</def>
+  </sense>
+</entry>
+  <entry id="cremare">
+  <form xml:lang="lat">
+    <orth>cremo</orth>
+    <form type="infl">
+      <orth type="inf">cremare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verbrennen</def>
+  </sense>
+</entry>
+  <entry id="erigere">
+  <form xml:lang="lat">
+    <orth>erego</orth>
+    <form type="infl">
+      <orth type="inf">erigere</orth>
+      <orth type="perf">erexi</orth>
+      <orth type="sup">erectus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufrichten; erheben; ermutigen</def>
+  </sense>
+</entry>
+  <entry id="crux">
+  <form xml:lang="lat">
+    <orth>crux</orth>
+    <form type="infl">
+      <orth type="gen">crucis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Mater; Kreuz, Kreuzigung</def>
+  </sense>
+</entry>
+  <entry id="viam_ducere">
+  <form xml:lang="lat">
+    <orth>viam ducere</orth>
+  </form>
+  <sense>
+    <def>eine Straße bauen</def>
+  </sense>
+</entry>
+  <entry id="idem,_qui">
+  <form xml:lang="lat">
+    <orth>idem, qui</orth>
+  </form>
+  <sense>
+    <def>derselbe wie</def>
+  </sense>
+</entry>
+  <entry id="de_vita_cedere">
+  <form xml:lang="lat">
+    <orth>de vita cedere</orth>
+  </form>
+  <sense>
+    <def>ableben; aus dem Leben scheiden; sterben</def>
+  </sense>
+</entry>
+  <entry id="fidem_habere">
+  <form xml:lang="lat">
+    <orth>fidem habere</orth>
+  </form>
+  <sense>
+    <def>Glauben schenken</def>
+  </sense>
+</entry>
+  <entry id="onerare">
+  <form xml:lang="lat">
+    <orth>onero</orth>
+    <form type="infl">
+      <orth type="inf">onerare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>belasten; beladen</def>
+  </sense>
+</entry>
+  <entry id="concludere">
+  <form xml:lang="lat">
+    <orth>concludo</orth>
+    <form type="infl">
+      <orth type="inf">concludere</orth>
+      <orth type="perf">conclusi</orth>
+      <orth type="sup">conclusus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>einschließen; folgen</def>
+  </sense>
+</entry>
+  <entry id="intercludere">
+  <form xml:lang="lat">
+    <orth>intercludo</orth>
+    <form type="infl">
+      <orth type="inf">intercludere</orth>
+      <orth type="perf">interclusi</orth>
+      <orth type="sup">interclusus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>abschließen, versperren</def>
+  </sense>
+</entry>
+  <entry id="nauta">
+  <form xml:lang="lat">
+    <orth>nauta</orth>
+    <form type="infl">
+      <orth type="gen">nautae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Seemann; Matrose</def>
+  </sense>
+</entry>
+  <entry id="severitas">
+  <form xml:lang="lat">
+    <orth>severitas</orth>
+    <form type="infl">
+      <orth type="gen">severitatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Strenge</def>
+  </sense>
+</entry>
+  <entry id="cubiculum">
+  <form xml:lang="lat">
+    <orth>cubiculum</orth>
+    <form type="infl">
+      <orth type="gen">cubiculi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Schlafzimmer</def>
+  </sense>
+</entry>
+  <entry id="stimulare">
+  <form xml:lang="lat">
+    <orth>stimulo</orth>
+    <form type="infl">
+      <orth type="inf">stimulare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>antreiben</def>
+  </sense>
+</entry>
+  <entry id="repugnare">
+  <form xml:lang="lat">
+    <orth>repugno</orth>
+    <form type="infl">
+      <orth type="inf">repugnare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich wehren; Wiederstand leisten</def>
+  </sense>
+</entry>
+  <entry id="nodus_virginitatis">
+  <form xml:lang="lat">
+    <orth>nodus virginitatis</orth>
+  </form>
+  <sense>
+    <def>Unschuld; Jungfräulichkeit</def>
+  </sense>
+</entry>
+  <entry id="mirari">
+  <form xml:lang="lat">
+    <orth>miror</orth>
+    <form type="infl">
+      <orth type="inf">mirari</orth>
+      <orth type="perf"/>
+      <orth type="sup">miratus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich wundern</def>
+  </sense>
+</entry>
+  <entry id="velum">
+  <form xml:lang="lat">
+    <orth>velum</orth>
+    <form type="infl">
+      <orth type="gen">veli</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Segel</def>
+  </sense>
+</entry>
+  <entry id="aemulus">
+  <form xml:lang="lat">
+    <orth>aemulus</orth>
+    <form type="infl">
+      <orth type="gen">aemuli</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Gegner; Widersacher; Nebenbuhler</def>
+  </sense>
+</entry>
+  <entry id="praetermittere">
+  <form xml:lang="lat">
+    <orth>praemitto</orth>
+    <form type="infl">
+      <orth type="inf">praetermittere</orth>
+      <orth type="perf">praetermisi</orth>
+      <orth type="sup">praetermissum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>vorübergehen lassen; übergehen</def>
+  </sense>
+</entry>
+  <entry id="latebra">
+  <form xml:lang="lat">
+    <orth>latebra</orth>
+    <form type="infl">
+      <orth type="gen">latebrae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schlupfwinkel; Versteck</def>
+  </sense>
+</entry>
+  <entry id="pulvis">
+  <form xml:lang="lat">
+    <orth>pulvis</orth>
+    <form type="infl">
+      <orth type="gen">pulvis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Staub</def>
+  </sense>
+</entry>
+  <entry id="divinus">
+  <form xml:lang="lat">
+    <orth>divinus</orth>
+    <form type="infl">
+      <orth type="f">divina</orth>
+      <orth type="n">divinum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>göttlich</def>
+  </sense>
+</entry>
+  <entry id="domare">
+  <form xml:lang="lat">
+    <orth>domo</orth>
+    <form type="infl">
+      <orth type="inf">domare</orth>
+      <orth type="perf">domui</orth>
+      <orth type="sup">domitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zähmen; bezwingen</def>
+  </sense>
+</entry>
+  <entry id="fama">
+  <form xml:lang="lat">
+    <orth>fama</orth>
+    <form type="infl">
+      <orth type="gen">famae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Gerücht; (guter/übler) Ruf</def>
+  </sense>
+</entry>
+  <entry id="natio">
+  <form xml:lang="lat">
+    <orth>natio</orth>
+    <form type="infl">
+      <orth type="gen">natonis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Volksstamm; Volk</def>
+  </sense>
+</entry>
+  <entry id="taciturnitas">
+  <form xml:lang="lat">
+    <orth>taciturnitas</orth>
+    <form type="infl">
+      <orth type="gen">taciturnittatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schweigsamkkeit; Stillschweigen; Verschwiegenheit</def>
+  </sense>
+</entry>
+  <entry id="generositas">
+  <form xml:lang="lat">
+    <orth>generositas</orth>
+    <form type="infl">
+      <orth type="gen">generositatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>edle Art; edles Aussehen; Vortrefflichkeit</def>
+  </sense>
+</entry>
+  <entry id="indicare">
+  <form xml:lang="lat">
+    <orth>indico</orth>
+    <form type="infl">
+      <orth type="inf">indicare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anzeigen, zeigen; verraten</def>
+  </sense>
+</entry>
+  <entry id="thesaurus">
+  <form xml:lang="lat">
+    <orth>thesaurus</orth>
+    <form type="infl">
+      <orth type="gen">thesauri</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Schatz; Vermögen; Besitz </def>
+  </sense>
+</entry>
+  <entry id="lacrimas_effundere">
+  <form xml:lang="lat">
+    <orth>lacrimas effundere</orth>
+  </form>
+  <sense>
+    <def>weinen</def>
+  </sense>
+</entry>
+  <entry id="maeror">
+  <form xml:lang="lat">
+    <orth>maeror</orth>
+    <form type="infl">
+      <orth type="gen">maeroris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Trauer; Betrübnis</def>
+  </sense>
+</entry>
+  <entry id="indulgentia">
+  <form xml:lang="lat">
+    <orth>indulgentia</orth>
+    <form type="infl">
+      <orth type="gen">indulgentiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Nachsicht; Güte</def>
+  </sense>
+</entry>
+  <entry id="autumnus">
+  <form xml:lang="lat">
+    <orth>autumnus</orth>
+    <form type="infl">
+      <orth type="gen">autumni</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Herbst</def>
+  </sense>
+</entry>
+  <entry id="cupiditas">
+  <form xml:lang="lat">
+    <orth>cupiditas</orth>
+    <form type="infl">
+      <orth type="gen">cupiditatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Begierde, Verlangen; Leidenschaft</def>
+  </sense>
+</entry>
+  <entry id="hiems">
+  <form xml:lang="lat">
+    <orth>hiems</orth>
+    <form type="infl">
+      <orth type="gen">hiemis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Winter, Kälte; Sturm</def>
+  </sense>
+</entry>
+  <entry id="excitare">
+  <form xml:lang="lat">
+    <orth>excito</orth>
+    <form type="infl">
+      <orth type="inf">excitare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufwecken, erregen; verursachen</def>
+  </sense>
+</entry>
+  <entry id="imber">
+  <form xml:lang="lat">
+    <orth>imber</orth>
+    <form type="infl">
+      <orth type="gen">imbris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Regen; Regenguss</def>
+  </sense>
+</entry>
+  <entry id="indulgere">
+  <form xml:lang="lat">
+    <orth>indulgeo</orth>
+    <form type="infl">
+      <orth type="inf">indulgere</orth>
+      <orth type="perf">indulsi</orth>
+      <orth type="sup">indultus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>gewähren; Nachsicht schenken; nachgeben; nachgeben</def>
+  </sense>
+</entry>
+  <entry id="aetas">
+  <form xml:lang="lat">
+    <orth>aetas</orth>
+    <form type="infl">
+      <orth type="gen">aetatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Lebensalter, Lebenszeit; Zeitalter; Alter</def>
+  </sense>
+</entry>
+  <entry id="fons">
+  <form xml:lang="lat">
+    <orth>fons</orth>
+    <form type="infl">
+      <orth type="gen">fontis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Quelle; Ursprung</def>
+  </sense>
+</entry>
+  <entry id="aquaeductus">
+  <form xml:lang="lat">
+    <orth>aquaeductus</orth>
+    <form type="infl">
+      <orth type="gen">aquaeductus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Wasserleitung; Aquädukt</def>
+  </sense>
+</entry>
+  <entry id="privatus">
+  <form xml:lang="lat">
+    <orth>privatus</orth>
+    <form type="infl">
+      <orth type="f">privata</orth>
+      <orth type="n">privatum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>privat; persönlich</def>
+  </sense>
+</entry>
+  <entry id="purus">
+  <form xml:lang="lat">
+    <orth>purus</orth>
+    <form type="infl">
+      <orth type="f">pura</orth>
+      <orth type="n">purum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>rein; klar</def>
+  </sense>
+</entry>
+  <entry id="cubare">
+  <form xml:lang="lat">
+    <orth>cubo</orth>
+    <form type="infl">
+      <orth type="inf">cubare</orth>
+      <orth type="perf">cubui</orth>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>liegen</def>
+  </sense>
+</entry>
+  <entry id="sonare">
+  <form xml:lang="lat">
+    <orth>sono</orth>
+    <form type="infl">
+      <orth type="inf">sonare</orth>
+      <orth type="perf">sonui</orth>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>tönen; erklingen</def>
+  </sense>
+</entry>
+  <entry id="initium">
+  <form xml:lang="lat">
+    <orth>initium</orth>
+    <form type="infl">
+      <orth type="gen">initii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Anfang; Beginn</def>
+  </sense>
+</entry>
+  <entry id="taedium">
+  <form xml:lang="lat">
+    <orth>taedium</orth>
+    <form type="infl">
+      <orth type="gen">taedii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Ekel; Abscheu</def>
+  </sense>
+</entry>
+  <entry id="stultitia">
+  <form xml:lang="lat">
+    <orth>stultitia</orth>
+    <form type="infl">
+      <orth type="gen">stultitiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Dummheit; Torheit</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth/>
+    <form type="infl">
+      <orth type="gen">vulgi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Volk, (breite) Masse; Pöbel; menge</def>
+  </sense>
+</entry>
+  <entry id="minimo_constare">
+  <form xml:lang="lat">
+    <orth>minimo constare</orth>
+  </form>
+  <sense>
+    <def>sehr wenig kosten</def>
+  </sense>
+</entry>
+  <entry id="veritas">
+  <form xml:lang="lat">
+    <orth>veritas</orth>
+    <form type="infl">
+      <orth type="gen">veritatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wahrheit; Wahrhaftigkeit; Tatsache</def>
+  </sense>
+</entry>
+  <entry id="re_vera">
+  <form xml:lang="lat">
+    <orth>re vera</orth>
+  </form>
+  <sense>
+    <def>in Wirklichkeit; tatsächlich</def>
+  </sense>
+</entry>
+  <entry id="post_Christum_natum">
+  <form xml:lang="lat">
+    <orth>post Christum natum</orth>
+  </form>
+  <sense>
+    <def>nach Christi Geburt</def>
+  </sense>
+</entry>
+  <entry id="praesidium">
+  <form xml:lang="lat">
+    <orth>praesidium</orth>
+    <form type="infl">
+      <orth type="gen">praesidii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schutz; Posten; Besatzung</def>
+  </sense>
+</entry>
+  <entry id="incitus">
+  <form xml:lang="lat">
+    <orth>incitus</orth>
+    <form type="infl">
+      <orth type="f">incita</orth>
+      <orth type="n">incitum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ungern; widerwillig</def>
+  </sense>
+</entry>
+  <entry id="obses">
+  <form xml:lang="lat">
+    <orth>obses</orth>
+    <form type="infl">
+      <orth type="gen">obsidis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Geisel; Bürge</def>
+  </sense>
+</entry>
+  <entry id="salvus">
+  <form xml:lang="lat">
+    <orth>salvus</orth>
+    <form type="infl">
+      <orth type="f">salva</orth>
+      <orth type="n">salvum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>wohlbehalten; unverletzt</def>
+  </sense>
+</entry>
+  <entry id="vallis">
+  <form xml:lang="lat">
+    <orth>vallis</orth>
+    <form type="infl">
+      <orth type="gen">vallis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Tal</def>
+  </sense>
+</entry>
+  <entry id="origo">
+  <form xml:lang="lat">
+    <orth>origo</orth>
+    <form type="infl">
+      <orth type="gen">originis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Ursprung; Beginn; Quelle</def>
+  </sense>
+</entry>
+  <entry id="coma">
+  <form xml:lang="lat">
+    <orth>coma</orth>
+    <form type="infl">
+      <orth type="gen">comae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Haar</def>
+  </sense>
+</entry>
+  <entry id="liquidus">
+  <form xml:lang="lat">
+    <orth>liquidus</orth>
+    <form type="infl">
+      <orth type="f">liquida</orth>
+      <orth type="n">liquidum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>flüssig</def>
+  </sense>
+</entry>
+  <entry id="malum">
+  <form xml:lang="lat">
+    <orth>malum</orth>
+    <form type="infl">
+      <orth type="gen">mali</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>(das) Übel; (das) Schlechte</def>
+  </sense>
+</entry>
+  <entry id="sine_dubio">
+  <form xml:lang="lat">
+    <orth>sine dubio</orth>
+  </form>
+  <sense>
+    <def>ohne Zweifel</def>
+  </sense>
+</entry>
+  <entry id="tutus">
+  <form xml:lang="lat">
+    <orth>tutus</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>geschützt; sicher</def>
+  </sense>
+</entry>
+  <entry id="cognomen">
+  <form xml:lang="lat">
+    <orth>cognomen</orth>
+    <form type="infl">
+      <orth type="gen">cognominis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Beiname</def>
+  </sense>
+</entry>
+  <entry id="testis">
+  <form xml:lang="lat">
+    <orth>testis</orth>
+    <form type="infl">
+      <orth type="gen">testis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Zeuge</def>
+  </sense>
+</entry>
+  <entry id="callidus">
+  <form xml:lang="lat">
+    <orth>callidus</orth>
+    <form type="infl">
+      <orth type="f">callida</orth>
+      <orth type="n">callidum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>schlau; verschlagen</def>
+  </sense>
+</entry>
+  <entry id="mea_causa">
+  <form xml:lang="lat">
+    <orth>mea causa</orth>
+  </form>
+  <sense>
+    <def>um meinetwillen; meinetwegen; wegen mir</def>
+  </sense>
+</entry>
+  <entry id="quem_ad_modum">
+  <form xml:lang="lat">
+    <orth>quem ad modum</orth>
+  </form>
+  <sense>
+    <def>auf welche Art und Weise auch immer</def>
+  </sense>
+</entry>
+  <entry id="existimare">
+  <form xml:lang="lat">
+    <orth>existimo</orth>
+    <form type="infl">
+      <orth type="inf">existimare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>schätzen; urteilen; meinen</def>
+  </sense>
+</entry>
+  <entry id="verberare">
+  <form xml:lang="lat">
+    <orth>verbero</orth>
+    <form type="infl">
+      <orth type="inf">verberare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verprügeln</def>
+  </sense>
+</entry>
+  <entry id="res_adversae">
+  <form xml:lang="lat">
+    <orth>res adversae</orth>
+  </form>
+  <sense>
+    <def>ungünstige Umstände; Unglück</def>
+  </sense>
+</entry>
+  <entry id="praeterire">
+  <form xml:lang="lat">
+    <orth>praetereo</orth>
+    <form type="infl">
+      <orth type="inf">praeterire</orth>
+      <orth type="perf">praeterii</orth>
+      <orth type="sup">praeteritus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>vorbeigehen; übergehen</def>
+  </sense>
+</entry>
+  <entry id="reire">
+  <form xml:lang="lat">
+    <orth/>
+    <form type="infl">
+      <orth type="inf">reire</orth>
+      <orth type="perf">reii</orth>
+      <orth type="sup">reitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zurückgehen; zurückkehren</def>
+  </sense>
+</entry>
+  <entry id="intereo">
+  <form xml:lang="lat">
+    <orth>intereo</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>zugrunde gehen; umkommen</def>
+  </sense>
+</entry>
+  <entry id="naufragus">
+  <form xml:lang="lat">
+    <orth>naufragus</orth>
+    <form type="infl">
+      <orth type="gen">naufragi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Schiffbrüchiger</def>
+  </sense>
+</entry>
+  <entry id="paries">
+  <form xml:lang="lat">
+    <orth>paries</orth>
+    <form type="infl">
+      <orth type="gen">parietis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Wand</def>
+  </sense>
+</entry>
+  <entry type="pl" id="epulae">
+  <form xml:lang="lat">
+    <orth>epulae</orth>
+    <form type="infl">
+      <orth type="gen">epularum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Essen; Speise, Speisen; Mahl, Festmahl</def>
+  </sense>
+</entry>
+  <entry id="unda">
+  <form xml:lang="lat">
+    <orth>unda</orth>
+    <form type="infl">
+      <orth type="gen">undae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Welle; Woge</def>
+  </sense>
+</entry>
+  <entry id="convertere">
+  <form xml:lang="lat">
+    <orth>converto</orth>
+    <form type="infl">
+      <orth type="inf">convertere</orth>
+      <orth type="perf">converti</orth>
+      <orth type="sup">conversus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>umwenden; umdrehen; umkehren</def>
+  </sense>
+</entry>
+  <entry id="marmoreus">
+  <form xml:lang="lat">
+    <orth>marmoreus</orth>
+    <form type="infl">
+      <orth type="f">marmorea</orth>
+      <orth type="n">memoreum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>aus Marmor; Marmor-</def>
+  </sense>
+</entry>
+  <entry id="in_memoriam_redigere">
+  <form xml:lang="lat">
+    <orth>in memoriam redigere</orth>
+  </form>
+  <sense>
+    <def>ins Gedächtnis zurückrufen</def>
+  </sense>
+</entry>
+  <entry id="signum_marmoreum">
+  <form xml:lang="lat">
+    <orth>signum marmoreum</orth>
+  </form>
+  <sense>
+    <def>Marmorstatue</def>
+  </sense>
+</entry>
+  <entry id="frugifer">
+  <form xml:lang="lat">
+    <orth>frugifer</orth>
+    <form type="infl">
+      <orth type="f">frugifera</orth>
+      <orth type="n">frugiferum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>fruchtbar</def>
+  </sense>
+</entry>
+  <entry id="id_agere,_ut...">
+  <form xml:lang="lat">
+    <orth>id agere, ut...</orth>
+  </form>
+  <sense>
+    <def>darauf hinarbeiten, dass...</def>
+  </sense>
+</entry>
+  <entry id="coniuratio">
+  <form xml:lang="lat">
+    <orth>coniuratio</orth>
+    <form type="infl">
+      <orth type="gen">coniurationis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Verschwörung</def>
+  </sense>
+</entry>
+  <entry id="adventus">
+  <form xml:lang="lat">
+    <orth>adventus</orth>
+    <form type="infl">
+      <orth type="gen">adventus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Ankunft</def>
+  </sense>
+</entry>
+  <entry id="uter">
+  <form xml:lang="lat">
+    <orth>uter</orth>
+    <form type="infl">
+      <orth type="f">utra</orth>
+      <orth type="n">utrum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>welcher von beiden</def>
+  </sense>
+</entry>
+  <entry id="neuter">
+  <form xml:lang="lat">
+    <orth>neuter</orth>
+    <form type="infl">
+      <orth type="f">neutra</orth>
+      <orth type="n">neutrum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>keiner von beiden</def>
+  </sense>
+</entry>
+  <entry id="conservare">
+  <form xml:lang="lat">
+    <orth>conservo</orth>
+    <form type="infl">
+      <orth type="inf">conservare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>bewahren; retten</def>
+  </sense>
+</entry>
+  <entry id="desertare">
+  <form xml:lang="lat">
+    <orth>deserto</orth>
+    <form type="infl">
+      <orth type="inf">desertare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>bis zur Entscheidung kämpfen</def>
+  </sense>
+</entry>
+  <entry id="idoneus">
+  <form xml:lang="lat">
+    <orth>idoneus</orth>
+    <form type="infl">
+      <orth type="f">idonea</orth>
+      <orth type="n">idoneum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>geeignet; passend</def>
+  </sense>
+</entry>
+  <entry id="evenit,_ut...">
+  <form xml:lang="lat">
+    <orth>evenit, ut...</orth>
+  </form>
+  <sense>
+    <def>es ereignet sich, dass...</def>
+  </sense>
+</entry>
+  <entry id="pueritia">
+  <form xml:lang="lat">
+    <orth>pueritia</orth>
+    <form type="infl">
+      <orth type="gen">pueritiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Kindheit; Jugendalter</def>
+  </sense>
+</entry>
+  <entry id="occidens">
+  <form xml:lang="lat">
+    <orth>occidens</orth>
+    <form type="infl">
+      <orth type="gen">occidentis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Abendland; Westen</def>
+  </sense>
+</entry>
+  <entry id="promunturium">
+  <form xml:lang="lat">
+    <orth>promunturium</orth>
+    <form type="infl">
+      <orth type="gen">promunturii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Vorgebirge</def>
+  </sense>
+</entry>
+  <entry id="damnum">
+  <form xml:lang="lat">
+    <orth>damnum</orth>
+    <form type="infl">
+      <orth type="gen">damni</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Schaden, Verlust</def>
+  </sense>
+</entry>
+  <entry id="confectus">
+  <form xml:lang="lat">
+    <orth>confectus</orth>
+    <form type="infl">
+      <orth type="f">confecta</orth>
+      <orth type="n">confectum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>beendet; aufgerieben; (tödlich) verwundet</def>
+  </sense>
+</entry>
+  <entry id="extremus">
+  <form xml:lang="lat">
+    <orth>extremus</orth>
+    <form type="infl">
+      <orth type="f">extrema</orth>
+      <orth type="n">extremum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>der äußerste; der letzte</def>
+  </sense>
+</entry>
+  <entry id="decollo">
+  <form xml:lang="lat">
+    <orth>decollo</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>köpfen</def>
+  </sense>
+</entry>
+  <entry id="fastigium">
+  <form xml:lang="lat">
+    <orth>fastigium</orth>
+    <form type="infl">
+      <orth type="gen">fastigii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Giebel</def>
+  </sense>
+</entry>
+  <entry id="suspendere">
+  <form xml:lang="lat">
+    <orth>suspendo</orth>
+    <form type="infl">
+      <orth type="inf">suspendere</orth>
+      <orth type="perf">suspendi</orth>
+      <orth type="sup">suspensus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>aufhängen</def>
+  </sense>
+</entry>
+  <entry id="contemnere">
+  <form xml:lang="lat">
+    <orth>contemno</orth>
+    <form type="infl">
+      <orth type="inf">contemnere</orth>
+      <orth type="perf">contempsi</orth>
+      <orth type="sup">contemptus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verachten</def>
+  </sense>
+</entry>
+  <entry id="attingere">
+  <form xml:lang="lat">
+    <orth>attingo</orth>
+    <form type="infl">
+      <orth type="inf">attingere</orth>
+      <orth type="perf">attigi</orth>
+      <orth type="sup">attactus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>erreichen; betreten</def>
+  </sense>
+</entry>
+  <entry id="ingredi">
+  <form xml:lang="lat">
+    <orth>ingredior</orth>
+    <form type="infl">
+      <orth type="inf">ingredi</orth>
+      <orth type="perf"/>
+      <orth type="sup">ingressus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>hineingehen; betreten</def>
+  </sense>
+</entry>
+  <entry id="festinus">
+  <form xml:lang="lat">
+    <orth>festinus</orth>
+    <form type="infl">
+      <orth type="f">festina</orth>
+      <orth type="n">festinum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>eilend; hastig</def>
+  </sense>
+</entry>
+  <entry id="oriri">
+  <form xml:lang="lat">
+    <orth>orior</orth>
+    <form type="infl">
+      <orth type="inf">oriri</orth>
+      <orth type="perf"/>
+      <orth type="sup">ortus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>sich erheben; aufgehen; entspringen</def>
+  </sense>
+</entry>
+  <entry id="respicere">
+  <form xml:lang="lat">
+    <orth>respicio</orth>
+    <form type="infl">
+      <orth type="inf">respicere</orth>
+      <orth type="perf">respexi</orth>
+      <orth type="sup">respectus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zurückschauen; (hinter sich) erblicken</def>
+  </sense>
+</entry>
+  <entry type="pl" id="nuptiae">
+  <form xml:lang="lat">
+    <orth>nuptiae</orth>
+    <form type="infl">
+      <orth type="gen">nuptiarum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Hochzeit; Ehe</def>
+  </sense>
+</entry>
+  <entry id="nupta">
+  <form xml:lang="lat">
+    <orth>nupta</orth>
+    <form type="infl">
+      <orth type="gen">nuptae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Braut</def>
+  </sense>
+</entry>
+  <entry id="fastigium">
+  <form xml:lang="lat">
+    <orth>fastigium</orth>
+    <form type="infl">
+      <orth type="gen">fastigii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Erhebung; Giebel; Spitze</def>
+  </sense>
+</entry>
+  <entry id="caro">
+  <form xml:lang="lat">
+    <orth>caro</orth>
+    <form type="infl">
+      <orth type="gen">carnis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Fleisch</def>
+  </sense>
+</entry>
+  <entry id="scrutari">
+  <form xml:lang="lat">
+    <orth>scrutor</orth>
+    <form type="infl">
+      <orth type="inf">scrutari</orth>
+      <orth type="perf"/>
+      <orth type="sup">scrutatus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>durchsuchen; untersuchen</def>
+  </sense>
+</entry>
+  <entry id="mentiri">
+  <form xml:lang="lat">
+    <orth>mentior</orth>
+    <form type="infl">
+      <orth type="inf">mentiri</orth>
+      <orth type="perf"/>
+      <orth type="sup">mentitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>lügen</def>
+  </sense>
+</entry>
+  <entry id="intueri">
+  <form xml:lang="lat">
+    <orth>intueor</orth>
+    <form type="infl">
+      <orth type="inf">intueri</orth>
+      <orth type="perf"/>
+      <orth type="sup">intuitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>betrachten, ansehen</def>
+  </sense>
+</entry>
+  <entry id="decollare">
+  <form xml:lang="lat">
+    <orth>decollo</orth>
+    <form type="infl">
+      <orth type="inf">decollare</orth>
+      <orth type="perf">decollavi</orth>
+      <orth type="sup">decollatus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>enthaupten</def>
+  </sense>
+</entry>
+  <entry id="caligo">
+  <form xml:lang="lat">
+    <orth>caligo</orth>
+    <form type="infl">
+      <orth type="gen">caliginis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Elend; Fisternis, Dunkelheit</def>
+  </sense>
+</entry>
+  <entry id="tranquillus">
+  <form xml:lang="lat">
+    <orth>tranquillus</orth>
+    <form type="infl">
+      <orth type="f">tranquilla</orth>
+      <orth type="n">tranquillum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ruhig</def>
+  </sense>
+</entry>
+  <entry id="rector">
+  <form xml:lang="lat">
+    <orth>rector</orth>
+    <form type="infl">
+      <orth type="gen">rectoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Beherrscher</def>
+  </sense>
+</entry>
+  <entry id="pelagus">
+  <form xml:lang="lat">
+    <orth>pelagus</orth>
+    <form type="infl">
+      <orth type="gen">pelagi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Meer</def>
+  </sense>
+</entry>
+  <entry id="discedere">
+  <form xml:lang="lat">
+    <orth>discedo</orth>
+    <form type="infl">
+      <orth type="inf">discedere</orth>
+      <orth type="perf">discessi</orth>
+      <orth type="sup">discessus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>weggehen; sich
+	  entfernen</def>
+  </sense>
+</entry>
+  <entry id="aliqui">
+  <form xml:lang="lat">
+    <orth>aliqui</orth>
+    <form type="infl">
+      <orth type="f">aliqua</orth>
+      <orth type="n">aliquod</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>irgendein; irgendeine; irgendein</def>
+  </sense>
+</entry>
+  <entry id="advenire">
+  <form xml:lang="lat">
+    <orth>advenio</orth>
+    <form type="infl">
+      <orth type="inf">advenire</orth>
+      <orth type="perf">adveni</orth>
+      <orth type="sup">adventus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>ankommen</def>
+  </sense>
+</entry>
+  <entry id="laetitia">
+  <form xml:lang="lat">
+    <orth>laetitia</orth>
+    <form type="infl">
+      <orth type="gen">laetitiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Freude; Heiterkeit, Fröhlichkeit</def>
+  </sense>
+</entry>
+  <entry id="mirus">
+  <form xml:lang="lat">
+    <orth>mirus</orth>
+    <form type="infl">
+      <orth type="f">mira</orth>
+      <orth type="n">mirum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>erstaunlich; bewundernswert</def>
+  </sense>
+</entry>
+  <entry id="scindere">
+  <form xml:lang="lat">
+    <orth>scindo</orth>
+    <form type="infl">
+      <orth type="inf">scindere</orth>
+      <orth type="perf">scidi</orth>
+      <orth type="sup">scissus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zerreißen</def>
+  </sense>
+</entry>
+  <entry id="hostem_fuga_intercludere">
+  <form xml:lang="lat">
+    <orth>hostem fuga intercludere</orth>
+  </form>
+  <sense>
+    <def>den Feind an der Flucht hindern</def>
+  </sense>
+</entry>
+  <entry type="pl" id="minae">
+  <form xml:lang="lat">
+    <orth>minae</orth>
+    <form type="infl">
+      <orth type="gen">minarum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Drohungen</def>
+  </sense>
+</entry>
+  <entry id="conturbare">
+  <form xml:lang="lat">
+    <orth>conturbo</orth>
+    <form type="infl">
+      <orth type="inf">conturbare</orth>
+      <orth type="perf">conturbavi</orth>
+      <orth type="sup">conturbatus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>verwirren</def>
+  </sense>
+</entry>
+  <entry id="flamma_concupiscentiae">
+  <form xml:lang="lat">
+    <orth>flamma concupiscentiae</orth>
+  </form>
+  <sense>
+    <def>Leidenschaft</def>
+  </sense>
+</entry>
+  <entry id="pius">
+  <form xml:lang="lat">
+    <orth>pius</orth>
+    <form type="infl">
+      <orth type="f">pia</orth>
+      <orth type="n">pium</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>liebevoll; pflichtgetreu; fromm</def>
+  </sense>
+</entry>
+  <entry id="ancora">
+  <form xml:lang="lat">
+    <orth>ancora</orth>
+    <form type="infl">
+      <orth type="gen">ancorae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Anker</def>
+  </sense>
+</entry>
+  <entry id="pirata">
+  <form xml:lang="lat">
+    <orth>pirata</orth>
+    <form type="infl">
+      <orth type="gen">piratae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Seeräuber, Pirat</def>
+  </sense>
+</entry>
+  <entry id="piscator">
+  <form xml:lang="lat">
+    <orth>piscator</orth>
+    <form type="infl">
+      <orth type="gen">piscatoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Fischer</def>
+  </sense>
+</entry>
+  <entry id="locupletare">
+  <form xml:lang="lat">
+    <orth>locupleto</orth>
+    <form type="infl">
+      <orth type="inf">locupletare</orth>
+      <orth type="perf">locupletavi</orth>
+      <orth type="sup">locupletatus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>reich beschenken</def>
+  </sense>
+</entry>
+  <entry id="comprobare">
+  <form xml:lang="lat">
+    <orth>comprobo</orth>
+    <form type="infl">
+      <orth type="inf">comprobare</orth>
+      <orth type="perf">comprobavi</orth>
+      <orth type="sup">comprobatum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>bestätigen</def>
+  </sense>
+</entry>
+  <entry id="devotus">
+  <form xml:lang="lat">
+    <orth>devotus</orth>
+    <form type="infl">
+      <orth type="f">devota</orth>
+      <orth type="n">devotum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>treu ergeben</def>
+  </sense>
+</entry>
+  <entry id="percipere">
+  <form xml:lang="lat">
+    <orth>percipio</orth>
+    <form type="infl">
+      <orth type="inf">percipere</orth>
+      <orth type="perf">percepi</orth>
+      <orth type="sup">perceptum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>empfangen</def>
+  </sense>
+</entry>
+  <entry id="invidia">
+  <form xml:lang="lat">
+    <orth>invidia</orth>
+    <form type="infl">
+      <orth type="gen">invidiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>der Neid</def>
+  </sense>
+</entry>
+  <entry id="defatigatus">
+  <form xml:lang="lat">
+    <orth>defatigatus</orth>
+    <form type="infl">
+      <orth type="f">defatigata</orth>
+      <orth type="n">defatigatum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>ganz erschöpft</def>
+  </sense>
+</entry>
+  <entry id="defessus">
+  <form xml:lang="lat">
+    <orth>defessus</orth>
+    <form type="infl">
+      <orth type="f">defessa</orth>
+      <orth type="n">defessum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>erschöpft; matt</def>
+  </sense>
+</entry>
+  <entry id="asinus">
+  <form xml:lang="lat">
+    <orth>asinus</orth>
+    <form type="infl">
+      <orth type="gen">asini</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Esel</def>
+  </sense>
+</entry>
+  <entry id="donare">
+  <form xml:lang="lat">
+    <orth>dono</orth>
+    <form type="infl">
+      <orth type="inf">donare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>spenden; schenken</def>
+  </sense>
+</entry>
+  <entry id="laus">
+  <form xml:lang="lat">
+    <orth>laus</orth>
+    <form type="infl">
+      <orth type="gen">laudis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Lob</def>
+  </sense>
+</entry>
+  <entry id="exitus">
+  <form xml:lang="lat">
+    <orth>exitus</orth>
+    <form type="infl">
+      <orth type="gen">exitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Ausgang</def>
+  </sense>
+</entry>
+  <entry id="exire">
+  <form xml:lang="lat">
+    <orth>exeo</orth>
+    <form type="infl">
+      <orth type="inf">exire</orth>
+      <orth type="perf">exii</orth>
+      <orth type="sup">exitus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>rausgehen, herausgehen; ausgehen</def>
+  </sense>
+</entry>
+  <entry id="custodia">
+  <form xml:lang="lat">
+    <orth>custodia</orth>
+    <form type="infl">
+      <orth type="gen">custodiae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wache, Wächter; Bewachung; Wachtposten</def>
+  </sense>
+</entry>
+  <entry id="aditus">
+  <form xml:lang="lat">
+    <orth>aditus</orth>
+    <form type="infl">
+      <orth type="gen">aditus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Hingang; Eingang; Herangehen; Zugang; Zutritt</def>
+  </sense>
+</entry>
+  <entry id="pacare">
+  <form xml:lang="lat">
+    <orth>paco</orth>
+    <form type="infl">
+      <orth type="inf">pacare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>befrieden; Frieden bringen</def>
+  </sense>
+</entry>
+  <entry id="flos">
+  <form xml:lang="lat">
+    <orth>flos</orth>
+    <form type="infl">
+      <orth type="gen">floris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Blume; Blüte</def>
+  </sense>
+</entry>
+  <entry id="stringere">
+  <form xml:lang="lat">
+    <orth>stringo</orth>
+    <form type="infl">
+      <orth type="inf">stringere</orth>
+      <orth type="perf">strinxi</orth>
+      <orth type="sup">strictum</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>streifen; leicht berühren</def>
+  </sense>
+</entry>
+  <entry id="nec..._nec">
+  <form xml:lang="lat">
+    <orth>nec... nec</orth>
+  </form>
+  <sense>
+    <def>weder... noch</def>
+  </sense>
+</entry>
+  <entry id="redigere">
+  <form xml:lang="lat">
+    <orth>redigo</orth>
+    <form type="infl">
+      <orth type="inf">redigere</orth>
+      <orth type="perf">redegi</orth>
+      <orth type="sup">redactus</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>zurücktreiben; in einen Zustand versetzen</def>
+  </sense>
+</entry>
+  <entry id="statua">
+  <form xml:lang="lat">
+    <orth>statua</orth>
+    <form type="infl">
+      <orth type="gen">statuae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Standbild, Statue</def>
+  </sense>
+</entry>
+  <entry id="aeneus">
+  <form xml:lang="lat">
+    <orth>aeneus</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>ehern, aus Erz; aus Bronze</def>
+  </sense>
+</entry>
+  <entry id="clima">
+  <form xml:lang="lat">
+    <orth>clima</orth>
+    <form type="infl">
+      <orth type="gen">climatis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Zone</def>
+  </sense>
+</entry>
+  <entry id="torridus">
+  <form xml:lang="lat">
+    <orth>torridus</orth>
+    <form type="infl">
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen/>
+  </gramGrp>
+  <sense>
+    <def>heiß</def>
+  </sense>
+</entry>
+  <entry id="vastus">
+  <form xml:lang="lat">
+    <orth>vastus</orth>
+    <form type="infl">
+      <orth type="f">vasta</orth>
+      <orth type="n">vastum</orth>
+      <orth type="gen"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>adj</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>öde; ungeheur (groß)</def>
+  </sense>
+</entry>
+  <entry id="naufragium">
+  <form xml:lang="lat">
+    <orth>naufragium</orth>
+    <form type="infl">
+      <orth type="gen">naufragii</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Schiffbruch</def>
+  </sense>
+</entry>
+  <entry id="pluvia">
+  <form xml:lang="lat">
+    <orth>pluvia</orth>
+    <form type="infl">
+      <orth type="gen">pluviae</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Regen</def>
+  </sense>
+</entry>
+  <entry id="solitudo">
+  <form xml:lang="lat">
+    <orth>solitudo</orth>
+    <form type="infl">
+      <orth type="gen">solitudinis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Wüste; Einsamkeiti, Einöde</def>
+  </sense>
+</entry>
+  <entry id="fabricare">
+  <form xml:lang="lat">
+    <orth>fabrico</orth>
+    <form type="infl">
+      <orth type="inf">fabricare</orth>
+      <orth type="perf"/>
+      <orth type="sup"/>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>v</pos>
+  </gramGrp>
+  <sense>
+    <def>anfertigen; herstellen</def>
+  </sense>
+</entry>
+  <entry id="">
+  <form xml:lang="lat">
+    <orth/>
+    <form type="infl">
+      <orth type="gen">frigoris</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Kälte; Frost</def>
+  </sense>
+</entry>
+  <entry id="nix">
+  <form xml:lang="lat">
+    <orth>nix</orth>
+    <form type="infl">
+      <orth type="gen">nivis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>f</gen>
+  </gramGrp>
+  <sense>
+    <def>Schnee</def>
+  </sense>
+</entry>
+  <entry id="accidit,_ut...">
+  <form xml:lang="lat">
+    <orth>accidit, ut...</orth>
+  </form>
+  <sense>
+    <def>es ereignet sich, dass...</def>
+  </sense>
+</entry>
+  <entry id="hodie_quoque">
+  <form xml:lang="lat">
+    <orth>hodie quoque</orth>
+  </form>
+  <sense>
+    <def>auch heute, heute noch</def>
+  </sense>
+</entry>
+  <entry id="ornamentum">
+  <form xml:lang="lat">
+    <orth>ornamentum</orth>
+    <form type="infl">
+      <orth type="gen">ornamenti</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Ausrüstung; Schmuck</def>
+  </sense>
+</entry>
+  <entry id="poculum">
+  <form xml:lang="lat">
+    <orth>poculum</orth>
+    <form type="infl">
+      <orth type="gen">poculi</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>n</gen>
+  </gramGrp>
+  <sense>
+    <def>Becher; Trank</def>
+  </sense>
+</entry>
+  <entry id="dens">
+  <form xml:lang="lat">
+    <orth>dens</orth>
+    <form type="infl">
+      <orth type="gen">dentis</orth>
+    </form>
+  </form>
+  <gramGrp>
+    <pos>n</pos>
+    <gen>m</gen>
+  </gramGrp>
+  <sense>
+    <def>Zahn</def>
+  </sense>
+</entry>
+
+      </body>
+   </text>
+</TEI>
+<!-- 
+This document is distributed under GPL 2.0 (or any later version) or Creative Commons BY-SA. See
+the header for copyright statements. 
+
+GPL statement: 
+This document is free software; you can redistribute it and/or modify it under the terms 
+of the GNU General Public License as published by the Free Software Foundation. This program is 
+distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;  without even the implied 
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details. You should have received a copy of the GNU General Public License
+along with this program; if not, write to the 
+
+Free Software Foundation, 
+Inc., 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA. 
+-->
