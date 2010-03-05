@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TEI.2
-  PUBLIC "-//TEI P4//DTD Main Document Type//EN"
-  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
-  <!ENTITY % TEI.XML          "INCLUDE" >
-  <!ENTITY % TEI.dictionaries "INCLUDE" >
-  <!ENTITY % TEI.linking      "INCLUDE" >
-  <!ENTITY HTMLspecial PUBLIC  "-//W3C//ENTITIES Special for XHTML//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-special.ent">
-  <!ATTLIST xptr url CDATA #IMPLIED >
-  <!ATTLIST xref url CDATA #IMPLIED >
-  ]>
-  
-<TEI.2>
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
+<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
+<!--<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">-->
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -19,10 +12,14 @@
           <resp>Maintainer</resp>
           <name>John Darrington</name>
         </respStmt>
+        <respStmt>
+          <resp>Re-edited and extended by</resp>
+          <name>John Darrington</name>
+        </respStmt>
       </titleStmt>
 
       <editionStmt>
-        <edition>0.3</edition>
+        <edition>0.3.1</edition>
       </editionStmt>
 
       <extent>8189 entries</extent>
@@ -42,7 +39,7 @@
       </notesStmt>
 
       <sourceDesc>
-        <p>Home: <xptr url="http://download.travlang.com/"/></p>
+        <p>Home: <ptr target="http://download.travlang.com/"/></p>
         <p>This Database was originally generated from Ergane.</p>
       </sourceDesc>
     </fileDesc>
@@ -54,48 +51,19 @@
     </encodingDesc>
 
     <revisionDesc>
-      <change>
-        <date>2010-03-04</date>
-        <respStmt>
-          <name>John Darrington</name>
-        </respStmt>
-        <item>Lots of new words added, (a few deleted) parts of speech added. Genders added. Some horrible errors corrected. Probably some new errors introduced.           Verbs were identified using "verbiste", nouns by using freedict's fra-deu dictionary (definitions starting with upper case were assumed to be nouns).</item>
+      <change when="2010-03-05" n="0.3.1"><name>Piotr Bański</name>: Merged the old header in. Converted the dictionary to TEI P5, replaced ndashes (or something of that sort, also within headwords) with plain hyphens. Reorganised the directory (NEWS and README out, stuff from shared/ in).</change>
+      <change when="2010-03-04" n="0.3"> 
+        <list type="bulleted">
+          <head>John Darrington:</head>
+          <item>Lots of new words added, (a few deleted) parts of speech added. Genders added. Some horrible errors corrected. Probably some new errors introduced.</item>
+          <item>Verbs were identified using "verbiste", nouns by using freedict's fra-deu dictionary (definitions starting with upper case were assumed to be nouns).</item>
+        </list>
       </change>
-      <change>
-        <date>2006-12-21</date>
-        <respStmt>
-          <name>Michael Bunk</name>
-        </respStmt>
-        <item>Re-Import from Ergane: fra.mdb from 2005-Sep-14, eng.mdb from 2006-Feb-02. Part of speech and gender information now included. teidiff gave the following output: Unmodified 487, Added 5821, Deleted 4173, Modified &lt;form> 1587, Modified &lt;sense>s 877, Modified multimatch 707 + 788.</item>
-      </change>
-      <change>
-        <date>2005-01-04</date>
-        <respStmt>
-          <name>Michael Bunk</name>
-        </respStmt>
-        <item>Converted file to TEI P4</item>
-      </change>
-      <change>
-        <date>2000-04-27</date>
-        <respStmt>
-          <name>Horst Eyermann</name>
-        </respStmt>
-        <item>Database was converted to TEI format and checked into CVS</item>
-      </change>
-      <change>
-        <date>2000-01-09</date>
-        <respStmt>
-          <name>Horst Eyermann</name>
-        </respStmt>
-        <item>Phonetics added - machine generated from MBRODICT</item>
-      </change>
-      <change>
-        <date>2000-01-01</date>
-        <respStmt>
-          <name>Horst Eyermann</name>
-        </respStmt>
-        <item>This Database was generated from ergane, http://www.travlang.com - Thanks!</item>
-      </change>
+      <change when="2006-12-21"><name>Michael Bunk</name>: Re-Import from Ergane: fra.mdb from 2005-Sep-14, eng.mdb from 2006-Feb-02. Part of speech and gender information now included. teidiff gave the following output: Unmodified 487, Added 5821, Deleted 4173, Modified &lt;form> 1587, Modified &lt;sense>s 877, Modified multimatch 707 + 788.</change>
+      <change when="2005-01-04"><name>Michael Bunk</name>: Switched to Makefile.common style. Converted file from TEI P3 to TEI P4.</change>
+      <change when="2000-04-27"><name>Horst Eyermann</name>: Database was converted to TEI format and checked into CVS.</change>
+      <change when="2000-01-09"><name>Horst Eyermann</name>: Phonetics added - machine generated from MBRODICT.</change>
+      <change when="2000-01-01"><name>Horst Eyermann</name>: This Database was generated from ergane, http://www.travlang.com - Thanks!</change>
     </revisionDesc>
   </teiHeader>  
  <text>
@@ -104,37 +72,37 @@
     <form>
      <orth>-able</orth>
     </form>
-    <def>‐able; ‐ible</def>
+    <def>-able; -ible</def>
    </entry>
    <entry>
     <form>
      <orth>-al</orth>
     </form>
-    <def>‐ish; ‐like</def>
+    <def>-ish; -like</def>
    </entry>
    <entry>
     <form>
      <orth>-er</orth>
     </form>
-    <def>‐er</def>
+    <def>-er</def>
    </entry>
    <entry>
     <form>
      <orth>-iste</orth>
     </form>
-    <def>‐er; ‐ist; ‐or</def>
+    <def>-er; -ist; -or</def>
    </entry>
    <entry>
     <form>
      <orth>-ième</orth>
     </form>
-    <def>‐th</def>
+    <def>-th</def>
    </entry>
    <entry>
     <form>
      <orth>-té</orth>
     </form>
-    <def>‐ness; ‐ship; ‐ity</def>
+    <def>-ness; -ship; -ity</def>
    </entry>
    <entry>
     <form>
@@ -225,7 +193,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Addis‐Abeba</orth>
+     <orth>Addis-Abeba</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -365,12 +333,12 @@
    </entry>
    <entry>
     <form>
-     <orth>Aix‐la‐Chapelle</orth>
+     <orth>Aix-la-Chapelle</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Aix‐la‐Chapelle</def>
+    <def>Aix-la-Chapelle</def>
    </entry>
    <entry>
     <form>
@@ -739,14 +707,14 @@
    </entry>
    <entry>
     <form>
-     <orth>Anglo‐Saxon</orth>
+     <orth>Anglo-Saxon</orth>
      <pron>ɑ̃glosaksɔ̃</pron>
     </form>
     <gramGrp>
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>anglo‐saxon</def>
+    <def>anglo-saxon</def>
    </entry>
    <entry>
     <form>
@@ -1130,12 +1098,12 @@
    </entry>
    <entry>
     <form>
-     <orth>Asie du Sud‐Est</orth>
+     <orth>Asie du Sud-Est</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Sout‐East Asia</def>
+    <def>Sout-East Asia</def>
    </entry>
    <entry>
     <form>
@@ -1406,7 +1374,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Barbe‐Bleue</orth>
+     <orth>Barbe-Bleue</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -1689,12 +1657,12 @@
    </entry>
    <entry>
     <form>
-     <orth>Bois‐le‐Duc</orth>
+     <orth>Bois-le-Duc</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Bois‐le‐Duc</def>
+    <def>Bois-le-Duc</def>
    </entry>
    <entry>
     <form>
@@ -2056,7 +2024,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Cap‐des‐Caissie</orth>
+     <orth>Cap-des-Caissie</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -2459,7 +2427,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Colombie‐Britannique</orth>
+     <orth>Colombie-Britannique</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3114,7 +3082,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Epiphany; Twelfth‐night</def>
+    <def>Epiphany; Twelfth-night</def>
    </entry>
    <entry>
     <form>
@@ -3201,7 +3169,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Etats‐Unis</orth>
+     <orth>Etats-Unis</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3272,7 +3240,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Extrême‐Orient</orth>
+     <orth>Extrême-Orient</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3416,7 +3384,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Forêt‐Noire</orth>
+     <orth>Forêt-Noire</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3678,7 +3646,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Grande‐Bretagne</orth>
+     <orth>Grande-Bretagne</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3687,7 +3655,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Grand‐Sault</orth>
+     <orth>Grand-Sault</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -3837,7 +3805,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Guinée‐Bissau</orth>
+     <orth>Guinée-Bissau</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -4229,7 +4197,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Ile du Cap‐Breton</orth>
+     <orth>Ile du Cap-Breton</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -4248,7 +4216,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Iles de la Reine‐Charlotte</orth>
+     <orth>Iles de la Reine-Charlotte</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -4257,7 +4225,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Iles de la Reine‐Elisabeth</orth>
+     <orth>Iles de la Reine-Elisabeth</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -4276,7 +4244,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Ile‐du‐Prince‐Edouard</orth>
+     <orth>Ile-du-Prince-Edouard</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -4334,7 +4302,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Indo‐China</def>
+    <def>Indo-China</def>
    </entry>
    <entry>
     <form>
@@ -4720,7 +4688,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Jésus‐Christ</orth>
+     <orth>Jésus-Christ</orth>
      <pron>ʒezykʀi(st)</pron>
     </form>
     <gramGrp>
@@ -5388,7 +5356,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Marc‐en‐Barœul</orth>
+     <orth>Marc-en-Barœul</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6050,7 +6018,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nord‐Américain</orth>
+     <orth>Nord-Américain</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6102,7 +6070,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouveau‐Brunswick</orth>
+     <orth>Nouveau-Brunswick</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6111,7 +6079,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouvelle‐Ecosse</orth>
+     <orth>Nouvelle-Ecosse</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6121,7 +6089,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouvelle‐Galles du Sud</orth>
+     <orth>Nouvelle-Galles du Sud</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6130,7 +6098,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouvelle‐Guinée</orth>
+     <orth>Nouvelle-Guinée</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6139,7 +6107,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouvelle‐Orléans</orth>
+     <orth>Nouvelle-Orléans</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6148,7 +6116,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Nouvelle‐Zélande</orth>
+     <orth>Nouvelle-Zélande</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6197,7 +6165,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Néo‐Zélandais</orth>
+     <orth>Néo-Zélandais</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6499,7 +6467,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Pays‐Bas</orth>
+     <orth>Pays-Bas</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6680,7 +6648,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Pont‐Euxine</orth>
+     <orth>Pont-Euxine</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -6739,7 +6707,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Proche‐Orient</orth>
+     <orth>Proche-Orient</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7070,7 +7038,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Sainte‐Hélène</orth>
+     <orth>Sainte-Hélène</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7079,7 +7047,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Sainte‐Vierge</orth>
+     <orth>Sainte-Vierge</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7088,7 +7056,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Saint‐Marin</orth>
+     <orth>Saint-Marin</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7097,7 +7065,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Saint‐Nicolas</orth>
+     <orth>Saint-Nicolas</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7106,7 +7074,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Saint‐Pétersbourg</orth>
+     <orth>Saint-Pétersbourg</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7115,7 +7083,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Saint‐Sylvestre</orth>
+     <orth>Saint-Sylvestre</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7501,7 +7469,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Sud‐Africain</orth>
+     <orth>Sud-Africain</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -7510,12 +7478,12 @@
    </entry>
    <entry>
     <form>
-     <orth>Sud‐Est asiatique</orth>
+     <orth>Sud-Est asiatique</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>Sout‐East Asia</def>
+    <def>Sout-East Asia</def>
    </entry>
    <entry>
     <form>
@@ -7765,7 +7733,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Terre‐Neuve</orth>
+     <orth>Terre-Neuve</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -8249,7 +8217,7 @@
    </entry>
    <entry>
     <form>
-     <orth>Viêt‐nam</orth>
+     <orth>Viêt-nam</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -8590,7 +8558,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>abacus; ball‐frame; counting‐frame</def>
+    <def>abacus; ball-frame; counting-frame</def>
    </entry>
    <entry>
     <form>
@@ -8699,9 +8667,9 @@
    </entry>
    <entry>
     <form>
-     <orth>abat‐jour</orth>
+     <orth>abat-jour</orth>
     </form>
-    <def>lamp‐shade</def>
+    <def>lamp-shade</def>
    </entry>
    <entry>
     <form>
@@ -9131,7 +9099,7 @@
      <pos>adj</pos>
     </gramGrp>
     <def>accessible</def>
-    <def>approachable; communicative; get‐at‐able</def>
+    <def>approachable; communicative; get-at-able</def>
     <def>moderate; reasonable</def>
    </entry>
    <entry>
@@ -9338,7 +9306,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>apricot‐tree</def>
+    <def>apricot-tree</def>
    </entry>
    <entry>
     <form>
@@ -9793,7 +9761,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>accent; stress</def>
-    <def>stress‐mark</def>
+    <def>stress-mark</def>
     <def>accent</def>
     <def>accent mark; supersign</def>
    </entry>
@@ -9878,7 +9846,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>accessory; side‐issue</def>
+    <def>accessory; side-issue</def>
    </entry>
    <entry>
     <form>
@@ -9991,7 +9959,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>accommodating; good‐hearted</def>
+    <def>accommodating; good-hearted</def>
    </entry>
    <entry>
     <form>
@@ -10200,7 +10168,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>arm; arm‐rest</def>
+    <def>arm; arm-rest</def>
    </entry>
    <entry>
     <form>
@@ -10242,7 +10210,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>lying‐in woman</def>
+    <def>lying-in woman</def>
    </entry>
    <entry>
     <form>
@@ -10253,7 +10221,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>arm; arm‐rest</def>
+    <def>arm; arm-rest</def>
    </entry>
    <entry>
     <form>
@@ -10975,7 +10943,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>current; present; present‐day; topical; up‐to‐date</def>
+    <def>current; present; present-day; topical; up-to-date</def>
     <def>fashionable</def>
    </entry>
    <entry>
@@ -11269,7 +11237,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>adjutant; aide‐de‐camp</def>
+    <def>adjutant; aide-de-camp</def>
    </entry>
    <entry>
     <form>
@@ -11610,7 +11578,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>adult; grown‐up</def>
+    <def>adult; grown-up</def>
    </entry>
    <entry>
     <form>
@@ -11620,7 +11588,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>adult; fully‐grown</def>
+    <def>adult; fully-grown</def>
    </entry>
    <entry>
     <form>
@@ -11710,7 +11678,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>affable; friendly; good‐natured; kind</def>
+    <def>affable; friendly; good-natured; kind</def>
    </entry>
    <entry>
     <form>
@@ -11994,7 +11962,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>post‐paid; stamped</def>
+    <def>post-paid; stamped</def>
    </entry>
    <entry>
     <form>
@@ -12124,12 +12092,12 @@
    </entry>
    <entry>
     <form>
-     <orth>afro‐asiatique</orth>
+     <orth>afro-asiatique</orth>
     </form>
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>Afro‐Asian</def>
+    <def>Afro-Asian</def>
    </entry>
    <entry>
     <form>
@@ -12166,9 +12134,9 @@
    </entry>
    <entry>
     <form>
-     <orth>agar‐agar</orth>
+     <orth>agar-agar</orth>
     </form>
-    <def>agar; agar‐agar</def>
+    <def>agar; agar-agar</def>
    </entry>
    <entry>
     <form>
@@ -12465,7 +12433,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>agrarian; agricultural; farm‐</def>
+    <def>agrarian; agricultural; farm-</def>
    </entry>
    <entry>
     <form>
@@ -12800,7 +12768,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>affable; friendly; good‐natured; kind</def>
+    <def>affable; friendly; good-natured; kind</def>
     <def>dainty; kind; nice; pretty</def>
    </entry>
    <entry>
@@ -12844,7 +12812,7 @@
    </entry>
    <entry>
     <form>
-     <orth>ainsi soit‐il</orth>
+     <orth>ainsi soit-il</orth>
     </form>
     <def>amen</def>
    </entry>
@@ -12906,7 +12874,7 @@
      <orth>aisé</orth>
      <pron>ɛze</pron>
     </form>
-    <def>in easy circumstances; well‐to‐do</def>
+    <def>in easy circumstances; well-to-do</def>
    </entry>
    <entry>
     <form>
@@ -14001,7 +13969,7 @@
      <gen>m</gen>
     </gramGrp>
     <def>friend</def>
-    <def>fellow‐thinker</def>
+    <def>fellow-thinker</def>
    </entry>
    <entry>
     <form>
@@ -14011,7 +13979,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>fellow‐thinker</def>
+    <def>fellow-thinker</def>
    </entry>
    <entry>
     <form>
@@ -14350,7 +14318,7 @@
      <orth>amène</orth>
      <pron>amɛn</pron>
     </form>
-    <def>affable; friendly; good‐natured; kind</def>
+    <def>affable; friendly; good-natured; kind</def>
    </entry>
    <entry>
     <form>
@@ -14648,7 +14616,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>ex‐; former</def>
+    <def>ex-; former</def>
     <def>old</def>
    </entry>
    <entry>
@@ -14818,13 +14786,13 @@
    </entry>
    <entry>
     <form>
-     <orth>anglo‐saxon</orth>
+     <orth>anglo-saxon</orth>
      <pron>ɑ̃glosaksɔ̃</pron>
     </form>
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>anglo‐saxon</def>
+    <def>anglo-saxon</def>
    </entry>
    <entry>
     <form>
@@ -14878,7 +14846,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>angular; sharp‐edged</def>
+    <def>angular; sharp-edged</def>
    </entry>
    <entry>
     <form>
@@ -15006,7 +14974,7 @@
     </gramGrp>
     <def>address list</def>
     <def>almanac</def>
-    <def>year‐book</def>
+    <def>year-book</def>
    </entry>
    <entry>
     <form>
@@ -15193,7 +15161,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>waiting‐room; waiting room</def>
+    <def>waiting-room; waiting room</def>
    </entry>
    <entry>
     <form>
@@ -15326,7 +15294,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>anti‐Semite</def>
+    <def>anti-Semite</def>
    </entry>
    <entry>
     <form>
@@ -15336,7 +15304,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>anti‐Semitic</def>
+    <def>anti-Semitic</def>
    </entry>
    <entry>
     <form>
@@ -15347,7 +15315,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>anti‐Semitism</def>
+    <def>anti-Semitism</def>
    </entry>
    <entry>
     <form>
@@ -15537,7 +15505,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>apiarist; bee‐keeper; bee‐master</def>
+    <def>apiarist; bee-keeper; bee-master</def>
    </entry>
    <entry>
     <form>
@@ -15548,7 +15516,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>bee‐keeping</def>
+    <def>bee-keeping</def>
    </entry>
    <entry>
     <form>
@@ -15588,7 +15556,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>aplomb; self‐assurance</def>
+    <def>aplomb; self-assurance</def>
    </entry>
    <entry>
     <form>
@@ -15817,7 +15785,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>accessory; side‐issue</def>
+    <def>accessory; side-issue</def>
     <def>addition; adjunct</def>
     <def>appendix</def>
    </entry>
@@ -16131,7 +16099,7 @@
    </entry>
    <entry>
     <form>
-     <orth>après‐demain</orth>
+     <orth>après-demain</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -16140,7 +16108,7 @@
    </entry>
    <entry>
     <form>
-     <orth>après‐midi</orth>
+     <orth>après-midi</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -16207,7 +16175,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>water‐colour</def>
+    <def>water-colour</def>
    </entry>
    <entry>
     <form>
@@ -16227,7 +16195,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>aquatic; watery; water‐; of water</def>
+    <def>aquatic; watery; water-; of water</def>
    </entry>
    <entry>
     <form>
@@ -16241,9 +16209,9 @@
    </entry>
    <entry>
     <form>
-     <orth>aqu‐</orth>
+     <orth>aqu-</orth>
     </form>
-    <def>aquatic; water‐</def>
+    <def>aquatic; water-</def>
    </entry>
    <entry>
     <form>
@@ -16568,7 +16536,7 @@
    </entry>
    <entry>
     <form>
-     <orth>arc‐en‐ciel</orth>
+     <orth>arc-en-ciel</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -16957,7 +16925,7 @@
    </entry>
    <entry>
     <form>
-     <orth>arrière‐cousin</orth>
+     <orth>arrière-cousin</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -16967,7 +16935,7 @@
    </entry>
    <entry>
     <form>
-     <orth>arrière‐cousine</orth>
+     <orth>arrière-cousine</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -16977,50 +16945,50 @@
    </entry>
    <entry>
     <form>
-     <orth>arrière‐garde</orth>
+     <orth>arrière-garde</orth>
     </form>
     <def>rear; rearguard</def>
    </entry>
    <entry>
     <form>
-     <orth>arrière‐grand‐mère</orth>
+     <orth>arrière-grand-mère</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>great‐grandmother</def>
+    <def>great-grandmother</def>
    </entry>
    <entry>
     <form>
-     <orth>arrière‐grand‐père</orth>
+     <orth>arrière-grand-père</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>great‐grandfather</def>
+    <def>great-grandfather</def>
    </entry>
    <entry>
     <form>
-     <orth>arrière‐neveu</orth>
+     <orth>arrière-neveu</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>grand‐nephew</def>
+    <def>grand-nephew</def>
    </entry>
    <entry>
     <form>
-     <orth>arrière‐nièce</orth>
+     <orth>arrière-nièce</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>grand‐niece</def>
+    <def>grand-niece</def>
    </entry>
    <entry>
     <form>
-     <orth>arrière‐petite‐fille</orth>
+     <orth>arrière-petite-fille</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -17030,7 +16998,7 @@
    </entry>
    <entry>
     <form>
-     <orth>arrière‐petit‐fils</orth>
+     <orth>arrière-petit-fils</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -17039,7 +17007,7 @@
    </entry>
    <entry>
     <form>
-     <orth>arrière‐plan</orth>
+     <orth>arrière-plan</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -17088,7 +17056,7 @@
      <orth>arrosoir</orth>
      <pron>aʀozwaʀ</pron>
     </form>
-    <def>watering‐can</def>
+    <def>watering-can</def>
    </entry>
    <entry>
     <form>
@@ -17223,9 +17191,9 @@
    </entry>
    <entry>
     <form>
-     <orth>artillerie anti‐aérienne</orth>
+     <orth>artillerie anti-aérienne</orth>
     </form>
-    <def>ack‐ack; anti‐aircraft guns</def>
+    <def>ack-ack; anti-aircraft guns</def>
    </entry>
    <entry>
     <form>
@@ -17419,7 +17387,7 @@
      <orth>aspirateur</orth>
      <pron>aspiʀatœʀ</pron>
     </form>
-    <def>vacuum cleaner; vacuum‐cleaner</def>
+    <def>vacuum cleaner; vacuum-cleaner</def>
    </entry>
    <entry>
     <form>
@@ -17768,7 +17736,7 @@
      <orth>astral</orth>
      <pron>astʀal</pron>
     </form>
-    <def>sideral; star; star‐; of a star</def>
+    <def>sideral; star; star-; of a star</def>
    </entry>
    <entry>
     <form>
@@ -17886,7 +17854,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>atavism; throw‐back</def>
+    <def>atavism; throw-back</def>
    </entry>
    <entry>
     <form>
@@ -17896,7 +17864,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>atelier; studio; work‐room; workshop</def>
+    <def>atelier; studio; work-room; workshop</def>
     <def>workplace</def>
     <def>workshop</def>
    </entry>
@@ -18725,7 +18693,7 @@
      <orth>autarcie</orth>
      <pron>otaʀsi</pron>
     </form>
-    <def>autarky; self‐sufficiency</def>
+    <def>autarky; self-sufficiency</def>
    </entry>
    <entry>
     <form>
@@ -18866,7 +18834,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>autodidact; self‐taught man</def>
+    <def>autodidact; self-taught man</def>
    </entry>
    <entry>
     <form>
@@ -19158,14 +19126,14 @@
    </entry>
    <entry>
     <form>
-     <orth>au‐delà de</orth>
+     <orth>au-delà de</orth>
     </form>
     <def>beyond; by; past; straight past</def>
     <def>across; beyond; on the other side of</def>
    </entry>
    <entry>
     <form>
-     <orth>au‐dessus de</orth>
+     <orth>au-dessus de</orth>
     </form>
     <def>above; over</def>
    </entry>
@@ -19256,22 +19224,22 @@
    </entry>
    <entry>
     <form>
-     <orth>avant‐bras</orth>
+     <orth>avant-bras</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>lower‐arm</def>
+    <def>lower-arm</def>
    </entry>
    <entry>
     <form>
-     <orth>avant‐garde</orth>
+     <orth>avant-garde</orth>
     </form>
-    <def>avant‐garde</def>
+    <def>avant-garde</def>
    </entry>
    <entry>
     <form>
-     <orth>avant‐hier</orth>
+     <orth>avant-hier</orth>
     </form>
     <def>the day before yesterday</def>
    </entry>
@@ -19548,7 +19516,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>advocate</def>
-    <def>barrister; barrister‐at‐law; counsel</def>
+    <def>barrister; barrister-at-law; counsel</def>
     <def>intercessor; lawyer; solicitor</def>
    </entry>
    <entry>
@@ -20032,7 +20000,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>balloon; air‐balloon</def>
+    <def>balloon; air-balloon</def>
    </entry>
    <entry>
     <form>
@@ -20131,7 +20099,7 @@
    </entry>
    <entry>
     <form>
-     <orth>baby‐sitter</orth>
+     <orth>baby-sitter</orth>
     </form>
     <def>babysitter</def>
    </entry>
@@ -20748,7 +20716,7 @@
      <orth>ballon</orth>
      <pron>balɔ̃</pron>
     </form>
-    <def>balloon; air‐balloon</def>
+    <def>balloon; air-balloon</def>
     <def>balloon</def>
     <def>football; soccer ball</def>
    </entry>
@@ -20828,7 +20796,7 @@
      <orth>bananier</orth>
      <pron>bananje</pron>
     </form>
-    <def>banana plant; banana‐plant</def>
+    <def>banana plant; banana-plant</def>
    </entry>
    <entry>
     <form>
@@ -20868,7 +20836,7 @@
      <orth>bande vidéo</orth>
      <pron>bɑ̃dvideo</pron>
     </form>
-    <def>video‐tape</def>
+    <def>video-tape</def>
    </entry>
    <entry>
     <form>
@@ -21520,7 +21488,7 @@
    </entry>
    <entry>
     <form>
-     <orth>base‐ball</orth>
+     <orth>base-ball</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -21560,7 +21528,7 @@
    </entry>
    <entry>
     <form>
-     <orth>basket‐ball</orth>
+     <orth>basket-ball</orth>
     </form>
     <def>basketball</def>
    </entry>
@@ -21613,16 +21581,16 @@
    </entry>
    <entry>
     <form>
-     <orth>bas‐relief</orth>
+     <orth>bas-relief</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>bas‐relief; low relief</def>
+    <def>bas-relief; low relief</def>
    </entry>
    <entry>
     <form>
-     <orth>bas‐ventre</orth>
+     <orth>bas-ventre</orth>
     </form>
     <def>abdomen</def>
    </entry>
@@ -21855,7 +21823,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>anti‐tank gun</def>
+    <def>anti-tank gun</def>
     <def>bazooka</def>
    </entry>
    <entry>
@@ -21908,19 +21876,19 @@
    </entry>
    <entry>
     <form>
-     <orth>beaux‐parents</orth>
+     <orth>beaux-parents</orth>
     </form>
-    <def>parents‐in‐law</def>
+    <def>parents-in-law</def>
    </entry>
    <entry>
     <form>
-     <orth>beau‐fils</orth>
+     <orth>beau-fils</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>son‐in‐law</def>
+    <def>son-in-law</def>
    </entry>
    <entry>
     <form>
@@ -22070,7 +22038,7 @@
      <orth>biberon</orth>
      <pron>bibəʀɔ̃</pron>
     </form>
-    <def>baby's bottle; feeding‐bottle</def>
+    <def>baby's bottle; feeding-bottle</def>
    </entry>
    <entry>
     <form>
@@ -22599,7 +22567,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>bonbon; bon‐bon</def>
+    <def>bonbon; bon-bon</def>
    </entry>
    <entry>
     <form>
@@ -22687,7 +22655,7 @@
      <orth>bossu</orth>
      <pron>bosy</pron>
     </form>
-    <def>hunch‐backed</def>
+    <def>hunch-backed</def>
     <def>hunchback</def>
    </entry>
    <entry>
@@ -22708,7 +22676,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>he‐goat</def>
+    <def>he-goat</def>
    </entry>
    <entry>
     <form>
@@ -22965,7 +22933,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>abacus; ball‐frame; counting‐frame</def>
+    <def>abacus; ball-frame; counting-frame</def>
    </entry>
    <entry>
     <form>
@@ -22982,8 +22950,8 @@
      <orth>bouquin</orth>
      <pron>bukɛ̃</pron>
     </form>
-    <def>buck; buck‐rabbit</def>
-    <def>buck; buck‐hare</def>
+    <def>buck; buck-rabbit</def>
+    <def>buck; buck-hare</def>
    </entry>
    <entry>
     <form>
@@ -23126,7 +23094,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>resonance‐box</def>
+    <def>resonance-box</def>
    </entry>
    <entry>
     <form>
@@ -23199,7 +23167,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>upper arm; upper‐arm</def>
+    <def>upper arm; upper-arm</def>
    </entry>
    <entry>
     <form>
@@ -23349,7 +23317,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>tooth‐brush</def>
+    <def>tooth-brush</def>
    </entry>
    <entry>
     <form>
@@ -23542,7 +23510,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>buffet</def>
-    <def>larder; pantry; store‐cupboard</def>
+    <def>larder; pantry; store-cupboard</def>
    </entry>
    <entry>
     <form>
@@ -23950,7 +23918,7 @@
    </entry>
    <entry>
     <form>
-     <orth>c'est‐à‐dire</orth>
+     <orth>c'est-à-dire</orth>
     </form>
     <def>that is</def>
    </entry>
@@ -24021,7 +23989,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dark‐room; small room</def>
+    <def>dark-room; small room</def>
    </entry>
    <entry>
     <form>
@@ -24158,7 +24126,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>coffee‐pot</def>
+    <def>coffee-pot</def>
    </entry>
    <entry>
     <form>
@@ -24168,7 +24136,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>café; coffee‐house</def>
+    <def>café; coffee-house</def>
     <def>coffee</def>
    </entry>
    <entry>
@@ -24190,7 +24158,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>exercise‐book; folder; notebook</def>
+    <def>exercise-book; folder; notebook</def>
    </entry>
    <entry>
     <form>
@@ -24210,7 +24178,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>rennet‐stomach</def>
+    <def>rennet-stomach</def>
    </entry>
    <entry>
     <form>
@@ -24220,7 +24188,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>cashier's stand; fund; money box; money‐box; till</def>
+    <def>cashier's stand; fund; money box; money-box; till</def>
     <def>box; chest</def>
    </entry>
    <entry>
@@ -25016,7 +24984,7 @@
    </entry>
    <entry>
     <form>
-     <orth>celle‐ci</orth>
+     <orth>celle-ci</orth>
     </form>
     <def>this</def>
    </entry>
@@ -25054,7 +25022,7 @@
    </entry>
    <entry>
     <form>
-     <orth>celui‐ci</orth>
+     <orth>celui-ci</orth>
     </form>
     <def>this</def>
    </entry>
@@ -25188,7 +25156,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>cherry‐tree</def>
+    <def>cherry-tree</def>
    </entry>
    <entry>
     <form>
@@ -25337,7 +25305,7 @@
      <orth>chambre de travail</orth>
      <pron>ʃɑ̃bʀdətʀavaj</pron>
     </form>
-    <def>lying‐in room</def>
+    <def>lying-in room</def>
    </entry>
    <entry>
     <form>
@@ -25890,7 +25858,7 @@
    </entry>
    <entry>
     <form>
-     <orth>chauve‐souris</orth>
+     <orth>chauve-souris</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -26147,9 +26115,9 @@
    </entry>
    <entry>
     <form>
-     <orth>chewing‐gum</orth>
+     <orth>chewing-gum</orth>
     </form>
-    <def>chewing‐gum</def>
+    <def>chewing-gum</def>
    </entry>
    <entry>
     <form>
@@ -26197,7 +26165,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>couch‐grass</def>
+    <def>couch-grass</def>
    </entry>
    <entry>
     <form>
@@ -26405,7 +26373,7 @@
    </entry>
    <entry>
     <form>
-     <orth>chou‐fleur</orth>
+     <orth>chou-fleur</orth>
      <pron>ʃuflœʀ</pron>
     </form>
     <gramGrp>
@@ -26500,7 +26468,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>chestnut; horse‐chestnut</def>
+    <def>chestnut; horse-chestnut</def>
    </entry>
    <entry>
     <form>
@@ -26510,7 +26478,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>chestnut‐tree</def>
+    <def>chestnut-tree</def>
    </entry>
    <entry>
     <form>
@@ -26540,7 +26508,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>she‐goat</def>
+    <def>she-goat</def>
     <def>goat</def>
    </entry>
    <entry>
@@ -26934,7 +26902,7 @@
      <orth>civil</orth>
      <pron>sivil</pron>
     </form>
-    <def>civil; civilian; non‐military</def>
+    <def>civil; civilian; non-military</def>
    </entry>
    <entry>
     <form>
@@ -27134,7 +27102,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>diving‐bell</def>
+    <def>diving-bell</def>
    </entry>
    <entry>
     <form>
@@ -27213,7 +27181,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>guinea‐pig</def>
+    <def>guinea-pig</def>
    </entry>
    <entry>
     <form>
@@ -27260,7 +27228,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>guinea‐pig</def>
+    <def>guinea-pig</def>
    </entry>
    <entry>
     <form>
@@ -27394,7 +27362,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>atpersand; commercial‐at sign; snail</def>
+    <def>atpersand; commercial-at sign; snail</def>
    </entry>
    <entry>
     <form>
@@ -27820,7 +27788,7 @@
    </entry>
    <entry>
     <form>
-     <orth>comment allez‐vous?</orth>
+     <orth>comment allez-vous?</orth>
     </form>
     <def>how are you?; how do you do?</def>
    </entry>
@@ -27859,7 +27827,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>police‐station</def>
+    <def>police-station</def>
    </entry>
    <entry>
     <form>
@@ -28212,7 +28180,7 @@
    </entry>
    <entry>
     <form>
-     <orth>compte‐rendu</orth>
+     <orth>compte-rendu</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -28717,7 +28685,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>well‐known</def>
+    <def>well-known</def>
    </entry>
    <entry>
     <form>
@@ -30138,7 +30106,7 @@
      <orth>courtois</orth>
      <pron>kuʀtwa</pron>
     </form>
-    <def>courteous; polite; well‐mannered</def>
+    <def>courteous; polite; well-mannered</def>
    </entry>
    <entry>
     <form>
@@ -30781,7 +30749,7 @@
    </entry>
    <entry>
     <form>
-     <orth>crève‐cœur</orth>
+     <orth>crève-cœur</orth>
     </form>
     <def>affliction</def>
    </entry>
@@ -31019,7 +30987,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>cultured; educated; learned; well‐informed</def>
+    <def>cultured; educated; learned; well-informed</def>
    </entry>
    <entry>
     <form>
@@ -31338,7 +31306,7 @@
      <orth>d'adieu</orth>
      <pron>dadjø</pron>
     </form>
-    <def>goodbye‐</def>
+    <def>goodbye-</def>
    </entry>
    <entry>
     <form>
@@ -31365,7 +31333,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>aquatic; water‐</def>
+    <def>aquatic; water-</def>
    </entry>
    <entry>
     <form>
@@ -31429,7 +31397,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>colour‐blind</def>
+    <def>colour-blind</def>
    </entry>
    <entry>
     <form>
@@ -31585,13 +31553,13 @@
    </entry>
    <entry>
     <form>
-     <orth>de celle‐là</orth>
+     <orth>de celle-là</orth>
     </form>
     <def>that one's</def>
    </entry>
    <entry>
     <form>
-     <orth>de cellui‐là</orth>
+     <orth>de cellui-là</orth>
     </form>
     <def>that one's</def>
    </entry>
@@ -32955,19 +32923,19 @@
    </entry>
    <entry>
     <form>
-     <orth>dix‐huit</orth>
+     <orth>dix-huit</orth>
     </form>
     <def>eighteen</def>
    </entry>
    <entry>
     <form>
-     <orth>dix‐neuf</orth>
+     <orth>dix-neuf</orth>
     </form>
     <def>nineteen</def>
    </entry>
    <entry>
     <form>
-     <orth>dix‐sept</orth>
+     <orth>dix-sept</orth>
     </form>
     <def>seventeen</def>
    </entry>
@@ -33283,7 +33251,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>sleeping‐accommodation; sleeping‐place</def>
+    <def>sleeping-accommodation; sleeping-place</def>
    </entry>
    <entry>
     <form>
@@ -33484,7 +33452,7 @@
     <def>right; righthand</def>
     <def>jurisprudence; law</def>
     <def>faithful; loyal</def>
-    <def>right‐angle; square</def>
+    <def>right-angle; square</def>
     <def>right</def>
     <def>direct; straight</def>
    </entry>
@@ -33496,7 +33464,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>excise; excise‐duty</def>
+    <def>excise; excise-duty</def>
    </entry>
    <entry>
     <form>
@@ -33671,7 +33639,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>landing‐stage; pier; wharf</def>
+    <def>landing-stage; pier; wharf</def>
    </entry>
    <entry>
     <form>
@@ -34046,13 +34014,13 @@
    </entry>
    <entry>
     <form>
-     <orth>défense anti‐aérienne</orth>
+     <orth>défense anti-aérienne</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>air‐defence; anti‐aircraft defence; anti‐aircraft defences</def>
+    <def>air-defence; anti-aircraft defence; anti-aircraft defences</def>
    </entry>
    <entry>
     <form>
@@ -35008,7 +34976,7 @@
    </entry>
    <entry>
     <form>
-     <orth>eau‐de‐vie</orth>
+     <orth>eau-de-vie</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -35018,7 +34986,7 @@
    </entry>
    <entry>
     <form>
-     <orth>eau‐forte</orth>
+     <orth>eau-forte</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -35655,7 +35623,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>accident‐prone</def>
+    <def>accident-prone</def>
    </entry>
    <entry>
     <form>
@@ -35955,7 +35923,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>shield; sign‐board</def>
+    <def>shield; sign-board</def>
    </entry>
    <entry>
     <form>
@@ -35987,7 +35955,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>bevy; collection; group; heap; herd; set</def>
-    <def>co‐; fellow</def>
+    <def>co-; fellow</def>
     <def>together</def>
    </entry>
    <entry>
@@ -35998,7 +35966,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>solair; sun; sun‐; of the sun</def>
+    <def>solair; sun; sun-; of the sun</def>
    </entry>
    <entry>
     <form>
@@ -36372,7 +36340,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>air‐squadron</def>
+    <def>air-squadron</def>
    </entry>
    <entry>
     <form>
@@ -36718,13 +36686,13 @@
    </entry>
    <entry>
     <form>
-     <orth>est‐ce qu' ... ?</orth>
+     <orth>est-ce qu' ... ?</orth>
     </form>
     <def>is ... ?; does ... ?</def>
    </entry>
    <entry>
     <form>
-     <orth>est‐ce que ... ?</orth>
+     <orth>est-ce que ... ?</orth>
     </form>
     <def>is ... ?; does ... ?</def>
    </entry>
@@ -37674,7 +37642,7 @@
    </entry>
    <entry>
     <form>
-     <orth>faire‐part</orth>
+     <orth>faire-part</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -37712,7 +37680,7 @@
      <pos>adj</pos>
     </gramGrp>
     <def>mature; ripe</def>
-    <def>adult; full‐grown</def>
+    <def>adult; full-grown</def>
    </entry>
    <entry>
     <form>
@@ -37795,7 +37763,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>make up; make‐up</def>
+    <def>make up; make-up</def>
    </entry>
    <entry>
     <form>
@@ -37904,7 +37872,7 @@
    </entry>
    <entry>
     <form>
-     <orth>faux‐col</orth>
+     <orth>faux-col</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -38014,7 +37982,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>lying‐in woman</def>
+    <def>lying-in woman</def>
    </entry>
    <entry>
     <form>
@@ -38057,7 +38025,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>iron; flat‐iron</def>
+    <def>iron; flat-iron</def>
    </entry>
    <entry>
     <form>
@@ -38102,7 +38070,7 @@
    </entry>
    <entry>
     <form>
-     <orth>fermeture‐éclair</orth>
+     <orth>fermeture-éclair</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -38151,7 +38119,7 @@
    </entry>
    <entry>
     <form>
-     <orth>fer‐blanc</orth>
+     <orth>fer-blanc</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -38341,7 +38309,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>fig‐tree</def>
+    <def>fig-tree</def>
    </entry>
    <entry>
     <form>
@@ -38493,7 +38461,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>air‐filter</def>
+    <def>air-filter</def>
    </entry>
    <entry>
     <form>
@@ -38740,7 +38708,7 @@
    </entry>
    <entry>
     <form>
-     <orth>fleuve Saint‐Laurent</orth>
+     <orth>fleuve Saint-Laurent</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -38830,7 +38798,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>air‐fleet</def>
+    <def>air-fleet</def>
    </entry>
    <entry>
     <form>
@@ -39626,7 +39594,7 @@
    </entry>
    <entry>
     <form>
-     <orth>franc‐maçon</orth>
+     <orth>franc-maçon</orth>
      <pron>fʀɑ̃masɔ̃</pron>
     </form>
     <gramGrp>
@@ -39695,7 +39663,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>communication‐cord</def>
+    <def>communication-cord</def>
    </entry>
    <entry>
     <form>
@@ -39706,7 +39674,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>communication‐cord</def>
+    <def>communication-cord</def>
    </entry>
    <entry>
     <form>
@@ -39886,7 +39854,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>fruit‐tree</def>
+    <def>fruit-tree</def>
     <def>fertile; fruitful</def>
    </entry>
    <entry>
@@ -40064,7 +40032,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>air gun; air‐gun</def>
+    <def>air gun; air-gun</def>
    </entry>
    <entry>
     <form>
@@ -40212,7 +40180,7 @@
    </entry>
    <entry>
     <form>
-     <orth>fête‐Dieux</orth>
+     <orth>fête-Dieux</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -40672,7 +40640,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>son‐in‐law</def>
+    <def>son-in-law</def>
    </entry>
    <entry>
     <form>
@@ -40712,7 +40680,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>affable; friendly; good‐natured; kind</def>
+    <def>affable; friendly; good-natured; kind</def>
     <def>gentle; soft; sweet; tender</def>
     <def>kind; obliging</def>
     <def>charming; lovely</def>
@@ -40974,7 +40942,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>ball; ball‐bearing; globe</def>
+    <def>ball; ball-bearing; globe</def>
    </entry>
    <entry>
     <form>
@@ -41074,7 +41042,7 @@
    </entry>
    <entry>
     <form>
-     <orth>golfe du Saint‐Laurent</orth>
+     <orth>golfe du Saint-Laurent</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -41216,7 +41184,7 @@
     </gramGrp>
     <def>handlebars; helm; rudder</def>
     <def>rudder</def>
-    <def>joystick; steering‐wheel</def>
+    <def>joystick; steering-wheel</def>
    </entry>
    <entry>
     <form>
@@ -41371,7 +41339,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>adult; grown‐up</def>
+    <def>adult; grown-up</def>
    </entry>
    <entry>
     <form>
@@ -41407,7 +41375,7 @@
    </entry>
    <entry>
     <form>
-     <orth>grand‐maman</orth>
+     <orth>grand-maman</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -41417,7 +41385,7 @@
    </entry>
    <entry>
     <form>
-     <orth>grand‐mère</orth>
+     <orth>grand-mère</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -41427,7 +41395,7 @@
    </entry>
    <entry>
     <form>
-     <orth>grand‐père</orth>
+     <orth>grand-père</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -41652,7 +41620,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>air‐grid</def>
+    <def>air-grid</def>
    </entry>
    <entry>
     <form>
@@ -41997,7 +41965,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>window; ticket‐window</def>
+    <def>window; ticket-window</def>
    </entry>
    <entry>
     <form>
@@ -42279,7 +42247,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>crane's‐bill</def>
+    <def>crane's-bill</def>
     <def>geranium</def>
    </entry>
    <entry>
@@ -42355,7 +42323,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dress‐coat; evening dress; tails</def>
+    <def>dress-coat; evening dress; tails</def>
     <def>article of dress; garment</def>
    </entry>
    <entry>
@@ -43019,7 +42987,7 @@
      <orth>honnête</orth>
      <pron>onɛt</pron>
     </form>
-    <def>above‐board; honest</def>
+    <def>above-board; honest</def>
     <def>faithful; loyal</def>
    </entry>
    <entry>
@@ -43047,7 +43015,7 @@
      <orth>hop</orth>
      <pron>ɔp</pron>
     </form>
-    <def>gee‐up</def>
+    <def>gee-up</def>
    </entry>
    <entry>
     <form>
@@ -43150,7 +43118,7 @@
    </entry>
    <entry>
     <form>
-     <orth>hors‐d'œuvre</orth>
+     <orth>hors-d'œuvre</orth>
     </form>
     <def>entrée</def>
    </entry>
@@ -43201,7 +43169,7 @@
      <orth>houp</orth>
      <pron>u</pron>
     </form>
-    <def>gee‐up</def>
+    <def>gee-up</def>
    </entry>
    <entry>
     <form>
@@ -43744,7 +43712,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>town‐hall</def>
+    <def>town-hall</def>
     <def>city hall; town hall</def>
    </entry>
    <entry>
@@ -43847,7 +43815,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>yew‐tree</def>
+    <def>yew-tree</def>
    </entry>
    <entry>
     <form>
@@ -44144,7 +44112,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>dead‐end street; deadlock</def>
+    <def>dead-end street; deadlock</def>
    </entry>
    <entry>
     <form>
@@ -44309,7 +44277,7 @@
     <gramGrp>
      <pos>v</pos>
     </gramGrp>
-    <def>ad‐lib</def>
+    <def>ad-lib</def>
    </entry>
    <entry>
     <form>
@@ -46487,7 +46455,7 @@
    </entry>
    <entry>
     <form>
-     <orth>kilowatt‐heure</orth>
+     <orth>kilowatt-heure</orth>
      <pron>kilowatœʀ</pron>
     </form>
     <gramGrp>
@@ -46819,7 +46787,7 @@
    </entry>
    <entry>
     <form>
-     <orth>lac Sainte‐Clair</orth>
+     <orth>lac Sainte-Clair</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -46924,7 +46892,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>shoe‐lace</def>
+    <def>shoe-lace</def>
    </entry>
    <entry>
     <form>
@@ -47022,7 +46990,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dash‐board; panel; wainscot</def>
+    <def>dash-board; panel; wainscot</def>
    </entry>
    <entry>
     <form>
@@ -47060,7 +47028,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dead‐nettle</def>
+    <def>dead-nettle</def>
    </entry>
    <entry>
     <form>
@@ -47633,7 +47601,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>dunning‐letter</def>
+    <def>dunning-letter</def>
    </entry>
    <entry>
     <form>
@@ -48142,7 +48110,7 @@
      <orth>littéralement</orth>
      <pron>liteʀaləmɑ̃</pron>
     </form>
-    <def>verbatim; word‐for‐word</def>
+    <def>verbatim; word-for-word</def>
    </entry>
    <entry>
     <form>
@@ -48252,7 +48220,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>location; place; spot</def>
-    <def>abode; dwelling‐place‐residence</def>
+    <def>abode; dwelling-place-residence</def>
     <def>town</def>
     <def>village</def>
    </entry>
@@ -48542,7 +48510,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>she‐wolf</def>
+    <def>she-wolf</def>
    </entry>
    <entry>
     <form>
@@ -49115,7 +49083,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>tape‐recorder</def>
+    <def>tape-recorder</def>
    </entry>
    <entry>
     <form>
@@ -49126,7 +49094,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>video recorder; video‐recorder</def>
+    <def>video recorder; video-recorder</def>
    </entry>
    <entry>
     <form>
@@ -49190,7 +49158,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>bathing suit; bathing‐suit</def>
+    <def>bathing suit; bathing-suit</def>
    </entry>
    <entry>
     <form>
@@ -49298,7 +49266,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>resting‐place</def>
+    <def>resting-place</def>
    </entry>
    <entry>
     <form>
@@ -49328,7 +49296,7 @@
     </gramGrp>
     <def>important; serious</def>
     <def>considerable; sizable</def>
-    <def>adult; grown‐up; full‐grown</def>
+    <def>adult; grown-up; full-grown</def>
    </entry>
    <entry>
     <form>
@@ -49506,7 +49474,7 @@
      <pos>adj</pos>
     </gramGrp>
     <def>vicious</def>
-    <def>airy‐fairy; frolic; frolicsome; petulant</def>
+    <def>airy-fairy; frolic; frolicsome; petulant</def>
     <def>clever; cunning; sly; smart</def>
    </entry>
    <entry>
@@ -49633,7 +49601,7 @@
    </entry>
    <entry>
     <form>
-     <orth>mandat‐poste</orth>
+     <orth>mandat-poste</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -49862,7 +49830,7 @@
      <orth>maquillage</orth>
      <pron>makijaʒ</pron>
     </form>
-    <def>make up; make‐up</def>
+    <def>make up; make-up</def>
    </entry>
    <entry>
     <form>
@@ -50051,7 +50019,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>maritime; sea; sea‐; of the sea</def>
+    <def>maritime; sea; sea-; of the sea</def>
     <def>sailor</def>
    </entry>
    <entry>
@@ -50162,7 +50130,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>chestnut‐tree</def>
+    <def>chestnut-tree</def>
    </entry>
    <entry>
     <form>
@@ -50207,7 +50175,7 @@
    </entry>
    <entry>
     <form>
-     <orth>martin‐pêcheur</orth>
+     <orth>martin-pêcheur</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -50625,7 +50593,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>water‐melon</def>
+    <def>water-melon</def>
    </entry>
    <entry>
     <form>
@@ -51525,7 +51493,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>looking‐glass; mirror</def>
+    <def>looking-glass; mirror</def>
    </entry>
    <entry>
     <form>
@@ -52048,7 +52016,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>watch; wrist‐watch</def>
+    <def>watch; wrist-watch</def>
    </entry>
    <entry>
     <form>
@@ -52499,7 +52467,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>lily‐of‐the‐valley</def>
+    <def>lily-of-the-valley</def>
    </entry>
    <entry>
     <form>
@@ -52680,7 +52648,7 @@
      <orth>myope</orth>
      <pron>mjɔp</pron>
     </form>
-    <def>near‐sighted; short‐sighted</def>
+    <def>near-sighted; short-sighted</def>
    </entry>
    <entry>
     <form>
@@ -52690,7 +52658,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>forget‐me‐not</def>
+    <def>forget-me-not</def>
    </entry>
    <entry>
     <form>
@@ -53011,7 +52979,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>jelly‐fish</def>
+    <def>jelly-fish</def>
    </entry>
    <entry>
     <form>
@@ -53274,7 +53242,7 @@
      <pos>adj</pos>
     </gramGrp>
     <def>mature; ripe</def>
-    <def>adult; full‐grown</def>
+    <def>adult; full-grown</def>
    </entry>
    <entry>
     <form>
@@ -53291,7 +53259,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>mulberry‐tree</def>
+    <def>mulberry-tree</def>
    </entry>
    <entry>
     <form>
@@ -53315,7 +53283,7 @@
    </entry>
    <entry>
     <form>
-     <orth>n'est‐ce pas</orth>
+     <orth>n'est-ce pas</orth>
     </form>
     <def>isn't it; isn't that so; or not</def>
    </entry>
@@ -53324,7 +53292,7 @@
      <orth>n'importe</orth>
      <pron>nɛ̃pɔʀt</pron>
     </form>
-    <def>at all; ‐ever</def>
+    <def>at all; -ever</def>
    </entry>
    <entry>
     <form>
@@ -53392,7 +53360,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>table‐cloth</def>
+    <def>table-cloth</def>
    </entry>
    <entry>
     <form>
@@ -53402,7 +53370,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>table‐cloth</def>
+    <def>table-cloth</def>
    </entry>
    <entry>
     <form>
@@ -53952,7 +53920,7 @@
    </entry>
    <entry>
     <form>
-     <orth>nord‐coréen</orth>
+     <orth>nord-coréen</orth>
     </form>
     <def>North Korean</def>
    </entry>
@@ -54134,7 +54102,7 @@
      <pos>v</pos>
     </gramGrp>
     <def>drown</def>
-    <def>walnut‐tree</def>
+    <def>walnut-tree</def>
    </entry>
    <entry>
     <form>
@@ -54206,7 +54174,7 @@
      <orth>nul</orth>
      <pron>nyl</pron>
     </form>
-    <def>neither; nobody; none; no‐one</def>
+    <def>neither; nobody; none; no-one</def>
     <def>worthless</def>
    </entry>
    <entry>
@@ -54363,7 +54331,7 @@
    </entry>
    <entry>
     <form>
-     <orth>néo‐zélandais</orth>
+     <orth>néo-zélandais</orth>
     </form>
     <def>New Zealand</def>
    </entry>
@@ -54379,7 +54347,7 @@
      <orth>névralgie faciale</orth>
      <pron>nevʀalʒifasjal</pron>
     </form>
-    <def>face‐ache; tic douloureux</def>
+    <def>face-ache; tic douloureux</def>
    </entry>
    <entry>
     <form>
@@ -54958,7 +54926,7 @@
    </entry>
    <entry>
     <form>
-     <orth>oiseau‐mouche</orth>
+     <orth>oiseau-mouche</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -55010,7 +54978,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>olive‐tree</def>
+    <def>olive-tree</def>
    </entry>
    <entry>
     <form>
@@ -55092,7 +55060,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>musk‐rat; musquash</def>
+    <def>musk-rat; musquash</def>
    </entry>
    <entry>
     <form>
@@ -55315,7 +55283,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>orange; orange‐coloured</def>
+    <def>orange; orange-coloured</def>
    </entry>
    <entry>
     <form>
@@ -55325,7 +55293,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>orange‐tree</def>
+    <def>orange-tree</def>
    </entry>
    <entry>
     <form>
@@ -55782,7 +55750,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>cotton‐wool; wadding</def>
+    <def>cotton-wool; wadding</def>
    </entry>
    <entry>
     <form>
@@ -55818,7 +55786,7 @@
    </entry>
    <entry>
     <form>
-     <orth>ouest‐allemand</orth>
+     <orth>ouest-allemand</orth>
      <pron>wɛstalmɑ̃</pron>
     </form>
     <gramGrp>
@@ -55863,7 +55831,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>she‐bear</def>
+    <def>she-bear</def>
    </entry>
    <entry>
     <form>
@@ -56182,7 +56150,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dash‐board; panel; wainscot</def>
+    <def>dash-board; panel; wainscot</def>
     <def>board; plank</def>
    </entry>
    <entry>
@@ -56190,7 +56158,7 @@
      <orth>panneau d'affichage</orth>
      <pron>panodafiʃaʒ</pron>
     </form>
-    <def>bill‐board; notice‐board</def>
+    <def>bill-board; notice-board</def>
    </entry>
    <entry>
     <form>
@@ -56358,7 +56326,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>by marriage; ‐in‐law</def>
+    <def>by marriage; -in-law</def>
     <def>by marriage; related by marriage</def>
    </entry>
    <entry>
@@ -56607,7 +56575,7 @@
    </entry>
    <entry>
     <form>
-     <orth>pare‐chocs</orth>
+     <orth>pare-chocs</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -56802,7 +56770,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>adherents; disciples; following; party; supporters</def>
-    <def>decision‐making</def>
+    <def>decision-making</def>
     <def>faction; party; side</def>
     <def>adherents; disciples; followers; following; party; supporters</def>
    </entry>
@@ -56900,11 +56868,11 @@
      <orth>partisan de la même doctrine</orth>
      <pron>paʀtizɑ̃dəlamɛmdɔktʀin</pron>
     </form>
-    <def>fellow‐thinker</def>
+    <def>fellow-thinker</def>
    </entry>
    <entry>
     <form>
-     <orth>parti‐pris</orth>
+     <orth>parti-pris</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -57672,7 +57640,7 @@
    </entry>
    <entry>
     <form>
-     <orth>perce‐neige</orth>
+     <orth>perce-neige</orth>
     </form>
     <def>snowdrop</def>
    </entry>
@@ -57884,7 +57852,7 @@
      <orth>personne</orth>
      <pron>pɛʀsɔn</pron>
     </form>
-    <def>neither; nobody; none; no‐one</def>
+    <def>neither; nobody; none; no-one</def>
    </entry>
    <entry>
     <form>
@@ -57998,7 +57966,7 @@
      <orth>perçant</orth>
      <pron>pɛʀsɑ̃</pron>
     </form>
-    <def>abrasive; acrid; acrimonious; sharp‐toned; shrill; snappy; tard</def>
+    <def>abrasive; acrid; acrimonious; sharp-toned; shrill; snappy; tard</def>
     <def>shrill</def>
    </entry>
    <entry>
@@ -58094,7 +58062,7 @@
    </entry>
    <entry>
     <form>
-     <orth>petit‐fils</orth>
+     <orth>petit-fils</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -58160,7 +58128,7 @@
    </entry>
    <entry>
     <form>
-     <orth>peut‐être</orth>
+     <orth>peut-être</orth>
     </form>
     <def>maybe; mayhap; perchance; perhaps; possibly</def>
    </entry>
@@ -58231,7 +58199,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>cylinder phonograph</def>
-    <def>phonograph; record‐player</def>
+    <def>phonograph; record-player</def>
    </entry>
    <entry>
     <form>
@@ -58241,7 +58209,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>seal; sea‐dog</def>
+    <def>seal; sea-dog</def>
    </entry>
    <entry>
     <form>
@@ -58435,7 +58403,7 @@
      <orth>pilote de ligne</orth>
      <pron>pilɔtdəlinj</pron>
     </form>
-    <def>airline‐pilot</def>
+    <def>airline-pilot</def>
    </entry>
    <entry>
     <form>
@@ -58476,7 +58444,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>pine; pine‐tree</def>
+    <def>pine; pine-tree</def>
    </entry>
    <entry>
     <form>
@@ -58539,7 +58507,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>pick‐axe</def>
+    <def>pick-axe</def>
    </entry>
    <entry>
     <form>
@@ -58644,7 +58612,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>pool; swimming‐bath; swimming‐pool</def>
+    <def>pool; swimming-bath; swimming-pool</def>
    </entry>
    <entry>
     <form>
@@ -58677,7 +58645,7 @@
      <gen>f</gen>
     </gramGrp>
     <def>arena</def>
-    <def>course; race‐course; track; running track</def>
+    <def>course; race-course; track; running track</def>
     <def>path</def>
    </entry>
    <entry>
@@ -59075,7 +59043,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>plane; plane‐tree; sycamore</def>
+    <def>plane; plane-tree; sycamore</def>
    </entry>
    <entry>
     <form>
@@ -59090,7 +59058,7 @@
    </entry>
    <entry>
     <form>
-     <orth>plate‐bande</orth>
+     <orth>plate-bande</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -59099,7 +59067,7 @@
    </entry>
    <entry>
     <form>
-     <orth>plate‐forme</orth>
+     <orth>plate-forme</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -59532,7 +59500,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>pear‐tree</def>
+    <def>pear-tree</def>
    </entry>
    <entry>
     <form>
@@ -59603,7 +59571,7 @@
      <orth>poli</orth>
      <pron>pɔli</pron>
     </form>
-    <def>courteous; polite; well‐mannered</def>
+    <def>courteous; polite; well-mannered</def>
    </entry>
    <entry>
     <form>
@@ -59657,7 +59625,7 @@
      <orth>pollution atmosphérique</orth>
      <pron>pɔlytjɔ̃atmɔsfeʀik</pron>
     </form>
-    <def>air‐pollution</def>
+    <def>air-pollution</def>
    </entry>
    <entry>
     <form>
@@ -59739,7 +59707,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>apple‐tree</def>
+    <def>apple-tree</def>
    </entry>
    <entry>
     <form>
@@ -59901,7 +59869,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>share‐capital</def>
+    <def>share-capital</def>
    </entry>
    <entry>
     <form>
@@ -59936,7 +59904,7 @@
    </entry>
    <entry>
     <form>
-     <orth>porte‐monnaie</orth>
+     <orth>porte-monnaie</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -60533,7 +60501,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>frying‐pan; frying pan</def>
+    <def>frying-pan; frying pan</def>
    </entry>
    <entry>
     <form>
@@ -60705,7 +60673,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>air‐pressure</def>
+    <def>air-pressure</def>
    </entry>
    <entry>
     <form>
@@ -61084,7 +61052,7 @@
    </entry>
    <entry>
     <form>
-     <orth>procès‐verbal</orth>
+     <orth>procès-verbal</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -62513,7 +62481,7 @@
    </entry>
    <entry>
     <form>
-     <orth>pull‐over</orth>
+     <orth>pull-over</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -62593,7 +62561,7 @@
      <orth>purin</orth>
      <pron>pyʀɛ̃</pron>
     </form>
-    <def>liquid manure; muck‐water; stale</def>
+    <def>liquid manure; muck-water; stale</def>
    </entry>
    <entry>
     <form>
@@ -62766,7 +62734,7 @@
      <orth>père adoptif</orth>
      <pron>pɛʀadɔptif</pron>
     </form>
-    <def>foster‐father</def>
+    <def>foster-father</def>
    </entry>
    <entry>
     <form>
@@ -62983,7 +62951,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>paraffin‐oil; petroleum</def>
+    <def>paraffin-oil; petroleum</def>
    </entry>
    <entry>
     <form>
@@ -63047,7 +63015,7 @@
    </entry>
    <entry>
     <form>
-     <orth>qu'est‐ce qui</orth>
+     <orth>qu'est-ce qui</orth>
     </form>
     <def>who</def>
    </entry>
@@ -63158,7 +63126,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>rock‐crystal</def>
+    <def>rock-crystal</def>
    </entry>
    <entry>
     <form>
@@ -63186,13 +63154,13 @@
    </entry>
    <entry>
     <form>
-     <orth>quatre‐vingts</orth>
+     <orth>quatre-vingts</orth>
     </form>
     <def>eighty</def>
    </entry>
    <entry>
     <form>
-     <orth>quatre‐vingt‐dix</orth>
+     <orth>quatre-vingt-dix</orth>
     </form>
     <def>ninety</def>
    </entry>
@@ -63246,7 +63214,7 @@
    </entry>
    <entry>
     <form>
-     <orth>quelle heure est‐il?</orth>
+     <orth>quelle heure est-il?</orth>
     </form>
     <def>what time is it?</def>
    </entry>
@@ -63655,7 +63623,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>horse‐radish; horseradish</def>
+    <def>horse-radish; horseradish</def>
    </entry>
    <entry>
     <form>
@@ -64099,7 +64067,7 @@
      <orth>rat musqué</orth>
      <pron>ʀamyske</pron>
     </form>
-    <def>musk‐rat; musquash</def>
+    <def>musk-rat; musquash</def>
    </entry>
    <entry>
     <form>
@@ -64134,7 +64102,7 @@
      <orth>raton laveur</orth>
      <pron>ʀatɔ̃lavœʀ</pron>
     </form>
-    <def>raccoon; racoon; washing‐bear</def>
+    <def>raccoon; racoon; washing-bear</def>
    </entry>
    <entry>
     <form>
@@ -64581,7 +64549,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>right‐angle; square</def>
+    <def>right-angle; square</def>
    </entry>
    <entry>
     <form>
@@ -64994,7 +64962,7 @@
     <gramGrp>
      <pos>v</pos>
     </gramGrp>
-    <def>read again; read over again; re‐read</def>
+    <def>read again; read over again; re-read</def>
    </entry>
    <entry>
     <form>
@@ -65242,7 +65210,7 @@
    </entry>
    <entry>
     <form>
-     <orth>rendez‐vous</orth>
+     <orth>rendez-vous</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -65942,12 +65910,12 @@
    </entry>
    <entry>
     <form>
-     <orth>rez‐de‐chaussée</orth>
+     <orth>rez-de-chaussée</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>ground‐floor</def>
+    <def>ground-floor</def>
    </entry>
    <entry>
     <form>
@@ -66045,7 +66013,7 @@
      <orth>riche</orth>
      <pron>ʀiʃ</pron>
     </form>
-    <def>affluent; rich; wealthy; well‐off</def>
+    <def>affluent; rich; wealthy; well-off</def>
    </entry>
    <entry>
     <form>
@@ -66379,25 +66347,25 @@
    </entry>
    <entry>
     <form>
-     <orth>rivière Saint‐Augustin</orth>
+     <orth>rivière Saint-Augustin</orth>
     </form>
     <def>Saint Augustin River</def>
    </entry>
    <entry>
     <form>
-     <orth>rivière Saint‐François</orth>
+     <orth>rivière Saint-François</orth>
     </form>
     <def>Saint Francis River</def>
    </entry>
    <entry>
     <form>
-     <orth>rivière Saint‐Jean</orth>
+     <orth>rivière Saint-Jean</orth>
     </form>
     <def>Saint John River</def>
    </entry>
    <entry>
     <form>
-     <orth>rivière Saint‐Paul</orth>
+     <orth>rivière Saint-Paul</orth>
     </form>
     <def>Saint Paul River</def>
    </entry>
@@ -66601,7 +66569,7 @@
    </entry>
    <entry>
     <form>
-     <orth>rond‐point</orth>
+     <orth>rond-point</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -67314,7 +67282,7 @@
      <gen>f</gen>
     </gramGrp>
     <def>acceptance; admission</def>
-    <def>reception room; reception‐room</def>
+    <def>reception room; reception-room</def>
    </entry>
    <entry>
     <form>
@@ -67549,7 +67517,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>refectory; dining‐room</def>
+    <def>refectory; dining-room</def>
    </entry>
    <entry>
     <form>
@@ -67906,7 +67874,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>box‐room; storage room</def>
+    <def>box-room; storage room</def>
     <def>pantry</def>
     <def>supply</def>
    </entry>
@@ -67962,7 +67930,7 @@
      <orth>résistance à l'air</orth>
      <pron>ʀezistɑ̃salɛʀ</pron>
     </form>
-    <def>air‐resistance</def>
+    <def>air-resistance</def>
    </entry>
    <entry>
     <form>
@@ -68102,7 +68070,7 @@
    </entry>
    <entry>
     <form>
-     <orth>réveil‐matin</orth>
+     <orth>réveil-matin</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -68681,7 +68649,7 @@
     <gramGrp>
      <pos>v</pos>
     </gramGrp>
-    <def>match; match‐make</def>
+    <def>match; match-make</def>
    </entry>
    <entry>
     <form>
@@ -68999,7 +68967,7 @@
    </entry>
    <entry>
     <form>
-     <orth>sage‐femme</orth>
+     <orth>sage-femme</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -69185,7 +69153,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>dining‐room</def>
+    <def>dining-room</def>
    </entry>
    <entry>
     <form>
@@ -69196,7 +69164,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>lounge; parlour; salon; sitting‐room</def>
+    <def>lounge; parlour; salon; sitting-room</def>
    </entry>
    <entry>
     <form>
@@ -69207,7 +69175,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>reception; reception room; reception‐room</def>
+    <def>reception; reception room; reception-room</def>
    </entry>
    <entry>
     <form>
@@ -70780,7 +70748,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>fellow‐creature; neighbour</def>
+    <def>fellow-creature; neighbour</def>
    </entry>
    <entry>
     <form>
@@ -71493,7 +71461,7 @@
      <pos>
 ]    </pos>
     </gramGrp>
-    <def>above‐board; sincere</def>
+    <def>above-board; sincere</def>
    </entry>
    <entry>
     <form>
@@ -71859,7 +71827,7 @@
    </entry>
    <entry>
     <form>
-     <orth>soixante‐dix</orth>
+     <orth>soixante-dix</orth>
     </form>
     <def>seventy</def>
    </entry>
@@ -72568,7 +72536,7 @@
    </entry>
    <entry>
     <form>
-     <orth>sourd‐muet</orth>
+     <orth>sourd-muet</orth>
     </form>
     <gramGrp>
      <pos>adj</pos>
@@ -72629,13 +72597,13 @@
    </entry>
    <entry>
     <form>
-     <orth>sous‐entendu</orth>
+     <orth>sous-entendu</orth>
     </form>
     <def>overtone</def>
    </entry>
    <entry>
     <form>
-     <orth>sous‐marin</orth>
+     <orth>sous-marin</orth>
      <pron>sumaʀɛ̃</pron>
     </form>
     <gramGrp>
@@ -72674,7 +72642,7 @@
    </entry>
    <entry>
     <form>
-     <orth>soutien‐gorge</orth>
+     <orth>soutien-gorge</orth>
      <pron>sutjɛ̃gɔʀʒ</pron>
     </form>
     <gramGrp>
@@ -72724,7 +72692,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>silk; silk‐; silken; of silk</def>
+    <def>silk; silk-; silken; of silk</def>
    </entry>
    <entry>
     <form>
@@ -73031,7 +72999,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>by‐laws; statute; regulations</def>
+    <def>by-laws; statute; regulations</def>
    </entry>
    <entry>
     <form>
@@ -73073,7 +73041,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>roller‐blind</def>
+    <def>roller-blind</def>
    </entry>
    <entry>
     <form>
@@ -73165,7 +73133,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>atelier; studio; work‐room; workshop</def>
+    <def>atelier; studio; work-room; workshop</def>
     <def>studio</def>
    </entry>
    <entry>
@@ -73257,7 +73225,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>fountain‐pen; fountain pen</def>
+    <def>fountain-pen; fountain pen</def>
    </entry>
    <entry>
     <form>
@@ -73269,7 +73237,7 @@
      <gen>m</gen>
     </gramGrp>
     <def>ballpoint pen</def>
-    <def>ballpoint; ball‐point pen</def>
+    <def>ballpoint; ball-point pen</def>
    </entry>
    <entry>
     <form>
@@ -73490,7 +73458,7 @@
    </entry>
    <entry>
     <form>
-     <orth>sud‐africain</orth>
+     <orth>sud-africain</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -73499,7 +73467,7 @@
    </entry>
    <entry>
     <form>
-     <orth>sud‐américain</orth>
+     <orth>sud-américain</orth>
     </form>
     <def>South American</def>
    </entry>
@@ -74043,7 +74011,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>labour‐union; trade‐union; syndicate</def>
+    <def>labour-union; trade-union; syndicate</def>
    </entry>
    <entry>
     <form>
@@ -74339,7 +74307,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>bill‐board; notice‐board</def>
+    <def>bill-board; notice-board</def>
    </entry>
    <entry>
     <form>
@@ -74454,7 +74422,7 @@
    </entry>
    <entry>
     <form>
-     <orth>taille‐haie</orth>
+     <orth>taille-haie</orth>
     </form>
     <def>hedge clippers; hedge shears</def>
    </entry>
@@ -74574,7 +74542,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>hornet</def>
-    <def>gadfly; horse‐fly</def>
+    <def>gadfly; horse-fly</def>
    </entry>
    <entry>
     <form>
@@ -74757,7 +74725,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>excise; excise‐duty</def>
+    <def>excise; excise-duty</def>
    </entry>
    <entry>
     <form>
@@ -75103,7 +75071,7 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>end‐of‐the‐line; terminal; terminus</def>
+    <def>end-of-the-line; terminal; terminus</def>
    </entry>
    <entry>
     <form>
@@ -75203,7 +75171,7 @@
    </entry>
    <entry>
     <form>
-     <orth>territoires du Nord‐Ouest</orth>
+     <orth>territoires du Nord-Ouest</orth>
     </form>
     <def>Northwest Territories</def>
    </entry>
@@ -75286,7 +75254,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>tuna; tuna‐fish; tunny</def>
+    <def>tuna; tuna-fish; tunny</def>
    </entry>
    <entry>
     <form>
@@ -75338,7 +75306,7 @@
      <pos>n</pos>
     </gramGrp>
     <def>teapot</def>
-    <def>tea‐pot</def>
+    <def>tea-pot</def>
    </entry>
    <entry>
     <form>
@@ -75430,7 +75398,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>lime‐tree; linden‐tree</def>
+    <def>lime-tree; linden-tree</def>
    </entry>
    <entry>
     <form>
@@ -75453,11 +75421,11 @@
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>air‐mail stamp</def>
+    <def>air-mail stamp</def>
    </entry>
    <entry>
     <form>
-     <orth>timbre‐poste</orth>
+     <orth>timbre-poste</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -75538,7 +75506,7 @@
    </entry>
    <entry>
     <form>
-     <orth>tire‐bouchon</orth>
+     <orth>tire-bouchon</orth>
     </form>
     <gramGrp>
      <pos>n</pos>
@@ -76057,7 +76025,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>turtle‐dove</def>
+    <def>turtle-dove</def>
    </entry>
    <entry>
     <form>
@@ -76408,7 +76376,7 @@
     <def>metamorphosis; recreation; regeneration</def>
     <def>reform</def>
     <def>alteration; change; conversion; transformation</def>
-    <def>about‐face</def>
+    <def>about-face</def>
    </entry>
    <entry>
     <form>
@@ -77727,7 +77695,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>air‐valve</def>
+    <def>air-valve</def>
    </entry>
    <entry>
     <form>
@@ -77844,7 +77812,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>motor‐boat; motor‐launch</def>
+    <def>motor-boat; motor-launch</def>
     <def>celebrity; star</def>
    </entry>
    <entry>
@@ -78841,7 +78809,7 @@
    </entry>
    <entry>
     <form>
-     <orth>vis‐à‐vis</orth>
+     <orth>vis-à-vis</orth>
     </form>
     <gramGrp>
      <pos>adv</pos>
@@ -79077,7 +79045,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>steering‐wheel</def>
+    <def>steering-wheel</def>
    </entry>
    <entry>
     <form>
@@ -79463,7 +79431,7 @@
     <gramGrp>
      <pos>adj</pos>
     </gramGrp>
-    <def>unsound; worm‐eaten</def>
+    <def>unsound; worm-eaten</def>
    </entry>
    <entry>
     <form>
@@ -79589,14 +79557,14 @@
    </entry>
    <entry>
     <form>
-     <orth>week‐end</orth>
+     <orth>week-end</orth>
      <pron>wikɛnd</pron>
     </form>
     <gramGrp>
      <pos>n</pos>
      <gen>m</gen>
     </gramGrp>
-    <def>week‐end</def>
+    <def>week-end</def>
    </entry>
    <entry>
     <form>
@@ -79981,7 +79949,7 @@
     <form>
      <orth>à personne</orth>
     </form>
-    <def>no‐one's</def>
+    <def>no-one's</def>
    </entry>
    <entry>
     <form>
@@ -80014,7 +79982,7 @@
     <form>
      <orth>à proprement parler</orth>
     </form>
-    <def>verbatim; word‐for‐word</def>
+    <def>verbatim; word-for-word</def>
     <def>to tell the truth</def>
    </entry>
    <entry>
@@ -80141,7 +80109,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>jenny‐ass; she‐ass</def>
+    <def>jenny-ass; she-ass</def>
    </entry>
    <entry>
     <form>
@@ -80150,7 +80118,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>donkey‐driver</def>
+    <def>donkey-driver</def>
    </entry>
    <entry>
     <form>
@@ -80561,7 +80529,7 @@
      <pos>n</pos>
      <gen>f</gen>
     </gramGrp>
-    <def>church; church‐building; house of worship; place of worship</def>
+    <def>church; church-building; house of worship; place of worship</def>
    </entry>
    <entry>
     <form>
@@ -80826,7 +80794,7 @@
     <gramGrp>
      <pos>n</pos>
     </gramGrp>
-    <def>spruce; spruce‐fir</def>
+    <def>spruce; spruce-fir</def>
    </entry>
    <entry>
     <form>
@@ -81737,4 +81705,4 @@
    </entry>
   </body>
  </text>
-</TEI.2>
+</TEI>
