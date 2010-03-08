@@ -39,4 +39,4 @@ dist-hook:
 	fi
 
 deb:
-	fakeroot debuild
+	debuild
