@@ -1,14 +1,15 @@
-# translation of fredict.pot into French.
-# Copyright (C) 2006-2009
+# French translation for Freedict Website
+# Copyright (C) 2006-2010
 # This file is distributed under the same license as the FreeDict website.
 # noname <lelaulau@yahoo.fr>, 2006.
+# Denis Arnaud, 2009-2010
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
 "POT-Creation-Date: 2010-01-30 10:50+0100\n"
-"PO-Revision-Date: 2009-11-26 09:55+0100\n"
+"PO-Revision-Date: 2010-03-08 09:55+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +117,7 @@ msgstr ""
 " des caractéristiques dans l'%sintroduction%s."
 
 #: editor.php:17
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
 "You can do an anonymous check out the <tt>freedict-editor</tt>\n"
@@ -124,7 +125,7 @@ msgid ""
 msgstr ""
 "Aucune version de l' Editeur-FreeDict n'a été compilée pour le moment.\n"
 "Vous pouvez récupérer le module <tt>freedict-editor</tt>\n"
-"du %sCVS%s et essayer de le compiler vous même :"
+"du %sSVN%s et essayer de le compiler vous même :"
 
 #: editor.php:26
 #, php-format
@@ -202,9 +203,8 @@ msgid "Source Language / Size in MB"
 msgstr "Langage source / Taille en Mo"
 
 #: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
-#, fuzzy
 msgid "Destination<br />Language"
-msgstr "Langue de<br> destination"
+msgstr "Langue de<br /> destination"
 
 #: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
 msgid ""
@@ -465,7 +465,6 @@ msgstr ""
 ":<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
-#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
@@ -473,20 +472,19 @@ msgid ""
 msgstr ""
 "Si vous voulez mettre à jour une traduction existante, probablement\n"
 "parce qu'il reste quelques parties de ce site non traduites, vous pouvez\n"
-"récupérer le fichier <tt>.po</tt> à partir du CVS :"
+"récupérer le fichier <tt>.po</tt> à partir du SVN :"
 
 #: weblang.php:25
 msgid "Translation status for the website languages"
-msgstr ""
+msgstr "Status de la traduction pour la langue du site"
 
 #: weblang.php:28
-#, fuzzy
 msgid "Language"
-msgstr "Langue du site:"
+msgstr "Langue"
 
 #: inc/gettext.php:88
 msgid "Website Language: "
-msgstr "Langue du site:"
+msgstr "Langue du site :"
 
 #: inc/gettext.php:90 inc/langcodes.php:13
 msgid "English"
@@ -494,7 +492,7 @@ msgstr "Anglais"
 
 #: inc/langcodes.php:5
 msgid "Afrikaans"
-msgstr "Africains"
+msgstr "Afrikaans"
 
 #: inc/langcodes.php:6
 msgid "Arabic"
@@ -526,7 +524,7 @@ msgstr "Hollandais"
 
 #: inc/langcodes.php:14
 msgid "Modern Greek"
-msgstr ""
+msgstr "Grec moderne"
 
 #: inc/langcodes.php:15
 msgid "French"
@@ -542,7 +540,7 @@ msgstr "Allemand"
 
 #: inc/langcodes.php:18
 msgid "Hindi"
-msgstr "Hindou"
+msgstr "Hindi"
 
 #: inc/langcodes.php:19
 msgid "Hungarian"
