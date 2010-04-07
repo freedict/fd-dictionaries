@@ -17,7 +17,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.2.2</edition>
+        <edition>0.2.3</edition>
         <!-- KEEP THIS UP TO DATE -->
       </editionStmt>
       <extent>1800 headwords</extent>
@@ -26,12 +26,12 @@
         <availability>
           <p>Available under the terms of the GNU General Public Licence, version 3 </p>
         </availability>
-        <date when="2010-03-01">1th March 2010</date>
+        <date when="2010-04-07">7th April 2010</date>
         <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
       <sourceDesc>
-        <p>Created from scratch (from Sebastian Humenda's notes). And with a
-          FEW look-ups on http://auxilium-online.net (for verification).</p>
+        <p>Created from scratch (from Sebastian Humenda's notes) and with some
+          look-ups on http://auxilium-online.net (for verification).</p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
@@ -40,7 +40,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change n="0.2.3" who="#humenda" when="2010-04-04">
+      <change n="0.2.3" who="#humenda" when="2010-04-07">
         <list><item>introduced pronomes, numerals, prepositions and conjungtions</item>
           <item>Added words, fixed words (now 1800)</item>
           <item>increased complexity, mainly at verbs</item>
@@ -36220,26 +36220,6 @@
           <def>hochbetagt, alt</def>
         </sense>
       </entry>
-      <entry xml:id="vrb_1stpers-Antarcticus-">
-        <form xml:lang="la">
-          <orth>Antarcticus</orth>
-          <form type="infl">
-            <form xml:lang="la" xml:id="vrb_inf-Antarcticus-">
-              <orth/>
-            </form>
-          </form>
-        </form>
-        <gramGrp>
-          <per>1</per>
-          <number>sg</number>
-          <mood>ind</mood>
-          <tns>praes</tns>
-          <pos>v</pos>
-        </gramGrp>
-        <sense>
-          <def>Südpol</def>
-        </sense>
-      </entry>
       <entry xml:id="prep_eo">
         <form xml:lang="la">
           <orth>eo</orth>
@@ -36486,21 +36466,17 @@
           <def>Verwandter; Zweckfreund</def>
         </sense>
       </entry>
-      <entry xml:id="vrb_1stpers-necessarius-">
+      <entry xml:id="adj_necessarius">
         <form xml:lang="la">
           <orth>necessarius</orth>
           <form type="infl">
-            <form xml:lang="la" xml:id="vrb_inf-necessarius-">
-              <orth/>
-            </form>
+            <orth type="f">necessaria</orth>
+            <orth type="n">necessarium</orth>
           </form>
         </form>
         <gramGrp>
-          <per>1</per>
-          <number>sg</number>
-          <mood>ind</mood>
-          <tns>praes</tns>
-          <pos>v</pos>
+          <pos>adj</pos>
+          <gen>m</gen>
         </gramGrp>
         <sense>
           <def>notwendig; verwandt; notwendiger befreundet</def>
@@ -36950,6 +36926,44 @@
         </gramGrp>
         <sense>
           <def>Handlung, Aktion; Prozess, Klage</def>
+        </sense>
+      </entry>
+      <entry xml:id="vrb_1stpers-accendo-accendere">
+        <form xml:lang="la">
+          <orth>accendo</orth>
+          <form type="infl">
+            <form xml:lang="la" xml:id="vrb_inf-accendo-accendere">
+              <orth>accendere</orth>
+            </form>
+            <form xml:lang="de" xml:id="vrb_perf-accendo-">
+              <orth>accendi</orth>
+              <gramGrp xml:lang="de">
+                <per>1</per>
+                <number>sg</number>
+                <mood>ind</mood>
+                <tns>perf</tns>
+              </gramGrp>
+            </form>
+            <form xml:lang="la" xml:id="vrb_sup-accendo-accensus">
+              <orth>accensus</orth>
+              <gramGrp xml:lang="de">
+                <per>1</per>
+                <number>sg</number>
+                <mood>ind</mood>
+                <tns>sup</tns>
+              </gramGrp>
+            </form>
+          </form>
+        </form>
+        <gramGrp>
+          <per>1</per>
+          <number>sg</number>
+          <mood>ind</mood>
+          <tns>praes</tns>
+          <pos>v</pos>
+        </gramGrp>
+        <sense>
+          <def>anzünden, entzünden</def>
         </sense>
       </entry>
 
