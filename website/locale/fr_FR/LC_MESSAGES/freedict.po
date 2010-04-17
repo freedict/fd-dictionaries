@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-30 10:50+0100\n"
+"POT-Creation-Date: 2010-04-17 19:08+0200\n"
 "PO-Revision-Date: 2010-03-08 09:55+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -25,7 +25,8 @@ msgid "possibly plugin needed, eg."
 msgstr "un plugin peut être nécessaire, par exemple."
 
 #: dataflow.php:19
-msgid "Adbobe's"
+#, fuzzy
+msgid "Adobe's"
 msgstr "Adbobe's"
 
 #: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
@@ -170,11 +171,12 @@ msgstr "sur Zaurus/Qt"
 msgid "Download / Matrix View"
 msgstr "Télécharger / Vue Matrice"
 
-#: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30
-msgid "All downloads are for platform"
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
+#, fuzzy, php-format
+msgid "All downloads are for platform %s."
 msgstr "Tous les téléchargements sont pour la plateforme"
 
-#: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
+#: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
@@ -183,7 +185,7 @@ msgstr ""
 "Une autre application comprenant ce format de fichier est %1sWordtrans%2s, "
 "une application KDE."
 
-#: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
+#: flags-bedic.php:40 flags-dict-tgz.php:40 flags-evolutionary.php:40
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -194,19 +196,19 @@ msgstr ""
 "     Linux PDA de Sharp, et QBEDic, qui tourne sur Linux/Qt. BEDic est\n"
 "     semblable à stardict car il n'a pas une approche client/serveur"
 
-#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
+#: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
 msgid "Select your language combination!"
 msgstr "Choisissez votre combinaison de langues !"
 
-#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Source Language / Size in MB"
 msgstr "Langage source / Taille en Mo"
 
-#: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Destination<br />Language"
 msgstr "Langue de<br /> destination"
 
-#: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
+#: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -482,11 +484,11 @@ msgstr "Status de la traduction pour la langue du site"
 msgid "Language"
 msgstr "Langue"
 
-#: inc/gettext.php:88
+#: inc/gettext.php:90
 msgid "Website Language: "
 msgstr "Langue du site :"
 
-#: inc/gettext.php:90 inc/langcodes.php:13
+#: inc/gettext.php:92 inc/langcodes.php:13
 msgid "English"
 msgstr "Anglais"
 

@@ -26,10 +26,7 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
 
 <h1><?php echo _('Download / Matrix View') ?></h1>
 
-
-<p><?php echo _('All downloads are for platform') ?>
- <i><?php echo $platformStrings[$platform] ?></i>.</p>
-
+<p><?php printf(_('All downloads are for platform %s.'), '<i>' . $platformStrings[$platform], '</i>') ?></p>
 
 <?php
   if(strpos($platform, 'dict-') !== false)

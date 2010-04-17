@@ -16,6 +16,6 @@ border="0" alt="<?php printf("%2.0f", filesize('images/dataflow.png')/1024)
 <?php printf("%2.0f", filesize('images/dataflow.svgz')/1024) ?> kB,
 <?php echo _('possibly plugin needed, eg.') ?>
 <a href="http://www.adobe.com/svg/viewer/install/main.html"
-target="_parent"><?php echo _("Adbobe's") ?></a>]
+target="_parent"><?php echo _("Adobe's") ?></a>]
 
 <? require_once 'inc/footer.php';

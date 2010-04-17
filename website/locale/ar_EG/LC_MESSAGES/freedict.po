@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-30 10:50+0100\n"
+"POT-Creation-Date: 2010-04-17 19:08+0200\n"
 "PO-Revision-Date: 2006-08-31 03:02+0300\n"
 "Last-Translator: Amr Gharbeia <amr@gharbeia.net>\n"
 "Language-Team: Arabic <en@li.org>\n"
@@ -25,7 +25,8 @@ msgid "possibly plugin needed, eg."
 msgstr "قد تحتاج إلى تركيبة، مثلا."
 
 #: dataflow.php:19
-msgid "Adbobe's"
+#, fuzzy
+msgid "Adobe's"
 msgstr "أدوب"
 
 #: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
@@ -140,18 +141,19 @@ msgstr "على زوروس/كيو.تي"
 msgid "Download / Matrix View"
 msgstr "نزل/اعرض مصفوفة"
 
-#: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30
-msgid "All downloads are for platform"
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
+#, fuzzy, php-format
+msgid "All downloads are for platform %s."
 msgstr "كل الملفات تنزل من المنصة"
 
-#: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
+#: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
 
-#: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
+#: flags-bedic.php:40 flags-dict-tgz.php:40 flags-evolutionary.php:40
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -159,20 +161,20 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
+#: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
 msgid "Select your language combination!"
 msgstr "اختر أزواج اللغات!"
 
-#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Source Language / Size in MB"
 msgstr "لغة المصدر/الحجم بالميجابايت"
 
-#: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "اللغة<br>الهدف"
 
-#: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
+#: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -408,11 +410,11 @@ msgstr ""
 msgid "Language"
 msgstr "لغة الموقع:"
 
-#: inc/gettext.php:88
+#: inc/gettext.php:90
 msgid "Website Language: "
 msgstr "لغة الموقع:"
 
-#: inc/gettext.php:90 inc/langcodes.php:13
+#: inc/gettext.php:92 inc/langcodes.php:13
 msgid "English"
 msgstr "إنجليزية"
 

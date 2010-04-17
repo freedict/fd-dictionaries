@@ -22,7 +22,7 @@ because it leaves some part of the website untranslated, you can get the
 
 <blockquote><a href="http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/website/locale/">http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/website/locale/</a></blockquote>
 
-<table summary="><?php echo _('Translation status for the website languages') ?>">
+<table summary="<?php echo _('Translation status for the website languages') ?>">
  <thead>
   <tr>
     <th><?php echo _('Language')?></th>

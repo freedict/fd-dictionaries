@@ -1,4 +1,4 @@
-LANGUAGES=en de kha ru ku fr ar bg lt
+LANGUAGES=en de kha ru ku fr ar bg lt nl
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 DYNAMICPATH=$(FREEDICTDIR)/website
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))

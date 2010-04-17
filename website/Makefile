@@ -1,4 +1,4 @@
-LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT
+LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT nl_NL
 POS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES)))
 MOS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES)))
 
@@ -27,7 +27,7 @@ editordoc.html: ../freedict-editor/help/C/html/index.html
 	$(MAKE) -C ../howto xhtml
 
 howto: ../howto/xhtml
-	ln -s $< $@
+	if [ -d $@ ]; then touch $@; else ln -s $< $@; fi
 
 freedict-database.xml:
 	ln -s ../$@
@@ -48,4 +48,5 @@ locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
 clean:
 	-rm -f $(MOS)
 
-.PHONY: all
+.PHONY: all clean howto
+
