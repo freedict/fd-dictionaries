@@ -31,7 +31,7 @@
           <p>Available under the terms of the GNU General Public Licence, version 2 or any later version.</p>
         </availability>
         <date>2010</date>
-        <pubPlace>http://freedict.org/</pubPlace>
+       <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
       </publicationStmt>
 
       <notesStmt>
@@ -39,8 +39,7 @@
       </notesStmt>
 
       <sourceDesc>
-        <p>Home: <ptr target="http://download.travlang.com/"/></p>
-        <p>This Database was originally generated from Ergane.</p>
+       <p>An early version of this Database was originally generated from <ref target="http://download.travlang.com/">Ergane</ref>.</p>
       </sourceDesc>
     </fileDesc>
 
@@ -51,10 +50,10 @@
     </encodingDesc>
 
     <revisionDesc>
+     <change when="2010-04-22" n="0.3.2"><name>John Darrington</name>: Extended the dictionary (several commits: added POS fields, genders, + over 300 entries). (+ Piotr: little changes in the header, tiny fixes).</change>
       <change when="2010-03-05" n="0.3.1"><name>Piotr Bański</name>: Merged the old header in. Converted the dictionary to TEI P5, replaced ndashes (or something of that sort, also within headwords) with plain hyphens. Reorganised the directory (NEWS and README out, stuff from shared/ in).</change>
-      <change when="2010-03-04" n="0.3"> 
+     <change when="2010-03-04" n="0.3"><name>John Darrington</name>: 
         <list type="bulleted">
-          <head>John Darrington:</head>
           <item>Lots of new words added, (a few deleted) parts of speech added. Genders added. Some horrible errors corrected. Probably some new errors introduced.</item>
           <item>Verbs were identified using "verbiste", nouns by using freedict's fra-deu dictionary (definitions starting with upper case were assumed to be nouns).</item>
         </list>
@@ -49022,18 +49021,18 @@
        <pos>v</pos>
      </gramGrp>
      <sense>
-       <eg>
-	 <q>Il faut quelque chose</q>
-	 <trans><tr>We need something</tr></trans>
-       </eg>
-       <eg>
-	 <q>Il faut faire</q>
-	 <trans><tr>You have to</tr></trans>
-       </eg>
-       <eg>
-	 <q>Il faut que</q>
-	 <trans><tr>It is necessary that</tr></trans>
-       </eg>
+      <cit type="dicteg">
+       <quote>Il faut quelque chose</quote>
+       <note type="def">We need something</note>       
+      </cit>
+      <cit type="dicteg">
+       <quote>Il faut faire</quote>
+       <note type="def">You have to</note>       
+      </cit>
+      <cit type="dicteg">
+       <quote>Il faut que</quote>
+       <note type="def">It is necessary that</note>       
+      </cit>
      </sense>
    </entry>
    <entry>
@@ -102563,12 +102562,10 @@
        <pos>n</pos>
        <gen>m</gen>
      </gramGrp>
-     <sense>
-       <trans>
-	 <tr>back-slang</tr>
-       </trans>
-       <def>french slang formed by reversal of syllables</def>
-     </sense>
+    <sense>
+     <def>back-slang</def>
+     <note type="def">french slang formed by reversal of syllables</note>
+    </sense>
    </entry>
    <entry>
      <form>
