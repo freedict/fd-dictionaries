@@ -2,7 +2,7 @@
 <!-- This stylesheet converts a TEI dictionary file
      into the c5 format suitable to be processed
      by 'dictfmt -c5' -->
-<!-- $Id: tei2c5.xsl,v 1.15 2009-04-13 01:17:10 bansp Exp $ -->
+<!-- $Id$ -->
 
 <!-- the addition of P5 stuff relies on the absolute complementarity between
   null-spaced elements (P4) and elements in the TEI namespace (P5) -->

@@ -6,7 +6,7 @@
 
   <xsl:include href="indent.xsl"/>
    <!--<xsl:variable name="stylesheet-cvsid">
-     $Id: teientry2txt.xsl,v 1.15 2009-11-09 03:47:52 bansp Exp $
+     $Id$
      </xsl:variable>
    added the variable but then uncommented it, because it would get priority 
    over the one defined in the header module; not sure if that was indended -->

@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.1 $
+  $Revision$
 
   This stylesheet looks for orth, pron, tr, note and p elements from a TEI XML
   dictionary, which have an opening or closing brace without a matching closing

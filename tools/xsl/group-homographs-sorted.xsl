@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.3 $
+  $Revision$
 
   This stylesheet converts a TEI dictionary where homographs are not
   necessarily grouped with <hom> elements into a TEI file, where this

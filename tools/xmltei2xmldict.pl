@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Id: xmltei2xmldict.pl,v 1.8 2006-10-02 20:27:26 micha137 Exp $
+# $Id$
 
 # V1.5 10/2006 Michael Bunk
 #   * removed -l option completely

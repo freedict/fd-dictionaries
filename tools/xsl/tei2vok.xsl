@@ -26,7 +26,7 @@
        indentation and wrapping. -->
   <xsl:param name="width" select="25"/>
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2vok.xsl,v 1.11 2007-03-25 11:13:31 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id$</xsl:param>
 
   <!-- ';' and '/' have special meaning in the vok format, so they are
   not allowed in headwords or translations. The 0x2010 HYPHEN character

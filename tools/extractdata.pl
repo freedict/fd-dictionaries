@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Revision: 1.17 $
+# $Revision$
 
 # the produced freedict-database.xml has the following schema:
 #

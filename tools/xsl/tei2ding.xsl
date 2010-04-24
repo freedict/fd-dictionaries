@@ -15,7 +15,7 @@
 
   <!--xsl:strip-space elements="entry orth tr"/-->
 
-  <xsl:param name="stylesheet-cvsid">$Id: tei2ding.xsl,v 1.3 2007-03-25 11:13:31 micha137 Exp $</xsl:param>
+  <xsl:param name="stylesheet-cvsid">$Id$</xsl:param>
 
   <!-- something like the main function -->
   <xsl:template match="/">

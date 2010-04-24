@@ -9,7 +9,7 @@
   <!-- Has to come from the shell, as XSLT/XPath 1.0 provide no
   function to get current time/date -->
   <xsl:param name="current-date"/>
-  <xsl:variable name="stylesheet-cvsid">$Id: teiheader2txt.xsl,v 1.9 2009-04-13 01:19:43 bansp Exp $</xsl:variable>
+  <xsl:variable name="stylesheet-cvsid">$Id$</xsl:variable>
 
   <!-- Using this stylesheet with Sablotron requires a version >=0.95,
   because xsl:strip-space was implemented from that version on -->

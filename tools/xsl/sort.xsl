@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.3 $
+  $Revision$
 
   This stylesheet sorts the entries of a TEI file using <xsl:sort>.
 

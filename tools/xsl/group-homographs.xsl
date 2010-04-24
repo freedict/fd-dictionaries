@@ -3,7 +3,7 @@
 
   <!--
 
-  $Revision: 1.3 $
+  $Revision$
 
   This stylesheet converts a TEI file where homographs are not necessarily
   grouped by using the 'hom' element into a TEI file, where this grouping exists.

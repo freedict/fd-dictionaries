@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: xdf2tei.pl,v 1.5 2007-03-25 11:13:30 micha137 Exp $
+# $Id$
 # (c) Oct 2004 - July 2005 Michael Bunk
 # This is GPL software.
 #

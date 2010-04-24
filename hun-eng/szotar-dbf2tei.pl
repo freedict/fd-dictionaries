@@ -5,7 +5,7 @@ use strict;
 use Getopt::Long;
 use Pod::Usage;
 
-my $revision='$Revision: 1.3 $';
+my $revision='$Revision$';
 my $verbose = 0;
 my $reverse = 0;
 my $help;
