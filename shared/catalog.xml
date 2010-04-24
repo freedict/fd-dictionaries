@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
+<!-- FreeDict XML catalog, for developers -->
+<!-- $Id$ -->
+<!--
+  if you use xmllint and the default catalog in etc/xml/catalog, just add 
+  the following line, appropriately modified: 
+  <nextCatalog catalog="/home/Piotr/SVN/freedict/trunk/shared/catalog.xml"/>
+  (analogously with other tools)
+-->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+  <system systemId="freedict-P5.dtd" uri="./freedict-P5.dtd" />
+  <system systemId="freedict-P5.rng" uri="./freedict-P5.rng" />
+  <system systemId="tei_all.rng" uri="./tei_all.rng" />
+</catalog>
