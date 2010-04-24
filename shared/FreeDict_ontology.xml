@@ -1,0 +1,96 @@
+<fs n="FreeDict_ontology" xml:id="FreeDict_ontology" xmlns="http://www.tei-c.org/ns/1.0">
+    <!-- A sketch of FreeDict ontology, 24-apr-2010 -->
+ <!-- context of use:
+  
+  <text>
+    <front>
+       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../shared/FreeDict_ontology.xml"/>
+    </front>
+  <body>
+ -->
+    <f name="version"><string>$id</string></f>
+    <f name="gramGrp_values">
+     <fs>
+      <f name="adjective" xml:id="adj">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng"><string>adjective</string></f>
+          <f name="pol"><string>przymiotnik</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Adjectival</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1230</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="adverb" xml:id="adv">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>adverb</string></f>
+          <f name="pol" xml:lang="pl"><string>przysłówek</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Adverbial</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1232</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="noun" xml:id="n">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>noun</string></f>
+          <f name="pol" xml:lang="pl"><string>rzeczownik</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Noun</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1333</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="preposition" xml:id="prep">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>preposition</string></f>
+          <f name="pol" xml:lang="pl"><string>przyimek</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Preposition</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1366</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="verb" xml:id="v">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng"><string>verb</string></f>
+          <f name="pol"><string>czasownik</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Verbal</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1424</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+     </fs>
+    </f>
+   </fs>
