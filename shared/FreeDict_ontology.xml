@@ -59,6 +59,22 @@
         </f>
        </fs>
       </f>
+      <f name="numeral" xml:id="num">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>numeral</string></f>
+          <f name="pol" xml:lang="pl"><string>liczebnik</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/Numeral</string></f>
+          <f name="ISO_DCR"><string>	http://www.isocat.org/datcat/DC-1334</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
       <f name="preposition" xml:id="prep">
        <fs>
         <f name="label">
@@ -87,6 +103,38 @@
          <fs>
           <f name="GOLD"><string>http://purl.org/linguistics/gold/Verbal</string></f>
           <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1424</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="verb-intransitive" xml:id="v_intrans">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng"><string>intransitive verb</string></f>
+          <f name="pol"><string>czasownik nieprzechodni</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/IntransitiveVerb</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/1322</string></f>
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="verb-transitive" xml:id="v_trans">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng"><string>transitive verb</string></f>
+          <f name="pol"><string>czasownik przechodni</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/TransitiveVerb</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/1405</string></f>
          </fs>
         </f>
        </fs>
