@@ -4,12 +4,16 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict project (basic), version 0.4</title>
-            <author xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</author>
+            <title>TEI Customization for the FreeDict project (basic), version 0.6</title>
+            <respStmt>
+               <resp>maintained by</resp>
+               <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <availability status="free">
-               <p>This file is released as part of the FreeDict package (http://freedict.org/). It is licensed under the GNU Public License version 2.0 or later.</p>
+               <p>This file is released as part of the FreeDict package (http://freedict.org/). It
+                  is licensed under the GNU Public License version 2.0 or later.</p>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -29,30 +33,41 @@
             Piotr Bański and Beata Wójtowicz, which should be available from
             http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
-            <item><label>Version 0.4, 31 December 2009 by <name>Piotr Bański</name></label> 
+            <item><label>Version 0.6, <date when="2010-04-24">24 April 2010</date>, by <name>Piotr Bański</name></label>: Added the "iso-fs" module.</item>
+            <item><label>Version 0.5, <date when="2010-04-16">16 April 2010</date>, edited by <name>Piotr Bański</name></label>
+               <list type="bulleted">
+                  <item>Changed the responsibility type from the Roma-generated <gi>author</gi> to <gi>respStmt</gi> and called myself a maintainer.</item>
+                  <item>Made the changelog dates machine-readable.</item>
+                  <item>Added the linking module (merged changes by <name>Stuart Yeates</name>). This is to enable the <att>corresp</att> attributes.</item>
+               </list>
+            </item>
+            <item><label>Version 0.4, <date when="2009-12-31">31 December 2009</date> by <name>Piotr Bański</name></label>
                <list type="bulleted">
                   <item>Commited to the Freedict CVS (still in version 0.3).</item>
                   <item>Properly re-titled and described.</item>
                   <item>Added the "figures" module, for tables in the front matter.</item>
                </list>
             </item>
-            <item><label>Version 0.3, 30 December 2008 by <name>Piotr Bański</name></label> 
+            <item><label>Version 0.3, <date when="2008-12-30">30 December 2008</date> by <name>Piotr Bański</name></label>
                <list type="bulleted">
-                  <item>Removed <gi>dictScrap</gi> and <gi>entryFree</gi> and the mysterious header elements that cause Sanity Checker warnings.</item>
-                  <item>Removed numbered divs (with a view towards tailoring this ODD for all FreeDict dictionaries).</item>
+                  <item>Removed <gi>dictScrap</gi> and <gi>entryFree</gi> and the mysterious header
+                     elements that cause Sanity Checker warnings.</item>
+                  <item>Removed numbered divs (with a view towards tailoring this ODD for all
+                     FreeDict dictionaries).</item>
                </list>
             </item>
          </list>
          <schemaSpec ident="freedict-P5" docLang="en" prefix="tei_">
             <moduleRef key="core"/>
-            <moduleRef key="tei"/>
-            <moduleRef key="header"/>
-            <moduleRef key="textstructure"/>
-            <moduleRef key="dictionaries"/>
-            <moduleRef key="figures"/>
             <elementSpec module="core" ident="teiCorpus" mode="delete"/>
+
+            <moduleRef key="tei"/>
+
+            <moduleRef key="header"/>
             <elementSpec module="header" ident="handNote" mode="delete"/>
             <elementSpec module="header" ident="typeNote" mode="delete"/>
+            
+            <moduleRef key="textstructure"/>
             <elementSpec module="textstructure" ident="div1" mode="delete"/>
             <elementSpec module="textstructure" ident="div2" mode="delete"/>
             <elementSpec module="textstructure" ident="div3" mode="delete"/>
@@ -60,8 +75,38 @@
             <elementSpec module="textstructure" ident="div5" mode="delete"/>
             <elementSpec module="textstructure" ident="div6" mode="delete"/>
             <elementSpec module="textstructure" ident="div7" mode="delete"/>
+            
+            <moduleRef key="dictionaries"/>
             <elementSpec module="dictionaries" ident="dictScrap" mode="delete"/>
             <elementSpec module="dictionaries" ident="entryFree" mode="delete"/>
+            
+            <moduleRef key="figures"/>
+            
+            <moduleRef key="iso-fs"/>
+
+            <moduleRef key="linking"/>
+            <elementSpec module="linking" ident="ab" mode="delete"/>
+            <elementSpec module="linking" ident="alt" mode="delete"/>
+            <elementSpec module="linking" ident="altGrp" mode="delete"/>
+            <elementSpec module="linking" ident="anchor" mode="delete"/>
+            <elementSpec module="linking" ident="join" mode="delete"/>
+            <elementSpec module="linking" ident="joinGrp" mode="delete"/>
+            <elementSpec module="linking" ident="link" mode="delete"/>
+            <elementSpec module="linking" ident="linkGrp" mode="delete"/>
+            <elementSpec module="linking" ident="seg" mode="delete"/>
+            <elementSpec module="linking" ident="timeline" mode="delete"/>
+            <elementSpec module="linking" ident="when" mode="delete"/>
+            <classSpec ident="att.global.linking" mode="change" type="atts" module="linking">
+               <attList>
+                  <attDef ident="synch" mode="delete"/>
+                  <attDef ident="sameAs" mode="delete"/>
+                  <attDef ident="copyOf" mode="delete"/>
+                  <attDef ident="next" mode="delete"/>
+                  <attDef ident="prev" mode="delete"/>
+                  <attDef ident="exclude" mode="delete"/>
+                  <attDef ident="select" mode="delete"/>
+               </attList>
+            </classSpec>
          </schemaSpec>
       </body>
    </text>
