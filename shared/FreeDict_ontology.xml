@@ -1,5 +1,5 @@
-<fs n="FreeDict_ontology" xml:id="FreeDict_ontology" xmlns="http://www.tei-c.org/ns/1.0">
-    <!-- A sketch of FreeDict ontology, 24-apr-2010 -->
+<fs n="FreeDict_ontology" xml:id="f_FreeDict_ontology" xmlns="http://www.tei-c.org/ns/1.0">
+    <!-- A sketch of FreeDict's interface to reference ontologies, 24-apr-2010 -->
  <!-- context of use:
   
   <text>
@@ -11,12 +11,12 @@
     <f name="version"><string>$Id$</string></f>
     <f name="gramGrp_values">
      <fs>
-      <f name="adjective" xml:id="adj">
+      <f name="adjective" xml:id="f_adj">
        <fs>
         <f name="label">
          <fs>
-          <f name="eng"><string>adjective</string></f>
-          <f name="pol"><string>przymiotnik</string></f>
+          <f name="eng" xml:lang="en"><string>adjective</string></f>
+          <f name="pol" xml:lang="pl"><string>przymiotnik</string></f>
          </fs>
         </f>
         <f name="reference">
@@ -27,7 +27,7 @@
         </f>
        </fs>
       </f>
-      <f name="adverb" xml:id="adv">
+      <f name="adverb" xml:id="f_adv">
        <fs>
         <f name="label">
          <fs>
@@ -43,7 +43,58 @@
         </f>
        </fs>
       </f>
-      <f name="noun" xml:id="n">
+      <f name="gender_feminine" xml:id="f_fem">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>feminine gender</string></f>
+          <f name="pol" xml:lang="pl"><string>rodzaj żeński</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/FeminineGender</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/247</string></f>
+          <!-- http://www.isocat.org/rest/dc/1880 -->
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="gender_masculine" xml:id="f_masc">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>masculine gender</string></f>
+          <f name="pol" xml:lang="pl"><string>rodzaj męski</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/MasculineGender</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/246</string></f>
+          <!-- http://www.isocat.org/rest/dc/1883 -->
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="gender_neuter" xml:id="f_neut">
+       <fs>
+        <f name="label">
+         <fs>
+          <f name="eng" xml:lang="en"><string>neuter gender</string></f>
+          <f name="pol" xml:lang="pl"><string>rodzaj nijaki</string></f>
+         </fs>
+        </f>
+        <f name="reference">
+         <fs>
+          <f name="GOLD"><string>http://purl.org/linguistics/gold/NeuterGender</string></f>
+          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/248</string></f>
+          <!-- http://www.isocat.org/rest/dc/1884 -->
+         </fs>
+        </f>
+       </fs>
+      </f>
+      <f name="noun" xml:id="f_n">
        <fs>
         <f name="label">
          <fs>
@@ -59,7 +110,7 @@
         </f>
        </fs>
       </f>
-      <f name="numeral" xml:id="num">
+      <f name="numeral" xml:id="f_num">
        <fs>
         <f name="label">
          <fs>
@@ -75,7 +126,7 @@
         </f>
        </fs>
       </f>
-      <f name="preposition" xml:id="prep">
+      <f name="preposition" xml:id="f_prep">
        <fs>
         <f name="label">
          <fs>
@@ -91,12 +142,12 @@
         </f>
        </fs>
       </f>
-      <f name="verb" xml:id="v">
+      <f name="verb" xml:id="f_v">
        <fs>
         <f name="label">
          <fs>
-          <f name="eng"><string>verb</string></f>
-          <f name="pol"><string>czasownik</string></f>
+          <f name="eng" xml:lang="en"><string>verb</string></f>
+          <f name="pol" xml:lang="pl"><string>czasownik</string></f>
          </fs>
         </f>
         <f name="reference">
@@ -107,12 +158,12 @@
         </f>
        </fs>
       </f>
-      <f name="verb-intransitive" xml:id="v_intrans">
+      <f name="verb-intransitive" xml:id="f_v_intrans">
        <fs>
         <f name="label">
          <fs>
-          <f name="eng"><string>intransitive verb</string></f>
-          <f name="pol"><string>czasownik nieprzechodni</string></f>
+          <f name="eng" xml:lang="en"><string>intransitive verb</string></f>
+          <f name="pol" xml:lang="pl"><string>czasownik nieprzechodni</string></f>
          </fs>
         </f>
         <f name="reference">
@@ -123,12 +174,12 @@
         </f>
        </fs>
       </f>
-      <f name="verb-transitive" xml:id="v_trans">
+      <f name="verb-transitive" xml:id="f_v_trans">
        <fs>
         <f name="label">
          <fs>
-          <f name="eng"><string>transitive verb</string></f>
-          <f name="pol"><string>czasownik przechodni</string></f>
+          <f name="eng" xml:lang="en"><string>transitive verb</string></f>
+          <f name="pol" xml:lang="en"><string>czasownik przechodni</string></f>
          </fs>
         </f>
         <f name="reference">
