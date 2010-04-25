@@ -338,8 +338,17 @@
   </xsl:template>
   
   <xsl:template match="tei:ref">
-    <xsl:if test="preceding-sibling::*[1][self::tei:ref]"><xsl:text>, </xsl:text></xsl:if>
-    <xsl:value-of select="concat('{',.,'}')"/>
+    <xsl:if test="preceding-sibling::*[1][self::tei:ref]">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="ancestor::tei:teiHeader">
+        <xsl:value-of select="concat(.,' [',@target,']')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="concat('{',.,'}')"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
    <xsl:template match="entry//p | tei:entry//tei:p">
@@ -420,6 +429,17 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template match="tei:quote">
+    <xsl:choose>
+      <xsl:when test="parent::tei:cit[@type='dicteg']">
+        <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates/>
+      </xsl:otherwise>
+    </xsl:choose>
+    
+  </xsl:template>
   <xsl:template match="tei:q">
     <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
   </xsl:template>
