@@ -9,6 +9,12 @@
        <include xmlns="http://www.w3.org/2001/XInclude" href="../shared/FreeDict_ontology.xml"/>
     </front>
     <body>
+    
+    the only kind of xmllint validation I was able to pull off with a DTD was without 
+    xinclude processing though (otherwise it complains that this file doesn't have a DTD...),
+    but that should normally be enough.
+    
+    xmllint - -noout - -valid lg1-lg2.tei  (no space between '- -' !)
  -->
     <f name="version"><string>$Id$</string></f>
     <f name="gramGrp_values">
