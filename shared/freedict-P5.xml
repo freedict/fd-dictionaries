@@ -4,7 +4,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict project (basic), version 0.6</title>
+            <title>TEI Customization for the FreeDict project (basic), version 0.7</title>
             <respStmt>
                <resp>maintained by</resp>
                <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
@@ -33,6 +33,7 @@
             Piotr Bański and Beata Wójtowicz, which should be available from
             http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
+            <item><label>Version 0.7, <date when="2010-04-25">25 April 2010</date>, by <name>Piotr Bański</name></label>: Added the xinclude extension from the approoriate Roma template, changed it to be able to occur as a child of front (I can't validate xinclusions with xmllint if a DTD is used, so this is for the sake of DTDs only)</item>
             <item><label>Version 0.6, <date when="2010-04-24">24 April 2010</date>, by <name>Piotr Bański</name></label>: Added the "iso-fs" and "analysis" modules, the latter for the sake of @ana only...</item>
             <item><label>Version 0.5, <date when="2010-04-16">16 April 2010</date>, edited by <name>Piotr Bański</name></label>
                <list type="bulleted">
@@ -66,7 +67,7 @@
             <moduleRef key="header"/>
             <elementSpec module="header" ident="handNote" mode="delete"/>
             <elementSpec module="header" ident="typeNote" mode="delete"/>
-            
+
             <moduleRef key="textstructure"/>
             <elementSpec module="textstructure" ident="div1" mode="delete"/>
             <elementSpec module="textstructure" ident="div2" mode="delete"/>
@@ -75,15 +76,15 @@
             <elementSpec module="textstructure" ident="div5" mode="delete"/>
             <elementSpec module="textstructure" ident="div6" mode="delete"/>
             <elementSpec module="textstructure" ident="div7" mode="delete"/>
-            
+
             <moduleRef key="dictionaries"/>
             <elementSpec module="dictionaries" ident="dictScrap" mode="delete"/>
             <elementSpec module="dictionaries" ident="entryFree" mode="delete"/>
-            
+
             <moduleRef key="figures"/>
-            
+
             <moduleRef key="iso-fs"/>
-            
+
             <moduleRef key="analysis"/>
             <elementSpec module="analysis" ident="c" mode="delete"/>
             <elementSpec module="analysis" ident="cl" mode="delete"/>
@@ -96,7 +97,7 @@
             <elementSpec module="analysis" ident="span" mode="delete"/>
             <elementSpec module="analysis" ident="spanGrp" mode="delete"/>
             <elementSpec module="analysis" ident="w" mode="delete"/>
-            
+
             <moduleRef key="linking"/>
             <elementSpec module="linking" ident="ab" mode="delete"/>
             <elementSpec module="linking" ident="alt" mode="delete"/>
@@ -120,6 +121,61 @@
                   <attDef ident="select" mode="delete"/>
                </attList>
             </classSpec>
+
+            <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="include"
+               ns="http://www.w3.org/2001/XInclude" mode="add">
+               <desc>The W3C XInclude element</desc>
+               <classes>
+                  <!--<memberOf key="model.common"/>-->
+                  <memberOf key="model.pLike.front"/>
+                  <memberOf key="model.headerPart"/>
+               </classes>
+               <content>
+                  <rng:optional>
+                     <rng:ref name="fallback"/>
+                  </rng:optional>
+               </content>
+               <attList>
+                  <attDef ident="href">
+                     <desc>pointer to the resource being included</desc>
+                     <datatype>
+                        <rng:ref name="data.pointer"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="parse" usage="opt">
+                     <defaultVal>xml</defaultVal>
+                     <valList type="closed">
+                        <valItem ident="xml"/>
+                        <valItem ident="text"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="xpointer" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="encoding" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept-charset" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept-language" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
          </schemaSpec>
       </body>
    </text>
