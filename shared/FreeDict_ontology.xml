@@ -1,10 +1,12 @@
 <fs n="FreeDict_ontology" xml:id="f_FreeDict_ontology" xmlns="http://www.tei-c.org/ns/1.0">
     <!-- A sketch of FreeDict's interface to reference ontologies, 24-apr-2010 -->
- <!-- context of use:
+ 
+ <!-- context of use 
+      (note, the DTD will only allow the form below, with prefix-less <include>)
   
   <text>
     <front>
-       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../shared/FreeDict_ontology.xml"/>
+       <include xmlns="http://www.w3.org/2001/XInclude" href="../shared/FreeDict_ontology.xml"/>
     </front>
     <body>
  -->
