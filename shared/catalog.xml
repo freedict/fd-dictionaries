@@ -9,7 +9,14 @@
   (analogously with other tools)
 -->
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-  <system systemId="freedict-P5.dtd" uri="./freedict-P5.dtd" />
-  <system systemId="freedict-P5.rng" uri="./freedict-P5.rng" />
-  <system systemId="tei_all.rng" uri="./tei_all.rng" />
+  <group id="xmllint">
+    <system systemId="freedict-P5.dtd" uri="./freedict-P5.dtd"/>
+    <system systemId="freedict-P5.rng" uri="./freedict-P5.rng"/>
+    <system systemId="tei_all.rng" uri="./tei_all.rng"/>
+  </group>
+  <group id="xerces">
+    <systemSuffix systemIdSuffix="freedict-P5.dtd" uri="./freedict-P5.dtd"/>
+    <systemSuffix systemIdSuffix="freedict-P5.rng" uri="./freedict-P5.rng"/>
+    <systemSuffix systemIdSuffix="tei_all.rng" uri="./tei_all.rng"/>
+  </group>
 </catalog>
