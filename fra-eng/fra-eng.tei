@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 <?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
-<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
@@ -52,8 +51,9 @@
      <change when="2010-04-24" n="0.3.3"><name>Piotr Bański</name>: Technical changes: include the FreeDict interface to ontologies, use @ana to refer to it from inside gramGrp.</change>
      <change when="2010-04-22" n="0.3.2"><name>John Darrington</name>: Extended the dictionary (several commits: added POS fields, genders, + over 300 entries). (+ Piotr: little changes in the header, tiny fixes).</change>
      <change when="2010-03-05" n="0.3.1"><name>Piotr Bański</name>: Merged the old header in. Converted the dictionary to TEI P5, replaced ndashes (or something of that sort, also within headwords) with plain hyphens. Reorganised the directory (NEWS and README out, stuff from shared/ in).</change>
-     <change when="2010-03-04" n="0.3"><name>John Darrington</name>: 
-        <list type="bulleted">
+     <change when="2010-03-04" n="0.3">
+      <list type="bulleted">
+          <head><name>John Darrington</name></head>
           <item>Lots of new words added, (a few deleted) parts of speech added. Genders added. Some horrible errors corrected. Probably some new errors introduced.</item>
           <item>Verbs were identified using "verbiste", nouns by using freedict's fra-deu dictionary (definitions starting with upper case were assumed to be nouns).</item>
         </list>
