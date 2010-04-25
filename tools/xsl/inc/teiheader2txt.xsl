@@ -169,19 +169,25 @@ it will never be instantiated. -->
   <xsl:template match="tei:change">
     <xsl:text> * </xsl:text>
     <xsl:value-of select="@when"/>
-    <xsl:text> </xsl:text>
-    <xsl:value-of select="@who"/>
-    <!-- this should retrieve the reference, which is non-trivial, 
-      given all the possibilities of locating it; @who is IDREFS -->
-    <xsl:text>:&#xa;   </xsl:text>
-    
+    <xsl:if test="@who">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="@who"/>
+      <!-- this should retrieve the reference, which is non-trivial, 
+          given all the possibilities of locating it; @who is a fragment identifier -->
+    </xsl:if>
+    <xsl:if test="@n">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="@n"/>
+    </xsl:if>
+    <xsl:text>:&#xa;</xsl:text>
+
     <xsl:choose>
       <xsl:when test="count(tei:list)">
         <xsl:apply-templates select="*"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="normalize-space(.)"/>
+          <xsl:with-param name="txt" select="concat('   ',normalize-space(.))"/>
           <xsl:with-param name="width" select="$width"/>
           <xsl:with-param name="start" select="3"/>
         </xsl:call-template>
@@ -190,16 +196,16 @@ it will never be instantiated. -->
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
   
-  <!-- process a list; if a sublist happens, a -->
+  <!-- this is a horribly unreadable template that should definitely be rewritten -->
   <xsl:template match="tei:list">
     <xsl:variable name="indent" select="count(ancestor-or-self::tei:list)*3"/>
     <xsl:if test="tei:head">
       <xsl:call-template name="format">
-        <xsl:with-param name="txt" select="normalize-space(tei:head)"/>
+        <xsl:with-param name="txt" select="concat('   ',normalize-space(tei:head))"/>
         <xsl:with-param name="width" select="$width"/>
         <xsl:with-param name="start" select="$indent"/>
       </xsl:call-template>
-      <xsl:text>&#xa;</xsl:text>
+      <!--<xsl:text>&#xa;</xsl:text>-->
     </xsl:if>
     <xsl:for-each select="tei:item">
       <xsl:variable name="item-content">
@@ -218,7 +224,7 @@ it will never be instantiated. -->
         <xsl:with-param name="width" select="$width"/>
         <xsl:with-param name="start" select="$indent+2"/>
       </xsl:call-template>
-      <xsl:text>&#xa;</xsl:text>
+      <!--<xsl:text>&#xa;</xsl:text>-->
       <xsl:if test="tei:list">
         <xsl:apply-templates select="tei:list"/>
       </xsl:if>
