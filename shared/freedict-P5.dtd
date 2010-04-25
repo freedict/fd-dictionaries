@@ -1,6 +1,6 @@
 
 <!--
-DTD Generated 2010-04-24T10:01:42-04:00. 
+DTD Generated 2010-04-24T20:31:04-04:00. 
 This file is released as part of the FreeDict package (http://freedict.org/). It
                   is licensed under the GNU Public License version 2.0 or later.
 Edition: 1.6.0. Last updated on February 12th 2010.
@@ -650,11 +650,12 @@ subtype NMTOKEN  #IMPLIED'>
  docAuthor |
  docEdition |
  docImprint |
- docDate"> 
-<!ENTITY % model.pLike.front_sequence "head, byline, argument, epigraph, docTitle, titlePart, docAuthor, docEdition, docImprint, docDate"> 
-<!ENTITY % model.pLike.front_sequenceOptional "head?, byline?, argument?, epigraph?, docTitle?, titlePart?, docAuthor?, docEdition?, docImprint?, docDate?"> 
-<!ENTITY % model.pLike.front_sequenceOptionalRepeatable "head*, byline*, argument*, epigraph*, docTitle*, titlePart*, docAuthor*, docEdition*, docImprint*, docDate*"> 
-<!ENTITY % model.pLike.front_sequenceRepeatable "head+, byline+, argument+, epigraph+, docTitle+, titlePart+, docAuthor+, docEdition+, docImprint+, docDate+"> 
+ docDate |
+ include"> 
+<!ENTITY % model.pLike.front_sequence "head, byline, argument, epigraph, docTitle, titlePart, docAuthor, docEdition, docImprint, docDate, include"> 
+<!ENTITY % model.pLike.front_sequenceOptional "head?, byline?, argument?, epigraph?, docTitle?, titlePart?, docAuthor?, docEdition?, docImprint?, docDate?, include?"> 
+<!ENTITY % model.pLike.front_sequenceOptionalRepeatable "head*, byline*, argument*, epigraph*, docTitle*, titlePart*, docAuthor*, docEdition*, docImprint*, docDate*, include*"> 
+<!ENTITY % model.pLike.front_sequenceRepeatable "head+, byline+, argument+, epigraph+, docTitle+, titlePart+, docAuthor+, docEdition+, docImprint+, docDate+, include+"> 
 <!ENTITY % model.divBottomPart "trailer |
  closer |
  signed |
@@ -2794,6 +2795,18 @@ element. -->
  %att.global.attribute.xmlspace;
  %att.global.linking.attribute.corresp;
  %att.global.analytic.attributes; >
+<!--doc:The W3C XInclude element -->
+    <!ELEMENT include  EMPTY>
+<!ATTLIST include xmlns CDATA "http://www.w3.org/2001/XInclude">
+<!ATTLIST include
+href CDATA #IMPLIED
+parse (xml|
+text) "xml" 
+xpointer CDATA #IMPLIED
+encoding CDATA #IMPLIED
+accept CDATA #IMPLIED
+accept-charset CDATA #IMPLIED
+accept-language CDATA #IMPLIED >
 <!--doc:(index entry) marks a location to be indexed for whatever purpose. -->
     <!ELEMENT index (term,index?)*>
 <!ATTLIST index xmlns CDATA "http://www.tei-c.org/ns/1.0">
