@@ -1,203 +1,324 @@
-<fs n="FreeDict_ontology" xml:id="f_FreeDict_ontology" xmlns="http://www.tei-c.org/ns/1.0">
-    <!-- A sketch of FreeDict's interface to reference ontologies, 24-apr-2010 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>FreeDict interface to linguistic ontologies</title>
+    <editor>
+     <name xml:id="bansp">Piotr Bański</name>
+    </editor>
+   </titleStmt>
+   <publicationStmt>
+    <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
+    <idno>$Id$</idno>
+    <availability status="free">
+     <p>Copyright by the respective contributors. License: GNU General Public License ver. 3 or any
+      later version.</p>
+    </availability>
+   </publicationStmt>
+   <notesStmt>
+    <note>This interface has been created in order to make it possible to align the linguistic
+     information in FreeDict dictionaries. See the <ref
+      target="http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/fra-eng/fra-eng.tei
+      "
+      >fra-eng</ref> (French - English) dictionary, v. 0.3.3, for the first working example.</note>
+    <note>The xml:id values obey the pattern: f_[category]_[value], where categories are meant to be
+     very general and associated with the particular TEI elements (although note that part-of-speech
+     values can just as well be found as contents of the &lt;subc&gt; element. The leading "f_"
+     serves to group them for e.g. autocompletion purposes.</note>
+    <note>It is hoped that the label list is going to grow. We might actually derive a multilingual terminological dictionary this way :-) And we might submit that to both the GOLD and ISOCat.</note>
+    <note>To do: add a feature structure declaration. Implement Schematron checks for individual dictionaries.</note>
+   </notesStmt>
+   <sourceDesc><p>Created in electronic form</p></sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change who="#bansp" when="2010-04-27">Converted to a free-standing document.</change>
+   <change who="#bansp" when="2010-04">Created as an inclusion to the FreeDict fra-eng dictionary.</change>
+  </revisionDesc>
+ </teiHeader>
  
- <!-- context of use 
-      (note, the DTD will only allow the form below, with prefix-less <include>)
-  
-  <text>
-    <front>
-       <include xmlns="http://www.w3.org/2001/XInclude" href="../shared/FreeDict_ontology.xml"/>
-    </front>
-    <body>
-    
-    the only kind of xmllint validation I was able to pull off with a DTD was without 
-    xinclude processing though (otherwise it complains that this file doesn't have a DTD...),
-    but that should normally be enough.
-    
-    xmllint - -noout - -valid lg1-lg2.tei  (no space between '- -' !)
- -->
-    <f name="version"><string>$Id$</string></f>
-    <f name="gramGrp_values">
-     <fs>
-      <f name="adjective" xml:id="f_adj">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>adjective</string></f>
-          <f name="pol" xml:lang="pl"><string>przymiotnik</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Adjectival</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1230</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="adverb" xml:id="f_adv">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>adverb</string></f>
-          <f name="pol" xml:lang="pl"><string>przysłówek</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Adverbial</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1232</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="gender_feminine" xml:id="f_fem">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>feminine gender</string></f>
-          <f name="pol" xml:lang="pl"><string>rodzaj żeński</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/FeminineGender</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/247</string></f>
-          <!-- http://www.isocat.org/rest/dc/1880 -->
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="gender_masculine" xml:id="f_masc">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>masculine gender</string></f>
-          <f name="pol" xml:lang="pl"><string>rodzaj męski</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/MasculineGender</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/246</string></f>
-          <!-- http://www.isocat.org/rest/dc/1883 -->
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="gender_neuter" xml:id="f_neut">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>neuter gender</string></f>
-          <f name="pol" xml:lang="pl"><string>rodzaj nijaki</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/NeuterGender</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/248</string></f>
-          <!-- http://www.isocat.org/rest/dc/1884 -->
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="noun" xml:id="f_n">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>noun</string></f>
-          <f name="pol" xml:lang="pl"><string>rzeczownik</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Noun</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1333</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="numeral" xml:id="f_num">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>numeral</string></f>
-          <f name="pol" xml:lang="pl"><string>liczebnik</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Numeral</string></f>
-          <f name="ISO_DCR"><string>	http://www.isocat.org/datcat/DC-1334</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="preposition" xml:id="f_prep">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>preposition</string></f>
-          <f name="pol" xml:lang="pl"><string>przyimek</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Preposition</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1366</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="verb" xml:id="f_v">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>verb</string></f>
-          <f name="pol" xml:lang="pl"><string>czasownik</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/Verbal</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/datcat/DC-1424</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="verb-intransitive" xml:id="f_v_intrans">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>intransitive verb</string></f>
-          <f name="pol" xml:lang="pl"><string>czasownik nieprzechodni</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/IntransitiveVerb</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/1322</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-      <f name="verb-transitive" xml:id="f_v_trans">
-       <fs>
-        <f name="label">
-         <fs>
-          <f name="eng" xml:lang="en"><string>transitive verb</string></f>
-          <f name="pol" xml:lang="en"><string>czasownik przechodni</string></f>
-         </fs>
-        </f>
-        <f name="reference">
-         <fs>
-          <f name="GOLD"><string>http://purl.org/linguistics/gold/TransitiveVerb</string></f>
-          <f name="ISO_DCR"><string>http://www.isocat.org/rest/dc/1405</string></f>
-         </fs>
-        </f>
-       </fs>
-      </f>
-     </fs>
-    </f>
-   </fs>
+ <text>
+  <fLib>
+   <f name="FreeDict_ontology_interface">
+    <fs xml:id="f_FreeDict_ontology">
+     <f name="version_info">
+      <string>$Id$</string>
+     </f>
+     <f name="grammatical_categories">
+      <fs>
+       <f name="adjective" xml:id="f_pos_adj">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>adjective</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>przymiotnik</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Adjectival</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1230</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="adverb" xml:id="f_pos_adv">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>adverb</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>przysłówek</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Adverbial</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1232</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="gender_feminine" xml:id="f_gen_fem">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>feminine gender</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>rodzaj żeński</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/FeminineGender</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/rest/dc/247</string>
+           </f>
+           <!-- http://www.isocat.org/rest/dc/1880 -->
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="gender_masculine" xml:id="f_gen_masc">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>masculine gender</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>rodzaj męski</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/MasculineGender</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/rest/dc/246</string>
+           </f>
+           <!-- http://www.isocat.org/rest/dc/1883 -->
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="gender_neuter" xml:id="f_gen_neut">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>neuter gender</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>rodzaj nijaki</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/NeuterGender</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/rest/dc/248</string>
+           </f>
+           <!-- http://www.isocat.org/rest/dc/1884 -->
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="noun" xml:id="f_pos_noun">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>noun</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>rzeczownik</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Noun</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1333</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="numeral" xml:id="f_pos_num">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>numeral</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>liczebnik</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Numeral</string>
+           </f>
+           <f name="ISO_DCR">
+            <string> http://www.isocat.org/datcat/DC-1334</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="preposition" xml:id="f_pos_prep">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>preposition</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>przyimek</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Preposition</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1366</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="verb" xml:id="f_pos_verb">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>verb</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>czasownik</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/Verbal</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1424</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="verb-intransitive" xml:id="f_pos_v-intrans">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>intransitive verb</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>czasownik nieprzechodni</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/IntransitiveVerb</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/rest/dc/1322</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="verb-transitive" xml:id="f_pos_v-trans">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>transitive verb</string>
+           </f>
+           <f name="pol" xml:lang="en">
+            <string>czasownik przechodni</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://purl.org/linguistics/gold/TransitiveVerb</string>
+           </f>
+           <f name="ISO_DCR">
+            <string>http://www.isocat.org/rest/dc/1405</string>
+           </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+      </fs>
+     </f>
+    </fs>
+   </f>
+  </fLib>
+  <body><p>This line is here only to satisfy the TEI content model...</p></body>
+ </text>
+</TEI>
