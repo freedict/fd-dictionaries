@@ -65,7 +65,8 @@
           and <name>Zygmunt Saloni</name> (1992). Warszawa: Editions Spotkania.
           ISBN-83-85195-81-5.</p>
         <p>The dictionary was created in TeX and converted to SGML by <name>Katarzyna
-            Głowińska</name> and <name>Marcin Woliński</name> of the University of Warsaw.</p>
+        Głowińska</name> and <name>Marcin Woliński</name> of the University of Warsaw.</p>
+        <p>Idarex codes were added to it (possibly by Tadeusz Piotrowski and/or his students).</p>
         <p>The GNU release was facilitated by <name>Janusz S. Bień</name> of the University of
           Warsaw.</p>
         <p>The authors' licensing statement is included as PDF in the etc/ directory (the TEI
@@ -85,9 +86,20 @@
     <revisionDesc>
       <change n="0.1" who="#bansp" when="2010-05-06">
         <list type="bulleted">
-          <head>Version 0.1, <date>6 May 2010</date>. Converted by: <name>Piotr Bański</name>
-          </head>
-          <item>[the report on what has been done is going to take a while to write up]</item>
+          <head>Version 0.1, <date>6 May 2010</date>. Converted by: <name>Piotr Bański</name>; brief list of changes:</head>
+          <item>converted SGML files to UTF-8;</item>
+          <item>converted the transcription codes to IPA;</item>
+          <item>created an XML DTD to validate the dictionary as XML, split all letters into separate files (e.g. "xyz" used to be a single file);</item>
+          <item>very slightly corrected/modified the post-SGML version (it is released as one of the packages in version 0.1);</item>
+          <item>converted codes into letters with diacritics in UTF-8;</item>
+          <item>added non-diacritic versions to headwords with diacritics, to facilitate searches (e.g. <mentioned>pate</mentioned> to <mentioned>pâté</mentioned>; around 40 additions);</item>
+          <item>the only lexicographic intrusion was splitting <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> to make them analogical to <mentioned>fiancé</mentioned>/<mentioned>fiancée</mentioned>, to make it easier to process them (note the difference in the POS: <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> is categorised as Adj, <mentioned>fiancé</mentioned> is N);</item>
+          <item>wrote a conversion script to TEI XML (included with the post-SGML version as partial documentation);</item>
+          <item>created this header, xincluding the individual letter files, so that the dictionary is easier to maintain;</item>
+          <item>there is still a lot of fixes to do -- e.g. add entries missing in the SGML version (e.g. <mentioned>can</mentioned>! etc.) from the TeX version (a list by Radek Moszczyński is provided), fix POS (typo in inter(j), V Phras), unify the idarexen, join equivalents that were split around the '/' (km/h initially ended up as separate strings), split some ambiguous notes (e.g. 'gloss', see the conversion script for comments) into separate subclasses, split some comma-separated variant transcriptions into separate elements; separate regional variants Br/US from e.g. Latin expansions of some abbreviations (cf. <mentioned>cf.</mentioned>), which should not be located by headword queries (in this case, a query for <mentioned>confer</mentioned>);</item>
+          <item>some entries that were proper subparts of other entries (mostly US spellings) were eliminated from the TEI version (but preserved in the post-SGML XML version) - the full list can be found in the XSLT conversion script;</item>
+          <item>a separate item is extending the dictionary with an XML representation of idarexen (described in a paper by Bański and Moszczyński, LREC-08);</item>
+          <item>the companion volume (pol-eng) awaits conversion from the TeX source;</item>
         </list>
       </change>
     </revisionDesc>
@@ -126,7 +138,7 @@
 <!-- 
   This XML application is distributed under GNU GPL 3.0 (or any later version).
   
-  The textual content of the dictionary has been released under GNU GFDL 1.2 (or any later version).
+  The textual content of the dictionary has additionally been released by the original authors under GNU GFDL 1.2 (or any later version).
   
   This document is free software; you can redistribute it and/or modify it under the terms 
   of the GNU General Public License as published by the Free Software Foundation. This program is 
