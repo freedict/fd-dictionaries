@@ -82,8 +82,49 @@
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the <ref target="http://www.freedict.org">FreeDict project</ref>. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
       </projectDesc>
+      <tagsDecl>
+        <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+        <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
+          <tagUsage gi="pos">
+            <list n="values" type="bulleted">
+              <item xml:id="tag_N" ana="FreeDict_ontology.xml#f_pos_noun">N</item>
+              <item ana="FreeDict_ontology.xml#f_pos_noun">N Comp</item>
+              <item xml:id="tag_V" ana="FreeDict_ontology.xml#f_pos_verb">V</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Mod</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Phras</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Refl</item>
+              <item ana="FreeDict_ontology.xml#f_pos_adj">Adj</item>
+              <item ana="FreeDict_ontology.xml#f_pos_adv">Adv</item>
+              <item ana="FreeDict_ontology.xml#f_pos_num">Num</item>
+              <item ana="FreeDict_ontology.xml#f_pos_prep">Prep</item>
+              <item>Inter</item>
+              <item>Interj</item> <!-- typo -->
+              <item>Det</item>
+              <item>Conj</item>
+              <item>Pron</item>
+            </list>
+          </tagUsage>
+<!--          <tagUsage gi="subc">
+            <list n="values" type="bulleted">
+              <item corresp="#tag_V">Phras</item>
+              <item corresp="#tag_V">Mod</item>
+              <item corresp="#tag_N">Comp</item>
+              <item corresp="#tag_V">Refl</item> <!-\- ?? -\->
+            </list>
+          </tagUsage>
+          the 'subc' field does not exist in this dictionary yet 
+-->        </namespace>
+      </tagsDecl>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2" who="#bansp" when="2010-05-11">
+        <list type="bulleted">
+          <head>Version 0.2, <date>6 May 2010</date>. Changes by <name>Piotr Bański</name>:</head>
+            <item>added more information to the header,</item>
+            <item>anchored some of the POS values in the FreeDict interface to GOLD/ISO DCR (this is the reason for the version number change),</item>
+            <item>prepared the representation for the so far non-existent &lt;subc> (subcategorization) fields; for the time being "V Phras", etc. are used as an atomic POS that are aligned with the corresponding simple POS.</item>
+        </list>
+        </change>
       <change n="0.1" who="#bansp" when="2010-05-06">
         <list type="bulleted">
           <head>Version 0.1, <date>6 May 2010</date>. Converted by: <name>Piotr Bański</name>; brief list of changes:</head>
@@ -96,7 +137,7 @@
           <item>the only lexicographic intrusion was splitting <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> to make them analogical to <mentioned>fiancé</mentioned>/<mentioned>fiancée</mentioned>, to make it easier to process them (note the difference in the POS: <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> is categorised as Adj, <mentioned>fiancé</mentioned> is N);</item>
           <item>wrote a conversion script to TEI XML (included with the post-SGML version as partial documentation);</item>
           <item>created this header, xincluding the individual letter files, so that the dictionary is easier to maintain;</item>
-          <item>there is still a lot of fixes to do -- e.g. add entries missing in the SGML version (e.g. <mentioned>can</mentioned>! etc.) from the TeX version (a list by Radek Moszczyński is provided), fix POS (typo in inter(j), V Phras), unify the idarexen, join equivalents that were split around the '/' (km/h initially ended up as separate strings), split some ambiguous notes (e.g. 'gloss', see the conversion script for comments) into separate subclasses, split some comma-separated variant transcriptions into separate elements; separate regional variants Br/US from e.g. Latin expansions of some abbreviations (cf. <mentioned>cf.</mentioned>), which should not be located by headword queries (in this case, a query for <mentioned>confer</mentioned>);</item>
+          <item>there is still a lot of fixes to do -- e.g. add entries missing in the SGML version (e.g. <mentioned>can</mentioned>! etc.) from the TeX version (a list by Radek Moszczyński is provided), fix POS (typo in inter(j), V Refl), unify the idarexen, join equivalents that were split around the '/' (km/h initially ended up as separate strings), split some ambiguous notes (e.g. 'gloss', see the conversion script for comments) into separate subclasses, split some comma-separated variant transcriptions into separate elements; separate regional variants Br/US from e.g. Latin expansions of some abbreviations (cf. <mentioned>cf.</mentioned>), which should not be located by headword queries (in this case, a query for <mentioned>confer</mentioned>);</item>
           <item>some entries that were proper subparts of other entries (mostly US spellings) were eliminated from the TEI version (but preserved in the post-SGML XML version) - the full list can be found in the XSLT conversion script;</item>
           <item>a separate item is extending the dictionary with an XML representation of idarexen (described in a paper by Bański and Moszczyński, LREC-08);</item>
           <item>the companion volume (pol-eng) awaits conversion from the TeX source;</item>
