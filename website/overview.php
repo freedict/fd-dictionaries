@@ -11,19 +11,21 @@ $title = _('Overview'); require_once 'inc/head.php';
  '<a target="_top" href="http://sourceforge.net/project/memberlist.php?group_id=1419">',
  '</a>') ?></h2>
 
-<p><?php echo _('On this page you find translating dictionary databases.
+<p><?php echo _('On this page you can find translating dictionary databases.
 The databases are free. That means they are available
 under the GNU General Public Licence or a less restrictive
 licence. Check with the licence of the respective database!') ?></p>
 
-<p><?php printf(_('The databases are available in XML. We support to use the
-FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and other
-similar servers.'), '<a href="http://www.dict.org/" target="_parent">', '</a>') ?></p>
+<p><?php printf(_('The databases are available in XML. We support the conversion of FreeDict 
+databases from their native %4$sTEI%2$s format for use with %1$sdictd, the DICT dictionary server%2$s and other
+similar servers. Our own dictionary front-end can be found at %3$shttp://freedict.org/dict%2$s. Please note that
+on that page, you can also install a plugin that will let you query FreeDict dictionaries straight from your
+browser search window.'), '<a href="http://www.dict.org/w/" target="_parent">', '</a>',
+'<a href="http://freedict.org/dict" target="_top">', '<a href="http://www.tei-c.org/" target="_top">') ?></p>
 
 <p><?php echo _('But there are other applications for our databases as well. You could use
-them to generate wordlists for spellcheckers and new dictionaries,
-to build language corpora, to import them into your own terminological
-database and even to print your own dictionary with XSL-FO.') ?></p>
+them to generate wordlists for spellcheckers and to create new dictionaries, to import them 
+into your own terminological database and even to print your own dictionary with XSL-FO.') ?></p>
 
 <p><?php echo _('If you would like to see any other language included,
 please read the HOWTO and join this project! Your help is appreciated
