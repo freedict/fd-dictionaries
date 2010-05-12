@@ -24,8 +24,8 @@ $platform = 'deb';
   <p><?php echo _('You can find out what FreeDict packages are available in
   Debian by visiting') ?></p>
 
-  <blockquote><p><a href="http://packages.debian.org/testing/text/dict-freedict"
-  target="_top">http://packages.debian.org/testing/text/dict-freedict</a></p></blockquote>
+  <blockquote><p><a href="http://packages.debian.org/source/freedict"
+  target="_top">http://packages.debian.org/source/freedict</a></p></blockquote>
 
   <p><?php printf(_('The %1$sFreeDict pages in the
   Debian Bug Tracking System%2$s might also be of interest.'),
