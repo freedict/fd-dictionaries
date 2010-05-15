@@ -42,8 +42,11 @@
   </xsl:template>
 
   <xsl:template match="form | tei:form">
-    <xsl:variable name="paren" select="count(parent::form) = 1 or count(parent::tei:form) = 1 or @type='infl'"/>
+    <xsl:variable name="paren"
+      select="count(child::*[local-name()='orth']) and (count(parent::form) = 1 or count(parent::tei:form) = 1 or @type='infl')"/>
     <!-- parenthesised if nested or (ad hoc) if @type="infl" -->
+    <!-- further adhockishness (I'm duly ashamed): you'd better check if the <orth> is really there, because you may be 
+      looking at nested <form>s; a rewrite is needed here -->
     <xsl:if test="$paren">
       <xsl:text> (</xsl:text>
     </xsl:if>
