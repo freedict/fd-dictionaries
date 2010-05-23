@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-04-17 19:08+0200\n"
+"POT-Creation-Date: 2010-05-13 11:21+0200\n"
 "PO-Revision-Date: 2007-12-13 20:09+MET\n"
 "Last-Translator: Alexey Konyshev <alexey@polyglotexpert.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -304,8 +304,9 @@ msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr ""
 
 #: overview.php:14
+#, fuzzy
 msgid ""
-"On this page you find translating dictionary databases.\n"
+"On this page you can find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
 "licence. Check with the licence of the respective database!"
@@ -317,25 +318,30 @@ msgstr ""
 #: overview.php:19
 #, php-format
 msgid ""
-"The databases are available in XML. We support to use the\n"
-"FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and other\n"
-"similar servers."
+"The databases are available in XML. We support the conversion of FreeDict \n"
+"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
+"DICT dictionary server%2$s and other\n"
+"similar servers. Our own dictionary front-end can be found at %3$shttp://"
+"freedict.org/dict%2$s. Please note that\n"
+"on that page, you can also install a plugin that will let you query FreeDict "
+"dictionaries straight from your\n"
+"browser search window."
 msgstr ""
-"Базы данных доступны в формате XML. Мы поддерживаем использование баз "
-"FreeDict с помощью %1$sdictd – сервера словарей DICT%2$s, и других подобных."
 
-#: overview.php:23
+#: overview.php:26
+#, fuzzy
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
-"them to generate wordlists for spellcheckers and new dictionaries,\n"
-"to build language corpora, to import them into your own terminological\n"
-"database and even to print your own dictionary with XSL-FO."
+"them to generate wordlists for spellcheckers and to create new dictionaries, "
+"to import them \n"
+"into your own terminological database and even to print your own dictionary "
+"with XSL-FO."
 msgstr ""
 "Существует множество способов применения наших баз. Вы можете использовать "
 "их как списки слов в системах проверки правописания, создания языковых "
 "наборов для переноса в собственную базу, и даже для печати их с XSL-FO."
 
-#: overview.php:28
+#: overview.php:30
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -345,7 +351,7 @@ msgstr ""
 "проекту! Ваша помощь востребована и необходима, в том числе и для улучшения "
 "качества существующих словарей."
 
-#: overview.php:35
+#: overview.php:37
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -354,7 +360,7 @@ msgstr ""
 "Большинство ресурсов размещены на хостинге SourceForge. Без SourceForge "
 "FreeDict не развился бы так хорошо."
 
-#: overview.php:39
+#: overview.php:41
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -622,6 +628,16 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+
+#~ msgid ""
+#~ "The databases are available in XML. We support to use the\n"
+#~ "FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and "
+#~ "other\n"
+#~ "similar servers."
+#~ msgstr ""
+#~ "Базы данных доступны в формате XML. Мы поддерживаем использование баз "
+#~ "FreeDict с помощью %1$sdictd – сервера словарей DICT%2$s, и других "
+#~ "подобных."
 
 #~ msgid "Download / Matrix View - FreeDict"
 #~ msgstr "Загрузка / Матрица представления данных- FreeDict"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-01-30 12:01+0100\n"
+"POT-Creation-Date: 2010-05-13 11:21+0200\n"
 "PO-Revision-Date: 2010-04-15 12:01+0100\n"
 "Last-Translator: Jeroen Hellingman <jeroen@bohol.ph>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,8 +32,8 @@ msgstr "Adobe's"
 msgid "Database as XML"
 msgstr "Database als XML"
 
-#: db-as-xml.php:11
 # UNCLEAR: 1: Tables to be downloaded or 2: tables that are already downloaded. (translated 2)
+#: db-as-xml.php:11
 msgid ""
 "The Download Tables are generated from an XML file.\n"
 "To access that data easily, eg. for use in a program as\n"
@@ -41,7 +41,8 @@ msgid ""
 "use this URL:"
 msgstr ""
 "De te downloaden tabellen zijn gegeneerd uit een XML bestand.\n"
-"Om die gegevens eenvoudig te benaderen, bv. voor gebruik in een programma als\n"
+"Om die gegevens eenvoudig te benaderen, bv. voor gebruik in een programma "
+"als\n"
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, kun je "
 "deze URL gebruiken:"
 
@@ -49,9 +50,9 @@ msgstr ""
 msgid "Debian Packages"
 msgstr "Debian Packages"
 
+# UNCLEAR: use familiar or polite form of "you" in language that make the distinction: using familiar for Dutch.
 #: deb.php:11
 #, php-format
-# UNCLEAR: use familiar or polite form of "you" in language that make the distinction: using familiar for Dutch.
 msgid ""
 "The %1$sDebian%2$s Linux Distribution has its own system\n"
 "  of download mirrors. Since as administrator you are not so much concerned\n"
@@ -60,7 +61,8 @@ msgid ""
 msgstr ""
 "De %1$sDebian%2$s Linux Distributie heeft zijn eigen systeem\n"
 "  download mirrors. Omdat je als beheerder niet zozeer bent ge?nteresseerd\n"
-"  in het downloaded van die packages, maar alleen wilt selecteren welke packages je wilt\n"
+"  in het downloaded van die packages, maar alleen wilt selecteren welke "
+"packages je wilt\n"
 "  installeren, is het volgende commando het enige dat je moet onthouden:"
 
 #: deb.php:19 rock.php:30
@@ -71,11 +73,12 @@ msgid ""
 "  language combination has to be available in FreeDict."
 msgstr ""
 "Hier zijn %1$s en %2$s de 3-letterige taalcodes uit\n"
-"  ISO 639-2 van de talen van het woordenboek dat je nodig hebt. Vanzelfsprekend\n"
+"  ISO 639-2 van de talen van het woordenboek dat je nodig hebt. "
+"Vanzelfsprekend\n"
 "  moet die taalcombinatie beschikbaar zijn in FreeDict."
 
-#: deb.php:24
 # UNCLEAR: sentence fraction, apparently needs to be extended with something, but that won't work in the Dutch translation.
+#: deb.php:24
 msgid ""
 "You can find out what FreeDict packages are available in\n"
 "  Debian by visiting"
@@ -98,8 +101,8 @@ msgid ""
 "This page might as well be of interest: %1$sDebian FreeDict Packages team%2"
 "$s."
 msgstr ""
-"Deze pagina zou je mogelijk ook kunnen interesseren: %1$sDebian FreeDict Packages team%2"
-"$s."
+"Deze pagina zou je mogelijk ook kunnen interesseren: %1$sDebian FreeDict "
+"Packages team%2$s."
 
 #: editor.php:4
 msgid "FreeDict-Editor"
@@ -130,15 +133,15 @@ msgstr ""
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Raadpleeg de documentatie voor de %svereisten%s"
 
+# UNCLEAR: fraction: does the part between parentheses need translation?
 #: editor.php:29
 #, php-format
-# UNCLEAR: fraction: does the part between parentheses need translation?
 msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
 "<i>etch</i> by <i>unstable</i> if you use unstable):"
 msgstr ""
-"Als je %sDebian%s etch of unstable gebruikt, dan kun je dit aan je %s toevoegen (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+"Als je %sDebian%s etch of unstable gebruikt, dan kun je dit aan je %s "
+"toevoegen (replace <i>etch</i> by <i>unstable</i> if you use unstable):"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
@@ -168,21 +171,22 @@ msgstr "op Zaurus/Qt"
 msgid "Download / Matrix View"
 msgstr "Download / Matrix Overzicht"
 
-#: flags-bedic.php:30 flags-dict-tgz.php:30 flags-evolutionary.php:30  # UNCLEAR: fraction, name of platform follows? should be param.
-msgid "All downloads are for platform"
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
+#, fuzzy, php-format
+msgid "All downloads are for platform %s."
 msgstr "Alle downloads zijn voor het platform"
 
-#: flags-bedic.php:37 flags-dict-tgz.php:37 flags-evolutionary.php:37
+#: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
-"Een andere toepassing die dit bestandsformaat begrijpt is %1sWordtrans%2s, een KDE "
-"toepassing."
+"Een andere toepassing die dit bestandsformaat begrijpt is %1sWordtrans%2s, "
+"een KDE toepassing."
 
-#: flags-bedic.php:43 flags-dict-tgz.php:43 flags-evolutionary.php:43
 # FRACTION
+#: flags-bedic.php:40 flags-dict-tgz.php:40 flags-evolutionary.php:40
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -194,19 +198,19 @@ msgstr ""
 "     op stardict omdat het geen client/server\n"
 "     benadering gebruikt, zoals"
 
-#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
+#: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
 msgid "Select your language combination!"
 msgstr "Kies je taalcombinatie!"
 
-#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Source Language / Size in MB"
 msgstr "Brontaal / Grootte in MB"
 
-#: flags-bedic.php:57 flags-dict-tgz.php:57 flags-evolutionary.php:57
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Destination<br />Language"
 msgstr "Doeltaal"
 
-#: flags-bedic.php:149 flags-dict-tgz.php:149 flags-evolutionary.php:149
+#: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -228,13 +232,13 @@ msgstr "Gedetailleerd overzicht van het woordenboek"
 msgid "Language &amp; Project"
 msgstr "Taal &amp; Project"
 
-#: list.php:15
 # Translated as Responsible [Person]
+#: list.php:15
 msgid "Maintainer"
 msgstr "Verantwoordelijke"
 
-#: list.php:16
 # Translated as Entries
+#: list.php:16
 msgid "Headwords"
 msgstr "Ingangen"
 
@@ -336,8 +340,9 @@ msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr "Horst Eyermann, Michael Bunk en %1$svele anderen%2$s"
 
 #: overview.php:14
+#, fuzzy
 msgid ""
-"On this page you find translating dictionary databases.\n"
+"On this page you can find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
 "licence. Check with the licence of the respective database!"
@@ -350,27 +355,33 @@ msgstr ""
 #: overview.php:19
 #, php-format
 msgid ""
-"The databases are available in XML. We support to use the\n"
-"FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and other\n"
-"similar servers."
+"The databases are available in XML. We support the conversion of FreeDict \n"
+"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
+"DICT dictionary server%2$s and other\n"
+"similar servers. Our own dictionary front-end can be found at %3$shttp://"
+"freedict.org/dict%2$s. Please note that\n"
+"on that page, you can also install a plugin that will let you query FreeDict "
+"dictionaries straight from your\n"
+"browser search window."
 msgstr ""
-"De databases zijn beschikbaar in XML. We ondersteunen het gebruik van\n"
-"FreeDict databases met %1$sdictd, de DICT woordenboekserver%2$s en andere\n"
-"vergelijkbare servers."
 
-#: overview.php:23
+#: overview.php:26
+#, fuzzy
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
-"them to generate wordlists for spellcheckers and new dictionaries,\n"
-"to build language corpora, to import them into your own terminological\n"
-"database and even to print your own dictionary with XSL-FO."
+"them to generate wordlists for spellcheckers and to create new dictionaries, "
+"to import them \n"
+"into your own terminological database and even to print your own dictionary "
+"with XSL-FO."
 msgstr ""
 "Maar er zijn andere toepassingen voor onze databases. Je zou ze kunnen\n"
-"gebruiken om woordenlijsten te genereren voor spellingcontrole en nieuwe woordenboeken,\n"
-"om taalcorpora te maken. Je kunt ze importeren in je eigen terminologiedatabase\n"
+"gebruiken om woordenlijsten te genereren voor spellingcontrole en nieuwe "
+"woordenboeken,\n"
+"om taalcorpora te maken. Je kunt ze importeren in je eigen "
+"terminologiedatabase\n"
 "en je kunt zelfs je eigen woordenboek drukken met XSL-FO."
 
-#: overview.php:28
+#: overview.php:30
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
@@ -380,9 +391,7 @@ msgstr ""
 "lees dan de HOWTO en doe mee met dit project! Je hulp wordt gewaardeerd\n"
 "en is nodig, ook voor het verbeteren van de kwaliteit van de databases."
 
-
-
-#: overview.php:35
+#: overview.php:37
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
@@ -392,7 +401,7 @@ msgstr ""
 "Ondersteun hen ook. Zonder SourceForge had FreeDict nooit\n"
 "zover kunnen komen!"
 
-#: overview.php:39
+#: overview.php:41
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
@@ -422,12 +431,11 @@ msgid ""
 msgstr ""
 "De %1$sRock Linux%2$s Distribution Build Kit bevat een\n"
 "dictd package en de packages van de FreeDict woordenboeken in het dictd\n"
-"databaseformaat. Voor Rock 2.0 moet je, als de dictd/FreeDict packages nog geen "
-"onderdeel van de\n"
+"databaseformaat. Voor Rock 2.0 moet je, als de dictd/FreeDict packages nog "
+"geen onderdeel van de\n"
 "juiste distributie zijn, hun .desc bestanden uit de\n"
-"subversion repository halen, en de packages bouwen (dat zal de bestanden "
-"op dat moment installeren):"
-
+"subversion repository halen, en de packages bouwen (dat zal de bestanden op "
+"dat moment installeren):"
 
 #: rock.php:35
 msgid ""
@@ -473,17 +481,18 @@ msgstr ""
 
 #: weblang.php:25
 msgid "Translation status for the website languages"
-msgstr "Vertaalstatus voor de website talen"        # FRACTION
+msgstr "Vertaalstatus voor de website talen"
 
+# FRACTION
 #: weblang.php:28
 msgid "Language"
 msgstr "Taal"
 
-#: inc/gettext.php:88
+#: inc/gettext.php:90
 msgid "Website Language: "
 msgstr "Website Taal: "
 
-#: inc/gettext.php:90 inc/langcodes.php:13
+#: inc/gettext.php:92 inc/langcodes.php:13
 msgid "English"
 msgstr "Engels"
 
@@ -623,14 +632,14 @@ msgstr "Turks"
 msgid "Welsh"
 msgstr "Welsh"
 
-#: inc/legend.php:1
 # UNCLEAR MEANING. Please indicate context.
+#: inc/legend.php:1
 msgid ""
 "List of table cells with differing background colours representing examplary "
 "dictionary states"
 msgstr ""
-"Lijst van tabelvakjes met verschillende achtergrondkleuren die de "
-"status van een woordenboek aangeven"
+"Lijst van tabelvakjes met verschillende achtergrondkleuren die de status van "
+"een woordenboek aangeven"
 
 #: inc/legend.php:5
 msgid "Color Legend"
@@ -645,8 +654,8 @@ msgid ""
 "Dictionary Status was marked as 'big enough to be useful' (from 10000 "
 "entries on)"
 msgstr ""
-"Woordenboekstatus aangeduidt als 'groot genoeg om bruikbaar te zijn' (vanaf 10000 "
-"ingangen)"
+"Woordenboekstatus aangeduidt als 'groot genoeg om bruikbaar te zijn' (vanaf "
+"10000 ingangen)"
 
 #: inc/legend.php:18
 msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
@@ -683,3 +692,14 @@ msgid ""
 msgstr ""
 "Dit wordt momenteel altijd veroorzaakt omdat de tekens in het woordenboek\n"
 "  niet gecodeerd of getoond kunnen worden op dat platform."
+
+#~ msgid ""
+#~ "The databases are available in XML. We support to use the\n"
+#~ "FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and "
+#~ "other\n"
+#~ "similar servers."
+#~ msgstr ""
+#~ "De databases zijn beschikbaar in XML. We ondersteunen het gebruik van\n"
+#~ "FreeDict databases met %1$sdictd, de DICT woordenboekserver%2$s en "
+#~ "andere\n"
+#~ "vergelijkbare servers."

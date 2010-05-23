@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2010-04-17 19:08+0200\n"
+"POT-Creation-Date: 2010-05-13 11:21+0200\n"
 "PO-Revision-Date: 2006-08-31 03:02+0300\n"
 "Last-Translator: Amr Gharbeia <amr@gharbeia.net>\n"
 "Language-Team: Arabic <en@li.org>\n"
@@ -299,8 +299,9 @@ msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr "هورشت أيرمان، وميشائيل بونك، و%1$sآخرين%2$s"
 
 #: overview.php:14
+#, fuzzy
 msgid ""
-"On this page you find translating dictionary databases.\n"
+"On this page you can find translating dictionary databases.\n"
 "The databases are free. That means they are available\n"
 "under the GNU General Public Licence or a less restrictive\n"
 "licence. Check with the licence of the respective database!"
@@ -314,34 +315,40 @@ msgstr ""
 #: overview.php:19
 #, php-format
 msgid ""
-"The databases are available in XML. We support to use the\n"
-"FreeDict databases with %1$sdictd, the DICT dictionary server%2$s and other\n"
-"similar servers."
+"The databases are available in XML. We support the conversion of FreeDict \n"
+"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
+"DICT dictionary server%2$s and other\n"
+"similar servers. Our own dictionary front-end can be found at %3$shttp://"
+"freedict.org/dict%2$s. Please note that\n"
+"on that page, you can also install a plugin that will let you query FreeDict "
+"dictionaries straight from your\n"
+"browser search window."
 msgstr ""
 
-#: overview.php:23
+#: overview.php:26
 msgid ""
 "But there are other applications for our databases as well. You could use\n"
-"them to generate wordlists for spellcheckers and new dictionaries,\n"
-"to build language corpora, to import them into your own terminological\n"
-"database and even to print your own dictionary with XSL-FO."
+"them to generate wordlists for spellcheckers and to create new dictionaries, "
+"to import them \n"
+"into your own terminological database and even to print your own dictionary "
+"with XSL-FO."
 msgstr ""
 
-#: overview.php:28
+#: overview.php:30
 msgid ""
 "If you would like to see any other language included,\n"
 "please read the HOWTO and join this project! Your help is appreciated\n"
 "and needed, also for improving the quality of the databases."
 msgstr ""
 
-#: overview.php:35
+#: overview.php:37
 msgid ""
 "Most resources are hosted by SourceForge:\n"
 "Please support them also. Without SourceForge, FreeDict would\n"
 "not have come so far!"
 msgstr ""
 
-#: overview.php:39
+#: overview.php:41
 msgid ""
 "This project was started in 2000 by Horst Eyermann. The databases\n"
 "are a compilation of various free sources. Please consult the\n"
