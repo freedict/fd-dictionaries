@@ -2,3 +2,5 @@ Options +MultiViews +Indexes
 AddLanguage kha .kha
 AddLanguage de .de
 RedirectMatch ^/dict(d)?$ http://dict.uni-leipzig.de/dictd
+# https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/342863
+AddEncoding gzip .svgz
