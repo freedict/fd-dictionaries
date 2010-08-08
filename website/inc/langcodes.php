@@ -4,6 +4,7 @@ global $Langcode2english;
 $Langcode2english = array(
  'afr' => _('Afrikaans'),
  'ara' => _('Arabic'),
+ 'bre' => _('Breton'),
  'ckb' => _('Sorani'),
  'cro' => _('Croatian'),
  'cze' => _('Czech'),

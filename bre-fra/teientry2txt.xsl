@@ -37,13 +37,18 @@
 	<xsl:apply-templates select="gen"/>
 	<xsl:text> </xsl:text>
 	<xsl:apply-templates select="number"/>
-  <!--    form[@type='infl'] ? -->
+	<xsl:text> </xsl:text>
+	<xsl:apply-templates select="form[@type]"/>
+	
+	
 </xsl:template>
 
 <xsl:template match="sense">
 	<xsl:apply-templates select="usg"/>
 	<xsl:apply-templates select="lbl"/>
 	<xsl:apply-templates select="cit[@type='translation']"/>
+	<xsl:apply-templates select="def"/>
+	
 	<xsl:text>&#xa;</xsl:text>
 	<xsl:apply-templates select="cit[@type='example']"/>
 	<xsl:text>&#xa;</xsl:text>
@@ -65,7 +70,9 @@
 </xsl:template>
 
 <xsl:template match="cit[@type='translation']">
-	<xsl:text>  ↪ </xsl:text>
+	<xsl:choose>
+   <xsl:when  test="@usg != 0">	<xsl:text> \litt : </xsl:text><xsl:apply-templates select="quote"/><xsl:text> \ </xsl:text></xsl:when>
+	<xsl:otherwise><xsl:text>  ↪ </xsl:text>
 	<xsl:apply-templates select="quote"/>
 	<xsl:text> </xsl:text>
 	<xsl:apply-templates select="lbl"/>
@@ -76,7 +83,7 @@
 	<xsl:apply-templates select="number"/>
 	<xsl:text> </xsl:text>
 	<xsl:apply-templates select="form[@type]"/>
-	<xsl:text> </xsl:text>
+	<xsl:text> </xsl:text></xsl:otherwise></xsl:choose>
 </xsl:template>
 
 <xsl:template match="usg">
@@ -87,23 +94,29 @@
 
 <xsl:template match="quote">
 <!--		<xsl:value-of select="."/> -->
-		<xsl:apply-templates /> <!-- select="form[@type='infl']"/>-->
+		<xsl:apply-templates /> 
 </xsl:template>
+
 <!-- template-->
-<xsl:template match="form[@type='infl'] | pos | number | gen | form[@type='plur'] | form[@type='pastp']| form[@type='sing']">
+<xsl:template match="pos | number | gen | form[@type='plur'] | form[@type='pastp']| form[@type='sing']">
 	<xsl:copy>
-	   <xsl:for-each select="node()">
+	 <!--  <xsl:for-each select="node()"> -->
 		<xsl:text> </xsl:text>
 		<xsl:value-of select="."/>
-	   </xsl:for-each>
+	<!--   </xsl:for-each> -->
 	</xsl:copy>
 </xsl:template>
 
 
-<xsl:template match="form[@type='infl'] | lbl">
+<xsl:template match="lbl">
 	<xsl:text>(</xsl:text>
 	<xsl:value-of select="."/>
 	<xsl:text>)</xsl:text>
+</xsl:template>
+
+<xsl:template match="def">
+	<xsl:text> </xsl:text>
+	<xsl:value-of select="."/>
 </xsl:template>
 
 
