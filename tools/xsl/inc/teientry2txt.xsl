@@ -25,7 +25,7 @@
     <xsl:apply-templates select="form | tei:form"/> <!-- force form before gramGrp -->
     <xsl:apply-templates select="gramGrp | tei:gramGrp"/>
     <xsl:text>&#xa;</xsl:text>
-    <xsl:apply-templates select="sense | tei:sense"/>
+    <xsl:apply-templates select="sense | tei:sense | tei:note"/>
 
     <!-- For simple entries without separate senses and old FreeDict databases -->
       <!-- assume that such ultraflat structure will not be used in P5  -->
