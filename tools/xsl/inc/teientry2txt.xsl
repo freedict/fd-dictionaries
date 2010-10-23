@@ -167,20 +167,28 @@
   </xsl:template>
   
   <xsl:template match="tei:sense">
-    <xsl:if test="self::tei:sense and preceding-sibling::tei:sense"><xsl:text>&#xa;</xsl:text></xsl:if>
-    <xsl:text> </xsl:text>
-    <xsl:if test="not(last()=1)">
+    <xsl:variable name="prec_senses">
       <xsl:choose>
-        <xsl:when test="@n">
-          <xsl:value-of select="@n"/>
-        </xsl:when>
+        <xsl:when test="not(preceding-sibling::tei:sense)">0</xsl:when>
         <xsl:otherwise>
-          <xsl:number value="position()"/>
+          <xsl:value-of select="count(preceding-sibling::tei:sense)"/>
         </xsl:otherwise>
       </xsl:choose>
-      <xsl:text>. </xsl:text>
+    </xsl:variable>
+    <xsl:variable name="pref">
+      <xsl:choose>
+        <xsl:when test="@n">
+          <xsl:value-of select="concat(@n,'. ')"/>
+        </xsl:when>
+        <xsl:when test="$prec_senses > 0 or following-sibling::tei:sense">
+          <xsl:value-of select="concat(position(),'. ')"/>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:if test="$prec_senses > 0">
+      <xsl:text>&#xa;</xsl:text>
     </xsl:if>
-    
+    <xsl:value-of select="concat(' ',$pref)"/>
     <xsl:apply-templates/>
   </xsl:template>
   
