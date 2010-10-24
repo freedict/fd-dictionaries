@@ -61,7 +61,7 @@
 <xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
   <xsl:template match="gen" mode="horiz">
     <gramGrp>
-      <pos>N</pos>
+<!--      <pos>N</pos> this is fully recoverable -->
       <gen>
         <xsl:value-of select="."/>
       </gen>
