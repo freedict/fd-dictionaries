@@ -52,11 +52,14 @@
       <quote>
         <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
       </quote>
+      <xsl:apply-templates mode="horiz" select="following-sibling::*[1][self::gen]"/>
     </cit>
   </xsl:template>
 
+  <xsl:template match="gen"/>
+
 <xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
-  <xsl:template match="gen">
+  <xsl:template match="gen" mode="horiz">
     <gramGrp>
       <gen>
         <xsl:value-of select="."/>
@@ -79,12 +82,12 @@
   <xsl:template match="publicationStmt">
     <publicationStmt>
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
-      <idno type="svn">$Id:$</idno>
+      <idno type="svn">$Id$</idno>
     </publicationStmt>
   </xsl:template>
 
-<!-- eat the default attributes -->
-  <xsl:template match="note/@anchored[.='true'] | entry/@type[.='main'] | orth/@extent[. = 'full']"
+  <xd:doc>eat the default or unnecessary attributes </xd:doc>
+  <xsl:template match="note/@anchored[.='yes'] | entry/@type[.='main'] | orth/@extent[. = 'full']"
   />
 
 </xsl:stylesheet>
