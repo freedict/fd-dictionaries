@@ -28,34 +28,34 @@
     <xd:svnId>$Id$</xd:svnId>
   </xd:doc>
 
-<xd:doc>Convert trans to (sense/)cit. If the original has no sense elements, create them around each new cit.</xd:doc>
+<xd:doc>Convert trans to as many (sense/)cit as there are tr elements inside it. If the original dictionary has no sense elements under entry, create them around each old trans.</xd:doc>
   <xsl:template match="trans">
     <xsl:choose>
       <xsl:when test="parent::sense">
-        <cit type="trans">
-          <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
-        </cit>    
+        <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
       </xsl:when>
       <xsl:otherwise>
         <sense>
           <xsl:if test="preceding-sibling::trans or following-sibling::trans">
-            <xsl:attribute name="n" select="if (not(preceding-sibling::trans)) then 1 else count(preceding-sibling::trans)+1"/>
+            <xsl:attribute name="n"
+              select="if (not(preceding-sibling::trans)) then 1 else count(preceding-sibling::trans)+1"
+            />
           </xsl:if>
-          <cit type="trans">
-            <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
-          </cit>
+          <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
         </sense>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="tr">
-    <quote>
-      <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
-    </quote>
+    <cit type="trans">
+      <quote>
+        <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
+      </quote>
+    </cit>
   </xsl:template>
 
-<xd:doc>Convert gen elements *inside* tr. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
+<xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
   <xsl:template match="gen">
     <gramGrp>
       <gen>
@@ -65,12 +65,22 @@
   </xsl:template>
   
   <xsl:template match="revisionDesc">
+    <xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y]-[M01]-[D01]')"
+      as="xs:string"/>
     <revisionDesc>
-      <change when="{format-dateTime(current-dateTime(), '[Y]-[M01]-[D01]')}">
+      <change when="{$date}">
+        <date><xsl:value-of select="$date"/></date>
         <name>INSERT_NAME_OF_THE_CONVERTOR</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
+  </xsl:template>
+  
+  <xsl:template match="publicationStmt">
+    <publicationStmt>
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
+      <idno type="svn">$Id:$</idno>
+    </publicationStmt>
   </xsl:template>
 
 <!-- eat the default attributes -->
