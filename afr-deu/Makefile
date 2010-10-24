@@ -1,13 +1,13 @@
 FREEDICTDIR ?= ..
 DISTFILES = AUTHORS ChangeLog COPYING INSTALL Makefile NEWS README \
-	    afr-deu.tei.header
+	    afr-deu.tei
 include $(FREEDICTDIR)/tools/Makefile.common
-include $(toolsdir)/ergane/Makefile.inc
+#include $(toolsdir)/ergane/Makefile.inc
 
 # for teidiff testing: checkout an old revision
-old/$(dictname).tei:
-	cvs -z3 checkout -d old -D 2006-01-01 $(dictname)/$(dictname).tei
+#old/$(dictname).tei:
+#	cvs -z3 checkout -d old -D 2006-01-01 $(dictname)/$(dictname).tei
 
-old = old/$(dictname).tei
+#old = old/$(dictname).tei
 
-$(dictname).tei: $(dictname).tei.header
+#$(dictname).tei: $(dictname).tei.header
