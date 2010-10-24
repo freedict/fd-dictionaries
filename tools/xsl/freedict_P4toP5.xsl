@@ -83,12 +83,12 @@
   <xsl:template match="publicationStmt">
     <publicationStmt>
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
-      <idno type="svn">$Id$</idno>
+      <idno type="svn"><xsl:text>$Id</xsl:text><xsl:text>:$</xsl:text></idno>
     </publicationStmt>
   </xsl:template>
 
   <xd:doc>eat the default or unnecessary attributes </xd:doc>
-  <xsl:template match="note/@anchored[.='yes'] | entry/@type[.='main'] | orth/@extent[. = 'full']"
+  <xsl:template match="note/@anchored[.='yes'] | entry/@type[.='main'] | orth/@extent[. = 'full'] | pron/@extent[. = 'full']"
   />
 
 </xsl:stylesheet>
