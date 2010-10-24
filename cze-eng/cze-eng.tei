@@ -1,0 +1,5706 @@
+<TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Czech-English FreeDict Dictionary</title>
+            <respStmt><!-- for the freedict database -->
+               <resp>Maintainer</resp>
+               <name>[up for grabs]</name>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <edition>0.2.1</edition>
+         </editionStmt>
+         <extent>about 490 headwords</extent>
+         <publicationStmt>
+            <publisher>FreeDict</publisher>
+            <availability status="free">
+               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Available under the terms of the GNU General Public Licence ver. 2.0 and any later
+                  version.</p>
+            </availability>
+            <pubPlace>
+               <ref target="http://freedict.org/">http://freedict.org/</ref>
+            </pubPlace>
+            <idno type="svn">$Id:$</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="status">too small</note>
+         </notesStmt>
+         <sourceDesc>
+            <p>Home: <ref target="http://freedict.org/">http://freedict.org/</ref></p>
+            <p>This Database was generated from ergane, <ref target="http://www.travlang.com">http://www.travlang.com</ref>.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               available for free. Your contributions are welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2010-10-24">
+            <date>2010-10-24</date>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
+            Bunk's re-import from Ergane of 2006-12-19 that was rolled back due to Ergane's cryptic
+            change of database licensing. Multi-word equivalents should be split by spaces.</change>
+         <change>
+            <date>2005-01-04</date>
+            <name>Michael Bunk</name>Converted file to TEI P4</change>
+         <change>
+            <date>2000-04-27</date>
+            <name>Horst Eyermann</name>Database was converted to TEI format and checked into CVS</change>
+         <change>
+            <date>2000-01-10</date>
+            <name>Horst Eyermann</name>This Database was  generated from ergane (http://www.travlang.com) - Thanks!</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <entry>
+            <form>
+               <orth>Američan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>American</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>US-citizen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Angličan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Englishman</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sassenach</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Bulharsko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bulgaria</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Bůh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>God</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Francie</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>France</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Labe</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Elbe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Londýn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>London</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Londýňan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Londoner</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Morava</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Moravia</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Norsko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Norway</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Němec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>German</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Německo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Germany</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Odra</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Oder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Paříž</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Paris</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Polsko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Poland</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Polák</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Pole</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Praha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Prague</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Rakousko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Austria</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Rus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Russian</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Rusko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Russia</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Slovák</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Slovak</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Srb</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Serb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Svédsko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sweden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>VarŠava</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Warsaw</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Vídeň</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Vienna</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>a</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>and</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aby</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>for</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>to</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>inorderto</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>per</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>adresa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>address</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ale</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>but</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anebo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>or</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>angina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>angina</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>quinsy</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anglický</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>English</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ani ... ani</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>neither...nor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ano</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>yes</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>armáda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>army</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>asi</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>about</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>approximately</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>probably</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aspoň</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>atleast</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>auto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>car</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>autobus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>autobus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>omnibus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>autor</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>author</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>author</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>writer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>avŠak</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>but</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>however</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nevertheless</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>yet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ačkoliv</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>though</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>although</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>až</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>until</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>till</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>babička</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>grandmother</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>balík</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>packet</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>parcel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>barva</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>colour</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dye</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bedna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>box</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bez</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>without</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bledý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pale</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sallow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bluza</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blouse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>blízko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>at</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beside</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>by</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>near</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nearby</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nearto</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nextto</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bohatý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>affluent</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>rich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wealthy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>well‐off</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bolení</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ache</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pain</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bolest</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ache</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pain</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>boleti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ache</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bepainful</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hurt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bomba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bomb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>borůvka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blueberry</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bota</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>shoe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bouda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cabin</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hut</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>shack</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bouře</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>storm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bouřka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>storm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>brambor</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>potato</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bratr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>brother</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bratranec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cousin</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>brouček</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>beetle</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>beetle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>brzo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>soon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>brzy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>soon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bráti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>get</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>layholdof</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pickup</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>take</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>brýle</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>glasses</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>spectacles</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>buditi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>arouse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wake</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>awaken</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wakeup</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>budova</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>building</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bydleti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dwell</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>live</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bydliti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dwell</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>live</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bůh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>god</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>báseň</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>poem</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>básník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>poet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bílý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>white</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bíti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>beat</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>strike</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>běžeti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>run</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>březen</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>March</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>břicho</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>abdomen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>belly</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tummy</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cena</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>price</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cesta</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>road</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>route</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>way</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cestička</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>path</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chalupa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cabin</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hut</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>shack</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chladný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cool</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chlapec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>boy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>lad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>laddie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chléb</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bread</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>loaf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chutný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nice</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tasty</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chytrý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>clever</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>cunning</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sly</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>smart</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>chřipka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>flu</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>grip</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>influenza</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cibule</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>onion</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cizina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>foreigncountry</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cukr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sugar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cíl</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>aim</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>goal</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>purpose</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>target</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dcera</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>daughter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dcerka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>daughter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dceruŠka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>daughter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>den</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>day</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>deset</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>devět</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nine</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>deŠtník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>umbrella</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dilemma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dilemma</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>divadlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>theatre</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dlouhý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>long</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dnes</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>today</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dneska</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>today</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dobrý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>good</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nice</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>okay</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>doma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>athome</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>donésti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bring</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fetch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dopis</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>letter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dopoledne</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>morning</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>doproviditi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accompany</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dost</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>enough</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>quite</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>rather</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sufficiently</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dostati</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>get</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>have</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>receive</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dosti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>enough</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>quite</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>rather</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sufficiently</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>doufati</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hope</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>duben</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>April</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dva</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>two</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dveře</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>door</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dvě</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>two</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dům</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>house</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dáti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>give</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dávati</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>give</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dýmka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pipe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>děd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>grandfather</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dělník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hand</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>laborer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>labourer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>operative</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>worker</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>workingman</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>workman</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>děvče</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>girl</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>lass</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wench</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dřevo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>timber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wood</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>elektrika</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>streetcar</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tram</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>filosofie</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>philosophy</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fotografie</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>photography</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fysika</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>physics</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>garáž</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>garage</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>halenka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blouse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>harmonika</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accordion</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>herec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>actor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hlad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hunger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hladový</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hungry</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hlava</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>head</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pate</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hluchý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>deaf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hnědý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>brown</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hoch</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>boy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>lad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>laddie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hodina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hour</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>o'clock</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>time</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hodiny</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>clock</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>watch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hoditi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>throw</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hodný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>good</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nice</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>okay</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>holandsky</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Dutch</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Dutch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hora</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>mountain</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hrdina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hero</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hrdlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>throat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hruŠka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pear</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hudba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>music</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>husa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>goose</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hvězda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>star</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hymna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anthem</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hymn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>házeti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>throw</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hřeben</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>comb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>inkoust</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ink</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>inzerát</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>advertisement</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>istivý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>acute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>astute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>shrewd</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jablko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>apple</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jabloň</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>apple‐tree</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jahoda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>strawberry</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jaksi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anyway</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>somehow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jazyk</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>tongue</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>language</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tongue</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jeden</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>one</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jehně</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>lamb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jeho</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>his</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>jejich</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>their</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>její</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>her</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>játra</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>liver</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kasárna</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>barracks</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>barracks</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kniha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>book</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>knihovna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bookcase</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kolega</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>colleague</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>komár</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>moon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kost</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bone</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kvalita</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>property</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>quality</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>květen</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>May</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>květina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bloom</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>flower</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>labuť</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>swan</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>led</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ice</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>leden</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>January</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>les</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>forest</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>woods</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>letadlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>aeroplane</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>airplane</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>plane</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>letiŠtě</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>airport</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lev</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>lion</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>libra</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pound</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>list</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>leaf</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sheet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>listopad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>November</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>literatura</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>literature</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>loď</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ship</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>vessel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>loďka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>boat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ložnice</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bedroom</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lupič</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bandit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>láhev</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bottle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>láska</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>affection</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>love</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lék</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>drug</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>medicine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pharmaceutical</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lékař</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>doctor</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>physician</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lékárna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chemist'sshop</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>drugstore</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>léto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>summer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>líný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>lazy</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lžíce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>spoon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>malina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>raspberry</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>maminka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>mother</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>manžel</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>husband</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>manželka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wife</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>maso</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>meat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>matka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>mother</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>maďarsky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hungarian</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>medvěd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bear</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>meruňka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>apricot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mezinárodní</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>international</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mléko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>milk</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>modrý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blue</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>most</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bridge</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>motorka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>motorcycle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>moucha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fly</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>housefly</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>moře</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sea</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mrkev</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>carrot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>muž</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fellow</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>man</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>my</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>us</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>we</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>myŠ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>mouse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>můj</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>my</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>máslo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>butter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>míč</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ball</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mýdlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>soap</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>město</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>city</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>town</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>měsíc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>month</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nebo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>or</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>neděle</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sunday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nepřítomný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>absent</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>než</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>than</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nikdo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>neither</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nobody</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>none</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>no‐one</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>noc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>night</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>noha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>leg</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>paw</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nos</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nose</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nosič</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>porter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nový</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>new</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>novel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nůž</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>knife</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nůžky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>scissors</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nádraží</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>station</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>námořník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sailor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nápad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>idea</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>národ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nation</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>národní</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>national</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nízko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>low</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>něco</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anything</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>something</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>německy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>German</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>oblíbený</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>popular</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>obraz</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>image</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>picture</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>obvyklý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accustomed</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>customary</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>usedto</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>usual</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wonted</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>obyčejně</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ordinarily</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>usually</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>odpoledne</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>afternoon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>okno</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>window</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>oko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>eye</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>olej</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>oil</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>omáčka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gravy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sauce</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>on</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>he</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>him</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ona</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>her</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>she</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>it</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>opět</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>afresh</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>again</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>alloveragain</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anew</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>osm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>eight</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>osoba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>person</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>otec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>father</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>otevřený</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>open</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>otázka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>question</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ovce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sheep</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>oves</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>oats</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ovčák</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>shepherd</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>papír</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>paper</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>parno</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>heat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pasažér</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>passenger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>patro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>floor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pekař</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>baker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pekárna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bakery</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>peníze</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>money</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pes</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dog</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pianista</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pianist</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pivo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ale</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>plyn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gas</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>po</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>after</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>behind</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pod</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>below</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beneath</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>under</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>underneath</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>podlaha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>floor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>podzim</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>autumn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pohodlný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>comfortable</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pokoj</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chamber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>room</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pole</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>field</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>polsky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Polish</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>polévka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>soup</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pondělí</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Monday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>poschodí</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>floor</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>storey</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>story</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>postel</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bed</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>počasí</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>weather</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prapor</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>banner</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>flag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prase</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hog</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>swine</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>profesor</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>professor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prosinec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>December</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>proti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>acrossfrom</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>against</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>inexchangefor</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>opposedto</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>opposite</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>upon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prst</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>finger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prsten</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ring</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prázdný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>empty</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>void</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>párek</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sausage</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pátek</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Friday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>písek</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sand</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>píseň</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>song</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pět</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>five</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>přes</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>across</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beyond</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ontheothersideof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>přijmouti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accept</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>receive</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>take</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>takein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>přátelství</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>friendship</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>přítel</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>friend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>přítelkyně</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>friend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>advice</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>counsel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>restaurace</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>restaurant</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rodina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>family</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rodiče</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>parents</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ruka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hand</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rusky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Russian</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ryba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fish</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rybář</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fisherman</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rytmus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rhythm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>růže</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rose</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rána</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>injury</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wound</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ráno</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>morning</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sbohem</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>adieu</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>farewell</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bye</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>goodbye</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>schopný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>able</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>capable</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sedm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>seven</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>serum</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>serum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sestra</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sister</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sestřenice</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cousin</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sever</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>north</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>North</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sklep</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>basement</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>cellar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>skála</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rock</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sladký</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gentle</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>soft</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sweet</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tender</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>slepice</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chicken</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fowl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>slovo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>word</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sluha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>boy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>servant</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>slunce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sun</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>snacha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>daughter‐in‐law</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>snad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>maybe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>mayhap</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>perchance</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>perhaps</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>possibly</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>snídaně</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>breakfast</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>soudce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>judge</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>souhlasiti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accede</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>agree</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>consent</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>soused</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>neighbour</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>spaní</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sleep</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>spolu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>together</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>srdce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>heart</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>starý</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>old</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>old</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>stroj</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>engine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>machine</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>strom</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>tree</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>strážník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>policeman</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>strýc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>uncle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>studený</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bleak</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>chilly</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>cold</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>stůl</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>table</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>stěna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wall</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>střecha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>roof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>středa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wednesday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>stříbrný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>silver</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sud</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>barrel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>svět</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>world</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>světlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>light</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sympatie</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sympathy</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>son</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sám</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>alone</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>only</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sole</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>solitary</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sýr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>cheese</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>také</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>also</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>likewise</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>too</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tele</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>calf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>teplo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>warmth</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>teta</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>aunt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>teď</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>atpresent</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>now</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>thema</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>theme</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>topic</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>subject</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>theorie</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>theory</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>darkness</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>murk</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tmavý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dark</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dim</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tupý</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>blunt</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>dull</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>obtuse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>turecký</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Turkish</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tužka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pencil</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tvář</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>face</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>týden</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>week</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tělo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>body</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tři</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>three</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>třída</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>class</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ucho</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ear</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>uhlí</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>coal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ulice</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>street</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>umění</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>art</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>učitel</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>instructor</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>teacher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>už</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>already</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bynow</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>yet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vagon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>carriage</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>coach</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>railwaycarriage</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>waggon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vajíčko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>egg</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vchod</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>entrance</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>portal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vdova</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>widow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vdovec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>widower</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vejce</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>egg</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>venkov</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>country</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>land</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ves</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>village</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vesnice</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>village</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>večer</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>evening</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vlas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hair</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vlaŠtovka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>swallow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>voda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>water</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>voják</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>pawn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>soldier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vstup</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>entrance</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>portal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vychytralý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>acute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>astute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>shrewd</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vzduch</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>air</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>válka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>war</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>váza</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>vase</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>vessel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>víno</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wine</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vítr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wind</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>výběr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>choice</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>election</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>východ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>exit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wayout</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>výŠka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>altitude</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>height</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>včela</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bee</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>včera</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>yesterday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>věc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>thing</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>věk</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>age</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>větev</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bough</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>branch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>věž</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>castle</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tower</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vŠechno</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>all</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>altogether</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>everything</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vŠude</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>allabout</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>everywhere</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vždy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>always</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ever</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vždycky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>always</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ever</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>xylofon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>xylophone</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>z</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>from</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>outof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zahrada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>garden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zahradník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gardener</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zdraví</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>health</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zdravý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>healthy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>well</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ze</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>from</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>outof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zelený</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>green</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>země</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>earth</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>land</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>soil</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zima</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>cold</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>winter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zloděj</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>thief</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>znovu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>afresh</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>again</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>oncemore</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zrcadlo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>looking‐glass</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>mirror</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zvírě</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>animal</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beast</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zvíře</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>animal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>záchod</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>toilet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>záležitost</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>affair</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>business</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>businessdeal</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>case</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>matter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>západ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>west</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>West</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zápalná bomba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>incendiarybomb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>září</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>September</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zítra</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>tomorrow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>únor</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>February</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>úraz</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>accident</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>úterý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tuesday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>účet</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>account</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>účetní</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>book‐keeper</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>úřad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bureau</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>office</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Čech</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Czech</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Čechy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bohemia</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Československo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Czechoslovakia</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Česká Respublika</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>CzechRepublic</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Čina</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>China</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Řím</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rome</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Švýcarsko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Switzerland</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čaj</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>tea</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>časem</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>severaltimes</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sometimes</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>často</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>frequently</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>often</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>regularly</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>černý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>black</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>červen</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>June</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>červenec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>July</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>červený</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>red</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>red</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>český</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Czech</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>člověk</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>man</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>humanbeing</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>člun</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>boat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čokoláda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chocolate</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čtvrtek</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Thursday</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čtyři</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>four</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čí</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ofwhich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>whichone's</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>whose</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>čísti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>read</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>řeka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>river</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>řezník</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>butcher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Šedivý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>grey</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Šest</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>six</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Škola</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>school</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Španělsky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Spanish</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Špatný</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>miserable</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nasty</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>poor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Špenát</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>spinach</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Špinavý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dirty</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>filthy</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nasty</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>soiled</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>unclean</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Šunka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ham</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Švagr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>brother‐in‐law</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>žena</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>woman</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>židle</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chair</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>žito</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rye</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>život</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>life</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>žlutý</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>yellow</quote>
+               </cit>
+            </sense>
+         </entry>
+      </body>
+   </text>
+</TEI>

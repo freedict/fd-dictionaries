@@ -1,17 +1,17 @@
 FREEDICTDIR ?= ..
-DISTFILES = Makefile COPYING INSTALL NEWS README AUTHORS ChangeLog \
-	    cze-eng.tei.header
+DISTFILES = Makefile COPYING INSTALL NEWS README AUTHORS ChangeLog cze-eng.tei
+supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
-include $(toolsdir)/ergane/Makefile.inc
+#include $(toolsdir)/ergane/Makefile.inc
 
-$(dictname).tei: $(dictname).tei.header
+#$(dictname).tei: $(dictname).tei.header
 
-clean::
-	rm -f $(toolsdir)/ergane/zip/cze.zip
+#3clean::
+#	rm -f $(toolsdir)/ergane/zip/cze.zip
 
 # for teidiff testing: checkout an old revision
-old/$(dictname).tei:
-	cvs -z3 checkout -d old -D 2006-01-01 $(dictname)/$(dictname).tei
+#old/$(dictname).tei:
+#	cvs -z3 checkout -d old -D 2006-01-01 $(dictname)/$(dictname).tei
 
-old = old/$(dictname).tei
+#old = old/$(dictname).tei
 
