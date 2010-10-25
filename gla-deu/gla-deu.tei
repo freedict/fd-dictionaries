@@ -1,0 +1,3196 @@
+<TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Scottish Gaelic-German FreeDict Dictionary</title>
+            <respStmt>
+               <!--for the freedict database-->
+               <resp>Maintainer</resp>
+               <name>[up for grabs]</name>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <edition>0.1.1</edition>
+         </editionStmt>
+         <extent>about 260 headwords</extent>
+         <publicationStmt>
+            <publisher>FreeDict</publisher>
+            <availability status="free">
+               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Available under the terms of the <ref
+                     target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref>
+                  ver. 2.0 and any later version.</p>
+               <p>This program is free software; you can redistribute it and/or modify it under the
+                  terms of the GNU General Public License as published by the Free Software
+                  Foundation; either version 2 of the License, or (at your option) any later
+                  version.</p>
+               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
+                  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+                  PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+               <p>You should have received a copy of the GNU General Public License along with this
+                  program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
+                  Suite 330, Boston, MA 02111-1307, USA.</p>
+            </availability>
+            <pubPlace>
+               <ref target="http://freedict.org/">http://freedict.org/</ref>
+            </pubPlace>
+            <idno type="svn">$Id:$</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="status">too small</note>
+         </notesStmt>
+         <sourceDesc>
+            <p>Home: <ptr target="http://www.travlang.com/"/>
+            </p>
+            <p>This Database was generated from Ergane.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for
+        good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating
+        dictionaries available for free. Your contributions are welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2010-10-25">
+            <date>2010-10-25</date>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
+            Bunk's re-import from Ergane of 2006-12-21 that was rolled back due to Ergane's cryptic
+            change of database licensing. Renamed "Gaelic" (there is no "Gaelic" as such, other than
+            a language family) to "Scottish Gaelic". Renamed the database from "sco-deu" to
+            "gla-deu".</change>
+         <change>
+            <date>2005-07-19</date>
+            <name>Michael Bunk</name>Following Debian Bug#318025, retitled the dictionary from 'Scottish-German'
+	  to 'Gaelic-German'.</change>
+         <change>
+            <date>2005-02-12</date>
+            <name>Michael Bunk</name>Converted file to TEI P4</change>
+         <change>
+            <date>2000-04-30</date>
+            <name>Horst Eyermann</name>Database was converted to TEI format and checked into CVS</change>
+         <change>
+            <date>2000-01-01</date>
+            <name>Horst Eyermann</name>This Database was generated from ergane,
+	  http://www.travlang.com - Thanks!</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <entry>
+            <form>
+               <orth>Albannach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schotte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Beurla</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Englisch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>englische Sprache</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Bìobull</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bibel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Di‐Màirt</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Dienstag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Di‐luain</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Montag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Glaschu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Glasgow</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Sasunnach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Engländer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>a</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>daß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>abaich</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>reif</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>abhainn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fluß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>acair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Anker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>aber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>allein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dagegen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sondern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hut</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>adhar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Himmel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>agus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aig</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>an</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bei</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>neben</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aimsir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wetter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Witterung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ainm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Name</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>air</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>an</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>auf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>airgead</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geld</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>am</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zeit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>an</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>das</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>der</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>die</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anns</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>in</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nach</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>pro</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>zu</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>an diugh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>heute</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>an dé</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gestern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aodann</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Angesicht</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Antlitz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gesicht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eins</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aran</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>arm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Armee</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Heer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>a nis</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>jetzt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gegenwärtig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nun</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>baile</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ort</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stadt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bainne</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Milch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>balla</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mauer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wand</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gering</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>klein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bean</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Frau</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gemahlin</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beannachd leat</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>adieu</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>aufWiedersehen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>lebewohl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beannachd leibh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>adieu</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>aufWiedersehen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>lebewohl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beinn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Berg</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>biadh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gericht</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Speise</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>blas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geschmack</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bliadhna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Jahr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>blàth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>warm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bocsa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Büchse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schachtel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>boireannach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Frau</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weib</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>botul</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Flasche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bradan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Lachs</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Salm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>braec</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Forelle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bras</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>geschwind</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hurtig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>rasch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schnell</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>briogais</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Beinkleid</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hose</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bràthair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bruder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bròg</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schuh</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bó</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kuh</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bàn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blond</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bàrdachd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gedicht</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Poem</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bàta</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Boot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bòidheach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hübsch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bòrd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bùth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Butike</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Geschäft</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kramladen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Laden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cadal</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schlaf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>caileag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Dirne</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Mädchen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>caisteal</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Burg</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kastell</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schloß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cala</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hafen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>caoraich</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hammel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schaf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cat</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Katze</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cathair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Stuhl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cearc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Henne</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ceist</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Frage</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ceithir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>vier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ceàrr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>falsch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>irrig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ceòl</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Musik</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ciamar?</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wieso?</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ciste</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kasten</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kiste</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Truhe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>clachan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Dorf</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cluas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ohr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cnoc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Halde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hügel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>comhairle</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rat</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ratschlag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>crann</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mast</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>craobh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Baum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>creag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fels</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Felsen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Steinmasse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cròic</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geweih</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cuan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ozean</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weltmeer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cuideachd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>auch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ebenfalls</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gleichfalls</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cuileag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fliege</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cunnart</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gefahr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cupa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tasse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cóig</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fünf</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>càise</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Käse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>càr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Auto</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cìr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kamm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>còmhradh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gespräch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Konversation</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Unterhaltung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>còta</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mantel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Paletot</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Überrock</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Überzieher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>cù</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hund</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dath</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Farbe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dearg</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>deich</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>zehn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>diallaid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sattel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>doirbh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schwer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>domhain</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>tief</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>donn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>braun</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dorus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tür</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dubh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schwarz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>duine</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mann</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dà</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>zwei</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dòchas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hoffnung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dòrn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Faust</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dùthaich</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Land</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>e</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>er</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihm</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>seiner</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>es</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>each</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gaul</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Pferd</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eadar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>mittenunter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>zwischen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eaglais</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kirche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eallach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Belastung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bürde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fuhre</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ladung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Last</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>earball</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bürzel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fahne</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lunte</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Rute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schleppe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schwanz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schweif</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sterz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wedel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>earrach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Frühjahr</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Frühling</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lenz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eilean</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Eiland</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Insel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eun</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Vogel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>facal</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Vokabel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>lang</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fairge</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Meer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>See</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fann</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>flau</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gelinde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schwach</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>feòil</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fleisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fiadh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hirsch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fiodh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Holz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fitheach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rabe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fliuch</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>naß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>freagairt</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Antwort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fuachd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kälte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fìon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>fìrinn</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Wahrheit</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Wahrheit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gaoth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wind</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gas</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gealach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mond</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gille</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Junge</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Knabe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>glic</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gescheit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>klug</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>weise</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gloine</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Glas</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>glé</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sehr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>glùn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Knie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gnùis</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Angesicht</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Antlitz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gesicht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gorm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blau</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gruaidh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Backe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wange</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gunna</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Büchse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Flinte</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schießgewehr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bis</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gu leòr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>genug</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>genügend</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hinlänglich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ziemlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gàradh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Anlage</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Garten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>i</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>es</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihm</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>die</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihr</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ihrer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iarann</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Eisen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iarmailt</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Himmel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iasg</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>innis</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Anger</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Aue</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wiese</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Senne</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Trift</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weide</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wiese</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iolair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Adler</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>is</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iuchair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schlüssel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lagh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gesetz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>latha</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>leabhar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Buch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>leasan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Lehraufgabe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lektion</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Unterrichtsstunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>litir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brief</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>loch</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>See</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>long</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schiff</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>luath</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>geschwind</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hurtig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>rasch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schnell</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>làir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Stute</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>làmh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hand</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>làn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>voll</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>làr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Boden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Diele</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Dielung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fußboden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>lìon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Garn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Netz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>falls</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>insofern</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wenn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wofern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mac</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sohn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>madainn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Frühe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Morgen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mas e bhur toil e</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bitte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>math</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gut</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gütig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>meanglan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ast</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zweig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mil</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Honig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mionaid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Minute</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>muc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schwein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>muir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Meer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>See</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mór</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>groß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>màthair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mutter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>naoi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>neun</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nathair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schlange</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nead</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Horst</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Nest</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>neul</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wolke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>obair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arbeit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ochd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>acht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>oibriche</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arbeiter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>oidhche</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Nacht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ola</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Öl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>orainsear</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Apfelsine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Orange</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Pomeranze</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>paipear</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Papier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>peansail</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bleistift</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Crayon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pian</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schmerz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weh</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>piuthar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schwester</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>prìs</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Preis</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pàirc</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Park</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pìob</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Pfeife</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rathad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bahn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Chaussee</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Strecke</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weg</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rudeigin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>etwas</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>irgendetwas</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>irgendwas</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saighdear</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Soldat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>salach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unlauter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>salann</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Salz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>samhradh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sommer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saoghal</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Welt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saothrach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arbeit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seachd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sieben</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seachdain</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Woche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sealgair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Jäger</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Weidmann</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sean</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>alt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bejahrt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>betagt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seanair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Großvater</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>searbhadair</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Handtuch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seòl</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Segel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seòmar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gemach</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stube</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zimmer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgeulachd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Erzählung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Geschichte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgian</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Messer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgiath</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fittich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Flügel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgillinn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Penny</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgoil</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schule</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sgìth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>matt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>müde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sechs</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sinn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>uns</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>unser</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wir</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sionnach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fuchs</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>siùcar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zucker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>soirbh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>geläufig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>leicht</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>mühelos</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nichtschwierig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>solus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Licht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>spàin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Löffel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sràid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Straße</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sròn</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Nase</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>stèsean</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bahnhof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sàil</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ferse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hacke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sàsar</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Untertasse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sìde</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wetter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Witterung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sìol</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Same</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sìth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Friede</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sùgh</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Saft</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Suppe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sùil</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Auge</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tapadh leibh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>danke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tarag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Nagel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stift</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tarbh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Stier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>teine</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Feuer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>teth</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>heiß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tràigh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Strand</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>trì</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>drei</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tuagh</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Axt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Beil</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hacke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>turus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Reise</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Tour</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tàillear</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schneider</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tì</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tee</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tìr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Boden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Erdboden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Erde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Grund</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Land</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Terrain</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>uaine</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>grün</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>uan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Lamm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ubhal</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Apfel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>uisge</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Wasser</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Regen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>àite</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Anstalt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gelaß</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ort</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Platz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stelle</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Fleck</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ort</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Platz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stätte</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stelle</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Terrain</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>àrd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>erhaben</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hoch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ìm</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Butter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òg</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>jugendlich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>jung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òganach</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Jüngling</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òr</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gold</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òran</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gesang</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lied</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òrd</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hammer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>òrdag</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Daumen</quote>
+               </cit>
+            </sense>
+         </entry>
+      </body>
+   </text>
+</TEI>
