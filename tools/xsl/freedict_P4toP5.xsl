@@ -74,12 +74,35 @@
     <revisionDesc>
       <change when="{$date}">
         <date><xsl:value-of select="$date"/></date>
-        <name>INSERT_NAME_OF_THE_CONVERTOR</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up.</change>
+        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
+        Bunk's re-import from Ergane of 2006-12-19 that was rolled back due to Ergane's cryptic
+        change of database licensing. Multi-word equivalents should be split by spaces.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
   </xsl:template>
   
+  <xsl:template match="pubPlace">
+    <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
+  </xsl:template>
+
+  <xsl:template match="projectDesc">
+    <projectDesc>
+      <p>This dictionary comes to you through nice people making it available for free and for
+        good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+          >http://freedict.org/</ref>. This project aims to make translating
+        dictionaries available for free. Your contributions are welcome!</p>
+    </projectDesc>
+  </xsl:template>
+
+  <xsl:template match="titleStmt/respStmt">
+    <respStmt>
+      <xsl:comment>for the freedict database</xsl:comment>
+      <resp>Maintainer</resp>
+      <name>[up for grabs]</name>
+    </respStmt>
+  </xsl:template>
+
   <xsl:template match="publicationStmt">
     <publicationStmt>
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
@@ -87,7 +110,29 @@
     </publicationStmt>
   </xsl:template>
 
-  <xd:doc>eat the default or unnecessary attributes </xd:doc>
+  <xsl:template match="publicationStmt/date"/>
+
+  <xsl:template match="availability">
+    <availability status="free">
+      <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+      <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU
+          General Public Licence</ref> ver. 2.0 and any later version.</p>
+      <p>This program is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License as
+        published by the Free Software Foundation; either version 2 of the
+        License, or (at your option) any later version.</p>
+      <p>This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        General Public License for more details.</p>
+      <p>You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+        02111-1307, USA.</p>
+    </availability>
+  </xsl:template>
+  
+    <xd:doc>eat the default or unnecessary attributes </xd:doc>
   <xsl:template match="note/@anchored[.='yes'] | entry/@type[.='main'] | orth/@extent[. = 'full'] | pron/@extent[. = 'full']"
   />
 
