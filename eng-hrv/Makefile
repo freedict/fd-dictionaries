@@ -1,6 +1,7 @@
 FREEDICTDIR ?= ..
-DISTFILES = eng-cro-nophon.tei Makefile README
+DISTFILES = eng-hrv.tei Makefile README
+supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
 
-clean::
-	-rm $(dictname).tei
+#clean::
+#	-rm $(dictname).tei
