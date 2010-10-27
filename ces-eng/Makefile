@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ..
-DISTFILES = Makefile COPYING INSTALL NEWS README AUTHORS ChangeLog cze-eng.tei
+DISTFILES = Makefile COPYING INSTALL NEWS README AUTHORS ChangeLog ces-eng.tei
 supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
 #include $(toolsdir)/ergane/Makefile.inc
