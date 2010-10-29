@@ -4,8 +4,9 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.pnp-software.com/XSLTdoc"
   exclude-result-prefixes="xs xd">
 
-  <xsl:import href="../../../../TEI/Stylesheets/profiles/default/p4/from.xsl"/>
+  <xsl:import href="../../../TEI/Stylesheets/profiles/default/p4/from.xsl"/>
   <xsl:output method="xml" indent="yes"/>
+  <xsl:strip-space elements="*"/>
 
   <xd:doc type="stylesheet">
     <xd:short>Converter for FreeDict.org databases: from P4 to P5</xd:short>
@@ -17,7 +18,7 @@
         hopefully only within the header. Please make sure to indicate in the revisionDesc that
         conversion has taken place! And then check if the FreeDict build system converts your TEI source to c5 properly.</p>
       <p>It presupposes that your working copy of Freedict starts at (SVN/)freedict/trunk/ (you
-        really don't need the other directories) and that there is a copy of 
+        really don't need the other directories besides the trunk/) and that there is a copy of 
         <a href="http://tei.svn.sourceforge.net/viewvc/tei/trunk/Stylesheets/">Sebastian Rahtz's TEI
           Stylesheets</a> located in (SVN/)TEI/Stylesheets/ (this is only relevant for the xsl:import
         statement; but without that statement this script won't do its job).</p>
@@ -56,17 +57,17 @@
     </cit>
   </xsl:template>
 
-  <xsl:template match="gen"/>
+  <!--<xsl:template match="gen"/>-->
 
-<xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
-  <xsl:template match="gen" mode="horiz">
+<!--<xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>-->
+  <!--<xsl:template match="gen" mode="horiz">
     <gramGrp>
-<!--      <pos>N</pos> this is fully recoverable -->
+<!-\-      <pos>N</pos> this is fully recoverable -\->
       <gen>
         <xsl:value-of select="."/>
       </gen>
     </gramGrp>
-  </xsl:template>
+  </xsl:template>-->
   
   <xsl:template match="revisionDesc">
     <xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y]-[M01]-[D01]')"
@@ -74,9 +75,7 @@
     <revisionDesc>
       <change when="{$date}">
         <date><xsl:value-of select="$date"/></date>
-        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
-        Bunk's re-import from Ergane of 2006-12-19 that was rolled back due to Ergane's cryptic
-        change of database licensing. Multi-word equivalents should be split by spaces.</change>
+        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
@@ -86,16 +85,19 @@
     <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
   </xsl:template>
 
-  <xsl:template match="projectDesc">
+  <!--<xsl:template match="projectDesc">
     <projectDesc>
       <p>This dictionary comes to you through nice people making it available for free and for
         good. It is part of the FreeDict project, <ref target="http://freedict.org/"
           >http://freedict.org/</ref>. This project aims to make translating
         dictionaries available for free. Your contributions are welcome!</p>
     </projectDesc>
-  </xsl:template>
+  </xsl:template>-->
 
   <xsl:template match="titleStmt/respStmt">
+    <respStmt >
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
+    </respStmt>
     <respStmt>
       <xsl:comment>for the freedict database</xsl:comment>
       <resp>Maintainer</resp>
