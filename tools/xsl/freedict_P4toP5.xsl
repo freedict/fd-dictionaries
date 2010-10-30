@@ -57,17 +57,17 @@
     </cit>
   </xsl:template>
 
-  <!--<xsl:template match="gen"/>-->
+  <xsl:template match="trans/gen"/>
 
-<!--<xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>-->
-  <!--<xsl:template match="gen" mode="horiz">
+<xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
+  <xsl:template match="trans/gen" mode="horiz">
     <gramGrp>
-<!-\-      <pos>N</pos> this is fully recoverable -\->
+<!--      <pos>N</pos> this is fully recoverable -->
       <gen>
         <xsl:value-of select="."/>
       </gen>
     </gramGrp>
-  </xsl:template>-->
+  </xsl:template>
   
   <xsl:template match="revisionDesc">
     <xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y]-[M01]-[D01]')"
@@ -75,7 +75,7 @@
     <revisionDesc>
       <change when="{$date}">
         <date><xsl:value-of select="$date"/></date>
-        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up.</change>
+        <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
@@ -85,16 +85,15 @@
     <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
   </xsl:template>
 
-  <!--<xsl:template match="projectDesc">
+  <xsl:template match="projectDesc">
     <projectDesc>
-      <p>This dictionary comes to you through nice people making it available for free and for
-        good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-          >http://freedict.org/</ref>. This project aims to make translating
-        dictionaries available for free. Your contributions are welcome!</p>
+      <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref
+          target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
+        welcome!</p>
     </projectDesc>
-  </xsl:template>-->
+  </xsl:template>
 
-  <xsl:template match="titleStmt/respStmt">
+  <!--<xsl:template match="titleStmt/respStmt">
     <respStmt >
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
     </respStmt>
@@ -103,7 +102,7 @@
       <resp>Maintainer</resp>
       <name>[up for grabs]</name>
     </respStmt>
-  </xsl:template>
+  </xsl:template>-->
 
   <xsl:template match="publicationStmt">
     <publicationStmt>
@@ -117,20 +116,13 @@
   <xsl:template match="availability">
     <availability status="free">
       <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-      <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU
-          General Public Licence</ref> ver. 2.0 and any later version.</p>
-      <p>This program is free software; you can redistribute it and/or
-        modify it under the terms of the GNU General Public License as
-        published by the Free Software Foundation; either version 2 of the
-        License, or (at your option) any later version.</p>
-      <p>This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-        General Public License for more details.</p>
-      <p>You should have received a copy of the GNU General Public License
-        along with this program; if not, write to the Free Software
-        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-        02111-1307, USA.</p>
+      <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref> ver. 2.0 and any later version.</p>
+      <p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software
+        Foundation; either version 2 of the License, or (at your option) any later version.</p>
+      <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+        PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+      <p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place
+        - Suite 330, Boston, MA 02111-1307, USA.</p>
     </availability>
   </xsl:template>
   
