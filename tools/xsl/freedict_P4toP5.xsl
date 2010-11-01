@@ -4,7 +4,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.pnp-software.com/XSLTdoc"
   exclude-result-prefixes="xs xd">
 
-  <xsl:import href="../../../TEI/Stylesheets/profiles/default/p4/from.xsl"/>
+  <xsl:import href="../../../../TEI/Stylesheets/profiles/default/p4/from.xsl"/>
   <xsl:output method="xml" indent="yes"/>
   <xsl:strip-space elements="*"/>
 
@@ -29,9 +29,21 @@
     <xd:svnId>$Id$</xd:svnId>
   </xd:doc>
 
+  <xsl:template match="eg">
+    <cit type="dicteg">
+      <xsl:for-each select="q">
+        <quote><xsl:apply-templates select="text()"/></quote>
+      </xsl:for-each>
+      <xsl:for-each select="trans">
+        <xsl:apply-templates select="tr"/>
+      </xsl:for-each>
+    </cit>
+  </xsl:template>
+
 <xd:doc>Convert trans to as many (sense/)cit as there are tr elements inside it. If the original dictionary has no sense elements under entry, create them around each old trans.</xd:doc>
   <xsl:template match="trans">
     <xsl:choose>
+      <xsl:when test="parent::eg"/>    <!-- die here, we'll pull you elsewhere -->
       <xsl:when test="parent::sense">
         <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
       </xsl:when>
@@ -75,7 +87,7 @@
     <revisionDesc>
       <change when="{$date}">
         <date><xsl:value-of select="$date"/></date>
-        <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
+        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
