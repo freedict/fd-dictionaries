@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ..
-DISTFILES = eng-lit.tei Makefile COPYING AUTHORS
+DISTFILES = eng-lit.tei Makefile COPYING AUTHORS Changelog
 
 supported_phonetics =
 
