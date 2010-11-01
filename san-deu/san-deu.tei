@@ -1,1347 +1,1541 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main Document Type//EN"
-  "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
-<!ENTITY % TEI.XML "INCLUDE">
-<!ENTITY % TEI.dictionaries "INCLUDE">
-<!ENTITY % TEI.linking      "INCLUDE" >
-<!ATTLIST xptr url CDATA #IMPLIED >
-<!ATTLIST xref url CDATA #IMPLIED >
-]>
-
-<TEI.2>
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-	<title>Sanskrit-German FreeDict Dictionary</title>
-	<respStmt>
-	  <resp>Maintainer</resp>
-	  <name>Michael Bunk &lt;micha@luetzschena.de></name>
-	</respStmt>
-      </titleStmt>
-      <editionStmt>
-	<edition>0.2</edition>
-      </editionStmt>
-      <extent>about 100 headwords</extent>
-      <publicationStmt>
-	<publisher>FreeDict</publisher>
-	<availability>
-	  <p>GNU GENERAL PUBLIC LICENSE</p>
-	</availability>
-	<date>2003-2005</date>
-	<pubPlace>http://freedict.org/</pubPlace>
-      </publicationStmt>
-      <notesStmt>
-	<note type="status">too small</note>
-      </notesStmt>
-      <sourceDesc>
-	<p>Home: <xptr url="http://freedict.org/"/></p>
-      </sourceDesc>
-    </fileDesc>
-    <encodingDesc>
-      <projectDesc>
-	<p>This dictionary comes to you through nice people making it
-	  available for free and for good. It is part of the FreeDict project,
-	  http://www.freedict.org / http://freedict.de. This
-	  project aims to make available many translating dictionaries
-	  for free. Your contributions are welcome!</p>
-      </projectDesc>
-    </encodingDesc>
-
-    <revisionDesc>
-      <change>
-	<date>2003-05-07</date>
-	<respStmt><resp>Michael Bunk</resp></respStmt>
-	<item>Started writing the header and entering some words by hand.</item>
-      </change>
-    </revisionDesc>
-  </teiHeader>
-
-  <text>
-    <body>
-
-      <entry>
-	<form>
-  <orth>तिथी</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>f</gen>
-	</gramGrp>
-        <trans>
-	  <tr>Mondtag</tr>
-	</trans>
-      </entry>
-      <entry>
-        <form>
-	  <orth>अ</orth>
-	</form>
-	<gramGrp>
-	  <pos>Pronomialstamm</pos>
-	</gramGrp>
-	<xr>इदम</xr>
-      </entry>
-      <entry>
-        <form>
-	  <orth>अ॰</orth>
-	  <orth>अन॰</orth>
-	</form>
-	<sense><def>verneinend = un-</def></sense>
-      </entry>
-     <entry>
-        <form>
-	  <orth>अकस्मात्</orth>
-	</form>
-	<trans>
-	  <tr>unerwartet</tr>
-	  <tr>plötzlich</tr>
-        </trans>	  
-      </entry>
-      <entry>
-        <form>
-	  <orth>अक्श</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Würfel</tr>
-        </trans>	  
-      </entry>
-      <entry>
-        <form>
-	  <orth>अक्शम</orth>
-	</form>
-	<trans>
-	  <tr>unfähig</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अक्शय</orth>
-	</form>
-	<trans>
-	  <tr>unvergänglich</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अक्शौहिणी</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>f</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Heer</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अगोज्ञ</orth>
-	</form>
-	<trans>
-	  <tr>keine Kuh kennend</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अग्नि</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Feuer</tr>
-	  <tr>Gott des Feuers</tr>
-        </trans>	  
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अग्र</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Spitze</tr>
-          </trans>
-	<trans>
-	  <usg>L.</usg> <tr>vor</tr> <usg>(mit G.)</usg>
-	  <tr>vorn</tr>
-	  <tr>vor sich</tr>
-	  </trans>
-        <trans><tr>voran</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अङ्कित</orth>
-	</form>
-	<gramGrp>
-	  <pos>pp</pos>
-	</gramGrp>
-	<trans>
-	  <tr>gekennzeichnet</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अङ्ग</orth>
-	</form>
-	<gramGrp>
-	  <pos>ind</pos>
-	</gramGrp>
-	<trans>
-	  <tr>wohl</tr>
-        </trans>	  
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अङ्ग</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Glied</tr>
-	  <tr>Körper</tr>
-	  <usg>im Bah. f. ई</usg>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अङ्गना</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>f</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Frau</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अङ्गसेवक</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>persönlicher Diener</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अङ्गुल</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Daumenbreite</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अङ्गार</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Kohle</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अचल</orth>
-	</form>
-	<trans>
-	  <tr>unbeweglich</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अचल</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Berg</tr>
-	  <tr>Gebirge</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अजस्रम्</orth>
-	</form>
-	<gramGrp>
-	  <pos>Adv</pos>
-	</gramGrp>
-	<trans>
-	  <tr>unaufhörlich</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अजा</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>f</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Ziege</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-	<form>
-	  <orth>अजानत्</orth>
-	</form>
-	<trans>
-	  <usg>von ज्ञा</usg> <tr>nicht kennend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अञ्जलि</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>die hohl zusammengelegten Hände</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अट्</orth>
-	</form>
-	<gramGrp>
-	  <pos>v1</pos>
-	</gramGrp>
-	<trans>
-	  <tr>wandern</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अण्ड</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Ei</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अण्डज</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Vogel</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अतन्द्रित</orth>
-	</form>
-	<trans>
-	  <tr>unermüdlich</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अतस्</orth>
-	</form>
-	<trans>
-	  <tr>davon</tr>
-	  <tr>deshalb</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अति॰</orth>
-	</form>
-	<gramGrp>
-	  <pos>Pre</pos>
-	</gramGrp>
-	<trans>
-	  <tr>überaus</tr>
-	  <tr>sehr</tr>
-	  <tr>besonders</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अतिथि</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Gast</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अतिरेक</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Übermaß</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अतीत</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Vergangenheit</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अतीव</orth>
-	</form>
-	<trans>
-	  <tr>sehr</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अत्र</orth>
-	</form>
-	<trans>
-	  <tr>hier</tr>
-	  <tr>dort</tr>
-	  <tr>dabei</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अत्रि</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<sense><def>N. eines Sehers</def></sense>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अत्वरा</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>f</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Nicht-Eile</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अथ</orth>
-	</form>
-	<trans>
-	  <tr>darauf</tr>
-	  <tr>nun</tr>
-	  <tr>und</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अथवा</orth>
-	</form>
-	<trans>
-	  <tr>oder</tr>
-	  <tr>oder vielmehr</tr>
-	  <tr>ja doch</tr>
-	  <tr>wenn aber</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अद्</orth>
-	</form>
-	<gramGrp>
-	  <pos>v2</pos>
-	</gramGrp>
-	<trans>
-	  <tr>essen</tr>
-	  <tr>fressen</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अदर्शन</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Nicht-Sehen</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अदृश्य</orth>
-	</form>
-	<trans>
-	  <tr>unsichtbar</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अदृष्ट</orth>
-	</form>
-	<trans>
-	  <tr>ungesehen</tr>
-	  <tr>ungeahnt</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अदभुत</orth>
-	</form>
-	<trans>
-	  <tr>wunderbar</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अद्य</orth>
-	</form>
-	<trans>
-	  <tr>heute</tr>
-	  <tr>jetzt</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अद्रि</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Stein</tr>
-	  <tr>Fels</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधर</orth>
-	</form>
-	<hom>
-		<trans>
-		  <tr>unterer</tr>
-	        </trans>
-	</hom>
-	<hom>
-		<gramGrp><pos>n</pos><gen>m</gen></gramGrp>
-		<trans>
-		  <tr>Unterlippe</tr>
-	        </trans>
-	</hom>
-	</entry>
-
-      <entry>
-        <form>
-	  <orth>अधस्</orth>
-	</form>
-	<trans>
-	  <tr>abwärts</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अधसतात्</orth>
-	</form>
-	<trans>
-	  <tr>unterhalb</tr>
-	  <tr>unter</tr> <usg>(mit Gen.)</usg>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अधिक</orth>
-	</form>
-	<trans>
-	  <tr>größer</tr>
-	  <tr>stärker</tr>
-	  <tr>mehr als</tr>
-	  <tr>ärger</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधिप</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Beherrscher</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधिस्थान</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Ort</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधीयान</orth>
-	</form>
-	<hom>
-	 <trans><tr>studierend</tr></trans>
-	</hom>
-	<hom>
-		<gramGrp>
-		  <pos>n</pos>
-	 	  <gen>m</gen>
-		</gramGrp>
-		<trans>
-		  <tr>Student</tr>
-	        </trans>
-	</hom>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधुना</orth>
-	</form>
-	<trans>
-	  <tr>jetzt</tr>
-        </trans>
-      </entry>
-
-
-      <entry>
-        <form>
-	  <orth>अधोमुख</orth>
-	</form>
-	<trans><usg>(Bah.), f. ई</usg>
-	  <tr>mit gesenktem Angesicht</tr>
-
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अध्यक्श</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Aufseher</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अध्याय</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Kapitel</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अध्वन्</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Weg</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनघ</orth>
-	</form>
-	<trans>
-	  <tr>schuldlos</tr>
-	  <tr>fehlerlos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनन्तरम्</orth>
-	</form>
-	<trans>
-	  <tr>gleich nach</tr> <usg>(Komp.)</usg>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनन्ध</orth>
-	</form>
-	<trans>
-	  <tr>blind</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनडुह्</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Ochse</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनन्त</orth>
-	</form>
-	<trans>
-	  <tr>endlos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनपत्य</orth>
-	</form>
-	<trans><usg>f. आ</usg>
-	  <tr>kinderlos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनर्थ</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Unglück</tr>
-	  <tr>Unheil</tr>
-	  <tr>Schaden</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनवद्य</orth>
-	</form>
-	<trans>
-	  <tr>tadellos</tr>
-	  <tr>fehlerlos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनशन</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Nichtessen</tr>
-	  <tr>Fasten</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनागत</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Zukunft</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनागतवत्</orth>
-	</form>
-	<trans>
-	  <tr>die Zukunft betreffend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनादि</orth>
-	</form>
-	<trans>
-	  <tr>anfangslos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनामय</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Gesundheit</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनायक</orth>
-	</form>
-	<trans>
-	  <tr>keinen Anführer habend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनारतम्</orth>
-	</form>
-	<gramGrp>
-	  <pos>Adv</pos>
-	</gramGrp>
-	<trans>
-	  <tr>unaufhörlich</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनिच्छत्</orth>
-	</form>
-	<trans>
-	  <tr>nicht wünschend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुग्रह</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Gefallen</tr>
-	  <tr>Gunst</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुचर</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Diener</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुमान</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Schlußfolgerung</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुवाक</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Rezitation</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुव्रत</orth>
-	</form>
-	<trans>
-	  <tr>ergeben</tr>
-	  <tr>treu</tr> <usg>(mit A.)</usg>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुष्ठान</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Ausführung</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनुसारिन्</orth>
-	</form>
-	<trans>
-	  <tr>nachgehend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनृत</orth>
-	</form>
-	<hom>
-		<gramGrp>
-		  <pos>n</pos>
-		  <gen>n</gen>
-		</gramGrp>
-		<trans>
-		  <tr>Unwahrheit</tr>
-	        </trans>
-	</hom>
-	<hom>
-	<trans>
-	  <tr>unwahr</tr>
-        </trans>
-	</hom>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनृण</orth>
-	</form>
-	<trans>
-	  <tr>schuldlos</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अनेक</orth>
-	</form>
-	<gramGrp>
-	  <number>Pl</number>
-	</gramGrp>
-	<trans>
-	  <tr>mehrere</tr>
-	  <tr>viele</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्त</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>nm</gen>
-	</gramGrp>
-	<sense>
-	<trans>
-	  <tr>Ende</tr>
-	  <tr>Saum</tr>
-	  <tr>Ziel</tr>
-        </trans>
-	</sense>
-	<sense>
-	<trans><tr>Lösung</tr></trans></sense>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तं गम्</orth>
-	</form>
-	<trans>
-	  <tr>dahinter kommen</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तःखेद</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Verdruß im Herzen</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तःपुर</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Frauenhaus</tr>
-	  <tr>Frauengemach</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तकर</orth>
-	</form>
-	<trans>
-	  <tr>ein Ende machend</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तकाल</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Todesstunde</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तर्</orth>
-	</form>
-	<trans>
-	  <tr>inmitten</tr>
-	  <tr>dazwischen</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तर</orth>
-	</form>
-	<hom>
-		<trans><tr>innerer</tr></trans>
-	</hom>
-	<hom>
-		<gramGrp>
-		  <pos>n</pos>
-		  <gen>n</gen>
-		</gramGrp>
-		<sense>
-			<trans>
-			  <tr>Zwischenzeit</tr>
-			  <tr>Zeit</tr>
-		 	 <tr>Gelegenheit</tr>
-		        </trans>
-		</sense>
-		<sense>
-			<trans><tr>Unterschied</tr></trans>
-		</sense>
-	</hom>
-	<hom>
-	<trans><usg>Am Ende eines Komp.:</usg> <tr>anderer</tr></trans>
-	</hom>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तरपुरुष</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Seele</tr>
-	  <tr>Gewissen</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तरात्मन्</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Seele</tr>
-	  <tr>Herz</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तरिक्श</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Luftraum</tr> <usg>(Raum zwischen Himmel und Erde)</usg>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तरिक्शग</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>m</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Vogel</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्तिक</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Nähe</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्ध</orth>
-	</form>
-	<trans>
-	  <tr>blind</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्धिभू</orth>
-	</form>
-	<gramGrp>
-	  <pos>v</pos>
-	</gramGrp>
-	<trans>
-	  <tr>erblinden</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्न</orth>
-	</form>
-	<gramGrp>
-	  <pos>n</pos>
-	  <gen>n</gen>
-	</gramGrp>
-	<trans>
-	  <tr>Speise</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्य</orth>
-	</form>
-	<trans>
-	  <tr>anderer</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्यस्मिन्नहनि</orth>
-	</form>
-	<trans>
-	  <tr>eines Tages</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्यच्च</orth>
-	</form>
-	<trans>
-	  <tr>und ein anderes</tr>
-	  <tr>ferner</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्यतम</orth>
-	</form>
-	<trans>
-	  <tr>einer von mehreren</tr>
-        </trans>
-      </entry>
-
-      <entry>
-        <form>
-	  <orth>अन्यतस्</orth>
-	</form>
-	<trans>
-	  <tr>anderswohin</tr>
-        </trans>
-      </entry>
-
-<!--
+<TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sanskrit-German FreeDict Dictionary</title>
+            <respStmt>
+               <resp>Maintainer</resp>
+               <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
+               <name/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <edition>0.2.1</edition>
+         </editionStmt>
+         <extent>about 100 headwords</extent>
+         <publicationStmt>
+            <publisher>FreeDict</publisher>
+            <availability status="free">
+               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Available under the terms of the <ref
+                     target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref>
+                  ver. 2.0 and any later version.</p>
+               <p>This program is free software; you can redistribute it and/or modify it under the
+                  terms of the GNU General Public License as published by the Free Software
+                  Foundation; either version 2 of the License, or (at your option) any later
+                  version.</p>
+               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
+                  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+                  PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+               <p>You should have received a copy of the GNU General Public License along with this
+                  program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
+                  Suite 330, Boston, MA 02111-1307, USA.</p>
+            </availability>
+            <pubPlace>
+               <ref target="http://freedict.org/">http://freedict.org/</ref>
+            </pubPlace>
+            <idno type="svn">$Id:$</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="status">too small</note>
+         </notesStmt>
+         <sourceDesc>
+            <p>Home: <ptr target="http://freedict.org/"/>
+            </p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
+        welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2010-11-01">
+            <date>2010-11-01</date>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up. Todo: put the relevant &lt;usg> elements into their proper &lt;cit>s; watch out for &lt;hom>s when converting to presentational formats.</change>
+         <change>
+            <date>2003-05-07</date>
+            <label>Michael Bunk</label>Started writing the header and entering some words by hand.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <entry>
+            <form>
+               <orth>तिथी</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>f</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Mondtag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अ</orth>
+            </form>
+            <gramGrp>
+               <pos>Pronomialstamm</pos>
+            </gramGrp>
+            <xr>इदम</xr>
+         </entry>
+         <entry>
+            <form>
+               <orth>अ॰</orth>
+               <orth>अन॰</orth>
+            </form>
+            <sense>
+               <def>verneinend = un-</def>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अकस्मात्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unerwartet</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>plötzlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अक्श</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Würfel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अक्शम</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unfähig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अक्शय</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unvergänglich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अक्शौहिणी</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>f</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Heer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अगोज्ञ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>keine Kuh kennend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अग्नि</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Feuer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gott des Feuers</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अग्र</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Spitze</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <usg>L.</usg>
+               <cit type="trans">
+                  <quote>vor</quote>
+               </cit>
+               <usg>(mit G.)</usg>
+               <cit type="trans">
+                  <quote>vorn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>vor sich</quote>
+               </cit>
+            </sense>
+            <sense n="3">
+               <cit type="trans">
+                  <quote>voran</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्कित</orth>
+            </form>
+            <gramGrp>
+               <pos>pp</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>gekennzeichnet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्ग</orth>
+            </form>
+            <gramGrp>
+               <pos>ind</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>wohl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्ग</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Glied</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Körper</quote>
+               </cit>
+               <usg>im Bah. f. ई</usg>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्गना</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>f</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Frau</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्गसेवक</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>persönlicher Diener</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्गुल</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Daumenbreite</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अङ्गार</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Kohle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अचल</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unbeweglich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अचल</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Berg</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gebirge</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अजस्रम्</orth>
+            </form>
+            <gramGrp>
+               <pos>Adv</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>unaufhörlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अजा</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>f</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ziege</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अजानत्</orth>
+            </form>
+            <sense>
+               <usg>von ज्ञा</usg>
+               <cit type="trans">
+                  <quote>nicht kennend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अञ्जलि</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>die hohl zusammengelegten Hände</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अट्</orth>
+            </form>
+            <gramGrp>
+               <pos>v1</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>wandern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अण्ड</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ei</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अण्डज</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Vogel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतन्द्रित</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unermüdlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतस्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>davon</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>deshalb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अति॰</orth>
+            </form>
+            <gramGrp>
+               <pos>Pre</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>überaus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sehr</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>besonders</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतिथि</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Gast</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतिरेक</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Übermaß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतीत</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Vergangenheit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अतीव</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sehr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अत्र</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hier</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dort</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dabei</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अत्रि</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <def>N. eines Sehers</def>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अत्वरा</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>f</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Nicht-Eile</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अथ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>darauf</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nun</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अथवा</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>oder</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>oder vielmehr</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ja doch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wenn aber</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अद्</orth>
+            </form>
+            <gramGrp>
+               <pos>v2</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>essen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fressen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अदर्शन</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Nicht-Sehen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अदृश्य</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unsichtbar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अदृष्ट</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ungesehen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ungeahnt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अदभुत</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wunderbar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अद्य</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>heute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>jetzt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अद्रि</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Stein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fels</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधर</orth>
+            </form>
+            <hom>
+               <sense>
+                  <cit type="trans">
+                     <quote>unterer</quote>
+                  </cit>
+               </sense>
+            </hom>
+            <hom>
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>m</gen>
+               </gramGrp>
+               <sense>
+                  <cit type="trans">
+                     <quote>Unterlippe</quote>
+                  </cit>
+               </sense>
+            </hom>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधस्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>abwärts</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधसतात्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>unterhalb</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>unter</quote>
+               </cit>
+               <usg>(mit Gen.)</usg>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधिक</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>größer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>stärker</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>mehr als</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ärger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधिप</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Beherrscher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधिस्थान</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधीयान</orth>
+            </form>
+            <hom>
+               <sense>
+                  <cit type="trans">
+                     <quote>studierend</quote>
+                  </cit>
+               </sense>
+            </hom>
+            <hom>
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>m</gen>
+               </gramGrp>
+               <sense>
+                  <cit type="trans">
+                     <quote>Student</quote>
+                  </cit>
+               </sense>
+            </hom>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधुना</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>jetzt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अधोमुख</orth>
+            </form>
+            <sense>
+               <usg>(Bah.), f. ई</usg>
+               <cit type="trans">
+                  <quote>mit gesenktem Angesicht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अध्यक्श</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Aufseher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अध्याय</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Kapitel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अध्वन्</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Weg</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनघ</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schuldlos</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fehlerlos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनन्तरम्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>gleich nach</quote>
+               </cit>
+               <usg>(Komp.)</usg>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनन्ध</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blind</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनडुह्</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ochse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनन्त</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>endlos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनपत्य</orth>
+            </form>
+            <sense>
+               <usg>f. आ</usg>
+               <cit type="trans">
+                  <quote>kinderlos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनर्थ</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Unglück</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Unheil</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schaden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनवद्य</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>tadellos</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fehlerlos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनशन</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Nichtessen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fasten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनागत</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Zukunft</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनागतवत्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>die Zukunft betreffend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनादि</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anfangslos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनामय</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Gesundheit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनायक</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>keinen Anführer habend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनारतम्</orth>
+            </form>
+            <gramGrp>
+               <pos>Adv</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>unaufhörlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनिच्छत्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nicht wünschend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुग्रह</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Gefallen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gunst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुचर</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Diener</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुमान</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Schlußfolgerung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुवाक</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Rezitation</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुव्रत</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ergeben</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>treu</quote>
+               </cit>
+               <usg>(mit A.)</usg>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुष्ठान</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ausführung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनुसारिन्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>nachgehend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनृत</orth>
+            </form>
+            <hom>
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>n</gen>
+               </gramGrp>
+               <sense>
+                  <cit type="trans">
+                     <quote>Unwahrheit</quote>
+                  </cit>
+               </sense>
+            </hom>
+            <hom>
+               <sense>
+                  <cit type="trans">
+                     <quote>unwahr</quote>
+                  </cit>
+               </sense>
+            </hom>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनृण</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schuldlos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अनेक</orth>
+            </form>
+            <gramGrp>
+               <number>Pl</number>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>mehrere</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>viele</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्त</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>nm</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Ende</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Saum</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ziel</quote>
+               </cit>
+            </sense>
+            <sense>
+               <cit type="trans">
+                  <quote>Lösung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तं गम्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dahinter kommen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तःखेद</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Verdruß im Herzen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तःपुर</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Frauenhaus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Frauengemach</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तकर</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ein Ende machend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तकाल</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Todesstunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तर्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>inmitten</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dazwischen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तर</orth>
+            </form>
+            <hom>
+               <sense>
+                  <cit type="trans">
+                     <quote>innerer</quote>
+                  </cit>
+               </sense>
+            </hom>
+            <hom>
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>n</gen>
+               </gramGrp>
+               <sense>
+                  <cit type="trans">
+                     <quote>Zwischenzeit</quote>
+                  </cit>
+                  <cit type="trans">
+                     <quote>Zeit</quote>
+                  </cit>
+                  <cit type="trans">
+                     <quote>Gelegenheit</quote>
+                  </cit>
+               </sense>
+               <sense>
+                  <cit type="trans">
+                     <quote>Unterschied</quote>
+                  </cit>
+               </sense>
+            </hom>
+            <hom>
+               <sense>
+                  <usg>Am Ende eines Komp.:</usg>
+                  <cit type="trans">
+                     <quote>anderer</quote>
+                  </cit>
+               </sense>
+            </hom>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तरपुरुष</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Seele</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gewissen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तरात्मन्</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Seele</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Herz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तरिक्श</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Luftraum</quote>
+               </cit>
+               <def>(Raum zwischen Himmel und Erde)</def>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तरिक्शग</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>m</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Vogel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्तिक</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Nähe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्ध</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blind</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्धिभू</orth>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>erblinden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्न</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>n</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Speise</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्य</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anderer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्यस्मिन्नहनि</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>eines Tages</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्यच्च</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>und ein anderes</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ferner</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्यतम</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>einer von mehreren</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>अन्यतस्</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anderswohin</quote>
+               </cit>
+            </sense>
+         </entry>
+         <!--
 
       <entry>
         <form>
@@ -1373,7 +1567,6 @@
         </trans>
       </entry>
 
--->     
-   </body>
-  </text>
-</TEI.2>
+--></body>
+   </text>
+</TEI>

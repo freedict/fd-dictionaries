@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ..
-DISTFILES = san-deu.tei Makefile
+DISTFILES = san-deu.tei Makefile ChangeLog COPYING
 UNSUPPORTED_PLATFORMS = evolutionary
 
 # XXX actually, this switch is not reqd for reverse indexing
