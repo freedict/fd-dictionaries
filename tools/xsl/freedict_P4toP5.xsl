@@ -5,9 +5,9 @@
   exclude-result-prefixes="xs xd">
 
   <xsl:import href="../../../../TEI/Stylesheets/profiles/default/p4/from.xsl"/>
-  <xsl:output method="xml" indent="yes"/>
+<!--  <xsl:output method="xml" indent="yes"/>
   <xsl:strip-space elements="*"/>
-
+-->
   <xd:doc type="stylesheet">
     <xd:short>Converter for FreeDict.org databases: from P4 to P5</xd:short>
     <xd:detail>
@@ -65,11 +65,11 @@
       <quote>
         <xsl:apply-templates select="*|@*|processing-instruction()|comment()|text()"/>
       </quote>
-      <xsl:apply-templates mode="horiz" select="following-sibling::*[1][self::gen]"/>
+      <xsl:apply-templates mode="horiz" select="following-sibling::*[1][self::gen or self::pos]"/>
     </cit>
   </xsl:template>
 
-  <xsl:template match="trans/gen"/>
+  <xsl:template match="trans/gen | trans/pos"/>
 
 <xd:doc>Convert gen elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (probably by removing the gramGrp layer)</xd:doc>
   <xsl:template match="trans/gen" mode="horiz">
@@ -80,6 +80,16 @@
       </gen>
     </gramGrp>
   </xsl:template>
+  
+  <xd:doc>Convert pos elements *inside* trans. Be careful: this is a very specific case and you may have to tweak this template for your database (possibly by removing the gramGrp layer; mind also the template for trans/gen - if more such elements occur in a trans, it might be better to group them in a more nifty way)</xd:doc>
+  <xsl:template match="trans/pos" mode="horiz">
+    <gramGrp>
+      <pos>
+        <xsl:value-of select="."/>
+      </pos>
+    </gramGrp>
+  </xsl:template>
+  
   
   <xsl:template match="revisionDesc">
     <xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y]-[M01]-[D01]')"
