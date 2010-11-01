@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ..
-DISTFILES = kha-eng.tei Makefile
+DISTFILES = kha-eng.tei Makefile ChangeLog
 include $(FREEDICTDIR)/tools/Makefile.common
 LA1locale = kha_IN
 
