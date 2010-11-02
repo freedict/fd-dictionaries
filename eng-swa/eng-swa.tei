@@ -20,18 +20,19 @@
       </titleStmt>
 
       <editionStmt>
-        <edition>0.2.1</edition>
+        <edition>0.2.2</edition>
       </editionStmt>
 
       <extent>1450 headwords</extent>
 
       <publicationStmt>
         <publisher>FreeDict</publisher>
-        <availability>
-          <p>Available under the terms of the GNU General Public Licence 2.0 or later.</p>
+        <availability status="free">
+          <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+          <p>Available under the terms of the GNU General Public Licence ver. 2.0 and any later version.</p>
         </availability>
-        <date>2004</date>
-        <pubPlace>http://freedict.org/</pubPlace>
+        <idno type="svn">$Id:$</idno>
+        <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
       </publicationStmt>
 
       <sourceDesc>
@@ -47,11 +48,15 @@
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for
-          good. It is part of the FreeDict project / http://freedict.org/ .</p>
+          good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+            >http://freedict.org/</ref>. This project aims to make available many translating
+          dictionaries for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
 
     <revisionDesc>
+      <change when="2010-11-02"><name>Piotr Bański</name> Changed database name from eng-swa to eng-swh 
+        (by ISO 639-3).</change>
       <change when="2010-02-25"><name>Piotr Bański</name> Upgraded to TEI P5, removed whitespace
         from equivalents, sorted entries, sorted entry insides, wrapped &lt;def> in &lt;sense> and
         added &lt;gramGrp> with an empty &lt;pos> in the entries that had no POS. This is now an
