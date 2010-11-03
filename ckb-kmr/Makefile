@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ..
-DISTFILES = sor-kur.txt Makefile ckb-kmr.tei README ChangeLog
+DISTFILES = sor-kur.txt Makefile ckb-kmr.tei ckb-kmr.tei.header README ChangeLog
 include $(FREEDICTDIR)/tools/Makefile.common
 
 #$(dictname).tei: sor-kur.txt $(dictname).tei.header \
