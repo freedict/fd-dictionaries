@@ -1,0 +1,5468 @@
+<TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Japanese-German FreeDict Dictionary</title>
+            <respStmt>
+               <!--for the freedict database-->
+               <resp>Maintainer</resp>
+               <name>[up for grabs]</name>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <edition>0.1.1</edition>
+         </editionStmt>
+         <extent>about 440 headwords</extent>
+         <publicationStmt>
+            <publisher>FreeDict</publisher>
+            <availability status="free">
+               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Available under the terms of the <ref
+                     target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref>
+                  ver. 2.0 and any later version.</p>
+               <p>This program is free software; you can redistribute it and/or modify it under the
+                  terms of the GNU General Public License as published by the Free Software
+                  Foundation; either version 2 of the License, or (at your option) any later
+                  version.</p>
+               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
+                  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+                  PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+               <p>You should have received a copy of the GNU General Public License along with this
+                  program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
+                  Suite 330, Boston, MA 02111-1307, USA.</p>
+            </availability>
+            <pubPlace>
+               <ref target="http://freedict.org/">http://freedict.org/</ref>
+            </pubPlace>
+            <idno type="svn">$Id:$</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="status">too small</note>
+         </notesStmt>
+         <sourceDesc>
+            <p>Home: <ptr target="http://www.travlang.com/"/>
+            </p>
+            <p>This Database was generated from Ergane.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
+        welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2010-11-03">
+            <date>2010-11-03</date>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/xsl/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
+            Bunk's re-import from Ergane of 2006-12-18 that was rolled back due to Ergane's cryptic
+            change of database licensing.</change>
+         <change>
+            <date>2005-01-04</date>
+            <name>Michael Bunk</name>Converted file to TEI P4</change>
+         <change>
+            <date>2000-04-27</date>
+            <name>Horst Eyermann</name>Database was converted to TEI format and checked into CVS</change>
+         <change>
+            <date>2000-01-10</date>
+            <name>Horst Eyermann</name>This Database was generated from ergane,
+	  http://www.travlang.com - Thanks!</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <entry>
+            <form>
+               <orth>Ahuganisutan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Afghanistan</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ahuganisutanzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Afghane</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ahuganisutan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>afghanisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ahurika</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Afrika</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Amerikazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Amerikaner</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Amerika</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>amerikanisch</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>amerikanisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Arabia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arabien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Arabiazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Araber</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Arabia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>arabisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Arumenia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Armenien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Arumenia</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>armenisch</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Armenier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzentin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Argentinien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzentinzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Argentinier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzentin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>argentinisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzeria</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Algerien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzeriazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Algerier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aruzeria</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>algerisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Azia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Asien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Aziazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Asiat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Azia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>asiatisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Banguradesu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bengalisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Bengaru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bengalen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Berug</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Belgien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Berug</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Belgier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Berug</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>belgisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Biruma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Birma</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Biruma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>birmanisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Boribia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bolivien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Buraziru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brasilien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Buraziru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>brasilianisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Burugaria</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bulgarien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Burugariazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bulgare</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Burugaria</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bulgarisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Kanada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kanada</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Kanadazin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kanadier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Kanada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>kanadisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Kirisuto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Christus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Koronbia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kolumbien</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Kurisumasu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Weihnachten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Seisyo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bibel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Taiseiy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>AtlantischerOzean</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Tiri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chile</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Tirizin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chilene</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Tiri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>chilenisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>China</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chinesisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chinese</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Ty</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>chinesisch</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>%hŌsutoraria</quote>
+               </cit>
+            </sense>
+            <sense n="3">
+               <cit type="trans">
+                  <quote>Australien</quote>
+               </cit>
+            </sense>
+            <sense n="4">
+               <cit type="trans">
+                  <quote>%hŌsutorariazin</quote>
+               </cit>
+            </sense>
+            <sense n="5">
+               <cit type="trans">
+                  <quote>Australier</quote>
+               </cit>
+            </sense>
+            <sense n="6">
+               <cit type="trans">
+                  <quote>%hŌsutorariano</quote>
+               </cit>
+            </sense>
+            <sense n="7">
+               <cit type="trans">
+                  <quote>australisch</quote>
+               </cit>
+            </sense>
+            <sense n="8">
+               <cit type="trans">
+                  <quote>%hŌsutoria</quote>
+               </cit>
+            </sense>
+            <sense n="9">
+               <cit type="trans">
+                  <quote>Österreich</quote>
+               </cit>
+            </sense>
+            <sense n="10">
+               <cit type="trans">
+                  <quote>%hŌsutoriazin</quote>
+               </cit>
+            </sense>
+            <sense n="11">
+               <cit type="trans">
+                  <quote>Österreicher</quote>
+               </cit>
+            </sense>
+            <sense n="12">
+               <cit type="trans">
+                  <quote>%hŌsutoriano</quote>
+               </cit>
+            </sense>
+            <sense n="13">
+               <cit type="trans">
+                  <quote>österreichisch</quote>
+               </cit>
+            </sense>
+            <sense n="14">
+               <cit type="trans">
+                  <quote>%h‐te</quote>
+               </cit>
+            </sense>
+            <sense n="15">
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+            <sense n="16">
+               <cit type="trans">
+                  <quote>%hāmondo</quote>
+               </cit>
+            </sense>
+            <sense n="17">
+               <cit type="trans">
+                  <quote>Mandel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>Yagiza</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Steinbock</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>%hēsu</quote>
+               </cit>
+            </sense>
+            <sense n="3">
+               <cit type="trans">
+                  <quote>As</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Dauß</quote>
+               </cit>
+            </sense>
+            <sense n="4">
+               <cit type="trans">
+                  <quote>%hōkii</quote>
+               </cit>
+            </sense>
+            <sense n="5">
+               <cit type="trans">
+                  <quote>groß</quote>
+               </cit>
+            </sense>
+            <sense n="6">
+               <cit type="trans">
+                  <quote>%hōmugi</quote>
+               </cit>
+            </sense>
+            <sense n="7">
+               <cit type="trans">
+                  <quote>Hafer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ago</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kinn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Herbst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anaguma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Dachs</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anmonia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ammoniak</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>anzu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aprikose</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Marille</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ap</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Appartement</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Etagenwohnung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gemach</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>arabamu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Album</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ari</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ameise</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aruk</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Alkohol</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Spritus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aruk</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Alkoholismus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>aruminy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aluminium</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>asikubi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Knöchel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>asoko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>da</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>atumeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sammeln</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>einsammeln</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>b</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Speck</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>b</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>b</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blase</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>b</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Abenteuer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>baisyun</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bordell</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bakarasii</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>abgeschmackt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>absurd</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ungereimt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>widersinnig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>baketu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Eimer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bakudan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bombe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>banana</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Banane</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>basu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Autobus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>basur</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bademantel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bat</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Butter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bata</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Butter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beddo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bett</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bettstelle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>benti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bank</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>beri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Beere</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Flasche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>biriy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Billard</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>boikotto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ausperrung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Boykott</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>boti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Friedhof</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gottesacker</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kirchhof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>buiyon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bouillon</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Brühe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fleischbrühe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bunsekisuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>analysieren</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>auflösen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>zergliedern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bur</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bremse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>bur</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brosche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>burand</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Branntwein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schnaps</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>burausu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bluse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>buraziruzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brasilianer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>d</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>d</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arterie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Pulsader</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schlagader</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>d</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Amtsbruder</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Amtsgenosse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Genosse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kollege</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>daigaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kollegium</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>daiku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zimmermann</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dairinin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Agent</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Geschäftsbesorger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dairiten</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Agentur</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dais</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Algebra</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Buchstabenrechnung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>daisaigai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Katastrophe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>daiseid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Dom</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kathedrale</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Münster</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dangensuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bejahen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>jasagen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dansyaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Baron</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Freiherr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>danyaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Munition</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kartätsche</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Patrone</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>denki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Biographie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lebensbeschreibung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>denky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Birne</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>desu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dete</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>auskommen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>herauskommen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>hinauskommen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dokub</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Karzer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>donguri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Eichel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>dote</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bord</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gestade</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Küste</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Strand</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ufer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ast</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zweig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>enpitu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bleistift</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Crayon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>entotu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schornstein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>erabu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>auslesen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wählen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>auswählen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>erwählen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>eri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kragen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>f</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gabel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>g</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hasard</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zufall</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ga</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>aber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>allein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dagegen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sondern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gaizin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ausländer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Krebs</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>geizyutuka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Artist</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gensi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Atom</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gink</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bank</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gink</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bankier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gizi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Agenda</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Notizbuch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gogo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Nachmittag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gokiburi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schabe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>gy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rindfleisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>h</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Besen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>h</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bandage</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Verband</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>h</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ballon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Asche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>haiy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schauspieler</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>haizara</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aschenbecher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hako</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Büchse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schachtel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hakusyu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Applaus</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Beifall</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hakusyusuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>applaudieren</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Beifallspenden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hakuzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Europäer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hakuzy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anerkennen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gestehen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eingestehen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hanataba</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blumenstrauß</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bouquet</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bukett</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Strauch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hane</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Feder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>happy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ankündigen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anzeigen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>avisieren</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>melden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anmelden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>verkünden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>happyo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Annonce</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Anzeige</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Inserat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>haremono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Abszeß</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Eiterbeule</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Geschwulst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hasan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bankerott</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fallissement</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fallit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hasi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brücke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hati</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Biene</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hatigatu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>August</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hazimaru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anfangen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>beginnen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>henzi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Antwort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hige</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bart</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hihi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Pavian</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hik</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Äroplan</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Flugmaschine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Flugzeug</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hikaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gleichnis</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Vergleich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hitori</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>allein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>alleinig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>bloß</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>einzig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hoka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anderer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anders</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sonst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Buch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>honbako</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bücherschrank</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hone</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gebein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Knochen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hon</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Buchhandlung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hotondo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>beinahe</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fast</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>nahezu</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schier</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ungefähr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>huku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blasen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wehen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hukurahagi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wade</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hukusi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Adverb</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Umstandswort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hune</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Boot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>huro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bad</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>huroba</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Bad</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Badestube</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>huro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bad</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>hurumai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aufführung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Benehmen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Betragen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gebahren</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Verhalten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ikari</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Anker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Atem</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hauch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>atmen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>inki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tinte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Farbe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>iru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>sein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>isiki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bewußtsein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>isu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Stuhl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>itiban</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>best</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>itu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>allemal</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>allzeit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fortwährend</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>immer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>jederzeit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>stets</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Karte</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zettel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Nelke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kabel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Anfall</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Angriff</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anfallen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>angreifen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ausfallen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>befallen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>überfallen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kaffee</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bewerber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kandidat</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geldstück</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Münze</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Archäologie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Altertumskunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fledermaus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>k</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Luft</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kagaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chemie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kago</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Korb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaigan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Küste</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaiguntaisy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Admiral</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaisya</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Firma</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kakeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>wetten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kakutoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Beute</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Errungenschaft</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Erwerb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kakutokusuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>erbeuten</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>erlangen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>erringen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>habhaftwerden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sicherwerben</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kameo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kamee</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kami</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Papier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kamotu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Belastung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bürde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fuhre</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ladung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Last</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kamu</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>kauen</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>beißen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kanoe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kanaria</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kanarienvogel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kankiri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Büchsenöffner</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kansin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bewundernswert</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wunderbar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kantoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bischof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaori</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aroma</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Duft</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kara</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>da</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>denn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>weil</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>karada</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Körper</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Leib</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>karend</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kalender</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>karihuraw</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blumenkohl</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Karfiol</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>karus</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kalzium</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>katarogu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Katalog</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Verzeichnis</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kategor</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kategorie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaze</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Erkältung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kaziya</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schmied</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kedamono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tier</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>keiy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Adjektiv</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Eigenschaftswort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kekka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Folge</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Konsequenz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kemusi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Raupe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kentikuka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Architekt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kesseki</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Abwesenheit</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Abwesenheit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ketueki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blut</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gebüsch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Staude</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Strauch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kigeki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Komödie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lustspiel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kiheitai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kavallerie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kik</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Klima</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kikansien</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bronchitis</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kiku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chrysanthemum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kinpatu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>blond</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kissaten</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Café</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kizoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aristokrat</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Edelmann</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kobaruto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kobalt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>koi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Karpfen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kokoa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kakao</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kokonattu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kokosnuß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kokumin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bürger</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>konkur</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Beton</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kons</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Musikaufführung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Konzert</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>konton</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chaos</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>konyakku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kognak</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kott</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>altertümlich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>antik</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kousi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kalb</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kowai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bang</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>koziki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bettler</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kuma</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bär</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kumo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wolke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kur</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chrom</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kuro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schwarz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kuroi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schwarz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>kommen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kusari</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kette</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kusi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kamm</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kutibasi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schnabel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ky</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Grenze</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schranke</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Kirche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kommunismus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kommunist</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zwiebel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kyabetu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kohl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kyabia</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kaviar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kyanpu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Campingplatz</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zeltplatz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>kyarameru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Karamelle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>m</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bereits</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schon</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>m</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bettdecke</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Decke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>m</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blinder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mado</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fenster</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>maitosi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>jährlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mannaka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Mittelpunkt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zentrum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mata</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>auch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ebenfalls</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gleichfalls</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mekyabetu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rosenkohl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mezamasidokei</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Wecker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mizugi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Badeanzug</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mo</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>auch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ebenfalls</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gleichfalls</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>gleich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gleichfalls</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>motte</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bringen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anbringen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eintragen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>heranbringen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>überbringen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>motto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>besser</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mukand</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Apathie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Teilnahmslosigkeit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mune</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brust</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Busen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>n</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gehirn</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hirn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>n</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ackerbau</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nagusame</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Trost</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nagusameru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>trösten</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Trostspenden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>naihu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Messer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nankyoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>antarktisch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>südpolar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>neko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Katze</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nendo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Lehm</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ton</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Tonerde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ni</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>fragen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anfragen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nigai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bitter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nikuya</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fleischer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nikuyasan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fleischer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nimotu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bagage</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gepäck</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Verpackung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ninzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Karotte</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Möhre</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Mohrrübe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>niwatori</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Huhn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>noboru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>klettern</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>klimmen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nomi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Meißel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Stemmeisen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nomimono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Getränk</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Trank</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>okotta</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>arg</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>böse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>omoni</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Belastung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bürde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fuhre</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ladung</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Last</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>onezi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bolzen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Axt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Beil</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Hacke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>orenzi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Apfelsine</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Orange</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Pomeranze</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>otoko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Junge</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Knabe</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brot</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bäckerei</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Backstube</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bäcker</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pen</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Feder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>pin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Stecknadel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>r</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kerze</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Licht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>raku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bequem</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gemächlich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>wohnlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rakuda</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kamel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rasinban</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kompaß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>renga</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Backstein</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ziegel</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ziegelstein</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>rikk</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bewerbung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ringo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Apfel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ry</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Menge</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Quantität</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Quantum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ry</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gewissen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>s</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Abt</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Bischof</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saboten</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kaktus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saib</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zelle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>saidan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Altar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sake</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Spirituosen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sakeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ausweichen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>entgegen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>entweichen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>meiden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>vermeiden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sakura</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kirschbaum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sakuranbo</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kirsche</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sakura</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kirschbaum</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>samusa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kälte</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>san</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Säure</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sans</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arithmetik</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Rechenkunst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sara</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Teller</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seibutugaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Biologie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Lebenslehre</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bronze</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Erz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seihonsuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>binden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>einbinden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seikatai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chor</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sängerchor</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sekitan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kohle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>semento</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zement</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>senaka</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rücken</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>senseigaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Astrologie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sterndeutung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sensyu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Athlet</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sentaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Auslese</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Wahl</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>senti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Centimeter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zentimeter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>senty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kapitän</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>seriuri</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Auktion</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Versteigerung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>serori</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Sellerie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>si</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sibaru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>binden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>verbinden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sigatu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>April</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>siki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Feierlichkeit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Förmlichkeit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zeremonie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>simeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>schließen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>verschließen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>zumachen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sinsitu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Schlafzimmer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sinty</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>Messing</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Latun</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Messing</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sion</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aster</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>siro</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Burg</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kastell</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schloß</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>soko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Boden</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Grund</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>soko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>da</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>dort</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sugi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zeder</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sugu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>alsbald</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>flugs</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gleich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sofort</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sogleich</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>umgehend</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>suisei</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Komet</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schweifstern</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>suppai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>herb</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>sauer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>suzuki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Barsch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Annahme</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Aufnahme</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Übernahme</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zusage</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Barriere</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schranke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>sy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kampfer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syasy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aufseher</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Führer</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kondukteur</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schaffner</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syokubutugaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Botanik</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Pflanzenkunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syokuyoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Appetit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syuhu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hauptstadt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syuto</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Hauptstadt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>syuzin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Befehlshaber</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Chef</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Haupt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Häupling</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Herr</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Oberhaupt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Vorsteher</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>t</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Tisch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>t</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Käse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>t</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ankunft</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Eintreffen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tabako</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Zigarette</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>dulden</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taih</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kanon</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kanone</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taiho</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Arrest</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Haft</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taihosuru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>arretieren</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>festnehmen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>verhaften</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taiki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Atmosphäre</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taisa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Oberst</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taisi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Botschafter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gesandter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>take</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bambus</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tanzy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geburtstag</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>taru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Faß</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Tonne</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tatakai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kampf</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schlacht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tataku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hauen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schlagen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tatemono</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bau</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bauwerk</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Gebäude</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tateru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>bauen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>aufbauen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>erbauen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>konstruieren</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tenmongaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Astronomie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Himmelskunde</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sternkunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tensi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Engel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tenzy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Decke</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Zimmerdecke</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Blut</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tibusa</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Brust</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Mutterbrust</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tikasitu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Keller</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>to</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>und</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>Tür</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tokasu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>kämmen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tokei</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Uhr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>toraeru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>erbeuten</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ergreifen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ertappen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>erwischen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fangen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>fassen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tori</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Vogel</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>toriniku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Huhn</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tosi</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Alter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tubaki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kamelie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tumaranai</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>überdrüssig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>verdrießlich</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Falter</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Schmetterling</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Buchhalter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Kreide</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>zentral</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ty</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Besorgnis</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sorge</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tyansu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chance</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>tyero</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Violincello</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ukeireru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>annehmen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>empfangen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>genehmigen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>umare</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Geburt</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>umareru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>entstehen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>unga</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Graben</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Kanal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>untensyu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Chauffeur</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Fahrer</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>urad</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Gasse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>uragiru</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>verraten</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>utukusii</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>hübsch</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schön</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>wakinosita</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Achselhöhle</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>wan</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bai</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Bucht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>wani</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Alligator</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>warui</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>böse</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schlecht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ya</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Pfeil</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>yaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>annähernd</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>etwa</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>ungefähr</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>yasin</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Ehrgeiz</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>yasinteki</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>ehrgeizig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>yasui</orth>
+            </form>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>billig</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
+                  <quote>billig</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>yobu</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>rufen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>anrufen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zensoku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Asthma</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zid</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Auto</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ziden</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Selbstbiographie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ziken</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Angelegenheit</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ding</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Sache</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Werk</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ziko</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Unfall</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ziky</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>anerkennen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gestehen</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eingestehen</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zinruigaku</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Anthropologie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Menschenkunde</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zitensya</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Fahrrad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Rad</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Rover</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ziti</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Autonomie</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Selbstgesetzgebung</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zurui</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>abgefeimt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>arglistig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gerieben</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gewiegt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gewitzigt</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>listig</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>schlau</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Bigamie</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zy</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Adresse</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>zyogen</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Rat</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>Ratschlag</quote>
+               </cit>
+            </sense>
+         </entry>
+      </body>
+   </text>
+</TEI>
