@@ -1,22 +1,23 @@
 FREEDICTDIR ?= ..
 DISTFILES = COPYING Makefile README ChangeLog AUTHORS \
 	 English-Hindi-Dictionary_2.isc INSTALL NEWS \
-	 ehconv.yy eng-hin.tei.header
+	 ehconv.yy eng-hin.tei eng-hin.tei.header README ChangeLog
 TEI2DICTFLAGS = -a
+supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
 UNSUPPORTED_PLATFORMS = evolutionary bedic
 
 # these are eng-hin specific targets
-ehconv.c: ehconv.yy
-	flex -oehconv.c ehconv.yy
+#ehconv.c: ehconv.yy
+#	flex -oehconv.c ehconv.yy
 
-ehconv: ehconv.c
-	gcc ehconv.c -lfl -oehconv
+#ehconv: ehconv.c
+#	gcc ehconv.c -lfl -oehconv
 
-eng-hin-nophon.tei: eng-hin.tei.header ehconv English-Hindi-Dictionary_2.isc
-	cp eng-hin.tei.header $@
-	./ehconv <English-Hindi-Dictionary_2.isc >>$@
+#eng-hin-nophon.tei: eng-hin.tei.header ehconv English-Hindi-Dictionary_2.isc
+#	cp eng-hin.tei.header $@
+#	./ehconv <English-Hindi-Dictionary_2.isc >>$@
 
-clean::
-	rm -f ehconv.c eng-hin.tei eng-hin-nophon.tei ehconv
+#clean::
+#	rm -f ehconv.c eng-hin.tei eng-hin-nophon.tei ehconv
 
