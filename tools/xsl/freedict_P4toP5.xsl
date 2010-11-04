@@ -150,7 +150,7 @@
   
   <!-- note: this one is introduced late, to handle some robust @resp attributes that I don't want hashed -->
   <xsl:template match="@resp">
-    <xsl:attribute name="resp" select="translate(.,' ','_')"/>
+    <xsl:attribute name="resp" select="translate(.,' []():;''','_')"/>
   </xsl:template>
   
     <xd:doc>eat the default or unnecessary attributes </xd:doc>
