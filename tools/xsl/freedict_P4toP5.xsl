@@ -134,6 +134,10 @@
   </xsl:template>
 
   <xsl:template match="publicationStmt/date"/>
+  
+  <xsl:template match="div0">
+    <xsl:apply-templates select="node()"/>
+  </xsl:template>
 
   <xsl:template match="availability">
     <availability status="free">
