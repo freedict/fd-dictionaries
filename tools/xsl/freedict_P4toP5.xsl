@@ -97,7 +97,7 @@
     <revisionDesc>
       <change when="{$date}">
         <date><xsl:value-of select="$date"/></date>
-        <name>INSERT_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
+        <name>YOUR_NAME_HERE</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
       <xsl:apply-templates
         select="@*|*|comment()|processing-instruction()"/>
     </revisionDesc>
@@ -115,7 +115,7 @@
     </projectDesc>
   </xsl:template>
 
-  <!--<xsl:template match="titleStmt/respStmt">
+  <xsl:template match="titleStmt/respStmt">
     <respStmt >
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()"/>
     </respStmt>
@@ -124,7 +124,7 @@
       <resp>Maintainer</resp>
       <name>[up for grabs]</name>
     </respStmt>
-  </xsl:template>-->
+  </xsl:template>
 
   <xsl:template match="publicationStmt">
     <publicationStmt>
@@ -146,6 +146,11 @@
       <p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place
         - Suite 330, Boston, MA 02111-1307, USA.</p>
     </availability>
+  </xsl:template>
+  
+  <!-- note: this one is introduced late, to handle some robust @resp attributes that I don't want hashed -->
+  <xsl:template match="@resp">
+    <xsl:attribute name="resp" select="translate(.,' ','_')"/>
   </xsl:template>
   
     <xd:doc>eat the default or unnecessary attributes </xd:doc>
