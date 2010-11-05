@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
-<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
-<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
+<!--<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>-->
+<!--<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">-->
+<?oxygen SCHSchema="../shared/freedict-P5.rng"?>
+<?oxygen RNGSchema="../shared/freedict-P5.rng" type="xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
@@ -18,7 +20,7 @@
       </titleStmt>
 
       <editionStmt>
-        <edition>0.3.3</edition>
+        <edition>0.3.4</edition>
       </editionStmt>
 
       <extent>8505 entries</extent>
@@ -46,33 +48,38 @@
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org/. This project aims to make available many translating dictionaries for free. Your contributions are welcome!</p>
       </projectDesc>
-     <tagsDecl>
-      <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
-      <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
-       <tagUsage gi="pos">
-        <list n="values" type="bulleted">
-         <item ana="FreeDict_ontology.xml#f_pos_noun">n</item>
-         <item ana="FreeDict_ontology.xml#f_pos_verb">v</item>
-         <item ana="FreeDict_ontology.xml#f_pos_v-intrans">vi</item>
-         <item ana="FreeDict_ontology.xml#f_pos_v-trans">vt</item>
-         <item ana="FreeDict_ontology.xml#f_pos_adj">adj</item>
-         <item ana="FreeDict_ontology.xml#f_pos_adv">adv</item>
-         <item ana="FreeDict_ontology.xml#f_pos_num">num</item>
-         <item ana="FreeDict_ontology.xml#f_pos_prep">prep</item>
-        </list>
-       </tagUsage>
+   <tagsDecl>
+    <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+    <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
+     <tagUsage gi="pos">
+      <list n="values" type="bulleted">
+       <item ana="FreeDict_ontology.xml#f_pos_noun">n</item>
+       <item ana="FreeDict_ontology.xml#f_pos_verb">v</item>
+       <item ana="FreeDict_ontology.xml#f_pos_v-intrans">vi</item>
+       <item ana="FreeDict_ontology.xml#f_pos_v-trans">vt</item>
+       <item ana="FreeDict_ontology.xml#f_pos_adj">adj</item>
+       <item ana="FreeDict_ontology.xml#f_pos_adv">adv</item>
+       <item ana="FreeDict_ontology.xml#f_pos_num">num</item>
+       <item ana="FreeDict_ontology.xml#f_pos_prep">prep</item>
+       <item ana="FreeDict_ontology.xml#f_pos_int">int</item>
+       <item ana="FreeDict_ontology.xml#f_pos_pron">pron</item>
+       <item ana="FreeDict_ontology.xml#f_pos_conj">conj</item>
+       <item ana="FreeDict_ontology.xml#f_pos_art">art</item>
+      </list>
+     </tagUsage>
      <tagUsage gi="gen">
       <list>
        <item ana="FreeDict_ontology.xml#f_gen_fem">fem</item>
        <item ana="FreeDict_ontology.xml#f_gen_masc">masc</item>
       </list>
      </tagUsage>
-      </namespace>
-      
-     </tagsDecl>
+    </namespace>
+
+   </tagsDecl>
     </encodingDesc>
 
     <revisionDesc>
+     <change when="2010-11-05" n="0.3.4"><name>Piotr Bański</name>: Technical changes: added the missing values to the &lt;tagsDecl&gt;. TODO: conversion to the cit/quote system, but only after, or at the same time as, the equivalents inside &lt;def> are split apart.</change>
      <change when="2010-04-27" n="0.3.3"><name>Piotr Bański</name>: Technical changes: took out the dependency including the ontology interface. The interface is now a free-standing document and this dictionary refers to rhat document only via the header (see &lt;tagsDecl&gt;).</change>
      <change when="2010-04-24" n="0.3.3"><name>Piotr Bański</name>: Technical changes: include the FreeDict interface to ontologies, use @ana to refer to it from inside gramGrp.</change>
      <change when="2010-04-22" n="0.3.2"><name>John Darrington</name>: Extended the dictionary (several commits: added POS fields, genders, + over 300 entries). (+ Piotr: little changes in the header, tiny fixes).</change>
