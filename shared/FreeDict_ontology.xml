@@ -33,6 +33,7 @@
    <sourceDesc><p>Created in electronic form</p></sourceDesc>
   </fileDesc>
   <revisionDesc>
+   <change who="#bansp" when="2010-11-05">A few more additions of category references; skipped the ISO-DCR parts for now.</change>
    <change who="#bansp" when="2010-04-27">Converted to a free-standing document.</change>
    <change who="#bansp" when="2010-04">Created as an inclusion to the FreeDict fra-eng dictionary.</change>
   </revisionDesc>
@@ -91,6 +92,54 @@
            <f name="ISO_DCR">
             <string>http://www.isocat.org/datcat/DC-1232</string>
            </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="article" xml:id="f_pos_art">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>article</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>przedimek</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://linguistics-ontology.org/gold/2010/Article</string>
+           </f>
+           <!--<f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1230</string>
+           </f>-->
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="conjunction" xml:id="f_pos_conj">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>conjunction</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>spójnik</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://linguistics-ontology.org/gold/2010/Conjunction</string>
+           </f>
+           <!--<f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1230</string>
+           </f>-->
           </fs>
          </f>
         </fs>
@@ -170,6 +219,30 @@
          </f>
         </fs>
        </f>
+       <f name="interjection" xml:id="f_pos_int">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>interjection</string>
+           </f>
+           <!--<f name="pol" xml:lang="pl">
+            <string>...</string>
+           </f>-->
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://linguistics-ontology.org/gold/2010/Interjection</string>
+           </f>
+           <!--<f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1333</string>
+           </f>-->
+          </fs>
+         </f>
+        </fs>
+       </f>
        <f name="noun" xml:id="f_pos_noun">
         <fs>
          <f name="label">
@@ -238,6 +311,30 @@
            <f name="ISO_DCR">
             <string>http://www.isocat.org/datcat/DC-1366</string>
            </f>
+          </fs>
+         </f>
+        </fs>
+       </f>
+       <f name="pronoun" xml:id="f_pos_pron">
+        <fs>
+         <f name="label">
+          <fs>
+           <f name="eng" xml:lang="en">
+            <string>pronoun</string>
+           </f>
+           <f name="pol" xml:lang="pl">
+            <string>zaimek</string>
+           </f>
+          </fs>
+         </f>
+         <f name="reference">
+          <fs>
+           <f name="GOLD">
+            <string>http://linguistics-ontology.org/gold/2010/Pronominal</string>
+           </f>
+           <!--<f name="ISO_DCR">
+            <string>http://www.isocat.org/datcat/DC-1366</string>
+           </f>-->
           </fs>
          </f>
         </fs>
