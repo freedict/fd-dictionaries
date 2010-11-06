@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="tei_odds.rng" type="xml"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" n="freedict">
+<TEI 
+   xmlns="http://www.tei-c.org/ns/1.0" 
+   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+   xml:lang="en" n="freedict">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict project (basic), version 0.7</title>
+            <title>TEI Customization for the FreeDict project (basic), version 0.8</title>
             <respStmt>
                <resp>maintained by</resp>
                <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
@@ -33,7 +36,27 @@
             Piotr Bański and Beata Wójtowicz, which should be available from
             http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
-            <item><label>Version 0.7, <date when="2010-04-25">25 April 2010</date>, by <name>Piotr Bański</name></label>: Added the xinclude extension from the approoriate Roma template, changed it to be able to occur as a child of front (I can't validate xinclusions with xmllint if a DTD is used, so this is for the sake of DTDs only)</item>
+            <item><label>Version 0.8, <date when="2010-11-06">6 November 2010</date>, by <name>Piotr
+            Bański</name></label>:
+               <list type="bulleted">
+                  <item>Added Schematron constraints on <gi>tagUsage</gi> (so this may be the
+                     beginning of the end of DTDs for Freedict, and consequently the xinclude
+                     extension will be able to go);</item>
+                  <item>added <gi>tagUsage</gi> to the att.typed class (need to distinguish between
+                     tags used in the <gi>gramGroup</gi> describing the source language forms from
+                     those describing the target language (inside <gi>cit</gi>);</item>
+                  <item>added <gi>gramGrp</gi> to the att.typed class (in order to be able to talk
+                     about 'discharged' grammatical properties, in elements that trigger agreement
+                     on other elements (think noun classes)); note: this is a KLUDGE now, because
+                     something is wrong with the newest Roma 1.8.0 and I can't just modify the
+                     elementSpec, I have to replace the entire thing.</item>
+               </list>
+            </item>
+            <item><label>Version 0.7, <date when="2010-04-25">25 April 2010</date>, by <name>Piotr
+                     Bański</name></label>: Added the xinclude extension from the approoriate Roma
+               template, changed it to be able to occur as a child of front (I can't validate
+               xinclusions with xmllint if a DTD is used, so this is for the sake of DTDs
+               only)</item>
             <item><label>Version 0.6, <date when="2010-04-24">24 April 2010</date>, by <name>Piotr Bański</name></label>: Added the "iso-fs" and "analysis" modules, the latter for the sake of @ana only...</item>
             <item><label>Version 0.5, <date when="2010-04-16">16 April 2010</date>, edited by <name>Piotr Bański</name></label>
                <list type="bulleted">
@@ -67,6 +90,49 @@
             <moduleRef key="header"/>
             <elementSpec module="header" ident="handNote" mode="delete"/>
             <elementSpec module="header" ident="typeNote" mode="delete"/>
+            <elementSpec module="header" ident="tagUsage" mode="change">
+               <classes mode="replace">
+                  <memberOf key="att.typed" mode="add"/>
+                  <!-- TODO: possibly enumerate the values as 'source', 'equiv' and 'agr'? -->
+               </classes>
+               <constraintSpec ident="tagUsage-restrict_source" scheme="isoschematron">
+                  <constraint>
+                     <sch:rule
+                        context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:*">                        
+                        <sch:let name="loc_name" value="local-name()"/>
+                        <sch:assert
+                           test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
+                           >The values of gramGrp/<sch:name/> must belong to the set identified in
+                           tagUsage for this element.</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="tagUsage-restrict_target" scheme="isoschematron">
+                  <constraint>
+                     <!-- big question: is the context here stated properly? -->
+                     <sch:rule
+                        context="/tei:TEI/tei:text/tei:body//tei:cit[@type eq 'trans']/tei:gramGrp/tei:*">
+                        <sch:let name="loc_name" value="local-name()"/>
+                        <sch:assert
+                           test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item)"
+                           >The values of cit[@type='trans']/gramGrp/<sch:name/> must belong to the set identified in
+                           {tagUsage type="equiv"} for this element.</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="tagUsage-restrict_agr" scheme="isoschematron">
+                  <constraint>
+                     <sch:rule
+                        context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:gramGrp[@type='agr']/tei:*">
+                        <sch:let name="loc_name" value="local-name()"/>
+                        <sch:assert
+                           test="not(. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item)"
+                           >The values of gramGrp[@type='agr']/<sch:name/> must belong to the set identified in
+                           {tagUsage type="agr"} for this element.</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
 
             <moduleRef key="textstructure"/>
             <elementSpec module="textstructure" ident="div1" mode="delete"/>
@@ -80,7 +146,33 @@
             <moduleRef key="dictionaries"/>
             <elementSpec module="dictionaries" ident="dictScrap" mode="delete"/>
             <elementSpec module="dictionaries" ident="entryFree" mode="delete"/>
-
+            
+            <elementSpec module="dictionaries" ident="gramGrp" mode="replace">
+               <equiv/>
+               <gloss>grammatical information group</gloss>
+               <desc>groups morpho-syntactic information about a lexical item, e.g. <gi>pos</gi>, <gi>gen</gi>, <gi>number</gi>, <gi>case</gi>, or
+                  <gi>iType</gi> (inflectional class).</desc>
+               <classes>
+                  <memberOf key="model.entryPart.top"/>
+                  <memberOf key="model.entryPart"/>
+                  <memberOf key="model.gramPart"/>
+                  <memberOf key="att.lexicographic"/>
+                  <memberOf key="att.typed"/>
+               </classes>
+               <content>
+                  <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <choice>
+                        <text/>
+                        <ref name="model.gLike"/>
+                        <ref name="model.phrase"/>
+                        <ref name="model.inter"/>
+                        <ref name="model.gramPart"/>
+                        <ref name="model.global"/>
+                     </choice>
+                  </zeroOrMore>
+               </content>
+            </elementSpec>
+            
             <moduleRef key="figures"/>
 
             <moduleRef key="iso-fs"/>
