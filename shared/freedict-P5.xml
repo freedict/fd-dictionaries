@@ -95,41 +95,35 @@
                   <memberOf key="att.typed" mode="add"/>
                   <!-- TODO: possibly enumerate the values as 'source', 'equiv' and 'agr'? -->
                </classes>
-               <constraintSpec ident="tagUsage-restrict_source" scheme="isoschematron">
+               <constraintSpec ident="tagUsage_stuff" scheme="isoschematron">
                   <constraint>
-                     <sch:rule
-                        context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:*">                        
-                        <sch:let name="loc_name" value="local-name()"/>
-                        <sch:assert
-                           test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
-                           >The values of gramGrp/<sch:name/> must belong to the set identified in
-                           tagUsage for this element.</sch:assert>
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
-               <constraintSpec ident="tagUsage-restrict_target" scheme="isoschematron">
-                  <constraint>
-                     <!-- big question: is the context here stated properly? -->
-                     <sch:rule
-                        context="/tei:TEI/tei:text/tei:body//tei:cit[@type eq 'trans']/tei:gramGrp/tei:*">
-                        <sch:let name="loc_name" value="local-name()"/>
-                        <sch:assert
-                           test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item)"
-                           >The values of cit[@type='trans']/gramGrp/<sch:name/> must belong to the set identified in
-                           {tagUsage type="equiv"} for this element.</sch:assert>
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
-               <constraintSpec ident="tagUsage-restrict_agr" scheme="isoschematron">
-                  <constraint>
-                     <sch:rule
-                        context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:gramGrp[@type='agr']/tei:*">
-                        <sch:let name="loc_name" value="local-name()"/>
-                        <sch:assert
-                           test="not(. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item)"
-                           >The values of gramGrp[@type='agr']/<sch:name/> must belong to the set identified in
-                           {tagUsage type="agr"} for this element.</sch:assert>
-                     </sch:rule>
+                     <sch:pattern id="tagUsage_conformance">
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:*">
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
+                              >The values of gramGrp/<sch:name/> must belong to the set identified
+                              in tagUsage for this element.</sch:assert>
+                        </sch:rule>
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:cit[@type eq 'trans']/tei:gramGrp/tei:*">
+                           <!-- big question: is the context here stated properly? is it not too narrow now? -->
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item)"
+                              >The values of cit[@type='trans']/gramGrp/<sch:name/> must belong to the set identified in
+                              {tagUsage type="equiv"} for this element.</sch:assert>
+                        </sch:rule>
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:gramGrp[@type='agr']/tei:*">
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item)"
+                              >The values of gramGrp[@type='agr']/<sch:name/> must belong to the set identified in
+                              {tagUsage type="agr"} for this element.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
                   </constraint>
                </constraintSpec>
             </elementSpec>
