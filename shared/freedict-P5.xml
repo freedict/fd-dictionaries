@@ -7,7 +7,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict project (basic), version 0.8</title>
+            <title>TEI Customization for the FreeDict project (basic), version 0.9</title>
             <respStmt>
                <resp>maintained by</resp>
                <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
@@ -36,6 +36,20 @@
             Piotr Bański and Beata Wójtowicz, which should be available from
             http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
+            <item><label>Version 0.9, <date when="2010-11-08">8 November 2010</date>, by <name>Piotr
+               Bański</name></label>:
+               <list type="bulleted">
+                  <item>Added further Schematron constraints on the contents of <gi>tagUsage</gi>:
+                     when the <att>rend</att> on an ancestor is set to <val>anchored</val>, the
+                        <att>ana</att> attributes are traced to the FreeDict ontology interface (off
+                     by default, because it needs a checkout of the shared/ directory. See kha-deu
+                     for an example in action.</item>
+                  <item>Commented out the 'figures' module, until it is ever? needed.</item>
+                  <item>Removed <gi>tagUsage</gi> from the att.typed class added earlier in v. 0.8,
+                     because I decided to forcefully abuse the elements and attributes involved
+                     (mostly <gi>namespace</gi>, <att>n</att> and <att>rend</att>).</item>
+               </list>
+            </item>
             <item><label>Version 0.8, <date when="2010-11-06">6 November 2010</date>, by <name>Piotr
             Bański</name></label>:
                <list type="bulleted">
@@ -47,9 +61,10 @@
                      those describing the target language (inside <gi>cit</gi>);</item>
                   <item>added <gi>gramGrp</gi> to the att.typed class (in order to be able to talk
                      about 'discharged' grammatical properties, in elements that trigger agreement
-                     on other elements (think noun classes)); note: this is a KLUDGE now, because
-                     something is wrong with the newest Roma 1.8.0 and I can't just modify the
-                     elementSpec, I have to replace the entire thing.</item>
+                     on other elements (think noun classes));</item>
+                  <item>Took out module "iso-fs" - I think it was here while I still thought of
+                     ontology interfaces being plugged more directly into dictionaries, not via
+                     tagUsage (or maybe I'm forgetting something now...).</item>
                </list>
             </item>
             <item><label>Version 0.7, <date when="2010-04-25">25 April 2010</date>, by <name>Piotr
@@ -91,13 +106,14 @@
             <elementSpec module="header" ident="handNote" mode="delete"/>
             <elementSpec module="header" ident="typeNote" mode="delete"/>
             <elementSpec module="header" ident="tagUsage" mode="change">
-               <classes mode="replace">
+<!--               <classes mode="replace">
                   <memberOf key="att.typed" mode="add"/>
-                  <!-- TODO: possibly enumerate the values as 'source', 'equiv' and 'agr'? -->
                </classes>
-               <constraintSpec ident="tagUsage_stuff" scheme="isoschematron">
+-->               <constraintSpec ident="tagUsage_stuff" scheme="isoschematron">
+                  <desc>Make sure that the content of gramGrp (of various sorts) corresponds to
+                     whatever is defined in tagUsage *if* it is defined there.</desc>
                   <constraint>
-                     <sch:pattern id="tagUsage_conformance">
+                     <sch:pattern id="gramGrp-tagUsage_conformance">
                         <sch:rule
                            context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:*">
                            <sch:let name="loc_name" value="local-name()"/>
@@ -111,17 +127,28 @@
                            <!-- big question: is the context here stated properly? is it not too narrow now? -->
                            <sch:let name="loc_name" value="local-name()"/>
                            <sch:assert
-                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'equiv']/tei:list/tei:item)"
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'equiv']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'equiv']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
                               >The values of cit[@type='trans']/gramGrp/<sch:name/> must belong to the set identified in
-                              {tagUsage type="equiv"} for this element.</sch:assert>
+                              tagUsage for this element, in the 'equiv' section.</sch:assert>
                         </sch:rule>
                         <sch:rule
                            context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:gramGrp[@type='agr']/tei:*">
                            <sch:let name="loc_name" value="local-name()"/>
                            <sch:assert
-                              test="not(. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name and @type eq 'agr']/tei:list/tei:item)"
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'agr']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'agr']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
                               >The values of gramGrp[@type='agr']/<sch:name/> must belong to the set identified in
-                              {tagUsage type="agr"} for this element.</sch:assert>
+                              tagUsage for this element, in the 'agr' section.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="tagUsage-item-external" scheme="isoschematron">
+                  <desc>if this is an anchored description, for each item check if it identifies a resource in the FreeDict ontology interface</desc>
+                  <constraint>
+                     <sch:pattern id="tagUsage_item_check">
+                        <sch:rule context="tei:list/tei:item">
+                           <sch:let name="targ_res" value="document(@ana)"/>
+                           <sch:assert test="if(ancestor::tei:tagsDecl[@rend eq 'anchored'] or ancestor::tei:namespace[@rend eq 'anchored'] or ancestor::tei:tagUsage[@rend eq 'anchored']) then (exists($targ_res) and string-length($targ_res)) else true()">The @ana attributes should identify a resource fragment in the FreeDict ontology interface.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -140,36 +167,17 @@
             <moduleRef key="dictionaries"/>
             <elementSpec module="dictionaries" ident="dictScrap" mode="delete"/>
             <elementSpec module="dictionaries" ident="entryFree" mode="delete"/>
-            
-            <elementSpec module="dictionaries" ident="gramGrp" mode="replace">
-               <equiv/>
-               <gloss>grammatical information group</gloss>
-               <desc>groups morpho-syntactic information about a lexical item, e.g. <gi>pos</gi>, <gi>gen</gi>, <gi>number</gi>, <gi>case</gi>, or
-                  <gi>iType</gi> (inflectional class).</desc>
-               <classes>
-                  <memberOf key="model.entryPart.top"/>
+            <elementSpec ident="gramGrp" module="dictionaries" mode="change">
+               <classes mode="replace">
                   <memberOf key="model.entryPart"/>
+                  <memberOf key="model.entryPart.top"/>
                   <memberOf key="model.gramPart"/>
                   <memberOf key="att.lexicographic"/>
-                  <memberOf key="att.typed"/>
+                  <memberOf key="att.typed" mode="add"/>
                </classes>
-               <content>
-                  <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-                     <choice>
-                        <text/>
-                        <ref name="model.gLike"/>
-                        <ref name="model.phrase"/>
-                        <ref name="model.inter"/>
-                        <ref name="model.gramPart"/>
-                        <ref name="model.global"/>
-                     </choice>
-                  </zeroOrMore>
-               </content>
             </elementSpec>
             
-            <moduleRef key="figures"/>
-
-            <moduleRef key="iso-fs"/>
+            <!--<moduleRef key="figures"/>-->
 
             <moduleRef key="analysis"/>
             <elementSpec module="analysis" ident="c" mode="delete"/>
