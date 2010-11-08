@@ -1,3 +1,5 @@
+<?oxygen SCHSchema="freedict-P5.rng"?>
+<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
 <TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -17,18 +19,24 @@
             <publisher>FreeDict</publisher>
             <availability status="free">
                <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-               <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref> ver. 2.0 and any later version.</p>
-               <p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software
-        Foundation; either version 2 of the License, or (at your option) any later version.</p>
-               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-        PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-               <p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place
-        - Suite 330, Boston, MA 02111-1307, USA.</p>
+               <p>Available under the terms of the <ref
+                     target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref>
+                  ver. 2.0 and any later version.</p>
+               <p>This program is free software; you can redistribute it and/or modify it under the
+                  terms of the GNU General Public License as published by the Free Software
+                  Foundation; either version 2 of the License, or (at your option) any later
+                  version.</p>
+               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
+                  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+                  PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+               <p>You should have received a copy of the GNU General Public License along with this
+                  program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
+                  Suite 330, Boston, MA 02111-1307, USA.</p>
             </availability>
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id:$</idno>
+            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <seriesStmt>
             <title>free dictionaries</title>
@@ -44,8 +52,7 @@
         community: thrust for trust &amp; development</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://freedict.org/"/>
-            </p>
+            <p>Home: <ref target="http://freedict.org/">http://freedict.org/</ref></p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -53,11 +60,58 @@
             <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
         welcome!</p>
          </projectDesc>
+         <tagsDecl rend="anchored-no"> <!-- may have @rend="anchored" -->
+            <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+            <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
+               <!-- Khasi - German is a fairly good example to illustrate the need for separate descriptions of the 
+                  contents of gramGrp, because of the gender mismatch: masculine and feminine in Khasi vs. the additional 
+                  neuter in German; these genders cut the nominal space in two different ways and therefore are not equivalent 
+                  (for the sake of example, we ignore the third, apparently derived (cf. Greenberg) gender in Khasi: diminutive). -->
+               <tagUsage gi="pos">
+                  <list n="values" type="bulleted">
+                     <item ana="FreeDict_ontology.xml#f_pos_noun">n</item>
+                     <item ana="FreeDict_ontology.xml#f_pos_verb">v</item>
+                     <item ana="FreeDict_ontology.xml#f_pos_imit">imit</item>
+                  </list>
+               </tagUsage>
+               <tagUsage gi="gen">
+                  <list>
+                     <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
+                     <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
+                  </list>
+               </tagUsage>
+            </namespace>
+            <!-- this shows the limitations of the header structure: the values for equivalent forms should be structurally separate; 
+               I currently shamelessly abuse the namespace element for that purpose, with the @n attribute set to "equiv" 
+               (another abuse);
+               the third instance of abuse concerns the @rend attribute: the value 'anchored' signals the opposite of the 
+               default 'standalone': being tied to the FreeDict ontology interface (its presence triggers a Schematron check for 
+               the existence of the resources identified in the @ana attributes); if the entire tagsDecl has @rend="anchored", 
+               the namespace (sigh...) elements are not checked for it (see ../shared/Freedict-P5.xml, the ODD file).   
+            -->
+            <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/" n="equiv">
+               <tagUsage gi="gen">
+                  <list>
+                     <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
+                     <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
+                     <item ana="FreeDict_ontology.xml#f_gen_neut">n</item>
+                     <!-- and you will note that the descriptions here and up there lead to the same entries... 
+                        this is a failure of the ontology/DCR, not of this system :-) -->
+                  </list>
+               </tagUsage>
+            </namespace>
+         </tagsDecl>
       </encodingDesc>
       <revisionDesc>
+         <change when="2010-11-08">
+            <date>2010-11-08</date>
+            <name>Piotr Bański</name>: added the FreeDict ontology interface plugin and commented
+            it. Going to use it as an example at the coming TEI-MM. Added soft links to P5 stuff.</change>
          <change when="2010-10-30">
             <date>2010-10-30</date>
-            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up. There are some brackets in &lt;orth> and &lt;quote> waiting to be handled.</change>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/xsl/freedict_P4toP5.xsl; manual clean-up. There are some brackets in &lt;orth> and
+            &lt;quote> waiting to be handled.</change>
          <change>
             <date>2005-Nov-24</date>
             <name>Michael Bunk</name>Note that this version is quite final. I concentrate on
