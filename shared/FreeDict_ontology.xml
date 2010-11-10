@@ -18,11 +18,11 @@
     </availability>
    </publicationStmt>
    <notesStmt>
-    <note>This interface has been created in order to make it possible to align the linguistic
-     information in FreeDict dictionaries. See the <ref
+    <note>This interface has been created in order to make it possible to align the linguistic information in FreeDict dictionaries. See the <ref
       target="http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/fra-eng/fra-eng.tei
-      "
-      >fra-eng</ref> (French - English) dictionary, v. 0.3.3, for the first working example.</note>
+      ">fra-eng</ref> (French - English) dictionary, v. 0.3.3, for the first
+     working example. See the <ref target="http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/kha-eng/kha-eng.tei
+       ">kha-eng</ref> (Khasi - English) dictionary for a broader application.</note>
     <note>The xml:id values obey the pattern: f_[category]_[value], where categories are meant to be
      very general and associated with the particular TEI elements (although note that part-of-speech
      values can just as well be found as contents of the &lt;subc&gt; element. The leading "f_"
@@ -33,6 +33,8 @@
    <sourceDesc><p>Created in electronic form</p></sourceDesc>
   </fileDesc>
   <revisionDesc>
+   <change who="#bansp" when="2010-11-10">Expanded the i18n part to accommodate default short labels. I'm not sure about some of the Polish ones... possibly, latin
+    abbreviations may be more common ('inter' for "wykrzyknik"??)</change>
    <change who="#bansp" when="2010-11-05">A few more additions of category references; skipped the ISO-DCR parts for now.</change>
    <change who="#bansp" when="2010-04-27">Converted to a free-standing document.</change>
    <change who="#bansp" when="2010-04">Created as an inclusion to the FreeDict fra-eng dictionary.</change>
@@ -53,10 +55,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>adjective</string>
+            <fs>
+             <f name="long">
+              <string>adjective</string>
+             </f>
+             <f name="short">adj</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>przymiotnik</string>
+            <fs>
+             <f name="long">
+              <string>przymiotnik</string>
+             </f>
+             <f name="short">przym</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -77,10 +89,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>adverb</string>
+            <fs>
+             <f name="long">
+              <string>adverb</string>
+             </f>
+             <f name="short">adv</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>przysłówek</string>
+            <fs>
+             <f name="long">
+              <string>przysłówek</string>
+             </f>
+             <f name="short">przysł</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -101,10 +123,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>article</string>
+            <fs>
+             <f name="long">
+              <string>article</string>
+             </f>
+             <f name="short">art</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>przedimek</string>
+            <fs>
+             <f name="long">
+              <string>przedimek</string>
+             </f>
+             <f name="short">przedim</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -125,10 +157,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>conjunction</string>
+            <fs>
+             <f name="long">
+              <string>conjunction</string>
+             </f>
+             <f name="short">conj</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>spójnik</string>
+            <fs>
+             <f name="long">
+              <string>spójnik</string>
+             </f>
+             <f name="short">sp</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -149,10 +191,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>feminine gender</string>
+            <fs>
+             <f name="long">
+              <string>feminine gender</string>
+             </f>
+             <f name="short">fem</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>rodzaj żeński</string>
+            <fs>
+             <f name="long">
+              <string>rodzaj żeński</string>
+             </f>
+             <f name="short">ż</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -174,10 +226,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>masculine gender</string>
+            <fs>
+             <f name="long">
+              <string>masculine gender</string>
+             </f>
+             <f name="short">masc</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>rodzaj męski</string>
+            <fs>
+             <f name="long">
+              <string>rodzaj męski</string>
+             </f>
+             <f name="short">m</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -199,10 +261,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>neuter gender</string>
+            <fs>
+             <f name="long">
+              <string>neuter gender</string>
+             </f>
+             <f name="short">neut</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>rodzaj nijaki</string>
+            <fs>
+             <f name="long">
+              <string>rodzaj nijaki</string>
+             </f>
+             <f name="short">n</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -226,9 +298,9 @@
            <f name="eng" xml:lang="en">
             <string>imitative</string>
            </f>
-           <!--<f name="pol" xml:lang="pl">
+           <f name="pol" xml:lang="pl">
             <string>...</string>
-            </f>-->
+           </f>
           </fs>
          </f>
          <f name="reference">
@@ -249,11 +321,21 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>interjection</string>
+            <fs>
+             <f name="long">
+              <string>interjection</string>
+             </f>
+             <f name="short">int</f>
+            </fs>
            </f>
-           <!--<f name="pol" xml:lang="pl">
-            <string>...</string>
-           </f>-->
+           <f name="pol" xml:lang="pl">
+            <fs>
+             <f name="long">
+              <string>wykrzyknik</string>
+             </f>
+             <f name="short">interj</f>
+            </fs>
+           </f>
           </fs>
          </f>
          <f name="reference">
@@ -273,10 +355,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>noun</string>
+            <fs>
+             <f name="long">
+              <string>noun</string>
+             </f>
+             <f name="short">n</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>rzeczownik</string>
+            <fs>
+             <f name="long">
+              <string>rzeczownik</string>
+             </f>
+             <f name="short">rz</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -297,10 +389,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>numeral</string>
+            <fs>
+             <f name="long">
+              <string>numeral</string>
+             </f>
+             <f name="short">num</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>liczebnik</string>
+            <fs>
+             <f name="long">
+              <string>liczebnik</string>
+             </f>
+             <f name="short">licz</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -321,10 +423,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>preposition</string>
+            <fs>
+             <f name="long">
+              <string>preposition</string>
+             </f>
+             <f name="short">prep</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>przyimek</string>
+            <fs>
+             <f name="long">
+              <string>przyimek</string>
+             </f>
+             <f name="short">przyim</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -345,10 +457,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>pronoun</string>
+            <fs>
+             <f name="long">
+              <string>pronoun</string>
+             </f>
+             <f name="short">pron</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>zaimek</string>
+            <fs>
+             <f name="long">
+              <string>zaimek</string>
+             </f>
+             <f name="short">zaim</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -369,10 +491,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>verb</string>
+            <fs>
+             <f name="long">
+              <string>verb</string>
+             </f>
+             <f name="short">v</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>czasownik</string>
+            <fs>
+             <f name="long">
+              <string>czasownik</string>
+             </f>
+             <f name="short">czas</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -393,10 +525,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>intransitive verb</string>
+            <fs>
+             <f name="long">
+              <string>intransitive verb</string>
+             </f>
+             <f name="short">intr</f>
+            </fs>
            </f>
            <f name="pol" xml:lang="pl">
-            <string>czasownik nieprzechodni</string>
+            <fs>
+             <f name="long">
+              <string>czasownik nieprzechodni</string>
+             </f>
+             <f name="short">nieprz</f>
+            </fs>
            </f>
           </fs>
          </f>
@@ -417,10 +559,20 @@
          <f name="label">
           <fs>
            <f name="eng" xml:lang="en">
-            <string>transitive verb</string>
+            <fs>
+             <f name="long">
+              <string>transitive verb</string>
+             </f>
+             <f name="short">trans</f>
+            </fs>
            </f>
-           <f name="pol" xml:lang="en">
-            <string>czasownik przechodni</string>
+           <f name="pol" xml:lang="pl">
+            <fs>
+             <f name="long">
+              <string>czasownik przechodni</string>
+             </f>
+             <f name="short">przech</f>
+            </fs>
            </f>
           </fs>
          </f>
