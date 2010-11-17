@@ -19,7 +19,11 @@
 <!-- I am fully aware of introducing some project-specific features into the P5 mode,
      but let this stuff reside here for a while until we come up with a clean way to 
      import project-dependent overrides from the individual project directories... 13-apr-09-->
+     
+<!-- Entrées dont il faut vérifier la conversion :
+ korr- pour le tag <def>, brulu pour le subtype litt, azgwerzh pour le <sense><cit>, 
 
+-->
   <!-- TEI entry specific templates -->
   <xsl:template match="entry | tei:entry">
     <xsl:apply-templates select="form | tei:form"/> 
@@ -37,22 +41,62 @@
 	<xsl:apply-templates select="gen"/>
 	<xsl:text> </xsl:text>
 	<xsl:apply-templates select="number"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="form[@type]"/>
-	
-	
+  <!--    form[@type='infl'] ? -->
 </xsl:template>
 
 <xsl:template match="sense">
 	<xsl:apply-templates select="usg"/>
 	<xsl:apply-templates select="lbl"/>
-	<xsl:apply-templates select="cit[@type='translation']"/>
 	<xsl:apply-templates select="def"/>
-	
+	<xsl:apply-templates select="cit"/><!--
+	<xsl:apply-templates select="cit[@type='translation']"/>
 	<xsl:text>&#xa;</xsl:text>
 	<xsl:apply-templates select="cit[@type='example']"/>
-	<xsl:text>&#xa;</xsl:text>
+	<xsl:text>&#xa;</xsl:text>-->
   </xsl:template>
+
+<xsl:template match="cit">
+	<xsl:choose>
+		<xsl:when test="@type ='translation'">	<xsl:apply-templates select="cit[@type='translation']"/><xsl:text>&#xa;</xsl:text></xsl:when>
+		<xsl:when test="@type ='example'">	<xsl:apply-templates select="cit[@type='example']"/><xsl:text>&#xa;</xsl:text></xsl:when>
+		<xsl:otherwise>	<xsl:value-of select="."/>	<xsl:text> </xsl:text></xsl:otherwise>
+	</xsl:choose>
+
+
+
+</xsl:template>
+
+<xsl:template match="cit[@type='example']">
+	<xsl:text>&#xa;</xsl:text>	<xsl:text>     ● </xsl:text>
+	<xsl:apply-templates select="usg"/>
+	<xsl:apply-templates select="quote"/>
+	<xsl:text> </xsl:text>
+	<xsl:apply-templates select="cit[@type='translation']"/>
+
+</xsl:template>
+
+<xsl:template match="cit[@type='translation']">
+   <xsl:choose>
+      <xsl:when test="@subtype != 0">
+				<xsl:text>  litt. </xsl:text>
+			<xsl:apply-templates select="quote"/>
+      </xsl:when>
+      <xsl:otherwise>
+		<xsl:text>  ↪ </xsl:text>
+		<xsl:apply-templates select="quote"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="lbl"/>
+		<xsl:apply-templates select="pos"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="gen"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="number"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="form[@type]"/>
+		<xsl:text> </xsl:text>
+     </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
 
 <xsl:template match="lbl">
 	<xsl:text>(</xsl:text>
@@ -60,30 +104,9 @@
 	<xsl:text>) </xsl:text>
 </xsl:template>
 
-<xsl:template match="cit[@type='example']">
-	<xsl:text>     ● </xsl:text>
-	<xsl:apply-templates select="usg"/>
-	<xsl:apply-templates select="quote"/>
+<xsl:template match="def">
+	<xsl:value-of select="."/>
 	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="cit[@type='translation']"/>
-	<xsl:text>&#xa;</xsl:text>
-</xsl:template>
-
-<xsl:template match="cit[@type='translation']">
-	<xsl:choose>
-   <xsl:when  test="@usg != 0">	<xsl:text> \litt : </xsl:text><xsl:apply-templates select="quote"/><xsl:text> \ </xsl:text></xsl:when>
-	<xsl:otherwise><xsl:text>  ↪ </xsl:text>
-	<xsl:apply-templates select="quote"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="lbl"/>
-	<xsl:apply-templates select="pos"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="gen"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="number"/>
-	<xsl:text> </xsl:text>
-	<xsl:apply-templates select="form[@type]"/>
-	<xsl:text> </xsl:text></xsl:otherwise></xsl:choose>
 </xsl:template>
 
 <xsl:template match="usg">
@@ -94,29 +117,23 @@
 
 <xsl:template match="quote">
 <!--		<xsl:value-of select="."/> -->
-		<xsl:apply-templates /> 
+		<xsl:apply-templates /> <!-- select="form[@type='infl']"/>-->
 </xsl:template>
-
 <!-- template-->
-<xsl:template match="pos | number | gen | form[@type='plur'] | form[@type='pastp']| form[@type='sing']">
+<xsl:template match="form[@type='infl'] | pos | number | gen | form[@type='plur'] | form[@type='pastp']| form[@type='sing']">
 	<xsl:copy>
-	 <!--  <xsl:for-each select="node()"> -->
+	   <xsl:for-each select="node()">
 		<xsl:text> </xsl:text>
 		<xsl:value-of select="."/>
-	<!--   </xsl:for-each> -->
+	   </xsl:for-each>
 	</xsl:copy>
 </xsl:template>
 
 
-<xsl:template match="lbl">
+<xsl:template match="form[@type='infl'] | lbl">
 	<xsl:text>(</xsl:text>
 	<xsl:value-of select="."/>
 	<xsl:text>)</xsl:text>
-</xsl:template>
-
-<xsl:template match="def">
-	<xsl:text> </xsl:text>
-	<xsl:value-of select="."/>
 </xsl:template>
 
 

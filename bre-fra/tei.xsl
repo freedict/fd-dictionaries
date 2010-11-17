@@ -87,8 +87,8 @@ indent="yes" />
 
 <xsl:template match="cit[@type='translation']">
    <xsl:choose>
-      <xsl:when test="@usg != 0">
-		<cit type="translation" usg="litt">
+      <xsl:when test="@subtype != 0">
+		<cit type="translation" subtype="literal">
 			<xsl:apply-templates select="quote"/>
 		</cit>
       </xsl:when>
