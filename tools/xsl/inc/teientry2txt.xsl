@@ -408,7 +408,8 @@
       <xsl:when test="@type='gram'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="concat(' Note (gram.): ',normalize-space($stuff))"/>
+          <xsl:with-param name="txt" select="concat(' (',normalize-space($stuff),')')"/>
+<!--          select="concat(' Note (gram.): ',normalize-space($stuff))"-->
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -416,7 +417,8 @@
       <xsl:when test="@type='usage'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="concat(' Usage: ',normalize-space($stuff))"/>
+          <xsl:with-param name="txt" select="concat(' (',normalize-space($stuff),')')"/>
+<!--          select="concat(' Usage: ',normalize-space($stuff))"-->
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -432,6 +434,7 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="concat($spc,'(',$stuff,')')"/>
+        <xsl:text>&#xa;</xsl:text>
       </xsl:otherwise>
       <!--<xsl:when test="text()">
         <xsl:text>&#xa;         Note: </xsl:text>
