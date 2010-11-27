@@ -18,7 +18,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.3-1</edition>
+        <edition>0.3-2</edition>
         <!-- KEEP THIS UP TO DATE -->
       </editionStmt>
       <extent>3516 headwords</extent>
@@ -27,9 +27,15 @@
         <availability>
           <p>Available under the terms of the GNU General Public Licence, version 3 (or at your option any later version, published by the FSF).</p>
         </availability>
-        <date when="2010-11-26">26th November 2010</date>
+        <date when="2010-11-27">27th November 2010</date>
         <pubPlace>http://freedict.org/</pubPlace>
       </publicationStmt>
+      <notesStmt>
+        <note type="status">small</note>
+        <note>verbs with the regular 'a'-declination are only partially listed.</note>
+        <note>the headword of a verb is the first-person form, but you find the other forms as well; some exceptions have been made for verbs which only exist in the third person</note>
+        <note>phrases consisting of two parts are connected with " .. "</note>
+      </notesStmt>
       <sourceDesc>
         <p>Created from scratch (from Sebastian Humenda's notes) and with some
           look-ups on http://auxilium-online.net (for verification).</p>
@@ -41,7 +47,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change n="0.3-1" who="#humenda" when="2010-11-26">
+      <change n="0.3-2" who="#humenda" when="2010-11-27">
         <list><item>fixed a minor bug, added a few words</item>
           <item>pushed in an important feature I forgot (list inflections at the verb's head form</item>
         </list>
@@ -446,8 +452,6 @@
     <orth>abduco</orth>
     <form type="infl">
       <orth type="inf">abducere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -547,8 +551,6 @@
     <orth>aberro</orth>
     <form type="infl">
       <orth type="inf">aberrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -583,7 +585,6 @@
     <form type="infl">
       <orth type="inf">abhorrere</orth>
       <orth type="perf">abhorrui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -770,7 +771,6 @@
     <form type="infl">
       <orth type="inf">abnuere</orth>
       <orth type="perf">abnui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -885,8 +885,6 @@
     <orth>abrogo</orth>
     <form type="infl">
       <orth type="inf">abrogare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1428,7 +1426,6 @@
     <form type="infl">
       <orth type="inf">abesse</orth>
       <orth type="perf">abfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1624,8 +1621,6 @@
     <orth>abundo</orth>
     <form type="infl">
       <orth type="inf">abundare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1690,7 +1685,6 @@
     <form type="infl">
       <orth type="inf">accedere</orth>
       <orth type="perf">accessi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1811,7 +1805,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">accidit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1859,7 +1852,6 @@
     <form type="infl">
       <orth type="inf">accidere</orth>
       <orth type="perf">accidi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -1984,8 +1976,6 @@
     <orth>acclamo</orth>
     <form type="infl">
       <orth type="inf">acclamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -2024,8 +2014,6 @@
     <orth>accubo</orth>
     <form type="infl">
       <orth type="inf">accubare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -2059,8 +2047,6 @@
     <orth>accumulo</orth>
     <form type="infl">
       <orth type="inf">accumulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -2214,8 +2200,6 @@
     <orth>accuso</orth>
     <form type="infl">
       <orth type="inf">accusare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -2560,8 +2544,6 @@
     <orth>adamo</orth>
     <form type="infl">
       <orth type="inf">adamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -2894,7 +2876,6 @@
     <form type="infl">
       <orth type="inf">adhaerere</orth>
       <orth type="perf">adhaesi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -3334,7 +3315,6 @@
     <orth>adipiscor</orth>
     <form type="infl">
       <orth type="inf">adipisci</orth>
-      <orth type="perf"/>
       <orth type="sup">adeptum</orth>
     </form>
   </form>
@@ -3418,7 +3398,6 @@
     <form type="infl">
       <orth type="inf">adiudicare</orth>
       <orth type="perf">adiudicavi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -3538,8 +3517,6 @@
     <orth>adiuto</orth>
     <form type="infl">
       <orth type="inf">adiutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -3671,8 +3648,6 @@
     <orth>administro</orth>
     <form type="infl">
       <orth type="inf">administrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -3767,7 +3742,6 @@
     <orth>admiror</orth>
     <form type="infl">
       <orth type="inf">admirari</orth>
-      <orth type="perf"/>
       <orth type="sup">admiratum</orth>
     </form>
   </form>
@@ -4112,7 +4086,6 @@
     <form type="infl">
       <orth type="inf">adnuere</orth>
       <orth type="perf">adnui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -4232,8 +4205,6 @@
     <orth>adopto</orth>
     <form type="infl">
       <orth type="inf">adoptare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -4267,8 +4238,6 @@
     <orth>adoro</orth>
     <form type="infl">
       <orth type="inf">adorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -4307,7 +4276,6 @@
     <orth>adoror</orth>
     <form type="infl">
       <orth type="inf">adoriri</orth>
-      <orth type="perf"/>
       <orth type="sup">adortum</orth>
     </form>
   </form>
@@ -4490,8 +4458,6 @@
     <orth>adsimulo</orth>
     <form type="infl">
       <orth type="inf">adsimulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -4526,7 +4492,6 @@
     <form type="infl">
       <orth type="inf">adesse</orth>
       <orth type="perf">adfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -4889,7 +4854,6 @@
     <orth>adversor</orth>
     <form type="infl">
       <orth type="inf">adversari</orth>
-      <orth type="perf"/>
       <orth type="sup">adversum</orth>
     </form>
   </form>
@@ -5025,8 +4989,6 @@
     <orth>advoco</orth>
     <form type="infl">
       <orth type="inf">advocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -5060,8 +5022,6 @@
     <orth>advolo</orth>
     <form type="infl">
       <orth type="inf">advolare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -5161,8 +5121,6 @@
     <orth>aedifico</orth>
     <form type="infl">
       <orth type="inf">aedificare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -5470,8 +5428,6 @@
     <orth>aequo</orth>
     <form type="infl">
       <orth type="inf">aequare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -6051,8 +6007,6 @@
     <orth>affirmo</orth>
     <form type="infl">
       <orth type="inf">affirmare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -6135,7 +6089,6 @@
     <orth>aggredior</orth>
     <form type="infl">
       <orth type="inf">aggredi</orth>
-      <orth type="perf"/>
       <orth type="sup">aggressum</orth>
     </form>
   </form>
@@ -6191,8 +6144,6 @@
     <orth>agito</orth>
     <form type="infl">
       <orth type="inf">agitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -6964,8 +6915,6 @@
     <orth>alligo</orth>
     <form type="infl">
       <orth type="inf">alligare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -6999,7 +6948,6 @@
     <orth>alloquor</orth>
     <form type="infl">
       <orth type="inf">alloqui</orth>
-      <orth type="perf"/>
       <orth type="sup">allocutum</orth>
     </form>
   </form>
@@ -7306,8 +7254,6 @@
     <orth>amando</orth>
     <form type="infl">
       <orth type="inf">amandare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -7548,8 +7494,6 @@
     <orth>ambulo</orth>
     <form type="infl">
       <orth type="inf">ambulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -7675,7 +7619,6 @@
     <form type="infl">
       <orth type="inf">amici</orth>
       <orth type="perf">amictum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -7928,8 +7871,6 @@
     <orth>amo</orth>
     <form type="infl">
       <orth type="inf">amare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -8145,8 +8086,6 @@
     <orth>amplifico</orth>
     <form type="infl">
       <orth type="inf">amplificare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -8255,8 +8194,6 @@
     <orth>amputo</orth>
     <form type="infl">
       <orth type="inf">amputare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -8502,8 +8439,6 @@
     <orth>anhelo</orth>
     <form type="infl">
       <orth type="inf">anhelare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -8789,7 +8724,6 @@
     <orth>annitor</orth>
     <form type="infl">
       <orth type="inf">anniti</orth>
-      <orth type="perf"/>
       <orth type="sup">annixum</orth>
     </form>
   </form>
@@ -9097,7 +9031,6 @@
     <form type="infl">
       <orth type="inf">anteire</orth>
       <orth type="perf">anteii</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -9602,7 +9535,6 @@
     <form type="infl">
       <orth type="inf">apparere</orth>
       <orth type="perf">apparui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -9656,8 +9588,6 @@
     <orth>apparet</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -9678,8 +9608,6 @@
     <orth>apparo</orth>
     <form type="infl">
       <orth type="inf">apparare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -9740,8 +9668,6 @@
     <orth>appello</orth>
     <form type="infl">
       <orth type="inf">appellare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10054,8 +9980,6 @@
     <orth>apporto</orth>
     <form type="infl">
       <orth type="inf">apportare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10089,8 +10013,6 @@
     <orth>approbo</orth>
     <form type="infl">
       <orth type="inf">approbare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10124,8 +10046,6 @@
     <orth>appropinquo</orth>
     <form type="infl">
       <orth type="inf">appropinquare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10159,7 +10079,6 @@
     <orth>apricor</orth>
     <form type="infl">
       <orth type="inf">apricari</orth>
-      <orth type="perf"/>
       <orth type="sup">apricatus</orth>
     </form>
   </form>
@@ -10210,8 +10129,6 @@
     <orth>apto</orth>
     <form type="infl">
       <orth type="inf">aptare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10441,7 +10358,6 @@
     <orth>arbitror</orth>
     <form type="infl">
       <orth type="inf">arbitrari</orth>
-      <orth type="perf"/>
       <orth type="sup">arbitratum</orth>
     </form>
   </form>
@@ -10576,7 +10492,6 @@
     <form type="infl">
       <orth type="inf">arcere</orth>
       <orth type="perf">arcui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10741,7 +10656,6 @@
     <form type="infl">
       <orth type="inf">ardere</orth>
       <orth type="perf">arsi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -10951,7 +10865,6 @@
     <orth>argumentor</orth>
     <form type="infl">
       <orth type="inf">argumentari</orth>
-      <orth type="perf"/>
       <orth type="sup">argumentum sum</orth>
     </form>
   </form>
@@ -11030,7 +10943,6 @@
     <form type="infl">
       <orth type="inf">arguere</orth>
       <orth type="perf">argui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -11219,8 +11131,6 @@
     <orth>armo</orth>
     <form type="infl">
       <orth type="inf">armare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -11254,8 +11164,6 @@
     <orth>aro</orth>
     <form type="infl">
       <orth type="inf">arare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -11549,8 +11457,6 @@
     <orth>arrogo</orth>
     <form type="infl">
       <orth type="inf">arrogare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -12095,7 +12001,6 @@
     <orth>assentior</orth>
     <form type="infl">
       <orth type="inf">assentiri</orth>
-      <orth type="perf"/>
       <orth type="sup">assensum</orth>
     </form>
   </form>
@@ -12146,7 +12051,6 @@
     <orth>assequor</orth>
     <form type="infl">
       <orth type="inf">assequi</orth>
-      <orth type="perf"/>
       <orth type="sup">assecutum</orth>
     </form>
   </form>
@@ -12307,8 +12211,6 @@
     <orth>assigno</orth>
     <form type="infl">
       <orth type="inf">assignare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -12479,8 +12381,6 @@
     <orth>asto</orth>
     <form type="infl">
       <orth type="inf">astare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -13278,7 +13178,6 @@
     <form type="infl">
       <orth type="inf">audere</orth>
       <orth type="perf">ausum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -13327,8 +13226,6 @@
     <orth>audio</orth>
     <form type="infl">
       <orth type="inf">audire</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -13473,7 +13370,6 @@
     <form type="infl">
       <orth type="inf">aufugere</orth>
       <orth type="perf">aufugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -13588,8 +13484,6 @@
     <orth>augeor</orth>
     <form type="infl">
       <orth type="inf">augeri</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -13833,8 +13727,6 @@
     <orth>auro</orth>
     <form type="infl">
       <orth type="inf">aurare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -14254,8 +14146,6 @@
     <orth>avoco</orth>
     <form type="infl">
       <orth type="inf">avocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -14294,8 +14184,6 @@
     <orth>avolo</orth>
     <form type="infl">
       <orth type="inf">avolare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -14449,7 +14337,6 @@
     <orth>balneor</orth>
     <form type="infl">
       <orth type="inf">balneari</orth>
-      <orth type="perf"/>
       <orth type="sup">balneatum</orth>
     </form>
   </form>
@@ -14660,8 +14547,6 @@
     <orth>bello</orth>
     <form type="infl">
       <orth type="inf">bellare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -15058,7 +14943,6 @@
     <form type="infl">
       <orth type="inf">bibere</orth>
       <orth type="perf">bibi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -15513,7 +15397,6 @@
     <form type="infl">
       <orth type="inf">cadere</orth>
       <orth type="perf">cecidi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -15811,7 +15694,6 @@
     <form type="infl">
       <orth type="inf">calere</orth>
       <orth type="perf">calui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -15944,7 +15826,6 @@
     <form type="infl">
       <orth type="inf">callere</orth>
       <orth type="perf">callui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -16310,8 +16191,6 @@
     <orth>canto</orth>
     <form type="infl">
       <orth type="inf">cantare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -16790,8 +16669,6 @@
     <orth>capto</orth>
     <form type="infl">
       <orth type="inf">captare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -16875,7 +16752,6 @@
     <form type="infl">
       <orth type="inf">carere</orth>
       <orth type="perf">carui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -17310,8 +17186,6 @@
     <orth>castigo</orth>
     <form type="infl">
       <orth type="inf">castigare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -17651,8 +17525,6 @@
     <orth>cavo</orth>
     <form type="infl">
       <orth type="inf">cavare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -17781,8 +17653,6 @@
     <orth>celebro</orth>
     <form type="infl">
       <orth type="inf">celebrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -17913,8 +17783,6 @@
     <orth>celo</orth>
     <form type="infl">
       <orth type="inf">celare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -18009,8 +17877,6 @@
     <orth>ceno</orth>
     <form type="infl">
       <orth type="inf">cenare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -18444,8 +18310,6 @@
     <orth>certo</orth>
     <form type="infl">
       <orth type="inf">certare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -18557,8 +18421,6 @@
     <orth>cesso</orth>
     <form type="infl">
       <orth type="inf">cessare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -18902,8 +18764,6 @@
     <orth>circumago</orth>
     <form type="infl">
       <orth type="inf">circumagere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19344,7 +19204,6 @@
     <form type="infl">
       <orth type="inf">circumsilire</orth>
       <orth type="perf">circumsilui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19394,7 +19253,6 @@
     <form type="infl">
       <orth type="inf">circumsistere</orth>
       <orth type="perf">circumsteti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19443,8 +19301,6 @@
     <orth>circumsono</orth>
     <form type="infl">
       <orth type="inf">circumsonare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19478,8 +19334,6 @@
     <orth>circumspecto</orth>
     <form type="infl">
       <orth type="inf">circumspectare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19518,8 +19372,6 @@
     <orth>circumsto</orth>
     <form type="infl">
       <orth type="inf">circumstare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19678,8 +19530,6 @@
     <orth>cito</orth>
     <form type="infl">
       <orth type="inf">citare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -19910,8 +19760,6 @@
     <orth>clamo</orth>
     <form type="infl">
       <orth type="inf">clamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -20581,7 +20429,6 @@
     <orth>coepi</orth>
     <form type="infl">
       <orth type="inf">coepisse</orth>
-      <orth type="perf"/>
       <orth type="sup">coeptum</orth>
     </form>
   </form>
@@ -20752,8 +20599,6 @@
     <orth>coerceo</orth>
     <form type="infl">
       <orth type="inf">coercere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -20836,8 +20681,6 @@
     <orth>cogito</orth>
     <form type="infl">
       <orth type="inf">cogitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -21096,7 +20939,6 @@
     <orth>cohortor</orth>
     <form type="infl">
       <orth type="inf">cohortari</orth>
-      <orth type="perf"/>
       <orth type="sup">cohortatum</orth>
     </form>
   </form>
@@ -21316,8 +21158,6 @@
     <orth>colligo</orth>
     <form type="infl">
       <orth type="inf">colligare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -21373,8 +21213,6 @@
     <orth>colloco</orth>
     <form type="infl">
       <orth type="inf">collocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -21686,7 +21524,6 @@
     <form type="infl">
       <orth type="inf">comburere</orth>
       <orth type="perf">combussi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -21885,7 +21722,6 @@
     <orth>comitor</orth>
     <form type="infl">
       <orth type="inf">comitari</orth>
-      <orth type="perf"/>
       <orth type="sup">comitatum</orth>
     </form>
   </form>
@@ -21936,8 +21772,6 @@
     <orth>commemoro</orth>
     <form type="infl">
       <orth type="inf">commemorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -22086,8 +21920,6 @@
     <orth>commeo</orth>
     <form type="infl">
       <orth type="inf">commeare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -22448,8 +22280,6 @@
     <orth>communico</orth>
     <form type="infl">
       <orth type="inf">communicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -22627,8 +22457,6 @@
     <orth>commuto</orth>
     <form type="infl">
       <orth type="inf">commutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -22684,8 +22512,6 @@
     <orth>comparo</orth>
     <form type="infl">
       <orth type="inf">comparare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -22800,7 +22626,6 @@
     <orth>complector</orth>
     <form type="infl">
       <orth type="inf">complecti</orth>
-      <orth type="perf"/>
       <orth type="sup">complexum</orth>
     </form>
   </form>
@@ -23038,8 +22863,6 @@
     <orth>comporto</orth>
     <form type="infl">
       <orth type="inf">comportare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -23313,8 +23136,6 @@
     <orth>computo</orth>
     <form type="infl">
       <orth type="inf">omputare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -23348,8 +23169,6 @@
     <orth>computo</orth>
     <form type="infl">
       <orth type="inf">computare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -23520,8 +23339,6 @@
     <orth>concilio</orth>
     <form type="infl">
       <orth type="inf">conciliare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -23664,8 +23481,6 @@
     <orth>concito</orth>
     <form type="infl">
       <orth type="inf">concitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -23704,8 +23519,6 @@
     <orth>conclamo</orth>
     <form type="infl">
       <orth type="inf">conclamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -24126,8 +23939,6 @@
     <orth>condemno</orth>
     <form type="infl">
       <orth type="inf">condemnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -24762,7 +24573,6 @@
     <orth>confido</orth>
     <form type="infl">
       <orth type="inf">confidere</orth>
-      <orth type="perf"/>
       <orth type="sup">confisum</orth>
     </form>
   </form>
@@ -24813,8 +24623,6 @@
     <orth>confirmo</orth>
     <form type="infl">
       <orth type="inf">confirmare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -24853,7 +24661,6 @@
     <orth>confiteor</orth>
     <form type="infl">
       <orth type="inf">confiteri</orth>
-      <orth type="perf"/>
       <orth type="sup">confessum</orth>
     </form>
   </form>
@@ -25118,7 +24925,6 @@
     <form type="infl">
       <orth type="inf">confugere</orth>
       <orth type="perf">confugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -25238,7 +25044,6 @@
     <orth>congredior</orth>
     <form type="infl">
       <orth type="inf">congredi</orth>
-      <orth type="perf"/>
       <orth type="sup">congressum</orth>
     </form>
   </form>
@@ -25294,8 +25099,6 @@
     <orth>congrego</orth>
     <form type="infl">
       <orth type="inf">congregare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -25674,8 +25477,6 @@
     <orth>coniuro</orth>
     <form type="infl">
       <orth type="inf">coniurare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -25731,7 +25532,6 @@
     <orth>conor</orth>
     <form type="infl">
       <orth type="inf">conari</orth>
-      <orth type="perf"/>
       <orth type="sup">conatum</orth>
     </form>
   </form>
@@ -25853,8 +25653,6 @@
     <orth>consaluto</orth>
     <form type="infl">
       <orth type="inf">consalutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -26184,8 +25982,6 @@
     <orth>consecro</orth>
     <form type="infl">
       <orth type="inf">consecrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -26225,7 +26021,6 @@
     <form type="infl">
       <orth type="inf">consenescere</orth>
       <orth type="perf">consenui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -26428,7 +26223,6 @@
     <orth>consequor</orth>
     <form type="infl">
       <orth type="inf">consequi</orth>
-      <orth type="perf"/>
       <orth type="sup">consecutum</orth>
     </form>
   </form>
@@ -26479,8 +26273,6 @@
     <orth>conservo</orth>
     <form type="infl">
       <orth type="inf">conservare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -26536,8 +26328,6 @@
     <orth>considero</orth>
     <form type="infl">
       <orth type="inf">considerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -26761,7 +26551,6 @@
     <orth>consolor</orth>
     <form type="infl">
       <orth type="inf">consolari</orth>
-      <orth type="perf"/>
       <orth type="sup">consolatum</orth>
     </form>
   </form>
@@ -27168,7 +26957,6 @@
     <form type="infl">
       <orth type="inf">constare</orth>
       <orth type="perf">constiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -27590,8 +27378,6 @@
     <orth>consulto</orth>
     <form type="infl">
       <orth type="inf">consultare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -27772,7 +27558,6 @@
     <orth>contemplor</orth>
     <form type="infl">
       <orth type="inf">contemplari</orth>
-      <orth type="perf"/>
       <orth type="sup">contemplatum</orth>
     </form>
   </form>
@@ -28288,7 +28073,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">contigit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -28831,7 +28615,6 @@
     <form type="infl">
       <orth type="inf">convalescere</orth>
       <orth type="perf">convalui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -29005,7 +28788,6 @@
     <orth>conversor</orth>
     <form type="infl">
       <orth type="inf">conversari</orth>
-      <orth type="perf"/>
       <orth type="sup">conversatum</orth>
     </form>
   </form>
@@ -29182,7 +28964,6 @@
     <form type="infl">
       <orth type="inf">convincere</orth>
       <orth type="perf">convici</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -29341,8 +29122,6 @@
     <orth>convoco</orth>
     <form type="infl">
       <orth type="inf">convocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -29644,8 +29423,6 @@
     <orth>corono</orth>
     <form type="infl">
       <orth type="inf">coronare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -29920,7 +29697,6 @@
     <form type="infl">
       <orth type="inf">corruere</orth>
       <orth type="perf">corrui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -30340,8 +30116,6 @@
     <orth>cremo</orth>
     <form type="infl">
       <orth type="inf">cremare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -30375,8 +30149,6 @@
     <orth>creo</orth>
     <form type="infl">
       <orth type="inf">creare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -30420,8 +30192,6 @@
     <orth>crepito</orth>
     <form type="infl">
       <orth type="inf">crepitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -30798,8 +30568,6 @@
     <orth>crucio</orth>
     <form type="infl">
       <orth type="inf">cruciare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -31058,7 +30826,6 @@
     <form type="infl">
       <orth type="inf">cubare</orth>
       <orth type="perf">cubui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -31288,7 +31055,6 @@
     <orth>cunctor</orth>
     <form type="infl">
       <orth type="inf">cunctari</orth>
-      <orth type="perf"/>
       <orth type="sup">cunctatum</orth>
     </form>
   </form>
@@ -31641,8 +31407,6 @@
     <orth>curo</orth>
     <form type="infl">
       <orth type="inf">curare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -31791,8 +31555,6 @@
     <orth>curso</orth>
     <form type="infl">
       <orth type="inf">cursare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -32007,8 +31769,6 @@
     <orth>damno</orth>
     <form type="infl">
       <orth type="inf">damnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -32352,7 +32112,6 @@
     <form type="infl">
       <orth type="inf">decere</orth>
       <orth type="perf">decui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -32495,7 +32254,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">decuit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -32645,8 +32403,6 @@
     <orth>declamo</orth>
     <form type="infl">
       <orth type="inf">declamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -32685,8 +32441,6 @@
     <orth>declaro</orth>
     <form type="infl">
       <orth type="inf">declarare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -33504,8 +33258,6 @@
     <orth>delecto</orth>
     <form type="infl">
       <orth type="inf">delectare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -33627,8 +33379,6 @@
     <orth>delibero</orth>
     <form type="infl">
       <orth type="inf">deliberare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -33804,8 +33554,6 @@
     <orth>deliro</orth>
     <form type="infl">
       <orth type="inf">delirare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -33840,7 +33588,6 @@
     <form type="infl">
       <orth type="inf">demerere</orth>
       <orth type="perf">demerui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34031,8 +33778,6 @@
     <orth>demonstro</orth>
     <form type="infl">
       <orth type="inf">demonstrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34267,8 +34012,6 @@
     <orth>deploro</orth>
     <form type="infl">
       <orth type="inf">deplorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34368,7 +34111,6 @@
     <orth>deprehendo</orth>
     <form type="infl">
       <orth type="inf">deprehendere</orth>
-      <orth type="perf"/>
       <orth type="sup">deprehensum</orth>
     </form>
   </form>
@@ -34583,8 +34325,6 @@
     <orth>deserto</orth>
     <form type="infl">
       <orth type="inf">desertare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34669,8 +34409,6 @@
     <orth>desidero</orth>
     <form type="infl">
       <orth type="inf">desiderare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34709,8 +34447,6 @@
     <orth>designo</orth>
     <form type="infl">
       <orth type="inf">designare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34816,7 +34552,6 @@
     <form type="infl">
       <orth type="inf">desistere</orth>
       <orth type="perf">destiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -34894,8 +34629,6 @@
     <orth>despero</orth>
     <form type="infl">
       <orth type="inf">desperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -35001,7 +34734,6 @@
     <form type="infl">
       <orth type="inf">deesse</orth>
       <orth type="perf">defui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -35544,8 +35276,6 @@
     <orth>dicto</orth>
     <form type="infl">
       <orth type="inf">dictare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -36074,8 +35804,6 @@
     <orth>dimico</orth>
     <form type="infl">
       <orth type="inf">dimicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -36505,8 +36233,6 @@
     <orth>discepto</orth>
     <form type="infl">
       <orth type="inf">disceptare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -36656,7 +36382,6 @@
     <form type="infl">
       <orth type="inf">discere</orth>
       <orth type="perf">didici</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -36972,8 +36697,6 @@
     <orth>disputo</orth>
     <form type="infl">
       <orth type="inf">disputare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -37249,8 +36972,6 @@
     <orth>dissimulo</orth>
     <form type="infl">
       <orth type="inf">dissimulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -37813,8 +37534,6 @@
     <orth>do</orth>
     <form type="infl">
       <orth type="inf">dare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -37919,7 +37638,6 @@
     <orth>doceor</orth>
     <form type="infl">
       <orth type="inf">doceri</orth>
-      <orth type="perf"/>
       <orth type="sup">doctum</orth>
     </form>
   </form>
@@ -38065,7 +37783,6 @@
     <form type="infl">
       <orth type="inf">dolere</orth>
       <orth type="perf">dolui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -38275,8 +37992,6 @@
     <orth>domino</orth>
     <form type="infl">
       <orth type="inf">dominare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -38518,8 +38233,6 @@
     <orth>dono</orth>
     <form type="infl">
       <orth type="inf">donare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -38695,8 +38408,6 @@
     <orth>dubito</orth>
     <form type="infl">
       <orth type="inf">dubitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -38941,8 +38652,6 @@
     <orth>ducto</orth>
     <form type="infl">
       <orth type="inf">ductare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -39265,8 +38974,6 @@
     <orth>duro</orth>
     <form type="infl">
       <orth type="inf">durare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -39600,8 +39307,6 @@
     <orth>educo</orth>
     <form type="infl">
       <orth type="inf">educare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -39974,7 +39679,6 @@
     <form type="infl">
       <orth type="inf">effugere</orth>
       <orth type="perf">effugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -40063,7 +39767,6 @@
     <form type="infl">
       <orth type="inf">egere</orth>
       <orth type="perf">egui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -40234,7 +39937,6 @@
     <orth>egredior</orth>
     <form type="infl">
       <orth type="inf">egredi</orth>
-      <orth type="perf"/>
       <orth type="sup">egressum</orth>
     </form>
   </form>
@@ -40557,7 +40259,6 @@
     <form type="infl">
       <orth type="inf">eminere</orth>
       <orth type="perf">eminui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -40701,8 +40402,6 @@
     <orth>enummero</orth>
     <form type="infl">
       <orth type="inf">enumerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41031,8 +40730,6 @@
     <orth>equito</orth>
     <form type="infl">
       <orth type="inf">equitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41227,8 +40924,6 @@
     <orth>erro</orth>
     <form type="infl">
       <orth type="inf">errare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41294,8 +40989,6 @@
     <orth>erto</orth>
     <form type="infl">
       <orth type="inf">ertare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41715,7 +41408,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">evenit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41833,8 +41525,6 @@
     <orth>evigilo</orth>
     <form type="infl">
       <orth type="inf">evigilare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -41868,8 +41558,6 @@
     <orth>evoco</orth>
     <form type="infl">
       <orth type="inf">evocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -42220,8 +41908,6 @@
     <orth>excito</orth>
     <form type="infl">
       <orth type="inf">excitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -42757,8 +42443,6 @@
     <orth>existimo</orth>
     <form type="infl">
       <orth type="inf">existimare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -42798,7 +42482,6 @@
     <form type="infl">
       <orth type="inf">existere</orth>
       <orth type="perf">extiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -42891,8 +42574,6 @@
     <orth>exoro</orth>
     <form type="infl">
       <orth type="inf">exorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43146,7 +42827,6 @@
     <orth>experior</orth>
     <form type="infl">
       <orth type="inf">experiri</orth>
-      <orth type="perf"/>
       <orth type="sup">expertum</orth>
     </form>
   </form>
@@ -43342,8 +43022,6 @@
     <orth>explico</orth>
     <form type="infl">
       <orth type="inf">explicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43404,8 +43082,6 @@
     <orth>exploro</orth>
     <form type="infl">
       <orth type="inf">explorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43515,8 +43191,6 @@
     <orth>expugno</orth>
     <form type="infl">
       <orth type="inf">expugnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43617,7 +43291,6 @@
     <form type="infl">
       <orth type="inf">exsequi</orth>
       <orth type="perf">exsecutum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43672,7 +43345,6 @@
     <form type="infl">
       <orth type="inf">exsistere</orth>
       <orth type="perf">exstiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43721,8 +43393,6 @@
     <orth>exspecto</orth>
     <form type="infl">
       <orth type="inf">exspectare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -43893,8 +43563,6 @@
     <orth>exsulto</orth>
     <form type="infl">
       <orth type="inf">exsultare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -44109,8 +43777,6 @@
     <orth>fabrico</orth>
     <form type="infl">
       <orth type="inf">fabricare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -44485,7 +44151,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">fefellit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -44522,7 +44187,6 @@
     <form type="infl">
       <orth type="inf">fallere</orth>
       <orth type="perf">fefelli</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -45006,7 +44670,6 @@
     <orth>fateor</orth>
     <form type="infl">
       <orth type="inf">fateri</orth>
-      <orth type="perf"/>
       <orth type="sup">fassum</orth>
     </form>
   </form>
@@ -45062,8 +44725,6 @@
     <orth>fatigo</orth>
     <form type="infl">
       <orth type="inf">fatigare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -45102,8 +44763,6 @@
     <orth>fatisco</orth>
     <form type="infl">
       <orth type="inf">fatiscere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -45599,8 +45258,6 @@
     <orth>ferio</orth>
     <form type="infl">
       <orth type="inf">ferire</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -45880,7 +45537,6 @@
     <form type="infl">
       <orth type="inf">fervere</orth>
       <orth type="perf">ferbui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -45987,8 +45643,6 @@
     <orth>festino</orth>
     <form type="infl">
       <orth type="inf">festinare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -46079,7 +45733,6 @@
     <orth>ffruor</orth>
     <form type="infl">
       <orth type="inf">frui</orth>
-      <orth type="perf"/>
       <orth type="sup">fructum</orth>
     </form>
   </form>
@@ -46214,7 +45867,6 @@
     <form type="infl">
       <orth type="inf">fidere</orth>
       <orth type="perf">fisum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -46422,8 +46074,6 @@
     <orth>figuro</orth>
     <form type="infl">
       <orth type="inf">figurare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -46800,8 +46450,6 @@
     <orth>firmo</orth>
     <form type="infl">
       <orth type="inf">firmare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -46885,8 +46533,6 @@
     <orth>flagito</orth>
     <form type="infl">
       <orth type="inf">flagitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -47179,7 +46825,6 @@
     <form type="infl">
       <orth type="inf">florere</orth>
       <orth type="perf">florui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -47590,7 +47235,6 @@
     <orth>for</orth>
     <form type="infl">
       <orth type="inf">fari</orth>
-      <orth type="perf"/>
       <orth type="sup">fatum</orth>
     </form>
   </form>
@@ -47762,8 +47406,6 @@
     <orth>formo</orth>
     <form type="infl">
       <orth type="inf">formare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -47831,8 +47473,6 @@
     <orth>foro</orth>
     <form type="infl">
       <orth type="inf">forare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -48325,8 +47965,6 @@
     <orth>freno</orth>
     <form type="infl">
       <orth type="inf">frenare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -48619,7 +48257,6 @@
     <orth>frumentor</orth>
     <form type="infl">
       <orth type="inf">frumentari</orth>
-      <orth type="perf"/>
       <orth type="sup">frumentatum</orth>
     </form>
   </form>
@@ -48706,8 +48343,6 @@
     <orth>frustro</orth>
     <form type="infl">
       <orth type="inf">frustrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -48791,7 +48426,6 @@
     <form type="infl">
       <orth type="inf">fugere</orth>
       <orth type="perf">fugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -48896,8 +48530,6 @@
     <orth>fugo</orth>
     <form type="infl">
       <orth type="inf">fugare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -48932,7 +48564,6 @@
     <form type="infl">
       <orth type="inf">fulgere</orth>
       <orth type="perf">fulsi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -49230,8 +48861,6 @@
     <orth>funero</orth>
     <form type="infl">
       <orth type="inf">funerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -49265,7 +48894,6 @@
     <orth>fungor</orth>
     <form type="infl">
       <orth type="inf">fungi</orth>
-      <orth type="perf"/>
       <orth type="sup">functum</orth>
     </form>
   </form>
@@ -49376,7 +49004,6 @@
     <form type="infl">
       <orth type="inf">fuere</orth>
       <orth type="perf">fui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -49426,7 +49053,6 @@
     <form type="infl">
       <orth type="inf">furere</orth>
       <orth type="perf">furui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -49639,7 +49265,6 @@
     <orth>gaudeo</orth>
     <form type="infl">
       <orth type="inf">gaudere</orth>
-      <orth type="perf"/>
       <orth type="sup">gavisum</orth>
     </form>
   </form>
@@ -49961,8 +49586,6 @@
     <orth>genero</orth>
     <form type="infl">
       <orth type="inf">generare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -50522,7 +50145,6 @@
     <orth>gratulor</orth>
     <form type="infl">
       <orth type="inf">gratulari</orth>
-      <orth type="perf"/>
       <orth type="sup">gratulatum</orth>
     </form>
   </form>
@@ -50736,8 +50358,6 @@
     <orth>guberno</orth>
     <form type="infl">
       <orth type="inf">gubernare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -50798,8 +50418,6 @@
     <orth>gusto</orth>
     <form type="infl">
       <orth type="inf">gustare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -50977,8 +50595,6 @@
     <orth>habito</orth>
     <form type="infl">
       <orth type="inf">habitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51074,7 +50690,6 @@
     <form type="infl">
       <orth type="inf">haerere</orth>
       <orth type="perf">haesi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51253,8 +50868,6 @@
     <orth>hebeto</orth>
     <form type="infl">
       <orth type="inf">hebetare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51501,8 +51114,6 @@
     <orth>hiemo</orth>
     <form type="infl">
       <orth type="inf">hiemare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51749,8 +51360,6 @@
     <orth>honesto</orth>
     <form type="infl">
       <orth type="inf">honestare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51884,7 +51493,6 @@
     <form type="infl">
       <orth type="inf">horrere</orth>
       <orth type="perf">horrui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -51996,7 +51604,6 @@
     <orth>hortor</orth>
     <form type="infl">
       <orth type="inf">hortari</orth>
-      <orth type="perf"/>
       <orth type="sup">hortatum</orth>
     </form>
   </form>
@@ -52285,8 +51892,6 @@
     <orth>humo</orth>
     <form type="infl">
       <orth type="inf">humare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -52474,8 +52079,6 @@
     <orth>iacto</orth>
     <form type="infl">
       <orth type="inf">iactare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -53126,8 +52729,6 @@
     <orth>ignoro</orth>
     <form type="infl">
       <orth type="inf">ignorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -53585,8 +53186,6 @@
     <orth>illustro</orth>
     <form type="infl">
       <orth type="inf">illustrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -53796,7 +53395,6 @@
     <orth>imitor</orth>
     <form type="infl">
       <orth type="inf">imitari</orth>
-      <orth type="perf"/>
       <orth type="sup">imitatum</orth>
     </form>
   </form>
@@ -54065,8 +53663,6 @@
     <orth>immigro</orth>
     <form type="infl">
       <orth type="inf">immigrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -54100,8 +53696,6 @@
     <orth>immineo</orth>
     <form type="infl">
       <orth type="inf">imminere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -54313,8 +53907,6 @@
     <orth>immolo</orth>
     <form type="infl">
       <orth type="inf">immolare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -54812,8 +54404,6 @@
     <orth>impero</orth>
     <form type="infl">
       <orth type="inf">imperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -54852,8 +54442,6 @@
     <orth>impetro</orth>
     <form type="infl">
       <orth type="inf">impetrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -55064,8 +54652,6 @@
     <orth>imploro</orth>
     <form type="infl">
       <orth type="inf">implorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -55175,8 +54761,6 @@
     <orth>importo</orth>
     <form type="infl">
       <orth type="inf">importare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -55286,8 +54870,6 @@
     <orth>improbo</orth>
     <form type="infl">
       <orth type="inf">improbare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -56161,8 +55743,6 @@
     <orth>inchoho</orth>
     <form type="infl">
       <orth type="inf">inchoare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -56350,8 +55930,6 @@
     <orth>incito</orth>
     <form type="infl">
       <orth type="inf">incitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -56414,8 +55992,6 @@
     <orth>inclamo</orth>
     <form type="infl">
       <orth type="inf">inclamare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -56449,8 +56025,6 @@
     <orth>inclino</orth>
     <form type="infl">
       <orth type="inf">inclinare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -56579,8 +56153,6 @@
     <orth>incoho</orth>
     <form type="infl">
       <orth type="inf">incohare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -57107,8 +56679,6 @@
     <orth>incuso</orth>
     <form type="infl">
       <orth type="inf">incusare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -57188,8 +56758,6 @@
     <orth>indico</orth>
     <form type="infl">
       <orth type="inf">indicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -57295,7 +56863,6 @@
     <form type="infl">
       <orth type="inf">indigere</orth>
       <orth type="perf">indigui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -57344,7 +56911,6 @@
     <orth>indignor</orth>
     <form type="infl">
       <orth type="inf">indignare</orth>
-      <orth type="perf"/>
       <orth type="sup">indignatum</orth>
     </form>
   </form>
@@ -58496,8 +58062,6 @@
     <orth>infirmo</orth>
     <form type="infl">
       <orth type="inf">infirmare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -58560,8 +58124,6 @@
     <orth>inflammo</orth>
     <form type="infl">
       <orth type="inf">inflammare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -58700,7 +58262,6 @@
     <form type="infl">
       <orth type="inf">ingemiscere</orth>
       <orth type="perf">ingemui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -58754,8 +58315,6 @@
     <orth>ingemo</orth>
     <form type="infl">
       <orth type="inf">ingemere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -58972,7 +58531,6 @@
     <orth>ingredior</orth>
     <form type="infl">
       <orth type="inf">ingredi</orth>
-      <orth type="perf"/>
       <orth type="sup">ingressum</orth>
     </form>
   </form>
@@ -59489,7 +59047,6 @@
     <form type="infl">
       <orth type="inf">innuere</orth>
       <orth type="perf">innui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -59664,8 +59221,6 @@
     <orth>inquieto</orth>
     <form type="infl">
       <orth type="inf">inquietare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -59805,7 +59360,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">inquit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -60116,7 +59670,6 @@
     <form type="infl">
       <orth type="inf">insequi</orth>
       <orth type="perf">insecutum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -60425,7 +59978,6 @@
     <orth>insto</orth>
     <form type="infl">
       <orth type="inf">instare</orth>
-      <orth type="perf"/>
       <orth type="sup">institi</orth>
     </form>
   </form>
@@ -60675,7 +60227,6 @@
     <form type="infl">
       <orth type="inf">inesse</orth>
       <orth type="perf">infui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -60882,7 +60433,6 @@
     <orth>intendo</orth>
     <form type="infl">
       <orth type="inf">intendere </orth>
-      <orth type="perf"/>
       <orth type="sup">intentum</orth>
     </form>
   </form>
@@ -61241,8 +60791,6 @@
     <orth>interest</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -61475,7 +61023,6 @@
     <orth>interpretor</orth>
     <form type="infl">
       <orth type="inf">interpretari</orth>
-      <orth type="perf"/>
       <orth type="sup">interpretatum</orth>
     </form>
   </form>
@@ -61531,8 +61078,6 @@
     <orth>interrogo</orth>
     <form type="infl">
       <orth type="inf">interrogare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -61567,7 +61112,6 @@
     <form type="infl">
       <orth type="inf">interesse</orth>
       <orth type="perf">interfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -61730,8 +61274,6 @@
     <orth>intro</orth>
     <form type="infl">
       <orth type="inf">intrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -61770,7 +61312,6 @@
     <orth>intueor</orth>
     <form type="infl">
       <orth type="inf">intueri</orth>
-      <orth type="perf"/>
       <orth type="sup">intuitum</orth>
     </form>
   </form>
@@ -62229,8 +61770,6 @@
     <orth>investigo</orth>
     <form type="infl">
       <orth type="inf">investigare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -62446,8 +61985,6 @@
     <orth>invito</orth>
     <form type="infl">
       <orth type="inf">invitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -62744,7 +62281,6 @@
     <orth>irascor</orth>
     <form type="infl">
       <orth type="inf">irasci</orth>
-      <orth type="perf"/>
       <orth type="sup">iratum</orth>
     </form>
   </form>
@@ -62925,7 +62461,6 @@
     <form type="infl">
       <orth type="inf">irruere</orth>
       <orth type="perf">irrui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63359,8 +62894,6 @@
     <orth>iudico</orth>
     <form type="infl">
       <orth type="inf">iudicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63528,8 +63061,6 @@
     <orth>iurgo</orth>
     <form type="infl">
       <orth type="inf">iurgare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63563,8 +63094,6 @@
     <orth>iuro</orth>
     <form type="infl">
       <orth type="inf">iurare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63726,8 +63255,6 @@
     <orth>iuvat</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63928,8 +63455,6 @@
     <orth>labo</orth>
     <form type="infl">
       <orth type="inf">labare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -63963,7 +63488,6 @@
     <orth>labor</orth>
     <form type="infl">
       <orth type="inf">labi</orth>
-      <orth type="perf"/>
       <orth type="sup">lapsum</orth>
     </form>
   </form>
@@ -64046,8 +63570,6 @@
     <orth>laboro</orth>
     <form type="infl">
       <orth type="inf">laborare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -64108,8 +63630,6 @@
     <orth>lacero</orth>
     <form type="infl">
       <orth type="inf">lacerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -64403,7 +63923,6 @@
     <orth>laetor</orth>
     <form type="infl">
       <orth type="inf">laetari</orth>
-      <orth type="perf"/>
       <orth type="sup">laetatum</orth>
     </form>
   </form>
@@ -64556,7 +64075,6 @@
     <form type="infl">
       <orth type="inf">languere</orth>
       <orth type="perf">langui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -64639,8 +64157,6 @@
     <orth>lanio</orth>
     <form type="infl">
       <orth type="inf">lanire</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -64701,7 +64217,6 @@
     <orth>largior</orth>
     <form type="infl">
       <orth type="inf">largiri</orth>
-      <orth type="perf"/>
       <orth type="sup">largitum</orth>
     </form>
   </form>
@@ -64838,7 +64353,6 @@
     <form type="infl">
       <orth type="inf">latere</orth>
       <orth type="perf">latui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -64931,8 +64445,6 @@
     <orth>latro</orth>
     <form type="infl">
       <orth type="inf">latrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -65095,8 +64607,6 @@
     <orth>laudo</orth>
     <form type="infl">
       <orth type="inf">laudare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -65247,8 +64757,6 @@
     <orth>lavor</orth>
     <form type="infl">
       <orth type="inf">lavari</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -65436,8 +64944,6 @@
     <orth>legitimus</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -65748,8 +65254,6 @@
     <orth>levo</orth>
     <form type="infl">
       <orth type="inf">levare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -65996,8 +65500,6 @@
     <orth>libero</orth>
     <form type="infl">
       <orth type="inf">liberare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66076,7 +65578,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">libuit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66117,8 +65618,6 @@
     <orth>libet</orth>
     <form type="infl">
       <orth type="inf">libuit</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66208,8 +65707,6 @@
     <orth>libo</orth>
     <form type="infl">
       <orth type="inf">libare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66243,8 +65740,6 @@
     <orth>libro</orth>
     <form type="infl">
       <orth type="inf">librare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66310,7 +65805,6 @@
     <orth>liceor</orth>
     <form type="infl">
       <orth type="inf">liceri</orth>
-      <orth type="perf"/>
       <orth type="sup">licitum</orth>
     </form>
   </form>
@@ -66580,7 +66074,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">licuit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -66844,7 +66337,6 @@
     <orth>loquor</orth>
     <form type="infl">
       <orth type="inf">loqui</orth>
-      <orth type="perf"/>
       <orth type="sup">locutum</orth>
     </form>
   </form>
@@ -66930,7 +66422,6 @@
     <form type="infl">
       <orth type="inf">lucere</orth>
       <orth type="perf">luxi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -67006,7 +66497,6 @@
     <orth>luctor</orth>
     <form type="infl">
       <orth type="inf">luctari</orth>
-      <orth type="perf"/>
       <orth type="sup">luctatum</orth>
     </form>
   </form>
@@ -67204,7 +66694,6 @@
     <form type="infl">
       <orth type="inf">lugere</orth>
       <orth type="perf">luxi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -67325,7 +66814,6 @@
     <form type="infl">
       <orth type="inf">luere</orth>
       <orth type="perf">lui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -67526,7 +67014,6 @@
     <form type="infl">
       <orth type="inf">madere</orth>
       <orth type="perf">madui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -67576,7 +67063,6 @@
     <form type="infl">
       <orth type="inf">madescere</orth>
       <orth type="perf">madui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -67660,7 +67146,6 @@
     <form type="infl">
       <orth type="inf">maerere</orth>
       <orth type="perf">maerui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -68168,7 +67653,6 @@
     <form type="infl">
       <orth type="inf">malle</orth>
       <orth type="perf">malui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -68278,8 +67762,6 @@
     <orth>mando</orth>
     <form type="infl">
       <orth type="inf">mandare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -68432,8 +67914,6 @@
     <orth>mano</orth>
     <form type="infl">
       <orth type="inf">manare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -68944,7 +68424,6 @@
     <orth>meditor</orth>
     <form type="infl">
       <orth type="inf">meditari</orth>
-      <orth type="perf"/>
       <orth type="sup">meditatum</orth>
     </form>
   </form>
@@ -69071,7 +68550,6 @@
     <form type="infl">
       <orth type="inf">meminisse</orth>
       <orth type="perf">memini</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -69284,7 +68762,6 @@
     <orth>mentior</orth>
     <form type="infl">
       <orth type="inf">mentiri</orth>
-      <orth type="perf"/>
       <orth type="sup">mentitum</orth>
     </form>
   </form>
@@ -69446,7 +68923,6 @@
     <form type="infl">
       <orth type="inf">mereri</orth>
       <orth type="perf">meritum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -69803,7 +69279,6 @@
     <orth>metior</orth>
     <form type="infl">
       <orth type="inf">metiri</orth>
-      <orth type="perf"/>
       <orth type="sup">mensum</orth>
     </form>
   </form>
@@ -69855,7 +69330,6 @@
     <form type="infl">
       <orth type="inf">metuere</orth>
       <orth type="perf">metui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -69957,7 +69431,6 @@
     <form type="infl">
       <orth type="inf">micare</orth>
       <orth type="perf">micui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -70006,8 +69479,6 @@
     <orth>migro</orth>
     <form type="infl">
       <orth type="inf">migrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -70155,8 +69626,6 @@
     <orth>milito</orth>
     <form type="infl">
       <orth type="inf">militare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -70307,7 +69776,6 @@
     <orth>minor</orth>
     <form type="infl">
       <orth type="inf">minari</orth>
-      <orth type="perf"/>
       <orth type="sup">minatum</orth>
     </form>
   </form>
@@ -70438,7 +69906,6 @@
     <orth>miror</orth>
     <form type="infl">
       <orth type="inf">mirari</orth>
-      <orth type="perf"/>
       <orth type="sup">miratum</orth>
     </form>
   </form>
@@ -70589,7 +70056,6 @@
     <orth>misereor</orth>
     <form type="infl">
       <orth type="inf">misereri</orth>
-      <orth type="perf"/>
       <orth type="sup">miseritum</orth>
     </form>
   </form>
@@ -70645,8 +70111,6 @@
     <orth>miseret</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -70721,8 +70185,6 @@
     <orth>mitigo</orth>
     <form type="infl">
       <orth type="inf">mitigare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -71159,7 +70621,6 @@
     <orth>molior</orth>
     <form type="infl">
       <orth type="inf">moliri</orth>
-      <orth type="perf"/>
       <orth type="sup">molitum</orth>
     </form>
   </form>
@@ -71244,7 +70705,6 @@
     <orth>molor</orth>
     <form type="infl">
       <orth type="inf">moliri</orth>
-      <orth type="perf"/>
       <orth type="sup">molitum</orth>
     </form>
   </form>
@@ -71410,8 +70870,6 @@
     <orth>monstro</orth>
     <form type="infl">
       <orth type="inf">monstrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -71677,7 +71135,6 @@
     <orth>morior</orth>
     <form type="infl">
       <orth type="inf">mori</orth>
-      <orth type="perf"/>
       <orth type="sup">mortuum</orth>
     </form>
   </form>
@@ -71757,7 +71214,6 @@
     <orth>moror</orth>
     <form type="infl">
       <orth type="inf">morari</orth>
-      <orth type="perf"/>
       <orth type="sup">moratum</orth>
     </form>
   </form>
@@ -72220,8 +71676,6 @@
     <orth>multo</orth>
     <form type="infl">
       <orth type="inf">multare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -72537,8 +71991,6 @@
     <orth>muto</orth>
     <form type="infl">
       <orth type="inf">mutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -72685,7 +72137,6 @@
     <orth>nanciscor</orth>
     <form type="infl">
       <orth type="inf">nancisci</orth>
-      <orth type="perf"/>
       <orth type="sup">nactum</orth>
     </form>
   </form>
@@ -72785,8 +72236,6 @@
     <orth>narro</orth>
     <form type="infl">
       <orth type="inf">narrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -72820,7 +72269,6 @@
     <orth>nascor</orth>
     <form type="infl">
       <orth type="inf">nasci</orth>
-      <orth type="perf"/>
       <orth type="sup">natum</orth>
     </form>
   </form>
@@ -72988,8 +72436,6 @@
     <orth>nato</orth>
     <form type="infl">
       <orth type="inf">natare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -73376,8 +72822,6 @@
     <orth>navigo</orth>
     <form type="infl">
       <orth type="inf">navigare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -73685,8 +73129,6 @@
     <orth>necesse sum</orth>
     <form type="infl">
       <orth type="inf">necesse esse</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -73742,8 +73184,6 @@
     <orth>neco</orth>
     <form type="infl">
       <orth type="inf">necare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -73804,8 +73244,6 @@
     <orth>necto</orth>
     <form type="infl">
       <orth type="inf">nectare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -74054,8 +73492,6 @@
     <orth>nego</orth>
     <form type="infl">
       <orth type="inf">negare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -74796,7 +74232,6 @@
     <form type="infl">
       <orth type="inf">nitere</orth>
       <orth type="perf">nitui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -74845,7 +74280,6 @@
     <orth>nitor</orth>
     <form type="infl">
       <orth type="inf">niti</orth>
-      <orth type="perf"/>
       <orth type="sup">nixum</orth>
     </form>
   </form>
@@ -74952,8 +74386,6 @@
     <orth>no</orth>
     <form type="infl">
       <orth type="inf">nare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -75150,7 +74582,6 @@
     <form type="infl">
       <orth type="inf">nolle</orth>
       <orth type="perf">nolui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -75221,8 +74652,6 @@
     <orth>nomino</orth>
     <form type="infl">
       <orth type="inf">nominare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -75735,8 +75164,6 @@
     <orth>noto</orth>
     <form type="infl">
       <orth type="inf">notare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -75823,7 +75250,6 @@
     <orth>novi</orth>
     <form type="infl">
       <orth type="inf">novisse</orth>
-      <orth type="perf"/>
       <orth type="sup">notum</orth>
     </form>
   </form>
@@ -75920,8 +75346,6 @@
     <orth>novo</orth>
     <form type="infl">
       <orth type="inf">novare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -76094,8 +75518,6 @@
     <orth>nudo</orth>
     <form type="infl">
       <orth type="inf">nudare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -76283,8 +75705,6 @@
     <orth>numero</orth>
     <form type="infl">
       <orth type="inf">numerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -76447,8 +75867,6 @@
     <orth>nuntio</orth>
     <form type="infl">
       <orth type="inf">nuntiare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -76610,8 +76028,6 @@
     <orth>nuto</orth>
     <form type="infl">
       <orth type="inf">nutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -76877,7 +76293,6 @@
     <orth>obliviscor</orth>
     <form type="infl">
       <orth type="inf">oblivisci</orth>
-      <orth type="perf"/>
       <orth type="sup">oblitum</orth>
     </form>
   </form>
@@ -77058,8 +76473,6 @@
     <orth>obsecro</orth>
     <form type="infl">
       <orth type="inf">obsecrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77209,7 +76622,6 @@
     <form type="infl">
       <orth type="inf">obsistere</orth>
       <orth type="perf">obstiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77259,7 +76671,6 @@
     <form type="infl">
       <orth type="inf">obstare</orth>
       <orth type="perf">obstiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77440,8 +76851,6 @@
     <orth>obtempero</orth>
     <form type="infl">
       <orth type="inf">obtemperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77476,7 +76885,6 @@
     <form type="infl">
       <orth type="inf">obtinere</orth>
       <orth type="perf">obtinui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77716,8 +77124,6 @@
     <orth>occulto</orth>
     <form type="infl">
       <orth type="inf">occultare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -77814,8 +77220,6 @@
     <orth>occupo</orth>
     <form type="infl">
       <orth type="inf">occupare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -78148,7 +77552,6 @@
     <form type="infl">
       <orth type="inf">odisse</orth>
       <orth type="perf">odi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -78246,8 +77649,6 @@
     <orth>odoro</orth>
     <form type="infl">
       <orth type="inf">odorare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -78668,8 +78069,6 @@
     <orth>onero</orth>
     <form type="infl">
       <orth type="inf">onerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -78917,8 +78316,6 @@
     <orth>oportet</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79103,8 +78500,6 @@
     <orth>oppugno</orth>
     <form type="infl">
       <orth type="inf">oppugnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79143,8 +78538,6 @@
     <orth>opto</orth>
     <form type="infl">
       <orth type="inf">optare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79365,8 +78758,6 @@
     <orth>orbo</orth>
     <form type="infl">
       <orth type="inf">orbare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79439,7 +78830,6 @@
     <orth>ordior</orth>
     <form type="infl">
       <orth type="inf">ordiri</orth>
-      <orth type="perf"/>
       <orth type="sup">orsum</orth>
     </form>
   </form>
@@ -79566,7 +78956,6 @@
     <orth>orior</orth>
     <form type="infl">
       <orth type="inf">oriri</orth>
-      <orth type="perf"/>
       <orth type="sup">ortum</orth>
     </form>
   </form>
@@ -79671,8 +79060,6 @@
     <orth>orno</orth>
     <form type="infl">
       <orth type="inf">ornare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79706,8 +79093,6 @@
     <orth>oro</orth>
     <form type="infl">
       <orth type="inf">orare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -79816,7 +79201,6 @@
     <form type="infl">
       <orth type="inf">osculari</orth>
       <orth type="perf">osculatum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80002,8 +79386,6 @@
     <orth>paco</orth>
     <form type="infl">
       <orth type="inf">pacare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80172,7 +79554,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">paenituit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80252,8 +79633,6 @@
     <orth>palpo</orth>
     <form type="infl">
       <orth type="inf">palpare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80505,7 +79884,6 @@
     <form type="infl">
       <orth type="inf">parere</orth>
       <orth type="perf">parui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80674,8 +80052,6 @@
     <orth>paro</orth>
     <form type="infl">
       <orth type="inf">parare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -80764,7 +80140,6 @@
     <orth>partior</orth>
     <form type="infl">
       <orth type="inf">partiri</orth>
-      <orth type="perf"/>
       <orth type="sup">partitum</orth>
     </form>
   </form>
@@ -80815,8 +80190,6 @@
     <orth>parturio</orth>
     <form type="infl">
       <orth type="inf">parturire</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -81107,7 +80480,6 @@
     <orth>pateo</orth>
     <form type="infl">
       <orth type="inf">patere</orth>
-      <orth type="perf"/>
       <orth type="sup">patui</orth>
     </form>
   </form>
@@ -81242,7 +80614,6 @@
     <orth>patior</orth>
     <form type="infl">
       <orth type="inf">pati</orth>
-      <orth type="perf"/>
       <orth type="sup">passum</orth>
     </form>
   </form>
@@ -81994,8 +81365,6 @@
     <orth>peragro</orth>
     <form type="infl">
       <orth type="inf">peragrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -82095,7 +81464,6 @@
     <orth>percontor</orth>
     <form type="infl">
       <orth type="inf">percontari</orth>
-      <orth type="perf"/>
       <orth type="sup">percontatum</orth>
     </form>
   </form>
@@ -83210,8 +82578,6 @@
     <orth>perpetro</orth>
     <form type="infl">
       <orth type="inf">perpetrare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -83279,7 +82645,6 @@
     <orth>persequor</orth>
     <form type="infl">
       <orth type="inf">persequi</orth>
-      <orth type="perf"/>
       <orth type="sup">persecutum</orth>
     </form>
   </form>
@@ -83330,8 +82695,6 @@
     <orth>persevero</orth>
     <form type="infl">
       <orth type="inf">perseverare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -83371,7 +82734,6 @@
     <form type="infl">
       <orth type="inf">persistere</orth>
       <orth type="perf">perstiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -83452,8 +82814,6 @@
     <orth>persono</orth>
     <form type="infl">
       <orth type="inf">personare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -83729,7 +83089,6 @@
     <form type="infl">
       <orth type="inf">pertinere</orth>
       <orth type="perf">pertinui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -83778,8 +83137,6 @@
     <orth>perturbo</orth>
     <form type="infl">
       <orth type="inf">perturbare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -84173,8 +83530,6 @@
     <orth>piget</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -84580,7 +83935,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">placuit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -85126,7 +84480,6 @@
     <orth>polliceor</orth>
     <form type="infl">
       <orth type="inf">polliceri</orth>
-      <orth type="perf"/>
       <orth type="sup">pollicitum</orth>
     </form>
   </form>
@@ -85577,8 +84930,6 @@
     <orth>porto</orth>
     <form type="infl">
       <orth type="inf">portare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -85772,7 +85123,6 @@
     <form type="infl">
       <orth type="inf">posse</orth>
       <orth type="perf">potui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -86016,8 +85366,6 @@
     <orth>postulo</orth>
     <form type="infl">
       <orth type="inf">postulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -86228,7 +85576,6 @@
     <orth>potior</orth>
     <form type="infl">
       <orth type="inf">potiri</orth>
-      <orth type="perf"/>
       <orth type="sup">potitum</orth>
     </form>
   </form>
@@ -86347,7 +85694,6 @@
     <form type="infl">
       <orth type="inf">potesse</orth>
       <orth type="perf">potfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -86771,8 +86117,6 @@
     <orth>praecipito</orth>
     <form type="infl">
       <orth type="inf">praecipitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -86943,8 +86287,6 @@
     <orth>praedico</orth>
     <form type="infl">
       <orth type="inf">praedicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -87144,7 +86486,6 @@
     <orth>praefor</orth>
     <form type="infl">
       <orth type="inf">praefari</orth>
-      <orth type="perf"/>
       <orth type="sup">praefatum</orth>
     </form>
   </form>
@@ -87410,8 +86751,6 @@
     <orth>praestat</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -87527,7 +86866,6 @@
     <form type="infl">
       <orth type="inf">praeesse</orth>
       <orth type="perf">praefui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -87909,7 +87247,6 @@
     <form type="infl">
       <orth type="inf">precari</orth>
       <orth type="perf">precatum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -88384,8 +87721,6 @@
     <orth>privo</orth>
     <form type="infl">
       <orth type="inf">privare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -88449,8 +87784,6 @@
     <orth>probo</orth>
     <form type="infl">
       <orth type="inf">probare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -88638,8 +87971,6 @@
     <orth>procreo</orth>
     <form type="infl">
       <orth type="inf">procreare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -88791,7 +88122,6 @@
     <form type="infl">
       <orth type="inf">prodesse</orth>
       <orth type="perf">prodfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -89150,7 +88480,6 @@
     <orth>proficiscor</orth>
     <form type="infl">
       <orth type="inf">proficisci</orth>
-      <orth type="perf"/>
       <orth type="sup">profectum</orth>
     </form>
   </form>
@@ -89202,7 +88531,6 @@
     <form type="infl">
       <orth type="inf">profugere</orth>
       <orth type="perf">profugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -89251,7 +88579,6 @@
     <orth>progredior</orth>
     <form type="infl">
       <orth type="inf">progredi</orth>
-      <orth type="perf"/>
       <orth type="sup">progressum</orth>
     </form>
   </form>
@@ -89727,8 +89054,6 @@
     <orth>pronuntio</orth>
     <form type="infl">
       <orth type="inf">pronuntiare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -89781,8 +89106,6 @@
     <orth>propero</orth>
     <form type="infl">
       <orth type="inf">properare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90056,7 +89379,6 @@
     <orth>prosequor</orth>
     <form type="infl">
       <orth type="inf">prosequi</orth>
-      <orth type="perf"/>
       <orth type="sup">prosecutum</orth>
     </form>
   </form>
@@ -90321,7 +89643,6 @@
     <orth>protsum</orth>
     <form type="infl">
       <orth type="inf">protesse</orth>
-      <orth type="perf"/>
       <orth type="sup">protfui</orth>
     </form>
   </form>
@@ -90394,8 +89715,6 @@
     <orth>provoco</orth>
     <form type="infl">
       <orth type="inf">provocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90616,7 +89935,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">puduit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90777,8 +90095,6 @@
     <orth>pugno</orth>
     <form type="infl">
       <orth type="inf">pugnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90863,8 +90179,6 @@
     <orth>punio</orth>
     <form type="infl">
       <orth type="inf">punire</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90898,8 +90212,6 @@
     <orth>purgo</orth>
     <form type="infl">
       <orth type="inf">purgare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -90962,8 +90274,6 @@
     <orth>purus</orth>
     <form type="infl">
       <orth type="inf">populare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -91019,8 +90329,6 @@
     <orth>puto</orth>
     <form type="infl">
       <orth type="inf">putare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -91737,7 +91045,6 @@
     <orth>queror</orth>
     <form type="infl">
       <orth type="inf">queri</orth>
-      <orth type="perf"/>
       <orth type="sup">questum</orth>
     </form>
   </form>
@@ -92866,8 +92173,6 @@
     <orth>rapto</orth>
     <form type="infl">
       <orth type="inf">raptare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -93176,8 +92481,6 @@
     <orth>recito</orth>
     <form type="infl">
       <orth type="inf">recitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -93211,7 +92514,6 @@
     <orth>recordor</orth>
     <form type="infl">
       <orth type="inf">recordari</orth>
-      <orth type="perf"/>
       <orth type="sup">recordatum</orth>
     </form>
   </form>
@@ -93267,8 +92569,6 @@
     <orth>recreo</orth>
     <form type="infl">
       <orth type="inf">recreare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -93363,8 +92663,6 @@
     <orth>recupero</orth>
     <form type="infl">
       <orth type="inf">recuperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -93403,8 +92701,6 @@
     <orth>recuso</orth>
     <form type="infl">
       <orth type="inf">recusare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94014,8 +93310,6 @@
     <orth>refert</orth>
     <form type="infl">
       <orth type="inf"/>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94108,7 +93402,6 @@
     <form type="infl">
       <orth type="inf">refugere</orth>
       <orth type="perf">refugi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94280,8 +93573,6 @@
     <orth>regno</orth>
     <form type="infl">
       <orth type="inf">regnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94408,7 +93699,6 @@
     <orth>regredior</orth>
     <form type="infl">
       <orth type="inf">regredi</orth>
-      <orth type="perf"/>
       <orth type="sup">regressum</orth>
     </form>
   </form>
@@ -94581,7 +93871,6 @@
     <form type="infl">
       <orth type="inf">remanere</orth>
       <orth type="perf">remansi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94806,8 +94095,6 @@
     <orth>renovo</orth>
     <form type="infl">
       <orth type="inf">renovare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -94842,7 +94129,6 @@
     <form type="infl">
       <orth type="inf">reri</orth>
       <orth type="perf">ratum</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -95214,7 +94500,6 @@
     <form type="infl">
       <orth type="inf">repere</orth>
       <orth type="perf">repsi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -95268,8 +94553,6 @@
     <orth>reporto</orth>
     <form type="infl">
       <orth type="inf">reportare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -95435,8 +94718,6 @@
     <orth>repugno</orth>
     <form type="infl">
       <orth type="inf">repugnare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -95749,8 +95030,6 @@
     <orth>reservo</orth>
     <form type="infl">
       <orth type="inf">reservare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -95790,7 +95069,6 @@
     <form type="infl">
       <orth type="inf">resistere</orth>
       <orth type="perf">resisti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96003,8 +95281,6 @@
     <orth>restituo</orth>
     <form type="infl">
       <orth type="inf">restituere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96044,7 +95320,6 @@
     <form type="infl">
       <orth type="inf">restare</orth>
       <orth type="perf">restiti</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96093,8 +95368,6 @@
     <orth>resulto</orth>
     <form type="infl">
       <orth type="inf">resultare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96204,8 +95477,6 @@
     <orth>retexeo</orth>
     <form type="infl">
       <orth type="inf">retexere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96417,7 +95688,6 @@
     <orth>revertor</orth>
     <form type="infl">
       <orth type="inf">reverti</orth>
-      <orth type="perf"/>
       <orth type="sup">reverti</orth>
     </form>
   </form>
@@ -96586,7 +95856,6 @@
     <form type="infl">
       <orth type="inf">rigescere</orth>
       <orth type="perf">rigui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96662,8 +95931,6 @@
     <orth>rimo</orth>
     <form type="infl">
       <orth type="inf">rimare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -96841,8 +96108,6 @@
     <orth>rogo</orth>
     <form type="infl">
       <orth type="inf">rogare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97371,8 +96636,6 @@
     <orth>sacrificio</orth>
     <form type="infl">
       <orth type="inf">sacrificare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97610,8 +96873,6 @@
     <orth>sagitto</orth>
     <form type="infl">
       <orth type="inf">sagittare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97695,7 +96956,6 @@
     <form type="infl">
       <orth type="inf">salire</orth>
       <orth type="perf">salui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97744,8 +97004,6 @@
     <orth>salto</orth>
     <form type="infl">
       <orth type="inf">saltare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97849,8 +97107,6 @@
     <orth>saluto</orth>
     <form type="infl">
       <orth type="inf">salutare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -97884,8 +97140,6 @@
     <orth>salveo</orth>
     <form type="infl">
       <orth type="inf">salvere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -98004,8 +97258,6 @@
     <orth>sano</orth>
     <form type="infl">
       <orth type="inf">sanare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -98136,7 +97388,6 @@
     <form type="infl">
       <orth type="inf">sapire</orth>
       <orth type="perf">sapivi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -98212,8 +97463,6 @@
     <orth>satio</orth>
     <form type="infl">
       <orth type="inf">satiare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -98586,8 +97835,6 @@
     <orth>scintillo</orth>
     <form type="infl">
       <orth type="inf">scintillare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -98780,7 +98027,6 @@
     <orth>scrutor</orth>
     <form type="infl">
       <orth type="inf">scrutari</orth>
-      <orth type="perf"/>
       <orth type="sup">scrutatum</orth>
     </form>
   </form>
@@ -98878,7 +98124,6 @@
     <orth>se glorior</orth>
     <form type="infl">
       <orth type="inf">se gloriari</orth>
-      <orth type="perf"/>
       <orth type="sup">se loriatum</orth>
     </form>
   </form>
@@ -98940,8 +98185,6 @@
     <orth>se praesto</orth>
     <form type="infl">
       <orth type="inf">se praestare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -99057,8 +98300,6 @@
     <orth>seco</orth>
     <form type="infl">
       <orth type="inf">secare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -99111,8 +98352,6 @@
     <orth>secum cogito</orth>
     <form type="infl">
       <orth type="inf">secum cogitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -100177,7 +99416,6 @@
     <orth>sequor</orth>
     <form type="infl">
       <orth type="inf">sequi</orth>
-      <orth type="perf"/>
       <orth type="sup">secutum</orth>
     </form>
   </form>
@@ -100528,8 +99766,6 @@
     <orth>servo</orth>
     <form type="infl">
       <orth type="inf">servare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -100896,8 +100132,6 @@
     <orth>sibi propono</orth>
     <form type="infl">
       <orth type="inf">sibi proponere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -100981,8 +100215,6 @@
     <orth>significo</orth>
     <form type="infl">
       <orth type="inf">significare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -101021,8 +100253,6 @@
     <orth>signo</orth>
     <form type="infl">
       <orth type="inf">signare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -101127,7 +100357,6 @@
     <form type="infl">
       <orth type="inf">silere</orth>
       <orth type="perf">silui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -101477,8 +100706,6 @@
     <orth>simulo</orth>
     <form type="infl">
       <orth type="inf">simulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -102106,7 +101333,6 @@
     <orth>soleo</orth>
     <form type="infl">
       <orth type="inf">solere</orth>
-      <orth type="perf"/>
       <orth type="sup">solitum</orth>
     </form>
   </form>
@@ -102309,8 +101535,6 @@
     <orth>sollicito</orth>
     <form type="infl">
       <orth type="inf">sollicitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -102613,7 +101837,6 @@
     <form type="infl">
       <orth type="inf">sonare</orth>
       <orth type="perf">sonui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -102946,8 +102169,6 @@
     <orth>specto</orth>
     <form type="infl">
       <orth type="inf">spectare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -103030,8 +102251,6 @@
     <orth>spero</orth>
     <form type="infl">
       <orth type="inf">sperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -103147,8 +102366,6 @@
     <orth>spiro</orth>
     <form type="infl">
       <orth type="inf">spirare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -103216,8 +102433,6 @@
     <orth>spolio</orth>
     <form type="infl">
       <orth type="inf">spoliare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -103600,8 +102815,6 @@
     <orth>stimulo</orth>
     <form type="infl">
       <orth type="inf">stimulare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -103980,7 +103193,6 @@
     <form type="infl">
       <orth type="inf">studere</orth>
       <orth type="perf">studui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -104169,7 +103381,6 @@
     <form type="infl">
       <orth type="inf">stupere</orth>
       <orth type="perf">stupui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -104641,7 +103852,6 @@
     <orth>subsequor</orth>
     <form type="infl">
       <orth type="inf">subsequi</orth>
-      <orth type="perf"/>
       <orth type="sup">subsecutum</orth>
     </form>
   </form>
@@ -105036,8 +104246,6 @@
     <orth>sudo</orth>
     <form type="infl">
       <orth type="inf">sudare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -105138,7 +104346,6 @@
     <form type="infl">
       <orth type="inf">esse</orth>
       <orth type="perf">fui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -105422,8 +104629,6 @@
     <orth>supero</orth>
     <form type="infl">
       <orth type="inf">superare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -105547,7 +104752,6 @@
     <form type="infl">
       <orth type="inf">superesse</orth>
       <orth type="perf">superfui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -105667,8 +104871,6 @@
     <orth>supplico</orth>
     <form type="infl">
       <orth type="inf">supplicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -106095,7 +105297,6 @@
     <orth>suspicor</orth>
     <form type="infl">
       <orth type="inf">suspicari</orth>
-      <orth type="perf"/>
       <orth type="sup">suspicatum</orth>
     </form>
   </form>
@@ -106167,8 +105368,6 @@
     <orth>suspiro</orth>
     <form type="infl">
       <orth type="inf">suspirare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -106473,7 +105672,6 @@
     <form type="infl">
       <orth type="inf"/>
       <orth type="perf">taeduit</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -107101,8 +106299,6 @@
     <orth>tempero</orth>
     <form type="infl">
       <orth type="inf">temperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -107185,8 +106381,6 @@
     <orth>tempto</orth>
     <form type="infl">
       <orth type="inf">temptare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -107683,7 +106877,6 @@
     <orth>terreor</orth>
     <form type="infl">
       <orth type="inf">terreri</orth>
-      <orth type="perf"/>
       <orth type="sup">territum</orth>
     </form>
   </form>
@@ -107916,8 +107109,6 @@
     <orth>texeo</orth>
     <form type="infl">
       <orth type="inf">texere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -107996,7 +107187,6 @@
     <form type="infl">
       <orth type="inf">timere</orth>
       <orth type="perf">timui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -108157,8 +107347,6 @@
     <orth>tolero</orth>
     <form type="infl">
       <orth type="inf">tolerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -108290,8 +107478,6 @@
     <orth>tono</orth>
     <form type="infl">
       <orth type="inf">tonare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -108521,8 +107707,6 @@
     <orth>tracto</orth>
     <form type="infl">
       <orth type="inf">tractare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -108637,8 +107821,6 @@
     <orth>traduco</orth>
     <form type="infl">
       <orth type="inf">traducere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -108989,7 +108171,6 @@
     <orth>transgredior</orth>
     <form type="infl">
       <orth type="inf">transgredi</orth>
-      <orth type="perf"/>
       <orth type="sup">transgressum</orth>
     </form>
   </form>
@@ -109133,8 +108314,6 @@
     <orth>transporto</orth>
     <form type="infl">
       <orth type="inf">transportare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -109240,7 +108419,6 @@
     <form type="infl">
       <orth type="inf">tremere</orth>
       <orth type="perf">tremui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -109318,8 +108496,6 @@
     <orth>trepido</orth>
     <form type="infl">
       <orth type="inf">trepidare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -109685,8 +108861,6 @@
     <orth>trucido</orth>
     <form type="infl">
       <orth type="inf">trucidare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -109793,7 +108967,6 @@
     <orth>tueor</orth>
     <form type="infl">
       <orth type="inf">tueri</orth>
-      <orth type="perf"/>
       <orth type="sup">tuitum</orth>
     </form>
   </form>
@@ -109992,8 +109165,6 @@
     <orth>turbo</orth>
     <form type="infl">
       <orth type="inf">turbare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -110560,8 +109731,6 @@
     <orth>ululo</orth>
     <form type="infl">
       <orth type="inf">ululare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -111238,7 +110407,6 @@
     <form type="infl">
       <orth type="inf">urgere</orth>
       <orth type="perf">ursi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -111712,7 +110880,6 @@
     <orth>utor</orth>
     <form type="infl">
       <orth type="inf">uti</orth>
-      <orth type="perf"/>
       <orth type="sup">usum</orth>
     </form>
   </form>
@@ -111821,8 +110988,6 @@
     <orth>vaco</orth>
     <form type="infl">
       <orth type="inf">vacare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -111890,8 +111055,6 @@
     <orth>vado</orth>
     <form type="infl">
       <orth type="inf">vadere</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -111983,7 +111146,6 @@
     <form type="infl">
       <orth type="inf">valere</orth>
       <orth type="perf">valui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -112300,8 +111462,6 @@
     <orth>vasto</orth>
     <form type="infl">
       <orth type="inf">vastare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -112529,7 +111689,6 @@
     <orth>vehor</orth>
     <form type="infl">
       <orth type="inf">vehi</orth>
-      <orth type="perf"/>
       <orth type="sup">vectum</orth>
     </form>
   </form>
@@ -112783,7 +111942,6 @@
     <orth>veneror</orth>
     <form type="infl">
       <orth type="inf">venerari</orth>
-      <orth type="perf"/>
       <orth type="sup">veneratum</orth>
     </form>
   </form>
@@ -112866,8 +112024,6 @@
     <orth>veniam do</orth>
     <form type="infl">
       <orth type="inf">veniam dare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -112901,7 +112057,6 @@
     <orth>venor</orth>
     <form type="infl">
       <orth type="inf">venari</orth>
-      <orth type="perf"/>
       <orth type="sup">venatum</orth>
     </form>
   </form>
@@ -113018,8 +112173,6 @@
     <orth>verbero</orth>
     <form type="infl">
       <orth type="inf">verberare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -113118,7 +112271,6 @@
     <orth>vereor</orth>
     <form type="infl">
       <orth type="inf">vereri</orth>
-      <orth type="perf"/>
       <orth type="sup">veritum</orth>
     </form>
   </form>
@@ -113210,8 +112362,6 @@
     <orth>verso</orth>
     <form type="infl">
       <orth type="inf">versare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -113772,8 +112922,6 @@
     <orth>vexo</orth>
     <form type="infl">
       <orth type="inf">vexare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114183,7 +113331,6 @@
     <orth>videor</orth>
     <form type="infl">
       <orth type="inf">vidori</orth>
-      <orth type="perf"/>
       <orth type="sup">visum</orth>
     </form>
   </form>
@@ -114235,7 +113382,6 @@
     <form type="infl">
       <orth type="inf">vigere</orth>
       <orth type="perf">vigui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114375,8 +113521,6 @@
     <orth>vigilo</orth>
     <form type="infl">
       <orth type="inf">vigilare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114649,8 +113793,6 @@
     <orth>vindico</orth>
     <form type="infl">
       <orth type="inf">vindicare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114711,8 +113853,6 @@
     <orth>violo</orth>
     <form type="infl">
       <orth type="inf">violare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114874,8 +114014,6 @@
     <orth>visito</orth>
     <form type="infl">
       <orth type="inf">visitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -114910,7 +114048,6 @@
     <form type="infl">
       <orth type="inf">visere</orth>
       <orth type="perf">visi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115035,8 +114172,6 @@
     <orth>vito</orth>
     <form type="infl">
       <orth type="inf">vitare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115070,8 +114205,6 @@
     <orth>vitupero</orth>
     <form type="infl">
       <orth type="inf">vituperare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115106,7 +114239,6 @@
     <form type="infl">
       <orth type="inf">vivere</orth>
       <orth type="perf">vixi</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115198,8 +114330,6 @@
     <orth>voco</orth>
     <form type="infl">
       <orth type="inf">vocare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115233,8 +114363,6 @@
     <orth>volo</orth>
     <form type="infl">
       <orth type="inf">volare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115274,7 +114402,6 @@
     <form type="infl">
       <orth type="inf">velle</orth>
       <orth type="perf">volui</orth>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115613,8 +114740,6 @@
     <orth>vulgo</orth>
     <form type="infl">
       <orth type="inf">vulgare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
@@ -115670,8 +114795,6 @@
     <orth>vulnero</orth>
     <form type="infl">
       <orth type="inf">vulnerare</orth>
-      <orth type="perf"/>
-      <orth type="sup"/>
     </form>
   </form>
   <gramGrp>
