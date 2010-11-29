@@ -1,6 +1,6 @@
 FREEDICTDIR ?= ..
-DISTFILES = AUTHORS ChangeLog COPYING eng-scr.tei \
-	    INSTALL Makefile NEWS README
+DISTFILES = AUTHORS ChangeLog COPYING eng-scr.tei Makefile NEWS README \
+INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 # Clear this variable, because currently the .tei file already contains
 # phonetics information.
 supported_phonetics =

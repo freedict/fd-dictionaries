@@ -1,5 +1,7 @@
 FREEDICTDIR ?= ..
-DISTFILES = fra-deu.tei Makefile COPYING INSTALL NEWS README AUTHORS
+DISTFILES = fra-deu.tei Makefile COPYING INSTALL NEWS README AUTHORS \
+    freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
+
 supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
 #include $(toolsdir)/ergane/Makefile.inc

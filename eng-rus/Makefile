@@ -1,5 +1,6 @@
 FREEDICTDIR ?= ..
-DISTFILES = eng-rus.tei ChangeLog AUTHORS Makefile COPYING INSTALL NEWS README
+DISTFILES = eng-rus.tei ChangeLog AUTHORS Makefile COPYING INSTALL NEWS README \
+freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 include $(FREEDICTDIR)/tools/Makefile.common
 supported_phonetics=
 UNSUPPORTED_PLATFORMS = evolutionary

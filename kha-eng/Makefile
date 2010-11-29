@@ -1,5 +1,7 @@
 FREEDICTDIR ?= ..
-DISTFILES = kha-eng.tei Makefile ChangeLog
+DISTFILES = kha-eng.tei Makefile ChangeLog \
+   INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml \
+   freedict-dictionary.css
 include $(FREEDICTDIR)/tools/Makefile.common
 LA1locale = kha_IN
 

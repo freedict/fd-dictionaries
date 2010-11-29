@@ -1,5 +1,6 @@
 FREEDICTDIR ?= ..
-DISTFILES = sor-kur.txt Makefile ckb-kmr.tei ckb-kmr.tei.header README ChangeLog
+DISTFILES = sor-kur.txt Makefile ckb-kmr.tei ckb-kmr.tei.header README ChangeLog \
+  INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 include $(FREEDICTDIR)/tools/Makefile.common
 
 #$(dictname).tei: sor-kur.txt $(dictname).tei.header \
