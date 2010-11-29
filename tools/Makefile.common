@@ -40,9 +40,10 @@ version := $(subst $(space),_,$(version1))
 # default target
 ################
 
+#	$(MAKE) release-tei-tbz2 -- took it out as we don't use it at all...
+
 all:
 	$(MAKE) dist
-	$(MAKE) release-tei-tbz2
 	$(MAKE) release-dict-tbz2
 	-$(MAKE) release-evolutionary
 	$(MAKE) release-bedic
