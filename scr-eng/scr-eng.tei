@@ -33,7 +33,7 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id:$</idno>
+            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">too small</note>
@@ -51,6 +51,9 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2010-12-01">
+            <date>2010-12-01</date>
+            <name>Piotr Bański</name>: Database name changed to srp-eng, as the content was confirmed to be Serbian with some dialectal Montenegrin additions (many thanks to Dr. Jerzy Molas of the University of Warsaw for his input). TODO: mark the dialectal additions with the appropriate &lt;usg> notes.</change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
