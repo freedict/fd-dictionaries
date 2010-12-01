@@ -33,7 +33,7 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id:$</idno>
+            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">too small</note>
@@ -51,6 +51,9 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2010-12-01">
+            <date>2010-12-01</date>
+            <name>Piotr Bański</name>: Database name changed from eng-scr to eng.srp. I assume this dictionary to be close in nature to the previous scr-eng (current srp-eng) in that the latter contained Serbian with Montenegrin dialectal additions (thanks to Dr. Jerzy Molas of the University of Warsaw for his remarks on scr-eng, which I assume to hold for eng-scr, because they have the same origin in Ergane). TODO: identify the Montenegrin additions and mark them with &lt;usg> elements.</change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
