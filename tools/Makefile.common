@@ -41,16 +41,21 @@ version := $(subst $(space),_,$(version1))
 ################
 
 #	$(MAKE) release-tei-tbz2 -- took it out as we don't use it at all...
+#	-$(MAKE) release-evolutionary
+#	$(MAKE) release-bedic
+#	$(MAKE) release-stardict
+#	-$(MAKE) release-aspell
+#	-$(MAKE) release-d4m
+#	-$(MAKE) release-fo
+
+# Please note: the "all" target has been significantly reduced to enable the
+# release of FreeDict tools in a relatively problem-free state.
+# You are more than welcome to help out in the process of re-instituting
+# the above targets; please drop us a line at freedict-beta.
 
 all:
 	$(MAKE) dist
 	$(MAKE) release-dict-tbz2
-	-$(MAKE) release-evolutionary
-	$(MAKE) release-bedic
-	$(MAKE) release-stardict
-	-$(MAKE) release-aspell
-	-$(MAKE) release-d4m
-	-$(MAKE) release-fo
 
 
 ##################################################
