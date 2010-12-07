@@ -11,6 +11,7 @@ ifeq ($(dbview_in_path),)
 	@echo "Try to get it from http://packages.debian.org/stable/misc/dbview"
 	@false
 else
+	cp $(hedir)/SZOTAR.DBF .
 	cp $< $@
 	$(hedir)/szotar-dbf2tei.pl -v --reverse >> $@
 endif
