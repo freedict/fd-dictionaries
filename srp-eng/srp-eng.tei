@@ -1,15 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
+   <teiHeader xml:lang="en">
       <fileDesc>
          <titleStmt>
-            <title>Serbo-Croat - English FreeDict Dictionary</title>
-            <respStmt><!-- for the freedict database -->
+            <title>Serbian - English FreeDict Dictionary</title>
+            <respStmt>
+               <!-- for the freedict database -->
                <resp>Maintainer</resp>
                <name>[up for grabs]</name>
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.2</edition>
+            <edition>0.1.3</edition>
          </editionStmt>
          <extent>about 400 headwords</extent>
          <publicationStmt>
@@ -46,17 +48,42 @@
       </fileDesc>
       <encodingDesc>
          <projectDesc>
-            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
-        welcome!</p>
+            <p>This dictionary comes to you through nice people making it available for free and for
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="sr">
+               <idno type="iso639-2">sr</idno>
+               <idno type="iso639-3">srp</idno>
+               <name xml:lang="sr">српски</name>
+               <name xml:lang="en">Serbian</name>
+            </language>
+            <language ident="en">
+               <idno type="iso639-2">en</idno>
+               <idno type="iso639-3">eng</idno>
+               <name xml:lang="sr">енглески</name>
+               <name xml:lang="en">English</name>
+            </language>
+         </langUsage>
+      </profileDesc>
       <revisionDesc>
+         <change when="2010-12-09">
+            <date>2010-12-09</date>
+            <name>Piotr Bański</name>: Added @xml:lang attributes and profileDesc/langUsage.</change>
          <change when="2010-12-01">
             <date>2010-12-01</date>
-            <name>Piotr Bański</name>: Database name changed to srp-eng, as the content was confirmed to be Serbian with some dialectal Montenegrin additions (many thanks to Dr. Jerzy Molas of the University of Warsaw for his input). TODO: mark the dialectal additions with the appropriate &lt;usg> notes.</change>
+            <name>Piotr Bański</name>: Database name changed to srp-eng, as the content was
+            confirmed to be Serbian with some dialectal Montenegrin additions (many thanks to Dr.
+            Jerzy Molas of the University of Warsaw for his input). TODO: mark the dialectal
+            additions with the appropriate &lt;usg> notes.</change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
-            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
          <change>
             <date>2005-02-12</date>
             <name>Michael Bunk</name>Converted file to TEI P4</change>
@@ -66,13 +93,13 @@
          <change>
             <date>2000-01-01</date>
             <name>Horst Eyermann</name>This Database was generated from ergane,
-	  http://www.travlang.com - Thanks!</change>
+            http://www.travlang.com - Thanks!</change>
       </revisionDesc>
    </teiHeader>
    <text>
-      <body>
+      <body xml:lang="en">
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Југославен</orth>
             </form>
             <sense>
@@ -85,7 +112,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Југославија</orth>
             </form>
             <sense>
@@ -95,7 +122,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Југословен</orth>
             </form>
             <sense>
@@ -108,7 +135,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јабука</orth>
             </form>
             <sense>
@@ -118,7 +145,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јагње</orth>
             </form>
             <sense>
@@ -128,7 +155,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јануар</orth>
             </form>
             <sense>
@@ -138,7 +165,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јастук</orth>
             </form>
             <sense>
@@ -148,7 +175,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>један</orth>
             </form>
             <sense>
@@ -158,7 +185,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>једна</orth>
             </form>
             <sense>
@@ -168,7 +195,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>једно</orth>
             </form>
             <sense>
@@ -178,7 +205,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>језеро</orth>
             </form>
             <sense>
@@ -191,7 +218,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>језик</orth>
             </form>
             <sense n="1">
@@ -209,7 +236,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јул</orth>
             </form>
             <sense>
@@ -219,7 +246,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јун</orth>
             </form>
             <sense>
@@ -229,7 +256,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јунак</orth>
             </form>
             <sense>
@@ -239,7 +266,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>јуче</orth>
             </form>
             <sense>
@@ -249,7 +276,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Њемачка</orth>
             </form>
             <sense>
@@ -259,7 +286,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>љекар</orth>
             </form>
             <sense>
@@ -272,7 +299,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>љето</orth>
             </form>
             <sense>
@@ -282,7 +309,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>љубав</orth>
             </form>
             <sense>
@@ -295,7 +322,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>људи</orth>
             </form>
             <sense>
@@ -305,7 +332,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Бог</orth>
             </form>
             <sense>
@@ -315,7 +342,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Енглез</orth>
             </form>
             <sense>
@@ -328,7 +355,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Енглеска</orth>
             </form>
             <sense>
@@ -338,7 +365,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Енглескиња</orth>
             </form>
             <sense>
@@ -351,7 +378,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Немачка</orth>
             </form>
             <sense>
@@ -361,7 +388,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Србин</orth>
             </form>
             <sense>
@@ -371,7 +398,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Француз</orth>
             </form>
             <sense>
@@ -381,7 +408,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Францускиња</orth>
             </form>
             <sense>
@@ -391,7 +418,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Хрват</orth>
             </form>
             <sense>
@@ -401,7 +428,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Хрватска</orth>
             </form>
             <sense>
@@ -411,7 +438,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Циганин</orth>
             </form>
             <sense>
@@ -424,7 +451,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>Чех</orth>
             </form>
             <sense>
@@ -434,7 +461,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>август</orth>
             </form>
             <sense>
@@ -444,7 +471,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>авион</orth>
             </form>
             <sense n="1">
@@ -465,7 +492,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>адреса</orth>
             </form>
             <sense>
@@ -475,7 +502,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>аеродром</orth>
             </form>
             <sense>
@@ -485,7 +512,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>аероплан</orth>
             </form>
             <sense>
@@ -501,7 +528,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ако</orth>
             </form>
             <sense>
@@ -514,7 +541,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>али</orth>
             </form>
             <sense>
@@ -524,7 +551,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>април</orth>
             </form>
             <sense>
@@ -534,7 +561,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>аутомобил</orth>
             </form>
             <sense>
@@ -544,7 +571,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>баба</orth>
             </form>
             <sense>
@@ -554,7 +581,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>балкон</orth>
             </form>
             <sense>
@@ -564,7 +591,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бацати</orth>
             </form>
             <sense>
@@ -574,7 +601,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бацити</orth>
             </form>
             <sense>
@@ -584,7 +611,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>баш</orth>
             </form>
             <sense>
@@ -597,7 +624,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>башта</orth>
             </form>
             <sense>
@@ -607,7 +634,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>без</orth>
             </form>
             <sense>
@@ -617,7 +644,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>берберин</orth>
             </form>
             <sense>
@@ -630,7 +657,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>библиотека</orth>
             </form>
             <sense>
@@ -640,7 +667,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>биоскоп</orth>
             </form>
             <sense>
@@ -653,7 +680,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бифтек</orth>
             </form>
             <sense>
@@ -666,7 +693,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>боја</orth>
             </form>
             <sense>
@@ -679,7 +706,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бол</orth>
             </form>
             <sense>
@@ -692,7 +719,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бомба</orth>
             </form>
             <sense>
@@ -702,7 +729,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>брат</orth>
             </form>
             <sense>
@@ -712,7 +739,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>брег</orth>
             </form>
             <sense>
@@ -722,7 +749,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бресква</orth>
             </form>
             <sense>
@@ -732,7 +759,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>брзо</orth>
             </form>
             <sense>
@@ -748,7 +775,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бријег</orth>
             </form>
             <sense>
@@ -758,7 +785,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>брод</orth>
             </form>
             <sense>
@@ -771,7 +798,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>бубрег</orth>
             </form>
             <sense>
@@ -781,7 +808,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ваздух</orth>
             </form>
             <sense>
@@ -791,7 +818,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>варош</orth>
             </form>
             <sense>
@@ -804,7 +831,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>већ</orth>
             </form>
             <sense>
@@ -823,7 +850,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>веђ</orth>
             </form>
             <sense>
@@ -839,7 +866,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>вељача</orth>
             </form>
             <sense>
@@ -849,7 +876,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>вече</orth>
             </form>
             <sense>
@@ -859,7 +886,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>вино</orth>
             </form>
             <sense>
@@ -869,7 +896,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>висина</orth>
             </form>
             <sense>
@@ -882,7 +909,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>воће</orth>
             </form>
             <sense>
@@ -892,7 +919,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>војник</orth>
             </form>
             <sense>
@@ -905,7 +932,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>војска</orth>
             </form>
             <sense>
@@ -915,7 +942,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>вода</orth>
             </form>
             <sense>
@@ -925,7 +952,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>враг</orth>
             </form>
             <sense>
@@ -935,7 +962,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>врата</orth>
             </form>
             <sense>
@@ -945,7 +972,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>време</orth>
             </form>
             <sense n="1">
@@ -963,7 +990,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>вријеме</orth>
             </form>
             <sense n="1">
@@ -981,7 +1008,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>врло</orth>
             </form>
             <sense>
@@ -997,7 +1024,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>врт</orth>
             </form>
             <sense>
@@ -1007,7 +1034,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>врућина</orth>
             </form>
             <sense>
@@ -1017,7 +1044,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>галама</orth>
             </form>
             <sense>
@@ -1033,7 +1060,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>глумац</orth>
             </form>
             <sense>
@@ -1043,7 +1070,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>глумица</orth>
             </form>
             <sense>
@@ -1053,7 +1080,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>година</orth>
             </form>
             <sense>
@@ -1063,7 +1090,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>гост</orth>
             </form>
             <sense>
@@ -1073,7 +1100,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>гостионица</orth>
             </form>
             <sense>
@@ -1086,7 +1113,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>град</orth>
             </form>
             <sense>
@@ -1099,7 +1126,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>грана</orth>
             </form>
             <sense>
@@ -1112,7 +1139,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>да</orth>
             </form>
             <sense>
@@ -1122,7 +1149,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>дан</orth>
             </form>
             <sense>
@@ -1132,7 +1159,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>данас</orth>
             </form>
             <sense>
@@ -1142,7 +1169,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>датум</orth>
             </form>
             <sense>
@@ -1152,7 +1179,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>два</orth>
             </form>
             <sense>
@@ -1162,7 +1189,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>две</orth>
             </form>
             <sense>
@@ -1172,7 +1199,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>двоје</orth>
             </form>
             <sense>
@@ -1182,7 +1209,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>девет</orth>
             </form>
             <sense>
@@ -1192,7 +1219,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>девојка</orth>
             </form>
             <sense>
@@ -1208,7 +1235,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>десет</orth>
             </form>
             <sense>
@@ -1218,7 +1245,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>децембар</orth>
             </form>
             <sense>
@@ -1228,7 +1255,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>джеп</orth>
             </form>
             <sense>
@@ -1238,7 +1265,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>диван</orth>
             </form>
             <sense>
@@ -1251,7 +1278,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>до виђења</orth>
             </form>
             <sense>
@@ -1267,7 +1294,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>доба</orth>
             </form>
             <sense>
@@ -1277,7 +1304,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>доручак</orth>
             </form>
             <sense>
@@ -1287,7 +1314,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>дућан</orth>
             </form>
             <sense>
@@ -1303,7 +1330,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>дужност</orth>
             </form>
             <sense>
@@ -1316,7 +1343,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>жена</orth>
             </form>
             <sense>
@@ -1326,7 +1353,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>живот</orth>
             </form>
             <sense>
@@ -1336,7 +1363,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>заједно</orth>
             </form>
             <sense>
@@ -1346,7 +1373,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>збогом</orth>
             </form>
             <sense>
@@ -1365,7 +1392,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>зграда</orth>
             </form>
             <sense>
@@ -1375,7 +1402,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>земља</orth>
             </form>
             <sense>
@@ -1391,7 +1418,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>зид</orth>
             </form>
             <sense>
@@ -1401,7 +1428,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>зима</orth>
             </form>
             <sense>
@@ -1411,7 +1438,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>зуб</orth>
             </form>
             <sense>
@@ -1421,7 +1448,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>и</orth>
             </form>
             <sense>
@@ -1431,7 +1458,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>иако</orth>
             </form>
             <sense>
@@ -1444,7 +1471,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>играчка</orth>
             </form>
             <sense>
@@ -1454,7 +1481,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>из</orth>
             </form>
             <sense>
@@ -1467,7 +1494,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>између</orth>
             </form>
             <sense>
@@ -1480,7 +1507,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>или</orth>
             </form>
             <sense>
@@ -1490,7 +1517,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>име</orth>
             </form>
             <sense>
@@ -1503,7 +1530,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>иностранство</orth>
             </form>
             <sense>
@@ -1513,7 +1540,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>истина</orth>
             </form>
             <sense>
@@ -1526,7 +1553,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кћерка</orth>
             </form>
             <sense>
@@ -1536,7 +1563,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кћи</orth>
             </form>
             <sense>
@@ -1546,7 +1573,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>к</orth>
             </form>
             <sense>
@@ -1565,7 +1592,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кључ</orth>
             </form>
             <sense>
@@ -1575,7 +1602,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>књига</orth>
             </form>
             <sense>
@@ -1585,7 +1612,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ка</orth>
             </form>
             <sense>
@@ -1604,7 +1631,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>камен</orth>
             </form>
             <sense>
@@ -1614,7 +1641,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>канцеларија</orth>
             </form>
             <sense>
@@ -1627,7 +1654,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>карта</orth>
             </form>
             <sense>
@@ -1643,7 +1670,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кафа</orth>
             </form>
             <sense>
@@ -1653,7 +1680,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кафана</orth>
             </form>
             <sense>
@@ -1666,7 +1693,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кашика</orth>
             </form>
             <sense>
@@ -1676,7 +1703,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>келнер</orth>
             </form>
             <sense>
@@ -1686,7 +1713,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>килограм</orth>
             </form>
             <sense>
@@ -1696,7 +1723,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>клас</orth>
             </form>
             <sense>
@@ -1706,7 +1733,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>клима</orth>
             </form>
             <sense>
@@ -1716,7 +1743,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кнез</orth>
             </form>
             <sense>
@@ -1726,7 +1753,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кољено</orth>
             </form>
             <sense>
@@ -1736,7 +1763,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>коњ</orth>
             </form>
             <sense>
@@ -1746,7 +1773,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ковчег</orth>
             </form>
             <sense>
@@ -1759,7 +1786,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>когод</orth>
             </form>
             <sense>
@@ -1787,7 +1814,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кола</orth>
             </form>
             <sense>
@@ -1797,7 +1824,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>колено</orth>
             </form>
             <sense>
@@ -1807,7 +1834,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>коловоз</orth>
             </form>
             <sense>
@@ -1817,7 +1844,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>комад</orth>
             </form>
             <sense>
@@ -1833,7 +1860,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>конзул</orth>
             </form>
             <sense>
@@ -1843,7 +1870,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>концерат</orth>
             </form>
             <sense>
@@ -1853,7 +1880,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>концерт</orth>
             </form>
             <sense>
@@ -1863,7 +1890,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кост</orth>
             </form>
             <sense>
@@ -1873,7 +1900,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>краљ</orth>
             </form>
             <sense>
@@ -1883,7 +1910,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кревет</orth>
             </form>
             <sense>
@@ -1893,7 +1920,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кров</orth>
             </form>
             <sense>
@@ -1903,7 +1930,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кроз</orth>
             </form>
             <sense>
@@ -1913,7 +1940,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>купатило</orth>
             </form>
             <sense>
@@ -1923,7 +1950,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>купе</orth>
             </form>
             <sense>
@@ -1936,7 +1963,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>кухиња</orth>
             </form>
             <sense>
@@ -1946,7 +1973,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>леђа</orth>
             </form>
             <sense>
@@ -1956,7 +1983,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>лед</orth>
             </form>
             <sense>
@@ -1966,7 +1993,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>лекар</orth>
             </form>
             <sense>
@@ -1979,7 +2006,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>лето</orth>
             </form>
             <sense>
@@ -1989,7 +2016,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>лиспањ</orth>
             </form>
             <sense>
@@ -1999,7 +2026,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>листопад</orth>
             </form>
             <sense>
@@ -2009,7 +2036,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>литар</orth>
             </form>
             <sense>
@@ -2022,7 +2049,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>лице</orth>
             </form>
             <sense>
@@ -2032,7 +2059,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мјесец</orth>
             </form>
             <sense n="1">
@@ -2047,7 +2074,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мјесто</orth>
             </form>
             <sense n="1">
@@ -2068,7 +2095,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мај</orth>
             </form>
             <sense>
@@ -2078,7 +2105,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мајка</orth>
             </form>
             <sense>
@@ -2088,7 +2115,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>магла</orth>
             </form>
             <sense>
@@ -2101,7 +2128,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>марка</orth>
             </form>
             <sense>
@@ -2114,7 +2141,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>март</orth>
             </form>
             <sense>
@@ -2124,7 +2151,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мати</orth>
             </form>
             <sense>
@@ -2134,7 +2161,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мачка</orth>
             </form>
             <sense>
@@ -2144,7 +2171,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>машина</orth>
             </form>
             <sense n="1">
@@ -2162,7 +2189,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мед</orth>
             </form>
             <sense>
@@ -2172,7 +2199,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>месец</orth>
             </form>
             <sense n="1">
@@ -2187,7 +2214,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>месо</orth>
             </form>
             <sense>
@@ -2197,7 +2224,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>место</orth>
             </form>
             <sense n="1">
@@ -2218,7 +2245,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>метар</orth>
             </form>
             <sense>
@@ -2228,7 +2255,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ми</orth>
             </form>
             <sense>
@@ -2241,7 +2268,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>миља</orth>
             </form>
             <sense>
@@ -2251,7 +2278,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>милицајац</orth>
             </form>
             <sense>
@@ -2261,7 +2288,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>министар</orth>
             </form>
             <sense>
@@ -2271,7 +2298,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мир</orth>
             </form>
             <sense>
@@ -2281,7 +2308,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>можда</orth>
             </form>
             <sense>
@@ -2303,7 +2330,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>море</orth>
             </form>
             <sense>
@@ -2313,7 +2340,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мост</orth>
             </form>
             <sense>
@@ -2323,7 +2350,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>мрак</orth>
             </form>
             <sense>
@@ -2336,7 +2363,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>муж</orth>
             </form>
             <sense>
@@ -2346,7 +2373,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>музеј</orth>
             </form>
             <sense>
@@ -2356,7 +2383,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>музика</orth>
             </form>
             <sense>
@@ -2366,7 +2393,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>неђеља</orth>
             </form>
             <sense>
@@ -2376,7 +2403,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>небо</orth>
             </form>
             <sense>
@@ -2389,7 +2416,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>негђе</orth>
             </form>
             <sense>
@@ -2402,7 +2429,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>негде</orth>
             </form>
             <sense>
@@ -2415,7 +2442,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>него</orth>
             </form>
             <sense>
@@ -2425,7 +2452,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>недеља</orth>
             </form>
             <sense>
@@ -2435,7 +2462,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>незгода</orth>
             </form>
             <sense>
@@ -2445,7 +2472,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>неко</orth>
             </form>
             <sense>
@@ -2473,7 +2500,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>непријатељ</orth>
             </form>
             <sense>
@@ -2486,7 +2513,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нешто</orth>
             </form>
             <sense>
@@ -2499,7 +2526,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нигђе</orth>
             </form>
             <sense>
@@ -2509,7 +2536,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нигде</orth>
             </form>
             <sense>
@@ -2519,7 +2546,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>никад</orth>
             </form>
             <sense>
@@ -2529,7 +2556,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>никада</orth>
             </form>
             <sense>
@@ -2539,7 +2566,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нико</orth>
             </form>
             <sense>
@@ -2558,7 +2585,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ништа</orth>
             </form>
             <sense>
@@ -2568,7 +2595,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ноћ</orth>
             </form>
             <sense>
@@ -2578,7 +2605,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>новембар</orth>
             </form>
             <sense>
@@ -2588,7 +2615,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нога</orth>
             </form>
             <sense>
@@ -2598,7 +2625,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нож</orth>
             </form>
             <sense>
@@ -2608,7 +2635,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>нос</orth>
             </form>
             <sense>
@@ -2618,7 +2645,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ођедном</orth>
             </form>
             <sense>
@@ -2631,7 +2658,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>обала</orth>
             </form>
             <sense>
@@ -2647,7 +2674,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>обичај</orth>
             </form>
             <sense>
@@ -2663,7 +2690,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>обично</orth>
             </form>
             <sense>
@@ -2676,7 +2703,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>обоје</orth>
             </form>
             <sense>
@@ -2686,7 +2713,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>обрва</orth>
             </form>
             <sense>
@@ -2699,7 +2726,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>оглас</orth>
             </form>
             <sense>
@@ -2712,7 +2739,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ожујак</orth>
             </form>
             <sense>
@@ -2722,7 +2749,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>око</orth>
             </form>
             <sense>
@@ -2732,7 +2759,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>октобар</orth>
             </form>
             <sense>
@@ -2742,7 +2769,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>оловка</orth>
             </form>
             <sense>
@@ -2752,7 +2779,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>он</orth>
             </form>
             <sense>
@@ -2765,7 +2792,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>она</orth>
             </form>
             <sense>
@@ -2778,7 +2805,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>оно</orth>
             </form>
             <sense>
@@ -2788,7 +2815,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>опасност</orth>
             </form>
             <sense>
@@ -2801,7 +2828,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>опет</orth>
             </form>
             <sense n="1">
@@ -2831,7 +2858,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>орах</orth>
             </form>
             <sense>
@@ -2841,7 +2868,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ормар</orth>
             </form>
             <sense>
@@ -2860,7 +2887,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>осам</orth>
             </form>
             <sense>
@@ -2870,7 +2897,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>отсутан</orth>
             </form>
             <sense>
@@ -2880,7 +2907,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пјесма</orth>
             </form>
             <sense>
@@ -2893,7 +2920,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пјешице</orth>
             </form>
             <sense>
@@ -2906,7 +2933,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пар</orth>
             </form>
             <sense>
@@ -2916,7 +2943,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>парк</orth>
             </form>
             <sense>
@@ -2926,7 +2953,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пас</orth>
             </form>
             <sense>
@@ -2936,7 +2963,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пасош</orth>
             </form>
             <sense>
@@ -2946,7 +2973,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>перон</orth>
             </form>
             <sense>
@@ -2962,7 +2989,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>песма</orth>
             </form>
             <sense>
@@ -2975,7 +3002,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пет</orth>
             </form>
             <sense>
@@ -2985,7 +3012,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>петак</orth>
             </form>
             <sense>
@@ -2995,7 +3022,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пешице</orth>
             </form>
             <sense>
@@ -3008,7 +3035,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пиво</orth>
             </form>
             <sense>
@@ -3021,7 +3048,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>писмо</orth>
             </form>
             <sense>
@@ -3031,7 +3058,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>питање</orth>
             </form>
             <sense>
@@ -3041,7 +3068,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>планина</orth>
             </form>
             <sense>
@@ -3051,7 +3078,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>плата</orth>
             </form>
             <sense>
@@ -3067,7 +3094,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>плеће</orth>
             </form>
             <sense>
@@ -3077,7 +3104,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>погрешка</orth>
             </form>
             <sense>
@@ -3093,7 +3120,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>под</orth>
             </form>
             <sense n="1">
@@ -3117,7 +3144,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>позориште</orth>
             </form>
             <sense>
@@ -3127,7 +3154,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>полиција</orth>
             </form>
             <sense>
@@ -3137,7 +3164,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>понедељак</orth>
             </form>
             <sense>
@@ -3147,7 +3174,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>понекад</orth>
             </form>
             <sense>
@@ -3160,7 +3187,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>поподне</orth>
             </form>
             <sense>
@@ -3170,7 +3197,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>породица</orth>
             </form>
             <sense>
@@ -3180,7 +3207,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>после</orth>
             </form>
             <sense>
@@ -3193,7 +3220,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>постеља</orth>
             </form>
             <sense>
@@ -3203,7 +3230,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пратити</orth>
             </form>
             <sense>
@@ -3213,7 +3240,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>предграђе</orth>
             </form>
             <sense>
@@ -3223,7 +3250,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прекјуче</orth>
             </form>
             <sense>
@@ -3233,7 +3260,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>преко</orth>
             </form>
             <sense>
@@ -3249,7 +3276,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прекосутра</orth>
             </form>
             <sense>
@@ -3259,7 +3286,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прексутра</orth>
             </form>
             <sense>
@@ -3269,7 +3296,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пријатељ</orth>
             </form>
             <sense>
@@ -3279,7 +3306,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пријатељица</orth>
             </form>
             <sense>
@@ -3289,7 +3316,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прихватити</orth>
             </form>
             <sense>
@@ -3308,7 +3335,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прозор</orth>
             </form>
             <sense>
@@ -3318,7 +3345,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>просинац</orth>
             </form>
             <sense>
@@ -3328,7 +3355,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>против</orth>
             </form>
             <sense>
@@ -3353,7 +3380,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>професор</orth>
             </form>
             <sense>
@@ -3363,7 +3390,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прст</orth>
             </form>
             <sense>
@@ -3373,7 +3400,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>прстен</orth>
             </form>
             <sense>
@@ -3383,7 +3410,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>пут</orth>
             </form>
             <sense>
@@ -3396,7 +3423,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рад</orth>
             </form>
             <sense>
@@ -3409,7 +3436,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>радња</orth>
             </form>
             <sense>
@@ -3425,7 +3452,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>радник</orth>
             </form>
             <sense>
@@ -3453,7 +3480,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>радост</orth>
             </form>
             <sense>
@@ -3466,7 +3493,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рана</orth>
             </form>
             <sense>
@@ -3479,7 +3506,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рат</orth>
             </form>
             <sense>
@@ -3489,7 +3516,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рачун</orth>
             </form>
             <sense>
@@ -3499,7 +3526,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>река</orth>
             </form>
             <sense>
@@ -3509,7 +3536,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ресторан</orth>
             </form>
             <sense>
@@ -3519,7 +3546,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>реч</orth>
             </form>
             <sense>
@@ -3529,7 +3556,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>речник</orth>
             </form>
             <sense>
@@ -3542,7 +3569,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ријека</orth>
             </form>
             <sense>
@@ -3552,7 +3579,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ријеч</orth>
             </form>
             <sense>
@@ -3562,7 +3589,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ријечник</orth>
             </form>
             <sense>
@@ -3575,7 +3602,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>риба</orth>
             </form>
             <sense>
@@ -3585,7 +3612,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рујан</orth>
             </form>
             <sense>
@@ -3595,7 +3622,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рука</orth>
             </form>
             <sense>
@@ -3605,7 +3632,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>рукавица</orth>
             </form>
             <sense>
@@ -3618,7 +3645,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сјеме</orth>
             </form>
             <sense>
@@ -3628,7 +3655,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>савјет</orth>
             </form>
             <sense>
@@ -3641,7 +3668,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>савет</orth>
             </form>
             <sense>
@@ -3654,7 +3681,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сагласити се</orth>
             </form>
             <sense>
@@ -3670,7 +3697,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сад</orth>
             </form>
             <sense>
@@ -3683,7 +3710,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сада</orth>
             </form>
             <sense>
@@ -3696,7 +3723,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сам</orth>
             </form>
             <sense>
@@ -3715,7 +3742,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>саобраћај</orth>
             </form>
             <sense>
@@ -3725,7 +3752,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сат</orth>
             </form>
             <sense>
@@ -3741,7 +3768,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>све</orth>
             </form>
             <sense>
@@ -3757,7 +3784,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>свет</orth>
             </form>
             <sense>
@@ -3767,7 +3794,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>свијет</orth>
             </form>
             <sense>
@@ -3777,7 +3804,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>свибањ</orth>
             </form>
             <sense>
@@ -3787,7 +3814,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>свуда</orth>
             </form>
             <sense>
@@ -3800,7 +3827,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>седам</orth>
             </form>
             <sense>
@@ -3810,7 +3837,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>село</orth>
             </form>
             <sense>
@@ -3820,7 +3847,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>семе</orth>
             </form>
             <sense>
@@ -3830,7 +3857,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>септембар</orth>
             </form>
             <sense>
@@ -3840,7 +3867,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сестра</orth>
             </form>
             <sense>
@@ -3850,7 +3877,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сијечањ</orth>
             </form>
             <sense>
@@ -3860,7 +3887,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>син</orth>
             </form>
             <sense>
@@ -3870,7 +3897,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сир</orth>
             </form>
             <sense>
@@ -3880,7 +3907,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>скупа</orth>
             </form>
             <sense>
@@ -3890,7 +3917,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>слика</orth>
             </form>
             <sense>
@@ -3903,7 +3930,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сликар</orth>
             </form>
             <sense>
@@ -3913,7 +3940,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>слуга</orth>
             </form>
             <sense>
@@ -3926,7 +3953,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>смоква</orth>
             </form>
             <sense>
@@ -3936,7 +3963,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>снаха</orth>
             </form>
             <sense>
@@ -3946,7 +3973,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>снег</orth>
             </form>
             <sense>
@@ -3956,7 +3983,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>снијег</orth>
             </form>
             <sense>
@@ -3966,7 +3993,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>соба</orth>
             </form>
             <sense>
@@ -3979,7 +4006,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>списак</orth>
             </form>
             <sense>
@@ -3989,7 +4016,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>способан</orth>
             </form>
             <sense>
@@ -4002,7 +4029,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>среда</orth>
             </form>
             <sense>
@@ -4012,7 +4039,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сриједа</orth>
             </form>
             <sense>
@@ -4022,7 +4049,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>српањ</orth>
             </form>
             <sense>
@@ -4032,7 +4059,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>срце</orth>
             </form>
             <sense>
@@ -4042,7 +4069,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>стаза</orth>
             </form>
             <sense>
@@ -4052,7 +4079,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>станица</orth>
             </form>
             <sense>
@@ -4062,7 +4089,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ствар</orth>
             </form>
             <sense>
@@ -4084,7 +4111,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>столица</orth>
             </form>
             <sense>
@@ -4094,7 +4121,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>странац</orth>
             </form>
             <sense>
@@ -4104,7 +4131,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>страница</orth>
             </form>
             <sense>
@@ -4114,7 +4141,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>стриц</orth>
             </form>
             <sense>
@@ -4124,7 +4151,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>студент</orth>
             </form>
             <sense>
@@ -4137,7 +4164,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>студенткиња</orth>
             </form>
             <sense>
@@ -4150,7 +4177,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>судац</orth>
             </form>
             <sense>
@@ -4160,7 +4187,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сунце</orth>
             </form>
             <sense>
@@ -4170,7 +4197,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>супа</orth>
             </form>
             <sense>
@@ -4180,7 +4207,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>сутра</orth>
             </form>
             <sense>
@@ -4190,7 +4217,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>тајна</orth>
             </form>
             <sense>
@@ -4200,7 +4227,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>тањир</orth>
             </form>
             <sense>
@@ -4210,7 +4237,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>такоде</orth>
             </form>
             <sense>
@@ -4226,7 +4253,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>такси</orth>
             </form>
             <sense>
@@ -4236,7 +4263,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>тетка</orth>
             </form>
             <sense>
@@ -4246,7 +4273,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>травањ</orth>
             </form>
             <sense>
@@ -4256,7 +4283,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>три</orth>
             </form>
             <sense>
@@ -4266,7 +4293,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>турист</orth>
             </form>
             <sense>
@@ -4276,7 +4303,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>у</orth>
             </form>
             <sense>
@@ -4304,7 +4331,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>увек</orth>
             </form>
             <sense>
@@ -4317,7 +4344,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>увијек</orth>
             </form>
             <sense>
@@ -4330,7 +4357,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>уво</orth>
             </form>
             <sense>
@@ -4340,7 +4367,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>универзитет</orth>
             </form>
             <sense>
@@ -4350,7 +4377,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>усна</orth>
             </form>
             <sense>
@@ -4360,7 +4387,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>успјех</orth>
             </form>
             <sense>
@@ -4373,7 +4400,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>успех</orth>
             </form>
             <sense>
@@ -4386,7 +4413,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>уторак</orth>
             </form>
             <sense>
@@ -4396,7 +4423,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ухо</orth>
             </form>
             <sense>
@@ -4406,7 +4433,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>учитељ</orth>
             </form>
             <sense>
@@ -4419,7 +4446,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>фебруар</orth>
             </form>
             <sense>
@@ -4429,7 +4456,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>фунта</orth>
             </form>
             <sense>
@@ -4439,7 +4466,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>хљеб</orth>
             </form>
             <sense>
@@ -4452,7 +4479,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>хармоника</orth>
             </form>
             <sense>
@@ -4462,7 +4489,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>хартија</orth>
             </form>
             <sense>
@@ -4472,7 +4499,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>хлеб</orth>
             </form>
             <sense>
@@ -4485,7 +4512,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>хотел</orth>
             </form>
             <sense>
@@ -4495,7 +4522,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>храброст</orth>
             </form>
             <sense>
@@ -4505,7 +4532,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>цвет</orth>
             </form>
             <sense>
@@ -4518,7 +4545,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>цвијет</orth>
             </form>
             <sense>
@@ -4531,7 +4558,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>циљ</orth>
             </form>
             <sense>
@@ -4550,7 +4577,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>цигарета</orth>
             </form>
             <sense>
@@ -4560,7 +4587,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>ципела</orth>
             </form>
             <sense>
@@ -4570,7 +4597,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>црква</orth>
             </form>
             <sense>
@@ -4589,7 +4616,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>чај</orth>
             </form>
             <sense>
@@ -4599,7 +4626,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>чек</orth>
             </form>
             <sense>
@@ -4612,7 +4639,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>чекић</orth>
             </form>
             <sense>
@@ -4622,7 +4649,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>често</orth>
             </form>
             <sense>
@@ -4638,7 +4665,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>четвртак</orth>
             </form>
             <sense>
@@ -4648,7 +4675,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>четири</orth>
             </form>
             <sense>
@@ -4658,7 +4685,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шећер</orth>
             </form>
             <sense>
@@ -4668,7 +4695,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шест</orth>
             </form>
             <sense>
@@ -4678,7 +4705,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шешир</orth>
             </form>
             <sense>
@@ -4688,7 +4715,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>школа</orth>
             </form>
             <sense>
@@ -4698,7 +4725,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шоља</orth>
             </form>
             <sense>
@@ -4708,7 +4735,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шофер</orth>
             </form>
             <sense>
@@ -4721,7 +4748,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="sr">
                <orth>шума</orth>
             </form>
             <sense>
