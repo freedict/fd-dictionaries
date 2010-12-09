@@ -1,15 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
+   <teiHeader xml:lang="en">
       <fileDesc>
          <titleStmt>
-            <title>English-Serbocroatian FreeDict Dictionary</title>
-            <respStmt><!-- for the freedict database -->
+            <title>English-Serbian FreeDict Dictionary</title>
+            <respStmt>
+               <!-- for the freedict database -->
                <resp>Maintainer</resp>
                <name>[up for grabs]</name>
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.1.2</edition>
          </editionStmt>
          <extent>about 600 headwords</extent>
          <publicationStmt>
@@ -46,17 +48,44 @@
       </fileDesc>
       <encodingDesc>
          <projectDesc>
-            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
-        welcome!</p>
+            <p>This dictionary comes to you through nice people making it available for free and for
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="en">
+               <idno type="iso639-2">en</idno>
+               <idno type="iso639-3">eng</idno>
+               <name xml:lang="en">English</name>
+               <name xml:lang="sr">енглески</name>
+            </language>
+            <language ident="sr">
+               <idno type="iso639-2">sr</idno>
+               <idno type="iso639-3">srp</idno>
+               <name xml:lang="en">Serbian</name>
+               <name xml:lang="sr">српски</name>
+            </language>
+         </langUsage>
+      </profileDesc>
       <revisionDesc>
+         <change when="2010-12-09">
+            <date>2010-12-09</date>
+            <name>Piotr Bański</name>: Added @xml:lang attributes and profileDesc/langUsage.</change>
          <change when="2010-12-01">
             <date>2010-12-01</date>
-            <name>Piotr Bański</name>: Database name changed from eng-scr to eng.srp. I assume this dictionary to be close in nature to the previous scr-eng (current srp-eng) in that the latter contained Serbian with Montenegrin dialectal additions (thanks to Dr. Jerzy Molas of the University of Warsaw for his remarks on scr-eng, which I assume to hold for eng-scr, because they have the same origin in Ergane). TODO: identify the Montenegrin additions and mark them with &lt;usg> elements.</change>
+            <name>Piotr Bański</name>: Database name changed from eng-scr to eng.srp. I assume this
+            dictionary to be close in nature to the previous scr-eng (current srp-eng) in that the
+            latter contained Serbian with Montenegrin dialectal additions (thanks to Dr. Jerzy Molas
+            of the University of Warsaw for his remarks on scr-eng, which I assume to hold for
+            eng-scr, because they have the same origin in Ergane). TODO: identify the Montenegrin
+            additions and mark them with &lt;usg> elements.</change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
-            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
+            <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
+            tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
          <change>
             <date>2005-02-11</date>
             <name>Michael Bunk</name>Converted file to TEI P4</change>
@@ -66,13 +95,13 @@
          <change>
             <date>2000-01-10</date>
             <name>Horst Eyermann</name>This Database was generated from ergane,
-	  http://www.travlang.com - Thanks!</change>
+            http://www.travlang.com - Thanks!</change>
       </revisionDesc>
    </teiHeader>
    <text>
-      <body>
+      <body xml:lang="sr">
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>April</orth>
                <pron>eiprəl</pron>
             </form>
@@ -86,7 +115,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>August</orth>
                <pron>ɔːgəst</pron>
             </form>
@@ -100,7 +129,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Croat</orth>
                <pron>krouit</pron>
             </form>
@@ -111,7 +140,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Croatia</orth>
                <pron>krouʃə</pron>
             </form>
@@ -122,7 +151,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Czech</orth>
                <pron>tʃek</pron>
             </form>
@@ -133,7 +162,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>December</orth>
                <pron>disembər</pron>
             </form>
@@ -147,7 +176,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>England</orth>
                <pron>iŋglənd</pron>
             </form>
@@ -158,7 +187,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>English</orth>
                <pron>iŋgliʃ</pron>
             </form>
@@ -169,7 +198,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Englishman</orth>
                <pron>iŋgliʃmən</pron>
             </form>
@@ -180,7 +209,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Englishwoman</orth>
                <pron>iŋgliʃwumən</pron>
             </form>
@@ -191,7 +220,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>February</orth>
                <pron>febjeəriː</pron>
             </form>
@@ -205,7 +234,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Frenchman</orth>
                <pron>frentʃmən</pron>
             </form>
@@ -216,7 +245,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Frenchwoman</orth>
                <pron>frentʃwumən</pron>
             </form>
@@ -227,7 +256,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Friday</orth>
                <pron>fraidiː</pron>
             </form>
@@ -238,7 +267,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Germany</orth>
                <pron>dʒəːməniː</pron>
             </form>
@@ -252,7 +281,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>God</orth>
                <pron>gɔd</pron>
             </form>
@@ -263,7 +292,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Gypsy</orth>
                <pron>dʒipsiː</pron>
             </form>
@@ -274,7 +303,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>January</orth>
                <pron>dʒænjuriː</pron>
             </form>
@@ -288,7 +317,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>July</orth>
                <pron>dʒuːlai</pron>
             </form>
@@ -302,7 +331,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>June</orth>
                <pron>dʒuːn</pron>
             </form>
@@ -316,7 +345,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>March</orth>
                <pron>mɑːtʃ</pron>
             </form>
@@ -330,7 +359,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>May</orth>
                <pron>mei</pron>
             </form>
@@ -344,7 +373,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Miss</orth>
                <pron>mis</pron>
             </form>
@@ -355,7 +384,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Mister</orth>
                <pron>mistər</pron>
             </form>
@@ -366,7 +395,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Monday</orth>
                <pron>mʌndiː</pron>
             </form>
@@ -377,7 +406,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Mr</orth>
                <pron>mr</pron>
             </form>
@@ -388,7 +417,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Mrs</orth>
                <pron>mz</pron>
             </form>
@@ -399,7 +428,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>November</orth>
                <pron>nouvembər</pron>
             </form>
@@ -410,7 +439,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>October</orth>
                <pron>ɔktoubər</pron>
             </form>
@@ -424,7 +453,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Roman</orth>
                <pron>roumən</pron>
             </form>
@@ -435,7 +464,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Sabbath</orth>
                <pron>sæbəθ</pron>
             </form>
@@ -446,7 +475,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Sassenach</orth>
                <pron>sæsənæk</pron>
             </form>
@@ -457,7 +486,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Saturday</orth>
                <pron>sætədiː</pron>
             </form>
@@ -468,7 +497,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>September</orth>
                <pron>septembər</pron>
             </form>
@@ -482,7 +511,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Serb</orth>
                <pron>səb</pron>
             </form>
@@ -493,7 +522,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Sunday</orth>
                <pron>sʌndiː</pron>
             </form>
@@ -507,7 +536,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Thursday</orth>
                <pron>θəːzdei</pron>
             </form>
@@ -518,7 +547,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Tuesday</orth>
                <pron>tjuːzdei</pron>
             </form>
@@ -529,7 +558,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Wednesday</orth>
                <pron>wenzdei</pron>
             </form>
@@ -543,7 +572,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Yugoslav</orth>
                <pron>juːgousleiv</pron>
             </form>
@@ -557,7 +586,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Yugoslavia</orth>
                <pron>juːgouslɑːviə</pron>
             </form>
@@ -568,7 +597,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>Yugoslavian</orth>
                <pron>juːgouslɑːviən</pron>
             </form>
@@ -582,7 +611,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>a</orth>
                <pron>ə</pron>
             </form>
@@ -601,7 +630,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>aberration</orth>
                <pron>æbəreiʃən</pron>
             </form>
@@ -612,7 +641,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>able</orth>
                <pron>eibl</pron>
             </form>
@@ -623,7 +652,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>abroad</orth>
                <pron>əbrɔːd</pron>
             </form>
@@ -634,7 +663,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>absent</orth>
                <pron>æbsənt</pron>
             </form>
@@ -645,7 +674,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>academic</orth>
                <pron>ækədemik</pron>
             </form>
@@ -656,7 +685,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>accede</orth>
                <pron>əksiːd</pron>
             </form>
@@ -667,7 +696,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>accept</orth>
                <pron>æksept</pron>
             </form>
@@ -678,7 +707,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>accident</orth>
                <pron>æksidənt</pron>
             </form>
@@ -689,7 +718,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>accompany</orth>
                <pron>əkʌmpəniː</pron>
             </form>
@@ -700,7 +729,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>accordion</orth>
                <pron>əkɔːdiən</pron>
             </form>
@@ -711,7 +740,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>account</orth>
                <pron>əkaunt</pron>
             </form>
@@ -722,7 +751,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ache</orth>
                <pron>eik</pron>
             </form>
@@ -733,7 +762,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>achievement</orth>
                <pron>ətʃiːvmənt</pron>
             </form>
@@ -747,7 +776,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>across</orth>
                <pron>əkrɔs</pron>
             </form>
@@ -758,7 +787,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>across</orth>
                <pron>əkrɔsfrɔm</pron>
             </form>
@@ -769,7 +798,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>actor</orth>
                <pron>æktər</pron>
             </form>
@@ -780,7 +809,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>actress</orth>
                <pron>æktris</pron>
             </form>
@@ -791,7 +820,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ad</orth>
                <pron>əd</pron>
             </form>
@@ -802,7 +831,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>address</orth>
                <pron>ədres</pron>
             </form>
@@ -813,7 +842,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>adieu</orth>
                <pron>ədjuː</pron>
             </form>
@@ -824,7 +853,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ado</orth>
                <pron>ədou</pron>
             </form>
@@ -835,7 +864,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>adversary</orth>
                <pron>ædvəsəriː</pron>
             </form>
@@ -846,7 +875,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>advertisement</orth>
                <pron>ədvəːtismənt</pron>
             </form>
@@ -857,7 +886,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>advice</orth>
                <pron>ədvais</pron>
             </form>
@@ -871,7 +900,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>advocate</orth>
                <pron>ædvəkeit</pron>
             </form>
@@ -882,7 +911,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>aeroplane</orth>
                <pron>ɛərəplein</pron>
             </form>
@@ -896,7 +925,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>affair</orth>
                <pron>əfɛər</pron>
             </form>
@@ -907,7 +936,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>affection</orth>
                <pron>əfekʃən</pron>
             </form>
@@ -918,7 +947,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>afoot</orth>
                <pron>əfut</pron>
             </form>
@@ -938,7 +967,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>afresh</orth>
                <pron>əfreʃ</pron>
             </form>
@@ -949,7 +978,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>after</orth>
                <pron>ɑːftər</pron>
             </form>
@@ -960,7 +989,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>afternoon</orth>
                <pron>ɑːftənuːn</pron>
             </form>
@@ -971,7 +1000,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>again</orth>
                <pron>əgein</pron>
             </form>
@@ -982,7 +1011,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>against</orth>
                <pron>əgenst</pron>
             </form>
@@ -993,7 +1022,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>age</orth>
                <pron>eidʒ</pron>
             </form>
@@ -1004,7 +1033,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>agree</orth>
                <pron>əgriː</pron>
             </form>
@@ -1015,7 +1044,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>aim</orth>
                <pron>eim</pron>
             </form>
@@ -1026,7 +1055,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>air</orth>
                <pron>ɛər</pron>
             </form>
@@ -1037,7 +1066,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>aircraft</orth>
                <pron>ɛəkrɑːft</pron>
             </form>
@@ -1048,7 +1077,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>airplane</orth>
                <pron>ɛəplein</pron>
             </form>
@@ -1062,7 +1091,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>airport</orth>
                <pron>ɛəpɔːt</pron>
             </form>
@@ -1073,7 +1102,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ale</orth>
                <pron>l</pron>
             </form>
@@ -1084,7 +1113,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>all</orth>
                <pron>l</pron>
             </form>
@@ -1095,7 +1124,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>all</orth>
                <pron>ləbaut</pron>
             </form>
@@ -1106,7 +1135,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>all</orth>
                <pron>lɔfəsʌdn</pron>
             </form>
@@ -1117,7 +1146,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>all</orth>
                <pron>louvərəgein</pron>
             </form>
@@ -1128,7 +1157,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>all</orth>
                <pron>lð</pron>
             </form>
@@ -1139,7 +1168,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>alone</orth>
                <pron>əloun</pron>
             </form>
@@ -1150,7 +1179,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>already</orth>
                <pron>ɔːlrediː</pron>
             </form>
@@ -1161,7 +1190,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>also</orth>
                <pron>ælsou</pron>
             </form>
@@ -1172,7 +1201,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>although</orth>
                <pron>ɔːlthau</pron>
             </form>
@@ -1183,7 +1212,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>altitude</orth>
                <pron>æltitjuːd</pron>
             </form>
@@ -1194,7 +1223,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>altogether</orth>
                <pron>ɔːltədʒeðər</pron>
             </form>
@@ -1205,7 +1234,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>always</orth>
                <pron>ɔːlweiz</pron>
             </form>
@@ -1219,7 +1248,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>among</orth>
                <pron>əmʌŋ</pron>
             </form>
@@ -1230,7 +1259,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>and</orth>
                <pron>ænd</pron>
             </form>
@@ -1241,7 +1270,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>anew</orth>
                <pron>ənjuː</pron>
             </form>
@@ -1252,7 +1281,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>any</orth>
                <pron>æniː</pron>
             </form>
@@ -1266,7 +1295,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>anybody</orth>
                <pron>enibɔdiː</pron>
             </form>
@@ -1280,7 +1309,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>anything</orth>
                <pron>eniθiŋ</pron>
             </form>
@@ -1291,7 +1320,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>anywhere</orth>
                <pron>æniwɛər</pron>
             </form>
@@ -1305,7 +1334,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>appellation</orth>
                <pron>æpəleiʃən</pron>
             </form>
@@ -1316,7 +1345,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>apple</orth>
                <pron>æpl</pron>
             </form>
@@ -1327,7 +1356,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>arm</orth>
                <pron>ɑːm</pron>
             </form>
@@ -1338,7 +1367,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>army</orth>
                <pron>ɑːmiː</pron>
             </form>
@@ -1349,7 +1378,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>as</orth>
                <pron>əz</pron>
             </form>
@@ -1360,7 +1389,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>at</orth>
                <pron>eit</pron>
             </form>
@@ -1374,7 +1403,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>at</orth>
                <pron>eitprizent</pron>
             </form>
@@ -1388,7 +1417,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>at</orth>
                <pron>eitðætpleis</pron>
             </form>
@@ -1402,7 +1431,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>aunt</orth>
                <pron>ɑːnt</pron>
             </form>
@@ -1413,7 +1442,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>back</orth>
                <pron>bæk</pron>
             </form>
@@ -1424,7 +1453,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bag</orth>
                <pron>bæg</pron>
             </form>
@@ -1435,7 +1464,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bairn</orth>
                <pron>bɛən</pron>
             </form>
@@ -1449,7 +1478,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>balcony</orth>
                <pron>bælkəniː</pron>
             </form>
@@ -1460,7 +1489,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>barber</orth>
                <pron>bɑːbər</pron>
             </form>
@@ -1471,7 +1500,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>barrister</orth>
                <pron>bæristər</pron>
             </form>
@@ -1482,7 +1511,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bathroom</orth>
                <pron>bɑːθrum</pron>
             </form>
@@ -1493,7 +1522,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>be</orth>
                <pron>b</pron>
             </form>
@@ -1504,7 +1533,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>beam</orth>
                <pron>biːm</pron>
             </form>
@@ -1515,7 +1544,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bed</orth>
                <pron>bd</pron>
             </form>
@@ -1529,7 +1558,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>beefsteak</orth>
                <pron>biːfsteik</pron>
             </form>
@@ -1540,7 +1569,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>beer</orth>
                <pron>biər</pron>
             </form>
@@ -1551,7 +1580,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>behind</orth>
                <pron>biːhaind</pron>
             </form>
@@ -1562,7 +1591,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>below</orth>
                <pron>bilou</pron>
             </form>
@@ -1573,7 +1602,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>beneath</orth>
                <pron>benəːθ</pron>
             </form>
@@ -1584,7 +1613,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>between</orth>
                <pron>bitwiːn</pron>
             </form>
@@ -1595,7 +1624,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>beyond</orth>
                <pron>beiənd</pron>
             </form>
@@ -1606,7 +1635,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bit</orth>
                <pron>bit</pron>
             </form>
@@ -1617,7 +1646,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bloom</orth>
                <pron>bluːm</pron>
             </form>
@@ -1631,7 +1660,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bomb</orth>
                <pron>bɔm</pron>
             </form>
@@ -1642,7 +1671,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bone</orth>
                <pron>boun</pron>
             </form>
@@ -1653,7 +1682,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>book</orth>
                <pron>buk</pron>
             </form>
@@ -1664,7 +1693,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>both</orth>
                <pron>bɔθ</pron>
             </form>
@@ -1675,7 +1704,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bough</orth>
                <pron>bau</pron>
             </form>
@@ -1686,7 +1715,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>boutique</orth>
                <pron>buːtiːk</pron>
             </form>
@@ -1700,7 +1729,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>box</orth>
                <pron>bɔks</pron>
             </form>
@@ -1711,7 +1740,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>boy</orth>
                <pron>bɔi</pron>
             </form>
@@ -1722,7 +1751,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>branch</orth>
                <pron>brɑːntʃ</pron>
             </form>
@@ -1733,7 +1762,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bread</orth>
                <pron>bred</pron>
             </form>
@@ -1747,7 +1776,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>breakfast</orth>
                <pron>brekfəst</pron>
             </form>
@@ -1758,7 +1787,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bridge</orth>
                <pron>bridʒ</pron>
             </form>
@@ -1769,7 +1798,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>brother</orth>
                <pron>brʌðər</pron>
             </form>
@@ -1780,7 +1809,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>brow</orth>
                <pron>brau</pron>
             </form>
@@ -1791,7 +1820,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>building</orth>
                <pron>bildiŋ</pron>
             </form>
@@ -1802,7 +1831,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bureau</orth>
                <pron>bjeərou</pron>
             </form>
@@ -1813,7 +1842,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>business</orth>
                <pron>biznəs</pron>
             </form>
@@ -1824,7 +1853,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>but</orth>
                <pron>bʌt</pron>
             </form>
@@ -1840,7 +1869,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>button</orth>
                <pron>bʌtn</pron>
             </form>
@@ -1851,7 +1880,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>bye</orth>
                <pron>biː</pron>
             </form>
@@ -1867,7 +1896,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>by</orth>
                <pron>biːnau</pron>
             </form>
@@ -1878,7 +1907,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cabin</orth>
                <pron>kæbin</pron>
             </form>
@@ -1889,7 +1918,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cabinet</orth>
                <pron>kæbinət</pron>
             </form>
@@ -1900,7 +1929,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>caf</orth>
             </form>
             <sense>
@@ -1910,7 +1939,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>capable</orth>
                <pron>keipəbl</pron>
             </form>
@@ -1921,7 +1950,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>car</orth>
                <pron>kɑːr</pron>
             </form>
@@ -1932,7 +1961,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>card</orth>
                <pron>kɑːd</pron>
             </form>
@@ -1943,7 +1972,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>case</orth>
                <pron>keis</pron>
             </form>
@@ -1954,7 +1983,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cat</orth>
                <pron>kæt</pron>
             </form>
@@ -1965,7 +1994,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>chair</orth>
                <pron>tʃɛər</pron>
             </form>
@@ -1976,7 +2005,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>chamber</orth>
                <pron>tʃeimbər</pron>
             </form>
@@ -1987,7 +2016,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>chauffeur</orth>
                <pron>ʃoufər</pron>
             </form>
@@ -1998,7 +2027,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>check</orth>
                <pron>tʃek</pron>
             </form>
@@ -2009,7 +2038,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cheese</orth>
                <pron>tʃiːz</pron>
             </form>
@@ -2020,7 +2049,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cheque</orth>
                <pron>tʃek</pron>
             </form>
@@ -2031,7 +2060,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>chest</orth>
                <pron>tʃest</pron>
             </form>
@@ -2042,7 +2071,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>child</orth>
                <pron>tʃaild</pron>
             </form>
@@ -2056,7 +2085,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>church</orth>
                <pron>tʃəːtʃ</pron>
             </form>
@@ -2067,7 +2096,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cigarette</orth>
                <pron>sigəret</pron>
             </form>
@@ -2078,7 +2107,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cinema</orth>
                <pron>sinəmə</pron>
             </form>
@@ -2089,7 +2118,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>city</orth>
                <pron>sitiː</pron>
             </form>
@@ -2103,7 +2132,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>class</orth>
                <pron>klɑːs</pron>
             </form>
@@ -2114,7 +2143,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>climate</orth>
                <pron>klaimət</pron>
             </form>
@@ -2125,7 +2154,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>closet</orth>
                <pron>klɔzit</pron>
             </form>
@@ -2136,7 +2165,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>coast</orth>
                <pron>koust</pron>
             </form>
@@ -2147,7 +2176,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>coffee</orth>
             </form>
             <sense>
@@ -2157,7 +2186,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>coffee</orth>
                <pron>kɔfiː</pron>
             </form>
@@ -2168,7 +2197,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>colour</orth>
                <pron>kʌlər</pron>
             </form>
@@ -2179,7 +2208,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>compartment</orth>
                <pron>kəmpɑːtmənt</pron>
             </form>
@@ -2190,7 +2219,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>concert</orth>
                <pron>kənsəːt</pron>
             </form>
@@ -2204,7 +2233,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>consent</orth>
                <pron>kənsent</pron>
             </form>
@@ -2215,7 +2244,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>consul</orth>
                <pron>kənsl</pron>
             </form>
@@ -2226,7 +2255,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>couch</orth>
                <pron>kautʃ</pron>
             </form>
@@ -2237,7 +2266,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>counsel</orth>
                <pron>kaunsl</pron>
             </form>
@@ -2256,7 +2285,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>coup</orth>
             </form>
             <sense>
@@ -2266,7 +2295,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>courage</orth>
                <pron>kʌridʒ</pron>
             </form>
@@ -2277,7 +2306,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cup</orth>
                <pron>kʌp</pron>
             </form>
@@ -2288,7 +2317,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cupboard</orth>
                <pron>kʌbəd</pron>
             </form>
@@ -2299,7 +2328,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>cushion</orth>
                <pron>kuʃən</pron>
             </form>
@@ -2310,7 +2339,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>custom</orth>
                <pron>kʌstəm</pron>
             </form>
@@ -2321,7 +2350,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>danger</orth>
                <pron>deindʒər</pron>
             </form>
@@ -2332,7 +2361,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>darkness</orth>
                <pron>dɑːknəs</pron>
             </form>
@@ -2343,7 +2372,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>date</orth>
                <pron>deit</pron>
             </form>
@@ -2354,7 +2383,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>daughter</orth>
             </form>
             <sense>
@@ -2364,7 +2393,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>daughter</orth>
                <pron>dɔːtər</pron>
             </form>
@@ -2378,7 +2407,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>day</orth>
                <pron>dei</pron>
             </form>
@@ -2389,7 +2418,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>devil</orth>
                <pron>devəl</pron>
             </form>
@@ -2400,7 +2429,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>dictionary</orth>
                <pron>dikʃənriː</pron>
             </form>
@@ -2414,7 +2443,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>din</orth>
                <pron>din</pron>
             </form>
@@ -2425,7 +2454,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>divan</orth>
                <pron>divæn</pron>
             </form>
@@ -2436,7 +2465,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>doctor</orth>
                <pron>dɔktər</pron>
             </form>
@@ -2450,7 +2479,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>dog</orth>
                <pron>dɔg</pron>
             </form>
@@ -2461,7 +2490,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>door</orth>
                <pron>dɔːr</pron>
             </form>
@@ -2472,7 +2501,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>driver</orth>
                <pron>drivər</pron>
             </form>
@@ -2483,7 +2512,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>duty</orth>
                <pron>djuːtiː</pron>
             </form>
@@ -2494,7 +2523,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>dye</orth>
                <pron>diː</pron>
             </form>
@@ -2505,7 +2534,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>each</orth>
                <pron>iːtʃ</pron>
             </form>
@@ -2516,7 +2545,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ear</orth>
                <pron>iər</pron>
             </form>
@@ -2530,7 +2559,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>earth</orth>
                <pron>əːθ</pron>
             </form>
@@ -2541,7 +2570,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>eight</orth>
                <pron>eit</pron>
             </form>
@@ -2552,7 +2581,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>enemy</orth>
                <pron>enəmiː</pron>
             </form>
@@ -2563,7 +2592,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>engine</orth>
                <pron>endʒin</pron>
             </form>
@@ -2574,7 +2603,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>error</orth>
                <pron>erər</pron>
             </form>
@@ -2585,7 +2614,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>evening</orth>
                <pron>iːvniŋ</pron>
             </form>
@@ -2596,7 +2625,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ever</orth>
                <pron>evər</pron>
             </form>
@@ -2610,7 +2639,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>every</orth>
                <pron>evriː</pron>
             </form>
@@ -2621,7 +2650,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>everybody</orth>
                <pron>evribɔdiː</pron>
             </form>
@@ -2632,7 +2661,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>everything</orth>
                <pron>evriθiŋ</pron>
             </form>
@@ -2643,7 +2672,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>everywhere</orth>
                <pron>evriwɛər</pron>
             </form>
@@ -2654,7 +2683,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>exactly</orth>
                <pron>igzætliː</pron>
             </form>
@@ -2665,7 +2694,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>eye</orth>
                <pron>iː</pron>
             </form>
@@ -2676,7 +2705,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>eyebrow</orth>
                <pron>aibrau</pron>
             </form>
@@ -2687,7 +2716,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>face</orth>
                <pron>feis</pron>
             </form>
@@ -2698,7 +2727,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>family</orth>
                <pron>fæməliː</pron>
             </form>
@@ -2709,7 +2738,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>farewell</orth>
                <pron>fɛəwel</pron>
             </form>
@@ -2720,7 +2749,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>fast</orth>
                <pron>fɑːst</pron>
             </form>
@@ -2731,7 +2760,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>father</orth>
                <pron>fɑːðər</pron>
             </form>
@@ -2742,7 +2771,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>feather</orth>
                <pron>feðər</pron>
             </form>
@@ -2753,7 +2782,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>female</orth>
                <pron>fiːmeilstjuːdnt</pron>
             </form>
@@ -2764,7 +2793,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>field</orth>
                <pron>fiːld</pron>
             </form>
@@ -2775,7 +2804,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>fig</orth>
                <pron>fig</pron>
             </form>
@@ -2786,7 +2815,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>finger</orth>
                <pron>fiŋgər</pron>
             </form>
@@ -2797,7 +2826,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>fish</orth>
                <pron>fiʃ</pron>
             </form>
@@ -2808,7 +2837,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>five</orth>
                <pron>faiv</pron>
             </form>
@@ -2819,7 +2848,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>floor</orth>
                <pron>flɔːr</pron>
             </form>
@@ -2830,7 +2859,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>flower</orth>
                <pron>flauər</pron>
             </form>
@@ -2844,7 +2873,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>fog</orth>
                <pron>fɔg</pron>
             </form>
@@ -2855,7 +2884,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>foot</orth>
                <pron>fut</pron>
             </form>
@@ -2866,7 +2895,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>foreigner</orth>
                <pron>fɔrənər</pron>
             </form>
@@ -2877,7 +2906,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>forest</orth>
                <pron>fɔrist</pron>
             </form>
@@ -2888,7 +2917,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>four</orth>
                <pron>fɔːr</pron>
             </form>
@@ -2899,7 +2928,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>frequently</orth>
                <pron>frikwentliː</pron>
             </form>
@@ -2910,7 +2939,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>friend</orth>
                <pron>frend</pron>
             </form>
@@ -2926,7 +2955,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>from</orth>
                <pron>frɔm</pron>
             </form>
@@ -2937,7 +2966,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>fruit</orth>
                <pron>fruːt</pron>
             </form>
@@ -2948,7 +2977,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>garden</orth>
                <pron>gɑːdn</pron>
             </form>
@@ -2962,7 +2991,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>gentleman</orth>
                <pron>dʒentlmən</pron>
             </form>
@@ -2973,7 +3002,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>girl</orth>
                <pron>gəːl</pron>
             </form>
@@ -2984,7 +3013,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>gladness</orth>
                <pron>glædnəs</pron>
             </form>
@@ -2995,7 +3024,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>glove</orth>
                <pron>glʌv</pron>
             </form>
@@ -3006,7 +3035,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>goal</orth>
                <pron>goul</pron>
             </form>
@@ -3017,7 +3046,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>goodbye</orth>
                <pron>gudbai</pron>
             </form>
@@ -3033,7 +3062,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>grandmother</orth>
                <pron>grænmʌðər</pron>
             </form>
@@ -3044,7 +3073,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>grass</orth>
                <pron>grɑːs</pron>
             </form>
@@ -3055,7 +3084,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>guest</orth>
                <pron>gest</pron>
             </form>
@@ -3066,7 +3095,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>habit</orth>
                <pron>hæbit</pron>
             </form>
@@ -3077,7 +3106,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hairdresser</orth>
                <pron>hɛədresər</pron>
             </form>
@@ -3088,7 +3117,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hammer</orth>
                <pron>hæmər</pron>
             </form>
@@ -3099,7 +3128,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hand</orth>
                <pron>hænd</pron>
             </form>
@@ -3115,7 +3144,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hat</orth>
                <pron>heit</pron>
             </form>
@@ -3126,7 +3155,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>he</orth>
                <pron>h</pron>
             </form>
@@ -3137,7 +3166,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>head</orth>
                <pron>hed</pron>
             </form>
@@ -3148,7 +3177,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>heart</orth>
                <pron>hɑːt</pron>
             </form>
@@ -3159,7 +3188,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>heat</orth>
                <pron>hiːt</pron>
             </form>
@@ -3170,7 +3199,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>heaven</orth>
                <pron>hevn</pron>
             </form>
@@ -3181,7 +3210,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>height</orth>
                <pron>hait</pron>
             </form>
@@ -3192,7 +3221,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>her</orth>
                <pron>hər</pron>
             </form>
@@ -3203,7 +3232,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>herb</orth>
                <pron>həːb</pron>
             </form>
@@ -3214,7 +3243,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hero</orth>
                <pron>hiərou</pron>
             </form>
@@ -3225,7 +3254,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hill</orth>
                <pron>hil</pron>
             </form>
@@ -3239,7 +3268,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>him</orth>
                <pron>him</pron>
             </form>
@@ -3250,7 +3279,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>honey</orth>
                <pron>hʌniː</pron>
             </form>
@@ -3261,7 +3290,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>horse</orth>
                <pron>hɔːs</pron>
             </form>
@@ -3272,7 +3301,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hostel</orth>
                <pron>hɔstl</pron>
             </form>
@@ -3283,7 +3312,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hotel</orth>
                <pron>houtel</pron>
             </form>
@@ -3294,7 +3323,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hour</orth>
                <pron>auər</pron>
             </form>
@@ -3305,7 +3334,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>house</orth>
                <pron>haus</pron>
             </form>
@@ -3316,7 +3345,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>house</orth>
                <pron>hausɔfwəːʃip</pron>
             </form>
@@ -3327,7 +3356,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>how</orth>
                <pron>hau</pron>
             </form>
@@ -3338,7 +3367,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>however</orth>
                <pron>hauwevər</pron>
             </form>
@@ -3349,7 +3378,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>husband</orth>
                <pron>hʌzbənd</pron>
             </form>
@@ -3360,7 +3389,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>hut</orth>
                <pron>hʌt</pron>
             </form>
@@ -3371,7 +3400,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ice</orth>
                <pron>ais</pron>
             </form>
@@ -3382,7 +3411,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>if</orth>
                <pron>aif</pron>
             </form>
@@ -3393,7 +3422,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>in</orth>
                <pron>in</pron>
             </form>
@@ -3404,7 +3433,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>infant</orth>
                <pron>infənt</pron>
             </form>
@@ -3418,7 +3447,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>injury</orth>
                <pron>indʒəriː</pron>
             </form>
@@ -3429,7 +3458,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>inn</orth>
                <pron>in</pron>
             </form>
@@ -3440,7 +3469,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>inside</orth>
                <pron>insaid</pron>
             </form>
@@ -3451,7 +3480,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>instructor</orth>
                <pron>instrʌktər</pron>
             </form>
@@ -3462,7 +3491,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>intercessor</orth>
                <pron>intəsesər</pron>
             </form>
@@ -3473,7 +3502,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>into</orth>
                <pron>intə</pron>
             </form>
@@ -3484,7 +3513,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>in</orth>
                <pron>inikstʃeindʒfər</pron>
             </form>
@@ -3495,7 +3524,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>in</orth>
                <pron>inwɔtwei</pron>
             </form>
@@ -3506,7 +3535,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>it</orth>
                <pron>it</pron>
             </form>
@@ -3517,7 +3546,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>job</orth>
                <pron>dʒɔb</pron>
             </form>
@@ -3528,7 +3557,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>joy</orth>
                <pron>dʒɔi</pron>
             </form>
@@ -3539,7 +3568,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>judge</orth>
                <pron>dʒʌdʒ</pron>
             </form>
@@ -3550,7 +3579,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>kidney</orth>
                <pron>kidniː</pron>
             </form>
@@ -3561,7 +3590,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>kilo</orth>
                <pron>kiːlou</pron>
             </form>
@@ -3572,7 +3601,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>king</orth>
                <pron>kiŋ</pron>
             </form>
@@ -3583,7 +3612,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>kitchen</orth>
                <pron>kitʃin</pron>
             </form>
@@ -3594,7 +3623,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>knee</orth>
                <pron>niː</pron>
             </form>
@@ -3608,7 +3637,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>knife</orth>
                <pron>naif</pron>
             </form>
@@ -3619,7 +3648,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>laborer</orth>
                <pron>ləbɔːrər</pron>
             </form>
@@ -3630,7 +3659,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>labourer</orth>
                <pron>leibərər</pron>
             </form>
@@ -3641,7 +3670,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lady</orth>
                <pron>leidiː</pron>
             </form>
@@ -3652,7 +3681,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lake</orth>
                <pron>leik</pron>
             </form>
@@ -3663,7 +3692,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lamb</orth>
                <pron>læm</pron>
             </form>
@@ -3674,7 +3703,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>land</orth>
                <pron>lænd</pron>
             </form>
@@ -3685,7 +3714,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>language</orth>
                <pron>læŋgwidʒ</pron>
             </form>
@@ -3696,7 +3725,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lass</orth>
                <pron>læs</pron>
             </form>
@@ -3707,7 +3736,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lawyer</orth>
                <pron>lɔːjər</pron>
             </form>
@@ -3718,7 +3747,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>leg</orth>
                <pron>leg</pron>
             </form>
@@ -3729,7 +3758,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>letter</orth>
                <pron>letər</pron>
             </form>
@@ -3740,7 +3769,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>library</orth>
                <pron>laibrəriː</pron>
             </form>
@@ -3751,7 +3780,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>life</orth>
                <pron>laif</pron>
             </form>
@@ -3762,7 +3791,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>like</orth>
                <pron>laik</pron>
             </form>
@@ -3773,7 +3802,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>likewise</orth>
                <pron>laikjuːiːz</pron>
             </form>
@@ -3784,7 +3813,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lip</orth>
                <pron>lip</pron>
             </form>
@@ -3795,7 +3824,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>list</orth>
                <pron>list</pron>
             </form>
@@ -3806,7 +3835,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>liter</orth>
                <pron>litər</pron>
             </form>
@@ -3817,7 +3846,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>litre</orth>
                <pron>liːtər</pron>
             </form>
@@ -3828,7 +3857,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>loaf</orth>
                <pron>louf</pron>
             </form>
@@ -3842,7 +3871,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>location</orth>
                <pron>loukeiʃən</pron>
             </form>
@@ -3856,7 +3885,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>loch</orth>
                <pron>lɔk</pron>
             </form>
@@ -3867,7 +3896,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lock</orth>
                <pron>lɔk</pron>
             </form>
@@ -3878,7 +3907,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lord</orth>
                <pron>lɔːd</pron>
             </form>
@@ -3889,7 +3918,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>love</orth>
                <pron>lʌv</pron>
             </form>
@@ -3900,7 +3929,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>lump</orth>
                <pron>lʌmp</pron>
             </form>
@@ -3911,7 +3940,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>machine</orth>
                <pron>məʃiːn</pron>
             </form>
@@ -3922,7 +3951,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>madam</orth>
                <pron>mædəm</pron>
             </form>
@@ -3933,7 +3962,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>map</orth>
                <pron>meip</pron>
             </form>
@@ -3944,7 +3973,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>matter</orth>
                <pron>mætər</pron>
             </form>
@@ -3955,7 +3984,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>maybe</orth>
                <pron>meiib</pron>
             </form>
@@ -3966,7 +3995,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mayhap</orth>
                <pron>meiieip</pron>
             </form>
@@ -3977,7 +4006,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>meat</orth>
                <pron>miːt</pron>
             </form>
@@ -3988,7 +4017,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>menu</orth>
                <pron>menjuː</pron>
             </form>
@@ -3999,7 +4028,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>metre</orth>
                <pron>miːtər</pron>
             </form>
@@ -4010,7 +4039,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mile</orth>
                <pron>mail</pron>
             </form>
@@ -4021,7 +4050,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>minister</orth>
                <pron>ministər</pron>
             </form>
@@ -4032,7 +4061,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mist</orth>
                <pron>mist</pron>
             </form>
@@ -4043,7 +4072,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mistake</orth>
                <pron>misteik</pron>
             </form>
@@ -4054,7 +4083,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mitten</orth>
                <pron>mitn</pron>
             </form>
@@ -4065,7 +4094,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>month</orth>
                <pron>mʌnθ</pron>
             </form>
@@ -4079,7 +4108,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>moon</orth>
                <pron>muːn</pron>
             </form>
@@ -4093,7 +4122,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mother</orth>
                <pron>mʌðər</pron>
             </form>
@@ -4107,7 +4136,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>mountain</orth>
                <pron>mauntn</pron>
             </form>
@@ -4118,7 +4147,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>movie</orth>
                <pron>muːviːθiətər</pron>
             </form>
@@ -4129,7 +4158,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>murk</orth>
                <pron>məːk</pron>
             </form>
@@ -4140,7 +4169,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>museum</orth>
                <pron>mjuːziəm</pron>
             </form>
@@ -4151,7 +4180,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>music</orth>
                <pron>mjuːzik</pron>
             </form>
@@ -4162,7 +4191,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>name</orth>
                <pron>neim</pron>
             </form>
@@ -4173,7 +4202,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>neither</orth>
                <pron>naiðər</pron>
             </form>
@@ -4184,7 +4213,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>never</orth>
                <pron>nevər</pron>
             </form>
@@ -4198,7 +4227,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nevertheless</orth>
                <pron>nivəːθləs</pron>
             </form>
@@ -4209,7 +4238,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>night</orth>
                <pron>nait</pron>
             </form>
@@ -4220,7 +4249,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nine</orth>
                <pron>nain</pron>
             </form>
@@ -4231,7 +4260,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>no</orth>
             </form>
             <sense>
@@ -4241,7 +4270,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>no</orth>
                <pron>nou</pron>
             </form>
@@ -4252,7 +4281,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nobody</orth>
                <pron>noubədiː</pron>
             </form>
@@ -4263,7 +4292,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>noise</orth>
                <pron>nɔiz</pron>
             </form>
@@ -4274,7 +4303,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>none</orth>
                <pron>nɔn</pron>
             </form>
@@ -4285,7 +4314,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nose</orth>
                <pron>nouz</pron>
             </form>
@@ -4296,7 +4325,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>not</orth>
                <pron>nout</pron>
             </form>
@@ -4307,7 +4336,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nothing</orth>
                <pron>nʌθiŋ</pron>
             </form>
@@ -4318,7 +4347,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>novel</orth>
                <pron>nɔvəl</pron>
             </form>
@@ -4329,7 +4358,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>now</orth>
                <pron>nau</pron>
             </form>
@@ -4343,7 +4372,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>nowhere</orth>
                <pron>nauwɛər</pron>
             </form>
@@ -4357,7 +4386,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>obligation</orth>
                <pron>ɔbligeiʃən</pron>
             </form>
@@ -4368,7 +4397,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>office</orth>
                <pron>ɔfis</pron>
             </form>
@@ -4379,7 +4408,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>often</orth>
                <pron>ɔfn</pron>
             </form>
@@ -4390,7 +4419,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>on</orth>
                <pron>wʌn</pron>
             </form>
@@ -4401,7 +4430,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>once</orth>
                <pron>wʌnsmɔːr</pron>
             </form>
@@ -4412,7 +4441,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>one</orth>
                <pron>wʌn</pron>
             </form>
@@ -4437,7 +4466,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>only</orth>
                <pron>ounliː</pron>
             </form>
@@ -4448,7 +4477,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>on</orth>
                <pron>wʌnfut</pron>
             </form>
@@ -4468,7 +4497,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>on</orth>
                <pron>wʌnðʌðərsaidɔf</pron>
             </form>
@@ -4479,7 +4508,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>operative</orth>
                <pron>ɔpərətiv</pron>
             </form>
@@ -4490,7 +4519,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>opposed</orth>
                <pron>əpouzdtou</pron>
             </form>
@@ -4501,7 +4530,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>opposite</orth>
                <pron>ɔpəzit</pron>
             </form>
@@ -4512,7 +4541,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>or</orth>
                <pron>ər</pron>
             </form>
@@ -4523,7 +4552,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ordinarily</orth>
                <pron>ɔːdinəriliː</pron>
             </form>
@@ -4534,7 +4563,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>out</orth>
                <pron>autɔf</pron>
             </form>
@@ -4545,7 +4574,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>over</orth>
                <pron>ouvərðər</pron>
             </form>
@@ -4559,7 +4588,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>o</orth>
                <pron>əklɔk</pron>
             </form>
@@ -4570,7 +4599,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>page</orth>
                <pron>pædʒ</pron>
             </form>
@@ -4581,7 +4610,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pain</orth>
                <pron>pein</pron>
             </form>
@@ -4592,7 +4621,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>painter</orth>
                <pron>peintər</pron>
             </form>
@@ -4603,7 +4632,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>painting</orth>
                <pron>peintiŋ</pron>
             </form>
@@ -4614,7 +4643,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pair</orth>
                <pron>pɛər</pron>
             </form>
@@ -4628,7 +4657,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>paper</orth>
                <pron>peipər</pron>
             </form>
@@ -4639,7 +4668,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>park</orth>
                <pron>pɑːk</pron>
             </form>
@@ -4650,7 +4679,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>passport</orth>
                <pron>pɑːspɔːt</pron>
             </form>
@@ -4661,7 +4690,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pate</orth>
                <pron>peit</pron>
             </form>
@@ -4672,7 +4701,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>path</orth>
                <pron>pɑːθ</pron>
             </form>
@@ -4683,7 +4712,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pawn</orth>
                <pron>pɔːn</pron>
             </form>
@@ -4694,7 +4723,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>peace</orth>
                <pron>piːs</pron>
             </form>
@@ -4705,7 +4734,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>peach</orth>
                <pron>piːtʃ</pron>
             </form>
@@ -4716,7 +4745,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pencil</orth>
                <pron>pensl</pron>
             </form>
@@ -4727,7 +4756,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>people</orth>
                <pron>piːpl</pron>
             </form>
@@ -4738,7 +4767,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>per</orth>
                <pron>pər</pron>
             </form>
@@ -4749,7 +4778,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>perchance</orth>
                <pron>pəːtʃəns</pron>
             </form>
@@ -4760,7 +4789,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>perhaps</orth>
                <pron>pəhæps</pron>
             </form>
@@ -4771,7 +4800,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>peril</orth>
                <pron>perəl</pron>
             </form>
@@ -4782,7 +4811,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>physician</orth>
                <pron>fiziʃən</pron>
             </form>
@@ -4796,7 +4825,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>picture</orth>
                <pron>piktʃər</pron>
             </form>
@@ -4807,7 +4836,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>piece</orth>
                <pron>pis</pron>
             </form>
@@ -4818,7 +4847,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>place</orth>
                <pron>pleis</pron>
             </form>
@@ -4832,7 +4861,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>place</orth>
                <pron>pleisɔfwəːʃip</pron>
             </form>
@@ -4843,7 +4872,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>plane</orth>
                <pron>plein</pron>
             </form>
@@ -4857,7 +4886,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>plate</orth>
                <pron>pleit</pron>
             </form>
@@ -4868,7 +4897,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>platform</orth>
                <pron>plætfɔːm</pron>
             </form>
@@ -4879,7 +4908,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>plume</orth>
                <pron>pluːm</pron>
             </form>
@@ -4890,7 +4919,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pocket</orth>
                <pron>pɔkit</pron>
             </form>
@@ -4901,7 +4930,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>police</orth>
                <pron>pəliːs</pron>
             </form>
@@ -4912,7 +4941,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>policeman</orth>
                <pron>pəliːsmən</pron>
             </form>
@@ -4923,7 +4952,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>possibly</orth>
                <pron>pɔsəbliː</pron>
             </form>
@@ -4934,7 +4963,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>postage</orth>
                <pron>poustidʒstæmp</pron>
             </form>
@@ -4945,7 +4974,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>pound</orth>
                <pron>paund</pron>
             </form>
@@ -4956,7 +4985,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>prince</orth>
                <pron>prins</pron>
             </form>
@@ -4967,7 +4996,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>professor</orth>
                <pron>prəfesər</pron>
             </form>
@@ -4978,7 +5007,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>provided</orth>
                <pron>prəvaididðæt</pron>
             </form>
@@ -4989,7 +5018,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>purpose</orth>
                <pron>pʌpouz</pron>
             </form>
@@ -5000,7 +5029,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>quay</orth>
                <pron>kweiiː</pron>
             </form>
@@ -5011,7 +5040,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>question</orth>
                <pron>kwestʃən</pron>
             </form>
@@ -5022,7 +5051,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>quickly</orth>
                <pron>kwikliː</pron>
             </form>
@@ -5033,7 +5062,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>quite</orth>
                <pron>kwait</pron>
             </form>
@@ -5044,7 +5073,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>radio</orth>
                <pron>reidiəə</pron>
             </form>
@@ -5055,7 +5084,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ray</orth>
                <pron>rei</pron>
             </form>
@@ -5066,7 +5095,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>reality</orth>
                <pron>riælitiː</pron>
             </form>
@@ -5077,7 +5106,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>receive</orth>
                <pron>risiːv</pron>
             </form>
@@ -5088,7 +5117,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>regularly</orth>
                <pron>regjuləliː</pron>
             </form>
@@ -5099,7 +5128,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>restaurant</orth>
                <pron>restrɔnt</pron>
             </form>
@@ -5110,7 +5139,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ring</orth>
                <pron>riŋ</pron>
             </form>
@@ -5121,7 +5150,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>river</orth>
                <pron>rivər</pron>
             </form>
@@ -5135,7 +5164,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>roof</orth>
                <pron>ruːf</pron>
             </form>
@@ -5146,7 +5175,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>room</orth>
                <pron>ruːm</pron>
             </form>
@@ -5157,7 +5186,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sack</orth>
                <pron>sæk</pron>
             </form>
@@ -5168,7 +5197,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>salary</orth>
                <pron>sæləriː</pron>
             </form>
@@ -5179,7 +5208,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>school</orth>
                <pron>sʃuːl</pron>
             </form>
@@ -5190,7 +5219,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sea</orth>
                <pron>siə</pron>
             </form>
@@ -5201,7 +5230,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>seaside</orth>
                <pron>siːsaid</pron>
             </form>
@@ -5212,7 +5241,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>secret</orth>
                <pron>siːkrit</pron>
             </form>
@@ -5223,7 +5252,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>seed</orth>
                <pron>siːd</pron>
             </form>
@@ -5237,7 +5266,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>servant</orth>
                <pron>səːvənt</pron>
             </form>
@@ -5248,7 +5277,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>seven</orth>
                <pron>sevn</pron>
             </form>
@@ -5259,7 +5288,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>several</orth>
                <pron>sevrəltaimz</pron>
             </form>
@@ -5270,7 +5299,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shack</orth>
                <pron>ʃæk</pron>
             </form>
@@ -5281,7 +5310,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shade</orth>
                <pron>ʃeid</pron>
             </form>
@@ -5295,7 +5324,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shadow</orth>
                <pron>ʃædou</pron>
             </form>
@@ -5309,7 +5338,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sharp</orth>
                <pron>ʃɑːp</pron>
             </form>
@@ -5320,7 +5349,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>she</orth>
                <pron>ʃou</pron>
             </form>
@@ -5331,7 +5360,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ship</orth>
                <pron>ʃip</pron>
             </form>
@@ -5342,7 +5371,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shoe</orth>
                <pron>ʃuː</pron>
             </form>
@@ -5353,7 +5382,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shop</orth>
                <pron>ʃɔp</pron>
             </form>
@@ -5367,7 +5396,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shore</orth>
                <pron>ʃɔːr</pron>
             </form>
@@ -5378,7 +5407,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>shoulder</orth>
                <pron>ʃouldər</pron>
             </form>
@@ -5389,7 +5418,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sideboard</orth>
                <pron>saidbɔːd</pron>
             </form>
@@ -5400,7 +5429,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sir</orth>
                <pron>saiər</pron>
             </form>
@@ -5411,7 +5440,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sister</orth>
                <pron>sistər</pron>
             </form>
@@ -5422,7 +5451,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>six</orth>
                <pron>siks</pron>
             </form>
@@ -5433,7 +5462,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sky</orth>
                <pron>skiː</pron>
             </form>
@@ -5444,7 +5473,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>snow</orth>
                <pron>snou</pron>
             </form>
@@ -5458,7 +5487,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>soil</orth>
                <pron>sɔil</pron>
             </form>
@@ -5469,7 +5498,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>soldier</orth>
                <pron>souldiər</pron>
             </form>
@@ -5480,7 +5509,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sole</orth>
                <pron>soul</pron>
             </form>
@@ -5491,7 +5520,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>solicitor</orth>
                <pron>səlisitər</pron>
             </form>
@@ -5502,7 +5531,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>solitary</orth>
                <pron>sɔlitriː</pron>
             </form>
@@ -5513,7 +5542,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>some</orth>
                <pron>sʌm</pron>
             </form>
@@ -5527,7 +5556,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>somebody</orth>
                <pron>sʌmbədiː</pron>
             </form>
@@ -5541,7 +5570,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>someone</orth>
                <pron>sʌmwʌn</pron>
             </form>
@@ -5555,7 +5584,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>something</orth>
                <pron>səmiːθiŋ</pron>
             </form>
@@ -5566,7 +5595,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sometimes</orth>
                <pron>səmetaimz</pron>
             </form>
@@ -5577,7 +5606,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>somewhere</orth>
                <pron>soumwɛər</pron>
             </form>
@@ -5591,7 +5620,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>son</orth>
                <pron>sɔn</pron>
             </form>
@@ -5602,7 +5631,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>soup</orth>
                <pron>suːp</pron>
             </form>
@@ -5613,7 +5642,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>so</orth>
                <pron>soulɔŋ</pron>
             </form>
@@ -5624,7 +5653,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>spinster</orth>
                <pron>spinstər</pron>
             </form>
@@ -5635,7 +5664,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>spoon</orth>
                <pron>spuːn</pron>
             </form>
@@ -5646,7 +5675,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>spot</orth>
                <pron>spɔt</pron>
             </form>
@@ -5660,7 +5689,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>stamp</orth>
                <pron>stæmp</pron>
             </form>
@@ -5671,7 +5700,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>station</orth>
                <pron>steiʃən</pron>
             </form>
@@ -5682,7 +5711,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>steak</orth>
                <pron>steik</pron>
             </form>
@@ -5693,7 +5722,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>stone</orth>
                <pron>stoun</pron>
             </form>
@@ -5704,7 +5733,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>store</orth>
                <pron>stɔːr</pron>
             </form>
@@ -5718,7 +5747,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>student</orth>
                <pron>stjuːdnt</pron>
             </form>
@@ -5734,7 +5763,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>suburb</orth>
                <pron>sʌbəːb</pron>
             </form>
@@ -5745,7 +5774,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>success</orth>
                <pron>səkses</pron>
             </form>
@@ -5759,7 +5788,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>such</orth>
                <pron>sʌtʃə</pron>
             </form>
@@ -5770,7 +5799,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>suddenly</orth>
                <pron>sʌdnliː</pron>
             </form>
@@ -5781,7 +5810,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sugar</orth>
                <pron>ʃugər</pron>
             </form>
@@ -5792,7 +5821,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>summer</orth>
                <pron>sʌmər</pron>
             </form>
@@ -5806,7 +5835,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>sun</orth>
                <pron>sn</pron>
             </form>
@@ -5817,7 +5846,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>swiftly</orth>
                <pron>swiftliː</pron>
             </form>
@@ -5828,7 +5857,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>take</orth>
                <pron>teik</pron>
             </form>
@@ -5839,7 +5868,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>target</orth>
                <pron>tɑːgit</pron>
             </form>
@@ -5850,7 +5879,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>taxi</orth>
                <pron>tæksiː</pron>
             </form>
@@ -5861,7 +5890,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>tea</orth>
                <pron>tiə</pron>
             </form>
@@ -5872,7 +5901,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>teacher</orth>
                <pron>tiːtʃər</pron>
             </form>
@@ -5883,7 +5912,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ten</orth>
                <pron>tn</pron>
             </form>
@@ -5894,7 +5923,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>than</orth>
                <pron>θein</pron>
             </form>
@@ -5905,7 +5934,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>that</orth>
                <pron>ðæt</pron>
             </form>
@@ -5927,7 +5956,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>theatre</orth>
                <pron>θiətər</pron>
             </form>
@@ -5938,7 +5967,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>there</orth>
                <pron>ðər</pron>
             </form>
@@ -5952,7 +5981,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>they</orth>
                <pron>ðei</pron>
             </form>
@@ -5969,7 +5998,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>the</orth>
                <pron>ðdeiɑːftərtəmɔrou</pron>
             </form>
@@ -5983,7 +6012,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>the</orth>
                <pron>ðdeibfɔːrjestədiː</pron>
             </form>
@@ -5994,7 +6023,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>thou</orth>
                <pron>ðau</pron>
             </form>
@@ -6008,7 +6037,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>though</orth>
                <pron>ðau</pron>
             </form>
@@ -6019,7 +6048,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>three</orth>
                <pron>θriː</pron>
             </form>
@@ -6030,7 +6059,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>through</orth>
                <pron>θruː</pron>
             </form>
@@ -6041,7 +6070,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>throw</orth>
                <pron>θrou</pron>
             </form>
@@ -6055,7 +6084,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>time</orth>
                <pron>taim</pron>
             </form>
@@ -6077,7 +6106,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>to</orth>
                <pron>tou</pron>
             </form>
@@ -6091,7 +6120,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>today</orth>
                <pron>tədei</pron>
             </form>
@@ -6102,7 +6131,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>together</orth>
                <pron>təgeðər</pron>
             </form>
@@ -6116,7 +6145,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>tomorrow</orth>
                <pron>təmɔrou</pron>
             </form>
@@ -6127,7 +6156,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>tongue</orth>
                <pron>tʌŋ</pron>
             </form>
@@ -6138,7 +6167,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>too</orth>
                <pron>tuː</pron>
             </form>
@@ -6149,7 +6178,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>tooth</orth>
                <pron>tuːθ</pron>
             </form>
@@ -6160,7 +6189,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>tourist</orth>
                <pron>teərist</pron>
             </form>
@@ -6171,7 +6200,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>toward</orth>
                <pron>təwɔːd</pron>
             </form>
@@ -6185,7 +6214,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>towards</orth>
                <pron>təwɔːdz</pron>
             </form>
@@ -6199,7 +6228,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>town</orth>
                <pron>taun</pron>
             </form>
@@ -6213,7 +6242,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>toy</orth>
                <pron>tɔi</pron>
             </form>
@@ -6224,7 +6253,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>traffic</orth>
                <pron>træfik</pron>
             </form>
@@ -6235,7 +6264,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>truth</orth>
                <pron>truːθ</pron>
             </form>
@@ -6246,7 +6275,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>two</orth>
                <pron>twou</pron>
             </form>
@@ -6260,7 +6289,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>typewriter</orth>
                <pron>taipraitər</pron>
             </form>
@@ -6271,7 +6300,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>uncle</orth>
                <pron>ʌŋkl</pron>
             </form>
@@ -6282,7 +6311,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>under</orth>
                <pron>ʌndər</pron>
             </form>
@@ -6293,7 +6322,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>underneath</orth>
                <pron>ʌndənəːθ</pron>
             </form>
@@ -6304,7 +6333,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>university</orth>
                <pron>juːnivəːsitiː</pron>
             </form>
@@ -6315,7 +6344,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>unmarried</orth>
                <pron>ʌnmæridwumən</pron>
             </form>
@@ -6326,7 +6355,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>upon</orth>
                <pron>əpɔn</pron>
             </form>
@@ -6337,7 +6366,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>us</orth>
                <pron>juːs</pron>
             </form>
@@ -6348,7 +6377,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>usually</orth>
                <pron>juːʒəliː</pron>
             </form>
@@ -6359,7 +6388,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>vehicle</orth>
                <pron>viːikl</pron>
             </form>
@@ -6370,7 +6399,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>very</orth>
                <pron>veriː</pron>
             </form>
@@ -6381,7 +6410,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>vessel</orth>
                <pron>vesəl</pron>
             </form>
@@ -6392,7 +6421,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>village</orth>
                <pron>vilidʒ</pron>
             </form>
@@ -6403,7 +6432,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>vocabulary</orth>
                <pron>vəkæbjuləriː</pron>
             </form>
@@ -6417,7 +6446,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>voice</orth>
                <pron>vɔis</pron>
             </form>
@@ -6428,7 +6457,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>vote</orth>
                <pron>vout</pron>
             </form>
@@ -6439,7 +6468,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wage</orth>
                <pron>weidʒ</pron>
             </form>
@@ -6450,7 +6479,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wages</orth>
                <pron>weidʒiz</pron>
             </form>
@@ -6461,7 +6490,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>waiter</orth>
                <pron>weitər</pron>
             </form>
@@ -6472,7 +6501,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wall</orth>
                <pron>wɔːl</pron>
             </form>
@@ -6483,7 +6512,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>walnut</orth>
                <pron>wɔːlnʌt</pron>
             </form>
@@ -6494,7 +6523,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>war</orth>
                <pron>ər</pron>
             </form>
@@ -6505,7 +6534,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>water</orth>
                <pron>wɔːtər</pron>
             </form>
@@ -6516,7 +6545,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>way</orth>
                <pron>wei</pron>
             </form>
@@ -6527,7 +6556,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>we</orth>
             </form>
             <sense>
@@ -6537,7 +6566,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>weather</orth>
                <pron>weðər</pron>
             </form>
@@ -6551,7 +6580,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wench</orth>
                <pron>wentʃ</pron>
             </form>
@@ -6562,7 +6591,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wharf</orth>
                <pron>wɔːf</pron>
             </form>
@@ -6573,7 +6602,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>what</orth>
                <pron>wɔt</pron>
             </form>
@@ -6584,7 +6613,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>what</orth>
                <pron>wɔtə</pron>
             </form>
@@ -6595,7 +6624,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>what</orth>
                <pron>wɔtfər</pron>
             </form>
@@ -6606,7 +6635,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>when</orth>
                <pron>n</pron>
             </form>
@@ -6620,7 +6649,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>where</orth>
                <pron>wɛər</pron>
             </form>
@@ -6634,7 +6663,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>which</orth>
                <pron>witʃ</pron>
             </form>
@@ -6651,7 +6680,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>while</orth>
                <pron>wail</pron>
             </form>
@@ -6668,7 +6697,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>who</orth>
                <pron>hou</pron>
             </form>
@@ -6685,7 +6714,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>why</orth>
                <pron>wiː</pron>
             </form>
@@ -6696,7 +6725,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>window</orth>
                <pron>windou</pron>
             </form>
@@ -6707,7 +6736,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wine</orth>
                <pron>wain</pron>
             </form>
@@ -6718,7 +6747,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>winter</orth>
                <pron>wintər</pron>
             </form>
@@ -6729,7 +6758,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wireless</orth>
                <pron>waiələs</pron>
             </form>
@@ -6740,7 +6769,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>within</orth>
                <pron>wiθin</pron>
             </form>
@@ -6751,7 +6780,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>without</orth>
                <pron>wiθɔːt</pron>
             </form>
@@ -6762,7 +6791,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>woman</orth>
                <pron>wumən</pron>
             </form>
@@ -6773,7 +6802,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>woods</orth>
                <pron>wudz</pron>
             </form>
@@ -6784,7 +6813,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>word</orth>
                <pron>wəːd</pron>
             </form>
@@ -6798,7 +6827,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>work</orth>
                <pron>wəːk</pron>
             </form>
@@ -6809,7 +6838,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>worker</orth>
                <pron>wəːkər</pron>
             </form>
@@ -6820,7 +6849,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>working</orth>
                <pron>wəːkiŋmein</pron>
             </form>
@@ -6831,7 +6860,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>workman</orth>
                <pron>wəːkmən</pron>
             </form>
@@ -6842,7 +6871,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>world</orth>
                <pron>wəːld</pron>
             </form>
@@ -6856,7 +6885,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>wound</orth>
                <pron>waund</pron>
             </form>
@@ -6867,7 +6896,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>ye</orth>
                <pron>iː</pron>
             </form>
@@ -6881,7 +6910,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>year</orth>
                <pron>jəːr</pron>
             </form>
@@ -6892,7 +6921,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>yes</orth>
                <pron>jez</pron>
             </form>
@@ -6903,7 +6932,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>yesterday</orth>
                <pron>jestədiː</pron>
             </form>
@@ -6914,7 +6943,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>yet</orth>
                <pron>jet</pron>
             </form>
@@ -6930,7 +6959,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>yon</orth>
                <pron>jɔn</pron>
             </form>
@@ -6944,7 +6973,7 @@
             </sense>
          </entry>
          <entry>
-            <form>
+            <form xml:lang="en">
                <orth>yonder</orth>
                <pron>jɔndər</pron>
             </form>
