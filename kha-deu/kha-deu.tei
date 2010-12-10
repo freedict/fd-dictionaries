@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <?oxygen SCHSchema="freedict-P5.rng"?>
 <?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -8,7 +9,6 @@
             <respStmt>
                <resp>Maintainer</resp>
                <name>Michael Bunk &lt;micha@luetzschena.de&gt;</name>
-               <name/>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -42,14 +42,12 @@
             <title>free dictionaries</title>
          </seriesStmt>
          <notesStmt>
-            <note>Thanks go to the supporters of this project:
-        Karl-Heinz Grüßner, University of Tübingen; Rebekah Tham,
-        CIEFL, Shillong; Brother Sngi, Sacred Heart College,
-        Shillong; University of Leipzig, Depts of Indology and
-        Computer Science; Rik Faith for dictd server &amp;
-        protocol; TEI for their wonderful guidelines; Horst
-        Eyermann for his generous freedict project; the open source
-        community: thrust for trust &amp; development</note>
+            <note>Thanks go to the supporters of this project: Karl-Heinz Grüßner, University of
+               Tübingen; Rebekah Tham, CIEFL, Shillong; Brother Sngi, Sacred Heart College,
+               Shillong; University of Leipzig, Depts of Indology and Computer Science; Rik Faith
+               for dictd server &amp; protocol; TEI for their wonderful guidelines; Horst Eyermann
+               for his generous freedict project; the open source community: thrust for trust &amp;
+               development</note>
          </notesStmt>
          <sourceDesc>
             <p>Home: <ref target="http://freedict.org/">http://freedict.org/</ref></p>
@@ -57,8 +55,10 @@
       </fileDesc>
       <encodingDesc>
          <projectDesc>
-            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries available for free. Your contributions are
-        welcome!</p>
+            <p>This dictionary comes to you through nice people making it available for free and for
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               available for free. Your contributions are welcome!</p>
          </projectDesc>
          <tagsDecl> <!-- may have @rend="anchored" -->
             <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
