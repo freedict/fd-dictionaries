@@ -3,7 +3,7 @@
 Originally by Piotr Bański (bansp at o2.pl), 01-nov-2010.
 License: GNU GPL ver. 3.0 or any later version. 
 
-$Id:$
+$Id$
 
 This script expects an external parameter $lg_pair but you may safely set that to '' 
 and manipulate the contents of $my_lg_pair pair instead.
@@ -20,10 +20,10 @@ declare namespace functx = "http:///www.functx.com";
 declare option saxon:output "method=text";
 
 (:the following variable is system-internal :)
-declare variable $my_svn_id as xs:string := "$Id:$";
+declare variable $my_svn_id as xs:string := "$Id$";
 
 (: set this to the pair of languages that you want to process :)
-declare variable $my_lg_pair as xs:string := "eng-scr";
+declare variable $my_lg_pair as xs:string := "srp-eng";
 
 (: reset this to true() for an even simpler dump :)
 declare variable $skip_gram as xs:boolean := false();
