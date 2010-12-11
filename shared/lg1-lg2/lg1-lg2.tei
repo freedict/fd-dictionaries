@@ -13,11 +13,13 @@
                  The fact that you can use this as a basis for your assignment does not mean that you are in any 
                  way forced to submit the result to FreeDict - the choice is yours alone. -PB           -->
             <title>Lg1 - Lg2 FreeDict Dictionary</title>
+<!--            <title xml:lang="??">provide equivalent titles in the languages involved</title>-->
             <respStmt>
                <resp>Author</resp>
                <name>???</name>
             </respStmt>
-            <!--<respStmt>
+            <!-- would you like to become a maintainer of this dictionary?
+               <respStmt>
                <resp>Maintainer</resp>
                <name>???</name>
             </respStmt>-->
@@ -27,7 +29,7 @@
          </editionStmt>
          <extent>[number] headwords</extent>
          <publicationStmt>
-            <publisher>FreeDict</publisher>
+            <publisher>FreeDict.org</publisher>
             <availability status="free">
                <p>Copyright (C) by various authors listed in revisionDesc below.</p>
                <p>Available under the terms of the <ref
@@ -50,7 +52,7 @@
             <idno type="svn">$Id:$</idno>
          </publicationStmt>
          <sourceDesc>
-            <p>No source: created in the electronic form.</p>
+            <p>No source: created in the electronic form, from the FreeDict dictionary template.</p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -101,55 +103,61 @@
 -->         </tagsDecl>
       </encodingDesc>
 
-<!--  Please adjust this to the appropriate languages.
+      <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
    
       <profileDesc>
          <langUsage>
-            <language ident="sr">
-               <idno type="iso639-2">sr</idno>
+            <language ident="sr" n="source">
+               <idno type="iso639-1">sr</idno>
                <idno type="iso639-3">srp</idno>
                <name xml:lang="sr">српски</name>
                <name xml:lang="en">Serbian</name>
             </language>
-            <language ident="en">
-               <idno type="iso639-2">en</idno>
+            <language ident="en" n="target">
+               <idno type="iso639-1">en</idno>
                <idno type="iso639-3">eng</idno>
                <name xml:lang="sr">енглески</name>
                <name xml:lang="en">English</name>
             </language>
          </langUsage>
-      </profileDesc>-->
+      </profileDesc>
+      -->
 
       <revisionDesc>
          <change when="2010-12-10">
             <date>2010-12-10</date>
-            <name>???</name>: created the first entries.</change>
+            <name>???</name>: created the first X entries.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text> <!-- xml:lang="??" usually for the target language-->
       <body>
          <entry>
-            <form>
-               <orth></orth>
+            <form> <!-- if <text> has @xml:lang set for the target language, 
+                        set it here for the source; note that you can do this 
+                        automatically, by search-and-replace, before submitting 
+                        your dictionary -->
+               <orth>???</orth>
+               <!--<pron></pron>  for pronunciation -->
             </form>
             <gramGrp>
-               <pos/>
-               <!--<gen></gen>-->
+               <pos>n</pos>
+               <!--<gen></gen> gender - may be useful for nouns -->
             </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote/>
+                  <quote>???</quote>
                   <!--<gramGrp>
-                     <gen>f</gen>
+                     <gen>f</gen>    (for cases when the equivalent noun has a different gender)
                   </gramGrp>-->
                </cit>
-               <!--               
+               <!-- you may need to reset xml:lang for examples, depending on which language they come from            
                <cit type="dicteg">
-                  <quote></quote>
+                  <quote>???</quote>
                   <cit type="trans">
-                     <quote></quote>
+                     <quote>???</quote>
                  </cit>
-               </cit>-->
+               </cit>
+               -->
             </sense>
          </entry>
       </body>
