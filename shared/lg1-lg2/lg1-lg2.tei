@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+    you may want to uncomment one of these to be able to look at your dictionary in a web browser 
+   
 <?xml-stylesheet type="text/xsl" href="freedict-dictionary.xsl"?>
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 -->
@@ -17,7 +19,7 @@
             <!-- would you like to become a maintainer of this dictionary?
                <respStmt>
                <resp>Maintainer</resp>
-               <name>???</name>
+               <name>??? &lt;your@address></name>
             </respStmt>-->
          </titleStmt>
          <editionStmt>
@@ -45,7 +47,7 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id:$</idno>
+            <idno type="svn">$Id:$</idno> <!-- this is expanded automatically by the SVN -->
          </publicationStmt>
          <sourceDesc>
             <p>No source: created in the electronic form, from the FreeDict dictionary template.</p>
@@ -60,7 +62,8 @@
          </projectDesc>
          <tagsDecl> <!-- may have @rend="anchored" -->
             <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
-<!--
+
+            <!--
             <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
                <tagUsage gi="pos">
                   <list>
@@ -75,16 +78,8 @@
                   </list>
                </tagUsage>
             </namespace>
--->            
-            <!-- this shows the limitations of the header structure: the values for equivalent forms should be structurally separate; 
-               I currently shamelessly abuse the namespace element for that purpose, with the @n attribute set to "equiv" 
-               (another abuse);
-               the third instance of abuse concerns the @rend attribute: the value 'anchored' signals the opposite of the 
-               default 'standalone': being tied to the FreeDict ontology interface (its presence triggers a Schematron check for 
-               the existence of the resources identified in the @ana attributes); if the entire tagsDecl has @rend="anchored", 
-               the namespace (sigh...) elements are not checked for it (see ../shared/Freedict-P5.xml, the ODD file).   
             -->
-<!--
+            <!--
             <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/" n="equiv">
                <tagUsage gi="gen">
                   <list>
@@ -96,10 +91,12 @@
                   </list>
                </tagUsage>
             </namespace>
--->         </tagsDecl>
+            -->
+         </tagsDecl>
       </encodingDesc>
 
       <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
+              Note that the xml:lang attributes accept ISO 639-1 codes.
    
       <profileDesc>
          <langUsage>
@@ -141,9 +138,11 @@
             </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>???</quote>
+                  <quote>???</quote>  <!-- this is another place where you might want 
+                                                                 to use @xml:lang, depending on the setup 
+                                                                 of your dictionary (no need to be redundant) -->
                   <!--<gramGrp>
-                     <gen>f</gen>    (for cases when the equivalent noun has a different gender)
+                     <gen>f</gen>    (for cases when the equivalent noun has a different gender, etc.)
                   </gramGrp>-->
                </cit>
                <!-- you may need to reset xml:lang for examples, depending on which language they come from            
