@@ -16,10 +16,11 @@
                  way forced to submit the result to FreeDict - the choice is yours alone. -PB           -->
             <title>Lg1 - Lg2 FreeDict Dictionary</title>
 <!--            <title xml:lang="??">provide equivalent titles in the languages involved</title>-->
+
             <!-- would you like to become a maintainer of this dictionary?
                <respStmt>
                <resp>Maintainer</resp>
-               <name>??? &lt;your@address></name>
+               <name>??? &lt;your@address&gt;</name>
             </respStmt>-->
          </titleStmt>
          <editionStmt>
@@ -96,7 +97,8 @@
       </encodingDesc>
 
       <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
-              Note that the xml:lang attributes accept ISO 639-1 codes.
+              Note that the xml:lang attributes accept ISO 639-1 codes. Some language lack these codes and in such cases 
+              have to use ISO 639-3. 
    
       <profileDesc>
          <langUsage>
@@ -129,7 +131,7 @@
                         set it here for the source; note that you can do this 
                         automatically, by search-and-replace, before submitting 
                         your dictionary -->
-               <orth>???</orth>
+               <orth>headword_placeholder</orth>
                <!--<pron></pron>  for pronunciation -->
             </form>
             <gramGrp>
@@ -138,7 +140,7 @@
             </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>???</quote>  <!-- this is another place where you might want 
+                  <quote>translation_equivalent</quote>  <!-- this is another place where you might want 
                                                                  to use @xml:lang, depending on the setup 
                                                                  of your dictionary (no need to be redundant) -->
                   <!--<gramGrp>
@@ -147,9 +149,9 @@
                </cit>
                <!-- you may need to reset xml:lang for examples, depending on which language they come from            
                <cit type="dicteg">
-                  <quote>???</quote>
+                  <quote xml:lang="sr">example_text (we assume it's in the source language, here it's Serbian)</quote>
                   <cit type="trans">
-                     <quote>???</quote>
+                     <quote xml:lang="en">translation in the target language (here: en)</quote>
                  </cit>
                </cit>
                -->
