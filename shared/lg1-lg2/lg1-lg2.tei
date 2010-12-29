@@ -18,10 +18,17 @@
 <!--            <title xml:lang="??">provide equivalent titles in the languages involved</title>-->
 
             <!-- would you like to become a maintainer of this dictionary?
+               Being a maintainer means a certain right (to be the primary decision maker, within reason),
+               and a certain obligation (to accept improvements and devote some time to the maintenance of the dictionary).
+               You decide. See also http://sourceforge.net/apps/mediawiki/freedict/index.php?title=Dictionary_maintainers -->
+            <!--               t
                <respStmt>
                <resp>Maintainer</resp>
                <name>??? &lt;your@address&gt;</name>
-            </respStmt>-->
+               </respStmt>-->
+            <!-- we don't really list authors in hand-made dictionaries - they are listed in the revisionDesc below;
+               in donated dictionaries, use "original author" as the resp type -->
+            
          </titleStmt>
          <editionStmt>
             <edition>0.1</edition>
@@ -157,6 +164,57 @@
                -->
             </sense>
          </entry>
+         
+         <!-- what follows is some example entries -->
+         
+         <entry>
+            <form xml:lang="en"><orth>consult</orth></form>
+            <gramGrp><pos>v</pos><subc>tr</subc></gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote xml:lang="pl">konsultować się</quote>
+                  <gramGrp>
+                     <pos>v</pos> <!-- redundant -->
+                     <subc>inh_refl</subc> <!-- inherently reflexive (the 'się' marker) -->
+                  </gramGrp>
+                  <cit type="colloc"> <!-- collocate -->
+                     <quote xml:lang="en">somebody</quote>
+                     <cit type="trans">
+                        <quote xml:lang="pl">z kimś</quote>
+                     </cit>
+                  </cit>
+               </cit>
+            </sense>
+         </entry>
+         
+         
+         <!-- below, notice especially the inflection forms of the described headword (lemma) -->
+         
+         <!-- please note: this recommendation is not complete and, as it is now, wrong from the point of 
+            view of coherence in serializing the data model (gram features in the attributes should become element content);
+            
+            So please don't treat this as an example to be followed. -PB, 29-dec-10
+
+         -->
+         <entry xml:id="iubeo">
+            <form xml:lang="la">
+               <orth>iubeo</orth>
+               <form type="infl">
+                  <orth type="inf">iubere</orth>
+                  <orth type="perf">iussi</orth>
+                  <orth type="sup">ussum</orth>
+               </form>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+               <iType>2</iType> <!-- inflection class (for verbs: conjugation number) -->
+            </gramGrp>
+            <sense>
+               <cit type="trans"><quote xml:lang="de">befehlen</quote></cit>
+            </sense>
+         </entry>
+         
+         
       </body>
    </text>
 </TEI>
