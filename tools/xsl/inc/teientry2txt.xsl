@@ -87,7 +87,10 @@
       means "you're either P4 or <pos> in P5 is non-empty"
 -->
   <xsl:template match="tei:gramGrp">
-    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())">
+    <xsl:variable name="bracket"
+      select="count(ancestor::tei:gramGrp)=0 and (count(tei:pos/text()) or count(tei:*[local-name() != 'pos']))"
+    />
+    <xsl:if test="$bracket">
       <xsl:text> &lt;</xsl:text>
     </xsl:if>
     <xsl:for-each
@@ -97,7 +100,7 @@
         <xsl:text>, </xsl:text>
       </xsl:if>
     </xsl:for-each>
-    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())">
+    <xsl:if test="$bracket">
       <xsl:text>></xsl:text>
     </xsl:if>
 
