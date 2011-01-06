@@ -4,12 +4,9 @@
      by 'dictfmt -c5' -->
 <!-- $Id$ -->
 
-<!-- the addition of P5 stuff relies on the absolute complementarity between
-  null-spaced elements (P4) and elements in the TEI namespace (P5) -->
-
-<xsl:stylesheet
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0"
+  xmlns:xd="http://www.pnp-software.com/XSLTdoc" exclude-result-prefixes="tei xd">
 
   <xsl:import href="inc/teiheader2txt.xsl"/>
   <xsl:import href="inc/teientry2txt.xsl"/>
@@ -23,36 +20,36 @@
     <xsl:call-template name="t00-database-info"/>
     <xsl:call-template name="t00-database-short"/>
     <xsl:call-template name="t00-database-url"/>
-    <xsl:apply-templates select="//entry | //tei:entry" mode="c5"/>
+    <xsl:apply-templates select="tei:TEI/tei:text/tei:body//tei:entry" mode="c5"/>
   </xsl:template>
 
   <xsl:template name="t00-database-info">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-info&#x0A;</xsl:text>
-    <xsl:apply-templates select="TEI.2/teiHeader | tei:TEI/tei:teiHeader"/>
+    <xsl:apply-templates select="tei:TEI/tei:teiHeader"/>
   </xsl:template>
 
   <xsl:template name="t00-database-short">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-short&#x0A;</xsl:text>
-    <xsl:value-of select="concat(TEI.2/teiHeader/fileDesc/titleStmt/title | 
-      tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title,
-      ' ver. ',
-      tei:TEI/tei:teiHeader/tei:fileDesc/tei:editionStmt/tei:edition | 
-      TEI.2/teiHeader/fileDesc/editionStmt/edition)"/>
+    <xsl:value-of
+      select="concat(tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title,
+      ' ver. ',tei:TEI/tei:teiHeader/tei:fileDesc/tei:editionStmt/tei:edition)"/>
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
+  <xd:doc>Use either the ref of type='home' or possibly make a mistake and use the first ref under sourceDesc.</xd:doc>
   <xsl:template name="t00-database-url">
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-url&#x0A;</xsl:text>
-    <xsl:value-of select="TEI.2/teiHeader/fileDesc/sourceDesc//xptr/@url |
-      tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ptr/@target"/>
+    <xsl:value-of
+      select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[@type='home']/@target | 
+              tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[1]/@target"/>
     <xsl:text>&#x0A;</xsl:text>
   </xsl:template>
 
 
-  <xsl:template match="entry | tei:entry" mode="c5">
+  <xsl:template match="tei:entry" mode="c5">
     <!-- mark start of a new c5 format definition -->
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
 
@@ -64,10 +61,10 @@
 	 (those two minus signs are separated by a space here, because
 	 otherwise an XML parser considers them as sgml comment end. for
 	 calling dictfmt you have to omit that space.)  -->
-    <xsl:for-each select="form/orth | tei:form/tei:orth">
+    <xsl:for-each select="tei:form/tei:orth">
       <xsl:if test="1>string-length()">
-	<xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position()"/>
-	</xsl:message>
+        <xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position()"/>
+        </xsl:message>
       </xsl:if>
       <xsl:value-of select="."/>
       <xsl:if test="not(position()=last())">%%%</xsl:if>
