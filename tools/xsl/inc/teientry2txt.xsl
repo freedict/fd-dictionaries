@@ -1,25 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
-<xsl:stylesheet
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-    xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0" exclude-result-prefixes="tei">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+  version="1.0">
 
   <xsl:include href="indent.xsl"/>
-   <!--<xsl:variable name="stylesheet-cvsid">
-     $Id$
-     </xsl:variable>
-   added the variable but then uncommented it, because it would get priority 
-   over the one defined in the header module; not sure if that was intended -->
 
-    <xsl:strip-space elements="*"/>
+  <xsl:strip-space elements="*"/>
 
-<!-- I am fully aware of introducing some project-specific features into the P5 mode,
+  <xsl:variable name="stylesheet-entry_svnid">$Id:$</xsl:variable>
+
+  <!-- I am fully aware of introducing some project-specific features into the P5 mode,
      but let this stuff reside here for a while until we come up with a clean way to 
      import project-dependent overrides from the individual project directories... -PB 13-apr-09-->
 
   <!-- TEI entry specific templates -->
   <xsl:template match="tei:entry">
-    <xsl:apply-templates select="tei:form"/> <!-- force form before gramGrp -->
+    <xsl:apply-templates select="tei:form"/>
+    <!-- force form before gramGrp -->
     <xsl:apply-templates select="tei:gramGrp"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="tei:sense | tei:note"/>
@@ -70,7 +68,7 @@
     </xsl:if>
   </xsl:template>
 
-<!-- can't see when this template may be active; see above for enhancement (pref, suff), if necessary -->
+  <!-- can't see when this template may be active; see above for enhancement (pref, suff), if necessary -->
   <xsl:template match="tei:orth">
     <xsl:value-of select="."/>
     <xsl:if test="position() != last()">
@@ -84,26 +82,34 @@
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
-<!-- allow for empty <pos/>; make it a condition for the presence of angled brackets, too 
+  <!-- allow for empty <pos/>; make it a condition for the presence of angled brackets, too 
   the weird "(self::gramGrp or count(tei:pos/text())" 
       means "you're either P4 or <pos> in P5 is non-empty"
 -->
   <xsl:template match="tei:gramGrp">
-    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())"><xsl:text> &lt;</xsl:text></xsl:if>
-    <xsl:for-each select="tei:pos[text()] | tei:subc | tei:num | tei:gen | tei:gramGrp | tei:iType | tei:gram">
+    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())">
+      <xsl:text> &lt;</xsl:text>
+    </xsl:if>
+    <xsl:for-each
+      select="tei:pos[text()] | tei:subc | tei:num | tei:gen | tei:gramGrp | tei:iType | tei:gram">
       <xsl:apply-templates select="."/>
       <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
       </xsl:if>
     </xsl:for-each>
-    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())"><xsl:text>></xsl:text></xsl:if>
+    <xsl:if test="count(ancestor::tei:gramGrp)=0 and count(tei:pos/text())">
+      <xsl:text>></xsl:text>
+    </xsl:if>
 
     <!-- <xr> elements are not allowed inside <form> or <gramGrp>, so reach out and grab them... -->
-    <xsl:if test="count(preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
+    <xsl:if
+      test="count(preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
                     @type='past-form' or @type='infl-form'])">
       <xsl:text> </xsl:text>
-      <xsl:apply-templates select="preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
-                                   @type='past-form' or @type='infl-form']"/>
+      <xsl:apply-templates
+        select="preceding-sibling::tei:xr[@type='plural-form' or @type='imp-form' or
+                                   @type='past-form' or @type='infl-form']"
+      />
     </xsl:if>
     <!-- horribly project-specific, will be overridden by project-specific imports later on; 
       OTOH, we might make this a project feature, too, if there is a need -->
@@ -112,9 +118,9 @@
     </xsl:if>
   </xsl:template>
 
-<xsl:template match="tei:gram[@type='cl-agr']">
-  <xsl:value-of select="concat('agr: ',.)"/>
-</xsl:template>
+  <xsl:template match="tei:gram[@type='cl-agr']">
+    <xsl:value-of select="concat('agr: ',.)"/>
+  </xsl:template>
 
   <xsl:template match="tei:sense">
     <xsl:variable name="prec_senses">
@@ -141,23 +147,29 @@
     <xsl:value-of select="concat(' ',$pref)"/>
     <xsl:apply-templates/>
   </xsl:template>
-  
-   <xsl:template match="tei:usg[@type]">
+
+  <xsl:template match="tei:usg[@type]">
     <xsl:text>[</xsl:text>
-    <xsl:value-of select="." />
+    <xsl:value-of select="."/>
     <xsl:text>.] </xsl:text>
   </xsl:template>
 
   <xsl:template match="tei:def">
-    <xsl:variable name="stuff"><xsl:apply-templates select="*|text()"/></xsl:variable>
+    <xsl:variable name="stuff">
+      <xsl:apply-templates select="*|text()"/>
+    </xsl:variable>
     <!-- first question: am I abused? Do I hold a translation equivalent 
     within a <sense>, or am I a real definition within a <cit>? -->
     <xsl:choose>
       <xsl:when test="parent::tei:sense">
         <xsl:variable name="separator">
           <xsl:choose>
-            <xsl:when test="preceding-sibling::tei:def"><xsl:value-of select="'; '"/></xsl:when>
-            <xsl:otherwise><xsl:value-of select="''"/></xsl:otherwise>
+            <xsl:when test="preceding-sibling::tei:def">
+              <xsl:value-of select="'; '"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="''"/>
+            </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
         <xsl:value-of select="concat($separator,$stuff)"/>
@@ -175,7 +187,7 @@
   <xsl:template match="tei:xr">
     <xsl:choose>
       <xsl:when test="count(@rend) and @rend='as-is'">
-        <xsl:apply-templates/>        
+        <xsl:apply-templates/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
@@ -187,8 +199,12 @@
           <xsl:when test="@type='syn'">
             <xsl:text>&#xa;   </xsl:text>
             <xsl:choose>
-              <xsl:when test="count(tei:ref) &gt; 1"><xsl:text>Synonyms: </xsl:text></xsl:when>
-              <xsl:otherwise><xsl:text>Synonym: </xsl:text></xsl:otherwise>
+              <xsl:when test="count(tei:ref) &gt; 1">
+                <xsl:text>Synonyms: </xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>Synonym: </xsl:text>
+              </xsl:otherwise>
             </xsl:choose>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
@@ -196,39 +212,49 @@
           <xsl:when test="@type='ant'">
             <xsl:text>&#xa;   </xsl:text>
             <xsl:choose>
-              <xsl:when test="count(tei:ref) &gt; 1"><xsl:text>Antonyms: </xsl:text></xsl:when>
-              <xsl:otherwise><xsl:text>Antonym: </xsl:text></xsl:otherwise>
+              <xsl:when test="count(tei:ref) &gt; 1">
+                <xsl:text>Antonyms: </xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>Antonym: </xsl:text>
+              </xsl:otherwise>
             </xsl:choose>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='infl-base'"> <!-- inflectional base -->
+          <xsl:when test="@type='infl-base'">
+            <!-- inflectional base -->
             <xsl:text>&#xa; Inflection of: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='deriv-base'"> <!-- derivational/compound base -->
+          <xsl:when test="@type='deriv-base'">
+            <!-- derivational/compound base -->
             <xsl:text>&#xa; Derived from: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>&#xa;</xsl:text>
           </xsl:when>
           <!-- the <xr>s below are positioned inline -->
-          <xsl:when test="@type='imp-form'"> <!-- imperative -->
+          <xsl:when test="@type='imp-form'">
+            <!-- imperative -->
             <xsl:text>(imp: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>)</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='plural-form'"> <!-- plural -->
+          <xsl:when test="@type='plural-form'">
+            <!-- plural -->
             <xsl:text>(pl: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>)</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='past-form'"> <!-- past -->
+          <xsl:when test="@type='past-form'">
+            <!-- past -->
             <xsl:text>(past: </xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>)</xsl:text>
           </xsl:when>
-          <xsl:when test="@type='infl-form'"> <!-- general inflections, e.g. past/pprt/fut -->
+          <xsl:when test="@type='infl-form'">
+            <!-- general inflections, e.g. past/pprt/fut -->
             <xsl:text>(</xsl:text>
             <xsl:apply-templates select="tei:ref"/>
             <xsl:text>)</xsl:text>
@@ -244,7 +270,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="tei:ref">
     <xsl:if test="preceding-sibling::*[1][self::tei:ref]">
       <xsl:text>, </xsl:text>
@@ -258,21 +284,25 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
-   <xsl:template match="tei:entry//tei:p">
+
+  <xsl:template match="tei:entry//tei:p">
     <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="tei:note[@type='editor']" priority="1"/>
 
   <xsl:template match="tei:entry//tei:note">
-    <xsl:variable name="stuff"><xsl:apply-templates/></xsl:variable>
+    <xsl:variable name="stuff">
+      <xsl:apply-templates/>
+    </xsl:variable>
     <xsl:variable name="spc">
       <xsl:choose>
         <xsl:when test="(count(preceding-sibling::node())=0) or @rend='noindent'">
           <xsl:value-of select="''"/>
         </xsl:when>
-        <xsl:otherwise><xsl:value-of select="' '"/></xsl:otherwise>
+        <xsl:otherwise>
+          <xsl:value-of select="' '"/>
+        </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:choose>
@@ -285,14 +315,15 @@
         <xsl:text>&#xa;</xsl:text>
       </xsl:when>
       <!-- a subset of values from the TEI Guidelines -->
-      <xsl:when test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc'">
+      <xsl:when
+        test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc'">
         <xsl:value-of select="concat($spc,'(',.,')')"/>
       </xsl:when>
       <xsl:when test="@type='gram'">
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
           <xsl:with-param name="txt" select="concat(' (',normalize-space($stuff),')')"/>
-<!--          select="concat(' Note (gram.): ',normalize-space($stuff))"-->
+          <!--          select="concat(' Note (gram.): ',normalize-space($stuff))"-->
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -301,7 +332,7 @@
         <xsl:text>&#xa;</xsl:text>
         <xsl:call-template name="format">
           <xsl:with-param name="txt" select="concat(' (',normalize-space($stuff),')')"/>
-<!--          select="concat(' Usage: ',normalize-space($stuff))"-->
+          <!--          select="concat(' Usage: ',normalize-space($stuff))"-->
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
         </xsl:call-template>
@@ -335,7 +366,7 @@
         <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
-    
+
   </xsl:template>
   <xsl:template match="tei:q">
     <xsl:value-of select="concat('&quot;',.,'&quot;')"/>

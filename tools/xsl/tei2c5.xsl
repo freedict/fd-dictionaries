@@ -6,7 +6,7 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0"
-  xmlns:xd="http://www.pnp-software.com/XSLTdoc" exclude-result-prefixes="tei xd">
+  xmlns:xd="http://www.pnp-software.com/XSLTdoc">
 
   <xsl:import href="inc/teiheader2txt.xsl"/>
   <xsl:import href="inc/teientry2txt.xsl"/>
@@ -14,6 +14,8 @@
   <xsl:output method="text" omit-xml-declaration="yes" encoding="UTF-8"/>
 
   <xsl:strip-space elements="*"/>
+
+  <xsl:variable name="stylesheet-main_svnid">$Id:$</xsl:variable>
 
   <!-- "main()" function -->
   <xsl:template match="/">
