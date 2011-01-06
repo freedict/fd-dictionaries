@@ -8,7 +8,7 @@
 
   <xsl:strip-space elements="*"/>
 
-  <xsl:variable name="stylesheet-entry_svnid">$Id:$</xsl:variable>
+  <xsl:variable name="stylesheet-entry_svnid">$Id$</xsl:variable>
 
   <!-- I am fully aware of introducing some project-specific features into the P5 mode,
      but let this stuff reside here for a while until we come up with a clean way to 
@@ -136,17 +136,41 @@
         <xsl:when test="@n">
           <xsl:value-of select="concat(@n,'. ')"/>
         </xsl:when>
-        <xsl:when test="$prec_senses > 0 or following-sibling::tei:sense">
+        <xsl:when test="number($prec_senses) > 0 or following-sibling::tei:sense">
           <xsl:value-of select="concat(position(),'. ')"/>
         </xsl:when>
       </xsl:choose>
     </xsl:variable>
-    <xsl:if test="$prec_senses > 0">
+    <xsl:if test="number($prec_senses) > 0">
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
     <xsl:value-of select="concat(' ',$pref)"/>
     <xsl:apply-templates/>
   </xsl:template>
+
+  <xsl:template match="tei:cit">
+    <xsl:if test="@type='trans' and preceding-sibling::tei:cit[@type='trans']"><xsl:text>; </xsl:text></xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="tei:quote">
+    <xsl:choose>
+      <xsl:when test="parent::tei:cit[@type='dicteg']">
+        <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
+      </xsl:when>
+      <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit[@type='dicteg']]">
+        <xsl:value-of select="concat(' - ',.,'&#xa;')"/>
+      </xsl:when>
+      <xsl:when test="preceding-sibling::tei:quote"> <!-- parent::tei:cit[@type='trans'] and  -->
+        <xsl:value-of select="', '"/>
+        <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
 
   <xsl:template match="tei:usg[@type]">
     <xsl:text>[</xsl:text>
@@ -357,17 +381,6 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="tei:quote">
-    <xsl:choose>
-      <xsl:when test="parent::tei:cit[@type='dicteg']">
-        <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:apply-templates/>
-      </xsl:otherwise>
-    </xsl:choose>
-
-  </xsl:template>
   <xsl:template match="tei:q">
     <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
   </xsl:template>
