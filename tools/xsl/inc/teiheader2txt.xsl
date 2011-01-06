@@ -21,71 +21,71 @@
 
   <!-- For transforming the teiHeader -->
 
-  <xsl:template match="titleStmt | tei:titleStmt">
-    <xsl:value-of select="title | tei:title"/>
+  <xsl:template match="tei:titleStmt">
+    <xsl:value-of select="tei:title"/>
     <xsl:text>&#xa;&#xa;</xsl:text>
-    <xsl:for-each select="respStmt | tei:respStmt">
-      <xsl:value-of select="resp | tei:resp"/>: <xsl:value-of select="name | tei:name"/>
+    <xsl:for-each select="tei:respStmt">
+      <xsl:value-of select="tei:resp"/>: <xsl:value-of select="tei:name"/>
       <xsl:text>&#xa;</xsl:text>
     </xsl:for-each>
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
 <!-- editionStmt consists of <edition/> followed by (respStmt)* -->
-  <xsl:template match="editionStmt | tei:editionStmt">
+  <xsl:template match="tei:editionStmt">
     <xsl:text>Edition: </xsl:text>
-    <xsl:apply-templates select="edition | tei:edition"/>
+    <xsl:apply-templates select="tei:edition"/>
     <xsl:text>&#xa;</xsl:text>
     
-    <xsl:if test="respStmt | tei:respStmt">
-      <xsl:for-each select="respStmt | tei:respStmt">
+    <xsl:if test="tei:respStmt">
+      <xsl:for-each select="tei:respStmt">
         <xsl:call-template name="format">
-          <xsl:with-param name="txt" select="normalize-space(concat(name | tei:name, ': ', resp | tei:resp))"/>
+          <xsl:with-param name="txt" select="normalize-space(concat(tei:name, ': ', tei:resp))"/>
           <xsl:with-param name="width" select="$width"/>
-          <xsl:with-param name="start" select="string-length(name | tei:name) + 3"/>
+          <xsl:with-param name="start" select="string-length(tei:name) + 3"/>
         </xsl:call-template>
       </xsl:for-each>
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="extent | tei:extent">
+  <xsl:template match="tei:extent">
     <xsl:text>Size: </xsl:text>
     <xsl:value-of select="."/>
     <xsl:text>&#xa;&#xa;</xsl:text>
   </xsl:template>
 
 
-  <xsl:template match="publicationStmt | tei:publicationStmt">
+  <xsl:template match="tei:publicationStmt">
     <xsl:text>Published by: </xsl:text>
-    <xsl:value-of select="./publisher  | ./tei:publisher"/>
+    <xsl:value-of select="tei:publisher"/>
     <xsl:text>, </xsl:text>
-    <xsl:value-of select="./date  | ./tei:date"/>
+    <xsl:value-of select="tei:date"/>
     <xsl:text>&#xa;at: </xsl:text>
-    <xsl:value-of select="./pubPlace  | ./tei:pubPlace"/>
+    <xsl:value-of select="tei:pubPlace"/>
 
     <xsl:text>&#xa;&#xa;Availability:&#xa;&#xa;  </xsl:text>
     <xsl:call-template name="format">
-      <xsl:with-param name="txt" select="normalize-space(availability | tei:availability)"/>
+      <xsl:with-param name="txt" select="normalize-space(tei:availability)"/>
       <xsl:with-param name="width" select="$width"/>
       <xsl:with-param name="start" select="2"/>
     </xsl:call-template>
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="seriesStmt | tei:seriesStmt">
+  <xsl:template match="tei:seriesStmt">
     <xsl:text>Series: </xsl:text>
-    <xsl:value-of select="./title | ./tei:title"/>
+    <xsl:value-of select="tei:title"/>
     <xsl:text>&#xa;&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="notesStmt | tei:notesStmt">
+  <xsl:template match="tei:notesStmt">
     <xsl:text>Notes:&#xa;&#xa;</xsl:text>
     <xsl:apply-templates/>
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="teiHeader//note  | tei:teiHeader//tei:note">
+  <xsl:template match="tei:teiHeader//tei:note">
     <xsl:text> * </xsl:text>
     <xsl:call-template name="format">
       <xsl:with-param name="txt" select="normalize-space()"/>
@@ -96,13 +96,13 @@
 
   <!-- This template must follow the previous one, otherwise
 it will never be instantiated. -->
-  <xsl:template match="teiHeader//note[@type='status'] | tei:teiHeader//tei:note[@type='status']">
+  <xsl:template match="tei:teiHeader//tei:note[@type='status']">
     <xsl:text> * Database Status: </xsl:text>
     <xsl:value-of select="."/>
     <xsl:text>&#xa;&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="sourceDesc | tei:sourceDesc">
+  <xsl:template match="tei:sourceDesc">
     <xsl:text>Source(s):&#xa;&#xa;  </xsl:text>
     <xsl:variable name="sdtext">
       <xsl:apply-templates/>
@@ -115,21 +115,17 @@ it will never be instantiated. -->
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="p | tei:p">
+  <xsl:template match="tei:p">
     <xsl:text>  </xsl:text>
     <xsl:apply-templates/>
     <xsl:text>&#xa;&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="xptr">
-    <xsl:value-of select="@url"/>
-  </xsl:template>
-  
   <xsl:template match="tei:ptr">
     <xsl:value-of select="@target"/>
   </xsl:template>
 
-  <xsl:template match="projectDesc | tei:projectDesc">
+  <xsl:template match="tei:projectDesc">
     <xsl:text>The Project:&#xa;&#xa;  </xsl:text>
     <xsl:call-template name="format">
       <xsl:with-param name="txt" select="normalize-space()"/>
@@ -139,7 +135,7 @@ it will never be instantiated. -->
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="revisionDesc | tei:revisionDesc">
+  <xsl:template match="tei:revisionDesc">
     <xsl:text>Changelog:&#xa;&#xa;</xsl:text>
     <xsl:if test="string-length($current-date)>0">
       <!-- Add conversion timestamp -->
@@ -150,20 +146,6 @@ it will never be instantiated. -->
       <xsl:text>:&#xa;   Converted TEI file into text format&#xa;&#xa;</xsl:text>
     </xsl:if>
     <xsl:apply-templates/>
-  </xsl:template>
-
-  <xsl:template match="change">
-    <xsl:text> * </xsl:text>
-    <xsl:value-of select="date"/>
-    <xsl:text> </xsl:text>
-    <xsl:value-of select="respStmt/name"/>
-    <xsl:text>:&#xa;   </xsl:text>
-    <xsl:call-template name="format">
-      <xsl:with-param name="txt" select="normalize-space(item | tei:item)"/>
-      <xsl:with-param name="width" select="$width"/>
-      <xsl:with-param name="start" select="3"/>
-    </xsl:call-template>
-    <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
   <xsl:template match="tei:change">
