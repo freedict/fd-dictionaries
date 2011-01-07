@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="eng-pol.css"?>
+<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
+<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" version="5.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>English - Polish Piotrowski+Saloni/FreeDict dictionary</title>
+        <respStmt>
+          <resp>co-author of the original TeX/print version</resp>
+          <name>Tadeusz Piotrowski</name>
+        </respStmt>
+        <respStmt>
+          <resp>co-author of the original TeX/print version</resp>
+          <name>Zygmunt Saloni</name>
+        </respStmt>
+        <respStmt>
+          <resp>converted from TeX to SGML by</resp>
+          <name>Katarzyna Głowińska</name>
+        </respStmt>
+        <respStmt>
+          <resp>converted from TeX to SGML by</resp>
+          <name>Marcin Woliński</name>
+        </respStmt>
+        <respStmt>
+          <resp>converted from SGML to TEI XML by</resp>
+          <name xml:id="bansp">Piotr Bański</name>
+        </respStmt>
+        <respStmt>
+          <!-- for the freedict database -->
+          <resp>Maintainer</resp>
+          <name ref="#bansp">Piotr Bański</name>
+        </respStmt>
+      </titleStmt>
+      <editionStmt>
+        <edition>0.1</edition>
+        <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
+        <respStmt>
+          <resp>The first TEI P5 version: converted from an XML-ised SGML version (see changelogs for details).</resp>
+          <name>Piotr Bański</name>
+        </respStmt>
+      </editionStmt>
+      <!-- KEEP THIS UP TO DATE -->
+      <extent>16362 headwords</extent>
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+        <availability>
+          <p>The FreeDict application is available under the terms of the <ref
+              target="http://www.gnu.org/licenses/gpl.html">GNU General Public Licence</ref>,
+            version 3.0 or any later version. In addition, the textual content of the dictionary is
+            licensed under <ref target="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation
+              License</ref> ver. 1.2 or any later version.</p>
+        </availability>
+        <date when="2010-05-06">6 May 2009</date>
+        <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
+        <idno type="SVN">$Id$</idno>
+      </publicationStmt>
+      <notesStmt>
+        <note type="status">big enough to be useful</note>
+      </notesStmt>
+      <sourceDesc>
+        <p>The FreeDict dictionary was converted from an SGML version of <q>Nowy Słownik
+            angielsko-polski</q> (New English-Polish Dictionary) by <name>Tadeusz Piotrowski</name>
+          and <name>Zygmunt Saloni</name> (1992). Warszawa: Editions Spotkania.
+          ISBN-83-85195-81-5.</p>
+        <p>The dictionary was created in TeX and converted to SGML by <name>Katarzyna
+        Głowińska</name> and <name>Marcin Woliński</name> of the University of Warsaw.</p>
+        <p>Idarex codes were added to it (possibly by Tadeusz Piotrowski and/or his students).</p>
+        <p>The GNU release was facilitated by <name>Janusz S. Bień</name> of the University of
+          Warsaw.</p>
+        <p>The authors' licensing statement is included as PDF in the etc/ directory (the TEI
+          version mentioned there is a different version produced by students of the University of
+          Warsaw; that version was not used in the creation of the FreeDict dictionary).</p>
+        <p>See the revisionDesc and the ChangeLog file for more details.</p>
+        <p>The TeX, SGML and XML-ised SGML versions (the latter accompanied by an XSLT conversion
+          script by Piotr Bański, included for verifiability and reproducibility of the results) are
+          released together with release 0.1 of this dictionary.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the <ref target="http://www.freedict.org">FreeDict project</ref>. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
+      </projectDesc>
+      <tagsDecl>
+        <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+        <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
+          <tagUsage gi="pos">
+            <list n="values" type="bulleted">
+              <item xml:id="tag_N" ana="FreeDict_ontology.xml#f_pos_noun">N</item>
+              <item ana="FreeDict_ontology.xml#f_pos_noun">N Comp</item>
+              <item xml:id="tag_V" ana="FreeDict_ontology.xml#f_pos_verb">V</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Mod</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Phras</item>
+              <item ana="FreeDict_ontology.xml#f_pos_verb">V Refl</item>
+              <item ana="FreeDict_ontology.xml#f_pos_adj">Adj</item>
+              <item ana="FreeDict_ontology.xml#f_pos_adv">Adv</item>
+              <item ana="FreeDict_ontology.xml#f_pos_num">Num</item>
+              <item ana="FreeDict_ontology.xml#f_pos_prep">Prep</item>
+              <item>Inter</item>
+              <item>Interj</item> <!-- typo -->
+              <item>Det</item>
+              <item>Conj</item>
+              <item>Pron</item>
+            </list>
+          </tagUsage>
+<!--          <tagUsage gi="subc">
+            <list n="values" type="bulleted">
+              <item corresp="#tag_V">Phras</item>
+              <item corresp="#tag_V">Mod</item>
+              <item corresp="#tag_N">Comp</item>
+              <item corresp="#tag_V">Refl</item> <!-\- ?? -\->
+            </list>
+          </tagUsage>
+          the 'subc' field does not exist in this dictionary yet 
+-->        </namespace>
+      </tagsDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change n="0.2" who="#bansp" when="2010-05-11">
+        <list type="bulleted">
+          <head>Version 0.2, <date>6 May 2010</date>. Changes by <name>Piotr Bański</name>:</head>
+            <item>added more information to the header,</item>
+            <item>anchored some of the POS values in the FreeDict interface to GOLD/ISO DCR (this is the reason for the version number change),</item>
+            <item>prepared the representation for the so far non-existent &lt;subc> (subcategorization) fields; for the time being "V Phras", etc. are used as an atomic POS that are aligned with the corresponding simple POS.</item>
+        </list>
+        </change>
+      <change n="0.1" who="#bansp" when="2010-05-06">
+        <list type="bulleted">
+          <head>Version 0.1, <date>6 May 2010</date>. Converted by: <name>Piotr Bański</name>; brief list of changes:</head>
+          <item>converted SGML files to UTF-8;</item>
+          <item>converted the transcription codes to IPA;</item>
+          <item>created an XML DTD to validate the dictionary as XML, split all letters into separate files (e.g. "xyz" used to be a single file);</item>
+          <item>very slightly corrected/modified the post-SGML version (it is released as one of the packages in version 0.1);</item>
+          <item>converted codes into letters with diacritics in UTF-8;</item>
+          <item>added non-diacritic versions to headwords with diacritics, to facilitate searches (e.g. <mentioned>pate</mentioned> to <mentioned>pâté</mentioned>; around 40 additions);</item>
+          <item>the only lexicographic intrusion was splitting <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> to make them analogical to <mentioned>fiancé</mentioned>/<mentioned>fiancée</mentioned>, to make it easier to process them (note the difference in the POS: <mentioned>protégé</mentioned>/<mentioned>protégée</mentioned> is categorised as Adj, <mentioned>fiancé</mentioned> is N);</item>
+          <item>wrote a conversion script to TEI XML (included with the post-SGML version as partial documentation);</item>
+          <item>created this header, xincluding the individual letter files, so that the dictionary is easier to maintain;</item>
+          <item>there are still a lot of fixes to do -- e.g. add entries missing in the SGML version (e.g. <mentioned>can</mentioned>! etc.) from the TeX version (a list by Radek Moszczyński is provided), fix POS (typo in inter(j), V Refl), unify the idarexen, join equivalents that were split around the '/' (km/h initially ended up as separate strings), split some ambiguous notes (e.g. 'gloss', see the conversion script for comments) into separate subclasses, split some comma-separated variant transcriptions into separate elements; separate regional variants Br/US from e.g. Latin expansions of some abbreviations (cf. <mentioned>cf.</mentioned>), which should not be located by headword queries (in this case, a query for <mentioned>confer</mentioned>);</item>
+          <item>some entries that were proper subparts of other entries (mostly US spellings) were eliminated from the TEI version (but preserved in the post-SGML XML version) - the full list can be found in the XSLT conversion script;</item>
+          <item>a separate item is extending the dictionary with an XML representation of idarexen (described in a paper by Bański and Moszczyński, LREC-08);</item>
+          <item>the companion volume (pol-eng) awaits conversion from the TeX source;</item>
+        </list>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <include href="letters/a.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/b.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/c.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/d.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/e.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/f.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/g.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/h.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/i.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/j.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/k.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/l.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/m.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/n.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/o.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/p.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/q.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/r.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/s.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/t.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/u.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/w.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/v.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/x.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/y.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+      <include href="letters/z.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+    </body>
+  </text>
+</TEI>
+<!-- 
+  This XML application is distributed under GNU GPL 3.0 (or any later version).
+  
+  The textual content of the dictionary has additionally been released by the original authors under GNU GFDL 1.2 (or any later version).
+  
+  This document is free software; you can redistribute it and/or modify it under the terms 
+  of the GNU General Public License as published by the Free Software Foundation. This program is 
+  distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;  without even the implied 
+  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  General Public License for more details. You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the 
+  
+  Free Software Foundation, 
+  Inc., 59 Temple Place - Suite 330,
+  Boston, MA 02111-1307, USA. 
+-->
