@@ -1,50 +1,17 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
-# $Revision$
+$::VERSION = '$Revision$';
 
-# the produced freedict-database.xml has the following schema:
-#
-# document element: FreeDictDatabase
-#  attributes: none
-#  children: dictionary*
-#
-# element: dictionary
-#  children: release*
-#  attributes:
-#   @name		language-combination, eg. eng-deu
-#   @edition		taken from TEI header, will be used as release version
-#   @headwords		`wc -l dictd-formatted-db.index`
-#   @date		last change of TEI file
-#   @status		contents of status note in TEI header, if available
-#   @sourceURL		URL in sourceDesc in TEI header (upstream project)
-#   @notes		unused
-#   @HEADorRelease	in CVS, unused
-#   @maintainerName	Maintainer name (without email) from
-#			/TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
-#   @maintainerEmail	Email address of Maintainer from same place
-#   @unsupported	space separated list of platforms, eg. "evolutionary bedic"
-#
-# element: release
-#  children: none
-#  attributes:
-#   @platform		allowed values: dict-tgz, dict-tbz2, mobi,
-#			bedic, deb, rpm, gem, src, evolutionary
-#   @version		version of the dictionary this is a release of
-#   @URL		URL where this release can be downloaded
-#			(additional click may be required by SourceForge)
-#   @size		size of this release in bytes
-#   @date		when this release was made, eg. 2004-12-25
-
+use strict;
+use warnings;
 use FindBin;
 use Getopt::Std;
 use XML::DOM;
 use File::stat;
-use strict;
-use WWW::Mechanize;
-use HTML::TreeBuilder;
+use File::stat;
+use POSIX qw(strftime);
 
 our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l);
-getopts('vhald:fr');
 
 sub printd
 {
@@ -52,14 +19,11 @@ sub printd
   print @_
 }
 
-my $sfurl = 'http://sourceforge.net/projects/freedict/files/';
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
+our $dbfile = "$FREEDICTDIR/freedict-database.xml";
+getopts('vhald:fr');
 
-printd "Using FREEDICTDIR=$FREEDICTDIR\n";
-
-my $dbfile = "$FREEDICTDIR/freedict-database.xml";
-
-if($opt_h)
+sub HELP_MESSAGE
 {
   print <<EOT;
 $0 [options] (-a | -d <la1-la2> | -r)
@@ -82,12 +46,46 @@ Options:
 -f	force update of extracted data from TEI file,
 	even if its modification time is less than the last update
 -l	leave $dbfile untouched
--r	extract released packages from the SourceForge file release pages
-	at $sfurl
+-r	extract released packages from the SourceForge file releases
+
+The produced freedict-database.xml has the following schema:
+
+ document element: FreeDictDatabase
+  attributes: none
+  children: dictionary*
+
+ element: dictionary
+  children: release*
+  attributes:
+   \@name		language-combination, eg. eng-deu
+   \@edition		taken from TEI header, will be used as release version
+   \@headwords		`wc -l dictd-formatted-db.index`
+   \@date		last change of TEI file
+   \@status		contents of status note in TEI header, if available
+   \@sourceURL		URL in sourceDesc in TEI header (upstream project)
+   \@notes		unused
+   \@HEADorRelease	in CVS, unused
+   \@maintainerName	Maintainer name (without email) from
+			/TEI.2/fileDesc/titleStmt/respStmt/name[../resp='Maintainer']
+   \@maintainerEmail	Email address of Maintainer from same place
+   \@unsupported	space separated list of platforms, eg. "evolutionary bedic"
+
+ element: release
+  children: none
+  attributes:
+   \@platform		allowed values: dict-tgz, dict-tbz2, mobi,
+			bedic, deb, rpm, gem, src, evolutionary
+   \@version		version of the dictionary this is a release of
+   \@URL		URL where this release can be downloaded
+			(additional click may be required by SourceForge)
+   \@size		size of this release in bytes
+   \@date		when this release was made, eg. 2004-12-25
 
 EOT
   exit
 }
+
+HELP_MESSAGE if $opt_h;
 
 sub contains_dictionary
 {
@@ -263,6 +261,9 @@ sub fdict_extract_all_metadata
 
 ##################################################################
 
+# See
+# http://sourceforge.net/apps/trac/sourceforge/wiki/Release%20files%20for%20download
+# for ideas if it breaks again
 sub update_database
 {
   my($doc, $URL, $size, $release_date) = @_;
@@ -290,6 +291,7 @@ sub update_database
     'ipk' => 'zbedic',
     'evolutionary.zip' => 'evolutionary',
     'src.tar.bz2' => 'src',
+    'src.zip' => 'src',
     'noarch.rpm' => 'rpm'
   );
   my $platform = $ext2platform{$extension};
@@ -335,54 +337,39 @@ sub fdict_extract_releases
 {
   my $doc = shift;
 
-  # Probably WWW::Mechanize is overkill now, LWP might be enough
-  my $mech = WWW::Mechanize->new;
-  printd "Getting $sfurl\n";
-  $mech->get($sfurl);
-  my $tree = HTML::TreeBuilder->new_from_content($mech->content);
-
-  my @tablerows = $tree->look_down('_tag', 'tr');
-  printd scalar(@tablerows), " <tr> elements in web page.\n";
-  for my $tr (@tablerows)
+  my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
+  my $rsynccmd = "rsync -ave ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
+  printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
+  system($rsynccmd) unless defined $ENV{'SKIPRSYNC'};
+  my $findcmd = "find $FREEDICTDIR/frs -type f -print0";
+  open my $fh, "$findcmd|" or die $!;
+  my $found = 0;
+  my @filenames = split '\0', <$fh>;
+  close $fh;
+  for my $f (@filenames)
   {
-    # find $releasedate, $size, $URL
-    my $a = $tr->look_down(
-      '_tag', 'a',
-      sub
-      {
-	#print $_[0]->attr('href'), "\n";
-	$_[0]->attr('href') =~
-	qr"^/projects/freedict/files/[^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+)/download"
-      }
-    );
-    next unless defined $a;
-    my $URL = "http://sourceforge.net" . $a->attr('href');
-    #printd "Got URL: $URL\n";
+    next unless $f =~ m"/frs/freedict/([^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+))$";
 
-    my $date_td = $tr->look_down(
-      '_tag', 'td',
-      sub { $_[0]->as_text =~ /^\d\d\d\d-\d\d-\d\d$/ }
-    );
-    unless(defined $date_td)
-    { printd "Did not find release date.\n"; next }
-    my $release_date = $date_td->as_text;
-    #printd "Got release date: $release_date\n";
+    $found++;
 
-    my $size_td = $tr->look_down(
-      '_tag', 'td',
-      sub { $_[0]->as_text =~ /^[\d.]+ [KM]B$/ }
-    );
-    next unless defined $size_td;
-    my $s = $size_td->as_text;
-    $s =~ /^([\d.]+) ([KM])B$/;
-    my $size = int($1 * ($2 eq 'K' ? 1024 : 1024*1024));
+    # find $URL, $releasedate, $size
+    my $path = $1;
+    my $URL = "http://sourceforge.net/projects/freedict/files/$path/download";
 
-    #printd "\n\t$URL $size $release_date\n";
+    my $sb = stat($f);
+    my $release_date = strftime '%Y-%m-%d', gmtime($sb->mtime);
+
+    my $size = $sb->size;
+
+    #printd "$found:\t$path\n\trelease date: $release_date\n\tsize: $size\n";
     update_database $doc, $URL, $size, $release_date
-  } # foreach(@links)
-  $tree->delete
+  } # foreach
+  warn "Found only $found dictionary releases.  Something is broken?"
+    if $found < 419;
 }
 ##################################################################
+
+printd "Using FREEDICTDIR=$FREEDICTDIR\n";
 
 if($opt_d && $opt_a)
 { print STDERR "Only one of -d and -a may be given at the same time.\n"; exit }
