@@ -133,7 +133,8 @@ sub fdict_extract_metadata
   unless(-r $indexfile)
   {
     system "cd $dirname/$entry && make $entry.index"
-      or print STDERR "  ERROR: Failed to remake $entry.index\n"
+      or print STDERR "  ERROR: Failed to remake $entry.index\n";
+    exit 1
   }
 
   if(-r $indexfile)
@@ -145,7 +146,8 @@ sub fdict_extract_metadata
   else
   {
     print STDERR "  Where is file '$indexfile'?\n";
-    $headwords = "ERROR: Could not find $indexfile"
+    $headwords = "ERROR: Could not find $indexfile";
+    exit 1
   }
 
   $d->setAttribute('headwords', $headwords);
@@ -157,7 +159,8 @@ sub fdict_extract_metadata
   unless(-r $teifile)
   {
     system "cd $dirname/$entry && make $teifile"
-      or print STDERR "  ERROR: Failed to remake $teifile\n"
+      or print STDERR "  ERROR: Failed to remake $teifile\n";
+    exit 1
   }
 
   if(-r $teifile)
@@ -218,10 +221,8 @@ sub fdict_extract_metadata
   }
   else
   {
-    $edition = "ERROR: $teifile not readable";
-    $date = $edition;
-    $status = $edition;
-    $sourceURL = $edition
+    print STDERR "ERROR: $teifile not readable";
+    exit 1
   }
 
   $d->setAttribute('edition', $edition);
