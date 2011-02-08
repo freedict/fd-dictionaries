@@ -1,10 +1,13 @@
 FREEDICTDIR ?= ..
 hedir ?= $(FREEDICTDIR)/hun-eng
 VPATH += $(hedir)
-include $(hedir)/Makefile
 DISTFILES = eng-hun.tei.header Makefile ChangeLog
+supported_phonetics =
+include $(FREEDICTDIR)/tools/Makefile.common
 
-eng-hun-nophon.tei: eng-hun.tei.header SZOTAR.DBF szotar-dbf2tei.pl
+dbview_in_path := $(shell which dbview 2>/dev/null)
+
+eng-hun.tei: eng-hun.tei.header SZOTAR.DBF szotar-dbf2tei.pl
 ifeq ($(dbview_in_path),)
 	@echo "To get the data out of the dBase database, we require the tool"
 	@echo "\`dbview' from Martin Schulze aka Joey."

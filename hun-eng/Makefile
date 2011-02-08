@@ -1,6 +1,7 @@
 FREEDICTDIR ?= ..
 DISTFILES = Makefile ChangeLog README SZOTAR.ZIP \
 	    hun-eng.tei.header szotar-dbf2tei.pl
+supported_phonetics =
 include $(FREEDICTDIR)/tools/Makefile.common
 
 dbview_in_path := $(shell which dbview 2>/dev/null)
