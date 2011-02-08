@@ -11,7 +11,7 @@ AC_ISC_POSIX
 AC_PROG_CC(colorgcc)
 AC_HEADER_STDC
 
-pkg_modules="libgnomeui-2.0 libxml-2.0 libgtkhtml-2.0 libxslt libbonoboui-2.0 gconf-2.0 libglade-2.0"
+pkg_modules="libgnomeui-2.0 libxml-2.0 libgtkhtml-3.14 libxslt libbonoboui-2.0 gconf-2.0 libglade-2.0"
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)

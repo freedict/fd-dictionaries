@@ -2,9 +2,9 @@ Source: freedict-editor
 Section: editors
 Priority: optional
 Maintainer: Michael M. Bunk <micha@luetzschena.de>
-Build-Depends: debhelper (>= 4.0.0), autotools-dev, libgnomeui-dev,
- libxml2-dev, libxslt-dev, libgtkhtml2-dev, libglade2-dev, scrollkeeper,
- libaspell-dev (>=0.50.3)
+Build-Depends: debhelper (>= 4.0.0), autotools-dev,
+ libxslt-dev, libgtkhtml3.14-dev, libglade2-dev, scrollkeeper,
+ libaspell-dev (>=0.50.3), xmlto
 Standards-Version: 3.7.2
 
 Package: freedict-editor
