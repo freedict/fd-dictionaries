@@ -28,7 +28,7 @@ all: xhtml
 
 inc/build-system-overview.svg inc/build-system-overview.png: inc/build-system-overview.sxd
 	@echo "I'm starting OpenOffice now. Please export the data as PNG and SVG."
-	OOo-draw $<
+	oodraw $<
 	exit 1
 
 $(addprefix html/,$(linkfiles)): $(addprefix inc/,$(linkfiles))
