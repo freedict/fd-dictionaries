@@ -333,8 +333,8 @@ $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFI
 		$(addprefix $(notdir $(realpath .))/, $(DISTFILES))
 
 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
-	cd .. && zip -9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
-      -x $(dictname)/.svn/* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
+	cd .. && zip -r9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
+      -x \*/.svn/\* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
 dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
 
