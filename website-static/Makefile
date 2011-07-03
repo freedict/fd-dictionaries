@@ -6,25 +6,14 @@ FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICP
 WGET=wget --no-verbose --header='X-FreeDict: staticlinks' --html-extension --no-clobber
 
 upload:
-	# For the lftp to connect using the proper password, a bookmark
-	# with the name "freedict.org" is required.  To create it, connect
-	# to the ftp server with "lftp user@freedict.org", enter the password,
-	# "set bmk:save-passwords yes", and finally "bookmark add freedict.org".
-	# This creates a file "~/.lftp/bookmarks" containing the line
-	# "freedict.org	user:pass@freedict.org/".
-	lftp freedict.org -e \
-	"mirror -ReLnv \
-	--exclude-glob logs/* \
-	--exclude-glob mb/* \
-	--exclude-glob */.svn/* \
-	--exclude-glob images/flags/src/* \
-	--exclude-glob howto/images/*.gif \
-	--exclude-glob howto/images/*.svg \
-	--exclude-glob howto/images/*.tif \
-	--exclude-glob t/* \
-	--exclude-glob ergane/* \
-	--exclude-glob tmp/* \
-	static .; exit"
+	rsync -avP -e ssh --copy-links \
+	static/ micha137,freedict@web.sourceforge.net:htdocs/ \
+	--exclude 'mb/*' \
+	--exclude '*/.svn' \
+	--exclude 'images/flags/src' \
+	--exclude 'howto/images/*.gif' \
+	--exclude 'howto/images/*.svg' \
+	--exclude 'howto/images/*.tif'
 
 update: $(DYNAMICPATH)
 	$(MAKE) -C $(DYNAMICPATH)
@@ -78,10 +67,10 @@ static/freedict-database.xml:
 
 static/index.html:
 	# when the webspace has php, use this (but then, no need for static version at all):
-	# if [ ! -d static/inc/ ]; then ln -s $(DYNAMICPATH)/inc static/inc; fi
-	# if [ ! -e static/index.php ]; then ln -s ../index-freedict.org.php static/index.php; fi
+	if [ ! -d static/inc/ ]; then ln -s $(DYNAMICPATH)/inc static/inc; fi
+	if [ ! -e static/index.php ]; then ln -s ../index-freedict.org.php static/index.php; fi
 	# otherwise only plain html:
-	ln -s ../index.html $@
+	#ln -s ../index.html $@
 
 static/.htaccess:
 	ln -s $(DYNAMICPATH)/.htaccess $@
