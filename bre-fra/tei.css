@@ -1,14 +1,14 @@
 /* CSS for the Geriadur Tomaz FreeDict dictionary, by Denis Arnaud (denisarnuad in the domain of yahoo dot fr) */
-/* Version 2010, november 15. Licence GNU/GPL 2 or later*/
+/* Version 2011, august 23. Licence GNU/GPL 2 or later, front part added */
 /* All the header part (bottom) has been taken from the 'freedict-dictionary.css' for the swa-eng Freedict dictionary  */
 
-html, TEI {	width:80%;
-	margin:auto;
+html, TEI {	margin-right:10%;
+	margin-left:15%;
 	padding-bottom:70px;
 	font-family: sans-serif;
 	/*display:none; */
 }
-div {width:750px;margin:auto;}
+
 title {	display:block;
 	margin:10px;
 	color:blue;
@@ -16,8 +16,6 @@ title {	display:block;
 }
 
 /* teiHeader {display:none;}*/
-
-front {	display:block;}
 
 back { 	display:block;
 	margin-top :50px;
@@ -40,9 +38,9 @@ item{	display:block;
 
 xr,date,head {display:block;}
 
-head { 	font-weight:bold;
+/*head { 	font-weight:bold;
 	text-transform:uppercase;
-}
+}*/
 
 /* DICO */
 entry {	display:block;}
@@ -128,13 +126,21 @@ grmGrp:after {content:""}
 /*orth {color:pink} */
 /*⇗↳↪• */
 
-/* Following part (header part) has been taken from Piotr Bański work for swa-eng dcitionary, see comments */
+/* The front part has been written to show the list of abbreviations, and list of references */
+
+/*************** the front part ***************/
+front {display:block; border-bottom:solid black 1px; margin-bottom: 3em; padding-bottom: 1em;} 
+div {display:block; margin-bottom: 2em; padding-bottom:1em;}
+head {display:block;color:blue; font-size:larger; margin-bottom: 1em;}
+
+/* Following part (header part) has been taken from Piotr Bański work for swa-eng dictionary, see comments */
 /* CSS for the Swahili-English FreeDict dictionary, by Piotr Bański (bansp in the domain of o2.pl) */
 /* Version: 02 January 2009. License: CC BY 3.0 */
 
 /*************** the header part ***************/
 title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
-fileDesc, encodingDesc, revisionDesc, change, item, pubPlace, list > head {display:block; margin-bottom: 1em}
+fileDesc, encodingDesc, revisionDesc, change, item, pubPlace, list > head {display:block; margin-bottom: 1em; }
+
 
 titleStmt > title, edition { font-weight:bold}
 
@@ -170,10 +176,8 @@ revisionDesc:before {content: "Change Log"; color:blue; font-size:larger}
 
 respStmt:before, list[type='bulleted'] > item:before {content:"* "}
 
-teiHeader {display:block; margin-bottom: 3em}
+teiHeader {display:block; margin-bottom: 3em; border-bottom:solid black 1px;}
 
 name {color:teal}
 
 foreign {font-style:italic}
-
-teiHeader {border-bottom:solid black 1px} 
