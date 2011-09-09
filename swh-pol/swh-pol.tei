@@ -29,7 +29,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.2.1</edition>
+        <edition>0.2.2</edition>
         <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
         <!--<respStmt>
           <resp>xxx</resp>
@@ -43,7 +43,7 @@
         <availability>
           <p>Original dictionary contents available under the GNU Free Documentation License, ver. 1.1 and later. XML application together with the content is available under the terms of the GNU General Public License, version 3.0 or any later version.</p>
         </availability>
-        <date when="2009-12-31">31 December 2009</date>
+        <date when="2011-09-09">9 September 2011</date>
         <pubPlace><ptr target="http://freedict.org/"/></pubPlace>
       </publicationStmt>
       <notesStmt>
@@ -72,6 +72,15 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2.2" who="#bansp" when="2011-09-09">
+        <list type="bulleted">
+          <head>Version 0.2.2, <date>9 September 2011</date>. <name ref="#bansp">Piotr Bański</name>
+          </head>
+          <item>Purely a maintenance release, to sort out file distribution issues and to include a
+            list of biblical names in the archive (it is not a part of the dictionary). Accompanied
+            by an update of the Freedict schemas, to handle &lt;table> and friends.</item>
+        </list>
+      </change>
       <change n="0.2.1" who="#bansp" when="2009-12-31">
         <list type="bulleted">
           <head>Version 0.2.1, <date>31 December 2009</date>. <name ref="#bansp">Piotr Bański</name>
