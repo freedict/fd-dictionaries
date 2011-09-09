@@ -1,0 +1,110 @@
+﻿This is the content of the notes that I have made during 
+the conversion of the GPL-ed English - Polish dictionary by  
+Tadeusz Piotrowski and Zygmunt Saloni (1992). 
+
+Unfortunately, I am not able to locate the XSL script that I used
+to transduce SGML into TEI XML. It had SO many comments inside...
+If I ever find it in the vastness of my backups and the mess of 
+my subsequent disks, I will roll another tarball of this release (0.1).
+
+For more information, see 
+
+https://sourceforge.net/projects/freedict/files/English%20-%20Polish/0.1/
+
+http://clip.ipipan.waw.pl/Nowy_slownik_angielsko-polski
+
+Piotr Bański, 28 May 2011
+
+=====================
+Unstructured fragments of my notes follow.
+
+
+Latin2: everything.
+
+for G in *.sgml; do iconv -f LATIN2 -t UTF-8 <$G >$G.xml; done
+
+
+Generate a .dtd
+
+Replace XBDICT with xbdict, add the XML prolog.
+
+&eacute; with é
+
+&ecirc; with ê
+
+&acirc; with â
+
+&iuml; with ï
+
+&egrave; with è
+
+Added spellings without these diacritics (around 40 additions)
+
+    <spl>pâté</spl>
+    <spl>pate</spl>
+
+Adjusted matinée, negligée, séance, soufflé, naïve (they were preceded by the diacritic-less form; I want to always index entries by the last orth, without introducing checks in the loop).
+
+Split protégé/protégée to make them analogical to fiancé/fiancée (noting the difference in the POS: protégé/protégée is Adj, fiancé is N).
+
+Potential danger for indexing, will probably have to index by hand here: 
+
+    <spl>rosé</spl>
+    <spl>rose</spl>
+
+Pronunciation changes:
+
+ei --> eɪ (2187 replacements);
+ai --> aɪ (1650 replacements);
+oi --> ɔɪ (149)
+e{\e} --> ɛə (251)
+u: 1048 (hmm, why is it 1042 later? check!!!!)
+ou --> əʊ (1332)
+{\e}: --> ɜ: (721)
+{t} --> ɑ (829)
+
+o: --> ɔ:(1052)
+{\o} --> æ (2456)
+
+for \cdot, I chose the "dot operator" $sdot; ⋅ (420 replacements)
+for the accompanying $, I chose non-breaking-space  &nbsp; ( ).
+
+ 
+{\n} --> ŋ (1086)
+
+{\a} --> ʌ (1507)
+
+d{\z} --> ʤ (847)
+{\z} --> ʒ (101)
+t{\s} --> ʧ (550)
+{\s} --> ʃ (1477)
+
+
+{\q} --> θ (393)
+{\h} --> ð (150)
+
+{\`} --> ˈ (13762)
+{\,} --> ˌ (2198)
+
+{\e} --> ə (10347)
+
+au --> aʊ (421)
+u --> ʊ (670)
+
+
+(<phonetic>.*)i(.*<)
+i --> ɪ (8169+2180+405+62+5)
+o --> ɒ (1629+21)
+
+(for the sake of completeness: u: - 1042; i: - 1259)
+
+number of <phonetic> elements: 16334; some of them should be split around ", " (for variants)
+
+
+careful here:
+
+ <spl>aesthetic</spl>
+    <spl>esthetic</spl>
+    <lang>US</lang>
+
+(encoding by position, nasty)
