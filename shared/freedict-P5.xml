@@ -7,7 +7,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI Customization for the FreeDict project (basic), version 0.9</title>
+            <title>TEI Customization for the FreeDict project (basic), version 0.10</title>
             <respStmt>
                <resp>maintained by</resp>
                <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
@@ -36,6 +36,9 @@
             Piotr Bański and Beata Wójtowicz, which should be available from
             http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
          <list n="changelog" type="glossed">
+            <item><label>Version 0.10, <date when="2011-09-09">9 September 2011</date>, by <name>Piotr
+            Bański</name></label>: Added the <gi>cell</gi>, <gi>row</gi>, and <gi>table</gi> elements, 
+               to handle front matter better.</item>
             <item><label>Version 0.9, <date when="2010-11-08">8 November 2010</date>, by <name>Piotr
                Bański</name></label>:
                <list type="bulleted">
@@ -178,7 +181,7 @@
                </classes>
             </elementSpec>
             
-            <!--<moduleRef key="figures"/>-->
+            <moduleRef key="figures" include="cell row table"/>
 
             <moduleRef key="analysis"/>
             <elementSpec module="analysis" ident="c" mode="delete"/>
