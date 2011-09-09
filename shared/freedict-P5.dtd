@@ -1,13 +1,54 @@
 
 <!--
-DTD Generated 2010-04-24T20:31:04-04:00. 
+DTD Generated 2011-09-09T15:35:21Z. 
 This file is released as part of the FreeDict package (http://freedict.org/). It
                   is licensed under the GNU Public License version 2.0 or later.
-Edition: 1.6.0. Last updated on February 12th 2010.
+Edition: 1.9.0. Last updated on February 25th 2011.
+Edition Location: http://www.tei-c.org/Vault/P5/1.9.0/
 
 -->
 
 <!-- start datatypes -->
+
+<!ENTITY % data.certainty '(high|
+medium|
+low|
+unknown)' >
+
+<!ENTITY % data.numeric ' CDATA' >
+
+<!ENTITY % data.count ' CDATA' >
+
+<!ENTITY % data.temporal.w3c ' CDATA' >
+
+<!ENTITY % data.duration.w3c ' CDATA' >
+
+<!ENTITY % data.truthValue ' CDATA' >
+
+<!ENTITY % data.xTruthValue '(unknown|
+inapplicable | true | false)' >
+
+<!ENTITY % data.language ' CDATA' >
+
+<!ENTITY % data.namespace ' CDATA' >
+
+<!ENTITY % data.outputMeasurement ' CDATA' >
+
+<!ENTITY % data.pattern ' CDATA' >
+
+<!ENTITY % data.pointer ' CDATA' >
+
+<!ENTITY % data.version ' CDATA' >
+
+<!ENTITY % data.key ' CDATA' >
+
+<!ENTITY % data.word ' CDATA' >
+
+<!ENTITY % data.code ' CDATA' >
+
+<!ENTITY % data.name ' CDATA' >
+
+<!ENTITY % data.enumerated '%data.name;' >
 
 <!-- end datatypes -->
 
@@ -42,11 +83,11 @@ Edition: 1.6.0. Last updated on February 12th 2010.
 <!ENTITY % model.entryPart_sequenceOptional "superEntry?, hom?, sense?, form?, orth?, pron?, hyph?, syll?, gen?, number?, case?, per?, tns?, mood?, iType?, gramGrp?, pos?, subc?, colloc?, def?, etym?, usg?, lbl?, xr?, re?"> 
 <!ENTITY % model.entryPart_sequenceOptionalRepeatable "superEntry*, hom*, sense*, form*, orth*, pron*, hyph*, syll*, gen*, number*, case*, per*, tns*, mood*, iType*, gramGrp*, pos*, subc*, colloc*, def*, etym*, usg*, lbl*, xr*, re*"> 
 <!ENTITY % model.entryPart_sequenceRepeatable "superEntry+, hom+, sense+, form+, orth+, pron+, hyph+, syll+, gen+, number+, case+, per+, tns+, mood+, iType+, gramGrp+, pos+, subc+, colloc+, def+, etym+, usg+, lbl+, xr+, re+"> 
-<!ENTITY % model.resourceLike "fsdDecl"> 
-<!ENTITY % model.resourceLike_sequence "fsdDecl"> 
-<!ENTITY % model.resourceLike_sequenceOptional "fsdDecl?"> 
-<!ENTITY % model.resourceLike_sequenceOptionalRepeatable "fsdDecl*"> 
-<!ENTITY % model.resourceLike_sequenceRepeatable "fsdDecl+"> 
+<!ENTITY % model.resourceLike ""> 
+<!ENTITY % model.resourceLike_sequence ""> 
+<!ENTITY % model.resourceLike_sequenceOptional ""> 
+<!ENTITY % model.resourceLike_sequenceOptionalRepeatable ""> 
+<!ENTITY % model.resourceLike_sequenceRepeatable ""> 
 <!ENTITY % model.entryLike "superEntry |
  entry"> 
 <!ENTITY % model.entryLike_sequence "superEntry, entry"> 
@@ -60,185 +101,140 @@ Edition: 1.6.0. Last updated on February 12th 2010.
 <!ENTITY % model.ptrLike.form_sequence "oRef, oVar, pRef, pVar"> 
 <!ENTITY % model.ptrLike.form_sequenceOptional "oRef?, oVar?, pRef?, pVar?"> 
 <!ENTITY % model.ptrLike.form_sequenceOptionalRepeatable "oRef*, oVar*, pRef*, pVar*"> 
-<!ENTITY % model.ptrLike.form_sequenceRepeatable "oRef+, oVar+, pRef+, pVar+"> 
-<!ENTITY % att.ptrLike.form.attributes '
-target CDATA #IMPLIED'> 
-<!ENTITY % att.ptrLike.form.attribute.target '
-target CDATA #IMPLIED'>
-
-<!ENTITY % att.global.analytic.attributes '
+<!ENTITY % model.ptrLike.form_sequenceRepeatable "oRef+, oVar+, pRef+, pVar+"> <!ENTITY % att.global.analytic.attributes '
 ana CDATA  #IMPLIED'> 
 <!ENTITY % att.global.analytic.attribute.ana '
 ana CDATA  #IMPLIED'>
-
 <!ENTITY % att.global.linking.attributes '
 corresp CDATA  #IMPLIED'> 
 <!ENTITY % att.global.linking.attribute.corresp '
 corresp CDATA  #IMPLIED'>
 
-<!ENTITY % att.pointing.attributes '
-type NMTOKEN  #IMPLIED
-evaluate (all|
-one|
-none) #IMPLIED'> 
-<!ENTITY % att.pointing.attribute.type '
-type NMTOKEN  #IMPLIED'>
-
-<!ENTITY % att.pointing.attribute.evaluate '
-evaluate (all|
-one|
-none) #IMPLIED'>
-
 <!--end of predeclared classes -->
-
 <!ENTITY % att.ascribed.attributes '
 who CDATA  #IMPLIED'> 
 <!ENTITY % att.ascribed.attribute.who '
 who CDATA  #IMPLIED'>
-
 <!ENTITY % att.canonical.attributes '
-key CDATA #IMPLIED
+key %data.key;  #IMPLIED
 ref CDATA  #IMPLIED'> 
 <!ENTITY % att.canonical.attribute.key '
-key CDATA #IMPLIED'>
+key %data.key;  #IMPLIED'>
 
 <!ENTITY % att.canonical.attribute.ref '
 ref CDATA  #IMPLIED'>
-
 <!ENTITY % att.ranging.attributes '
-atLeast CDATA #IMPLIED
-atMost CDATA #IMPLIED
-min CDATA #IMPLIED
-max CDATA #IMPLIED'> 
+atLeast %data.numeric;  #IMPLIED
+atMost %data.numeric;  #IMPLIED
+min %data.numeric;  #IMPLIED
+max %data.numeric;  #IMPLIED'> 
 <!ENTITY % att.ranging.attribute.atLeast '
-atLeast CDATA #IMPLIED'>
+atLeast %data.numeric;  #IMPLIED'>
 
 <!ENTITY % att.ranging.attribute.atMost '
-atMost CDATA #IMPLIED'>
+atMost %data.numeric;  #IMPLIED'>
 
 <!ENTITY % att.ranging.attribute.min '
-min CDATA #IMPLIED'>
+min %data.numeric;  #IMPLIED'>
 
 <!ENTITY % att.ranging.attribute.max '
-max CDATA #IMPLIED'>
-
+max %data.numeric;  #IMPLIED'>
 <!ENTITY % att.dimensions.attributes ' %att.ranging.attributes;
-unit NMTOKEN  #IMPLIED
-quantity CDATA #IMPLIED
+unit %data.enumerated;  #IMPLIED
+quantity %data.numeric;  #IMPLIED
 extent CDATA  #IMPLIED
-precision CDATA #IMPLIED
-scope NMTOKEN  #IMPLIED'> 
+precision %data.certainty;  #IMPLIED
+scope %data.enumerated;  #IMPLIED'> 
 <!ENTITY % att.dimensions.attribute.unit '
-unit NMTOKEN  #IMPLIED'>
+unit %data.enumerated;  #IMPLIED'>
 
 <!ENTITY % att.dimensions.attribute.quantity '
-quantity CDATA #IMPLIED'>
+quantity %data.numeric;  #IMPLIED'>
 
 <!ENTITY % att.dimensions.attribute.extent '
 extent CDATA  #IMPLIED'>
 
 <!ENTITY % att.dimensions.attribute.precision '
-precision CDATA #IMPLIED'>
+precision %data.certainty;  #IMPLIED'>
 
 <!ENTITY % att.dimensions.attribute.scope '
-scope NMTOKEN  #IMPLIED'>
-
+scope %data.enumerated;  #IMPLIED'>
+<!ENTITY % att.breaking.attributes '
+break %data.enumerated;  #IMPLIED'> 
+<!ENTITY % att.breaking.attribute.break '
+break %data.enumerated;  #IMPLIED'>
 <!ENTITY % att.datable.w3c.attributes '
-period CDATA #IMPLIED
-when CDATA #IMPLIED
-notBefore CDATA #IMPLIED
-notAfter CDATA #IMPLIED
-from CDATA #IMPLIED
-to CDATA #IMPLIED'> 
+period %data.pointer;  #IMPLIED
+when %data.temporal.w3c;  #IMPLIED
+notBefore %data.temporal.w3c;  #IMPLIED
+notAfter %data.temporal.w3c;  #IMPLIED
+from %data.temporal.w3c;  #IMPLIED
+to %data.temporal.w3c;  #IMPLIED'> 
 <!ENTITY % att.datable.w3c.attribute.period '
-period CDATA #IMPLIED'>
+period %data.pointer;  #IMPLIED'>
 
 <!ENTITY % att.datable.w3c.attribute.when '
-when CDATA #IMPLIED'>
+when %data.temporal.w3c;  #IMPLIED'>
 
 <!ENTITY % att.datable.w3c.attribute.notBefore '
-notBefore CDATA #IMPLIED'>
+notBefore %data.temporal.w3c;  #IMPLIED'>
 
 <!ENTITY % att.datable.w3c.attribute.notAfter '
-notAfter CDATA #IMPLIED'>
+notAfter %data.temporal.w3c;  #IMPLIED'>
 
 <!ENTITY % att.datable.w3c.attribute.from '
-from CDATA #IMPLIED'>
+from %data.temporal.w3c;  #IMPLIED'>
 
 <!ENTITY % att.datable.w3c.attribute.to '
-to CDATA #IMPLIED'>
-
-<!ENTITY % att.datable.attributes ' %att.datable.w3c.attributes;'> 
-<!ENTITY % att.declarable.attributes '
-default (true|
-false) "false" '> 
+to %data.temporal.w3c;  #IMPLIED'>
+<!ENTITY % att.datable.attributes ' %att.datable.w3c.attributes;'> <!ENTITY % att.declarable.attributes '
+default (true|false) "false" '> 
 <!ENTITY % att.declarable.attribute.default '
-default (true|
-false) "false" '>
-
+default (true|false) "false" '>
 <!ENTITY % att.declaring.attributes '
 decls CDATA  #IMPLIED'> 
 <!ENTITY % att.declaring.attribute.decls '
 decls CDATA  #IMPLIED'>
-
 <!ENTITY % att.divLike.attributes '
-org (composite|
-uniform) "uniform" 
-sample (initial|
-medial|
-final|
-unknown|
-complete) "complete" 
-part (Y|
-N|
-I|
-M|
-F) "N" '> 
+org (composite|uniform) "uniform" 
+sample (initial|medial|final|unknown|complete) "complete" 
+part (Y|N|I|M|F) "N" '> 
 <!ENTITY % att.divLike.attribute.org '
-org (composite|
-uniform) "uniform" '>
+org (composite|uniform) "uniform" '>
 
 <!ENTITY % att.divLike.attribute.sample '
-sample (initial|
-medial|
-final|
-unknown|
-complete) "complete" '>
+sample (initial|medial|final|unknown|complete) "complete" '>
 
 <!ENTITY % att.divLike.attribute.part '
-part (Y|
-N|
-I|
-M|
-F) "N" '>
-
+part (Y|N|I|M|F) "N" '>
+<!ENTITY % att.docStatus.attributes '
+status %data.enumerated;  "draft" '> 
+<!ENTITY % att.docStatus.attribute.status '
+status %data.enumerated;  "draft" '>
 <!ENTITY % att.responsibility.attributes '
-cert CDATA #IMPLIED
+cert %data.certainty;  #IMPLIED
 resp CDATA  #IMPLIED'> 
 <!ENTITY % att.responsibility.attribute.cert '
-cert CDATA #IMPLIED'>
+cert %data.certainty;  #IMPLIED'>
 
 <!ENTITY % att.responsibility.attribute.resp '
 resp CDATA  #IMPLIED'>
-
 <!ENTITY % att.editLike.attributes ' %att.dimensions.attributes; %att.responsibility.attributes;
-evidence NMTOKEN  #IMPLIED
+evidence NMTOKENS  #IMPLIED
 source CDATA  #IMPLIED'> 
 <!ENTITY % att.editLike.attribute.evidence '
-evidence NMTOKEN  #IMPLIED'>
+evidence NMTOKENS  #IMPLIED'>
 
 <!ENTITY % att.editLike.attribute.source '
 source CDATA  #IMPLIED'>
-
 <!ENTITY % att.global.attributes ' %att.global.linking.attributes; %att.global.analytic.attributes;
 xml:id ID #IMPLIED
 n CDATA  #IMPLIED
-xml:lang CDATA #IMPLIED
+xml:lang %data.language;  #IMPLIED
 rend CDATA  #IMPLIED
 rendition CDATA  #IMPLIED
-xml:base CDATA #IMPLIED
-xml:space (default|
-preserve) #IMPLIED'> 
+xml:base %data.pointer;  #IMPLIED
+xml:space (default|preserve) #IMPLIED'> 
 <!ENTITY % att.global.attribute.xmlid '
 xml:id ID #IMPLIED'>
 
@@ -246,7 +242,7 @@ xml:id ID #IMPLIED'>
 n CDATA  #IMPLIED'>
 
 <!ENTITY % att.global.attribute.xmllang '
-xml:lang CDATA #IMPLIED'>
+xml:lang %data.language;  #IMPLIED'>
 
 <!ENTITY % att.global.attribute.rend '
 rend CDATA  #IMPLIED'>
@@ -255,93 +251,114 @@ rend CDATA  #IMPLIED'>
 rendition CDATA  #IMPLIED'>
 
 <!ENTITY % att.global.attribute.xmlbase '
-xml:base CDATA #IMPLIED'>
+xml:base %data.pointer;  #IMPLIED'>
 
 <!ENTITY % att.global.attribute.xmlspace '
-xml:space (default|
-preserve) #IMPLIED'>
+xml:space (default|preserve) #IMPLIED'>
+<!ENTITY % att.handFeatures.attributes '
+scribe %data.name;  #IMPLIED
+scribeRef CDATA  #IMPLIED
+script NMTOKENS  #IMPLIED
+scriptRef CDATA  #IMPLIED
+medium %data.enumerated;  #IMPLIED
+scope (sole|major|minor) #IMPLIED'> 
+<!ENTITY % att.handFeatures.attribute.scribe '
+scribe %data.name;  #IMPLIED'>
 
+<!ENTITY % att.handFeatures.attribute.scribeRef '
+scribeRef CDATA  #IMPLIED'>
+
+<!ENTITY % att.handFeatures.attribute.script '
+script NMTOKENS  #IMPLIED'>
+
+<!ENTITY % att.handFeatures.attribute.scriptRef '
+scriptRef CDATA  #IMPLIED'>
+
+<!ENTITY % att.handFeatures.attribute.medium '
+medium %data.enumerated;  #IMPLIED'>
+
+<!ENTITY % att.handFeatures.attribute.scope '
+scope (sole|major|minor) #IMPLIED'>
 <!ENTITY % att.internetMedia.attributes '
-mimeType CDATA #IMPLIED'> 
+mimeType %data.word;  #IMPLIED'> 
 <!ENTITY % att.internetMedia.attribute.mimeType '
-mimeType CDATA #IMPLIED'>
-
+mimeType %data.word;  #IMPLIED'>
 <!ENTITY % att.measurement.attributes '
-unit NMTOKEN  #IMPLIED
-quantity CDATA #IMPLIED
+unit %data.enumerated;  #IMPLIED
+quantity %data.numeric;  #IMPLIED
 commodity CDATA  #IMPLIED'> 
 <!ENTITY % att.measurement.attribute.unit '
-unit NMTOKEN  #IMPLIED'>
+unit %data.enumerated;  #IMPLIED'>
 
 <!ENTITY % att.measurement.attribute.quantity '
-quantity CDATA #IMPLIED'>
+quantity %data.numeric;  #IMPLIED'>
 
 <!ENTITY % att.measurement.attribute.commodity '
 commodity CDATA  #IMPLIED'>
-
 <!ENTITY % att.naming.attributes ' %att.canonical.attributes;
-role NMTOKEN  #IMPLIED
+role %data.enumerated;  #IMPLIED
 nymRef CDATA  #IMPLIED'> 
 <!ENTITY % att.naming.attribute.role '
-role NMTOKEN  #IMPLIED'>
+role %data.enumerated;  #IMPLIED'>
 
 <!ENTITY % att.naming.attribute.nymRef '
 nymRef CDATA  #IMPLIED'>
-
 <!ENTITY % att.placement.attributes '
 place NMTOKENS  #IMPLIED'> 
 <!ENTITY % att.placement.attribute.place '
 place NMTOKENS  #IMPLIED'>
+<!ENTITY % att.typed.attributes '
+type %data.enumerated;  #IMPLIED
+subtype %data.enumerated;  #IMPLIED'> 
+<!ENTITY % att.typed.attribute.type '
+type %data.enumerated;  #IMPLIED'>
 
+<!ENTITY % att.typed.attribute.subtype '
+subtype %data.enumerated;  #IMPLIED'>
+<!ENTITY % att.pointing.attributes '
+target CDATA  #IMPLIED
+evaluate (all|one|none) #IMPLIED'> 
+<!ENTITY % att.pointing.attribute.target '
+target CDATA  #IMPLIED'>
+
+<!ENTITY % att.pointing.attribute.evaluate '
+evaluate (all|one|none) #IMPLIED'>
 <!ENTITY % att.sourced.attributes '
 ed CDATA  #IMPLIED'> 
 <!ENTITY % att.sourced.attribute.ed '
 ed CDATA  #IMPLIED'>
-
 <!ENTITY % att.spanning.attributes '
-spanTo CDATA #IMPLIED'> 
+spanTo %data.pointer;  #IMPLIED'> 
 <!ENTITY % att.spanning.attribute.spanTo '
-spanTo CDATA #IMPLIED'>
-
+spanTo %data.pointer;  #IMPLIED'>
 <!ENTITY % att.tableDecoration.attributes '
-role NMTOKEN  "data" 
-rows CDATA "1" 
-cols CDATA "1" '> 
+role %data.enumerated;  "data" 
+rows %data.count;  "1" 
+cols %data.count;  "1" '> 
 <!ENTITY % att.tableDecoration.attribute.role '
-role NMTOKEN  "data" '>
+role %data.enumerated;  "data" '>
 
 <!ENTITY % att.tableDecoration.attribute.rows '
-rows CDATA "1" '>
+rows %data.count;  "1" '>
 
 <!ENTITY % att.tableDecoration.attribute.cols '
-cols CDATA "1" '>
-
+cols %data.count;  "1" '>
 <!ENTITY % att.transcriptional.attributes ' %att.editLike.attributes;
-hand CDATA #IMPLIED
-status NMTOKEN  "unremarkable" 
+hand %data.pointer;  #IMPLIED
+status %data.enumerated;  "unremarkable" 
 seq CDATA  #IMPLIED'> 
 <!ENTITY % att.transcriptional.attribute.hand '
-hand CDATA #IMPLIED'>
+hand %data.pointer;  #IMPLIED'>
 
 <!ENTITY % att.transcriptional.attribute.status '
-status NMTOKEN  "unremarkable" '>
+status %data.enumerated;  "unremarkable" '>
 
 <!ENTITY % att.transcriptional.attribute.seq '
 seq CDATA  #IMPLIED'>
-
 <!ENTITY % att.translatable.attributes '
-version CDATA #IMPLIED'> 
+version %data.word;  #IMPLIED'> 
 <!ENTITY % att.translatable.attribute.version '
-version CDATA #IMPLIED'>
-
-<!ENTITY % att.typed.attributes '
-type NMTOKEN  #IMPLIED
-subtype NMTOKEN  #IMPLIED'> 
-<!ENTITY % att.typed.attribute.type '
-type NMTOKEN  #IMPLIED'>
-
-<!ENTITY % att.typed.attribute.subtype '
-subtype NMTOKEN  #IMPLIED'>
+version %data.word;  #IMPLIED'>
 
 <!ENTITY % model.nameLike.agent "name"> 
 <!ENTITY % model.nameLike.agent_sequence "name"> 
@@ -395,12 +412,11 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.egLike_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.egLike_sequenceRepeatable ""> 
 <!ENTITY % model.graphicLike "graphic |
- binaryObject |
- formula"> 
-<!ENTITY % model.graphicLike_sequence "graphic, binaryObject, formula"> 
-<!ENTITY % model.graphicLike_sequenceOptional "graphic?, binaryObject?, formula?"> 
-<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "graphic*, binaryObject*, formula*"> 
-<!ENTITY % model.graphicLike_sequenceRepeatable "graphic+, binaryObject+, formula+"> 
+ binaryObject"> 
+<!ENTITY % model.graphicLike_sequence "graphic, binaryObject"> 
+<!ENTITY % model.graphicLike_sequenceOptional "graphic?, binaryObject?"> 
+<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "graphic*, binaryObject*"> 
+<!ENTITY % model.graphicLike_sequenceRepeatable "graphic+, binaryObject+"> 
 <!ENTITY % model.pPart.editorial "choice |
  abbr |
  expan"> 
@@ -431,14 +447,11 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.ptrLike_sequenceOptional "ptr?, ref?"> 
 <!ENTITY % model.ptrLike_sequenceOptionalRepeatable "ptr*, ref*"> 
 <!ENTITY % model.ptrLike_sequenceRepeatable "ptr+, ref+"> 
-<!ENTITY % model.global.meta "index |
- fs |
- fLib |
- fvLib"> 
-<!ENTITY % model.global.meta_sequence "index, fs, fLib, fvLib"> 
-<!ENTITY % model.global.meta_sequenceOptional "index?, fs?, fLib?, fvLib?"> 
-<!ENTITY % model.global.meta_sequenceOptionalRepeatable "index*, fs*, fLib*, fvLib*"> 
-<!ENTITY % model.global.meta_sequenceRepeatable "index+, fs+, fLib+, fvLib+"> 
+<!ENTITY % model.global.meta "index"> 
+<!ENTITY % model.global.meta_sequence "index"> 
+<!ENTITY % model.global.meta_sequenceOptional "index?"> 
+<!ENTITY % model.global.meta_sequenceOptionalRepeatable "index*"> 
+<!ENTITY % model.global.meta_sequenceRepeatable "index+"> 
 <!ENTITY % model.milestoneLike "milestone |
  pb |
  lb |
@@ -496,25 +509,6 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.stageLike_sequenceOptional "stage?"> 
 <!ENTITY % model.stageLike_sequenceOptionalRepeatable "stage*"> 
 <!ENTITY % model.stageLike_sequenceRepeatable "stage+"> 
-<!ENTITY % model.featureVal.complex "fs |
- vColl |
- vNot |
- vMerge"> 
-<!ENTITY % model.featureVal.complex_sequence "fs, vColl, vNot, vMerge"> 
-<!ENTITY % model.featureVal.complex_sequenceOptional "fs?, vColl?, vNot?, vMerge?"> 
-<!ENTITY % model.featureVal.complex_sequenceOptionalRepeatable "fs*, vColl*, vNot*, vMerge*"> 
-<!ENTITY % model.featureVal.complex_sequenceRepeatable "fs+, vColl+, vNot+, vMerge+"> 
-<!ENTITY % model.featureVal.single "binary |
- symbol |
- numeric |
- string |
- vLabel |
- default |
- vAlt"> 
-<!ENTITY % model.featureVal.single_sequence "binary, symbol, numeric, string, vLabel, default, vAlt"> 
-<!ENTITY % model.featureVal.single_sequenceOptional "binary?, symbol?, numeric?, string?, vLabel?, default?, vAlt?"> 
-<!ENTITY % model.featureVal.single_sequenceOptionalRepeatable "binary*, symbol*, numeric*, string*, vLabel*, default*, vAlt*"> 
-<!ENTITY % model.featureVal.single_sequenceRepeatable "binary+, symbol+, numeric+, string+, vLabel+, default+, vAlt+"> 
 <!ENTITY % model.entryPart "superEntry |
  hom |
  sense |
@@ -673,6 +667,7 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.titlepagePart "graphic |
  binaryObject |
  byline |
+ argument |
  epigraph |
  docTitle |
  titlePart |
@@ -681,10 +676,10 @@ subtype NMTOKEN  #IMPLIED'>
  docEdition |
  docImprint |
  docDate"> 
-<!ENTITY % model.titlepagePart_sequence "graphic, binaryObject, byline, epigraph, docTitle, titlePart, docAuthor, imprimatur, docEdition, docImprint, docDate"> 
-<!ENTITY % model.titlepagePart_sequenceOptional "graphic?, binaryObject?, byline?, epigraph?, docTitle?, titlePart?, docAuthor?, imprimatur?, docEdition?, docImprint?, docDate?"> 
-<!ENTITY % model.titlepagePart_sequenceOptionalRepeatable "graphic*, binaryObject*, byline*, epigraph*, docTitle*, titlePart*, docAuthor*, imprimatur*, docEdition*, docImprint*, docDate*"> 
-<!ENTITY % model.titlepagePart_sequenceRepeatable "graphic+, binaryObject+, byline+, epigraph+, docTitle+, titlePart+, docAuthor+, imprimatur+, docEdition+, docImprint+, docDate+"> 
+<!ENTITY % model.titlepagePart_sequence "graphic, binaryObject, byline, argument, epigraph, docTitle, titlePart, docAuthor, imprimatur, docEdition, docImprint, docDate"> 
+<!ENTITY % model.titlepagePart_sequenceOptional "graphic?, binaryObject?, byline?, argument?, epigraph?, docTitle?, titlePart?, docAuthor?, imprimatur?, docEdition?, docImprint?, docDate?"> 
+<!ENTITY % model.titlepagePart_sequenceOptionalRepeatable "graphic*, binaryObject*, byline*, argument*, epigraph*, docTitle*, titlePart*, docAuthor*, imprimatur*, docEdition*, docImprint*, docDate*"> 
+<!ENTITY % model.titlepagePart_sequenceRepeatable "graphic+, binaryObject+, byline+, argument+, epigraph+, docTitle+, titlePart+, docAuthor+, imprimatur+, docEdition+, docImprint+, docDate+"> 
 <!ENTITY % model.msQuoteLike "title"> 
 <!ENTITY % model.msQuoteLike_sequence "title"> 
 <!ENTITY % model.msQuoteLike_sequenceOptional "title?"> 
@@ -731,37 +726,30 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.addressLike_sequenceRepeatable "email+, address+"> 
 <!ENTITY % model.nameLike "%model.nameLike.agent; |
  rs |
+ idno |
  lang"> 
-<!ENTITY % model.nameLike_sequence "%model.nameLike.agent;, rs, lang"> 
-<!ENTITY % model.nameLike_sequenceOptional "%model.nameLike.agent;?, rs?, lang?"> 
-<!ENTITY % model.nameLike_sequenceOptionalRepeatable "%model.nameLike.agent;*, rs*, lang*"> 
-<!ENTITY % model.nameLike_sequenceRepeatable "%model.nameLike.agent;+, rs+, lang+"> 
+<!ENTITY % model.nameLike_sequence "%model.nameLike.agent;, rs, idno, lang"> 
+<!ENTITY % model.nameLike_sequenceOptional "%model.nameLike.agent;?, rs?, idno?, lang?"> 
+<!ENTITY % model.nameLike_sequenceOptionalRepeatable "%model.nameLike.agent;*, rs*, idno*, lang*"> 
+<!ENTITY % model.nameLike_sequenceRepeatable "%model.nameLike.agent;+, rs+, idno+, lang+"> 
 <!ENTITY % model.global "%model.global.meta; |
  %model.milestoneLike; |
  %model.noteLike; |
- %model.global.edit; |
- figure"> 
-<!ENTITY % model.global_sequence "%model.global.meta;, %model.milestoneLike;, %model.noteLike;, %model.global.edit;, figure"> 
-<!ENTITY % model.global_sequenceOptional "%model.global.meta;?, %model.milestoneLike;?, %model.noteLike;?, %model.global.edit;?, figure?"> 
-<!ENTITY % model.global_sequenceOptionalRepeatable "%model.global.meta;*, %model.milestoneLike;*, %model.noteLike;*, %model.global.edit;*, figure*"> 
-<!ENTITY % model.global_sequenceRepeatable "%model.global.meta;+, %model.milestoneLike;+, %model.noteLike;+, %model.global.edit;+, figure+"> 
-<!ENTITY % model.featureVal "%model.featureVal.complex; |
- %model.featureVal.single;"> 
-<!ENTITY % model.featureVal_sequence "%model.featureVal.complex;, %model.featureVal.single;"> 
-<!ENTITY % model.featureVal_sequenceOptional "%model.featureVal.complex;?, %model.featureVal.single;?"> 
-<!ENTITY % model.featureVal_sequenceOptionalRepeatable "%model.featureVal.complex;*, %model.featureVal.single;*"> 
-<!ENTITY % model.featureVal_sequenceRepeatable "%model.featureVal.complex;+, %model.featureVal.single;+"> 
+ %model.global.edit;"> 
+<!ENTITY % model.global_sequence "%model.global.meta;, %model.milestoneLike;, %model.noteLike;, %model.global.edit;"> 
+<!ENTITY % model.global_sequenceOptional "%model.global.meta;?, %model.milestoneLike;?, %model.noteLike;?, %model.global.edit;?"> 
+<!ENTITY % model.global_sequenceOptionalRepeatable "%model.global.meta;*, %model.milestoneLike;*, %model.noteLike;*, %model.global.edit;*"> 
+<!ENTITY % model.global_sequenceRepeatable "%model.global.meta;+, %model.milestoneLike;+, %model.noteLike;+, %model.global.edit;+"> 
 <!ENTITY % model.biblPart "%model.respLike; |
  %model.imprintPart; |
  series |
  relatedItem |
  edition |
- extent |
- idno"> 
-<!ENTITY % model.biblPart_sequence "%model.respLike;, %model.imprintPart;, series, relatedItem, edition, extent, idno"> 
-<!ENTITY % model.biblPart_sequenceOptional "%model.respLike;?, %model.imprintPart;?, series?, relatedItem?, edition?, extent?, idno?"> 
-<!ENTITY % model.biblPart_sequenceOptionalRepeatable "%model.respLike;*, %model.imprintPart;*, series*, relatedItem*, edition*, extent*, idno*"> 
-<!ENTITY % model.biblPart_sequenceRepeatable "%model.respLike;+, %model.imprintPart;+, series+, relatedItem+, edition+, extent+, idno+"> 
+ extent"> 
+<!ENTITY % model.biblPart_sequence "%model.respLike;, %model.imprintPart;, series, relatedItem, edition, extent"> 
+<!ENTITY % model.biblPart_sequenceOptional "%model.respLike;?, %model.imprintPart;?, series?, relatedItem?, edition?, extent?"> 
+<!ENTITY % model.biblPart_sequenceOptionalRepeatable "%model.respLike;*, %model.imprintPart;*, series*, relatedItem*, edition*, extent*"> 
+<!ENTITY % model.biblPart_sequenceRepeatable "%model.respLike;+, %model.imprintPart;+, series+, relatedItem+, edition+, extent+"> 
 <!ENTITY % model.frontPart "divGen |
  titlePage"> 
 <!ENTITY % model.frontPart_sequence "divGen, titlePage"> 
@@ -835,11 +823,11 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.div1Like_sequenceOptional ""> 
 <!ENTITY % model.div1Like_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.div1Like_sequenceRepeatable ""> 
-<!ENTITY % model.resourceLike "fsdDecl"> 
-<!ENTITY % model.resourceLike_sequence "fsdDecl"> 
-<!ENTITY % model.resourceLike_sequenceOptional "fsdDecl?"> 
-<!ENTITY % model.resourceLike_sequenceOptionalRepeatable "fsdDecl*"> 
-<!ENTITY % model.resourceLike_sequenceRepeatable "fsdDecl+"> 
+<!ENTITY % model.applicationLike "application"> 
+<!ENTITY % model.applicationLike_sequence "application"> 
+<!ENTITY % model.applicationLike_sequenceOptional "application?"> 
+<!ENTITY % model.applicationLike_sequenceOptionalRepeatable "application*"> 
+<!ENTITY % model.applicationLike_sequenceRepeatable "application+"> 
 <!ENTITY % model.teiHeaderPart "encodingDesc |
  profileDesc"> 
 <!ENTITY % model.teiHeaderPart_sequence "encodingDesc, profileDesc"> 
@@ -858,12 +846,11 @@ subtype NMTOKEN  #IMPLIED'>
  refsDecl |
  classDecl |
  appInfo |
- geoDecl |
- fsdDecl"> 
-<!ENTITY % model.encodingDescPart_sequence "projectDesc, samplingDecl, editorialDecl, tagsDecl, refsDecl, classDecl, appInfo, geoDecl, fsdDecl"> 
-<!ENTITY % model.encodingDescPart_sequenceOptional "projectDesc?, samplingDecl?, editorialDecl?, tagsDecl?, refsDecl?, classDecl?, appInfo?, geoDecl?, fsdDecl?"> 
-<!ENTITY % model.encodingDescPart_sequenceOptionalRepeatable "projectDesc*, samplingDecl*, editorialDecl*, tagsDecl*, refsDecl*, classDecl*, appInfo*, geoDecl*, fsdDecl*"> 
-<!ENTITY % model.encodingDescPart_sequenceRepeatable "projectDesc+, samplingDecl+, editorialDecl+, tagsDecl+, refsDecl+, classDecl+, appInfo+, geoDecl+, fsdDecl+"> 
+ geoDecl"> 
+<!ENTITY % model.encodingDescPart_sequence "projectDesc, samplingDecl, editorialDecl, tagsDecl, refsDecl, classDecl, appInfo, geoDecl"> 
+<!ENTITY % model.encodingDescPart_sequenceOptional "projectDesc?, samplingDecl?, editorialDecl?, tagsDecl?, refsDecl?, classDecl?, appInfo?, geoDecl?"> 
+<!ENTITY % model.encodingDescPart_sequenceOptionalRepeatable "projectDesc*, samplingDecl*, editorialDecl*, tagsDecl*, refsDecl*, classDecl*, appInfo*, geoDecl*"> 
+<!ENTITY % model.encodingDescPart_sequenceRepeatable "projectDesc+, samplingDecl+, editorialDecl+, tagsDecl+, refsDecl+, classDecl+, appInfo+, geoDecl+"> 
 <!ENTITY % model.editorialDeclPart "correction |
  normalization |
  quotation |
@@ -875,40 +862,39 @@ subtype NMTOKEN  #IMPLIED'>
 <!ENTITY % model.editorialDeclPart_sequenceOptional "correction?, normalization?, quotation?, hyphenation?, segmentation?, stdVals?, interpretation?"> 
 <!ENTITY % model.editorialDeclPart_sequenceOptionalRepeatable "correction*, normalization*, quotation*, hyphenation*, segmentation*, stdVals*, interpretation*"> 
 <!ENTITY % model.editorialDeclPart_sequenceRepeatable "correction+, normalization+, quotation+, hyphenation+, segmentation+, stdVals+, interpretation+"> 
-<!ENTITY % model.applicationLike "application"> 
-<!ENTITY % model.applicationLike_sequence "application"> 
-<!ENTITY % model.applicationLike_sequenceOptional "application?"> 
-<!ENTITY % model.applicationLike_sequenceOptionalRepeatable "application*"> 
-<!ENTITY % model.applicationLike_sequenceRepeatable "application+"> 
-<!ENTITY % model.profileDescPart "langUsage |
+<!ENTITY % model.profileDescPart "creation |
+ langUsage |
  textClass"> 
-<!ENTITY % model.profileDescPart_sequence "langUsage, textClass"> 
-<!ENTITY % model.profileDescPart_sequenceOptional "langUsage?, textClass?"> 
-<!ENTITY % model.profileDescPart_sequenceOptionalRepeatable "langUsage*, textClass*"> 
-<!ENTITY % model.profileDescPart_sequenceRepeatable "langUsage+, textClass+"> 
+<!ENTITY % model.profileDescPart_sequence "creation, langUsage, textClass"> 
+<!ENTITY % model.profileDescPart_sequenceOptional "creation?, langUsage?, textClass?"> 
+<!ENTITY % model.profileDescPart_sequenceOptionalRepeatable "creation*, langUsage*, textClass*"> 
+<!ENTITY % model.profileDescPart_sequenceRepeatable "creation+, langUsage+, textClass+"> 
+<!ENTITY % model.resourceLike ""> 
+<!ENTITY % model.resourceLike_sequence ""> 
+<!ENTITY % model.resourceLike_sequenceOptional ""> 
+<!ENTITY % model.resourceLike_sequenceOptionalRepeatable ""> 
+<!ENTITY % model.resourceLike_sequenceRepeatable ""> 
 <!ENTITY % model.entryLike "superEntry |
  entry"> 
 <!ENTITY % model.entryLike_sequence "superEntry, entry"> 
 <!ENTITY % model.entryLike_sequenceOptional "superEntry?, entry?"> 
 <!ENTITY % model.entryLike_sequenceOptionalRepeatable "superEntry*, entry*"> 
-<!ENTITY % model.entryLike_sequenceRepeatable "superEntry+, entry+"> 
-<!ENTITY % att.entryLike.attributes '
-type NMTOKEN  "main" 
-sortKey CDATA #IMPLIED'> 
+<!ENTITY % model.entryLike_sequenceRepeatable "superEntry+, entry+"> <!ENTITY % att.entryLike.attributes '
+type %data.enumerated;  "main" 
+sortKey %data.word;  #IMPLIED'> 
 <!ENTITY % att.entryLike.attribute.type '
-type NMTOKEN  "main" '>
+type %data.enumerated;  "main" '>
 
 <!ENTITY % att.entryLike.attribute.sortKey '
-sortKey CDATA #IMPLIED'>
-
+sortKey %data.word;  #IMPLIED'>
 <!ENTITY % att.lexicographic.attributes '
 expand CDATA #IMPLIED
 norm CDATA #IMPLIED
 split CDATA #IMPLIED
 value CDATA #IMPLIED
 orig CDATA #IMPLIED
-location CDATA #IMPLIED
-mergedIn CDATA #IMPLIED
+location %data.pointer;  #IMPLIED
+mergedIn %data.pointer;  #IMPLIED
 opt (true | false)  "false" '> 
 <!ENTITY % att.lexicographic.attribute.expand '
 expand CDATA #IMPLIED'>
@@ -926,10 +912,10 @@ value CDATA #IMPLIED'>
 orig CDATA #IMPLIED'>
 
 <!ENTITY % att.lexicographic.attribute.location '
-location CDATA #IMPLIED'>
+location %data.pointer;  #IMPLIED'>
 
 <!ENTITY % att.lexicographic.attribute.mergedIn '
-mergedIn CDATA #IMPLIED'>
+mergedIn %data.pointer;  #IMPLIED'>
 
 <!ENTITY % att.lexicographic.attribute.opt '
 opt (true | false)  "false" '>
@@ -975,36 +961,18 @@ opt (true | false)  "false" '>
 <!ENTITY % model.ptrLike.form_sequence "oRef, oVar, pRef, pVar"> 
 <!ENTITY % model.ptrLike.form_sequenceOptional "oRef?, oVar?, pRef?, pVar?"> 
 <!ENTITY % model.ptrLike.form_sequenceOptionalRepeatable "oRef*, oVar*, pRef*, pVar*"> 
-<!ENTITY % model.ptrLike.form_sequenceRepeatable "oRef+, oVar+, pRef+, pVar+"> 
-<!ENTITY % att.ptrLike.form.attributes '
-target CDATA #IMPLIED'> 
-<!ENTITY % att.ptrLike.form.attribute.target '
-target CDATA #IMPLIED'>
-
-<!ENTITY % att.global.analytic.attributes '
+<!ENTITY % model.ptrLike.form_sequenceRepeatable "oRef+, oVar+, pRef+, pVar+"> <!ENTITY % att.global.analytic.attributes '
 ana CDATA  #IMPLIED'> 
 <!ENTITY % att.global.analytic.attribute.ana '
 ana CDATA  #IMPLIED'>
-
 <!ENTITY % att.global.linking.attributes '
 corresp CDATA  #IMPLIED'> 
 <!ENTITY % att.global.linking.attribute.corresp '
 corresp CDATA  #IMPLIED'>
 
-<!ENTITY % att.pointing.attributes '
-type NMTOKEN  #IMPLIED
-evaluate (all|
-one|
-none) #IMPLIED'> 
-<!ENTITY % att.pointing.attribute.type '
-type NMTOKEN  #IMPLIED'>
-
-<!ENTITY % att.pointing.attribute.evaluate '
-evaluate (all|
-one|
-none) #IMPLIED'>
-
 <!-- start predeclared patterns -->
+
+<!-- end predeclared patterns -->
 
 <!-- start rest of patterns -->
 
@@ -1037,6 +1005,8 @@ none) #IMPLIED'>
 <!ENTITY % macro.xtext '( #PCDATA |
  _DUMMY_model.gLike)*' >
 
+<!ENTITY % macro.anyXML ' ANY' >
+
 <!-- end patterns -->
 
 <!-- start elements -->
@@ -1044,7 +1014,7 @@ none) #IMPLIED'>
 <!--doc:(TEI document) contains a single TEI-conformant document,
 comprising a TEI header and a text, either in isolation or as part of a
 teiCorpus element. -->
-    <!ELEMENT TEI (teiHeader,(((%model.resourceLike;)+,text?) |
+<!ELEMENT TEI (teiHeader,((_DUMMY_model.resourceLike+,text?) |
  text))>
 <!ATTLIST TEI xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST TEI
@@ -1055,14 +1025,14 @@ teiCorpus element. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-version CDATA "5.0"  >
+version %data.version;  #IMPLIED >
 <!ATTLIST TEI xsi:schemaLocation CDATA #IMPLIED
  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
  >
 <!--doc:(abbreviation) contains an abbreviation of any sort. -->
-    <!ELEMENT abbr %macro.phraseSeq;>
+<!ELEMENT abbr %macro.phraseSeq;>
 <!ATTLIST abbr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST abbr
  %att.global.attribute.xmlid;
@@ -1072,12 +1042,13 @@ version CDATA "5.0"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED >
+ %att.responsibility.attributes;
+type %data.enumerated;  #IMPLIED >
 <!--doc:(addition) contains letters, words, or phrases inserted in the text by an
         author, scribe, annotator, or corrector. -->
-    <!ELEMENT add %macro.paraContent;>
+<!ELEMENT add %macro.paraContent;>
 <!ATTLIST add xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST add
  %att.global.attribute.xmlid;
@@ -1087,13 +1058,13 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.transcriptional.attributes;
  %att.placement.attributes;
  %att.typed.attributes; >
 <!--doc:(address line) contains one line of a postal address. -->
-    <!ELEMENT addrLine %macro.phraseSeq;>
+<!ELEMENT addrLine %macro.phraseSeq;>
 <!ATTLIST addrLine xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST addrLine
  %att.global.attribute.xmlid;
@@ -1103,11 +1074,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a postal  address, for example of a
         publisher, an organization, or an individual. -->
-    <!ELEMENT address ((%model.global;)*,((%model.addrPart;),(%model.global;)*)+)>
+<!ELEMENT address ((%model.global;)*,((%model.addrPart;),(%model.global;)*)+)>
 <!ATTLIST address xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST address
  %att.global.attribute.xmlid;
@@ -1117,14 +1088,16 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(analytic level) contains bibliographic elements describing an item (e.g. an article or poem) published
     within a monograph or journal and not as an independent publication. -->
-    <!ELEMENT analytic (author |
+<!ELEMENT analytic (author |
  editor |
  respStmt |
- title)*>
+ title |
+ ref |
+ date)*>
 <!ATTLIST analytic xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST analytic
  %att.global.attribute.xmlid;
@@ -1134,11 +1107,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(application information) records information about an application which has
   edited the TEI file.  -->
-    <!ELEMENT appInfo (%model.applicationLike;)+>
+<!ELEMENT appInfo (%model.applicationLike;)+>
 <!ATTLIST appInfo xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST appInfo
  %att.global.attribute.xmlid;
@@ -1148,10 +1121,10 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:provides information about an application which has acted upon the document. -->
-    <!ELEMENT application ((%model.labelLike;)+,((%model.ptrLike;)* |
+<!ELEMENT application ((%model.labelLike;)+,((%model.ptrLike;)* |
  (%model.pLike;)*))>
 <!ATTLIST application xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST application
@@ -1162,15 +1135,15 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
  %att.datable.attributes;
-ident NMTOKEN  #REQUIRED
+ident %data.name;  #REQUIRED
 version CDATA #REQUIRED >
 <!--doc:A formal list or prose description of the topics addressed by
 	a subdivision of a text. -->
-    <!ELEMENT argument ((%model.global; |
+<!ELEMENT argument ((%model.global; |
  %model.headLike;)*,((%model.common;),(%model.global;)*)+)>
 <!ATTLIST argument xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST argument
@@ -1181,12 +1154,12 @@ version CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:in a bibliographic reference, contains the name(s) of the
   author(s), personal or corporate, of a work; for example in the same
   form as that provided by a recognized bibliographic name authority.  -->
-    <!ELEMENT author %macro.phraseSeq;>
+<!ELEMENT author %macro.phraseSeq;>
 <!ATTLIST author xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST author
  %att.global.attribute.xmlid;
@@ -1196,13 +1169,13 @@ version CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.naming.attributes; >
 <!--doc:(release authority) supplies the name of a person or other agency responsible for
   making an electronic file available, other than a publisher or
   distributor. -->
-    <!ELEMENT authority %macro.phraseSeq.limited;>
+<!ELEMENT authority %macro.phraseSeq.limited;>
 <!ATTLIST authority xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST authority
  %att.global.attribute.xmlid;
@@ -1212,11 +1185,11 @@ version CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:supplies information about the availability of a text, for example any restrictions on its
     use or distribution, its copyright status, etc. -->
-    <!ELEMENT availability (%model.pLike;)+>
+<!ELEMENT availability (%model.pLike;)+>
 <!ATTLIST availability xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST availability
  %att.global.attribute.xmlid;
@@ -1226,14 +1199,12 @@ version CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-status (free|
-unknown|
-restricted) "unknown"  >
+status (free|unknown|restricted) "unknown"  >
 <!--doc:(back matter) contains any appendixes, etc. following the main part of a text. -->
-    <!ELEMENT back ((%model.frontPart; |
+<!ELEMENT back ((%model.frontPart; |
  %model.pLike.front; |
  %model.global;)*,((_DUMMY_model.div1Like,(%model.frontPart; |
  _DUMMY_model.div1Like |
@@ -1251,12 +1222,12 @@ restricted) "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes; >
 <!--doc:(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may
     not be explicitly tagged.  -->
-    <!ELEMENT bibl ( #PCDATA |
+<!ELEMENT bibl ( #PCDATA |
  _DUMMY_model.gLike |
  %model.highlighted; |
  %model.pPart.data; |
@@ -1274,13 +1245,13 @@ restricted) "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
  %att.typed.attributes; >
 <!--doc:(fully-structured bibliographic citation) contains a fully-structured bibliographic citation, in which all components of the TEI file
     description are present. -->
-    <!ELEMENT biblFull ((titleStmt,editionStmt?,extent?,publicationStmt,seriesStmt?,notesStmt?),sourceDesc*)>
+<!ELEMENT biblFull ((titleStmt,editionStmt?,extent?,publicationStmt,seriesStmt?,notesStmt?),sourceDesc*)>
 <!ATTLIST biblFull xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST biblFull
  %att.global.attribute.xmlid;
@@ -1290,12 +1261,12 @@ restricted) "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:(scope of citation) defines the scope of a bibliographic reference, for example as a
         list of page numbers, or a named subdivision of a larger work. -->
-    <!ELEMENT biblScope %macro.phraseSeq;>
+<!ELEMENT biblScope %macro.phraseSeq;>
 <!ATTLIST biblScope xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST biblScope
  %att.global.attribute.xmlid;
@@ -1305,14 +1276,14 @@ restricted) "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED
-from CDATA #IMPLIED
-to CDATA #IMPLIED >
+type %data.enumerated;  #IMPLIED
+from %data.word;  #IMPLIED
+to %data.word;  #IMPLIED >
 <!--doc:(structured bibliographic citation) contains a structured bibliographic citation, in which only bibliographic sub-elements
     appear and in a specified order.  -->
-    <!ELEMENT biblStruct (analytic*,(monogr,series*)+,(%model.noteLike; |
+<!ELEMENT biblStruct (analytic*,(monogr,series*)+,(%model.noteLike; |
  idno |
  relatedItem)*)>
 <!ATTLIST biblStruct xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1324,45 +1295,12 @@ to CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
  %att.typed.attributes; >
-<!--doc:(bi-conditional feature-structure constraint) defines a biconditional feature-structure constraint; both
-consequent and antecedent are specified as feature structures or groups
-of feature structures; the constraint is satisfied if both
-subsume a given feature structure, or if both do not. -->
-    <!ELEMENT bicond ((fs |
- f),iff,(fs |
- f))>
-<!ATTLIST bicond xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST bicond
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(binary value) represents the value part of a feature-value specification which can contain either
-  of exactly two possible values. -->
-    <!ELEMENT binary EMPTY>
-<!ATTLIST binary xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST binary
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-value CDATA #REQUIRED >
 <!--doc:provides encoded binary data representing an inline graphic or other object. -->
-    <!ELEMENT binaryObject  (#PCDATA)>
+<!ELEMENT binaryObject  (#PCDATA)>
 <!ATTLIST binaryObject xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST binaryObject
  %att.global.attribute.xmlid;
@@ -1372,15 +1310,15 @@ value CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.internetMedia.attributes;
-width CDATA #IMPLIED
-height CDATA #IMPLIED
-scale CDATA #IMPLIED
+width %data.outputMeasurement;  #IMPLIED
+height %data.outputMeasurement;  #IMPLIED
+scale %data.numeric;  #IMPLIED
 encoding CDATA  #IMPLIED >
 <!--doc:(text body) contains the whole body of a single unitary text, excluding any front or back matter. -->
-    <!ELEMENT body ((%model.global;)*,((%model.divTop;),(%model.global; |
+<!ELEMENT body ((%model.global;)*,((%model.divTop;),(%model.global; |
  %model.divTop;)*)?,((%model.divGenLike;),(%model.global; |
  %model.divGenLike;)*)?,(((%model.divLike;),(%model.global; |
  %model.divGenLike;)*)+ |
@@ -1399,12 +1337,12 @@ encoding CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes; >
 <!--doc:contains the primary statement of responsibility given for a work
 on its title page or at the head or end of the work. -->
-    <!ELEMENT byline ( #PCDATA |
+<!ELEMENT byline ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  docAuthor |
@@ -1418,11 +1356,11 @@ on its title page or at the head or end of the work. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(canonical reference pattern) specifies an expression and replacement pattern for transforming a canonical reference into
     a URI.  -->
-    <!ELEMENT cRefPattern (%model.pLike;)*>
+<!ELEMENT cRefPattern (%model.pLike;)*>
 <!ATTLIST cRefPattern xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST cRefPattern
  %att.global.attribute.xmlid;
@@ -1432,12 +1370,12 @@ on its title page or at the head or end of the work. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-matchPattern CDATA #REQUIRED
+matchPattern %data.pattern;  #REQUIRED
 replacementPattern CDATA #REQUIRED >
 <!--doc:contains grammatical case information given by a dictionary for a given form. -->
-    <!ELEMENT case %macro.paraContent;>
+<!ELEMENT case %macro.paraContent;>
 <!ATTLIST case xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST case
  %att.global.attribute.xmlid;
@@ -1447,12 +1385,12 @@ replacementPattern CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(category description) describes some category within a taxonomy or text typology, either in the form of a brief
     prose description or in terms of the situational parameters used by the TEI formal textDesc. -->
-    <!ELEMENT catDesc ( #PCDATA |
+<!ELEMENT catDesc ( #PCDATA |
  %model.limitedPhrase; |
  _DUMMY_model.catDescPart)*>
 <!ATTLIST catDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1464,10 +1402,10 @@ replacementPattern CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(category reference) specifies one or more defined categories within some taxonomy or text typology. -->
-    <!ELEMENT catRef EMPTY>
+<!ELEMENT catRef EMPTY>
 <!ATTLIST catRef xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST catRef
  %att.global.attribute.xmlid;
@@ -1477,13 +1415,13 @@ replacementPattern CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-target CDATA  #REQUIRED
-scheme CDATA #IMPLIED >
+ %att.pointing.attributes;
+scheme %data.pointer;  #IMPLIED >
 <!--doc:contains an individual descriptive category, possibly nested within a superordinate
     category, within a user-defined taxonomy. -->
-    <!ELEMENT category ((catDesc+ |
+<!ELEMENT category ((catDesc+ |
  (%model.glossLike;)*),category*)>
 <!ATTLIST category xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST category
@@ -1494,11 +1432,11 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(column break) marks the boundary between one column of a text and the next
         in a standard reference system. -->
-    <!ELEMENT cb EMPTY>
+<!ELEMENT cb EMPTY>
 <!ATTLIST cb xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST cb
  %att.global.attribute.xmlid;
@@ -1508,12 +1446,14 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
- %att.sourced.attributes; >
+ %att.sourced.attributes;
+ %att.spanning.attributes;
+ %att.breaking.attributes; >
 <!--doc:contains one cell of a table.  -->
-    <!ELEMENT cell %macro.paraContent;>
+<!ELEMENT cell %macro.paraContent;>
 <!ATTLIST cell xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST cell
  %att.global.attribute.xmlid;
@@ -1523,12 +1463,12 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.tableDecoration.attributes; >
 <!--doc:summarizes a particular change or correction made to a particular version of an electronic
     text which is shared between several researchers. -->
-    <!ELEMENT change ( #PCDATA |
+<!ELEMENT change ( #PCDATA |
  %model.limitedPhrase; |
  %model.inter; |
  %model.global;)*>
@@ -1541,13 +1481,14 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.ascribed.attributes;
- %att.datable.attributes; >
+ %att.datable.attributes;
+ %att.docStatus.attributes; >
 <!--doc:groups a number of alternative encodings for the same point in
         a text. -->
-    <!ELEMENT choice (%model.choicePart; |
+<!ELEMENT choice (%model.choicePart; |
  choice)*>
 <!ATTLIST choice xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST choice
@@ -1558,12 +1499,13 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(cited quotation) contains a quotation from some other document, together with a bibliographic reference to
     its source. In a dictionary it may contain an example text with at least one occurrence of the
     word form, used in the sense being described, or a translation of the headword, or an example.  -->
-    <!ELEMENT cit (%model.qLike; |
+<!ELEMENT cit (%model.qLike; |
+ _DUMMY_model.egLike |
  %model.biblLike; |
  %model.ptrLike; |
  %model.global; |
@@ -1577,11 +1519,11 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes; >
 <!--doc:(classification code) contains the classification code used for this text in some standard classification system. -->
-    <!ELEMENT classCode %macro.phraseSeq.limited;>
+<!ELEMENT classCode %macro.phraseSeq.limited;>
 <!ATTLIST classCode xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST classCode
  %att.global.attribute.xmlid;
@@ -1591,12 +1533,12 @@ scheme CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-scheme CDATA #REQUIRED >
+scheme %data.pointer;  #REQUIRED >
 <!--doc:(classification declarations) contains one or more taxonomies defining any classificatory
 codes used elsewhere in the text. -->
-    <!ELEMENT classDecl (taxonomy)+>
+<!ELEMENT classDecl (taxonomy)+>
 <!ATTLIST classDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST classDecl
  %att.global.attribute.xmlid;
@@ -1606,11 +1548,11 @@ codes used elsewhere in the text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:groups together salutations, datelines, and similar phrases appearing as a final group at
     the end of a division, especially of a letter. -->
-    <!ELEMENT closer ( #PCDATA |
+<!ELEMENT closer ( #PCDATA |
  _DUMMY_model.gLike |
  signed |
  dateline |
@@ -1626,10 +1568,10 @@ codes used elsewhere in the text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(collocate) contains a collocate of the headword. -->
-    <!ELEMENT colloc %macro.paraContent;>
+<!ELEMENT colloc %macro.paraContent;>
 <!ATTLIST colloc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST colloc
  %att.global.attribute.xmlid;
@@ -1639,31 +1581,12 @@ codes used elsewhere in the text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
  %att.typed.attributes; >
-<!--doc:(conditional feature-structure constraint) defines a conditional feature-structure constraint; the consequent
-and the antecedent are specified as feature structures or
-feature-structure collections; the constraint is satisfied if both the
-antecedent and the consequent subsume a given feature
-structure, or if the antecedent does not. -->
-    <!ELEMENT cond ((fs |
- f),then,(fs |
- f))>
-<!ATTLIST cond xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST cond
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
 <!--doc:(correction) contains the correct form of a passage apparently erroneous in the copy text. -->
-    <!ELEMENT corr %macro.paraContent;>
+<!ELEMENT corr %macro.paraContent;>
 <!ATTLIST corr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST corr
  %att.global.attribute.xmlid;
@@ -1673,12 +1596,12 @@ structure, or if the antecedent does not. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.editLike.attributes;
  %att.typed.attributes; >
 <!--doc:(correction principles) states how and under what circumstances corrections have been made in the text. -->
-    <!ELEMENT correction (%model.pLike;)+>
+<!ELEMENT correction (%model.pLike;)+>
 <!ATTLIST correction xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST correction
  %att.global.attribute.xmlid;
@@ -1688,17 +1611,13 @@ structure, or if the antecedent does not. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-status (high|
-medium|
-low|
-unknown) "unknown" 
-method (silent|
-markup) "silent"  >
+status (high|medium|low|unknown) "unknown" 
+method (silent|markup) "silent"  >
 <!--doc:contains information about the creation of a text. -->
-    <!ELEMENT creation %macro.phraseSeq.limited;>
+<!ELEMENT creation %macro.phraseSeq.limited;>
 <!ATTLIST creation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST creation
  %att.global.attribute.xmlid;
@@ -1708,10 +1627,10 @@ markup) "silent"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a date in any format. -->
-    <!ELEMENT date ( #PCDATA |
+<!ELEMENT date ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.global;)*>
@@ -1724,15 +1643,15 @@ markup) "silent"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.datable.attributes;
  %att.editLike.attributes;
  %att.typed.attributes;
-calendar NMTOKEN  #IMPLIED >
+calendar %data.enumerated;  #IMPLIED >
 <!--doc:contains a brief description of the place, date, time, etc. of production of a letter,
     newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer.  -->
-    <!ELEMENT dateline %macro.phraseSeq;>
+<!ELEMENT dateline %macro.phraseSeq;>
 <!ATTLIST dateline xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST dateline
  %att.global.attribute.xmlid;
@@ -1742,10 +1661,10 @@ calendar NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(definition) contains definition text in a dictionary entry. -->
-    <!ELEMENT def %macro.paraContent;>
+<!ELEMENT def %macro.paraContent;>
 <!ATTLIST def xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST def
  %att.global.attribute.xmlid;
@@ -1755,26 +1674,12 @@ calendar NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
-<!--doc:(default feature value) represents the value part of a feature-value specification
-  which contains a defaulted value. -->
-    <!ELEMENT default EMPTY>
-<!ATTLIST default xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST default
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
 <!--doc:(deletion) contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as
     superfluous or spurious in the copy text by an author, scribe, annotator, or corrector. -->
-    <!ELEMENT del %macro.paraContent;>
+<!ELEMENT del %macro.paraContent;>
 <!ATTLIST del xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST del
  %att.global.attribute.xmlid;
@@ -1784,13 +1689,13 @@ calendar NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.transcriptional.attributes;
  %att.typed.attributes; >
 <!--doc:(description) contains a brief description of the object documented by its parent element, including its
     intended usage, purpose, or application where this is appropriate. -->
-    <!ELEMENT desc %macro.limitedContent;>
+<!ELEMENT desc %macro.limitedContent;>
 <!ATTLIST desc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST desc
  %att.global.attribute.xmlid;
@@ -1800,12 +1705,12 @@ calendar NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.translatable.attributes; >
 <!--doc:identifies any word or phrase which is regarded as linguistically distinct, for example as
         archaic, technical, dialectal, non-preferred, etc., or as forming part of a sublanguage.  -->
-    <!ELEMENT distinct %macro.phraseSeq;>
+<!ELEMENT distinct %macro.phraseSeq;>
 <!ATTLIST distinct xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST distinct
  %att.global.attribute.xmlid;
@@ -1815,15 +1720,15 @@ calendar NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED
-time CDATA #IMPLIED
-space CDATA #IMPLIED
-social CDATA #IMPLIED >
+type %data.enumerated;  #IMPLIED
+time %data.code;  #IMPLIED
+space %data.code;  #IMPLIED
+social %data.code;  #IMPLIED >
 <!--doc:supplies the name of a person or other agency responsible for the
 distribution of a text. -->
-    <!ELEMENT distributor %macro.phraseSeq;>
+<!ELEMENT distributor %macro.phraseSeq;>
 <!ATTLIST distributor xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST distributor
  %att.global.attribute.xmlid;
@@ -1833,10 +1738,10 @@ distribution of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(text division) contains a subdivision of the front, body, or back of a text. -->
-    <!ELEMENT div ((%model.divTop; |
+<!ELEMENT div ((%model.divTop; |
  %model.global;)*,((((%model.divLike; |
  %model.divGenLike;),(%model.global;)*)+ |
  (((%model.common;),(%model.global;)*)+,((%model.divLike; |
@@ -1850,14 +1755,14 @@ distribution of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.divLike.attributes;
  %att.typed.attributes;
  %att.declaring.attributes; >
 <!--doc:(automatically generated text division) indicates the location at which a textual division generated
         automatically by a text-processing application is to appear. -->
-    <!ELEMENT divGen (%model.headLike;)*>
+<!ELEMENT divGen (%model.headLike;)*>
 <!ATTLIST divGen xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST divGen
  %att.global.attribute.xmlid;
@@ -1867,12 +1772,12 @@ distribution of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(document author) contains the name of the author of the document, as given on the
 title page (often but not always contained in a byline). -->
-    <!ELEMENT docAuthor %macro.phraseSeq;>
+<!ELEMENT docAuthor %macro.phraseSeq;>
 <!ATTLIST docAuthor xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST docAuthor
  %att.global.attribute.xmlid;
@@ -1882,12 +1787,12 @@ title page (often but not always contained in a byline). -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.canonical.attributes; >
 <!--doc:(document date) contains the date of a document, as given
 (usually) on a title page. -->
-    <!ELEMENT docDate %macro.phraseSeq;>
+<!ELEMENT docDate %macro.phraseSeq;>
 <!ATTLIST docDate xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST docDate
  %att.global.attribute.xmlid;
@@ -1897,12 +1802,12 @@ title page (often but not always contained in a byline). -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-when CDATA #IMPLIED >
+when %data.temporal.w3c;  #IMPLIED >
 <!--doc:(document edition) contains an edition statement as presented on a title page of a
 document. -->
-    <!ELEMENT docEdition %macro.paraContent;>
+<!ELEMENT docEdition %macro.paraContent;>
 <!ATTLIST docEdition xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST docEdition
  %att.global.attribute.xmlid;
@@ -1912,12 +1817,12 @@ document. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(document imprint) contains the imprint statement (place and date of publication,
 publisher name), as given
 (usually) at the foot of a title page. -->
-    <!ELEMENT docImprint ( #PCDATA |
+<!ELEMENT docImprint ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  pubPlace |
@@ -1933,11 +1838,11 @@ publisher name), as given
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(document title) contains the title of a document, including all its
 constituents, as given on a title page. -->
-    <!ELEMENT docTitle ((%model.global;)*,(titlePart,(%model.global;)*)+)>
+<!ELEMENT docTitle ((%model.global;)*,(titlePart,(%model.global;)*)+)>
 <!ATTLIST docTitle xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST docTitle
  %att.global.attribute.xmlid;
@@ -1947,11 +1852,11 @@ constituents, as given on a title page. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.canonical.attributes; >
 <!--doc:(edition) describes the particularities of one edition of a text. -->
-    <!ELEMENT edition %macro.phraseSeq;>
+<!ELEMENT edition %macro.phraseSeq;>
 <!ATTLIST edition xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST edition
  %att.global.attribute.xmlid;
@@ -1961,10 +1866,10 @@ constituents, as given on a title page. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(edition statement) groups information relating to one edition of a text. -->
-    <!ELEMENT editionStmt ((%model.pLike;)+ |
+<!ELEMENT editionStmt ((%model.pLike;)+ |
  (edition,respStmt*))>
 <!ATTLIST editionStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST editionStmt
@@ -1975,12 +1880,12 @@ constituents, as given on a title page. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:secondary statement of responsibility for a bibliographic item, for example the name of an
     individual, institution or organization, (or of several such) acting as editor, compiler,
     translator, etc.  -->
-    <!ELEMENT editor %macro.phraseSeq;>
+<!ELEMENT editor %macro.phraseSeq;>
 <!ATTLIST editor xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST editor
  %att.global.attribute.xmlid;
@@ -1990,12 +1895,12 @@ constituents, as given on a title page. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.naming.attributes; >
 <!--doc:(editorial practice declaration) provides details of editorial principles and practices applied
 during the encoding of a text. -->
-    <!ELEMENT editorialDecl (%model.pLike; |
+<!ELEMENT editorialDecl (%model.pLike; |
  %model.editorialDeclPart;)+>
 <!ATTLIST editorialDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST editorialDecl
@@ -2006,13 +1911,13 @@ during the encoding of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:(electronic mail address) contains an e-mail address identifying a location to which
         e-mail messages can be delivered.
      -->
-    <!ELEMENT email %macro.phraseSeq;>
+<!ELEMENT email %macro.phraseSeq;>
 <!ATTLIST email xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST email
  %att.global.attribute.xmlid;
@@ -2022,11 +1927,11 @@ during the encoding of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(emphasized) marks words or phrases which are stressed or emphasized for
         linguistic or rhetorical effect. -->
-    <!ELEMENT emph %macro.paraContent;>
+<!ELEMENT emph %macro.paraContent;>
 <!ATTLIST emph xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST emph
  %att.global.attribute.xmlid;
@@ -2036,11 +1941,11 @@ during the encoding of a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(encoding description) documents the relationship between an electronic text and the
 source or sources from which it was derived. -->
-    <!ELEMENT encodingDesc (%model.encodingDescPart; |
+<!ELEMENT encodingDesc (%model.encodingDescPart; |
  %model.pLike;)+>
 <!ATTLIST encodingDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST encodingDesc
@@ -2051,10 +1956,10 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a reasonably well-structured dictionary entry. -->
-    <!ELEMENT entry (hom |
+<!ELEMENT entry (hom |
  sense |
  %model.entryPart.top; |
  %model.global;)+>
@@ -2067,12 +1972,12 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.entryLike.attributes; >
 <!--doc:contains a quotation, anonymous or attributed, appearing at the start of a section or
     chapter, or on a title page.  -->
-    <!ELEMENT epigraph (%model.common; |
+<!ELEMENT epigraph (%model.common; |
  %model.global;)*>
 <!ATTLIST epigraph xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST epigraph
@@ -2083,10 +1988,10 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(etymology) encloses the etymological information in a dictionary entry. -->
-    <!ELEMENT etym ( #PCDATA |
+<!ELEMENT etym ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.inter; |
@@ -2105,11 +2010,11 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(expansion) contains the expansion of an abbreviation. -->
-    <!ELEMENT expan %macro.phraseSeq;>
+<!ELEMENT expan %macro.phraseSeq;>
 <!ATTLIST expan xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST expan
  %att.global.attribute.xmlid;
@@ -2119,12 +2024,12 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.editLike.attributes; >
 <!--doc:describes the approximate size of a text as stored on some carrier medium, whether digital
     or non-digital, specified in any convenient units. -->
-    <!ELEMENT extent %macro.phraseSeq;>
+<!ELEMENT extent %macro.phraseSeq;>
 <!ATTLIST extent xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST extent
  %att.global.attribute.xmlid;
@@ -2134,105 +2039,10 @@ source or sources from which it was derived. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
-<!--doc:(feature) represents a feature value specification, that
-  is, the association of a name with a value of any of several different types. -->
-    <!ELEMENT f (%model.featureVal;)*>
-<!ATTLIST f xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST f
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-name NMTOKEN  #REQUIRED
-fVal CDATA #IMPLIED >
-<!--doc:(feature declaration) declares a single feature, specifying its name, organization,
-range of allowed values, and optionally its default value. -->
-    <!ELEMENT fDecl (fDescr?,vRange,vDefault?)>
-<!ATTLIST fDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fDecl
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-name NMTOKEN  #REQUIRED
-optional (true | false)  "true"  >
-<!--doc:(feature description (in FSD)) describes in prose what is represented by the feature being
-declared and its values. -->
-    <!ELEMENT fDescr %macro.limitedContent;>
-<!ATTLIST fDescr xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fDescr
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(feature library) assembles a library of feature elements. -->
-    <!ELEMENT fLib (f)+>
-<!ATTLIST fLib xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fLib
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(description of figure) contains a brief prose description of the appearance or content
-of a graphic figure, for use when documenting an image without
-displaying it. -->
-    <!ELEMENT figDesc %macro.limitedContent;>
-<!ATTLIST figDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST figDesc
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:groups elements representing or containing graphic information such as an illustration or
-    figure. -->
-    <!ELEMENT figure (%model.headLike; |
- %model.pLike; |
- figDesc |
- %model.graphicLike; |
- _DUMMY_model.egLike |
- floatingText |
- %model.global;)*>
-<!ATTLIST figure xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST figure
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
- %att.placement.attributes; >
 <!--doc:(file description) contains a full bibliographic description of an electronic file. -->
-    <!ELEMENT fileDesc ((titleStmt,editionStmt?,extent?,publicationStmt,seriesStmt?,notesStmt?),sourceDesc+)>
+<!ELEMENT fileDesc ((titleStmt,editionStmt?,extent?,publicationStmt,seriesStmt?,notesStmt?),sourceDesc+)>
 <!ATTLIST fileDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST fileDesc
  %att.global.attribute.xmlid;
@@ -2242,11 +2052,11 @@ displaying it. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a single text of any kind, whether unitary or composite, which interrupts the text
     containing it at any point and after which the surrounding text resumes. -->
-    <!ELEMENT floatingText ((%model.global;)*,(front,(%model.global;)*)?,(body |
+<!ELEMENT floatingText ((%model.global;)*,(front,(%model.global;)*)?,(body |
  group),(%model.global;)*,(back,(%model.global;)*)?)>
 <!ATTLIST floatingText xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST floatingText
@@ -2257,13 +2067,13 @@ displaying it. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes;
  %att.typed.attributes; >
 <!--doc:(foreign) identifies a word or phrase as belonging to some language other than that of the
                 surrounding text.  -->
-    <!ELEMENT foreign %macro.phraseSeq;>
+<!ELEMENT foreign %macro.phraseSeq;>
 <!ATTLIST foreign xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST foreign
  %att.global.attribute.xmlid;
@@ -2273,10 +2083,10 @@ displaying it. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(form information group) groups all the information on the written and spoken forms of one headword. -->
-    <!ELEMENT form ( #PCDATA |
+<!ELEMENT form ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.inter; |
@@ -2291,29 +2101,14 @@ displaying it. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
-<!--doc:contains a mathematical or other formula. -->
-    <!ELEMENT formula ( #PCDATA |
- %model.graphicLike;)*>
-<!ATTLIST formula xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST formula
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-notation CDATA #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(front matter) contains any prefatory matter (headers,
 title page, prefaces, dedications, etc.)
 found  at the start of a document, before the main body. -->
-    <!ELEMENT front ((%model.frontPart; |
+<!ELEMENT front ((%model.frontPart; |
  %model.pLike.front; |
  %model.global;)*,((_DUMMY_model.div1Like,(%model.frontPart; |
  _DUMMY_model.div1Like |
@@ -2331,104 +2126,12 @@ found  at the start of a document, before the main body. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes; >
-<!--doc:(feature structure) represents a feature structure, that is, a
-  collection of feature-value pairs organized as a
-structural unit. -->
-    <!ELEMENT fs (f)*>
-<!ATTLIST fs xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fs
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED
-feats CDATA  #IMPLIED >
-<!--doc:(feature-structure constraints) specifies constraints on the content of valid feature
-structures. -->
-    <!ELEMENT fsConstraints (cond |
- bicond)*>
-<!ATTLIST fsConstraints xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fsConstraints
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(feature structure declaration) declares one type of feature structure. -->
-    <!ELEMENT fsDecl (fsDescr?,fDecl+,fsConstraints?)>
-<!ATTLIST fsDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fsDecl
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-type NMTOKEN  #REQUIRED
-baseTypes NMTOKENS  #IMPLIED >
-<!--doc:(feature system description (in FSD)) describes in prose what is represented by the type of feature
-structure declared in the enclosing fsDecl. -->
-    <!ELEMENT fsDescr %macro.limitedContent;>
-<!ATTLIST fsDescr xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fsDescr
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(feature system declaration) provides a feature system declaration comprising one or more
-  feature structure declarations or feature structure declaration links. -->
-    <!ELEMENT fsdDecl (fsDecl |
- fsdLink)+>
-<!ATTLIST fsdDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fsdDecl
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(feature structure declaration link) associates the name of a typed feature structure with a feature
-structure declaration for it. -->
-    <!ELEMENT fsdLink EMPTY>
-<!ATTLIST fsdLink xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fsdLink
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-type NMTOKEN  #REQUIRED
-target CDATA #REQUIRED >
 <!--doc:(funding body) specifies the name of an individual, institution, or organization responsible for the
     funding of a project or text. -->
-    <!ELEMENT funder %macro.phraseSeq.limited;>
+<!ELEMENT funder %macro.phraseSeq.limited;>
 <!ATTLIST funder xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST funder
  %att.global.attribute.xmlid;
@@ -2438,26 +2141,12 @@ target CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(feature-value library) assembles a library of reusable feature value elements
-  (including complete feature structures). -->
-    <!ELEMENT fvLib (%model.featureVal;)*>
-<!ATTLIST fvLib xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST fvLib
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(gap) indicates a point where material has been omitted in a transcription, whether for editorial
     reasons described in the TEI header, as part of sampling practice, or because the material is
     illegible, invisible, or inaudible. -->
-    <!ELEMENT gap (%model.glossLike;)*>
+<!ELEMENT gap (%model.glossLike;)*>
 <!ATTLIST gap xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST gap
  %att.global.attribute.xmlid;
@@ -2467,14 +2156,14 @@ target CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.editLike.attributes;
 reason CDATA  #IMPLIED
-hand CDATA #IMPLIED
-agent NMTOKEN  #IMPLIED >
+hand %data.pointer;  #IMPLIED
+agent %data.enumerated;  #IMPLIED >
 <!--doc:(gender) identifies the morphological gender of a lexical item, as given in the dictionary. -->
-    <!ELEMENT gen %macro.paraContent;>
+<!ELEMENT gen %macro.paraContent;>
 <!ATTLIST gen xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST gen
  %att.global.attribute.xmlid;
@@ -2484,12 +2173,12 @@ agent NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(geographic coordinates declaration) documents the notation and the datum used for geographic coordinates expressed as content of
     the geo element elsewhere within the document. -->
-    <!ELEMENT geoDecl %macro.phraseSeq;>
+<!ELEMENT geoDecl %macro.phraseSeq;>
 <!ATTLIST geoDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST geoDecl
  %att.global.attribute.xmlid;
@@ -2499,13 +2188,13 @@ agent NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-datum NMTOKEN  "WGS84"  >
+datum %data.enumerated;  "WGS84"  >
 <!--doc:identifies a phrase or word used to provide a gloss or definition for some other word or
     phrase. -->
-    <!ELEMENT gloss %macro.phraseSeq;>
+<!ELEMENT gloss %macro.phraseSeq;>
 <!ATTLIST gloss xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST gloss
  %att.global.attribute.xmlid;
@@ -2515,16 +2204,16 @@ datum NMTOKEN  "WGS84"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes;
  %att.translatable.attributes;
  %att.typed.attributes;
-target CDATA #IMPLIED
-cRef CDATA #IMPLIED >
+ %att.pointing.attributes;
+cRef %data.pointer;  #IMPLIED >
 <!--doc:(grammatical information) within an entry in a dictionary or a terminological data file, contains grammatical
     information relating to a term, word, or form. -->
-    <!ELEMENT gram %macro.paraContent;>
+<!ELEMENT gram %macro.paraContent;>
 <!ATTLIST gram xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST gram
  %att.global.attribute.xmlid;
@@ -2534,13 +2223,13 @@ cRef CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(grammatical information group) groups morpho-syntactic information about a lexical item, e.g. pos, gen, number, case, or
         iType (inflectional class). -->
-    <!ELEMENT gramGrp ( #PCDATA |
+<!ELEMENT gramGrp ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.inter; |
@@ -2548,18 +2237,10 @@ type NMTOKEN  #IMPLIED >
  %model.global;)*>
 <!ATTLIST gramGrp xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST gramGrp
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
- %att.lexicographic.attributes; >
+ %att.lexicographic.attributes;
+ %att.typed.attributes; >
 <!--doc:indicates the location of an inline graphic, illustration, or figure. -->
-    <!ELEMENT graphic EMPTY>
+<!ELEMENT graphic (%model.glossLike;)*>
 <!ATTLIST graphic xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST graphic
  %att.global.attribute.xmlid;
@@ -2569,18 +2250,18 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.internetMedia.attributes;
  %att.declaring.attributes;
-width CDATA #IMPLIED
-height CDATA #IMPLIED
-scale CDATA #IMPLIED
-url CDATA #IMPLIED >
+width %data.outputMeasurement;  #IMPLIED
+height %data.outputMeasurement;  #IMPLIED
+scale %data.numeric;  #IMPLIED
+url %data.pointer;  #REQUIRED >
 <!--doc:contains the body of a composite text, grouping together a sequence of distinct texts (or
     groups of such texts) which are regarded as a unit for some purpose, for example the collected
     works of an author, a sequence of prose essays, etc. -->
-    <!ELEMENT group ((%model.divTop; |
+<!ELEMENT group ((%model.divTop; |
  %model.global;)*,((text |
  group),(text |
  group |
@@ -2594,12 +2275,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes; >
 <!--doc:(heading) contains any type of heading, for example the title of a section, or the heading of a list,
     glossary, manuscript description, etc. -->
-    <!ELEMENT head %macro.paraContent;>
+<!ELEMENT head %macro.paraContent;>
 <!ATTLIST head xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST head
  %att.global.attribute.xmlid;
@@ -2609,12 +2290,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes; >
 <!--doc:(heading for list items) contains the heading for the item or gloss column in a glossary list or similar structured
         list. -->
-    <!ELEMENT headItem %macro.phraseSeq;>
+<!ELEMENT headItem %macro.phraseSeq;>
 <!ATTLIST headItem xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST headItem
  %att.global.attribute.xmlid;
@@ -2624,11 +2305,11 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(heading for list labels) contains the heading for the label or term column in a glossary list or similar structured
         list. -->
-    <!ELEMENT headLabel %macro.phraseSeq;>
+<!ELEMENT headLabel %macro.phraseSeq;>
 <!ATTLIST headLabel xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST headLabel
  %att.global.attribute.xmlid;
@@ -2638,12 +2319,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(highlighted) marks a word or phrase as graphically distinct from the
         surrounding text, for reasons concerning which no claim is
         made.  -->
-    <!ELEMENT hi %macro.paraContent;>
+<!ELEMENT hi %macro.paraContent;>
 <!ATTLIST hi xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST hi
  %att.global.attribute.xmlid;
@@ -2653,10 +2334,10 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(homograph) groups information relating to one homograph within an entry. -->
-    <!ELEMENT hom (sense |
+<!ELEMENT hom (sense |
  %model.entryPart.top; |
  %model.global;)*>
 <!ATTLIST hom xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -2668,12 +2349,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(hyphenation) contains a hyphenated form of a dictionary headword, or hyphenation information in some
     other form. -->
-    <!ELEMENT hyph %macro.paraContent;>
+<!ELEMENT hyph %macro.paraContent;>
 <!ATTLIST hyph xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST hyph
  %att.global.attribute.xmlid;
@@ -2683,12 +2364,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:summarizes the way in which hyphenation in a source text has been treated in an encoded
     version of it. -->
-    <!ELEMENT hyphenation (%model.pLike;)+>
+<!ELEMENT hyphenation (%model.pLike;)+>
 <!ATTLIST hyphenation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST hyphenation
  %att.global.attribute.xmlid;
@@ -2698,15 +2379,12 @@ url CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-eol (all|
-some|
-hard|
-none) "some"  >
+eol (all|some|hard|none) "some"  >
 <!--doc:(inflectional class) indicates the inflectional class associated with a lexical item. -->
-    <!ELEMENT iType %macro.paraContent;>
+<!ELEMENT iType %macro.paraContent;>
 <!ATTLIST iType xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST iType
  %att.global.attribute.xmlid;
@@ -2716,13 +2394,14 @@ none) "some"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
-<!--doc:(identifying number) supplies any number or other identifier used to identify a bibliographic item in a
-    standardized way. -->
-    <!ELEMENT idno  (#PCDATA)>
+type %data.enumerated;  #IMPLIED >
+<!--doc:(identifier) supplies any form of identifier used to identify some object,
+  such as a bibliographic item, a person, a title, an organization,
+  etc. in a standardized way. -->
+<!ELEMENT idno %macro.xtext;>
 <!ATTLIST idno xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST idno
  %att.global.attribute.xmlid;
@@ -2732,43 +2411,12 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED >
-<!--doc:defines a conditional default value for a feature; the condition
-is specified as a feature structure, and is met if it
-subsumes the feature structure in the text for which a
-default value is sought. -->
-    <!ELEMENT if ((fs |
- f),then,(%model.featureVal;))>
-<!ATTLIST if xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST if
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(if and only if) separates the condition from the consequence in a bicond
-element. -->
-    <!ELEMENT iff EMPTY>
-<!ATTLIST iff xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST iff
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
+type %data.enumerated;  #IMPLIED >
 <!--doc:contains a formal statement authorizing the publication of a work, sometimes required to
     appear on a title page or its verso. -->
-    <!ELEMENT imprimatur %macro.paraContent;>
+<!ELEMENT imprimatur %macro.paraContent;>
 <!ATTLIST imprimatur xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST imprimatur
  %att.global.attribute.xmlid;
@@ -2778,11 +2426,11 @@ element. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:groups information relating to the publication or distribution
         of a bibliographic item. -->
-    <!ELEMENT imprint (((%model.imprintPart;) |
+<!ELEMENT imprint (((%model.imprintPart;) |
  (%model.dateLike;)),(%model.global;)*)+>
 <!ATTLIST imprint xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST imprint
@@ -2793,22 +2441,21 @@ element. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:The W3C XInclude element -->
-    <!ELEMENT include  EMPTY>
+<!ELEMENT include  EMPTY>
 <!ATTLIST include xmlns CDATA "http://www.w3.org/2001/XInclude">
 <!ATTLIST include
-href CDATA #IMPLIED
-parse (xml|
-text) "xml" 
+href %data.pointer;  #IMPLIED
+parse (xml|text) "xml" 
 xpointer CDATA #IMPLIED
 encoding CDATA #IMPLIED
 accept CDATA #IMPLIED
 accept-charset CDATA #IMPLIED
 accept-language CDATA #IMPLIED >
 <!--doc:(index entry) marks a location to be indexed for whatever purpose. -->
-    <!ELEMENT index (term,index?)*>
+<!ELEMENT index (term,index?)*>
 <!ATTLIST index xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST index
  %att.global.attribute.xmlid;
@@ -2818,13 +2465,13 @@ accept-language CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.spanning.attributes;
-indexName NMTOKEN  #IMPLIED >
+indexName %data.name;  #IMPLIED >
 <!--doc:describes the scope of any analytic or interpretive information added to the text in
     addition to the transcription.  -->
-    <!ELEMENT interpretation (%model.pLike;)+>
+<!ELEMENT interpretation (%model.pLike;)+>
 <!ATTLIST interpretation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST interpretation
  %att.global.attribute.xmlid;
@@ -2834,11 +2481,11 @@ indexName NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:contains one component of a list. -->
-    <!ELEMENT item %macro.specialPara;>
+<!ELEMENT item %macro.specialPara;>
 <!ATTLIST item xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST item
  %att.global.attribute.xmlid;
@@ -2848,10 +2495,10 @@ indexName NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a list of keywords or phrases identifying the topic or nature of a text. -->
-    <!ELEMENT keywords (term+ |
+<!ELEMENT keywords (term+ |
  list)>
 <!ATTLIST keywords xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST keywords
@@ -2862,11 +2509,11 @@ indexName NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-scheme CDATA #REQUIRED >
+scheme %data.pointer;  #REQUIRED >
 <!--doc:(verse line) contains a single, possibly incomplete, line of verse. -->
-    <!ELEMENT l %macro.paraContent;>
+<!ELEMENT l %macro.paraContent;>
 <!ATTLIST l xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST l
  %att.global.attribute.xmlid;
@@ -2876,16 +2523,12 @@ scheme CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-part (Y|
-N|
-I|
-M|
-F) "N"  >
+part (Y|N|I|M|F) "N"  >
 <!--doc:contains the label associated with an item in a list; in glossaries, marks the term being
     defined. -->
-    <!ELEMENT label %macro.phraseSeq;>
+<!ELEMENT label %macro.phraseSeq;>
 <!ATTLIST label xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST label
  %att.global.attribute.xmlid;
@@ -2895,10 +2538,10 @@ F) "N"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(language name) name of a language mentioned in etymological or other linguistic discussion. -->
-    <!ELEMENT lang %macro.paraContent;>
+<!ELEMENT lang %macro.paraContent;>
 <!ATTLIST lang xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST lang
  %att.global.attribute.xmlid;
@@ -2908,12 +2551,12 @@ F) "N"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(language usage) describes the languages, sublanguages, registers, dialects, etc.
 represented within a text. -->
-    <!ELEMENT langUsage (language)+>
+<!ELEMENT langUsage (language)+>
 <!ATTLIST langUsage xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST langUsage
  %att.global.attribute.xmlid;
@@ -2923,11 +2566,11 @@ represented within a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:characterizes a single language or sublanguage used within a text. -->
-    <!ELEMENT language %macro.phraseSeq.limited;>
+<!ELEMENT language %macro.phraseSeq.limited;>
 <!ATTLIST language xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST language
  %att.global.attribute.xmlid;
@@ -2937,12 +2580,12 @@ represented within a text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-ident CDATA #REQUIRED
+ident %data.language;  #REQUIRED
 usage CDATA #IMPLIED >
 <!--doc:(line break) marks the start of a new (typographic) line in some edition or version of a text. -->
-    <!ELEMENT lb EMPTY>
+<!ELEMENT lb EMPTY>
 <!ATTLIST lb xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST lb
  %att.global.attribute.xmlid;
@@ -2952,13 +2595,15 @@ usage CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
- %att.sourced.attributes; >
+ %att.sourced.attributes;
+ %att.spanning.attributes;
+ %att.breaking.attributes; >
 <!--doc:(label) contains a label for a form, example, translation, or other piece of information, e.g.
     abbreviation for, contraction of, literally, approximately, synonyms:, etc. -->
-    <!ELEMENT lbl %macro.paraContent;>
+<!ELEMENT lbl %macro.paraContent;>
 <!ATTLIST lbl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST lbl
  %att.global.attribute.xmlid;
@@ -2968,13 +2613,13 @@ usage CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(line group) contains a group of verse lines functioning as a formal unit, e.g. a stanza, refrain,
         verse paragraph, etc. -->
-    <!ELEMENT lg ((%model.divTop; |
+<!ELEMENT lg ((%model.divTop; |
  %model.global;)*,(%model.lLike; |
  lg),(%model.lLike; |
  lg |
@@ -2988,13 +2633,13 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.divLike.attributes;
  %att.typed.attributes;
  %att.declaring.attributes; >
 <!--doc:(list) contains any sequence of items organized as a list. -->
-    <!ELEMENT list (((%model.divTop;) |
+<!ELEMENT list (((%model.divTop;) |
  (%model.global;))*,((item,(%model.global;)*)+ |
  (headLabel?,headItem?,(label,(%model.global;)*,item,(%model.global;)*)+)),((%model.divBottom;),(%model.global;)*)*)>
 <!ATTLIST list xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3006,11 +2651,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  "simple"  >
+type %data.enumerated;  "simple"  >
 <!--doc:(citation list) contains a list of bibliographic citations of any kind.  -->
-    <!ELEMENT listBibl ((%model.headLike;)*,(%model.biblLike; |
+<!ELEMENT listBibl ((%model.headLike;)*,(%model.biblLike; |
  %model.milestoneLike; |
  listBibl)+)>
 <!ATTLIST listBibl xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3022,13 +2667,13 @@ type NMTOKEN  "simple"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
  %att.typed.attributes; >
 <!--doc:contains a word or phrase referring to some quantity of an object or commodity, usually
         comprising a number, a unit, and a commodity name. -->
-    <!ELEMENT measure %macro.phraseSeq;>
+<!ELEMENT measure %macro.phraseSeq;>
 <!ATTLIST measure xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST measure
  %att.global.attribute.xmlid;
@@ -3038,13 +2683,13 @@ type NMTOKEN  "simple"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.measurement.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(measure group) contains a group of dimensional specifications which relate to the same object, for example
     the height and width of a manuscript page. -->
-    <!ELEMENT measureGrp ( #PCDATA |
+<!ELEMENT measureGrp ( #PCDATA |
  _DUMMY_model.gLike |
  %model.measureLike;)*>
 <!ATTLIST measureGrp xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3056,14 +2701,14 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.measurement.attributes;
  %att.typed.attributes; >
 <!--doc:contains the formalized descriptive title for a meeting or conference, for use in a
     bibliographic description for an item derived from such a meeting, or as a heading or preamble
     to publications emanating from it. -->
-    <!ELEMENT meeting %macro.limitedContent;>
+<!ELEMENT meeting %macro.limitedContent;>
 <!ATTLIST meeting xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST meeting
  %att.global.attribute.xmlid;
@@ -3073,10 +2718,10 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:marks words or phrases mentioned, not used. -->
-    <!ELEMENT mentioned %macro.phraseSeq;>
+<!ELEMENT mentioned %macro.phraseSeq;>
 <!ATTLIST mentioned xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST mentioned
  %att.global.attribute.xmlid;
@@ -3086,12 +2731,12 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:marks a boundary point separating any kind of section of a text, typically but not
     necessarily indicating a point at which some part of a standard reference system changes, where
     the change is not represented by a structural element. -->
-    <!ELEMENT milestone EMPTY>
+<!ELEMENT milestone EMPTY>
 <!ATTLIST milestone xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST milestone
  %att.global.attribute.xmlid;
@@ -3101,21 +2746,24 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
  %att.sourced.attributes;
-unit NMTOKEN  #REQUIRED >
+ %att.spanning.attributes;
+ %att.breaking.attributes;
+unit %data.enumerated;  #REQUIRED >
 <!--doc:(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an
     independent item (i.e. as a separate physical object). -->
-    <!ELEMENT monogr ((((author |
+<!ELEMENT monogr ((((author |
  editor |
  respStmt),(author |
  editor |
  respStmt)*,title+,(idno |
  editor |
  respStmt)*) |
- (title+,(idno |
+ ((title |
+ ref)+,(idno |
  author |
  editor |
  respStmt)*))?,(%model.noteLike; |
@@ -3133,11 +2781,11 @@ unit NMTOKEN  #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains information about the grammatical mood of verbs (e.g. indicative, subjunctive,
     imperative). -->
-    <!ELEMENT mood %macro.paraContent;>
+<!ELEMENT mood %macro.paraContent;>
 <!ATTLIST mood xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST mood
  %att.global.attribute.xmlid;
@@ -3147,11 +2795,11 @@ unit NMTOKEN  #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(name, proper noun) contains a proper noun or noun phrase. -->
-    <!ELEMENT name %macro.phraseSeq;>
+<!ELEMENT name %macro.phraseSeq;>
 <!ATTLIST name xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST name
  %att.global.attribute.xmlid;
@@ -3161,13 +2809,13 @@ unit NMTOKEN  #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.naming.attributes;
  %att.typed.attributes; >
 <!--doc:supplies the formal name of the namespace to which the elements documented by its children
     belong.  -->
-    <!ELEMENT namespace (tagUsage)+>
+<!ELEMENT namespace (tagUsage)+>
 <!ATTLIST namespace xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST namespace
  %att.global.attribute.xmlid;
@@ -3177,12 +2825,12 @@ unit NMTOKEN  #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-name CDATA #REQUIRED >
+name %data.namespace;  #REQUIRED >
 <!--doc:indicates the extent of normalization or regularization of the original source carried out
     in converting it to electronic form. -->
-    <!ELEMENT normalization (%model.pLike;)+>
+<!ELEMENT normalization (%model.pLike;)+>
 <!ATTLIST normalization xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST normalization
  %att.global.attribute.xmlid;
@@ -3192,14 +2840,13 @@ name CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-source CDATA #IMPLIED
-method (silent|
-markup) "silent"  >
+source %data.pointer;  #IMPLIED
+method (silent|markup) "silent"  >
 <!--doc:contains a note or annotation. -->
-    <!ELEMENT note %macro.specialPara;>
+<!ELEMENT note %macro.specialPara;>
 <!ATTLIST note xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST note
  %att.global.attribute.xmlid;
@@ -3209,17 +2856,17 @@ markup) "silent"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.placement.attributes;
+ %att.pointing.attributes;
  %att.responsibility.attributes;
-type NMTOKEN  #IMPLIED
-anchored CDATA "true" 
-target CDATA  #IMPLIED
+ %att.typed.attributes;
+anchored %data.truthValue;  "true" 
 targetEnd CDATA  #IMPLIED >
 <!--doc:(notes statement) collects together any notes providing information about a text additional to that recorded
     in other parts of the bibliographic description. -->
-    <!ELEMENT notesStmt (%model.noteLike;)+>
+<!ELEMENT notesStmt (%model.noteLike;)+>
 <!ATTLIST notesStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST notesStmt
  %att.global.attribute.xmlid;
@@ -3229,10 +2876,10 @@ targetEnd CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(number) contains a number, written in any form. -->
-    <!ELEMENT num %macro.phraseSeq;>
+<!ELEMENT num %macro.phraseSeq;>
 <!ATTLIST num xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST num
  %att.global.attribute.xmlid;
@@ -3242,13 +2889,13 @@ targetEnd CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.ranging.attributes;
-type NMTOKEN  #IMPLIED
-value CDATA #IMPLIED >
+type %data.enumerated;  #IMPLIED
+value %data.numeric;  #IMPLIED >
 <!--doc:indicates grammatical number associated with a form, as given in a dictionary. -->
-    <!ELEMENT number %macro.paraContent;>
+<!ELEMENT number %macro.paraContent;>
 <!ATTLIST number xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST number
  %att.global.attribute.xmlid;
@@ -3258,28 +2905,11 @@ value CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
-<!--doc:(numeric value) represents the value part of a feature-value specification
-  which contains a numeric value or range. -->
-    <!ELEMENT numeric EMPTY>
-<!ATTLIST numeric xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST numeric
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-value CDATA #REQUIRED
-max CDATA #IMPLIED
-trunc CDATA #IMPLIED >
 <!--doc:(orthographic-form reference) in a dictionary example, indicates a reference to the orthographic form(s) of the headword. -->
-    <!ELEMENT oRef EMPTY>
+<!ELEMENT oRef EMPTY>
 <!ATTLIST oRef xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST oRef
  %att.global.attribute.xmlid;
@@ -3289,14 +2919,14 @@ trunc CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
- %att.ptrLike.form.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
+ %att.pointing.attributes;
+type %data.enumerated;  #IMPLIED >
 <!--doc:(orthographic-variant reference) in a dictionary example, indicates a reference to variant orthographic form(s) of the
     headword. -->
-    <!ELEMENT oVar ( #PCDATA |
+<!ELEMENT oVar ( #PCDATA |
  _DUMMY_model.gLike |
  oRef)*>
 <!ATTLIST oVar xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3308,14 +2938,14 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
- %att.ptrLike.form.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
+ %att.pointing.attributes;
+type %data.enumerated;  #IMPLIED >
 <!--doc:groups together dateline, byline, salutation, and similar phrases appearing as a preliminary
     group at the start of a division, especially of a letter. -->
-    <!ELEMENT opener ( #PCDATA |
+<!ELEMENT opener ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  argument |
@@ -3334,11 +2964,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(original form) contains a reading which is marked as following the original, rather than being normalized
         or corrected. -->
-    <!ELEMENT orig %macro.paraContent;>
+<!ELEMENT orig %macro.paraContent;>
 <!ATTLIST orig xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST orig
  %att.global.attribute.xmlid;
@@ -3348,10 +2978,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
+ %att.global.linking.attributes;
+ %att.global.analytic.attributes;
+ %att.responsibility.attributes; >
 <!--doc:(orthographic form) gives the orthographic form of a dictionary headword. -->
-    <!ELEMENT orth %macro.paraContent;>
+<!ELEMENT orth %macro.paraContent;>
 <!ATTLIST orth xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST orth
  %att.global.attribute.xmlid;
@@ -3361,13 +2992,13 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED
-extent NMTOKEN  "full"  >
+type %data.enumerated;  #IMPLIED
+extent %data.enumerated;  "full"  >
 <!--doc:(paragraph) marks paragraphs in prose. -->
-    <!ELEMENT p %macro.paraContent;>
+<!ELEMENT p %macro.paraContent;>
 <!ATTLIST p xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST p
  %att.global.attribute.xmlid;
@@ -3377,11 +3008,11 @@ extent NMTOKEN  "full"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes; >
 <!--doc:(pronunciation reference) in a dictionary example, indicates a reference to the pronunciation(s) of the headword. -->
-    <!ELEMENT pRef EMPTY>
+<!ELEMENT pRef EMPTY>
 <!ATTLIST pRef xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST pRef
  %att.global.attribute.xmlid;
@@ -3391,12 +3022,12 @@ extent NMTOKEN  "full"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
- %att.ptrLike.form.attributes;
+ %att.pointing.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(pronunciation-variant reference) in a dictionary example, indicates a reference to variant pronunciation(s) of the headword. -->
-    <!ELEMENT pVar ( #PCDATA |
+<!ELEMENT pVar ( #PCDATA |
  _DUMMY_model.gLike |
  pRef)*>
 <!ATTLIST pVar xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3408,12 +3039,12 @@ extent NMTOKEN  "full"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
- %att.ptrLike.form.attributes;
+ %att.pointing.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(page break) marks the boundary between one page of a text and the next in a standard reference system. -->
-    <!ELEMENT pb EMPTY>
+<!ELEMENT pb EMPTY>
 <!ATTLIST pb xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST pb
  %att.global.attribute.xmlid;
@@ -3423,13 +3054,15 @@ extent NMTOKEN  "full"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
- %att.sourced.attributes; >
+ %att.sourced.attributes;
+ %att.spanning.attributes;
+ %att.breaking.attributes; >
 <!--doc:(person) contains an indication of the grammatical person (1st, 2nd, 3rd, etc.) associated with a
     given inflected form in a dictionary. -->
-    <!ELEMENT per %macro.paraContent;>
+<!ELEMENT per %macro.paraContent;>
 <!ATTLIST per xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST per
  %att.global.attribute.xmlid;
@@ -3439,13 +3072,13 @@ extent NMTOKEN  "full"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(part of speech) indicates the part of speech assigned to a dictionary 
 headword  such as noun, verb, or adjective.
      -->
-    <!ELEMENT pos %macro.paraContent;>
+<!ELEMENT pos %macro.paraContent;>
 <!ATTLIST pos xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST pos
  %att.global.attribute.xmlid;
@@ -3455,12 +3088,12 @@ headword  such as noun, verb, or adjective.
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:(postal box or post office box) contains a number or other identifier for some postal delivery point other than a street
     address.  -->
-    <!ELEMENT postBox  (#PCDATA)>
+<!ELEMENT postBox  (#PCDATA)>
 <!ATTLIST postBox xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST postBox
  %att.global.attribute.xmlid;
@@ -3470,11 +3103,11 @@ headword  such as noun, verb, or adjective.
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(postal code) contains a numerical or alphanumeric code used as part of a postal address to simplify
         sorting or delivery of mail.  -->
-    <!ELEMENT postCode  (#PCDATA)>
+<!ELEMENT postCode  (#PCDATA)>
 <!ATTLIST postCode xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST postCode
  %att.global.attribute.xmlid;
@@ -3484,10 +3117,10 @@ headword  such as noun, verb, or adjective.
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a postscript, e.g. to a letter. -->
-    <!ELEMENT postscript ((%model.common;) |
+<!ELEMENT postscript ((%model.common;) |
  (%model.global;))*>
 <!ATTLIST postscript xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST postscript
@@ -3498,11 +3131,11 @@ headword  such as noun, verb, or adjective.
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(principal researcher) supplies the name of the principal researcher responsible for the
 creation of an electronic text. -->
-    <!ELEMENT principal %macro.phraseSeq.limited;>
+<!ELEMENT principal %macro.phraseSeq.limited;>
 <!ATTLIST principal xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST principal
  %att.global.attribute.xmlid;
@@ -3512,12 +3145,12 @@ creation of an electronic text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the
     languages and sublanguages used, the situation in which it was produced, the participants and
     their setting. -->
-    <!ELEMENT profileDesc (creation?,(%model.profileDescPart;)*)>
+<!ELEMENT profileDesc (%model.profileDescPart;)*>
 <!ATTLIST profileDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST profileDesc
  %att.global.attribute.xmlid;
@@ -3527,12 +3160,12 @@ creation of an electronic text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(project description) describes in detail the aim or purpose for which an electronic file was encoded, together
     with any other relevant information concerning the process by which it was assembled or
     collected. -->
-    <!ELEMENT projectDesc (%model.pLike;)+>
+<!ELEMENT projectDesc (%model.pLike;)+>
 <!ATTLIST projectDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST projectDesc
  %att.global.attribute.xmlid;
@@ -3542,11 +3175,11 @@ creation of an electronic text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:(pronunciation) contains the pronunciation(s) of the word. -->
-    <!ELEMENT pron %macro.paraContent;>
+<!ELEMENT pron %macro.paraContent;>
 <!ATTLIST pron xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST pron
  %att.global.attribute.xmlid;
@@ -3556,13 +3189,13 @@ creation of an electronic text. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-extent NMTOKEN  "full" 
-notation NMTOKEN  #IMPLIED >
+extent %data.enumerated;  "full" 
+notation %data.enumerated;  #IMPLIED >
 <!--doc:(pointer) defines a pointer to another location. -->
-    <!ELEMENT ptr EMPTY>
+<!ELEMENT ptr EMPTY>
 <!ATTLIST ptr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST ptr
  %att.global.attribute.xmlid;
@@ -3572,14 +3205,14 @@ notation NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.pointing.attributes;
+ %att.typed.attributes;
  %att.declaring.attributes;
-target CDATA  #IMPLIED
 cRef CDATA  #IMPLIED >
 <!--doc:(publication place) contains the name of the place where a bibliographic item was published. -->
-    <!ELEMENT pubPlace %macro.phraseSeq;>
+<!ELEMENT pubPlace %macro.phraseSeq;>
 <!ATTLIST pubPlace xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST pubPlace
  %att.global.attribute.xmlid;
@@ -3589,12 +3222,12 @@ cRef CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.naming.attributes; >
 <!--doc:(publication statement) groups information concerning the publication or distribution of an electronic or other
     text.  -->
-    <!ELEMENT publicationStmt ((%model.pLike;)+ |
+<!ELEMENT publicationStmt ((%model.pLike;)+ |
  (%model.publicationStmtPart;)+)>
 <!ATTLIST publicationStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST publicationStmt
@@ -3605,11 +3238,11 @@ cRef CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:provides the name of the organization responsible for the publication or distribution of a
         bibliographic item. -->
-    <!ELEMENT publisher %macro.phraseSeq;>
+<!ELEMENT publisher %macro.phraseSeq;>
 <!ATTLIST publisher xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST publisher
  %att.global.attribute.xmlid;
@@ -3619,13 +3252,13 @@ cRef CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(separated from the surrounding text with quotation marks) contains material which is marked as (ostensibly) being somehow different than the
     surrounding text, for any one of a variety of reasons including, but not limited to: direct
     speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and
     passages that are mentioned but not used. -->
-    <!ELEMENT q %macro.specialPara;>
+<!ELEMENT q %macro.specialPara;>
 <!ATTLIST q xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST q
  %att.global.attribute.xmlid;
@@ -3635,12 +3268,12 @@ cRef CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.ascribed.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:specifies editorial practice adopted with respect to quotation marks in the original.  -->
-    <!ELEMENT quotation (%model.pLike;)+>
+<!ELEMENT quotation (%model.pLike;)+>
 <!ATTLIST quotation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST quotation
  %att.global.attribute.xmlid;
@@ -3650,16 +3283,14 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes;
-marks (none|
-some|
-all) "all" 
+marks (none|some|all) "all" 
 form CDATA  "unknown"  >
 <!--doc:(quotation) contains a phrase or passage attributed by the narrator or author to some agency external
         to the text. -->
-    <!ELEMENT quote %macro.specialPara;>
+<!ELEMENT quote %macro.specialPara;>
 <!ATTLIST quote xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST quote
  %att.global.attribute.xmlid;
@@ -3669,12 +3300,12 @@ form CDATA  "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes; >
 <!--doc:(related entry) contains a dictionary entry for a lexical item related to the headword, such as a compound
     phrase or derived form, embedded inside a larger entry. -->
-    <!ELEMENT re ( #PCDATA |
+<!ELEMENT re ( #PCDATA |
  _DUMMY_model.gLike |
  sense |
  %model.entryPart.top; |
@@ -3689,12 +3320,12 @@ form CDATA  "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
  %att.typed.attributes; >
 <!--doc:(reference) defines a reference to another location, possibly modified by additional text or comment. -->
-    <!ELEMENT ref %macro.paraContent;>
+<!ELEMENT ref %macro.paraContent;>
 <!ATTLIST ref xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST ref
  %att.global.attribute.xmlid;
@@ -3704,14 +3335,14 @@ form CDATA  "unknown"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.pointing.attributes;
+ %att.typed.attributes;
  %att.declaring.attributes;
-target CDATA  #IMPLIED
 cRef CDATA  #IMPLIED >
 <!--doc:(reference state) specifies one component of a canonical reference defined by the milestone method. -->
-    <!ELEMENT refState EMPTY>
+<!ELEMENT refState EMPTY>
 <!ATTLIST refState xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST refState
  %att.global.attribute.xmlid;
@@ -3721,15 +3352,15 @@ cRef CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.sourced.attributes;
-unit NMTOKEN  #REQUIRED
-length CDATA #IMPLIED
+unit %data.enumerated;  #REQUIRED
+length %data.count;  #IMPLIED
 delim CDATA #IMPLIED >
 <!--doc:(references declaration) specifies how canonical references are constructed for this
   text. -->
-    <!ELEMENT refsDecl ((%model.pLike;)+ |
+<!ELEMENT refsDecl ((%model.pLike;)+ |
  cRefPattern+ |
  refState+)>
 <!ATTLIST refsDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3741,11 +3372,11 @@ delim CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:(regularization) contains a reading which has been regularized or normalized in some sense. -->
-    <!ELEMENT reg %macro.paraContent;>
+<!ELEMENT reg %macro.paraContent;>
 <!ATTLIST reg xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST reg
  %att.global.attribute.xmlid;
@@ -3755,14 +3386,14 @@ delim CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.editLike.attributes;
  %att.typed.attributes; >
 <!--doc:contains or references some other bibliographic item which is related to the present one in
     some specified manner, for example as a constituent or alternative version of it. -->
-    <!ELEMENT relatedItem (%model.biblLike; |
- %model.ptrLike;)>
+<!ELEMENT relatedItem (%model.biblLike; |
+ %model.ptrLike;)?>
 <!ATTLIST relatedItem xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST relatedItem
  %att.global.attribute.xmlid;
@@ -3772,13 +3403,13 @@ delim CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.typed.attributes;
-target CDATA #IMPLIED >
+target %data.pointer;  #IMPLIED >
 <!--doc:supplies information about the rendition or appearance of one or more elements in the source
     text. -->
-    <!ELEMENT rendition %macro.limitedContent;>
+<!ELEMENT rendition %macro.limitedContent;>
 <!ATTLIST rendition xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST rendition
  %att.global.attribute.xmlid;
@@ -3788,15 +3419,12 @@ target CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-scheme (css|
-xslfo|
-free|
-other) #IMPLIED
+scheme (css|xslfo|free|other) #IMPLIED
 scope CDATA  #IMPLIED >
 <!--doc:(responsibility) contains a phrase describing the nature of a person's intellectual responsibility. -->
-    <!ELEMENT resp %macro.phraseSeq.limited;>
+<!ELEMENT resp %macro.phraseSeq.limited;>
 <!ATTLIST resp xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST resp
  %att.global.attribute.xmlid;
@@ -3806,13 +3434,13 @@ scope CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.canonical.attributes; >
 <!--doc:(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition,
     recording, or series, where the specialized elements for authors, editors, etc. do not suffice
     or do not apply. -->
-    <!ELEMENT respStmt ((resp+,(%model.nameLike.agent;)+) |
+<!ELEMENT respStmt ((resp+,(%model.nameLike.agent;)+) |
  ((%model.nameLike.agent;)+,resp+))>
 <!ATTLIST respStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST respStmt
@@ -3823,10 +3451,10 @@ scope CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(revision description) summarizes the revision history for a file. -->
-    <!ELEMENT revisionDesc (list |
+<!ELEMENT revisionDesc (list |
  change+)>
 <!ATTLIST revisionDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST revisionDesc
@@ -3837,10 +3465,11 @@ scope CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
+ %att.global.linking.attributes;
+ %att.global.analytic.attributes;
+ %att.docStatus.attributes; >
 <!--doc:contains one row of a table.  -->
-    <!ELEMENT row (cell)+>
+<!ELEMENT row (cell)+>
 <!ATTLIST row xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST row
  %att.global.attribute.xmlid;
@@ -3850,11 +3479,11 @@ scope CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.tableDecoration.attributes; >
 <!--doc:(referencing string) contains a general purpose name or referring string. -->
-    <!ELEMENT rs %macro.phraseSeq;>
+<!ELEMENT rs %macro.phraseSeq;>
 <!ATTLIST rs xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST rs
  %att.global.attribute.xmlid;
@@ -3864,13 +3493,13 @@ scope CDATA  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.naming.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(speech or thought) indicates passages thought or spoken aloud, whether explicitly indicated in the source or
     not, whether directly or indirectly reported, whether by real people or fictional characters. -->
-    <!ELEMENT said %macro.specialPara;>
+<!ELEMENT said %macro.specialPara;>
 <!ATTLIST said xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST said
  %att.global.attribute.xmlid;
@@ -3880,14 +3509,14 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.ascribed.attributes;
-aloud CDATA "unknown" 
-direct CDATA "true"  >
+aloud %data.xTruthValue;  "unknown" 
+direct %data.xTruthValue;  "true"  >
 <!--doc:(salutation) contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other
     division of a text, or the salutation in the closing of a letter, preface, etc. -->
-    <!ELEMENT salute %macro.phraseSeq;>
+<!ELEMENT salute %macro.phraseSeq;>
 <!ATTLIST salute xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST salute
  %att.global.attribute.xmlid;
@@ -3897,11 +3526,11 @@ direct CDATA "true"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(sampling declaration) contains a prose description of the rationale and methods used in sampling texts in the
     creation of a corpus or collection. -->
-    <!ELEMENT samplingDecl (%model.pLike;)+>
+<!ELEMENT samplingDecl (%model.pLike;)+>
 <!ATTLIST samplingDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST samplingDecl
  %att.global.attribute.xmlid;
@@ -3911,12 +3540,27 @@ direct CDATA "true"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
+<!--doc:describes a particular script distinguished within
+    the description of a manuscript or similar resource. -->
+<!ELEMENT scriptNote %macro.specialPara;>
+<!ATTLIST scriptNote xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST scriptNote
+ %att.global.attribute.xmlid;
+ %att.global.attribute.n;
+ %att.global.attribute.xmllang;
+ %att.global.attribute.rend;
+ %att.global.attribute.rendition;
+ %att.global.attribute.xmlbase;
+ %att.global.attribute.xmlspace;
+ %att.global.linking.attributes;
+ %att.global.analytic.attributes;
+ %att.handFeatures.attributes; >
 <!--doc:describes the principles according to which the text has been segmented, for example into
     sentences, tone-units, graphemic strata, etc. -->
-    <!ELEMENT segmentation (%model.pLike;)+>
+<!ELEMENT segmentation (%model.pLike;)+>
 <!ATTLIST segmentation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST segmentation
  %att.global.attribute.xmlid;
@@ -3926,12 +3570,12 @@ direct CDATA "true"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:groups together all information relating to one word sense in a dictionary entry, for
     example definitions, examples, and translation equivalents. -->
-    <!ELEMENT sense ( #PCDATA |
+<!ELEMENT sense ( #PCDATA |
  _DUMMY_model.gLike |
  sense |
  %model.entryPart.top; |
@@ -3946,15 +3590,16 @@ direct CDATA "true"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-level CDATA #IMPLIED >
+level %data.numeric;  #IMPLIED >
 <!--doc:(series information) contains information about the series in which a book or other bibliographic item has
     appeared. -->
-    <!ELEMENT series ( #PCDATA |
+<!ELEMENT series ( #PCDATA |
  _DUMMY_model.gLike |
  title |
+ ref |
  editor |
  respStmt |
  biblScope |
@@ -3968,10 +3613,10 @@ level CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(series statement) groups information about the series, if any, to which a publication belongs. -->
-    <!ELEMENT seriesStmt ((%model.pLike;)+ |
+<!ELEMENT seriesStmt ((%model.pLike;)+ |
  (title+,(idno |
  respStmt)*))>
 <!ATTLIST seriesStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3983,10 +3628,11 @@ level CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
-<!--doc:(latin for thus or so) contains text reproduced although apparently incorrect or inaccurate. -->
-    <!ELEMENT sic %macro.paraContent;>
+<!--doc:(latin for thus or so
+  ) contains text reproduced although apparently incorrect or inaccurate. -->
+<!ELEMENT sic %macro.paraContent;>
 <!ATTLIST sic xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST sic
  %att.global.attribute.xmlid;
@@ -3996,11 +3642,12 @@ level CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
+ %att.global.linking.attributes;
+ %att.global.analytic.attributes;
+ %att.responsibility.attributes; >
 <!--doc:(signature) contains the closing salutation, etc., appended to a foreword,
 dedicatory epistle, or other division of a text.  -->
-    <!ELEMENT signed %macro.phraseSeq;>
+<!ELEMENT signed %macro.phraseSeq;>
 <!ATTLIST signed xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST signed
  %att.global.attribute.xmlid;
@@ -4010,11 +3657,11 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a word or phrase for which the author or narrator indicates a disclaiming of
     responsibility, for example by the use of scare quotes or italics. -->
-    <!ELEMENT soCalled %macro.phraseSeq;>
+<!ELEMENT soCalled %macro.phraseSeq;>
 <!ATTLIST soCalled xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST soCalled
  %att.global.attribute.xmlid;
@@ -4024,12 +3671,12 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(source description) describes the source from which an electronic text was derived or generated, typically a
     bibliographic description in the case of a digitized text, or a phrase such as "born digital"
     for a text which has no previous existence. -->
-    <!ELEMENT sourceDesc ((%model.pLike;)+ |
+<!ELEMENT sourceDesc ((%model.pLike;)+ |
  (%model.biblLike; |
  _DUMMY_model.sourceDescPart |
  %model.listLike;)+)>
@@ -4042,12 +3689,12 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:(speech) An individual speech in a performance text, or a passage presented as such in a prose or
     verse text. -->
-    <!ELEMENT sp ((%model.global;)*,(speaker,(%model.global;)*)?,((%model.lLike; |
+<!ELEMENT sp ((%model.global;)*,(speaker,(%model.global;)*)?,((%model.lLike; |
  lg |
  %model.pLike; |
  %model.stageLike; |
@@ -4061,12 +3708,12 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.ascribed.attributes; >
 <!--doc:A specialized form of heading or label, giving the name of one or more speakers in a
         dramatic text or fragment. -->
-    <!ELEMENT speaker %macro.phraseSeq;>
+<!ELEMENT speaker %macro.phraseSeq;>
 <!ATTLIST speaker xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST speaker
  %att.global.attribute.xmlid;
@@ -4076,10 +3723,10 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:specifies the name of a sponsoring organization or institution. -->
-    <!ELEMENT sponsor %macro.phraseSeq.limited;>
+<!ELEMENT sponsor %macro.phraseSeq.limited;>
 <!ATTLIST sponsor xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST sponsor
  %att.global.attribute.xmlid;
@@ -4089,10 +3736,10 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(stage direction) contains any kind of stage direction within a dramatic text or fragment. -->
-    <!ELEMENT stage %macro.specialPara;>
+<!ELEMENT stage %macro.specialPara;>
 <!ATTLIST stage xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST stage
  %att.global.attribute.xmlid;
@@ -4102,11 +3749,11 @@ dedicatory epistle, or other division of a text.  -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(standard values) specifies the format used when standardized date or number values are supplied. -->
-    <!ELEMENT stdVals (%model.pLike;)+>
+<!ELEMENT stdVals (%model.pLike;)+>
 <!ATTLIST stdVals xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST stdVals
  %att.global.attribute.xmlid;
@@ -4116,13 +3763,13 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
 <!--doc:a full street address including any name or number identifying a
         building as well as the name of the street or route on which it is
         located. -->
-    <!ELEMENT street %macro.phraseSeq;>
+<!ELEMENT street %macro.phraseSeq;>
 <!ATTLIST street xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST street
  %att.global.attribute.xmlid;
@@ -4132,10 +3779,10 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains the stress pattern for a dictionary headword, if given separately. -->
-    <!ELEMENT stress %macro.paraContent;>
+<!ELEMENT stress %macro.paraContent;>
 <!ATTLIST stress xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST stress
  %att.global.attribute.xmlid;
@@ -4145,25 +3792,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(string value) represents the value part of a feature-value specification
-  which contains a string. -->
-    <!ELEMENT string %macro.xtext;>
-<!ATTLIST string xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST string
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(subcategorization) contains subcategorization information (transitive/intransitive, countable/non-countable,
         etc.) -->
-    <!ELEMENT subc %macro.paraContent;>
+<!ELEMENT subc %macro.paraContent;>
 <!ATTLIST subc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST subc
  %att.global.attribute.xmlid;
@@ -4173,11 +3806,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:groups successive entries for a set of homographs. -->
-    <!ELEMENT superEntry (form?,entry+)>
+<!ELEMENT superEntry (form?,entry+)>
 <!ATTLIST superEntry xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST superEntry
  %att.global.attribute.xmlid;
@@ -4187,11 +3820,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.entryLike.attributes; >
 <!--doc:(syllabification) contains the syllabification of the headword. -->
-    <!ELEMENT syll %macro.paraContent;>
+<!ELEMENT syll %macro.paraContent;>
 <!ATTLIST syll xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST syll
  %att.global.attribute.xmlid;
@@ -4201,26 +3834,11 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
-<!--doc:(symbolic value) represents the value part of a feature-value specification
-  which contains one of a finite list of symbols. -->
-    <!ELEMENT symbol EMPTY>
-<!ATTLIST symbol xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST symbol
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-value CDATA #REQUIRED >
 <!--doc:contains text displayed in tabular form, in rows and columns. -->
-    <!ELEMENT table ((%model.headLike; |
+<!ELEMENT table ((%model.headLike; |
  %model.global;)*,(row,(%model.global;)*)+)>
 <!ATTLIST table xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST table
@@ -4231,14 +3849,18 @@ value CDATA #REQUIRED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-rows CDATA #IMPLIED
-cols CDATA #IMPLIED >
+rows %data.count;  #IMPLIED
+cols %data.count;  #IMPLIED >
 <!--doc:supplies information about the usage of a specific element within a text.  -->
-    <!ELEMENT tagUsage %macro.limitedContent;>
+<!ELEMENT tagUsage %macro.limitedContent;>
 <!ATTLIST tagUsage xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST tagUsage
+gi %data.name;  #REQUIRED
+occurs %data.count;  #IMPLIED
+withId %data.count;  #IMPLIED
+render %data.pointer;  #IMPLIED
  %att.global.attribute.xmlid;
  %att.global.attribute.n;
  %att.global.attribute.xmllang;
@@ -4246,14 +3868,10 @@ cols CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-gi NMTOKEN  #REQUIRED
-occurs CDATA #IMPLIED
-withId CDATA #IMPLIED
-render CDATA #IMPLIED >
+ %att.global.linking.attributes;
+ %att.global.analytic.attributes; >
 <!--doc:(tagging declaration) provides detailed information about the tagging applied to a document. -->
-    <!ELEMENT tagsDecl (rendition*,namespace*)>
+<!ELEMENT tagsDecl (rendition*,namespace*)>
 <!ATTLIST tagsDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST tagsDecl
  %att.global.attribute.xmlid;
@@ -4263,11 +3881,11 @@ render CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:defines a typology used to classify texts either implicitly, by means of a bibliographic
     citation, or explicitly by a structured taxonomy. -->
-    <!ELEMENT taxonomy ((%model.glossLike;)* |
+<!ELEMENT taxonomy ((%model.glossLike;)* |
  category+ |
  ((%model.biblLike;),category*))>
 <!ATTLIST taxonomy xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -4279,11 +3897,11 @@ render CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(TEI Header) supplies the descriptive and declarative information making up an electronic title page
     prefixed to every TEI-conformant text. -->
-    <!ELEMENT teiHeader (fileDesc,(%model.teiHeaderPart;)*,revisionDesc?)>
+<!ELEMENT teiHeader (fileDesc,(%model.teiHeaderPart;)*,revisionDesc?)>
 <!ATTLIST teiHeader xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST teiHeader
  %att.global.attribute.xmlid;
@@ -4293,12 +3911,12 @@ render CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  "text"  >
+type %data.enumerated;  "text"  >
 <!--doc:contains a single-word, multi-word, or symbolic designation which is regarded as a technical
     term. -->
-    <!ELEMENT term %macro.phraseSeq;>
+<!ELEMENT term %macro.phraseSeq;>
 <!ATTLIST term xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST term
  %att.global.attribute.xmlid;
@@ -4308,17 +3926,17 @@ type NMTOKEN  "text"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes;
+ %att.pointing.attributes;
  %att.typed.attributes;
  %att.canonical.attributes;
-sortKey CDATA #IMPLIED
-target CDATA #IMPLIED
-cRef CDATA #IMPLIED >
+cRef %data.pointer;  #IMPLIED
+sortKey %data.word;  #IMPLIED >
 <!--doc:contains a single text of any kind, whether unitary or composite, for example a poem or
     drama, a collection of essays, a novel, a dictionary, or a corpus sample. -->
-    <!ELEMENT text ((%model.global;)*,(front,(%model.global;)*)?,(body |
+<!ELEMENT text ((%model.global;)*,(front,(%model.global;)*)?,(body |
  group),(%model.global;)*,(back,(%model.global;)*)?)>
 <!ATTLIST text xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST text
@@ -4329,13 +3947,13 @@ cRef CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declaring.attributes;
  %att.typed.attributes; >
 <!--doc:(text classification) groups information which describes the nature or topic of a text in terms of a standard
     classification scheme, thesaurus, etc. -->
-    <!ELEMENT textClass (classCode |
+<!ELEMENT textClass (classCode |
  catRef |
  keywords)*>
 <!ATTLIST textClass xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -4347,25 +3965,11 @@ cRef CDATA #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.declarable.attributes; >
-<!--doc:separates the condition from the default in an if, or
-the antecedent and the consequent in a cond element. -->
-    <!ELEMENT then EMPTY>
-<!ATTLIST then xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST then
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
 <!--doc:contains a phrase defining a time of day in any format. -->
-    <!ELEMENT time ( #PCDATA |
+<!ELEMENT time ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.global;)*>
@@ -4378,13 +3982,13 @@ the antecedent and the consequent in a cond element. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.datable.attributes;
  %att.editLike.attributes;
  %att.typed.attributes; >
 <!--doc:contains a title for any kind of work. -->
-    <!ELEMENT title %macro.paraContent;>
+<!ELEMENT title %macro.paraContent;>
 <!ATTLIST title xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST title
  %att.global.attribute.xmlid;
@@ -4394,17 +3998,13 @@ the antecedent and the consequent in a cond element. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.canonical.attributes;
-level (a|
-m|
-j|
-s|
-u) #IMPLIED
-type NMTOKEN  #IMPLIED >
+level (a|m|j|s|u) #IMPLIED
+type %data.enumerated;  #IMPLIED >
 <!--doc:(title page) contains the title page of a text, appearing within the front or back matter.  -->
-    <!ELEMENT titlePage ((%model.global;)*,(%model.titlepagePart;),(%model.titlepagePart; |
+<!ELEMENT titlePage ((%model.global;)*,(%model.titlepagePart;),(%model.titlepagePart; |
  %model.global;)*)>
 <!ATTLIST titlePage xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST titlePage
@@ -4415,12 +4015,12 @@ type NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!--doc:contains a subsection or division of the title of a work, as
 indicated on a title page. -->
-    <!ELEMENT titlePart %macro.paraContent;>
+<!ELEMENT titlePart %macro.paraContent;>
 <!ATTLIST titlePart xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST titlePart
  %att.global.attribute.xmlid;
@@ -4430,12 +4030,12 @@ indicated on a title page. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
-type NMTOKEN  "main"  >
+type %data.enumerated;  "main"  >
 <!--doc:(title statement) groups information about the title of a work and those responsible for its intellectual
     content. -->
-    <!ELEMENT titleStmt (title+,(%model.respLike;)*)>
+<!ELEMENT titleStmt (title+,(%model.respLike;)*)>
 <!ATTLIST titleStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST titleStmt
  %att.global.attribute.xmlid;
@@ -4445,10 +4045,10 @@ type NMTOKEN  "main"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:(tense) indicates the grammatical tense associated with a given inflected form in a dictionary. -->
-    <!ELEMENT tns %macro.paraContent;>
+<!ELEMENT tns %macro.paraContent;>
 <!ATTLIST tns xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST tns
  %att.global.attribute.xmlid;
@@ -4458,11 +4058,11 @@ type NMTOKEN  "main"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes; >
 <!--doc:contains a closing title or footer appearing at the end of a division of a text.  -->
-    <!ELEMENT trailer %macro.phraseSeq;>
+<!ELEMENT trailer %macro.phraseSeq;>
 <!ATTLIST trailer xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST trailer
  %att.global.attribute.xmlid;
@@ -4472,11 +4072,11 @@ type NMTOKEN  "main"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes; >
 <!--doc:contains a word, phrase, or passage which cannot be transcribed with certainty because it
         is illegible or inaudible in the source. -->
-    <!ELEMENT unclear %macro.paraContent;>
+<!ELEMENT unclear %macro.paraContent;>
 <!ATTLIST unclear xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST unclear
  %att.global.attribute.xmlid;
@@ -4486,14 +4086,14 @@ type NMTOKEN  "main"  >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.editLike.attributes;
 reason CDATA  #IMPLIED
-hand CDATA #IMPLIED
-agent NMTOKEN  #IMPLIED >
+hand %data.pointer;  #IMPLIED
+agent %data.enumerated;  #IMPLIED >
 <!--doc:(usage) contains usage information in a dictionary entry. -->
-    <!ELEMENT usg %macro.paraContent;>
+<!ELEMENT usg %macro.paraContent;>
 <!ATTLIST usg xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST usg
  %att.global.attribute.xmlid;
@@ -4503,130 +4103,13 @@ agent NMTOKEN  #IMPLIED >
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
-<!--doc:(value alternation) represents the value part of a feature-value specification
-  which contains a set of values, only one of which can be valid. -->
-    <!ELEMENT vAlt ((%model.featureVal;),(%model.featureVal;)+)>
-<!ATTLIST vAlt xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vAlt
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(collection of values) represents the value part of a feature-value specification
-  which contains multiple values organized as a set, bag, or list. -->
-    <!ELEMENT vColl (fs |
- %model.featureVal.single;)*>
-<!ATTLIST vColl xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vColl
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-org (set|
-bag|
-list) #IMPLIED >
-<!--doc:(value default) declares the default value to be supplied when a feature structure
-does not contain an instance of f for this name; if
-unconditional, it is specified as one (or, depending on the value of
-the org attribute of the enclosing fDecl) more
-fs elements or primitive values;
-if conditional, it is specified as
-one or more if elements; if no default is specified, or no
-condition matches, the value none is assumed. -->
-    <!ELEMENT vDefault ((%model.featureVal;)+ |
- if+)>
-<!ATTLIST vDefault xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vDefault
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(value label) represents the value part of a feature-value specification
-  which appears at more than one point in a feature structure. -->
-    <!ELEMENT vLabel (%model.featureVal;)?>
-<!ATTLIST vLabel xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vLabel
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-name CDATA #REQUIRED >
-<!--doc:(merged collection of values) represents a feature value which is the result of merging
-  together the feature values contained by its children, using the organization
-  specified by the org attribute. -->
-    <!ELEMENT vMerge (%model.featureVal;)+>
-<!ATTLIST vMerge xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vMerge
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes;
-org (set|
-bag|
-list) #IMPLIED >
-<!--doc:(value negation) represents a feature value which is the negation of its content. -->
-    <!ELEMENT vNot (%model.featureVal;)>
-<!ATTLIST vNot xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vNot
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
-<!--doc:(value range) defines the range of allowed values for a feature, in the form of
-an fs, vAlt, or primitive value;
-for the value of an f to be valid, it must be
-subsumed by the specified range; if the f
-contains multiple values (as sanctioned by the org attribute),
-then each value must be subsumed by the vRange. -->
-    <!ELEMENT vRange (%model.featureVal;)>
-<!ATTLIST vRange xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST vRange
- %att.global.attribute.xmlid;
- %att.global.attribute.n;
- %att.global.attribute.xmllang;
- %att.global.attribute.rend;
- %att.global.attribute.rendition;
- %att.global.attribute.xmlbase;
- %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
- %att.global.analytic.attributes; >
+type %data.enumerated;  #IMPLIED >
 <!--doc:(cross-reference phrase) contains a phrase, sentence, or icon referring the reader to some other location in this or
     another text. -->
-    <!ELEMENT xr ( #PCDATA |
+<!ELEMENT xr ( #PCDATA |
  _DUMMY_model.gLike |
  %model.phrase; |
  %model.inter; |
@@ -4642,8 +4125,8 @@ then each value must be subsumed by the vRange. -->
  %att.global.attribute.rendition;
  %att.global.attribute.xmlbase;
  %att.global.attribute.xmlspace;
- %att.global.linking.attribute.corresp;
+ %att.global.linking.attributes;
  %att.global.analytic.attributes;
  %att.lexicographic.attributes;
-type NMTOKEN  #IMPLIED >
+type %data.enumerated;  #IMPLIED >
 <!-- end elements -->
