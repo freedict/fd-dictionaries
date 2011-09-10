@@ -15,7 +15,7 @@
 
   <xsl:strip-space elements="*"/>
 
-  <xsl:variable name="stylesheet-main_svnid">$Id:$</xsl:variable>
+  <xsl:variable name="stylesheet-main_svnid">$Id$</xsl:variable>
 
   <!-- "main()" function -->
   <xsl:template match="/">
@@ -29,6 +29,7 @@
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
     <xsl:text>00-database-info&#x0A;</xsl:text>
     <xsl:apply-templates select="tei:TEI/tei:teiHeader"/>
+    <xsl:apply-templates select="tei:TEI/tei:text/tei:front"/>
   </xsl:template>
 
   <xsl:template name="t00-database-short">
@@ -77,6 +78,35 @@
     <xsl:apply-templates select="."/>
 
     <xsl:text>&#x0A;</xsl:text>
+  </xsl:template>
+
+<xd:doc>There is nothing special about the '=' characters, it's just a piece of quasi-aesthetic pseudomagic.</xd:doc>
+<xsl:template match="tei:front">
+  =====================================================================
+    <xsl:apply-templates mode="front"/>  
+  =====================================================================
+</xsl:template>
+  
+  <xsl:template match="tei:div|tei:table" mode="front">
+    <xsl:apply-templates mode="front"/>
+  </xsl:template>
+
+<xd:doc>An important note: tables within paragraphs will not render nice at all.</xd:doc>
+  <xsl:template match="tei:p" mode="front">
+    <xsl:text>&#x0A;</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>&#x0A;</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="tei:row" mode="front">
+    <xsl:text>| </xsl:text>
+    <xsl:apply-templates mode="front"/>
+    <xsl:text>&#x0A;</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="tei:cell" mode="front">
+    <xsl:apply-templates/><xsl:text>  </xsl:text>
+    <!-- being extremely primitive here... no need for anything fancy -->
   </xsl:template>
 
 </xsl:stylesheet>
