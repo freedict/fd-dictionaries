@@ -303,7 +303,7 @@
       <xsl:text>, </xsl:text>
     </xsl:if>
     <xsl:choose>
-      <xsl:when test="ancestor::tei:teiHeader">
+      <xsl:when test="ancestor::tei:teiHeader or ancestor::tei:front">
         <xsl:value-of select="concat(.,' [',@target,']')"/>
       </xsl:when>
       <xsl:otherwise>
