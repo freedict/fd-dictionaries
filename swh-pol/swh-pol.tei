@@ -76,9 +76,10 @@
         <list type="bulleted">
           <head>Version 0.2.2, <date>9 September 2011</date>. <name ref="#bansp">Piotr Bański</name>
           </head>
-          <item>Purely a maintenance release, to sort out file distribution issues and to include a
+          <item>Mostly a maintenance release, to sort out file distribution issues and to include a
             list of biblical names in the archive (it is not a part of the dictionary). Accompanied
-            by an update of the Freedict schemas, to handle &lt;table> and friends.</item>
+            by an update of Freedict schemas, to handle &lt;table> and friends, so that the
+            front matter can be put into 00-database-info together with the header information.</item>
         </list>
       </change>
       <change n="0.2.1" who="#bansp" when="2009-12-31">
@@ -110,25 +111,27 @@
     <front xml:lang="pl">
       
       <div type="preface">
-        <p>Niniejszy Studencki Słownik Suahilijsko-Polski powstał na podstawie haseł opracowanych i
-          wprowadzonych do komputera (za pomocą programu MS Access) przez Annę Pytluk, studentkę
-          Zakładu Języków i Kultur Afryki Instytutu Orientalistycznego Uniwersytetu Warszawskiego.
-          Został on wybrany jako najlepszy spośród kilku podobnych słowników studenckich oraz
-          przejrzany i skorygowany przez Beatę Wójtowicz, doktorantkę IO, która następnie dokonała
-          składu i łamania słownika z wykorzystaniem systemu LATEX2e. Słownik w takiej formie został
-          w roku 2003 opublikowany elektronicznie na licencji GNU FDL 1.1, m.in. w formacie PDF, pod
-          adresem <ptr target="http://www.orient.uw.edu.pl/~jsbien/BW/SSSP/"/> oraz <ptr
-            target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/"/>.</p>
+        <p xml:space="preserve">
+Niniejszy Studencki Słownik Suahilijsko-Polski powstał na podstawie haseł opracowanych i
+wprowadzonych do komputera (za pomocą programu MS Access) przez Annę Pytluk, studentkę
+Zakładu Języków i Kultur Afryki Instytutu Orientalistycznego Uniwersytetu Warszawskiego.
+Został on wybrany jako najlepszy spośród kilku podobnych słowników studenckich oraz
+przejrzany i skorygowany przez Beatę Wójtowicz, doktorantkę IO, która następnie dokonała
+składu i łamania słownika z wykorzystaniem systemu LATEX2e. Słownik w takiej formie został
+w roku 2003 opublikowany elektronicznie na licencji GNU FDL 1.1, m.in. w formacie PDF, pod
+adresem <ptr target="http://www.orient.uw.edu.pl/~jsbien/BW/SSSP/"/> oraz <ptr target="http://www.mimuw.edu.pl/~jsbien/BW/SSSP/"/>.</p>
 
-        <p>Oryginalna wersja słownika zawierała 1320 haseł, obejmujących zakres materiału z
-          pierwszego roku nauki języka suahili. W roku 2009 słownik został skonwertowany na język
-          znaczników XML wg. schematu TEI P5, a następnie opublikowany w projekcie <ref
-            target="http://freedict.org/">Freedict</ref>, na licencji GNU Public License 3.0.</p>
+        <p xml:space="preserve">
+Oryginalna wersja słownika zawierała 1320 haseł, obejmujących zakres materiału z
+pierwszego roku nauki języka suahili. W roku 2009 słownik został skonwertowany na język
+znaczników XML wg. schematu TEI P5, a następnie opublikowany w projekcie 
+<ref target="http://freedict.org/">Freedict</ref>, na licencji GNU Public License 3.0.</p>
       </div>
 
       <div type="abbreviations">
-        <p>Objaśnienie skrótów stosowanych przez autorkę haseł</p>
-        <p>
+        <p xml:space="preserve">Objaśnienie skrótów stosowanych przez autorkę haseł:
+</p>
+        
           <table rend="boxed" cols="3">
             <row><cell role="label">Skrót</cell><cell role="label">Opis</cell><cell role="label">Przykład</cell></row>
             <row><cell>V0</cell><cell>czasowniki jednosylabowe i nieregularne</cell><cell>ja</cell></row>
@@ -158,7 +161,7 @@
             <row><cell>P1</cell><cell>przysłówki jednowyrazowe</cell><cell>karibu</cell></row>
             <row><cell>P2</cell><cell>przysłówki składające się z wyrażenia (wielowyrazowe)</cell><cell>hivi karibuni</cell></row>
           </table>
-        </p>
+        
       </div>
     </front>
     <body xml:lang="pl">
