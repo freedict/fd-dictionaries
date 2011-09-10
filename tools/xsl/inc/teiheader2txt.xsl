@@ -202,10 +202,10 @@
     </xsl:variable>
     <xsl:value-of select="concat(' * ',$when,' ',$who)"/>
 
-    <!-- I forget what this is for... possibly it should go -->
+    <!-- this is for the version information -->
     <xsl:if test="@n">
       <xsl:text> </xsl:text>
-      <xsl:value-of select="@n"/>
+      <xsl:value-of select="concat('ver. ',@n)"/>
     </xsl:if>
     <xsl:text>:&#xa;</xsl:text>
     <xsl:apply-templates mode="changelog"/>
@@ -235,9 +235,12 @@
   </xsl:template>
 
   <!-- this is a horribly unreadable template that should definitely be rewritten -->
+<!-- if the <change> element has all three attrs: @n, @who and @when set, do not process <head> -->
   <xsl:template match="tei:list" mode="changelog">
     <xsl:variable name="indent" select="count(ancestor-or-self::tei:list)*3"/>
-    <xsl:if test="tei:head">
+    <xsl:if test="tei:head and not(string-length(ancestor::tei:change[1]/@n) &gt; 0 and
+                                  string-length(ancestor::tei:change[1]/@who) &gt; 0 and
+                                  string-length(ancestor::tei:change[1]/@when) &gt; 0)">
       <xsl:call-template name="format">
         <xsl:with-param name="txt" select="concat('   ',normalize-space(tei:head))"/>
         <xsl:with-param name="width" select="$width"/>
@@ -259,7 +262,7 @@
       </xsl:variable>
       <xsl:call-template name="format">
         <xsl:with-param name="txt"
-          select="concat(substring('                   ', 1, $indent),'* ',$item-content)"/>
+          select="concat(substring('                   ', 1, $indent),'* ',normalize-space($item-content))"/>
         <xsl:with-param name="width" select="$width"/>
         <xsl:with-param name="start" select="$indent+2"/>
       </xsl:call-template>
