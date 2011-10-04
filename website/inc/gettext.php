@@ -53,8 +53,7 @@
  foreach($langtag2Q as $langtag => $Q)
  {
    //echo "Trying $langtag...";
-   if(($langtag2locale[$langtag]) or
-      defined($langtag2locale[$langtag])) // TODO
+   if(array_key_exists($langtag, $langtag2locale)) // TODO
    {
      $content_language = $langtag;
      $l = $langtag2locale[$langtag];

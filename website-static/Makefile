@@ -38,7 +38,7 @@ generate-static: ~$(USER)/public_html/freedict-dynamic symlinks $(addprefix gene
 	mkdir $@
 
 ~$(USER)/public_html/freedict-dynamic: $(DYNAMICPATH) ~$(USER)/public_html
-	ln -s `realpath "$<"`  $@
+	if [ ! -e "$@" ]; then ln -s `realpath "$<"` "$@"; fi
 
 symlinks: static static/images static/howto static/debian-repository \
           static/s.css static/freedict.pot static/freedict-database.xml \
@@ -80,7 +80,7 @@ generate-%: symlinks
 	echo If it is disabled, please manually enable it and
 	echo restart Apache2.
 	locale -a | grep '$*_.*\.utf8' \
-	  || sudo -u root 'dpkg-reconfigure locales && /etc/init.d/apache2 restart'
+	  || ( sudo -u root dpkg-reconfigure locales && sudo -u root /etc/init.d/apache2 restart )
 	mkdir -p static/$*
 	( cd static/$*; \
 	  $(WGET) --header='Accept-Language: $*' \

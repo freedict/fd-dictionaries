@@ -1,7 +1,7 @@
 <?php
 
 global $freedict_database, $fddb_docel, $get_attr, $have_php5;
-define(DB_FILENAME, '../freedict-database.xml');
+define('DB_FILENAME', '../freedict-database.xml');
 // php4 uses the domxml extension, php5 the dom extension
 $have_php5 = version_compare(PHP_VERSION, '5', '>=');
 
