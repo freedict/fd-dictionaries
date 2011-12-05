@@ -1,0 +1,91 @@
+[If this text appears garbled on a Windows system, use Wordpad to open it]
+
+1. The CSS view (quick and dirty)
+
+You should be able to see the contents of the dictionary in your browser 
+(Firefox and Opera have no problem with it; IE 8.0 doesn't work perfectly), 
+thanks to the CSS style sheet (make sure that the DTD file is also present 
+in the same directory/folder; sometimes, you may have to rename the .tei file 
+to .xml). The browser view is merely a working view, with some of the text 
+supplied by the CSS  -- that's why copying from the browser won't yield the 
+results you'd expect (some brackets and some text may be missing). Also, the 
+CSS view may be difficult to use for large databases, unless you have lots 
+of RAM.
+
+The CSS view is triggered by the following line at the very top of the dictionary:
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
+
+If in your dictionary this line is missing, you can safely add it somewhere below 
+the line:
+<?xml version="1.0" encoding="UTF-8"?> (which always needs to be at the very top)
+
+Obviously, the CSS view requires a CSS stylesheet, which in FreeDict is called 
+freedict-dictionary.css by default. 
+
+If any of the above is missing in the dictionary you are viewing, please be so kind
+as to report this fact to us (see the bottom of this file for directions).
+
+Please note that the CSS view may need to be customized for your particular 
+dictionary. If you are a developer of this dictionary and decide to customize 
+the CSS view, please delete the symlink, copy the .css from /shared and have a go 
+at it.   
+
+
+2. The DICT view
+
+One way to access the dictionary properly is to use the DICT database 
+generated from the TEI source. The database is offered in a separate 
+download and it can be accessed online, e.g. at
+
+* http://freedict.org/dict (official Freedict WWW front-end)
+
+* http://www.dict.org/bin/Dict (official DICT WWW front-end)
+
+(make sure to check the version of the dictionary: these online 
+repositories may sometimes offer earlier versions!)
+
+You can also download a desktop/plugin client, see 
+
+* http://www.dict.org/w/software/software for a long list, and
+* https://sourceforge.net/apps/mediawiki/freedict/index.php?title=DICT_clients for a short one.
+
+Very often, you will have to tell the client which DICT server it 
+should use; look for "Freedict" in the server description. The relatively
+current list of Freedict servers that identified themselves to us is
+available at http://luetzschena-stahmeln.de/dictd/index.php?freedictonly
+
+Apart from using DICT databases online, you can also access them on your own 
+computer. To do that, you will sometimes need to run a server (don't worry, 
+they are small programs; see the list at http://www.dict.org/w/software/software or
+https://sourceforge.net/apps/mediawiki/freedict/index.php?title=DICT_servers and 
+choose something suitable for your platform) and set the client to use the localhost,
+rather than an online server.
+
+Some clients read dictionary databases directly (no server is needed). This is not verified 
+information, but look among GoldenDict, OpenDict or StarDict.
+
+3. Schemas (DTD, RNG), ODD
+
+The dictionary should standardly come equipped with a schema, in the form of a DTD (deprecated) 
+or a RelaxNG document. The standard way to associate a DTD with a dictionary is with the line
+<!DOCTYPE TEI SYSTEM "freedict-P5.dtd"> somewhere near the very top of the file. There is currently 
+no standard way to associate a RelaxNG schema (freedict-P5.rng) - this is still editor- or tool-dependent, 
+but the W3C is slowly working on changing that. Some dictionaries may be equipped with a freedict-P5.sch
+file -- such files contain a Schematron schema.
+
+The schemas are derived from what you may think of as the meta-spec for schemas, namely the TEI P5 ODD file,
+named freedict-P5.xml. This is usable with e.g. the Roma application at http://www.tei-c.org/Roma/
+
+Because the ODD and the schema files (as well as the CSS file and the document you are reading right now)
+sometimes get modified, they are kept in a single place across the project, namely the shared/ directory
+of the SVN repository. If you are using SVN, you should see them as symlinks (they may refuse to work under 
+Windows). But if you have downloaded a .tar or .zip archive, they should be contained in it in their full
+form (copied at the moment when the archive was created). 
+
+--
+Written up by Piotr Banski on 01-jan-2010. If you notice that this information 
+appears to be outdated, *please* post on the Support Requests tracker 
+( https://sourceforge.net/tracker/?group_id=1419&atid=201419 ) 
+or mail freedict-beta@lists.sourceforge.net. Thanks!
+
+$Id: INSTALL 1039 2010-11-29 00:31:16Z bansp $
