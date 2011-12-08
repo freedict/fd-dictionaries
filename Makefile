@@ -8,5 +8,5 @@ debian-build-dep:
 	libapache2-mod-php5 realpath dbview intltool rsync dictzip \
 	libxml-libxml-perl
 
-.PHONY: parse-showfiles buildtree debian-build-dep
+.PHONY: parse-showfiles debian-build-dep
 
