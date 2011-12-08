@@ -132,9 +132,11 @@ sub fdict_extract_metadata
 
   unless(-r $indexfile)
   {
-    system "cd $dirname/$entry && make $entry.index"
-      or print STDERR "  ERROR: Failed to remake $entry.index\n";
-    exit 1
+    if(system("cd $dirname/$entry && make $entry.index")!=0)
+    {
+      print STDERR "  ERROR: Failed to remake $entry.index: $?\n";
+      exit 1
+    }
   }
 
   if(-r $indexfile)
@@ -158,9 +160,11 @@ sub fdict_extract_metadata
 
   unless(-r $teifile)
   {
-    system "cd $dirname/$entry && make $teifile"
-      or print STDERR "  ERROR: Failed to remake $teifile\n";
-    exit 1
+    if(system("cd $dirname/$entry && make $teifile")!=0)
+    {
+      print STDERR "  ERROR: Failed to remake $teifile: $?\n";
+      exit 1
+    }
   }
 
   if(-r $teifile)
@@ -258,6 +262,7 @@ sub fdict_extract_all_metadata
   }
   foreach $entry (sort @entries)
   { fdict_extract_metadata $dirname, $entry, $doc }
+  printd "Got all metadata\n";
 }
 
 ##################################################################
