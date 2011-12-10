@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="freedict-dictionary.xsl"?>
-<!--
-<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
--->
-<?oxygen SCHSchema="freedict-P5.rng"?>
-<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
-
+<?xml-model href="freedict-P5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
       <fileDesc>
          <titleStmt>
-            <title>oc-ca FreeDict Dictionary</title>
+            <title>Lenga d'òc - Català FreeDict Dictionary</title>
          </titleStmt>
          <editionStmt>
             <edition>0.1</edition>
          </editionStmt>
-         <extent>4 headwords</extent>
+         <extent>16679 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
@@ -40,14 +34,24 @@
             <idno type="svn">$Id$</idno>
          </publicationStmt>
          <sourceDesc>
-            <p>No source: created in the electronic form.</p>
+            <p>Derived from resources of the Apertium project</p>
          </sourceDesc>
       </fileDesc>
-      
+      <encodingDesc>
+         <projectDesc>
+            <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, <ptr target="http://www.freedict.org"/>. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
+         </projectDesc>
+      </encodingDesc>
+      <revisionDesc>
+         <change n="0.1" when="2011-12-10">
+            <list type="bulleted">
+               <head>Version 0.1, <date>10 December 2011</date>.</head>
+               <item>Converted from Apertium by someone nice, finetuned by Jim O'Regan.</item>
+            </list></change>
+      </revisionDesc>
    </teiHeader>
    <text>
       <body>
-
 <entry><form><orth>aqueste</orth></form><sense><cit><quote type="trans">aquest</quote></cit></sense></entry>
 <entry><form><orth>aqueste</orth></form><sense><cit><quote type="trans">aquest</quote></cit></sense></entry>
 <entry><form><orth>aquel</orth></form><sense><cit><quote type="trans">aquest</quote></cit></sense></entry>
