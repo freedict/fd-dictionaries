@@ -3,9 +3,7 @@
 <!--
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 -->
-<?oxygen SCHSchema="freedict-P5.rng"?>
-<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
-
+<?xml-model href="freedict-P5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
       <fileDesc>
