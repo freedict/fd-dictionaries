@@ -39,7 +39,7 @@ flags-evolutionary.php:
 	ln -s flags-dict-tgz.php $@
 
 freedict.pot: $(sources)
-	xgettext -o $@ --copyright-holder="freedict.org" \
+	xgettext --from-code=utf-8 -o $@ --copyright-holder="freedict.org" \
 	  --msgid-bugs-address="freedict-beta@lists.sf.net" *.php inc/*.php
 
 locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
