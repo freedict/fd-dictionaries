@@ -90,7 +90,7 @@ require_once 'inc/gettext.php';
 </td></tr>
 
 <tr><td class="menuNObg" align="center">
- &copy; 2004-2010 <?php echo _('FreeDict Project') ?>
+ &copy; 2004-<?=date('Y')?> <?php echo _('FreeDict Project') ?>
 </td></tr>
 </table></body>
 <?php
