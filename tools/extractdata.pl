@@ -344,7 +344,7 @@ sub fdict_extract_releases
   my $doc = shift;
 
   my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
-  my $rsynccmd = "rsync -ave ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
+  my $rsynccmd = "rsync -a" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
   printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
   system($rsynccmd) unless defined $ENV{'SKIPRSYNC'};
   my $findcmd = "find $FREEDICTDIR/frs -type f -print0";

@@ -3,7 +3,7 @@ LANGUAGES=en de kha ru ku fr ar bg lt nl
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 DYNAMICPATH=$(FREEDICTDIR)/website
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))
-WGET=wget --no-verbose --header='X-FreeDict: staticlinks' --html-extension --no-clobber
+WGET=wget --quiet --header='X-FreeDict: staticlinks' --html-extension --no-clobber
 
 upload:
 	rsync -avP -e ssh --copy-links \
@@ -76,11 +76,13 @@ static/.htaccess:
 	ln -s $(DYNAMICPATH)/.htaccess $@
 
 generate-%: symlinks
-	echo Checking for locale $*_XX.utf8 being enabled...
-	echo If it is disabled, please manually enable it and
-	echo restart Apache2.
-	locale -a | grep '$*_.*\.utf8' \
-	  || ( sudo -u root dpkg-reconfigure locales && sudo -u root /etc/init.d/apache2 restart )
+	if locale -a | grep '$*_.*\.utf8' >/dev/null; then :; \
+	else \
+	  echo locale $*_XX.utf8 is not available. && \
+	  echo Please manually enable it. && \
+	  sudo -u root -i /usr/sbin/dpkg-reconfigure locales && \
+          sudo -u root /etc/init.d/apache2 restart; \
+	fi
 	mkdir -p static/$*
 	( cd static/$*; \
 	  $(WGET) --header='Accept-Language: $*' \
