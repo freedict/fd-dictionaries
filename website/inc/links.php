@@ -16,7 +16,9 @@
  // to whether the php-less version is generated
  function fdict_url($url)
  {
-  list($path, $query) = preg_split('/\?/', $url);
+  $splitted = preg_split('/\?/', $url, 2);
+  $path = $splitted[0];
+  $query = array_key_exists(1, $splitted) ? $splitted[1] : NULL;
 
   // split url
   $parts = pathinfo($path);

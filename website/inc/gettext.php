@@ -12,7 +12,9 @@
   $lsWithQString = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
   foreach($lsWithQString as $lWithQString)
   {
-    list($langtag, $QString) = explode(';q=', $lWithQString);
+    $splitted = explode(';q=', $lWithQString);
+    $langtag = $splitted[0];
+    $QString = array_key_exists(1, $splitted) ? $splitted[1] : ''; 
     if($QString=='') $Q = 1;
     else list($Q) = sscanf ($QString, "%f");
     $langtag2Q[$langtag] = $Q;
