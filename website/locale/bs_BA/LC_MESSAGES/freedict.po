@@ -1,0 +1,824 @@
+# Bosnian Translation for Freedict Website.
+# Copyright (C) 2012 freedict.org
+# This file is distributed under the same license as the Freedict website package.
+# Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>, 2012.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
+"POT-Creation-Date: 2012-06-12 20:00+0200\n"
+"PO-Revision-Date: 2012-07-03 08:04+0200\n"
+"Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dataflow.php:4 dataflow.php:8 menu.php:20
+msgid "Data Flow"
+msgstr "Protok Podataka"
+
+#: dataflow.php:17
+msgid "possibly plugin needed, eg."
+msgstr "Moda potreban plug-in, na primjer "
+
+#: dataflow.php:19
+msgid "Adobe's"
+msgstr "Adobe-ovo"
+
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+msgid "Database as XML"
+msgstr "XML Baza podataka"
+
+#: db-as-xml.php:11
+msgid ""
+"The Download Tables are generated from an XML file.\n"
+"To access that data easily, eg. for use in a program as\n"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
+"use this URL:"
+msgstr "Table preuzimanja su izazvane od XML fajla.\n"
+"Za jednostavan pristup tim podacima, na primjer za korištenje u programu kao\n"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, možete "
+"koristiti ovaj URL:"
+
+#: deb.php:4 deb.php:9
+msgid "Debian Packages"
+msgstr "Debian Paketi"
+
+#: deb.php:11
+#, php-format
+msgid ""
+"The %1$sDebian%2$s Linux Distribution has its own system\n"
+"  of download mirrors. Since as administrator you are not so much concerned\n"
+"  to download the packages, but rather to select the packages you want to\n"
+"  install, only the following command is what you have to remember:"
+msgstr ""
+"Distribucija Linux %1$sDebian%2$s ima svoj zaseban sistem ogledala "
+"preuzimanja. Kao administrator niste previše opterećeni sa skidanjem "
+"paketa, ali sa selekcijom paketa koje želite\n "
+"instalirati, samo sljedeće instrukcije trebate zapamtiti:"  
+
+#: deb.php:19 rock.php:30
+#, php-format
+msgid ""
+"Here %1$s and %2$s are the 3-letter language codes from\n"
+"  ISO 639-2 of the languages of the dictionary you require. Of course, that\n"
+"  language combination has to be available in FreeDict."
+msgstr ""
+"%1$s i %2$s su jezički kodovi koji se sastaju od tri slova sa\n"
+"ISO 639-2 jezika koje trebate. Naravno, ta kombinacija"
+"treba da bude dostupna na FreeDict-u"
+
+#: deb.php:24
+msgid ""
+"You can find out what FreeDict packages are available in\n"
+"  Debian by visiting"
+msgstr ""
+"Možete naći FreeDict pakete u Debian-u ako posjetite"
+
+#: deb.php:30
+#, php-format
+msgid ""
+"The %1$sFreeDict pages in the\n"
+"  Debian Bug Tracking System%2$s might also be of interest."
+msgstr ""
+"%1$sFreeDict stranice u\n"
+"  Debian Bug Tracking System%2$s također mogu biti od interesa."
+
+#: deb.php:35
+#, php-format
+msgid ""
+"This page might as well be of interest: %1$sDebian FreeDict Packages team"
+"%2$s."
+msgstr ""
+"Ova stranica također može biti od interesa: %1$sDebian FreeDict Packages team"
+"%2$s."
+
+#: editor.php:4
+msgid "FreeDict-Editor"
+msgstr ""
+"FreeDict-Editor"
+
+#: editor.php:13
+#, php-format
+msgid ""
+"The %sdocumentation%s coming with this application includes the list\n"
+"of features in the %sintroduction%s."
+msgstr ""
+"%sdocumentation%s koja ide uz ovu aplikaciju ukljućuje listu \n"
+"karakeristika u %sintroduction%s."
+
+#: editor.php:17
+#, php-format
+msgid ""
+"No release of the FreeDict-Editor has been made yet.\n"
+"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
+"module from %sSVN%s and try compiling it yourself:"
+msgstr ""
+"Nikakvo izdanje Freedict-Editora nije još urađena dosad.\n"
+"Možete apraviti anonimnu provjeru na <tt>freedict-editor</tt>\n"
+"modulu sa %sSVN%s i pokušati kompilirati sami:"
+
+#: editor.php:26
+#, php-format
+msgid "For the %srequirements%s, please also refer to the documentation."
+msgstr ""
+"Za %srequirements%s, molimo također pregledajte dokumentaciju."
+
+#: editor.php:29
+#, php-format
+msgid ""
+"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
+"<i>etch</i> by <i>unstable</i> if you use unstable):"
+msgstr ""
+"Ako upotrebljavate %sDebian%s etch ili nestabilno, možete dodati sljedeće važem %s"
+"zamjenite <i>etch</i> sa <i>unstable</i> ako upotrebljavate nestabilnu verziju):"
+
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
+msgid "DICT servers"
+msgstr ""
+"DICT serveri"
+
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
+msgid "on Windows/Linux"
+msgstr ""
+"na Windows/Linux"
+
+#: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
+msgid "Mobipocket"
+msgstr ""
+"Mobipocket"
+
+#: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
+#: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
+msgid "on WinCE/Palm"
+msgstr ""
+"na WinCE/Palm" 
+
+#: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
+msgid "on Zaurus/Qt"
+msgstr ""
+"Na Zaurus/Qt"
+
+#: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
+#: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
+msgid "Download / Matrix View"
+msgstr ""
+"Skinuti / Matrix View"
+
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
+#, php-format
+msgid "All downloads are for platform %s."
+msgstr ""
+"Sva preuzimanja su za platforme %s."
+
+#: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
+#, php-format
+msgid ""
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
+msgstr ""
+"Druga aplikacija koja preuzima taj format fajla je %1sWordtrans%2s, "
+"aplikacija KDE-a "
+
+#: flags-bedic.php:40 flags-dict-tgz.php:40 flags-evolutionary.php:40
+msgid ""
+"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
+"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
+"     similar to stardict as it doesn't use a client/server\n"
+"     approach like"
+msgstr ""
+"BEDic ima dva frontend-a: ZBEDic, koji radi na Zaurus-u\n"
+"     Linux PDA od Sharp-a, i QBEDic, koji rade na Linux/Qt. BeDic je\n"
+"     sličan stardict-u po tome što ne koristi klijent/server\n"
+"     pristup"
+
+#: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
+msgid "Select your language combination!"
+msgstr ""
+"Izaberite vašu kombinaciju jezika!"
+
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
+msgid "Source Language / Size in MB"
+msgstr ""
+"Izvorni Jezik / Veličina u MB"
+
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
+msgid "Destination<br />Language"
+msgstr ""
+"Jezik <br /> destinacije"
+
+#: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
+msgid ""
+"Please click on the links to get to the SourceForge\n"
+"Download Mirror selection page. Right-Click and Save-As will not work\n"
+"from here!"
+msgstr ""
+"Molimo kliknite na linkove da bi ste pristupili SourceForge\n"
+"stranici selekcije ogledala preuzimanja. Desni klik i Spasiti kao neće funkcionisati odavde!"
+
+#: list.php:6
+msgid "Download / List View"
+msgstr ""
+"Preuzimanje / List View"
+
+#: list.php:10
+msgid "Detailed Dictionary Overview"
+msgstr ""
+"Detaljni Pregled Riječnika"
+
+#: list.php:14
+msgid "Language &amp; Project"
+msgstr ""
+"Jezik &amp; Projekat"
+
+#: list.php:15
+msgid "Maintainer"
+msgstr ""
+"Maintainer"
+
+#: list.php:16
+msgid "Headwords"
+msgstr ""
+"Glavne Riječi"
+
+#: list.php:17
+msgid "Version"
+msgstr ""
+"Verzija"
+
+#: list.php:18
+msgid "Last Changed"
+msgstr ""
+"Zadnja promjena"
+
+#: list.php:19 weblang.php:29
+msgid "Status"
+msgstr ""
+"Statut"
+
+#: list.php:20
+msgid "Version for / Size in MB"
+msgstr ""
+"Verzija za / Veličina u MB"
+
+#: menu.php:7 menu.php:10
+msgid "Menu"
+msgstr ""
+"Meni"
+
+#: menu.php:19 overview.php:4
+msgid "Overview"
+msgstr ""
+"Pregled"
+
+#: menu.php:22
+msgid "Download databases"
+msgstr ""
+"Datoteke preuzimanja"
+
+#: menu.php:25
+msgid "Platform"
+msgstr ""
+"Platforme"
+
+#: menu.php:26
+msgid "Application"
+msgstr ""
+"Aplikacija"
+
+#: menu.php:30
+msgid "Windows &amp; Linux"
+msgstr ""
+"Windows &amp; Linux"
+
+#: menu.php:31
+msgid "DICT servers (tgz)"
+msgstr ""
+"DICT serveri (tgz)"
+
+#: menu.php:35
+msgid "Debian Linux"
+msgstr ""
+"Debian Linux"
+
+#: menu.php:36
+msgid "dictd"
+msgstr ""
+"dicttd"
+
+#: menu.php:40
+msgid "WinCE &amp; Palm"
+msgstr ""
+"WinCE &amp; Palm"
+
+#: menu.php:55
+msgid "Detailed List"
+msgstr ""
+"Detaljna Lista"
+
+#: menu.php:64
+msgid "FreeDict Online Servers"
+msgstr ""
+"FreeDict online serveri"
+
+#: menu.php:76
+msgid "SourceForge Project Page"
+msgstr ""
+"SourceForge Stranica Projekta"
+
+#: menu.php:81
+msgid "Mailinglists"
+msgstr ""
+"Nailing Liste"
+
+#: menu.php:83
+msgid "Bugs"
+msgstr ""
+"Kvar"
+
+#: menu.php:85
+msgid "Wiki"
+msgstr ""
+"Wiki"
+
+#: menu.php:88 weblang.php:5 weblang.php:9
+msgid "Translate this Website"
+msgstr ""
+"Prevedi ovu Web stranicu"
+
+#: menu.php:93
+msgid "FreeDict Project"
+msgstr ""
+"FreeDict Projekat"
+
+#: overview.php:8
+msgid "free bilingual dictionaries"
+msgstr ""
+"besplatni bilingvalni riječnici"
+
+#: overview.php:10
+#, php-format
+msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
+msgstr ""
+"Horst Eyermann, Michael Bunk i %1$smnogo drugih%2$s"
+
+#: overview.php:14
+msgid ""
+"On this page you can find translating dictionary databases.\n"
+"The databases are free. That means they are available\n"
+"under the GNU General Public Licence or a less restrictive\n"
+"licence. Check with the licence of the respective database!"
+msgstr ""
+"Na ovoj stranici možete naći datoteke prijevodnih riječnika.\n"
+"Datoteke su besplatne. To znaći da su dostupne.\n"
+"u okviru GNU General Public Licence ili manje restriktivne licence.\n"
+"Provjerite licencu dotične datoteke!"
+
+#: overview.php:19
+#, php-format
+msgid ""
+"The databases are available in XML. We support the conversion of FreeDict \n"
+"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
+"DICT dictionary server%2$s and other\n"
+"similar servers. Our own dictionary front-end can be found at %3$shttp://"
+"freedict.org/dict%2$s. Please note that\n"
+"on that page, you can also install a plugin that will let you query FreeDict "
+"dictionaries straight from your\n"
+"browser search window."
+msgstr ""
+"Dqtoteke su dostupne u XML-u. Podržavamo pretvaranje Freedict \n"
+"datoteka od svog izvornog %4$sTEI%2$s formata za upotrebu sa %1$sdictd, "
+"DICT riječnik server %2$s i drugih\n"
+"sličnih servera. Frontend našeg vlastitog riječnika možete naći na "
+"%3$shttp://freedict.org/dict%2$s. Molimo zabilježite da sa te stranice "
+"možete također intalirati plugin koji će vam omogućiti da pretražite FreeDict "
+"riječnike direktno sa\n"
+"prozora pretrage vašeg browsera."
+
+#: overview.php:26
+msgid ""
+"But there are other applications for our databases as well. You could use\n"
+"them to generate wordlists for spellcheckers and to create new dictionaries, "
+"to import them \n"
+"into your own terminological database and even to print your own dictionary "
+"with XSL-FO."
+msgstr ""
+"Ali postoje i druge aplikacije za naše datoteke također. Moožete\n"
+"ih upotrebiti da generirate liste riječi za pravopisne provjernike i stvoriti "
+"nove riječnike, da bi ih importirali \n"
+"u vašu terminološku datoteku pa čak i tiskati vaš lični riječnik "
+"sa XSL-FO." 
+
+#: overview.php:30
+msgid ""
+"If you would like to see any other language included,\n"
+"please read the HOWTO and join this project! Your help is appreciated\n"
+"and needed, also for improving the quality of the databases."
+msgstr ""
+"Ako želite vidjeti bilo koji dodatni jeziki,\n"
+"molimo pročitajte HOWTO i pridružite se projektu! Vaša pomoč je cijenjena\n"
+"i potrebna, tako i za poboljšanje kvaliteta datoteka."
+
+#: overview.php:37
+msgid ""
+"Most resources are hosted by SourceForge:\n"
+"Please support them also. Without SourceForge, FreeDict would\n"
+"not have come so far!"
+msgstr ""
+"Veličina resursa se nalazi na SourceForge:\n"
+"Molimo podržavajte ih također. Bez SourFroge-a, FreeDict ne bi\n"
+"dotle stigao!" 
+
+#: overview.php:41
+msgid ""
+"This project was started in 2000 by Horst Eyermann. The databases\n"
+"are a compilation of various free sources. Please consult the\n"
+"respective TEI headers, READMEs and 00-database-info entries.\n"
+"The first databases were derived from Ergane."
+msgstr ""
+"Ovaj projekat je pokrenut 2000. godine od Horst Evermann-a. Datoteke\n"
+"su kompilacije raznih besplanih izvora. Molimo pregledajte\n"
+"dotične TEI headers-e, README fajlove i 00-database-info unose.\n"
+"Prve datoteke su izvedene sa Ergane-a."
+
+#: rock.php:4 rock.php:9
+msgid "Rock Linux Packages"
+msgstr ""
+"Rock Linux Paketi"
+
+#: rock.php:11
+#, php-format
+msgid ""
+"The %1$sRock Linux%2$s Distribution Build Kit includes a\n"
+"dictd package as well as packages of the FreeDict dictionaries in the dictd\n"
+"database format. For Rock 2.0, when dictd/FreeDict packages were not yet "
+"part\n"
+"of the proper distribution, you have to get their .desc files from the\n"
+"subversion repository and build the packages (which will install the files "
+"at\n"
+"the same time):"
+msgstr ""
+"%1$sRock Linux%2$s Build Kit distribucijq uključuje\n"
+"dictdt paket kao i paketi FreeDict riječnika u formatu dictd\n"
+"datoteke. Za Rock 2.0, kada dictdt/FreeDict paketi nisu još bili "
+"dio\n"
+"ispravne distribucije, trebate uzeti njihove .desc fajlove sa\n"
+"skladišta podverzije i osnovati pakete (koji će instalirati fajlove "
+"u\n"
+"isto vrijeme):"
+
+#: rock.php:35
+msgid ""
+"Using the stone tool you can activate dictionaries for use\n"
+"with dictd. The stone script is included in the dictd package, but was not "
+"included\n"
+"in the 2.0 release of Rock Linux."
+msgstr ""
+"Uz stone alatke možete aktivirati riječnike za upotrebu sa dictd.\n"
+"Stone skript je uključen u dictd paketu, ali nije bio "
+"u verziji 2.0 Rock Linux-a."  
+
+#: rock.php:39
+msgid ""
+"Please note that the project fork \"t2\" does not include any\n"
+"    freedict-* packages."
+msgstr ""
+"Molimo zabilježite da sporedni projekat \"t2\" ne uključuje nijedan\n"
+"    freedict-* paket."
+
+#: weblang.php:12
+msgid ""
+"To make this website available in another language,\n"
+"please download the file below, add the translations for your language\n"
+"below the English translations and email the file to\n"
+"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+msgstr ""
+"Da bi ova web stranica bila dostupna na drugom jeziku,\n"
+"molimo preuzmite fajl niže, dodajte prijevode za vaš jezik\n"
+"ispod engleskih prijevoda i pošaljite mailom:\n"
+"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+
+#: weblang.php:19
+msgid ""
+"If you want to update an existing translation, probably\n"
+"because it leaves some part of the website untranslated, you can get the\n"
+"<tt>.po</tt> file from SVN:"
+msgstr ""
+"Ako želite ažurirati postojeći prijevod, vjerovatno\n"
+"što ostavlja dio web stranice neprevedeno, možete preuzeti\n"
+"<tt>.po</tt> fajl sa SVN-a:"
+
+#: weblang.php:25
+msgid "Translation status for the website languages"
+msgstr ""
+"Statut prijevoda za jezike web stranice"
+
+#: weblang.php:28
+msgid "Language"
+msgstr ""
+"Jezik"
+
+#: inc/gettext.php:91
+msgid "Website Language: "
+msgstr ""
+"Jezik web stranice"
+
+#: inc/gettext.php:93 inc/langcodes.php:17
+msgid "English"
+msgstr ""
+"Engleski"
+
+#: inc/langcodes.php:5
+msgid "Afrikaans"
+msgstr ""
+"Afrikaanski"
+
+#: inc/langcodes.php:6
+msgid "Arabic"
+msgstr ""
+"Arapski"
+
+#: inc/langcodes.php:7
+msgid "Asturian"
+msgstr ""
+"Asturijanski"
+
+#: inc/langcodes.php:8
+msgid "Belarusian"
+msgstr ""
+"Bjeloruski"
+
+#: inc/langcodes.php:9
+msgid "Breton"
+msgstr ""
+"Bretonski"
+
+#: inc/langcodes.php:10
+msgid "Catalan"
+msgstr ""
+"Katalonski"
+
+#: inc/langcodes.php:11
+msgid "Czech"
+msgstr ""
+"Češki"
+
+#: inc/langcodes.php:12
+msgid "Sorani"
+msgstr ""
+"Soranijski"
+
+#: inc/langcodes.php:13
+msgid "Welsh"
+msgstr ""
+"Velški"
+
+#: inc/langcodes.php:14
+msgid "Bulgarian"
+msgstr ""
+"Bugarski"
+
+#: inc/langcodes.php:15
+msgid "Danish"
+msgstr ""
+"Danski"
+
+#: inc/langcodes.php:16
+msgid "Dutch"
+msgstr ""
+"Nizozemski"
+
+#: inc/langcodes.php:18
+msgid "Modern Greek"
+msgstr ""
+"Moderni Grčki"
+
+#: inc/langcodes.php:19
+msgid "French"
+msgstr ""
+
+#: inc/langcodes.php:20
+msgid "Scottish Gaelic"
+msgstr ""
+"Škotski galski"
+
+#: inc/langcodes.php:21 inc/langcodes.php:26
+msgid "Irish"
+msgstr ""
+"Irski"
+
+#: inc/langcodes.php:22
+msgid "German"
+msgstr ""
+"Njemački"
+
+#: inc/langcodes.php:23
+msgid "Hindi"
+msgstr ""
+"Hindi"
+
+#: inc/langcodes.php:24
+msgid "Croatian"
+msgstr ""
+"Hrvatski"
+
+#: inc/langcodes.php:25
+msgid "Hungarian"
+msgstr ""
+"Mađarski"
+
+#: inc/langcodes.php:27
+msgid "Icelandic"
+msgstr ""
+"Islandski"
+
+#: inc/langcodes.php:28
+msgid "Italian"
+msgstr ""
+"Taljanski"
+
+#: inc/langcodes.php:29
+msgid "Khasi"
+msgstr ""
+"Khasijski"
+
+#: inc/langcodes.php:30
+msgid "Kurmanji"
+msgstr ""
+"Kurmanji"
+
+#: inc/langcodes.php:31
+msgid "Kurdish"
+msgstr ""
+"Kurdski"
+
+#: inc/langcodes.php:32
+msgid "Latin"
+msgstr ""
+"Latinski"
+
+#: inc/langcodes.php:33
+msgid "Lithuanian"
+msgstr ""
+"Litvanski"
+
+#: inc/langcodes.php:34
+msgid "Macedonian"
+msgstr ""
+"Makedonski"
+
+#: inc/langcodes.php:35
+msgid "Norwegian Nynorsk"
+msgstr ""
+"Norveški Nynorsk"
+
+#: inc/langcodes.php:36
+msgid "Norwegian BokmÃ¥l"
+msgstr ""
+"Norveški Bokmal"
+
+#: inc/langcodes.php:37
+msgid "Japanese"
+msgstr ""
+"Japanski"
+
+#: inc/langcodes.php:38
+msgid "Occitan"
+msgstr ""
+"Oksitanski"
+
+#: inc/langcodes.php:39
+msgid "Polish"
+msgstr ""
+"Poljski"
+
+#: inc/langcodes.php:40
+msgid "Portuguese"
+msgstr ""
+"Portugalski"
+
+#: inc/langcodes.php:41
+msgid "Romanian"
+msgstr ""
+"Rumunski"
+
+#: inc/langcodes.php:42
+msgid "Russian"
+msgstr ""
+"Ruski"
+
+#: inc/langcodes.php:43
+msgid "Sanskrit"
+msgstr ""
+"Sanskritski"
+
+#: inc/langcodes.php:44
+msgid "Gaelic Scottish"
+msgstr ""
+"Galski Škotski"
+
+#: inc/langcodes.php:45
+msgid "Slovak"
+msgstr ""
+"Slovački"
+
+#: inc/langcodes.php:46
+msgid "Spanish"
+msgstr ""
+"Španjolski"
+
+#: inc/langcodes.php:47
+msgid "Serbo-Croatian"
+msgstr ""
+"Srpsko-Hrvatski"
+
+#: inc/langcodes.php:48 inc/langcodes.php:49
+msgid "Swahili"
+msgstr ""
+"Svahili"
+
+#: inc/langcodes.php:50
+msgid "Swedish"
+msgstr ""
+"Švedski"
+
+#: inc/langcodes.php:51
+msgid "Turkish"
+msgstr ""
+"Turski"
+
+#: inc/langcodes.php:52
+msgid "Ukrainian"
+msgstr ""
+"Ukrajinski"
+
+#: inc/legend.php:1
+msgid ""
+"List of table cells with differing background colours representing examplary "
+"dictionary states"
+msgstr ""
+"Lista čelija sa različitim bojama u pozadini predstavljajući primjere "
+"stanja riječnika"
+
+#: inc/legend.php:5
+msgid "Color Legend"
+msgstr ""
+"Boja Legende"
+
+#: inc/legend.php:14
+msgid "Dictionary Status was marked as 'stable'"
+msgstr ""
+"Statut riječnika je obilježen kao 'stabilan'"
+
+#: inc/legend.php:16
+msgid ""
+"Dictionary Status was marked as 'big enough to be useful' (from 10000 "
+"entries on)"
+msgstr ""
+"Statut riječnika je obilježen kao 'dovoljno velik da bi bio koristan' (od 10000 "
+"pa nadalje)"
+
+#: inc/legend.php:18
+msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
+msgstr ""
+"Statut riječnika je obilježen kao 'premal' (manje od 10000 unosa)"
+
+#: inc/legend.php:20
+msgid "Dictionary Status was marked as 'low quality'"
+msgstr ""
+"Statut riječnika je obilježen kao 'loš kvalitet'"
+
+#: inc/legend.php:22
+msgid "Dictionary Status was not given or is 'unknown'"
+msgstr ""
+"Statut riječnika nije obilježen ili je 'nepoznat'"
+
+#: inc/legend.php:26
+msgid ""
+"The numbers for the platform downloads represent the download\n"
+"  sizes in Megabytes."
+msgstr ""
+"Brojevi za preuzimanja sa platforme pokazuje veličine preuzimanja\n" 
+" u Megabajtima."
+
+#: inc/legend.php:27
+msgid ""
+"A small 'u' instead of a download link means\n"
+"  that the respective dictionary is not supported on that platform."
+msgstr ""
+"Mali 'u' umjesto linka preuzimanja znaći\n"
+"  da dotični riječnik nije podnešen na toj platformi."
+
+#: inc/legend.php:29
+msgid ""
+"This is currently always due to characters of the dictionary not being\n"
+"  encodable or displayable for/on the platform."
+msgstr ""
+"To je trenutno uvijek zato što neke simbole u riječniku nije moguće\n"
+"  enkodirati ili pokazati za/na platformi."
