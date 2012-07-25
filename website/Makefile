@@ -1,4 +1,4 @@
-LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT nl_NL
+LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT nl_NL bs_BA
 POS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES)))
 MOS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES)))
 

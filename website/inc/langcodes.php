@@ -7,6 +7,7 @@ $Langcode2english = array(
  'ast' => _('Asturian'),
  'bel' => _('Belarusian'),
  'bre' => _('Breton'),
+ 'bos' => _('Bosnian'),
  'cat' => _('Catalan'),
  'ces' => _('Czech'),
  'ckb' => _('Sorani'),

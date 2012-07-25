@@ -24,6 +24,7 @@
 
  global $twoletters2threeletters;
  $twoletters2threeletters = array(
+  'bs' => 'bos',
   'de' => 'deu',
   'en' => 'eng',
   'fr' => 'fra',
@@ -37,6 +38,7 @@
  // the following also defines which locales we offer
  global $langtag2locale;
  $langtag2locale = array(
+  'bs' => 'bs_BA',
   'de' => 'de_DE',
   'fr' => 'fr_FR',
   'kha' => 'kha_IN',
