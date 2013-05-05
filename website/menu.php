@@ -60,7 +60,7 @@ require_once 'inc/gettext.php';
 
 
 <tr><td class="menu">
- <a href="http://luetzschena-stahmeln.de/dictd/index.php?freedictonly"
+ <a href="http://ccls-online.de/dictd/index.php?freedictonly"
   target="_top"><?php echo _('FreeDict Online Servers') ?></a>
 </td></tr>
 
