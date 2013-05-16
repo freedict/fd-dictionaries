@@ -33,7 +33,7 @@ $platform = 'deb';
   '</a>') ?></p>
 
   <p><?php printf(_('This page might as well be of interest: %1$sDebian FreeDict Packages team%2$s.'),
-  '<a href="http://pkg-freedict.alioth.debian.org/" target="_top">',
+  '<a href="http://wiki.debian.org/freedict" target="_top">',
   '</a>') ?></p>
 
 <? require_once 'inc/footer.php';

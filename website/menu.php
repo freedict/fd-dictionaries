@@ -75,9 +75,9 @@ require_once 'inc/gettext.php';
 <tr><td class="menu"><a href="http://sourceforge.net/projects/freedict/"
  target="_parent"><?php echo _('SourceForge Project Page') ?></a></td></tr>
 <tr><td class="menu"><ul>
- <li><small><a href="http://sourceforge.net/scm/?type=svn&amp;group_id=1419"
+ <li><small><a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/"
   target="_parent">SVN</a><br /></small></li>
- <li><small><a href="http://sourceforge.net/mail/?group_id=1419"
+ <li><small><a href="https://sourceforge.net/p/freedict/mailman/?source=navbar"
   target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
  <li><small><a href="http://sourceforge.net/tracker/?group_id=1419&amp;atid=101419"
   target="_parent"><?php echo _('Bugs') ?></a><br /></small></li>

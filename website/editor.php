@@ -17,17 +17,17 @@ of features in the %sintroduction%s."), '<a href="editordoc.html">', '</a>',
 <p><?php printf(_("No release of the FreeDict-Editor has been made yet.
 You can do an anonymous check out the <tt>freedict-editor</tt>
 module from %sSVN%s and try compiling it yourself:"),
-'<a href="http://sourceforge.net/scm/?type=svn&amp;group_id=1419">', '</a>') ?></p>
+'<a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/freedict-editor/">', '</a>') ?></p>
 
 <blockquote cite="http://sourceforge.net/scm/?type=svn&amp;group_id=1419">
-  <small><tt>svn co <a href="https://freedict.svn.sourceforge.net/svnroot/freedict/trunk/freedict-editor">https://freedict.svn.sourceforge.net/svnroot/freedict/trunk/freedict-editor</a> freedict-editor</tt></small>
+  <small><tt>svn co <a href="https://svn.code.sf.net/p/freedict/code/trunk/freedict-editor/">https://svn.code.sf.net/p/freedict/code/trunk/freedict-editor/</a> freedict-editor</tt></small>
 </blockquote>
 
 <p><?php printf(_("For the %srequirements%s, please also refer to the documentation."),
   '<a href="editordoc.html#freedict-editor-requirements">', '</a>') ?></p>
 
 <p><?php printf(_("If you use %sDebian%s etch or unstable, you can add this to your %s (replace <i>etch</i> by <i>unstable</i> if you use unstable):"),
-  '<a href="http://debian.org/">', '</a>', '<tt>/etc/apt/sources.list</tt>') ?></p>
+  '<a href="http://debian.org/" target="_parent">', '</a>', '<tt>/etc/apt/sources.list</tt>') ?></p>
 
 <blockquote><small><tt>deb <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main<br />
 deb-src <a href="http://freedict.org/debian-repository">http://freedict.org/debian-repository</a> etch main</tt></small></blockquote>
