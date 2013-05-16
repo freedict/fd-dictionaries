@@ -12,7 +12,7 @@ use File::stat;
 use POSIX qw(strftime);
 use URI::Escape;
 
-our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l, $opt_u);
+our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l, $opt_u, $opt_s);
 
 sub printd
 {
@@ -22,12 +22,12 @@ sub printd
 
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
 our $dbfile = "$FREEDICTDIR/freedict-database.xml";
-getopts('vhald:fru');
+getopts('vhald:frus');
 
 sub HELP_MESSAGE
 {
   print <<EOT;
-$0 [options] (-a | -d <la1-la2> | -r)
+$0 [options] (-a | -d <la1-la2> | -r[s] | -u)
 
 Gather metadata from TEI files in FreeDict file tree
 and save it in the XML file $dbfile.  Also collect information about
@@ -48,6 +48,7 @@ Options:
 	even if its modification time is less than the last update
 -l	leave $dbfile untouched
 -r	extract released packages from the SourceForge file releases
+-s	skip calling rsync (useful when local files are up to date anyway)
 -u	remove metadata for unavailable (renamed or deleted) dictionaries
 
 The produced freedict-database.xml has the following schema:
@@ -367,8 +368,11 @@ sub fdict_extract_releases
 
   my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
   my $rsynccmd = "rsync -a" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
-  printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
-  system($rsynccmd) unless defined $ENV{'SKIPRSYNC'};
+  unless($opt_s)
+  {
+    printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
+    system($rsynccmd)
+  }
   my $findcmd = "find $FREEDICTDIR/frs -type f -print0";
   open my $fh, "$findcmd|" or die $!;
   my $found = 0;
@@ -376,7 +380,11 @@ sub fdict_extract_releases
   close $fh;
   for my $f (@filenames)
   {
-    next unless $f =~ m"/frs/freedict/([^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+))$";
+    unless($f =~ m"/frs/freedict/([^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+))$")
+    {
+      printd "Skipping not matching path: $f\n";
+      next
+    }
 
     $found++;
 
