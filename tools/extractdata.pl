@@ -10,8 +10,9 @@ use XML::DOM;
 use File::stat;
 use File::stat;
 use POSIX qw(strftime);
+use URI::Escape;
 
-our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l);
+our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l, $opt_u);
 
 sub printd
 {
@@ -21,7 +22,7 @@ sub printd
 
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
 our $dbfile = "$FREEDICTDIR/freedict-database.xml";
-getopts('vhald:fr');
+getopts('vhald:fru');
 
 sub HELP_MESSAGE
 {
@@ -41,12 +42,13 @@ Options:
 
 -h	help & exit
 -v	verbose
--a	extract metadata from all available databases
+-a	extract metadata from all available dictionaries
 -d	extract data only from database la1-la2
 -f	force update of extracted data from TEI file,
 	even if its modification time is less than the last update
 -l	leave $dbfile untouched
 -r	extract released packages from the SourceForge file releases
+-u	remove metadata for unavailable (renamed or deleted) dictionaries
 
 The produced freedict-database.xml has the following schema:
 
@@ -85,7 +87,8 @@ EOT
   exit
 }
 
-HELP_MESSAGE if $opt_h;
+
+HELP_MESSAGE if $opt_h or (!$opt_d && !$opt_a && !$opt_r && !$opt_u);
 
 sub contains_dictionary
 {
@@ -248,10 +251,11 @@ sub fdict_extract_metadata
 
 sub fdict_extract_all_metadata
 {
-  my($dirname, $doc) = @_;
+  my($dirname, $doc, $unavailablemode) = @_;
   my($dir, $entry);
 
-  printd "Getting metadata of all databases\n";
+  if(defined $unavailablemode) { printd "Removing unavailable dictionaries\n" }
+  else { printd "Getting metadata of all dictionaries\n" };
   opendir $dir, $dirname;
   my @entries;
   while($entry = readdir($dir))
@@ -259,6 +263,24 @@ sub fdict_extract_all_metadata
     next unless -d $dirname.'/'.$entry;
     next if $entry !~ '^(\p{IsAlpha}{3})-(\p{IsAlpha}{3})$';
     push @entries, $entry
+  }
+
+  if(defined $unavailablemode)
+  {
+    my $ds = $doc->getElementsByTagName("dictionary");
+    my $n = $ds->getLength;
+    my $removed = 0;
+    for(my $i = 0; $i < $n; ++$i)
+    {
+      my $node = $ds->item($i);
+      my $name = $node->getAttributeNode("name")->getValue;
+      next if grep /^$name$/, @entries;
+      printd "Unavailable dictionary: $name\n";
+      $node->setParentNode(undef);
+      ++$removed;
+    }
+    printd "Removed $removed unavailable dictionaries\n";
+    return
   }
   foreach $entry (sort @entries)
   { fdict_extract_metadata $dirname, $entry, $doc }
@@ -360,6 +382,8 @@ sub fdict_extract_releases
 
     # find $URL, $releasedate, $size
     my $path = $1;
+    my @paths = split '/', $path;
+    $path = join '/', map {uri_escape $_} @paths;
     my $URL = "http://sourceforge.net/projects/freedict/files/$path/download";
 
     my $sb = stat($f);
@@ -377,11 +401,8 @@ sub fdict_extract_releases
 
 printd "Using FREEDICTDIR=$FREEDICTDIR\n";
 
-if($opt_d && $opt_a)
+if($opt_d && ($opt_a || $opt_u))
 { print STDERR "Only one of -d and -a may be given at the same time.\n"; exit }
-
-if(!$opt_d && !$opt_a && !$opt_r)
-{ print STDERR "One of -h, -d, -a or -r must be given.\n"; exit }
 
 my $parser = new XML::DOM::Parser;
 
@@ -403,6 +424,7 @@ else
 
 fdict_extract_metadata $FREEDICTDIR, $opt_d, $doc if $opt_d;
 fdict_extract_all_metadata $FREEDICTDIR, $doc if $opt_a;
+fdict_extract_all_metadata $FREEDICTDIR, $doc, 'unavailable' if $opt_u;
 fdict_extract_releases $doc if $opt_r;
 
 if($opt_l)
