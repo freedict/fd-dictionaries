@@ -2,8 +2,8 @@
 /* Version 2011, august 23. Licence GNU/GPL 2 or later, front part added */
 /* All the header part (bottom) has been taken from the 'freedict-dictionary.css' for the swa-eng Freedict dictionary  */
 
-html, TEI {	margin-right:10%;
-	margin-left:15%;
+TEI {	margin-right:10%;
+	margin-left:10%;
 	padding-bottom:70px;
 	font-family: sans-serif;
 	/*display:none; */
@@ -38,9 +38,9 @@ item{	display:block;
 
 xr,date,head {display:block;}
 
-/*head { 	font-weight:bold;
+head { 	font-weight:bold;
 	text-transform:uppercase;
-}*/
+}
 
 /* DICO */
 entry {	display:block;}
@@ -130,8 +130,7 @@ grmGrp:after {content:""}
 
 /*************** the front part ***************/
 front {display:block; border-bottom:solid black 1px; margin-bottom: 3em; padding-bottom: 1em;} 
-div {display:block; margin-bottom: 2em; padding-bottom:1em;}
-head {display:block;color:blue; font-size:larger; margin-bottom: 1em;}
+h1 {display:block;color:blue; font-size:larger; margin-bottom: 1em;}
 
 /* Following part (header part) has been taken from Piotr Bański work for swa-eng dictionary, see comments */
 /* CSS for the Swahili-English FreeDict dictionary, by Piotr Bański (bansp in the domain of o2.pl) */
@@ -140,7 +139,6 @@ head {display:block;color:blue; font-size:larger; margin-bottom: 1em;}
 /*************** the header part ***************/
 title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
 fileDesc, encodingDesc, revisionDesc, change, item, pubPlace, list > head {display:block; margin-bottom: 1em; }
-
 
 titleStmt > title, edition { font-weight:bold}
 
