@@ -1,0 +1,38 @@
+2013-11-04 Piotr Bański
+  * minor fixes in Makefile and the source, to make it
+    work with the Freedict pipeline; added ChangeLog
+  * maintenance release: 0.2.9 (I believe that a more correct 
+    version number should be something like 0.8.1)  
+
+<revisionDesc>
+    <change n="0.2.8" when="2013-06-04"><date>2013-06-04 </date><name>Denis Arnaud</name>
+        Some words and examples added, corrections. Gen and pos added.</change>
+    <change n="0.2.8" when="2013-06-04"><date>2013-06-04 </date><name>Denis Arnaud</name>
+        Some words and examples added, corrections. Gen and pos added.</change>
+    <change n="0.2.7" when="2011-09-05"><date>2011-09-05 </date><name>Denis Arnaud</name>
+        Some words and examples added, corrections. Gen and pos added.</change>
+    <change n="0.2.6" when="2011-09-05"><date>2011-09-05 </date><name>Denis Arnaud</name>
+        Some words or examples added, corrections. Gen and pos added.</change>
+    <change n="0.2.5" when="2011-08-05"><date>2011-08-05 </date><name>Denis Arnaud</name>
+        Some words added, corrections. Gen and pos added.</change>
+    <change n="0.2.4" when="2011-07-06"><date>2011-07-06 </date><name>Denis Arnaud</name>
+        Some words added, corrections and mark up improvments (TEI P5 compliance), gender
+        and parts of speech added.</change>
+    <change n="0.2.3" when="2010-11-10"><date>2010-11-10 </date><name>Denis Arnaud</name>
+        Some words added, corrections and mark up improvments: sense/cit(without attribute)
+        and cit@subtype for literal translation. All the regular plurals have been marked
+        up, some irregular plurals may still be in lbl tag. Next steps will be to merge
+        entries with the same headword (number of character is one of the freelang file
+        limits) and to remove redundant infos (ie there are two entries for a-dreuz: a-dreuz
+        and dreuz (a-)).</change>
+    <change n="0.2.2" when="2010-07-18"><date>2010-07-18 </date><name>Denis Arnaud</name>
+        Some words added, corrections. Still not yet comply with real TEI P5.</change>
+    <change n="0.2.1" when="2010-06-18"><date>2010-06-18 </date><name>Denis Arnaud</name>
+        Some words added (mostly computer sciences words). Mark up improvments. Additions
+        could be entry, sense or cit. All of those additions have been marked with attribute
+        who and sometimes src. Some entries, sense or cit have been marked with rev
+        attribute, meaning to be reviewed.</change>
+    <change n="0.2" when="2009-11-25"><date>2009-11-25 </date><name>Denis Arnaud</name>
+        Conversion of wb file to TEI file with Linguae software
+        (http://linguae.stalikez.info/).</change>
+</revisionDesc>
