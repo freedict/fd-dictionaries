@@ -31,16 +31,18 @@ p {
 	font-style:italic; */
 }
 /* LISTES */
-list {	display:block;}
+/*list {	display:block;}
 
 item{	display:block;
-	text-align:center;}
+	text-align:center;}*/
 
 xr,date,head {display:block;}
 
 head { 	font-weight:bold;
 	text-transform:uppercase;
 }
+
+idno {display:none;}
 
 /* DICO */
 entry {	display:block;}
@@ -94,8 +96,8 @@ form[type="pastp"]:before {content:" "}
 form[type="dual"] {display: inline; font-style:italic;}
 form[type="dual"]:before {content:" d: ";color:#000080;}
 
-def:before {content:" ";}
-def{color:purple; font-style:italic;}
+def:before {content:" ";margin-left:50px;}
+def{display:block;color:purple; font-style:italic;}
 
 note{}
 
