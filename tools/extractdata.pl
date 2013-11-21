@@ -290,6 +290,22 @@ sub fdict_extract_all_metadata
 
 ##################################################################
 
+sub compare_version
+{
+  my($v1, $v2) = @_;
+  my @v1 = split /\./, $v1;
+  my @v2 = split /\./, $v2;
+  my $pieces = scalar(@v1);
+  $pieces = scalar(@v2) if scalar(@v2) > $pieces;
+  for(my $i=0; $i<$pieces; $i++)
+  {
+    my $result = ($v1[$i] || 0) <=> ($v2[$i] || 0);
+    return $result unless $result == 0;
+  }
+  return 0;
+}
+
+
 # See
 # http://sourceforge.net/apps/trac/sourceforge/wiki/Release%20files%20for%20download
 # for ideas if it breaks again
@@ -297,11 +313,11 @@ sub update_database
 {
   my($doc, $URL, $size, $release_date) = @_;
 
-  unless($URL =~ qr"^http://sourceforge.net/projects/freedict/files/[^/]+/[^/]+/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([^/]+)/download")
+  unless($URL =~ qr"^http://sourceforge.net/projects/freedict/files/([^/]+/)?[^/]+/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([^/]+)/download")
   { printd "filename in URL '$URL' not recognized\n"; return }
-  my $la1la2 = $2;
-  my $version = $3;
-  my $extension = $4;
+  my $la1la2 = $3;
+  my $version = $4;
+  my $extension = $5;
 
   my $d = contains_dictionary $doc, $la1la2;
   unless($d)
@@ -349,9 +365,13 @@ sub update_database
     return
   }
 
-  # if $version is older release than available in the database,
-  # don't update the database
-  return if $r->getAttribute('version') gt $version;
+  my $v = $r->getAttribute('version');
+  if(compare_version($v, $version) > 0)
+  {
+    printd "\trelease version $version is older than $v available in the database\n";
+    # don't update the database
+    return
+  }
 
   printd "$la1la2: New release for $platform platform. Old: '" .
     $r->getAttribute('version') . "' New: '$version'\n"
@@ -380,7 +400,7 @@ sub fdict_extract_releases
   close $fh;
   for my $f (@filenames)
   {
-    unless($f =~ m"/frs/freedict/([^/]+/[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+).([\w\.]+))$")
+    unless($f =~ m"/frs/freedict/(([^/]+/)?[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+)\.([\w\.]+))$")
     {
       printd "Skipping not matching path: $f\n";
       next
