@@ -38,6 +38,11 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2014-02-09">
+            <date>2014-02-09</date>
+            <name>Sebastian Humenda</name>
+            Fix several double definitions, patched by Debian but not forwarded to FreeDict. Also correct grammatical information along the way.
+         </change
          <change when="2010-10-24">
             <date>2010-10-24</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
@@ -222,11 +227,6 @@
                <cit type="trans">
                   <quote>Afrikander</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Bure</quote>
-               </cit>
-            </sense>
-            <sense n="2">
                <cit type="trans">
                   <quote>Bure</quote>
                </cit>
@@ -1355,11 +1355,6 @@
                   <quote>Bure</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bure</quote>
-               </cit>
-            </sense>
          </entry>
          <entry>
             <form>
@@ -1835,11 +1830,6 @@
                <orth>Duits</orth>
             </form>
             <sense n="1">
-               <cit type="trans">
-                  <quote>deutsch</quote>
-               </cit>
-            </sense>
-            <sense n="2">
                <cit type="trans">
                   <quote>Deutsch</quote>
                </cit>
@@ -4219,9 +4209,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
                   <quote>bei</quote>
                </cit>
                <cit type="trans">
@@ -4230,21 +4217,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
                   <quote>auf</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bei</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zu</quote>
                </cit>
             </sense>
          </entry>
@@ -4899,9 +4872,15 @@
             <form>
                <orth>aandoening</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
                   <quote>Affekt</quote>
+                  <gramGrp>
+                      <gen>m</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Bewegung</quote>
@@ -4910,27 +4889,24 @@
                   </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Gemütsbewegung</quote>
+                  <quote>Rührung</quote>
+                  <gramGrp>
+                      <gen>f</gen>
+                  </gramGrp>
                </cit>
+               <cit type="trans">
+                  <quote>Gemütsbewegung</quote>
+                  <gramGrp>
+                      <gen>f</gen>
+                  </gramGrp>
+               </cit>
+            </sense>
+            <sense n="2">
                <cit type="trans">
                   <quote>Krankheit</quote>
                   <gramGrp>
                      <gen>f</gen>
                   </gramGrp>
-               </cit>
-               <cit type="trans">
-                  <quote>Rührung</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bewegung</quote>
-                  <gramGrp>
-                     <gen>m</gen>
-                  </gramGrp>
-               </cit>
-               <cit type="trans">
-                  <quote>Rührung</quote>
                </cit>
             </sense>
          </entry>
@@ -5128,16 +5104,7 @@
                   <quote>angeben</quote>
                </cit>
                <cit type="trans">
-                  <quote>weisen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>anweisen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>hinweisen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zeigen</quote>
                </cit>
             </sense>
             <sense n="3">
