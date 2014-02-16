@@ -73,9 +73,6 @@ uninstall:
 	$(ADDFREEDICT) --remove $(LANGUAGE) 
 	cd ../$(LANGUAGE)
 
-commit: 
-	cvs -z3 commit
-
 test:
 	nsgmls -s $(LANGUAGE).tei
 
