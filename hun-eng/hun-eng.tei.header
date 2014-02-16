@@ -1,17 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE TEI.2
- PUBLIC "-//TEI P4//DTD Main Document Type//EN"
- "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
- <!ENTITY % TEI.dictionaries "INCLUDE">
- <!ENTITY % TEI.XML 'INCLUDE'>
- <!ENTITY % TEI.linking      "INCLUDE" >
- <!ATTLIST xptr url CDATA #IMPLIED >
- <!ATTLIST xref url CDATA #IMPLIED >
- ]>
-
-<TEI.2>
-  <teiHeader>
-    <fileDesc>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="freedict-P5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader xml:lang="en">
+      <fileDesc>
       <titleStmt>
 	<title>Hungarian-English FreeDict Dictionary</title>
         <respStmt>
@@ -20,17 +11,18 @@
 	</respStmt>
       </titleStmt>
       <editionStmt>
-	<edition>0.2.1</edition>
+	<edition>0.3</edition>
       </editionStmt>
       <extent>139 935 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
-        <availability>
+        <availability status="free">
           <p>Copyright (C) 1999 Vony Attila and Bui Pol</p>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
         <date>2002</date>
         <pubPlace>http://freedict.org/</pubPlace>
+	<idno type="svn">$Id$</idno>
       </publicationStmt>
       <sourceDesc>
         <p>The original version of this file is from 13/Nov/1999,
@@ -49,8 +41,11 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change>
-        <date>2005-03-07</date>
+      <change when="2014-02-16">
+        <respStmt><name>Michael Bunk</name></respStmt>
+        <item>Converted converter from P4 to P5</item>
+      </change>
+      <change when="2005-03-07">
         <respStmt><name>Michael Bunk</name></respStmt>
 	<item>Reimport from source. There are now almost 3000 entries
 	  more, don't know why. Fixes Bug #920855 (Index and dict file
@@ -58,13 +53,11 @@
 	  encoding problem and missing spaces, besides an incorrectly
 	  sorted .index file for dictd.</item>
       </change>
-      <change>
-        <date>2004-12-29</date>
+      <change when="2004-12-29">
         <respStmt><name>Michael Bunk</name></respStmt>
         <item>Converted TEI file from P3 to P4</item>
       </change>
-      <change>
-        <date>2000-11-06</date>
+      <change when="2000-11-06">
         <respStmt><name>Horst Eyermann</name></respStmt>
         <item>Import from source</item>
       </change>

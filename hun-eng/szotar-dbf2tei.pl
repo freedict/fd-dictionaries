@@ -152,13 +152,13 @@ foreach(sort keys %dict)
     #           1590 |     2
     #             30 |     3
 
-    print "  <sense><trans><tr>$t</tr></trans></sense>\n";
+    print "  <sense><cit type=\"trans\"><quote>$t</quote></cit></sense>\n";
   }
 
   print "</entry>\n";
 }
 
-print "</body></text></TEI.2>\n";
+print "</body></text></TEI>\n";
 
 print STDERR "\nFinished.\nLines: $. Records: $n Entries: $entries\n\n"
   if $verbose;
@@ -167,7 +167,7 @@ __END__
 
 =head1 NAME
 
-    szotar-dbf2tei.pl - Convert the "Szotar" Hungarian-English dictionary to TEI
+    szotar-dbf2tei.pl - Convert the "Szotar" Hungarian-English dictionary to TEI P5
 
 =head1 SYNOPSIS
 
@@ -199,7 +199,7 @@ Messages are printed to STDERR.
 
 =head1 AUTHOR AND LICENCE
 
-Author: Michael Bunk, 2006
+Author: Michael Bunk, 2006, 2014
 
 This is free software, licensed under the GPL.
 
