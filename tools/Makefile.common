@@ -246,6 +246,8 @@ uninstall:
 ########################
 
 valid.stamp: $(dictname).tei
+	# way 3
+	xmllint -noout -valid -relaxng freedict-P5.rng $<
 	# way 1
 	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
 	export SP_ENCODING=XML; \
