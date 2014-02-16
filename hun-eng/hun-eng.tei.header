@@ -20,14 +20,14 @@
           <p>Copyright (C) 1999 Vony Attila and Bui Pol</p>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
-        <date>2002</date>
+	<date when="2014-02-16">16th of February 2014</date>
         <pubPlace>http://freedict.org/</pubPlace>
 	<idno type="svn">$Id$</idno>
       </publicationStmt>
       <sourceDesc>
         <p>The original version of this file is from 13/Nov/1999,
 	made by Vony Attila and Bui Pol.
-	Home: <xptr url="http://almos.vein.hu/~vonyoa"/>
+	Home: <ptr target="http://almos.vein.hu/~vonyoa"/>
 	(mindenkori legteljesebb v#ltozat)</p>
       </sourceDesc>
     </fileDesc>
@@ -42,24 +42,24 @@
     </encodingDesc>
     <revisionDesc>
       <change when="2014-02-16">
-        <respStmt><name>Michael Bunk</name></respStmt>
-        <item>Converted converter from P4 to P5</item>
+        <name>Michael Bunk</name>
+        Converted converter from P4 to P5
       </change>
       <change when="2005-03-07">
-        <respStmt><name>Michael Bunk</name></respStmt>
-	<item>Reimport from source. There are now almost 3000 entries
+        <name>Michael Bunk</name>
+	Reimport from source. There are now almost 3000 entries
 	  more, don't know why. Fixes Bug #920855 (Index and dict file
 	  for Hungarian-English dictionary is bad), which included an
 	  encoding problem and missing spaces, besides an incorrectly
-	  sorted .index file for dictd.</item>
+	  sorted .index file for dictd.
       </change>
       <change when="2004-12-29">
-        <respStmt><name>Michael Bunk</name></respStmt>
-        <item>Converted TEI file from P3 to P4</item>
+        <name>Michael Bunk</name>
+        Converted TEI file from P3 to P4
       </change>
       <change when="2000-11-06">
-        <respStmt><name>Horst Eyermann</name></respStmt>
-        <item>Import from source</item>
+        <name>Horst Eyermann</name>
+        Import from source
       </change>
     </revisionDesc>
   </teiHeader>
