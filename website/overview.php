@@ -13,8 +13,8 @@ $title = _('Overview'); require_once 'inc/head.php';
 
 <p><?php echo _('On this page you can find translating dictionary databases.
 The databases are free. That means they are available
-under the GNU General Public Licence or a less restrictive
-licence. Check with the licence of the respective database!') ?></p>
+under the GNU General Public License or a less restrictive
+license. Check with the license of the respective database!') ?></p>
 
 <p><?php printf(_('The databases are available in XML. We support the conversion of FreeDict 
 databases from their native %4$sTEI%2$s format for use with %1$sdictd, the DICT dictionary server%2$s and other
