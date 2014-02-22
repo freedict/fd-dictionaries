@@ -2,7 +2,7 @@
 <!-- This stylesheet converts a TEI dictionary file
      into the c5 format suitable to be processed
      by 'dictfmt -c5' -->
-<!-- $Id: tei2c5.xsl 1167 2011-09-10 20:03:38Z bansp $ -->
+<!-- $Id: tei2c5.xsl 1289 2014-02-16 19:30:59Z humenda $ -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0"
@@ -15,7 +15,7 @@
 
   <xsl:strip-space elements="*"/>
 
-  <xsl:variable name="stylesheet-main_svnid">$Id: tei2c5.xsl 1167 2011-09-10 20:03:38Z bansp $</xsl:variable>
+  <xsl:variable name="stylesheet-main_svnid">$Id: tei2c5.xsl 1289 2014-02-16 19:30:59Z humenda $</xsl:variable>
 
   <!-- "main()" function -->
   <xsl:template match="/">
@@ -43,12 +43,22 @@
 
   <xd:doc>Use either the ref of type='home' or possibly make a mistake and use the first ref under sourceDesc.</xd:doc>
   <xsl:template name="t00-database-url">
-    <xsl:text>_____&#x0A;&#x0A;</xsl:text>
-    <xsl:text>00-database-url&#x0A;</xsl:text>
-    <xsl:value-of
+    <xsl:variable name="the_url">
+      <xsl:value-of
+            select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[@type='home']/@target | 
+            tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[1]/@target"/>
+    </xsl:variable>
+
+    <xsl:if test="string-length($the_url)>0"> <!-- only executed if url present -->
+      <xsl:text>_____&#x0A;&#x0A;</xsl:text>
+      <xsl:text>00-database-url&#x0A;</xsl:text>
+      <xsl:value-of select="$the_url"/>
+        <!-- old value-of:
       select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[@type='home']/@target | 
               tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:ref[1]/@target"/>
-    <xsl:text>&#x0A;</xsl:text>
+          -->
+      <xsl:text>&#x0A;</xsl:text>
+    </xsl:if>
   </xsl:template>
 
 
