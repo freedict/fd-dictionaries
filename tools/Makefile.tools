@@ -5,7 +5,7 @@
 FREEDICTDIR ?= .
 include Makefile.config
 
-VERSION = 0.2
+VERSION = 0.4
 PREFIX ?= usr/local
 INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
 
@@ -13,7 +13,6 @@ dirs = ergane lib teimerge testing xsl/inc
 absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
 $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
-	$(MAKE) -f Makefile.common clean
 	cd .. && tar --totals --exclude="*/.svn/*" --exclude="*/.*" \
 	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
 	  --exclude="*/dictd2dic" \

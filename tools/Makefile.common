@@ -165,6 +165,13 @@ reverse: $(dictname)-reverse.c5
 %.dict %.index: %.c5 query-dictd
 	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
+$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
+	$(dictname).dict.dz $(dictname).index
+	tar -C .. -cvzf $@ $(addprefix $(notdir $(realpath .))/, $^)
+
+release-dict-tgz: dirs \
+	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
+
 $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
