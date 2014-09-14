@@ -1,5 +1,15 @@
 2014-02-16 Michael Bunk <kleinerwurm@gmx.net>
 
+    * Attempt to fix Debian #759952: FTBFS: hun-eng.tei:69: parser error : Premature end of data in tag body line 67
+      Debian sbuild runs a parallel make, which seems to cause the "fails to build". hun-eng.tei.header is 71 lines 
+      long, similar to the parser error in line 69. Previously, the Makefile target for hun-eng.tei created the 
+      destination file in several steps, using the target name from the beginning. Now two temporary files are 
+      created and hun-eng.tei is used only for the final step. Hopefully this will sbuild/parallel make use 
+      hun-eng.tei for building hun-eng.c5 only after hun-eng.tei is ready. 
+      See also https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=759952
+
+2014-02-16 Michael Bunk <kleinerwurm@gmx.net>
+
 	* Converted converter from P4 to P5
 
 2009-01-10 Kęstutis Biliūnas <kebil@kaunas.init.lt>
