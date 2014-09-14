@@ -11,7 +11,7 @@
 	</respStmt>
       </titleStmt>
       <editionStmt>
-	<edition>0.3</edition>
+	<edition>0.3.1</edition>
       </editionStmt>
       <extent>139 935 headwords</extent>
       <publicationStmt>
@@ -20,7 +20,7 @@
           <p>Copyright (C) 1999 Vony Attila and Bui Pol</p>
           <p>GNU GENERAL PUBLIC LICENSE</p>
         </availability>
-	<date when="2014-02-16">16th of February 2014</date>
+          <date when="2014-09-14">14 September 2014</date>
         <pubPlace>http://freedict.org/</pubPlace>
 	<idno type="svn">$Id$</idno>
       </publicationStmt>
@@ -44,6 +44,12 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+        <change when="2014-09-14">
+            <name>Michael Bunk</name>
+            Attempt to fix Debian #759952: FTBFS: hun-eng.tei:69: parser error : Premature end of data in tag body line 67 
+            Debian sbuild runs a parallel make, which seems to cause the "fails to build". hun-eng.tei.header is 71 lines long, similar to the parser error in line 69. Previously, the Makefile target for hun-eng.tei created the destination file in several steps, using the target name from the beginning. Now two temporary files are created and hun-eng.tei is used only for the final step. Hopefully this will sbuild/parallel make use hun-eng.tei for building hun-eng.c5 only after hun-eng.tei is ready. 
+            See also https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=759952
+        </change>
       <change when="2014-02-16">
         <name>Michael Bunk</name>
         Converted converter from P4 to P5
