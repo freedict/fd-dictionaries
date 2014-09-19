@@ -1,0 +1,63 @@
+<element name="FreeDictDatabase"
+  xmlns="http://relaxng.org/ns/structure/1.0"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <oneOrMore>
+    <element name="dictionary">
+      <attribute name="name">
+        <data type="string"> <!-- deu-ita -->
+	  <param name="pattern">[a-z]{3}-[a-z]{3}</param>
+        </data>
+      </attribute>
+      <attribute name="headwords">
+        <data type="positiveInteger"/> <!-- 4452 -->
+      </attribute>
+      <attribute name="edition">
+        <data type="string"> <!-- 0.1.1 -->
+	  <param name="pattern">\d+(\.\d+(\.\d+)?)?</param>
+        </data>
+      </attribute>
+      <attribute name="date">
+        <data type="date"/> <!-- 2011-10-01 -->
+      </attribute>
+      <attribute name="status">
+        <text/> <!-- small -->
+      </attribute>
+      <attribute name="sourceURL">
+        <data type="anyURI"/>
+      </attribute>
+      <attribute name="maintainerName">
+        <text/> <!-- [up for grabs] -->
+      </attribute>
+      <optional>
+        <attribute name="maintainerEmail">
+          <text/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="unsupported">
+          <text/>
+        </attribute>
+      </optional>
+      <oneOrMore>
+        <element name="release">
+          <attribute name="platform">
+            <text/> <!-- dict-tgz -->
+          </attribute>
+          <attribute name="version">
+            <text/> <!-- 0.0.2 -->
+          </attribute>
+          <attribute name="size">
+	    <data type="positiveInteger"/> <!-- 76216 -->
+          </attribute>
+          <attribute name="date">
+            <data type="date"/> <!-- 2005-11-20 -->
+          </attribute>
+          <attribute name="URL">
+            <data type="anyURI"/> <!-- "http://prdownloads.sourceforge.net/freedict/deu-ita.tar.gz?download -->
+          </attribute>
+        </element>
+      </oneOrMore>
+    </element>
+  </oneOrMore>
+  <text/>
+</element>
