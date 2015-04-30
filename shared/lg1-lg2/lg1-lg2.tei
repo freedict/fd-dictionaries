@@ -1,220 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    you may want to uncomment one of these to be able to look at your dictionary in a web browser 
-   
+you may want to uncomment one of these to be able to look at your dictionary in a web browser 
+
 <?xml-stylesheet type="text/xsl" href="freedict-dictionary.xsl"?>
 <?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 -->
 <?oxygen SCHSchema="freedict-P5.rng"?>
 <?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader xml:lang="en">
-      <fileDesc>
-         <titleStmt>
-            <!-- Please note: this file contains whatever I think useful or necessary for a FreeDict dictionary.
-                 The fact that you can use this as a basis for your assignment does not mean that you are in any 
-                 way forced to submit the result to FreeDict - the choice is yours alone. -PB           -->
-            <title>Lg1 - Lg2 FreeDict Dictionary</title>
-<!--            <title xml:lang="??">provide equivalent titles in the languages involved</title>-->
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <titleStmt>
+                <!-- Please note: this file contains whatever I think useful or necessary for a FreeDict dictionary.
+                The fact that you can use this as a basis for your assignment does not mean that you are in any 
+                way forced to submit the result to FreeDict - the choice is yours alone. -PB           -->
+                <title>Lg1 - Lg2 FreeDict Dictionary</title>
+                <!--            <title xml:lang="??">provide equivalent titles in the languages involved</title>-->
 
-            <!-- would you like to become a maintainer of this dictionary?
-               Being a maintainer means a certain right (to be the primary decision maker, within reason),
-               and a certain obligation (to accept improvements and devote some time to the maintenance of the dictionary).
-               You decide. See also http://sourceforge.net/apps/mediawiki/freedict/index.php?title=Dictionary_maintainers -->
-            <!--               t
-               <respStmt>
-               <resp>Maintainer</resp>
-               <name>??? &lt;your@address&gt;</name>
-               </respStmt>-->
-            <!-- we don't really list authors in hand-made dictionaries - they are listed in the revisionDesc below;
-               in donated dictionaries, use "original author" as the resp type -->
-            
-         </titleStmt>
-         <editionStmt>
-            <edition>0.1</edition>
-         </editionStmt>
-         <extent>[number] headwords</extent>
-         <publicationStmt>
-            <publisher>FreeDict.org</publisher>
-            <availability status="free">
-               <p>Copyright (C) by various authors listed in revisionDesc below.</p>
-               <p>Available under the terms of the <ref
-                     target="http://www.gnu.org/licenses/gpl.html">GNU General Public License</ref>
-                  ver. 3.0 or any later version.</p>
-               <p>This program is free software; you can redistribute it and/or modify it under the
-                  terms of the GNU General Public License as published by the Free Software
-                  Foundation; either version 3 of the License, or (at your option) any later
-                  version.</p>
-               <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
-                  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-                  PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-               <p>You should have received a copy of the GNU General Public License along with this
-                  program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
-                  Suite 330, Boston, MA 02111-1307, USA.</p>
-            </availability>
-            <pubPlace>
-               <ref target="http://freedict.org/">http://freedict.org/</ref>
-            </pubPlace>
-            <idno type="svn">$Id:$</idno> <!-- this is expanded automatically by the SVN -->
-         </publicationStmt>
-         <sourceDesc>
-            <p>No source: created in the electronic form, from the FreeDict dictionary template.</p>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <projectDesc>
-            <p>This dictionary comes to you through nice people making it available for free and for
-               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
-               available for free. Your contributions are welcome!</p>
-         </projectDesc>
-         <tagsDecl> <!-- may have @rend="anchored" -->
-            <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+                <!-- would you like to become a maintainer of this dictionary?
+                Being a maintainer means a certain right (to be the primary decision maker, within reason),
+                and a certain obligation (to accept improvements and devote some time to the maintenance of the dictionary).
+                You decide. See also http://sourceforge.net/apps/mediawiki/freedict/index.php?title=Dictionary_maintainers -->
+                <!--               t
+                <respStmt>
+                    <resp>Maintainer</resp>
+                    <name>??? &lt;your@address&gt;</name>
+                </respStmt>-->
+                <!-- we don't really list authors in hand-made dictionaries - they are listed in the revisionDesc below;
+                in donated dictionaries, use "original author" as the resp type -->
 
-            <!--
-            <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
-               <tagUsage gi="pos">
-                  <list>
-                     <item ana="FreeDict_ontology.xml#f_pos_noun">n</item>
-                     <item ana="FreeDict_ontology.xml#f_pos_verb">v</item>
-                  </list>
-               </tagUsage>
-               <tagUsage gi="gen">
-                  <list>
-                     <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
-                     <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
-                  </list>
-               </tagUsage>
-            </namespace>
-            -->
-            <!--
-            <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/" n="equiv">
-               <tagUsage gi="gen">
-                  <list>
-                     <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
-                     <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
-                     <item ana="FreeDict_ontology.xml#f_gen_neut">n</item>
-                     <!-\- and you will note that the descriptions here and up there lead to the same entries... 
-                        this is a failure of the ontology/DCR, not of this system :-) -\->
-                  </list>
-               </tagUsage>
-            </namespace>
-            -->
-         </tagsDecl>
-      </encodingDesc>
+            </titleStmt>
+            <editionStmt>
+                <edition>0.1</edition>
+            </editionStmt>
+            <extent>[number] headwords</extent>
+            <publicationStmt>
+                <publisher>FreeDict.org</publisher>
+                <availability status="free">
+                    <p>Copyright (C) by various authors listed in revisionDesc below.</p>
+                    <p>Available under the terms of the <ref
+                            target="http://www.gnu.org/licenses/gpl.html">GNU General Public License</ref>
+                        ver. 3.0 or any later version.</p>
+                    <p>This program is free software; you can redistribute it and/or modify it under the
+                        terms of the GNU General Public License as published by the Free Software
+                        Foundation; either version 3 of the License, or (at your option) any later
+                        version.</p>
+                    <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY
+                        WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+                        PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+                    <p>You should have received a copy of the GNU General Public License along with this
+                        program; if not, write to the Free Software Foundation, Inc., 59 Temple Place -
+                        Suite 330, Boston, MA 02111-1307, USA.</p>
+                </availability>
+                <pubPlace>
+                    <ref target="http://freedict.org/">http://freedict.org/</ref>
+                </pubPlace>
+                <idno type="svn">$Id:$</idno> <!-- this is expanded automatically by the SVN -->
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in the electronic form, from the FreeDict dictionary template.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>This dictionary comes to you through nice people making it available for free and for
+                    good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                        >http://freedict.org/</ref>. This project aims to make translating dictionaries
+                    available for free. Your contributions are welcome!</p>
+            </projectDesc>
+            <tagsDecl> <!-- may have @rend="anchored" -->
+                <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
 
-      <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
-              Note that the xml:lang attributes accept ISO 639-1 codes. Some language lack these codes and in such cases 
-              have to use ISO 639-3. 
-   
-      <profileDesc>
-         <langUsage>
-            <language ident="sr" n="source">
-               <idno type="iso639-1">sr</idno>
-               <idno type="iso639-3">srp</idno>
-               <name xml:lang="sr">српски</name>
-               <name xml:lang="en">Serbian</name>
-            </language>
-            <language ident="en" n="target">
-               <idno type="iso639-1">en</idno>
-               <idno type="iso639-3">eng</idno>
-               <name xml:lang="sr">енглески</name>
-               <name xml:lang="en">English</name>
-            </language>
-         </langUsage>
-      </profileDesc>
-      -->
+                <!--
+                <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
+                    <tagUsage gi="pos">
+                        <list>
+                            <item ana="FreeDict_ontology.xml#f_pos_noun">n</item>
+                            <item ana="FreeDict_ontology.xml#f_pos_verb">v</item>
+                        </list>
+                    </tagUsage>
+                    <tagUsage gi="gen">
+                        <list>
+                            <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
+                            <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
+                        </list>
+                    </tagUsage>
+                </namespace>
+                -->
+                <!--
+                <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/" n="equiv">
+                    <tagUsage gi="gen">
+                        <list>
+                            <item ana="FreeDict_ontology.xml#f_gen_fem">f</item>
+                            <item ana="FreeDict_ontology.xml#f_gen_masc">m</item>
+                            <item ana="FreeDict_ontology.xml#f_gen_neut">n</item>
+                            <!-\- and you will note that the descriptions here and up there lead to the same entries... 
+                            this is a failure of the ontology/DCR, not of this system :-) -\->
+                        </list>
+                    </tagUsage>
+                </namespace>
+                -->
+            </tagsDecl>
+        </encodingDesc>
 
-      <revisionDesc>
-         <change when="2010-12-10">
-            <date>2010-12-10</date>
-            <name>???</name>: created the first X entries.</change>
-      </revisionDesc>
-   </teiHeader>
-   <text> <!-- xml:lang="??" usually for the target language-->
-      <body>
-         <entry>
-            <form> <!-- if <text> has @xml:lang set for the target language, 
+        <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
+        Note that the xml:lang attributes accept ISO 639-1 codes. Some language lack these codes and in such cases 
+        have to use ISO 639-3. 
+
+        <profileDesc>
+            <langUsage>
+                <language ident="sr" n="source">
+                    <idno type="iso639-1">sr</idno>
+                    <idno type="iso639-3">srp</idno>
+                    <name xml:lang="sr">српски</name>
+                    <name xml:lang="en">Serbian</name>
+                </language>
+                <language ident="en" n="target">
+                    <idno type="iso639-1">en</idno>
+                    <idno type="iso639-3">eng</idno>
+                    <name xml:lang="sr">енглески</name>
+                    <name xml:lang="en">English</name>
+                </language>
+            </langUsage>
+        </profileDesc>
+        -->
+
+        <revisionDesc>
+            <change when="2010-12-10">
+                <date>2010-12-10</date>
+                <name>???</name>: created the first X entries.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text> <!-- xml:lang="??" usually for the target language-->
+        <body>
+            <entry>
+                <form> <!-- if <text> has @xml:lang set for the target language, 
                         set it here for the source; note that you can do this 
                         automatically, by search-and-replace, before submitting 
                         your dictionary -->
-               <orth>headword_placeholder</orth>
-               <!--<pron></pron>  for pronunciation -->
-            </form>
-            <gramGrp>
-               <pos>n</pos>
-               <!--<gen></gen> gender - may be useful for nouns -->
-            </gramGrp>
-            <sense>
-               <cit type="trans">
-                  <quote>translation_equivalent</quote>  <!-- this is another place where you might want 
-                                                                 to use @xml:lang, depending on the setup 
-                                                                 of your dictionary (no need to be redundant) -->
-                  <!--<gramGrp>
-                     <gen>f</gen>    (for cases when the equivalent noun has a different gender, etc.)
-                  </gramGrp>-->
-               </cit>
-               <!-- you may need to reset xml:lang for examples, depending on which language they come from            
-               <cit type="dicteg">
-                  <quote xml:lang="sr">example_text (we assume it's in the source language, here it's Serbian)</quote>
-                  <cit type="trans">
-                     <quote xml:lang="en">translation in the target language (here: en)</quote>
-                 </cit>
-               </cit>
-               -->
-            </sense>
-         </entry>
-         
-         <!-- what follows is some example entries -->
-         
-         <entry>
-            <form xml:lang="en"><orth>consult</orth></form>
-            <gramGrp><pos>v</pos><subc>tr</subc></gramGrp>
-            <sense>
-               <cit type="trans">
-                  <quote xml:lang="pl">konsultować się</quote>
-                  <gramGrp>
-                     <pos>v</pos> <!-- redundant -->
-                     <subc>inh_refl</subc> <!-- inherently reflexive (the 'się' marker) -->
-                  </gramGrp>
-                  <cit type="colloc"> <!-- collocate -->
-                     <quote xml:lang="en">somebody</quote>
-                     <cit type="trans">
-                        <quote xml:lang="pl">z kimś</quote>
-                     </cit>
-                  </cit>
-               </cit>
-            </sense>
-         </entry>
-         
-         
-         <!-- below, notice especially the inflection forms of the described headword (lemma) -->
-         
-         <!-- please note: this recommendation is not complete and, as it is now, wrong from the point of 
-            view of coherence in serializing the data model (gram features in the attributes should become element content);
-            
-            So please don't treat this as an example to be followed. -PB, 29-dec-10
+                        <orth>headword_placeholder</orth>
+                        <!--<pron></pron>  for pronunciation -->
+                    </form>
+                    <gramGrp>
+                        <pos>n</pos>
+                        <!--<gen></gen> gender - may be useful for nouns -->
+                    </gramGrp>
+                    <sense>
+                        <cit type="trans">
+                            <quote>translation_equivalent</quote>  <!-- this is another place where you might want 
+                            to use @xml:lang, depending on the setup 
+                            of your dictionary (no need to be redundant) -->
+                            <!--<gramGrp>
+                                <gen>f</gen>    (for cases when the equivalent noun has a different gender, etc.)
+                            </gramGrp>-->
+                        </cit>
+                        <!-- you may need to reset xml:lang for examples, depending on which language they come from            
+                        <cit type="dicteg">
+                            <quote xml:lang="sr">example_text (we assume it's in the source language, here it's Serbian)</quote>
+                            <cit type="trans">
+                                <quote xml:lang="en">translation in the target language (here: en)</quote>
+                            </cit>
+                        </cit>
+                        -->
+                    </sense>
+                </entry>
 
-         -->
-         <entry xml:id="iubeo">
-            <form xml:lang="la">
-               <orth>iubeo</orth>
-               <form type="infl">
-                  <orth type="inf">iubere</orth>
-                  <orth type="perf">iussi</orth>
-                  <orth type="sup">ussum</orth>
-               </form>
-            </form>
-            <gramGrp>
-               <pos>v</pos>
-               <iType>2</iType> <!-- inflection class (for verbs: conjugation number) -->
-            </gramGrp>
-            <sense>
-               <cit type="trans"><quote xml:lang="de">befehlen</quote></cit>
-            </sense>
-         </entry>
-         
-         
-      </body>
-   </text>
-</TEI>
+                <!-- what follows is some example entries -->
+
+                <entry>
+                    <form xml:lang="en"><orth>consult</orth></form>
+                    <gramGrp><pos>v</pos><subc>tr</subc></gramGrp>
+                    <sense>
+                        <cit type="trans">
+                            <quote xml:lang="pl">konsultować się</quote>
+                            <gramGrp>
+                                <pos>v</pos> <!-- redundant -->
+                                <subc>inh_refl</subc> <!-- inherently reflexive (the 'się' marker) -->
+                            </gramGrp>
+                            <cit type="colloc"> <!-- collocate -->
+                                <quote xml:lang="en">somebody</quote>
+                                <cit type="trans">
+                                    <quote xml:lang="pl">z kimś</quote>
+                                </cit>
+                            </cit>
+                        </cit>
+                    </sense>
+                </entry>
+
+                <!-- enriching translations with usage hints -->
+                <entry xml:lang="en">
+                    <form xml:lang="de">
+                        <orth>rechts</orth>
+                        <gramGrp>
+                            <pos>adv</pos>
+                        </gramGrp>
+                    </form>
+                    <sense level="0">
+                        <sense level="1">
+                            <cit type="trans">
+                                <quote>right</quote>
+                                <quote>right-hand side</quote>
+                            </cit>
+                            <usg type="indicator">Richtung</usg>
+                        </sense>
+                        <sense>
+                            <cit type="trans">
+                                <quote>right</quote>
+                            </cit>
+                            <usg type="indicator">polit.</usg>
+                        </sense>
+                    </sense>
+                </entry>
+
+
+                <!-- below, notice especially the inflection forms of the described headword (lemma) -->
+
+                <!-- please note: this recommendation is not complete and, as it is now, wrong from the point of 
+                view of coherence in serializing the data model (gram features in the attributes should become element content);
+
+                So please don't treat this as an example to be followed. -PB, 29-dec-10
+
+                -->
+                <entry xml:id="iubeo">
+                    <form xml:lang="la">
+                        <orth>iubeo</orth>
+                        <form type="infl">
+                            <orth type="inf">iubere</orth>
+                            <orth type="perf">iussi</orth>
+                            <orth type="sup">ussum</orth>
+                        </form>
+                    </form>
+                    <gramGrp>
+                        <pos>v</pos>
+                        <iType>2</iType> <!-- inflection class (for verbs: conjugation number) -->
+                    </gramGrp>
+                    <sense>
+                        <cit type="trans"><quote xml:lang="de">befehlen</quote></cit>
+                    </sense>
+                </entry>
+
+
+            </body>
+        </text>
+    </TEI>
