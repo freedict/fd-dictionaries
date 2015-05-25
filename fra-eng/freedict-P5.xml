@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="tei_odds.rng" type="xml"?>
+<TEI 
+   xmlns="http://www.tei-c.org/ns/1.0" 
+   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+   xml:lang="en" n="freedict">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>TEI Customization for the FreeDict project (basic), version 0.10</title>
+            <respStmt>
+               <resp>maintained by</resp>
+               <name xml:id="bansp">Piotr Bański (bansp in the domain of o2.pl)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <availability status="free">
+               <p>This file is released as part of the FreeDict package (http://freedict.org/). It
+                  is licensed under the GNU Public License version 2.0 or later.</p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Initial version created with Roma, the ODD generator, version 3.6.</p>
+            <p>This file was initially used for the Swahili-English dictionary. Later on, it got
+               generalised as the basic schema for Freedict dictionaries encoded in TEI P5.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <head>ODD for FreeDict dictionaries, basic level of conformance.</head>
+         <p>This is the ODD driver for generating schemas and documentation for dictionaries in the
+            FreeDict project (see http://freedict.org/). It is meant primarily for dictionaries with
+            very basic structure, but until higher-level ODDs are created, it will serve all TEI P5
+            dictionaries. For details, see a TEI Conference and Members' Meeting presentation by
+            Piotr Bański and Beata Wójtowicz, which should be available from
+            http://www.lib.umich.edu/spo/teimeeting09/program.html.</p>
+         <list n="changelog" type="glossed">
+            <item><label>Version 0.10, <date when="2011-09-09">9 September 2011</date>, by <name>Piotr
+            Bański</name></label>: Added the <gi>cell</gi>, <gi>row</gi>, and <gi>table</gi> elements, 
+               to handle front matter better.</item>
+            <item><label>Version 0.9, <date when="2010-11-08">8 November 2010</date>, by <name>Piotr
+               Bański</name></label>:
+               <list type="bulleted">
+                  <item>Added further Schematron constraints on the contents of <gi>tagUsage</gi>:
+                     when the <att>rend</att> on an ancestor is set to <val>anchored</val>, the
+                        <att>ana</att> attributes are traced to the FreeDict ontology interface (off
+                     by default, because it needs a checkout of the shared/ directory. See kha-deu
+                     for an example in action.</item>
+                  <item>Commented out the 'figures' module, until it is ever? needed.</item>
+                  <item>Removed <gi>tagUsage</gi> from the att.typed class added earlier in v. 0.8,
+                     because I decided to forcefully abuse the elements and attributes involved
+                     (mostly <gi>namespace</gi>, <att>n</att> and <att>rend</att>).</item>
+                  <item>TODO: extend this system for <gi>subcat</gi> elements.</item>
+               </list>
+            </item>
+            <item><label>Version 0.8, <date when="2010-11-06">6 November 2010</date>, by <name>Piotr
+            Bański</name></label>:
+               <list type="bulleted">
+                  <item>Added Schematron constraints on <gi>tagUsage</gi> (so this may be the
+                     beginning of the end of DTDs for Freedict, and consequently the xinclude
+                     extension will be able to go);</item>
+                  <item>added <gi>tagUsage</gi> to the att.typed class (need to distinguish between
+                     tags used in the <gi>gramGroup</gi> describing the source language forms from
+                     those describing the target language (inside <gi>cit</gi>);</item>
+                  <item>added <gi>gramGrp</gi> to the att.typed class (in order to be able to talk
+                     about 'discharged' grammatical properties, in elements that trigger agreement
+                     on other elements (think noun classes));</item>
+                  <item>Took out module "iso-fs" - I think it was here while I still thought of
+                     ontology interfaces being plugged more directly into dictionaries, not via
+                     tagUsage (or maybe I'm forgetting something now...).</item>
+               </list>
+            </item>
+            <item><label>Version 0.7, <date when="2010-04-25">25 April 2010</date>, by <name>Piotr
+                     Bański</name></label>: Added the xinclude extension from the approoriate Roma
+               template, changed it to be able to occur as a child of front (I can't validate
+               xinclusions with xmllint if a DTD is used, so this is for the sake of DTDs
+               only)</item>
+            <item><label>Version 0.6, <date when="2010-04-24">24 April 2010</date>, by <name>Piotr Bański</name></label>: Added the "iso-fs" and "analysis" modules, the latter for the sake of @ana only...</item>
+            <item><label>Version 0.5, <date when="2010-04-16">16 April 2010</date>, edited by <name>Piotr Bański</name></label>
+               <list type="bulleted">
+                  <item>Changed the responsibility type from the Roma-generated <gi>author</gi> to <gi>respStmt</gi> and called myself a maintainer.</item>
+                  <item>Made the changelog dates machine-readable.</item>
+                  <item>Added the linking module (merged changes by <name>Stuart Yeates</name>). This is to enable the <att>corresp</att> attributes.</item>
+               </list>
+            </item>
+            <item><label>Version 0.4, <date when="2009-12-31">31 December 2009</date> by <name>Piotr Bański</name></label>
+               <list type="bulleted">
+                  <item>Commited to the Freedict CVS (still in version 0.3).</item>
+                  <item>Properly re-titled and described.</item>
+                  <item>Added the "figures" module, for tables in the front matter.</item>
+               </list>
+            </item>
+            <item><label>Version 0.3, <date when="2008-12-30">30 December 2008</date> by <name>Piotr Bański</name></label>
+               <list type="bulleted">
+                  <item>Removed <gi>dictScrap</gi> and <gi>entryFree</gi> and the mysterious header
+                     elements that cause Sanity Checker warnings.</item>
+                  <item>Removed numbered divs (with a view towards tailoring this ODD for all
+                     FreeDict dictionaries).</item>
+               </list>
+            </item>
+         </list>
+         <schemaSpec ident="freedict-P5" docLang="en" prefix="tei_">
+            <moduleRef key="core"/>
+            <elementSpec module="core" ident="teiCorpus" mode="delete"/>
+
+            <moduleRef key="tei"/>
+
+            <moduleRef key="header"/>
+            <elementSpec module="header" ident="handNote" mode="delete"/>
+            <elementSpec module="header" ident="typeNote" mode="delete"/>
+            <elementSpec module="header" ident="tagUsage" mode="change">
+<!--               <classes mode="replace">
+                  <memberOf key="att.typed" mode="add"/>
+               </classes>
+-->               <constraintSpec ident="tagUsage_stuff" scheme="isoschematron">
+                  <desc>Make sure that the content of gramGrp (of various sorts) corresponds to
+                     whatever is defined in tagUsage *if* it is defined there.</desc>
+                  <constraint>
+                     <sch:pattern id="gramGrp-tagUsage_conformance">
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:*">
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
+                              >The values of gramGrp/<sch:name/> must belong to the set identified
+                              in tagUsage for this element.</sch:assert>
+                        </sch:rule>
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:cit[@type eq 'trans']/tei:gramGrp/tei:*">
+                           <!-- big question: is the context here stated properly? is it not too narrow now? -->
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'equiv']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'equiv']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
+                              >The values of cit[@type='trans']/gramGrp/<sch:name/> must belong to the set identified in
+                              tagUsage for this element, in the 'equiv' section.</sch:assert>
+                        </sch:rule>
+                        <sch:rule
+                           context="/tei:TEI/tei:text/tei:body//tei:*[local-name() eq 'entry' or local-name() eq 'sense']/tei:gramGrp/tei:gramGrp[@type='agr']/tei:*">
+                           <sch:let name="loc_name" value="local-name()"/>
+                           <sch:assert
+                              test="not(/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'agr']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item) or (. = /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:tagsDecl/tei:namespace[@name eq 'http://www.tei-c.org/ns/1.0'][@n eq 'agr']/tei:tagUsage[@gi eq $loc_name]/tei:list/tei:item)"
+                              >The values of gramGrp[@type='agr']/<sch:name/> must belong to the set identified in
+                              tagUsage for this element, in the 'agr' section.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="tagUsage-item-external" scheme="isoschematron">
+                  <desc>if this is an anchored description, for each item check if it identifies a resource in the FreeDict ontology interface</desc>
+                  <constraint>
+                     <sch:pattern id="tagUsage_item_check">
+                        <sch:rule context="tei:list/tei:item">
+                           <sch:let name="targ_res" value="document(@ana)"/>
+                           <sch:assert test="if(ancestor::tei:tagsDecl[@rend eq 'anchored'] or ancestor::tei:namespace[@rend eq 'anchored'] or ancestor::tei:tagUsage[@rend eq 'anchored']) then (exists($targ_res) and string-length($targ_res)) else true()">The @ana attributes should identify a resource fragment in the FreeDict ontology interface.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+
+            <moduleRef key="textstructure"/>
+            <elementSpec module="textstructure" ident="div1" mode="delete"/>
+            <elementSpec module="textstructure" ident="div2" mode="delete"/>
+            <elementSpec module="textstructure" ident="div3" mode="delete"/>
+            <elementSpec module="textstructure" ident="div4" mode="delete"/>
+            <elementSpec module="textstructure" ident="div5" mode="delete"/>
+            <elementSpec module="textstructure" ident="div6" mode="delete"/>
+            <elementSpec module="textstructure" ident="div7" mode="delete"/>
+
+            <moduleRef key="dictionaries"/>
+            <elementSpec module="dictionaries" ident="dictScrap" mode="delete"/>
+            <elementSpec module="dictionaries" ident="entryFree" mode="delete"/>
+            <elementSpec ident="gramGrp" module="dictionaries" mode="change">
+               <classes mode="replace">
+                  <memberOf key="model.entryPart"/>
+                  <memberOf key="model.entryPart.top"/>
+                  <memberOf key="model.gramPart"/>
+                  <memberOf key="att.lexicographic"/>
+                  <memberOf key="att.typed" mode="add"/>
+               </classes>
+            </elementSpec>
+            
+            <moduleRef key="figures" include="cell row table"/>
+
+            <moduleRef key="analysis"/>
+            <elementSpec module="analysis" ident="c" mode="delete"/>
+            <elementSpec module="analysis" ident="cl" mode="delete"/>
+            <elementSpec module="analysis" ident="interp" mode="delete"/>
+            <elementSpec module="analysis" ident="interpGrp" mode="delete"/>
+            <elementSpec module="analysis" ident="m" mode="delete"/>
+            <elementSpec module="analysis" ident="pc" mode="delete"/>
+            <elementSpec module="analysis" ident="phr" mode="delete"/>
+            <elementSpec module="analysis" ident="s" mode="delete"/>
+            <elementSpec module="analysis" ident="span" mode="delete"/>
+            <elementSpec module="analysis" ident="spanGrp" mode="delete"/>
+            <elementSpec module="analysis" ident="w" mode="delete"/>
+
+            <moduleRef key="linking"/>
+            <elementSpec module="linking" ident="ab" mode="delete"/>
+            <elementSpec module="linking" ident="alt" mode="delete"/>
+            <elementSpec module="linking" ident="altGrp" mode="delete"/>
+            <elementSpec module="linking" ident="anchor" mode="delete"/>
+            <elementSpec module="linking" ident="join" mode="delete"/>
+            <elementSpec module="linking" ident="joinGrp" mode="delete"/>
+            <elementSpec module="linking" ident="link" mode="delete"/>
+            <elementSpec module="linking" ident="linkGrp" mode="delete"/>
+            <elementSpec module="linking" ident="seg" mode="delete"/>
+            <elementSpec module="linking" ident="timeline" mode="delete"/>
+            <elementSpec module="linking" ident="when" mode="delete"/>
+            <classSpec ident="att.global.linking" mode="change" type="atts" module="linking">
+               <attList>
+                  <attDef ident="synch" mode="delete"/>
+                  <attDef ident="sameAs" mode="delete"/>
+                  <attDef ident="copyOf" mode="delete"/>
+                  <attDef ident="next" mode="delete"/>
+                  <attDef ident="prev" mode="delete"/>
+                  <attDef ident="exclude" mode="delete"/>
+                  <attDef ident="select" mode="delete"/>
+               </attList>
+            </classSpec>
+
+            <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="include"
+               ns="http://www.w3.org/2001/XInclude" mode="add">
+               <desc>The W3C XInclude element</desc>
+               <classes>
+                  <!--<memberOf key="model.common"/>-->
+                  <memberOf key="model.pLike.front"/>
+                  <memberOf key="model.headerPart"/>
+               </classes>
+               <content>
+                  <rng:optional>
+                     <rng:ref name="fallback"/>
+                  </rng:optional>
+               </content>
+               <attList>
+                  <attDef ident="href">
+                     <desc>pointer to the resource being included</desc>
+                     <datatype>
+                        <rng:ref name="data.pointer"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="parse" usage="opt">
+                     <defaultVal>xml</defaultVal>
+                     <valList type="closed">
+                        <valItem ident="xml"/>
+                        <valItem ident="text"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="xpointer" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="encoding" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept-charset" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="accept-language" usage="opt">
+                     <datatype>
+                        <rng:text/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+         </schemaSpec>
+      </body>
+   </text>
+</TEI>
