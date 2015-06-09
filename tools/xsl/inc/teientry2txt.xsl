@@ -176,9 +176,22 @@
 
 
   <xsl:template match="tei:usg[@type]">
+    <!-- insert spaces -->
+    <xsl:if test="preceding-sibling::tei:cit[@type='trans'] or preceding-sibling::tei:quote">
+      <xsl:text> </xsl:text> <!-- space if after a sibling -->
+    </xsl:if>
+
     <xsl:text>[</xsl:text>
     <xsl:value-of select="."/>
-    <xsl:text>.] </xsl:text>
+    <xsl:if test="not(self::node()[contains(text(), ' ')])">
+      <xsl:text>.</xsl:text> <!-- if space in value, then no abbrev. anymore, skip "." -->
+    </xsl:if>
+    <xsl:text>]</xsl:text>
+
+    <!-- if another sibling afterwards, insert space -->
+    <xsl:if test="following-sibling::*">
+        <xsl:text> </xsl:text> <!-- space if followed by more stuff -->
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="tei:def">
@@ -343,7 +356,7 @@
       </xsl:when>
       <!-- a subset of values from the TEI Guidelines -->
       <xsl:when
-        test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc'">
+        test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc' or @type='hint'">
         <xsl:value-of select="concat($spc,'(',.,')')"/>
       </xsl:when>
       <xsl:when test="@type='gram'">
