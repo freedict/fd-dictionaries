@@ -22,7 +22,7 @@
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="tei:sense | tei:note"/>
   </xsl:template>
-
+<!--Headword description FORM and GRAMGRP -->
   <xsl:template match="tei:form">
     <xsl:variable name="paren"
       select="count(child::tei:orth) and (count(parent::tei:form) = 1 or @type='infl')"/>
@@ -32,8 +32,12 @@
     <xsl:if test="$paren">
       <xsl:text> (</xsl:text>
     </xsl:if>
-    <xsl:apply-templates select="tei:usg"/>
-    <!-- added to handle usg info in nested <form>s -->
+	<!-- mandatory entry > form > orth -->	
+    <xsl:apply-templates select="tei:usg | tei:lbl"/> 
+      <xsl:if test="position() != last()">
+        <xsl:text> </xsl:text>
+      </xsl:if>
+	<!-- added to handle usg info in nested <form>s -->
     <xsl:for-each select="tei:orth">
       <xsl:choose>
         <!-- values from the TEI Guidelines -->
@@ -58,13 +62,21 @@
       </xsl:if>
     </xsl:for-each>
     <xsl:apply-templates select="tei:pron"/>
-    <xsl:if test="$paren">
-      <xsl:text>)</xsl:text>
-    </xsl:if>
-    <xsl:apply-templates select="tei:form"/>
+      <xsl:if test="position() != last()">
+        <xsl:text> </xsl:text>
+      </xsl:if>
+	<!-- then, if nested, gramGrp or gram infos... -->
+	<xsl:apply-templates select=" tei:gramGrp"/> 
+      <xsl:if test="position() != last()">
+        <xsl:text> </xsl:text>
+      </xsl:if>   
+	<xsl:apply-templates select="tei:form"/>
     <xsl:if test="following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')]">
       <xsl:text>, </xsl:text>
       <!-- cosmetics: no comma before parens  -->
+    </xsl:if>    
+    <xsl:if test="$paren">
+      <xsl:text>)</xsl:text>
     </xsl:if>
   </xsl:template>
 
@@ -74,11 +86,10 @@
     <xsl:if test="position() != last()">
       <xsl:text>, </xsl:text>
     </xsl:if>
-    <xsl:apply-templates select="tei:pron"/>
   </xsl:template>
 
   <xsl:template match="tei:pron">
-    <xsl:value-of select="concat(' /',.,'/')"/>
+    <xsl:value-of select="concat(' [',.,']')"/>
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
@@ -94,7 +105,7 @@
       <xsl:text> &lt;</xsl:text>
     </xsl:if>
     <xsl:for-each
-      select="tei:pos[text()] | tei:subc | tei:num | tei:gen | tei:gramGrp | tei:iType | tei:gram">
+      select="tei:pos[text()] | tei:subc | tei:num | tei:number | tei:gen | tei:gramGrp | tei:iType | tei:gram | tei:case">
       <xsl:apply-templates select="."/>
       <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
@@ -124,7 +135,8 @@
   <xsl:template match="tei:gram[@type='cl-agr']">
     <xsl:value-of select="concat('agr: ',.)"/>
   </xsl:template>
-
+  
+<!-- senses -->
   <xsl:template match="tei:sense">
     <xsl:variable name="prec_senses">
       <xsl:choose>
@@ -147,22 +159,34 @@
     <xsl:if test="number($prec_senses) > 0">
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
-    <xsl:value-of select="concat(' ',$pref)"/>
+    <xsl:value-of select="concat('  ',$pref)"/>
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:cit">
-    <xsl:if test="@type='trans' and preceding-sibling::tei:cit[@type='trans']"><xsl:text>; </xsl:text></xsl:if>
-    <xsl:apply-templates/>
+  <xsl:template match="tei:cit"><!--cit can be @trans, @example (@colloc) and simple cit (for idiomatic expression)-->
+	<xsl:choose>
+		<xsl:when test="@type ='trans'">
+			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text>, </xsl:text></xsl:if>
+			<xsl:apply-templates/>
+		</xsl:when>
+		<xsl:when test="@type ='example' or @type='dicteg'">
+			<xsl:text>&#xa;      </xsl:text>	
+			<xsl:apply-templates/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:apply-templates/>
+			<xsl:text> </xsl:text>
+		</xsl:otherwise>		
+	</xsl:choose>
   </xsl:template>
 
   <xsl:template match="tei:quote">
     <xsl:choose>
-      <xsl:when test="parent::tei:cit[@type='dicteg']">
-        <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
+      <xsl:when test="parent::tei:cit[@type='dicteg'] or parent::tei:cit[@type='example']">
+        <xsl:value-of select="concat('&quot;',.,'&quot; ')"/>
       </xsl:when>
-      <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit[@type='dicteg']]">
-        <xsl:value-of select="concat(' - ',.,'&#xa;')"/>
+      <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit]">
+        <xsl:value-of select="concat(' - ',.,' ')"/>
       </xsl:when>
       <xsl:when test="preceding-sibling::tei:quote"> <!-- parent::tei:cit[@type='trans'] and  -->
         <xsl:value-of select="', '"/>
@@ -174,24 +198,10 @@
     </xsl:choose>
   </xsl:template>
 
-
   <xsl:template match="tei:usg[@type]">
-    <!-- insert spaces -->
-    <xsl:if test="preceding-sibling::tei:cit[@type='trans'] or preceding-sibling::tei:quote">
-      <xsl:text> </xsl:text> <!-- space if after a sibling -->
-    </xsl:if>
-
     <xsl:text>[</xsl:text>
     <xsl:value-of select="."/>
-    <xsl:if test="not(self::node()[contains(text(), ' ')])">
-      <xsl:text>.</xsl:text> <!-- if space in value, then no abbrev. anymore, skip "." -->
-    </xsl:if>
-    <xsl:text>]</xsl:text>
-
-    <!-- if another sibling afterwards, insert space -->
-    <xsl:if test="following-sibling::*">
-        <xsl:text> </xsl:text> <!-- space if followed by more stuff -->
-    </xsl:if>
+    <xsl:text>] </xsl:text>
   </xsl:template>
 
   <xsl:template match="tei:def">
@@ -356,7 +366,7 @@
       </xsl:when>
       <!-- a subset of values from the TEI Guidelines -->
       <xsl:when
-        test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc' or @type='hint'">
+        test="@type='lbl' or @type='dom' or @type='obj' or @type='subj' or @type='hint' or @type='num' or @type='geo' or @type='syn' or @type='colloc'">
         <xsl:value-of select="concat($spc,'(',.,')')"/>
       </xsl:when>
       <xsl:when test="@type='gram'">
@@ -400,6 +410,23 @@
   <xsl:template match="tei:q">
     <xsl:value-of select="concat('&quot;',.,'&quot;')"/>
   </xsl:template>
+  
+  <xsl:template match="tei:lbl">
+	<xsl:text>(</xsl:text>
+	<xsl:value-of select="."/>
+	<xsl:text>) </xsl:text>
+</xsl:template>
+ 
+  <xsl:template match="tei:author">
+   <xsl:value-of select="concat(.,' ')"/>
+</xsl:template>
 
+
+ 
+<!--   <xsl:template match="| tei:pos | tei:num | tei:case | tei:gen">
+	<xsl:if test="parent::tei:gramGrp">
+		<xsl:value-of select="concat(.,' ')"/>
+    </xsl:if>
+</xsl:template> -->
 </xsl:stylesheet>
 

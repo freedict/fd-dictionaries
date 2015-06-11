@@ -1,0 +1,202 @@
+/* Tentative CSS for the dictionaries of the FreeDict project
+  originally by Piotr Bański (bansp in the domain of o2.pl) 
+  * 
+  * From Piotr's tentative, Denis's hack to have freedict css working with br<>fr dictionaries. 
+  * The lg1-lg2.tei should demonstrate how work this stylesheet. Some headwords written from scratch or picked in the Freedict tei dictionaries have been added to the lg1-lg2.tei file.
+  * Result looks something like heavy, xsl file should have a better view... Denis  */
+/* Version: 22 Mai 2015. License: CC BY-SA 3.0 or GNU GPL 3.0 (choose) */
+
+/* $Id: freedict-dictionary.css 1038 2010-11-29 00:04:39Z bansp $ */
+
+/* Note that you may need to CUSTOMIZE this stylesheet! */
+
+/*************** TEI generic *******************/
+TEI {margin-right:10%; margin-left:10%; padding-bottom:7em;}
+
+/*************** the header part ***************/
+title, respStmt, editionStmt, edition, extent, publicationStmt, publisher, availability, sourceDesc, 
+fileDesc, encodingDesc, revisionDesc, change, item, pubPlace, list > head {display:block; margin-bottom: 1em}
+
+titleStmt > title, edition { font-weight:bold}
+
+titleStmt > title {font-size:larger; text-align:center;padding-top:2em;color:blue;font-family:sans-serif;}
+
+p title, p name, change title, change name {font-weight:inherit; display:inline}
+
+/* edition > date {margin-left: 1em} */
+/* not needed for now, <edition/> is used for version numbering */
+
+edition:before {content: "Version ";  font-weight:bold}
+
+p, list {display:block}
+list {margin-left: 1em}
+
+list > head {font-weight:bold}
+
+extent:before {content: "Extent: "}
+publisher:before {content: "Publisher: "}
+availability:before {content: "Availability: "}
+publicationStmt > date:before {content: "Publication date: "}
+pubPlace:before {content: "Published at: "}
+
+publicationStmt:before {content: "Publication Statement"; color:blue; font-size:larger}
+
+editionStmt:before {content: "Edition Statement"; color:blue; font-size:larger}
+
+sourceDesc:before {content: "Source Description"; color:blue; font-size:larger}
+
+projectDesc:before {content: "Project Description"; color:blue; font-size:larger}
+
+revisionDesc:before {content: "Change Log"; color:blue; font-size:larger}
+
+respStmt:before, list[type='bulleted'] > item:before {content:"* "}
+
+teiHeader {display:block; margin-bottom: 3em}
+
+name {color:teal}
+
+foreign {font-style:italic}
+
+teiHeader {border-bottom:solid black 1px} 
+
+tagsDecl, profileDesc,idno {display:none;}
+
+/*************** the front part ***************/
+/* The front part has been written to show the list of abbreviations, and list of references */
+front {display:block; border-bottom:solid black 1px; margin-bottom: 3em; padding-bottom: 1em;} 
+/* h1 {display:block;color:blue; font-size:larger; margin-bottom: 1em;}*/
+head { 	font-weight:bold;
+	text-transform:uppercase;}
+	
+/*************** dictionary body ***************/
+/* Here is the TEI Guideline http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html 
+The following "may contain" are only for Freedict process ! TEI has larger view. */
+entry {display:block;margin:2em;}
+/* entry may contain form, gramGrp and sense(s)*/
+
+form {display: inline}
+
+sense[level='0'] {display:line;margin-left: 1em;}
+sense[level='1']:before {content:"• "}
+
+sense {display:block;margin-left: 1em;}
+sense[n]:before {content:attr(n) "."}
+
+/* entry>form may contain orth, pron, form type='infl' and gramGrp.*/
+entry > form > orth {font-weight:bold;}
+
+orth[type=morph]+orth {display: none} /* out */
+entry[n='1'] > form > orth:first-child:after {content:"1"; font-size: 0.7em;
+    vertical-align: top; bottom: 0.33em}
+entry[n='2'] > form > orth:first-child:after {content:"2"; font-size: 0.7em;
+    vertical-align: top; bottom: 0.33em}
+entry[n='3'] > form > orth:first-child:after {content:"3"; font-size: 0.7em;
+    vertical-align: top; bottom: 0.33em}
+entry[n='4'] > form > orth:first-child:after {content:"4"; font-size: 0.7em;
+    vertical-align: top; bottom: 0.33em}
+/* this might be made more universal, though I'm not sure it's worth the time */
+orth[type=variant]:before {content: "(also ";font-weight:normal}
+orth[type=variant]:after {content: ")";font-weight:normal}
+
+
+pron:before {content:" [";}
+pron:after {content:"]";}
+
+form[type='infl'] {font-style: italic;}
+
+gramGrp:before {content:" ";}
+gramGrp {display: inline;color:brown;font-style: italic;}
+
+/* GramGrp may contain pos, number, gen, subc, case, iType ,lbl...*/
+pos:before, number:before, gen:before, subc:before, case:before {content:" ";}
+pos, number, gen, subc, case {color:brown;}
+
+usg:before,lbl:before {	content: " (";}
+usg, lbl {}
+usg:after,lbl:after {	content: ")";}
+
+form[type='infl']>orth:before {content:" ";}
+form[type='infl']>orth[type="dual"]:before {content:" d: ";color:#000080;} 
+
+form[type='N']:after {content: " [sg=pl]"}
+
+/* Sense may contain def, cit, note */
+
+def:before {content:" ";margin-left:3em;}
+def{display:block;color:purple; font-style:italic;}
+def+xr[type=plural-sense] {display:block}
+def+xr[type=plural-sense]:before {content:"· "}
+xr[type=plural-sense]:after {content:":"}
+ref+ref:before {content:"· "; text-decoration: none;}
+def+def:before {content:"· "}
+
+sense > cit[type="trans"]:before {content:"  ↪ "; margin-left:0.5em;}
+cit[type='trans'] {display:inline;color:blue;}
+
+cit[type='trans'] > quote {display:inline}
+cit[type='trans'] > quote + note {display:inline}
+
+sense > cit[type='dicteg']:before, sense > cit[type='example']:before {margin-left:2.5em;content:"    ◊  "}
+sense > cit[type='dicteg'], sense > cit[type='example'] {display:block; margin-left:0.5em;}
+
+cit[type="example"] > cit[subtype="literal"] > quote:before {content:" litt. ";}
+cit[type="example"] > cit[subtype="literal"] > quote {	display:inline; font-style:italic; color:gray;}
+
+
+cit > cit[type="translation"], cit > cit[type="trans"] {display:inline;}
+
+cit > cit[type="translation"] > quote:before, cit > cit[type="trans"] > quote:before {content:" ↪ ";}
+cit > cit[type="translation"] > quote, cit > cit[type="trans"] > quote {	display:inline;font-style:italic;}
+
+cit > cit[type="colloc"]:before {content:" (";}
+cit > cit[type="colloc"] {display:inline;}
+cit > cit[type="colloc"]:after {content:")";}
+
+
+/*◊ ‣ ‧ */
+re, note {display:block}
+
+xr, quote, bibl, gloss {display: inline;}
+bibl >author {font-style: italic;}
+
+hi {font-weight:bold;}
+
+q:before, quote:before {content:" "}
+/*
+ hiding untyped <note> elements 
+note {display:none}
+note[type] {display:block}
+*/
+
+note[type='style'], note[type='infl-base'], note[type='hint'], note[type='num'] {display:inline}
+note[type='style']:before, note[type='infl-base']:before, note[type='hint']:before, note[type='num']:before {content: "("; color:black; font-weight:normal}
+note[type='style']:after, note[type='infl-base']:after, note[type='hint']:after, note[type='num']:after {content: ")"; color:black; font-weight:normal}
+note[type='cl-agr']:before {content: "(agrees with cl. ";color:navy; font-weight:normal}
+note[type='cl-agr']:after {content: ")"; color:navy; font-weight:normal}
+
+note[type='plural-sense'] {color: black}
+note[type='plural-form'] {display:inline; color: black}
+note[type='plural-sense']:before {content:""}
+note[type='plural-form']:before {content:""}
+
+note {color: navy}
+note:before {content: "NOTE: "; color: orange; font-weight:bold}
+
+
+re > form > orth {font-weight: bold}
+xr[type=cf] {display:block}
+ref {color: teal; text-decoration: none}
+xr[type=tail_infl] > ref {color: green; }
+ref+ref:before {content:"· "; text-decoration: none;}
+def+def:before {content:"· "}
+
+
+/*********** ERRORS ***********/
+entry > xr[type=syn] { color: red; font-weight: bold; font-size: larger }
+ /* synonyms always for a particular sense */
+ 
+ [rend='red'] {color: red}
+ [rend='red']:before {content: "ERROR: "; color: red} /* sometimes the rend can appear on an empty element */
+ 
+ note[type='dunno'] {color: green}
+ 

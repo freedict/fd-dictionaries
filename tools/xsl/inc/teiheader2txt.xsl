@@ -272,5 +272,8 @@
       </xsl:if>
     </xsl:for-each>
   </xsl:template>
+	<!-- added by Denis on 2015 0708 -->
+    <xsl:template match="tei:tagsDecl"/>
+    <xsl:template match="tei:langUsage"/>
 
 </xsl:stylesheet>
