@@ -30,7 +30,7 @@
   </xd:doc>
 
   <xsl:template match="eg">
-    <cit type="dicteg">
+    <cit type="example">
       <xsl:for-each select="q">
         <quote><xsl:apply-templates select="text()"/></quote>
       </xsl:for-each>
