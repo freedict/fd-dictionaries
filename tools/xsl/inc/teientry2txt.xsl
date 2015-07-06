@@ -89,7 +89,7 @@
   </xsl:template>
 
   <xsl:template match="tei:pron">
-    <xsl:value-of select="concat(' [',.,']')"/>
+    <xsl:value-of select="concat(' /',.,'/')"/>
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
@@ -163,15 +163,22 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:cit"><!--cit can be @trans, @example (@colloc) and simple cit (for idiomatic expression)-->
+  <xsl:template match="tei:cit"><!--cit can be @trans, @example, (@colloc) and simple cit (for idiomatic expression)-->
 	<xsl:choose>
 		<xsl:when test="@type ='trans'">
+<!-- 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text> ◊ </xsl:text></xsl:if> -->
+			<xsl:if test="not(preceding-sibling::tei:cit[@type='trans']) and parent::tei:cit"><xsl:text> - </xsl:text></xsl:if>
 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text>, </xsl:text></xsl:if>
 			<xsl:apply-templates/>
 		</xsl:when>
-		<xsl:when test="@type ='example' or @type='dicteg'">
+		<xsl:when test="@type ='example'">
 			<xsl:text>&#xa;      </xsl:text>	
 			<xsl:apply-templates/>
+		</xsl:when>
+		<xsl:when test="@type ='colloc'">
+			<xsl:text> (</xsl:text>	
+			<xsl:apply-templates/>
+			<xsl:text>) </xsl:text>	
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:apply-templates/>
@@ -182,12 +189,13 @@
 
   <xsl:template match="tei:quote">
     <xsl:choose>
-      <xsl:when test="parent::tei:cit[@type='dicteg'] or parent::tei:cit[@type='example']">
+      <xsl:when test="parent::tei:cit[@type='example']">
         <xsl:value-of select="concat('&quot;',.,'&quot; ')"/>
-      </xsl:when>
+      </xsl:when><!--
       <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit]">
-        <xsl:value-of select="concat(' - ',.,' ')"/>
-      </xsl:when>
+		
+		<xsl:value-of select="concat(' - ',.,' ')"/>
+      </xsl:when>-->
       <xsl:when test="preceding-sibling::tei:quote"> <!-- parent::tei:cit[@type='trans'] and  -->
         <xsl:value-of select="', '"/>
         <xsl:apply-templates/>
@@ -196,10 +204,10 @@
         <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:template><!---->
 
-  <xsl:template match="tei:usg[@type]">
-    <xsl:text>[</xsl:text>
+  <xsl:template match="tei:usg">
+    <xsl:text> [</xsl:text>
     <xsl:value-of select="."/>
     <xsl:text>] </xsl:text>
   </xsl:template>
@@ -412,7 +420,7 @@
   </xsl:template>
   
   <xsl:template match="tei:lbl">
-	<xsl:text>(</xsl:text>
+	<xsl:text> (</xsl:text>
 	<xsl:value-of select="."/>
 	<xsl:text>) </xsl:text>
 </xsl:template>
@@ -421,12 +429,16 @@
    <xsl:value-of select="concat(.,' ')"/>
 </xsl:template>
 
+<xsl:template match=" tei:pos | tei:subc | tei:num | tei:number | tei:gen | tei:iType | tei:gram | tei:case">
+    <xsl:choose>
+      <xsl:when test="not(parent::tei:gramGrp)">
+		<xsl:value-of select="concat(' ',.)"/>
+	  </xsl:when>
+	  <xsl:otherwise>
+		<xsl:value-of select="."/>
+	  </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
 
- 
-<!--   <xsl:template match="| tei:pos | tei:num | tei:case | tei:gen">
-	<xsl:if test="parent::tei:gramGrp">
-		<xsl:value-of select="concat(.,' ')"/>
-    </xsl:if>
-</xsl:template> -->
 </xsl:stylesheet>
 
