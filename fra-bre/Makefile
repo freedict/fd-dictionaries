@@ -1,5 +1,7 @@
 FREEDICTDIR ?= ..
-DISTFILES = fra-bre.tei geriadur.dtd tei.css COPYING README ChangeLog tei.xsl Makefile
+
+DISTFILES = fra-bre.tei Makefile COPYING README \
+    freedict-P5.dtd freedict-dictionary.css
 
 supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
