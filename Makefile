@@ -6,7 +6,7 @@ debian-build-dep:
 	autoconf autotools-dev libxslt-dev libgtkhtml3.14-dev \
 	libglade2-dev scrollkeeper xmlto openoffice.org-draw \
 	libapache2-mod-php5 realpath dbview intltool rsync dictzip \
-	libxml-libxml-perl opensp
+	libxml-libxml-perl opensp git
 
 validate: freedict-database.xml freedict-database.rng
 	xmllint --noout --relaxng freedict-database.rng $<
