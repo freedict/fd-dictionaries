@@ -2,13 +2,12 @@
 # Copyright (C) 2012 freedict.org
 # This file is distributed under the same license as the Freedict website package.
 # Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>, 2013.
-#
-
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2012-06-12 20:00+0200\n"
+"POT-Creation-Date: 2015-09-30 13:11+0200\n"
 "PO-Revision-Date: 2013-01-20 02:13+0200\n"
 "Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,8 +38,10 @@ msgid ""
 "To access that data easily, eg. for use in a program as\n"
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
 "use this URL:"
-msgstr "Table preuzimanja su izazvane od XML fajla.\n"
-"Za jednostavan pristup tim podacima, na primjer za korištenje u programu kao\n"
+msgstr ""
+"Table preuzimanja su izazvane od XML fajla.\n"
+"Za jednostavan pristup tim podacima, na primjer za korištenje u programu "
+"kao\n"
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, možete "
 "koristiti ovaj URL:"
 
@@ -58,8 +59,8 @@ msgid ""
 msgstr ""
 "Distribucija Linux %1$sDebian%2$s ima svoj zaseban sistem ogledala "
 "preuzimanja. Kao administrator niste previše opterećeni sa preuzimanjem "
-"paketa, ali sa selekcijom paketa koje želite\n "
-"instalirati, samo sljedeće instrukcije trebate zapamtiti:"  
+"paketa, ali sa selekcijom paketa koje želite\n"
+" instalirati, samo sljedeće instrukcije trebate zapamtiti:"
 
 #: deb.php:19 rock.php:30
 #, php-format
@@ -69,15 +70,14 @@ msgid ""
 "  language combination has to be available in FreeDict."
 msgstr ""
 "%1$s i %2$s su jezički kodovi koji se sastaju od tri slova sa\n"
-"ISO 639-2 jezika koje trebate. Naravno, ta kombinacija "
-"treba da bude dostupna na FreeDict-u."
+"ISO 639-2 jezika koje trebate. Naravno, ta kombinacija treba da bude "
+"dostupna na FreeDict-u."
 
 #: deb.php:24
 msgid ""
 "You can find out what FreeDict packages are available in\n"
 "  Debian by visiting"
-msgstr ""
-"Možete naći FreeDict pakete u Debian-u ako posjetite"
+msgstr "Možete naći FreeDict pakete u Debian-u ako posjetite"
 
 #: deb.php:30
 #, php-format
@@ -99,8 +99,7 @@ msgstr ""
 
 #: editor.php:4
 msgid "FreeDict-Editor"
-msgstr ""
-"FreeDict-Editor"
+msgstr "FreeDict-Editor"
 
 #: editor.php:13
 #, php-format
@@ -125,8 +124,7 @@ msgstr ""
 #: editor.php:26
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
-msgstr ""
-"Za %soslove%s, molimo takođe pregledajte dokumentaciju."
+msgstr "Za %soslove%s, molimo takođe pregledajte dokumentaciju."
 
 #: editor.php:29
 #, php-format
@@ -134,48 +132,43 @@ msgid ""
 "If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
 "<i>etch</i> by <i>unstable</i> if you use unstable):"
 msgstr ""
-"Ako upotrebljavate %sDebian%s etch ili nestabilno, možete dodati sljedeće vašem %s "
-"(zamjenite <i>etch</i> sa <i>unstable</i> ako upotrebljavate nestabilnu verziju):"
+"Ako upotrebljavate %sDebian%s etch ili nestabilno, možete dodati sljedeće "
+"vašem %s (zamjenite <i>etch</i> sa <i>unstable</i> ako upotrebljavate "
+"nestabilnu verziju):"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "DICT servers"
-msgstr ""
-"DICT serveri"
+msgstr "DICT serveri"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "on Windows/Linux"
-msgstr ""
-"na Windows/Linux"
+msgstr "na Windows/Linux"
 
 #: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
 msgid "Mobipocket"
-msgstr ""
-"Mobipocket"
+msgstr "Mobipocket"
 
 #: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
 #: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
 msgid "on WinCE/Palm"
-msgstr ""
-"na WinCE/Palm" 
+msgstr "na WinCE/Palm"
 
 #: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
 msgid "on Zaurus/Qt"
-msgstr ""
-"Na Zaurus/Qt"
+msgstr "Na Zaurus/Qt"
 
 #: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
 #: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
-msgid "Download / Matrix view"
-msgstr ""
-"Skinuti / Pogled Matrixa"
+#, fuzzy
+msgid "Download / Matrix View"
+msgstr "Skinuti / Pogled Matrixa"
 
 #: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
 #, php-format
 msgid "All downloads are for platform %s."
-msgstr ""
-"Sva preuzimanja su za platforme %s."
+msgstr "Sva preuzimanja su za platforme %s."
 
 #: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
 #, php-format
@@ -200,18 +193,15 @@ msgstr ""
 
 #: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
 msgid "Select your language combination!"
-msgstr ""
-"Izaberite vašu kombinaciju jezika!"
+msgstr "Izaberite vašu kombinaciju jezika!"
 
 #: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Source Language / Size in MB"
-msgstr ""
-"Izvorni Jezik / Veličina u MB"
+msgstr "Izvorni Jezik / Veličina u MB"
 
 #: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Destination<br />Language"
-msgstr ""
-"Ciljani <br jezik /> "
+msgstr "Ciljani <br jezik /> "
 
 #: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
 msgid ""
@@ -220,153 +210,125 @@ msgid ""
 "from here!"
 msgstr ""
 "Molimo kliknite na linkove da bi ste pristupili SourceForge\n"
-"stranici selekcije ogledala preuzimanja. \"Desni klik\" i \"Spasiti kao\" neće funkcionisati odavde!"
+"stranici selekcije ogledala preuzimanja. \"Desni klik\" i \"Spasiti kao\" "
+"neće funkcionisati odavde!"
 
 #: list.php:6
 msgid "Download / List View"
-msgstr ""
-"Preuzimanje / Pogled u Lists"
+msgstr "Preuzimanje / Pogled u Lists"
 
 #: list.php:10
 msgid "Detailed Dictionary Overview"
-msgstr ""
-"Detaljni Pregled Rječnika"
+msgstr "Detaljni Pregled Rječnika"
 
 #: list.php:14
 msgid "Language &amp; Project"
-msgstr ""
-"Jezik &amp; Projekat"
+msgstr "Jezik &amp; Projekat"
 
 #: list.php:15
 msgid "Maintainer"
-msgstr ""
-"Održavatelj"
+msgstr "Održavatelj"
 
 #: list.php:16
 msgid "Headwords"
-msgstr ""
-"Glavne Riječi"
+msgstr "Glavne Riječi"
 
 #: list.php:17
 msgid "Version"
-msgstr ""
-"Verzija"
+msgstr "Verzija"
 
 #: list.php:18
 msgid "Last Changed"
-msgstr ""
-"Zadnja promjena"
+msgstr "Zadnja promjena"
 
 #: list.php:19 weblang.php:29
 msgid "Status"
-msgstr ""
-"Status"
+msgstr "Status"
 
 #: list.php:20
 msgid "Version for / Size in MB"
-msgstr ""
-"Verzija za / Veličina u MB"
+msgstr "Verzija za / Veličina u MB"
 
 #: menu.php:7 menu.php:10
 msgid "Menu"
-msgstr ""
-"Meni"
+msgstr "Meni"
 
 #: menu.php:19 overview.php:4
 msgid "Overview"
-msgstr ""
-"Pregled"
+msgstr "Pregled"
 
 #: menu.php:22
 msgid "Download databases"
-msgstr ""
-"Datoteke preuzimanja"
+msgstr "Datoteke preuzimanja"
 
 #: menu.php:25
 msgid "Platform"
-msgstr ""
-"Platforme"
+msgstr "Platforme"
 
 #: menu.php:26
 msgid "Application"
-msgstr ""
-"Aplikacija"
+msgstr "Aplikacija"
 
 #: menu.php:30
 msgid "Windows &amp; Linux"
-msgstr ""
-"Windows &amp; Linux"
+msgstr "Windows &amp; Linux"
 
 #: menu.php:31
 msgid "DICT servers (tgz)"
-msgstr ""
-"DICT serveri (tgz)"
+msgstr "DICT serveri (tgz)"
 
 #: menu.php:35
 msgid "Debian Linux"
-msgstr ""
-"Debian Linux"
+msgstr "Debian Linux"
 
 #: menu.php:36
 msgid "dictd"
-msgstr ""
-"dicttd"
+msgstr "dicttd"
 
 #: menu.php:40
 msgid "WinCE &amp; Palm"
-msgstr ""
-"WinCE &amp; Palm"
+msgstr "WinCE &amp; Palm"
 
 #: menu.php:55
 msgid "Detailed List"
-msgstr ""
-"Detaljna Lista"
+msgstr "Detaljna Lista"
 
 #: menu.php:64
 msgid "FreeDict Online Servers"
-msgstr ""
-"FreeDict Online Serveri"
+msgstr "FreeDict Online Serveri"
 
 #: menu.php:76
 msgid "SourceForge Project Page"
-msgstr ""
-"SourceForge Stranica Projekta"
+msgstr "SourceForge Stranica Projekta"
 
 #: menu.php:81
 msgid "Mailinglists"
-msgstr ""
-"Mailing Liste"
+msgstr "Mailing Liste"
 
 #: menu.php:83
 msgid "Bugs"
-msgstr ""
-"Kvar"
+msgstr "Kvar"
 
 #: menu.php:85
 msgid "Wiki"
-msgstr ""
-"Wiki"
+msgstr "Wiki"
 
 #: menu.php:88 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
-msgstr ""
-"Prevedite ovu Web stranicu"
+msgstr "Prevedite ovu Web stranicu"
 
 #: menu.php:93
 msgid "FreeDict Project"
-msgstr ""
-"FreeDict Projekat"
+msgstr "FreeDict Projekat"
 
 #: overview.php:8
 msgid "free bilingual dictionaries"
-msgstr ""
-"besplatni bilingvalni rječnici"
+msgstr "besplatni bilingvalni rječnici"
 
 #: overview.php:10
 #, php-format
 msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
-msgstr ""
-"Horst Eyermann, Michael Bunk i %1$smnogo drugih%2$s"
+msgstr "Horst Eyermann, Michael Bunk i %1$smnogo drugih%2$s"
 
 #: overview.php:14
 msgid ""
@@ -393,12 +355,12 @@ msgid ""
 "browser search window."
 msgstr ""
 "Datoteke su dostupne u XML-u. Podržavamo pretvaranje Freedict \n"
-"datoteka od svog izvornog %4$sTEI%2$s formata za upotrebu sa %1$sdictd, "
-"DICT Rječnik server %2$s i drugih\n"
-"sličnih servera. Frontend našeg vlastitog rječnika možete naći na "
-"%3$shttp://freedict.org/dict%2$s. Molimo zabilježite da sa te stranice "
-"možete takođe intalirati plugin koji će vam omogućiti da pretražite FreeDict "
-"rječnike direktno sa\n"
+"datoteka od svog izvornog %4$sTEI%2$s formata za upotrebu sa %1$sdictd, DICT "
+"Rječnik server %2$s i drugih\n"
+"sličnih servera. Frontend našeg vlastitog rječnika možete naći na %3$shttp://"
+"freedict.org/dict%2$s. Molimo zabilježite da sa te stranice možete takođe "
+"intalirati plugin koji će vam omogućiti da pretražite FreeDict rječnike "
+"direktno sa\n"
 "prozora pretrage vašeg pregledeča."
 
 #: overview.php:26
@@ -410,10 +372,9 @@ msgid ""
 "with XSL-FO."
 msgstr ""
 "Ali takođe postoje i druge aplikacije za naše datoteke. Možete\n"
-"ih upotrijebiti da generirate liste riječi za pravopisne provjernike i stvoriti "
-"nove rječnike, da bi ih importirali \n"
-"u vašu terminološku datoteku pa čak i tiskati vaš lični rječnik "
-"sa XSL-FO." 
+"ih upotrijebiti da generirate liste riječi za pravopisne provjernike i "
+"stvoriti nove rječnike, da bi ih importirali \n"
+"u vašu terminološku datoteku pa čak i tiskati vaš lični rječnik sa XSL-FO."
 
 #: overview.php:30
 msgid ""
@@ -433,7 +394,7 @@ msgid ""
 msgstr ""
 "Veličina resursa se nalazi na SourceForge-u:\n"
 "Molimo podržite ih takođe. Bez SourForge-a, FreeDict ne bi\n"
-"dotle stigao!" 
+"dotle stigao!"
 
 #: overview.php:41
 msgid ""
@@ -449,8 +410,7 @@ msgstr ""
 
 #: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
-msgstr ""
-"Rock Linux Paketi"
+msgstr "Rock Linux Paketi"
 
 #: rock.php:11
 #, php-format
@@ -466,11 +426,9 @@ msgid ""
 msgstr ""
 "%1$sRock Linux%2$s Build Kit distribucija uključuje\n"
 "dictdt paket kao i paketi FreeDict rječnika u formatu dictd\n"
-"datoteke. Za Rock 2.0, kada dictdt/FreeDict paketi nisu još "
-"dio\n"
+"datoteke. Za Rock 2.0, kada dictdt/FreeDict paketi nisu još dio\n"
 "ispravne distribucije, trebate uzeti njihove .desc fajlove sa\n"
-"skladišta podverzije i osnovati pakete (koji će instalirati fajlove "
-"u\n"
+"skladišta podverzije i osnovati pakete (koji će instalirati fajlove u\n"
 "isto vrijeme):"
 
 #: rock.php:35
@@ -481,8 +439,8 @@ msgid ""
 "in the 2.0 release of Rock Linux."
 msgstr ""
 "Uz stone alatke možete aktivirati rječnike za upotrebu sa dictd.\n"
-"Stone skript je uključen u dictd paketu, ali nije bio "
-"u verziji 2.0 Rock Linux-a."  
+"Stone skript je uključen u dictd paketu, ali nije bio u verziji 2.0 Rock "
+"Linux-a."
 
 #: rock.php:39
 msgid ""
@@ -516,300 +474,247 @@ msgstr ""
 
 #: weblang.php:25
 msgid "Translation status for the website languages"
-msgstr ""
-"Status prijevoda za jezike web stranice"
+msgstr "Status prijevoda za jezike web stranice"
 
 #: weblang.php:28
 msgid "Language"
-msgstr ""
-"Jezik"
+msgstr "Jezik"
 
-#: inc/gettext.php:91
+#: inc/gettext.php:93
 msgid "Website Language: "
-msgstr ""
-"Jezik web stranice"
+msgstr "Jezik web stranice"
 
-#: inc/gettext.php:93 inc/langcodes.php:17
+#: inc/gettext.php:95 inc/langcodes.php:18
 msgid "English"
-msgstr ""
-"Engleski"
+msgstr "Engleski"
 
 #: inc/langcodes.php:5
 msgid "Afrikaans"
-msgstr ""
-"Afrikaanski"
+msgstr "Afrikaanski"
 
 #: inc/langcodes.php:6
 msgid "Arabic"
-msgstr ""
-"Arapski"
+msgstr "Arapski"
 
 #: inc/langcodes.php:7
 msgid "Asturian"
-msgstr ""
-"Asturijanski"
+msgstr "Asturijanski"
 
 #: inc/langcodes.php:8
 msgid "Belarusian"
-msgstr ""
-"Bjeloruski"
+msgstr "Bjeloruski"
 
 #: inc/langcodes.php:9
 msgid "Breton"
-msgstr ""
-"Bretonski"
+msgstr "Bretonski"
 
 #: inc/langcodes.php:10
-msgid "Catalan"
-msgstr ""
-"Katalonski"
+msgid "Bosnian"
+msgstr "Bosanski"
 
 #: inc/langcodes.php:11
-msgid "Czech"
-msgstr ""
-"Češki"
+msgid "Catalan"
+msgstr "Katalonski"
 
 #: inc/langcodes.php:12
-msgid "Sorani"
-msgstr ""
-"Soranijski"
+msgid "Czech"
+msgstr "Češki"
 
 #: inc/langcodes.php:13
-msgid "Welsh"
-msgstr ""
-"Velški"
+msgid "Sorani"
+msgstr "Soranijski"
 
 #: inc/langcodes.php:14
-msgid "Bulgarian"
-msgstr ""
-"Bugarski"
+msgid "Welsh"
+msgstr "Velški"
 
 #: inc/langcodes.php:15
-msgid "Danish"
-msgstr ""
-"Danski"
+msgid "Bulgarian"
+msgstr "Bugarski"
 
 #: inc/langcodes.php:16
-msgid "Dutch"
-msgstr ""
-"Nizozemski"
+msgid "Danish"
+msgstr "Danski"
 
-#: inc/langcodes.php:18
-msgid "Modern Greek"
-msgstr ""
-"Moderni Grčki"
+#: inc/langcodes.php:17
+msgid "Dutch"
+msgstr "Nizozemski"
 
 #: inc/langcodes.php:19
+msgid "Modern Greek"
+msgstr "Moderni Grčki"
+
+#: inc/langcodes.php:20
 msgid "French"
 msgstr ""
 
-#: inc/langcodes.php:20
+#: inc/langcodes.php:21
 msgid "Scottish Gaelic"
-msgstr ""
-"Škotski galski"
+msgstr "Škotski galski"
 
-#: inc/langcodes.php:21 inc/langcodes.php:26
+#: inc/langcodes.php:22 inc/langcodes.php:27
 msgid "Irish"
-msgstr ""
-"Irski"
-
-#: inc/langcodes.php:22
-msgid "German"
-msgstr ""
-"Njemački"
+msgstr "Irski"
 
 #: inc/langcodes.php:23
-msgid "Hindi"
-msgstr ""
-"Hindski"
+msgid "German"
+msgstr "Njemački"
 
 #: inc/langcodes.php:24
-msgid "Croatian"
-msgstr ""
-"Hrvatski"
+msgid "Hindi"
+msgstr "Hindski"
 
 #: inc/langcodes.php:25
-msgid "Hungarian"
-msgstr ""
-"Mađarski"
+msgid "Croatian"
+msgstr "Hrvatski"
 
-#: inc/langcodes.php:27
-msgid "Icelandic"
-msgstr ""
-"Islandski"
+#: inc/langcodes.php:26
+msgid "Hungarian"
+msgstr "Mađarski"
 
 #: inc/langcodes.php:28
-msgid "Italian"
-msgstr ""
-"Taljanski"
+msgid "Icelandic"
+msgstr "Islandski"
 
 #: inc/langcodes.php:29
-msgid "Khasi"
-msgstr ""
-"Kasijski"
+msgid "Italian"
+msgstr "Taljanski"
 
 #: inc/langcodes.php:30
-msgid "Kurmanji"
-msgstr ""
-"Kurmanji"
+msgid "Khasi"
+msgstr "Kasijski"
 
 #: inc/langcodes.php:31
-msgid "Kurdish"
-msgstr ""
-"Kurdski"
+msgid "Kurmanji"
+msgstr "Kurmanji"
 
 #: inc/langcodes.php:32
-msgid "Latin"
-msgstr ""
-"Latinski"
+msgid "Kurdish"
+msgstr "Kurdski"
 
 #: inc/langcodes.php:33
-msgid "Lithuanian"
-msgstr ""
-"Litvanski"
+msgid "Latin"
+msgstr "Latinski"
 
 #: inc/langcodes.php:34
-msgid "Macedonian"
-msgstr ""
-"Makedonski"
+msgid "Lithuanian"
+msgstr "Litvanski"
 
 #: inc/langcodes.php:35
-msgid "Norwegian Nynorsk"
-msgstr ""
-"Norveški Nynorsk"
+msgid "Macedonian"
+msgstr "Makedonski"
 
 #: inc/langcodes.php:36
-msgid "Norwegian BokmÃ¥l"
-msgstr ""
-"Norveški Bokmal"
+msgid "Norwegian Nynorsk"
+msgstr "Norveški Nynorsk"
 
 #: inc/langcodes.php:37
-msgid "Japanese"
-msgstr ""
-"Japanski"
+#, fuzzy
+msgid "Norwegian Bokmål"
+msgstr "Norveški Bokmal"
 
 #: inc/langcodes.php:38
-msgid "Occitan"
-msgstr ""
-"Oksitanski"
+msgid "Japanese"
+msgstr "Japanski"
 
 #: inc/langcodes.php:39
-msgid "Polish"
-msgstr ""
-"Poljski"
+msgid "Occitan"
+msgstr "Oksitanski"
 
 #: inc/langcodes.php:40
-msgid "Portuguese"
-msgstr ""
-"Portugalski"
+msgid "Polish"
+msgstr "Poljski"
 
 #: inc/langcodes.php:41
-msgid "Romanian"
-msgstr ""
-"Rumunski"
+msgid "Portuguese"
+msgstr "Portugalski"
 
 #: inc/langcodes.php:42
-msgid "Russian"
-msgstr ""
-"Ruski"
+msgid "Romanian"
+msgstr "Rumunski"
 
 #: inc/langcodes.php:43
-msgid "Sanskrit"
-msgstr ""
-"Sanskritski"
+msgid "Russian"
+msgstr "Ruski"
 
 #: inc/langcodes.php:44
-msgid "Gaelic Scottish"
-msgstr ""
-"Galski Škotski"
+msgid "Sanskrit"
+msgstr "Sanskritski"
 
 #: inc/langcodes.php:45
-msgid "Slovak"
-msgstr ""
-"Slovački"
+msgid "Gaelic Scottish"
+msgstr "Galski Škotski"
 
 #: inc/langcodes.php:46
-msgid "Spanish"
-msgstr ""
-"Španjolski"
+msgid "Slovak"
+msgstr "Slovački"
 
 #: inc/langcodes.php:47
+msgid "Spanish"
+msgstr "Španjolski"
+
+#: inc/langcodes.php:48
 msgid "Serbo-Croatian"
-msgstr ""
-"Srpsko-Hrvatski"
+msgstr "Srpsko-Hrvatski"
 
-#: inc/langcodes.php:48 inc/langcodes.php:49
+#: inc/langcodes.php:49 inc/langcodes.php:50
 msgid "Swahili"
-msgstr ""
-"Svahili"
-
-#: inc/langcodes.php:50
-msgid "Swedish"
-msgstr ""
-"Švedski"
+msgstr "Svahili"
 
 #: inc/langcodes.php:51
-msgid "Turkish"
-msgstr ""
-"Turski"
+msgid "Swedish"
+msgstr "Švedski"
 
 #: inc/langcodes.php:52
-msgid "Ukrainian"
-msgstr ""
-"Ukrajinski"
+msgid "Turkish"
+msgstr "Turski"
 
 #: inc/langcodes.php:53
-msgid "Bosnian"
-msgstr ""
-"Bosanski"
+msgid "Ukrainian"
+msgstr "Ukrajinski"
 
 #: inc/legend.php:1
 msgid ""
 "List of table cells with differing background colours representing examplary "
 "dictionary states"
 msgstr ""
-"Lista čelija sa različitim bojama u pozadini predstavljaju primjere "
-"stanja rječnika"
+"Lista čelija sa različitim bojama u pozadini predstavljaju primjere stanja "
+"rječnika"
 
 #: inc/legend.php:5
 msgid "Color Legend"
-msgstr ""
-"Boja Legende"
+msgstr "Boja Legende"
 
 #: inc/legend.php:14
 msgid "Dictionary Status was marked as 'stable'"
-msgstr ""
-"Statut rječnika je obilježen kao 'stabilan'"
+msgstr "Statut rječnika je obilježen kao 'stabilan'"
 
 #: inc/legend.php:16
 msgid ""
 "Dictionary Status was marked as 'big enough to be useful' (from 10000 "
 "entries on)"
 msgstr ""
-"Statut rječnika je obilježen kao 'dovoljno velik da bi bio koristan' (od 10000 "
-"pa nadalje)"
+"Statut rječnika je obilježen kao 'dovoljno velik da bi bio koristan' (od "
+"10000 pa nadalje)"
 
 #: inc/legend.php:18
 msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
-msgstr ""
-"Statut rječnika je obilježen kao 'premal' (manje od 10000 unosa)"
+msgstr "Statut rječnika je obilježen kao 'premal' (manje od 10000 unosa)"
 
 #: inc/legend.php:20
 msgid "Dictionary Status was marked as 'low quality'"
-msgstr ""
-"Statut Rječnika je obilježen kao 'loš kvalitet'"
+msgstr "Statut Rječnika je obilježen kao 'loš kvalitet'"
 
 #: inc/legend.php:22
 msgid "Dictionary Status was not given or is 'unknown'"
-msgstr ""
-"Statut rječnika nije obilježen ili je 'nepoznat'"
+msgstr "Statut rječnika nije obilježen ili je 'nepoznat'"
 
 #: inc/legend.php:26
 msgid ""
 "The numbers for the platform downloads represent the download\n"
 "  sizes in Megabytes."
 msgstr ""
-"Brojevi za preuzimanja sa platforme pokazuje veličine preuzimanja\n" 
+"Brojevi za preuzimanja sa platforme pokazuje veličine preuzimanja\n"
 "u Megabajtima."
 
 #: inc/legend.php:27
