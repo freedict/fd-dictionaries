@@ -20,7 +20,7 @@ below the English translations and email the file to
 because it leaves some part of the website untranslated, you can get the
 <tt>.po</tt> file from SVN:') ?></p>
 
-<blockquote><a href="http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/website/locale/">http://freedict.svn.sourceforge.net/viewvc/freedict/trunk/website/locale/</a></blockquote>
+<blockquote><a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/website/locale/">https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/website/locale/</a></blockquote>
 
 <table summary="<?php echo _('Translation status for the website languages') ?>">
  <thead>
