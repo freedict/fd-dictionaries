@@ -19,19 +19,21 @@ update: $(DYNAMICPATH)
 	$(MAKE) -C $(DYNAMICPATH)
 	$(MAKE) generate-static
 
-generate-static: ~$(USER)/public_html/freedict-dynamic symlinks $(addprefix generate-, $(LANGUAGES)) /etc/apache2/mods-enabled/userdir.load
+generate-static: ~$(USER)/public_html/freedict-dynamic symlinks /etc/apache2/mods-enabled/userdir.load $(addprefix generate-, $(LANGUAGES))
 
 /etc/apache2/mods-enabled/userdir.load:
-	echo As root, please enable Apache2's mod_userdir.
+	echo As root, please enable Apache2\'s mod_userdir.
 	echo Please also make sure that in
 	echo /etc/apache2/mods-enabled/userdir.conf
 	echo you
-	echo AllowOverride FileInfo AuthConfig Limit Indexes Options=MultiViews,Indexes echo Otherwise you might get 500 Internal Server Error from Apache.
+	echo	 AllowOverride FileInfo AuthConfig Limit Indexes Options=MultiViews,Indexes
+	echo	 MultiviewsMatch Any
+	echo Otherwise you might get 500 Internal Server Error from Apache or 404 for Apache failing to negotiate .php URLs.
 	echo Finally, in /etc/apache2/mods-enabled/php5.conf
 	echo comment out the line
 	echo php_admin_value engine Off
-	echo , which disabled php for user dirs (otherwise Firefox will
-	echo allow you to download your php file as .html)...
+	echo , which disabled php for user dirs \(otherwise Firefox will
+	echo allow you to download your php file as .html\)...
 	sudo -u root "a2enmod userdir && /etc/init.d/apache2 restart"
 
 ~$(USER)/public_html:
