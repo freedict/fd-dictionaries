@@ -12,7 +12,7 @@ use File::stat;
 use POSIX qw(strftime);
 use URI::Escape;
 
-our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l, $opt_u, $opt_s);
+our($opt_v, $opt_h, $opt_a, $opt_d, $opt_f, $opt_r, $opt_l, $opt_u, $opt_s, $opt_R);
 
 sub printd
 {
@@ -22,12 +22,12 @@ sub printd
 
 my $FREEDICTDIR = $ENV{'FREEDICTDIR'} || "$FindBin::Bin/..";
 our $dbfile = "$FREEDICTDIR/freedict-database.xml";
-getopts('vhald:frus');
+getopts('vhald:frusR');
 
 sub HELP_MESSAGE
 {
   print <<EOT;
-$0 [options] (-a | -d <la1-la2> | -r[s] | -u)
+$0 [options] (-a | -d <la1-la2> | -r[s] | -u | -R)
 
 Gather metadata from TEI files in FreeDict file tree
 and save it in the XML file $dbfile.  Also collect information about
@@ -50,6 +50,7 @@ Options:
 -r	extract released packages from the SourceForge file releases
 -s	skip calling rsync (useful when local files are up to date anyway)
 -u	remove metadata for unavailable (renamed or deleted) dictionaries
+-R	list missing releases
 
 The produced freedict-database.xml has the following schema:
 
@@ -89,7 +90,7 @@ EOT
 }
 
 
-HELP_MESSAGE if $opt_h or (!$opt_d && !$opt_a && !$opt_r && !$opt_u);
+HELP_MESSAGE if $opt_h or (!$opt_d && !$opt_a && !$opt_r && !$opt_u && !$opt_R);
 
 sub contains_dictionary
 {
@@ -425,6 +426,73 @@ sub fdict_extract_releases
   warn "Found only $found dictionary releases.  Something is broken?"
     if $found < 419;
 }
+
+sub fdict_list_required_releases
+{
+  my $doc = shift;
+  my $ds = $doc->getElementsByTagName("dictionary");
+  my $n = $ds->getLength;
+  my @rrs = ();
+  my ($current, $outdated) = (0,0);
+  my @platforms = ('dict-tbz2', 'src');
+  my %platforms = ();
+  for my $p (@platforms) { $platforms{$p} = 1 };
+  # XXX exclude secondary platforms for now
+  #push @platforms, 'dict-tgz';
+  #push @platforms, 'bedic', 'zbedic', 'evolutionary', 'rpm';
+
+  for(my $i = 0; $i < $n; ++$i)
+  {
+    my $d = $ds->item($i);
+    my $headwords = $d->getAttributeNode("headwords")->getValue;
+    next if $headwords < 100;
+    my $name = $d->getAttributeNode("name")->getValue;
+    my $edition = $d->getAttributeNode("edition")->getValue;
+    my @unsupported = ();
+    my $u = $d->getAttributeNode("unsupported");
+    @unsupported = split /\s/, $u->getValue if defined $u;
+    my %unsupported = ();
+    foreach my $u (@unsupported) { $unsupported{$u} = 1 };
+    #printd "$name: Version in XML: $edition\n";
+
+    my %released_for_platform = ();
+    for my $r ($d->getElementsByTagName('release'))
+    {
+      my $p = $r->getAttribute('platform');
+      my $v = $r->getAttribute('version');
+      #printd "  $p: $v\n";
+      $released_for_platform{$p} = 1;
+      if($v eq $edition)
+      {
+	# XXX Compare release date with last change of .tei file
+	# (or better with last commit date in dictionary directory)
+	# to identify changed dictionaries where the edition was not changed yet.
+	$current++; next
+      }
+      next unless exists $platforms{$p};
+      my @missing = ($name, $edition, $p, $v);
+      push @rrs, [ @missing ];
+    }
+    # add
+    for my $p (@platforms)
+    {
+      next if exists $released_for_platform{$p};
+      next if exists $unsupported{$p};
+      my @missing = ($name, $edition, $p, 'Never released');
+      push @rrs, [ @missing ];
+    }
+  }
+
+  my $rrcount = scalar(@rrs);# number of required releases
+  if($rrcount>0)
+  {
+    print "\nDictionary | Edition in XML | Platform   | Last released version\n";
+    print "-" x 64, "\n";
+    for my $rr (@rrs) { printf "%10s | %14s | %10s | %21s\n", @$rr; }
+  }
+  printd "\n$rrcount outstanding releases\n";
+  exit ($rrcount > 0) ? 1 : 0;
+}
 ##################################################################
 
 printd "Using FREEDICTDIR=$FREEDICTDIR\n";
@@ -454,6 +522,7 @@ fdict_extract_metadata $FREEDICTDIR, $opt_d, $doc if $opt_d;
 fdict_extract_all_metadata $FREEDICTDIR, $doc if $opt_a;
 fdict_extract_all_metadata $FREEDICTDIR, $doc, 'unavailable' if $opt_u;
 fdict_extract_releases $doc if $opt_r;
+fdict_list_required_releases $doc if $opt_R;
 
 if($opt_l)
 { printd "Leaving $dbfile untouched.\n"; exit }
