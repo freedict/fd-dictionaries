@@ -294,10 +294,19 @@ sub fdict_extract_all_metadata
 sub compare_version
 {
   my($v1, $v2) = @_;
-  my @v1 = split /\./, $v1;
-  my @v2 = split /\./, $v2;
+  my $isdate1 = $v1 =~ /^\d\d\d\d-\d\d-\d\d$/;
+  my $isdate2 = $v2 =~ /^\d\d\d\d-\d\d-\d\d$/;
+  return $v1 cmp $v2 if $isdate1 and $isdate2;# compare dates stringwise
+  # dates sort after version numbers
+  return  1 if $isdate1 and !$isdate2;
+  return -1 if $isdate2 and !$isdate1;
+
+  warn "Doomed comparison: $v1 <=> $v2"
+    if $v1 !~ /^\d+([\.\-]\d+)*$/ or $v2 !~ /^\d+([\.\-]\d+)*$/;
+  my @v1 = split /[\.\-]/, $v1;
+  my @v2 = split /[\.\-]/, $v2;
   my $pieces = scalar(@v1);
-  $pieces = scalar(@v2) if scalar(@v2) > $pieces;
+  $pieces = scalar(@v2) if scalar(@v2) > $pieces;# max
   for(my $i=0; $i<$pieces; $i++)
   {
     my $result = ($v1[$i] || 0) <=> ($v2[$i] || 0);
@@ -314,7 +323,7 @@ sub update_database
 {
   my($doc, $URL, $size, $release_date) = @_;
 
-  unless($URL =~ qr"^http://sourceforge.net/projects/freedict/files/([^/]+/)?[^/]+/(freedict-)(\w{3}-\w{3})-([\d\.]+)\.([^/]+)/download")
+  unless($URL =~ qr"^http://sourceforge.net/projects/freedict/files/([^/]+/)?[^/]+/(freedict-)(\w{3}-\w{3})-([\d\.\-]+)\.([^/]+)/download")
   { printd "filename in URL '$URL' not recognized\n"; return }
   my $la1la2 = $3;
   my $version = $4;
@@ -387,10 +396,10 @@ sub fdict_extract_releases
 {
   my $doc = shift;
 
-  my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
-  my $rsynccmd = "rsync -a" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
   unless($opt_s)
   {
+    my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
+    my $rsynccmd = "rsync -a" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
     printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
     system($rsynccmd)
   }
@@ -401,7 +410,7 @@ sub fdict_extract_releases
   close $fh;
   for my $f (@filenames)
   {
-    unless($f =~ m"/frs/freedict/(([^/]+/)?[^/]+/freedict-(\w{3})-(\w{3})-([\d\.]+)\.([\w\.]+))$")
+    unless($f =~ m"/frs/freedict/(([^/]+/)?[^/]+/freedict-(\w{3})-(\w{3})-([\d\.\-]+)\.([\w\.]+))$")
     {
       printd "Skipping not matching path: $f\n";
       next
