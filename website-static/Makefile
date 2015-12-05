@@ -4,10 +4,11 @@ BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 DYNAMICPATH=$(FREEDICTDIR)/website
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))
 WGET=wget --quiet --header='X-FreeDict: staticlinks' --html-extension --no-clobber
+SFACCOUNT ?= micha137
 
 upload:
 	rsync -avP -e ssh --copy-links \
-	static/ micha137,freedict@web.sourceforge.net:htdocs/ \
+	static/ $(SFACCOUNT),freedict@web.sourceforge.net:htdocs/ \
 	--exclude 'mb/*' \
 	--exclude '*/.svn' \
 	--exclude 'images/flags/src' \
