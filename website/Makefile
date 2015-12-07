@@ -1,6 +1,6 @@
-LOCALES=ar_EG de_DE kha_IN ru_RU ku_TR fr_FR bg_BG lt_LT nl_NL bs_BA
-POS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES)))
-MOS=$(addprefix locale/,$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES)))
+LOCALES=$(wildcard locale/*_*)
+POS=$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES))
+MOS=$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES))
 
 all: editordoc.html howto freedict-database.xml flags-bedic.php \
 	flags-evolutionary.php freedict.pot $(MOS)
@@ -48,5 +48,5 @@ locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
 clean:
 	-rm -f $(MOS)
 
-.PHONY: all clean howto
+.PHONY: all clean
 

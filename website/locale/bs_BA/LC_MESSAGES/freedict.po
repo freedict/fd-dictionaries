@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2015-09-30 13:11+0200\n"
+"POT-Creation-Date: 2015-12-07 12:49+0100\n"
 "PO-Revision-Date: 2013-01-20 02:13+0200\n"
 "Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Možda potreban plug-in, na primjer "
 msgid "Adobe's"
 msgstr "Adobe-ovo"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "XML Baza podataka"
 
@@ -102,6 +102,11 @@ msgid "FreeDict-Editor"
 msgstr "FreeDict-Editor"
 
 #: editor.php:13
+#, fuzzy
+msgid "FreeDict-Editor is unmaintained!"
+msgstr "FreeDict-Editor"
+
+#: editor.php:15
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
@@ -110,27 +115,25 @@ msgstr ""
 "%sDokumentacija%s koja ide uz ovu aplikaciju ukljućuje listu \n"
 "karakeristika u %suvodu%s."
 
-#: editor.php:17
-#, php-format
+#: editor.php:19
+#, fuzzy, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
-"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sSVN%s and try compiling it yourself:"
+"You can checkout the <tt>freedict-editor</tt>\n"
+"directory from %sgit%s and try compiling it yourself:"
 msgstr ""
 "Nikakvo izdanje Freedict-Editora nije još urađeno dosad.\n"
 "Možete napraviti anonimnu provjeru na <tt>freedict-editor</tt>\n"
 "modulu sa %sSVN-a%s i pokušati kompilirati sami:"
 
-#: editor.php:26
+#: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Za %soslove%s, molimo takođe pregledajte dokumentaciju."
 
-#: editor.php:29
-#, php-format
-msgid ""
-"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+#: editor.php:33
+#, fuzzy, php-format
+msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 "Ako upotrebljavate %sDebian%s etch ili nestabilno, možete dodati sljedeće "
 "vašem %s (zamjenite <i>etch</i> sa <i>unstable</i> ako upotrebljavate "
@@ -241,7 +244,7 @@ msgstr "Verzija"
 msgid "Last Changed"
 msgstr "Zadnja promjena"
 
-#: list.php:19 weblang.php:29
+#: list.php:19 weblang.php:31
 msgid "Status"
 msgstr "Status"
 
@@ -298,26 +301,30 @@ msgid "FreeDict Online Servers"
 msgstr "FreeDict Online Serveri"
 
 #: menu.php:76
+msgid "Sources"
+msgstr ""
+
+#: menu.php:80
 msgid "SourceForge Project Page"
 msgstr "SourceForge Stranica Projekta"
 
-#: menu.php:81
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Mailing Liste"
 
-#: menu.php:83
+#: menu.php:85
 msgid "Bugs"
 msgstr "Kvar"
 
-#: menu.php:85
+#: menu.php:87
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:88 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Prevedite ovu Web stranicu"
 
-#: menu.php:93
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict Projekat"
 
@@ -463,20 +470,28 @@ msgstr ""
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.po</tt> file from SVN:"
+"<tt>.po</tt> file from:"
 msgstr ""
 "Ako želite ažurirati postojeći prijevod, vjerovatno\n"
 "zato što ostavlja dio web stranice neprevedeno, možete preuzeti\n"
 "<tt>.po</tt> fajl sa SVN-a:"
 
 #: weblang.php:25
+#, php-format
+msgid ""
+"We can recommend %spoedit%s for editing .po files, even though a text editor "
+"is is enough in theory."
+msgstr ""
+
+#: weblang.php:27
 msgid "Translation status for the website languages"
 msgstr "Status prijevoda za jezike web stranice"
 
-#: weblang.php:28
+#: weblang.php:30
 msgid "Language"
 msgstr "Jezik"
 

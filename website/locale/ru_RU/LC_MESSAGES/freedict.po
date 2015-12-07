@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2012-07-23 13:56+0200\n"
+"POT-Creation-Date: 2015-12-07 12:49+0100\n"
 "PO-Revision-Date: 2007-12-13 20:09+MET\n"
 "Last-Translator: Alexey Konyshev <alexey@polyglotexpert.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Возможно плугин необходим"
 msgid "Adobe's"
 msgstr ""
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "Данные как XML"
 
@@ -91,30 +91,32 @@ msgid "FreeDict-Editor"
 msgstr ""
 
 #: editor.php:13
+msgid "FreeDict-Editor is unmaintained!"
+msgstr ""
+
+#: editor.php:15
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
 "of features in the %sintroduction%s."
 msgstr ""
 
-#: editor.php:17
+#: editor.php:19
 #, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
-"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sSVN%s and try compiling it yourself:"
+"You can checkout the <tt>freedict-editor</tt>\n"
+"directory from %sgit%s and try compiling it yourself:"
 msgstr ""
 
-#: editor.php:26
+#: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr ""
 
-#: editor.php:29
+#: editor.php:33
 #, php-format
-msgid ""
-"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
@@ -215,7 +217,7 @@ msgstr "Версия"
 msgid "Last Changed"
 msgstr "Последнее изменение"
 
-#: list.php:19 weblang.php:29
+#: list.php:19 weblang.php:31
 msgid "Status"
 msgstr "Статус"
 
@@ -272,26 +274,30 @@ msgid "FreeDict Online Servers"
 msgstr "FreeDict онлайн сервер"
 
 #: menu.php:76
+msgid "Sources"
+msgstr ""
+
+#: menu.php:80
 msgid "SourceForge Project Page"
 msgstr "Страница проекта SourceForge"
 
-#: menu.php:81
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Почтовый список"
 
-#: menu.php:83
+#: menu.php:85
 msgid "Bugs"
 msgstr "Ошибки"
 
-#: menu.php:85
+#: menu.php:87
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:88 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Переведите эту Web-страницу"
 
-#: menu.php:93
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict проект"
 
@@ -419,14 +425,21 @@ msgstr ""
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.po</tt> file from SVN:"
+"<tt>.po</tt> file from:"
 msgstr ""
 
 #: weblang.php:25
+#, php-format
+msgid ""
+"We can recommend %spoedit%s for editing .po files, even though a text editor "
+"is is enough in theory."
+msgstr ""
+
+#: weblang.php:27
 msgid "Translation status for the website languages"
 msgstr ""
 
-#: weblang.php:28
+#: weblang.php:30
 #, fuzzy
 msgid "Language"
 msgstr "Язык Web-страницы"

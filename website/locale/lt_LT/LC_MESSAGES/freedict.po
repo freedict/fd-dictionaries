@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreeDict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2012-07-23 13:56+0200\n"
+"POT-Creation-Date: 2015-12-07 12:49+0100\n"
 "PO-Revision-Date: 2010-01-31 20:40+0200\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -29,7 +29,7 @@ msgstr "galbūt reikalingas įskiepis, pvz."
 msgid "Adobe's"
 msgstr "Adbobe"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "Duomenų bazė XML formatu"
 
@@ -104,6 +104,11 @@ msgid "FreeDict-Editor"
 msgstr "FreeDict-Redaktorius"
 
 #: editor.php:13
+#, fuzzy
+msgid "FreeDict-Editor is unmaintained!"
+msgstr "FreeDict-Redaktorius"
+
+#: editor.php:15
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
@@ -112,27 +117,25 @@ msgstr ""
 "Kartu su šia programa pateikiamos %sdokumentacos%s, skyriuje\n"
 "%sĮvadas%s išdėstytas jos savybių sąrašas."
 
-#: editor.php:17
-#, php-format
+#: editor.php:19
+#, fuzzy, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
-"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sSVN%s and try compiling it yourself:"
+"You can checkout the <tt>freedict-editor</tt>\n"
+"directory from %sgit%s and try compiling it yourself:"
 msgstr ""
 "Dar nėra išleista jokia šio redaktoriaus laida.\n"
 "Jūs galite anonimiškai atsisiųsti <tt>freedict-editor</tt> modulį\n"
 "iš %sSVN%s repozitorijos ir pabandyti susikompiliuoti ji patys:"
 
-#: editor.php:26
+#: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Dėl %sreikalavimų%s, prašome taip pat remtis dokumentacija."
 
-#: editor.php:29
-#, php-format
-msgid ""
-"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+#: editor.php:33
+#, fuzzy, php-format
+msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 "Jei naudojate %sDebian%s etch ar nestabilią laidą, Jūs galite įdėti šis "
 "eilutes  į savo %s failą (pakeiskite <i>etch</i> į <i>unstable</i>, jei Jūs "
@@ -237,7 +240,7 @@ msgstr "Versija"
 msgid "Last Changed"
 msgstr "Paskutiniai pakeitimai"
 
-#: list.php:19 weblang.php:29
+#: list.php:19 weblang.php:31
 msgid "Status"
 msgstr "Būsena"
 
@@ -294,26 +297,30 @@ msgid "FreeDict Online Servers"
 msgstr "FreeDict tiesioginiai serveriai"
 
 #: menu.php:76
+msgid "Sources"
+msgstr ""
+
+#: menu.php:80
 msgid "SourceForge Project Page"
 msgstr "Projekto puslapis SourceForge"
 
-#: menu.php:81
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Pašto konferencijos"
 
-#: menu.php:83
+#: menu.php:85
 msgid "Bugs"
 msgstr "Riktai"
 
-#: menu.php:85
+#: menu.php:87
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:88 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Išversti šia svetainę"
 
-#: menu.php:93
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict projectas"
 
@@ -445,20 +452,28 @@ msgstr ""
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.po</tt> file from SVN:"
+"<tt>.po</tt> file from:"
 msgstr ""
 "Jei norite atnaujinti esamą vertimą, tikriausiai todėl,\n"
 "kad jame lieka neišverstų svetainės vietų, galite gauti\n"
 "<tt>.po</tt> failą SVN repozitorijoje:"
 
 #: weblang.php:25
+#, php-format
+msgid ""
+"We can recommend %spoedit%s for editing .po files, even though a text editor "
+"is is enough in theory."
+msgstr ""
+
+#: weblang.php:27
 msgid "Translation status for the website languages"
 msgstr "Svetainės vertimų būsena"
 
-#: weblang.php:28
+#: weblang.php:30
 msgid "Language"
 msgstr "Kalba"
 

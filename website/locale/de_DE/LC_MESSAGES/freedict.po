@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2012-07-23 13:56+0200\n"
-"PO-Revision-Date: 2015-09-28 15:27+0100\n"
-"Last-Translator: Axel Brüning <bruening@iat.uni-leipzig.de>\n"
+"POT-Creation-Date: 2015-12-07 12:49+0100\n"
+"PO-Revision-Date: 2015-12-07 13:47+0100\n"
+"Last-Translator: Michael Bunk <micha@freedict.org>\n"
 "Language-Team: Deutsch <de@li.org>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: dataflow.php:4 dataflow.php:8 menu.php:20
@@ -31,7 +31,7 @@ msgstr "möglicherweise wird ein Plugin gebraucht, z.B."
 msgid "Adobe's"
 msgstr "Adobes"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "Datenbank als XML"
 
@@ -106,6 +106,10 @@ msgid "FreeDict-Editor"
 msgstr "FreeDict-Editor"
 
 #: editor.php:13
+msgid "FreeDict-Editor is unmaintained!"
+msgstr "FreeDict-Editor wird nicht gepflegt!"
+
+#: editor.php:15
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
@@ -114,31 +118,28 @@ msgstr ""
 "Die %sDokumentation%s enthält eine Liste der Leistungen in der %sEinführung"
 "%s (auf Englisch)."
 
-#: editor.php:17
+#: editor.php:19
 #, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
-"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sSVN%s and try compiling it yourself:"
+"You can checkout the <tt>freedict-editor</tt>\n"
+"directory from %sgit%s and try compiling it yourself:"
 msgstr ""
 "Der FreeDict-Editor wurde noch nicht veröffentlicht.  Sie können jedoch das "
-"Modul <tt>freedict-editor</tt> anonymus aus dem %sSVN%s auschecken und es "
-"versuchen selbst zu kompilieren:"
+"Verzeichnis <tt>freedict-editor</tt> aus %sgit%s auschecken und versuchen "
+"ihn selbst zu kompilieren:"
 
-#: editor.php:26
+#: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Die %sAnforderungen%s entnehmen sie bitte auch der Dokumentation."
 
-#: editor.php:29
+#: editor.php:33
 #, php-format
-msgid ""
-"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
-"Wenn sie %sDebian%s etch oder unstable verwenden, können sie dies zu ihrer "
-"%s-Datei hinzufügen (ersetzen sie <i>etch</i> durch <i>unstable</i>, wenn "
-"sie unstable verwenden):"
+"Wenn sie %sDebian%s unstable verwenden, können sie dies zu ihrer %s-Datei "
+"hinzufügen:"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
@@ -242,7 +243,7 @@ msgstr "Version"
 msgid "Last Changed"
 msgstr "Letzte Änderung"
 
-#: list.php:19 weblang.php:29
+#: list.php:19 weblang.php:31
 msgid "Status"
 msgstr "Status"
 
@@ -299,26 +300,30 @@ msgid "FreeDict Online Servers"
 msgstr "FreeDict Online-Server (en)"
 
 #: menu.php:76
+msgid "Sources"
+msgstr "Quellen"
+
+#: menu.php:80
 msgid "SourceForge Project Page"
 msgstr "SourceForge-Projektseite (en)"
 
-#: menu.php:81
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Mailinglisten (en)"
 
-#: menu.php:83
+#: menu.php:85
 msgid "Bugs"
 msgstr "Fehler"
 
-#: menu.php:85
+#: menu.php:87
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:88 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Übersetzen sie diese Webseite!"
 
-#: menu.php:93
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict-Projekt"
 
@@ -465,17 +470,26 @@ msgstr ""
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.po</tt> file from SVN:"
+"<tt>.po</tt> file from:"
 msgstr ""
 "Wenn sie eine vorhandene Übersetzung aktualisieren wollen - evtl. weil Teile "
 "dieser Webseite nicht übersetzt werden, können sie die <tt>.po</tt>-Datei "
-"aus dem Subversion-Repository holen:"
+"holen von:"
 
 #: weblang.php:25
+#, php-format
+msgid ""
+"We can recommend %spoedit%s for editing .po files, even though a text editor "
+"is is enough in theory."
+msgstr ""
+"Wir können %spoedit%s zum Bearbeiten der .po-Dateien empfehlen, obwohl "
+"theoretisch ein Texteditor ausreicht."
+
+#: weblang.php:27
 msgid "Translation status for the website languages"
 msgstr "Übersetzungsstatus für die Sprachen der Webseite"
 
-#: weblang.php:28
+#: weblang.php:30
 msgid "Language"
 msgstr "Sprache"
 

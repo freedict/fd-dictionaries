@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2012-07-23 13:56+0200\n"
+"POT-Creation-Date: 2015-12-07 12:49+0100\n"
 "PO-Revision-Date: 2010-04-15 12:01+0100\n"
 "Last-Translator: Jeroen Hellingman <jeroen@bohol.ph>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "mogelijk plugin vereist, bv."
 msgid "Adobe's"
 msgstr "Adobe's"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:89
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "Database als XML"
 
@@ -110,6 +110,11 @@ msgid "FreeDict-Editor"
 msgstr "FreeDict-Editor"
 
 #: editor.php:13
+#, fuzzy
+msgid "FreeDict-Editor is unmaintained!"
+msgstr "FreeDict-Editor"
+
+#: editor.php:15
 #, php-format
 msgid ""
 "The %sdocumentation%s coming with this application includes the list\n"
@@ -118,28 +123,26 @@ msgstr ""
 "Die %sdocumentatie%s die met deze applicatie wordt geleverd, bevat de lijst\n"
 "van mogelijkheden in de %sintroductie%s."
 
-#: editor.php:17
-#, php-format
+#: editor.php:19
+#, fuzzy, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
-"You can do an anonymous check out the <tt>freedict-editor</tt>\n"
-"module from %sSVN%s and try compiling it yourself:"
+"You can checkout the <tt>freedict-editor</tt>\n"
+"directory from %sgit%s and try compiling it yourself:"
 msgstr ""
 "Er is nog geen release van de FreeDict-Editor.\n"
 "Je kunt de <tt>freedict-editor</tt> module anoniem uitchecken\n"
 "met %sSVN%s en proberen het zelf te compileren:"
 
-#: editor.php:26
+#: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Raadpleeg de documentatie voor de %svereisten%s"
 
 # UNCLEAR: fraction: does the part between parentheses need translation?
-#: editor.php:29
-#, php-format
-msgid ""
-"If you use %sDebian%s etch or unstable, you can add this to your %s (replace "
-"<i>etch</i> by <i>unstable</i> if you use unstable):"
+#: editor.php:33
+#, fuzzy, php-format
+msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 "Als je %sDebian%s etch of unstable gebruikt, dan kun je dit aan je %s "
 "toevoegen (replace <i>etch</i> by <i>unstable</i> if you use unstable):"
@@ -251,7 +254,7 @@ msgstr "Versie"
 msgid "Last Changed"
 msgstr "Laatst Gewijzigd"
 
-#: list.php:19 weblang.php:29
+#: list.php:19 weblang.php:31
 msgid "Status"
 msgstr "Status"
 
@@ -308,26 +311,30 @@ msgid "FreeDict Online Servers"
 msgstr "FreeDict Online Servers"
 
 #: menu.php:76
+msgid "Sources"
+msgstr ""
+
+#: menu.php:80
 msgid "SourceForge Project Page"
 msgstr "SourceForge Project Pagina"
 
-#: menu.php:81
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Mailinglijsten"
 
-#: menu.php:83
+#: menu.php:85
 msgid "Bugs"
 msgstr "Bugs"
 
-#: menu.php:85
+#: menu.php:87
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:88 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Vertaal deze Website"
 
-#: menu.php:93
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict Project"
 
@@ -471,21 +478,29 @@ msgstr ""
 "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
+#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
-"<tt>.po</tt> file from SVN:"
+"<tt>.po</tt> file from:"
 msgstr ""
 "Als je een bestaande vertaling wilt aanpassen, waarschijnlijk\n"
 "omdat het een gedeelte van de website onvertaald laat, dan kun je het\n"
 "<tt>.po</tt> bestand van SVN verkrijgen:"
 
 #: weblang.php:25
+#, php-format
+msgid ""
+"We can recommend %spoedit%s for editing .po files, even though a text editor "
+"is is enough in theory."
+msgstr ""
+
+#: weblang.php:27
 msgid "Translation status for the website languages"
 msgstr "Vertaalstatus voor de website talen"
 
 # FRACTION
-#: weblang.php:28
+#: weblang.php:30
 msgid "Language"
 msgstr "Taal"
 
