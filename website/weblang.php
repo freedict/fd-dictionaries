@@ -18,9 +18,11 @@ below the English translations and email the file to
 
 <p><?php echo _('If you want to update an existing translation, probably
 because it leaves some part of the website untranslated, you can get the
-<tt>.po</tt> file from SVN:') ?></p>
+<tt>.po</tt> file from:') ?></p>
 
-<blockquote><a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/website/locale/">https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/website/locale/</a></blockquote>
+<blockquote><a href="https://github.com/freedict/fd-dictionaries/tree/master/website/locale" target="_parent">https://github.com/freedict/fd-dictionaries/tree/master/website/locale</a></blockquote>
+
+<p><?php echo sprintf(_('We can recommend %spoedit%s for editing .po files, even though a text editor is is enough in theory.'), '<a href="http://poedit.net/">', '</a>')?></p>
 
 <table summary="<?php echo _('Translation status for the website languages') ?>">
  <thead>

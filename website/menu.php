@@ -72,11 +72,13 @@ require_once 'inc/gettext.php';
  <a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=FreeDict_HOWTO_-_TOC" target="_parent">HOWTO</a>
 </td></tr>
 
+<tr><td class="menu">
+ <a href="https://github.com/freedict/fd-dictionaries" target="_parent"><?php echo _('Sources')?></a>
+</td></tr>
+
 <tr><td class="menu"><a href="https://sourceforge.net/projects/freedict/"
  target="_parent"><?php echo _('SourceForge Project Page') ?></a></td></tr>
 <tr><td class="menu"><ul>
- <li><small><a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/"
-  target="_parent">SVN</a><br /></small></li>
  <li><small><a href="https://sourceforge.net/p/freedict/mailman/?source=navbar"
   target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
  <li><small><a href="https://sourceforge.net/p/freedict/bugs/"
