@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
 "POT-Creation-Date: 2015-12-07 12:49+0100\n"
-"PO-Revision-Date: 2013-06-11 15:24+0100\n"
+"PO-Revision-Date: 2015-12-19 21:25+0100\n"
 "Last-Translator: Denis Arnaud <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: dataflow.php:4 dataflow.php:8 menu.php:20
 msgid "Data Flow"
@@ -110,9 +110,8 @@ msgid "FreeDict-Editor"
 msgstr "Editeur FreeDict"
 
 #: editor.php:13
-#, fuzzy
 msgid "FreeDict-Editor is unmaintained!"
-msgstr "Editeur FreeDict"
+msgstr "L'éditeur FreeDict n'est pas maintenu !"
 
 #: editor.php:15
 #, php-format
@@ -124,15 +123,15 @@ msgstr ""
 " des caractéristiques dans l'%sintroduction%s."
 
 #: editor.php:19
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "No release of the FreeDict-Editor has been made yet.\n"
 "You can checkout the <tt>freedict-editor</tt>\n"
 "directory from %sgit%s and try compiling it yourself:"
 msgstr ""
-"Aucune version de l' Editeur-FreeDict n'a été compilée pour le moment.\n"
+"Aucune version de l' éditeur FreeDict n'a été compilée pour le moment.\n"
 "Vous pouvez récupérer le module <tt>freedict-editor</tt>\n"
-"du %sSVN%s et essayer de le compiler vous même :"
+"depuis le dossier  %sgit%s et essayer de le compiler vous même :"
 
 #: editor.php:30
 #, php-format
@@ -140,12 +139,10 @@ msgid "For the %srequirements%s, please also refer to the documentation."
 msgstr "Pour les %spré-requis%s, veuillez vous référer à la documentation"
 
 #: editor.php:33
-#, fuzzy, php-format
+#, php-format
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
-"Si vous utilisez %sDebian%s etch ou instable, vous pouvez ajouter ceci à "
-"votre %s (remplacez <i>etch</i> par <i>unstable</i> si vous utilisez la "
-"version instable) :"
+"Si vous utilisez %sDebian%s instable, vous pouvez ajouter ceci à votre %s :"
 
 #: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
 #: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
@@ -309,7 +306,7 @@ msgstr "Serveurs FreeDict en ligne"
 
 #: menu.php:76
 msgid "Sources"
-msgstr ""
+msgstr "Sources"
 
 #: menu.php:80
 msgid "SourceForge Project Page"
@@ -486,7 +483,6 @@ msgstr ""
 ":<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
-#, fuzzy
 msgid ""
 "If you want to update an existing translation, probably\n"
 "because it leaves some part of the website untranslated, you can get the\n"
@@ -494,14 +490,16 @@ msgid ""
 msgstr ""
 "Si vous voulez mettre à jour une traduction existante, probablement\n"
 "parce qu'il reste quelques parties de ce site non traduites, vous pouvez\n"
-"récupérer le fichier <tt>.po</tt> à partir du SVN :"
+"récupérer le fichier <tt>.po</tt> depuis :"
 
 #: weblang.php:25
 #, php-format
 msgid ""
 "We can recommend %spoedit%s for editing .po files, even though a text editor "
-"is is enough in theory."
+"is enough in theory."
 msgstr ""
+"Nous recommandons l'édition des fichiers .po avec %spoedit%s, même si un "
+"éditeur de texte suffit en théorie"
 
 #: weblang.php:27
 msgid "Translation status for the website languages"
