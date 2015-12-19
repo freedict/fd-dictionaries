@@ -8,7 +8,7 @@
 
   <xsl:strip-space elements="*"/>
 
-  <xsl:variable name="stylesheet-entry_svnid">$Id$</xsl:variable>
+  <xsl:variable name="stylesheet-entry_svnid">$Id: teientry2txt.xsl 1166 2011-09-10 20:02:34Z bansp $</xsl:variable>
 
   <!-- I am fully aware of introducing some project-specific features into the P5 mode,
      but let this stuff reside here for a while until we come up with a clean way to 
@@ -159,7 +159,10 @@
     <xsl:if test="number($prec_senses) > 0">
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
-    <xsl:value-of select="concat('  ',$pref)"/>
+    <xsl:if test="parent::tei:sense">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+    <xsl:value-of select="$pref"/>
     <xsl:apply-templates/>
   </xsl:template>
 
@@ -213,6 +216,7 @@
   </xsl:template>
 
   <xsl:template match="tei:def">
+    <xsl:text>&#xa;</xsl:text>
     <xsl:variable name="stuff">
       <xsl:apply-templates select="*|text()"/>
     </xsl:variable>
@@ -387,13 +391,13 @@
         </xsl:call-template>
       </xsl:when>
       <xsl:when test="@type='usage'">
-        <xsl:text>&#xa;</xsl:text>
-        <xsl:call-template name="format">
+		<xsl:value-of select="concat(&#xa;'(',.,')&#xa;')"/>
+        <!--<xsl:call-template name="format">
           <xsl:with-param name="txt" select="concat(' (',normalize-space($stuff),')')"/>
-          <!--          select="concat(' Usage: ',normalize-space($stuff))"-->
+                    select="concat(' Usage: ',normalize-space($stuff))"
           <xsl:with-param name="width" select="75"/>
           <xsl:with-param name="start" select="1"/>
-        </xsl:call-template>
+        </xsl:call-template>-->
       </xsl:when>
       <xsl:when test="@type='def'">
         <xsl:text>&#xa;</xsl:text>
@@ -439,6 +443,12 @@
 	  </xsl:otherwise>
     </xsl:choose>
 </xsl:template>
-
+ <!-- 
+    <xsl:if test="following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')]">
+      <xsl:text>, </xsl:text>
+    </xsl:if> 
+	
+	 test="parent::tei:cit[@type='trans'][parent::tei:cit] and not(preceding-sibling::tei:quote)"
+-->
 </xsl:stylesheet>
 
