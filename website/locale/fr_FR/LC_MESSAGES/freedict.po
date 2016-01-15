@@ -1,8 +1,8 @@
 # French translation for Freedict Website
-# Copyright (C) 2006-2013
+# Copyright (C) 2006-2016
 # This file is distributed under the same license as the FreeDict website.
 # noname <lelaulau@yahoo.fr>, 2006.
-# Denis Arnaud <denisarnuad@yahoo.fr>, 2009-2013
+# Denis Arnaud <denisarnuad@yahoo.fr>, 2009-2016
 #
 msgid ""
 msgstr ""
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.4\n"
+<<<<<<< 480af864bfff0c6bb84e0876f55d4ea159b1206f
+=======
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+>>>>>>> Updated French translation for Freedict website.
 
 #: dataflow.php:4 dataflow.php:8 menu.php:20
 msgid "Data Flow"
@@ -107,11 +111,15 @@ msgstr ""
 
 #: editor.php:4
 msgid "FreeDict-Editor"
-msgstr "Editeur FreeDict"
+msgstr "Éditeur FreeDict"
 
 #: editor.php:13
 msgid "FreeDict-Editor is unmaintained!"
+<<<<<<< 480af864bfff0c6bb84e0876f55d4ea159b1206f
 msgstr "L'éditeur FreeDict n'est pas maintenu !"
+=======
+msgstr "L'Éditeur FreeDict n'est plus maintenu !"
+>>>>>>> Updated French translation for Freedict website.
 
 #: editor.php:15
 #, php-format
@@ -129,9 +137,15 @@ msgid ""
 "You can checkout the <tt>freedict-editor</tt>\n"
 "directory from %sgit%s and try compiling it yourself:"
 msgstr ""
+<<<<<<< 480af864bfff0c6bb84e0876f55d4ea159b1206f
 "Aucune version de l' éditeur FreeDict n'a été compilée pour le moment.\n"
 "Vous pouvez récupérer le module <tt>freedict-editor</tt>\n"
 "depuis le dossier  %sgit%s et essayer de le compiler vous même :"
+=======
+"Aucune version de l'Éditeur-FreeDict n'a été compilée pour le moment.\n"
+"Vous pouvez récupérer le module <tt>freedict-editor</tt>\n"
+"de %sgit%s et essayer de le compiler vous même :"
+>>>>>>> Updated French translation for Freedict website.
 
 #: editor.php:30
 #, php-format
@@ -498,8 +512,13 @@ msgid ""
 "We can recommend %spoedit%s for editing .po files, even though a text editor "
 "is enough in theory."
 msgstr ""
+<<<<<<< 480af864bfff0c6bb84e0876f55d4ea159b1206f
 "Nous recommandons l'édition des fichiers .po avec %spoedit%s, même si un "
 "éditeur de texte suffit en théorie"
+=======
+"Bien qu'un éditeur de texte soit suffisant en théorie, nous recommandons "
+"l'édition des fichiers .po par %spoedit%s."
+>>>>>>> Updated French translation for Freedict website.
 
 #: weblang.php:27
 msgid "Translation status for the website languages"
