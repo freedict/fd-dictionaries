@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Shell script to configure a dictionary into place.
+# install / remove dictionary on a UNIX-alike system with init
 
 
 DICTD_CONF=/etc/dictd.conf
@@ -32,16 +32,15 @@ Dict_Remove_Dictionary () {
 
 
 Restart_Dict_Server () {
-    if [ -f $DICT_SCRIPT ] ; then
-    $DICT_SCRIPT stop
-    $DICT_SCRIPT start
+    if [ -f $DICT_SCRIPT ]
+    then
+        $DICT_SCRIPT stop
+        $DICT_SCRIPT start
     fi
 }
 
 
-#
 # Program starts here
-#
 
 case "$1" in 
   '--install')

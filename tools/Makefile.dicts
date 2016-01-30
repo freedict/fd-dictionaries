@@ -8,7 +8,6 @@ WEBSTERDIR = /usr/local/bin/
 DICTFMT = dictfmt
 XEROX   = /usr/local/bin/xerox
 DICT2VOK = $(TOOLS)dict2evolutionary.pl
-#XSLPROCESSOR = sabcmd
 XSLPROCESSOR = xsltproc
 XSLT = $(TOOLS)xsl/tei2c5.xsl
 TEIFO = /usr/src/packages/theater/teixsl/fo/tei.xsl
