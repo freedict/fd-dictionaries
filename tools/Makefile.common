@@ -11,7 +11,7 @@ PATH := $(toolsdir):$(PATH)
 
 SHELL=bash
 
-available_platforms := dictd evolutionary bedic stardict aspell d4m fo
+available_platforms := dictd stardict aspell d4m fo
 
 xsldir ?= $(toolsdir)/xsl
 tei2dict := xmltei2xmldict.pl -n $(NSGMLS) -d $(XMLDECLARATION)
@@ -20,13 +20,10 @@ xmllint := /usr/bin/xmllint
 dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
-# Extracting the tiny edition element contents per XSLT is
-# inefficient.
-# version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
-#version1 = $(shell grep -m 1 -o -P -e \
-#	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
+DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
 
-# So we use grep to extract the edition.
+# Extracting the tiny edition element contents per XSLT is
+# inefficient. Use grep instead.
 # if $(version) contains spaces:
 # Makefile.common:235: *** mixed implicit and normal rules.  Stop.
 # so spaces are substituted by underscores
@@ -192,49 +189,6 @@ release-dict-tbz2-reverse: dirs \
 
 date=$(shell date +%G-%m-%d)
 
-$(FREEDICTDIR)/release/vok/%.vok: %.tei $(xsldir)/tei2vok.xsl \
-	$(xsldir)/inc/teiheader2txt.xsl $(xsldir)/inc/indent.xsl query-evolutionary
-	@if [ ! -d $(FREEDICTDIR)/release/vok ]; then \
-	  mkdir $(FREEDICTDIR)/release/vok; fi
-	@if [ "$(firstword $(XSLTPROCESSOR))" == "xsltproc" ]; then \
-	  echo "Warning! xsltproc does not warn of invalid chars in output encoding."; \
-	  $(XSLTPROCESSOR) --stringparam current-date $(date) $(xsldir)/tei2vok.xsl $< >$@; \
-	  else \
-	  $(XSLTPROCESSOR) $(xsldir)/tei2vok.xsl $< \$$current-date=$(date) >$@; fi
-
-vok: $(FREEDICTDIR)/release/vok/$(dictname).vok
-
-$(FREEDICTDIR)/release/vok/tld/%.tld: $(FREEDICTDIR)/release/vok/%.vok
-	@if [ ! -d $(FREEDICTDIR)/release/vok/tld ]; then \
-		mkdir $(FREEDICTDIR)/release/vok/tld; fi
-ifdef EVOLUTIONARY_MAKEDICT
-	cd $(dir $<) && $(EVOLUTIONARY_MAKEDICT) $(notdir $<)
-else
-	@echo "To convert from '.vok' to '.tld' requires manual invervention,"
-	@echo "because the 'Dictionary.exe' tool for it is a Win32 Application."
-	@echo "When you build on Cygwin and have Dictionary.exe installed, "
-	@echo "it will be started automatically."
-	@echo "If you had the Windows Emulator Wine installed, Dictionary.exe"
-	@echo "would also be started automatically (you have to install it before!)."
-	@echo "Be aware the Dicionary.exe does not work in all Wine versions"
-	@echo "(20041201 didn't work for me)."
-	@echo "Please define EVOLUTIONARY_MAKEDICT in $(toolsdir)/Makefile.config"
-	exit 1
-endif
-
-$(FREEDICTDIR)/release/vok/tld/freedict-$(dictname)-$(version).evolutionary.zip: \
-  $(FREEDICTDIR)/release/vok/tld/$(dictname).tld
-	cd '$(FREEDICTDIR)/release/vok/tld' && \
-	 rm -f '$@' && \
-	 zip '$@' '$(dictname).tld'
-
-release-evolutionary: $(FREEDICTDIR)/release/vok/tld/freedict-$(dictname)-$(version).evolutionary.zip
-
-clean::
-	rm -f $(FREEDICTDIR)/release/vok/$(dictname).vok \
-	$(FREEDICTDIR)/release/vok/tld/$(dictname).tld \
-	freedict-$(dictname)-$(version).evolutionary.zip
-
 ######################
 #### not used by me :)
 ######################
@@ -242,11 +196,11 @@ clean::
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)
 	install -m 644 $^ $(DESTDIR)
-	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+	$(DICTD_RESTART_SCRIPT)
 
 uninstall:
 	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
-	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+	$(DICTD_RESTART_SCRIPT)
 
 ########################
 #### maintenance targets
@@ -388,7 +342,6 @@ release-rpm-reverse:
 #  1b. apply `group-homographs-sorted.xsl'
 #  1c. link to `tei-wrapper.xml'
 #  2a. apply `tei2dic.xsl' to create a bedic format file with newlines
-#      (formerly `tei2zbdic.py' was used for 2a&c)
 #  2b. convert to Unicode NFC using charlint.pl
 #  2c. replace double newlines by NUL bytes and replace \\e by \e using perl
 #  3. apply `xerox' that comes with libbedic to generate missing properties
@@ -583,8 +536,7 @@ endif
 	release-dict-tbz2-oldstyle release-dict-tbz2-reverse-oldstyle \
 	release-dict-tgz-oldstyle release-dict-tgz-reverse-oldstyle \
 	release-dict-tbz2 release-dict-tbz2-reverse \
-	vok release-evolutionary \
-	bedic-precedence release-bedic release-zaurus \
+	release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
 	commit clean dist dbupdate validation query-% print-unsupported \
 	test test-reverse test-oldstyle test-reverse-oldstyle tests \
