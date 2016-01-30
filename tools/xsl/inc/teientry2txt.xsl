@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!-- vim: set expandtab sts=2 ts=2 sw=2 tw=80 ft=xml: -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.pnp-software.com/XSLTdoc"
@@ -12,7 +13,7 @@
 
   <!-- I am fully aware of introducing some project-specific features into the P5 mode,
      but let this stuff reside here for a while until we come up with a clean way to 
-     import project-dependent overrides from the individual project directories... -PB 13-apr-09-->
+     import project-dependent overrides from the individual project directories... -PB 13-apr-09 -->
 
   <!-- TEI entry specific templates -->
   <xsl:template match="tei:entry">
@@ -22,63 +23,83 @@
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="tei:sense | tei:note"/>
   </xsl:template>
-<!--Headword description FORM and GRAMGRP -->
+
+  <!--Headword description FORM and GRAMGRP -->
   <xsl:template match="tei:form">
     <xsl:variable name="paren"
       select="count(child::tei:orth) and (count(parent::tei:form) = 1 or @type='infl')"/>
     <!-- parenthesized if nested or (ad hoc) if @type="infl" -->
     <!-- further adhockishness (I'm duly ashamed): you'd better check if the <orth> is really there, because you may be 
-      looking at nested <form>s; a rewrite is needed here -->
-    <xsl:if test="$paren">
-      <xsl:text> (</xsl:text>
-    </xsl:if>
-	<!-- mandatory entry > form > orth -->	
-    <xsl:apply-templates select="tei:usg | tei:lbl"/> 
-      <xsl:if test="position() != last()">
-        <xsl:text> </xsl:text>
-      </xsl:if>
-	<!-- added to handle usg info in nested <form>s -->
-    <xsl:for-each select="tei:orth">
-      <xsl:choose>
-        <!-- values from the TEI Guidelines -->
-        <xsl:when test="count(@extent)=0 or @extent='full'">
-          <xsl:value-of select="."/>
-        </xsl:when>
-        <xsl:when test="@extent='pref'">
-          <xsl:value-of select="concat(.,'-')"/>
-        </xsl:when>
-        <xsl:when test="@extent='suff'">
-          <xsl:value-of select="concat('-',.)"/>
-        </xsl:when>
-        <xsl:when test="@extent='part'">
-          <xsl:value-of select="concat('-',.,'-')"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="."/>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:if test="position() != last()">
-        <xsl:text>, </xsl:text>
-      </xsl:if>
-    </xsl:for-each>
-    <xsl:apply-templates select="tei:pron"/>
-      <xsl:if test="position() != last()">
-        <xsl:text> </xsl:text>
-      </xsl:if>
-	<!-- then, if nested, gramGrp or gram infos... -->
-	<xsl:apply-templates select=" tei:gramGrp"/> 
-      <xsl:if test="position() != last()">
-        <xsl:text> </xsl:text>
-      </xsl:if>   
-	<xsl:apply-templates select="tei:form"/>
-    <xsl:if test="following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')]">
-      <xsl:text>, </xsl:text>
-      <!-- cosmetics: no comma before parens  -->
-    </xsl:if>    
-    <xsl:if test="$paren">
-      <xsl:text>)</xsl:text>
-    </xsl:if>
-  </xsl:template>
+      looking at nested <form>s; a rewrite is needed here
+        Output paren only when preceding sibling was not infl already
+        (parenthesis might exist). Note: closing might be still necessary when
+        it is the last "infl" in a row. -->
+        <xsl:if test="$paren and not(preceding-sibling::tei:form[@type='infl'])">
+          <xsl:text> (</xsl:text>
+        </xsl:if>
+        <!-- mandatory entry > form > orth -->	
+        <xsl:variable name="formatted_usg">
+          <xsl:apply-templates select="tei:usg | tei:lbl"/> 
+        </xsl:variable>
+        <!-- print the usg / lbl information and only print space afterwards if
+        there was actually something to print -->
+        <xsl:if test="$formatted_usg != ''">
+          <xsl:value-of select="$formatted_usg" />
+          <xsl:if test="position() != last()">
+            <xsl:text> </xsl:text>
+          </xsl:if>
+        </xsl:if>
+
+        <!-- iterate over orth's to handle nested forms with usg correctly -->
+        <xsl:variable name="orth_was_formatted">
+          <xsl:for-each select="tei:orth">
+            <xsl:choose>
+              <!-- values from the TEI Guidelines -->
+              <xsl:when test="count(@extent)=0 or @extent='full'">
+                <xsl:value-of select="."/>
+              </xsl:when>
+              <xsl:when test="@extent='pref'">
+                <xsl:value-of select="concat(.,'-')"/>
+              </xsl:when>
+              <xsl:when test="@extent='suff'">
+                <xsl:value-of select="concat('-',.)"/>
+              </xsl:when>
+              <xsl:when test="@extent='part'">
+                <xsl:value-of select="concat('-',.,'-')"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="."/>
+              </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="following-sibling::tei:orth">
+              <xsl:text>, </xsl:text>
+            </xsl:if>
+          </xsl:for-each>
+          <xsl:apply-templates select="tei:pron"/>
+        </xsl:variable>
+        <xsl:if test="$orth_was_formatted">
+          <xsl:value-of select="$orth_was_formatted"/>
+        </xsl:if>
+        <!-- then, if nested, gramGrp or gram infos... -->
+        <xsl:apply-templates select="tei:gramGrp"/> 
+        <xsl:apply-templates select="tei:form"/>
+        <!-- only print spaces or ,<space> when there are more leements -->
+          <xsl:choose>
+            <xsl:when test="following-sibling::tei:form"> <!--  and following-sibling::tei:form[1][not(@type='infl')] -->
+              <xsl:text>, </xsl:text>
+              <!-- cosmetics: no comma before parens  -->
+            </xsl:when>    
+            <xsl:when test="position() != last()">
+              <xsl:text> </xsl:text>
+            </xsl:when>   
+          </xsl:choose>
+
+          <!-- print parenthesis, except when next form sibling exists and has a
+          infl attribute -->
+          <xsl:if test="$paren and not(following-sibling::tei:form[@type='infl'])">
+            <xsl:text>)</xsl:text>
+          </xsl:if>
+        </xsl:template>
 
   <!-- can't see when this template may be active; see above for enhancement (pref, suff), if necessary -->
   <xsl:template match="tei:orth">
