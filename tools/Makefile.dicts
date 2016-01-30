@@ -1,8 +1,6 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .fo .pdf
 
 TOOLS = ../tools/
-BUILDHELPERS_DIR=$(TOOLS)/buildhelpers/
-ADDFREEDICT = $(BUILDHELPERS_DIR)add-freedict.sh
 #TEI2ZBDIC = $(BUILDHELPERS_DIR)tei2zbdic.py
 WEBSTERDIR = /usr/local/bin/
 DICTFMT = dictfmt
@@ -31,11 +29,6 @@ include $(TOOLS)Makefile.config
 #	$(XEROX) -d ../dicts/$*1.dic ../dicts/$*.dic
 #	rm -f ../dicts/$*1.dic
 
-
-#.dic.dic.dz:
-#	echo zip dic 
-#	dictzip ../dicts/$*.dic
-
 .dict.dz:
 	dictzip -k ../dicts/$*.dict
 
@@ -49,22 +42,5 @@ include $(TOOLS)Makefile.config
 .tei.fo:
 	$(XSLPROCESSOR) -o $*.fo $(TEIFO) $*.tei
 
-all:	\
-	$(LANGUAGE).tar.gz
-
-install: all
-	echo Hier
-	cd ../dicts && \
-	pwd; \
-	$(ADDFREEDICT) --remove $(LANGUAGE); \
-	$(ADDFREEDICT) --install $(LANGUAGE); \
-	cd ../$(LANGUAGE); 
-
-uninstall: 
-	cd ../dicts
-	$(ADDFREEDICT) --remove $(LANGUAGE) 
-	cd ../$(LANGUAGE)
-
-test:
-	nsgmls -s $(LANGUAGE).tei
+all: $(LANGUAGE).tar.gz
 

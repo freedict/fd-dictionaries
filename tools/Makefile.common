@@ -20,13 +20,10 @@ xmllint := /usr/bin/xmllint
 dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
-# Extracting the tiny edition element contents per XSLT is
-# inefficient.
-# version1 = $(shell $(XSLTPROCESSOR) $(xsldir)/getedition.xsl $(dictname).tei)
-#version1 = $(shell grep -m 1 -o -P -e \
-#	  "(?<=<edition>).+(?=</edition>)" $(dictname).tei)
+DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
 
-# So we use grep to extract the edition.
+# Extracting the tiny edition element contents per XSLT is
+# inefficient. Use grep instead.
 # if $(version) contains spaces:
 # Makefile.common:235: *** mixed implicit and normal rules.  Stop.
 # so spaces are substituted by underscores
@@ -199,11 +196,11 @@ date=$(shell date +%G-%m-%d)
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)
 	install -m 644 $^ $(DESTDIR)
-	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+	$(DICTD_RESTART_SCRIPT)
 
 uninstall:
 	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
-	if [ -x /usr/sbin/dictdconfig ]; then /usr/sbin/dictdconfig -w; fi
+	$(DICTD_RESTART_SCRIPT)
 
 ########################
 #### maintenance targets
