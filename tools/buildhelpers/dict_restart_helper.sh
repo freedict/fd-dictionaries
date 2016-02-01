@@ -40,6 +40,8 @@ restart_dictd_server() {
     then
         /etc/init.d/dictd restart stop
         /etc/init.d/dictd restart start
+    else
+        echo "Error, could not detect init system. DICT SERVER HAS NOT BEEN RESTARTED!"
     fi
 }
 
