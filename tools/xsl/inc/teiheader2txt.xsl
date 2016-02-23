@@ -235,7 +235,7 @@
   </xsl:template>
 
   <!-- this is a horribly unreadable template that should definitely be rewritten -->
-<!-- if the <change> element has all three attrs: @n, @who and @when set, do not process <head> -->
+  <!-- if the <change> element has all three attrs: @n, @who and @when set, do not process <head> -->
   <xsl:template match="tei:list" mode="changelog">
     <xsl:variable name="indent" select="count(ancestor-or-self::tei:list)*3"/>
     <xsl:if test="tei:head and not(string-length(ancestor::tei:change[1]/@n) &gt; 0 and
