@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# Dependencies (possibly not complete) in debian: libxml-dom-perl
 
 $::VERSION = '$Revision$';
 
