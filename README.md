@@ -28,5 +28,5 @@ instructions. For Debian/Ubuntu/Mint, the installation is really easy. Just
 search in the package manager for packages containing "freedict", i.e. for the
 English-German dictionary:
 
-    sudo apt-get install dictd gnome-dictionary dict-freedict-lat-deu
+    sudo apt-get install dictd gnome-dictionary dict-freedict-eng-deu
 
