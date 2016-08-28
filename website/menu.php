@@ -69,7 +69,7 @@ require_once 'inc/gettext.php';
 </td></tr>
 
 <tr><td class="menu">
- <a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=FreeDict_HOWTO_-_TOC" target="_parent">HOWTO</a>
+ <a href="https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO---TOC" target="_parent">HOWTO</a>
 </td></tr>
 
 <tr><td class="menu">
@@ -83,7 +83,7 @@ require_once 'inc/gettext.php';
   target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
  <li><small><a href="https://sourceforge.net/p/freedict/bugs/"
   target="_parent"><?php echo _('Bugs') ?></a><br /></small></li>
- <li><small><a href="http://apps.sourceforge.net/mediawiki/freedict/index.php?title=Main_Page"
+ <li><small><a href="https://github.com/freedict/fd-dictionaries/wiki"
   target="_parent"><?php echo _('Wiki') ?></a><br /></small></li>
 </ul></td>
 </tr>
