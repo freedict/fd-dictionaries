@@ -22,7 +22,7 @@ because it leaves some part of the website untranslated, you can get the
 
 <blockquote><a href="https://github.com/freedict/fd-dictionaries/tree/master/website/locale" target="_parent">https://github.com/freedict/fd-dictionaries/tree/master/website/locale</a></blockquote>
 
-<p><?php echo sprintf(_('We can recommend %spoedit%s for editing .po files, even though a text editor is is enough in theory.'), '<a href="http://poedit.net/">', '</a>')?></p>
+<p><?php echo sprintf(_('We can recommend %spoedit%s for editing .po files, even though a text editor is enough in theory.'), '<a href="http://poedit.net/">', '</a>')?></p>
 
 <table summary="<?php echo _('Translation status for the website languages') ?>">
  <thead>
