@@ -244,9 +244,6 @@ test-reverse-oldstyle: $(rdictname).oldstyle.index $(rdictname).oldstyle.dict
 
 tests: valid.stamp testresult-$(version).log
 
-commit:
-	svn commit
-
 dbupdate: $(dictname).dict $(dictname).index
 	extractdata.pl -vfd $(dictname)
 
@@ -538,7 +535,7 @@ endif
 	release-dict-tbz2 release-dict-tbz2-reverse \
 	release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
-	commit clean dist dbupdate validation query-% print-unsupported \
+	clean dist dbupdate validation query-% print-unsupported \
 	test test-reverse test-oldstyle test-reverse-oldstyle tests \
 	find-homographs pos-statistics \
 	stardict release-stardict release-tei-tbz2

@@ -18,9 +18,6 @@ dist:
 	$(BUILD)
 
 # if you forgot where you made changes... :)
-commit:
-	$(BUILD)
-
 vok:
 	$(BUILD)
 
@@ -48,5 +45,5 @@ validation:
 update:
 	for file in $(FREEDICTDIR)/???-???; do cd $$file && svn update; done
 
-.PHONY: install uninstall dbupdate commit release-% all vok clean tests update dist
+.PHONY: install uninstall dbupdate release-% all vok clean tests update dist
 
