@@ -2,10 +2,7 @@
 Jim Breen's JMdict database
 ===========================
 
-Conversion Style Sheets
------------------------
-
-JMdict_e project aims at providing at dictionary databases with Japanese as its
+The JMdict_e project aims at providing at dictionary databases with Japanese as its
 pivot language. The meta language of these databases is english. The project
 home is at <http://www.edrdg.org/jmdict/edict_doc.html>.
 
