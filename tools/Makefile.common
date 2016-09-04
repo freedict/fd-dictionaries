@@ -160,7 +160,7 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 reverse: $(dictname)-reverse.c5
 
 %.dict %.index: %.c5 query-dictd
-	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
+	dictfmt --without-time -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
 $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
