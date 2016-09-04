@@ -157,8 +157,9 @@
 
   <xsl:template match="tei:revisionDesc">
     <xsl:text>Changelog:&#xa;&#xa;</xsl:text>
+    <!--
     <xsl:if test="string-length($current-date)>0">
-      <!-- Add conversion timestamp -->
+      <!-- do not add conversion time stamp, prevents reproducible builds
       <xsl:text> * </xsl:text>
       <xsl:value-of select="$current-date"/>
       <xsl:text>: Conversion of the TEI source file into c5 format.</xsl:text>
@@ -166,6 +167,7 @@
       <xsl:value-of select="$stylesheet-header_svnid"/>
       <xsl:text>&#xa;</xsl:text>
     </xsl:if>
+    -->
     <xsl:apply-templates/>
   </xsl:template>
 
