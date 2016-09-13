@@ -5,5 +5,4 @@ supported_phonetics=
 include $(FREEDICTDIR)/tools/Makefile.common
 #include $(toolsdir)/ergane/Makefile.inc
 
-#$(dictname)-nophon.tei: $(dictname).tei.header
 

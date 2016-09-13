@@ -9,7 +9,12 @@ include $(toolsdir)/Makefile.config
 # from /usr/bin
 PATH := $(toolsdir):$(PATH)
 
+# that might need adaptation, standard debian ships with dash these days and people might not have bash at all
 SHELL=bash
+ifeq ($(origin UNSUPPORTED_PLATFORMS), undefined)
+UNSUPPORTED_PLATFORMS = bedic evolutionary
+endif
+
 
 available_platforms := dictd stardict aspell d4m fo
 
