@@ -187,9 +187,9 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:cit"><!--cit can be @trans, @example, (@colloc) and simple cit (for idiomatic expression)-->
+  <xsl:template match="tei:cit"><!--cit can be @trans, @translation @example, (@colloc) and simple cit (for idiomatic expression)-->
 	<xsl:choose>
-		<xsl:when test="@type ='trans'">
+		<xsl:when test="@type = 'trans' or @type = 'translation'">
 <!-- 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text> ◊ </xsl:text></xsl:if> -->
 			<xsl:if test="not(preceding-sibling::tei:cit[@type='trans']) and parent::tei:cit"><xsl:text> - </xsl:text></xsl:if>
 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text>, </xsl:text></xsl:if>
@@ -216,11 +216,11 @@
       <xsl:when test="parent::tei:cit[@type='example']">
         <xsl:value-of select="concat('&quot;',.,'&quot; ')"/>
       </xsl:when><!--
-      <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit]">
+      <xsl:when test="parent::tei:cit[@type='trans'][parent::tei:cit] or parent::tei:cit[@type='translation'][parent::tei:cit]">
 		
 		<xsl:value-of select="concat(' - ',.,' ')"/>
       </xsl:when>-->
-      <xsl:when test="preceding-sibling::tei:quote"> <!-- parent::tei:cit[@type='trans'] and  -->
+      <xsl:when test="preceding-sibling::tei:quote">
         <xsl:value-of select="', '"/>
         <xsl:apply-templates/>
       </xsl:when>
@@ -464,12 +464,5 @@
 	  </xsl:otherwise>
     </xsl:choose>
 </xsl:template>
- <!-- 
-    <xsl:if test="following-sibling::tei:form and following-sibling::tei:form[1][not(@type='infl')]">
-      <xsl:text>, </xsl:text>
-    </xsl:if> 
-	
-	 test="parent::tei:cit[@type='trans'][parent::tei:cit] and not(preceding-sibling::tei:quote)"
--->
 </xsl:stylesheet>
 
