@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Dependencies (possibly not complete) in debian: libxml-dom-perl
+# Dependencies in debian (possibly not complete): libxml-dom-perl make xsltproc
 
 $::VERSION = '$Revision$';
 
@@ -188,25 +188,21 @@ sub fdict_extract_metadata
 
   ###################################################################
 
-    #$edition = `sabcmd xsl/getedition.xsl "$teifile"`;
     # the --no-print-directory switch is required if extractdata is
     # run from inside a Makefile
     $edition = `cd $dirname/$entry;make --no-print-directory version`;
 
   ###################################################################
 
-    #$status = `sabcmd xsl/getstatus.xsl "$teifile"`;
     $status = `cd $dirname/$entry;make --no-print-directory status`;
     $status = 'unknown' if(!$status);
 
   ###################################################################
 
-    #$sourceURL = `sabcmd xsl/getsourceurl.xsl "$teifile"`;
     $sourceURL = `cd $dirname/$entry;make --no-print-directory sourceURL`;
 
   ###################################################################
 
-    #my $maintainer = `sabcmd xsl/getmaintainer.xsl "$teifile"`;
     use Encode;
     my $maintainer = decode_utf8(`cd $dirname/$entry;make --no-print-directory maintainer`);
     if($maintainer =~ /^([^<]+)\s<(.*)>$/)
@@ -238,11 +234,14 @@ sub fdict_extract_metadata
   $d->setAttribute('edition', $edition);
   $d->setAttribute('date', $date);
   $d->setAttribute('status', $status);
-  $d->setAttribute('sourceURL', $sourceURL);
+  if(length $sourceURL) # only add source URL if present
+  {
+    $d->setAttribute('sourceURL', $sourceURL);
+  }
   $d->setAttribute('maintainerName', $maintainerName);
   $d->setAttribute('maintainerEmail', $maintainerEmail);
 
-  if(defined $unsupported && $unsupported =~ /[^\s]/)
+  if($unsupported =~ /^\s*$/)
   {
     $d->setAttribute('unsupported', $unsupported)
   }

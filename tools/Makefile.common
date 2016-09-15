@@ -9,7 +9,12 @@ include $(toolsdir)/Makefile.config
 # from /usr/bin
 PATH := $(toolsdir):$(PATH)
 
+# that might need adaptation, standard debian ships with dash these days and people might not have bash at all
 SHELL=bash
+ifeq ($(origin UNSUPPORTED_PLATFORMS), undefined)
+UNSUPPORTED_PLATFORMS = bedic evolutionary
+endif
+
 
 available_platforms := dictd stardict aspell d4m fo
 
@@ -160,7 +165,7 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 reverse: $(dictname)-reverse.c5
 
 %.dict %.index: %.c5 query-dictd
-	dictfmt -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
+	dictfmt --without-time -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
 $(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
@@ -207,18 +212,15 @@ uninstall:
 ########################
 
 valid.stamp: $(dictname).tei
-	# way 3
-	xmllint -noout -valid -relaxng freedict-P5.rng $<
+	xmllint --noout --relaxng freedict-P5.rng $<
 	# way 1
 	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
-	export SP_ENCODING=XML; \
-	export SP_CHARSET_FIXED=YES; \
-	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
-	$(NSGMLS) -wxml -s -E 10 $(XMLDECLARATION) $(dictname).tei
-	# way 2
-	if [ -x $(xmllint) ]; then \
-		$(xmllint) --noout --valid $(dictname).tei; fi
-	echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
+	#export SP_ENCODING=XML; \
+	#export SP_CHARSET_FIXED=YES; \
+	#export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
+	#$(NSGMLS) -wxml -s -E 10 $(XMLDECLARATION) $(dictname).tei
+	#echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
+	echo "File is valid TEI XML."
 
 validation: valid.stamp
 

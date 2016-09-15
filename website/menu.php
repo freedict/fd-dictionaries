@@ -69,7 +69,7 @@ require_once 'inc/gettext.php';
 </td></tr>
 
 <tr><td class="menu">
- <a href="https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO---TOC" target="_parent">HOWTO</a>
+ <a href="https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO" target="_parent">HOWTO</a>
 </td></tr>
 
 <tr><td class="menu">
