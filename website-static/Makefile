@@ -3,7 +3,7 @@ LANGUAGES=en de kha ru ku fr ar bg lt nl bs
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 DYNAMICPATH=$(FREEDICTDIR)/website
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))
-WGET=wget --quiet --header='X-FreeDict: staticlinks' --html-extension --no-clobber
+WGET=wget --header='X-FreeDict: staticlinks' --html-extension --no-clobber
 SFACCOUNT ?= micha137
 
 upload:
