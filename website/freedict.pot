@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2016-09-01 21:36+0200\n"
+"POT-Creation-Date: 2016-10-09 09:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Adobe's"
 msgstr ""
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:95
 msgid "Database as XML"
 msgstr ""
 
@@ -115,43 +115,47 @@ msgstr ""
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 
-#: flags-dict-tgz.php:7 flags-dict-tgz.php:9
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "DICT servers"
 msgstr ""
 
-#: flags-dict-tgz.php:7 flags-dict-tgz.php:9
+#: flags-bedic.php:7 flags-bedic.php:9 flags-dict-tgz.php:7
+#: flags-dict-tgz.php:9 flags-evolutionary.php:7 flags-evolutionary.php:9
 msgid "on Windows/Linux"
 msgstr ""
 
-#: flags-dict-tgz.php:11
+#: flags-bedic.php:11 flags-dict-tgz.php:11 flags-evolutionary.php:11
 msgid "Mobipocket"
 msgstr ""
 
-#: flags-dict-tgz.php:11 flags-dict-tgz.php:13
+#: flags-bedic.php:11 flags-bedic.php:13 flags-dict-tgz.php:11
+#: flags-dict-tgz.php:13 flags-evolutionary.php:11 flags-evolutionary.php:13
 msgid "on WinCE/Palm"
 msgstr ""
 
-#: flags-dict-tgz.php:15
+#: flags-bedic.php:15 flags-dict-tgz.php:15 flags-evolutionary.php:15
 msgid "on Zaurus/Qt"
 msgstr ""
 
-#: flags-dict-tgz.php:23 flags-dict-tgz.php:27
+#: flags-bedic.php:23 flags-bedic.php:27 flags-dict-tgz.php:23
+#: flags-dict-tgz.php:27 flags-evolutionary.php:23 flags-evolutionary.php:27
 msgid "Download / Matrix View"
 msgstr ""
 
-#: flags-dict-tgz.php:29
+#: flags-bedic.php:29 flags-dict-tgz.php:29 flags-evolutionary.php:29
 #, php-format
 msgid "All downloads are for platform %s."
 msgstr ""
 
-#: flags-dict-tgz.php:34
+#: flags-bedic.php:34 flags-dict-tgz.php:34 flags-evolutionary.php:34
 #, php-format
 msgid ""
 "Another application understanding this file format is %1sWordtrans%2s, a KDE "
 "application."
 msgstr ""
 
-#: flags-dict-tgz.php:40
+#: flags-bedic.php:40 flags-dict-tgz.php:40 flags-evolutionary.php:40
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -159,19 +163,19 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-dict-tgz.php:48
+#: flags-bedic.php:48 flags-dict-tgz.php:48 flags-evolutionary.php:48
 msgid "Select your language combination!"
 msgstr ""
 
-#: flags-dict-tgz.php:51
+#: flags-bedic.php:51 flags-dict-tgz.php:51 flags-evolutionary.php:51
 msgid "Source Language / Size in MB"
 msgstr ""
 
-#: flags-dict-tgz.php:54
+#: flags-bedic.php:54 flags-dict-tgz.php:54 flags-evolutionary.php:54
 msgid "Destination<br />Language"
 msgstr ""
 
-#: flags-dict-tgz.php:146
+#: flags-bedic.php:146 flags-dict-tgz.php:146 flags-evolutionary.php:146
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -267,26 +271,26 @@ msgid "Sources"
 msgstr ""
 
 #: menu.php:80
-msgid "SourceForge Project Page"
-msgstr ""
-
-#: menu.php:83
-msgid "Mailinglists"
-msgstr ""
-
-#: menu.php:85
-msgid "Bugs"
+msgid "GitHub Project Page"
 msgstr ""
 
 #: menu.php:87
+msgid "Mailinglists"
+msgstr ""
+
+#: menu.php:89
+msgid "Bugs"
+msgstr ""
+
+#: menu.php:91
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:94 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr ""
 
-#: menu.php:95
+#: menu.php:99
 msgid "FreeDict Project"
 msgstr ""
 
@@ -301,30 +305,32 @@ msgstr ""
 
 #: overview.php:14
 msgid ""
-"On this page you can find translating dictionary databases.\n"
+"On this page you can find translation dictionary databases.\n"
 "The databases are free. That means they are available\n"
-"under the GNU General Public License or a less restrictive\n"
-"license. Check with the license of the respective database!"
+"under a free license like the GNU GPL or similar. Please check with the "
+"indrespective dictionary."
 msgstr ""
 
-#: overview.php:19
+#: overview.php:18
 #, php-format
 msgid ""
-"The databases are available in XML. We support the conversion of FreeDict \n"
-"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
-"DICT dictionary server%2$s and other\n"
-"similar servers. Our own dictionary front-end can be found at %3$shttp://"
-"freedict.org/dict%2$s. Please note that\n"
-"on that page, you can also install a plugin that will let you query FreeDict "
+"The databases are available in TEI, a XML language to encode human language. "
+"This way the dictionaries can be used both by humans and machines.\n"
+"We support the conversion of FreeDict databases from their native %4$sTEI"
+"%2$s\n"
+"format for use with %1$sdictd, the DICT dictionary server%2$s and other\n"
+"similar servers. Our own online dictionary lookup page can be found at "
+"%3$shttp://freedict.org/dict%2$s. Please note that\n"
+"you can also install a plugin on that page which will let you query FreeDict "
 "dictionaries straight from your\n"
 "browser search window."
 msgstr ""
 
 #: overview.php:26
 msgid ""
-"But there are other applications for our databases as well. You could use\n"
-"them to generate wordlists for spellcheckers and to create new dictionaries, "
-"to import them \n"
+"There are other applications for our databases as well. It is\n"
+"possible to use them to generate wordlists for spellcheckers and to create "
+"new dictionaries, to import them \n"
 "into your own terminological database and even to print your own dictionary "
 "with XSL-FO."
 msgstr ""
@@ -344,10 +350,13 @@ msgid ""
 msgstr ""
 
 #: overview.php:41
+msgid "History"
+msgstr ""
+
+#: overview.php:42
 msgid ""
-"This project was started in 2000 by Horst Eyermann. The databases\n"
-"are a compilation of various free sources. Please consult the\n"
-"respective TEI headers, READMEs and 00-database-info entries.\n"
+"This project was started in 2000 by Horst Eyermann. \n"
+"TODO: document his work...\n"
 "The first databases were derived from Ergane."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreeDict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2016-08-28 17:11+0200\n"
+"POT-Creation-Date: 2016-10-09 09:00+0200\n"
 "PO-Revision-Date: 2010-01-31 20:40+0200\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -29,7 +29,7 @@ msgstr "galbūt reikalingas įskiepis, pvz."
 msgid "Adobe's"
 msgstr "Adbobe"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:95
 msgid "Database as XML"
 msgstr "Duomenų bazė XML formatu"
 
@@ -301,26 +301,27 @@ msgid "Sources"
 msgstr ""
 
 #: menu.php:80
-msgid "SourceForge Project Page"
+#, fuzzy
+msgid "GitHub Project Page"
 msgstr "Projekto puslapis SourceForge"
 
-#: menu.php:83
+#: menu.php:87
 msgid "Mailinglists"
 msgstr "Pašto konferencijos"
 
-#: menu.php:85
+#: menu.php:89
 msgid "Bugs"
 msgstr "Riktai"
 
-#: menu.php:87
+#: menu.php:91
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:94 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Išversti šia svetainę"
 
-#: menu.php:95
+#: menu.php:99
 msgid "FreeDict Project"
 msgstr "FreeDict projectas"
 
@@ -336,10 +337,10 @@ msgstr "Horst Eyermann, Michael Bunk ir %1$sdaugelis kitų%2$s"
 #: overview.php:14
 #, fuzzy
 msgid ""
-"On this page you can find translating dictionary databases.\n"
+"On this page you can find translation dictionary databases.\n"
 "The databases are free. That means they are available\n"
-"under the GNU General Public License or a less restrictive\n"
-"license. Check with the license of the respective database!"
+"under a free license like the GNU GPL or similar. Please check with the "
+"indrespective dictionary."
 msgstr ""
 "Šiame puslapyje Jūs rasite vertimo žodynų duomenų bazes.\n"
 "Jos yra laisvos. Tai reiškia, kad visi žodynai leidžiami pagal\n"
@@ -347,15 +348,17 @@ msgstr ""
 "licenciją. Pasitikslinimui, pasitikrinkite atitinkamos duomenų bazės\n"
 "licenciją!"
 
-#: overview.php:19
+#: overview.php:18
 #, php-format
 msgid ""
-"The databases are available in XML. We support the conversion of FreeDict \n"
-"databases from their native %4$sTEI%2$s format for use with %1$sdictd, the "
-"DICT dictionary server%2$s and other\n"
-"similar servers. Our own dictionary front-end can be found at %3$shttp://"
-"freedict.org/dict%2$s. Please note that\n"
-"on that page, you can also install a plugin that will let you query FreeDict "
+"The databases are available in TEI, a XML language to encode human language. "
+"This way the dictionaries can be used both by humans and machines.\n"
+"We support the conversion of FreeDict databases from their native %4$sTEI"
+"%2$s\n"
+"format for use with %1$sdictd, the DICT dictionary server%2$s and other\n"
+"similar servers. Our own online dictionary lookup page can be found at "
+"%3$shttp://freedict.org/dict%2$s. Please note that\n"
+"you can also install a plugin on that page which will let you query FreeDict "
 "dictionaries straight from your\n"
 "browser search window."
 msgstr ""
@@ -363,9 +366,9 @@ msgstr ""
 #: overview.php:26
 #, fuzzy
 msgid ""
-"But there are other applications for our databases as well. You could use\n"
-"them to generate wordlists for spellcheckers and to create new dictionaries, "
-"to import them \n"
+"There are other applications for our databases as well. It is\n"
+"possible to use them to generate wordlists for spellcheckers and to create "
+"new dictionaries, to import them \n"
 "into your own terminological database and even to print your own dictionary "
 "with XSL-FO."
 msgstr ""
@@ -396,10 +399,14 @@ msgstr ""
 "taip gerai vystytis!"
 
 #: overview.php:41
+msgid "History"
+msgstr ""
+
+#: overview.php:42
+#, fuzzy
 msgid ""
-"This project was started in 2000 by Horst Eyermann. The databases\n"
-"are a compilation of various free sources. Please consult the\n"
-"respective TEI headers, READMEs and 00-database-info entries.\n"
+"This project was started in 2000 by Horst Eyermann. \n"
+"TODO: document his work...\n"
 "The first databases were derived from Ergane."
 msgstr ""
 "Šį projektą 2000 m. pradėjo Horst Eyermann. Duomenų bazės\n"
