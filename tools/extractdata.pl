@@ -399,7 +399,7 @@ sub fdict_extract_releases
   unless($opt_s)
   {
     my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
-    my $rsynccmd = "rsync -avrltD" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/frs/project/f/fr/freedict $FREEDICTDIR/frs";
+    my $rsynccmd = "rsync -avrltD" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/pfs/project/freedict $FREEDICTDIR/frs";
     printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
     system($rsynccmd)
   }
