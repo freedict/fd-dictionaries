@@ -187,7 +187,7 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:cit"><!--cit can be @trans, @translation @example, (@colloc) and simple cit (for idiomatic expression)-->
+  <xsl:template match="tei:cit"><!--cit can be @trans, @translation, @example, (@colloc) and simple cit (for idiomatic expression)-->
 	<xsl:choose>
 		<xsl:when test="@type = 'trans' or @type = 'translation'">
 <!-- 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text> ◊ </xsl:text></xsl:if> -->
@@ -195,7 +195,7 @@
 			<xsl:if test="preceding-sibling::tei:cit[@type='trans']"><xsl:text>, </xsl:text></xsl:if>
 			<xsl:apply-templates/>
 		</xsl:when>
-		<xsl:when test="@type ='example'">
+		<xsl:when test="@type = 'example'">
 			<xsl:text>&#xa;      </xsl:text>	
 			<xsl:apply-templates/>
 		</xsl:when>
