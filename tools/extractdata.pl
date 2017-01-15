@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+print "TODO: this script doesn't yet know that the layout of FREEDICTDIR/changed, quick, but necessary fix!";
+exit 88;
 # Dependencies in debian (possibly not complete): libxml-dom-perl make xsltproc
 
 $::VERSION = '$Revision$';
@@ -399,11 +401,11 @@ sub fdict_extract_releases
   unless($opt_s)
   {
     my $sfaccount = $ENV{'SFACCOUNT'} || 'micha137';
-    my $rsynccmd = "rsync -avrltD" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/pfs/project/freedict $FREEDICTDIR/frs";
+    my $rsynccmd = "rsync -avrltD" . ($opt_v ? 'v' : '') . "e ssh $sfaccount,freedict\@frs.sourceforge.net:/home/pfs/project/freedict $FREEDICTDIR/releases";
     printd "Rsyncing all released FreeDict files from SF using command: '$rsynccmd'...\n";
     system($rsynccmd)
   }
-  my $findcmd = "find $FREEDICTDIR/frs -type f -print0";
+  my $findcmd = "find $FREEDICTDIR/releases -type f -print0";
   open my $fh, "$findcmd|" or die $!;
   my $found = 0;
   my @filenames = split '\0', <$fh>;

@@ -17,10 +17,10 @@ import xmlhandlers
 def find_freedictdir():
     """Find FreeDict path:
     1.   FREEDICTDIR is set, take that
-    2.   current directory is tools, crafted or generated or releases, then take parent
+    2.   current directory is tools, crafted, generated or release, then take parent
     3.  -   return directory upon success
         -   raise FileNotFoundError if nothing found.
-        -   raise ValueError, if crafted, generated, releases and tools could not be found
+        -   raise ValueError, if crafted, generated, release and tools could not be found
             in FREEDICTDIR"""
     localpath = None
     if 'FREEDICTDIR' in os.environ:
@@ -39,8 +39,8 @@ def find_freedictdir():
     if not os.path.exists(localpath):
         raise FileNotFoundError("FREEDICTDIR=%s: not found" % localpath)
     elif notexists('tools') or notexists('crafted') or notexists('generated') \
-            or notexists('releases'):
-        raise ValueError(("The four directories tools, generated, releases and "
+            or notexists('release'):
+        raise ValueError(("The four directories tools, generated, release and "
         "crafted have  to exist below\n    FREEDICTDIR=%s") % localpath)
     return localpath
 
@@ -64,7 +64,7 @@ def main(args):
     dictionaries.extend(metadata.get_meta_from_xml(pathjoin(freedictdir, "generated")))
 
     print("parsing release information...")
-    release_files = releases.get_all_downloads(pathjoin(freedictdir, 'releases'))
+    release_files = releases.get_all_downloads(pathjoin(freedictdir, 'release'))
     for dict in dictionaries:
         name = dict.get_name()
         if not name in release_files:

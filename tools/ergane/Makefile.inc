@@ -1,3 +1,4 @@
+# NOTE: the assumptions about FREEDICTDIR from this script are WRONG
 FREEDICTDIR ?= $(realpath ../..)
 erganetoolsdir = $(realpath $(FREEDICTDIR)/tools/ergane)
 
