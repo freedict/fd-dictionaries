@@ -45,25 +45,24 @@ def find_freedictdir():
     return localpath
 
 def main(args):
-    parser = argparse.ArgumentParser(description='Short sample app')
-    parser.add_argument('-o', "--output", action="store", dest="outputpath",
-            default='freedict-database.xml',
-            help='output path for the resulting XML freedict database')
-    parser.add_argument('-l', "--local-only", action="store_true", dest="l",
-            default='False',
-            help='do NOT connect to any server, perform all actions locally.')
-    parser.add_argument('-r', "--local-rsync", action="store", dest="r",
-            default="False",
-            help='do everything locally, except for releases where rsync is used')
+    parser = argparse.ArgumentParser(description='FreeDict API generator')
+    parser.add_argument("output_path", metavar="PATH_TO_XML", type=str, nargs=1,
+            help='output path to the FreeDict API XML file')
+    parser.add_argument('-s', "--script", dest="script", metavar="PATH", 
+            help=('script to execute before this script, e.g. to set up a sshfs '
+                'connection to a remote server, or to invoke rsync.'))
 
     config = parser.parse_args(args[1:])
 
     freedictdir = find_freedictdir()
-    print("parsing meta data for all dictionaries")
-    dictionaries = metadata.get_meta_from_xml(pathjoin(freedictdir, "crafted"))
-    dictionaries.extend(metadata.get_meta_from_xml(pathjoin(freedictdir, "generated")))
+    dictionaries = []
+    for dict_source in ['crafted', 'generated']:
+        print("Parsing meta data for all dictionaries in", pathjoin(freedictdir,
+            dict_source))
+        dictionaries.extend(metadata.get_meta_from_xml(pathjoin(freedictdir,
+                dict_source)))
 
-    print("parsing release information...")
+    print("Parsing release information from", pathjoin(freedictdir, 'release'))
     release_files = releases.get_all_downloads(pathjoin(freedictdir, 'release'))
     for dict in dictionaries:
         name = dict.get_name()
@@ -83,4 +82,14 @@ def main(args):
     dictionaries.sort(key=lambda entry: entry.get_name())
     xmlhandlers.write_freedict_database(config.outputpath, dictionaries)
 
-main(sys.argv)
+#pylint: disable=broad-except
+try:
+    main(sys.argv)
+except Exception as e:
+    if 'DEBUG' not in os.environ:
+        print(str(e))
+        print(("\nNote: Rerun the script with the environment variable DEBUG=1 "
+            "to obtain a traceback."))
+        sys.exit(9)
+    else:
+        raise e
