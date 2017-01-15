@@ -1,7 +1,7 @@
-FREEDICTDIR?=$(realpath ..)
+FREEDICTDIR?=$(realpath ../..)
 LANGUAGES=ar bg bs de en fr kha ku lt nl pt ru
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
-DYNAMICPATH=$(FREEDICTDIR)/website
+DYNAMICPATH=$(FREEDICTDIR)/crafted/website
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))
 WGET=wget --header='X-FreeDict: staticlinks' --html-extension --no-clobber
 SFACCOUNT ?= micha137
@@ -49,6 +49,7 @@ static:
 
 static/images: $(DYNAMICPATH)/images
 	ln -s $(DYNAMICPATH)/images $@
+
 
 static/debian-repository: $(DYNAMICPATH)/debian-repository
 	ln -s $(DYNAMICPATH)/debian-repository $@
