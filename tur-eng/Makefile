@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = AUTHORS ChangeLog tur-eng.tei Makefile COPYING INSTALL NEWS README \
             freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 include $(FREEDICTDIR)/tools/Makefile.common

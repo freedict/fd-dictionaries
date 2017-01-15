@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = COPYING eng-ara.tei Makefile README ChangeLog \
 INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 supported_phonetics=

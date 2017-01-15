@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = fra-deu.tei Makefile COPYING INSTALL NEWS README AUTHORS \
     freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 

@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = COPYING Makefile README ChangeLog AUTHORS \
 	 English-Hindi-Dictionary_2.isc INSTALL NEWS \
 	 ehconv.yy eng-hin.tei eng-hin.tei.header  \

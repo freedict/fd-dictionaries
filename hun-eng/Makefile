@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = Makefile ChangeLog README SZOTAR.ZIP \
 	    hun-eng.tei.header szotar-dbf2tei.pl
 supported_phonetics =

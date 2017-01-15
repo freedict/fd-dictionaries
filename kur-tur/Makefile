@@ -1,4 +1,4 @@
-FREEDICTDIR ?= ..
+FREEDICTDIR ?= ../../
 DISTFILES = kur-tur.txt Makefile kur-tur.tei kur-tur.tei.header README ChangeLog \
     INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 include $(FREEDICTDIR)/tools/Makefile.common
