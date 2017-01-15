@@ -4,7 +4,7 @@
 
 import argparse
 import os
-import re
+from os.path import join as pathjoin
 import sys
 
 import dictionary
@@ -17,33 +17,35 @@ import xmlhandlers
 def find_freedictdir():
     """Find FreeDict path:
     1.   FREEDICTDIR is set, take that
-    2.   current directory is tools and above are dictionaries, take parent
-    3.   check whether current directory contains dictionaries, take it
-    4.   raise FileNotFoundError if nothing found."""
+    2.   current directory is tools, crafted or generated or releases, then take parent
+    3.  -   return directory upon success
+        -   raise FileNotFoundError if nothing found.
+        -   raise ValueError, if crafted, generated, releases and tools could not be found
+            in FREEDICTDIR"""
     localpath = None
     if 'FREEDICTDIR' in os.environ:
-        if os.path.exists(os.environ['FREEDICTDIR']):
-            localpath = os.environ['FREEDICTDIR']
-        else:
-            raise ValueError("Path specified in $FREEDICTDIR does not exist.")
+        localpath = os.environ['FREEDICTDIR']
     else: # check whether current directory contains dictionaries
         # is cwd == 'tools':
-        directory = ('..' if os.path.basename(os.getcwd()) == 'tools' else '.')
-        match = re.compile('^[a-z]{3}-[a-z]{3}')
-        # does `directory` contain files?
-        # any files with our dictionary naming conventions?
-        if any(match.search(f) for f in os.listdir(directory)):
-            localpath = directory
+        cwd = os.getcwd()
+        for subdir in ['crafted', 'generated', 'tools']:
+            if cwd.endswith(subdir):
+                localpath = os.path.abspath(os.path.join(cwd, '..'))
+
+    notexists = lambda x: not os.path.exists(os.path.join(localpath, x))
     if localpath is None:
-        raise ValueError("path to FreeDictDir not set.")
-    else:
-        return localpath
+        raise ValueError("No environment variable FREEDICTDIR set and not in a "
+                "subdirectory called either tools, crafted or generated.")
+    if not os.path.exists(localpath):
+        raise FileNotFoundError("FREEDICTDIR=%s: not found" % localpath)
+    elif notexists('tools') or notexists('crafted') or notexists('generated') \
+            or notexists('releases'):
+        raise ValueError(("The four directories tools, generated, releases and "
+        "crafted have  to exist below\n    FREEDICTDIR=%s") % localpath)
+    return localpath
 
 def main(args):
     parser = argparse.ArgumentParser(description='Short sample app')
-    parser.add_argument('-f', "--freedict-dir", action="store",
-            dest="freedictdir",
-            help='set FREEDICTDIR')
     parser.add_argument('-o', "--output", action="store", dest="outputpath",
             default='freedict-database.xml',
             help='output path for the resulting XML freedict database')
@@ -56,14 +58,13 @@ def main(args):
 
     config = parser.parse_args(args[1:])
 
-    freedictdir = (config.freedictdir if config.freedictdir else find_freedictdir())
+    freedictdir = find_freedictdir()
     print("parsing meta data for all dictionaries")
-    dictionaries = metadata.get_meta_from_xml(freedictdir)
+    dictionaries = metadata.get_meta_from_xml(pathjoin(freedictdir, "crafted"))
+    dictionaries.extend(metadata.get_meta_from_xml(pathjoin(freedictdir, "generated")))
 
     print("parsing release information...")
-    # ToDo: properly figure out where the freedict release files are
-    release_files = releases.get_all_downloads(os.path.join(freedictdir,
-        'frs/freedict'))
+    release_files = releases.get_all_downloads(pathjoin(freedictdir, 'releases'))
     for dict in dictionaries:
         name = dict.get_name()
         if not name in release_files:
