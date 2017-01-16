@@ -1,0 +1,18 @@
+# Example configuration for fsetup; remove # signs at the beginning of a line to
+# make fsetup consider it.
+[DEFAULT]
+file_access_via = sshfs # this may be set to either rsync or sshfs, default is rsync
+[generated]
+#server = www.wikdict.com # the default built-in server for storing auto-generated dictionaries
+#remote_path = /home/freedict/lf-dictionaries # built-in default remote path
+#user = anonymous # you probably want to adjust this
+
+[release]
+#server = frs.sf.net # default built-in server, doesn't need to be changed
+remote_path = /home/pfs/project/freedict # default built-in path, can be left unchanged, too
+user = anonymous # change that to your SF user + ",freedict", e.g.  "john,freedict"
+
+# NOTE: if you want to skip a section, you can add skip = yes as the first
+# option; this is only possible for the secions generated and release. Example:
+# [release]
+# skip = yes

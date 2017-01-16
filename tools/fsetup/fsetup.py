@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""This script makes remote files available for local processing. Remote files
+are e.g. the released files hosted on a server as downloads or the
+auto-generated dictionaries, kept outside the git repository."""
+
 import argparse
 import configparser
 import io
@@ -6,6 +10,8 @@ import os
 import sys
 
 def execute(cmd, raise_on_error=False):
+    """Execute a command; if the return value is != 0, the program either
+    terminates or an exception is raised."""
     ret = os.system(cmd)
     if ret:
         print('Subcommand failed with exit code', ret)
@@ -16,6 +22,11 @@ def execute(cmd, raise_on_error=False):
             sys.exit(ret)
 
 class RsyncFileAccess:
+    """This class is one of two classes to allow acces to remote files using
+    rsync. The drawback with rsync is that before the usage by other scripts,
+    all files have to be downloaded. On the other hand, this might speed up
+    subsequent runs and allows offline work. On Windows, it might be desirable
+    to use rsync, because sshfs is not officially ported to Windows."""
     def name(self):
         return "rsync"
 
@@ -30,6 +41,8 @@ class RsyncFileAccess:
         pass
 
 class SshfsAccess:
+    """This class mounts and umounts the remote files using sshfs. This will
+    work on any system that fuse runs on, namely GNU/Linux, FreeBSD and Mac."""
     def name(self):
         return 'sshfs'
 
@@ -45,8 +58,8 @@ class SshfsAccess:
 
 
 def load_configuration(freedictdir):
-    """load given `config` from given freedictdir. Default values are assumed
-    for values which weren't given."""
+    """Load given `config` from given freedictdir. Default values are assumed
+    for values which weren't given. The configuration is called config.ini."""
     config = configparser.ConfigParser()
     config['DEFAULT'] = {
             'file_access_via': 'sshfs'} # only rsync and sshfs are allowed
@@ -54,10 +67,12 @@ def load_configuration(freedictdir):
     config['generated']['server'] = 'www.wikdict.com'
     config['generated']['remote_path'] = '/home/freedict/lf-dictionaries'
     config['generated']['user'] = 'anonymous'
+    config['generated']['skip'] = 'no'
     config['release'] = {}
     config['release']['server'] = 'frs.sf.net'
     config['release']['remote_path'] = '/home/pfs/project/freedict'
     config['release']['user'] = 'anonymous'
+    config['release']['skip'] = 'no'
 
     # overwrite defaults with user settings
     with open(os.path.join(freedictdir, 'config.ini')) as configfile:
@@ -92,7 +107,7 @@ def setup():
 
 def main():
     (freedictdir, args) = setup()
-    try:
+    try: # load configuration
         config = load_configuration(freedictdir)
     except io.UnsupportedOperation:
         print("Could not read from %s" % os.path.join(freedictdir, 'config.ini'))
@@ -117,6 +132,9 @@ def main():
 
     if args.make_available:
         for section in (s for s in config.sections() if s):
+            if config[section].getboolean('skip'):
+                print("Skipping",section)
+                continue
             print("Making files for `%s` available" % section)
             options = config[section]
             target_path = os.path.join(freedictdir, section)
@@ -124,6 +142,9 @@ def main():
                 options['remote_path'], target_path)
     elif args.umount:
         for section in (s for s in config.sections() if s):
+            if config[section].getboolean('skip'):
+                print("Skipping",section)
+                continue
             target_path = os.path.join(freedictdir, section)
             try:
                 access_method.make_unavailable(target_path)
