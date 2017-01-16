@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-print "TODO: this script doesn't yet know that the layout of FREEDICTDIR/changed, quick, but necessary fix!";
+print "TODO: this script doesn't yet know that the layout of FREEDICTDIR/ changed.\nQuick, but necessary fix!";
 exit 88;
 # Dependencies in debian (possibly not complete): libxml-dom-perl make xsltproc
 

@@ -1,7 +1,6 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .fo .pdf
 
-TOOLS = ../tools/
-#TEI2ZBDIC = $(BUILDHELPERS_DIR)tei2zbdic.py
+TOOLS = $(FREEDICTDIR)/tools/
 WEBSTERDIR = /usr/local/bin/
 DICTFMT = dictfmt
 XEROX   = /usr/local/bin/xerox

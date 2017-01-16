@@ -12,7 +12,7 @@ INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
 dirs = ergane lib teimerge testing xsl/inc
 absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
-$(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
+$(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
 	cd .. && tar --totals --exclude="*/.svn/*" --exclude="*/.*" \
 	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
 	  --exclude="*/dictd2dic" \
@@ -21,7 +21,7 @@ $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
 	  --exclude="*/ergane/zip/*" \
 	  -cvjf $@ tools
 
-dist: $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2
+dist: $(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2
 
 install:
 	install -d $(absdirs)
@@ -49,16 +49,16 @@ install:
 	  $(INSTALLDIR)/tools/xsl/inc
 
 release-rpm-freedict-tools: freedict-tools.spec \
-	$(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2
+	$(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2
 	@if [ ! -d /usr/src/rpm/RPMS/noarch ]; then \
 	  mkdir -p /usr/src/rpm/RPMS/noarch; fi
-	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+	@if [ ! -d $(BUILD_DIR)/rpm ]; then \
 	  ln -s /usr/src/rpm/RPMS/noarch \
-	  $(FREEDICTDIR)/release/rpm; fi
+	  $(BUILD_DIR)/rpm; fi
 	@if [ ! -d /usr/src/rpm/SOURCES ]; then \
 	  mkdir -p /usr/src/rpm/SOURCES; fi
 	if [ ! -r /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2 ]; then \
-	  ln -s $(FREEDICTDIR)/release/freedict-tools-$(VERSION).tar.bz2 \
+	  ln -s $(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2 \
 	    /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2; fi
 	rpmbuild --target=noarch -ba freedict-tools.spec
 

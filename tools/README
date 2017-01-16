@@ -24,25 +24,25 @@ editor are strongly advised.
 In order to build source release files (freedict-*-*-*.src.tar.bz2,
 containing *-*.tei), run:
 
- cd tools
- mkdir -p ../../release/src
+Note: it's assumed that FREEDICTDIR is set to the freedict root. More
+information can be found in the wiki.
+ cd $FREEDICTDIR/tools
+ mkdir -p ../../build/src
  make dist
 
 In order to build binary release files (freedict-*-*-*.tar.bz2,
 containing *-*.dict.dz and *-*.index), run:
 
- cd tools
- mkdir -p ../../release/dict-tbz2
- make release-dict-tbz2
+ cd $FREEDICTDIR/tools
+ mkdir -p build/dict-tbz2
 
 In order to create eng-deu.{dict,index} from
 freedict-eng-deu-0.3.src.tar.bz2, run:
 
  tar jxf freedict-eng-deu-0.3.src.tar.bz2
  cd eng-deu
- FREEDICTDIR=path/to/freedict/root make
+ make
 
-where path/to/freedict should contain tools/Makefile.common.
 
 
 Debian/Ubuntu Dependencies

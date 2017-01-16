@@ -42,14 +42,6 @@ version := $(subst $(space),_,$(version1))
 # default target
 ################
 
-#	$(MAKE) release-tei-tbz2 -- took it out as we don't use it at all...
-#	-$(MAKE) release-evolutionary
-#	$(MAKE) release-bedic
-#	$(MAKE) release-stardict
-#	-$(MAKE) release-aspell
-#	-$(MAKE) release-d4m
-#	-$(MAKE) release-fo
-
 # Please note: the "all" target has been significantly reduced to enable the
 # release of FreeDict tools in a relatively problem-free state.
 # You are more than welcome to help out in the process of re-instituting
@@ -97,10 +89,10 @@ pos-statistics: $(dictname).tei
 ###################################################
 
 dirs:
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \
-		mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tbz2 ]; then \
-		mkdir $(FREEDICTDIR)/release/dict-tbz2; fi
+	@if [ ! -d $(BUILD_DIR)/dict-tgz ]; then \
+		mkdir $(BUILD_DIR)/dict-tgz; fi
+	@if [ ! -d $(BUILD_DIR)/dict-tbz2 ]; then \
+		mkdir $(BUILD_DIR)/dict-tbz2; fi
 
 #############################################################
 #### rules how to create dict database format in old way
@@ -121,19 +113,19 @@ dirs:
 
 release-dict-tgz-oldstyle: $(dictname)-oldstyle.tar.gz dirs
 	cp $(dictname).tar.gz \
-	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
+	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
 release-dict-tgz-reverse-oldstyle: $(rdictname)-oldstyle.tar.gz dirs
 	cp $(rdictname).tar.gz \
-	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version)-reverse.tar.gz
+	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version)-reverse.tar.gz
 
 release-dict-tbz2-oldstyle: $(dictname)-oldstyle.tar.bz2 dirs
 	cp $(dictname).tar.bz2 \
-	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
+	$(BUILD_DIR)/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
 
 release-dict-tbz2-reverse-oldstyle: $(rdictname)-oldstyle.tar.bz2 dirs
 	cp $(rdictname).tar.bz2 \
-	$(FREEDICTDIR)/release/dict-bz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
+	$(BUILD_DIR)/dict-bz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
 reverse-oldstyle: $(dictname).tei
 	@echo "Will generate $(rdictname):"
@@ -167,26 +159,26 @@ reverse: $(dictname)-reverse.c5
 %.dict %.index: %.c5 query-dictd
 	dictfmt --without-time -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
 
-$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
+$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvzf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
 release-dict-tgz: dirs \
-	$(FREEDICTDIR)/release/dict-tgz/freedict-$(dictname)-$(version).tar.gz
+	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
-$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
+$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
 release-dict-tbz2: dirs \
-	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
+	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
-$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
+$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
 release-dict-tbz2-reverse: dirs \
-	$(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
+	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
 ######################################
 #### targets for evolutionary platform
@@ -278,33 +270,33 @@ clean::
 	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
 	rm -f $(dictname)-reverse.index
 	rm -f valid.stamp
-	rm -f $(FREEDICTDIR)/release/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
-	rm -f $(FREEDICTDIR)/release/dict-tgz/$(dictname)-$(version).tar.gz
-	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2
-	rm -f $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
-	rm -f $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
+	rm -f $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
+	rm -f $(BUILD_DIR)/dict-tgz/$(dictname)-$(version).tar.gz
+	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2
+	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
+	rm -f $(BUILD_DIR)/tei/$(dictname)-$(version)-tei.tar.bz2
 
 # put all sources of a dictionary module into a tarball for release
 # ("distribution").  this only includes the .tei file if it doesn't have to be
 # generated from other sources
-$(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFILES)
-	@if [ ! -d $(FREEDICTDIR)/release/src ]; then \
-		mkdir -p $(FREEDICTDIR)/release/src; fi
+$(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2: $(DISTFILES)
+	@if [ ! -d $(BUILD_DIR)/src ]; then \
+		mkdir -p $(BUILD_DIR)/src; fi
 	tar -C .. -cvjhf $@ \
 		--exclude=.svn --exclude=freedict-*.tar.bz2 --exclude=freedict-*.zip --exclude=.* \
 		$(addprefix $(notdir $(realpath .))/, $(DISTFILES))
 
-$(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
+$(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
 	cd .. && zip -r9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
       -x \*/.svn/\* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
-dist: $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
+dist: $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.zip
 
 # the following two targets work like "dist", but include the .tei file
 # unconditionally
-$(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
-	@if [ ! -d $(FREEDICTDIR)/release/tei ]; then \
-		mkdir -p $(FREEDICTDIR)/release/tei; fi
+$(BUILD_DIR)/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(dictname).tei
+	@if [ ! -d $(BUILD_DIR)/tei ]; then \
+		mkdir -p $(BUILD_DIR)/tei; fi
 	if (echo "$(DISTFILES)" | grep "$(dictname).tei " > /dev/null); then \
 		tar -C .. -cvjhf $@ \
 			--exclude=.svn --exclude=freedict-*.tar.bz2 --exclude=.* \
@@ -315,18 +307,18 @@ $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2: $(DISTFILES) $(di
 			$(addprefix $(notdir $(realpath .))/, $(DISTFILES) $(dictname).tei); \
 	fi
 
-release-tei-tbz2: $(FREEDICTDIR)/release/tei/$(dictname)-$(version)-tei.tar.bz2
+release-tei-tbz2: $(BUILD_DIR)/tei/$(dictname)-$(version)-tei.tar.bz2
 
 #############################
 #### targets for rpm packages
 #############################
 
 release-rpm: freedict-$(dictname).spec dist
-	@if [ ! -d $(FREEDICTDIR)/release/rpm ]; then \
+	@if [ ! -d $(BUILD_DIR)/rpm ]; then \
 		ln -s /usr/src/packages/RPMS/noarch \
-		$(FREEDICTDIR)/release/rpm; fi
+		$(BUILD_DIR)/rpm; fi
 	@if [! -x /usr/src/packages/SOURCES/freedict-$(dictname)-$(version).src.tar.bz2 ]; then \
-		ln -s $(FREEDICTDIR)/release/src/freedict-$(dictname)-$(version).src.tar.bz2 \
+		ln -s $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 \
 			/usr/src/packages/SOURCES; fi
 	rpmbuild --target=noarch -ba freedict-$(dictname).spec
 
@@ -402,27 +394,27 @@ $(dictname).unxeroxed.dic: $(dictname).normalized.dic
 #%.unxeroxed.dic: %.tei
 #	tei2dic.py $< $*.unxeroxed.dic
 
-$(FREEDICTDIR)/release/dic/freedict-%-$(version).dic: %.unxeroxed.dic
-	@if [ ! -d $(FREEDICTDIR)/release/dic ]; then \
-		mkdir $(FREEDICTDIR)/release/dic; fi
+$(BUILD_DIR)/dic/freedict-%-$(version).dic: %.unxeroxed.dic
+	@if [ ! -d $(BUILD_DIR)/dic ]; then \
+		mkdir $(BUILD_DIR)/dic; fi
 	$(XEROX) $*.unxeroxed.dic $@
 
-release-bedic: $(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
+release-bedic: $(BUILD_DIR)/dic/freedict-$(dictname)-$(version).dic.dz
 
 # optional
-$(FREEDICTDIR)/release/ipk/%.ipk: $(FREEDICTDIR)/release/dic/%.dic.dz
-	@if [ ! -d $(FREEDICTDIR)/release/ipk ]; then \
-		mkdir $(FREEDICTDIR)/release/ipk; fi
-	cd $(FREEDICTDIR)/release/ipk && ln -s `dic2ipk.sh $<` $@
+$(BUILD_DIR)/ipk/%.ipk: $(BUILD_DIR)/dic/%.dic.dz
+	@if [ ! -d $(BUILD_DIR)/ipk ]; then \
+		mkdir $(BUILD_DIR)/ipk; fi
+	cd $(BUILD_DIR)/ipk && ln -s `dic2ipk.sh $<` $@
 
 # optional
-release-zaurus: $(FREEDICTDIR)/release/ipk/freedict-$(dictname)-$(version).ipk
+release-zaurus: $(BUILD_DIR)/ipk/freedict-$(dictname)-$(version).ipk
 
 clean::
 	rm -f sorted.tei grouped.tei tei-wrapper.xml unwrapped.tei \
 	$(dictname).escaped.dic $(dictname).normalized.dic $(dictname).unxeroxed.dic \
-	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic \
-	$(FREEDICTDIR)/release/dic/freedict-$(dictname)-$(version).dic.dz
+	$(BUILD_DIR)/dic/freedict-$(dictname)-$(version).dic \
+	$(BUILD_DIR)/dic/freedict-$(dictname)-$(version).dic.dz
 
 ##################################
 #### targets for StarDict platform
@@ -477,23 +469,23 @@ $(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx \
 
 stardict: $(stardict_prefix)$(dictname).ifo
 
-$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
+$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
        	$(stardict_prefix)$(dictname).ifo \
 	$(stardict_prefix)$(dictname).dict.dz \
 	$(stardict_prefix)$(dictname).idx.gz
-	@if [ ! -d $(FREEDICTDIR)/release/stardict ]; then \
-		mkdir $(FREEDICTDIR)/release/stardict; fi
+	@if [ ! -d $(BUILD_DIR)/stardict ]; then \
+		mkdir $(BUILD_DIR)/stardict; fi
 	tar -C .. -cvjf \
-	  $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+	  $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	  $(addprefix $(notdir $(realpath .))/, $^)
 
 release-stardict: \
-	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
+	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
 
 clean::
 	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
 	$(stardict_prefix)$(dictname).dict.dz $(stardict_prefix)$(dictname).ifo \
-	$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	dictd2dic.out authorresp.out title.out sourceurl.out
 
 #####################
