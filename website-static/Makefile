@@ -11,10 +11,7 @@ upload:
 	static/ $(SFACCOUNT),freedict@web.sourceforge.net:htdocs/ \
 	--exclude 'mb/*' \
 	--exclude '*/.svn' \
-	--exclude 'images/flags/src' \
-	--exclude 'howto/images/*.gif' \
-	--exclude 'howto/images/*.svg' \
-	--exclude 'howto/images/*.tif'
+	--exclude 'images/flags/src'
 
 update: $(DYNAMICPATH)
 	$(MAKE) -C $(DYNAMICPATH)
@@ -43,7 +40,7 @@ generate-static: ~$(USER)/public_html/freedict-dynamic symlinks /etc/apache2/mod
 ~$(USER)/public_html/freedict-dynamic: $(DYNAMICPATH) ~$(USER)/public_html
 	if [ ! -e "$@" ]; then ln -s `realpath "$<"` "$@"; fi
 
-symlinks: static static/images static/howto static/debian-repository \
+symlinks: static static/images static/debian-repository \
           static/s.css static/freedict.pot static/freedict-database.xml \
           static/index.html static/.htaccess
 
@@ -52,9 +49,6 @@ static:
 
 static/images: $(DYNAMICPATH)/images
 	ln -s $(DYNAMICPATH)/images $@
-
-static/howto: $(FREEDICTDIR)/howto
-	ln -s $(FREEDICTDIR)/howto $@
 
 static/debian-repository: $(DYNAMICPATH)/debian-repository
 	ln -s $(DYNAMICPATH)/debian-repository $@

@@ -1,4 +1,19 @@
 #!/usr/bin/perl
+#xmltei2xmldict.pl requires:
+#
+#- nsgmls from SP 1.3.4 from http://www.jclark.com/jade/
+#  or OpenSP from http://openjade.sourceforge.net/
+#- ESISParser.pm from libxml-perl-0.07, available via
+#	(su)
+#	perl -MCPAN -e shell
+#	install K/KM/KMACLEOD/libxml-perl-0.07.tar.gz
+#- TEI P4 DTDs, available from http://www.tei-c.org/Guidelines2/index.html
+#- make SGML_CATALOG_FILES point to the right location(s), e.g.
+#	export SGML_CATALOG_FILES="/usr/share/doc/packages/sp/\
+#html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/\
+#CATALOG.iso_ent"
+#- Sablotron library and Perl module:
+#
 # $Id$
 
 # V1.5 10/2006 Michael Bunk

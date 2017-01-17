@@ -1,30 +1,25 @@
 Most of the documentation can be found in the FreeDict HOWTO at
 
-	http://freedict.org/howto
+    https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO
+
+In general, it is a good idea to have a look at our wiki at
+    
+    https://github.com/freedict/fd-dictionaries/wiki
 
 The following lines may get you started on some requirements:
 
-The "blessed" conversion process from .tei to DICT database format
-is now based on XSLT stylesheets, an XSLT processor and dictfmt.
-It is still possible to use xmltei2xmldict.pl though, but the DICT
-compatibility may suffer.
+FreeDict databases are encoded in the TEI XML format (chapter 9), see
+<http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html>.
 
-xmltei2xmldict.pl requires:
+The conversion is based on XSL stylesheets (see directory `xsl/`). These can in
+principle transform to any format, but only the .dict format is supported at the
+moment.
 
-- nsgmls from SP 1.3.4 from http://www.jclark.com/jade/
-  or OpenSP from http://openjade.sourceforge.net/
-- ESISParser.pm from libxml-perl-0.07, available via
-	(su)
-	perl -MCPAN -e shell
-	install K/KM/KMACLEOD/libxml-perl-0.07.tar.gz
-- TEI P4 DTDs, available from http://www.tei-c.org/Guidelines2/index.html
-- make SGML_CATALOG_FILES point to the right location(s), e.g.
-	export SGML_CATALOG_FILES="/usr/share/doc/packages/sp/\
-html-xml/xml.soc:/var/lib/sgml/CATALOG.tei_4xml:/var/lib/sgml/\
-CATALOG.iso_ent"
-- Sablotron library and Perl module:
-  http://www.gingerall.com/charlie/ga/xml/p_sab.xml
+You should have at least the following tools installed, to build the
+dictionaries: make, xsltproc, tar, gzip, dictzip, dictfmt
 
+For proper use of all our tools, Perl, Python > 3.4, Git and a XML-capable
+editor are strongly advised.
 
 In order to build source release files (freedict-*-*-*.src.tar.bz2,
 containing *-*.tei), run:
@@ -50,44 +45,18 @@ freedict-eng-deu-0.3.src.tar.bz2, run:
 where path/to/freedict should contain tools/Makefile.common.
 
 
-Creating the Postgresql databases for Ergane Import
----------------------------------------------------
+Debian/Ubuntu Dependencies
+--------------------------
 
-Unfortunately this is not automated, because it requires permissions
-that the account for building FreeDict doesn't have.
+If you use Debian/Ubuntu, you should install the following packages:
 
-> su
-> sudo -u postgres createuser $USER
-   superuser right - no
-   create db right - yes
-   create roles right - no
-> exit
-> createdb
-
-
-Dependencies as Debian packages
--------------------------------
-
-If you use Debian, you will need these packages (and some more):
-
-   * perl
-   * dictfmt
-   * dbview
-   * flex
-   * svn
-   * mdbtools
-   * patch
-   * postgresql or postgresql-8.1
-   * tei (inofficial packet from FreeDict debian repository)
-   * txt2pho (inofficial packet from FreeDict debian repository, non-free)
-   * mbrdico (inofficial packet from FreeDict debian repository)
+    sudo apt-get install dbview unzip xsltproc libxml-libxml-perl python3
 
 Also, teiaddphonetics requires XML::LibXML::Reader, which is not even
 in libxml-libxml-perl in unstable, so you need to do as root:
 
 	cpan XML::LibXML
 
-hope this helps get you started :)
 
-Michael Bunk, February 2007
+Sebastian Humenda, January 2017
 
