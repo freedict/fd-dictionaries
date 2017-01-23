@@ -48,7 +48,7 @@ def main(args):
     parser = argparse.ArgumentParser(description='FreeDict API generator')
     parser.add_argument("output_path", metavar="PATH_TO_XML", type=str, nargs=1,
             help='output path to the FreeDict API XML file')
-    parser.add_argument('-s', "--script", dest="script", metavar="PATH", 
+    parser.add_argument('-s', "--script", dest="script", metavar="PATH",
             help=('script to execute before this script, e.g. to set up a sshfs '
                 'connection to a remote server, or to invoke rsync.'))
 
@@ -80,7 +80,7 @@ def main(args):
     # remove dictionaries without download links
     dictionaries = list(d for d in dictionaries if d.get_downloads() != [])
     dictionaries.sort(key=lambda entry: entry.get_name())
-    xmlhandlers.write_freedict_database(config.outputpath, dictionaries)
+    xmlhandlers.write_freedict_database(config.output_path[0], dictionaries)
 
 #pylint: disable=broad-except
 try:
