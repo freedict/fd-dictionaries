@@ -101,6 +101,9 @@ def setup():
     if args.umount and args.make_available:
         print("Error: you can only specify -u or -m exclusively.")
         sys.exit(44)
+    if not args.umount and not args.make_available:
+        print("Error: No option specified")
+        parser.print_help()
 
     return (os.environ['FREEDICTDIR'], args)
 

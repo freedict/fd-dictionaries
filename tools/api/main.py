@@ -48,9 +48,12 @@ def main(args):
     parser = argparse.ArgumentParser(description='FreeDict API generator')
     parser.add_argument("output_path", metavar="PATH_TO_XML", type=str, nargs=1,
             help='output path to the FreeDict API XML file')
-    parser.add_argument('-s', "--script", dest="script", metavar="PATH",
-            help=('script to execute before this script, e.g. to set up a sshfs '
+    parser.add_argument('-p', "--pre-exec-script", dest="script", metavar="PATH",
+            help=('script/command to execute before this script, e.g. to set up a sshfs '
                 'connection to a remote server, or to invoke rsync.'))
+    parser.add_argument('-o', "--post-exec-script", dest="script", metavar="PATH",
+            help=("script/command to execute after this script is done, e.g. to "
+                "umount mounted volumes."))
 
     config = parser.parse_args(args[1:])
 
