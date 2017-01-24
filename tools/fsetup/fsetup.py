@@ -19,6 +19,8 @@ def execute(cmd, raise_on_error=False):
         if raise_on_error:
             raise OSError()
         else:
+            if ret >= 255:
+                ret = 1
             sys.exit(ret)
 
 class RsyncFileAccess:
