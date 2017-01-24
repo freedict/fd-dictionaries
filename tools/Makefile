@@ -2,6 +2,8 @@
 
 include Makefile.config
 
+TOOLSDIR := $(FREEDICTDIR)/tools
+
 BUILD = set -e && for file in $(FREEDICTDIR)/crafted/???-???; do $(MAKE) -C $$file $@; done \
                && for file in $(FREEDICTDIR)/generated/???-???; do $(MAKE) -C $$file $@; done \
 
@@ -29,8 +31,20 @@ install:
 uninstall:
 	$(BUILD)
 
-dbupdate:
-	$(BUILD)
+# check whether fsetup has been configured already
+$(FREEDICTDIR)/config.ini:
+ifeq ("$(wildcard $(PATH_TO_FILE))","")
+	$(error For this target, a configuration named $FREEDICTDIR/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the tools/fsetup program.")
+endif
+
+# call the API generator to create a file $FREEDICTDIR/freedict-database.xml
+dbupdate: $(FREEDICTDIR)/config.ini
+	# -p: mount / synchronize released and generated files; -o: umount them
+	#  again
+	$(PYTHON) $(TOOLSDIR)/api/main.py \
+		-p "$(PYTHON) $(TOOLSDIR)/fsetup/fsetup.py -m" \
+		-o "$(PYTHON) $(TOOLSDIR)/fsetup/fsetup.py -u" \
+		$(FREEDICTDIR)/freedict-database.xml
 
 clean:
 	$(BUILD)

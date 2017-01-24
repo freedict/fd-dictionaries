@@ -44,19 +44,29 @@ def find_freedictdir():
         "crafted have  to exist below\n    FREEDICTDIR=%s") % localpath)
     return localpath
 
+def exec_or_fail(command):
+    """If command is not None, execute command. Exit upon failure."""
+    if command:
+        ret = os.system(command)
+        if ret:
+            print("Failed to execute `%s`:" % command)
+            sys.exit(ret)
+
+
 def main(args):
     parser = argparse.ArgumentParser(description='FreeDict API generator')
     parser.add_argument("output_path", metavar="PATH_TO_XML", type=str, nargs=1,
             help='output path to the FreeDict API XML file')
-    parser.add_argument('-p', "--pre-exec-script", dest="script", metavar="PATH",
+    parser.add_argument('-p', "--pre-exec-script", dest="prexec", metavar="PATH",
             help=('script/command to execute before this script, e.g. to set up a sshfs '
                 'connection to a remote server, or to invoke rsync.'))
-    parser.add_argument('-o', "--post-exec-script", dest="script", metavar="PATH",
+    parser.add_argument('-o', "--post-exec-script", dest="postexc", metavar="PATH",
             help=("script/command to execute after this script is done, e.g. to "
                 "umount mounted volumes."))
 
     config = parser.parse_args(args[1:])
 
+    exec_or_fail(config.prexec) # mount / synchronize release files
     freedictdir = find_freedictdir()
     dictionaries = []
     for dict_source in ['crafted', 'generated']:
@@ -84,6 +94,8 @@ def main(args):
     dictionaries = list(d for d in dictionaries if d.get_downloads() != [])
     dictionaries.sort(key=lambda entry: entry.get_name())
     xmlhandlers.write_freedict_database(config.output_path[0], dictionaries)
+
+    exec_or_fail(config.postexc) # umount rsync files, if required
 
 #pylint: disable=broad-except
 try:
