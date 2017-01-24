@@ -140,7 +140,8 @@ def main():
             if config[section].getboolean('skip'):
                 print("Skipping",section)
                 continue
-            print("Making files for `%s` available" % section)
+            fdir = ('$FREEDICTDIR/' if not sys.platform.startswith('wiN') else '%FREEDICTDIR%\\')
+            print("Making files for `%s%s` available..." % (fdir, section))
             options = config[section]
             target_path = os.path.join(freedictdir, section)
             access_method.make_avalailable(options['user'], options['server'],

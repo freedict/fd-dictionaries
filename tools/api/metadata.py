@@ -118,27 +118,20 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
         return {'headwords': headwords}
 
 
-    def handle_respStmt(self, elem):
+    def handle_respStmt(self, respStmt):
         """Maintainer is in <respStmt/>, this one can contain nesting for author
         and maintainer, hide complexity and return either maintainer, then
         author or None."""
-        maintainer = None
-        backup = None # if no maintainer found
-        for respStmt in elem:
-            # find name attribute
-            try:
-                name = next(respStmt.iter(self._namespace + 'name'))
-            except StopIteration:
-                continue # no name, skip
-
-            if not 'maint' in elem[0].text.lower():
-                backup = name.text
-            else:
-                maintainer = name.text
-        if not backup and not maintainer:
+        # find name attribute
+        name = respStmt.find(self._namespace + 'name')
+        if name is None:
             return
+        resp = respStmt.findall(self._namespace + 'resp')
+        if resp is None or not any('maintainer' in t.text.lower() for t in resp):
+            return
+        maintainer = name.text
         if not maintainer:
-            maintainer = backup
+            return
         if 'up for grab' in maintainer.lower(): # not a real maintainer
             return
         # try to extract email address:
@@ -146,10 +139,11 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
             maintainer = html.parser.unescape(maintainer)
         match = self.MAINTAINER_PATTERN.search(maintainer)
         if match:
-            return {'maintainerName': match.groups()[0],
-                    'maintainerEmail': match.groups()[1] }
+            return {'maintainerName': match.groups()[0].rstrip().lstrip(),
+                    'maintainerEmail': match.groups()[1].rstrip().lstrip()
+                   }
         else:
-            return {'maintainerName': maintainer}
+            return {'maintainerName': maintainer.rstrip().lstrip()}
 
     def __handle_revisionDesc(self, elem):
         """If date has not been set, try to guess it from revision desc."""

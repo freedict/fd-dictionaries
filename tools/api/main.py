@@ -102,7 +102,7 @@ try:
     main(sys.argv)
 except Exception as e:
     if 'DEBUG' not in os.environ:
-        print(str(e))
+        print('Error:',str(e))
         print(("\nNote: Rerun the script with the environment variable DEBUG=1 "
             "to obtain a traceback."))
         sys.exit(9)
