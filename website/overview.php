@@ -13,7 +13,7 @@ $title = _('Overview'); require_once 'inc/head.php';
 
 <p><?php echo _('On this page you can find translation dictionary databases.
 The databases are free. That means they are available
-under a free license like the GNU GPL or similar. Please check with the indrespective dictionary.') ?></p>
+under a free license like the GNU GPL or similar. Please check with the respective dictionary.') ?></p>
 
 <p><?php printf(_('The databases are available in TEI, a XML language to encode human language. This way the dictionaries can be used both by humans and machines.
 We support the conversion of FreeDict databases from their native %4$sTEI%2$s
@@ -40,8 +40,9 @@ not have come so far!') ?></p>
 
 <h2><?php echo _('History') ?></p>
 <p><?php echo _('This project was started in 2000 by Horst Eyermann. 
-TODO: document his work...
-The first databases were derived from Ergane.') ?></p>
+The first databases were derived from Ergane.
+Since then, FreeDict has much evolved and now offers both imported and hand-crafted dictionaries in various sizes.
+With the switch to TEI P5 in 2010, the project uses a comprehensive standard to encode human speech. This format also allows for the usage of the dictionaries in yet unforeseen use case scenario's, because it decouples from the actual output format.') ?></p>
 
 <!-- TODO: document michael's work
 
