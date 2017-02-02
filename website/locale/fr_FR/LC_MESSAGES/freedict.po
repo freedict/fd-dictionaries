@@ -1,17 +1,17 @@
 # French translation for Freedict Website
-# Copyright (C) 2006-2016
+# Copyright (C) 2006-2017
 # This file is distributed under the same license as the FreeDict website.
 # noname <lelaulau@yahoo.fr>, 2006.
-# Denis <denisarnuad@yahoo.fr>, 2009-2016.
+# Denis <denisarnuad@yahoo.fr>, 2009-2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
 "POT-Creation-Date: 2017-01-24 23:17+0100\n"
-"PO-Revision-Date: 2016-10-09 22:46+0200\n"
+"PO-Revision-Date: 2017-01-27 21:42+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
-"Language-Team: breton <>\n"
+"Language-Team: French <>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -310,9 +310,8 @@ msgid "Sources"
 msgstr "Sources"
 
 #: menu.php:80
-#, fuzzy
 msgid "GitHub Project Page"
-msgstr "Page du projet sur SourceForge"
+msgstr "Page du projet sur GitHub"
 
 #: menu.php:87
 msgid "Mailinglists"
@@ -344,7 +343,6 @@ msgid "Horst Eyermann, Michael Bunk and %1$smany more%2$s"
 msgstr "Horst Eyermann, Michael Bunk et %1$sbeaucoup d'autres%2$s"
 
 #: overview.php:14
-#, fuzzy
 msgid ""
 "On this page you can find translation dictionary databases.\n"
 "The databases are free. That means they are available\n"
@@ -353,11 +351,11 @@ msgid ""
 msgstr ""
 "Sur cette page vous pouvez trouver des dictionnaires bilingues.\n"
 "Les bases de données sont libres. Cela signifie qu'ils sont disponibles\n"
-"sous licence GNU (General Public License) ou une licence moins restrictive.\n"
-"Vérifiez la licence de la base de donnée qui vous intéresse!"
+"sous licence GNU GPL ou une licence similaire.\n"
+"Vérifiez la licence de la base de donnée qui vous intéresse !"
 
 #: overview.php:18
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "The databases are available in TEI, a XML language to encode human language. "
 "This way the dictionaries can be used both by humans and machines.\n"
@@ -370,18 +368,18 @@ msgid ""
 "dictionaries straight from your\n"
 "browser search window."
 msgstr ""
-"Les dictionnaires sont disponibles au format XML. Nous assurons la "
-"conversion du\n"
-"format natif %4$sTEI%2$s pour utilisation avec %1$sdictd, le serveur de "
-"dictionnaire DICT%2$s et d'autres\n"
-"serveurs analogues. Vous pouvez consulter notre propre inteface à l'adresse "
+"Les dictionnaires sont disponibles au format TEI, qui est un format XML. "
+"Ainsi, les dictionnaires peuvent être utilisés par des humains comme par des "
+"machines.\n"
+"Nous assurons la conversion du format natif %4$sTEI%2$s pour utilisation "
+"avec %1$sdictd, le serveur de dictionnaire DICT%2$s et d'autres serveurs "
+"analogues. Vous pouvez consulter notre propre interface à l'adresse "
 "suivante  %3$shttp://freedict.org/dict%2$s. \n"
 "Notez que, de cette page, vous pouvez aussi installer un plugin permettant "
-"d'interroger un dictionnaire \n"
-"Freedict directement depuis la fenêtre de recherche de votre navigateur."
+"d'interroger un dictionnaire Freedict directement depuis la fenêtre de "
+"recherche de votre navigateur."
 
 #: overview.php:26
-#, fuzzy
 msgid ""
 "There are other applications for our databases as well. It is\n"
 "possible to use them to generate wordlists for spellcheckers and to create "
@@ -390,13 +388,10 @@ msgid ""
 "with XSL-FO."
 msgstr ""
 "Mais il y a aussi d'autres applications pour nos base de données. Vous "
-"pouvez les\n"
-"utiliser pour générer des listes de mots pour des correcteurs "
-"orthographiques\n"
-"et des nouveaux dictionnaires, pour créer des corpora linguistiques, pour "
-"les importer\n"
-"dans votre propre base de données de termes et même imprimer votre propre "
-"dictionnaire avec XSL-FO."
+"pouvez les utiliser pour générer des listes de mots pour des correcteurs "
+"orthographiques et des nouveaux dictionnaires, pour les importer dans votre "
+"propre base de données de termes et même imprimer votre propre dictionnaire "
+"avec XSL-FO."
 
 #: overview.php:30
 msgid ""
@@ -421,7 +416,7 @@ msgstr ""
 
 #: overview.php:41
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: overview.php:42
 msgid ""
@@ -433,6 +428,13 @@ msgid ""
 "to encode human speech. This format also allows for the usage of the "
 "dictionaries in yet unforeseen use case scenario"
 msgstr ""
+"Horst Eyermann a commencé ce projet en 2000.\n"
+"Les premiers dictionnaires ont été dérivés d'Ergane.\n"
+"Depuis lors, Freedict a évolué et offre et des dictionnaires importé "
+"d'autres formats et des dictionnaires édité manuellement. \n"
+"Depuis 2010, le standard TEI P5 permet un encodage compréhensible de la "
+"parole humaine. La flexibilité xml du format TEI permet une adaptation à des "
+"scenarios d'utilisation encore inconnus."
 
 #: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
