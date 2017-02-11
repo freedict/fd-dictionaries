@@ -38,7 +38,7 @@ ifeq ("$(wildcard $(PATH_TO_FILE))","")
 endif
 
 # call the API generator to create a file $FREEDICTDIR/freedict-database.xml
-dbupdate: $(FREEDICTDIR)/config.ini
+api: $(FREEDICTDIR)/config.ini
 	# -p: mount / synchronize released and generated files; -o: umount them
 	#  again
 	$(PYTHON) $(TOOLSDIR)/api/generator/main.py \
@@ -58,5 +58,5 @@ test:
 validation:
 	$(BUILD)
 
-.PHONY: install uninstall dbupdate release-% all vok clean tests update dist
+.PHONY: install uninstall api release-% all vok clean tests update dist
 
