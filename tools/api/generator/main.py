@@ -1,7 +1,12 @@
-# ToDo: usage of script right here
-# explain search for directories
-# have a look at extractdata.pl
+"""FreeDict API generator
 
+This script parses the meta data of all available dictionaries, queries
+information about available releases and writes all information to an XML file.
+For more information, please have a look at the wiki at
+<http://freedict.org/howto>.
+
+For usage of the script, try the -h option.
+"""
 import argparse
 import os
 from os.path import join as pathjoin

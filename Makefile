@@ -1,10 +1,3 @@
-update-fd-database-with-releases:
-	echo $(SFACCOUNT)
-	tools/extractdata.pl -r
-
-upload-frs:
-	rsync --archive --partial --progress --protect-args --rsh=ssh frs/freedict/ "$(SFACCOUNT),freedict@frs.sourceforge.net:/home/frs/project/f/fr/freedict/"
-
 validate: freedict-database.xml freedict-database.rng
 	xmllint --noout --relaxng freedict-database.rng $<
 
