@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """This script makes remote files available for local processing. Remote files
 are e.g. the released files hosted on a server as downloads or the
-auto-generated dictionaries, kept outside the git repository."""
+auto-generated dictionaries, kept outside the git repository.
+This script requires the variable FREEDICT_DIR to be set.
+Running this script with the `-h` option will give an overview about its usage."""
 
 import argparse
 import configparser
@@ -135,13 +137,13 @@ def main():
             # we could try running fusermount -u:
             os.system('fusermount -u "%s"' % release_directory)
 
+    print("Using FREEDICT_DIR=" + freedictdir)
     if args.make_available:
         for section in (s for s in config.sections() if s):
             if config[section].getboolean('skip'):
                 print("Skipping",section)
                 continue
-            fdir = ('$FREEDICTDIR/' if not sys.platform.startswith('wiN') else '%FREEDICTDIR%\\')
-            print("Making files for `%s%s` available..." % (fdir, section))
+            print("Making files in %s available..." % section)
             options = config[section]
             target_path = os.path.join(freedictdir, section)
             access_method.make_avalailable(options['user'], options['server'],

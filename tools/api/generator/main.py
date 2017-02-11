@@ -15,13 +15,13 @@ import xmlhandlers
 
 
 def find_freedictdir():
-    """Find FreeDict path:
-    1.   FREEDICTDIR is set, take that
+    """Find FreeDict path with these rules:
+    1.   environment variable FREEDICTDIR is set, takeit 
     2.   current directory is tools, crafted, generated or release, then take parent
-    3.  -   return directory upon success
-        -   raise FileNotFoundError if nothing found.
-        -   raise ValueError, if crafted, generated, release and tools could not be found
-            in FREEDICTDIR"""
+
+    When the FREEDICTDIR has been found, it's returned.
+    FileNotFoundError is raised, if FREEDICTDIR couldn't be determined.
+    ValueError is raised, if crafted, generated, release and tools could not be found in FREEDICTDIR."""
     localpath = None
     if 'FREEDICTDIR' in os.environ:
         localpath = os.environ['FREEDICTDIR']
@@ -84,8 +84,7 @@ def main(args):
             continue
         try:
             version = releases.get_latest_version(release_files[name])
-        except releases.ReleaseError as e:
-            # ToDo: nicer handling
+        except releases.ReleaseError as e: # add file name to error
             raise releases.ReleaseError(list(e.args) + [name])
         for full_file, format in release_files[name][version]:
             dict.add_download(dictionary.mklink(full_file, format, version))
@@ -95,7 +94,7 @@ def main(args):
     dictionaries.sort(key=lambda entry: entry.get_name())
     xmlhandlers.write_freedict_database(config.output_path[0], dictionaries)
 
-    exec_or_fail(config.postexc) # umount rsync files, if required
+    exec_or_fail(config.postexc) # umount or rsync files, if required
 
 #pylint: disable=broad-except
 try:
@@ -108,3 +107,4 @@ except Exception as e:
         sys.exit(9)
     else:
         raise e
+

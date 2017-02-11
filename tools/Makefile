@@ -34,16 +34,16 @@ uninstall:
 # check whether fsetup has been configured already
 $(FREEDICTDIR)/config.ini:
 ifeq ("$(wildcard $(PATH_TO_FILE))","")
-	$(error For this target, a configuration named $FREEDICTDIR/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the tools/fsetup program.")
+	$(error For this target, a configuration named $FREEDICTDIR/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the $(FREEDICTDIR)tools/api/file_manager program.)
 endif
 
 # call the API generator to create a file $FREEDICTDIR/freedict-database.xml
 dbupdate: $(FREEDICTDIR)/config.ini
 	# -p: mount / synchronize released and generated files; -o: umount them
 	#  again
-	$(PYTHON) $(TOOLSDIR)/api/main.py \
-		-p "$(PYTHON) $(TOOLSDIR)/fsetup/fsetup.py -m" \
-		-o "$(PYTHON) $(TOOLSDIR)/fsetup/fsetup.py -u" \
+	$(PYTHON) $(TOOLSDIR)/api/generator/main.py \
+		-p "$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -m" \
+		-o "$(PYTHON) $(TOOLSDIR)/file_manager/file_manager.py -u" \
 		$(FREEDICTDIR)/freedict-database.xml
 
 clean:
