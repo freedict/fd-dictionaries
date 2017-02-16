@@ -13,7 +13,7 @@
       </attribute>
       <attribute name="edition">
         <data type="string"> <!-- version in the format 0.1.1 -->
-	  <param name="pattern">\d+(\.\d+(\.\d+)?)?</param>
+          <param name="pattern">\d+(\.\d+(\.\d+)?)?</param>
         </data>
       </attribute>
       <attribute name="date">
@@ -37,23 +37,18 @@
           <data type="anyURI"/>
         </attribute>
       </optional>
-      <!-- this is possibly not required anymore
-      <optional>
-        <attribute name="unsupported">
-          <text/>
-        </attribute>
-      </optional>
-      -->
       <oneOrMore>
         <element name="release">
           <attribute name="platform">
             <text/> <!-- e.g. dict-tgz -->
           </attribute>
           <attribute name="version">
-            <text/> <!-- e.g. 0.0.2 (proper version enforcement missing --> 
+            <data type="string"> <!-- version in the format 0.1.1 -->
+              <param name="pattern">\d+(\.\d+(\.\d+)?)?</param>
+            </data>
           </attribute>
           <attribute name="size">
-	    <data type="positiveInteger"/> <!-- 76216 -->
+            <data type="positiveInteger"/> <!-- 76216 -->
           </attribute>
           <attribute name="date">
             <data type="date"/> <!-- 2005-11-20 -->
