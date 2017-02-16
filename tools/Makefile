@@ -1,18 +1,22 @@
-# Makefile that can call `make' for all dictionary modules
-
-include Makefile.config
+# This makefile forms the root of the FreeDict build infrastructure.
+# It provides commands to build and install dictionaries and to generate the API
+# file.
 
 TOOLSDIR := $(FREEDICTDIR)/tools
+include $(TOOLSDIR)/Makefile.config
 
-BUILD = set -e && for file in $(FREEDICTDIR)/crafted/???-???; do $(MAKE) -C $$file $@; done \
-               && for file in $(FREEDICTDIR)/generated/???-???; do $(MAKE) -C $$file $@; done \
+DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
+
+# allow parallel builds of all dictionaries
+build_all: $(DICTS)
+
+$(DICTS):
+	$(MAKE) -C $(FREEDICTDIR)/$@
 
 # Calls default target for each dictionary module.
 # Note: This is a conflict if you wanted to call
 # the 'all' target of each dictionary module.
-all:
-	for file in $(FREEDICTDIR)/crafted/???-???; do $(MAKE) -C $$file; done
-	for file in $(FREEDICTDIR)/generated/???-???; do $(MAKE) -C $$file; done
+all: build_all $(DICTs)
 
 # most useful targets
 release-%:
@@ -21,42 +25,41 @@ release-%:
 dist:
 	$(BUILD)
 
-# if you forgot where you made changes... :)
-vok:
-	$(BUILD)
-
+# ToDo: FIXME, take DESTDIR and PREFIX into account
 install:
 	$(BUILD)
 
 uninstall:
 	$(BUILD)
 
-# check whether fsetup has been configured already
+# check whether has been configured for remote file access exists
 $(FREEDICTDIR)/config.ini:
 ifeq ("$(wildcard $(PATH_TO_FILE))","")
-	$(error For this target, a configuration named $FREEDICTDIR/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the $(FREEDICTDIR)tools/api/file_manager program.)
+	$(error For this target, a configuration named $(FREEDICTDIR)/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the $(FREEDICTDIR)tools/api/file_manager program.)
 endif
 
 # call the API generator to create a file $FREEDICTDIR/freedict-database.xml
 api: $(FREEDICTDIR)/config.ini
 	# -p: mount / synchronize released and generated files; -o: umount them
 	#  again
-	$(PYTHON) $(TOOLSDIR)/api/generator/main.py \
+	$(PYTHON) $(TOOLSDIR)/api/generator/generator.py \
 		-p "$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -m" \
-		-o "$(PYTHON) $(TOOLSDIR)/file_manager/file_manager.py -u" \
-		$(FREEDICTDIR)/freedict-database.xml
+		-o "$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u" \
+		$(FREEDICTDIR)/freedict-database.xml\
+		|| sleep 1; $(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
+# the last line above makes sure that sshfs volumes are umounted, if something
+# goes wrong
+
+# provide a clean up rule, which can be run, if sshfs was not umounted cleanly
+api-cleanup:
+	$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
+
+api-validate: $(FREEDICT_DIR)/freedict-database.xml $(FREEDICT_DIR)/freedict-database.rng
+	xmllint --noout --relaxng freedict-database.rng $<
+
 
 clean:
 	$(BUILD)
 
-tests:
-	$(BUILD)
-
-test:
-	$(BUILD)
-
-validation:
-	$(BUILD)
-
-.PHONY: install uninstall api release-% all vok clean tests update dist
+.PHONY: install uninstall api release-% all vok clean tests update dist build_all $(DICTS)
 

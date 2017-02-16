@@ -4,7 +4,7 @@
   <oneOrMore>
     <element name="dictionary">
       <attribute name="name">
-        <data type="string"> <!-- deu-ita -->
+        <data type="string"> <!-- three-digit lang code, separated by dash, e.g. deu-ita -->
 	  <param name="pattern">[a-z]{3}-[a-z]{3}</param>
         </data>
       </attribute>
@@ -12,21 +12,15 @@
         <data type="positiveInteger"/> <!-- 4452 -->
       </attribute>
       <attribute name="edition">
-        <data type="string"> <!-- 0.1.1 -->
+        <data type="string"> <!-- version in the format 0.1.1 -->
 	  <param name="pattern">\d+(\.\d+(\.\d+)?)?</param>
         </data>
       </attribute>
       <attribute name="date">
-        <data type="date"/> <!-- 2011-10-01 -->
-      </attribute>
-      <attribute name="status">
-        <text/> <!-- small -->
-      </attribute>
-      <attribute name="sourceURL">
-        <data type="anyURI"/>
+        <data type="date"/> <!-- date in the format 2011-10-01 -->
       </attribute>
       <attribute name="maintainerName">
-        <text/> <!-- [up for grabs] -->
+        <text/> <!-- e.g. FreeDict - no maintainer assigned -->
       </attribute>
       <optional>
         <attribute name="maintainerEmail">
@@ -34,17 +28,29 @@
         </attribute>
       </optional>
       <optional>
+        <attribute name="status">
+          <text/> <!-- e.g. small -->
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="sourceURL">
+          <data type="anyURI"/>
+        </attribute>
+      </optional>
+      <!-- this is possibly not required anymore
+      <optional>
         <attribute name="unsupported">
           <text/>
         </attribute>
       </optional>
+      -->
       <oneOrMore>
         <element name="release">
           <attribute name="platform">
-            <text/> <!-- dict-tgz -->
+            <text/> <!-- e.g. dict-tgz -->
           </attribute>
           <attribute name="version">
-            <text/> <!-- 0.0.2 -->
+            <text/> <!-- e.g. 0.0.2 (proper version enforcement missing --> 
           </attribute>
           <attribute name="size">
 	    <data type="positiveInteger"/> <!-- 76216 -->
