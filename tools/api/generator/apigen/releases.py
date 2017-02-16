@@ -4,7 +4,7 @@ import distutils.version
 import os
 import re
 
-from dictionary import DownloadFormat
+from .dictionary import DownloadFormat
 
 
 class ReleaseError(Exception):

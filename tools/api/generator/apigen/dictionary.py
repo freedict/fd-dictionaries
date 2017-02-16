@@ -8,7 +8,7 @@ import os
 import re
 import urllib.request
 
-import config
+from . import config
 
 def extract_version(string):
     """Try to extract a version from the given string and feed it into
@@ -103,7 +103,7 @@ class Dictionary:
 
     def is_complete(self):
         """Return true if all mandatory fields are set, else false."""
-        return bool(self._get_missing_keys)
+        return not self._get_missing_keys()
 
     def _get_missing_keys(self):
         """Return list of keys which haven't been set yet but which are

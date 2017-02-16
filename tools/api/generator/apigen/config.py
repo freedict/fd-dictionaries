@@ -1,7 +1,4 @@
 """Constants for the freedict-API generator."""
-# ToDo:
-# make PROJECTHOME_* configuration settings read from some ~/.*-directory /
-# file, therefore decouple it from SF
 
 import re
 

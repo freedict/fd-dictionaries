@@ -137,7 +137,7 @@ def main():
             # we could try running fusermount -u:
             os.system('fusermount -u "%s"' % release_directory)
 
-    print("Using FREEDICT_DIR=" + freedictdir)
+    #print("Using FREEDICT_DIR=" + freedictdir)
     if args.make_available:
         for section in (s for s in config.sections() if s):
             if config[section].getboolean('skip'):

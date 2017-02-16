@@ -8,9 +8,9 @@ import os
 import re
 from xml.etree import ElementTree as ET
 
-import dictionary
-import xmlhandlers
-from xmlhandlers import istag
+from . import dictionary
+from . import xmlhandlers
+from .xmlhandlers import istag
 
 class MetaDataParser(xmlhandlers.TeiHeadParser):
     """Parse a TEI XML dictionary for required and optional meta data using
@@ -27,6 +27,8 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
     MAINTAINER_PATTERN = re.compile(r'^([^<]+)\s*<?([^<]+)?>$')
     # match number of headwords in <extend/> pattern
     HEADWORD_PATTERN = re.compile(r'(\d+(?:\.|,|\s*)\d*).*')
+    # ISO date pattern
+    DATE_PATTERN = re.compile(r'\d{4}-\d{2}-\d{2}')
 
     def __init__(self, name, xml):
         # can be a file object or a string with XML data
@@ -62,7 +64,7 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
             missing = [k for k in self.dictionary.get_mandatory_keys()
                         if not self.dictionary[k]]
             raise ValueError("%s: the following information couldn't be read: "\
-                % self.dictionary['name'] + ', '.join(missing))
+                % self.dictionary.get_name() + ', '.join(missing))
 
     def handle_tag(self, elem):
         """Delegate parsing of XML elements."""
@@ -70,16 +72,19 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
             # take when attribute, is often in ISO 8601
             if elem.get('when'):
                 self.dictionary['date'] = elem.get('when')
-            else:
-                self.dictionary['date'] = elem.text[:]
-        elif istag(elem, 'revisionDesc') and not self.dictionary['date']:
-            self.__handle_revisionDesc(elem)
-        else: # call specialized tag handler function, if possible
-            tag = elem.tag.split(self._namespace)[-1] # strip etree namespace
-            funcname = 'handle_%s' % tag
-            if not hasattr(self, funcname):
-                return
-            result = getattr(self, funcname)(elem)
+            else: # check for correct format and if present, take it
+                if self.DATE_PATTERN.search(elem.text):
+                    self.dictionary['date'] = elem.text[:]
+        else:
+            result = None # try to figure out date:
+            if istag(elem, 'revisionDesc') and not self.dictionary['date']:
+                result = self.__handle_revisionDesc(elem)
+            else: # call specialized tag handler function, if possible
+                tag = elem.tag.split(self._namespace)[-1] # strip etree namespace
+                funcname = 'handle_%s' % tag
+                if not hasattr(self, funcname):
+                    return
+                result = getattr(self, funcname)(elem)
             if result:
                 self.dictionary.update(result)
 
@@ -146,15 +151,19 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
             return {'maintainerName': maintainer.rstrip().lstrip()}
 
     def __handle_revisionDesc(self, elem):
-        """If date has not been set, try to guess it from revision desc."""
-        lastchange = elem[0]
-        if not lastchange.tag.endswith('change'):
+        """If date has not been set with the <date/> attrbiute in the header,
+        guess it from change log."""
+        latest_change = elem[0]
+        print(latest_change.tag, repr(self.dictionary.get_name()))
+        if not latest_change.tag.endswith('change'):
             return # is not a change attribute, can't read any information
-        if lastchange.get('when'):
-            return lastchange.get('when')
-        for child in elem:
+        print("after")
+        if latest_change.get('when'):
+            return {'date': latest_change.get('when')}
+        namespace = latest_change.tag[:latest_change.tag.index('}')+1]
+        for child in latest_change.iter(namespace + 'date'):
             if child.tag.endswith('date'):
-                return child.text
+                return {'date': child.text}
 
     def __format_date(self, date):
         """Bring date into the following format: YYYY-MM-dd."""

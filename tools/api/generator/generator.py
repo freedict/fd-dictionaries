@@ -11,11 +11,9 @@ import argparse
 import os
 from os.path import join as pathjoin
 import sys
+import time
 
-import dictionary
-import metadata
-import releases
-import xmlhandlers
+from apigen import dictionary, metadata, releases, xmlhandlers
 
 
 
@@ -99,17 +97,21 @@ def main(args):
     dictionaries.sort(key=lambda entry: entry.get_name())
     xmlhandlers.write_freedict_database(config.output_path[0], dictionaries)
 
+    # if the files had been mounted with sshfs, it's a good idea to give it some
+    # time to synchronize its state, otherwise umounting fails
+    time.sleep(1.3)
     exec_or_fail(config.postexc) # umount or rsync files, if required
 
-#pylint: disable=broad-except
-try:
-    main(sys.argv)
-except Exception as e:
-    if 'DEBUG' not in os.environ:
-        print('Error:',str(e))
-        print(("\nNote: Rerun the script with the environment variable DEBUG=1 "
-            "to obtain a traceback."))
-        sys.exit(9)
-    else:
-        raise e
+if __name__ == '__main__':
+    #pylint: disable=broad-except
+    try:
+        main(sys.argv)
+    except Exception as e:
+        if 'DEBUG' not in os.environ:
+            print('Error:',str(e))
+            print(("\nNote: Rerun the script with the environment variable DEBUG=1 "
+                "to obtain a traceback."))
+            sys.exit(9)
+        else:
+            raise e
 
