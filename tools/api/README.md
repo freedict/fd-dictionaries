@@ -12,7 +12,7 @@ to make them available, either SSHFS or RSYNC can be used. This can be
 configured in the FreeDict configuration, see <ToDo, Chapter 9 of HOWTO>. The
 `file_manager` will take care of doing this work, transparently.
 
-The `generator` generates the actual XML file. It relies on the FREEDICT_DIR
+The `generator` generates the actual XML file. It relies on the FREEDICTDIR
 variable to be set. Information about this variable can be found
 [here](https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO).\
 To find out how this program works, call

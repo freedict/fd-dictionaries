@@ -59,7 +59,7 @@ api-cleanup: #! runs umount / clean up actions if make api failed and cannot be 
 	$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
 
 api-validation: #! validate the $$FREEDICTDIR/freedict-database.xml against its RNG schema
-api-validation: $(FREEDICT_DIR)/freedict-database.xml $(FREEDICT_DIR)/freedict-database.rng
+api-validation: $(FREEDICTDIR)/freedict-database.xml $(FREEDICTDIR)/freedict-database.rng
 	xmllint --noout --relaxng freedict-database.rng $<
 
 
