@@ -26,7 +26,6 @@ xmllint := /usr/bin/xmllint
 dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
-DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
 
 # Extracting the tiny edition element contents per XSLT is
 # inefficient. Use grep instead.
@@ -38,6 +37,8 @@ space:= $(empty) $(empty)
 version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
 	   $(wildcard $(dictname).tei*) $(dictname)-nophon.tei)
 version := $(subst $(space),_,$(version1))
+PREFIX ?= usr
+DESTDIR ?= /
 
 ################
 # default target
@@ -159,9 +160,8 @@ date=$(shell date +%G-%m-%d)
 ######################
 
 install: $(dictname).dict.dz $(dictname).index
-	install -d $(DESTDIR)
-	install -m 644 $^ $(DESTDIR)
-	$(DICTD_RESTART_SCRIPT)
+	install -d $(DESTDIR)/$(PREFIX)
+	install -m 644 $^ $(DESTDIR)/$(PREFIX)
 
 uninstall:
 	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index

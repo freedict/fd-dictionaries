@@ -7,28 +7,30 @@ include $(TOOLSDIR)/Makefile.config # that defines also TOOLSDIR - never mind
 
 DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
 
-# allow parallel builds of all dictionaries
-build_all: $(DICTS)
-
-$(DICTS):
-	$(MAKE) -C $(FREEDICTDIR)/$@
-
 # Calls default target for each dictionary module.
 # Note: This is a conflict if you wanted to call
 # the 'all' target of each dictionary module.
 all: build_all $(DICTs)
 
 # most useful targets
-release-%:
-	$(BUILD)
+## allow parallel builds of all dictionaries
 
-dist:
-	$(BUILD)
+build_all: $(DICTS)
 
-# ToDo: FIXME, take DESTDIR and PREFIX into account
-install:
-	$(BUILD)
+$(DICTS):
+	$(MAKE) -C $(FREEDICTDIR)/$@
 
+install-base: ## install the built files, without attempting to restart any applications using them
+install-base: build_all
+	for dict in $(DICTS); do; \
+		make -e -C $(DICTS) install; \
+	done
+
+install: ## install built dictionaries and attempt to restart applications using them
+install: install-core
+	$(DICTD_RESTART_SCRIPT)
+
+# ToDo
 uninstall:
 	$(BUILD)
 
