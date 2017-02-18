@@ -10,23 +10,24 @@ DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
 # Calls default target for each dictionary module.
 # Note: This is a conflict if you wanted to call
 # the 'all' target of each dictionary module.
+all: #! build all dictionaries (default)
 all: build_all $(DICTs)
 
 # most useful targets
-## allow parallel builds of all dictionaries
+# allow parallel builds of all dictionaries
 
 build_all: $(DICTS)
 
 $(DICTS):
 	$(MAKE) -C $(FREEDICTDIR)/$@
 
-install-base: ## install the built files, without attempting to restart any applications using them
+install-base: #! install the built files, without attempting to restart any applications using them
 install-base: build_all
 	for dict in $(DICTS); do; \
 		make -e -C $(DICTS) install; \
 	done
 
-install: ## install built dictionaries and attempt to restart applications using them
+install: #! install built dictionaries and attempt to restart applications using them
 install: install-core
 	$(DICTD_RESTART_SCRIPT)
 
@@ -41,6 +42,7 @@ ifeq ("$(wildcard $(PATH_TO_FILE))","")
 endif
 
 # call the API generator to create a file $FREEDICTDIR/freedict-database.xml
+api: #! generate the api with information about all dictionaries at $$FREEDICTDIR/freedict-database.xml
 api: $(FREEDICTDIR)/config.ini
 	# -p: mount / synchronize released and generated files; -o: umount them
 	#  again
@@ -53,13 +55,15 @@ api: $(FREEDICTDIR)/config.ini
 # goes wrong
 
 # provide a clean up rule, which can be run, if sshfs was not umounted cleanly
-api-cleanup:
+api-cleanup: #! runs umount / clean up actions if make api failed and cannot be executed in a subsequent run
 	$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
 
+api-validation: #! validate the $$FREEDICTDIR/freedict-database.xml against its RNG schema
 api-validation: $(FREEDICT_DIR)/freedict-database.xml $(FREEDICT_DIR)/freedict-database.rng
 	xmllint --noout --relaxng freedict-database.rng $<
 
 
+# ToDo
 clean:
 	$(BUILD)
 

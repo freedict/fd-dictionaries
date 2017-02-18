@@ -9,10 +9,6 @@ include $(TOOLSDIR)/Makefile.config
 # from /usr/bin
 PATH := $(TOOLSDIR):$(PATH)
 
-# that might need adaptation, standard debian ships with dash these days and
-# people might not have bash at all; it's also questionable what functionality
-# from bash is actually used
-SHELL=bash
 ifeq ($(origin UNSUPPORTED_PLATFORMS), undefined)
 UNSUPPORTED_PLATFORMS = bedic evolutionary
 endif
@@ -45,21 +41,23 @@ DESTDIR ?= /
 ################
 
 
-all: %.dict.dz %.index
+all: #! build all currently supported output formats
+all: $(dictname).dict.dz $(dictname).index
 
 # Please note: the "release" target has been significantly reduced to enable the
 # release of FreeDict tools in a relatively problem-free state.
 # You are more than welcome to help out in the process of re-instituting
 # the above targets; please drop us a line at freedict-beta.
 
+release: #! build all available release archives at $$FREEDICTDIR/release
 release: release-src release-dict-tbz2 release-dict-tgz
 
 
 # default `make` compilation target
 
-##################################################
-#### targets to extract information from TEI files
-##################################################
+#-------------------------------------------------------------------------------
+# targets to extract information from TEI files
+#-------------------------------------------------------------------------------
 
 # no newline, so output is equal to the output of
 # xsl/getedition.xsl / xsl/getstaus.xsl
@@ -89,11 +87,11 @@ find-homographs: $(dictname).tei
 pos-statistics: $(dictname).tei
 	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
 
-###################################################
-#### create directories where release files are put
-###################################################
+#-------------------------------------------------------------------------------
+# create directories where release files are put
+#-------------------------------------------------------------------------------
 
-dirs:
+dirs: #! This creates all directories for releasing files
 	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
 		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
 	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
@@ -119,6 +117,7 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 	  else \
 	  $(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< \$$current-date=$(date) >$@; fi
 
+# ToDo: doesn't work
 reverse: $(dictname)-reverse.c5
 
 %.dict %.index: %.c5 query-dictd
@@ -132,6 +131,7 @@ $(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvzf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
+release-dict-tgz: #! prepare the release for the dict format in tar.gz format
 release-dict-tgz: dirs \
 	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz
 
@@ -139,6 +139,7 @@ $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
+release-dict-tbz2: #! prepare the release for the dict format in tar.bz2 format
 release-dict-tbz2: dirs \
 	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
@@ -146,6 +147,7 @@ $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
+# ToDo: reverse target, description, still working?
 release-dict-tbz2-reverse: dirs \
 	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
@@ -155,16 +157,14 @@ release-dict-tbz2-reverse: dirs \
 
 date=$(shell date +%G-%m-%d)
 
-######################
-#### not used by me :)
-######################
 
+install: #! install the dictionary
 install: $(dictname).dict.dz $(dictname).index
 	install -d $(DESTDIR)/$(PREFIX)
 	install -m 644 $^ $(DESTDIR)/$(PREFIX)
 
-uninstall:
-	-rm $(DESTDIR)/$(dictname).dict.dz $(DESTDIR)/$(dictname).index
+uninstall: #! uninstall this dictionary
+	-rm $(DESTDIR)/$(PREFIX)/$(dictname).dict.dz $(DESTDIR)/$(DESTDIR)/$(dictname).index
 	$(DICTD_RESTART_SCRIPT)
 
 ########################
@@ -182,6 +182,7 @@ valid.stamp: $(dictname).tei
 	#echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
 	echo "File is valid TEI XML."
 
+validation: #! check for valid FreeDict's subset of TEI XML
 validation: valid.stamp
 
 testresult-$(version).log: $(dictname).index $(dictname).dict
@@ -210,7 +211,7 @@ query-%:
 	  echo "Platform $* does not support this dictionary module."; exit 1; fi
 	@echo "Platform $* supports this dictionary module."
 
-print-unsupported:
+print-unsupported: #! print unsupported platforms
 	@echo -n $(UNSUPPORTED_PLATFORMS)
 
 # this is a "double colon rule"
@@ -221,7 +222,7 @@ print-unsupported:
 #
 # clean::
 #	-rm -f delete_this_file.too
-clean::
+clean:: #! clean build files
 	rm -f $(dictname).index $(dictname).dict
 	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
 	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
@@ -247,6 +248,7 @@ $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
 	cd .. && zip -r9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
       -x \*/.svn/\* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
+release-src: #! create source release tarball
 release-src: $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
 
 # the following two targets work like "dist", but include the .tei file
