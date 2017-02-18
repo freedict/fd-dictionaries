@@ -2,8 +2,8 @@
 # It provides commands to build and install dictionaries and to generate the API
 # file.
 
-TOOLSDIR := $(FREEDICTDIR)/tools
-include $(TOOLSDIR)/Makefile.config
+TOOLSDIR ?= $(FREEDICTDIR)/tools
+include $(TOOLSDIR)/Makefile.config # that defines also TOOLSDIR - never mind
 
 DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
 
@@ -54,7 +54,7 @@ api: $(FREEDICTDIR)/config.ini
 api-cleanup:
 	$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
 
-api-validate: $(FREEDICT_DIR)/freedict-database.xml $(FREEDICT_DIR)/freedict-database.rng
+api-validation: $(FREEDICT_DIR)/freedict-database.xml $(FREEDICT_DIR)/freedict-database.rng
 	xmllint --noout --relaxng freedict-database.rng $<
 
 

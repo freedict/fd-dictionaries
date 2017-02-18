@@ -1,5 +1,5 @@
-toolsdir := $(FREEDICTDIR)/tools
-include $(toolsdir)/Makefile.config
+TOOLSDIR := $(FREEDICTDIR)/tools
+include $(TOOLSDIR)/Makefile.config
 
 #######################
 #### set some variables
@@ -7,9 +7,11 @@ include $(toolsdir)/Makefile.config
 
 # let the tools from $(toolsdir) override tools
 # from /usr/bin
-PATH := $(toolsdir):$(PATH)
+PATH := $(TOOLSDIR):$(PATH)
 
-# that might need adaptation, standard debian ships with dash these days and people might not have bash at all
+# that might need adaptation, standard debian ships with dash these days and
+# people might not have bash at all; it's also questionable what functionality
+# from bash is actually used
 SHELL=bash
 ifeq ($(origin UNSUPPORTED_PLATFORMS), undefined)
 UNSUPPORTED_PLATFORMS = bedic evolutionary
@@ -18,8 +20,7 @@ endif
 
 available_platforms := dictd stardict aspell d4m fo
 
-xsldir ?= $(toolsdir)/xsl
-tei2dict := xmltei2xmldict.pl -n $(NSGMLS) -d $(XMLDECLARATION)
+xsldir ?= $(TOOLSDIR)/xsl
 xmllint := /usr/bin/xmllint
 
 dictname ?= $(shell basename "$(shell pwd)")
@@ -42,15 +43,18 @@ version := $(subst $(space),_,$(version1))
 # default target
 ################
 
-# Please note: the "all" target has been significantly reduced to enable the
+
+all: %.dict.dz %.index
+
+# Please note: the "release" target has been significantly reduced to enable the
 # release of FreeDict tools in a relatively problem-free state.
 # You are more than welcome to help out in the process of re-instituting
 # the above targets; please drop us a line at freedict-beta.
 
-all:
-	$(MAKE) dist
-	$(MAKE) release-dict-tbz2
+release: release-src release-dict-tbz2 release-dict-tgz
 
+
+# default `make` compilation target
 
 ##################################################
 #### targets to extract information from TEI files
@@ -89,51 +93,11 @@ pos-statistics: $(dictname).tei
 ###################################################
 
 dirs:
-	@if [ ! -d $(BUILD_DIR)/dict-tgz ]; then \
-		mkdir $(BUILD_DIR)/dict-tgz; fi
-	@if [ ! -d $(BUILD_DIR)/dict-tbz2 ]; then \
-		mkdir $(BUILD_DIR)/dict-tbz2; fi
+	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
+		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
+	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
+		mkdir "$(BUILD_DIR)/dict-tbz2"; fi
 
-#############################################################
-#### rules how to create dict database format in old way
-#############################################################
-
-%-oldstyle.dict %-oldstyle.index: %.tei query-dictd
-	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
-	$(tei2dict) -f $<-oldstyle $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
-
-%.dz: %
-	dictzip -k $<
-
-%.tar.gz: %.dict.dz %.index
-	tar czf $*.tar.gz $*.dict.dz $*.index
-
-%.tar.bz2: %.dict.dz %.index
-	tar cjf $*.tar.bz2 $*.dict.dz $*.index
-
-release-dict-tgz-oldstyle: $(dictname)-oldstyle.tar.gz dirs
-	cp $(dictname).tar.gz \
-	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz
-
-release-dict-tgz-reverse-oldstyle: $(rdictname)-oldstyle.tar.gz dirs
-	cp $(rdictname).tar.gz \
-	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version)-reverse.tar.gz
-
-release-dict-tbz2-oldstyle: $(dictname)-oldstyle.tar.bz2 dirs
-	cp $(dictname).tar.bz2 \
-	$(BUILD_DIR)/dict-bz2/freedict-$(dictname)-$(version).tar.bz2
-
-release-dict-tbz2-reverse-oldstyle: $(rdictname)-oldstyle.tar.bz2 dirs
-	cp $(rdictname).tar.bz2 \
-	$(BUILD_DIR)/dict-bz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
-
-reverse-oldstyle: $(dictname).tei
-	@echo "Will generate $(rdictname):"
-	export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)";\
-	$(tei2dict) -f $< -r $(TEI2DICTFLAGS) -t $(xsldir)/tei2txt.xsl
-	mv $(dictname).index $(rdictname).index
-	mv $(dictname).dict $(rdictname).dict
-	dictzip -k $(rdictname).dict
 
 ######################################################################
 #### targets for c5/dictfmt conversion style into dict database format
@@ -158,6 +122,10 @@ reverse: $(dictname)-reverse.c5
 
 %.dict %.index: %.c5 query-dictd
 	dictfmt --without-time -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
+
+%.dict.dz: %.dict
+	dictzip -k $<
+
 
 $(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
@@ -217,25 +185,17 @@ valid.stamp: $(dictname).tei
 validation: valid.stamp
 
 testresult-$(version).log: $(dictname).index $(dictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
+	$(TOOLSDIR)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
 	&& exit $${PIPESTATUS[0]}
 
 test: testresult-$(version).log
 
 testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
-	$(toolsdir)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
+	$(TOOLSDIR)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
 	&& exit $${PIPESTATUS[0]}
 
 test-reverse: testresult-$(version)-reverse.log
 	
-test-oldstyle: $(dictname).oldstyle.index $(dictname).oldstyle.dict.dz
-	$(toolsdir)/testing/test-database.pl -f $(dictname).oldstyle \
- -l $(DICTD_LOCALE) |tee testresult-$(version)-oldstyle.log
-
-test-reverse-oldstyle: $(rdictname).oldstyle.index $(rdictname).oldstyle.dict
-	$(toolsdir)/testing/test-database.pl -f $(rdictname).oldstyle \
- -l $(DICTD_LOCALE) |tee testresult-$(version)-oldstyle-reverse.log
-
 tests: valid.stamp testresult-$(version).log
 
 # Query platform support status
@@ -287,7 +247,7 @@ $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
 	cd .. && zip -r9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
       -x \*/.svn/\* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
-dist: $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
+release-src: $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
 
 # the following two targets work like "dist", but include the .tei file
 # unconditionally
@@ -363,17 +323,17 @@ $(dictname).escaped.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
 # http://www.w3.org/International/charlint/
 #
 # You may want to adapt this:
-unicodedata = $(toolsdir)/UnicodeData.txt
+unicodedata = $(TOOLSDIR)/UnicodeData.txt
 #unicodedata = /usr/lib/perl5/5.8.1/unicore/UnicodeData.txt
 #unicodedata = /usr/share/perl/5.8.8/unicore/UnicodeData.txt
 #
-$(toolsdir)/UnicodeData.txt:
-	cd $(toolsdir) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+$(TOOLSDIR)/UnicodeData.txt:
+	cd $(TOOLSDIR) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
 #
 charlint_url = http://dev.w3.org/cvsweb/~checkout~/charlint/charlint.pl?rev=1.27&content-type=text/plain&only_with_tag=HEAD
-$(toolsdir)/charlint.pl::
+$(TOOLSDIR)/charlint.pl::
 	@if [ ! -x $@ ]; then \
-	cd $(toolsdir) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
+	cd $(TOOLSDIR) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
 #
 $(CHARLINT_DATA): $(unicodedata)
 	$(CHARLINT) -f $< -S $@ -d -D
@@ -499,7 +459,7 @@ clean::
 #### Phonetics import
 #######################
 
-supported_phonetics ?= $(shell PATH="$(toolsdir):$(PATH)" teiaddphonetics -li)
+supported_phonetics ?= $(shell PATH="$(TOOLSDIR):$(PATH)" teiaddphonetics -li)
 
 la1 := $(shell export V=$(dictname); echo $${V:0:3})
 #la2 := $(shell export V=$(dictname); echo $${V:4:3})
@@ -520,14 +480,12 @@ endif
 # should be default, but is not for make-historic reasons
 .DELETE_ON_ERROR:
 
-.PHONY: all version status sourceURL maintainer dirs install uninstall reverse reverse-oldstyle \
-	release-dict-tbz2-oldstyle release-dict-tbz2-reverse-oldstyle \
-	release-dict-tgz-oldstyle release-dict-tgz-reverse-oldstyle \
-	release-dict-tbz2 release-dict-tbz2-reverse \
-	release-zaurus \
+.PHONY: all version status sourceURL maintainer dirs install uninstall \
+	release releaase-src release-dict-tbz2 release-dict-tbz2-reverse release-dict-tgz \
+	release-dict-tgz-reverse release-zaurus \
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
 	clean dist validation query-% print-unsupported \
-	test test-reverse test-oldstyle test-reverse-oldstyle tests \
+	test test-reverse test-reverse-oldstyle tests \
 	find-homographs pos-statistics \
 	stardict release-stardict release-tei-tbz2
 
