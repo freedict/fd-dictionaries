@@ -91,7 +91,7 @@ pos-statistics: $(dictname).tei
 # create directories where release files are put
 #-------------------------------------------------------------------------------
 
-dirs: #! This creates all directories for releasing files
+dirs: #! creates all directories for releasing files
 	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
 		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
 	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
@@ -182,7 +182,7 @@ valid.stamp: $(dictname).tei
 	#echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
 	echo "File is valid TEI XML."
 
-validation: #! check for valid FreeDict's subset of TEI XML
+validation: #! validate dictionary with FreeDict's TEI XML subset
 validation: valid.stamp
 
 testresult-$(version).log: $(dictname).index $(dictname).dict

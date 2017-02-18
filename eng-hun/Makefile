@@ -1,5 +1,5 @@
 FREEDICTDIR ?= ../../
-hedir ?= $(FREEDICTDIR)/hun-eng
+hedir ?= ../hun-eng
 VPATH += $(hedir)
 DISTFILES = eng-hun.tei.header Makefile ChangeLog
 supported_phonetics =
