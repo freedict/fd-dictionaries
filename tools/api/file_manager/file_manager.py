@@ -2,14 +2,17 @@
 """This script makes remote files available for local processing. Remote files
 are e.g. the released files hosted on a server as downloads or the
 auto-generated dictionaries, kept outside the git repository.
-This script requires the variable FREEDICTDIR to be set.
+This script requires a configuration. Please see the README for more details.
 Running this script with the `-h` option will give an overview about its usage."""
 
 import argparse
-import configparser
-import io
 import os
 import sys
+
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0]))))
+import config
+
 
 def execute(cmd, raise_on_error=False):
     """Execute a command; if the return value is != 0, the program either
@@ -61,38 +64,10 @@ class SshfsAccess:
         execute('fusermount -u {}'.format(path), raise_on_error=True)
 
 
-def load_configuration(freedictdir):
-    """Load given `config` from given freedictdir. Default values are assumed
-    for values which weren't given. The configuration is called config.ini."""
-    config = configparser.ConfigParser()
-    config['DEFAULT'] = {
-            'file_access_via': 'sshfs'} # only rsync and sshfs are allowed
-    config['generated'] = {}
-    config['generated']['server'] = 'www.wikdict.com'
-    config['generated']['remote_path'] = '/home/freedict/lf-dictionaries'
-    config['generated']['user'] = 'anonymous'
-    config['generated']['skip'] = 'no'
-    config['release'] = {}
-    config['release']['server'] = 'frs.sf.net'
-    config['release']['remote_path'] = '/home/pfs/project/freedict'
-    config['release']['user'] = 'anonymous'
-    config['release']['skip'] = 'no'
-
-    # overwrite defaults with user settings
-    with open(os.path.join(freedictdir, 'config.ini')) as configfile:
-        config.read_file(configfile)
-
-    if config['DEFAULT']['file_access_via'] not in ['sshfs', 'rsync']:
-        raise ValueError(('section=DEFAULT, file_access_via="%s": invalid value,'
-            ' possible values are sshfs and rsync' % config['DEFAULT']['file_access_via']))
-    return config
 
 def setup():
     """Find freedict directory and parse command line arguments. Return a tuple
     with the freedict directory and the configuration object."""
-    if not 'FREEDICTDIR' in os.environ:
-        print("Error: environment variable FREEDICT unset, but it is required.")
-        sys.exit(40)
     # parse command line options
     parser = argparse.ArgumentParser(description='FreeDict build setup utility')
     parser.add_argument('-m', dest="make_available", action='store_true',
@@ -109,26 +84,22 @@ def setup():
         print("Error: No option specified")
         parser.print_help()
 
-    return (os.environ['FREEDICTDIR'], args)
+    return args
 
 
 def main():
-    (freedictdir, args) = setup()
+    args = setup()
     try: # load configuration
-        config = load_configuration(freedictdir)
-    except io.UnsupportedOperation:
-        print("Could not read from %s" % os.path.join(freedictdir, 'config.ini'))
-        print("Please check that the file exists and is readable.")
-        sys.exit(1)
-    except ValueError as e:
+        conf = config.discover_and_load()
+    except config.ConfigurationError as e:
         print(e)
         sys.exit(42)
 
     access_method = RsyncFileAccess()
-    if config['DEFAULT']['file_access_with'] == 'sshfs':
+    if conf['DEFAULT']['file_access_via'] == 'sshfs':
         access_method = SshfsAccess()
 
-    release_directory = os.path.join(freedictdir, 'release')
+    release_directory = config.get_path(conf['release'])
     if not os.path.exists(release_directory):
         try:
             os.makedirs(release_directory)
@@ -137,23 +108,22 @@ def main():
             # we could try running fusermount -u:
             os.system('fusermount -u "%s"' % release_directory)
 
-    #print("Using FREEDICTDIR=" + freedictdir)
     if args.make_available:
-        for section in (s for s in config.sections() if s):
-            if config[section].getboolean('skip'):
+        for section in ('release', 'generated'):
+            if conf[section].getboolean('skip'):
                 print("Skipping",section)
                 continue
             print("Making files in %s available..." % section)
-            options = config[section]
-            target_path = os.path.join(freedictdir, section)
+            options = conf[section]
+            target_path = config.get_path(options)
             access_method.make_avalailable(options['user'], options['server'],
                 options['remote_path'], target_path)
     elif args.umount:
-        for section in (s for s in config.sections() if s):
-            if config[section].getboolean('skip'):
+        for section in ('generated', 'release'):
+            if conf[section].getboolean('skip'):
                 print("Skipping",section)
                 continue
-            target_path = os.path.join(freedictdir, section)
+            target_path = config.get_path(conf[section])
             try:
                 access_method.make_unavailable(target_path)
             except OSError:

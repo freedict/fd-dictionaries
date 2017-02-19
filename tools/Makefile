@@ -13,32 +13,26 @@ INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/share/freedict
 dirs = api buildhelpers ergane JMdict lib mk teimerge testing xquery xsl/inc
 TARGET_DIRS = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
-# check whether config for remote file access exists
-$(FREEDICTDIR)/config.ini:
-ifeq ("$(wildcard $(PATH_TO_FILE))","")
-	$(error For this target, a configuration named $(FREEDICTDIR)/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the $(FREEDICTDIR)tools/api/file_manager program.)
-endif
 
-# call the API generator to create a file $FREEDICTDIR/freedict-database.xml
-api: #! generate the api with information about all dictionaries at $$FREEDICTDIR/freedict-database.xml
-api: $(FREEDICTDIR)/config.ini
+api: #! generate the api with information about all dictionaries and their downloads at the configured api path
+api:
 	# -p: mount / synchronize released and generated files; -o: umount them
 	#  again
-	$(PYTHON) $(TOOLSDIR)/api/generator/generator.py \
-		-p "$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -m" \
-		-o "$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u" \
-		$(FREEDICTDIR)/freedict-database.xml\
-		|| sleep 1; $(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
+	$(PYTHON) $(FREEDICT_TOOLS)/api/generator/generator.py \
+		-p "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -m" \
+		-o "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u" \
+		$(FREEDICT_TOOLS)/freedict-database.xml\
+		|| sleep 1; $(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u
 # the last line above makes sure that sshfs volumes are umounted, if something
 # goes wrong
 
 # provide a clean up rule, which can be run, if sshfs was not umounted cleanly
 api-cleanup: #! runs umount / clean up actions if make api failed and cannot be executed in a subsequent run
-	$(PYTHON) $(TOOLSDIR)/api/file_manager/file_manager.py -u
+	@$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u
 
-api-validation: #! validate the $$FREEDICTDIR/freedict-database.xml against its RNG schema
-api-validation: $(FREEDICTDIR)/freedict-database.xml $(FREEDICTDIR)/freedict-database.rng
-	xmllint --noout --relaxng freedict-database.rng $<
+api-validation: #! validate the freedict-database.xml against its RNG schema
+api-validation:
+	xmllint --noout --relaxng freedict-database.rng $(shell $(MAKE) api-path)
 
 
 

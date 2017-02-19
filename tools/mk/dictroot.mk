@@ -1,11 +1,13 @@
-# This makefile snippet contains all commands which can be performed on a whole
-# collection of dictionaries in the same directory. It assumes to be included
-# and executed in a directory with subdirectories called "lg1-lg2" (so the usual
-# ditionary naming conventions).
+# This makefile snippet contains all commands which can be performed in a
+# directory containing many dictionary (a dictionary root).
+# The subdirectories have to be called "lg1-lg2" (so the usual dictionary naming
+# conventions).
 FREEDICT_TOOLS ?= .
 include $(FREEDICT_TOOLS)/mk/config.mk
 
-DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
+# this shows that this makefile include may only be used for a directory
+# containing many dictionaries
+DICTS=$(shell find . -maxdepth 1 -name '???-???' -printf "%P ")
 
 # Calls default target for each dictionary module.
 # Note: This is a conflict if you wanted to call
@@ -19,7 +21,7 @@ all: build_all $(DICTs)
 build_all: $(DICTS)
 
 $(DICTS):
-	$(MAKE) -C $(FREEDICTDIR)/$@
+	$(MAKE) -C $@
 
 install-base: #! install the built files, without attempting to restart any applications using them
 install-base: build_all
