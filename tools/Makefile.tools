@@ -28,7 +28,7 @@ install:
 	install *.pl *.py *.sh \
 	  ergane-records2tei teiaddphonetics teidiff \
 	  $(INSTALLDIR)/tools
-	install -m 644 Makefile Makefile.common mk/config.mk \
+	install -m 644 Makefile mk/dicts.mk mk/config.mk \
 	  $(INSTALLDIR)/tools
 	install ergane/convert-with-access-to-jet4 \
 	  $(INSTALLDIR)/tools/ergane

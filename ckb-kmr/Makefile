@@ -2,7 +2,7 @@
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = sor-kur.txt Makefile ckb-kmr.tei ckb-kmr.tei.header README ChangeLog \
   INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 #$(dictname).tei: sor-kur.txt $(dictname).tei.header \
 #	$(toolsdir)/xdf2tei.pl
 #	cat $(dictname).tei.header >$@

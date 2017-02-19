@@ -2,7 +2,7 @@ FREEDICT_TOOLS ?= ../../tools
 DISTFILES = Makefile ChangeLog README SZOTAR.ZIP \
 	    hun-eng.tei.header szotar-dbf2tei.pl
 supported_phonetics =
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 
 dbview_in_path := $(shell which dbview 2>/dev/null)
 

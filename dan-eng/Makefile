@@ -2,7 +2,7 @@
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = Makefile AUTHORS COPYING INSTALL NEWS README ChangeLog dan-eng.tei \
  freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 #include $(toolsdir)/ergane/Makefile.inc
 
 #$(dictname).tei: $(dictname).tei.header

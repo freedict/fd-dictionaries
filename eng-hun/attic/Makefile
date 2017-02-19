@@ -3,7 +3,7 @@ hedir ?= ../hun-eng
 VPATH += $(hedir)
 DISTFILES = eng-hun.tei.header Makefile ChangeLog
 supported_phonetics =
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 
 dbview_in_path := $(shell which dbview 2>/dev/null)
 

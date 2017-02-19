@@ -6,7 +6,7 @@ DISTFILES = COPYING Makefile README ChangeLog AUTHORS \
    freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 TEI2DICTFLAGS = -a
 supported_phonetics=
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 UNSUPPORTED_PLATFORMS = evolutionary bedic
 
 # these are eng-hin specific targets

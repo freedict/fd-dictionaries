@@ -5,7 +5,7 @@ freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 
 supported_phonetics =
 UNSUPPORTED_PLATFORMS = evolutionary
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 #include $(toolsdir)/ergane/Makefile.inc
 
 #$(dictname)-nophon.tei: $(dictname).tei.header

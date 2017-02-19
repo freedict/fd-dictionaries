@@ -2,4 +2,4 @@
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = AUTHORS ChangeLog COPYING lat-deu.tei \
 freedict-P5.xml freedict-P5.rng freedict-P5.dtd freedict-dictionary.css INSTALL Makefile NEWS README
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk

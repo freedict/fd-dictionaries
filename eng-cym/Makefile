@@ -3,4 +3,4 @@ FREEDICT_TOOLS ?= ../../tools
 DISTFILES = AUTHORS ChangeLog COPYING eng-cym.tei INSTALL Makefile freedict-P5.dtd freedict-dictionary.css freedict-P5.rng freedict-P5.xml
 supported_phonetics=
 
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk

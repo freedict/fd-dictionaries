@@ -2,5 +2,5 @@
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = AUTHORS ChangeLog COPYING srp-eng.tei INSTALL Makefile NEWS README \
         freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 UNSUPPORTED_PLATFORMS = evolutionary

@@ -1,4 +1,9 @@
-include $(FREEDICT_TOOLS)/config.mk
+# This file contains all targets defined for a dictionary. Each dictionary
+# makefile should include it. It defines targets to convert (build) the TEI
+# files to the supported output formats. It also features some release targets
+# used for making a release in FreeDict. "install" and "uninstall" targets are
+# provided, too.
+include $(FREEDICT_TOOLS)/mk/config.mk
 
 #######################
 #### set some variables

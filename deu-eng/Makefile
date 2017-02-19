@@ -8,4 +8,4 @@ DISTFILES = AUTHORS COPYING ChangeLog INSTALL Makefile NEWS README deu-eng.tei \
 # upstream is implemented.
 supported_phonetics =
 
-include $(FREEDICT_TOOLS)/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
