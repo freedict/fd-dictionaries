@@ -23,16 +23,6 @@ dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
 
 
-# Extracting the tiny edition element contents per XSLT is
-# inefficient. Use grep instead.
-# if $(version) contains spaces:
-# Makefile.common:235: *** mixed implicit and normal rules.  Stop.
-# so spaces are substituted by underscores
-empty:=
-space:= $(empty) $(empty)
-version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
-	   $(wildcard $(dictname).tei*) $(dictname)-nophon.tei)
-version := $(subst $(space),_,$(version1))
 PREFIX ?= usr
 DESTDIR ?= /
 
@@ -53,30 +43,6 @@ release: #! build all available release archives at $$FREEDICTDIR/release
 release: release-src release-dict-tbz2 release-dict-tgz
 
 
-# default `make` compilation target
-
-#-------------------------------------------------------------------------------
-# targets to extract information from TEI files
-#-------------------------------------------------------------------------------
-
-# no newline, so output is equal to the output of
-# xsl/getedition.xsl / xsl/getstaus.xsl
-version: $(dictname).tei
-	@echo -n "$(version)"
-
-# alternative: @$(XSLTPROCESSOR) $(xsldir)/getstatus.xsl $(dictname).tei
-status: $(dictname).tei
-	@echo -n "$(shell grep -m 1 -o -P -e \
-	"(?<=<note type=\"status\">).+(?=</note>)" $(dictname).tei)"
-
-sourceURL: $(dictname).tei
-	@echo -n $(shell grep -m 1 -o -P -e \
-	"(?<=<xptr url=\")|(?<=<ptr target=\").+(?=\"\/>)" $(dictname).tei)
-
-maintainer: $(dictname).tei $(xsldir)/getmaintainer.xsl
-	@$(XSLTPROCESSOR) $(xsldir)/getmaintainer.xsl $<
-
-
 find-homographs: $(dictname).tei
 	@cat $< | grep orth | \
 	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
@@ -87,9 +53,9 @@ find-homographs: $(dictname).tei
 pos-statistics: $(dictname).tei
 	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
 
-#-------------------------------------------------------------------------------
-# create directories where release files are put
-#-------------------------------------------------------------------------------
+###############################################################################
+#### create directories where release files are stored
+###############################################################################
 
 dirs: #! creates all directories for releasing files
 	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
