@@ -1,5 +1,4 @@
-TOOLSDIR := $(FREEDICTDIR)/tools
-include $(TOOLSDIR)/Makefile.config
+include $(FREEDICT_TOOLS)/Makefile.config
 
 #######################
 #### set some variables
@@ -7,7 +6,7 @@ include $(TOOLSDIR)/Makefile.config
 
 # let the tools from $(toolsdir) override tools
 # from /usr/bin
-PATH := $(TOOLSDIR):$(PATH)
+PATH := $(FREEDICT_TOOLS):$(PATH)
 
 ifeq ($(origin UNSUPPORTED_PLATFORMS), undefined)
 UNSUPPORTED_PLATFORMS = bedic evolutionary
@@ -16,7 +15,7 @@ endif
 
 available_platforms := dictd stardict aspell d4m fo
 
-xsldir ?= $(TOOLSDIR)/xsl
+xsldir ?= $(FREEDICT_TOOLS)/xsl
 xmllint := /usr/bin/xmllint
 
 dictname ?= $(shell basename "$(shell pwd)")
@@ -39,7 +38,7 @@ all: $(dictname).dict.dz $(dictname).index
 # You are more than welcome to help out in the process of re-instituting
 # the above targets; please drop us a line at freedict-beta.
 
-release: #! build all available release archives at $$FREEDICTDIR/release
+release: #! build all available release archives at release/
 release: release-src release-dict-tbz2 release-dict-tgz
 
 
@@ -126,11 +125,11 @@ date=$(shell date +%G-%m-%d)
 
 install: #! install the dictionary
 install: $(dictname).dict.dz $(dictname).index
-	install -d $(DESTDIR)/$(PREFIX)
-	install -m 644 $^ $(DESTDIR)/$(PREFIX)
+	install -d $(DESTDIR)/$(PREFIX)/share/dictd
+	install -m 644 $^ $(DESTDIR)/$(PREFIX)/share/dictd
 
 uninstall: #! uninstall this dictionary
-	-rm $(DESTDIR)/$(PREFIX)/$(dictname).dict.dz $(DESTDIR)/$(DESTDIR)/$(dictname).index
+	-rm $(DESTDIR)/$(PREFIX)/share/dictd/$(dictname).dict.dz $(DESTDIR)/$(DESTDIR)/$(dictname).index
 	$(DICTD_RESTART_SCRIPT)
 
 ########################
@@ -152,13 +151,13 @@ validation: #! validate dictionary with FreeDict's TEI XML subset
 validation: valid.stamp
 
 testresult-$(version).log: $(dictname).index $(dictname).dict
-	$(TOOLSDIR)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
+	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
 	&& exit $${PIPESTATUS[0]}
 
 test: testresult-$(version).log
 
 testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
-	$(TOOLSDIR)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
+	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
 	&& exit $${PIPESTATUS[0]}
 
 test-reverse: testresult-$(version)-reverse.log
@@ -291,17 +290,17 @@ $(dictname).escaped.dic: tei-wrapper.xml grouped.tei $(xsldir)/tei2dic.xsl
 # http://www.w3.org/International/charlint/
 #
 # You may want to adapt this:
-unicodedata = $(TOOLSDIR)/UnicodeData.txt
+unicodedata = $(FREEDICT_TOOLS)/UnicodeData.txt
 #unicodedata = /usr/lib/perl5/5.8.1/unicore/UnicodeData.txt
 #unicodedata = /usr/share/perl/5.8.8/unicore/UnicodeData.txt
 #
-$(TOOLSDIR)/UnicodeData.txt:
-	cd $(TOOLSDIR) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+$(FREEDICT_TOOLS)/UnicodeData.txt:
+	cd $(FREEDICT_TOOLS) && wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
 #
 charlint_url = http://dev.w3.org/cvsweb/~checkout~/charlint/charlint.pl?rev=1.27&content-type=text/plain&only_with_tag=HEAD
-$(TOOLSDIR)/charlint.pl::
+$(FREEDICT_TOOLS)/charlint.pl::
 	@if [ ! -x $@ ]; then \
-	cd $(TOOLSDIR) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
+	cd $(FREEDICT_TOOLS) && wget -O $@ '$(charlint_url)' && chmod a+x $@; fi
 #
 $(CHARLINT_DATA): $(unicodedata)
 	$(CHARLINT) -f $< -S $@ -d -D
@@ -427,7 +426,7 @@ clean::
 #### Phonetics import
 #######################
 
-supported_phonetics ?= $(shell PATH="$(TOOLSDIR):$(PATH)" teiaddphonetics -li)
+supported_phonetics ?= $(shell PATH="$(FREEDICT_TOOLS):$(PATH)" teiaddphonetics -li)
 
 la1 := $(shell export V=$(dictname); echo $${V:0:3})
 #la2 := $(shell export V=$(dictname); echo $${V:4:3})

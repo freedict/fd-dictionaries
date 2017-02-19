@@ -2,8 +2,8 @@
 # It provides commands to build and install dictionaries and to generate the API
 # file.
 
-TOOLSDIR ?= $(FREEDICTDIR)/tools
-include $(TOOLSDIR)/Makefile.config # that defines also TOOLSDIR - never mind
+FREEDICT_TOOLS ?= .
+include $(FREEDICT_TOOLS)/Makefile.config
 
 DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
 

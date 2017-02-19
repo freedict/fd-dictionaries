@@ -1,17 +1,16 @@
 .SUFFIXES: .tar.gz .tei .dict .dz .fo .pdf
 
-TOOLS = $(FREEDICTDIR)/tools/
 WEBSTERDIR = /usr/local/bin/
 DICTFMT = dictfmt
 XEROX   = /usr/local/bin/xerox
 XSLPROCESSOR = xsltproc
-XSLT = $(TOOLS)xsl/tei2c5.xsl
+XSLT = $(FREEDICT_TOOLS)xsl/tei2c5.xsl
 TEIFO = /usr/src/packages/theater/teixsl/fo/tei.xsl
 
 VPATH = ../tools:../dicts:../dicts/bin
 
 include Makefile.language
-include $(TOOLS)Makefile.config
+include $(FREEDICT_TOOLS)/Makefile.config
 
 .tei.dict:
 	$(XSLPROCESSOR) $(XSLT) $*.tei | \

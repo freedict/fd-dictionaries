@@ -16,7 +16,7 @@ which is a flexible XML format to encode human speech. The FreeDict project
 provides dictionaries but also style sheets to convert the TEI databases into
 human-readable formats.
 
-At the past there were a variety of output formats, but at the moment only the
+In the past there were a variety of output formats, but at the moment only the
 [dict format](https://en.wikipedia.org/wiki/DICT)
 is supported.
 
