@@ -1,41 +1,19 @@
-# This makefile forms the root of the FreeDict build infrastructure.
-# It provides commands to build and install dictionaries and to generate the API
-# file.
+# This makefile contains all recipes to build and manage the FreeDict
+# tools, including the API. It also provides targets to build a release archive
+# with the latest tools included.
 
 FREEDICT_TOOLS ?= .
 include $(FREEDICT_TOOLS)/mk/config.mk
 
-DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
+VERSION = 0.4
+PREFIX ?= usr/local
+DESTDIR ?= /
+INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/share/freedict
 
-# Calls default target for each dictionary module.
-# Note: This is a conflict if you wanted to call
-# the 'all' target of each dictionary module.
-all: #! build all dictionaries (default)
-all: build_all $(DICTs)
+dirs = api buildhelpers ergane JMdict lib mk teimerge testing xquery xsl/inc
+TARGET_DIRS = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
-# most useful targets
-# allow parallel builds of all dictionaries
-
-build_all: $(DICTS)
-
-$(DICTS):
-	$(MAKE) -C $(FREEDICTDIR)/$@
-
-install-base: #! install the built files, without attempting to restart any applications using them
-install-base: build_all
-	for dict in $(DICTS); do; \
-		make -e -C $(DICTS) install; \
-	done
-
-install: #! install built dictionaries and attempt to restart applications using them
-install: install-core
-	$(DICTD_RESTART_SCRIPT)
-
-# ToDo
-uninstall:
-	$(BUILD)
-
-# check whether has been configured for remote file access exists
+# check whether config for remote file access exists
 $(FREEDICTDIR)/config.ini:
 ifeq ("$(wildcard $(PATH_TO_FILE))","")
 	$(error For this target, a configuration named $(FREEDICTDIR)/config.ini has to exist. It contains information about how to access the released and generated dictionaries. You might also want to have a look at the $(FREEDICTDIR)tools/api/file_manager program.)
@@ -63,9 +41,46 @@ api-validation: $(FREEDICTDIR)/freedict-database.xml $(FREEDICTDIR)/freedict-dat
 	xmllint --noout --relaxng freedict-database.rng $<
 
 
-# ToDo
-clean:
-	$(BUILD)
 
-.PHONY: install uninstall api release-% all vok clean tests update dist build_all $(DICTS)
+$(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2: Makefile* *.pl
+ifeq ($(wildcard $(BUILD_DIR)),)
+	mkdir -p $(BUILD_DIR)
+endif
+	tar --totals --exclude="*/.svn/*" --exclude="*/.*" \
+	  --exclude="*/charlint*" --exclude="*/UnicodeData.txt" \
+	  --exclude="*/ergane/jet4/*" \
+	  --exclude="*/ergane/unzip/*" \
+	  --exclude="*/ergane/zip/*" \
+	  --exclude="*/__pycache__/*" \
+	  -cvjf $@ ../tools
+
+release: #! build a release tarball in $$BUILD_DIR, ../build by default
+release: $(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2
+
+# ToDo: needs to be rewritten
+install: #! install the tools to $$DESTDIR/$PREFIX/share/freedict, by default /usr/local/share/freedict
+	install -d $(TARGET_DIRS)
+	install $(INSTALL_FILES) $(INSTALLDIR)
+	install -m 644 lib/*.pm \
+	  $(INSTALLDIR)/tools/lib
+	install -m 644 xsl/inc/*.xsl \
+	  $(INSTALLDIR)/xsl/inc
+
+# ToDo: should be only re-enabled when providing an up-to-date RPM .spec file
+#release-rpm-freedict-tools: freedict-tools.spec \
+#	$(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2
+#	@if [ ! -d /usr/src/rpm/RPMS/noarch ]; then \
+#	  mkdir -p /usr/src/rpm/RPMS/noarch; fi
+#	@if [ ! -d $(BUILD_DIR)/rpm ]; then \
+#	  ln -s /usr/src/rpm/RPMS/noarch \
+#	  $(BUILD_DIR)/rpm; fi
+#	@if [ ! -d /usr/src/rpm/SOURCES ]; then \
+#	  mkdir -p /usr/src/rpm/SOURCES; fi
+#	if [ ! -r /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2 ]; then \
+#	  ln -s $(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2 \
+#	    /usr/src/rpm/SOURCES/freedict-tools-$(VERSION).tar.bz2; fi
+#	rpmbuild --target=noarch -ba freedict-tools.spec
+
+.PHONY: release install release-rpm-freedict-tools api all
+
 
