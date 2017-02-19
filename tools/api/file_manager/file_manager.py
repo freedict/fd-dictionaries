@@ -70,6 +70,8 @@ def setup():
     with the freedict directory and the configuration object."""
     # parse command line options
     parser = argparse.ArgumentParser(description='FreeDict build setup utility')
+    parser.add_argument('-a', dest="print_api_path", action='store_true',
+            help="print output path for generated API file, read from local configuration")
     parser.add_argument('-m', dest="make_available", action='store_true',
             help='make files in generated/ and release/ available; this will use internally either sshfs or rsync, depending on the configuration')
     parser.add_argument('-u', dest='umount', action='store_true',
@@ -80,7 +82,7 @@ def setup():
     if args.umount and args.make_available:
         print("Error: you can only specify -u or -m exclusively.")
         sys.exit(44)
-    if not args.umount and not args.make_available:
+    if not args.umount and not args.make_available and not args.print_api_path:
         print("Error: No option specified")
         parser.print_help()
 
@@ -95,6 +97,9 @@ def main():
         print(e)
         sys.exit(42)
 
+    if args.print_api_path:
+        print(config.get_path(conf['DEFAULT'], key='api_output_path'))
+        sys.exit(0)
     access_method = RsyncFileAccess()
     if conf['DEFAULT']['file_access_via'] == 'sshfs':
         access_method = SshfsAccess()
