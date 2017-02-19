@@ -10,7 +10,7 @@ TEIFO = /usr/src/packages/theater/teixsl/fo/tei.xsl
 VPATH = ../tools:../dicts:../dicts/bin
 
 include Makefile.language
-include $(FREEDICT_TOOLS)/Makefile.config
+include $(FREEDICT_TOOLS)/mk/config.mk
 
 .tei.dict:
 	$(XSLPROCESSOR) $(XSLT) $*.tei | \

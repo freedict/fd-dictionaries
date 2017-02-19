@@ -3,7 +3,7 @@
 # file.
 
 FREEDICT_TOOLS ?= .
-include $(FREEDICT_TOOLS)/Makefile.config
+include $(FREEDICT_TOOLS)/mk/config.mk
 
 DICTS=$(shell find $(FREEDICTDIR) -maxdepth 2 -name '???-???' -printf "%P ")
 

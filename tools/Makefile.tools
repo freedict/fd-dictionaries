@@ -2,12 +2,12 @@
 # installing the tools, especially to keep things needed for rpm and deb
 # packaging in one place.
 
-FREEDICTDIR ?= .
-include Makefile.config
+FREEDICT_TOOLS ?= .
+include $(FREEDICT_TOOLS)/mk/config.mk
 
 VERSION = 0.4
 PREFIX ?= usr/local
-INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/src/freedict
+INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/share/freedict
 
 dirs = ergane lib teimerge testing xsl/inc
 absdirs = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
@@ -28,7 +28,7 @@ install:
 	install *.pl *.py *.sh \
 	  ergane-records2tei teiaddphonetics teidiff \
 	  $(INSTALLDIR)/tools
-	install -m 644 Makefile Makefile.common Makefile.config \
+	install -m 644 Makefile Makefile.common mk/config.mk \
 	  $(INSTALLDIR)/tools
 	install ergane/convert-with-access-to-jet4 \
 	  $(INSTALLDIR)/tools/ergane
