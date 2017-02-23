@@ -35,7 +35,8 @@ DESTDIR ?= /
 ################
 
 
-all: #! build all currently supported output formats
+# NOTE: keep the list up-to-date
+all: #! convert TEI XML source into the dictd format
 all: $(dictname).dict.dz $(dictname).index
 
 # Please note: the "release" target has been significantly reduced to enable the
@@ -44,7 +45,7 @@ all: $(dictname).dict.dz $(dictname).index
 # the above targets; please drop us a line at freedict-beta.
 
 release: #! build all available release archives at release/
-release: release-src release-dict-tbz2 release-dict-tgz
+release: release-src release-dict-tbz2
 
 
 find-homographs: $(dictname).tei
@@ -101,17 +102,8 @@ $(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvzf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
-release-dict-tgz: #! prepare the release for the dict format in tar.gz format
-release-dict-tgz: dirs \
-	$(BUILD_DIR)/dict-tgz/freedict-$(dictname)-$(version).tar.gz
-
-$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
-	$(dictname).dict.dz $(dictname).index
-	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
-
-release-dict-tbz2: #! prepare the release for the dict format in tar.bz2 format
-release-dict-tbz2: dirs \
-	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
+release-dictd: #! prepare the release for the dict format in tar.bz2 format
+release-dictd: dirs $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
 
 $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index

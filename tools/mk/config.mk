@@ -9,22 +9,6 @@
 SHELL=bash
 
 
-# Define the help system, first, use #! after the colon of a rule to add a
-# documentation string
-help:
-	@echo "Usage: make <command>"
-	@echo "The following commands are defined:"
-	@echo
-	@IFS=$$'\n'; \
-	help_lines=`fgrep -h "#!" $(MAKEFILE_LIST) | fgrep -v fgrep | fgrep -v help_line | grep -v 'Define the' | sed -e 's/\\$$//' | sort`; \
-	for help_line in $${help_lines[@]}; do \
-		help_command=`echo $$help_line | sed -e 's/^\(.*\): .*/\1/' -e 's/^ *//' -e 's/ *$$//' -e 's/:$$//'`; \
-		help_info=`echo $$help_line | sed -e 's/.*#!\(.*\)$$/\1/' -e 's/^ *//' -e 's/ *$$//'`; \
-		printf "%-19s %s\n" $$help_command $$help_info; \
-	done
-
-
-
 # set all as default target, so that help is not executed by default
 .DEFAULT_GOAL := all
 
@@ -35,8 +19,8 @@ XSLTPROCESSOR ?= xsltproc --novalid
 FREEDICT_TOOLS ?= .
 
 # where built files should get installed
-PREFIX?=/usr
-DESTDIR ?= /
+PREFIX?=/usr/local
+DESTDIR ?= 
 
 # name of the nsgmls command
 NSGMLS ?= onsgmls
@@ -96,3 +80,23 @@ endif
 
 # script to restart the dictd deamon, if installed
 DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
+
+# Define the help system, use #! after the colon of a rule to add a
+# documentation string
+# It's defined as a last item, so that it can make use of all the nice defined
+# variables
+help:
+	@echo "Usage: make <command>"
+	@echo "The following commands are defined:"
+	@echo
+	@IFS=$$'\n'; \
+	help_lines=`fgrep -h "#!" $(MAKEFILE_LIST) | fgrep -v fgrep | fgrep -v help_line | grep -v 'Define the' | sed -e 's/\\$$//' | sort`; \
+	for help_line in $${help_lines[@]}; do \
+		help_command=`echo $$help_line | sed -e 's/^\(.*\): .*/\1/' -e 's/^ *//' -e 's/ *$$//' -e 's/:$$//'`; \
+		help_info=`echo $$help_line | sed -e 's/.*#!\(.*\)$$/\1/' -e 's/^ *//' -e 's/ *$$//'`; \
+		printf "%-19s %s\n" $$help_command $$help_info; \
+	done
+
+
+
+

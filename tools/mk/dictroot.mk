@@ -23,10 +23,10 @@ build_all: $(DICTS)
 $(DICTS):
 	$(MAKE) -C $@
 
-install-base: #! install the built files, without attempting to restart any applications using them
-install-base: build_all
+install-core: #! install the built files, without attempting to restart any applications using them
+install-core: build_all
 	for dict in $(DICTS); do; \
-		make -e -C $(DICTS) install; \
+		make -e -C $(DICTS) install-core; \
 	done
 
 install: #! install built dictionaries and attempt to restart applications using them

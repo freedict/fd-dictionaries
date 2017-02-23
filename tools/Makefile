@@ -7,10 +7,10 @@ include $(FREEDICT_TOOLS)/mk/config.mk
 
 VERSION = 0.4
 PREFIX ?= usr/local
-DESTDIR ?= /
-INSTALLDIR ?= $(DESTDIR)/$(PREFIX)/share/freedict
+DESTDIR ?= 
+INSTALLDIR ?= $(abspath $(DESTDIR)/$(PREFIX)/share/freedict)
 
-dirs = api buildhelpers ergane JMdict lib mk teimerge testing xquery xsl/inc
+dirs = api JMdict lib mk xquery xsl/inc
 TARGET_DIRS = $(addprefix $(INSTALLDIR)/tools/, $(dirs))
 
 
@@ -53,14 +53,29 @@ endif
 release: #! build a release tarball in $$BUILD_DIR, ../build by default
 release: $(BUILD_DIR)/freedict-tools-$(VERSION).tar.bz2
 
-# ToDo: needs to be rewritten
-install: #! install the tools to $$DESTDIR/$PREFIX/share/freedict, by default /usr/local/share/freedict
-	install -d $(TARGET_DIRS)
-	install $(INSTALL_FILES) $(INSTALLDIR)
-	install -m 644 lib/*.pm \
-	  $(INSTALLDIR)/tools/lib
-	install -m 644 xsl/inc/*.xsl \
-	  $(INSTALLDIR)/xsl/inc
+# install a file using its relative path below $(FREEDICT_TOOLS)
+define install_relative 
+endef
+
+# NOTE: the directories below HAVE to be on one line
+DIRS := api api/generator api/file_manager api/generator/apigen mk xquery xsl/inc
+PATHS := $(wildcard api/*.py api/*.md api/generator/*.py api/generator/apigen/*.py \ api/file_manager/*.py \
+	freedict-database.rng \
+	mk/* xsl/inc/* \
+	xquery/* xsl/tei2c5.xsl)
+install: #! install the tools to $$DESTDIR/$PREFIX/share/freedict (default /usr/local/share/freedict)
+install:
+	@echo Creating directories in $(INSTALLDIR)…
+	@set -e; for d in $(DIRS); do \
+		install -d $(INSTALLDIR)/$$d; \
+	done
+	@echo Copying files to $(INSTALLDIR)…
+	@set -e; for f in $(PATHS); do \
+		if [ -f $$f ]; then \
+			install -m 644 $$f $(INSTALLDIR)/$$f; \
+		fi \
+	done
+
 
 # ToDo: should be only re-enabled when providing an up-to-date RPM .spec file
 #release-rpm-freedict-tools: freedict-tools.spec \
