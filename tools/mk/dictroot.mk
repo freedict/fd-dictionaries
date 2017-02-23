@@ -25,13 +25,14 @@ $(DICTS):
 
 install-core: #! install the built files, without attempting to restart any applications using them
 install-core: build_all
-	for dict in $(DICTS); do; \
-		make -e -C $(DICTS) install-core; \
+	echo Installing $(DICTS)
+	@set -e; for dict in $(DICTS); do \
+		$(MAKE) -C $$dict install; \
 	done
 
 install: #! install built dictionaries and attempt to restart applications using them
 install: install-core
-	$(DICTD_RESTART_SCRIPT)
+	@$(DICTD_RESTART_SCRIPT) || echo "Please make sure to run this command as root"
 
 # ToDo
 uninstall:
