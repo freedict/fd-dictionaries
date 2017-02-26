@@ -66,15 +66,16 @@
     <!-- mark start of a new c5 format definition -->
     <xsl:text>_____&#x0A;&#x0A;</xsl:text>
 
-    <!-- take the contents of the orth elements and put them in the c5 headword
-	 line. headwords in that line will be put into the .index file by
-	 dictfmt. they are separated by %%%, so you will have to call dictfmt
+    <!-- Make all elements of form/orth (recursive orth lookup) the headwords
+         for the dict index.
+     Headwords in this line will be put into the .index file by dictfmt. they
+     are separated by %%%, so you will have to call dictfmt
 	 as 'dictfmt - -headword-separator %%%'
 
 	 (those two minus signs are separated by a space here, because
 	 otherwise an XML parser considers them as sgml comment end. for
 	 calling dictfmt you have to omit that space.)  -->
-    <xsl:for-each select="tei:form/tei:orth">
+    <xsl:for-each select="tei:form//tei:orth">
       <xsl:if test="1>string-length()">
         <xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position()"/>
         </xsl:message>
