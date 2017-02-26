@@ -94,7 +94,7 @@ install:
 .PHONY: release install release-rpm-freedict-tools api all
 
 
-need-update: #! queries for unreleased dictionaries or for those with an newer source changes
+need-update: #! queries for unreleased dictionaries or for those with newer source changes
 	$(PYTHON) $(FREEDICT_TOOLS)/api/generator/generator.py -n \
 		-p "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -m" \
 		-o "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u" \
