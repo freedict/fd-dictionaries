@@ -7,6 +7,7 @@ Running this script with the `-h` option will give an overview about its usage."
 
 import argparse
 import os
+import subprocess
 import sys
 
 
@@ -17,13 +18,21 @@ import config
 def execute(cmd, raise_on_error=False):
     """Execute a command; if the return value is != 0, the program either
     terminates or an exception is raised."""
-    ret = os.system(cmd)
+    proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
+    text = (e.decode(sys.getdefaultencoding()) for e in proc.communicate())
+    ret = proc.wait()
     if ret:
-        print('Subcommand failed with exit code', ret)
-        print('Command:',cmd)
+        text = '\n'.join(text).strip()
+        if text.startswith('fusermount: ') and 'not found in /etc/mtab' in text:
+            return # umounting something which isn't mounted is not harmful, ignore
+
+        text = ('Subcommand failed with exit code %s\n'
+                 'Command: %s\n%s\n') % (ret, cmd, text)
         if raise_on_error:
-            raise OSError()
+            raise OSError(text)
         else:
+            print(text)
             if ret >= 255:
                 ret = 1
             sys.exit(ret)
@@ -118,7 +127,7 @@ def main():
             if conf[section].getboolean('skip'):
                 print("Skipping",section)
                 continue
-            print("Making files in %s available..." % section)
+            print('Making files for "%s" available...' % section)
             options = conf[section]
             target_path = config.get_path(options)
             access_method.make_avalailable(options['user'], options['server'],
@@ -131,7 +140,8 @@ def main():
             target_path = config.get_path(conf[section])
             try:
                 access_method.make_unavailable(target_path)
-            except OSError:
+            except OSError as e:
+                print(e.args[0])
                 continue
 
 main()
