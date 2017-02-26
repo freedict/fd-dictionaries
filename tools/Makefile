@@ -21,7 +21,6 @@ api:
 	$(PYTHON) $(FREEDICT_TOOLS)/api/generator/generator.py \
 		-p "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -m" \
 		-o "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u" \
-		$(FREEDICT_TOOLS)/freedict-database.xml\
 		|| sleep 1; $(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u
 # the last line above makes sure that sshfs volumes are umounted, if something
 # goes wrong
@@ -94,4 +93,10 @@ install:
 
 .PHONY: release install release-rpm-freedict-tools api all
 
+
+need-update: #! queries for unreleased dictionaries or for those with an newer source changes
+	$(PYTHON) $(FREEDICT_TOOLS)/api/generator/generator.py -n \
+		-p "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -m" \
+		-o "$(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u" \
+		|| sleep 1; $(PYTHON) $(FREEDICT_TOOLS)/api/file_manager/file_manager.py -u
 
