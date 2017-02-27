@@ -133,19 +133,10 @@ uninstall: #! uninstall this dictionary
 #### maintenance targets
 ########################
 
-valid.stamp: $(dictname).tei
-	xmllint --noout --relaxng freedict-P5.rng $<
-	# way 1
-	@test -e $(XMLSOC) || (echo "Please set path to xml.soc file!"; exit 1)
-	#export SP_ENCODING=XML; \
-	#export SP_CHARSET_FIXED=YES; \
-	#export SGML_CATALOG_FILES="$(XMLSOC):$(SGML_CATALOG_FILES)"; \
-	#$(NSGMLS) -wxml -s -E 10 $(XMLDECLARATION) $(dictname).tei
-	#echo "If this file is newer than $(dictname).tei, that is valid XML." >$@
-	echo "File is valid TEI XML."
-
 validation: #! validate dictionary with FreeDict's TEI XML subset
-validation: valid.stamp
+validation: $(dictname).tei
+	xmllint --noout --relaxng freedict-P5.rng $<
+
 
 testresult-$(version).log: $(dictname).index $(dictname).dict
 	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
