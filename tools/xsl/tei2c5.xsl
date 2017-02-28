@@ -6,7 +6,9 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:tei="http://www.tei-c.org/ns/1.0" version="1.0"
-  xmlns:xd="http://www.pnp-software.com/XSLTdoc">
+  xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+  xmlns:set="http://exslt.org/sets"
+  extension-element-prefixes="set">
 
   <xsl:import href="inc/teiheader2txt.xsl"/>
   <xsl:import href="inc/teientry2txt.xsl"/>
@@ -75,7 +77,7 @@
 	 (those two minus signs are separated by a space here, because
 	 otherwise an XML parser considers them as sgml comment end. for
 	 calling dictfmt you have to omit that space.)  -->
-    <xsl:for-each select="tei:form//tei:orth">
+    <xsl:for-each select="set:distinct(tei:form//tei:orth)">
       <xsl:if test="1>string-length()">
         <xsl:message>Warning! Empty headword for entry #<xsl:value-of select="position()"/>
         </xsl:message>
