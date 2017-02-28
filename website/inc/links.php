@@ -47,10 +47,6 @@
       $parts["extension"]=='pot')
     $parts["dirname"] = '..' . $parts["dirname"];
 
-   // the howto exists only once in english
-   if(strncmp($parts["dirname"], 'howto', 5) == 0)
-    $parts["dirname"] = '../' . $parts["dirname"];
-
    $url = (strlen($parts["dirname"]) ? ($parts["dirname"] . '/') : '') .
           $parts["basename"] .
 	  '.' . $parts["extension"];
