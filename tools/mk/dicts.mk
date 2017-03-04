@@ -5,6 +5,14 @@
 # provided, too.
 include $(FREEDICT_TOOLS)/mk/config.mk
 
+export HELP_SUFFIX
+define HELP_SUFFIX =
+NOTE: For the targets `release` and `build`, there are targets called
+    `release-PLATFORM` and `build-PLATFORM` available, if you just want to build
+    one target.
+endef
+
+
 #######################
 #### set some variables
 #######################
@@ -18,34 +26,57 @@ UNSUPPORTED_PLATFORMS = bedic evolutionary
 endif
 
 
-available_platforms := dictd stardict aspell d4m fo
+available_platforms := dictd
 
 xsldir ?= $(FREEDICT_TOOLS)/xsl
 xmllint := /usr/bin/xmllint
 
 dictname ?= $(shell basename "$(shell pwd)")
 rdictname := $(shell export V=$(dictname); echo $${V:4:3}-$${V:0:3})
+version1 := $(shell sed -e '100q;/<edition>/!d;s/.*<edition>\(.*\)<\/edition>.*/\1/;q'\
+	   $(wildcard $(dictname).tei*) $(dictname)-nophon.tei)
+version := $(subst $(space),,$(version1))
 
 
 PREFIX ?= usr
 DESTDIR ?= /
 
 ################
-# default target
+# General targets (default target, maintainance targets)
 ################
 
 
-# NOTE: keep the list up-to-date
-all: #! convert TEI XML source into the dictd format
-all: $(dictname).dict.dz $(dictname).index
+all: #! convert the TEI XML source into all supported output formats (see list-platforms)
+all: $(foreach platform,$(available_platforms),build-$(platform) )
 
-# Please note: the "release" target has been significantly reduced to enable the
-# release of FreeDict tools in a relatively problem-free state.
-# You are more than welcome to help out in the process of re-instituting
-# the above targets; please drop us a line at freedict-beta.
+build: #! same as all, build all available output formats
 
-release: #! build all available release archives at release/
-release: release-src release-dict-tbz2
+dirs: #! creates all directories for releasing files
+	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
+		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
+	@if [ ! -d "$(BUILD_DIR)/dictd" ]; then \
+		mkdir "$(BUILD_DIR)/dictd"; fi
+
+
+# this is a "double colon rule"
+# adding another "clean::" rule in your Makefile
+# allows to extend this with additional commands
+#
+# for example:
+#
+# clean::
+#	-rm -f delete_this_file.too
+clean:: #! clean build files
+	rm -f $(dictname).index $(dictname).dict
+	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
+	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
+	rm -f $(dictname)-reverse.index
+	rm -f valid.stamp
+	rm -f $(BUILD_DIR)/dictd/freedict-$(dictname)-$(version).tar.bz2
+	rm -f $(BUILD_DIR)/dict-tgz/$(dictname)-$(version).tar.gz
+	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2
+	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
+	rm -f $(BUILD_DIR)/tei/$(dictname)-$(version)-tei.tar.bz2
 
 
 find-homographs: $(dictname).tei
@@ -53,21 +84,55 @@ find-homographs: $(dictname).tei
 	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
 	uniq -i -d
 
+list-platforms: #! list all available platforms, AKA output formats
+	@echo -n $(available_platforms)
+
+print-unsupported: #! print unsupported platforms
+	@echo -n $(UNSUPPORTED_PLATFORMS)
+
+# Query platform support status
+# This yields an exit status of
+# 0 for dict supported on this platform
+# 1 for dict unsupported on this platform
+# 2 FOR unknown platform
+query-%: #! query platform support status: 0=dictd supported, 1=dictd unsupported, 2=UNKNOWN platform
+	@if [ -z "$(findstring $*,$(available_platforms))" ]; then \
+	  echo "Unknown platform: $*"; exit 2; fi
+	@if [ -n "$(findstring $*,$(UNSUPPORTED_PLATFORMS))" ]; then \
+	  echo "Platform $* does not support this dictionary module."; exit 1; fi
+	@echo "Platform $* supports this dictionary module."
+
+
+
+release: #! build releases for all available platforms
+release: release-src $(foreach platform,$(available_platforms),release-$(platform) )
+
+testresult-$(version).log: $(dictname).index $(dictname).dict
+	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
+	&& exit $${PIPESTATUS[0]}
+
+test: testresult-$(version).log
+
+testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
+	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
+	&& exit $${PIPESTATUS[0]}
+
+test-reverse: testresult-$(version)-reverse.log
+	
+tests: valid.stamp testresult-$(version).log
+
+
+validation: #! validate dictionary with FreeDict's TEI XML subset
+validation: $(dictname).tei
+	xmllint --noout --relaxng freedict-P5.rng $<
+
+
+
+
 # prints what was used as Part-Of-Speech <pos> element content
 # with a number stating how often it was used
 pos-statistics: $(dictname).tei
 	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
-
-###############################################################################
-#### create directories where release files are stored
-###############################################################################
-
-dirs: #! creates all directories for releasing files
-	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
-		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
-	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
-		mkdir "$(BUILD_DIR)/dict-tbz2"; fi
-
 
 ######################################################################
 #### targets for c5/dictfmt conversion style into dict database format
@@ -88,8 +153,7 @@ $(dictname)-reverse.c5: $(dictname).tei $(xsldir)/tei2c5-reverse.xsl
 	  else \
 	  $(XSLTPROCESSOR) $(xsldir)/tei2c5-reverse.xsl $< \$$current-date=$(date) >$@; fi
 
-# ToDo: doesn't work
-reverse: $(dictname)-reverse.c5
+build-dictd: $(dictname).dict.dz $(dictname).index
 
 %.dict %.index: %.c5 query-dictd
 	dictfmt --without-time -t --headword-separator %%% $(DICTFMTFLAGS) $* <$<
@@ -98,20 +162,23 @@ reverse: $(dictname)-reverse.c5
 	dictzip -k $<
 
 
-$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2: \
+$(BUILD_DIR)/dictd/freedict-$(dictname)-$(version).tar.bz2: \
 	$(dictname).dict.dz $(dictname).index
 	tar -C .. -cvzf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
-release-dictd: #! prepare the release for the dict format in tar.bz2 format
-release-dictd: dirs $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
+release-dictd: dirs $(BUILD_DIR)/dictd/freedict-$(dictname)-$(version).tar.bz2
 
-$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
+# ToDo: doesn't work
+reverse: $(dictname)-reverse.c5
+
+
+$(BUILD_DIR)/dictd/freedict-$(dictname)-$(version)-reverse.tar.bz2: \
 	$(dictname)-reverse.dict.dz $(dictname)-reverse.index
 	tar -C .. -cvjf $@ $(addprefix $(notdir $(realpath .))/, $^)
 
 # ToDo: reverse target, description, still working?
-release-dict-tbz2-reverse: dirs \
-	$(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version)-reverse.tar.bz2
+release-dictd-reverse: dirs \
+	$(BUILD_DIR)/dictd/freedict-$(dictname)-$(version)-reverse.tar.bz2
 
 ######################################
 #### targets for evolutionary platform
@@ -129,64 +196,7 @@ uninstall: #! uninstall this dictionary
 	-rm $(DESTDIR)/$(PREFIX)/share/dictd/$(dictname).dict.dz $(DESTDIR)/$(DESTDIR)/$(dictname).index
 	$(DICTD_RESTART_SCRIPT)
 
-########################
-#### maintenance targets
-########################
-
-validation: #! validate dictionary with FreeDict's TEI XML subset
-validation: $(dictname).tei
-	xmllint --noout --relaxng freedict-P5.rng $<
-
-
-testresult-$(version).log: $(dictname).index $(dictname).dict
-	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(dictname) -l $(DICTD_LOCALE) |tee $@ \
-	&& exit $${PIPESTATUS[0]}
-
-test: testresult-$(version).log
-
-testresult-$(version)-reverse.log: $(rdictname).index $(rdictname).dict
-	$(FREEDICT_TOOLS)/testing/test-database.pl -f $(rdictname) -l $(DICTD_LOCALE) |tee $@ \
-	&& exit $${PIPESTATUS[0]}
-
-test-reverse: testresult-$(version)-reverse.log
-	
-tests: valid.stamp testresult-$(version).log
-
-# Query platform support status
-# This yields an exit status of
-# 0 for dict supported on this platform
-# 1 for dict unsupported on this platform
-# 2 FOR unknown platform
-query-%: #! query platform support status: 0=dictd supported, 1=dictd unsupported, 2=UNKNOWN platform
-	@if [ -z "$(findstring $*,$(available_platforms))" ]; then \
-	  echo "Unknown platform: $*"; exit 2; fi
-	@if [ -n "$(findstring $*,$(UNSUPPORTED_PLATFORMS))" ]; then \
-	  echo "Platform $* does not support this dictionary module."; exit 1; fi
-	@echo "Platform $* supports this dictionary module."
-
-print-unsupported: #! print unsupported platforms
-	@echo -n $(UNSUPPORTED_PLATFORMS)
-
-# this is a "double colon rule"
-# adding another "clean::" rule in your Makefile
-# allows to extend this with additional commands
-#
-# for example:
-#
-# clean::
-#	-rm -f delete_this_file.too
-clean:: #! clean build files
-	rm -f $(dictname).index $(dictname).dict
-	rm -f $(dictname).c5 $(dictname).dict.dz testresult-*.log
-	rm -f $(dictname)-reverse.c5 $(dictname)-reverse.dict.dz
-	rm -f $(dictname)-reverse.index
-	rm -f valid.stamp
-	rm -f $(BUILD_DIR)/dict-tbz2/freedict-$(dictname)-$(version).tar.bz2
-	rm -f $(BUILD_DIR)/dict-tgz/$(dictname)-$(version).tar.gz
-	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2
-	rm -f $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
-	rm -f $(BUILD_DIR)/tei/$(dictname)-$(version)-tei.tar.bz2
-
+#### ToDo: source
 # put all sources of a dictionary module into a tarball for release
 # ("distribution").  this only includes the .tei file if it doesn't have to be
 # generated from other sources
@@ -201,7 +211,7 @@ $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip: $(DISTFILES)
 	cd .. && zip -r9 $(subst ../,,$@) $(addprefix $(dictname)/, $(DISTFILES)) \
       -x \*/.svn/\* $(dictname)/freedict-*.tar.bz2 $(dictname)/freedict-*.zip $(dictname)/.* 
 
-release-src: #! create source release tarball
+release-src:
 release-src: $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.tar.bz2 $(BUILD_DIR)/src/freedict-$(dictname)-$(version).src.zip
 
 # the following two targets work like "dist", but include the .tei file
@@ -435,12 +445,7 @@ endif
 # should be default, but is not for make-historic reasons
 .DELETE_ON_ERROR:
 
-.PHONY: all version status sourceURL maintainer dirs install uninstall \
-	release releaase-src release-dict-tbz2 release-dict-tbz2-reverse release-dict-tgz \
-	release-dict-tgz-reverse release-zaurus \
-	release-rpm release-rpm-reverse release-rpm-freedict-tools \
-	clean dist validation query-% print-unsupported \
-	test test-reverse test-reverse-oldstyle tests \
-	find-homographs pos-statistics \
-	stardict release-stardict release-tei-tbz2
-
+.PHONY: all build-dictd clean dirs dist find-homographs install maintainer \
+	pos-statistics print-unsupported query-% releaase-src release release-dictd
+	release-dictd-reverse release-rpm release-rpm-reverse release-zaurus
+	status test test-reverse tests uninstall validation version

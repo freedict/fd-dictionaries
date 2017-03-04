@@ -83,8 +83,6 @@ DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
 
 # Define the help system, use #! after the colon of a rule to add a
 # documentation string
-# It's defined as a last item, so that it can make use of all the nice defined
-# variables
 help:
 	@echo "Usage: make <command>"
 	@echo "The following commands are defined:"
@@ -95,8 +93,14 @@ help:
 		help_command=`echo $$help_line | sed -e 's/^\(.*\): .*/\1/' -e 's/^ *//' -e 's/ *$$//' -e 's/:$$//'`; \
 		help_info=`echo $$help_line | sed -e 's/.*#!\(.*\)$$/\1/' -e 's/^ *//' -e 's/ *$$//'`; \
 		printf "%-19s %s\n" $$help_command $$help_info; \
-	done
-
+	done;\
+	if [ -n `echo $$HELP_SUFFIX|wc -w` ]; then \
+		echo;\
+		printf "%s\n" $$HELP_SUFFIX; \
+	fi
+# NOTE: If you want to add a HELP_SUFFIX, you have to export the variable as
+# environment variable.
+# Note II: wc -w is necessary, because HELP_SUFFIX might be a multi-line string
 
 
 
