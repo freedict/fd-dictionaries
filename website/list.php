@@ -20,7 +20,6 @@ $title = _('Download / List View'); require_once 'inc/head.php';
   <th colspan="8"><?php echo _('Version for / Size in MB') ?></th>
  </tr>
  <tr bgcolor="#dddddd">
-  <th>dictd (tgz)</th>
   <th>dictd (bz2)</th>
   <th><small>evolutionary</small></th>
   <!-- th><small>mobi- pocket</small></th -->
@@ -80,7 +79,7 @@ foreach($ds as $d)
   echo '<td>'. $d->$get_attr('date') .'</td>';
   echo '<td><small>'. $status .'</small></td>';
 
-  foreach(array('dict-tgz', 'dict-tbz2', 'evolutionary', 'bedic', 'stardict', 'rpm', 'tei', 'src') as $platform)
+  foreach(array('dict-tbz2', 'evolutionary', 'bedic', 'stardict', 'rpm', 'tei', 'src') as $platform)
   {
     linkcell($d, find_release($d, $platform), $platform);
   }

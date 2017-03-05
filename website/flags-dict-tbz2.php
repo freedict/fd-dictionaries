@@ -3,8 +3,6 @@ $platform = substr(basename($_SERVER['PHP_SELF']), 6);
 if(substr($platform,-4) =='.php') $platform= substr($platform, 0, -4);
 
 $platformStrings = array(
-  'dict-tgz' => '<a href="http://sourceforge.net/project/showfiles.php?group_id=605" target="_top">'.
-    _('DICT servers') .'</a> ' ._('on Windows/Linux'),
   'dict-bz2' => '<a href="http://dict.org/links.html" target="_top">'.
     _('DICT servers') .'</a> ' ._('on Windows/Linux'),
   'mobipocket' => '<a href="http://www.mobipocket.com/en/DownloadSoft/DownLoadReaderStep1.asp" target="_top">'.
@@ -26,13 +24,13 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
 
 <h1><?php echo _('Download / Matrix View') ?></h1>
 
-<p><?php printf(_('All downloads are for platform %s.'), '<i>' . $platformStrings[$platform], '</i>') ?></p>
+<p><?php printf(_('The following downloads are for platform %s.'), '<i>' . $platformStrings[$platform], '</i>') ?></p>
 
 <?php
   if(strpos($platform, 'dict-') !== false)
   {
-    printf(_('Another application understanding this file format is %1sWordtrans%2s, a KDE application.'),
-      '<a target="_parent" href="http://www.escomposlinux.org/rvm/wordtrans/">', '</a>');
+      printf(_('For a list of dictionary programs supporting this format, have a look at the %1swiki%2s.'),
+      '<a target="_parent" href="https://github.com/freedict/fd-dictionaries/wiki/Dictionary-Clients">', '</a>');
   }
   else if($platform == 'bedic')
   {
@@ -41,7 +39,7 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
      Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is
      similar to stardict as it doesn\'t use a client/server
      approach like') .
-     ' <a href="' . fdict_url('flags-dict-tgz.php') . '">dictd</a>.</p>';
+     ' <a href="' . fdict_url('flags-dict-tbz2.php') . '">dictd</a>.</p>';
   }
 ?>
 
