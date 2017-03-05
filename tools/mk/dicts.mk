@@ -95,7 +95,7 @@ print-unsupported: #! print unsupported platforms
 # 0 for dict supported on this platform
 # 1 for dict unsupported on this platform
 # 2 FOR unknown platform
-query-%: #! query platform support status: 0=dictd supported, 1=dictd unsupported, 2=UNKNOWN platform
+query-%: #! query platform support status; 0=dictd supported, 1=dictd unsupported, 2=UNKNOWN platform
 	@if [ -z "$(findstring $*,$(available_platforms))" ]; then \
 	  echo "Unknown platform: $*"; exit 2; fi
 	@if [ -n "$(findstring $*,$(UNSUPPORTED_PLATFORMS))" ]; then \
