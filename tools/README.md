@@ -1,3 +1,7 @@
+FreeDict Tools
+===============
+
+The FreeDict tools are used to import, export and mange FreeDict dictionaries.
 Most of the documentation can be found in the FreeDict HOWTO at
 
     https://github.com/freedict/fd-dictionaries/wiki/FreeDict-HOWTO
@@ -5,6 +9,9 @@ Most of the documentation can be found in the FreeDict HOWTO at
 In general, it is a good idea to have a look at our wiki at
     
     https://github.com/freedict/fd-dictionaries/wiki
+
+Getting Started
+---------------
 
 The following lines may get you started on some requirements:
 
@@ -21,36 +28,22 @@ dictionaries: make, xsltproc, tar, gzip, dictzip, dictfmt
 For proper use of all our tools, Perl, Python > 3.4, Git and a XML-capable
 editor are strongly advised.
 
-In order to build source release files (freedict-*-*-*.src.tar.bz2,
-containing *-*.tei), run:
+If you find a `Makefile` in a directory, you can be sure that `make help` will
+assist you in what you can do with it. The help screen will also inform you how
+to build dictionary releases. Furthermore, the whole build system is explained
+in chapter 8 of the HOWTO, mentioned earlier.
 
-Note: it's assumed that FREEDICTDIR is set to the freedict root. More
-information can be found in the wiki.
- cd $FREEDICTDIR/tools
- mkdir -p ../../build/src
- make dist
-
-In order to build binary release files (freedict-*-*-*.tar.bz2,
-containing *-*.dict.dz and *-*.index), run:
-
- cd $FREEDICTDIR/tools
- mkdir -p build/dict-tbz2
-
-In order to create eng-deu.{dict,index} from
-freedict-eng-deu-0.3.src.tar.bz2, run:
-
- tar jxf freedict-eng-deu-0.3.src.tar.bz2
- cd eng-deu
- make
-
-
+If you read this file, because you want to figure out how to build a dictionary,
+please have a look at a dictionary from
+<https://github.com/freedict/fd-dictionaries) and run make in one of the various
+dictionary directories.
 
 Debian/Ubuntu Dependencies
 --------------------------
 
 If you use Debian/Ubuntu, you should install the following packages:
 
-    sudo apt-get install dbview unzip xsltproc libxml-libxml-perl python3
+    sudo apt-get install make unzip xsltproc libxml-libxml-perl python3
 
 Also, teiaddphonetics requires XML::LibXML::Reader, which is not even
 in libxml-libxml-perl in unstable, so you need to do as root:
@@ -58,5 +51,5 @@ in libxml-libxml-perl in unstable, so you need to do as root:
 	cpan XML::LibXML
 
 
-Sebastian Humenda, January 2017
+Sebastian Humenda, March 2017
 
