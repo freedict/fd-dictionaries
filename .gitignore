@@ -1,12 +1,12 @@
 # keep that alphabetical please
 *~
 *.bak
+build
+*/build/*
 *.c5
 *.dict
 *.dict.dz
 freedict-database.xml
-freedict-editor/Makefile
-freedict-editor/Makefile.in
 freedict-editor/aclocal.m4
 freedict-editor/autom4te.cache/
 freedict-editor/compile
@@ -17,14 +17,16 @@ freedict-editor/config.status
 freedict-editor/configure
 freedict-editor/data/Makefile
 freedict-editor/data/Makefile.in
+freedict-editor/help/C/html/
 freedict-editor/help/C/Makefile
 freedict-editor/help/C/Makefile.in
-freedict-editor/help/C/html/
 freedict-editor/help/Makefile
 freedict-editor/help/Makefile.in
 freedict-editor/intltool-extract.in
 freedict-editor/intltool-merge.in
 freedict-editor/intltool-update.in
+freedict-editor/Makefile
+freedict-editor/Makefile.in
 freedict-editor/pixmaps/Makefile
 freedict-editor/pixmaps/Makefile.in
 freedict-editor/po/Makefile
@@ -43,8 +45,8 @@ howto/inc/la1-la2.template.tei.escaped.xml
 *.mo
 *__pycache__*
 release
-*.swp
 *.swo
+*.swp
 website/editordoc.html
 website/flags-bedic.php
 website/flags-evolutionary.php

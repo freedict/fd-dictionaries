@@ -1,14 +1,6 @@
-FREEDICTDIR ?= ../../
+# The line below is really just a fallback and only works if you have got a copy of the tools directory at this location. It's better to set the environment variable in your shell.
+FREEDICT_TOOLS ?= ../../tools
 DISTFILES = Deutsch-Kurdi.txt Makefile deu-kur.tei deu-kur.tei.header README ChangeLog \
 INSTALL freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
 supported_phonetics=
-include $(FREEDICTDIR)/tools/Makefile.common
-
-#$(dictname)-nophon.tei: Deutsch-Kurd�.txt $(dictname).tei.header \
-#	$(FREEDICTDIR)/tools/xdf2tei.pl
-#	cat $(dictname).tei.header >$@
-#	$(FREEDICTDIR)/tools/xdf2tei.pl <$< >>$@
-#	echo "</body></text></TEI.2>" >>$@
-
-#clean::
-#	rm -f $(dictname).tei
+include $(FREEDICT_TOOLS)/mk/dicts.mk

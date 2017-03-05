@@ -9,43 +9,16 @@ For usage of the script, try the -h option.
 """
 import argparse
 import os
-from os.path import join as pathjoin
 import sys
 import time
 
 from apigen import dictionary, metadata, releases, xmlhandlers
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0]))))
+from config import get_path
+import config
 
 
-def find_freedictdir():
-    """Find FreeDict path with these rules:
-    1.   environment variable FREEDICTDIR is set, takeit 
-    2.   current directory is tools, crafted, generated or release, then take parent
-
-    When the FREEDICTDIR has been found, it's returned.
-    FileNotFoundError is raised, if FREEDICTDIR couldn't be determined.
-    ValueError is raised, if crafted, generated, release and tools could not be found in FREEDICTDIR."""
-    localpath = None
-    if 'FREEDICTDIR' in os.environ:
-        localpath = os.environ['FREEDICTDIR']
-    else: # check whether current directory contains dictionaries
-        # is cwd == 'tools':
-        cwd = os.getcwd()
-        for subdir in ['crafted', 'generated', 'tools']:
-            if cwd.endswith(subdir):
-                localpath = os.path.abspath(os.path.join(cwd, '..'))
-
-    notexists = lambda x: not os.path.exists(os.path.join(localpath, x))
-    if localpath is None:
-        raise ValueError("No environment variable FREEDICTDIR set and not in a "
-                "subdirectory called either tools, crafted or generated.")
-    if not os.path.exists(localpath):
-        raise FileNotFoundError("FREEDICTDIR=%s: not found" % localpath)
-    elif notexists('tools') or notexists('crafted') or notexists('generated') \
-            or notexists('release'):
-        raise ValueError(("The four directories tools, generated, release and "
-        "crafted have  to exist below\n    FREEDICTDIR=%s") % localpath)
-    return localpath
 
 def exec_or_fail(command):
     """If command is not None, execute command. Exit upon failure."""
@@ -56,34 +29,25 @@ def exec_or_fail(command):
             sys.exit(ret)
 
 
-def main(args):
-    parser = argparse.ArgumentParser(description='FreeDict API generator')
-    parser.add_argument("output_path", metavar="PATH_TO_XML", type=str, nargs=1,
-            help='output path to the FreeDict API XML file')
-    parser.add_argument('-p', "--pre-exec-script", dest="prexec", metavar="PATH",
-            help=('script/command to execute before this script, e.g. to set up a sshfs '
-                'connection to a remote server, or to invoke rsync.'))
-    parser.add_argument('-o', "--post-exec-script", dest="postexc", metavar="PATH",
-            help=("script/command to execute after this script is done, e.g. to "
-                "umount mounted volumes."))
-
-    config = parser.parse_args(args[1:])
-
-    exec_or_fail(config.prexec) # mount / synchronize release files
-    freedictdir = find_freedictdir()
+def read_dict_info(conf, generate_api=True):
+    """Parse dictionary meta data from the dictionary source and extract
+    information about all released dictionaries. Return a list of dictionaries
+    (Dictionary objects). generate_api is used to emit a message which is only
+    useful if the API is generated."""
     dictionaries = []
     for dict_source in ['crafted', 'generated']:
-        print("Parsing meta data for all dictionaries in", pathjoin(freedictdir,
-            dict_source))
-        dictionaries.extend(metadata.get_meta_from_xml(pathjoin(freedictdir,
-                dict_source)))
+        dict_source = get_path(conf[dict_source])
+        print("Parsing meta data for all dictionaries from", dict_source)
+        dictionaries.extend(metadata.get_meta_from_xml(dict_source))
 
-    print("Parsing release information from", pathjoin(freedictdir, 'release'))
-    release_files = releases.get_all_downloads(pathjoin(freedictdir, 'release'))
+    release_path = get_path(conf['release'])
+    print("Parsing release information from", release_path)
+    release_files = releases.get_all_downloads(release_path)
     for dict in dictionaries:
         name = dict.get_name()
         if not name in release_files:
-            print("Skipping %s, no releases found." % name)
+            if generate_api:
+                print("Skipping %s, no releases found." % name)
             continue
         try:
             version = releases.get_latest_version(release_files[name])
@@ -91,16 +55,67 @@ def main(args):
             raise releases.ReleaseError(list(e.args) + [name])
         for full_file, format in release_files[name][version]:
             dict.add_download(dictionary.mklink(full_file, format, version))
+    return dictionaries
 
-    # remove dictionaries without download links
-    dictionaries = list(d for d in dictionaries if d.get_downloads() != [])
-    dictionaries.sort(key=lambda entry: entry.get_name())
-    xmlhandlers.write_freedict_database(config.output_path[0], dictionaries)
+
+
+def find_outdated_releases(dictionaries):
+    """This function finds dictionaries which have been updated, but not
+    released yet."""
+    candidates = []
+    for dict in dictionaries:
+        if dict.get_downloads() == []:
+            candidates.append((dict.get_name(), None, None))
+        else:
+            released = max(l.version for l in dict.get_downloads())
+            if dict['edition'] > released:
+                candidates.append((dict.get_name(), dict['edition'], released))
+    return candidates
+
+
+def main(args):
+    parser = argparse.ArgumentParser(description='FreeDict API generator')
+    parser.add_argument("-n", "--need-update", dest="check_for_unreleased_dicts",
+            action="store_true", default=False,
+            help="check for unreleased dictionaries instead of generating the API file")
+    parser.add_argument('-p', "--pre-exec-script", dest="prexec", metavar="PATH",
+            help=('script/command to execute before this script, e.g. to set up a sshfs '
+                'connection to a remote server, or to invoke rsync.'))
+    parser.add_argument('-o', "--post-exec-script", dest="postexc", metavar="PATH",
+            help=("script/command to execute after this script is done, e.g. to "
+                "umount mounted volumes."))
+
+    args = parser.parse_args(args[1:])
+    conf = config.discover_and_load()
+
+    exec_or_fail(args.prexec) # mount / synchronize release files
+
+    dictionaries = read_dict_info(conf, not args.check_for_unreleased_dicts)
+
+    if args.check_for_unreleased_dicts:
+        outdated = find_outdated_releases(dictionaries)
+        if not outdated:
+            print("Everything up-to-date.")
+        else:
+            print("\nName      Source Version    Release Version")
+            print("-------   ---------------   --------------------------")
+            for data in sorted(outdated, key=lambda x: x[0]):
+                name, v1, v2 = [str(e if e else 'unknown') for e in data]
+                print('{}   {:<15}   {:<15}'.format(name, v1, v2))
+    else:
+        # remove dictionaries without download links
+        dictionaries = sorted((d for d in dictionaries if d.get_downloads() != []),
+            key=lambda entry: entry.get_name())
+        api_path = config.get_path(conf['DEFAULT'], key='api_output_path')
+        if not api_path == 'freedict-database.xml' and not os.path.exists(os.path.dirname(api_path)):
+            os.makedirs(os.path.dirname(api_path))
+        print("Writing API file to",api_path)
+        xmlhandlers.write_freedict_database(api_path, dictionaries)
 
     # if the files had been mounted with sshfs, it's a good idea to give it some
     # time to synchronize its state, otherwise umounting fails
-    time.sleep(1.3)
-    exec_or_fail(config.postexc) # umount or rsync files, if required
+    time.sleep(2)
+    exec_or_fail(args.postexc) # umount or rsync files, if required
 
 if __name__ == '__main__':
     #pylint: disable=broad-except

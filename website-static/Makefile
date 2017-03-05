@@ -1,7 +1,13 @@
-FREEDICTDIR?=$(realpath ../..)
+FREEDICT_TOOLS?=$(realpath ../../tools)
 LANGUAGES=ar bg bs de en fr kha ku lt nl pt ru
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
-DYNAMICPATH=$(FREEDICTDIR)/crafted/website
+
+# check whether dynamic website can be found
+ifeq ($(wildcard ../website),../website)
+DYNAMICPATH=../website
+else
+$(error Could not find ../website, cannot create static version)
+endif
 FILES=$(notdir $(basename $(wildcard $(DYNAMICPATH)/*.php) $(wildcard $(DYNAMICPATH)/*.html)))
 WGET=wget --header='X-FreeDict: staticlinks' --html-extension --no-clobber
 SFACCOUNT ?= micha137
@@ -61,7 +67,8 @@ static/freedict.pot: $(DYNAMICPATH)/freedict.pot
 	ln -s $(DYNAMICPATH)/freedict.pot $@
 
 static/freedict-database.xml:
-	ln -s $(FREEDICTDIR)/freedict-database.xml $@
+	APIFILE=`$(MAKE) -C $(FREEDICT_TOOLS) api-path`; \
+		ln -s $$APIFILE $@
 
 static/index.html:
 	# when the webspace has php, use this (but then, no need for static version at all):

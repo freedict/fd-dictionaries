@@ -1,9 +1,9 @@
-FREEDICTDIR ?= ../../
+FREEDICT_TOOLS ?= ../../tools
 hedir ?= ../hun-eng
 VPATH += $(hedir)
 DISTFILES = eng-hun.tei.header Makefile ChangeLog
 supported_phonetics =
-include $(FREEDICTDIR)/tools/Makefile.common
+include $(FREEDICT_TOOLS)/mk/dicts.mk
 
 dbview_in_path := $(shell which dbview 2>/dev/null)
 

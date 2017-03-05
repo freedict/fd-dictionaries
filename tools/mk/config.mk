@@ -9,22 +9,6 @@
 SHELL=bash
 
 
-# Define the help system, first, use #! after the colon of a rule to add a
-# documentation string
-help:
-	@echo "Usage: make <command>"
-	@echo "The following commands are defined:"
-	@echo
-	@IFS=$$'\n'; \
-	help_lines=`fgrep -h "#!" $(MAKEFILE_LIST) | fgrep -v fgrep | fgrep -v help_line | grep -v 'Define the' | sed -e 's/\\$$//' | sort`; \
-	for help_line in $${help_lines[@]}; do \
-		help_command=`echo $$help_line | sed -e 's/^\(.*\): .*/\1/' -e 's/^ *//' -e 's/ *$$//' -e 's/:$$//'`; \
-		help_info=`echo $$help_line | sed -e 's/.*#!\(.*\)$$/\1/' -e 's/^ *//' -e 's/ *$$//'`; \
-		printf "%-19s %s\n" $$help_command $$help_info; \
-	done
-
-
-
 # set all as default target, so that help is not executed by default
 .DEFAULT_GOAL := all
 
@@ -32,14 +16,13 @@ help:
 XSLTPROCESSOR ?= xsltproc --novalid
 
 # set default value
-FREEDICTDIR ?= ../..
-TOOLSDIR ?= $FREEDICTDIR/tools
+FREEDICT_TOOLS ?= .
 
 # where built files should get installed
-DESTDIR ?= /usr/share/dictd
+PREFIX?=/usr/local
+DESTDIR ?= 
 
 # name of the nsgmls command
-#NSGMLS ?= nsgmls
 NSGMLS ?= onsgmls
 
 # the file xml.soc file comes with sp/opensp/openjade
@@ -75,15 +58,16 @@ ifneq ($(charlint_in_path), )
 CHARLINT := $(charlint_in_path)
 else
 # if this doesn't exist it will be downloaded
-CHARLINT := $(TOOLSDIR)/charlint.pl
+CHARLINT := $(FREEDICT_TOOLS)/charlint.pl
 endif
 CHARLINT_DATA := $(dir $(CHARLINT))charlint-unicodedata
 
 MBRDICO_PATH = /
 
-BUILDHELPERS_DIR=$(TOOLSDIR)/buildhelpers/
-# the directory, in which releases are built
-BUILD_DIR=$(FREEDICTDIR)/build/
+BUILDHELPERS_DIR=$(FREEDICT_TOOLS)/buildhelpers/
+# the directory, in which releases are built (usually one directory above the
+# current dictionary
+BUILD_DIR=../build/
 
 # to find dictd2dic from stardict-tools in Debian
 PATH := $(PATH):/usr/lib/stardict-tools
@@ -96,3 +80,27 @@ endif
 
 # script to restart the dictd deamon, if installed
 DICTD_RESTART_SCRIPT = $(BUILDHELPERS_DIR)dict_restart_helper.sh
+
+# Define the help system, use #! after the colon of a rule to add a
+# documentation string
+help:
+	@echo "Usage: make <command>"
+	@echo "The following commands are defined:"
+	@echo
+	@IFS=$$'\n'; \
+	help_lines=`fgrep -h "#!" $(MAKEFILE_LIST) | fgrep -v fgrep | fgrep -v help_line | grep -v 'Define the' | sed -e 's/\\$$//' | sort`; \
+	for help_line in $${help_lines[@]}; do \
+		help_command=`echo $$help_line | sed -e 's/^\(.*\): .*/\1/' -e 's/^ *//' -e 's/ *$$//' -e 's/:$$//'`; \
+		help_info=`echo $$help_line | sed -e 's/.*#!\(.*\)$$/\1/' -e 's/^ *//' -e 's/ *$$//'`; \
+		printf "%-19s %s\n" $$help_command $$help_info; \
+	done;\
+	if [ -n `echo $$HELP_SUFFIX|wc -w` ]; then \
+		echo;\
+		printf "%s\n" $$HELP_SUFFIX; \
+	fi
+# NOTE: If you want to add a HELP_SUFFIX, you have to export the variable as
+# environment variable.
+# Note II: wc -w is necessary, because HELP_SUFFIX might be a multi-line string
+
+
+

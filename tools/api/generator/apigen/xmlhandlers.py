@@ -70,7 +70,7 @@ def dictionary2xml(dictionary):
                 'size': str(download.size),
                 'date': download.last_modification_date,
                 'URL': str(download), 'version': str(download.version)
-                }
+            }
         create_child(dictionary, 'release', attrib)
     return dictionary
 

@@ -1,0 +1,15 @@
+[DEFAULT]
+file_access_via = sshfs
+api_output_path = ~/freedict/build/
+
+[release]
+user = john,freedict
+local_path = ~/freedict/release
+
+[generated]
+user=john
+local_path = ~/freedict/generated
+
+[crafted]
+local_path = ~/freedict/fd-dictionaries
+

@@ -154,10 +154,8 @@ class MetaDataParser(xmlhandlers.TeiHeadParser):
         """If date has not been set with the <date/> attrbiute in the header,
         guess it from change log."""
         latest_change = elem[0]
-        print(latest_change.tag, repr(self.dictionary.get_name()))
         if not latest_change.tag.endswith('change'):
             return # is not a change attribute, can't read any information
-        print("after")
         if latest_change.get('when'):
             return {'date': latest_change.get('when')}
         namespace = latest_change.tag[:latest_change.tag.index('}')+1]
