@@ -4,7 +4,7 @@ BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 
 # check whether dynamic website can be found
 ifeq ($(wildcard ../website),../website)
-DYNAMICPATH=../website
+DYNAMICPATH=$(abspath ../website)
 else
 $(error Could not find ../website, cannot create static version)
 endif
@@ -67,7 +67,7 @@ static/freedict.pot: $(DYNAMICPATH)/freedict.pot
 	ln -s $(DYNAMICPATH)/freedict.pot $@
 
 static/freedict-database.xml:
-	APIFILE=`$(MAKE) -C $(FREEDICT_TOOLS) api-path`; \
+	APIFILE=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
 		ln -s $$APIFILE $@
 
 static/index.html:

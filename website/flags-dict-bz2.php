@@ -39,7 +39,7 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
      Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is
      similar to stardict as it doesn\'t use a client/server
      approach like') .
-     ' <a href="' . fdict_url('flags-dict-tbz2.php') . '">dictd</a>.</p>';
+     ' <a href="' . fdict_url('flags-dict-bz2.php') . '">dictd</a>.</p>';
   }
 ?>
 

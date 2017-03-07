@@ -28,7 +28,7 @@ require_once 'inc/gettext.php';
 
   <tr style="background-color: #f0f0f0">
    <td><?php echo _('Windows &amp; Linux') ?></td>
-   <td><a href="<?php echo fdict_url('flags-dict-tbz2.php') ?>" target="main"><?php echo _('DICT servers') ?></a></td>
+   <td><a href="<?php echo fdict_url('flags-dict-bz2.php') ?>" target="main"><?php echo _('DICT servers') ?></a></td>
   </tr>
 
   <tr style="background-color: #f0f0f0">

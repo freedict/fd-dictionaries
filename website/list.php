@@ -79,7 +79,7 @@ foreach($ds as $d)
   echo '<td>'. $d->$get_attr('date') .'</td>';
   echo '<td><small>'. $status .'</small></td>';
 
-  foreach(array('dict-tbz2', 'evolutionary', 'bedic', 'stardict', 'rpm', 'tei', 'src') as $platform)
+  foreach(array('dict-bz2', 'evolutionary', 'bedic', 'stardict', 'rpm', 'tei', 'src') as $platform)
   {
     linkcell($d, find_release($d, $platform), $platform);
   }
