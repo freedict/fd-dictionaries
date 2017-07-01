@@ -114,11 +114,19 @@
     <!--<xsl:text> /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>-->
   </xsl:template>
 
-  <!-- allow for empty <pos/>; make it a condition for the presence of angled brackets, too 
-  the weird "(self::gramGrp or count(tei:pos/text())" 
-      means "you're either P4 or <pos> in P5 is non-empty"
--->
   <xsl:template match="tei:gramGrp">
+    <!-- enforce colloc *before the brackets; although it's part of the gramGrp,
+       it's visually something distinct in most dictionaries -->
+    <xsl:if test="tei:colloc">
+      <xsl:text> (</xsl:text>
+      <xsl:value-of select="."/>
+      <xsl:text>)</xsl:text>
+    </xsl:if>
+
+
+  <!-- allow for empty <pos/>; make it a condition for the presence of angled
+       brackets, too the weird "(self::gramGrp or count(tei:pos/text())" means
+       "you're either P4 or <pos> in P5 is non-empty" -->
     <xsl:variable name="bracket"
       select="count(ancestor::tei:gramGrp)=0 and (count(tei:pos/text()) or count(tei:*[local-name() != 'pos']))"
     />
@@ -133,7 +141,7 @@
       </xsl:if>
     </xsl:for-each>
     <xsl:if test="$bracket">
-      <xsl:text>></xsl:text>
+      <xsl:text>&gt;</xsl:text>
     </xsl:if>
 
     <!-- <xr> elements are not allowed inside <form> or <gramGrp>, so reach out and grab them... -->
@@ -157,7 +165,7 @@
     <xsl:value-of select="concat('agr: ',.)"/>
   </xsl:template>
   
-<!-- senses -->
+  <!-- senses -->
   <xsl:template match="tei:sense">
     <xsl:variable name="prec_senses">
       <xsl:choose>
