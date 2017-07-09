@@ -46,10 +46,6 @@ require_once 'inc/gettext.php';
    </td>
   </tr>
 
-  <tr style="background-color: #f0f0f0">
-   <td>Zaurus/Qt</td>
-   <td><a href="<?php echo fdict_url('flags-bedic.php') ?>" target="main">BEDic</a></td>
-  </tr>
 
   <tr style="background-color: #f0f0f0"><td colspan="2" align="center">
    <a href="<?php echo fdict_url('list.php') ?>" target="main"><?php echo _('Detailed List') ?></a>

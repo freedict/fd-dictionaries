@@ -2,8 +2,7 @@ LOCALES=$(wildcard locale/*_*)
 POS=$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES))
 MOS=$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES))
 
-all: editordoc.html freedict-database.xml flags-bedic.php \
-	flags-evolutionary.php freedict.pot $(MOS)
+all: freedict-database.xml flags-evolutionary.php freedict.pot $(MOS)
 
 sources = $(wildcard *.php) $(wildcard inc/*.php)
 

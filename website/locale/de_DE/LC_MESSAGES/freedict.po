@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-03-06 16:30+0100\n"
+"POT-Creation-Date: 2017-07-09 21:41+0200\n"
 "PO-Revision-Date: 2015-12-07 13:47+0100\n"
 "Last-Translator: Michael Bunk <micha@freedict.org>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "möglicherweise wird ein Plugin gebraucht, z.B."
 msgid "Adobe's"
 msgstr "Adobes"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:95
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
 msgid "Database as XML"
 msgstr "Datenbank als XML"
 
@@ -141,45 +141,47 @@ msgstr ""
 "Wenn sie %sDebian%s unstable verwenden, können sie dies zu ihrer %s-Datei "
 "hinzufügen:"
 
-#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT-Server"
 
-#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-dict-bz2.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr "unter Windows/Linux"
 
-#: flags-bedic.php:9 flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-dict-bz2.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:9 flags-bedic.php:11 flags-dict-bz2.php:9
-#: flags-dict-bz2.php:11 flags-evolutionary.php:9 flags-evolutionary.php:11
+#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
+#: flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr "unter WinCE/PalmOS"
 
-#: flags-bedic.php:13 flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-dict-bz2.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr "auf Zaurus/unter Qt"
 
-#: flags-bedic.php:21 flags-bedic.php:25 flags-dict-bz2.php:21
-#: flags-dict-bz2.php:25 flags-evolutionary.php:21 flags-evolutionary.php:25
+#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
+#: flags-evolutionary.php:25
 msgid "Download / Matrix View"
 msgstr "Download / Matrixansicht"
 
-#: flags-bedic.php:27 flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-dict-bz2.php:27 flags-evolutionary.php:27
 #, php-format
 msgid "The following downloads are for platform %s."
 msgstr "Die folgenden Downloads sind für Plattform %s."
 
-#: flags-bedic.php:32 flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-dict-bz2.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
-msgstr "Eine Liste von Wörterbuchprogrammen, die dieses Format unterstützen, findet sich im %1sWiki%2s."
+msgstr ""
+"Eine Liste von Wörterbuchprogrammen, die dieses Format unterstützen, findet "
+"sich im %1sWiki%2s."
 
-#: flags-bedic.php:38 flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-dict-bz2.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -190,19 +192,19 @@ msgstr ""
 "PDA von Sharp läuft, und QBEDic - welches unter GNU/Linux/Qt läuft.  BEDic "
 "ist ähnlich stardict, denn es verwendet keinen Client-Server-Ansatz wie"
 
-#: flags-bedic.php:46 flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-dict-bz2.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Wählen sie ihre Sprachkombination!"
 
-#: flags-bedic.php:49 flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-dict-bz2.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Quellsprache / Größe in MB"
 
-#: flags-bedic.php:52 flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-dict-bz2.php:52 flags-evolutionary.php:52
 msgid "Destination<br />Language"
 msgstr "Zielsprache"
 
-#: flags-bedic.php:144 flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-dict-bz2.php:146 flags-evolutionary.php:146
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -283,39 +285,39 @@ msgstr "dictd"
 msgid "WinCE &amp; Palm"
 msgstr "WinCE &amp; Palm"
 
-#: menu.php:55
+#: menu.php:51
 msgid "Detailed List"
 msgstr "Detailliste"
 
-#: menu.php:64
+#: menu.php:60
 msgid "FreeDict Online Servers"
 msgstr "FreeDict Online-Server (en)"
 
-#: menu.php:76
+#: menu.php:72
 msgid "Sources"
 msgstr "Quellen"
 
-#: menu.php:80
+#: menu.php:76
 msgid "GitHub Project Page"
 msgstr "GitHub-Projektseite (en)"
 
-#: menu.php:87
+#: menu.php:83
 msgid "Mailinglists"
 msgstr "Mailinglisten (en)"
 
-#: menu.php:89
+#: menu.php:85
 msgid "Bugs"
 msgstr "Fehler"
 
-#: menu.php:91
+#: menu.php:87
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:94 weblang.php:5 weblang.php:9
+#: menu.php:90 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Übersetzen sie diese Webseite!"
 
-#: menu.php:99
+#: menu.php:95
 msgid "FreeDict Project"
 msgstr "FreeDict-Projekt"
 
@@ -391,11 +393,11 @@ msgstr ""
 
 #: overview.php:37
 msgid "Most resources are hosted by GitHub."
-msgstr ""
+msgstr "Die meisten Ressourcen werden von GitHub bereitgestellt."
 
 #: overview.php:39
 msgid "History"
-msgstr ""
+msgstr "Geschichte"
 
 #: overview.php:40
 msgid ""
@@ -408,6 +410,14 @@ msgid ""
 "dictionaries in yet unforeseen use case scenario's, because it decouples "
 "from the actual output format."
 msgstr ""
+"Dieses project wurde im Jahr 2000 von Horst Eiermann gegründet.\n"
+"Die ersten Wörterbücher wurden vom Ergane-Projekt importiert.\n"
+"Seitdem hat sich FreeDict entwickelt und bietet nun sowohl importierte, als "
+"auch handgeschriebene Wörterbücher in verschiedenen Größen.\n"
+"Mit dem Wechsel zu TEI P5 im Jahr 2010 nutzt das Projekt nun einen "
+"vielseitigen Standard zum Kodieren von menschlicher Sprache. Ferner erlaubt "
+"dieses Format die Weiternutzung der Daten für völlig neue Anwendungsgebiete, "
+"da es von dem konkreten Ausgabeformat entkoppelt ist."
 
 #: rock.php:4 rock.php:9
 msgid "Rock Linux Packages"
@@ -493,7 +503,7 @@ msgstr "Sprache"
 msgid "Website Language: "
 msgstr "Sprachen dieser Website: "
 
-#: inc/gettext.php:97 inc/langcodes.php:18
+#: inc/gettext.php:97 inc/langcodes.php:19
 msgid "English"
 msgstr "Englisch"
 
@@ -549,135 +559,139 @@ msgstr "Dänisch"
 msgid "Dutch"
 msgstr "Niederländisch"
 
-#: inc/langcodes.php:19
+#: inc/langcodes.php:18
 msgid "Modern Greek"
 msgstr "Modernes Griechisch"
 
 #: inc/langcodes.php:20
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: inc/langcodes.php:21
 msgid "French"
 msgstr "Französisch"
 
-#: inc/langcodes.php:21
+#: inc/langcodes.php:22
 msgid "Scottish Gaelic"
 msgstr "Schottisch-gälisch"
 
-#: inc/langcodes.php:22 inc/langcodes.php:27
+#: inc/langcodes.php:23 inc/langcodes.php:28
 msgid "Irish"
 msgstr "Irisch"
 
-#: inc/langcodes.php:23
+#: inc/langcodes.php:24
 msgid "German"
 msgstr "Deutsch"
 
-#: inc/langcodes.php:24
+#: inc/langcodes.php:25
 msgid "Hindi"
 msgstr "Hindi"
 
-#: inc/langcodes.php:25
+#: inc/langcodes.php:26
 msgid "Croatian"
 msgstr "Kroatisch"
 
-#: inc/langcodes.php:26
+#: inc/langcodes.php:27
 msgid "Hungarian"
 msgstr "Ungarisch"
 
-#: inc/langcodes.php:28
+#: inc/langcodes.php:29
 msgid "Icelandic"
 msgstr "Isländisch"
 
-#: inc/langcodes.php:29
+#: inc/langcodes.php:30
 msgid "Italian"
 msgstr "Italienisch"
 
-#: inc/langcodes.php:30
+#: inc/langcodes.php:31
 msgid "Khasi"
 msgstr "Khasi"
 
-#: inc/langcodes.php:31
+#: inc/langcodes.php:32
 msgid "Kurmanji"
 msgstr "Kurmanji"
 
-#: inc/langcodes.php:32
+#: inc/langcodes.php:33
 msgid "Kurdish"
 msgstr "Kurdisch"
 
-#: inc/langcodes.php:33
+#: inc/langcodes.php:34
 msgid "Latin"
 msgstr "Lateinisch"
 
-#: inc/langcodes.php:34
+#: inc/langcodes.php:35
 msgid "Lithuanian"
 msgstr "Litauisch"
 
-#: inc/langcodes.php:35
+#: inc/langcodes.php:36
 msgid "Macedonian"
 msgstr "Mazedonisch"
 
-#: inc/langcodes.php:36
+#: inc/langcodes.php:37
 msgid "Norwegian Nynorsk"
 msgstr "Neunorwegisch"
 
-#: inc/langcodes.php:37
+#: inc/langcodes.php:38
 msgid "Norwegian Bokmål"
 msgstr "Norwegisch Bokmål"
 
-#: inc/langcodes.php:38
+#: inc/langcodes.php:39
 msgid "Japanese"
 msgstr "Japanisch"
 
-#: inc/langcodes.php:39
+#: inc/langcodes.php:40
 msgid "Occitan"
 msgstr "Okzitanisch"
 
-#: inc/langcodes.php:40
+#: inc/langcodes.php:41
 msgid "Polish"
 msgstr "Polnisch"
 
-#: inc/langcodes.php:41
+#: inc/langcodes.php:42
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: inc/langcodes.php:42
+#: inc/langcodes.php:43
 msgid "Romanian"
 msgstr "Rumänisch"
 
-#: inc/langcodes.php:43
+#: inc/langcodes.php:44
 msgid "Russian"
 msgstr "Russisch"
 
-#: inc/langcodes.php:44
+#: inc/langcodes.php:45
 msgid "Sanskrit"
 msgstr "Sanskrit"
 
-#: inc/langcodes.php:45
+#: inc/langcodes.php:46
 msgid "Gaelic Scottish"
 msgstr "Gälisch/Schottisch"
 
-#: inc/langcodes.php:46
+#: inc/langcodes.php:47
 msgid "Slovak"
 msgstr "Slovakisch"
 
-#: inc/langcodes.php:47
+#: inc/langcodes.php:48
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: inc/langcodes.php:48
+#: inc/langcodes.php:49
 msgid "Serbo-Croatian"
 msgstr "Serbokroatisch"
 
-#: inc/langcodes.php:49 inc/langcodes.php:50
+#: inc/langcodes.php:50 inc/langcodes.php:51
 msgid "Swahili"
 msgstr "Suaheli"
 
-#: inc/langcodes.php:51
+#: inc/langcodes.php:52
 msgid "Swedish"
 msgstr "Schwedisch"
 
-#: inc/langcodes.php:52
+#: inc/langcodes.php:53
 msgid "Turkish"
 msgstr "Türkisch"
 
-#: inc/langcodes.php:53
+#: inc/langcodes.php:54
 msgid "Ukrainian"
 msgstr "Ukrainisch"
 
@@ -702,8 +716,8 @@ msgid ""
 "Dictionary Status was marked as 'big enough to be useful' (from 10000 "
 "entries on)"
 msgstr ""
-"Wörterbuchzustand wurde als 'Groß genug, um brauchbar zu sein' (enthält mehr "
-"als 10000 Einträge) markiert"
+"Wörterbuchzustand wurde als 'Groß genug, um brauchbar zu sein' markiert "
+"(enthält mehr als 10000 Einträge)"
 
 #: inc/legend.php:18
 msgid "Dictionary Status was marked as 'too small' (less than 1000 entries)"
