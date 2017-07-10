@@ -21,8 +21,6 @@
   <frame name="menu" src="<?php echo fdict_url("menu.php$langparam") ?>" scrolling="auto" marginheight="1" marginwidth="3" />
   <frame name="main" src="<?php echo fdict_url("overview.php$langparam") ?>" scrolling="auto" marginheight="5" marginwidth="5" />
 
-  <!-- frame NAME="right" SCROLLING="AUTO" MARGINHEIGHT="5" marginwidth=5 NORESIZE
-   SRC="http://sourceforge.net/export/projnews.php?group_id=1419&amp;limit=5&amp;flat=1&amp;show_summaries=0" -->
 
   <noframes>
    <?php global $menu_nohead; $menu_nohead=1; include 'menu.php' ?>

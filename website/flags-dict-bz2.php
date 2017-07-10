@@ -58,7 +58,7 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
     // or no release for this plattform available
     global $fddb_docel, $have_php5;
     $appears = false;
-    foreach(getElementsByTagname(($have_php5) ? $freedict_database : $fddb_docel, 'dictionary') as $d)
+    foreach(getElementsByTagName(($have_php5) ? $freedict_database : $fddb_docel, 'dictionary') as $d)
     {
       if(substr($d->$get_attr('name'),0,3) == $code)
       {
