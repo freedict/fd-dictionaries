@@ -33,7 +33,7 @@ open(DB, "$cmd|") or die "Can't do '$cmd': $!";
 #Magyar     : meg van lepve
 #
 #Angol      : to abase
-#Magyar     : megal z
+#Magyar     : megalÂ z
 #
 
 $| = 1;# no STDOUT buffering
