@@ -13,10 +13,9 @@ ifeq ($(dbview_in_path),)
 	@echo "Try to get it from http://packages.debian.org/stable/misc/dbview"
 	@false
 else
-	cp $< tmp.tei
-	./szotar-dbf2tei.pl >> tmp.tei 
-	sed 's/ô/ő/g; s/û/ű/g;' tmp.tei > $@
-	rm tmp.tei
+	cp $< $@
+	./szotar-dbf2tei.pl >> $@
+	sed -i 's/ô/ő/g; s/û/ű/g;' $@
 endif
 
 SZOTAR.DBF: SZOTAR.ZIP
