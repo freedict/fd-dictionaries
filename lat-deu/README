@@ -1,0 +1,10 @@
+This is the Latin-German dictionary, written by Sebastian Humenda. Please see
+the file INSTALL for installation instructions.
+
+The dictionary is transformed from a file called words.xml. This is a condensed
+format custom-tailored to the lat-deu dictionary. It is far more efficient than
+normal TEI and it's included in the dictibution to inspire future authors.
+NOTE: if you plan to edit the TEI source directory, you *have to* exclude the
+transformation from words.xml → lat-deu.tei out of the Makefile, otherwise your
+work will be lost.
+
