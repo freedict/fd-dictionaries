@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>   <!-- vim: set expandtab shiftwidth=2 tw=160 sts=2 ft=xml: -->
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
+<?oxygen RNGSchema="freedict-P5.rng" type="xml"?>
+<!DOCTYPE TEI SYSTEM "freedict-P5.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" version="5.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Lateinisch-Deutsch FreeDict-Wörterbuch</title>
+        <respStmt>
+          <resp>created by</resp>
+          <name>Sebastian Humenda &lt;shumenda |at| gmx |dot| de&gt;</name>
+        </respStmt>
+        <respStmt>
+          <!-- for the freedict database -->
+          <resp>Maintainer</resp>
+          <name xml:id="humenda">Sebastian Humenda &lt;shumenda |at| gmx |dot| de&gt;</name>
+        </respStmt>
+      </titleStmt>
+      <editionStmt>
+        <edition>1.0</edition>
+      </editionStmt>
+      <extent>5501 headwords</extent>
+      <publicationStmt>
+        <publisher>FreeDict</publisher>
+        <availability>
+          <p>Available under the terms of the GNU General Public Licence, version 3 (or at your option any later version, published by the FSF).</p>
+        </availability>
+        <date when="2017-08-23">23rd of August 2017</date>
+        <pubPlace><ref>http://freedict.org/</ref></pubPlace>
+      </publicationStmt>
+      <notesStmt>
+        <note type="status">small</note>
+        <!-- Note: spaces at the end are important, because there's a hard to fix bug in the stylesheets -->
+        <note xml:lang="de"><p>Anmerkungen zum Wörterbuch (English version below): </p>
+          Verben mit regelmäßiger A-Konjugation sind nur in der Infinitivform und in der ersten Person aufgeführt.  Das Indexwort eines Verbes ist die erste Person Singular, die anderen Formen werden aber auch aufgeführt; für einige Verben musste hierfür eine Ausnahme gemacht werden. Übersetzungen werden häufig nur in ihrer maskulinen Form aufgeführt, auch wenn die anderen Formen existieren. Phrasen die aus zwei Satzteilen bestehen, sind mit einem "..." verbunden.
+        </note>
+        <note xml:lang="en"><p>Please note: </p>
+            Verbs with the regular 'a' conjugation are only listed in their infinitive and first person form. The headword of a verb is the first-person form, but you find the other forms as well; some exceptions have been made for verbs which only exist in the third person.  Translations are often only listed in their masculine form, even though they exist in the feminine and neuter form as well.  phrases consisting of two parts are connected with " .. ".
+        </note>
+      </notesStmt>
+      <sourceDesc>
+        <p>Created from scratch (from Sebastian Humenda's notes); validation of some entries using http://auxilium-online.net and
+          http://en.wiktionary.org.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!</p>
+      </projectDesc>
+    </encodingDesc>
+    <revisionDesc>
+      <change n="1.0" who="#humenda" when="2017-08-23">
+        <list><item>added remaining words from word list</item>
+          <item>add particles like -ne or -ve</item>
+          <item>Improve TEI markup</item>
+        </list>
+      </change>
+      <change n="0.4" who="#humenda" when="2011-02-03">
+        <list><item>added more words; now 4500 headwords</item></list>
+      </change>
+      <change n="0.3.1" who="#humenda" when="2010-11-27">
+        <list><item>fixed a minor bug, added a few words</item>
+          <item>pushed in an important feature I forgot (list inflections at the verb's head form)</item>
+        </list>
+      </change>
+      <change n="0.3" who="#humenda" when="2010-11-24">
+        <list>
+          <item>extended database to 35xx words</item>
+          <item>added Latin special cases; that are verbs only available in 3rd person</item>
+          <item>changed the supine form of all verbs from .*us to .*um</item>
+          <item>notes are now noted correctly in TEi xML</item>
+          <item>senses (translations) are now splitted, only translations related to each other are on one line</item>
+          <item>also some bugfixes.</item>
+        </list>
+      </change>
+      <change n="0.2.3" who="#humenda" when="2010-04-07">
+        <list><item>introduced pronomes, numerals, prepositions and conjungtions</item>
+          <item>added words, fixed words (now 1800)</item>
+          <item>increased complexity, mainly on verbs</item>
+        </list>
+      </change>
+      <change n="0.2.2" who="#humenda" when="2010-03-01"><list>
+          <item>Fixed bug with doubled id's: auto-generated id's now take as much from the headword (genitivie form, gender, etc.) as possible</item>
+          <item>Deleted some doubled words, checked others twice</item>
+          <item>Added a few new words for a new version</item> </list>
+      </change>
+      <change n="0.2.1" who="#bansp" when="2010-02-25">Started fixing it the same way I did the previous version, but gave up - there are too many entries with the same IDs (42 remain, I removed or merged a few); changed @id to @xml:id, removed commas from IDs, removed null-string IDs, touched the header in a few places.</change>
+      <change n="0.2.1" who="#humenda" when="2010-02-24">
+        <list><item>roughly about 1120 words</item>
+          <item>now also adverbs and phrases added</item></list>
+      </change>
+      <change n="0.1.2" who="#humenda" when="2010-01-07">
+        <list><item>500 Headwords: adjectives, nouns and verbs</item>
+          <item>First "usable" database, but still extremely small</item></list>
+      </change>
+      <change n="0.1" who="#humenda" when="2009-12-20">
+        <list><item>200 words written. Main goal was to get used to TEI XML.</item>
+        </list>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text xml:lang="de">
+    <body>
+    </body>
+  </text>
+</TEI>
+<!-- 
+This document is distributed under GPL 3 (or any later version published by 
+the FSF). See the header for copyright statements. 
+
+GPL statement: 
+This document is free software; you can redistribute it and/or modify it under the terms 
+of the GNU General Public License as published by the Free Software Foundation. This program is 
+distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;  without even the implied 
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details. You should have received a copy of the GNU General Public License
+along with this program; if not, write to the 
+
+Free Software Foundation, 
+Inc., 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA. 
+-->
