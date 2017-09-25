@@ -33,7 +33,7 @@ flags-evolutionary.php:
 
 freedict.pot: $(sources)
 	xgettext --from-code=utf-8 -o $@ --copyright-holder="freedict.org" \
-	  --msgid-bugs-address="freedict-beta@lists.sf.net" *.php inc/*.php
+	  --msgid-bugs-address="freedict@freelists.org" *.php inc/*.php
 
 locale/%/LC_MESSAGES/freedict.mo: locale/%/LC_MESSAGES/freedict.po
 	msgfmt -c --statistics -o $@ $<
