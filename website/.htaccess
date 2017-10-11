@@ -5,3 +5,7 @@ RedirectMatch ^/dict(d)?$ http://dict.uni-leipzig.de/dictd
 # https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/342863
 AddEncoding gzip .svgz
 AddType image/svg+xml .svgz
+
+<FilesMatch "\.(json|xml)$">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
