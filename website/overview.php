@@ -36,7 +36,7 @@ and needed, also for improving the quality of the databases.') ?></p>
 width="88" height="31" border="0" align="left" alt="GitHub Octocat Logo" /></a>
 <?php echo _('Most resources are hosted by GitHub.') ?></p>
 
-<h2><?php echo _('History') ?></p>
+<h2><?php echo _('History') ?></h2>
 <p><?php echo _('This project was started in 2000 by Horst Eyermann. 
 The first databases were derived from Ergane.
 Since then, FreeDict has much evolved and now offers both imported and hand-crafted dictionaries in various sizes.

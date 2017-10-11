@@ -79,10 +79,13 @@ require_once 'inc/gettext.php';
  <li><small><a href="https://sourceforge.net/p/freedict/code/HEAD/tree/trunk/"
   target="_parent">SVN</a><br /></small></li>
 -->
- <li><small><a href="https://sourceforge.net/p/freedict/mailman/?source=navbar"
-  target="_parent"><?php echo _('Mailinglists') ?></a><br /></small></li>
- <li><small><a href="https://sourceforge.net/p/freedict/bugs/"
-  target="_parent"><?php echo _('Bugs') ?></a><br /></small></li>
+ <li><small><a href="https://www.freelists.org/list/freedict"
+  target="_parent"><?php echo _('Mailing list') ?></a><br /></small></li>
+ <li><small>
+  <a href="https://github.com/freedict/fd-dictionaries/issues" target="_parent" title="at GitHub"><?php echo _('Issues')?></a>
+  <a href="https://sourceforge.net/p/freedict/bugs/" target="_parent" title="at SF"><?php echo _('Bugs') ?></a>
+
+  <br /></small></li>
  <li><small><a href="https://github.com/freedict/fd-dictionaries/wiki"
   target="_parent"><?php echo _('Wiki') ?></a><br /></small></li>
 </ul></td>
