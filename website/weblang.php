@@ -9,10 +9,10 @@ $title = _('Translate this Website'); require_once 'inc/head.php';
 <h1><?php echo _('Translate this Website') ?></h1>
 
 
-<p><?php echo _('To make this website available in another language,
+<p><?php echo sprintf(_('To make this website available in another language,
 please download the file below, add the translations for your language
-below the English translations and email the file to
-<a href="mailto:micha@luetzschena.de">micha@luetzschena.de</a>.') ?></p>
+below the English translations and email the file to %s.'),
+'<a href="mailto:freedict@freelists.org">freedict@freelists.org</a>') ?></p>
 
 <p style="align: center"><a href="<?php echo fdict_url('freedict.pot') ?>">freedict.pot</a></p>
 
