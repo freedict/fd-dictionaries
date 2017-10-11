@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FreeDict\n"
-"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-07-10 20:25+0200\n"
+"Report-Msgid-Bugs-To: freedict@freelists.org\n"
+"POT-Creation-Date: 2017-10-11 11:51+0200\n"
 "PO-Revision-Date: 2010-01-31 20:40+0200\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -29,7 +29,7 @@ msgstr "galbūt reikalingas įskiepis, pvz."
 msgid "Adobe's"
 msgstr "Adbobe"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
 msgid "Database as XML"
 msgstr "Duomenų bazė XML formatu"
 
@@ -299,22 +299,27 @@ msgid "GitHub Project Page"
 msgstr "Projekto puslapis SourceForge"
 
 #: menu.php:83
-msgid "Mailinglists"
+#, fuzzy
+msgid "Mailing list"
 msgstr "Pašto konferencijos"
 
 #: menu.php:85
+msgid "Issues"
+msgstr ""
+
+#: menu.php:86
 msgid "Bugs"
 msgstr "Riktai"
 
-#: menu.php:87
+#: menu.php:90
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:93 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Išversti šia svetainę"
 
-#: menu.php:95
+#: menu.php:98
 msgid "FreeDict Project"
 msgstr "FreeDict projectas"
 
@@ -433,11 +438,11 @@ msgid ""
 msgstr ""
 
 #: weblang.php:12
+#, fuzzy, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
-"below the English translations and email the file to\n"
-"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"below the English translations and email the file to %s."
 msgstr ""
 "Tam, kad padaryti šią svetainę prieinama kita kalba,\n"
 " atsiųskite žemiau pateiktą failą, pridėkite žemiau angliškojo teksto\n"

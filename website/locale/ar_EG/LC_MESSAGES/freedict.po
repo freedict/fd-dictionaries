@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
-"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-07-10 20:25+0200\n"
+"Report-Msgid-Bugs-To: freedict@freelists.org\n"
+"POT-Creation-Date: 2017-10-11 11:51+0200\n"
 "PO-Revision-Date: 2006-08-31 03:02+0300\n"
 "Last-Translator: Amr Gharbeia <amr@gharbeia.net>\n"
 "Language-Team: Arabic <en@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "قد تحتاج إلى تركيبة، مثلا."
 msgid "Adobe's"
 msgstr "أدوب"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
 msgid "Database as XML"
 msgstr "قاعدة البيانات في صيغة إكس.إم.إل"
 
@@ -273,22 +273,27 @@ msgid "GitHub Project Page"
 msgstr "صفحة مشروع سورس.فورج"
 
 #: menu.php:83
-msgid "Mailinglists"
+#, fuzzy
+msgid "Mailing list"
 msgstr "القوائم البريدية"
 
 #: menu.php:85
+msgid "Issues"
+msgstr ""
+
+#: menu.php:86
 msgid "Bugs"
 msgstr "بقات"
 
-#: menu.php:87
+#: menu.php:90
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:93 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "ترجم هذا الموقع"
 
-#: menu.php:95
+#: menu.php:98
 msgid "FreeDict Project"
 msgstr "مشروع فري.دكت"
 
@@ -398,14 +403,14 @@ msgid ""
 msgstr ""
 
 #: weblang.php:12
+#, fuzzy, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
-"below the English translations and email the file to\n"
-"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"below the English translations and email the file to %s."
 msgstr ""
-"كي تترجم هذا الموقع إلى لغة أخرى، من فضلك أنزل الملف أدناه، وأضف الترجمة "
-"بلغتك تحت الإنجليزية، ثم أرسل الملف إلى <a href=\"mailto:micha@luetzschena.de"
+"لتجعل هذا الموقع متوفرا في لغة أخرى، من فضلك أنزل الملف أدناه، وأضف ترجماتك "
+"أسفل الإنجليزية، ثم أرسل الملف إلى <a href=\"mailto:micha@luetzschena.de"
 "\">micha@luetzschena.de</a>."
 
 #: weblang.php:19
@@ -684,6 +689,16 @@ msgid ""
 "  encodable or displayable for/on the platform."
 msgstr ""
 
+#~ msgid ""
+#~ "To make this website available in another language,\n"
+#~ "please download the file below, add the translations for your language\n"
+#~ "below the English translations and email the file to\n"
+#~ "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+#~ msgstr ""
+#~ "كي تترجم هذا الموقع إلى لغة أخرى، من فضلك أنزل الملف أدناه، وأضف الترجمة "
+#~ "بلغتك تحت الإنجليزية، ثم أرسل الملف إلى <a href=\"mailto:"
+#~ "micha@luetzschena.de\">micha@luetzschena.de</a>."
+
 #~ msgid "DICT servers (tgz)"
 #~ msgstr "خادومات دكت (أرشيفات tgz)"
 
@@ -738,16 +753,6 @@ msgstr ""
 #~ "الموقع تحت التطوير.\n"
 #~ "قد لا يكون كل المحتوى متوفرا. في هذه الحالة، رجاء ارجع للموقع القديم على "
 #~ "<a target=_parent href=http://freedict.de/>freedict.de</a>."
-
-#~ msgid ""
-#~ "To make this website available in another language,\n"
-#~ "please download the file below, add the translations for your language\n"
-#~ "below the English translations and email the file to\n"
-#~ "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>"
-#~ msgstr ""
-#~ "لتجعل هذا الموقع متوفرا في لغة أخرى، من فضلك أنزل الملف أدناه، وأضف "
-#~ "ترجماتك أسفل الإنجليزية، ثم أرسل الملف إلى <a href=\"mailto:"
-#~ "micha@luetzschena.de\">micha@luetzschena.de</a>."
 
 #~ msgid ""
 #~ "This website is under development.\n"

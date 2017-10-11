@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
-"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-07-10 20:25+0200\n"
+"Report-Msgid-Bugs-To: freedict@freelists.org\n"
+"POT-Creation-Date: 2017-10-11 11:51+0200\n"
 "PO-Revision-Date: 2007-12-13 20:09+MET\n"
 "Last-Translator: Alexey Konyshev <alexey@polyglotexpert.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Возможно плугин необходим"
 msgid "Adobe's"
 msgstr ""
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
 msgid "Database as XML"
 msgstr "Данные как XML"
 
@@ -277,22 +277,27 @@ msgid "GitHub Project Page"
 msgstr "Страница проекта SourceForge"
 
 #: menu.php:83
-msgid "Mailinglists"
+#, fuzzy
+msgid "Mailing list"
 msgstr "Почтовый список"
 
 #: menu.php:85
+msgid "Issues"
+msgstr ""
+
+#: menu.php:86
 msgid "Bugs"
 msgstr "Ошибки"
 
-#: menu.php:87
+#: menu.php:90
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:93 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Переведите эту Web-страницу"
 
-#: menu.php:95
+#: menu.php:98
 msgid "FreeDict Project"
 msgstr "FreeDict проект"
 
@@ -407,11 +412,11 @@ msgid ""
 msgstr ""
 
 #: weblang.php:12
+#, fuzzy, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
-"below the English translations and email the file to\n"
-"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"below the English translations and email the file to %s."
 msgstr ""
 "Сделайте эту Web-страницу доступной в другом языке, пожалуйста загрузите "
 "файл, потом добавьте перевод на вашeм языкe после английского и пошлите файл "
@@ -694,6 +699,17 @@ msgid ""
 msgstr ""
 
 #~ msgid ""
+#~ "To make this website available in another language,\n"
+#~ "please download the file below, add the translations for your language\n"
+#~ "below the English translations and email the file to\n"
+#~ "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+#~ msgstr ""
+#~ "Сделайте эту Web-страницу доступной в другом языке, пожалуйста загрузите "
+#~ "файл, потом добавьте перевод на вашeм языкe после английского и пошлите "
+#~ "файл по адресу <a href=\"mailto:micha@luetzschena.de\">micha@luetzschena."
+#~ "de</a>"
+
+#~ msgid ""
 #~ "Most resources are hosted by SourceForge:\n"
 #~ "Please support them also. Without SourceForge, FreeDict would\n"
 #~ "not have come so far!"
@@ -779,17 +795,6 @@ msgstr ""
 #~ "Эта Web-страница  улучшается. Доступ невозможен. Вы можете посетить "
 #~ "старую Web-страницу по адресу: <a target=_parent href=http://freedict.de/"
 #~ ">freedict.de</a>"
-
-#~ msgid ""
-#~ "To make this website available in another language,\n"
-#~ "please download the file below, add the translations for your language\n"
-#~ "below the English translations and email the file to\n"
-#~ "<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>"
-#~ msgstr ""
-#~ "Сделайте эту Web-страницу доступной в другом языке, пожалуйста загрузите "
-#~ "файл, потом добавьте перевод на вашeм языкe после английского и пошлите "
-#~ "файл по адресу <a href=\"mailto:micha@luetzschena.de\">micha@luetzschena."
-#~ "de</a>"
 
 #~ msgid ""
 #~ "The Download Tables are generated from an XML file.\n"

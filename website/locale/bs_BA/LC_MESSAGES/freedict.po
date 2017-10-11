@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-07-10 20:25+0200\n"
+"Report-Msgid-Bugs-To: freedict@freelists.org\n"
+"POT-Creation-Date: 2017-10-11 11:51+0200\n"
 "PO-Revision-Date: 2013-01-20 02:13+0200\n"
 "Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Možda potreban plug-in, na primjer "
 msgid "Adobe's"
 msgstr "Adobe-ovo"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
 msgid "Database as XML"
 msgstr "XML Baza podataka"
 
@@ -302,22 +302,27 @@ msgid "GitHub Project Page"
 msgstr "SourceForge Stranica Projekta"
 
 #: menu.php:83
-msgid "Mailinglists"
+#, fuzzy
+msgid "Mailing list"
 msgstr "Mailing Liste"
 
 #: menu.php:85
+msgid "Issues"
+msgstr ""
+
+#: menu.php:86
 msgid "Bugs"
 msgstr "Kvar"
 
-#: menu.php:87
+#: menu.php:90
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:93 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Prevedite ovu Web stranicu"
 
-#: menu.php:95
+#: menu.php:98
 msgid "FreeDict Project"
 msgstr "FreeDict Projekat"
 
@@ -453,11 +458,11 @@ msgstr ""
 "    freedict-* paket."
 
 #: weblang.php:12
+#, fuzzy, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
-"below the English translations and email the file to\n"
-"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"below the English translations and email the file to %s."
 msgstr ""
 "Da bi ova web stranica bila dostupna na drugom jeziku,\n"
 "molimo preuzmite fajl niže, dodajte prijevode za vaš jezik\n"

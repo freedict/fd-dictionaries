@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: freedict-beta@lists.sf.net\n"
-"POT-Creation-Date: 2017-07-10 20:25+0200\n"
+"Report-Msgid-Bugs-To: freedict@freelists.org\n"
+"POT-Creation-Date: 2017-10-11 11:51+0200\n"
 "PO-Revision-Date: 2010-04-15 12:01+0100\n"
 "Last-Translator: Jeroen Hellingman <jeroen@bohol.ph>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "mogelijk plugin vereist, bv."
 msgid "Adobe's"
 msgstr "Adobe's"
 
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:91
+#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
 msgid "Database as XML"
 msgstr "Database als XML"
 
@@ -312,22 +312,27 @@ msgid "GitHub Project Page"
 msgstr "SourceForge Project Pagina"
 
 #: menu.php:83
-msgid "Mailinglists"
+#, fuzzy
+msgid "Mailing list"
 msgstr "Mailinglijsten"
 
 #: menu.php:85
+msgid "Issues"
+msgstr ""
+
+#: menu.php:86
 msgid "Bugs"
 msgstr "Bugs"
 
-#: menu.php:87
+#: menu.php:90
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:90 weblang.php:5 weblang.php:9
+#: menu.php:93 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Vertaal deze Website"
 
-#: menu.php:95
+#: menu.php:98
 msgid "FreeDict Project"
 msgstr "FreeDict Project"
 
@@ -459,11 +464,11 @@ msgstr ""
 "    freedict-* packages bevat."
 
 #: weblang.php:12
+#, fuzzy, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
-"below the English translations and email the file to\n"
-"<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"below the English translations and email the file to %s."
 msgstr ""
 "Als je deze website beschikbaar te maken in een andere taal,\n"
 "download dan het bestand hieronder en voeg de vertalingen voor jouw taal\n"
