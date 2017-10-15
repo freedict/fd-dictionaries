@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-11 11:51+0200\n"
+"POT-Creation-Date: 2017-10-15 22:11+0200\n"
 "PO-Revision-Date: 2015-12-07 13:47+0100\n"
 "Last-Translator: Michael Bunk <micha@freedict.org>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -30,22 +30,6 @@ msgstr "möglicherweise wird ein Plugin gebraucht, z.B."
 #: dataflow.php:19
 msgid "Adobe's"
 msgstr "Adobes"
-
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
-msgid "Database as XML"
-msgstr "Datenbank als XML"
-
-#: db-as-xml.php:11
-msgid ""
-"The Download Tables are generated from an XML file.\n"
-"To access that data easily, eg. for use in a program as\n"
-"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
-"use this URL:"
-msgstr ""
-"Die Download-Tabellen werden aus einer XML-Datei generiert.\n"
-"Um aus Programmen heraus leicht auf diese Daten zugreifen zu können, z.B. "
-"durch das Programm <a href=\"http://stardict.sf.net/\">Stardict</a>, kann "
-"folgende URL erwendet werden:"
 
 #: deb.php:4 deb.php:9
 msgid "Debian Packages"
@@ -141,70 +125,96 @@ msgstr ""
 "Wenn sie %sDebian%s unstable verwenden, können sie dies zu ihrer %s-Datei "
 "hinzufügen:"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: fd-api.php:4 fd-api.php:8 menu.php:94
+msgid "FreeDict JSON/XML API"
+msgstr ""
+
+# stay empty
+#: fd-api.php:11
+msgid ""
+"The FreeDict Project offers a statically updated API to query\n"
+"information about dictionaries and to retrieve them. Furthermore, the API "
+"is\n"
+"used by the web site to generate the download tables.\n"
+"The documentation is in the <a href=\"https://github.com/freedict/fd-"
+"dictionaries/wiki/FreeDict-API\">wiki</a>."
+msgstr ""
+"Das FreeDict-Projekt bietet eine statische, regelmäßig aktualisierte, API um "
+"Informationen über Wörterbücher abzufragen und um selbige herunterzuladen. "
+"Außerdem wird die API intern genutzt, um die Downloadtabellen zu "
+"generieren.\n"
+"Die Dokumentation findet sich im <a href=\"https://github.com/freedict/fd-"
+"dictionaries/wiki/FreeDict-API\">Wiki</a>."
+
+#: fd-api.php:16
+msgid ""
+"To access the data easily, eg. for use in a program as\n"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
+"use this URL:"
+msgstr ""
+"Um aus Programmen heraus leicht auf diese Daten zugreifen zu können, z.B. "
+"durch das Programm <a href=\"http://stardict.sf.net/\">Stardict</a>, kann "
+"folgende URL erwendet werden:"
+
+#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT-Server"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr "unter Windows/Linux"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-bedic.php:9 flags-dict-bz2.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-bedic.php:9 flags-bedic.php:11 flags-dict-bz2.php:9
+#: flags-dict-bz2.php:11 flags-evolutionary.php:9 flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr "unter WinCE/PalmOS"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-bedic.php:13 flags-dict-bz2.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr "auf Zaurus/unter Qt"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-bedic.php:21 flags-bedic.php:25 flags-dict-bz2.php:21
+#: flags-dict-bz2.php:25 flags-evolutionary.php:21 flags-evolutionary.php:25
 msgid "Download / Matrix View"
 msgstr "Download / Matrixansicht"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-bedic.php:27 flags-evolutionary.php:27
 #, php-format
-msgid "The following downloads are for platform %s."
+msgid "All downloads are for platform %s."
 msgstr "Die folgenden Downloads sind für Plattform %s."
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-bedic.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
-"For a list of dictionary programs supporting this format, have a look at the "
-"%1swiki%2s."
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
 msgstr ""
-"Eine Liste von Wörterbuchprogrammen, die dieses Format unterstützen, findet "
-"sich im %1sWiki%2s."
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-bedic.php:38 flags-dict-bz2.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
 "     similar to stardict as it doesn't use a client/server\n"
 "     approach like"
 msgstr ""
-"BEDic hat zwei grafische Benutzerinterfaces: ZBEDic - welches auf dem Zaurus-"
-"PDA von Sharp läuft, und QBEDic - welches unter GNU/Linux/Qt läuft.  BEDic "
-"ist ähnlich stardict, denn es verwendet keinen Client-Server-Ansatz wie"
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:46 flags-dict-bz2.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Wählen sie ihre Sprachkombination!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-bedic.php:49 flags-dict-bz2.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Quellsprache / Größe in MB"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:52 flags-dict-bz2.php:52 flags-evolutionary.php:52
 msgid "Destination<br />Language"
 msgstr "Zielsprache"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-bedic.php:144 flags-dict-bz2.php:144 flags-evolutionary.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -212,6 +222,20 @@ msgid ""
 msgstr ""
 "Bitte klicken sie auf die Links, um zur SourceForge-Mirror-Auswahl zu "
 "gelangen. Rechtsklick und 'Speichern unter' funktionieren nicht von hier aus!"
+
+#: flags-dict-bz2.php:27
+#, php-format
+msgid "The following downloads are for platform %s."
+msgstr "Die folgenden Downloads sind für Plattform %s."
+
+#: flags-dict-bz2.php:32
+#, php-format
+msgid ""
+"For a list of dictionary programs supporting this format, have a look at the "
+"%1swiki%2s."
+msgstr ""
+"Eine Liste von Wörterbuchprogrammen, die dieses Format unterstützen, findet "
+"sich im %1sWiki%2s."
 
 #: list.php:6
 msgid "Download / List View"
@@ -302,7 +326,6 @@ msgid "GitHub Project Page"
 msgstr "GitHub-Projektseite (en)"
 
 #: menu.php:83
-#, fuzzy
 msgid "Mailing list"
 msgstr "Mailinglisten (en)"
 
@@ -466,7 +489,7 @@ msgstr ""
 "enthält."
 
 #: weblang.php:12
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -759,3 +782,6 @@ msgid ""
 msgstr ""
 "Das liegt derzeit stets daran, daß die Zeichen des Wörterbuchs auf dieser "
 "Plattform nicht kodier- oder darstellbar sind."
+
+#~ msgid "Database as XML"
+#~ msgstr "Datenbank als XML"

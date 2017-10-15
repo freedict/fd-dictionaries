@@ -91,7 +91,7 @@ require_once 'inc/gettext.php';
 </ul></td>
 </tr>
 <tr><td class="menu"><a href="<?php echo fdict_url('weblang.php') ?>" target="main"><?php echo _('Translate this Website') ?></a></td></tr>
-<tr><td class="menu"><a href="<?php echo fdict_url('db-as-xml.php') ?>" target="main"><?php echo _('Database as XML') ?></a>
+<tr><td class="menu"><a href="<?php echo fdict_url('fd-api.php') ?>" target="main"><?php echo _('FreeDict JSON/XML API') ?></a>
 </td></tr>
 
 <tr><td class="menuNObg" align="center">

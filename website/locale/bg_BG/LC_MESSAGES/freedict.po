@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-11 11:51+0200\n"
+"POT-Creation-Date: 2017-10-15 22:11+0200\n"
 "PO-Revision-Date: 2007-07-24 13:33+MET\n"
 "Last-Translator: Emanoil Kotsev <a9706152@unet.univie.ac.at>\n"
 "Language-Team: Bulgarian <freedict-beta@lists.sourceforge.net>\n"
@@ -28,22 +28,6 @@ msgstr ""
 #, fuzzy
 msgid "Adobe's"
 msgstr "на Adobe"
-
-#: db-as-xml.php:4 db-as-xml.php:8 menu.php:94
-msgid "Database as XML"
-msgstr "База данни като XML"
-
-#: db-as-xml.php:11
-msgid ""
-"The Download Tables are generated from an XML file.\n"
-"To access that data easily, eg. for use in a program as\n"
-"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
-"use this URL:"
-msgstr ""
-"Таблиците за сваляне са генерирани от XML файл.\n"
-"За да имате лесен достъп до информацията, напр. за да ги ползвате\n"
-"в програми като <a href=\"http://stardict.sf.net/\" target=\"_top"
-"\">Stardict</a>,ползвайте този линк:"
 
 #: deb.php:4 deb.php:9
 msgid "Debian Packages"
@@ -137,45 +121,71 @@ msgstr "за всички %sпредпоставки%s, моля прочете�
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr "Ако ползвате нестабилната версия на %sDebian%s, може да добавите %s:"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: fd-api.php:4 fd-api.php:8 menu.php:94
+msgid "FreeDict JSON/XML API"
+msgstr ""
+
+#: fd-api.php:11
+msgid ""
+"The FreeDict Project offers a statically updated API to query\n"
+"information about dictionaries and to retrieve them. Furthermore, the API "
+"is\n"
+"used by the web site to generate the download tables.\n"
+"The documentation is in the <a href=\"https://github.com/freedict/fd-"
+"dictionaries/wiki/FreeDict-API\">wiki</a>."
+msgstr ""
+
+#: fd-api.php:16
+#, fuzzy
+msgid ""
+"To access the data easily, eg. for use in a program as\n"
+"<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
+"use this URL:"
+msgstr ""
+"Таблиците за сваляне са генерирани от XML файл.\n"
+"За да имате лесен достъп до информацията, напр. за да ги ползвате\n"
+"в програми като <a href=\"http://stardict.sf.net/\" target=\"_top"
+"\">Stardict</a>,ползвайте този линк:"
+
+#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT сървери"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr "под Windows/Linux"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-bedic.php:9 flags-dict-bz2.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Мобипокет"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-bedic.php:9 flags-bedic.php:11 flags-dict-bz2.php:9
+#: flags-dict-bz2.php:11 flags-evolutionary.php:9 flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr "на WinCE/Palm"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-bedic.php:13 flags-dict-bz2.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr "под Zaurus/Qt"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-bedic.php:21 flags-bedic.php:25 flags-dict-bz2.php:21
+#: flags-dict-bz2.php:25 flags-evolutionary.php:21 flags-evolutionary.php:25
 msgid "Download / Matrix View"
 msgstr "Сваляне / матричен преглед"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-bedic.php:27 flags-evolutionary.php:27
 #, fuzzy, php-format
-msgid "The following downloads are for platform %s."
+msgid "All downloads are for platform %s."
 msgstr "Всичко за сваляне е за платформа"
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-bedic.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
-"For a list of dictionary programs supporting this format, have a look at the "
-"%1swiki%2s."
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-bedic.php:38 flags-dict-bz2.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -187,20 +197,20 @@ msgstr ""
 "     подобен на stardict тъй като не ползва клиент/сървер\n"
 "     технология"
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:46 flags-dict-bz2.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Изберете вашата комбинация от езици!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-bedic.php:49 flags-dict-bz2.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Изходен език / големина в МБ"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:52 flags-dict-bz2.php:52 flags-evolutionary.php:52
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "предназначение<br>език"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-bedic.php:144 flags-dict-bz2.php:144 flags-evolutionary.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -209,6 +219,18 @@ msgstr ""
 "Моля, кликнете на линкна, за да посетите SourceForge\n"
 "огледалата за сваляне. Дясно копче на мишката и Save-As не работят\n"
 "от това място!"
+
+#: flags-dict-bz2.php:27
+#, fuzzy, php-format
+msgid "The following downloads are for platform %s."
+msgstr "Всичко за сваляне е за платформа"
+
+#: flags-dict-bz2.php:32
+#, php-format
+msgid ""
+"For a list of dictionary programs supporting this format, have a look at the "
+"%1swiki%2s."
+msgstr ""
 
 #: list.php:6
 msgid "Download / List View"
@@ -742,3 +764,6 @@ msgid ""
 msgstr ""
 "Това се случва поради знаци в речника които не могад да бъдат\n"
 "  кодирани или изобразени под съответната платформа."
+
+#~ msgid "Database as XML"
+#~ msgstr "База данни като XML"
