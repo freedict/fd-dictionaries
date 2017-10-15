@@ -23,10 +23,13 @@ editordoc.html: ../freedict-editor/help/C/html/index.html
 	test -e $@ || ln -s $< $@
 
 freedict-database.xml:
-	ln -s ../$@
+	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
+		ln -s $$APIDIR/freedict-database.xml $@
 
 freedict-database.json:
-	ln -s ../$@
+freedict-database.json:
+	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
+		ln -s $$APIDIR/freedict-database.json $@
 
 flags-bedic.php:
 	ln -s flags-dict-bz2.php $@

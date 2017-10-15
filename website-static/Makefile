@@ -47,8 +47,8 @@ generate-static: ~$(USER)/public_html/freedict-dynamic symlinks /etc/apache2/mod
 	if [ ! -e "$@" ]; then ln -s `realpath "$<"` "$@"; fi
 
 symlinks: static static/images static/debian-repository \
-          static/s.css static/freedict.pot static/freedict-database.xml \
-          static/index.html static/.htaccess
+		static/s.css static/freedict.pot static/freedict-database.xml \
+		static/freedict-database.json static/index.html static/.htaccess
 
 static:
 	mkdir -p static
@@ -67,8 +67,12 @@ static/freedict.pot: $(DYNAMICPATH)/freedict.pot
 	ln -s $(DYNAMICPATH)/freedict.pot $@
 
 static/freedict-database.xml:
-	APIFILE=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
-		ln -s $$APIFILE $@
+	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
+		ln -s $$APIDIR/freedict-database.xml $@
+
+static/freedict-database.json
+	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
+		ln -s $$APIDIR/freedict-database.json $@
 
 static/index.html:
 	# when the webspace has php, use this (but then, no need for static version at all):
