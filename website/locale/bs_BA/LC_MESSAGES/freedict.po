@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:11+0200\n"
+"POT-Creation-Date: 2017-10-15 22:33+0200\n"
 "PO-Revision-Date: 2013-01-20 02:13+0200\n"
 "Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,48 +149,46 @@ msgstr ""
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, možete "
 "koristiti ovaj URL:"
 
-#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT serveri"
 
-#: flags-bedic.php:7 flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-dict-bz2.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr "na Windows/Linux"
 
-#: flags-bedic.php:9 flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-dict-bz2.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:9 flags-bedic.php:11 flags-dict-bz2.php:9
-#: flags-dict-bz2.php:11 flags-evolutionary.php:9 flags-evolutionary.php:11
+#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
+#: flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr "na WinCE/Palm"
 
-#: flags-bedic.php:13 flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-dict-bz2.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr "Na Zaurus/Qt"
 
-#: flags-bedic.php:21 flags-bedic.php:25 flags-dict-bz2.php:21
-#: flags-dict-bz2.php:25 flags-evolutionary.php:21 flags-evolutionary.php:25
+#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
+#: flags-evolutionary.php:25
 #, fuzzy
 msgid "Download / Matrix View"
 msgstr "Skinuti / Pogled Matrixa"
 
-#: flags-bedic.php:27 flags-evolutionary.php:27
+#: flags-dict-bz2.php:27 flags-evolutionary.php:27
 #, fuzzy, php-format
-msgid "All downloads are for platform %s."
+msgid "The following downloads are for platform %s."
 msgstr "Sva preuzimanja su za platforme %s."
 
-#: flags-bedic.php:32 flags-evolutionary.php:32
+#: flags-dict-bz2.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
-"Another application understanding this file format is %1sWordtrans%2s, a KDE "
-"application."
+"For a list of dictionary programs supporting this format, have a look at the "
+"%1swiki%2s."
 msgstr ""
-"Druga aplikacija koja preuzima taj format fajla je %1sWordtrans%2s, "
-"aplikacija KDE-a "
 
-#: flags-bedic.php:38 flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-dict-bz2.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -202,19 +200,19 @@ msgstr ""
 "     sličan stardict-u po tome što ne koristi klijent/server\n"
 "     pristup"
 
-#: flags-bedic.php:46 flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-dict-bz2.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Izaberite vašu kombinaciju jezika!"
 
-#: flags-bedic.php:49 flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-dict-bz2.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Izvorni Jezik / Veličina u MB"
 
-#: flags-bedic.php:52 flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-dict-bz2.php:52 flags-evolutionary.php:52
 msgid "Destination<br />Language"
 msgstr "Ciljani <br jezik /> "
 
-#: flags-bedic.php:144 flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-dict-bz2.php:144 flags-evolutionary.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -223,18 +221,6 @@ msgstr ""
 "Molimo kliknite na linkove da bi ste pristupili SourceForge\n"
 "stranici selekcije ogledala preuzimanja. \"Desni klik\" i \"Spasiti kao\" "
 "neće funkcionisati odavde!"
-
-#: flags-dict-bz2.php:27
-#, fuzzy, php-format
-msgid "The following downloads are for platform %s."
-msgstr "Sva preuzimanja su za platforme %s."
-
-#: flags-dict-bz2.php:32
-#, php-format
-msgid ""
-"For a list of dictionary programs supporting this format, have a look at the "
-"%1swiki%2s."
-msgstr ""
 
 #: list.php:6
 msgid "Download / List View"
@@ -775,6 +761,17 @@ msgid ""
 msgstr ""
 "To je trenutno uvijek zato što neke simbole u Rječniku nije moguće\n"
 "  šifrirati ili pokazati za/na platformi."
+
+#, fuzzy
+#~ msgid "All downloads are for platform %s."
+#~ msgstr "Sva preuzimanja su za platforme %s."
+
+#~ msgid ""
+#~ "Another application understanding this file format is %1sWordtrans%2s, a "
+#~ "KDE application."
+#~ msgstr ""
+#~ "Druga aplikacija koja preuzima taj format fajla je %1sWordtrans%2s, "
+#~ "aplikacija KDE-a "
 
 #~ msgid "Database as XML"
 #~ msgstr "XML Baza podataka"

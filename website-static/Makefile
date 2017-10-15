@@ -66,11 +66,11 @@ static/s.css: $(DYNAMICPATH)/s.css
 static/freedict.pot: $(DYNAMICPATH)/freedict.pot
 	ln -s $(DYNAMICPATH)/freedict.pot $@
 
-static/freedict-database.xml:
+static/freedict-database.xml: static
 	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
 		ln -s $$APIDIR/freedict-database.xml $@
 
-static/freedict-database.json
+static/freedict-database.json: static
 	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
 		ln -s $$APIDIR/freedict-database.json $@
 
