@@ -10,20 +10,19 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2.1</edition>
+            <edition>0.2.2</edition>
          </editionStmt>
          <extent>about 5900 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the GNU General Public License ver. 2.0 and any later
                   version.</p>
             </availability>
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">small</note>
@@ -41,6 +40,10 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2017-10-24" who="humenda">
+            <date>2017-10-24</date>
+            <name>Sebastian Humenda</name>: Valentino (GitHub) fixed some parsing errors in a few entries. I fixed another one.
+         </change>
          <change when="2010-10-24">
             <date>2010-10-24</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
@@ -7182,7 +7185,7 @@
             </sense>
             <sense n="10">
                <cit type="trans">
-                  <quote>10.lugar</quote>
+                  <quote>lugar</quote>
                </cit>
                <cit type="trans">
                   <quote>motivo</quote>
@@ -61192,7 +61195,7 @@
             </sense>
             <sense n="10">
                <cit type="trans">
-                  <quote>10.adquisición</quote>
+                  <quote>adquisición</quote>
                </cit>
                <cit type="trans">
                   <quote>compra</quote>
