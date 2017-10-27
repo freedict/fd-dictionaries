@@ -19,15 +19,16 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>1.0</edition>
+        <edition>1.0.1</edition>
       </editionStmt>
       <extent>5501 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability>
+          <p>© 2009-2017 Sebastian Humenda</p>
           <p>Available under the terms of the GNU General Public Licence, version 3 (or at your option any later version, published by the FSF).</p>
         </availability>
-        <date when="2017-08-23">23rd of August 2017</date>
+        <date when="2017-10-27">27th of October 2017</date>
         <pubPlace>
           <ref>http://freedict.org/</ref>
         </pubPlace>
@@ -53,25 +54,31 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change n="1.0" who="#humenda" when="2017-08-23">
+      <change n="1.0.1" who="humenda" when="2017-10-27">
+        <list>
+          <item>fix spacing issues</item>
+          <item>strip unwanted words from the untransformed source, improve markup</item>
+        </list>
+      </change>
+      <change n="1.0" who="humenda" when="2017-08-23">
         <list>
           <item>added remaining words from word list</item>
           <item>add particles like -ne or -ve</item>
           <item>Improve TEI markup</item>
         </list>
       </change>
-      <change n="0.4" who="#humenda" when="2011-02-03">
+      <change n="0.4" who="humenda" when="2011-02-03">
         <list>
           <item>added more words; now 4500 headwords</item>
         </list>
       </change>
-      <change n="0.3.1" who="#humenda" when="2010-11-27">
+      <change n="0.3.1" who="humenda" when="2010-11-27">
         <list>
           <item>fixed a minor bug, added a few words</item>
           <item>pushed in an important feature I forgot (list inflections at the verb's head form)</item>
         </list>
       </change>
-      <change n="0.3" who="#humenda" when="2010-11-24">
+      <change n="0.3" who="humenda" when="2010-11-24">
         <list>
           <item>extended database to 35xx words</item>
           <item>added Latin special cases; that are verbs only available in 3rd person</item>
@@ -81,34 +88,34 @@
           <item>also some bugfixes.</item>
         </list>
       </change>
-      <change n="0.2.3" who="#humenda" when="2010-04-07">
+      <change n="0.2.3" who="humenda" when="2010-04-07">
         <list>
           <item>introduced pronomes, numerals, prepositions and conjungtions</item>
           <item>added words, fixed words (now 1800)</item>
           <item>increased complexity, mainly on verbs</item>
         </list>
       </change>
-      <change n="0.2.2" who="#humenda" when="2010-03-01">
+      <change n="0.2.2" who="humenda" when="2010-03-01">
         <list>
           <item>Fixed bug with doubled id's: auto-generated id's now take as much from the headword (genitivie form, gender, etc.) as possible</item>
           <item>Deleted some doubled words, checked others twice</item>
           <item>Added a few new words for a new version</item>
         </list>
       </change>
-      <change n="0.2.1" who="#bansp" when="2010-02-25">Started fixing it the same way I did the previous version, but gave up - there are too many entries with the same IDs (42 remain, I removed or merged a few); changed @id to @xml:id, removed commas from IDs, removed null-string IDs, touched the header in a few places.</change>
-      <change n="0.2.1" who="#humenda" when="2010-02-24">
+      <change n="0.2.1" who="bansp" when="2010-02-25">Started fixing it the same way I did the previous version, but gave up - there are too many entries with the same IDs (42 remain, I removed or merged a few); changed @id to @xml:id, removed commas from IDs, removed null-string IDs, touched the header in a few places.</change>
+      <change n="0.2.1" who="humenda" when="2010-02-24">
         <list>
           <item>roughly about 1120 words</item>
           <item>now also adverbs and phrases added</item>
         </list>
       </change>
-      <change n="0.1.2" who="#humenda" when="2010-01-07">
+      <change n="0.1.2" who="humenda" when="2010-01-07">
         <list>
           <item>500 Headwords: adjectives, nouns and verbs</item>
           <item>First "usable" database, but still extremely small</item>
         </list>
       </change>
-      <change n="0.1" who="#humenda" when="2009-12-20">
+      <change n="0.1" who="humenda" when="2009-12-20">
         <list>
           <item>200 words written. Main goal was to get used to TEI XML.</item>
         </list>
@@ -144,6 +151,7 @@
           <orth>optimus</orth>
           <gramGrp>
             <gen>m</gen>
+            <gram type="degree">Superlativ</gram>
           </gramGrp>
           <form type="infl">
             <orth>optima</orth>
@@ -13734,7 +13742,7 @@
         </gramGrp>
         <sense level="1">
           <cit type="trans">
-            <quote>nachkommen, einholen, erreichen </quote>
+            <quote>nachkommen, einholen, erreichen</quote>
           </cit>
         </sense>
       </entry>
@@ -27705,7 +27713,7 @@
         </sense>
         <sense level="1">
           <cit type="trans">
-            <quote>vorhalten, ermahnen Verb , Gemischte Konjugation </quote>
+            <quote>vorhalten, ermahnen</quote>
           </cit>
         </sense>
       </entry>
@@ -30957,7 +30965,7 @@
         </sense>
         <sense level="1">
           <cit type="trans">
-            <quote>beraten, besprechen, befragen </quote>
+            <quote>beraten, besprechen, befragen</quote>
           </cit>
         </sense>
       </entry>
@@ -61681,7 +61689,7 @@
         </sense>
         <sense level="1">
           <cit type="trans">
-            <quote>belästigen, schikanieren Verb , A-Konjugation </quote>
+            <quote>belästigen, schikanieren</quote>
           </cit>
         </sense>
       </entry>
@@ -70352,7 +70360,7 @@
         </gramGrp>
         <sense level="1">
           <cit type="trans">
-            <quote>mehr </quote>
+            <quote>mehr</quote>
           </cit>
         </sense>
       </entry>
@@ -78936,7 +78944,7 @@
         </form>
         <sense level="1">
           <cit type="trans">
-            <quote>nicht weniger als, ebenso wie </quote>
+            <quote>nicht weniger als, ebenso wie</quote>
           </cit>
         </sense>
       </entry>
@@ -86902,14 +86910,20 @@
           <number>sg</number>
           <gen>m</gen>
         </gramGrp>
+        <note type="usage">archaisch auch für den Tierschwanz</note>
         <sense level="1">
           <cit type="trans">
-            <quote>Unzucht</quote>
+            <quote>Penis</quote>
           </cit>
         </sense>
         <sense level="1">
           <cit type="trans">
-            <quote>Männlichkeit </quote>
+            <quote>Unzucht, Männlichkeit</quote>
+          </cit>
+        </sense>
+        <sense level="1">
+          <cit type="trans">
+            <quote>Schwanz</quote>
           </cit>
         </sense>
       </entry>
@@ -91972,7 +91986,7 @@
         </gramGrp>
         <sense level="1">
           <cit type="trans">
-            <quote>können </quote>
+            <quote>können</quote>
           </cit>
         </sense>
       </entry>
@@ -92183,7 +92197,7 @@
         </gramGrp>
         <sense level="1">
           <cit type="trans">
-            <quote>der Letzte, jüngst Vergangene </quote>
+            <quote>der Letzte, jüngst Vergangene</quote>
           </cit>
         </sense>
       </entry>
@@ -100467,7 +100481,7 @@
         </gramGrp>
         <sense level="1">
           <cit type="trans">
-            <quote>, zurückerlangen</quote>
+            <quote>zurückerlangen</quote>
           </cit>
         </sense>
         <sense level="1">
@@ -102216,7 +102230,7 @@
         </form>
         <sense level="1">
           <cit type="trans">
-            <quote>- Getreideversorgung</quote>
+            <quote>Getreideversorgung</quote>
           </cit>
         </sense>
       </entry>
