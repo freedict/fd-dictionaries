@@ -19,7 +19,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>1.0.1</edition>
+        <edition>1.0.2</edition>
       </editionStmt>
       <extent>5501 headwords</extent>
       <publicationStmt>
@@ -28,7 +28,7 @@
           <p>© 2009-2017 Sebastian Humenda</p>
           <p>Available under the terms of the GNU General Public Licence, version 3 (or at your option any later version, published by the FSF).</p>
         </availability>
-        <date when="2017-10-27">27th of October 2017</date>
+        <date when="2017-11-06">6th of November 2017</date>
         <pubPlace>
           <ref>http://freedict.org/</ref>
         </pubPlace>
@@ -54,6 +54,9 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="1.0.2" when="2017-11-06" who="humenda">
+        <p>Fix some gender and POS issues, remove duplicated translations.</p>
+      </change>
       <change n="1.0.1" who="humenda" when="2017-10-27">
         <list>
           <item>fix spacing issues</item>
@@ -42900,11 +42903,6 @@
             <quote>dahin, dorthin</quote>
           </cit>
         </sense>
-        <sense level="1">
-          <cit type="trans">
-            <quote>hierhin</quote>
-          </cit>
-        </sense>
       </entry>
       <entry xml:id="vrb_head_eo_ire">
         <form xml:lang="la">
@@ -48528,14 +48526,18 @@
           </cit>
         </sense>
       </entry>
-      <entry xml:id="sub_fligo_">
+      <entry xml:id="vrb_head_fligo_fligere">
         <form xml:lang="la">
           <orth>fligo</orth>
+          <form type="infl">
+            <orth type="inf">fligere</orth>
+          </form>
         </form>
         <gramGrp>
-          <pos>n</pos>
           <number>sg</number>
-          <gen/>
+          <mood>ind</mood>
+          <tns>praes</tns>
+          <pos>v</pos>
         </gramGrp>
         <sense level="1">
           <cit type="trans">
@@ -53110,7 +53112,7 @@
           </cit>
         </sense>
       </entry>
-      <entry xml:id="sub_halophanta_">
+      <entry xml:id="sub_halophanta_f">
         <form xml:lang="la">
           <orth>halophanta</orth>
           <form type="infl">
@@ -53123,7 +53125,7 @@
         <gramGrp>
           <pos>n</pos>
           <number>sg</number>
-          <gen/>
+          <gen>f</gen>
         </gramGrp>
         <sense level="1">
           <cit type="trans">
