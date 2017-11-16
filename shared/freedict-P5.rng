@@ -5736,6 +5736,23 @@ distribution of a text.</a:documentation>
          <oneOrMore>
             <ref name="tei_model.pLike"/>
          </oneOrMore>
+
+         <!-- Make sure that at least one <p> contains a <ref target=""></ref>. This should be the license name and URL -->
+         <zeroOrMore>
+            <element name="p"><text/></element>
+         </zeroOrMore>
+         <element name="p">
+            <text/>
+            <element name="ref">
+               <attribute name="target"/>
+               <text/>
+            </element>
+            <text/>
+         </element>
+         <zeroOrMore>
+            <element name="p"><text/></element>
+         </zeroOrMore>
+
          <ref name="tei_att.global.attribute.xmlid"/>
          <ref name="tei_att.global.attribute.n"/>
          <ref name="tei_att.global.attribute.xmllang"/>
