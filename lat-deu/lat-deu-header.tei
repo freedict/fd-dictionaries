@@ -20,14 +20,14 @@
       <editionStmt>
         <edition>1.0.2</edition>
       </editionStmt>
-      <extent>5501 headwords</extent>
+      <extent>5500 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability>
           <p>© 2009-2017 Sebastian Humenda</p>
           <p>Available under the terms of the GNU General Public Licence, version 3 (or at your option any later version, published by the FSF).</p>
         </availability>
-        <date when="2017-11-06">6th of November 2017</date>
+        <date when="2017-11-18">Nov 18, 2017</date>
         <pubPlace><ref>http://freedict.org/</ref></pubPlace>
       </publicationStmt>
       <notesStmt>
@@ -51,30 +51,36 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="1.0.3" when="2017-11-18" who="humenda">
+        <list>
+          <item>correct various minor issues</item>
+          <item>remove empty XML nodes</item>
+          <item>add word(s)</item>
+      </list></change>
       <change n="1.0.2" when="2017-11-06" who="humenda">
-        <p>Fix some gender and POS issues, remove duplicated translations.</p>
+        Fix some gender and POS issues, remove duplicated translations.
       </change>
-      <change n="1.0.1" who="humenda" when="2017-10-27">
+      <change n="1.0.1" when="2017-10-27" who="humenda">
         <list>
           <item>fix spacing issues</item>
           <item>strip unwanted words from the untransformed source, improve markup</item>
         </list>
       </change>
-      <change n="1.0" who="humenda" when="2017-08-23">
+      <change n="1.0" when="2017-08-23" who="humenda">
         <list><item>added remaining words from word list</item>
           <item>add particles like -ne or -ve</item>
           <item>Improve TEI markup</item>
         </list>
       </change>
-      <change n="0.4" who="humenda" when="2011-02-03">
+      <change n="0.4" when="2011-02-03" who="humenda">
         <list><item>added more words; now 4500 headwords</item></list>
       </change>
-      <change n="0.3.1" who="humenda" when="2010-11-27">
+      <change n="0.3.1" when="2010-11-27" who="humenda">
         <list><item>fixed a minor bug, added a few words</item>
           <item>pushed in an important feature I forgot (list inflections at the verb's head form)</item>
         </list>
       </change>
-      <change n="0.3" who="humenda" when="2010-11-24">
+      <change n="0.3" when="2010-11-24" who="humenda">
         <list>
           <item>extended database to 35xx words</item>
           <item>added Latin special cases; that are verbs only available in 3rd person</item>
@@ -84,33 +90,32 @@
           <item>also some bugfixes.</item>
         </list>
       </change>
-      <change n="0.2.3" who="humenda" when="2010-04-07">
+      <change n="0.2.3" when="2010-04-07" who="humenda">
         <list><item>introduced pronomes, numerals, prepositions and conjungtions</item>
           <item>added words, fixed words (now 1800)</item>
           <item>increased complexity, mainly on verbs</item>
         </list>
       </change>
-      <change n="0.2.2" who="humenda" when="2010-03-01"><list>
+      <change n="0.2.2" when="2010-03-01" who="humenda"><list>
           <item>Fixed bug with doubled id's: auto-generated id's now take as much from the headword (genitivie form, gender, etc.) as possible</item>
           <item>Deleted some doubled words, checked others twice</item>
           <item>Added a few new words for a new version</item> </list>
       </change>
-      <change n="0.2.1" who="bansp" when="2010-02-25">Started fixing it the same way I did the previous version, but gave up - there are too many entries with the same IDs (42 remain, I removed or merged a few); changed @id to @xml:id, removed commas from IDs, removed null-string IDs, touched the header in a few places.</change>
-      <change n="0.2.1" who="humenda" when="2010-02-24">
+      <change n="0.2.1" when="2010-02-25" who="bansp">Started fixing it the same way I did the previous version, but gave up - there are too many entries with the same IDs (42 remain, I removed or merged a few); changed @id to @xml:id, removed commas from IDs, removed null-string IDs, touched the header in a few places.</change>
+      <change n="0.2.1" when="2010-02-24" who="humenda">
         <list><item>roughly about 1120 words</item>
           <item>now also adverbs and phrases added</item></list>
       </change>
-      <change n="0.1.2" who="humenda" when="2010-01-07">
+      <change n="0.1.2" when="2010-01-07" who="humenda">
         <list><item>500 Headwords: adjectives, nouns and verbs</item>
           <item>First "usable" database, but still extremely small</item></list>
       </change>
-      <change n="0.1" who="humenda" when="2009-12-20">
+      <change n="0.1" when="2009-12-20" who="humenda">
         <list><item>200 words written. Main goal was to get used to TEI XML.</item>
         </list>
       </change>
     </revisionDesc>
   </teiHeader>
-
   <text xml:lang="de">
     <body>
     </body>
