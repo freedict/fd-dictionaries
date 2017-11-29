@@ -5740,11 +5740,13 @@ distribution of a text.</a:documentation>
          </zeroOrMore>
          <element name="p">
             <text/>
-            <element name="ref">
-               <attribute name="target"/>
+            <oneOrMore>
+               <element name="ref">
+                  <attribute name="target"/>
+                  <text/>
+               </element>
                <text/>
-            </element>
-            <text/>
+            </oneOrMore>
          </element>
          <zeroOrMore>
             <ref name="tei_model.pLike"/>
