@@ -10,19 +10,18 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.3</edition>
+        <edition>0.3.1</edition>
       </editionStmt>
-      <extent>about 1700 headwords</extent>
+      <extent>1693 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2014 by various authors listed below.</p>
+          <p>Copyright (C) 1999-2017 by various authors listed below.</p>
           <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
         </availability>
         <pubPlace>
           <ref target="http://freedict.org/">http://freedict.org/</ref>
         </pubPlace>
-        <idno type="svn">$Id$</idno>
       </publicationStmt>
       <notesStmt>
         <note type="status">too small</note>
@@ -45,11 +44,18 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2017-12-03" who="humenda" n="0.3.1">
+        <name>Sebastian Humenda</name>
+        <list>
+          <item>update licencing stanza (thanks to Karl Bartel)</item>
+          <item>remove duplicated entries</item>
+        </list>
+      </change>
       <change when="2014-02-15">
         <name>Nikolay Shaplov</name>: Added spaces to the translations everywhere they needed. Some typos fixed. Some absurd article marked with correct me in a XML comment
       </change>
       <change when="2014-02-13">
-        <name>Nikolay Shaplov</name>: Globaly replace another one wrong unicode symbol with correct one (U0453 -> Л)
+        <name>Nikolay Shaplov</name>: Globaly replace another one wrong unicode symbol with correct one (U0453 -&gt; Л)
       </change>
       <change when="2014-02-12">
         <name>Nikolay Shaplov</name>: correct spacing errors and more importantly replace all occurrences of an invalid Unicode sign for a Russian character
@@ -3134,12 +3140,12 @@
           <orth>act</orth>
           <pron>ækt</pron>
         </form>
-        <sense n="1">
+        <sense>
           <cit type="trans">
             <quote>акт</quote>
           </cit>
         </sense>
-        <sense n="3">
+        <sense>
           <cit type="trans">
             <quote>делать</quote>
           </cit>
@@ -17128,12 +17134,7 @@
           <orth>so</orth>
           <pron>sou</pron>
         </form>
-        <sense n="1">
-          <cit type="trans">
-            <quote>так</quote>
-          </cit>
-        </sense>
-        <sense n="2">
+        <sense>
           <cit type="trans">
             <quote>так</quote>
           </cit>
