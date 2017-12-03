@@ -10,13 +10,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.2</edition>
          </editionStmt>
-         <extent>about 5400 headwords</extent>
+         <extent>5479 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
             </availability>
             <pubPlace>
@@ -35,12 +35,19 @@
       <encodingDesc>
          <projectDesc>
             <p>This dictionary comes to you through nice people making it available for free and for
-               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
                available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2017-12-03" who="humenda" n="0.2">
+            <name>Sebastian Humenda</name>
+            <list>
+               <item>update licencing stanza (thanks to Karl Bartel)</item>
+               <item>remove duplicated entries</item>
+               <item>fix enumeration in one translation</item>
+            </list>
+         </change>
          <change when="2010-10-24">
             <date>2010-10-24</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
@@ -130,22 +137,12 @@
                <orth>American</orth>
                <pron>əmerikən</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>amerikansk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>amerikan</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>amerikansk</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>amerikan</quote>
                </cit>
@@ -419,12 +416,7 @@
                <orth>Bavaria</orth>
                <pron>beivɛəriə</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Bajern</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Bajern</quote>
                </cit>
@@ -658,12 +650,7 @@
                   <quote>kristlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kristen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>Christianity</orth>
@@ -831,12 +818,7 @@
                <orth>England</orth>
                <pron>iŋglənd</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>England</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>England</quote>
                </cit>
@@ -902,12 +884,7 @@
                <orth>Europa</orth>
                <pron>jeəroupə</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Europa</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Europa</quote>
                </cit>
@@ -1093,12 +1070,7 @@
                <orth>Frisian</orth>
                <pron>fziən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fris</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>fris</quote>
                </cit>
@@ -1548,23 +1520,13 @@
                   <quote>jude</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>jude</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>Jewish</orth>
                <pron>dʒuːiʃ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>judisk</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>judisk</quote>
                </cit>
@@ -1894,12 +1856,7 @@
                <orth>Mr</orth>
                <pron>mrændmz</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>herrskap</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>herrskap</quote>
                </cit>
@@ -2125,18 +2082,7 @@
                   <quote>part</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>andel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>del</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>part</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>Pentecost</orth>
@@ -2251,22 +2197,12 @@
                <orth>Roman</orth>
                <pron>roumən</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>romersk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>romare</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>romersk</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>romare</quote>
                </cit>
@@ -2277,12 +2213,7 @@
                <orth>Romania</orth>
                <pron>rəmeiniə</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Rumänien</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Rumänien</quote>
                </cit>
@@ -2326,12 +2257,7 @@
                <orth>Russia</orth>
                <pron>rʌʃə</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Ryssland</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Ryssland</quote>
                </cit>
@@ -2402,15 +2328,7 @@
                <orth>Scandinavia</orth>
                <pron>skændineiviə</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Norden</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Skandinavien</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Norden</quote>
                </cit>
@@ -2755,37 +2673,32 @@
             <form>
                <orth>Twelfth</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>trettondag</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>%h‐able</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>‐bar</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>%h‐ible</quote>
                </cit>
             </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>‐bar</quote>
-               </cit>
-            </sense>
-            <sense n="6">
+            <sense>
                <cit type="trans">
                   <quote>%h‐less</quote>
                </cit>
             </sense>
-            <sense n="7">
+            <sense>
                <cit type="trans">
                   <quote>‐lös</quote>
                </cit>
@@ -2821,12 +2734,7 @@
                <orth>Ukraine</orth>
                <pron>juːkn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Ukraina</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Ukraina</quote>
                </cit>
@@ -3521,32 +3429,17 @@
                <orth>absolute</orth>
                <pron>æbsəluːt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>absolut</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>absolut</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>absolut</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>absolut</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>komplett</quote>
                </cit>
             </sense>
-            <sense n="6">
+            <sense>
                <cit type="trans">
                   <quote>gränslös</quote>
                </cit>
@@ -3720,12 +3613,7 @@
                   <quote>akademi</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>akademi</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>accelerator</orth>
@@ -3820,10 +3708,7 @@
                <cit type="trans">
                   <quote>ackvisition</quote>
                </cit>
-               <cit type="trans">
-                  <quote>förvärv</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -4065,47 +3950,42 @@
                <orth>account</orth>
                <pron>əkaunt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>explikation</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>faktura</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>nota</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>explikation</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>betrakta</quote>
                </cit>
             </sense>
-            <sense n="6">
+            <sense>
                <cit type="trans">
                   <quote>konto</quote>
                </cit>
             </sense>
-            <sense n="7">
+            <sense>
                <cit type="trans">
                   <quote>tro</quote>
                </cit>
             </sense>
-            <sense n="8">
+            <sense>
                <cit type="trans">
                   <quote>motiv</quote>
                </cit>
             </sense>
-            <sense n="9">
+            <sense>
                <cit type="trans">
                   <quote>anse</quote>
                </cit>
@@ -4113,9 +3993,9 @@
                   <quote>tycka</quote>
                </cit>
             </sense>
-            <sense n="10">
+            <sense>
                <cit type="trans">
-                  <quote>10.beskrivning</quote>
+                  <quote>beskrivning</quote>
                </cit>
             </sense>
          </entry>
@@ -4124,17 +4004,12 @@
                <orth>accountable</orth>
                <pron>əkauntəbl</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>förklarlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ansvarig</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>ansvarig</quote>
                </cit>
@@ -4167,15 +4042,7 @@
                <orth>account</orth>
                <pron>əkauntfər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förklara</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>utlägga</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förklara</quote>
                </cit>
@@ -4258,9 +4125,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>ackurat</quote>
-               </cit>
                <cit type="trans">
                   <quote>noga</quote>
                </cit>
@@ -4444,10 +4308,7 @@
                <cit type="trans">
                   <quote>längtaefter</quote>
                </cit>
-               <cit type="trans">
-                  <quote>smäkta</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -4498,13 +4359,7 @@
                <cit type="trans">
                   <quote>dåd</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gärning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>handling</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>framgång</quote>
@@ -4671,25 +4526,17 @@
                <orth>acquisition</orth>
                <pron>ækwiziʃən</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>ackvisition</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förvärv</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>ackvisition</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>förvärv</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>anskaffning</quote>
                </cit>
@@ -4700,18 +4547,7 @@
                   <quote>köp</quote>
                </cit>
             </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>anskaffning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>inköp</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köp</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>acquisitive</orth>
@@ -4773,7 +4609,7 @@
                <orth>act</orth>
                <pron>ækt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>gärning</quote>
                </cit>
@@ -4781,38 +4617,27 @@
                   <quote>handling</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>aktstycke</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>aktstycke</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>göra</quote>
                </cit>
             </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>dåd</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gärning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>handling</quote>
-               </cit>
-            </sense>
-            <sense n="6">
+               </sense>
+            <sense>
                <cit type="trans">
                   <quote>påverka</quote>
                </cit>
             </sense>
-            <sense n="7">
+            <sense>
                <cit type="trans">
                   <quote>processa</quote>
                </cit>
@@ -4852,13 +4677,7 @@
                <cit type="trans">
                   <quote>dåd</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gärning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>handling</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>rättegång</quote>
@@ -4887,17 +4706,7 @@
                <orth>active</orth>
                <pron>æktiv</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>aktiv</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>aktiv</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>aktiv</quote>
                </cit>
@@ -5199,17 +5008,7 @@
                <orth>administer</orth>
                <pron>ədministər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förvalta</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förvalta</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>förvalta</quote>
                </cit>
@@ -5231,12 +5030,7 @@
                <orth>administrator</orth>
                <pron>ədministreitər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>administratör</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>administratör</quote>
                </cit>
@@ -5419,12 +5213,7 @@
                <orth>adopt</orth>
                <pron>ədɔpt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>adoptere</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>adoptere</quote>
                </cit>
@@ -5498,12 +5287,7 @@
                   <quote>vuxen</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>vuxen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>advance</orth>
@@ -5539,12 +5323,7 @@
                   <quote>gagn</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>gagn</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>advantageous</orth>
@@ -6137,12 +5916,7 @@
                   <quote>verktyg</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>agent</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>aggrandize</orth>
@@ -6269,15 +6043,7 @@
                   <quote>nyfiken</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>frågvis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nyfiken</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>agonize</orth>
@@ -6362,12 +6128,7 @@
                   <quote>trevlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>trevlig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>agreement</orth>
@@ -6401,18 +6162,7 @@
                <orth>agriculture</orth>
                <pron>ægrikʌltʃər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>jordbruk</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>lantbruk</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>åkerbruk</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>jordbruk</quote>
                </cit>
@@ -6765,7 +6515,7 @@
                <orth>alien</orth>
                <pron>eiliən</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>främmande</quote>
                </cit>
@@ -6773,12 +6523,7 @@
                   <quote>utländsk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>främmande</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>motsatt</quote>
                </cit>
@@ -7099,12 +6844,7 @@
                <orth>alphabet</orth>
                <pron>ælfəbet</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>alfabet</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>alfabet</quote>
                </cit>
@@ -7628,10 +7368,7 @@
                <cit type="trans">
                   <quote>best</quote>
                </cit>
-               <cit type="trans">
-                  <quote>djur</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -7735,12 +7472,7 @@
                   <quote>anonym</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>anonym</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>another</orth>
@@ -7834,12 +7566,7 @@
                <orth>antithesis</orth>
                <pron>æntiθəsis</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>motsats</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>motsats</quote>
                </cit>
@@ -7994,9 +7721,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>ursäktesig</quote>
-               </cit>
-               <cit type="trans">
                   <quote>undskyllasig</quote>
                </cit>
             </sense>
@@ -8078,12 +7802,7 @@
                   <quote>vy</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>anseende</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>appear</orth>
@@ -8374,17 +8093,7 @@
                <orth>archipelago</orth>
                <pron>ɑːkipeləgou</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>arkipelag</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>arkipelag</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>arkipelag</quote>
                </cit>
@@ -8578,12 +8287,7 @@
                   <quote>inreda</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>inreda</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>arrangement</orth>
@@ -8702,22 +8406,12 @@
                <orth>article</orth>
                <pron>ɑːtikl</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>artikel</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>artikel</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>artikel</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>objekt</quote>
                </cit>
@@ -8772,7 +8466,7 @@
                <orth>as</orth>
                <pron>əz</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>hur</quote>
                </cit>
@@ -8786,21 +8480,7 @@
                   <quote>såsom</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hur</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>huru</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>liksom</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>såsom</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>alltefter</quote>
                </cit>
@@ -8811,7 +8491,7 @@
                   <quote>jämlikt</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>sålunda</quote>
                </cit>
@@ -9187,9 +8867,6 @@
                   <quote>förundran</quote>
                </cit>
                <cit type="trans">
-                  <quote>förvåning</quote>
-               </cit>
-               <cit type="trans">
                   <quote>undran</quote>
                </cit>
             </sense>
@@ -9232,12 +8909,7 @@
                <orth>as</orth>
                <pron>əzəz</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>lika...som</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>lika...som</quote>
                </cit>
@@ -9267,17 +8939,7 @@
                   <quote>vid</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>på</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>vid</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>atelier</orth>
@@ -9319,12 +8981,7 @@
                <orth>atlas</orth>
                <pron>ætləs</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>atlas</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>atlas</quote>
                </cit>
@@ -9468,9 +9125,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>bemödande</quote>
-               </cit>
                <cit type="trans">
                   <quote>försök</quote>
                </cit>
@@ -9705,12 +9359,7 @@
                <orth>auditory</orth>
                <pron>ɔːditriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>auditorium</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>auditorium</quote>
                </cit>
@@ -9743,17 +9392,7 @@
                   <quote>tant</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>moster</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>faster</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>authentic</orth>
@@ -9778,12 +9417,7 @@
                   <quote>författare</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>författare</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>automatic</orth>
@@ -10281,15 +9915,7 @@
                <orth>bag</orth>
                <pron>bæg</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>säck</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>väska</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>säck</quote>
                </cit>
@@ -10585,15 +10211,7 @@
                   <quote>förband</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>bandage</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>förband</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bandit</orth>
@@ -10637,9 +10255,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>bank</quote>
-               </cit>
                <cit type="trans">
                   <quote>sandbank</quote>
                </cit>
@@ -10839,12 +10454,7 @@
                   <quote>skälla</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>bark</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>barley</orth>
@@ -10924,12 +10534,7 @@
                <orth>barracks</orth>
                <pron>bærəks</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kasern</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kasern</quote>
                </cit>
@@ -11205,17 +10810,7 @@
                <orth>battery</orth>
                <pron>bætəriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>batteri</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>batteri</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>batteri</quote>
                </cit>
@@ -11501,9 +11096,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bli</quote>
-               </cit>
-               <cit type="trans">
                   <quote>bliva</quote>
                </cit>
             </sense>
@@ -11513,12 +11105,7 @@
                <orth>become</orth>
                <pron>bikʌmingeidʒd</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förlovasig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förlovasig</quote>
                </cit>
@@ -11529,12 +11116,7 @@
                <orth>become</orth>
                <pron>bikʌmingeidʒdwið</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förlovasigmed</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förlovasigmed</quote>
                </cit>
@@ -11704,12 +11286,7 @@
                <orth>beetle</orth>
                <pron>biːtl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>skalbagge</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>skalbagge</quote>
                </cit>
@@ -11793,15 +11370,7 @@
                   <quote>börja</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>begynna</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>börja</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>beginner</orth>
@@ -11818,15 +11387,7 @@
                <orth>beginning</orth>
                <pron>biginiŋ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>begynnelse</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>början</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>begynnelse</quote>
                </cit>
@@ -11963,15 +11524,7 @@
                   <quote>under</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>nedan</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nere</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>belt</orth>
@@ -12044,12 +11597,7 @@
                   <quote>gagn</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>gagn</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bent</orth>
@@ -12093,12 +11641,7 @@
                   <quote>bredvid</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>vid</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>besides</orth>
@@ -12159,17 +11702,7 @@
                <orth>betrothal</orth>
                <pron>bitrouðəl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förlovning</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förlovning</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>förlovning</quote>
                </cit>
@@ -12514,12 +12047,7 @@
                <orth>be</orth>
                <pron>bmærid</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>giftasig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>giftasig</quote>
                </cit>
@@ -12666,9 +12194,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>cykel</quote>
-               </cit>
-               <cit type="trans">
                   <quote>följd</quote>
                </cit>
                <cit type="trans">
@@ -12715,9 +12240,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>cykel</quote>
-               </cit>
                <cit type="trans">
                   <quote>följd</quote>
                </cit>
@@ -12795,9 +12317,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>binda</quote>
-               </cit>
                <cit type="trans">
                   <quote>snöra</quote>
                </cit>
@@ -12913,12 +12432,7 @@
                <orth>black</orth>
                <pron>blæk</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>svart</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>svart</quote>
                </cit>
@@ -12929,12 +12443,7 @@
                <orth>blackberry</orth>
                <pron>blækbəriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>björnbär</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>björnbär</quote>
                </cit>
@@ -12995,10 +12504,7 @@
                <cit type="trans">
                   <quote>stjälk</quote>
                </cit>
-               <cit type="trans">
-                  <quote>strå</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -13338,9 +12844,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>blåsa</quote>
-               </cit>
-               <cit type="trans">
                   <quote>fläkta</quote>
                </cit>
             </sense>
@@ -13369,12 +12872,7 @@
                   <quote>blå</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>blå</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>blueberry</orth>
@@ -13533,12 +13031,7 @@
                   <quote>koka</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>koka</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bold</orth>
@@ -13753,12 +13246,7 @@
                   <quote>mästare</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>chef</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>botany</orth>
@@ -14032,17 +13520,7 @@
                <orth>bracelet</orth>
                <pron>breislit</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>armband</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>armband</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>armband</quote>
                </cit>
@@ -14228,12 +13706,7 @@
                   <quote>knäcka</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>bryta</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>breakable</orth>
@@ -14683,12 +14156,7 @@
                <orth>brown</orth>
                <pron>braun</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>brun</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>brun</quote>
                </cit>
@@ -15122,12 +14590,7 @@
                <orth>burst</orth>
                <pron>bəːst</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>rämna</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>rämna</quote>
                </cit>
@@ -15146,23 +14609,13 @@
                   <quote>jordfästa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>begrava</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bush</orth>
                <pron>buʃ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>buske</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>buske</quote>
                </cit>
@@ -15183,9 +14636,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>affär</quote>
-               </cit>
-               <cit type="trans">
                   <quote>handel</quote>
                </cit>
             </sense>
@@ -15201,9 +14651,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>affärsman</quote>
-               </cit>
                <cit type="trans">
                   <quote>handelsman</quote>
                </cit>
@@ -15318,12 +14765,7 @@
                <orth>button</orth>
                <pron>bʌtn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>knapp</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>knapp</quote>
                </cit>
@@ -15334,7 +14776,7 @@
                <orth>buy</orth>
                <pron>bəiː</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>anskaffa</quote>
                </cit>
@@ -15342,47 +14784,7 @@
                   <quote>köpa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="6">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="7">
+            <sense>
                <cit type="trans">
                   <quote>anskaffning</quote>
                </cit>
@@ -15474,9 +14876,6 @@
             <sense n="4">
                <cit type="trans">
                   <quote>alltefter</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>efter</quote>
                </cit>
                <cit type="trans">
                   <quote>jämlikt</quote>
@@ -15847,9 +15246,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>kalla</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ropa</quote>
                </cit>
             </sense>
@@ -16170,9 +15566,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>kapten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>skeppare</quote>
                </cit>
             </sense>
@@ -16420,7 +15813,7 @@
                <orth>case</orth>
                <pron>keis</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>affär</quote>
                </cit>
@@ -16428,12 +15821,7 @@
                   <quote>sak</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fall</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>fall</quote>
                </cit>
@@ -16862,12 +16250,7 @@
                <orth>cell</orth>
                <pron>sel</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>cell</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>cell</quote>
                </cit>
@@ -17013,12 +16396,7 @@
                <orth>ceremony</orth>
                <pron>seriməniː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ceremoni</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>ceremoni</quote>
                </cit>
@@ -17186,7 +16564,7 @@
                <orth>change</orth>
                <pron>tʃeindʒ</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>förvandla</quote>
                </cit>
@@ -17197,10 +16575,7 @@
                   <quote>ändra</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förvandla</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>förväxla</quote>
                </cit>
@@ -17211,20 +16586,12 @@
                   <quote>växla</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>förvandla</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ändra</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>ändring</quote>
                </cit>
             </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>förändring</quote>
                </cit>
@@ -17291,9 +16658,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>art</quote>
-               </cit>
                <cit type="trans">
                   <quote>natur</quote>
                </cit>
@@ -17665,12 +17029,7 @@
                <orth>chemistry</orth>
                <pron>kemistriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kemi</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kemi</quote>
                </cit>
@@ -17764,12 +17123,7 @@
                <orth>chestnut</orth>
                <pron>tʃesnʌt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kastanje</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kastanje</quote>
                </cit>
@@ -17846,12 +17200,7 @@
                   <quote>överman</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>chef</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>chief</orth>
@@ -17883,19 +17232,8 @@
                <cit type="trans">
                   <quote>barn</quote>
                </cit>
-               <cit type="trans">
-                  <quote>unge</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>barn</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>unge</quote>
-               </cit>
-            </sense>
-         </entry>
+               </sense>
+            </entry>
          <entry>
             <form>
                <orth>childless</orth>
@@ -18140,12 +17478,7 @@
             <form>
                <orth>church</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kyrka</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kyrka</quote>
                </cit>
@@ -18156,12 +17489,7 @@
                <orth>church</orth>
                <pron>tʃəːtʃ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kyrka</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kyrka</quote>
                </cit>
@@ -18268,9 +17596,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>anförande</quote>
-               </cit>
                <cit type="trans">
                   <quote>citat</quote>
                </cit>
@@ -19236,7 +18561,7 @@
                <orth>column</orth>
                <pron>kɔləm</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>pelare</quote>
                </cit>
@@ -19244,12 +18569,7 @@
                   <quote>spalt</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>spalt</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>rubrik</quote>
                </cit>
@@ -19498,22 +18818,10 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>befalla</quote>
-               </cit>
-               <cit type="trans">
                   <quote>påbjuda</quote>
                </cit>
             </sense>
             <sense n="4">
-               <cit type="trans">
-                  <quote>befallning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>befäl</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>order</quote>
-               </cit>
                <cit type="trans">
                   <quote>påbud</quote>
                </cit>
@@ -19538,15 +18846,7 @@
                <orth>commence</orth>
                <pron>kəmens</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>begynna</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>börja</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>begynna</quote>
                </cit>
@@ -19560,15 +18860,7 @@
                <orth>commencement</orth>
                <pron>kəmensmənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>begynnelse</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>början</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>begynnelse</quote>
                </cit>
@@ -19959,12 +19251,7 @@
                <orth>compose</orth>
                <pron>kəmpouz</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>komponera</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>komponera</quote>
                </cit>
@@ -20343,15 +19630,7 @@
                   <quote>tillit</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förtroende</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>tillit</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>confine</orth>
@@ -20827,12 +20106,7 @@
                <orth>contrary</orth>
                <pron>kɔntrɛəriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>motsatt</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>motsatt</quote>
                </cit>
@@ -21077,17 +20351,7 @@
                <orth>cordial</orth>
                <pron>kɔːdiəl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>hjärtlig</quote>
                </cit>
@@ -21346,12 +20610,7 @@
                <orth>cough</orth>
                <pron>kɔf</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hosta</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>hosta</quote>
                </cit>
@@ -21617,12 +20876,7 @@
                <orth>cousin</orth>
                <pron>kʌzn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kusin</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kusin</quote>
                </cit>
@@ -21744,17 +20998,7 @@
                <orth>crane</orth>
                <pron>krein</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kran</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kran</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>kran</quote>
                </cit>
@@ -22079,12 +21323,7 @@
                   <quote>kråka</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kråka</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>crowd</orth>
@@ -22098,12 +21337,7 @@
                   <quote>mängd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hop</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>crucify</orth>
@@ -22357,9 +21591,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>ström</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ströming</quote>
                </cit>
             </sense>
@@ -22577,9 +21808,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>cykel</quote>
-               </cit>
                <cit type="trans">
                   <quote>följd</quote>
                </cit>
@@ -22851,22 +22079,17 @@
                <orth>date</orth>
                <pron>deit</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>dadel</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>dadel</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>datera</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>datum</quote>
                </cit>
@@ -23063,15 +22286,7 @@
                   <quote>kostbar</quote>
                </cit>
             </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>dyr</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dyrbar</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>death</orth>
@@ -23486,12 +22701,7 @@
                <orth>demonstrate</orth>
                <pron>demənstreit</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>exponera</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>exponera</quote>
                </cit>
@@ -23511,9 +22721,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>kyffe</quote>
-               </cit>
                <cit type="trans">
                   <quote>näste</quote>
                </cit>
@@ -23687,18 +22894,7 @@
                   <quote>djuplek</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>djup</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>djuphet</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>djuplek</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>derive</orth>
@@ -23893,12 +23089,7 @@
                <orth>despite</orth>
                <pron>dispait</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>trots</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>trots</quote>
                </cit>
@@ -24240,9 +23431,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>olik</quote>
-               </cit>
-               <cit type="trans">
                   <quote>olika</quote>
                </cit>
             </sense>
@@ -24530,12 +23718,7 @@
                <orth>disagreement</orth>
                <pron>disəgriːmənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>oenighet</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>oenighet</quote>
                </cit>
@@ -24557,12 +23740,7 @@
                <orth>disappoint</orth>
                <pron>disəpɔint</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>görabesviken</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>görabesviken</quote>
                </cit>
@@ -24579,9 +23757,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>besvikelse</quote>
-               </cit>
                <cit type="trans">
                   <quote>missräkning</quote>
                </cit>
@@ -24686,12 +23861,7 @@
                <orth>discord</orth>
                <pron>diskɔːd</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>oenighet</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>oenighet</quote>
                </cit>
@@ -24754,15 +23924,7 @@
                   <quote>ordaom</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>diskutera</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ordaom</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>disease</orth>
@@ -24796,12 +23958,7 @@
                <orth>dish</orth>
                <pron>diʃ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fat</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>fat</quote>
                </cit>
@@ -24900,12 +24057,7 @@
                <orth>disobedient</orth>
                <pron>disəbiːdiənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>olydig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>olydig</quote>
                </cit>
@@ -25036,12 +24188,7 @@
                <orth>dissension</orth>
                <pron>disenʃən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>oenighet</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>oenighet</quote>
                </cit>
@@ -25223,15 +24370,7 @@
                   <quote>frånskild</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>skild</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>frånskild</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>do</orth>
@@ -25468,18 +24607,7 @@
                <orth>down</orth>
                <pron>daun</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ned</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nedvänd</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ner</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>ned</quote>
                </cit>
@@ -26140,12 +25268,7 @@
                <orth>dye</orth>
                <pron>diː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>färg</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>färg</quote>
                </cit>
@@ -26942,10 +26065,7 @@
                <cit type="trans">
                   <quote>krama</quote>
                </cit>
-               <cit type="trans">
-                  <quote>omfamna</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -27087,15 +26207,7 @@
                   <quote>löngivare</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>arbetsgivare</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>löngivare</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>empress</orth>
@@ -27185,9 +26297,6 @@
                   <quote>slut</quote>
                </cit>
                <cit type="trans">
-                  <quote>ända</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ände</quote>
                </cit>
             </sense>
@@ -27274,17 +26383,7 @@
                <orth>engagement</orth>
                <pron>ingeidʒmənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förlovning</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förlovning</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>förlovning</quote>
                </cit>
@@ -27419,15 +26518,7 @@
                   <quote>förleda</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förföra</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>förleda</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>entire</orth>
@@ -28247,20 +27338,12 @@
                <orth>exhibit</orth>
                <pron>igzibit</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>exponera</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>exponera</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>exponera</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>utställa</quote>
                </cit>
@@ -28373,15 +27456,7 @@
                   <quote>kostbar</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>dyr</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dyrbar</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>experiment</orth>
@@ -28425,26 +27500,13 @@
                   <quote>utlägga</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förklara</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>utlägga</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>explanation</orth>
                <pron>ikspləneiʃən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>explikation</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>explikation</quote>
                </cit>
@@ -28687,12 +27749,7 @@
                   <quote>fabrik</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fabrik</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>factual</orth>
@@ -28877,18 +27934,7 @@
                   <quote>förälskasigi</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>blikäri</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bliförälskadi</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>förälskasigi</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>false</orth>
@@ -29381,12 +28427,7 @@
                <orth>female</orth>
                <pron>fiːmeil</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kvinnlig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kvinnlig</quote>
                </cit>
@@ -29652,27 +28693,17 @@
                <orth>field</orth>
                <pron>fiːld</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>åker</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>fält</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>fält</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>fält</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>field</orth>
@@ -29803,9 +28834,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>fil</quote>
-               </cit>
                <cit type="trans">
                   <quote>kö</quote>
                </cit>
@@ -30399,22 +29427,14 @@
                <cit type="trans">
                   <quote>fly</quote>
                </cit>
-               <cit type="trans">
-                  <quote>rymma</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
                <orth>fleet</orth>
                <pron>fliːt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>flotta</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>flotta</quote>
                </cit>
@@ -30509,15 +29529,7 @@
                   <quote>högvatten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>flod</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>högvatten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>floor</orth>
@@ -30803,15 +29815,7 @@
                   <quote>tass</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fot</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>tass</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>for</orth>
@@ -30855,12 +29859,7 @@
                <orth>forecast</orth>
                <pron>fɔːriːkɑːst</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>varsla</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>varsla</quote>
                </cit>
@@ -30890,12 +29889,7 @@
                   <quote>utländsk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>främmande</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>foreigner</orth>
@@ -30945,12 +29939,7 @@
                <orth>foretell</orth>
                <pron>fɔːtel</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>varsla</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>varsla</quote>
                </cit>
@@ -31439,12 +30428,7 @@
                   <quote>sötvatten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sötvatten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>friend</orth>
@@ -31465,10 +30449,7 @@
                <cit type="trans">
                   <quote>kompis</quote>
                </cit>
-               <cit type="trans">
-                  <quote>vän</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -31633,12 +30614,7 @@
                <orth>frost</orth>
                <pron>frɔst</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>frost</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>frost</quote>
                </cit>
@@ -32093,17 +31069,7 @@
                   <quote>fängelse</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>gape</orth>
@@ -32595,12 +31561,7 @@
                <orth>get</orth>
                <pron>getmærid</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>giftasig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>giftasig</quote>
                </cit>
@@ -32694,12 +31655,7 @@
                   <quote>jätte</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>jätte</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>gift</orth>
@@ -32977,12 +31933,7 @@
                <orth>glass</orth>
                <pron>glɑːs</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>glas</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>glas</quote>
                </cit>
@@ -33099,12 +32050,7 @@
                   <quote>limma</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>lim</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>gnat</orth>
@@ -33549,9 +32495,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>korn</quote>
-               </cit>
-               <cit type="trans">
                   <quote>spannmål</quote>
                </cit>
                <cit type="trans">
@@ -33770,12 +32713,7 @@
                <orth>grasshopper</orth>
                <pron>grɑːshɔpər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>gräshoppa</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>gräshoppa</quote>
                </cit>
@@ -33897,12 +32835,7 @@
                <orth>green</orth>
                <pron>griːn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>grön</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>grön</quote>
                </cit>
@@ -33957,12 +32890,7 @@
                <orth>grey</orth>
                <pron>grei</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>grå</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>grå</quote>
                </cit>
@@ -34110,12 +33038,7 @@
                   <quote>trupp</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>grupp</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>grow</orth>
@@ -34127,9 +33050,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>bli</quote>
-               </cit>
                <cit type="trans">
                   <quote>bliva</quote>
                </cit>
@@ -34195,17 +33115,7 @@
                <orth>grudge</orth>
                <pron>grʌdʒ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>agg</quote>
                </cit>
@@ -34317,22 +33227,17 @@
                <orth>guide</orth>
                <pron>gaid</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>vägledare</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>gid</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>gid</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>föra</quote>
                </cit>
@@ -34805,12 +33710,7 @@
                   <quote>svår</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>hård</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>hardly</orth>
@@ -35284,22 +34184,7 @@
                <orth>head</orth>
                <pron>hed</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>huvud</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>huvud</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>huvud</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>huvud</quote>
                </cit>
@@ -35453,17 +34338,7 @@
                <orth>hearty</orth>
                <pron>hɑːtiː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>hjärtlig</quote>
                </cit>
@@ -35581,12 +34456,7 @@
                   <quote>häl</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>häl</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>height</orth>
@@ -35597,12 +34467,7 @@
                   <quote>höjd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>höjd</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>heighten</orth>
@@ -35967,12 +34832,7 @@
                <orth>hiccup</orth>
                <pron>hikʌp</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hicka</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>hicka</quote>
                </cit>
@@ -36200,9 +35060,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>hyra</quote>
-               </cit>
-               <cit type="trans">
                   <quote>lega</quote>
                </cit>
             </sense>
@@ -36372,12 +35229,7 @@
                   <quote>hemåt</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hem</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>homy</orth>
@@ -36437,10 +35289,7 @@
                <cit type="trans">
                   <quote>honnör</quote>
                </cit>
-               <cit type="trans">
-                  <quote>ära</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -36473,10 +35322,7 @@
                <cit type="trans">
                   <quote>honnör</quote>
                </cit>
-               <cit type="trans">
-                  <quote>ära</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -36587,12 +35433,7 @@
                <orth>horn</orth>
                <pron>hɔːn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>horn</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>horn</quote>
                </cit>
@@ -36634,9 +35475,6 @@
             <sense n="3">
                <cit type="trans">
                   <quote>gruvlig</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>hemsk</quote>
                </cit>
                <cit type="trans">
                   <quote>hisklig</quote>
@@ -36689,12 +35527,7 @@
                <orth>horsepower</orth>
                <pron>hɔːspauər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hästkraft</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>hästkraft</quote>
                </cit>
@@ -36945,35 +35778,7 @@
                   <quote>såsom</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hur</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>huru</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>liksom</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>såsom</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>hur</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>huru</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>liksom</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>såsom</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>however</orth>
@@ -37122,17 +35927,12 @@
                <orth>humour</orth>
                <pron>hjuːmər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>humör</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>humör</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>humor</quote>
                </cit>
@@ -37522,12 +36322,7 @@
                   <quote>ideal</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ideal</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>identical</orth>
@@ -37763,12 +36558,7 @@
                   <quote>otålig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>otålig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>impel</orth>
@@ -38009,9 +36799,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>oberoende</quote>
-               </cit>
                <cit type="trans">
                   <quote>oavhängig</quote>
                </cit>
@@ -38314,12 +37101,7 @@
                <orth>initial</orth>
                <pron>iniʃl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>initialbokstav</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>initialbokstav</quote>
                </cit>
@@ -38450,15 +37232,7 @@
                   <quote>nyfiken</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>frågvis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nyfiken</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>insane</orth>
@@ -38595,12 +37369,7 @@
                   <quote>inspektor</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>inspektor</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>install</orth>
@@ -38689,12 +37458,7 @@
                <orth>insubordinate</orth>
                <pron>insəbɔːdineit</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>olydig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>olydig</quote>
                </cit>
@@ -38987,12 +37751,7 @@
                <orth>invention</orth>
                <pron>invenʃən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>uppfinning</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>uppfinning</quote>
                </cit>
@@ -39123,12 +37882,7 @@
                <orth>in</orth>
                <pron>inækʃən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>aktiv</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>aktiv</quote>
                </cit>
@@ -39189,12 +37943,7 @@
                <orth>in</orth>
                <pron>inspaitɔf</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>trots</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>trots</quote>
                </cit>
@@ -39252,21 +38001,7 @@
                   <quote>såsom</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hur</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>huru</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>liksom</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>såsom</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>iron</orth>
@@ -39420,17 +38155,7 @@
                <orth>jail</orth>
                <pron>dʒeil</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>fängelse</quote>
                </cit>
@@ -39585,15 +38310,7 @@
                   <quote>ädelsten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>juvel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ädelsten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>jeweller</orth>
@@ -39604,12 +38321,7 @@
                   <quote>juvelerare</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>juvelerare</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>job</orth>
@@ -39818,9 +38530,6 @@
             <sense n="3">
                <cit type="trans">
                   <quote>skål</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>stop</quote>
                </cit>
                <cit type="trans">
                   <quote>så</quote>
@@ -40383,15 +39092,7 @@
                   <quote>kännedom</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kunskap</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>kännedom</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>know</orth>
@@ -40514,12 +39215,7 @@
                <orth>ladies</orth>
                <pron>leidizænddʒentlmen</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>herrskap</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>herrskap</quote>
                </cit>
@@ -40539,10 +39235,7 @@
                <cit type="trans">
                   <quote>fru</quote>
                </cit>
-               <cit type="trans">
-                  <quote>dam</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -41196,12 +39889,7 @@
                <orth>leg</orth>
                <pron>leg</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ben</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>ben</quote>
                </cit>
@@ -41322,12 +40010,7 @@
                   <quote>längd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>längd</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>lengthen</orth>
@@ -41640,27 +40323,22 @@
                <orth>light</orth>
                <pron>lait</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>antända</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ljus</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>belysa</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>ljus</quote>
                </cit>
             </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>klen</quote>
                </cit>
@@ -41668,7 +40346,7 @@
                   <quote>svag</quote>
                </cit>
             </sense>
-            <sense n="6">
+            <sense>
                <cit type="trans">
                   <quote>lätt</quote>
                </cit>
@@ -42506,12 +41184,7 @@
                <orth>lorry</orth>
                <pron>lɔriː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>lastbil</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>lastbil</quote>
                </cit>
@@ -42541,12 +41214,7 @@
                   <quote>förlust</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förlust</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>lottery</orth>
@@ -43431,12 +42099,7 @@
                <orth>manage</orth>
                <pron>mænidʒ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>förvalta</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förvalta</quote>
                </cit>
@@ -43447,7 +42110,7 @@
                <orth>manager</orth>
                <pron>mænidʒər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>administratör</quote>
                </cit>
@@ -43455,12 +42118,7 @@
                   <quote>förvaltare</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>administratör</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>direktör</quote>
                </cit>
@@ -43561,12 +42219,7 @@
                <orth>map</orth>
                <pron>meip</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>landkarta</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>karta</quote>
                </cit>
@@ -43574,7 +42227,7 @@
                   <quote>kort</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>landkarta</quote>
                </cit>
@@ -43632,22 +42285,17 @@
                <orth>mark</orth>
                <pron>mɑːk</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>märke</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>märke</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>signal</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>tecken</quote>
                </cit>
@@ -43669,9 +42317,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>marknad</quote>
-               </cit>
                <cit type="trans">
                   <quote>torg</quote>
                </cit>
@@ -43718,12 +42363,7 @@
                <orth>married</orth>
                <pron>mærid</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>gift</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>gift</quote>
                </cit>
@@ -43748,27 +42388,17 @@
                <orth>marry</orth>
                <pron>mæriː</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>giftasig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>giftasig</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>giftasigmed</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>giftasigmed</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>marsh</orth>
@@ -43896,12 +42526,7 @@
                   <quote>mängd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hop</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>massive</orth>
@@ -44158,12 +42783,7 @@
                <orth>meadow</orth>
                <pron>medou</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>äng</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>äng</quote>
                </cit>
@@ -44330,9 +42950,6 @@
                   <quote>församling</quote>
                </cit>
                <cit type="trans">
-                  <quote>möte</quote>
-               </cit>
-               <cit type="trans">
                   <quote>sammankomst</quote>
                </cit>
                <cit type="trans">
@@ -44389,12 +43006,7 @@
                   <quote>smälta</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>smälta</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>melting</orth>
@@ -44492,12 +43104,7 @@
                   <quote>matsedel</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>matsedel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>merchandise</orth>
@@ -44522,15 +43129,7 @@
                   <quote>handelsman</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>affärsman</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>handelsman</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>mercury</orth>
@@ -44638,17 +43237,12 @@
                <orth>metropolis</orth>
                <pron>mətrɔpəlis</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>världsstad</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>världsstad</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>huvudstad</quote>
                </cit>
@@ -44689,15 +43283,7 @@
                   <quote>barnmorska</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ackuschörska</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>barnmorska</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>mild</orth>
@@ -44788,17 +43374,12 @@
                <orth>mine</orth>
                <pron>main</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>gruva</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>gruva</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>mina</quote>
                </cit>
@@ -45440,12 +44021,7 @@
                <orth>monotonous</orth>
                <pron>mənɔtənəs</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>entonig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>entonig</quote>
                </cit>
@@ -45759,12 +44335,7 @@
                   <quote>bilist</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>bilist</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>motto</orth>
@@ -45882,7 +44453,7 @@
                <orth>mouth</orth>
                <pron>mauθ</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>gap</quote>
                </cit>
@@ -45890,22 +44461,12 @@
                   <quote>käft</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>mun</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>mun</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>mun</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>move</orth>
@@ -45994,12 +44555,7 @@
                <orth>multiply</orth>
                <pron>mʌltiplai</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>multiplicera</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>multiplicera</quote>
                </cit>
@@ -46018,12 +44574,7 @@
                   <quote>mängd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hop</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>mummy</orth>
@@ -46085,10 +44636,7 @@
                <cit type="trans">
                   <quote>baneman</quote>
                </cit>
-               <cit type="trans">
-                  <quote>mördare</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -46367,12 +44915,7 @@
                   <quote>spik</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>nagel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>naked</orth>
@@ -46538,9 +45081,6 @@
                   <quote>dålig</quote>
                </cit>
                <cit type="trans">
-                  <quote>ful</quote>
-               </cit>
-               <cit type="trans">
                   <quote>illa</quote>
                </cit>
                <cit type="trans">
@@ -46656,15 +45196,7 @@
                   <quote>natur</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>art</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>natur</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>naught</orth>
@@ -46877,24 +45409,16 @@
                <orth>needle</orth>
                <pron>niːdl</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>nål</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>nål</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>knappnål</quote>
                </cit>
-               <cit type="trans">
-                  <quote>nål</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -47419,15 +45943,7 @@
                   <quote>vårta</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>spene</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vårta</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>nitrogen</orth>
@@ -48224,15 +46740,7 @@
                <orth>obedient</orth>
                <pron>əbiːdiənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hörsam</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>lydig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>hörsam</quote>
                </cit>
@@ -48320,12 +46828,7 @@
                   <quote>ackuschör</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>ackuschör</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>obtain</orth>
@@ -48517,27 +47020,17 @@
                <orth>offer</orth>
                <pron>ɔfər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>offert</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>presentera</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>presentera</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>presentera</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>bjuda</quote>
                </cit>
@@ -48548,7 +47041,7 @@
                <orth>office</orth>
                <pron>ɔfis</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>byrå</quote>
                </cit>
@@ -48556,15 +47049,7 @@
                   <quote>kontor</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>byrå</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>kontor</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>ämbete</quote>
                </cit>
@@ -48786,9 +47271,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bra</quote>
-               </cit>
-               <cit type="trans">
                   <quote>väl</quote>
                </cit>
             </sense>
@@ -48814,20 +47296,12 @@
                <orth>old</orth>
                <pron>ould</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>gammal</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>gammal</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>gammal</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>åldrig</quote>
                </cit>
@@ -48940,10 +47414,7 @@
                <cit type="trans">
                   <quote>över</quote>
                </cit>
-               <cit type="trans">
-                  <quote>på</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -49439,9 +47910,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>befalla</quote>
-               </cit>
-               <cit type="trans">
                   <quote>påbjuda</quote>
                </cit>
             </sense>
@@ -49522,12 +47990,7 @@
                   <quote>original</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>original</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>originate</orth>
@@ -49955,9 +48418,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>packa</quote>
-               </cit>
-               <cit type="trans">
                   <quote>packe</quote>
                </cit>
             </sense>
@@ -50063,12 +48523,7 @@
                   <quote>färg</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>måla</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>painter</orth>
@@ -50079,12 +48534,7 @@
                   <quote>målare</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>målare</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>painting</orth>
@@ -50112,15 +48562,7 @@
                   <quote>par</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>duo</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>par</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>pal</orth>
@@ -50445,16 +48887,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>parasit</quote>
-               </cit>
-               <cit type="trans">
                   <quote>snyltväxt</quote>
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>snyltgäst</quote>
-               </cit>
                <cit type="trans">
                   <quote>tallricksslickare</quote>
                </cit>
@@ -50602,7 +49038,7 @@
                <orth>part</orth>
                <pron>pɑːt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>andel</quote>
                </cit>
@@ -50613,18 +49049,7 @@
                   <quote>part</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>andel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>del</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>part</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>roll</quote>
                </cit>
@@ -50806,10 +49231,7 @@
                <cit type="trans">
                   <quote>prost</quote>
                </cit>
-               <cit type="trans">
-                  <quote>präst</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -51833,12 +50255,7 @@
                <orth>photograph</orth>
                <pron>foutəgrɑːf</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fotografera</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>fotografera</quote>
                </cit>
@@ -51849,12 +50266,7 @@
                <orth>photographer</orth>
                <pron>fətɔgrəfər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fotograf</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>fotograf</quote>
                </cit>
@@ -52082,12 +50494,7 @@
                <orth>pigeon</orth>
                <pron>pidʒən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>duva</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>duva</quote>
                </cit>
@@ -52200,17 +50607,12 @@
                <orth>pilot</orth>
                <pron>pailət</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>lotsa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>lots</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>lots</quote>
                </cit>
@@ -52470,17 +50872,12 @@
                <orth>place</orth>
                <pron>pleis</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>ort</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ort</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>lägga</quote>
                </cit>
@@ -52719,18 +51116,13 @@
                   <quote>trovärdig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>trovärdig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>play</orth>
                <pron>plei</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>leka</quote>
                </cit>
@@ -52738,23 +51130,7 @@
                   <quote>spela</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>leka</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>spela</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>leka</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>spela</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>skådespel</quote>
                </cit>
@@ -52793,12 +51169,7 @@
                   <quote>trevlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>trevlig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>please</orth>
@@ -53109,15 +51480,7 @@
                   <quote>poliskonstapel</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>konstapel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>poliskonstapel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>policy</orth>
@@ -53281,15 +51644,7 @@
                   <quote>fattig</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>arm</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>fattig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>pope</orth>
@@ -54060,7 +52415,7 @@
                <orth>present</orth>
                <pron>prizent</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>gåva</quote>
                </cit>
@@ -54071,22 +52426,12 @@
                   <quote>skänk</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>presentera</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>presentera</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>presentera</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>närvarande</quote>
                </cit>
@@ -54368,17 +52713,7 @@
                <orth>prison</orth>
                <pron>prizn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fängelse</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>fängelse</quote>
                </cit>
@@ -54739,9 +53074,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>egenskap</quote>
-               </cit>
-               <cit type="trans">
                   <quote>kvalitet</quote>
                </cit>
             </sense>
@@ -54761,12 +53093,7 @@
                <orth>prophesy</orth>
                <pron>prɔfisai</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>varsla</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>varsla</quote>
                </cit>
@@ -55067,12 +53394,7 @@
                   <quote>publik</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>publik</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>publicity</orth>
@@ -55279,7 +53601,7 @@
                <orth>purchase</orth>
                <pron>pəːtʃəs</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>anskaffa</quote>
                </cit>
@@ -55287,31 +53609,7 @@
                   <quote>köpa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>anskaffa</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köpa</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>anskaffning</quote>
                </cit>
@@ -55322,51 +53620,7 @@
                   <quote>köp</quote>
                </cit>
             </sense>
-            <sense n="6">
-               <cit type="trans">
-                  <quote>anskaffning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>inköp</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köp</quote>
-               </cit>
-            </sense>
-            <sense n="7">
-               <cit type="trans">
-                  <quote>anskaffning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>inköp</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köp</quote>
-               </cit>
-            </sense>
-            <sense n="8">
-               <cit type="trans">
-                  <quote>anskaffning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>inköp</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köp</quote>
-               </cit>
-            </sense>
-            <sense n="9">
-               <cit type="trans">
-                  <quote>anskaffning</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>inköp</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>köp</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>purchaser</orth>
@@ -55674,9 +53928,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>egenskap</quote>
-               </cit>
-               <cit type="trans">
                   <quote>kvalitet</quote>
                </cit>
             </sense>
@@ -55867,9 +54118,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>anförande</quote>
-               </cit>
                <cit type="trans">
                   <quote>citat</quote>
                </cit>
@@ -56184,15 +54432,7 @@
                   <quote>räfsa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kratta</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>räfsa</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>ram</orth>
@@ -56232,17 +54472,7 @@
                <orth>rancour</orth>
                <pron>ræŋkər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>agg</quote>
                </cit>
@@ -56821,10 +55051,7 @@
                <cit type="trans">
                   <quote>hågkomst</quote>
                </cit>
-               <cit type="trans">
-                  <quote>minne</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -56979,17 +55206,7 @@
                   <quote>röd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>röd</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>röd</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>reek</orth>
@@ -57092,21 +55309,7 @@
                   <quote>titta</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>beskåda</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>kika</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>skåda</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>titta</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>regiment</orth>
@@ -57420,12 +55623,7 @@
                <orth>relief</orth>
                <pron>riliːf</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>lättnad</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>lättnad</quote>
                </cit>
@@ -57491,15 +55689,7 @@
                   <quote>litapå</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>haförtroendeför</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>litapå</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>remain</orth>
@@ -57608,12 +55798,7 @@
                   <quote>lega</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hyra</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>rental</orth>
@@ -57978,22 +56163,7 @@
                <orth>resentment</orth>
                <pron>rizentmənt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>agg</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>agg</quote>
                </cit>
@@ -58076,12 +56246,7 @@
                <orth>responsibility</orth>
                <pron>rispɔnsəbilitiː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ansvar</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>ansvar</quote>
                </cit>
@@ -58092,12 +56257,7 @@
                <orth>responsible</orth>
                <pron>rispɔnsəbl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ansvarig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>ansvarig</quote>
                </cit>
@@ -58188,17 +56348,12 @@
                <orth>result</orth>
                <pron>rizʌlt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>härstamma</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>resultat</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>resultat</quote>
                </cit>
@@ -58693,9 +56848,6 @@
                   <quote>roffa</quote>
                </cit>
                <cit type="trans">
-                  <quote>råna</quote>
-               </cit>
-               <cit type="trans">
                   <quote>röva</quote>
                </cit>
             </sense>
@@ -59154,10 +57306,7 @@
                <cit type="trans">
                   <quote>roder</quote>
                </cit>
-               <cit type="trans">
-                  <quote>styre</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -59434,12 +57583,7 @@
                   <quote>sorgsen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ledsen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>saddle</orth>
@@ -59462,9 +57606,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>bedrövelse</quote>
-               </cit>
                <cit type="trans">
                   <quote>förtrytelse</quote>
                </cit>
@@ -59499,12 +57640,7 @@
                <orth>safety</orth>
                <pron>seiftiː</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>behåll</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>behåll</quote>
                </cit>
@@ -59895,12 +58031,7 @@
                <orth>sardine</orth>
                <pron>sɑːdiːn</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>sardin</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>sardin</quote>
                </cit>
@@ -60835,12 +58966,7 @@
                <orth>sender</orth>
                <pron>sendər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>adressant</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>adressant</quote>
                </cit>
@@ -61337,17 +59463,17 @@
                <orth>share</orth>
                <pron>ʃɛər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>aktie</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>dela</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>andel</quote>
                </cit>
@@ -61358,18 +59484,7 @@
                   <quote>part</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>andel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>del</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>part</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>portion</quote>
                </cit>
@@ -61408,24 +59523,7 @@
                   <quote>skarp</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>amper</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>egg</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gräll</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gäll</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>skarp</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sharpen</orth>
@@ -61809,12 +59907,7 @@
                <orth>short</orth>
                <pron>ʃɔːt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>gen</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>gen</quote>
                </cit>
@@ -62008,12 +60101,7 @@
                <orth>shrub</orth>
                <pron>ʃrʌb</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>buske</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>buske</quote>
                </cit>
@@ -62502,15 +60590,7 @@
                   <quote>efter</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>alltifrån</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>efter</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sinew</orth>
@@ -62755,34 +60835,13 @@
                   <quote>storlek</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>storhet</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>storlek</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>storlek</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>skeleton</orth>
                <pron>skelitən</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>benrangel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>skelett</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>benrangel</quote>
                </cit>
@@ -63127,9 +61186,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>långsam</quote>
-               </cit>
-               <cit type="trans">
                   <quote>trög</quote>
                </cit>
             </sense>
@@ -63436,12 +61492,7 @@
                <orth>snowdrop</orth>
                <pron>snoudrɔp</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>snödroppe</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>snödroppe</quote>
                </cit>
@@ -63463,17 +61514,7 @@
                <orth>so</orth>
                <pron>sou</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>sålunda</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sålunda</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>sålunda</quote>
                </cit>
@@ -63512,12 +61553,7 @@
                <orth>social</orth>
                <pron>souʃl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>social</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>social</quote>
                </cit>
@@ -63660,12 +61696,7 @@
                   <quote>smutsa</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>jord</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>soiled</orth>
@@ -64001,9 +62032,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bedrövelse</quote>
-               </cit>
-               <cit type="trans">
                   <quote>förtrytelse</quote>
                </cit>
                <cit type="trans">
@@ -64148,12 +62176,7 @@
                <orth>sovereign</orth>
                <pron>sɔvrin</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>suverän</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>suverän</quote>
                </cit>
@@ -64271,12 +62294,7 @@
                   <quote>spade</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>spade</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>spare</orth>
@@ -64560,17 +62578,7 @@
                <orth>spine</orth>
                <pron>spain</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>ryggrad</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ryggrad</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>ryggrad</quote>
                </cit>
@@ -65021,24 +63029,16 @@
                <orth>stalk</orth>
                <pron>stɔːk</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>strå</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>strå</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>stjälk</quote>
                </cit>
-               <cit type="trans">
-                  <quote>strå</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -65158,7 +63158,7 @@
                <orth>start</orth>
                <pron>stɑːt</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>begynna</quote>
                </cit>
@@ -65166,23 +63166,7 @@
                   <quote>börja</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>begynna</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>börja</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>begynnelse</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>början</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>begynnelse</quote>
                </cit>
@@ -65767,10 +63751,7 @@
                <cit type="trans">
                   <quote>berättelse</quote>
                </cit>
-               <cit type="trans">
-                  <quote>historia</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -66200,17 +64181,12 @@
                <orth>study</orth>
                <pron>stʌdiː</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>studera</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>studera</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>studie</quote>
                </cit>
@@ -66986,9 +64962,6 @@
                   <quote>förundran</quote>
                </cit>
                <cit type="trans">
-                  <quote>förvåning</quote>
-               </cit>
-               <cit type="trans">
                   <quote>undran</quote>
                </cit>
             </sense>
@@ -67165,12 +65138,7 @@
                   <quote>svära</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>svära</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sweat</orth>
@@ -67843,17 +65811,12 @@
                <orth>taste</orth>
                <pron>teist</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>smaka</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>smak</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>smaka</quote>
                </cit>
@@ -68597,12 +66560,7 @@
                <orth>thankful</orth>
                <pron>θæŋkfəl</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>tacksam</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>tacksam</quote>
                </cit>
@@ -68723,18 +66681,7 @@
                <orth>that</orth>
                <pron>ðeitzoukei</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>detgöringenting</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>föralldel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ingenorsak</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>detgöringenting</quote>
                </cit>
@@ -68878,17 +66825,12 @@
                <orth>there</orth>
                <pron>ðər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>dit</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>där</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>där</quote>
                </cit>
@@ -68984,12 +66926,7 @@
                   <quote>Ukraina</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ukraina</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>the</orth>
@@ -69256,23 +67193,7 @@
                <orth>thou</orth>
                <pron>ðau</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>du</quote>
                </cit>
@@ -69530,12 +67451,7 @@
                <orth>thumb</orth>
                <pron>θʌm</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>tumme</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>tumme</quote>
                </cit>
@@ -69560,12 +67476,7 @@
                <orth>thus</orth>
                <pron>θʌs</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>sålunda</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>sålunda</quote>
                </cit>
@@ -70248,9 +68159,6 @@
                   <quote>marter</quote>
                </cit>
                <cit type="trans">
-                  <quote>pina</quote>
-               </cit>
-               <cit type="trans">
                   <quote>tortyr</quote>
                </cit>
             </sense>
@@ -70460,12 +68368,7 @@
                   <quote>handel</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>handla</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>tradition</orth>
@@ -70507,12 +68410,7 @@
                <orth>train</orth>
                <pron>trein</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>järnvägståg</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>järnvägståg</quote>
                </cit>
@@ -70642,9 +68540,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>fara</quote>
-               </cit>
                <cit type="trans">
                   <quote>färdas</quote>
                </cit>
@@ -70938,12 +68833,7 @@
                <orth>truck</orth>
                <pron>trʌk</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>lastbil</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>lastbil</quote>
                </cit>
@@ -71006,12 +68896,7 @@
                <orth>trust</orth>
                <pron>trʌst</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>haförtroendeför</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>förtroende</quote>
                </cit>
@@ -71019,7 +68904,7 @@
                   <quote>tillit</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>haförtroendeför</quote>
                </cit>
@@ -71044,15 +68929,7 @@
                <orth>trust</orth>
                <pron>trʌstin</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>haförtroendeför</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>litapå</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>haförtroendeför</quote>
                </cit>
@@ -71066,12 +68943,7 @@
                <orth>truth</orth>
                <pron>truːθ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>sanning</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>sanning</quote>
                </cit>
@@ -71265,7 +69137,7 @@
                <orth>turn</orth>
                <pron>təːn</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>vrida</quote>
                </cit>
@@ -71273,12 +69145,7 @@
                   <quote>vända</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>vända</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>fil</quote>
                </cit>
@@ -71616,23 +69483,7 @@
                   <quote>morbror</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>morbroder</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>morbror</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>farbroder</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>farbror</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>unclean</orth>
@@ -71709,20 +69560,12 @@
                <orth>underneath</orth>
                <pron>ʌndənəːθ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>nedan</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nere</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>under</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>nedan</quote>
                </cit>
@@ -71730,7 +69573,7 @@
                   <quote>nere</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>ned</quote>
                </cit>
@@ -72216,10 +70059,7 @@
                <cit type="trans">
                   <quote>över</quote>
                </cit>
-               <cit type="trans">
-                  <quote>på</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -72354,17 +70194,12 @@
                <orth>use</orth>
                <pron>juːzʌp</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>utnöta</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>förbruka</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>förbruka</quote>
                </cit>
@@ -72461,15 +70296,7 @@
                   <quote>semester</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ferier</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>semester</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>vaccinate</orth>
@@ -73003,10 +70830,7 @@
                <cit type="trans">
                   <quote>utsikt</quote>
                </cit>
-               <cit type="trans">
-                  <quote>vy</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>beskåda</quote>
@@ -73287,12 +71111,7 @@
                   <quote>stämma</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>röst</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>void</orth>
@@ -73325,12 +71144,7 @@
                   <quote>volym</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>volym</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>voluntary</orth>
@@ -73810,22 +71624,12 @@
                <orth>warm</orth>
                <pron>wɔːm</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>hjärtlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>hjärtlig</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>varm</quote>
                </cit>
@@ -73905,12 +71709,7 @@
                   <quote>tvätta</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>tvätta</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>washing</orth>
@@ -73959,7 +71758,7 @@
                <orth>watch</orth>
                <pron>wɔtʃ</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>armbandsur</quote>
                </cit>
@@ -73967,7 +71766,7 @@
                   <quote>klockarmband</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>klocka</quote>
                </cit>
@@ -73975,15 +71774,7 @@
                   <quote>ur</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>klocka</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ur</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>beskåda</quote>
                </cit>
@@ -74086,23 +71877,7 @@
                   <quote>vattenfall</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>kaskad</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vattenfall</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>kaskad</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vattenfall</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>waterlily</orth>
@@ -74516,12 +72291,7 @@
                   <quote>väster</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>väster</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>western</orth>
@@ -74580,12 +72350,7 @@
                <orth>what</orth>
                <pron>wɔt</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>vad</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>vad</quote>
                </cit>
@@ -74652,27 +72417,12 @@
                <orth>when</orth>
                <pron>n</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>när</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>när</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>när</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>när</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>whence</orth>
@@ -74689,7 +72439,7 @@
                <orth>where</orth>
                <pron>wɛər</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>vart</quote>
                </cit>
@@ -74697,42 +72447,23 @@
                   <quote>varthän</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>vart</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>varthän</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>var</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>där</quote>
                </cit>
-               <cit type="trans">
-                  <quote>var</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
                <orth>where</orth>
                <pron>wɛərtou</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>vart</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>varthän</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>vart</quote>
                </cit>
@@ -74746,18 +72477,7 @@
                <orth>which</orth>
                <pron>witʃ</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>som</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vilken</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>som</quote>
                </cit>
@@ -74840,26 +72560,13 @@
                   <quote>vit</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>vit</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>whither</orth>
                <pron>wiðər</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>vart</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>varthän</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>vart</quote>
                </cit>
@@ -74984,12 +72691,7 @@
                   <quote>vidd</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>bredd</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>wife</orth>
@@ -75259,12 +72961,12 @@
                <orth>wish</orth>
                <pron>wiʃ</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>önska</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>längtan</quote>
                </cit>
@@ -75272,12 +72974,7 @@
                   <quote>önskan</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>vilja</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>vilja</quote>
                </cit>
@@ -75497,9 +73194,6 @@
                </cit>
                <cit type="trans">
                   <quote>förundran</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>förvåning</quote>
                </cit>
                <cit type="trans">
                   <quote>undran</quote>
@@ -75950,12 +73644,7 @@
                   <quote>handlove</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>handled</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>write</orth>
@@ -76062,17 +73751,12 @@
                <orth>yard</orth>
                <pron>jɑːd</pron>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>rå</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>rå</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>gård</quote>
                </cit>
@@ -76094,15 +73778,7 @@
                   <quote>ni</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>year</orth>
@@ -76144,12 +73820,7 @@
                <orth>yellow</orth>
                <pron>jelou</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>gul</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>gul</quote>
                </cit>
@@ -76275,31 +73946,7 @@
                <orth>you</orth>
                <pron>jau</pron>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>du</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ni</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>du</quote>
                </cit>
@@ -76354,17 +74001,7 @@
                   <quote>uppväxtår</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ungdom</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>ungdom</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>you</orth>
