@@ -18,16 +18,16 @@
 				</respStmt>
 			</titleStmt>
 			<editionStmt>
-				<edition>0.3.5</edition>
+				<edition>0.4</edition>
 			</editionStmt>
-			<extent>8505 entries</extent>
+        <extent>8505 headwords</extent>
 			<publicationStmt>
 				<publisher>FreeDict</publisher>
 				<availability>
-					<p>Copyright: the particular authors/compilers (1999: Horst Eyermann, horst@freedict.de; 2010: John Darrington)</p>
+					<p>Copyright: the particular authors/compilers (1999: Horst Eyermann, horst@freedict.de; 2010: John Darrington); (c) 2017 FreeDict project</p>
 					<p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
 				</availability>
-				<date>2014-08-10</date>
+				<date when="2017-12-03">Dec 03, 2017</date>
 				<pubPlace>
 					<ref target="http://freedict.org/">http://freedict.org/</ref>
 				</pubPlace>
@@ -72,6 +72,13 @@
 			</tagsDecl>
 		</encodingDesc>
 		<revisionDesc>
+            <change when="2017-12-03" who="humenda" n="0.4">
+               <name>Sebastian Humenda</name>
+               <list>
+                  <item>update licencing stanza (thanks to Karl Bartel)</item>
+                  <item>remove duplicated entries</item>
+               </list>
+            </change>
             <change when="2014-08-10" n="0.3.5"><name>Yota Moteuchi</name>: &lt;sense&gt; tags were not properly set (after the previous conversion of &lt;def&gt;).  Corrections were half automatic, half manual, but the content should not have changed. The file was also fully re-indented with xmllint.</change>
 			<change when="2010-11-05" n="0.3.4"><name>Piotr Bański</name>: Technical changes: added the missing values to the &lt;tagsDecl&gt;. TODO: conversion to the cit/quote system, but only after, or at the same time as, the equivalents inside &lt;def&gt; are split apart.</change>
 			<change when="2010-04-27" n="0.3.3"><name>Piotr Bański</name>: Technical changes: took out the dependency including the ontology interface. The interface is now a free-standing document and this dictionary refers to rhat document only via the header (see &lt;tagsDecl&gt;).</change>
