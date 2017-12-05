@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.2</edition>
          </editionStmt>
-         <extent>about 260 headwords</extent>
+         <extent>257 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -33,13 +33,12 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">too small</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://www.travlang.com/"/>
+            <p>Home: <ptr target="http://www.travlang.com/" />
             </p>
             <p>This Database was generated from Ergane.</p>
          </sourceDesc>
@@ -52,6 +51,12 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2017-12-05" who="humenda" n="0.2">
+         <name>Sebastian Humenda</name>    <list>
+               <item>update licencing stanza (thanks to Karl Bartel</item>
+               <item>remove duplicated entries</item>
+            </list>
+         </change>
          <change when="2010-10-25">
             <date>2010-10-25</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
@@ -1327,6 +1332,11 @@
                   <quote>er</quote>
                </cit>
                <cit type="trans">
+                  <quote>es</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <cit type="trans">
                   <quote>ihm</quote>
                </cit>
                <cit type="trans">
@@ -1335,15 +1345,7 @@
                <cit type="trans">
                   <quote>seiner</quote>
                </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>es</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ihm</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -1620,12 +1622,7 @@
                   <quote>Wahrheit</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Wahrheit</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>gaoth</orth>
@@ -1894,10 +1891,7 @@
                <cit type="trans">
                   <quote>Weide</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Wiese</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -3085,16 +3079,7 @@
                   <quote>Fleck</quote>
                </cit>
                <cit type="trans">
-                  <quote>Ort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Platz</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Stätte</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Stelle</quote>
                </cit>
                <cit type="trans">
                   <quote>Terrain</quote>

@@ -10,9 +10,9 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.1.2</edition>
          </editionStmt>
-         <extent>about 280 headwords</extent>
+         <extent>280 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
@@ -32,7 +32,6 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">too small</note>
@@ -48,6 +47,9 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2017-12-05" who="humenda" n="0.1.2">
+            <name>Sebastian Humenda</name> update licencing stanza (thanks to Karl Bartel)
+         </change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
