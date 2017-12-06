@@ -7,13 +7,13 @@
             <title>Lenga d'òc - Català FreeDict Dictionary</title>
          </titleStmt>
          <editionStmt>
-            <edition>0.1</edition>
+            <edition>0.1.1</edition>
          </editionStmt>
          <extent>16679 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) by various authors listed in revisionDesc below.</p>
+               <p>Copyright (C) 2011-2017 by various authors listed in revisionDesc below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl.html">GNU General Public License ver. 3.0 or any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -29,7 +29,6 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">big enough to be useful</note>
@@ -44,6 +43,9 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change when="2017-12-06" who="humenda" n="0.1.1">
+            <name>Sebastian Humenda</name> update licencing stanza (thanks to Karl Bartel)
+         </change>
          <change n="0.1" when="2011-12-10">
             <list type="bulleted">
                <head>Version 0.1, <date>10 December 2011</date>.</head>
