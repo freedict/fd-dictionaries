@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.3</edition>
+            <edition>0.2</edition>
          </editionStmt>
-         <extent>about 400 headwords</extent>
+         <extent>395 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -39,7 +39,7 @@
             <note type="status">too small</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://www.travlang.com/"/>
+            <p>Home: <ptr target="http://www.travlang.com/" />
             </p>
             <p>This Database was generated from Ergane.</p>
          </sourceDesc>
@@ -47,8 +47,7 @@
       <encodingDesc>
          <projectDesc>
             <p>This dictionary comes to you through nice people making it available for free and for
-               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
                available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
@@ -69,6 +68,13 @@
          </langUsage>
       </profileDesc>
       <revisionDesc>
+         <change n="0.2" when="2017-12-09">
+            <name>Sebastian Humenda</name>
+            <list>
+               <item>update licencing stanza (thanks to Karl Bartel)</item>
+               <item>remove duplicated entries</item>
+            </list>
+         </change>
          <change when="2010-12-09">
             <date>2010-12-09</date>
             <name>Piotr Bański</name>: Added @xml:lang attributes and profileDesc/langUsage.</change>
@@ -77,7 +83,7 @@
             <name>Piotr Bański</name>: Database name changed to srp-eng, as the content was
             confirmed to be Serbian with some dialectal Montenegrin additions (many thanks to Dr.
             Jerzy Molas of the University of Warsaw for his input). TODO: mark the dialectal
-            additions with the appropriate &lt;usg> notes.</change>
+            additions with the appropriate &lt;usg&gt; notes.</change>
          <change when="2010-11-01">
             <date>2010-11-01</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via
@@ -228,10 +234,7 @@
                <cit type="trans">
                   <quote>language</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tongue</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form xml:lang="sr">
@@ -2085,9 +2088,6 @@
                   <quote>location</quote>
                </cit>
                <cit type="trans">
-                  <quote>place</quote>
-               </cit>
-               <cit type="trans">
                   <quote>spot</quote>
                </cit>
             </sense>
@@ -2233,9 +2233,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>location</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>place</quote>
                </cit>
                <cit type="trans">
                   <quote>spot</quote>
@@ -2844,12 +2841,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>afresh</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>again</quote>
-               </cit>
                <cit type="trans">
                   <quote>once more</quote>
                </cit>

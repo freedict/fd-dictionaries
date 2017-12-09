@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.2</edition>
          </editionStmt>
-         <extent>about 8300 headwords</extent>
+         <extent>8294 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -33,13 +33,12 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">small</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://www.travlang.com/"/>
+            <p>Home: <ptr target="http://www.travlang.com/" />
             </p>
             <p>This Database was generated from Ergane.</p>
          </sourceDesc>
@@ -52,6 +51,13 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2" when="2017-12-09">
+            <name>Sebastian Humenda</name>
+            <list>
+               <item>update licencing stanza (thanks to Karl Bartel)</item>
+               <item>remove duplicated entries</item>
+            </list>
+         </change>
          <change when="2010-10-25">
             <date>2010-10-25</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
@@ -343,12 +349,7 @@
             <form>
                <orth>Aqueronte</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Acheron</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Acheron</quote>
                </cit>
@@ -581,12 +582,7 @@
             <form>
                <orth>Baviera</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Bayern</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Bayern</quote>
                </cit>
@@ -671,12 +667,7 @@
                   <quote>Weißrußland</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Weißrußland</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>Birmânia</orth>
@@ -691,12 +682,7 @@
             <form>
                <orth>Biscaia</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Biskaya</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Biskaya</quote>
                </cit>
@@ -1264,17 +1250,7 @@
                   <quote>Europa</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Europa</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Europa</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>Fevereiro</orth>
@@ -1349,12 +1325,7 @@
             <form>
                <orth>Groenlândia</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Grönland</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Grönland</quote>
                </cit>
@@ -1434,12 +1405,7 @@
             <form>
                <orth>Inglaterra</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>England</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>England</quote>
                </cit>
@@ -1469,12 +1435,7 @@
             <form>
                <orth>Israel</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Israel</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Israel</quote>
                </cit>
@@ -2020,17 +1981,12 @@
             <form>
                <orth>Vênus</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Venus</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Venus</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Angst</quote>
                </cit>
@@ -2072,15 +2028,9 @@
             </sense>
             <sense n="4">
                <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
                   <quote>bei</quote>
                </cit>
-               <cit type="trans">
-                  <quote>zu</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -2159,9 +2109,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>unten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>unterhalb</quote>
                </cit>
             </sense>
@@ -2204,14 +2151,8 @@
                <cit type="trans">
                   <quote>schüttern</quote>
                </cit>
-               <cit type="trans">
-                  <quote>erschüttern</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>bewegen</quote>
-               </cit>
                <cit type="trans">
                   <quote>wankend machen</quote>
                </cit>
@@ -2238,15 +2179,7 @@
                   <quote>Rührung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bewegung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Rührung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>abanar</orth>
@@ -2539,12 +2472,7 @@
                   <quote>Schlund</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Loch</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>abeto</orth>
@@ -3095,7 +3023,7 @@
             <form>
                <orth>absurdo</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>abgeschmackt</quote>
                </cit>
@@ -3109,17 +3037,12 @@
                   <quote>widersinnig</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Verdrehtheit</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Verdrehtheit</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>Gallimathias</quote>
                </cit>
@@ -3162,12 +3085,7 @@
             <form>
                <orth>abóbora</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kürbis</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kürbis</quote>
                </cit>
@@ -3197,15 +3115,7 @@
                   <quote>erledigen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>enden</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>endigen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>acabrunhar</orth>
@@ -3591,12 +3501,7 @@
                   <quote>sich befinden</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sich befinden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>achar</orth>
@@ -3647,12 +3552,7 @@
                   <quote>sich befinden</quote>
                </cit>
             </sense>
-            <sense n="6">
-               <cit type="trans">
-                  <quote>sich befinden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>aciano</orth>
@@ -4022,7 +3922,7 @@
             <form>
                <orth>acontecer</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>geschehen</quote>
                </cit>
@@ -4036,15 +3936,7 @@
                   <quote>zu stande kommen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>werden</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>geschehen</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>passieren</quote>
                </cit>
@@ -4054,10 +3946,7 @@
                <cit type="trans">
                   <quote>stattfinden</quote>
                </cit>
-               <cit type="trans">
-                  <quote>vorkommen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -4077,9 +3966,6 @@
                </cit>
                <cit type="trans">
                   <quote>Geschehnis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Ereignis</quote>
                </cit>
                <cit type="trans">
                   <quote>Fall</quote>
@@ -4234,10 +4120,7 @@
                <cit type="trans">
                   <quote>anlegen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>beifügen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -4360,21 +4243,13 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>gegenwärtig</quote>
-               </cit>
-               <cit type="trans">
                   <quote>heutig</quote>
                </cit>
                <cit type="trans">
                   <quote>jetzig</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>gegenwärtig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>actuar</orth>
@@ -4437,12 +4312,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>anklagen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>beschuldigen</quote>
-               </cit>
                <cit type="trans">
                   <quote>verklagen</quote>
                </cit>
@@ -4631,16 +4500,10 @@
                   <quote>gleich</quote>
                </cit>
                <cit type="trans">
-                  <quote>entsprechend</quote>
-               </cit>
-               <cit type="trans">
                   <quote>konform</quote>
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>angemessen</quote>
-               </cit>
                <cit type="trans">
                   <quote>füglich</quote>
                </cit>
@@ -4758,12 +4621,7 @@
                   <quote>zufügen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>addieren</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>adido</orth>
@@ -4965,12 +4823,7 @@
                   <quote>wunderbar</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>wunderbar</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>admissão</orth>
@@ -5403,12 +5256,7 @@
                   <quote>Luftballon</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ballon</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>aerômetro</orth>
@@ -5768,12 +5616,6 @@
                   <quote>ärgern</quote>
                </cit>
                <cit type="trans">
-                  <quote>bekümmern</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>betrüben</quote>
-               </cit>
-               <cit type="trans">
                   <quote>kränken</quote>
                </cit>
                <cit type="trans">
@@ -5817,10 +5659,7 @@
                <cit type="trans">
                   <quote>Verdruß</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Weh</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -6115,9 +5954,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>wirken</quote>
-               </cit>
-               <cit type="trans">
                   <quote>einwirken</quote>
                </cit>
                <cit type="trans">
@@ -6352,9 +6188,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>dankbar</quote>
-               </cit>
-               <cit type="trans">
                   <quote>erkenntlich</quote>
                </cit>
             </sense>
@@ -6449,9 +6282,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>arg</quote>
-               </cit>
                <cit type="trans">
                   <quote>barsch</quote>
                </cit>
@@ -6857,15 +6687,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>beistehen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>beispringen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>helfen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>dienen</quote>
@@ -6904,9 +6728,6 @@
                </cit>
                <cit type="trans">
                   <quote>schätzen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>abschätzen</quote>
                </cit>
                <cit type="trans">
                   <quote>einschätzen</quote>
@@ -7069,12 +6890,7 @@
                   <quote>Winde</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Hebel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>alaúde</orth>
@@ -8187,12 +8003,7 @@
                   <quote>Kopfkissen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Kissen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>almofadinha</orth>
@@ -8447,7 +8258,7 @@
             <form>
                <orth>alto</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>erhaben</quote>
                </cit>
@@ -8455,17 +8266,12 @@
                   <quote>hoch</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Höhe</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Höhe</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>laut</quote>
                </cit>
@@ -8475,17 +8281,12 @@
             <form>
                <orth>altura</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Höhe</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Höhe</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Gestalt</quote>
                </cit>
@@ -8707,12 +8508,7 @@
                   <quote>zudem</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>zudem</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>alínea</orth>
@@ -9250,17 +9046,12 @@
             <form>
                <orth>americano</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>amerikanisch</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Amerikaner</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Amerikaner</quote>
                </cit>
@@ -9423,12 +9214,7 @@
             <form>
                <orth>amoreira</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Maulbeerbaum</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Maulbeerbaum</quote>
                </cit>
@@ -9628,10 +9414,7 @@
                <cit type="trans">
                   <quote>geräumig</quote>
                </cit>
-               <cit type="trans">
-                  <quote>weit</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -9989,32 +9772,18 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>gehen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>laufen</quote>
                </cit>
                <cit type="trans">
                   <quote>marschieren</quote>
                </cit>
-               <cit type="trans">
-                  <quote>treten</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>schreiten</quote>
                </cit>
-               <cit type="trans">
-                  <quote>treten</quote>
-               </cit>
-            </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>fahren</quote>
-               </cit>
-            </sense>
-         </entry>
+               </sense>
+            </entry>
          <entry>
             <form>
                <orth>andar a cavalo</orth>
@@ -10387,17 +10156,12 @@
             <form>
                <orth>animal</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Tier</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Tier</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Vieh</quote>
                </cit>
@@ -10982,12 +10746,7 @@
                   <quote>verkünden</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>avisieren</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>anunciar por sinal</orth>
@@ -11168,21 +10927,7 @@
                   <quote>im Gegensatz</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>dagegen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>entgegengesetzt</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gegenteils</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>hingegen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>ao derredor de</orth>
@@ -11292,12 +11037,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bei</quote>
-               </cit>
                <cit type="trans">
                   <quote>zu</quote>
                </cit>
@@ -11625,12 +11364,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Aussehen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Äußere</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gesicht</quote>
                </cit>
                <cit type="trans">
@@ -11646,9 +11379,6 @@
                </cit>
                <cit type="trans">
                   <quote>Augenschein</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Aussehen</quote>
                </cit>
                <cit type="trans">
                   <quote>Schein</quote>
@@ -11941,7 +11671,7 @@
             <form>
                <orth>aplauso</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Applaus</quote>
                </cit>
@@ -11949,22 +11679,11 @@
                   <quote>Beifall</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Applaus</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Beifall</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Approbation</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Beifall</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -12103,12 +11822,7 @@
                   <quote>Stütze</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Stütze</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>apologia</orth>
@@ -12335,9 +12049,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>befestigen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>festsetzen</quote>
                </cit>
                <cit type="trans">
                   <quote>fixieren</quote>
@@ -12651,16 +12362,10 @@
                   <quote>gleich</quote>
                </cit>
                <cit type="trans">
-                  <quote>entsprechend</quote>
-               </cit>
-               <cit type="trans">
                   <quote>konform</quote>
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>angemessen</quote>
-               </cit>
                <cit type="trans">
                   <quote>füglich</quote>
                </cit>
@@ -12783,10 +12488,7 @@
                <cit type="trans">
                   <quote>tauglich</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tüchtig</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -12979,9 +12681,6 @@
                   <quote>Beute</quote>
                </cit>
                <cit type="trans">
-                  <quote>Errungenschaft</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Erwerb</quote>
                </cit>
             </sense>
@@ -13063,12 +12762,7 @@
             <form>
                <orth>arame</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Draht</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Draht</quote>
                </cit>
@@ -13172,12 +12866,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Gebüsch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Staude</quote>
-               </cit>
                <cit type="trans">
                   <quote>Strauch</quote>
                </cit>
@@ -13286,9 +12974,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Bogen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Violinbogen</quote>
                </cit>
             </sense>
@@ -13298,9 +12983,6 @@
                </cit>
             </sense>
             <sense n="5">
-               <cit type="trans">
-                  <quote>Bogen</quote>
-               </cit>
                <cit type="trans">
                   <quote>Schießbogen</quote>
                </cit>
@@ -13328,12 +13010,7 @@
                   <quote>glühen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>brennen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>ardiloso</orth>
@@ -13386,10 +13063,7 @@
                <cit type="trans">
                   <quote>Eifer</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Inbrunst</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>Leidenschaft</quote>
@@ -13713,12 +13387,7 @@
             <form>
                <orth>armadilha</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Falle</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Falle</quote>
                </cit>
@@ -13805,9 +13474,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Geschäft</quote>
-               </cit>
                <cit type="trans">
                   <quote>Kaufladen</quote>
                </cit>
@@ -14024,9 +13690,6 @@
                   <quote>entziehen</quote>
                </cit>
                <cit type="trans">
-                  <quote>fortnehmen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>wegnehmen</quote>
                </cit>
             </sense>
@@ -14081,9 +13744,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>schaben</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>kratzen</quote>
                </cit>
                <cit type="trans">
                   <quote>radieren</quote>
@@ -14583,10 +14243,7 @@
                <cit type="trans">
                   <quote>Arsenal</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zeughaus</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -14693,17 +14350,12 @@
             <form>
                <orth>articular</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>artikulieren</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>artikulieren</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>aussprechen</quote>
                </cit>
@@ -15156,9 +14808,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Aussehen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gesicht</quote>
                </cit>
                <cit type="trans">
@@ -15387,9 +15036,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>behaupten</quote>
-               </cit>
                <cit type="trans">
                   <quote>bestätigen</quote>
                </cit>
@@ -15695,9 +15341,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Ding</quote>
-               </cit>
                <cit type="trans">
                   <quote>Gegenstand</quote>
                </cit>
@@ -16682,9 +16325,6 @@
                   <quote>hierauf</quote>
                </cit>
                <cit type="trans">
-                  <quote>hinten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>hinterher</quote>
                </cit>
                <cit type="trans">
@@ -16710,9 +16350,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>hinter</quote>
-               </cit>
                <cit type="trans">
                   <quote>nach</quote>
                </cit>
@@ -17229,10 +16866,7 @@
                <cit type="trans">
                   <quote>Schriftsteller</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Verfasser</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -17317,12 +16951,7 @@
                   <quote>glaubhaft</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>echt</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>autômato</orth>
@@ -17404,9 +17033,6 @@
                </cit>
                <cit type="trans">
                   <quote>schätzen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>abschätzen</quote>
                </cit>
                <cit type="trans">
                   <quote>einschätzen</quote>
@@ -17693,12 +17319,7 @@
                   <quote>Flugzeug</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Flugzeug</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>avulso</orth>
@@ -18671,22 +18292,14 @@
             <form>
                <orth>banco</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Bank</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bank</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Arbeitsbock</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Bank</quote>
                </cit>
                <cit type="trans">
                   <quote>Gestell</quote>
@@ -18758,12 +18371,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Banner</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Fahne</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Standarte</quote>
                </cit>
             </sense>
@@ -18820,12 +18427,7 @@
                   <quote>Troß</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Rotte</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bandoleiro</orth>
@@ -18931,12 +18533,7 @@
             <form>
                <orth>banqueiro</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Bankier</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Bankier</quote>
                </cit>
@@ -18991,12 +18588,7 @@
             <form>
                <orth>barato</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>billig</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>billig</quote>
                </cit>
@@ -19156,9 +18748,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Baracke</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Bude</quote>
                </cit>
                <cit type="trans">
@@ -19169,9 +18758,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>Baracke</quote>
-               </cit>
                <cit type="trans">
                   <quote>Zelt</quote>
                </cit>
@@ -19224,9 +18810,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>Hecke</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Schranke</quote>
                </cit>
                <cit type="trans">
                   <quote>Sperre</quote>
@@ -19449,15 +19032,9 @@
                   <quote>genug</quote>
                </cit>
                <cit type="trans">
-                  <quote>genügend</quote>
-               </cit>
-               <cit type="trans">
                   <quote>hinlänglich</quote>
                </cit>
-               <cit type="trans">
-                  <quote>ziemlich</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -19722,10 +19299,7 @@
                <cit type="trans">
                   <quote>klopfen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>schlagen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>quirlen</quote>
@@ -21519,7 +21093,7 @@
             <form>
                <orth>bolsa</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Börse</quote>
                </cit>
@@ -21527,12 +21101,7 @@
                   <quote>Börsengebäude</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Börse</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Tasche</quote>
                </cit>
@@ -21753,12 +21322,7 @@
                   <quote>schön</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hübsch</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>boné</orth>
@@ -22741,9 +22305,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>kleinstoßen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zermalmen</quote>
                </cit>
                <cit type="trans">
                   <quote>zerstampfen</quote>
@@ -23876,7 +23437,7 @@
             <form>
                <orth>cadeia</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Gefängnis</quote>
                </cit>
@@ -23884,17 +23445,7 @@
                   <quote>Verlies</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Gefängnis</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Gefängnis</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>Kette</quote>
                </cit>
@@ -24116,9 +23667,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Bahnsteig</quote>
-               </cit>
                <cit type="trans">
                   <quote>Freitreppe</quote>
                </cit>
@@ -24484,13 +24032,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>gelassen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>gemütlich</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ruhig</quote>
                </cit>
                <cit type="trans">
                   <quote>still</quote>
@@ -24737,26 +24279,17 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>gehen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>laufen</quote>
                </cit>
                <cit type="trans">
                   <quote>marschieren</quote>
                </cit>
-               <cit type="trans">
-                  <quote>treten</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>schreiten</quote>
                </cit>
-               <cit type="trans">
-                  <quote>treten</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -24808,18 +24341,7 @@
             <form>
                <orth>caminhão</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Lastauto</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Lastkraftwagen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>LKW</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Fuder</quote>
                </cit>
@@ -24830,7 +24352,7 @@
                   <quote>Karren</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Lastauto</quote>
                </cit>
@@ -25467,10 +24989,7 @@
                <cit type="trans">
                   <quote>tauglich</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tüchtig</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -25556,12 +25075,7 @@
                   <quote>Kapitän</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Kapitän</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>capitão de navio</orth>
@@ -25727,10 +25241,7 @@
                <cit type="trans">
                   <quote>Antlitz</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Gesicht</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -25906,12 +25417,7 @@
             <form>
                <orth>carne</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Fleisch</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Fleisch</quote>
                </cit>
@@ -26022,12 +25528,7 @@
                   <quote>wert</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>teuer</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>carolice</orth>
@@ -26164,9 +25665,6 @@
                </cit>
                <cit type="trans">
                   <quote>belasten</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>laden</quote>
                </cit>
                <cit type="trans">
                   <quote>aufladen</quote>
@@ -26532,9 +26030,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Haus</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Heim</quote>
                </cit>
             </sense>
@@ -26583,18 +26078,7 @@
                   <quote>Überzieher</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Mantel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Überrock</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Überzieher</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>casada</orth>
@@ -26637,25 +26121,12 @@
                   <quote>sich verheiraten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sich verehelichen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>sich verheiraten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>casar</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>heiraten</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>heiraten</quote>
                </cit>
@@ -26741,9 +26212,6 @@
                </cit>
                <cit type="trans">
                   <quote>Hülse</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Rinde</quote>
                </cit>
                <cit type="trans">
                   <quote>Schale</quote>
@@ -26926,12 +26394,7 @@
                   <quote>Kastanienbaum</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Kastanienbaum</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>castanho</orth>
@@ -27330,9 +26793,6 @@
                   <quote>Beweggrund</quote>
                </cit>
                <cit type="trans">
-                  <quote>Grund</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Motiv</quote>
                </cit>
             </sense>
@@ -27494,12 +26954,7 @@
                   <quote>Spaten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Spaten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>cavala</orth>
@@ -27809,12 +27264,7 @@
             <form>
                <orth>cebola</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Zwiebel</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Zwiebel</quote>
                </cit>
@@ -27875,9 +27325,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>früh</quote>
-               </cit>
                <cit type="trans">
                   <quote>zeitig</quote>
                </cit>
@@ -28234,12 +27681,7 @@
             <form>
                <orth>centelha</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Funke</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Funke</quote>
                </cit>
@@ -28702,16 +28144,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>bestimmt</quote>
-               </cit>
-               <cit type="trans">
                   <quote>bündig</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>exakt</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>genau</quote>
                </cit>
                <cit type="trans">
                   <quote>präzis</quote>
@@ -28903,12 +28336,7 @@
             <form>
                <orth>chaleira</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kessel</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kessel</quote>
                </cit>
@@ -28954,10 +28382,7 @@
                <cit type="trans">
                   <quote>rufen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>anrufen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -29150,9 +28575,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>flach</quote>
-               </cit>
-               <cit type="trans">
                   <quote>platt</quote>
                </cit>
             </sense>
@@ -29209,15 +28631,7 @@
                   <quote>Vorsteher</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Chef</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Haupt</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>chefe da estação</orth>
@@ -29319,10 +28733,7 @@
                <cit type="trans">
                   <quote>duften</quote>
                </cit>
-               <cit type="trans">
-                  <quote>riechen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -30428,12 +29839,7 @@
                   <quote>zitieren</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>nennen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>citar novamente</orth>
@@ -30633,9 +30039,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Geistliche</quote>
-               </cit>
                <cit type="trans">
                   <quote>Pastor</quote>
                </cit>
@@ -30940,7 +30343,7 @@
             <form>
                <orth>coisa</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Angelegenheit</quote>
                </cit>
@@ -30954,15 +30357,7 @@
                   <quote>Werk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ding</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Ding</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>Gegenstand</quote>
                </cit>
@@ -31279,18 +30674,12 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>legen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>setzen</quote>
                </cit>
                <cit type="trans">
                   <quote>stecken</quote>
                </cit>
-               <cit type="trans">
-                  <quote>stellen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -31335,12 +30724,7 @@
                   <quote>zuzüglich</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>zuzüglich</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>comando</orth>
@@ -31353,9 +30737,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>Anlaß</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Befehl</quote>
                </cit>
                <cit type="trans">
                   <quote>Edikt</quote>
@@ -31449,10 +30830,7 @@
                <cit type="trans">
                   <quote>Eisenbahnzug</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zug</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -31489,9 +30867,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>abstinent</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>mäßig</quote>
                </cit>
                <cit type="trans">
                   <quote>nüchtern</quote>
@@ -31536,15 +30911,7 @@
                   <quote>Kaufmann</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Händler</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Kaufmann</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>comestível</orth>
@@ -31609,15 +30976,7 @@
                   <quote>beginnen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>anfangen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>beginnen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>começar a queimar</orth>
@@ -31793,15 +31152,7 @@
                   <quote>Rührung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bewegung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Rührung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>como que</orth>
@@ -31914,12 +31265,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>Gefährte</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Genosse</quote>
-               </cit>
                <cit type="trans">
                   <quote>Geselle</quote>
                </cit>
@@ -32160,12 +31505,7 @@
                   <quote>völlig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>völlig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>completar</orth>
@@ -32675,9 +32015,6 @@
                   <quote>allerdings</quote>
                </cit>
                <cit type="trans">
-                  <quote>freilich</quote>
-               </cit>
-               <cit type="trans">
                   <quote>immerhin</quote>
                </cit>
                <cit type="trans">
@@ -32853,9 +32190,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>folgern</quote>
-               </cit>
-               <cit type="trans">
                   <quote>schließen</quote>
                </cit>
             </sense>
@@ -32864,23 +32198,12 @@
             <form>
                <orth>conclusão</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Ende</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Erfolg</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Ergebnis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Resultat</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Erfolg</quote>
                </cit>
@@ -32939,19 +32262,7 @@
                <cit type="trans">
                   <quote>Akkord</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Abkommen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Einklang</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Übereinkommen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Übereinstimmung</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -33133,7 +32444,7 @@
             <form>
                <orth>conduzir</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>führen</quote>
                </cit>
@@ -33144,15 +32455,7 @@
                   <quote>lenken</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>führen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>leiten</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>fahren</quote>
                </cit>
@@ -33297,9 +32600,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>bekräftigen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bestätigen</quote>
                </cit>
                <cit type="trans">
                   <quote>konfirmieren</quote>
@@ -33573,9 +32873,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>vermuten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>voraussetzen</quote>
                </cit>
             </sense>
@@ -33777,9 +33074,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Folge</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Sequenz</quote>
                </cit>
             </sense>
@@ -33797,9 +33091,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Folge</quote>
-               </cit>
                <cit type="trans">
                   <quote>Sequenz</quote>
                </cit>
@@ -34007,9 +33298,6 @@
                   <quote>beständig</quote>
                </cit>
                <cit type="trans">
-                  <quote>fest</quote>
-               </cit>
-               <cit type="trans">
                   <quote>konstant</quote>
                </cit>
                <cit type="trans">
@@ -34053,12 +33341,7 @@
             <form>
                <orth>constipação</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Erkältung</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Erkältung</quote>
                </cit>
@@ -34360,12 +33643,7 @@
             <form>
                <orth>conteúdo</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Inhalt</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Inhalt</quote>
                </cit>
@@ -34484,10 +33762,7 @@
                <cit type="trans">
                   <quote>Erzählung</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Geschichte</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -34888,9 +34163,6 @@
                   <quote>fügen</quote>
                </cit>
                <cit type="trans">
-                  <quote>ziemen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>geziemen</quote>
                </cit>
             </sense>
@@ -35001,10 +34273,7 @@
                <cit type="trans">
                   <quote>mutig</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tapfer</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -35170,9 +34439,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Chor</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Sängerchor</quote>
                </cit>
             </sense>
@@ -35279,12 +34545,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>recht</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>richtig</quote>
-               </cit>
                <cit type="trans">
                   <quote>zutreffend</quote>
                </cit>
@@ -35447,12 +34707,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>recht</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>richtig</quote>
-               </cit>
-               <cit type="trans">
                   <quote>zutreffend</quote>
                </cit>
             </sense>
@@ -35540,12 +34794,7 @@
                   <quote>abschneiden</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>schneiden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>cortar com machado</orth>
@@ -35770,7 +35019,7 @@
             <form>
                <orth>costume</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Anzug</quote>
                </cit>
@@ -35784,7 +35033,7 @@
                   <quote>Tracht</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Angewohnheit</quote>
                </cit>
@@ -35804,7 +35053,7 @@
                   <quote>Usus</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Mode</quote>
                </cit>
@@ -35812,18 +35061,7 @@
                   <quote>Weise</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Mode</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Weise</quote>
-               </cit>
-            </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>Brauch</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>Sitte</quote>
                </cit>
@@ -36326,12 +35564,7 @@
             <form>
                <orth>criança</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kind</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kind</quote>
                </cit>
@@ -37019,12 +36252,7 @@
                   <quote>wiederherstellen</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>genesen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>curioso</orth>
@@ -37046,16 +36274,8 @@
                <cit type="trans">
                   <quote>gespannt</quote>
                </cit>
-               <cit type="trans">
-                  <quote>neugierig</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>neugierig</quote>
-               </cit>
-            </sense>
-         </entry>
+               </sense>
+            </entry>
          <entry>
             <form>
                <orth>curisoso</orth>
@@ -37099,12 +36319,7 @@
             <form>
                <orth>curto</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>kurz</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kurz</quote>
                </cit>
@@ -37135,12 +36350,7 @@
                   <quote>flektieren</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>biegen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>curvo</orth>
@@ -37441,9 +36651,6 @@
                   <quote>Bezirk</quote>
                </cit>
                <cit type="trans">
-                  <quote>Kreis</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Runde</quote>
                </cit>
             </sense>
@@ -37524,15 +36731,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bequem</quote>
-               </cit>
-               <cit type="trans">
                   <quote>gelegen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gemächlich</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -37735,15 +36936,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bequem</quote>
-               </cit>
-               <cit type="trans">
                   <quote>gelegen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gemächlich</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -38883,12 +38078,7 @@
                   <quote>zugetan</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ergeben</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>dedicar</orth>
@@ -40317,17 +39507,7 @@
                   <quote>Delegierter</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Abgeordneter</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Abgeordneter</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>deputar</orth>
@@ -40341,9 +39521,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>abordnen</quote>
-               </cit>
                <cit type="trans">
                   <quote>deputieren</quote>
                </cit>
@@ -40407,12 +39584,7 @@
                   <quote>schütten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>schütten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>derramar lágrimas</orth>
@@ -40815,9 +39987,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>entschuldigen</quote>
-               </cit>
                <cit type="trans">
                   <quote>verzeihen</quote>
                </cit>
@@ -41655,9 +40824,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bestimmen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>definieren</quote>
                </cit>
             </sense>
@@ -41674,20 +40840,7 @@
                   <quote>Empfänger</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Adressat</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Empfänger</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Empfänger</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>destino</orth>
@@ -41907,12 +41060,7 @@
                   <quote>zurückhalten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>zurückhalten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>deteriorar‐se</orth>
@@ -42376,7 +41524,7 @@
             <form>
                <orth>de facto</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>freilich</quote>
                </cit>
@@ -42384,20 +41532,9 @@
                   <quote>tatsächlich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>freilich</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>tatsächlich</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>allerdings</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>freilich</quote>
                </cit>
                <cit type="trans">
                   <quote>immerhin</quote>
@@ -42575,15 +41712,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>abermals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>von neuem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wieder</quote>
-               </cit>
                <cit type="trans">
                   <quote>wiederholt</quote>
                </cit>
@@ -43026,12 +42154,7 @@
             <form>
                <orth>dictado</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Diktat</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Diktat</quote>
                </cit>
@@ -43434,15 +42557,7 @@
                   <quote>Umfang</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ausdehnung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Dimension</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>diminuir</orth>
@@ -43571,12 +42686,7 @@
                   <quote>Bistum</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bistum</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>diploma</orth>
@@ -43657,13 +42767,7 @@
                   <quote>flugs</quote>
                </cit>
                <cit type="trans">
-                  <quote>gleich</quote>
-               </cit>
-               <cit type="trans">
                   <quote>sofort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>sogleich</quote>
                </cit>
                <cit type="trans">
                   <quote>umgehend</quote>
@@ -43704,10 +42808,7 @@
                <cit type="trans">
                   <quote>Oberhaupt</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Vorsteher</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -43868,9 +42969,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>führen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>leiten</quote>
                </cit>
                <cit type="trans">
@@ -43969,12 +43067,7 @@
                   <quote>Diskussion</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Diskussion</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>discutir</orth>
@@ -44264,9 +43357,6 @@
                   <quote>fern</quote>
                </cit>
                <cit type="trans">
-                  <quote>entfernt</quote>
-               </cit>
-               <cit type="trans">
                   <quote>weit</quote>
                </cit>
             </sense>
@@ -44406,15 +43496,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>austeilen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>verallgemeinern</quote>
                </cit>
-               <cit type="trans">
-                  <quote>verteilen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -44624,10 +43708,7 @@
                <cit type="trans">
                   <quote>entzweien</quote>
                </cit>
-               <cit type="trans">
-                  <quote>scheiden</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>zerlegen</quote>
@@ -44649,10 +43730,7 @@
                <cit type="trans">
                   <quote>verteilen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>zerlegen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -44701,17 +43779,12 @@
             <form>
                <orth>divisão</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Division</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Teilung</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Division</quote>
                </cit>
@@ -45170,12 +44243,7 @@
                   <quote>Wohnsitz</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Wohnort</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>dominar</orth>
@@ -45274,10 +44342,7 @@
                <cit type="trans">
                   <quote>Verdruß</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Weh</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -45825,12 +44890,7 @@
             <form>
                <orth>duro</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hart</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>hart</quote>
                </cit>
@@ -45880,12 +44940,7 @@
                   <quote>Vermächtnis</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Gabe</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>débil</orth>
@@ -46151,12 +45206,7 @@
                   <quote>wirtschaftlich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sparsam</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>eczema</orth>
@@ -46198,9 +45248,6 @@
                </cit>
                <cit type="trans">
                   <quote>aufbauen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>erbauen</quote>
                </cit>
                <cit type="trans">
                   <quote>konstruieren</quote>
@@ -46335,9 +45382,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>erziehen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Erziehung leiten</quote>
                </cit>
             </sense>
@@ -46357,12 +45401,7 @@
                   <quote>Züchtung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Erziehung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>efectivamente</orth>
@@ -46375,15 +45414,7 @@
                   <quote>tatsächlich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>freilich</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>tatsächlich</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>efectivar</orth>
@@ -46415,15 +45446,7 @@
                   <quote>wirklich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>faktisch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wirklich</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>efectuar</orth>
@@ -46723,10 +45746,7 @@
                <cit type="trans">
                   <quote>es</quote>
                </cit>
-               <cit type="trans">
-                  <quote>ihm</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -46905,9 +45925,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Aufzug</quote>
-               </cit>
                <cit type="trans">
                   <quote>Fahrstuhl</quote>
                </cit>
@@ -47114,10 +46131,7 @@
                <cit type="trans">
                   <quote>bei</quote>
                </cit>
-               <cit type="trans">
-                  <quote>zu</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -47133,17 +46147,12 @@
             <form>
                <orth>embaixada</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Gesandtschaft</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Gesandtschaft</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Abordnung</quote>
                </cit>
@@ -47875,9 +46884,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>borgen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>leihen</quote>
                </cit>
                <cit type="trans">
@@ -47992,12 +46998,7 @@
                   <quote>zuzüglich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>zuzüglich</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>em continuação</orth>
@@ -48833,12 +47834,7 @@
                   <quote>sich befinden</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>sich befinden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>encontrar</orth>
@@ -49195,10 +48191,7 @@
                <cit type="trans">
                   <quote>werben</quote>
                </cit>
-               <cit type="trans">
-                  <quote>anwerben</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -49535,10 +48528,7 @@
                <cit type="trans">
                   <quote>rollen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wickeln</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -49598,9 +48588,6 @@
                </cit>
                <cit type="trans">
                   <quote>probieren</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>prüfen</quote>
                </cit>
                <cit type="trans">
                   <quote>versuchen</quote>
@@ -50169,10 +49156,7 @@
                <cit type="trans">
                   <quote>wickeln</quote>
                </cit>
-               <cit type="trans">
-                  <quote>einwickeln</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -50191,12 +49175,7 @@
                   <quote>Hacke</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Spaten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>enxaguar</orth>
@@ -50452,15 +49431,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Epik</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Epos</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Heldengedicht</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -51289,12 +50262,7 @@
             <form>
                <orth>escola</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Schule</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Schule</quote>
                </cit>
@@ -51575,10 +50543,7 @@
                <cit type="trans">
                   <quote>Amt</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Büro</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -52330,18 +51295,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Rückgrat</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Wirbelsäule</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Rückgrat</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>espinho</orth>
@@ -52723,12 +51680,7 @@
                   <quote>Genius</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Geist</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>esquadra</orth>
@@ -52793,15 +51745,7 @@
                   <quote>Skelett</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Gerippe</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Skelett</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>esquema</orth>
@@ -52947,18 +51891,7 @@
                   <quote>dieser</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>diese</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dieses</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dieser</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>estabelecer‐se</orth>
@@ -52992,9 +51925,6 @@
             <sense n="3">
                <cit type="trans">
                   <quote>fundieren</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gründen</quote>
                </cit>
                <cit type="trans">
                   <quote>begründen</quote>
@@ -53108,12 +52038,7 @@
                   <quote>Zustand</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Staat</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>estado de chefia</orth>
@@ -53468,12 +52393,7 @@
                   <quote>liegen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>liegen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>estar vago</orth>
@@ -53549,12 +52469,7 @@
             <form>
                <orth>estação balneária</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Badeort</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Badeort</quote>
                </cit>
@@ -53585,18 +52500,7 @@
                   <quote>dieser</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>diese</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dieses</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dieser</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>estender‐se</orth>
@@ -53784,9 +52688,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>achten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>mögen</quote>
                </cit>
                <cit type="trans">
@@ -53822,9 +52723,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>anregen</quote>
-               </cit>
                <cit type="trans">
                   <quote>reizen</quote>
                </cit>
@@ -54113,9 +53011,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>verderben</quote>
-               </cit>
                <cit type="trans">
                   <quote>verschlechtern</quote>
                </cit>
@@ -54719,9 +53614,6 @@
                   <quote>allzeit</quote>
                </cit>
                <cit type="trans">
-                  <quote>fortwährend</quote>
-               </cit>
-               <cit type="trans">
                   <quote>immer</quote>
                </cit>
                <cit type="trans">
@@ -55047,12 +53939,6 @@
                   <quote>bündig</quote>
                </cit>
                <cit type="trans">
-                  <quote>exakt</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>genau</quote>
-               </cit>
-               <cit type="trans">
                   <quote>präzis</quote>
                </cit>
                <cit type="trans">
@@ -55194,9 +54080,6 @@
                </cit>
                <cit type="trans">
                   <quote>exakt</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>genau</quote>
                </cit>
                <cit type="trans">
                   <quote>präzis</quote>
@@ -55690,12 +54573,7 @@
                   <quote>Existenz</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Existenz</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>exonerar</orth>
@@ -56072,17 +54950,12 @@
             <form>
                <orth>expresso</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Expreß</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Eilzug</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Eilzug</quote>
                </cit>
@@ -56115,9 +54988,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>Ausdruck</quote>
-               </cit>
                <cit type="trans">
                   <quote>Terminus</quote>
                </cit>
@@ -56488,10 +55358,7 @@
                <cit type="trans">
                   <quote>rmee</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Heer</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -56513,12 +55380,7 @@
             <form>
                <orth>fabricante</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Fabrikant</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Fabrikant</quote>
                </cit>
@@ -56684,9 +55546,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Fähigkeit</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gewalt</quote>
                </cit>
                <cit type="trans">
@@ -56698,10 +55557,7 @@
                <cit type="trans">
                   <quote>Macht</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Vermögen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -56874,21 +55730,13 @@
                <cit type="trans">
                   <quote>Binde</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Streifen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Band</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Streifen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>fala</orth>
@@ -58360,12 +57208,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>schließen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>verschließen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>zuschließen</quote>
                </cit>
             </sense>
@@ -58460,9 +57302,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Markt</quote>
-               </cit>
                <cit type="trans">
                   <quote>Messe</quote>
                </cit>
@@ -59142,12 +57981,7 @@
             <form>
                <orth>figueira</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Feigenbaum</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Feigenbaum</quote>
                </cit>
@@ -59566,12 +58400,7 @@
             <form>
                <orth>fio de metal</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Draht</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Draht</quote>
                </cit>
@@ -59939,9 +58768,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>flüssig</quote>
-               </cit>
-               <cit type="trans">
                   <quote>dünnflüssig</quote>
                </cit>
             </sense>
@@ -60085,9 +58911,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Herd</quote>
-               </cit>
                <cit type="trans">
                   <quote>Ofen</quote>
                </cit>
@@ -61176,22 +59999,17 @@
             <form>
                <orth>frio</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Frost</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>kalt</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>kalt</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>lieblos</quote>
                </cit>
@@ -61786,12 +60604,7 @@
                   <quote>Zukunft</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Zukunft</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>fuxicar</orth>
@@ -61838,12 +60651,7 @@
             <form>
                <orth>fábrica</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Fabrik</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Fabrik</quote>
                </cit>
@@ -61938,12 +60746,7 @@
             <form>
                <orth>férias</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Ferien</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Ferien</quote>
                </cit>
@@ -62613,12 +61416,7 @@
             <form>
                <orth>garrafa térmica</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Isolier‐Gefäß</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Isolier‐Gefäß</quote>
                </cit>
@@ -62774,12 +61572,7 @@
             <form>
                <orth>geada</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Frost</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Frost</quote>
                </cit>
@@ -63563,9 +62356,6 @@
                   <quote>achten</quote>
                </cit>
                <cit type="trans">
-                  <quote>mögen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>schätzen</quote>
                </cit>
                <cit type="trans">
@@ -63761,18 +62551,7 @@
                   <quote>Spaß</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Jux</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Scherz</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Spaß</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>gracioso</orth>
@@ -64015,9 +62794,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>dankbar</quote>
-               </cit>
-               <cit type="trans">
                   <quote>erkenntlich</quote>
                </cit>
             </sense>
@@ -64040,9 +62816,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>Amtswürde</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Grad</quote>
                </cit>
                <cit type="trans">
                   <quote>Rang</quote>
@@ -64122,9 +62895,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>ernst</quote>
-               </cit>
                <cit type="trans">
                   <quote>ernsthaft</quote>
                </cit>
@@ -64364,9 +63134,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>barsch</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ungezogen</quote>
                </cit>
                <cit type="trans">
@@ -64401,12 +63168,7 @@
             <form>
                <orth>grou</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kranich</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kranich</quote>
                </cit>
@@ -64592,12 +63354,7 @@
                   <quote>Sonnenschirm</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Regenschirm</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>guarda‐livros</orth>
@@ -64846,24 +63603,13 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>führen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>leiten</quote>
                </cit>
                <cit type="trans">
                   <quote>lenken</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>führen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>leiten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>guichê</orth>
@@ -64896,12 +63642,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Lenkrad</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Steuer</quote>
-               </cit>
                <cit type="trans">
                   <quote>Steuerrad</quote>
                </cit>
@@ -65027,10 +63767,7 @@
                <cit type="trans">
                   <quote>Geist</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Genius</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -65101,15 +63838,7 @@
                   <quote>Insasse</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Bewohner</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Einwohner</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>habitante da cidade</orth>
@@ -65446,13 +64175,7 @@
                <cit type="trans">
                   <quote>zagen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>zaudern</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zögern</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -65557,12 +64280,7 @@
                   <quote>Voraussetzung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Voraussetzung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>hirto</orth>
@@ -65668,16 +64386,10 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>holländisch</quote>
-               </cit>
-               <cit type="trans">
                   <quote>niederländisch</quote>
                </cit>
             </sense>
             <sense n="4">
-               <cit type="trans">
-                  <quote>Holländer</quote>
-               </cit>
                <cit type="trans">
                   <quote>Niederländer</quote>
                </cit>
@@ -65801,9 +64513,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>bieder</quote>
-               </cit>
                <cit type="trans">
                   <quote>harmlos</quote>
                </cit>
@@ -66458,12 +65167,7 @@
             <form>
                <orth>igreja</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kirche</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kirche</quote>
                </cit>
@@ -66502,9 +65206,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>gleich</quote>
-               </cit>
                <cit type="trans">
                   <quote>gleichfalls</quote>
                </cit>
@@ -66732,13 +65433,7 @@
                   <quote>flugs</quote>
                </cit>
                <cit type="trans">
-                  <quote>gleich</quote>
-               </cit>
-               <cit type="trans">
                   <quote>sofort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>sogleich</quote>
                </cit>
                <cit type="trans">
                   <quote>umgehend</quote>
@@ -66825,12 +65520,7 @@
             <form>
                <orth>imitação</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Imitation</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Imitation</quote>
                </cit>
@@ -66962,9 +65652,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>frecht</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>impertinent</quote>
                </cit>
                <cit type="trans">
                   <quote>unverschämt</quote>
@@ -67382,10 +66069,7 @@
                <cit type="trans">
                   <quote>Stoß</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Trieb</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -67567,9 +66251,6 @@
                </cit>
                <cit type="trans">
                   <quote>antreiben</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>aufhetzen</quote>
                </cit>
                <cit type="trans">
                   <quote>herausfordern</quote>
@@ -68109,9 +66790,6 @@
                   <quote>Beruf</quote>
                </cit>
                <cit type="trans">
-                  <quote>Gewerbe</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Handwerk</quote>
                </cit>
             </sense>
@@ -68435,9 +67113,6 @@
                   <quote>melden</quote>
                </cit>
                <cit type="trans">
-                  <quote>mitteilen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>verkünden</quote>
                </cit>
             </sense>
@@ -68613,9 +67288,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>beleidigen</quote>
-               </cit>
                <cit type="trans">
                   <quote>kränken</quote>
                </cit>
@@ -68891,18 +67563,12 @@
                   <quote>beaufsichtigen</quote>
                </cit>
                <cit type="trans">
-                  <quote>inspizieren</quote>
-               </cit>
-               <cit type="trans">
                   <quote>mustern</quote>
                </cit>
             </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>kontrollieren</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nachsehen</quote>
                </cit>
                <cit type="trans">
                   <quote>überwachen</quote>
@@ -68976,9 +67642,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>drängen</quote>
-               </cit>
                <cit type="trans">
                   <quote>pressieren</quote>
                </cit>
@@ -69107,10 +67770,7 @@
                <cit type="trans">
                   <quote>Instrument</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Werkzeug</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -69317,12 +67977,7 @@
                   <quote>Verstand</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Verstand</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>intencional</orth>
@@ -69988,12 +68643,7 @@
                   <quote>treten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>fahren</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>irlandês</orth>
@@ -70540,12 +69190,7 @@
             <form>
                <orth>joalheiro</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Juwelier</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Juwelier</quote>
                </cit>
@@ -70578,12 +69223,7 @@
             <form>
                <orth>jogar</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>spielen</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>spielen</quote>
                </cit>
@@ -70662,12 +69302,7 @@
                   <quote>Journalist</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Journalist</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>jorrar</orth>
@@ -70773,12 +69408,7 @@
                   <quote>jüdisch</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Jude</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>judicioso</orth>
@@ -71075,12 +69705,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>an</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bei</quote>
-               </cit>
-               <cit type="trans">
                   <quote>zu</quote>
                </cit>
             </sense>
@@ -71185,12 +69809,7 @@
                   <quote>Zins</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Zins</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>jus</orth>
@@ -71305,9 +69924,6 @@
                </cit>
             </sense>
             <sense n="4">
-               <cit type="trans">
-                  <quote>Weisheit</quote>
-               </cit>
                <cit type="trans">
                   <quote>Klugheit</quote>
                </cit>
@@ -71928,12 +70544,7 @@
             <form>
                <orth>laranjeira</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Orangenbaum</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Orangenbaum</quote>
                </cit>
@@ -72000,12 +70611,7 @@
             <form>
                <orth>largura</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Breite</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Breite</quote>
                </cit>
@@ -72172,10 +70778,7 @@
                <cit type="trans">
                   <quote>Latun</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Messing</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -72229,10 +70832,7 @@
                <cit type="trans">
                   <quote>abbeuchen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>waschen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -72284,7 +70884,7 @@
             <form>
                <orth>laço</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Band</quote>
                </cit>
@@ -72295,20 +70895,12 @@
                   <quote>Schlinge</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Band</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Masche</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Schlinge</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+               </sense>
+            <sense>
                <cit type="trans">
                   <quote>Knoten</quote>
                </cit>
@@ -72350,33 +70942,13 @@
             </sense>
             <sense n="4">
                <cit type="trans">
-                  <quote>bieder</quote>
-               </cit>
-               <cit type="trans">
                   <quote>harmlos</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>loyal</quote>
                </cit>
                <cit type="trans">
                   <quote>unumwunden</quote>
                </cit>
             </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>bieder</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>harmlos</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>loyal</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>unumwunden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>lebre</orth>
@@ -73103,9 +71675,6 @@
                   <quote>Allianz</quote>
                </cit>
                <cit type="trans">
-                  <quote>Band</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Bund</quote>
                </cit>
                <cit type="trans">
@@ -73480,10 +72049,7 @@
                <cit type="trans">
                   <quote>Tabelle</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Verzeichnis</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -73671,16 +72237,7 @@
                   <quote>Fleck</quote>
                </cit>
                <cit type="trans">
-                  <quote>Ort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Platz</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Stätte</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Stelle</quote>
                </cit>
                <cit type="trans">
                   <quote>Terrain</quote>
@@ -73847,9 +72404,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Geschäft</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Kaufladen</quote>
                </cit>
                <cit type="trans">
@@ -73862,12 +72416,7 @@
                   <quote>Warenhaus</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Geschäft</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>lombriga</orth>
@@ -74176,16 +72725,7 @@
                   <quote>Fleck</quote>
                </cit>
                <cit type="trans">
-                  <quote>Ort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Platz</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Stätte</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Stelle</quote>
                </cit>
                <cit type="trans">
                   <quote>Terrain</quote>
@@ -74833,10 +73373,7 @@
                <cit type="trans">
                   <quote>hager</quote>
                </cit>
-               <cit type="trans">
-                  <quote>mager</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -74903,9 +73440,6 @@
                   <quote>fürder</quote>
                </cit>
                <cit type="trans">
-                  <quote>mehr</quote>
-               </cit>
-               <cit type="trans">
                   <quote>weiter</quote>
                </cit>
             </sense>
@@ -74913,18 +73447,12 @@
                <cit type="trans">
                   <quote>fort</quote>
                </cit>
-               <cit type="trans">
-                  <quote>weiter</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="9">
                <cit type="trans">
                   <quote>am liebsten</quote>
                </cit>
-               <cit type="trans">
-                  <quote>lieber</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -76218,12 +74746,7 @@
             <form>
                <orth>matrimônio</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Ehe</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Ehe</quote>
                </cit>
@@ -76568,12 +75091,7 @@
                   <quote>Mittel</quote>
                </cit>
             </sense>
-            <sense n="6">
-               <cit type="trans">
-                  <quote>Mittel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>mel</orth>
@@ -76730,12 +75248,7 @@
             <form>
                <orth>membrana</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Tunika</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Tunika</quote>
                </cit>
@@ -76754,9 +75267,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Glied</quote>
-               </cit>
                <cit type="trans">
                   <quote>Mitglied</quote>
                </cit>
@@ -76809,12 +75319,7 @@
                   <quote>zitieren</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>nennen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>mendigo</orth>
@@ -76952,7 +75457,7 @@
             <form>
                <orth>mercado</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Basar</quote>
                </cit>
@@ -76963,17 +75468,12 @@
                   <quote>Warenhaus</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Halle</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Markt</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>Marktplatz</quote>
                </cit>
@@ -77133,10 +75633,7 @@
                <cit type="trans">
                   <quote>selber</quote>
                </cit>
-               <cit type="trans">
-                  <quote>selbst</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>gleiche</quote>
@@ -77149,9 +75646,6 @@
                </cit>
                <cit type="trans">
                   <quote>selbe</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>selber</quote>
                </cit>
                <cit type="trans">
                   <quote>selbes</quote>
@@ -77670,17 +76164,12 @@
             <form>
                <orth>ministério</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Kabinett</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ministerium</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Ministerium</quote>
                </cit>
@@ -78013,20 +76502,12 @@
             <form>
                <orth>moda</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Wut</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Mode</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Weise</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Mode</quote>
                </cit>
@@ -78202,10 +76683,7 @@
                <cit type="trans">
                   <quote>Mode</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Weise</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -78815,12 +77293,7 @@
             <form>
                <orth>mortal</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>sterblich</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>sterblich</quote>
                </cit>
@@ -79140,9 +77613,6 @@
                   <quote>Tausch</quote>
                </cit>
                <cit type="trans">
-                  <quote>Veränderung</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Wechsel</quote>
                </cit>
             </sense>
@@ -79315,9 +77785,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>Frau</quote>
-               </cit>
                <cit type="trans">
                   <quote>Weib</quote>
                </cit>
@@ -80160,12 +78627,7 @@
                   <quote>Natur</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Natur</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>navegar</orth>
@@ -80312,27 +78774,12 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>allerdings</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>freilich</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>immerhin</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ja</quote>
                </cit>
                <cit type="trans">
                   <quote>ja doch</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wohl</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zwar</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>fürwahr</quote>
@@ -80901,12 +79348,7 @@
             <form>
                <orth>nogueira</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Nußbaum</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Nußbaum</quote>
                </cit>
@@ -81103,7 +79545,7 @@
             <form>
                <orth>nota</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Faktura</quote>
                </cit>
@@ -81114,7 +79556,7 @@
                   <quote>Warenrechnung</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Bon</quote>
                </cit>
@@ -81122,7 +79564,7 @@
                   <quote>Schein</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Aufzeichnung</quote>
                </cit>
@@ -81133,18 +79575,7 @@
                   <quote>Notiz</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Aufzeichnung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Note</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Notiz</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>Bemerkung</quote>
                </cit>
@@ -81211,16 +79642,7 @@
                <cit type="trans">
                   <quote>ankundigen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>melden</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>mitteilen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>verkünden</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -81254,15 +79676,9 @@
                   <quote>ankundigen</quote>
                </cit>
                <cit type="trans">
-                  <quote>melden</quote>
-               </cit>
-               <cit type="trans">
                   <quote>mitteilen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>verkünden</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -81339,15 +79755,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>abermals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>von neuem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wieder</quote>
-               </cit>
-               <cit type="trans">
                   <quote>wiederholt</quote>
                </cit>
                <cit type="trans">
@@ -81420,12 +79827,7 @@
                   <quote>unberührt</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>neu</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>noz</orth>
@@ -81758,10 +80160,7 @@
                <cit type="trans">
                   <quote>Anzahl</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zahl</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Nummer</quote>
@@ -82358,12 +80757,7 @@
                   <quote>Zaun</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Schranke</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>obséquio</orth>
@@ -82399,9 +80793,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>erlangen</quote>
-               </cit>
                <cit type="trans">
                   <quote>erzielen</quote>
                </cit>
@@ -82530,9 +80921,6 @@
                </cit>
                <cit type="trans">
                   <quote>Geschehnis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Ereignis</quote>
                </cit>
                <cit type="trans">
                   <quote>Fall</quote>
@@ -82714,12 +81102,7 @@
                   <quote>Westen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Westen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>ofender</orth>
@@ -82804,15 +81187,7 @@
                   <quote>Werkstatt</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Atelier</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Werkstatt</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>oftalmologista</orth>
@@ -83001,10 +81376,7 @@
                <cit type="trans">
                   <quote>Ölbaum</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Olivenbaum</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -83609,12 +81981,7 @@
                   <quote>Ursprung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Ursprung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>original</orth>
@@ -83785,9 +82152,6 @@
                   <quote>schätzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>abschätzen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>einschätzen</quote>
                </cit>
             </sense>
@@ -83840,9 +82204,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Gepränge</quote>
-               </cit>
                <cit type="trans">
                   <quote>Pomp</quote>
                </cit>
@@ -83983,15 +82344,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>abermals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>von neuem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wieder</quote>
-               </cit>
-               <cit type="trans">
                   <quote>wiederholt</quote>
                </cit>
                <cit type="trans">
@@ -84038,9 +82390,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>ehemals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>einmal</quote>
                </cit>
                <cit type="trans">
                   <quote>einst</quote>
@@ -84314,10 +82663,7 @@
                <cit type="trans">
                   <quote>Ballen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Paket</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -84409,9 +82755,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Geistliche</quote>
-               </cit>
                <cit type="trans">
                   <quote>Pastor</quote>
                </cit>
@@ -84865,17 +83208,12 @@
             <form>
                <orth>pano</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Draperie</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Tuch</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Leinwand</quote>
                </cit>
@@ -84883,17 +83221,17 @@
                   <quote>Linnen</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>Tuch</quote>
                </cit>
             </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>Segel</quote>
                </cit>
             </sense>
-            <sense n="6">
+            <sense>
                <cit type="trans">
                   <quote>Stoff</quote>
                </cit>
@@ -85250,9 +83588,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Haltestelle</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Station</quote>
                </cit>
             </sense>
@@ -85596,12 +83931,7 @@
                   <quote>Wand</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Wand</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>parelho</orth>
@@ -85733,13 +84063,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Anteil</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Stück</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Teil</quote>
                </cit>
                <cit type="trans">
                   <quote>Partie</quote>
@@ -85782,9 +84106,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>anschließen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>mitteilen</quote>
                </cit>
                <cit type="trans">
                   <quote>teilhaftig machen</quote>
@@ -86222,22 +84543,17 @@
             <form>
                <orth>passeio</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Spaziergang</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Foyer</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Spaziergang</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>Bürgersteig</quote>
                </cit>
@@ -87109,21 +85425,7 @@
                   <quote>im Gegensatz</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>dagegen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>entgegengesetzt</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gegenteils</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>hingegen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>pelo menos</orth>
@@ -87509,12 +85811,7 @@
             <form>
                <orth>perda</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Verlust</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Verlust</quote>
                </cit>
@@ -87922,9 +86219,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Bein</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Pfote</quote>
                </cit>
                <cit type="trans">
@@ -88302,10 +86596,7 @@
                <cit type="trans">
                   <quote>schwer sein</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wiegen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Ärger</quote>
@@ -89223,10 +87514,7 @@
                <cit type="trans">
                   <quote>geläufig</quote>
                </cit>
-               <cit type="trans">
-                  <quote>glatt</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Abriß</quote>
@@ -89246,19 +87534,10 @@
             </sense>
             <sense n="4">
                <cit type="trans">
-                  <quote>flach</quote>
-               </cit>
-               <cit type="trans">
                   <quote>platt</quote>
                </cit>
             </sense>
             <sense n="5">
-               <cit type="trans">
-                  <quote>Entwurf</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Plan</quote>
-               </cit>
                <cit type="trans">
                   <quote>Projekt</quote>
                </cit>
@@ -89679,12 +87958,7 @@
             <form>
                <orth>polegar</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Daumen</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Daumen</quote>
                </cit>
@@ -89788,9 +88062,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>glätten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>polieren</quote>
                </cit>
             </sense>
@@ -89822,12 +88093,7 @@
                   <quote>Lehnstuhl</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Lehnstuhl</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>polvilho</orth>
@@ -89857,13 +88123,7 @@
                <cit type="trans">
                   <quote>Häscher</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Polizist</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Schutzmann</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Polizei</quote>
@@ -90181,12 +88441,7 @@
             <form>
                <orth>porca</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Mutter</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Mutter</quote>
                </cit>
@@ -90196,12 +88451,7 @@
             <form>
                <orth>porcentagem</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Prozent</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Prozent</quote>
                </cit>
@@ -90276,15 +88526,9 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>da</quote>
-               </cit>
-               <cit type="trans">
                   <quote>denn</quote>
                </cit>
-               <cit type="trans">
-                  <quote>weil</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -90406,9 +88650,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>aber</quote>
-               </cit>
                <cit type="trans">
                   <quote>doch</quote>
                </cit>
@@ -90927,12 +89168,7 @@
                   <quote>Gut</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Besitz</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>possibilitar</orth>
@@ -91769,9 +90005,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>faul</quote>
-               </cit>
-               <cit type="trans">
                   <quote>träge</quote>
                </cit>
             </sense>
@@ -92520,9 +90753,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>achten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>mögen</quote>
                </cit>
                <cit type="trans">
@@ -92716,7 +90946,7 @@
             <form>
                <orth>princípio</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Anfang</quote>
                </cit>
@@ -92724,15 +90954,7 @@
                   <quote>Beginn</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Anfang</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Beginn</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Grundsatz</quote>
                </cit>
@@ -92781,17 +91003,7 @@
                   <quote>Verlies</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Gefängnis</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Gefängnis</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>privada</orth>
@@ -92918,12 +91130,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>verfahren</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vorgehen</quote>
-               </cit>
                <cit type="trans">
                   <quote>vorschreiten</quote>
                </cit>
@@ -93195,15 +91401,7 @@
                   <quote>Produktion</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Erzeugung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Produktion</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>prodígio</orth>
@@ -93383,12 +91581,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Beruf</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Gewerbe</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Profession</quote>
                </cit>
             </sense>
@@ -93412,12 +91604,7 @@
                   <quote>Tiefe</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Tiefe</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>profundo</orth>
@@ -93570,12 +91757,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Entwurf</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Plan</quote>
-               </cit>
                <cit type="trans">
                   <quote>Projekt</quote>
                </cit>
@@ -93820,30 +92001,8 @@
                <cit type="trans">
                   <quote>Besitztum</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Besitzung</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Eigentum</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Gut</quote>
-               </cit>
-            </sense>
-            <sense n="5">
-               <cit type="trans">
-                  <quote>Besitz</quote>
-               </cit>
-            </sense>
-            <sense n="6">
-               <cit type="trans">
-                  <quote>Besitztum</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Eigentum</quote>
-               </cit>
-            </sense>
-         </entry>
+               </sense>
+            </entry>
          <entry>
             <form>
                <orth>proprietário</orth>
@@ -94016,10 +92175,7 @@
                <cit type="trans">
                   <quote>schützen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>beschützen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>bergen</quote>
@@ -94027,13 +92183,7 @@
                <cit type="trans">
                   <quote>schirmen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>beschirmen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>beschützen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -94100,10 +92250,7 @@
                <cit type="trans">
                   <quote>Prototyp</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Urbild</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -94188,10 +92335,7 @@
                <cit type="trans">
                   <quote>wahrscheinlich</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wohl</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -94430,12 +92574,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>gescheit</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>klug</quote>
-               </cit>
-               <cit type="trans">
                   <quote>weise</quote>
                </cit>
             </sense>
@@ -94628,12 +92766,6 @@
                </cit>
             </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>angrenzend</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>anstoßend</quote>
-               </cit>
                <cit type="trans">
                   <quote>benachbart</quote>
                </cit>
@@ -94928,17 +93060,12 @@
             <form>
                <orth>pulso</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Handgelenk</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Handgelenk</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Puls</quote>
                </cit>
@@ -95084,9 +93211,6 @@
                   <quote>blank</quote>
                </cit>
                <cit type="trans">
-                  <quote>rein</quote>
-               </cit>
-               <cit type="trans">
                   <quote>reinlich</quote>
                </cit>
                <cit type="trans">
@@ -95179,12 +93303,7 @@
                   <quote>Schüppe</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Spaten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>página</orth>
@@ -95807,9 +93926,6 @@
                   <quote>Abart</quote>
                </cit>
                <cit type="trans">
-                  <quote>Art</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gattung</quote>
                </cit>
                <cit type="trans">
@@ -95961,12 +94077,7 @@
             <form>
                <orth>quartel</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Kaserne</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Kaserne</quote>
                </cit>
@@ -96181,12 +94292,7 @@
                   <quote>glühen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>brennen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>queimar</orth>
@@ -97026,9 +95132,6 @@
                   <quote>Eile</quote>
                </cit>
                <cit type="trans">
-                  <quote>Geschwindigkeit</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Hast</quote>
                </cit>
             </sense>
@@ -97362,7 +95465,7 @@
             <form>
                <orth>real</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>effektiv</quote>
                </cit>
@@ -97376,28 +95479,17 @@
                   <quote>wirklich</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>faktisch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wirklich</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>positiv</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>real</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wirklich</quote>
-               </cit>
-            </sense>
-            <sense n="5">
+               </sense>
+            <sense>
                <cit type="trans">
                   <quote>königlich</quote>
                </cit>
@@ -97679,9 +95771,6 @@
                   <quote>bekommen</quote>
                </cit>
                <cit type="trans">
-                  <quote>empfangen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>erhalten</quote>
                </cit>
             </sense>
@@ -97807,12 +95896,7 @@
                   <quote>Quittung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Quittung</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>recinto</orth>
@@ -98015,9 +96099,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>dankbar</quote>
-               </cit>
                <cit type="trans">
                   <quote>erkenntlich</quote>
                </cit>
@@ -98446,13 +96527,7 @@
                <cit type="trans">
                   <quote>bedenken</quote>
                </cit>
-               <cit type="trans">
-                  <quote>erwägen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>sich überlegen</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>reflektieren</quote>
@@ -99018,12 +97093,7 @@
             <form>
                <orth>relógio</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Uhr</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Uhr</quote>
                </cit>
@@ -99066,12 +97136,7 @@
             <form>
                <orth>remetente</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Absender</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Absender</quote>
                </cit>
@@ -99241,10 +97306,7 @@
                <cit type="trans">
                   <quote>Reputation</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Ruf</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -99676,12 +97738,7 @@
             <form>
                <orth>resfriado</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Erkältung</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Erkältung</quote>
                </cit>
@@ -99712,10 +97769,7 @@
                <cit type="trans">
                   <quote>beschirmen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>beschützen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -100001,23 +98055,12 @@
             <form>
                <orth>resultado</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Wirksamkeit</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Erfolg</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Ergebnis</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Resultat</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Erfolg</quote>
                </cit>
@@ -100083,12 +98126,7 @@
                   <quote>zurückhalten</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>zurückhalten</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>retesar</orth>
@@ -100515,10 +98553,7 @@
                <cit type="trans">
                   <quote>Revue</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zeitschrift</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -101026,15 +99061,7 @@
                   <quote>Steinmasse</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Fels</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Felsen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>rochedo</orth>
@@ -101050,15 +99077,7 @@
                   <quote>Steinmasse</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Fels</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Felsen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>rocio</orth>
@@ -101280,15 +99299,7 @@
                   <quote>Zwinger</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Turm</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Zwinger</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>rosa‐de‐provença</orth>
@@ -101572,12 +99583,7 @@
             <form>
                <orth>rubro</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>rot</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>rot</quote>
                </cit>
@@ -101609,18 +99615,7 @@
                   <quote>roh</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>arg</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>barsch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>grob</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>rudimentar</orth>
@@ -101828,7 +99823,7 @@
             <form>
                <orth>rápido</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>geschwind</quote>
                </cit>
@@ -101842,12 +99837,7 @@
                   <quote>schnell</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Eilzug</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Eilzug</quote>
                </cit>
@@ -102264,17 +100254,12 @@
             <form>
                <orth>sala</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Wohnzimmer</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Wohnzimmer</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Gemach</quote>
                </cit>
@@ -102323,15 +100308,7 @@
             <form>
                <orth>sala de jantar</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Speisesaal</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Speisezimmer</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Speisesaal</quote>
                </cit>
@@ -102814,12 +100791,7 @@
                   <quote>wiederherstellen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>genesen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sarcasmo</orth>
@@ -103315,12 +101287,7 @@
                   <quote>umgehend</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>nächst</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>seguir</orth>
@@ -103450,12 +101417,7 @@
                   <quote>Busen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Busen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>seis</orth>
@@ -103898,9 +101860,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Weisheit</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Klugheit</quote>
                </cit>
             </sense>
@@ -103924,12 +101883,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>gescheit</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>klug</quote>
-               </cit>
                <cit type="trans">
                   <quote>weise</quote>
                </cit>
@@ -103979,9 +101932,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Weisheit</quote>
-               </cit>
                <cit type="trans">
                   <quote>Klugheit</quote>
                </cit>
@@ -104048,10 +101998,7 @@
                <cit type="trans">
                   <quote>Sentenz</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Spruch</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -104168,10 +102115,7 @@
                <cit type="trans">
                   <quote>entzweien</quote>
                </cit>
-               <cit type="trans">
-                  <quote>scheiden</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -104887,19 +102831,8 @@
                <cit type="trans">
                   <quote>ihr</quote>
                </cit>
-               <cit type="trans">
-                  <quote>sein</quote>
-               </cit>
-            </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>ihr</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>ihrige</quote>
-               </cit>
-            </sense>
-         </entry>
+               </sense>
+            </entry>
          <entry>
             <form>
                <orth>severo</orth>
@@ -105521,10 +103454,7 @@
                <cit type="trans">
                   <quote>Stand</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zustand</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -105568,18 +103498,9 @@
                   <quote>hallen</quote>
                </cit>
                <cit type="trans">
-                  <quote>klingen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>läuten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>schallen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tönen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -105797,9 +103718,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>besonders</quote>
-               </cit>
-               <cit type="trans">
                   <quote>eigens</quote>
                </cit>
                <cit type="trans">
@@ -105815,18 +103733,7 @@
                   <quote>zumal</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>Mantel</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Überrock</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Überzieher</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sobrinha</orth>
@@ -106246,12 +104153,7 @@
             <form>
                <orth>sombra</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Schatten</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Schatten</quote>
                </cit>
@@ -106324,22 +104226,12 @@
                   <quote>wähnen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>träumen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>sonho</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Traum</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Traum</quote>
                </cit>
@@ -106671,14 +104563,8 @@
                <cit type="trans">
                   <quote>ihr</quote>
                </cit>
-               <cit type="trans">
-                  <quote>sein</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>ihr</quote>
-               </cit>
                <cit type="trans">
                   <quote>ihrige</quote>
                </cit>
@@ -107432,9 +105318,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>bewältigen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>meistern</quote>
                </cit>
                <cit type="trans">
@@ -107658,9 +105541,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>vermuten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>voraussetzen</quote>
                </cit>
             </sense>
@@ -107690,9 +105570,6 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>aushalten</quote>
-               </cit>
-               <cit type="trans">
                   <quote>dulden</quote>
                </cit>
                <cit type="trans">
@@ -107708,12 +105585,7 @@
                   <quote>erleiden</quote>
                </cit>
             </sense>
-            <sense n="4">
-               <cit type="trans">
-                  <quote>dulden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>suposição</orth>
@@ -108111,9 +105983,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>ernst</quote>
-               </cit>
-               <cit type="trans">
                   <quote>ernsthaft</quote>
                </cit>
                <cit type="trans">
@@ -108203,16 +106072,7 @@
                   <quote>Fleck</quote>
                </cit>
                <cit type="trans">
-                  <quote>Ort</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Platz</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Stätte</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Stelle</quote>
                </cit>
                <cit type="trans">
                   <quote>Terrain</quote>
@@ -108247,13 +106107,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>allein</quote>
-               </cit>
-               <cit type="trans">
                   <quote>alleinig</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bloß</quote>
                </cit>
                <cit type="trans">
                   <quote>einzig</quote>
@@ -108645,12 +106499,7 @@
                   <quote>wohl</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>wohl</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>talão</orth>
@@ -109085,9 +106934,6 @@
                   <quote>schätzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>abschätzen</quote>
-               </cit>
-               <cit type="trans">
                   <quote>einschätzen</quote>
                </cit>
             </sense>
@@ -109105,9 +106951,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Becher</quote>
-               </cit>
                <cit type="trans">
                   <quote>Pokal</quote>
                </cit>
@@ -109658,9 +107501,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Baracke</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Zelt</quote>
                </cit>
             </sense>
@@ -109688,12 +107528,7 @@
             <form>
                <orth>tendência</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Tendenz</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Tendenz</quote>
                </cit>
@@ -109786,12 +107621,12 @@
             <form>
                <orth>ter</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>entbinden</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>besitzen</quote>
                </cit>
@@ -109802,12 +107637,7 @@
                   <quote>innehaben</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>besitzen</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>halten</quote>
                </cit>
@@ -109850,15 +107680,7 @@
                   <quote>erledigen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>enden</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>endigen</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>termo</orth>
@@ -109944,9 +107766,6 @@
                </cit>
                <cit type="trans">
                   <quote>Grund</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Land</quote>
                </cit>
                <cit type="trans">
                   <quote>Terrain</quote>
@@ -110651,10 +108470,7 @@
                <cit type="trans">
                   <quote>testieren</quote>
                </cit>
-               <cit type="trans">
-                  <quote>vererben</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -110752,9 +108568,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>dein</quote>
-               </cit>
                <cit type="trans">
                   <quote>deinig</quote>
                </cit>
@@ -111276,7 +109089,7 @@
             <form>
                <orth>tocar</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>erlangen</quote>
                </cit>
@@ -111290,17 +109103,12 @@
                   <quote>erreichen</quote>
                </cit>
             </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>spielen</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>spielen</quote>
-               </cit>
-            </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>anfeuern</quote>
                </cit>
@@ -111314,7 +109122,7 @@
                   <quote>vor sich hertreiben</quote>
                </cit>
             </sense>
-            <sense n="5">
+            <sense>
                <cit type="trans">
                   <quote>rühren</quote>
                </cit>
@@ -111538,9 +109346,6 @@
                </cit>
                <cit type="trans">
                   <quote>entziehen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>fortnehmen</quote>
                </cit>
                <cit type="trans">
                   <quote>wegnehmen</quote>
@@ -111950,23 +109755,7 @@
                   <quote>Zwinger</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Turm</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Zwinger</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Turm</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Zwinger</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>torrente</orth>
@@ -113071,10 +110860,7 @@
                <cit type="trans">
                   <quote>Eisenbahnzug</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zug</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -114138,12 +111924,7 @@
             <form>
                <orth>túnica</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Tunika</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Tunika</quote>
                </cit>
@@ -114321,24 +112102,13 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>ein</quote>
-               </cit>
-               <cit type="trans">
                   <quote>eine</quote>
                </cit>
                <cit type="trans">
                   <quote>eins</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>ein</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>eine</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>uma</orth>
@@ -114407,9 +112177,6 @@
                   <quote>ehemals</quote>
                </cit>
                <cit type="trans">
-                  <quote>einmal</quote>
-               </cit>
-               <cit type="trans">
                   <quote>einst</quote>
                </cit>
                <cit type="trans">
@@ -114428,12 +112195,7 @@
                   <quote>jemals</quote>
                </cit>
             </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>einmal</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>umbigo</orth>
@@ -114621,10 +112383,7 @@
                <cit type="trans">
                   <quote>einigen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>vereinigen</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -114957,13 +112716,7 @@
                <cit type="trans">
                   <quote>zagen</quote>
                </cit>
-               <cit type="trans">
-                  <quote>zaudern</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zögern</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -114979,27 +112732,7 @@
             <form>
                <orth>vadiar</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>bummeln</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>herumschweifen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>irren</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>streifen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>umherstreifen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vagieren</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>bummeln</quote>
                </cit>
@@ -115198,9 +112931,6 @@
             <sense n="3">
                <cit type="trans">
                   <quote>aufwiegen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gelten</quote>
                </cit>
                <cit type="trans">
                   <quote>sich verlohnen</quote>
@@ -115506,9 +113236,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Behälter</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gefäß</quote>
                </cit>
                <cit type="trans">
@@ -115541,14 +113268,8 @@
                <cit type="trans">
                   <quote>Besteck</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Krug</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
-               <cit type="trans">
-                  <quote>Behälter</quote>
-               </cit>
                <cit type="trans">
                   <quote>Gefäß</quote>
                </cit>
@@ -115693,7 +113414,7 @@
             <form>
                <orth>vela</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Kerze</quote>
                </cit>
@@ -115701,12 +113422,7 @@
                   <quote>Licht</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Kerze</quote>
-               </cit>
-            </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>Segel</quote>
                </cit>
@@ -115780,9 +113496,6 @@
             <sense n="2">
                <cit type="trans">
                   <quote>Eile</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Geschwindigkeit</quote>
                </cit>
                <cit type="trans">
                   <quote>Hast</quote>
@@ -116054,12 +113767,7 @@
                   <quote>Wahrheit</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Wahrheit</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>verdadeiramente</orth>
@@ -116106,16 +113814,10 @@
                <cit type="trans">
                   <quote>real</quote>
                </cit>
-               <cit type="trans">
-                  <quote>wirklich</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>authentisch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>echt</quote>
                </cit>
                <cit type="trans">
                   <quote>recht</quote>
@@ -116275,12 +113977,7 @@
                   <quote>rot</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>rot</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>verniz</orth>
@@ -116511,9 +114208,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>anziehen</quote>
-               </cit>
                <cit type="trans">
                   <quote>kleiden</quote>
                </cit>
@@ -117155,12 +114849,7 @@
             <form>
                <orth>virgília</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Wache</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Wache</quote>
                </cit>
@@ -117323,18 +115012,12 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Aussicht</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Panorama</quote>
                </cit>
             </sense>
             <sense n="4">
                <cit type="trans">
                   <quote>Anblick</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Ansicht</quote>
                </cit>
                <cit type="trans">
                   <quote>Übersicht</quote>
@@ -117406,20 +115089,12 @@
             <form>
                <orth>visão</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>Erscheinung</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Erscheinung</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>Erscheinung</quote>
-               </cit>
+            <sense>
                <cit type="trans">
                   <quote>Gesicht</quote>
                </cit>
@@ -117676,12 +115351,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>Lenkrad</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Steuer</quote>
-               </cit>
                <cit type="trans">
                   <quote>Steuerrad</quote>
                </cit>
@@ -118992,9 +116661,6 @@
                   <quote>anstellig</quote>
                </cit>
                <cit type="trans">
-                  <quote>behende</quote>
-               </cit>
-               <cit type="trans">
                   <quote>fix</quote>
                </cit>
                <cit type="trans">
@@ -119003,10 +116669,7 @@
                <cit type="trans">
                   <quote>geübt</quote>
                </cit>
-               <cit type="trans">
-                  <quote>gewandt</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>aufgeweckt</quote>
@@ -119016,9 +116679,6 @@
                </cit>
                <cit type="trans">
                   <quote>frisch</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gewandt</quote>
                </cit>
                <cit type="trans">
                   <quote>hurtig</quote>
@@ -119819,12 +117479,7 @@
                   <quote>einzig</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>einzig</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>útero</orth>

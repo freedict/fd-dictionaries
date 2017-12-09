@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.1</edition>
+            <edition>0.2</edition>
          </editionStmt>
-         <extent>about 950 headwords</extent>
+         <extent>941 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2010 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -39,7 +39,7 @@
             <note type="status">too small</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://www.travlang.com/"/>
+            <p>Home: <ptr target="http://www.travlang.com/" />
             </p>
             <p>This Database was generated from Ergane.</p>
          </sourceDesc>
@@ -47,12 +47,18 @@
       <encodingDesc>
          <projectDesc>
             <p>This dictionary comes to you through nice people making it available for free and for
-               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
                available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2" when="2017-12-09">
+            <name>Sebastian Humenda</name>
+            <list>
+               <item>update licencing stanza (thanks to Karl Bartel)</item>
+               <item>remove duplicated entries</item>
+            </list>
+         </change>
          <change when="2010-10-25">
             <date>2010-10-25</date>
             <name>Piotr Bański</name>: Conversion of TEI P4 source into P5 via tools/freedict_P4toP5.xsl; manual clean-up. We are back to version from before Michael
@@ -492,16 +498,10 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>holländisch</quote>
-               </cit>
-               <cit type="trans">
                   <quote>niederländisch</quote>
                </cit>
             </sense>
             <sense n="4">
-               <cit type="trans">
-                  <quote>Holländer</quote>
-               </cit>
                <cit type="trans">
                   <quote>Niederländer</quote>
                </cit>
@@ -1721,9 +1721,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>hinter</quote>
-               </cit>
-               <cit type="trans">
                   <quote>nach</quote>
                </cit>
             </sense>
@@ -1800,10 +1797,7 @@
                <cit type="trans">
                   <quote>rmee</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Heer</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>Soldat</quote>
@@ -2699,15 +2693,7 @@
                   <quote>eins</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>ein</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>eine</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>bira</orth>
@@ -2814,15 +2800,7 @@
                   <quote>Rover</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Rad</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Fahrrad</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>biyografi</orth>
@@ -4944,12 +4922,7 @@
             <form>
                <orth>hayvan</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Tier</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Tier</quote>
                </cit>
@@ -4969,12 +4942,7 @@
             <form>
                <orth>hayvansal</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Tier</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Tier</quote>
                </cit>
@@ -7684,10 +7652,7 @@
                <cit type="trans">
                   <quote>es</quote>
                </cit>
-               <cit type="trans">
-                  <quote>ihm</quote>
-               </cit>
-            </sense>
+               </sense>
             <sense n="3">
                <cit type="trans">
                   <quote>die</quote>
@@ -7774,12 +7739,7 @@
                   <quote>zustandekommen</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>werden</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>on</orth>
@@ -7816,10 +7776,7 @@
                <cit type="trans">
                   <quote>rmee</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Heer</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -8248,10 +8205,7 @@
                <cit type="trans">
                   <quote>Stunde</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Uhr</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -8883,9 +8837,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>hinter</quote>
-               </cit>
-               <cit type="trans">
                   <quote>nach</quote>
                </cit>
             </sense>
@@ -9249,9 +9200,6 @@
                   <quote>exakt</quote>
                </cit>
                <cit type="trans">
-                  <quote>genau</quote>
-               </cit>
-               <cit type="trans">
                   <quote>präzis</quote>
                </cit>
                <cit type="trans">
@@ -9447,15 +9395,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>abermals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vonneuem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wieder</quote>
-               </cit>
                <cit type="trans">
                   <quote>wiederholt</quote>
                </cit>
@@ -9701,10 +9640,7 @@
                <cit type="trans">
                   <quote>Eisenbahnzug</quote>
                </cit>
-               <cit type="trans">
-                  <quote>Zug</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -9976,12 +9912,7 @@
                   <quote>Flugzeug</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Flugzeug</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>uçaklar</orth>
@@ -10444,15 +10375,6 @@
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
-                  <quote>abermals</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vonneuem</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wieder</quote>
-               </cit>
                <cit type="trans">
                   <quote>wiederholt</quote>
                </cit>
@@ -11557,12 +11479,7 @@
                   <quote>England</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>England</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>İrlanda</orth>
@@ -11632,12 +11549,7 @@
                   <quote>Israel</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>Israel</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>İsveç</orth>
