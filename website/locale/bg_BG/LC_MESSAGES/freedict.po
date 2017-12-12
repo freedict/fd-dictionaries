@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:33+0200\n"
+"POT-Creation-Date: 2017-12-12 19:03+0100\n"
 "PO-Revision-Date: 2007-07-24 13:33+MET\n"
 "Last-Translator: Emanoil Kotsev <a9706152@unet.univie.ac.at>\n"
 "Language-Team: Bulgarian <freedict-beta@lists.sourceforge.net>\n"
@@ -147,45 +147,45 @@ msgstr ""
 "в програми като <a href=\"http://stardict.sf.net/\" target=\"_top"
 "\">Stardict</a>,ползвайте този линк:"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT сървери"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr "под Windows/Linux"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-bedic.php:9 flags-dictd.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Мобипокет"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-bedic.php:9 flags-bedic.php:11 flags-dictd.php:9 flags-dictd.php:11
+#: flags-evolutionary.php:9 flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr "на WinCE/Palm"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-bedic.php:13 flags-dictd.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr "под Zaurus/Qt"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-bedic.php:21 flags-bedic.php:25 flags-dictd.php:21 flags-dictd.php:25
+#: flags-evolutionary.php:21 flags-evolutionary.php:25
 msgid "Download / Matrix View"
 msgstr "Сваляне / матричен преглед"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-bedic.php:27 flags-evolutionary.php:27
 #, fuzzy, php-format
-msgid "The following downloads are for platform %s."
+msgid "All downloads are for platform %s."
 msgstr "Всичко за сваляне е за платформа"
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-bedic.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
-"For a list of dictionary programs supporting this format, have a look at the "
-"%1swiki%2s."
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-bedic.php:38 flags-dictd.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -197,20 +197,20 @@ msgstr ""
 "     подобен на stardict тъй като не ползва клиент/сървер\n"
 "     технология"
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:46 flags-dictd.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Изберете вашата комбинация от езици!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-bedic.php:49 flags-dictd.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Изходен език / големина в МБ"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:52 flags-dictd.php:52 flags-evolutionary.php:52
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "предназначение<br>език"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-bedic.php:144 flags-dictd.php:144 flags-evolutionary.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -219,6 +219,18 @@ msgstr ""
 "Моля, кликнете на линкна, за да посетите SourceForge\n"
 "огледалата за сваляне. Дясно копче на мишката и Save-As не работят\n"
 "от това място!"
+
+#: flags-dictd.php:27
+#, fuzzy, php-format
+msgid "The following downloads are for platform %s."
+msgstr "Всичко за сваляне е за платформа"
+
+#: flags-dictd.php:32
+#, php-format
+msgid ""
+"For a list of dictionary programs supporting this format, have a look at the "
+"%1swiki%2s."
+msgstr ""
 
 #: list.php:6
 msgid "Download / List View"
@@ -752,10 +764,6 @@ msgid ""
 msgstr ""
 "Това се случва поради знаци в речника които не могад да бъдат\n"
 "  кодирани или изобразени под съответната платформа."
-
-#, fuzzy
-#~ msgid "All downloads are for platform %s."
-#~ msgstr "Всичко за сваляне е за платформа"
 
 #~ msgid "Database as XML"
 #~ msgstr "База данни като XML"

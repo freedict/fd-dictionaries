@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:33+0200\n"
+"POT-Creation-Date: 2017-12-12 19:03+0100\n"
 "PO-Revision-Date: 2007-12-13 20:09+MET\n"
 "Last-Translator: Alexey Konyshev <alexey@polyglotexpert.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -128,45 +128,45 @@ msgstr ""
 "например используя в программе ссылку: <a href=\"http://stardict.sf.net/"
 "\">Stardict</a>"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7 menu.php:31
 msgid "DICT servers"
 msgstr ""
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7
 msgid "on Windows/Linux"
 msgstr ""
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-bedic.php:9 flags-dictd.php:9 flags-evolutionary.php:9
 msgid "Mobipocket"
 msgstr "Мобипокет"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-bedic.php:9 flags-bedic.php:11 flags-dictd.php:9 flags-dictd.php:11
+#: flags-evolutionary.php:9 flags-evolutionary.php:11
 msgid "on WinCE/Palm"
 msgstr ""
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-bedic.php:13 flags-dictd.php:13 flags-evolutionary.php:13
 msgid "on Zaurus/Qt"
 msgstr ""
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-bedic.php:21 flags-bedic.php:25 flags-dictd.php:21 flags-dictd.php:25
+#: flags-evolutionary.php:21 flags-evolutionary.php:25
 msgid "Download / Matrix View"
 msgstr "Загрузка / Матрица представления данных"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-bedic.php:27 flags-evolutionary.php:27
 #, fuzzy, php-format
-msgid "The following downloads are for platform %s."
+msgid "All downloads are for platform %s."
 msgstr "Все загрузки для платформы"
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-bedic.php:32 flags-evolutionary.php:32
 #, php-format
 msgid ""
-"For a list of dictionary programs supporting this format, have a look at the "
-"%1swiki%2s."
+"Another application understanding this file format is %1sWordtrans%2s, a KDE "
+"application."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-bedic.php:38 flags-dictd.php:38 flags-evolutionary.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -174,20 +174,20 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-bedic.php:46 flags-dictd.php:46 flags-evolutionary.php:46
 msgid "Select your language combination!"
 msgstr "Выберите вашу комбинацию языков!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-bedic.php:49 flags-dictd.php:49 flags-evolutionary.php:49
 msgid "Source Language / Size in MB"
 msgstr "Исходный язык / Размер в МВ"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-bedic.php:52 flags-dictd.php:52 flags-evolutionary.php:52
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "Результирующий язык"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-bedic.php:144 flags-dictd.php:144 flags-evolutionary.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -195,6 +195,18 @@ msgid ""
 msgstr ""
 "Пожалуйста кликните на ссылку, чтобы перейти к Загрузка ошибочно выбранной "
 "страницы. Функция правой кнопки и сохранить-как не будет здесь работать."
+
+#: flags-dictd.php:27
+#, fuzzy, php-format
+msgid "The following downloads are for platform %s."
+msgstr "Все загрузки для платформы"
+
+#: flags-dictd.php:32
+#, php-format
+msgid ""
+"For a list of dictionary programs supporting this format, have a look at the "
+"%1swiki%2s."
+msgstr ""
 
 #: list.php:6
 msgid "Download / List View"
@@ -706,10 +718,6 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
-
-#, fuzzy
-#~ msgid "All downloads are for platform %s."
-#~ msgstr "Все загрузки для платформы"
 
 #~ msgid "Database as XML"
 #~ msgstr "Данные как XML"

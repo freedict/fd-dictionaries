@@ -32,10 +32,10 @@ freedict-database.json:
 		ln -s $$APIDIR/freedict-database.json $@
 
 flags-bedic.php:
-	ln -s flags-dict-bz2.php $@
+	ln -s flags-dictd.php $@
 
 flags-evolutionary.php:
-	ln -s flags-dict-bz2.php $@
+	ln -s flags-dictd.php $@
 
 freedict.pot: $(sources)
 	xgettext --from-code=utf-8 -o $@ --copyright-holder="freedict.org" \
