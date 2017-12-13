@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-12-12 19:03+0100\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2017-07-11 08:24+0200\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <>\n"
@@ -128,7 +128,7 @@ msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 "Si vous utilisez %sDebian%s instable, vous pouvez ajouter ceci à votre %s :"
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -155,79 +155,29 @@ msgstr ""
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, vous "
 "pouvez utiliser ce lien :"
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "serveurs DICT"
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "sur Windows/Linux"
 
-#: flags-bedic.php:9 flags-dictd.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:9 flags-bedic.php:11 flags-dictd.php:9 flags-dictd.php:11
-#: flags-evolutionary.php:9 flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "sur WinCE/Palm"
 
-#: flags-bedic.php:13 flags-dictd.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "sur Zaurus/Qt"
 
-#: flags-bedic.php:21 flags-bedic.php:25 flags-dictd.php:21 flags-dictd.php:25
-#: flags-evolutionary.php:21 flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 msgid "Download / Matrix View"
 msgstr "Télécharger / Vue de la matrice"
-
-#: flags-bedic.php:27 flags-evolutionary.php:27
-#, fuzzy, php-format
-msgid "All downloads are for platform %s."
-msgstr "Les téléchargements suivants sont pour la plateforme %s."
-
-#: flags-bedic.php:32 flags-evolutionary.php:32
-#, php-format
-msgid ""
-"Another application understanding this file format is %1sWordtrans%2s, a KDE "
-"application."
-msgstr ""
-"Une autre application comprenant ce format de fichier est %1sWordtrans%2s, "
-"une application KDE."
-
-#: flags-bedic.php:38 flags-dictd.php:38 flags-evolutionary.php:38
-msgid ""
-"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
-"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
-"     similar to stardict as it doesn't use a client/server\n"
-"     approach like"
-msgstr ""
-"BEDic a deux interfaces: ZBEDic, qui tourne sur Zaurus\n"
-"     Linux PDA de Sharp, et QBEDic, qui tourne sur Linux/Qt. BEDic est\n"
-"     semblable à stardict car il n'a pas une approche client/serveur"
-
-#: flags-bedic.php:46 flags-dictd.php:46 flags-evolutionary.php:46
-msgid "Select your language combination!"
-msgstr "Choisissez votre combinaison de langues !"
-
-#: flags-bedic.php:49 flags-dictd.php:49 flags-evolutionary.php:49
-msgid "Source Language / Size in MB"
-msgstr "Langage source / Taille en Mo"
-
-#: flags-bedic.php:52 flags-dictd.php:52 flags-evolutionary.php:52
-msgid "Destination<br />Language"
-msgstr "Langue de<br /> destination"
-
-#: flags-bedic.php:144 flags-dictd.php:144 flags-evolutionary.php:144
-msgid ""
-"Please click on the links to get to the SourceForge\n"
-"Download Mirror selection page. Right-Click and Save-As will not work\n"
-"from here!"
-msgstr ""
-"Veuillez cliquer sur les liens pour accéder à SourceForge\n"
-"Sélection de pages de téléchargement mirroir. Clique-droit et Sauvegarder "
-"sous\n"
-"ne marcheront pas de là!!"
 
 #: flags-dictd.php:27
 #, php-format
@@ -241,6 +191,40 @@ msgid ""
 "%1swiki%2s."
 msgstr ""
 "Consultez le %1swiki%2s pour la liste des programmes supportant ce format."
+
+#: flags-dictd.php:38
+msgid ""
+"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
+"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
+"     similar to stardict as it doesn't use a client/server\n"
+"     approach like"
+msgstr ""
+"BEDic a deux interfaces: ZBEDic, qui tourne sur Zaurus\n"
+"     Linux PDA de Sharp, et QBEDic, qui tourne sur Linux/Qt. BEDic est\n"
+"     semblable à stardict car il n'a pas une approche client/serveur"
+
+#: flags-dictd.php:46
+msgid "Select your language combination!"
+msgstr "Choisissez votre combinaison de langues !"
+
+#: flags-dictd.php:49
+msgid "Source Language / Size in MB"
+msgstr "Langage source / Taille en Mo"
+
+#: flags-dictd.php:52
+msgid "Destination<br />Language"
+msgstr "Langue de<br /> destination"
+
+#: flags-dictd.php:144
+msgid ""
+"Please click on the links to get to the SourceForge\n"
+"Download Mirror selection page. Right-Click and Save-As will not work\n"
+"from here!"
+msgstr ""
+"Veuillez cliquer sur les liens pour accéder à SourceForge\n"
+"Sélection de pages de téléchargement mirroir. Clique-droit et Sauvegarder "
+"sous\n"
+"ne marcheront pas de là!!"
 
 #: list.php:6
 msgid "Download / List View"
@@ -311,47 +295,43 @@ msgid "dictd"
 msgstr "dictd"
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "WinCE &amp; Palm"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "Liste détaillée"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "Serveurs FreeDict en ligne"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr "Sources"
 
-#: menu.php:76
+#: menu.php:65
 msgid "GitHub Project Page"
 msgstr "Page du projet sur GitHub"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "Listes de diffusion"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "Bugs"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Traduire ce site"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "Projet FreeDict"
 
@@ -794,6 +774,20 @@ msgid ""
 msgstr ""
 "Le fait que certains dictionnaires ne soient pas affichables sur cette\n"
 " plate-forme est dû à leur encodage."
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "WinCE &amp; Palm"
+
+#, fuzzy
+#~ msgid "All downloads are for platform %s."
+#~ msgstr "Les téléchargements suivants sont pour la plateforme %s."
+
+#~ msgid ""
+#~ "Another application understanding this file format is %1sWordtrans%2s, a "
+#~ "KDE application."
+#~ msgstr ""
+#~ "Une autre application comprenant ce format de fichier est %1sWordtrans"
+#~ "%2s, une application KDE."
 
 #~ msgid "Database as XML"
 #~ msgstr "Base de donnée XML"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreeDict\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-12-12 19:03+0100\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2010-01-31 20:40+0200\n"
 "Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -125,7 +125,7 @@ msgstr ""
 "eilutes  į savo %s failą (pakeiskite <i>etch</i> į <i>unstable</i>, jei Jūs "
 "naudojate nestabilią Debian laidą):"
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -151,74 +151,29 @@ msgstr ""
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, naudokite "
 "adresą:"
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT serveriai"
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "Windows/Linux sistemose"
 
-#: flags-bedic.php:9 flags-dictd.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr ""
 
-#: flags-bedic.php:9 flags-bedic.php:11 flags-dictd.php:9 flags-dictd.php:11
-#: flags-evolutionary.php:9 flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "WinCE/Palm sistemose"
 
-#: flags-bedic.php:13 flags-dictd.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "Zaurus/Qt sistemose"
 
-#: flags-bedic.php:21 flags-bedic.php:25 flags-dictd.php:21 flags-dictd.php:25
-#: flags-evolutionary.php:21 flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 msgid "Download / Matrix View"
 msgstr "Atsisiuntimai / Matricinis vaizdas"
-
-#: flags-bedic.php:27 flags-evolutionary.php:27
-#, fuzzy, php-format
-msgid "All downloads are for platform %s."
-msgstr "Visi atsisiuntimai skirti platformai"
-
-#: flags-bedic.php:32 flags-evolutionary.php:32
-#, php-format
-msgid ""
-"Another application understanding this file format is %1sWordtrans%2s, a KDE "
-"application."
-msgstr ""
-"Kita programa, suprantanti šį formatą, yra KDE programa %1sWordtrans%2s."
-
-#: flags-bedic.php:38 flags-dictd.php:38 flags-evolutionary.php:38
-msgid ""
-"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
-"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
-"     similar to stardict as it doesn't use a client/server\n"
-"     approach like"
-msgstr ""
-
-#: flags-bedic.php:46 flags-dictd.php:46 flags-evolutionary.php:46
-msgid "Select your language combination!"
-msgstr "Pasirinkite Jūsų kalbų rinkinį!"
-
-#: flags-bedic.php:49 flags-dictd.php:49 flags-evolutionary.php:49
-msgid "Source Language / Size in MB"
-msgstr "Šaltinio kalba / Dydis MB'ais"
-
-#: flags-bedic.php:52 flags-dictd.php:52 flags-evolutionary.php:52
-msgid "Destination<br />Language"
-msgstr "Pageidaujama<br />kalba"
-
-#: flags-bedic.php:144 flags-dictd.php:144 flags-evolutionary.php:144
-msgid ""
-"Please click on the links to get to the SourceForge\n"
-"Download Mirror selection page. Right-Click and Save-As will not work\n"
-"from here!"
-msgstr ""
-"Kad atsidarytų SourceForge atsisiuntimo veidrodžių pasirinkimo puslapis, \n"
-"straktelėkite nuorodą. Šioje vietoje, pasirinkimas „Išsaugoti kaip...“ "
-"paspaudus dešinįjį pelės klavišą, neveiks!"
 
 #: flags-dictd.php:27
 #, fuzzy, php-format
@@ -231,6 +186,36 @@ msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
 msgstr ""
+
+#: flags-dictd.php:38
+msgid ""
+"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
+"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
+"     similar to stardict as it doesn't use a client/server\n"
+"     approach like"
+msgstr ""
+
+#: flags-dictd.php:46
+msgid "Select your language combination!"
+msgstr "Pasirinkite Jūsų kalbų rinkinį!"
+
+#: flags-dictd.php:49
+msgid "Source Language / Size in MB"
+msgstr "Šaltinio kalba / Dydis MB'ais"
+
+#: flags-dictd.php:52
+msgid "Destination<br />Language"
+msgstr "Pageidaujama<br />kalba"
+
+#: flags-dictd.php:144
+msgid ""
+"Please click on the links to get to the SourceForge\n"
+"Download Mirror selection page. Right-Click and Save-As will not work\n"
+"from here!"
+msgstr ""
+"Kad atsidarytų SourceForge atsisiuntimo veidrodžių pasirinkimo puslapis, \n"
+"straktelėkite nuorodą. Šioje vietoje, pasirinkimas „Išsaugoti kaip...“ "
+"paspaudus dešinįjį pelės klavišą, neveiks!"
 
 #: list.php:6
 msgid "Download / List View"
@@ -301,48 +286,44 @@ msgid "dictd"
 msgstr "dictd"
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "WinCE &amp; Palm"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "Detalus sąrašas"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "FreeDict tiesioginiai serveriai"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr ""
 
-#: menu.php:76
+#: menu.php:65
 #, fuzzy
 msgid "GitHub Project Page"
 msgstr "Projekto puslapis SourceForge"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "Pašto konferencijos"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "Riktai"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Išversti šia svetainę"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "FreeDict projectas"
 
@@ -749,6 +730,19 @@ msgid ""
 msgstr ""
 "Tai daugumoje atvejų yra dėl to, kad tose platformose nėra arba \n"
 "negali būti atspindėti tam tikri simboliai."
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "WinCE &amp; Palm"
+
+#, fuzzy
+#~ msgid "All downloads are for platform %s."
+#~ msgstr "Visi atsisiuntimai skirti platformai"
+
+#~ msgid ""
+#~ "Another application understanding this file format is %1sWordtrans%2s, a "
+#~ "KDE application."
+#~ msgstr ""
+#~ "Kita programa, suprantanti šį formatą, yra KDE programa %1sWordtrans%2s."
 
 #~ msgid "Database as XML"
 #~ msgstr "Duomenų bazė XML formatu"

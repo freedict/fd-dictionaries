@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-12-12 19:03+0100\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2004-12-27 13:09+0530\n"
 "Last-Translator: Michael Bunk <kleinerwurm@gmx.net>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -126,71 +126,29 @@ msgid ""
 "use this URL:"
 msgstr ""
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT servers"
 
-#: flags-bedic.php:7 flags-dictd.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "ha Windows/Linux"
 
-#: flags-bedic.php:9 flags-dictd.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-bedic.php:9 flags-bedic.php:11 flags-dictd.php:9 flags-dictd.php:11
-#: flags-evolutionary.php:9 flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "ha WinCE/Palm"
 
-#: flags-bedic.php:13 flags-dictd.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "ha Zaurus"
 
-#: flags-bedic.php:21 flags-bedic.php:25 flags-dictd.php:21 flags-dictd.php:25
-#: flags-evolutionary.php:21 flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 msgid "Download / Matrix View"
 msgstr "Download / Matrix jingi"
-
-#: flags-bedic.php:27 flags-evolutionary.php:27
-#, fuzzy, php-format
-msgid "All downloads are for platform %s."
-msgstr "Baroh ki download ki bynta balah buh platform"
-
-#: flags-bedic.php:32 flags-evolutionary.php:32
-#, php-format
-msgid ""
-"Another application understanding this file format is %1sWordtrans%2s, a KDE "
-"application."
-msgstr ""
-
-#: flags-bedic.php:38 flags-dictd.php:38 flags-evolutionary.php:38
-msgid ""
-"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
-"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
-"     similar to stardict as it doesn't use a client/server\n"
-"     approach like"
-msgstr ""
-
-#: flags-bedic.php:46 flags-dictd.php:46 flags-evolutionary.php:46
-msgid "Select your language combination!"
-msgstr ""
-
-#: flags-bedic.php:49 flags-dictd.php:49 flags-evolutionary.php:49
-msgid "Source Language / Size in MB"
-msgstr "rukom ktien / jingheh-jingrit MB"
-
-#: flags-bedic.php:52 flags-dictd.php:52 flags-evolutionary.php:52
-#, fuzzy
-msgid "Destination<br />Language"
-msgstr "ktien baar"
-
-#: flags-bedic.php:144 flags-dictd.php:144 flags-evolutionary.php:144
-msgid ""
-"Please click on the links to get to the SourceForge\n"
-"Download Mirror selection page. Right-Click and Save-As will not work\n"
-"from here!"
-msgstr "Sngewbha kdew ha ki bynta ban ioh ia ka SourceForge Download Iit "
 
 #: flags-dictd.php:27
 #, fuzzy, php-format
@@ -203,6 +161,34 @@ msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
 msgstr ""
+
+#: flags-dictd.php:38
+msgid ""
+"BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
+"     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
+"     similar to stardict as it doesn't use a client/server\n"
+"     approach like"
+msgstr ""
+
+#: flags-dictd.php:46
+msgid "Select your language combination!"
+msgstr ""
+
+#: flags-dictd.php:49
+msgid "Source Language / Size in MB"
+msgstr "rukom ktien / jingheh-jingrit MB"
+
+#: flags-dictd.php:52
+#, fuzzy
+msgid "Destination<br />Language"
+msgstr "ktien baar"
+
+#: flags-dictd.php:144
+msgid ""
+"Please click on the links to get to the SourceForge\n"
+"Download Mirror selection page. Right-Click and Save-As will not work\n"
+"from here!"
+msgstr "Sngewbha kdew ha ki bynta ban ioh ia ka SourceForge Download Iit "
 
 #: list.php:6
 msgid "Download / List View"
@@ -273,48 +259,44 @@ msgid "dictd"
 msgstr ""
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "WinCE &amp; Palm"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "la thoh pathik"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "FreeDict Online Servers"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr ""
 
-#: menu.php:76
+#: menu.php:65
 #, fuzzy
 msgid "GitHub Project Page"
 msgstr "SourceForge Project Page"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "Mailinglists"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "kiei kiei ba lah ban pynkhien"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Kylla kane ka sla"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "FreeDict projek"
 
@@ -705,6 +687,13 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "WinCE &amp; Palm"
+
+#, fuzzy
+#~ msgid "All downloads are for platform %s."
+#~ msgstr "Baroh ki download ki bynta balah buh platform"
 
 #~ msgid ""
 #~ "Most resources are hosted by SourceForge:\n"

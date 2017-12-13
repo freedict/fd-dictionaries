@@ -27,7 +27,7 @@ $title = _('Download / Matrix View'); require_once 'inc/head.php';
 <p><?php printf(_('The following downloads are for platform %s.'), '<i>' . $platformStrings[$platform], '</i>') ?></p>
 
 <?php
-  if(strpos($platform, 'dict-') !== false)
+  if(strpos($platform, 'dictd') !== false)
   {
       printf(_('For a list of dictionary programs supporting this format, have a look at the %1swiki%2s.'),
       '<a target="_parent" href="https://github.com/freedict/fd-dictionaries/wiki/Dictionary-Clients">', '</a>');
