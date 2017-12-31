@@ -1,4 +1,5 @@
-FREEDICT_TOOLS?=$(realpath ../../tools)
+FREEDICT_TOOLS?=$(realpath ../../fd-tools)
+APIDIR?=$(shell $(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path)
 LANGUAGES=ar bg bs de en fr kha ku lt nl pt ru
 BASEURL=http://localhost/~$(USER)/freedict-dynamic/
 
@@ -54,25 +55,23 @@ static:
 	mkdir -p static
 
 static/images: $(DYNAMICPATH)/images
-	ln -s $(DYNAMICPATH)/images $@
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
 
 static/debian-repository: $(DYNAMICPATH)/debian-repository
-	ln -s $(DYNAMICPATH)/debian-repository $@
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
 static/s.css: $(DYNAMICPATH)/s.css
-	ln -s $(DYNAMICPATH)/s.css $@
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
 static/freedict.pot: $(DYNAMICPATH)/freedict.pot
-	ln -s $(DYNAMICPATH)/freedict.pot $@
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
-static/freedict-database.xml: static
-	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
-		ln -s $$APIDIR/freedict-database.xml $@
+static/freedict-database.xml: $(APIDIR)/freedict-database.xml
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
-static/freedict-database.json: static
-	APIDIR=`$(MAKE) --no-print-directory -C $(FREEDICT_TOOLS) api-path`; \
-		ln -s $$APIDIR/freedict-database.json $@
+static/freedict-database.json: $(APIDIR)/freedict-database.json
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
 static/index.html:
 	# when the webspace has php, use this (but then, no need for static version at all):
@@ -81,8 +80,8 @@ static/index.html:
 	# otherwise only plain html:
 	#ln -s ../index.html $@
 
-static/.htaccess:
-	ln -s $(DYNAMICPATH)/.htaccess $@
+static/.htaccess: $(DYNAMICPATH)/.htaccess
+	if [ ! -e "$@" ]; then ln -s "$<" $@; fi
 
 generate-%: symlinks
 	if locale -a | grep '$*_.*\.utf8' >/dev/null; then :; \

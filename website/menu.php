@@ -28,24 +28,13 @@ require_once 'inc/gettext.php';
 
   <tr style="background-color: #f0f0f0">
    <td><?php echo _('Windows &amp; Linux') ?></td>
-   <td><a href="<?php echo fdict_url('flags-dict-bz2.php') ?>" target="main"><?php echo _('DICT servers') ?></a></td>
+   <td><a href="<?php echo fdict_url('flags-dictd.php') ?>" target="main"><?php echo _('DICT servers') ?></a></td>
   </tr>
 
   <tr style="background-color: #f0f0f0">
    <td><a href="<?php echo fdict_url('deb.php') ?>" target="main"><?php echo _('Debian Linux') ?></a></td>
    <td><?php echo _('dictd') ?></td>
   </tr>
-
-  <tr style="background-color: #f0f0f0">
-   <td><?php echo _('WinCE &amp; Palm') ?></td>
-   <td>
-<!--
-    <a href="<?php echo fdict_url('flags-mobipocket.php') ?>" target="main">Mobipocket</a><br>
-  -->
-    <a href="<?php echo fdict_url('flags-evolutionary.php') ?>" target="main">Evolutionary Dictionary</a>
-   </td>
-  </tr>
-
 
   <tr style="background-color: #f0f0f0"><td colspan="2" align="center">
    <a href="<?php echo fdict_url('list.php') ?>" target="main"><?php echo _('Detailed List') ?></a>

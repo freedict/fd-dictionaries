@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: freedict\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:33+0200\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2006-08-31 03:02+0300\n"
 "Last-Translator: Amr Gharbeia <amr@gharbeia.net>\n"
 "Language-Team: Arabic <en@li.org>\n"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr ""
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -126,45 +126,43 @@ msgid ""
 "use this URL:"
 msgstr ""
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "خادوم دكت"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "على وندوز/لينكس"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr "موبيبوكت"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "على وندوز.سي.إي/بالم"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "على زوروس/كيو.تي"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 msgid "Download / Matrix View"
 msgstr "نزل/اعرض مصفوفة"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-dictd.php:27
 #, fuzzy, php-format
 msgid "The following downloads are for platform %s."
 msgstr "كل الملفات تنزل من المنصة"
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-dictd.php:32
 #, php-format
 msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-dictd.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -172,20 +170,20 @@ msgid ""
 "     approach like"
 msgstr ""
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-dictd.php:46
 msgid "Select your language combination!"
 msgstr "اختر أزواج اللغات!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-dictd.php:49
 msgid "Source Language / Size in MB"
 msgstr "لغة المصدر/الحجم بالميجابايت"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-dictd.php:52
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "اللغة<br>الهدف"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-dictd.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -261,48 +259,44 @@ msgid "dictd"
 msgstr ""
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "وندوز.سي.إي &amp; بالم"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "قائمة مفصلة"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "خادومات فري.دكت عالخط"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr ""
 
-#: menu.php:76
+#: menu.php:65
 #, fuzzy
 msgid "GitHub Project Page"
 msgstr "صفحة مشروع سورس.فورج"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "القوائم البريدية"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "بقات"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "ترجم هذا الموقع"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "مشروع فري.دكت"
 
@@ -697,6 +691,9 @@ msgid ""
 "This is currently always due to characters of the dictionary not being\n"
 "  encodable or displayable for/on the platform."
 msgstr ""
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "وندوز.سي.إي &amp; بالم"
 
 #, fuzzy
 #~ msgid "All downloads are for platform %s."

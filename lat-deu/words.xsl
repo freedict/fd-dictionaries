@@ -82,6 +82,9 @@
           </xsl:otherwise>
         </xsl:choose>
         <gen><xsl:value-of select="@g"/></gen>
+        <xsl:if test="string-length(@g2)>0">
+          <gen><xsl:value-of select="@g2"/></gen>
+        </xsl:if>
       </gramGrp>
       <xsl:call-template name="sense">
         <xsl:with-param name="senses" select="."/>
@@ -407,7 +410,7 @@
     </xsl:variable>
 
     <xsl:variable name="result_meaning">
-      <!-- we declare an extra variable to avoid having to a nested structure here -->
+      <!-- we declare an extra variable to avoid having to tinker with a nested structure here -->
       <xsl:choose>
         <xsl:when test="contains($modified_meaning, ';')">
           <xsl:value-of select="substring-before($modified_meaning, ';')"/>
@@ -417,12 +420,10 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <!-- ><xsl:text>(</xsl:text><xsl:value-of select="$result_meaning"/><xsl:text>)</xsl:text>
-    -->
     <sense level="1">
-      <cit type="trans">
-        <quote><xsl:value-of select="$result_meaning"/></quote>
-      </cit>
+      <xsl:call-template name="split_comma">
+        <xsl:with-param name="words" select="$result_meaning"/>
+      </xsl:call-template>
     </sense>
 
     <!-- more of these extra senses? get them: -->
@@ -432,6 +433,39 @@
         <xsl:with-param name="meaning" select="substring-after($modified_meaning, ';')"/>
       </xsl:call-template>
     </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="split_comma">
+    <!-- devide different related headwords, separated by comma -->
+    <xsl:param name="words"/>
+
+    <!-- if this is a recursive call, there could be a white-space at the beginning, so modify the parameter -->
+    <xsl:variable name="trimmed_words">
+      <xsl:choose>
+        <xsl:when test="substring($words, 0,2) = ' '">
+          <xsl:value-of select="substring($words, 2,string-length(.))"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$words"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:choose>
+      <xsl:when test="contains($trimmed_words, ',')">
+        <cit type="trans">
+          <quote><xsl:value-of select="substring-before($trimmed_words, ',')"/></quote>
+        </cit>
+        <xsl:call-template name="split_comma">
+          <xsl:with-param name="words" select="substring-after($trimmed_words, ',')"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <cit type="trans">
+          <quote><xsl:value-of select="$trimmed_words"/></quote>
+        </cit>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
  
   <xsl:template name="sense"> <!-- properly format translations -->

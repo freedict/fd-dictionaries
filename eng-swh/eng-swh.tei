@@ -11,26 +11,24 @@
         <title>English-Swahili xFried/FreeDict Dictionary</title>
         <respStmt>
           <resp>Compiled by </resp>
-          <name>Beata Wojtowicz &lt;wierzchob@wp.pl></name>
+          <name>Beata Wojtowicz &lt;wierzchob@wp.pl&gt;</name>
         </respStmt>
         <respStmt>
           <resp>Maintainer</resp>
-          <name>Beata Wojtowicz &lt;wierzchob@wp.pl></name>
+          <name>Beata Wojtowicz &lt;wierzchob@wp.pl&gt;</name>
         </respStmt>
       </titleStmt>
-
       <editionStmt>
-        <edition>0.2.1</edition>
+        <edition>0.2.2</edition>
       </editionStmt>
-
       <extent>1450 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-          <p>Available under the terms of the GNU General Public License ver. 2.0 and any later version.</p>
+          <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+          <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
         </availability>
-        <idno type="svn">$Id$</idno>
+        <date when="2017-12-03">Dec 03, 2017</date>
         <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
       </publicationStmt>
       <notesStmt>
@@ -49,18 +47,20 @@
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for
-          good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-            >http://freedict.org/</ref>. This project aims to make available many translating
+          good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make available many translating
           dictionaries for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
 
     <revisionDesc>
+      <change when="2017-12-03" who="#humenda" n="0.2.2">
+         <name>Sebastian Humenda</name> Update licence stanza (thanks to Karl Bartel)
+      </change>
       <change when="2010-11-02"><name>Piotr Bański</name> Changed database name from eng-swa to eng-swh 
         (by ISO 639-3).</change>
       <change when="2010-02-25"><name>Piotr Bański</name> Upgraded to TEI P5, removed whitespace
-        from equivalents, sorted entries, sorted entry insides, wrapped &lt;def> in &lt;sense> and
-        added &lt;gramGrp> with an empty &lt;pos> in the entries that had no POS. This is now an
+        from equivalents, sorted entries, sorted entry insides, wrapped &lt;def&gt; in &lt;sense&gt; and
+        added &lt;gramGrp&gt; with an empty &lt;pos&gt; in the entries that had no POS. This is now an
         example of minimal TEI P5 conformance. Changed the header very slightly. Added brackets
         around "plural" in headwords.</change>
       <change when="2007-02-13"><name>Michael Bunk</name> Enabled phonetics import. </change>
@@ -318,7 +318,6 @@
         <form>
           <orth>all of you</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>nyote</def></sense>
       </entry>
       <entry>
@@ -379,14 +378,12 @@
         <form>
           <orth>and I</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>nami</def></sense>
       </entry>
       <entry>
         <form>
           <orth>and they</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>nao</def></sense>
       </entry>
       <entry>
@@ -5262,7 +5259,6 @@
         <form>
           <orth>hello</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>jambo</def></sense>
       </entry>
       <entry>
@@ -5989,14 +5985,12 @@
         <form>
           <orth>it is I</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>ndimi</def></sense>
       </entry>
       <entry>
         <form>
           <orth>it is we</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>ndisi</def></sense>
       </entry>
       <entry>
@@ -6507,7 +6501,6 @@
         <form>
           <orth>less a quarter</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>kasorobo</def></sense>
       </entry>
       <entry>
@@ -11392,7 +11385,6 @@
         <form>
           <orth>thank you</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>asante</def></sense>
       </entry>
       <entry>
@@ -11498,14 +11490,12 @@
         <form>
           <orth>there is not there</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>hapana</def></sense>
       </entry>
       <entry>
         <form>
           <orth>there is/are not</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>hakuna</def></sense>
       </entry>
       <entry>
@@ -12871,7 +12861,6 @@
         <form>
           <orth>with me</orth>
         </form>
-        <gramGrp><pos/></gramGrp>
         <sense><def>nami</def></sense>
       </entry>
       <entry>

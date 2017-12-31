@@ -18,15 +18,14 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.1.1</edition>
+        <edition>0.1.2</edition>
       </editionStmt>
-      <extent>about 24 300 headwords</extent>
+      <extent>24377 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-          <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU
-              General Public License</ref> ver. 2.0 and any later version.</p>
+          <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+          <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
           <p>This program is free software; you can redistribute it and/or modify it under the terms
             of the GNU General Public License as published by the Free Software Foundation; either
             version 2 of the License, or (at your option) any later version.</p>
@@ -60,6 +59,9 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2017-12-06" who="#humenda" n="0.1.2">
+      <name>Sebastian Humenda</name> update licencing stanza (thanks to Karl Bartel)
+      </change>
       <change when="2010-11-04"><date>2010-11-04</date><name>Piotr Bański</name>: Conversion of TEI
         P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up. There are some
         brackets to be converted to separate elements.</change>

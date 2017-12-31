@@ -8,17 +8,20 @@
           <resp>by</resp>
           <name>Kęstutis Biliūnas &lt;kebil@kaunas.init.lt&gt;</name>
         </respStmt>
+        <respStmt><!-- for the freedict database -->
+          <resp>Maintainer</resp>
+          <name>[up for grabs]</name>
+        </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.7.1</edition>
+        <edition>0.7.2</edition>
       </editionStmt>
       <extent>6255 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
           <p>Copyright (C) 2007 Atviras Kodas Lietuvai (AKL). </p>
-          <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU
-              General Public License</ref> ver. 2.0 and any later version.</p>
+          <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
           <p>This program is free software; you can redistribute it and/or modify it under the terms
             of the GNU General Public License as published by the Free Software Foundation; either
             version 2 of the License, or (at your option) any later version.</p>
@@ -30,7 +33,6 @@
             330, Boston, MA 02111-1307, USA.</p>
         </availability>
         <pubPlace><ref target="http://freedict.org/">http://freedict.org/</ref></pubPlace>
-        <idno type="svn">$Id$</idno>
       </publicationStmt>
       <seriesStmt>
         <title>free dictionaries</title>
@@ -39,18 +41,24 @@
         <note type="status">stable</note>
       </notesStmt>
       <sourceDesc>
-        <p>Home: <ptr target="http://files.akl.lt/freedict-lit/"/></p>
+        <p>Home: <ptr target="http://files.akl.lt/freedict-lit/" /></p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for
-          good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-            >http://freedict.org/</ref>. This project aims to make translating dictionaries
+          good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
           available for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2017-12-02" who="#humenda" n="0.7.2">
+        <name>Sebastian Humenda</name>
+        <list>
+          <item>update licence stanza (thanks to Karl Bartel)</item>
+          <item>remove duplicated translations</item>
+        </list>
+      </change>
       <change when="2010-11-01"><date>2010-11-01</date><name>Piotr Bański</name>: Conversion of TEI
         P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
       <change><date>2010-02-28</date><name>Kęstutis Biliūnas</name>Added 945 headwords.</change>
@@ -421,7 +429,6 @@
 	</sense><sense>
     <cit type="trans"><quote>aplink</quote></cit>
     <cit type="trans"><quote>aplinkui</quote></cit>
-    <cit type="trans"><quote>apie</quote></cit>
     <xr><ref>around</ref></xr>
 	</sense><sense>
     <cit type="trans"><quote>(apie vietą) netoli</quote></cit>
@@ -4946,7 +4953,6 @@
     <xr><ref>warm</ref></xr>
 	</sense><sense>
     <cit type="trans"><quote>prieraišus</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>affiliation</orth>
 	  <pron>əfılıeıʃn</pron>
@@ -5272,8 +5278,7 @@
     <cit type="trans"><quote>gyvas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>judrus</quote></cit>
-    <cit type="trans"><quote>gyvas</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>suprantantis</quote></cit>
     <cit type="trans"><quote>jautriai reaguojantis</quote></cit>
 	</sense><sense>
@@ -7790,8 +7795,6 @@
 	  <orth>back</orth>
 	  <pron>bæk</pron>
   </form><sense>
-    <cit type="trans"><quote>atgal</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>nugara</quote></cit>
     <cit type="trans"><quote>užpakalinė dalis</quote></cit>
     <cit type="trans"><quote>atlošas</quote></cit>
@@ -9883,8 +9886,6 @@
     <cit type="trans"><quote>apačia</quote></cit>
     <cit type="trans"><quote>pagrindas</quote></cit>
 	</sense><sense>
-	</sense><sense>
-    <cit type="trans"><quote>pagrindas</quote></cit>
     <cit type="trans"><quote>esmė</quote></cit>
     <cit type="trans"><quote>priežastis</quote></cit>
 	</sense><sense>
@@ -10989,8 +10990,7 @@
 	</sense><sense>
     <cit type="trans"><quote>(amer.) dienotvarkė</quote></cit>
     <cit type="trans"><quote>tvarkaraštis</quote></cit>
-    <cit type="trans"><quote>kalendorius</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>registruoti</quote></cit>
     <cit type="trans"><quote>įtraukti į sąrašą</quote></cit>
     <cit type="trans"><quote>sudaryti rodyklę</quote></cit>
@@ -13110,7 +13110,6 @@
   </form><sense>
     <cit type="trans"><quote>šaltas</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>šaltas</quote></cit>
     <cit type="trans"><quote>abejingas</quote></cit>
     <cit type="trans"><quote>nesvetingas</quote></cit>
 	</sense><sense>
@@ -15119,7 +15118,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>susikirsti</quote></cit>
     <cit type="trans"><quote>susikryžiuoti (apie kelius, linijas)</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>pereiti</quote></cit>
     <cit type="trans"><quote>įveikti (tam tikrą ribą)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(su)kryžiuoti</quote></cit>
@@ -15690,8 +15688,7 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(šnek.) baisus</quote></cit>
     <cit type="trans"><quote>šlykštus</quote></cit>
-    <cit type="trans"><quote>smerktinas</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>Damocles</orth>
 	  <pron>dæməkliːz</pron>
   </form><sense>
@@ -16652,8 +16649,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(balso) (pri)slopinimas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(fiz.) depresija</quote></cit>
-    <cit type="trans"><quote>nuosmukis</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(tech.) išretėjimas</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>depressive</orth>
@@ -17790,7 +17786,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>centrinis</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>komerciniame miesto rajone</quote></cit>
-    <cit type="trans"><quote>komerciniame miesto rajone</quote></cit>
     <cit type="trans"><quote>į miesto centrą</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>downward</orth>
@@ -18129,7 +18124,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>gėrimas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>išgertuvės</quote></cit>
-    <cit type="trans"><quote>gėrimas</quote></cit>
     <cit type="trans"><quote>išgėrimas</quote></cit>
     <cit type="trans"><quote>girtavimas</quote></cit>
     <cit type="trans"><quote>girtuokliavimas</quote></cit>
@@ -18321,8 +18315,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(anat.) (ausies) būgnelis</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(tech.) cilindras</quote></cit>
-    <cit type="trans"><quote>būgnas</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>būgnyti</quote></cit>
     <cit type="trans"><quote>mušti būgną</quote></cit>
 	</sense><sense>
@@ -19602,8 +19595,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>išeivystė</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>išeivija</quote></cit>
-    <cit type="trans"><quote>emigracija</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>emigratory</orth>
 	  <pron>'emıgreıtərı</pron>
   </form><gramGrp>
@@ -19816,8 +19808,6 @@ pan.)</quote></cit>
 	  <pron>i'skeip</pron>
   </form><sense>
     <cit type="trans"><quote>išsigelbėjimas</quote></cit>
-    <cit type="trans"><quote>išvengimas</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>išvengimas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(dujų, skysčių) nuotėkis</quote></cit>
@@ -21606,8 +21596,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>laužas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>šaudymas</quote></cit>
-    <cit type="trans"><quote>ugnis</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>užsiliepsnoti</quote></cit>
     <cit type="trans"><quote>padegti</quote></cit>
 	</sense><sense>
@@ -24696,8 +24685,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>gerovė</quote></cit>
     <cit type="trans"><quote>nauda</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>nauda</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>gerai</quote></cit>
     <xr><ref>well</ref></xr>
 	</sense></entry><entry><form>
@@ -25384,8 +25371,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(pl šnek.) vertė</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(pl šnek.) vidaus mechanizmas</quote></cit>
-    <cit type="trans"><quote>viduriai</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>siauras perėjimas</quote></cit>
     <cit type="trans"><quote>sąsiauris</quote></cit>
 	</sense><sense>
@@ -26000,7 +25986,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>klausytis</quote></cit>
     <cit type="trans"><quote>išklausyti</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>girdėti</quote></cit>
     <cit type="trans"><quote>išgirsti</quote></cit>
     <cit type="trans"><quote>sužinoti</quote></cit>
 	</sense><sense>
@@ -26838,7 +26823,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>tikėjimasis</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>tikėtis</quote></cit>
-    <cit type="trans"><quote>viltis</quote></cit>
     <cit type="trans"><quote>laukti</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>hopeful</orth>
@@ -27634,8 +27618,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>užpleišyti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>užspausti</quote></cit>
-    <cit type="trans"><quote>užpleišyti</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>imperil</orth>
 	  <pron>imperəl</pron>
   </form><sense>
@@ -28206,7 +28189,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>inspiruoti</quote></cit>
     <cit type="trans"><quote>įteigti</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>įkvėpti</quote></cit>
     <cit type="trans"><quote>įtraukti (oro)</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>inspired</orth>
@@ -29974,8 +29956,6 @@ pan.)</quote></cit>
   </gramGrp><sense>
     <cit type="trans"><quote>sąmoningai</quote></cit>
     <cit type="trans"><quote>sumaniai</quote></cit>
-	</sense><sense>
-    <cit type="trans"><quote>sumaniai</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>knowledge</orth>
 	  <pron>nɒlıdʒ</pron>
@@ -31446,8 +31426,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>energingas</quote></cit>
     <cit type="trans"><quote>degantis</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>energingas</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>tiesiogiai</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>live high</orth>
@@ -32667,8 +32645,6 @@ pan.)</quote></cit>
   </gramGrp><sense>
     <cit type="trans"><quote>vesti</quote></cit>
     <cit type="trans"><quote>ištekėti</quote></cit>
-	</sense><sense>
-    <cit type="trans"><quote>sutuokti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>apvesdinti</quote></cit>
     <cit type="trans"><quote>ištekinti</quote></cit>
@@ -34750,7 +34726,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>artimas</quote></cit>
     <cit type="trans"><quote>kaimynė</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>artimas</quote></cit>
     <cit type="trans"><quote>kaimyninis</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>ribotis</quote></cit>
@@ -36119,7 +36094,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>atdaras</quote></cit>
     <cit type="trans"><quote>atviras</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>atviras</quote></cit>
     <cit type="trans"><quote>aiškus</quote></cit>
     <cit type="trans"><quote>nuoširdus</quote></cit>
 	</sense><sense>
@@ -36345,8 +36319,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(anat.) raumens pradžia</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(spec.) (koordinačių) susikirtimo taškas</quote></cit>
-    <cit type="trans"><quote>pradžia</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>original</orth>
 	  <pron>ərıdʒənəl</pron>
   </form><sense>
@@ -36620,8 +36593,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>nuosavas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>tikras</quote></cit>
-    <cit type="trans"><quote>savas</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>valdyti</quote></cit>
     <cit type="trans"><quote>turėti</quote></cit>
 	</sense><sense>
@@ -37979,7 +37951,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>rinkti</quote></cit>
     <cit type="trans"><quote>skinti</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>rinkti</quote></cit>
     <cit type="trans"><quote>(nu)skinti (vaisius, uogas, gėles)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(nu)pešti (vištą)</quote></cit>
@@ -38867,8 +38838,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>padėtis</quote></cit>
     <cit type="trans"><quote>poza</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>padėtis</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>pozicija</quote></cit>
     <cit type="trans"><quote>požiūris</quote></cit>
 	</sense><sense>
@@ -38955,8 +38924,7 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>patogus</quote></cit>
     <cit type="trans"><quote>tinkamas</quote></cit>
-    <cit type="trans"><quote>praktiškas</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>faktiškas</quote></cit>
     <cit type="trans"><quote>realus</quote></cit>
     <cit type="trans"><quote>tikras</quote></cit>
@@ -38984,7 +38952,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(pri)taikymas</quote></cit>
     <cit type="trans"><quote>panaudojimas</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>praktika</quote></cit>
     <cit type="trans"><quote>pratybos</quote></cit>
     <cit type="trans"><quote>treniravimasis</quote></cit>
 	</sense><sense>
@@ -40844,7 +40811,6 @@ pan.)</quote></cit>
   </form><sense>
     <cit type="trans"><quote>klausimas</quote></cit>
 	</sense><sense>
-	</sense><sense>
     <cit type="trans"><quote>problema, dalykas, svarstomas klausimas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>abejonė</quote></cit>
@@ -40895,7 +40861,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>apklausa</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>smalsus</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>questionless</orth>
 	  <pron>'kwestʃənləs</pron>
@@ -41709,8 +41674,7 @@ pan.)</quote></cit>
     <pos>adj</pos>
   </gramGrp><sense>
     <cit type="trans"><quote>padarytas arba išrinktas aklai</quote></cit>
-    <cit type="trans"><quote>padarytas arba išrinktas aklai</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(at random) iš akies</quote></cit>
     <cit type="trans"><quote>aklai</quote></cit>
     <cit type="trans"><quote>kaip papuola</quote></cit>
@@ -43700,7 +43664,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>grubletas</quote></cit>
     <cit type="trans"><quote>rupus</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>šiurkštus</quote></cit>
     <cit type="trans"><quote>storžieviškas</quote></cit>
     <cit type="trans"><quote>staciokiškas</quote></cit>
 	</sense><sense>
@@ -44436,8 +44399,6 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>mažas</quote></cit>
     <cit type="trans"><quote>siauras</quote></cit>
-	</sense><sense>
-    <cit type="trans"><quote>siauras</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>scar</orth>
 	  <pron>skɑːr</pron>
@@ -44673,8 +44634,6 @@ pan.)</quote></cit>
 	  <orth>seal</orth>
 	  <pron>siːl</pron>
   </form><sense>
-    <cit type="trans"><quote>antspaudas</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>užantspauduoti</quote></cit>
     <cit type="trans"><quote>padėti antspaudą</quote></cit>
 	</sense><sense>
@@ -44998,8 +44957,6 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>atskirai</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>atskirai</quote></cit>
-	</sense><sense>
     <cit type="trans"><quote>skirti</quote></cit>
     <cit type="trans"><quote>at(si)skirti</quote></cit>
     <cit type="trans"><quote>iš(si)skirti</quote></cit>
@@ -45202,7 +45159,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>skirtingas</quote></cit>
     <cit type="trans"><quote>įvairus</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>keletas</quote></cit>
     <cit type="trans"><quote>kai kurie</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>severe</orth>
@@ -46577,8 +46533,7 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>mokėjimas</quote></cit>
     <cit type="trans"><quote>įgūdis</quote></cit>
-    <cit type="trans"><quote>įgudimas</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>skilled</orth>
 	  <pron>skıld</pron>
   </form><gramGrp>
@@ -48382,8 +48337,7 @@ pan.)</quote></cit>
           <cit type="trans"><quote>sąžiningai</quote></cit>
 	</sense><sense>
           <cit type="trans"><quote>kvadratas</quote></cit>
-          <cit type="trans"><quote>stačiakampis</quote></cit>
-	</sense><sense>
+          </sense><sense>
           <cit type="trans"><quote>aikštė</quote></cit>
           <cit type="trans"><quote>skveras</quote></cit>
 	</sense><sense>
@@ -50251,8 +50205,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>(už)plūsti (apie minią, jausmus, t.p. surge up)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(kainų, pelno, poreikių ir pan.) kilimas</quote></cit>
-    <cit type="trans"><quote>augimas</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>surgeon</orth>
 	  <pron>'sə:rdʒən</pron>
   </form><gramGrp>
@@ -50365,7 +50318,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>patirti</quote></cit>
     <cit type="trans"><quote>ištverti</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>pragyventi</quote></cit>
     <cit type="trans"><quote>prasimaitinti (on)</quote></cit>
 	</sense></entry><entry><form>
           <orth>suspend</orth>
@@ -50400,7 +50352,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>atlaikyti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>pritarti</quote></cit>
-    <cit type="trans"><quote>palaikyti</quote></cit>
     <cit type="trans"><quote>patvirtinti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>išlaikyti (charakterį, principą ir pan.)</quote></cit>
@@ -50640,10 +50591,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>plaukiojimas</quote></cit>
     <cit type="trans"><quote>plaukymas</quote></cit>
     <cit type="trans"><quote>maudymasis</quote></cit>
-    <cit type="trans"><quote>paplūsti</quote></cit>
-    <cit type="trans"><quote>būti paplūdusiam</quote></cit>
-    <cit type="trans"><quote>pasrūti</quote></cit>
-    <cit type="trans"><quote>būti pasruvusiam</quote></cit>
     <xr><ref>swimming</ref></xr>
 	</sense></entry><entry><form>
 	  <orth>swimming</orth>
@@ -52183,8 +52130,7 @@ pan.)</quote></cit>
     <cit type="trans"><quote>vagiliavimas</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>vagiantis</quote></cit>
-    <cit type="trans"><quote>vagiantis</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>vagis</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>thievish</orth>
@@ -56779,9 +56725,7 @@ pan.)</quote></cit>
 	  <pron>weitiŋruːm</pron>
   </form><sense>
     <cit type="trans"><quote>laukiamasis (kambarys)</quote></cit>
-	</sense></entry><entry><form>
-  </form><sense>
-	</sense></entry><entry><form>
+	</sense></entry><entry /><entry><form>
 	  <orth>wait for</orth>
 	  <pron>weitfər</pron>
   </form><sense>
@@ -56822,7 +56766,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>vesti pasivaikščioti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>eiti</quote></cit>
-    <cit type="trans"><quote>vaikščioti</quote></cit>
     <cit type="trans"><quote>žingsniuoti</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>wall</orth>
@@ -57532,8 +57475,7 @@ pan.)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>kuris</quote></cit>
     <cit type="trans"><quote>ką</quote></cit>
-    <cit type="trans"><quote>koks</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>whatever</orth>
 	  <pron>wɒtevər</pron>
   </form><sense>
@@ -58767,8 +58709,6 @@ pan.)</quote></cit>
     <cit type="trans"><quote>kiauksėti, amsėti, ambryti, vampsėti, viauksėti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(šnek.) kvailos kalbos</quote></cit>
-	</sense><sense>
-    <cit type="trans"><quote>kiauksėti, amsėti, ambryti, vampsėti, viauksėti</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(šnek.) taukšti</quote></cit>
 	</sense></entry><entry><form>

@@ -10,16 +10,15 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.3</edition>
+        <edition>0.3.1</edition>
       </editionStmt>
-      <extent>about 3800 headwords</extent>
+      <extent>3800 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-          <p>Available under the terms of the GNU General Public License ver. 2.0 and any later version.</p>
+          <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+	  <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
         </availability>
-        <idno type="svn">$Id$</idno>
         <pubPlace>
           <ref target="http://freedict.org/">http://freedict.org/</ref>
         </pubPlace>
@@ -28,8 +27,7 @@
         <note type="status">too small</note>
       </notesStmt>
       <sourceDesc>
-        <p>
-          Home: <ref target="http://freedict.org/">http://freedict.org/</ref>
+        <p>Home: <ref target="http://freedict.org/">http://freedict.org/</ref>
         </p>
         <p>
           This Database was generated from ergane, <ref target="http://www.travlang.com">http://www.travlang.com</ref>.
@@ -45,6 +43,9 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.3.1" when="2017-11-21" who="#karlb">
+        <name>Karl Bartel</name>Update license link.
+      </change>
       <change when="2014-02-11">
         <date>2014-02-11</date>
         <name>Sebastian Humenda</name>

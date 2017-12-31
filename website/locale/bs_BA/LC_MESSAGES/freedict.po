@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:33+0200\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2013-01-20 02:13+0200\n"
 "Last-Translator: Senad HASANBAŠIĆ <hasanbasic.senad@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 "vašem %s (zamjenite <i>etch</i> sa <i>unstable</i> ako upotrebljavate "
 "nestabilnu verziju):"
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -149,46 +149,44 @@ msgstr ""
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, možete "
 "koristiti ovaj URL:"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT serveri"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "na Windows/Linux"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr "Mobipocket"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "na WinCE/Palm"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "Na Zaurus/Qt"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 #, fuzzy
 msgid "Download / Matrix View"
 msgstr "Skinuti / Pogled Matrixa"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-dictd.php:27
 #, fuzzy, php-format
 msgid "The following downloads are for platform %s."
 msgstr "Sva preuzimanja su za platforme %s."
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-dictd.php:32
 #, php-format
 msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-dictd.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -200,19 +198,19 @@ msgstr ""
 "     sličan stardict-u po tome što ne koristi klijent/server\n"
 "     pristup"
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-dictd.php:46
 msgid "Select your language combination!"
 msgstr "Izaberite vašu kombinaciju jezika!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-dictd.php:49
 msgid "Source Language / Size in MB"
 msgstr "Izvorni Jezik / Veličina u MB"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-dictd.php:52
 msgid "Destination<br />Language"
 msgstr "Ciljani <br jezik /> "
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-dictd.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -291,48 +289,44 @@ msgid "dictd"
 msgstr "dicttd"
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "WinCE &amp; Palm"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "Detaljna Lista"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "FreeDict Online Serveri"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr ""
 
-#: menu.php:76
+#: menu.php:65
 #, fuzzy
 msgid "GitHub Project Page"
 msgstr "SourceForge Stranica Projekta"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "Mailing Liste"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "Kvar"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr "Wiki"
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Prevedite ovu Web stranicu"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "FreeDict Projekat"
 
@@ -761,6 +755,9 @@ msgid ""
 msgstr ""
 "To je trenutno uvijek zato što neke simbole u Rječniku nije moguće\n"
 "  šifrirati ili pokazati za/na platformi."
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "WinCE &amp; Palm"
 
 #, fuzzy
 #~ msgid "All downloads are for platform %s."

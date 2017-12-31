@@ -2,7 +2,7 @@ LOCALES=$(wildcard locale/*_*)
 POS=$(addsuffix /LC_MESSAGES/freedict.po,$(LOCALES))
 MOS=$(addsuffix /LC_MESSAGES/freedict.mo,$(LOCALES))
 
-all: freedict-database.xml freedict-database.json flags-evolutionary.php freedict.pot $(MOS)
+all: freedict-database.xml freedict-database.json freedict.pot $(MOS)
 
 sources = $(wildcard *.php) $(wildcard inc/*.php)
 
@@ -32,10 +32,7 @@ freedict-database.json:
 		ln -s $$APIDIR/freedict-database.json $@
 
 flags-bedic.php:
-	ln -s flags-dict-bz2.php $@
-
-flags-evolutionary.php:
-	ln -s flags-dict-bz2.php $@
+	ln -s flags-dictd.php $@
 
 freedict.pot: $(sources)
 	xgettext --from-code=utf-8 -o $@ --copyright-holder="freedict.org" \

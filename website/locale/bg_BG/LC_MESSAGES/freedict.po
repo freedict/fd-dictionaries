@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
-"POT-Creation-Date: 2017-10-15 22:33+0200\n"
+"POT-Creation-Date: 2017-12-13 16:27+0100\n"
 "PO-Revision-Date: 2007-07-24 13:33+MET\n"
 "Last-Translator: Emanoil Kotsev <a9706152@unet.univie.ac.at>\n"
 "Language-Team: Bulgarian <freedict-beta@lists.sourceforge.net>\n"
@@ -121,7 +121,7 @@ msgstr "за всички %sпредпоставки%s, моля прочете�
 msgid "If you use %sDebian%s unstable, you can add this to your %s:"
 msgstr "Ако ползвате нестабилната версия на %sDebian%s, може да добавите %s:"
 
-#: fd-api.php:4 fd-api.php:8 menu.php:94
+#: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
 msgstr ""
 
@@ -147,45 +147,43 @@ msgstr ""
 "в програми като <a href=\"http://stardict.sf.net/\" target=\"_top"
 "\">Stardict</a>,ползвайте този линк:"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7 menu.php:31
+#: flags-dictd.php:7 menu.php:31
 msgid "DICT servers"
 msgstr "DICT сървери"
 
-#: flags-dict-bz2.php:7 flags-evolutionary.php:7
+#: flags-dictd.php:7
 msgid "on Windows/Linux"
 msgstr "под Windows/Linux"
 
-#: flags-dict-bz2.php:9 flags-evolutionary.php:9
+#: flags-dictd.php:9
 msgid "Mobipocket"
 msgstr "Мобипокет"
 
-#: flags-dict-bz2.php:9 flags-dict-bz2.php:11 flags-evolutionary.php:9
-#: flags-evolutionary.php:11
+#: flags-dictd.php:9 flags-dictd.php:11
 msgid "on WinCE/Palm"
 msgstr "на WinCE/Palm"
 
-#: flags-dict-bz2.php:13 flags-evolutionary.php:13
+#: flags-dictd.php:13
 msgid "on Zaurus/Qt"
 msgstr "под Zaurus/Qt"
 
-#: flags-dict-bz2.php:21 flags-dict-bz2.php:25 flags-evolutionary.php:21
-#: flags-evolutionary.php:25
+#: flags-dictd.php:21 flags-dictd.php:25
 msgid "Download / Matrix View"
 msgstr "Сваляне / матричен преглед"
 
-#: flags-dict-bz2.php:27 flags-evolutionary.php:27
+#: flags-dictd.php:27
 #, fuzzy, php-format
 msgid "The following downloads are for platform %s."
 msgstr "Всичко за сваляне е за платформа"
 
-#: flags-dict-bz2.php:32 flags-evolutionary.php:32
+#: flags-dictd.php:32
 #, php-format
 msgid ""
 "For a list of dictionary programs supporting this format, have a look at the "
 "%1swiki%2s."
 msgstr ""
 
-#: flags-dict-bz2.php:38 flags-evolutionary.php:38
+#: flags-dictd.php:38
 msgid ""
 "BEDic has two frontends: ZBEDic, which runs on the Zaurus\n"
 "     Linux PDA from Sharp, and QBEDic, which runs on Linux/Qt. BEDic is\n"
@@ -197,20 +195,20 @@ msgstr ""
 "     подобен на stardict тъй като не ползва клиент/сървер\n"
 "     технология"
 
-#: flags-dict-bz2.php:46 flags-evolutionary.php:46
+#: flags-dictd.php:46
 msgid "Select your language combination!"
 msgstr "Изберете вашата комбинация от езици!"
 
-#: flags-dict-bz2.php:49 flags-evolutionary.php:49
+#: flags-dictd.php:49
 msgid "Source Language / Size in MB"
 msgstr "Изходен език / големина в МБ"
 
-#: flags-dict-bz2.php:52 flags-evolutionary.php:52
+#: flags-dictd.php:52
 #, fuzzy
 msgid "Destination<br />Language"
 msgstr "предназначение<br>език"
 
-#: flags-dict-bz2.php:144 flags-evolutionary.php:144
+#: flags-dictd.php:144
 msgid ""
 "Please click on the links to get to the SourceForge\n"
 "Download Mirror selection page. Right-Click and Save-As will not work\n"
@@ -289,48 +287,44 @@ msgid "dictd"
 msgstr "dictd"
 
 #: menu.php:40
-msgid "WinCE &amp; Palm"
-msgstr "WinCE &amp; Palm"
-
-#: menu.php:51
 msgid "Detailed List"
 msgstr "Подробен Списък"
 
-#: menu.php:60
+#: menu.php:49
 msgid "FreeDict Online Servers"
 msgstr "FreeDict онлайн сървери"
 
-#: menu.php:72
+#: menu.php:61
 msgid "Sources"
 msgstr ""
 
-#: menu.php:76
+#: menu.php:65
 #, fuzzy
 msgid "GitHub Project Page"
 msgstr "SourceForge сайт на проекта"
 
-#: menu.php:83
+#: menu.php:72
 #, fuzzy
 msgid "Mailing list"
 msgstr "майл листи"
 
-#: menu.php:85
+#: menu.php:74
 msgid "Issues"
 msgstr ""
 
-#: menu.php:86
+#: menu.php:75
 msgid "Bugs"
 msgstr "Бъгове"
 
-#: menu.php:90
+#: menu.php:79
 msgid "Wiki"
 msgstr ""
 
-#: menu.php:93 weblang.php:5 weblang.php:9
+#: menu.php:82 weblang.php:5 weblang.php:9
 msgid "Translate this Website"
 msgstr "Преведи този уеб сайт"
 
-#: menu.php:98
+#: menu.php:87
 msgid "FreeDict Project"
 msgstr "проект FreeDict"
 
@@ -752,6 +746,9 @@ msgid ""
 msgstr ""
 "Това се случва поради знаци в речника които не могад да бъдат\n"
 "  кодирани или изобразени под съответната платформа."
+
+#~ msgid "WinCE &amp; Palm"
+#~ msgstr "WinCE &amp; Palm"
 
 #, fuzzy
 #~ msgid "All downloads are for platform %s."

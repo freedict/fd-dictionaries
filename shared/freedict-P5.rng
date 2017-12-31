@@ -5733,9 +5733,25 @@ distribution of a text.</a:documentation>
       <element name="availability">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies information about the availability of a text, for example any restrictions on its
     use or distribution, its copyright status, etc.</a:documentation>
-         <oneOrMore>
+
+         <!-- Make sure that at least one <p> contains a <ref target=""></ref>. This should be the license name and URL -->
+         <zeroOrMore>
             <ref name="tei_model.pLike"/>
-         </oneOrMore>
+         </zeroOrMore>
+         <element name="p">
+            <text/>
+            <oneOrMore>
+               <element name="ref">
+                  <attribute name="target"/>
+                  <text/>
+               </element>
+               <text/>
+            </oneOrMore>
+         </element>
+         <zeroOrMore>
+            <ref name="tei_model.pLike"/>
+         </zeroOrMore>
+
          <ref name="tei_att.global.attribute.xmlid"/>
          <ref name="tei_att.global.attribute.n"/>
          <ref name="tei_att.global.attribute.xmllang"/>

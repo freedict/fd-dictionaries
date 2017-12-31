@@ -29,7 +29,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.2.2</edition>
+        <edition>0.2.3</edition>
         <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
         <!--<respStmt>
           <resp>xxx</resp>
@@ -41,9 +41,9 @@
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability>
-          <p>Original dictionary contents available under the GNU Free Documentation License, ver. 1.1 and later. XML application together with the content is available under the terms of the GNU General Public License, version 3.0 or any later version.</p>
+			  <p>Original dictionary contents available under the <ref target="https://www.gnu.org/licenses/fdl-1.1.html">GNU Free Documentation License, ver. 1.1 and later</ref>. XML application together with the content is available under the terms of the GNU General Public License, version 3.0 or any later version.</p>
         </availability>
-        <date when="2011-09-09">9 September 2011</date>
+        <date when="2017-12-09">Dec 09, 2017</date>
         <pubPlace><ptr target="http://freedict.org/"/></pubPlace>
       </publicationStmt>
       <notesStmt>
@@ -72,6 +72,9 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2.3" when="2017-12-09">
+        <name>Sebastian Humenda</name> update licencing stanza (thanks to Karl Bartel)
+      </change>
       <change n="0.2.2" who="#bansp" when="2011-09-09">
         <list type="bulleted">
           <head>Version 0.2.2, <date>9 September 2011</date>. <name ref="#bansp">Piotr Bański</name>

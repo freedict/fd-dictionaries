@@ -8,17 +8,21 @@
           <resp>by</resp>
           <name>Kęstutis Biliūnas &lt;kebil@kaunas.init.lt&gt;</name>
         </respStmt>
+        <respStmt>
+          <!-- for the freedict database -->
+          <resp>Maintainer</resp>
+          <name>[up for grabs]</name>
+        </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.7.1</edition>
+        <edition>0.7.2</edition>
       </editionStmt>
-      <extent>7030 headwords</extent>
+      <extent>7031 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
           <p>Copyright (C) 2007 Atviras Kodas Lietuvai (AKL). </p>
-          <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl.html">GNU
-              General Public License</ref> ver. 2.0 and any later version.</p>
+          <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
           <p>This program is free software; you can redistribute it and/or modify it under the terms
             of the GNU General Public License as published by the Free Software Foundation; either
             version 2 of the License, or (at your option) any later version.</p>
@@ -39,18 +43,24 @@
         <note type="status">stable</note>
       </notesStmt>
       <sourceDesc>
-        <p>Home: <ptr target="http://files.akl.lt/freedict-lit/"/></p>
+        <p>Home: <ptr target="http://files.akl.lt/freedict-lit/" /></p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for
-          good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-            >http://freedict.org/</ref>. This project aims to make translating dictionaries
+          good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
           available for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2017-12-06" who="#humenda" n="0.7.2">
+          <name>Sebastian Humenda</name>
+          <list>
+          <item>update licencing stanza (thanks to Karl Bartel)</item>
+          <item>improve markup by removing empty nodes and doubled translations</item>
+        </list>
+      </change>
       <change when="2010-11-01"><date>2010-11-01</date><name>Piotr Bański</name>: Conversion of TEI
         P4 source into P5 via tools/xsl/freedict_P4toP5.xsl; manual clean-up.</change>
       <change><date>2010-02-28</date><name>Kęstutis Biliūnas</name>Added 970 headwords.</change>
@@ -785,7 +795,6 @@
     <cit type="trans"><quote>lifetime</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>century</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>amžinas</orth>
   </form><gramGrp>
@@ -1142,8 +1151,7 @@
         <cit type="trans"><quote>approximately</quote></cit>
       </sense><sense>
         <cit type="trans"><quote>(aplink, ties) around</quote></cit>
-        <cit type="trans"><quote>about</quote></cit>
-      </sense></entry><entry><form>
+        </sense></entry><entry><form>
 	  <orth>apimti</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -1514,7 +1522,6 @@
     <cit type="trans"><quote>give up</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(palikti) leave</quote></cit>
-    <cit type="trans"><quote>abandon</quote></cit>
     <cit type="trans"><quote>desert</quote></cit>
 	</sense></entry><entry><form>
         <orth>aplink</orth>
@@ -2519,8 +2526,7 @@
   </gramGrp><sense>
     <cit type="trans"><quote>answer</quote></cit>
     <cit type="trans"><quote>reply</quote></cit>
-    <cit type="trans"><quote>reply</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(neigiamas) refusal</quote></cit>
     <cit type="trans"><quote>repudiation</quote></cit>
     <cit type="trans"><quote>(teis.) rejection</quote></cit>
@@ -3203,7 +3209,6 @@
     <cit type="trans"><quote>cultivation</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(gyvulių) rearing</quote></cit>
-    <cit type="trans"><quote>raising</quote></cit>
     <cit type="trans"><quote>breeding</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(kadrų) training</quote></cit>
@@ -3221,7 +3226,6 @@
     <cit type="trans"><quote>breed</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(augalus) grow</quote></cit>
-    <cit type="trans"><quote>raise</quote></cit>
     <cit type="trans"><quote>cultivate</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(užveisti sodą, parką ir pan.) make</quote></cit>
@@ -4117,7 +4121,6 @@
         <cit type="trans"><quote>experiment</quote></cit>
       </sense><sense>
         <cit type="trans"><quote>(išbandymas) trial</quote></cit>
-        <cit type="trans"><quote>test</quote></cit>
         <cit type="trans"><quote>try-out</quote></cit>
       </sense><sense>
         <cit type="trans"><quote>(mėginimas) attempt</quote></cit>
@@ -5001,8 +5004,7 @@
     <cit type="trans"><quote>verge</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(pylimo sankasos) bank</quote></cit>
-    <cit type="trans"><quote>edge</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>briaunainis</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -6119,7 +6121,6 @@
 	</sense><sense>
     <cit type="trans"><quote>sharing</quote></cit>
     <cit type="trans"><quote>distribution</quote></cit>
-    <cit type="trans"><quote>division</quote></cit>
     <cit type="trans"><quote>partition</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>dalyti</orth>
@@ -8275,8 +8276,7 @@
     <cit type="trans"><quote>company</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(organizacija) association</quote></cit>
-    <cit type="trans"><quote>company</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
        <orth>draugiškai</orth>
      </form><gramGrp><pos>adv</pos></gramGrp><sense>
        <cit type="trans"><quote>in a friendly way</quote></cit>
@@ -8347,8 +8347,7 @@
     <cit type="trans"><quote>shake</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(apie balsą) quaver</quote></cit>
-    <cit type="trans"><quote>tremble</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>drebėti iš džiaugsmo</orth>
   </form><sense>
     <cit type="trans"><quote>thrill with joy</quote></cit>
@@ -16462,7 +16461,6 @@
     <cit type="trans"><quote>(fiziol.) secretion</quote></cit>
     <cit type="trans"><quote>excretion</quote></cit>
     <cit type="trans"><quote>(pūlių) discharge</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>išskyrus</orth>
   </form><gramGrp>
@@ -16776,7 +16774,6 @@
     <cit type="trans"><quote>(išsilaisvinti) break away (from)</quote></cit>
     <cit type="trans"><quote>escape</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>escape</quote></cit>
     <cit type="trans"><quote>burst</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(apie sagą ir pan.) be torn out</quote></cit>
@@ -17379,8 +17376,7 @@
     <cit type="trans"><quote>grounding</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(prietaisas) earth/ground connection</quote></cit>
-    <cit type="trans"><quote>ground</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>įžeminti</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -20395,8 +20391,7 @@
     <cit type="trans"><quote>clip</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(avis) shear</quote></cit>
-    <cit type="trans"><quote>clip</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(drabužį) cut (out)</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>kirpykla</orth>
@@ -22519,8 +22514,7 @@
     <cit type="trans"><quote>stupidity</quote></cit>
     <cit type="trans"><quote>imbecility</quote></cit>
     <cit type="trans"><quote>foolishness</quote></cit>
-    <cit type="trans"><quote>foolishness</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>kvailys</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -23201,7 +23195,6 @@
     <cit type="trans"><quote>(pvz., knygas) publish</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(pinigus) spend</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>lemiamas</orth>
   </form><gramGrp>
@@ -25215,8 +25208,7 @@
     <cit type="trans"><quote>endeavour</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(sport.) effort</quote></cit>
-    <cit type="trans"><quote>attempt</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>mėginti</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -25365,8 +25357,7 @@
        <cit type="trans"><quote>(audeklas) material</quote></cit>
        <cit type="trans"><quote>cloth</quote></cit>
        <cit type="trans"><quote>fabric</quote></cit>
-       <cit type="trans"><quote>stuff</quote></cit>
-     </sense><sense>
+       </sense><sense>
        <cit type="trans"><quote>(miško m.) timber</quote></cit>
      </sense></entry><entry><form>
        <orth>medžiaginis</orth>
@@ -25386,8 +25377,6 @@
        <cit type="trans"><quote>shoot</quote></cit>
        <cit type="trans"><quote>(su šunimis) chase</quote></cit>
        <cit type="trans"><quote>(su varovais) battue</quote></cit>
-     </sense><sense>
-       <cit type="trans"><quote>(su šunimis) chase</quote></cit>
      </sense></entry><entry><form>
        <orth>medžiotojas</orth>
      </form><gramGrp><pos>n</pos></gramGrp><sense>
@@ -26133,8 +26122,7 @@
     <cit type="trans"><quote>morphology</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(lingv.) accidence</quote></cit>
-    <cit type="trans"><quote>morphology</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>morka</orth>
   </form><gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -26426,8 +26414,7 @@
     <cit type="trans"><quote>analysis</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(gram.) parsing</quote></cit>
-    <cit type="trans"><quote>analysis</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>nagrinėti</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -26506,8 +26493,7 @@
     <cit type="trans"><quote>plunger</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(paukštis) loon</quote></cit>
-    <cit type="trans"><quote>diver</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>nardinti</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -26639,8 +26625,7 @@
 	</sense><sense>
     <cit type="trans"><quote>(sunkumas) weight</quote></cit>
     <cit type="trans"><quote>load</quote></cit>
-    <cit type="trans"><quote>burden</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>nauda</orth>
   </form><gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -28016,7 +28001,6 @@
     <xr><ref>niekada</ref></xr>
     <xr><ref>niekuomet</ref></xr>
     <xr><ref>niekados</ref></xr>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>niekada</orth>
   </form><gramGrp>
@@ -28028,7 +28012,6 @@
     <xr><ref>niekad</ref></xr>
     <xr><ref>niekuomet</ref></xr>
     <xr><ref>niekados</ref></xr>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>niekuomet</orth>
   </form><gramGrp>
@@ -28040,7 +28023,6 @@
     <xr><ref>niekad</ref></xr>
     <xr><ref>niekada</ref></xr>
     <xr><ref>niekados</ref></xr>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>niekados</orth>
   </form><gramGrp>
@@ -28052,7 +28034,6 @@
     <xr><ref>niekad</ref></xr>
     <xr><ref>niekada</ref></xr>
     <xr><ref>niekuomet</ref></xr>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>niekaip</orth>
   </form><gramGrp>
@@ -29583,7 +29564,6 @@
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
   </gramGrp><sense>
-    <cit type="trans"><quote>fugitive, runaway</quote></cit>
     <cit type="trans"><quote>fugitive, runaway</quote></cit>
     <cit type="trans"><quote>(iš kalėjimo) prison-breaker, escapee</quote></cit>
 	</sense><sense>
@@ -31249,7 +31229,6 @@
     <cit type="trans"><quote>indicate (smth)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(atskleisti) display</quote></cit>
-    <cit type="trans"><quote>show</quote></cit>
     <cit type="trans"><quote>exhibit</quote></cit>
     <cit type="trans"><quote>(rezultatą, laiką ir pan.) achieve</quote></cit>
 	</sense><sense>
@@ -32131,8 +32110,7 @@
     <cit type="trans"><quote>(galutinis t. p.) final</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(naujausias) latest</quote></cit>
-    <cit type="trans"><quote>last</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(prasčiausias) lowest</quote></cit>
     <cit type="trans"><quote>worst</quote></cit>
 	</sense><sense>
@@ -35262,8 +35240,7 @@
     <cit type="trans"><quote>practice</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(įgudimas) practical experience</quote></cit>
-    <cit type="trans"><quote>practice</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(mokomoji) practical work</quote></cit>
     <cit type="trans"><quote>practice period</quote></cit>
 	</sense><sense>
@@ -36857,8 +36834,7 @@
     <cit type="trans"><quote>draft</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(sumanymas) scheme</quote></cit>
-    <cit type="trans"><quote>project</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>projektavimas</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -37071,8 +37047,7 @@
 	</sense><sense>
     <cit type="trans"><quote>paragraph</quote></cit>
     <cit type="trans"><quote>item</quote></cit>
-    <cit type="trans"><quote>point</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>puodas</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -37367,8 +37342,7 @@
     <cit type="trans"><quote>tranquility</quote></cit>
     <cit type="trans"><quote>peace</quote></cit>
     <cit type="trans"><quote>rest</quote></cit>
-    <cit type="trans"><quote>quiet(ness)</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>ramstis</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>
@@ -37649,8 +37623,7 @@
     <cit type="trans"><quote>pucker</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(drabužio) crease</quote></cit>
-    <cit type="trans"><quote>pucker</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>raukšlėtas</orth>
   </form><gramGrp>
     <pos>adj</pos><gen>m</gen>
@@ -37879,7 +37852,6 @@
     <cit type="trans"><quote>signification</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(svarba) importance</quote></cit>
-    <cit type="trans"><quote>significance</quote></cit>
     <cit type="trans"><quote>moment</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>reikšmingas</orth>
@@ -40867,11 +40839,9 @@
     <cit type="trans"><quote>section</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(įstaigos ir pan.) department</quote></cit>
-    <cit type="trans"><quote>section</quote></cit>
     <cit type="trans"><quote>(filialas) branch</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(patalpos) compartment</quote></cit>
-    <cit type="trans"><quote>section</quote></cit>
     <cit type="trans"><quote>(rašomojo stalo) pigeonhole</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>skyryba</orth>
@@ -45228,8 +45198,7 @@ introduce (to), present (to)</quote></cit>
     <xr><ref>kuždėti</ref></xr>
 	</sense><sense>
     <cit type="trans"><quote>(šlamėti) rustle</quote></cit>
-    <cit type="trans"><quote>whisper</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>šnabždėtis</orth>
   </form><gramGrp>
     <pos>v</pos>
@@ -45937,7 +45906,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>intact</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(naudingas sveikatai) wholesome</quote></cit>
-    <cit type="trans"><quote>healthy</quote></cit>
     <cit type="trans"><quote>salubrious</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(visas) whole</quote></cit>
@@ -47350,7 +47318,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>lug</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(daryti, kad tįstų) stretch</quote></cit>
-	</sense><sense>
 	</sense></entry><entry><form>
 	  <orth>ten</orth>
   </form><gramGrp>
@@ -47558,7 +47525,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>direct</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>straightforward</quote></cit>
-    <cit type="trans"><quote>straight</quote></cit>
     <cit type="trans"><quote>upright</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>tigras</orth>
@@ -47686,8 +47652,7 @@ introduce (to), present (to)</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(tikslus) correct</quote></cit>
     <cit type="trans"><quote>right</quote></cit>
-    <cit type="trans"><quote>true</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(neabejotinas) sure</quote></cit>
     <cit type="trans"><quote>certain</quote></cit>
     <cit type="trans"><quote>(pabrėžiant) veritable</quote></cit>
@@ -48167,7 +48132,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>longsighted</quote></cit>
     <cit type="trans"><quote>farsighted</quote></cit>
 	</sense><sense>
-    <cit type="trans"><quote>farsighted</quote></cit>
     <cit type="trans"><quote>farseeing</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>toliaregiškumas</orth>
@@ -48848,7 +48812,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>(morališkai stiprus) strong</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(patvarus, pastovus) steady</quote></cit>
-    <cit type="trans"><quote>firm</quote></cit>
     <cit type="trans"><quote>lasting</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(patikimas) reliable</quote></cit>
@@ -48915,8 +48878,7 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>reliability</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(draugystės) strength</quote></cit>
-    <cit type="trans"><quote>stability</quote></cit>
-	</sense><sense>
+    </sense><sense>
     <cit type="trans"><quote>(dvasios) fortitude</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(ryžtingumas) firmness</quote></cit>
@@ -50785,8 +50747,7 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>(vykdyti) carry on</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(mechanizmą) set/put in motion</quote></cit>
-    <cit type="trans"><quote>drive</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>varlė</orth>
   </form><gramGrp>
     <pos>n</pos><gen>f</gen>
@@ -50849,7 +50810,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>apply</quote></cit>
     <cit type="trans"><quote>use</quote></cit>
     <cit type="trans"><quote>make use (of)</quote></cit>
-    <cit type="trans"><quote>apply</quote></cit>
     <cit type="trans"><quote>(pvz., vaistus) take</quote></cit>
 	</sense></entry><entry><form>
 	  <orth>vartojimas</orth>
@@ -51080,8 +51040,6 @@ introduce (to), present (to)</quote></cit>
     <cit type="trans"><quote>activity</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>act</quote></cit>
-	</sense><sense>
-    <cit type="trans"><quote>operation</quote></cit>
 	</sense></entry><entry><form>
        <orth>veiksmažodis</orth>
      </form><gramGrp><pos>n</pos></gramGrp><sense>
@@ -53194,8 +53152,7 @@ make (smth) the same</quote></cit>
     <cit type="trans"><quote>symbol</quote></cit>
 	</sense><sense>
     <cit type="trans"><quote>(signalas) signal</quote></cit>
-    <cit type="trans"><quote>token</quote></cit>
-	</sense></entry><entry><form>
+    </sense></entry><entry><form>
 	  <orth>ženklelis</orth>
   </form><gramGrp>
     <pos>n</pos><gen>m</gen>

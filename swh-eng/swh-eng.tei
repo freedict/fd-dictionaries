@@ -23,7 +23,7 @@
                <name>P. Bański, B. Wójtowicz</name>
             </respStmt>
          </titleStmt>
-         <editionStmt><!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  --><edition>0.4.3</edition>
+         <editionStmt><!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  --><edition>0.4.4</edition>
             <respStmt>
                <resp>little lexical and technical fixes</resp>
                <name>Beata Wójtowicz</name>
@@ -35,7 +35,7 @@
             <publisher>FreeDict</publisher>
             <availability status="free">
                <p>Copyright (C) 1999-2010 by various authors listed below.</p>
-               <p>Available under the terms of the GNU General Public License ver. 2.0 and any later version.</p>
+               <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
             </availability>
             <idno type="svn">$Id$</idno>
             <date when="2010-11-02">2 November 2010</date>
@@ -58,6 +58,9 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.4.4" when="2010-11-02">
+            <name>Sebastian Humenda</name> correct licencing stanza (thanks to Karl Bartel)
+         </change>
          <change n="0.4.4" when="2010-11-02" who="#bansp">
             <list type="bulleted">
                <head>Version 0.4.3, <date>30 December 2009</date>. Changes by <name>Piotr Bański</name>.</head>
