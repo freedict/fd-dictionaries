@@ -2,21 +2,21 @@
 # Copyright (C) 2006-2017
 # This file is distributed under the same license as the FreeDict website.
 # noname <lelaulau@yahoo.fr>, 2006.
-# Denis <denisarnuad@yahoo.fr>, 2009-2017.
+# Denis <denisarnuad@yahoo.fr>, 2009-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: freedict@freelists.org\n"
 "POT-Creation-Date: 2017-12-13 16:27+0100\n"
-"PO-Revision-Date: 2017-07-11 08:24+0200\n"
+"PO-Revision-Date: 2018-01-15 12:36+0100\n"
 "Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
 "Language-Team: French <>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: dataflow.php:4 dataflow.php:8 menu.php:20
@@ -25,7 +25,7 @@ msgstr "Flux de données"
 
 #: dataflow.php:17
 msgid "possibly plugin needed, eg."
-msgstr "un plugin peut être nécessaire, par exemple "
+msgstr "un plugin peut être nécessaire, par exemple."
 
 #: dataflow.php:19
 msgid "Adobe's"
@@ -48,7 +48,7 @@ msgstr ""
 "le téléchargement des paquets, mais plutôt\n"
 " par la sélection des paquets que vous voulez installer, la prochaine "
 "instruction\n"
-" est la seule instruction que vous avez besoin de vous rappeler :</p>"
+" est la seule instruction que vous avez besoin de vous rappeler :"
 
 #: deb.php:19 rock.php:30
 #, php-format
@@ -59,9 +59,9 @@ msgid ""
 msgstr ""
 "Les codes %1$s and %2$s sont les codes de language en 3 lettres de l'ISO "
 "639-2 des \n"
-" langues du dictionnaire que vous voulez. Bien sûr, cette combination  de "
+" langues du dictionnaire que vous voulez. Bien sûr, cette combination de "
 "langues doit\n"
-"être disponible sur FreeDict"
+"être disponible sur FreeDict."
 
 #: deb.php:24
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 #: editor.php:30
 #, php-format
 msgid "For the %srequirements%s, please also refer to the documentation."
-msgstr "Pour les %spré-requis%s, veuillez vous référer à la documentation"
+msgstr "Pour les %spré-requis%s, veuillez vous référer à la documentation."
 
 #: editor.php:33
 #, php-format
@@ -130,7 +130,7 @@ msgstr ""
 
 #: fd-api.php:4 fd-api.php:8 menu.php:83
 msgid "FreeDict JSON/XML API"
-msgstr ""
+msgstr "API Freedict JSON/XML"
 
 #: fd-api.php:11
 msgid ""
@@ -141,15 +141,19 @@ msgid ""
 "The documentation is in the <a href=\"https://github.com/freedict/fd-"
 "dictionaries/wiki/FreeDict-API\">wiki</a>."
 msgstr ""
+"Une API du projet FreeDict permet de récupérer \n"
+"les informations concerant les dictionnaires. L'API est\n"
+"utilisée par le site web pour la génération du tableau des\n"
+" téléchargements.\n"
+"La documentation est disponible sur le <a href=\"https://github.com/freedict/"
+"fd-dictionaries/wiki/FreeDict-API\">wiki</a>."
 
 #: fd-api.php:16
-#, fuzzy
 msgid ""
 "To access the data easily, eg. for use in a program as\n"
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, you can "
 "use this URL:"
 msgstr ""
-"Les tables de téléchargement sont générés depuis un fichier XML.\n"
 "Pour accéder facilement à ces données, par exemple pour les utiliser dans un "
 "programme comme :\n"
 "<a href=\"http://stardict.sf.net/\" target=\"_top\">Stardict</a>, vous "
@@ -311,13 +315,12 @@ msgid "GitHub Project Page"
 msgstr "Page du projet sur GitHub"
 
 #: menu.php:72
-#, fuzzy
 msgid "Mailing list"
 msgstr "Listes de diffusion"
 
 #: menu.php:74
 msgid "Issues"
-msgstr ""
+msgstr "En question"
 
 #: menu.php:75
 msgid "Bugs"
@@ -480,7 +483,7 @@ msgstr ""
 "   paquet freedict-*."
 
 #: weblang.php:12
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "To make this website available in another language,\n"
 "please download the file below, add the translations for your language\n"
@@ -488,8 +491,7 @@ msgid ""
 msgstr ""
 "Pour rendre ce site disponible dans d'autres langues,\n"
 "téléchargez le ficher ci-dessus, ajoutez les traductions pour votre langue\n"
-"sous les traductions anglaises et envoyer le ficher à\n"
-":<a href=\"mailto:micha@luetzschena.de\">micha@luetzschena.de</a>."
+"sous les traductions anglaises et envoyer le ficher à %s."
 
 #: weblang.php:19
 msgid ""
@@ -520,7 +522,7 @@ msgstr "Langue"
 
 #: inc/gettext.php:95
 msgid "Website Language: "
-msgstr "Langue du site :"
+msgstr "Langue du site : "
 
 #: inc/gettext.php:97 inc/langcodes.php:19
 msgid "English"
@@ -724,7 +726,7 @@ msgstr ""
 
 #: inc/legend.php:5
 msgid "Color Legend"
-msgstr "Légende des couleurs "
+msgstr "Légende des couleurs"
 
 #: inc/legend.php:14
 msgid "Dictionary Status was marked as 'stable'"
@@ -774,43 +776,3 @@ msgid ""
 msgstr ""
 "Le fait que certains dictionnaires ne soient pas affichables sur cette\n"
 " plate-forme est dû à leur encodage."
-
-#~ msgid "WinCE &amp; Palm"
-#~ msgstr "WinCE &amp; Palm"
-
-#, fuzzy
-#~ msgid "All downloads are for platform %s."
-#~ msgstr "Les téléchargements suivants sont pour la plateforme %s."
-
-#~ msgid ""
-#~ "Another application understanding this file format is %1sWordtrans%2s, a "
-#~ "KDE application."
-#~ msgstr ""
-#~ "Une autre application comprenant ce format de fichier est %1sWordtrans"
-#~ "%2s, une application KDE."
-
-#~ msgid "Database as XML"
-#~ msgstr "Base de donnée XML"
-
-#~ msgid ""
-#~ "Most resources are hosted by SourceForge:\n"
-#~ "Please support them also. Without SourceForge, FreeDict would\n"
-#~ "not have come so far!"
-#~ msgstr ""
-#~ "La plupart des ressources sont hébergées chez SourceForge:\n"
-#~ "Encouragez-les aussi. Sans SourceForge, FreeDict ne serait\n"
-#~ "pas allé si loin!"
-
-#~ msgid "DICT servers (tgz)"
-#~ msgstr "Serveurs DICT (tgz)"
-
-#, fuzzy
-#~ msgid ""
-#~ "This project was started in 2000 by Horst Eyermann. \n"
-#~ "TODO: document his work...\n"
-#~ "The first databases were derived from Ergane."
-#~ msgstr ""
-#~ "Horst Eyermann a débuté ce projet en 2000. Les bases de données\n"
-#~ "sont une compilation de plusieurs sources libres. Merci de consulter les\n"
-#~ "en-têtes TEI respectives, READMEs et données 00-database-info.\n"
-#~ "Les premières bases de données ont été dérivées d' Ergane."
