@@ -7,8 +7,16 @@ to be used both by humans and machines
 The official home is at <http://freedict.org>. This page details how to get and
 use the dictionaries.
 
+Sources
+-------
+
+This repository only contains dictionaries which are *not* auto-imported, so
+which were converted once or written by hand. If you are searching for *all*
+dictionary sources, you should instead go to <https://freedict.org/downloads>,
+where you find the latetest source releases of all dictionaries.
+
 Development
-===========
+-----------
 
 All dictionaries are encoded in
 [TEI (version 5)](https://en.wikipedia.org/wiki/Text_Encoding_Initiative)
@@ -21,7 +29,7 @@ In the past there were a variety of output formats, but at the moment only the
 is supported.
 
 Installation
-============
+------------
 
 As mentioned above, please have a look at <http://freedict.org> for
 instructions. For Debian/Ubuntu/Mint, the installation is really easy. Just
