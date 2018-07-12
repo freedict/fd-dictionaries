@@ -5,7 +5,8 @@ The FreeDict project aims at providing free (open source) dictionary databases,
 to be used both by humans and machines
 
 The official home is at <http://freedict.org>. This page details how to get and
-use the dictionaries.
+use the dictionaries. This document lists some resources if you want to develop
+and build the dictionaries yourself.
 
 Sources
 -------
@@ -13,7 +14,9 @@ Sources
 This repository only contains dictionaries which are *not* auto-imported, so
 which were converted once or written by hand. If you are searching for *all*
 dictionary sources, you should instead go to <https://freedict.org/downloads>,
-where you find the latetest source releases of all dictionaries.
+where you find the latest source releases of all dictionaries.
+Auto-imported dictionaries can also be found at
+<https://download.freedict.org/generated>.
 
 Development
 -----------
@@ -24,17 +27,28 @@ which is a flexible XML format to encode human speech. The FreeDict project
 provides dictionaries but also style sheets to convert the TEI databases into
 human-readable formats.
 
-In the past there were a variety of output formats, but at the moment only the
+At the moment, the
 [dict format](https://en.wikipedia.org/wiki/DICT)
-is supported.
+and the
+[SLOB format](https://github.com/itkach/slob/wiki/Dictionaries)
+are supported.
+
+The development documentation is in our wiki at
+<https://github.com/freedict/fd-dictionaries/wiki>.
 
 Installation
 ------------
 
-As mentioned above, please have a look at <http://freedict.org> for
-instructions. For Debian/Ubuntu/Mint, the installation is really easy. Just
-search in the package manager for packages containing "freedict", i.e. for the
-English-German dictionary:
+You can install precompiled dictionaries on GNU/Linux distributions like Debian
+(and all derived distributions as Ubuntu, Mint, etc.) and Arch Linux. Please
+have a look at your package manager.
 
-    sudo apt-get install dictd gnome-dictionary dict-freedict-eng-deu
+If you still want to build from source and you don't want to read the wiki,
+here's a really quick getting started guide:
 
+-   Get <https://github.comfreedict/tools>, clone it to a path without spaces
+    and set an environment variable called `FREEDICT_TOOLS` pointing there.
+-   Change to your dictionary, try `make help`. For building `make` should be
+    enough, at least if you have both tei2slob and xsltproc installed. It's also
+    possible to disable some of the output formats, ask our friendly buildsystem
+    for help: `make help`.
