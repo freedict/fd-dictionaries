@@ -10,13 +10,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2.2</edition>
+            <edition>0.2.3</edition>
          </editionStmt>
          <extent>488 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2018 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
             </availability>
             <pubPlace>
@@ -34,13 +34,16 @@
       <encodingDesc>
          <projectDesc>
             <p>This dictionary comes to you through nice people making it available for free and for
-               good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-                  >http://freedict.org/</ref>. This project aims to make translating dictionaries
+               good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
                available for free. Your contributions are welcome!</p>
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
-         <change n="0.2.2" when="2017-11-27" who="#humenda">add uniform licensing information
+         <change n="0.2.3" when="2018-08-04">
+             <name>Sebastian Humenda</name>Remove dupplicated entries.
+         </change>
+         <change n="0.2.2" when="2017-11-27">
+                 <name>Sebastian Humenda</name>: add uniform licensing information
          </change>
          <change when="2010-10-27">
             <date>2010-10-27</date>
@@ -497,9 +500,6 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>author</quote>
-               </cit>
-               <cit type="trans">
                   <quote>writer</quote>
                </cit>
             </sense>
@@ -817,12 +817,7 @@
             <form>
                <orth>brouček</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>beetle</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>beetle</quote>
                </cit>
@@ -1826,12 +1821,7 @@
             <form>
                <orth>holandsky</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>Dutch</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>Dutch</quote>
                </cit>
@@ -2035,10 +2025,7 @@
                <cit type="trans">
                   <quote>language</quote>
                </cit>
-               <cit type="trans">
-                  <quote>tongue</quote>
-               </cit>
-            </sense>
+               </sense>
          </entry>
          <entry>
             <form>
@@ -2104,12 +2091,7 @@
             <form>
                <orth>kasárna</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>barracks</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>barracks</quote>
                </cit>
@@ -4099,12 +4081,7 @@
                   <quote>old</quote>
                </cit>
             </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>old</quote>
-               </cit>
-            </sense>
-         </entry>
+            </entry>
          <entry>
             <form>
                <orth>stroj</orth>
@@ -5424,12 +5401,7 @@
             <form>
                <orth>červený</orth>
             </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>red</quote>
-               </cit>
-            </sense>
-            <sense n="2">
+            <sense>
                <cit type="trans">
                   <quote>red</quote>
                </cit>
