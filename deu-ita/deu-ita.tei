@@ -10,20 +10,19 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.1.2</edition>
+            <edition>0.2</edition>
          </editionStmt>
          <extent>4454 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2018 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
             </availability>
-            <date>2014-02-23</date>
+            <date when="2018-08-06">Aug 06, 2018</date>
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">small</note>
@@ -41,6 +40,10 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2" when="2018-08-06">
+             <name>Sebastian Humenda</name>
+             remove doubled entries, re-enumerated broken sense numbers
+         </change>
          <change n="0.1.2" when="2017-11-28" who="#humenda"><name>Sebastian Humenda</name>
             <list>
                <item>adjust licencing information</item>
@@ -3217,7 +3220,7 @@
             <form>
                <orth>Aussehen</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>apparenza</quote>
                </cit>
@@ -3228,7 +3231,7 @@
                   <quote>aspetto</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>vista</quote>
                </cit>
@@ -6895,12 +6898,12 @@
             <form>
                <orth>Decke</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>coperta</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>soffitto</quote>
                </cit>
@@ -18020,17 +18023,17 @@
             <form>
                <orth>Ort</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>luogo</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>città</quote>
                </cit>
             </sense>
-            <sense n="4">
+            <sense>
                <cit type="trans">
                   <quote>villaggio</quote>
                </cit>
@@ -18521,12 +18524,12 @@
             <form>
                <orth>Platz</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>luogo</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>piazza</quote>
                </cit>
@@ -19082,12 +19085,12 @@
             <form>
                <orth>Rad</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>bicicletta</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>ruota</quote>
                </cit>
@@ -38527,7 +38530,7 @@
             <form>
                <orth>ihr</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>tu</quote>
                </cit>
@@ -38535,7 +38538,7 @@
                   <quote>voi</quote>
                </cit>
             </sense>
-            <sense n="3">
+            <sense>
                <cit type="trans">
                   <quote>lei</quote>
                </cit>
