@@ -18,13 +18,13 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.1.2</edition>
+        <edition>0.2</edition>
       </editionStmt>
-      <extent>7853 headwords</extent>
+      <extent>7845 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+          <p>Copyright (C) 1999-2018 by various authors listed below.</p>
           <p>Available under the terms of the <ref target="http://www.gnu.org/licenses/gpl-2.0.html">GNU
               General Public License ver. 2.0 and any later version</ref>.</p>
           <p>This program is free software; you can redistribute it and/or modify it under the terms
@@ -47,19 +47,23 @@
         <note type="status">stable</note>
       </notesStmt>
       <sourceDesc>
-        <p>Home: <ptr target="http://ferheng.org/"/></p>
-        <p>This file was converted from another electronic document.</p>
+        <p>Lîsteya soranî-kurmancî</p>
+            <p><name>Erdal Ronahî</name>, ferheng@ferheng.org     #  </p>
+            <p><ptr target="www.ferheng.org"/></p>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
       <projectDesc>
         <p>This dictionary comes to you through nice people making it available for free and for
-          good. It is part of the FreeDict project, <ref target="http://freedict.org/"
-            >http://freedict.org/</ref>. This project aims to make translating dictionaries
+          good. It is part of the FreeDict project, <ref target="http://freedict.org/">http://freedict.org/</ref>. This project aims to make translating dictionaries
           available for free. Your contributions are welcome!</p>
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2" when="2018-08-05">
+      <name>Sebastian Humenda</name>: fix markup, remove empty headwords or those
+      missing a definition.
+      </change>
       <change n="0.1.2" when="2017-11-27" who="#humenda">add uniform licensing information
       </change>
       <change when="2010-11-03"><date>2010-11-03</date><name>Piotr Bański</name>: Conversion of TEI
@@ -69,19 +73,6 @@
         2005-07-29 into FreeDict by creating the initial Makefile.</change>
     </revisionDesc>
   </teiHeader><text>
-    <front>
-      <div>
-        <ab xml:space="preserve">
-           ########################### 
-           # Lîsteya soranî-kurmancî # 
-           # Erdal Ronahî            # 
-           # www.ferheng.org         # 
-           # ferheng@ferheng.org     #  
-           # license: GPL            # 
-           ########################### 
-        </ab>
-      </div>
-    </front>
     <body>
       <entry><form>
        <orth>a</orth>
@@ -7566,10 +7557,6 @@
      </sense></entry><entry><form>
        <orth>duxter</orth>
      </form><sense>
-       <cit type="trans"><quote/></cit>
-     </sense></entry><entry><form>
-       <orth>duxter</orth>
-     </form><sense>
        <cit type="trans"><quote>doktor, tixtor, nojdar, bijîşk, pisîşk</quote></cit>
      </sense></entry><entry><form>
        <orth>duxter</orth>
@@ -10703,10 +10690,6 @@
        <orth>gezne</orth>
      </form><sense>
        <cit type="trans"><quote>gezgezok, gezgezînk (giyayek e)</quote></cit>
-     </sense></entry><entry><form>
-       <orth> </orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
      </sense></entry><entry><form>
        <orth>gêçel</orth>
      </form><sense>
@@ -17008,10 +16991,6 @@
      </form><sense>
        <cit type="trans"><quote>îstîfa, destjêberdan, devjêberdan</quote></cit>
      </sense></entry><entry><form>
-       <orth>îtir</orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
-     </sense></entry><entry><form>
        <orth>îxtiyar</orth>
      </form><sense>
        <cit type="trans"><quote>êxtiyar, pîr, kal</quote></cit>
@@ -17147,11 +17126,7 @@
        <orth>-jen</orth>
      </form><sense>
        <cit type="trans"><quote>-jen, paşdankek e bo çêkirina peyvên nû bi wateya "ya / yê lê dide": defjen defjen, kesa/ê li</quote></cit>
-     </sense></entry><entry><form>
-       <orth>amûra muzîkê defê dide, deholjen deholjen, kesa/ê li deholê dide</orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
-     </sense></entry><entry><form>
+       </sense></entry><entry><form>
        <orth>jendin</orth>
      </form><sense>
        <cit type="trans"><quote>jenandin</quote></cit>
@@ -17871,10 +17846,6 @@
        <orth>kanûnî yekem</orth>
      </form><sense>
        <cit type="trans"><quote>kanûna yekê, berfanbar, meha 12 ji salnameya romî</quote></cit>
-     </sense></entry><entry><form>
-       <orth>kanûnî yekem</orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
      </sense></entry><entry><form>
        <orth>kanûnî duwem</orth>
      </form><sense>
@@ -21436,10 +21407,6 @@
      </form><sense>
        <cit type="trans"><quote>semînar, semposyûm</quote></cit>
      </sense></entry><entry><form>
-       <orth>Bw: Çi heye le korê? Çi xeber hene? Çi nû heye?</orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
-     </sense></entry><entry><form>
        <orth>korge</orth>
      </form><sense>
        <cit type="trans"><quote>civang, encûmen, şûra</quote></cit>
@@ -24127,10 +24094,6 @@
        <orth>lerzan</orth>
      </form><sense>
        <cit type="trans"><quote>velivîn, veqeliqîn</quote></cit>
-     </sense></entry><entry><form>
-       <orth>lerzan</orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
      </sense></entry><entry><form>
        <orth>lerzandin</orth>
      </form><sense>
@@ -30199,10 +30162,6 @@
        <orth>nezok</orth>
      </form><sense>
        <cit type="trans"><quote>nezok, stewr, jina zarokan naîne</quote></cit>
-     </sense></entry><entry><form>
-       <orth> </orth>
-     </form><sense>
-       <cit type="trans"><quote/></cit>
      </sense></entry><entry><form>
        <orth>nezr</orth>
      </form><sense>
