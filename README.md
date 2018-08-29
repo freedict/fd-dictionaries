@@ -21,17 +21,13 @@ Auto-imported dictionaries can also be found at
 Development
 -----------
 
-All dictionaries are encoded in
-[TEI (version 5)](https://en.wikipedia.org/wiki/Text_Encoding_Initiative)
-which is a flexible XML format to encode human speech. The FreeDict project
-provides dictionaries but also style sheets to convert the TEI databases into
-human-readable formats.
+All dictionaries are encoded in [TEI (version 5)][tei_v5] which is a
+flexible XML format to encode human speech. The FreeDict project
+provides dictionaries but also style sheets to convert the TEI
+databases into human-readable formats.
 
-At the moment, the
-[dict format](https://en.wikipedia.org/wiki/DICT)
-and the
-[SLOB format](https://github.com/itkach/slob/wiki/Dictionaries)
-are supported.
+At the moment, the [dict format][dict] and the [SLOB format][slob] are
+supported.
 
 The development documentation is in our wiki at
 <https://github.com/freedict/fd-dictionaries/wiki>.
@@ -46,9 +42,14 @@ have a look at your package manager.
 If you still want to build from source and you don't want to read the wiki,
 here's a really quick getting started guide:
 
--   Get <https://github.comfreedict/tools>, clone it to a path without spaces
+-   Get <https://github.com/freedict/tools>, clone it to a path without spaces
     and set an environment variable called `FREEDICT_TOOLS` pointing there.
 -   Change to your dictionary, try `make help`. For building `make` should be
     enough, at least if you have both tei2slob and xsltproc installed. It's also
     possible to disable some of the output formats, ask our friendly buildsystem
     for help: `make help`.
+
+
+  [dict]: https://en.wikipedia.org/wiki/DICT
+  [slob]: https://github.com/itkach/slob/wiki/Dictionaries
+  [tei_v5]: https://en.wikipedia.org/wiki/Text_Encoding_Initiative
