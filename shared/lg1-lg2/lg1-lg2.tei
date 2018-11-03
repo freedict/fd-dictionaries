@@ -53,9 +53,8 @@ you may want to uncomment one of these to be able to look at your dictionary in 
                         Suite 330, Boston, MA 02111-1307, USA.</p>
                 </availability>
                 <pubPlace>
-                    <ref target="http://freedict.org/">http://freedict.org/</ref>
+                    <ref target="https://freedict.org/">https://freedict.org/</ref>
                 </pubPlace>
-                <idno type="svn">$Id:$</idno> <!-- this is expanded automatically by the SVN -->
             </publicationStmt>
             <sourceDesc>
                 <p>No source: created in the electronic form, from the FreeDict dictionary template.</p>
@@ -68,8 +67,15 @@ you may want to uncomment one of these to be able to look at your dictionary in 
                         >http://freedict.org/</ref>. This project aims to make translating dictionaries
                     available for free. Your contributions are welcome!</p>
             </projectDesc>
+            <!-- tagUsage allows the association of "free" text fields with a
+            properly defined ontology. This means that you could use the
+            localised version of noun in the part-of-speech annotation
+            (<pos/>), yet link it to an ontology so that a English-only
+            speaker (or a machine) would know which part of speech you are
+            talking about. -->
             <tagsDecl> <!-- may have @rend="anchored" -->
-                <!-- for each gi, its values are listed, with a pointer to the ontology interface -->
+                <!-- for each generic identifier (gi), its values are listed,
+                  with a pointer to the ontology interface -->
 
                 <!--
                 <namespace name="http://www.tei-c.org/ns/1.0" xml:base="../shared/">
@@ -103,7 +109,13 @@ you may want to uncomment one of these to be able to look at your dictionary in 
             </tagsDecl>
         </encodingDesc>
 
-        <!--  Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
+        <!--
+        The profileDesc allows the description of non-bibliographic
+        information of the dictionary (such as languages, sublanguages, etc.).
+        Please see the guidelines for more information. This tag is not
+        mandatory.
+
+        Please adjust this to the appropriate languages. Look up the codes at http://www.sil.org/iso639-3/codes.asp
         Note that the xml:lang attributes accept ISO 639-1 codes. Some language lack these codes and in such cases 
         have to use ISO 639-3. 
 
