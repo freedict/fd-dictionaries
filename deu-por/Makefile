@@ -2,8 +2,5 @@
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = AUTHORS ChangeLog COPYING deu-por.tei INSTALL Makefile NEWS README \
  freedict-P5.dtd freedict-P5.rng freedict-P5.xml freedict-dictionary.css
-supported_phonetics=
 include $(FREEDICT_TOOLS)/mk/dicts.mk
-clean::
-	rm -f deu-por.tei
 
