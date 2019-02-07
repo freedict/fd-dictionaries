@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="freedict-dictionary.css"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -12,7 +13,7 @@
          <editionStmt>
             <edition>0.2.3</edition>
          </editionStmt>
-         <extent>4225 headwords</extent>
+         <extent>4228 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
@@ -84,7 +85,11 @@
             <form>
                <orth>abbed</orth>
             </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
             <sense>
+            <usg type="hint">forstander for et (større) munkekloster i den romersk-katolske kirke</usg>
                <cit type="trans">
                   <quote>abbot</quote>
                </cit>
@@ -1569,7 +1574,7 @@
                   <quote>cut</quote>
                </cit>
                <cit type="trans">
-                  <quote>cutaconnection</quote>
+                  <quote>cut a connection</quote>
                </cit>
             </sense>
             <sense n="3">
@@ -1943,10 +1948,13 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>bedependenton</quote>
+                  <quote>be dependent on</quote>
                </cit>
                <cit type="trans">
-                  <quote>dependonldependupon</quote>
+                  <quote>depend on</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>depend upon</quote>
                </cit>
             </sense>
          </entry>
@@ -1976,7 +1984,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>dependanton</quote>
+                  <quote>dependant on</quote>
                </cit>
             </sense>
          </entry>
@@ -1994,7 +2002,7 @@
                   <quote>findout</quote>
                </cit>
                <cit type="trans">
-                  <quote>learnof</quote>
+                  <quote>learn of</quote>
                </cit>
             </sense>
          </entry>
@@ -2186,13 +2194,13 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>absentonself</quote>
+                  <quote>absent onself</quote>
                </cit>
                <cit type="trans">
                   <quote>depart</quote>
                </cit>
                <cit type="trans">
-                  <quote>goaway</quote>
+                  <quote>go away</quote>
                </cit>
                <cit type="trans">
                   <quote>leave</quote>
@@ -2200,10 +2208,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>driveaway</quote>
+                  <quote>drive away</quote>
                </cit>
                <cit type="trans">
-                  <quote>driveoff</quote>
+                  <quote>drive off</quote>
                </cit>
             </sense>
             <sense n="3">
@@ -2364,10 +2372,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>doawaywith</quote>
+                  <quote>do away with</quote>
                </cit>
                <cit type="trans">
-                  <quote>getridof</quote>
+                  <quote>get rid of</quote>
                </cit>
                <cit type="trans">
                   <quote>remove</quote>
@@ -2610,7 +2618,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>eveningpaper</quote>
+                  <quote>evening paper</quote>
                </cit>
             </sense>
          </entry>
@@ -2620,7 +2628,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>eveningmeal</quote>
+                  <quote>evening meal</quote>
                </cit>
                <cit type="trans">
                   <quote>supper</quote>
@@ -2752,7 +2760,7 @@
                   <quote>esteem</quote>
                </cit>
                <cit type="trans">
-                  <quote>thinkwellof</quote>
+                  <quote>think well of</quote>
                </cit>
             </sense>
          </entry>
@@ -2890,7 +2898,7 @@
                   <quote>battery</quote>
                </cit>
                <cit type="trans">
-                  <quote>storagebattery</quote>
+                  <quote>storage battery</quote>
                </cit>
             </sense>
          </entry>
@@ -3082,7 +3090,7 @@
                   <quote>Albanian</quote>
                </cit>
                <cit type="trans">
-                  <quote>Albanianwoman</quote>
+                  <quote>Albanian woman</quote>
                </cit>
             </sense>
          </entry>
@@ -3095,7 +3103,7 @@
                   <quote>Albanian</quote>
                </cit>
                <cit type="trans">
-                  <quote>Albanianlanguage</quote>
+                  <quote>Albanian language</quote>
                </cit>
             </sense>
          </entry>
@@ -3145,7 +3153,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>oldpeople'shome</quote>
+                  <quote>old people's home</quote>
                </cit>
             </sense>
          </entry>
@@ -3411,7 +3419,7 @@
                   <quote>customary</quote>
                </cit>
                <cit type="trans">
-                  <quote>usedto</quote>
+                  <quote>used to</quote>
                </cit>
                <cit type="trans">
                   <quote>usual</quote>
@@ -3459,13 +3467,13 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Alpinehut</quote>
+                  <quote>Alpine hut</quote>
                </cit>
                <cit type="trans">
-                  <quote>climber'shut</quote>
+                  <quote>climber's hut</quote>
                </cit>
                <cit type="trans">
-                  <quote>mountainhut</quote>
+                  <quote>mountain hut</quote>
                </cit>
             </sense>
          </entry>
@@ -3491,7 +3499,7 @@
                   <quote>climber</quote>
                </cit>
                <cit type="trans">
-                  <quote>mountainclimber</quote>
+                  <quote>mountain climber</quote>
                </cit>
                <cit type="trans">
                   <quote>mountaineer</quote>
@@ -3712,7 +3720,7 @@
                   <quote>ambulance</quote>
                </cit>
                <cit type="trans">
-                  <quote>fieldhospital</quote>
+                  <quote>field hospital</quote>
                </cit>
             </sense>
          </entry>
@@ -3770,7 +3778,7 @@
                   <quote>football</quote>
                </cit>
                <cit type="trans">
-                  <quote>Americanfootball</quote>
+                  <quote>American football</quote>
                </cit>
             </sense>
          </entry>
@@ -3780,7 +3788,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>AmericanSamoa</quote>
+                  <quote>American Samoa</quote>
                </cit>
             </sense>
          </entry>
@@ -3886,7 +3894,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>registeredletter</quote>
+                  <quote>registered letter</quote>
                </cit>
             </sense>
          </entry>
@@ -3946,10 +3954,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>invertedcomma</quote>
+                  <quote>inverted comma</quote>
                </cit>
                <cit type="trans">
-                  <quote>quotationmark</quote>
+                  <quote>quotation mark</quote>
                </cit>
                <cit type="trans">
                   <quote>quote</quote>
@@ -4456,10 +4464,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>apartmentbuilding</quote>
+                  <quote>apartment building</quote>
                </cit>
                <cit type="trans">
-                  <quote>blockofflats</quote>
+                  <quote>block of flats</quote>
                </cit>
             </sense>
          </entry>
@@ -4973,7 +4981,7 @@
                   <quote>asthma</quote>
                </cit>
                <cit type="trans">
-                  <quote>shortnessofbreath</quote>
+                  <quote>shortness of breath</quote>
                </cit>
                <cit type="trans">
                   <quote>wheeziness</quote>
@@ -5014,7 +5022,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>placeofrefuge</quote>
+                  <quote>place of refuge</quote>
                </cit>
                <cit type="trans">
                   <quote>shelter</quote>
@@ -10409,7 +10417,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>Danishwoman</quote>
+                  <quote>Danish woman</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -10424,7 +10432,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Danishwoman</quote>
+                  <quote>Danish woman</quote>
                </cit>
             </sense>
          </entry>
@@ -10897,7 +10905,7 @@
                   <quote>besides</quote>
                </cit>
                <cit type="trans">
-                  <quote>inaddition</quote>
+                  <quote>in addition</quote>
                </cit>
                <cit type="trans">
                   <quote>moreover</quote>
@@ -10972,10 +10980,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>that'stoobad</quote>
+                  <quote>that's too bad</quote>
                </cit>
                <cit type="trans">
-                  <quote>whatapity</quote>
+                  <quote>what a pity</quote>
                </cit>
             </sense>
          </entry>
@@ -12054,7 +12062,7 @@
             <form>
                <orth>egenskab</orth>
             </form>
-            <sense n="1">
+            <sense>
                <cit type="trans">
                   <quote>property</quote>
                </cit>
@@ -12273,10 +12281,10 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>internationalexpress</quote>
+                  <quote>international express</quote>
                </cit>
                <cit type="trans">
-                  <quote>internationalexpresstrain</quote>
+                  <quote>international express train</quote>
                </cit>
             </sense>
          </entry>
@@ -13808,7 +13816,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>celebratingone'sbirthday</quote>
+                  <quote>celebrating one's birthday</quote>
                </cit>
             </sense>
          </entry>
@@ -14370,7 +14378,7 @@
                   <quote>fortnight</quote>
                </cit>
                <cit type="trans">
-                  <quote>twoweeks</quote>
+                  <quote>two weeks</quote>
                </cit>
             </sense>
          </entry>
@@ -14639,13 +14647,13 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>furniturevan</quote>
+                  <quote>furniture van</quote>
                </cit>
                <cit type="trans">
                   <quote>pantechnicon</quote>
                </cit>
                <cit type="trans">
-                  <quote>pantechniconvan</quote>
+                  <quote>pantechnicon van</quote>
                </cit>
             </sense>
          </entry>
@@ -14706,7 +14714,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>whippedcream</quote>
+                  <quote>whipped cream</quote>
                </cit>
             </sense>
          </entry>
@@ -15218,7 +15226,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>comeabout</quote>
+                  <quote>come about</quote>
                </cit>
                <cit type="trans">
                   <quote>happen</quote>
@@ -15235,7 +15243,7 @@
                   <quote>belocated</quote>
                </cit>
                <cit type="trans">
-                  <quote>findoneself</quote>
+                  <quote>find oneself</quote>
                </cit>
             </sense>
             <sense n="3">
@@ -15266,7 +15274,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>fallinlovewith</quote>
+                  <quote>fall in love with</quote>
                </cit>
             </sense>
          </entry>
@@ -15398,7 +15406,7 @@
                   <quote>dumbfounded</quote>
                </cit>
                <cit type="trans">
-                  <quote>putoutofcountenance</quote>
+                  <quote>put out of countenance</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -15681,15 +15689,15 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>becomeengagedwith</quote>
+                  <quote>become engaged with</quote>
                </cit>
                <cit type="trans">
-                  <quote>becomethefiacéeof</quote>
+                  <quote>become the fiacée of</quote>
                </cit>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>becomethefiancéof</quote>
+                  <quote>become the fiancé of</quote>
                </cit>
             </sense>
          </entry>
@@ -16383,13 +16391,13 @@
                   <quote>advert</quote>
                </cit>
                <cit type="trans">
-                  <quote>payattention</quote>
+                  <quote>pay attention</quote>
                </cit>
                <cit type="trans">
-                  <quote>payattentionto</quote>
+                  <quote>pay attention to</quote>
                </cit>
                <cit type="trans">
-                  <quote>watchoutfor</quote>
+                  <quote>watch out for</quote>
                </cit>
             </sense>
          </entry>
@@ -16533,7 +16541,21 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Frenchlanguage</quote>
+                  <quote>French language</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>franskbrød</orth>
+            </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
+            <sense>
+            <usg type="hint">omtrent lig</usg>
+               <cit type="trans">
+                  <quote>white bread</quote>
                </cit>
             </sense>
          </entry>
@@ -16750,7 +16772,7 @@
                   <quote>stamp</quote>
                </cit>
                <cit type="trans">
-                  <quote>postagestamp</quote>
+                  <quote>postage stamp</quote>
                </cit>
             </sense>
          </entry>
@@ -16786,7 +16808,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>freezingcold</quote>
+                  <quote>freezing cold</quote>
                </cit>
                <cit type="trans">
                   <quote>frost</quote>
@@ -17267,7 +17289,7 @@
                   <quote>cradle</quote>
                </cit>
                <cit type="trans">
-                  <quote>placeofbirth</quote>
+                  <quote>place of birth</quote>
                </cit>
             </sense>
          </entry>
@@ -17380,7 +17402,7 @@
                   <quote>before</quote>
                </cit>
                <cit type="trans">
-                  <quote>infrontof</quote>
+                  <quote>in front of</quote>
                </cit>
             </sense>
          </entry>
@@ -17430,7 +17452,7 @@
                   <quote>firstly</quote>
                </cit>
                <cit type="trans">
-                  <quote>firstofall</quote>
+                  <quote>first of all</quote>
                </cit>
             </sense>
          </entry>
@@ -17806,7 +17828,7 @@
                   <quote>endure</quote>
                </cit>
                <cit type="trans">
-                  <quote>putupwith</quote>
+                  <quote>put up with</quote>
                </cit>
                <cit type="trans">
                   <quote>suffer</quote>
@@ -17817,7 +17839,7 @@
                   <quote>experience</quote>
                </cit>
                <cit type="trans">
-                  <quote>livethrough</quote>
+                  <quote>live through</quote>
                </cit>
                <cit type="trans">
                   <quote>survive</quote>
@@ -17836,7 +17858,7 @@
                   <quote>gothrough</quote>
                </cit>
                <cit type="trans">
-                  <quote>passthrough</quote>
+                  <quote>pass through</quote>
                </cit>
             </sense>
          </entry>
@@ -18041,7 +18063,7 @@
                   <quote>bemarried</quote>
                </cit>
                <cit type="trans">
-                  <quote>getmarried</quote>
+                  <quote>get married</quote>
                </cit>
             </sense>
          </entry>
@@ -18051,7 +18073,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>becomethewifeof</quote>
+                  <quote>become the wife of</quote>
                </cit>
                <cit type="trans">
                   <quote>marry</quote>
@@ -18059,7 +18081,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>becomethehusbandof</quote>
+                  <quote>become the husband of</quote>
                </cit>
                </sense>
          </entry>
@@ -18077,6 +18099,9 @@
             <form>
                <orth>giraf</orth>
             </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>giraffe</quote>
@@ -18102,13 +18127,13 @@
                   <quote>cede</quote>
                </cit>
                <cit type="trans">
-                  <quote>givein</quote>
+                  <quote>give in</quote>
                </cit>
                <cit type="trans">
-                  <quote>giveup</quote>
+                  <quote>give up</quote>
                </cit>
                <cit type="trans">
-                  <quote>giveway</quote>
+                  <quote>give way</quote>
                </cit>
                <cit type="trans">
                   <quote>relinquish</quote>
@@ -18257,7 +18282,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>goodevening</quote>
+                  <quote>good evening</quote>
                </cit>
             </sense>
          </entry>
@@ -18353,13 +18378,13 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>absentonself</quote>
+                  <quote>absent onself</quote>
                </cit>
                <cit type="trans">
                   <quote>depart</quote>
                </cit>
                <cit type="trans">
-                  <quote>goaway</quote>
+                  <quote>go away</quote>
                </cit>
                <cit type="trans">
                   <quote>leave</quote>
@@ -18388,7 +18413,7 @@
                   <quote>gradually</quote>
                </cit>
                <cit type="trans">
-                  <quote>littlebylittle</quote>
+                  <quote>little by little</quote>
                </cit>
             </sense>
             </entry>
@@ -18562,7 +18587,7 @@
                   <quote>get</quote>
                </cit>
                <cit type="trans">
-                  <quote>layholdof</quote>
+                  <quote>lay hold of</quote>
                </cit>
                <cit type="trans">
                   <quote>pickup</quote>
@@ -18658,7 +18683,7 @@
                   <quote>puzzleover</quote>
                </cit>
                <cit type="trans">
-                  <quote>rackone'sbrains</quote>
+                  <quote>rack one's brains</quote>
                </cit>
             </sense>
          </entry>
@@ -19284,7 +19309,7 @@
                   <quote>cleanse</quote>
                </cit>
                <cit type="trans">
-                  <quote>makeclean</quote>
+                  <quote>make clean</quote>
                </cit>
                <cit type="trans">
                   <quote>purge</quote>
@@ -19589,7 +19614,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>malecat</quote>
+                  <quote>male cat</quote>
                </cit>
             </sense>
          </entry>
@@ -19620,6 +19645,34 @@
             <sense>
                <cit type="trans">
                   <quote>accordion</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>harpiks</orth>
+            </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
+            <sense>
+            <usg type="hint">sejtflydende stof fra planter</usg>
+               <cit type="trans">
+                  <quote>resin</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>harpun</orth>
+            </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
+            <sense>
+            <usg type="hint">kastespyd</usg>
+               <cit type="trans">
+                  <quote>harpoon</quote>
                </cit>
             </sense>
          </entry>
@@ -19712,7 +19765,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>havecompassionon</quote>
+                  <quote>have compassion on</quote>
                </cit>
                <cit type="trans">
                   <quote>pity</quote>
@@ -19725,7 +19778,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>havecompassionon</quote>
+                  <quote>have compassion on</quote>
                </cit>
                <cit type="trans">
                   <quote>pity</quote>
@@ -19781,10 +19834,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>havefaith</quote>
+                  <quote>have faith</quote>
                </cit>
                <cit type="trans">
-                  <quote>havefaithin</quote>
+                  <quote>have faith in</quote>
                </cit>
                <cit type="trans">
                   <quote>trust</quote>
@@ -21189,10 +21242,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>howareyou?</quote>
+                  <quote>how are you?</quote>
                </cit>
                <cit type="trans">
-                  <quote>howdoyoudo?</quote>
+                  <quote>how do you do?</quote>
                </cit>
             </sense>
          </entry>
@@ -21202,7 +21255,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>whatfor</quote>
+                  <quote>what for</quote>
                </cit>
                <cit type="trans">
                   <quote>wherefore</quote>
@@ -21228,7 +21281,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>fromwhere</quote>
+                  <quote>from where</quote>
                </cit>
                <cit type="trans">
                   <quote>whence</quote>
@@ -21596,7 +21649,7 @@
                   <quote>apartmentbuilding</quote>
                </cit>
                <cit type="trans">
-                  <quote>blockofflats</quote>
+                  <quote>block of flats</quote>
                </cit>
             </sense>
          </entry>
@@ -21658,7 +21711,7 @@
                   <quote>findout</quote>
                </cit>
                <cit type="trans">
-                  <quote>learnof</quote>
+                  <quote>learn of</quote>
                </cit>
             </sense>
          </entry>
@@ -21822,7 +21875,7 @@
                   <quote>again</quote>
                </cit>
                <cit type="trans">
-                  <quote>alloveragain</quote>
+                  <quote>all over again</quote>
                </cit>
                <cit type="trans">
                   <quote>anew</quote>
@@ -21972,16 +22025,16 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>acrossfrom</quote>
+                  <quote>across from</quote>
                </cit>
                <cit type="trans">
                   <quote>against</quote>
                </cit>
                <cit type="trans">
-                  <quote>inexchangefor</quote>
+                  <quote>in exchange for</quote>
                </cit>
                <cit type="trans">
-                  <quote>opposedto</quote>
+                  <quote>opposed to</quote>
                </cit>
                <cit type="trans">
                   <quote>opposite</quote>
@@ -22188,7 +22241,7 @@
                   <quote>Indian</quote>
                </cit>
                <cit type="trans">
-                  <quote>AmericanIndian</quote>
+                  <quote>American Indian</quote>
                </cit>
             </sense>
          </entry>
@@ -22492,16 +22545,16 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>bynomeans</quote>
+                  <quote>by no means</quote>
                </cit>
                <cit type="trans">
-                  <quote>innoway</quote>
+                  <quote>in no way</quote>
                </cit>
                <cit type="trans">
-                  <quote>notatall</quote>
+                  <quote>not at all</quote>
                </cit>
                <cit type="trans">
-                  <quote>notonanyaccount</quote>
+                  <quote>not on any account</quote>
                </cit>
             </sense>
          </entry>
@@ -22650,7 +22703,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>disabledperson</quote>
+                  <quote>disabled person</quote>
                </cit>
             </sense>
          </entry>
@@ -22753,7 +22806,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>ArcticOcean</quote>
+                  <quote>Arctic Ocean</quote>
                </cit>
             </sense>
          </entry>
@@ -22809,7 +22862,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>thisevening</quote>
+                  <quote>this evening</quote>
                </cit>
             </sense>
          </entry>
@@ -22819,7 +22872,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>ontheoccasionof</quote>
+                  <quote>on the occasion of</quote>
                </cit>
             </sense>
          </entry>
@@ -22849,7 +22902,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>thisafternoon</quote>
+                  <quote>this afternoon</quote>
                </cit>
             </sense>
          </entry>
@@ -22881,7 +22934,7 @@
                   <quote>towards</quote>
                </cit>
                <cit type="trans">
-                  <quote>withreferenceto</quote>
+                  <quote>with reference to</quote>
                </cit>
             </sense>
          </entry>
@@ -22891,7 +22944,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>thedaybeforeyesterday</quote>
+                  <quote>the day before yesterday</quote>
                </cit>
             </sense>
          </entry>
@@ -22921,10 +22974,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>accordingas</quote>
+                  <quote>according as</quote>
                </cit>
                <cit type="trans">
-                  <quote>accordingto</quote>
+                  <quote>according to</quote>
                </cit>
                <cit type="trans">
                   <quote>as</quote>
@@ -22940,7 +22993,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>tomorrowevening</quote>
+                  <quote>tomorrow evening</quote>
                </cit>
             </sense>
          </entry>
@@ -22950,7 +23003,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>tomorrowmorning</quote>
+                  <quote>tomorrow morning</quote>
                </cit>
             </sense>
          </entry>
@@ -22960,7 +23013,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>thismorning</quote>
+                  <quote>this morning</quote>
                </cit>
             </sense>
          </entry>
@@ -22980,7 +23033,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>thedayaftertomorrow</quote>
+                  <quote>the day after tomorrow</quote>
                </cit>
             </sense>
          </entry>
@@ -22990,10 +23043,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>attherighttime</quote>
+                  <quote>at the right time</quote>
                </cit>
                <cit type="trans">
-                  <quote>intime</quote>
+                  <quote>in time</quote>
                </cit>
             </sense>
          </entry>
@@ -25993,7 +26046,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>quarterofanhour</quote>
+                  <quote>quarter of an hour</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -26323,7 +26376,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>purchasemoney</quote>
+                  <quote>purchase money</quote>
                </cit>
             </sense>
          </entry>
@@ -27250,7 +27303,7 @@
                   <quote>somewhat</quote>
                </cit>
                <cit type="trans">
-                  <quote>tosomeextent</quote>
+                  <quote>to some extent</quote>
                </cit>
             </sense>
          </entry>
@@ -27346,7 +27399,7 @@
                   <quote>belocated</quote>
                </cit>
                <cit type="trans">
-                  <quote>findoneself</quote>
+                  <quote>find oneself</quote>
                </cit>
             </sense>
          </entry>
@@ -28991,7 +29044,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>giveanaccount</quote>
+                  <quote>give an account</quote>
                </cit>
                <cit type="trans">
                   <quote>report</quote>
@@ -29002,7 +29055,7 @@
                   <quote>acquaint</quote>
                </cit>
                <cit type="trans">
-                  <quote>letknow</quote>
+                  <quote>let know</quote>
                </cit>
                <cit type="trans">
                   <quote>inform</quote>
@@ -29348,7 +29401,7 @@
                   <quote>increasingly</quote>
                </cit>
                <cit type="trans">
-                  <quote>moreandmore</quote>
+                  <quote>more and more</quote>
                </cit>
             </sense>
          </entry>
@@ -29576,7 +29629,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>lessandless</quote>
+                  <quote>less and less</quote>
                </cit>
             </sense>
          </entry>
@@ -30882,7 +30935,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>backoftheneck</quote>
+                  <quote>back of the neck</quote>
                </cit>
                <cit type="trans">
                   <quote>nape</quote>
@@ -31265,7 +31318,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>atsometime</quote>
+                  <quote>at sometime</quote>
                </cit>
                <cit type="trans">
                   <quote>ever</quote>
@@ -31369,7 +31422,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>NorthAmerica</quote>
+                  <quote>North America</quote>
                </cit>
             </sense>
          </entry>
@@ -34088,7 +34141,7 @@
                   <quote>beyond</quote>
                </cit>
                <cit type="trans">
-                  <quote>ontheothersideof</quote>
+                  <quote>on the other side of</quote>
                </cit>
             </sense>
          </entry>
@@ -34941,7 +34994,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>railwayplatform</quote>
+                  <quote>railway platform</quote>
                </cit>
             </sense>
          </entry>
@@ -34991,7 +35044,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>personalnumber</quote>
+                  <quote>personal number</quote>
                </cit>
             </sense>
          </entry>
@@ -36153,7 +36206,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>blowone'snose</quote>
+                  <quote>blow one's nose</quote>
                </cit>
             </sense>
          </entry>
@@ -36176,7 +36229,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>pulloversweater</quote>
+                  <quote>pullover sweater</quote>
                </cit>
             </sense>
          </entry>
@@ -36966,10 +37019,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>touristagency</quote>
+                  <quote>tourist agency</quote>
                </cit>
                <cit type="trans">
-                  <quote>travelagency</quote>
+                  <quote>travel agency</quote>
                </cit>
             </sense>
          </entry>
@@ -36989,13 +37042,13 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>absentonself</quote>
+                  <quote>absent onself</quote>
                </cit>
                <cit type="trans">
                   <quote>depart</quote>
                </cit>
                <cit type="trans">
-                  <quote>goaway</quote>
+                  <quote>go away</quote>
                </cit>
                <cit type="trans">
                   <quote>leave</quote>
@@ -37003,7 +37056,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>setout</quote>
+                  <quote>set out</quote>
                </cit>
             </sense>
          </entry>
@@ -38079,7 +38132,7 @@
                   <quote>dumbfounded</quote>
                </cit>
                <cit type="trans">
-                  <quote>putoutofcountenance</quote>
+                  <quote>put out of countenance</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -38109,7 +38162,7 @@
                   <quote>terracehouse</quote>
                </cit>
                <cit type="trans">
-                  <quote>terracedhouse</quote>
+                  <quote>terraced house</quote>
                </cit>
             </sense>
          </entry>
@@ -39288,7 +39341,7 @@
                   <quote>take</quote>
                </cit>
                <cit type="trans">
-                  <quote>takein</quote>
+                  <quote>take in</quote>
                </cit>
             </sense>
          </entry>
@@ -41983,7 +42036,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>methylatedspirit</quote>
+                  <quote>methylated spirit</quote>
                </cit>
             </sense>
          </entry>
@@ -43057,7 +43110,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>boardofdirectors</quote>
+                  <quote>board of directors</quote>
                </cit>
             </sense>
             <sense n="4">
@@ -43971,7 +44024,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>thinkabout</quote>
+                  <quote>think about</quote>
                </cit>
                <cit type="trans">
                   <quote>reflecton</quote>
@@ -44568,7 +44621,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>brothersandsisters</quote>
+                  <quote>brothers and sisters</quote>
                </cit>
                <cit type="trans">
                   <quote>siblings</quote>
@@ -44714,7 +44767,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Africanmarigold</quote>
+                  <quote>African marigold</quote>
                </cit>
             </sense>
          </entry>
@@ -44798,13 +44851,13 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>payattentionto</quote>
+                  <quote>pay attention to</quote>
                </cit>
                <cit type="trans">
-                  <quote>takeaccountof</quote>
+                  <quote>take account of</quote>
                </cit>
                <cit type="trans">
-                  <quote>takeintoaccount</quote>
+                  <quote>take into account</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -44831,7 +44884,7 @@
                   <quote>get</quote>
                </cit>
                <cit type="trans">
-                  <quote>layholdof</quote>
+                  <quote>lay hold of</quote>
                </cit>
                <cit type="trans">
                   <quote>pickup</quote>
@@ -44855,7 +44908,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>thankyou</quote>
+                  <quote>thank you</quote>
                </cit>
                </sense>
          </entry>
@@ -44878,7 +44931,7 @@
                   <quote>acknowledge</quote>
                </cit>
                <cit type="trans">
-                  <quote>thankfor</quote>
+                  <quote>thank for</quote>
                </cit>
             </sense>
          </entry>
@@ -46873,7 +46926,7 @@
                   <quote>rostrum</quote>
                </cit>
                <cit type="trans">
-                  <quote>speaker'splatform</quote>
+                  <quote>speaker's platform</quote>
                </cit>
             </sense>
          </entry>
@@ -46980,7 +47033,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>believein</quote>
+                  <quote>believe in</quote>
                </cit>
             </sense>
          </entry>
@@ -47459,7 +47512,7 @@
                   <quote>beyond</quote>
                </cit>
                <cit type="trans">
-                  <quote>ontheothersideof</quote>
+                  <quote>on the other side of</quote>
                </cit>
             </sense>
          </entry>
@@ -47826,7 +47879,7 @@
                   <quote>endure</quote>
                </cit>
                <cit type="trans">
-                  <quote>putupwith</quote>
+                  <quote>put up with</quote>
                </cit>
                <cit type="trans">
                   <quote>tolerate</quote>
@@ -48805,7 +48858,7 @@
                   <quote>noncom</quote>
                </cit>
                <cit type="trans">
-                  <quote>non‐commissionedofficer</quote>
+                  <quote>non‐commissioned officer</quote>
                </cit>
             </sense>
          </entry>
@@ -48903,7 +48956,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>severaltimes</quote>
+                  <quote>several times</quote>
                </cit>
                <cit type="trans">
                   <quote>sometimes</quote>
@@ -49735,7 +49788,7 @@
                   <quote>towards</quote>
                </cit>
                <cit type="trans">
-                  <quote>withreferenceto</quote>
+                  <quote>with reference to</quote>
                </cit>
             </sense>
          </entry>
@@ -49824,7 +49877,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>ineasycircumstances</quote>
+                  <quote>in easy circumstances</quote>
                </cit>
                <cit type="trans">
                   <quote>well‐to‐do</quote>
@@ -50158,7 +50211,7 @@
                   <quote>furthermore</quote>
                </cit>
                <cit type="trans">
-                  <quote>inaddition</quote>
+                  <quote>in addition</quote>
                </cit>
                <cit type="trans">
                   <quote>moreover</quote>
@@ -50409,10 +50462,10 @@
                   <quote>act</quote>
                </cit>
                <cit type="trans">
-                  <quote>beeffective</quote>
+                  <quote>be effective</quote>
                </cit>
                <cit type="trans">
-                  <quote>haveeffect</quote>
+                  <quote>have effect</quote>
                </cit>
             </sense>
          </entry>
@@ -50506,7 +50559,7 @@
                   <quote>coach</quote>
                </cit>
                <cit type="trans">
-                  <quote>railwaycarriage</quote>
+                  <quote>railway carriage</quote>
                </cit>
                <cit type="trans">
                   <quote>waggon</quote>
@@ -50876,7 +50929,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>beafraidof</quote>
+                  <quote>be afraid of</quote>
                </cit>
                <cit type="trans">
                   <quote>fear</quote>
@@ -50889,7 +50942,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>beafraidof</quote>
+                  <quote>be afraid of</quote>
                </cit>
                <cit type="trans">
                   <quote>fear</quote>
@@ -50902,10 +50955,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>beabsent</quote>
+                  <quote>be absent</quote>
                </cit>
                <cit type="trans">
-                  <quote>bemissing</quote>
+                  <quote>be missing</quote>
                </cit>
             </sense>
          </entry>
@@ -50915,7 +50968,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>agreewith</quote>
+                  <quote>agree with</quote>
                </cit>
             </sense>
          </entry>
@@ -50928,7 +50981,7 @@
                   <quote>arise</quote>
                </cit>
                <cit type="trans">
-                  <quote>beborn</quote>
+                  <quote>be born</quote>
                </cit>
             </sense>
          </entry>
@@ -50938,10 +50991,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>belucky</quote>
+                  <quote>be lucky</quote>
                </cit>
                <cit type="trans">
-                  <quote>havegoodluck</quote>
+                  <quote>have good luck</quote>
                </cit>
             </sense>
          </entry>
@@ -50961,7 +51014,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>besorryabout</quote>
+                  <quote>be sorry about</quote>
                </cit>
                <cit type="trans">
                   <quote>regret</quote>
@@ -50974,13 +51027,13 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>begrieved</quote>
+                  <quote>be grieved</quote>
                </cit>
                <cit type="trans">
-                  <quote>besad</quote>
+                  <quote>be sad</quote>
                </cit>
                <cit type="trans">
-                  <quote>besorrowful</quote>
+                  <quote>be sorrowful</quote>
                </cit>
             </sense>
          </entry>
@@ -51010,7 +51063,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>havebadluck</quote>
+                  <quote>have bad luck</quote>
                </cit>
             </sense>
          </entry>
@@ -51020,7 +51073,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>befondof</quote>
+                  <quote>be fond of</quote>
                </cit>
                <cit type="trans">
                   <quote>love</quote>
@@ -51033,10 +51086,10 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>beworth</quote>
+                  <quote>be worth</quote>
                </cit>
                <cit type="trans">
-                  <quote>beworthyof</quote>
+                  <quote>be worthy of</quote>
                </cit>
             </sense>
             </entry>
@@ -51167,6 +51220,9 @@
             <form>
                <orth>yacht</orth>
             </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>yacht</quote>
@@ -51336,6 +51392,9 @@
             <form>
                <orth>yver</orth>
             </form>
+             <gramGrp>
+             <pos>n</pos>
+             </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>udder</quote>
@@ -51369,26 +51428,6 @@
             <sense>
                <cit type="trans">
                   <quote>zoo</quote>
-               </cit>
-            </sense>
-         </entry>
-         <entry>
-            <form>
-               <orth>Ægir</orth>
-            </form>
-            <sense>
-               <cit type="trans">
-                  <quote>Aegir</quote>
-               </cit>
-            </sense>
-         </entry>
-         <entry>
-            <form>
-               <orth>Æneas</orth>
-            </form>
-            <sense>
-               <cit type="trans">
-                  <quote>Aeneas</quote>
                </cit>
             </sense>
          </entry>
@@ -51562,6 +51601,16 @@
          </entry>
          <entry>
             <form>
+               <orth>Ægir</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aegir</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>ægte</orth>
             </form>
             <sense n="1">
@@ -51689,6 +51738,16 @@
          </entry>
          <entry>
             <form>
+               <orth>Æneas</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>Aeneas</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>ændre</orth>
             </form>
             <sense n="1">
@@ -51778,10 +51837,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>beindignantwith</quote>
+                  <quote>be indignant with</quote>
                </cit>
                <cit type="trans">
-                  <quote>takeoffenceat</quote>
+                  <quote>take offence at</quote>
                </cit>
             </sense>
          </entry>
