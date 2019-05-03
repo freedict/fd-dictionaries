@@ -10,13 +10,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2.2</edition>
+            <edition>0.2.3</edition>
          </editionStmt>
          <extent>107 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2019 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -49,6 +49,10 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2.3" when="2019-05-03">
+            <name>Ivan Panchenko</name>
+            insert missing spaces, replace incorrect "ß" through "ss"
+         </change>
          <change n="0.2.2" when="2017-12-09">
             <name>Sebastian Humenda</name>
             update licencing stanza (thanks to Karl Bartel)
