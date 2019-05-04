@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2</edition>
+            <edition>0.2.1</edition>
          </editionStmt>
-         <extent>2923 headwords</extent>
+         <extent>2924 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2019 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -52,6 +52,10 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2.1" when="2019-05-03">
+            <name>Ivan Panchenko</name>
+            insert missing spaces, replace incorrect "ß" through "ss"
+         </change>
          <change when="2017-12-06" who="#humenda" n="0.2">
             <name>Sebastian Humenda</name>
             <list>
@@ -196,7 +200,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Elsaß</quote>
+                  <quote>Elsass</quote>
                </cit>
             </sense>
          </entry>
@@ -206,7 +210,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Elsaß‐Lothringen</quote>
+                  <quote>Elsass‐Lothringen</quote>
                </cit>
             </sense>
          </entry>
@@ -231,7 +235,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Vereinigten Staaten</quote>
+                  <quote>Vereinigte Staaten</quote>
                </cit>
             </sense>
          </entry>
@@ -590,7 +594,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kastillien</quote>
+                  <quote>Kastilien</quote>
                </cit>
             </sense>
          </entry>
@@ -870,9 +874,6 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>India</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Indien</quote>
                </cit>
             </sense>
@@ -1006,7 +1007,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ägäische Meer</quote>
+                  <quote>Ägäisches Meer</quote>
                </cit>
             </sense>
          </entry>
@@ -1157,7 +1158,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Rußland</quote>
+                  <quote>Russland</quote>
                </cit>
             </sense>
          </entry>
@@ -1210,7 +1211,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Vereinigten Staaten</quote>
+                  <quote>Vereinigte Staaten</quote>
                </cit>
             </sense>
          </entry>
@@ -1468,7 +1469,7 @@
                   <quote>anstellig</quote>
                </cit>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>fix</quote>
@@ -1508,7 +1509,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>abessynisch</quote>
+                  <quote>abessinisch</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -1922,7 +1923,7 @@
                   <quote>gewahr werden</quote>
                </cit>
                <cit type="trans">
-                  <quote>inne werden</quote>
+                  <quote>innewerden</quote>
                </cit>
             </sense>
          </entry>
@@ -2141,7 +2142,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Äroplan</quote>
+                  <quote>Aeroplan</quote>
                </cit>
                <cit type="trans">
                   <quote>Flugmaschine</quote>
@@ -2157,7 +2158,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Äroplan</quote>
+                  <quote>Aeroplan</quote>
                </cit>
                <cit type="trans">
                   <quote>Flugmaschine</quote>
@@ -2320,9 +2321,21 @@
             <form>
                <orth>affitto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Miete;Vermietung/f/</quote>
+                  <quote>Miete</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Vermietung</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -2483,7 +2496,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>gewandt</quote>
@@ -2562,9 +2575,15 @@
             <form>
                <orth>agosto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-August/m/</quote>
+                  <quote>August</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -2755,7 +2774,7 @@
                   <quote>Alkohol</quote>
                </cit>
                <cit type="trans">
-                  <quote>Spritus</quote>
+                  <quote>Spiritus</quote>
                </cit>
             </sense>
          </entry>
@@ -2793,255 +2812,53 @@
             <form>
                <orth>alfabeto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Alphabet/n/</quote>
+                  <quote>Alphabet</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>alfabeto italiano</orth>
+            </form>
             <sense>
                <cit type="trans">
-                  <quote>Alfabetoitaliano/ItalienischesAlphabet</quote>
+                  <quote>italienisches Alphabet</quote>
                </cit>
             </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>italianointernationaleaviazione</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>italienischinternationalLuftfahrt</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>A</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>aAnconaAmsterdamAlfa</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>B</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>bBolognaBaltimoreBravo</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>C</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>cCataniaCasablancaCharlie</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>D</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>dDomodossolaDanemarkDelta</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>E</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>eEmpoliEdisonEcco</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>F</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>fFirenzeFloridaFoxtrot</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>G</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>gGenovaGallipoliGolf</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>H</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>hHotelHavannaHotel</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>I</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>iImolaItaliaIndia</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>J</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>jilunga</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>JerusalemJuliet</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>Jersey</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>K</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>kkappaKilogrammeKilo</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>L</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>lLivornoLiverpoolLima</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>M</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>mMilanoMadagaskaMike</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>N</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>nNapoliNewYorkNovember</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>O</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>oOtrantoOsloOscar</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>P</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>pPadovaParisPapa</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>Q</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>qQuartoQuebecQuebec</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>R</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>rRomaRomaRomeo</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>S</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>sSavondaSantiagoSierra</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>T</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>tTurinoTripoliTango</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>U</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>uUdineUpsalaUniform</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>V</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>vVeneziaValenciaVictor</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>W</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>wvudoppia</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>WashingtonWhiskey</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>Washington</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>X</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>xXilofonoXanthippeX-ray</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>Y</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>yYachtYokohamaYankee</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>Z</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>zZaraZürichZulu</quote>
-               </cit>
-            </sense>
-            <sense>
-               <cit type="trans">
-                  <quote>-----------------------------------------------</quote>
-               </cit>
-            </sense>
+            <note>A, a: Ancona, Amsterdam, Alfa</note>
+            <note>B, b: Bologna, Baltimore, Bravo</note>
+            <note>C, c: Catania, Casablanca, Charlie</note>
+            <note>D, d: Domodossola, Danemark, Delta</note>
+            <note>E, e: Empoli, Edison, Ecco</note>
+            <note>F, f: Firenze, Florida, Foxtrot</note>
+            <note>G, g: Genova, Gallipoli, Golf</note>
+            <note>H, h: Hotel, Havanna, Hotel</note>
+            <note>I, i: Imola, Italia, India</note>
+            <note>J, j: i lunga, Jerusalem, Juliet, Jersey</note>
+            <note>K, k: Kappa, Kilogramme, Kilo</note>
+            <note>L, l: Livorno, Liverpool, Lima</note>
+            <note>M, m: Milano, Madagascar, Mike</note>
+            <note>N, n: Napoli, New York, November</note>
+            <note>O, o: Otranto, Oslo, Oscar</note>
+            <note>P, p: Padova, Paris, Papa</note>
+            <note>Q, q: Quarto, Quebec, Quebec</note>
+            <note>R, r: Roma, Roma, Romeo</note>
+            <note>S, s: Savonda, Santiago, Sierra</note>
+            <note>T, t: Turino, Tripoli, Tango</note>
+            <note>U, u: Udine, Upsala, Uniform</note>
+            <note>V, v: Venezia, Valencia, Victor</note>
+            <note>W, w: vu doppia, Washington, Whiskey</note>
+            <note>X, x: Xilofono, Xanthippe, X-ray</note>
+            <note>Y, y: Yacht, Yokohama, Yankee</quote>
+            <note>Z, z: Zara, Zürich, Zulu</quote>
          </entry>
          <entry>
             <form>
@@ -3567,12 +3384,21 @@
             <form>
                <orth>ambiente</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Umgebung/f/</quote>
+                  <quote>Umgebung</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Milieu/n/</quote>
+                  <quote>Milieu</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -3645,9 +3471,15 @@
             <form>
                <orth>amicizia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Freundschaft/f/</quote>
+                  <quote>Freundschaft</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -3820,7 +3652,7 @@
                   <quote>Begnadigung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Straferlaß</quote>
+                  <quote>Straferlass</quote>
                </cit>
             </sense>
          </entry>
@@ -4115,9 +3947,15 @@
             <form>
                <orth>animale</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Tier/n/</quote>
+                  <quote>Tier</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -4158,9 +3996,15 @@
             <form>
                <orth>anno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Jahr/n/</quote>
+                  <quote>Jahr</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -4188,9 +4032,12 @@
             <form>
                <orth>annuale</orth>
             </form>
+            <gramGrp>
+               <pos>adv</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/adv/jährlich</quote>
+                  <quote>jährlich</quote>
                </cit>
             </sense>
          </entry>
@@ -4436,9 +4283,15 @@
             <form>
                <orth>ape</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Biene/f/</quote>
+                  <quote>Biene</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -4481,7 +4334,7 @@
                   <quote>Schlag</quote>
                </cit>
                <cit type="trans">
-                  <quote>Schlagfluß</quote>
+                  <quote>Schlagfluss</quote>
                </cit>
             </sense>
          </entry>
@@ -4549,15 +4402,27 @@
             <form>
                <orth>appartamento</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/m/-Appartment/n/</quote>
+                  <quote>Appartment</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Etagenwohnung/f/</quote>
+                  <quote>Etagenwohnung</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Gemach/n/</quote>
+                  <quote>Gemach</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
@@ -4812,9 +4677,15 @@
             <form>
                <orth>aprile</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-April/m/</quote>
+                  <quote>April</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -5122,7 +4993,7 @@
             </sense>
             <sense n="5">
                <cit type="trans">
-                  <quote>Äußere</quote>
+                  <quote>Äußeres</quote>
                </cit>
                <cit type="trans">
                   <quote>Gesicht</quote>
@@ -5470,7 +5341,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Abszeß</quote>
+                  <quote>Abszess</quote>
                </cit>
                <cit type="trans">
                   <quote>Eiterbeule</quote>
@@ -5570,9 +5441,15 @@
             <form>
                <orth>asino</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Esel/m/</quote>
+                  <quote>Esel</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -5668,7 +5545,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>ein Anschlag ausführen</quote>
+                  <quote>einen Anschlag ausführen</quote>
                </cit>
                <cit type="trans">
                   <quote>ein Attentat ausführen</quote>
@@ -5880,7 +5757,7 @@
                   <quote>As</quote>
                </cit>
                <cit type="trans">
-                  <quote>Dauß</quote>
+                  <quote>Daus</quote>
                </cit>
             </sense>
          </entry>
@@ -6348,9 +6225,15 @@
             <form>
                <orth>autunno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Herbst/m/</quote>
+                  <quote>Herbst</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -6543,7 +6426,7 @@
                   <quote>Antipathie</quote>
                </cit>
                <cit type="trans">
-                  <quote>Wiederwillen</quote>
+                  <quote>Widerwillen</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -6821,7 +6704,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kuß</quote>
+                  <quote>Kuss</quote>
                </cit>
             </sense>
          </entry>
@@ -6925,7 +6808,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>naß</quote>
+                  <quote>nass</quote>
                </cit>
             </sense>
          </entry>
@@ -6989,9 +6872,15 @@
             <form>
                <orth>balena</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/f/-Wal/m/</quote>
+                  <quote>Wal</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
@@ -7324,7 +7213,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Faß</quote>
+                  <quote>Fass</quote>
                </cit>
                <cit type="trans">
                   <quote>Tonne</quote>
@@ -7648,7 +7537,7 @@
                   <quote>Nutzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Überschuß</quote>
+                  <quote>Überschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Verdienst</quote>
@@ -7712,12 +7601,21 @@
             <form>
                <orth>bestia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Bestie/f/</quote>
+                  <quote>Bestie</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Tier/m/</quote>
+                  <quote>Tier</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -7866,7 +7764,7 @@
                   <quote>Bilanz</quote>
                </cit>
                <cit type="trans">
-                  <quote>Schlußrechnung</quote>
+                  <quote>Schlussrechnung</quote>
                </cit>
             </sense>
          </entry>
@@ -7947,9 +7845,6 @@
             <sense>
                <cit type="trans">
                   <quote>Biskuit</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Bisquit</quote>
                </cit>
                <cit type="trans">
                   <quote>Zwieback</quote>
@@ -8456,7 +8351,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kompaß</quote>
+                  <quote>Kompass</quote>
                </cit>
             </sense>
          </entry>
@@ -8556,9 +8451,12 @@
             <form>
                <orth>cagna</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Hündin</quote>
+                  <quote>Hündin</quote>
                </cit>
             </sense>
          </entry>
@@ -8834,12 +8732,21 @@
             <form>
                <orth>cameriera</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Zimmermädchen/n/</quote>
+                  <quote>Zimmermädchen</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Zofe/f/</quote>
+                  <quote>Zofe</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -9013,9 +8920,15 @@
             <form>
                <orth>cane</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Hund/m/</quote>
+                  <quote>Hund</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -9169,7 +9082,7 @@
                   <quote>Haupt</quote>
                </cit>
                <cit type="trans">
-                  <quote>Häupling</quote>
+                  <quote>Häuptling</quote>
                </cit>
                <cit type="trans">
                   <quote>Herr</quote>
@@ -9267,9 +9180,15 @@
             <form>
                <orth>capriolo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Reh/n/</quote>
+                  <quote>Reh</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -9484,9 +9403,15 @@
             <form>
                <orth>carriera</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Karriere/f/</quote>
+                  <quote>Karriere</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -9720,7 +9645,7 @@
                   <quote>Kastell</quote>
                </cit>
                <cit type="trans">
-                  <quote>Schloß</quote>
+                  <quote>Schloss</quote>
                </cit>
             </sense>
          </entry>
@@ -9828,7 +9753,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Anlaß</quote>
+                  <quote>Anlass</quote>
                </cit>
                <cit type="trans">
                   <quote>Grund</quote>
@@ -9867,9 +9792,19 @@
             <form>
                <orth>cava</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Grube/f/;Steinbruch/m/</quote>
+                  <quote>Grube</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+                  <quote>Steinbruch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -9913,9 +9848,17 @@
             <form>
                <orth>cavia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Meerschweinchen;Versuchskaninchen/n/</quote>
+                  <quote>Meerschweinchen</quote>
+                  <gen>n</gen>
+               </cit>
+               <cit type="trans">
+                  <quote>Versuchskaninchen</quote>
+                  <gen>n</gen>
                </cit>
             </sense>
          </entry>
@@ -10025,9 +9968,15 @@
             <form>
                <orth>cella</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Zelle/f/</quote>
+                  <quote>Zelle</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -10092,9 +10041,6 @@
                <orth>centimetro</orth>
             </form>
             <sense>
-               <cit type="trans">
-                  <quote>Centimeter</quote>
-               </cit>
                <cit type="trans">
                   <quote>Zentimeter</quote>
                </cit>
@@ -10174,7 +10120,7 @@
                   <quote>freilich</quote>
                </cit>
                <cit type="trans">
-                  <quote>gewiß</quote>
+                  <quote>gewiss</quote>
                </cit>
                <cit type="trans">
                   <quote>immerhin</quote>
@@ -10215,7 +10161,7 @@
                   <quote>bestimmt</quote>
                </cit>
                <cit type="trans">
-                  <quote>gewiß</quote>
+                  <quote>gewiss</quote>
                </cit>
                <cit type="trans">
                   <quote>sicher</quote>
@@ -10242,9 +10188,15 @@
             <form>
                <orth>cervo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Hirsch/m/</quote>
+                  <quote>Hirsch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -10307,7 +10259,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>daß</quote>
+                  <quote>dass</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -10667,14 +10619,23 @@
             <form>
                <orth>cimice</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/f/-Wanze/f/</quote>
+                  <quote>Wanze</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>/f/-Reiszwecke/f/</quote>
+                  <quote>Reiszwecke</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -10718,12 +10679,21 @@
             <form>
                <orth>cinghiale</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Wildschwein/n/</quote>
+                  <quote>Wildschwein</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Eber/m/</quote>
+                  <quote>Eber</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -11095,7 +11065,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Anschluß</quote>
+                  <quote>Anschluss</quote>
                </cit>
             </sense>
          </entry>
@@ -11317,7 +11287,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ausschuß</quote>
+                  <quote>Ausschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Komitee</quote>
@@ -11366,7 +11336,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>eßbar</quote>
+                  <quote>essbar</quote>
                </cit>
                <cit type="trans">
                   <quote>genießbar</quote>
@@ -11448,7 +11418,7 @@
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>Association</quote>
+                  <quote>Assoziation</quote>
                </cit>
                <cit type="trans">
                   <quote>Sozietät</quote>
@@ -11477,7 +11447,7 @@
                   <quote>kaufen</quote>
                </cit>
                <cit type="trans">
-                  <quote>sichkaufen</quote>
+                  <quote>sich kaufen</quote>
                </cit>
             </sense>
          </entry>
@@ -11592,7 +11562,7 @@
                   <quote>kaufen</quote>
                </cit>
                <cit type="trans">
-                  <quote>sichkaufen</quote>
+                  <quote>sich kaufen</quote>
                </cit>
             </sense>
             </entry>
@@ -11634,7 +11604,7 @@
                   <quote>begreiflich</quote>
                </cit>
                <cit type="trans">
-                  <quote>faßbar</quote>
+                  <quote>fassbar</quote>
                </cit>
                <cit type="trans">
                   <quote>verständlich</quote>
@@ -11647,7 +11617,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kompromiß</quote>
+                  <quote>Kompromiss</quote>
                </cit>
             </sense>
          </entry>
@@ -11839,7 +11809,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Konkurrenz‐Prüfung</quote>
+                  <quote>Konkurrenzprüfung</quote>
                </cit>
                <cit type="trans">
                   <quote>Preisausschreiben</quote>
@@ -12061,7 +12031,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>bestürtzt</quote>
+                  <quote>bestürzt</quote>
                </cit>
             </sense>
          </entry>
@@ -12123,7 +12093,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kongreß</quote>
+                  <quote>Kongress</quote>
                </cit>
             </sense>
          </entry>
@@ -12194,7 +12164,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Bewußtsein</quote>
+                  <quote>Bewusstsein</quote>
                </cit>
             </sense>
          </entry>
@@ -12290,7 +12260,7 @@
                   <quote>beraten</quote>
                </cit>
                <cit type="trans">
-                  <quote>ratgeben</quote>
+                  <quote>einen Rat geben</quote>
                </cit>
             </sense>
          </entry>
@@ -12499,7 +12469,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>Kalkul</quote>
+                  <quote>Kalkül</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -12750,6 +12720,9 @@
             <form>
                <orth>coperta</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
                   <quote>Deck</quote>
@@ -12777,10 +12750,16 @@
                </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>/f/-Bettdecke/f/</quote>
+                  <quote>Bettdecke</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Decke/f/</quote>
+                  <quote>Decke</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -13061,7 +13040,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Bewußtsein</quote>
+                  <quote>Bewusstsein</quote>
                </cit>
             </sense>
          </entry>
@@ -13395,9 +13374,15 @@
             <form>
                <orth>criceto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Hamster/m/</quote>
+                  <quote>Hamster</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -13456,7 +13441,7 @@
                   <quote>arg</quote>
                </cit>
                <cit type="trans">
-                  <quote>rauh</quote>
+                  <quote>rau</quote>
                </cit>
                <cit type="trans">
                   <quote>roh</quote>
@@ -13566,17 +13551,41 @@
             <form>
                <orth>cura</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/f/-Sorge;Pflege;Sorgfalt/f/</quote>
+                  <quote>Sorge</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Pflege</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Sorgfalt</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>/f/-Besorgnis/f/</quote>
+                  <quote>Besorgnis</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Sorge/f/</quote>
+                  <quote>Sorge</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -13599,7 +13608,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Geistliche</quote>
+                  <quote>Geistlicher</quote>
                </cit>
                <cit type="trans">
                   <quote>Pastor</quote>
@@ -13960,10 +13969,10 @@
                   <quote>Austrag</quote>
                </cit>
                <cit type="trans">
-                  <quote>Beschluß</quote>
+                  <quote>Beschluss</quote>
                </cit>
                <cit type="trans">
-                  <quote>Entschluß</quote>
+                  <quote>Entschluss</quote>
                </cit>
             </sense>
          </entry>
@@ -14093,6 +14102,9 @@
          <entry>
             <form>
                <orth>delfino</orth>
+               <gramGrp>
+                  <gen>m</gen>
+               </gramGrp>
             </form>
             <sense n="1">
                <cit type="trans">
@@ -14104,10 +14116,11 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>/m/Delphin</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>/nR/Delfin/m/</quote>
+                  <quote>Delphin</quote>
+                  <quote type="nR">Delfin</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -14188,7 +14201,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Gebiß</quote>
+                  <quote>Gebiss</quote>
                </cit>
             </sense>
          </entry>
@@ -14198,7 +14211,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Gebiß</quote>
+                  <quote>Gebiss</quote>
                </cit>
             </sense>
          </entry>
@@ -14479,7 +14492,7 @@
                   <quote>anstellig</quote>
                </cit>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>fix</quote>
@@ -14620,9 +14633,15 @@
             <form>
                <orth>dicembre</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Dezember/m/</quote>
+                  <quote>Dezember</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -15398,9 +15417,15 @@
             <form>
                <orth>ditta</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Firma/f/</quote>
+                  <quote>Firma</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -15712,14 +15737,23 @@
             <form>
                <orth>domanda</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/f/-Gesuch/m/</quote>
+                  <quote>Gesuch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>/f/-Frage/f/</quote>
+                  <quote>Frage</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -15750,9 +15784,15 @@
             <form>
                <orth>domenica</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Sonntag/m/</quote>
+                  <quote>Sonntag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -15760,9 +15800,15 @@
             <form>
                <orth>domestica</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Dienstmädchen/n/</quote>
+                  <quote>Dienstmädchen</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -16174,7 +16220,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>u.s.w.</quote>
+                  <quote>u. s. w.</quote>
                </cit>
             </sense>
          </entry>
@@ -16194,7 +16240,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Geistliche</quote>
+                  <quote>Geistlicher</quote>
                </cit>
             </sense>
          </entry>
@@ -16202,9 +16248,15 @@
             <form>
                <orth>economia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Wirtschaft/f/</quote>
+                  <quote>Wirtschaft</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -16274,9 +16326,15 @@
             <form>
                <orth>elefante</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Elefant/m/</quote>
+                  <quote>Elefant</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -16612,7 +16670,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>rmee</quote>
+                  <quote>Armee</quote>
                </cit>
                </sense>
          </entry>
@@ -16840,9 +16898,15 @@
             <form>
                <orth>estate</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Sommer/m/</quote>
+                  <quote>Sommer</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -16852,7 +16916,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Äußere</quote>
+                  <quote>Äußeres</quote>
                </cit>
                <cit type="trans">
                   <quote>Habitus</quote>
@@ -16964,7 +17028,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>anschaulig</quote>
+                  <quote>anschaulich</quote>
                </cit>
                <cit type="trans">
                   <quote>augenscheinlich</quote>
@@ -17183,7 +17247,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Bankerott</quote>
+                  <quote>Bankrott</quote>
                </cit>
                <cit type="trans">
                   <quote>Fallissement</quote>
@@ -17272,9 +17336,15 @@
             <form>
                <orth>farafalla</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Schmetterling/m/</quote>
+                  <quote>Schmetterling</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -17391,7 +17461,7 @@
                   <quote>schmerzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>wehe tun</quote>
+                  <quote>wehtun</quote>
                </cit>
             </sense>
          </entry>
@@ -17504,9 +17574,15 @@
             <form>
                <orth>febbraio</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Februar/m/</quote>
+                  <quote>Februar</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -17572,7 +17648,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>glücklig</quote>
+                  <quote>glücklich</quote>
                </cit>
             </sense>
          </entry>
@@ -18179,7 +18255,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Fluß</quote>
+                  <quote>Fluss</quote>
                </cit>
             </sense>
          </entry>
@@ -18223,9 +18299,15 @@
             <form>
                <orth>foca</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Seehund/m/</quote>
+                  <quote>Seehund</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -18344,9 +18426,6 @@
                   <quote>Brunnen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Fontaine</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Fontäne</quote>
                </cit>
                <cit type="trans">
@@ -18431,9 +18510,15 @@
             <form>
                <orth>formica</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Ameise/f/</quote>
+                  <quote>Ameise</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19137,9 +19222,23 @@
             <form>
                <orth>gatto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
+            <sense type="gen">
+               <cit type="trans">
+                  <quote>Katze</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+            </sense>
             <sense>
                <cit type="trans">
-                  <quote>/m/-/gen/Katze/f/;Kater/m/</quote>
+                  <quote>Kater</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19321,9 +19420,15 @@
             <form>
                <orth>gennaio</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Januar/m/</quote>
+                  <quote>Januar</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19341,9 +19446,21 @@
             <form>
                <orth>gentiluomo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Adlige(r)/f(m)/;Gentleman/m/</quote>
+                  <quote>Adlige(r)</quote>
+                  <gramGrp>
+                     <gen>f(m)</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Gentleman</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19562,9 +19679,15 @@
             <form>
                <orth>giorno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Tag/m/</quote>
+                  <quote>Tag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19572,9 +19695,15 @@
             <form>
                <orth>giostra</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Karussell/n/</quote>
+                  <quote>Karussell</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19582,12 +19711,18 @@
             <form>
                <orth>giovamento</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Nutzen</quote>
+                  <quote>Nutzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Vorteil/m/</quote>
+                  <quote>Vorteil</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19597,27 +19732,48 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>-/adj/jung</quote>
+                  <quote>jung</quote>
                </cit>
+               <gramGrp>
+                  <pos>adj</pos>
+               </gramGrp>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>-/adv/jugendlich</quote>
+                  <quote>jugendlich</quote>
                </cit>
+               <gramGrp>
+                  <pos>adv</pos>
+               </gramGrp>
             </sense>
             <sense n="3">
                <cit type="trans">
-                  <quote>/mf/-Jungendliche(r)/mf/</quote>
+                  <quote>Jugendliche(r)</quote>
+                  <gramGrp>
+                     <gen>f(m)</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>jungerMann/m/</quote>
+                  <quote>junger Mann</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>(junges)MÃ¤dchen/n/</quote>
+                  <quote>(junges) Mädchen</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>jungeFrau/f/</quote>
+                  <quote>junge Frau</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
+               <gramGrp>
+                  <gen>mf</gen>
+               </gramGrp>
             </sense>
          </entry>
          <entry>
@@ -19639,10 +19795,16 @@
          <entry>
             <form>
                <orth>gioved</orth>
+               <gramGrp>
+                  <gen>m</gen>
+               </gramGrp>
             </form>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Donnerstag/m/</quote>
+                  <quote>Donnerstag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -19689,9 +19851,15 @@
             <form>
                <orth>giugno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Juni/m/</quote>
+                  <quote>Juni</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -20219,7 +20387,7 @@
                   <quote>Nutzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Überschuß</quote>
+                  <quote>Überschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Verdienst</quote>
@@ -20368,9 +20536,15 @@
             <form>
                <orth>gusto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Geschmack/m/</quote>
+                  <quote>Geschmack</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -20631,18 +20805,33 @@
             <form>
                <orth>impiego</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Beschäftigung</quote>
+                  <quote>Beschäftigung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Stelle/f/;Gebrauch/m/</quote>
+                  <quote>Stelle</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Gebrauch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Verwendung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Anwendung/f/</quote>
+                  <quote>Anwendung</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -20998,7 +21187,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ablaß</quote>
+                  <quote>Ablass</quote>
                </cit>
             </sense>
          </entry>
@@ -21060,7 +21249,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>unglücklig</quote>
+                  <quote>unglücklich</quote>
                </cit>
             </sense>
          </entry>
@@ -21109,7 +21298,7 @@
                   <quote>Auskunft geben</quote>
                </cit>
                <cit type="trans">
-                  <quote>benachrichten</quote>
+                  <quote>benachrichtigen</quote>
                </cit>
                <cit type="trans">
                   <quote>informieren</quote>
@@ -21300,7 +21489,7 @@
                   <quote>Auskunft geben</quote>
                </cit>
                <cit type="trans">
-                  <quote>benachrichten</quote>
+                  <quote>benachrichtigen</quote>
                </cit>
                <cit type="trans">
                   <quote>informieren</quote>
@@ -21331,7 +21520,7 @@
                   <quote>angeben</quote>
                </cit>
                <cit type="trans">
-                  <quote>ankundigen</quote>
+                  <quote>ankündigen</quote>
                </cit>
                <cit type="trans">
                   <quote>melden</quote>
@@ -21371,9 +21560,15 @@
             <form>
                <orth>insetto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Insekt/n/</quote>
+                  <quote>Insekt</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -21427,7 +21622,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>frecht</quote>
+                  <quote>frech</quote>
                </cit>
                <cit type="trans">
                   <quote>impertinent</quote>
@@ -21652,9 +21847,12 @@
             <form>
                <orth>invernale</orth>
             </form>
+            <gramGrp>
+               <pos>adj</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/adj/Winter-</quote>
+                  <quote>Winter-</quote>
                </cit>
                <cit type="trans">
                   <quote>winterlich</quote>
@@ -21665,9 +21863,15 @@
             <form>
                <orth>inverno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Winter/m/</quote>
+                  <quote>Winter</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -21843,7 +22047,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Flußpferd</quote>
+                  <quote>Flusspferd</quote>
                </cit>
             </sense>
          </entry>
@@ -22312,12 +22516,16 @@
             <form>
                <orth>lenzuolo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Bettuch/n/</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>/nR/Betttuch/n/</quote>
+                  <quote type="aR">Bettuch</quote>
+                  <quote type="nR">Betttuch</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Bettlaken</quote>
@@ -22331,9 +22539,15 @@
             <form>
                <orth>leone</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Löwe/m/</quote>
+                  <quote>Löwe</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -22356,7 +22570,7 @@
                   <quote>anstellig</quote>
                </cit>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>fix</quote>
@@ -22450,9 +22664,15 @@
             <form>
                <orth>libert</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Freiheit/f/</quote>
+                  <quote>Freiheit</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -22730,9 +22950,15 @@
             <form>
                <orth>luglio</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Juli/m/</quote>
+                  <quote>Juli</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -22779,9 +23005,15 @@
             <form>
                <orth>luned</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Montag/m/</quote>
+                  <quote>Montag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -22804,7 +23036,7 @@
                   <quote>Anstalt</quote>
                </cit>
                <cit type="trans">
-                  <quote>Gelaß</quote>
+                  <quote>Gelass</quote>
                </cit>
                <cit type="trans">
                   <quote>Ort</quote>
@@ -22832,9 +23064,15 @@
             <form>
                <orth>lupo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Wolf/m/</quote>
+                  <quote>Wolf</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -22996,9 +23234,15 @@
             <form>
                <orth>maggio</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Mai/m/</quote>
+                  <quote>Mai</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23072,9 +23316,15 @@
             <form>
                <orth>mammifero</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Säugetier/n/</quote>
+                  <quote>Säugetier</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23136,7 +23386,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>eßbar</quote>
+                  <quote>essbar</quote>
                </cit>
                <cit type="trans">
                   <quote>genießbar</quote>
@@ -23261,9 +23511,15 @@
             <form>
                <orth>marmo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Marmor/m/</quote>
+                  <quote>Marmor</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23281,9 +23537,15 @@
             <form>
                <orth>marted</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Dienstag/m/</quote>
+                  <quote>Dienstag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23301,9 +23563,15 @@
             <form>
                <orth>marzo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-MÃ¤rz/m/</quote>
+                  <quote>März</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23344,9 +23612,15 @@
             <form>
                <orth>matematica</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Mathematik/m/</quote>
+                  <quote>Mathematik</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23354,9 +23628,15 @@
             <form>
                <orth>materasso</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Matratze/f/</quote>
+                  <quote>Matratze</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23387,9 +23667,23 @@
             <form>
                <orth>matita</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
+            <sense type="gen">
+               <cit type="trans">
+                  <quote>Stift</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
+               </cit>
+            </sense>
             <sense>
                <cit type="trans">
-                  <quote>/f/-/gen/Stift;Bleistift/m/</quote>
+                  <quote>Bleistift</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Crayon</quote>
@@ -23622,16 +23916,31 @@
                <orth>mensile</orth>
             </form>
             <sense n="1">
+               <gramGrp>
+                  <pos>adj</pos>
+               </gramGrp>
                <cit type="trans">
-                  <quote>-/adj/monatlich</quote>
+                  <quote>monatlich</quote>
                </cit>
                <cit type="trans">
                   <quote>Monat-</quote>
                </cit>
             </sense>
             <sense n="2">
+               <gramGrp>
+                  <gen>m</gen>
+               </gramGrp>
                <cit type="trans">
-                  <quote>/m/-Monatsschrift/f/;Monatsgehalt/m/</quote>
+                  <quote>Monatsschrift</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Monatsgehalt</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23721,9 +24030,15 @@
             <form>
                <orth>mercoled</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Mittwoch/m/</quote>
+                  <quote>Mittwoch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23764,9 +24079,15 @@
             <form>
                <orth>mese</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Monat/m/</quote>
+                  <quote>Monat</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -23949,7 +24270,7 @@
                   <quote>bevorstehen</quote>
                </cit>
                <cit type="trans">
-                  <quote>dräuhen</quote>
+                  <quote>dräuen</quote>
                </cit>
                <cit type="trans">
                   <quote>drohen</quote>
@@ -24060,7 +24381,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>geheimnissvoll</quote>
+                  <quote>geheimnisvoll</quote>
                </cit>
                <cit type="trans">
                   <quote>mysteriös</quote>
@@ -24413,9 +24734,15 @@
             <form>
                <orth>mosca</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Fliege/f/</quote>
+                  <quote>Fliege</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -24836,7 +25163,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Butike</quote>
+                  <quote>Butique</quote>
                </cit>
                <cit type="trans">
                   <quote>Geschäft</quote>
@@ -24883,7 +25210,7 @@
                   <quote>neutral</quote>
                </cit>
                <cit type="trans">
-                  <quote>sächlig</quote>
+                  <quote>sächlich</quote>
                </cit>
             </sense>
          </entry>
@@ -24896,7 +25223,7 @@
                   <quote>neutral</quote>
                </cit>
                <cit type="trans">
-                  <quote>sächlig</quote>
+                  <quote>sächlich</quote>
                </cit>
             </sense>
          </entry>
@@ -24932,7 +25259,7 @@
                   <quote>ganz und gar nicht</quote>
                </cit>
                <cit type="trans">
-                  <quote>ganz nicht</quote>
+                  <quote>gar nicht</quote>
                </cit>
             </sense>
          </entry>
@@ -24987,7 +25314,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Haselnuß</quote>
+                  <quote>Haselnuss</quote>
                </cit>
             </sense>
          </entry>
@@ -24997,7 +25324,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Haselnuß</quote>
+                  <quote>Haselnuss</quote>
                </cit>
             </sense>
          </entry>
@@ -25007,12 +25334,12 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Nußbaum</quote>
+                  <quote>Nussbaum</quote>
                </cit>
             </sense>
             <sense>
                <cit type="trans">
-                  <quote>Nuß</quote>
+                  <quote>Nuss</quote>
                </cit>
             </sense>
          </entry>
@@ -25250,9 +25577,15 @@
             <form>
                <orth>novembre</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-November/m/</quote>
+                  <quote>November</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -25457,7 +25790,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Haß</quote>
+                  <quote>Hass</quote>
                </cit>
             </sense>
          </entry>
@@ -25776,7 +26109,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>Anlaß</quote>
+                  <quote>Anlass</quote>
                </cit>
                <cit type="trans">
                   <quote>Befehl</quote>
@@ -25874,7 +26207,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>gesichtskreis</quote>
+                  <quote>Gesichtskreis</quote>
                </cit>
                <cit type="trans">
                   <quote>Horizont</quote>
@@ -25939,7 +26272,7 @@
                   <quote>Abscheu</quote>
                </cit>
                <cit type="trans">
-                  <quote>Greuel</quote>
+                  <quote>Gräuel</quote>
                </cit>
             </sense>
          </entry>
@@ -25969,7 +26302,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Brennessel</quote>
+                  <quote>Brennnessel</quote>
                </cit>
             </sense>
          </entry>
@@ -26057,7 +26390,7 @@
                   <quote>betrachten</quote>
                </cit>
                <cit type="trans">
-                  <quote>vervolgen</quote>
+                  <quote>verfolgen</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -26171,9 +26504,15 @@
             <form>
                <orth>ottobre</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Oktober/m/</quote>
+                  <quote>Oktober</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -26381,7 +26720,7 @@
                   <quote>Palast</quote>
                </cit>
                <cit type="trans">
-                  <quote>Schloß</quote>
+                  <quote>Schloss</quote>
                </cit>
             </sense>
          </entry>
@@ -26391,7 +26730,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>anschaulig</quote>
+                  <quote>anschaulich</quote>
                </cit>
                <cit type="trans">
                   <quote>augenscheinlich</quote>
@@ -26428,7 +26767,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>blaß</quote>
+                  <quote>blass</quote>
                </cit>
                <cit type="trans">
                   <quote>bleich</quote>
@@ -26737,10 +27076,10 @@
                   <quote>Mittelwort</quote>
                </cit>
                <cit type="trans">
-                  <quote>Particip</quote>
+                  <quote>Partizip</quote>
                </cit>
                <cit type="trans">
-                  <quote>Participium</quote>
+                  <quote>Partizipium</quote>
                </cit>
             </sense>
          </entry>
@@ -26824,10 +27163,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Paß</quote>
+                  <quote>Pass</quote>
                </cit>
                <cit type="trans">
-                  <quote>Reisepaß</quote>
+                  <quote>Reisepass</quote>
                </cit>
             </sense>
          </entry>
@@ -26879,9 +27218,21 @@
             <form>
                <orth>passero</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Sperling;Spatz/m/</quote>
+                  <quote>Sperling</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Spatz</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -27076,15 +27427,21 @@
             <form>
                <orth>pelle</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/f/-Fell/n/</quote>
+                  <quote>Fell</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Balg</quote>
                </cit>
                <cit type="trans">
-                  <quote>Peltz</quote>
+                  <quote>Pelz</quote>
                </cit>
                <cit type="trans">
                   <quote>Tierhaut</quote>
@@ -27110,10 +27467,16 @@
             <form>
                <orth>penna</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Feder/f/</quote>
+                  <quote>Feder</quote>
                </cit>
+               <gramGrp>
+                  <gen>f</gen>
+               </gramGrp>
             </sense>
          </entry>
          <entry>
@@ -27485,7 +27848,7 @@
                   <quote>Jalousie</quote>
                </cit>
                <cit type="trans">
-                  <quote>Rolladen</quote>
+                  <quote>Rollladen</quote>
                </cit>
             </sense>
          </entry>
@@ -27635,9 +27998,15 @@
             <form>
                <orth>pesce</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Fisch/m/</quote>
+                  <quote>Fisch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -27776,7 +28145,7 @@
                   <quote>Freude</quote>
                </cit>
                <cit type="trans">
-                  <quote>Genuß</quote>
+                  <quote>Genuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Vergnügen</quote>
@@ -27850,7 +28219,7 @@
                   <quote>Etage</quote>
                </cit>
                <cit type="trans">
-                  <quote>Geschoß</quote>
+                  <quote>Geschoss</quote>
                </cit>
                <cit type="trans">
                   <quote>Stock</quote>
@@ -27928,7 +28297,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Erdgeschoß</quote>
+                  <quote>Erdgeschoss</quote>
                </cit>
             </sense>
          </entry>
@@ -28616,9 +28985,15 @@
             <form>
                <orth>porcellino</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Meerschweinchen/n/</quote>
+                  <quote>Meerschweinchen</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -28952,7 +29327,7 @@
                   <quote>ordnen</quote>
                </cit>
                <cit type="trans">
-                  <quote>anorden</quote>
+                  <quote>anordnen</quote>
                </cit>
                <cit type="trans">
                   <quote>veranstalten</quote>
@@ -29170,7 +29545,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Geistliche</quote>
+                  <quote>Geistlicher</quote>
                </cit>
                <cit type="trans">
                   <quote>Pastor</quote>
@@ -29207,9 +29582,15 @@
             <form>
                <orth>primavera</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Frühling/m/</quote>
+                  <quote>Frühling</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -29412,7 +29793,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Prozeß</quote>
+                  <quote>Prozess</quote>
                </cit>
             </sense>
          </entry>
@@ -29497,7 +29878,7 @@
                   <quote>Nutzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Überschuß</quote>
+                  <quote>Überschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Verdienst</quote>
@@ -29554,7 +29935,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>Abriß</quote>
+                  <quote>Abriss</quote>
                </cit>
                <cit type="trans">
                   <quote>Entwurf</quote>
@@ -29563,10 +29944,10 @@
                   <quote>Plan</quote>
                </cit>
                <cit type="trans">
-                  <quote>Riß</quote>
+                  <quote>Riss</quote>
                </cit>
                <cit type="trans">
-                  <quote>Grundriß</quote>
+                  <quote>Grundriss</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -30006,9 +30387,15 @@
             <form>
                <orth>pulce</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Floh/m/</quote>
+                  <quote>Floh</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -30016,9 +30403,21 @@
             <form>
                <orth>pulizia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Sauberkeit/f/;Saubermachen/n/</quote>
+                  <quote>Sauberkeit</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>Saubermachen</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Reinheit</quote>
@@ -30379,7 +30778,7 @@
                   <quote>beraten</quote>
                </cit>
                <cit type="trans">
-                  <quote>ratgeben</quote>
+                  <quote>einen Rat geben</quote>
                </cit>
             </sense>
          </entry>
@@ -30476,9 +30875,15 @@
             <form>
                <orth>ragnatela</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Spinnennetz/n/</quote>
+                  <quote>Spinnennetz</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -30486,9 +30891,15 @@
             <form>
                <orth>ragno</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Spinne/f/</quote>
+                  <quote>Spinne</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -30519,9 +30930,15 @@
             <form>
                <orth>rana</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Frosch/m/</quote>
+                  <quote>Frosch</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -30601,9 +31018,15 @@
             <form>
                <orth>ratto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Ratte/f/</quote>
+                  <quote>Ratte</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -30950,7 +31373,7 @@
                   <quote>Abscheu</quote>
                </cit>
                <cit type="trans">
-                  <quote>Greuel</quote>
+                  <quote>Gräuel</quote>
                </cit>
             </sense>
          </entry>
@@ -31397,7 +31820,7 @@
                   <quote>Antipathie</quote>
                </cit>
                <cit type="trans">
-                  <quote>Wiederwillen</quote>
+                  <quote>Widerwillen</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -31426,9 +31849,15 @@
             <form>
                <orth>riscaldamento</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Heizung/f/</quote>
+                  <quote>Heizung</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -31781,9 +32210,15 @@
             <form>
                <orth>rospo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Kröte/f/</quote>
+                  <quote>Kröte</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -31950,12 +32385,18 @@
             <form>
                <orth>sabato</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Samstag</quote>
+                  <quote>Samstag</quote>
                </cit>
                <cit type="trans">
-                  <quote>Sonnabend/m/</quote>
+                  <quote>Sonnabend</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -31975,7 +32416,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Geistliche</quote>
+                  <quote>Geistlicher</quote>
                </cit>
                <cit type="trans">
                   <quote>Pastor</quote>
@@ -32573,9 +33014,15 @@
             <form>
                <orth>scimmia</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Affe/m/</quote>
+                  <quote>Affe</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -32583,9 +33030,15 @@
             <form>
                <orth>scimpanz</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Schimpanse/m/</quote>
+                  <quote>Schimpanse</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -32636,12 +33089,18 @@
             <form>
                <orth>scoiattolo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Eichhorn</quote>
+                  <quote>Eichhorn</quote>
                </cit>
                <cit type="trans">
-                  <quote>Eichhörnchen/n/</quote>
+                  <quote>Eichhörnchen</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -32675,9 +33134,6 @@
                </cit>
                <cit type="trans">
                   <quote>Coupé</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Kupee</quote>
                </cit>
             </sense>
          </entry>
@@ -33017,12 +33473,21 @@
             <form>
                <orth>sedere</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Hintern/m/</quote>
+                  <quote>Hintern</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Gesäß/n/</quote>
+                  <quote>Gesäß</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>After</quote>
@@ -33184,9 +33649,15 @@
             <form>
                <orth>selvaggina</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Wild/n/</quote>
+                  <quote>Wild</quote>
+                  <gramGrp>
+                     <gen>n</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -33343,7 +33814,7 @@
                   <quote>einzeln</quote>
                </cit>
                <cit type="trans">
-                  <quote>seperat</quote>
+                  <quote>separat</quote>
                </cit>
             </sense>
          </entry>
@@ -33387,9 +33858,15 @@
             <form>
                <orth>serpente</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Schlange/f/</quote>
+                  <quote>Schlange</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -33437,10 +33914,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Schloß</quote>
+                  <quote>Schloss</quote>
                </cit>
                <cit type="trans">
-                  <quote>Verschluß</quote>
+                  <quote>Verschluss</quote>
                </cit>
             </sense>
          </entry>
@@ -33546,9 +34023,15 @@
             <form>
                <orth>settembre</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-September/m/</quote>
+                  <quote>September</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -33637,7 +34120,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>wiederwärtig</quote>
+                  <quote>widerwärtig</quote>
                </cit>
             </sense>
          </entry>
@@ -33706,7 +34189,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Bedeuting</quote>
+                  <quote>Bedeutung</quote>
                </cit>
                <cit type="trans">
                   <quote>Bezeichnung</quote>
@@ -33784,7 +34267,7 @@
                   <quote>ordnen</quote>
                </cit>
                <cit type="trans">
-                  <quote>anorden</quote>
+                  <quote>anordnen</quote>
                </cit>
                <cit type="trans">
                   <quote>veranstalten</quote>
@@ -33843,7 +34326,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>gewandt</quote>
@@ -34027,9 +34510,15 @@
             <form>
                <orth>somaro</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Esel/m/</quote>
+                  <quote>Esel</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -34400,12 +34889,21 @@
             <form>
                <orth>spalla</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Schulter/f/</quote>
+                  <quote>Schulter</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Achsel/f/</quote>
+                  <quote>Achsel</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -34438,7 +34936,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Gelaß</quote>
+                  <quote>Gelass</quote>
                </cit>
                <cit type="trans">
                   <quote>Raum</quote>
@@ -34599,7 +35097,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>wiederwärtig</quote>
+                  <quote>widerwärtig</quote>
                </cit>
             </sense>
          </entry>
@@ -34664,7 +35162,7 @@
                   <quote>Aufklärung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Aufschluß</quote>
+                  <quote>Aufschluss</quote>
                </cit>
                <cit type="trans">
                   <quote>Erläuterung</quote>
@@ -34852,7 +35350,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>verheirated</quote>
+                  <quote>verheiratet</quote>
                </cit>
             </sense>
          </entry>
@@ -34970,12 +35468,18 @@
             <form>
                <orth>stagione</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Jahreszeit</quote>
+                  <quote>Jahreszeit</quote>
                </cit>
                <cit type="trans">
-                  <quote>Saison/f/</quote>
+                  <quote>Saison</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -35103,7 +35607,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>heute abend</quote>
+                  <quote>heute Abend</quote>
                </cit>
             </sense>
          </entry>
@@ -35467,9 +35971,15 @@
             <form>
                <orth>subaffitto</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Untermiete/f/</quote>
+                  <quote>Untermiete</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -35544,7 +36054,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>hinter einander</quote>
+                  <quote>hintereinander</quote>
                </cit>
             </sense>
          </entry>
@@ -35815,7 +36325,7 @@
                   <quote>anstellig</quote>
                </cit>
                <cit type="trans">
-                  <quote>behende</quote>
+                  <quote>behände</quote>
                </cit>
                <cit type="trans">
                   <quote>fix</quote>
@@ -35958,13 +36468,13 @@
                   <quote>sosehr</quote>
                </cit>
                <cit type="trans">
-                  <quote>ebensosehr</quote>
+                  <quote>ebenso sehr</quote>
                </cit>
                <cit type="trans">
                   <quote>soviel</quote>
                </cit>
                <cit type="trans">
-                  <quote>ebensoviel</quote>
+                  <quote>ebenso viel</quote>
                </cit>
                <cit type="trans">
                   <quote>soweit</quote>
@@ -36356,7 +36866,7 @@
                   <quote>furchtbar</quote>
                </cit>
                <cit type="trans">
-                  <quote>gräßlich</quote>
+                  <quote>grässlich</quote>
                </cit>
                <cit type="trans">
                   <quote>schrecklich</quote>
@@ -36410,9 +36920,15 @@
             <form>
                <orth>tigre</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Tiger/m/</quote>
+                  <quote>Tiger</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -36576,14 +37092,23 @@
             <form>
                <orth>topo</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense n="1">
                <cit type="trans">
-                  <quote>/m/-Maus/f/</quote>
+                  <quote>Maus</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>/m/-Ratte/f/</quote>
+                  <quote>Ratte</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -37240,7 +37765,7 @@
                   <quote>befolgen</quote>
                </cit>
                <cit type="trans">
-                  <quote>gehörchen</quote>
+                  <quote>gehorchen</quote>
                </cit>
             </sense>
          </entry>
@@ -37264,9 +37789,15 @@
             <form>
                <orth>uccello</orth>
             </form>
+            <gramGrp>
+               <gen>m</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/m/-Vogel/m/</quote>
+                  <quote>Vogel</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -37356,7 +37887,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Auskunftstelle</quote>
+                  <quote>Auskunftsstelle</quote>
                </cit>
             </sense>
          </entry>
@@ -37901,7 +38432,7 @@
                   <quote>Nutzen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Überschuß</quote>
+                  <quote>Überschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Verdienst</quote>
@@ -38108,7 +38639,10 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Freitag/m/</quote>
+                  <quote>Freitag</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -38317,9 +38851,15 @@
             <form>
                <orth>vespa</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Wespe/f/</quote>
+                  <quote>Wespe</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -38516,7 +39056,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Violincello</quote>
+                  <quote>Violoncello</quote>
                </cit>
             </sense>
          </entry>
@@ -38745,7 +39285,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>gern haben</quote>
+                  <quote>gernhaben</quote>
                </cit>
                <cit type="trans">
                   <quote>lieben</quote>
@@ -38785,9 +39325,15 @@
             <form>
                <orth>volpe</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Fuchs/m/</quote>
+                  <quote>Fuchs</quote>
+                  <gramGrp>
+                     <gen>m</gen>
+                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -38892,12 +39438,21 @@
             <form>
                <orth>zanzara</orth>
             </form>
+            <gramGrp>
+               <gen>f</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>/f/-Mücke/f/</quote>
+                  <quote>Mücke</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>Stechmücke/f/</quote>
+                  <quote>Stechmücke</quote>
+                  <gramGrp>
+                     <gen>f</gen>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>Moskito</quote>

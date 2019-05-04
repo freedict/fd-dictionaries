@@ -11,13 +11,13 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2</edition>
+            <edition>0.2.3</edition>
          </editionStmt>
          <extent>941 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2017 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2019 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
                <p>This program is free software; you can redistribute it and/or modify it under the
                   terms of the GNU General Public License as published by the Free Software
@@ -33,7 +33,6 @@
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
-            <idno type="svn">$Id$</idno>
          </publicationStmt>
          <notesStmt>
             <note type="status">too small</note>
@@ -41,7 +40,7 @@
          <sourceDesc>
             <p>Home: <ptr target="http://www.travlang.com/" />
             </p>
-            <p>This Database was generated from Ergane.</p>
+            <p>This Database was generated from the Ergane project.</p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -52,6 +51,10 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2.3" when="2019-05-03">
+            <name>Ivan Panchenko</name>
+            insert missing spaces, replace incorrect "ß" through "ss"
+         </change>
          <change n="0.2" when="2017-12-09">
             <name>Sebastian Humenda</name>
             <list>
@@ -129,7 +132,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>VereinigtenStaaten</quote>
+                  <quote>Vereinigte Staaten</quote>
                </cit>
             </sense>
          </entry>
@@ -232,7 +235,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>AtlantischerOzean</quote>
+                  <quote>Atlantischer Ozean</quote>
                </cit>
             </sense>
          </entry>
@@ -317,7 +320,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>VereinigtenStaaten</quote>
+                  <quote>Vereinigte Staaten</quote>
                </cit>
             </sense>
          </entry>
@@ -447,9 +450,6 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>India</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Indien</quote>
                </cit>
             </sense>
@@ -478,7 +478,7 @@
                   <quote>Niederlande</quote>
                </cit>
                <cit type="trans">
-                  <quote>dieNiederlande</quote>
+                  <quote>die Niederlande</quote>
                </cit>
             </sense>
          </entry>
@@ -623,7 +623,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Mohammedaner</quote>
+                  <quote>Muslim</quote>
                </cit>
             </sense>
          </entry>
@@ -643,7 +643,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>egyptisch</quote>
+                  <quote>ägyptisch</quote>
                </cit>
             </sense>
             <sense n="2">
@@ -803,7 +803,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Rußland</quote>
+                  <quote>Russland</quote>
                </cit>
             </sense>
          </entry>
@@ -836,7 +836,7 @@
                   <quote>Türkei</quote>
                </cit>
                <cit type="trans">
-                  <quote>dieTürkei</quote>
+                  <quote>die Türkei</quote>
                </cit>
             </sense>
          </entry>
@@ -1117,7 +1117,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Schmerzverursachen</quote>
+                  <quote>Schmerz verursachen</quote>
                </cit>
                <cit type="trans">
                   <quote>schmerzen</quote>
@@ -1182,7 +1182,7 @@
                   <quote>Begnadigung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Straferlaß</quote>
+                  <quote>Straferlass</quote>
                </cit>
             </sense>
          </entry>
@@ -1393,7 +1393,7 @@
                   <quote>applaudieren</quote>
                </cit>
                <cit type="trans">
-                  <quote>Beifallspenden</quote>
+                  <quote>Beifall spenden</quote>
                </cit>
             </sense>
          </entry>
@@ -1500,7 +1500,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ampère</quote>
+                  <quote>Ampere</quote>
                </cit>
             </sense>
          </entry>
@@ -1589,7 +1589,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Encyklopädie</quote>
+                  <quote>Enzyklopädie</quote>
                </cit>
             </sense>
          </entry>
@@ -1635,7 +1635,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Abszeß</quote>
+                  <quote>Abszess</quote>
                </cit>
                <cit type="trans">
                   <quote>Eiterbeule</quote>
@@ -1661,7 +1661,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>ausschauennach</quote>
+                  <quote>ausschauen nach</quote>
                </cit>
                <cit type="trans">
                   <quote>suchen</quote>
@@ -1680,7 +1680,7 @@
                   <quote>unter</quote>
                </cit>
                <cit type="trans">
-                  <quote>mittenunter</quote>
+                  <quote>mitten unter</quote>
                </cit>
                <cit type="trans">
                   <quote>zwischen</quote>
@@ -1795,7 +1795,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>rmee</quote>
+                  <quote>Armee</quote>
                </cit>
                </sense>
             <sense n="3">
@@ -2068,7 +2068,7 @@
                   <quote>Aufklärung</quote>
                </cit>
                <cit type="trans">
-                  <quote>Aufschluß</quote>
+                  <quote>Aufschluss</quote>
                </cit>
                <cit type="trans">
                   <quote>Erläuterung</quote>
@@ -2879,7 +2879,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ausperrung</quote>
+                  <quote>Aussperrung</quote>
                </cit>
                <cit type="trans">
                   <quote>Boykott</quote>
@@ -3201,7 +3201,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Walnuß</quote>
+                  <quote>Walnuss</quote>
                </cit>
             </sense>
          </entry>
@@ -3590,9 +3590,6 @@
                   <quote>Atheismus</quote>
                </cit>
                <cit type="trans">
-                  <quote>Atheïsmus</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Gottesleugnung</quote>
                </cit>
             </sense>
@@ -3829,7 +3826,7 @@
                   <quote>anhalten</quote>
                </cit>
                <cit type="trans">
-                  <quote>Haltmachen</quote>
+                  <quote>haltmachen</quote>
                </cit>
                <cit type="trans">
                   <quote>stocken</quote>
@@ -3865,7 +3862,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Butike</quote>
+                  <quote>Butique</quote>
                </cit>
                <cit type="trans">
                   <quote>Geschäft</quote>
@@ -4112,7 +4109,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>FraudesHauses</quote>
+                  <quote>Frau des Hauses</quote>
                </cit>
             </sense>
          </entry>
@@ -4336,7 +4333,7 @@
                   <quote>beraten</quote>
                </cit>
                <cit type="trans">
-                  <quote>ratgeben</quote>
+                  <quote>einen Rat geben</quote>
                </cit>
             </sense>
          </entry>
@@ -4406,7 +4403,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Nuß</quote>
+                  <quote>Nuss</quote>
                </cit>
             </sense>
          </entry>
@@ -4437,9 +4434,6 @@
             <sense>
                <cit type="trans">
                   <quote>Brunnen</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>Fontaine</quote>
                </cit>
                <cit type="trans">
                   <quote>Fontäne</quote>
@@ -5047,7 +5041,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ausschuß</quote>
+                  <quote>Ausschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Komitee</quote>
@@ -5393,7 +5387,7 @@
                   <quote>annullieren</quote>
                </cit>
                <cit type="trans">
-                  <quote>fürnullundnichtigerklären</quote>
+                  <quote>für null und nichtig erklären</quote>
                </cit>
                <cit type="trans">
                   <quote>kassieren</quote>
@@ -6348,7 +6342,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Ausschuß</quote>
+                  <quote>Ausschuss</quote>
                </cit>
                <cit type="trans">
                   <quote>Komitee</quote>
@@ -6381,7 +6375,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kongreß</quote>
+                  <quote>Kongress</quote>
                </cit>
             </sense>
          </entry>
@@ -7616,7 +7610,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Fluß</quote>
+                  <quote>Fluss</quote>
                </cit>
             </sense>
          </entry>
@@ -7736,7 +7730,7 @@
                   <quote>werden</quote>
                </cit>
                <cit type="trans">
-                  <quote>zustandekommen</quote>
+                  <quote>zustande kommen</quote>
                </cit>
             </sense>
             </entry>
@@ -7774,7 +7768,7 @@
             </sense>
             <sense n="2">
                <cit type="trans">
-                  <quote>rmee</quote>
+                  <quote>Armee</quote>
                </cit>
                </sense>
          </entry>
@@ -7853,7 +7847,7 @@
                   <quote>Gänseblümchen</quote>
                </cit>
                <cit type="trans">
-                  <quote>kleinesMaßlieb</quote>
+                  <quote>kleines Maßlieb</quote>
                </cit>
                <cit type="trans">
                   <quote>Marienblume</quote>
@@ -7908,7 +7902,7 @@
                   <quote>Haupt</quote>
                </cit>
                <cit type="trans">
-                  <quote>Häupling</quote>
+                  <quote>Häuptling</quote>
                </cit>
                <cit type="trans">
                   <quote>Herr</quote>
@@ -8102,7 +8096,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Kompaß</quote>
+                  <quote>Kompass</quote>
                </cit>
             </sense>
          </entry>
@@ -8402,7 +8396,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>alsob</quote>
+                  <quote>als ob</quote>
                </cit>
                <cit type="trans">
                   <quote>gleichsam</quote>
@@ -8427,9 +8421,6 @@
                <orth>santimetre</orth>
             </form>
             <sense>
-               <cit type="trans">
-                  <quote>Centimeter</quote>
-               </cit>
                <cit type="trans">
                   <quote>Zentimeter</quote>
                </cit>
@@ -9145,7 +9136,7 @@
                   <quote>applaudieren</quote>
                </cit>
                <cit type="trans">
-                  <quote>Beifallspenden</quote>
+                  <quote>Beifall spenden</quote>
                </cit>
             </sense>
          </entry>
@@ -9313,7 +9304,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Äroplan</quote>
+                  <quote>Aeroplan</quote>
                </cit>
                <cit type="trans">
                   <quote>Flugmaschine</quote>
@@ -9388,7 +9379,7 @@
                   <quote>abermals</quote>
                </cit>
                <cit type="trans">
-                  <quote>vonneuem</quote>
+                  <quote>von neuem</quote>
                </cit>
                <cit type="trans">
                   <quote>wieder</quote>
@@ -9501,7 +9492,7 @@
                   <quote>ordnen</quote>
                </cit>
                <cit type="trans">
-                  <quote>anorden</quote>
+                  <quote>anordnen</quote>
                </cit>
                <cit type="trans">
                   <quote>veranstalten</quote>
@@ -9792,7 +9783,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>gesichtskreis</quote>
+                  <quote>Gesichtskreis</quote>
                </cit>
                <cit type="trans">
                   <quote>Horizont</quote>
@@ -9903,7 +9894,7 @@
             </form>
             <sense n="1">
                <cit type="trans">
-                  <quote>Äroplan</quote>
+                  <quote>Aeroplan</quote>
                </cit>
                <cit type="trans">
                   <quote>Flugmaschine</quote>
@@ -9952,7 +9943,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Faß</quote>
+                  <quote>Fass</quote>
                </cit>
                <cit type="trans">
                   <quote>Tonne</quote>
@@ -10368,7 +10359,7 @@
                   <quote>abermals</quote>
                </cit>
                <cit type="trans">
-                  <quote>vonneuem</quote>
+                  <quote>von neuem</quote>
                </cit>
                <cit type="trans">
                   <quote>wieder</quote>
@@ -11075,9 +11066,6 @@
                   <quote>Brunnen</quote>
                </cit>
                <cit type="trans">
-                  <quote>Fontaine</quote>
-               </cit>
-               <cit type="trans">
                   <quote>Fontäne</quote>
                </cit>
                <cit type="trans">
@@ -11331,7 +11319,7 @@
                   <quote>klagen</quote>
                </cit>
                <cit type="trans">
-                  <quote>sichbeklagen</quote>
+                  <quote>sich beklagen</quote>
                </cit>
                <cit type="trans">
                   <quote>verklagen</quote>
@@ -11416,7 +11404,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Fluß</quote>
+                  <quote>Fluss</quote>
                </cit>
             </sense>
          </entry>
@@ -11584,7 +11572,7 @@
                   <quote>Schweiz</quote>
                </cit>
                <cit type="trans">
-                  <quote>dieSchweiz</quote>
+                  <quote>die Schweiz</quote>
                </cit>
             </sense>
          </entry>
