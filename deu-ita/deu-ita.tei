@@ -10,16 +10,16 @@
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>0.2</edition>
+            <edition>0.2.1</edition>
          </editionStmt>
-         <extent>4454 headwords</extent>
+         <extent>4443 headwords</extent>
          <publicationStmt>
             <publisher>FreeDict</publisher>
             <availability status="free">
-               <p>Copyright (C) 1999-2018 by various authors listed below.</p>
+               <p>Copyright (C) 1999-2019 by various authors listed below.</p>
                <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
             </availability>
-            <date when="2018-08-06">Aug 06, 2018</date>
+            <date when="2019-05-05">May 05, 2019</date>
             <pubPlace>
                <ref target="http://freedict.org/">http://freedict.org/</ref>
             </pubPlace>
@@ -40,6 +40,14 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
+         <change n="0.2.1" when="2019-05-05">
+            <name>Ivan Panchenko</name>
+            <list>
+               <item>Remove doubled entries</item>
+               <item>fix archaic spelling</item>
+               <item>add missing spaces</item>
+            </list>
+         </change>
          <change n="0.2" when="2018-08-06">
              <name>Sebastian Humenda</name>
              remove doubled entries, re-enumerated broken sense numbers

@@ -10,13 +10,13 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.3.2</edition>
+        <edition>0.3.3</edition>
       </editionStmt>
       <extent>3800 headwords</extent>
       <publicationStmt>
         <publisher>FreeDict</publisher>
         <availability status="free">
-          <p>Copyright (C) 1999-2018 by various authors listed below.</p>
+          <p>Copyright (C) 1999-2019 by various authors listed below.</p>
 	  <p>Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.</p>
         </availability>
         <pubPlace>
@@ -43,6 +43,14 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.3.3" when="2019-05-05">
+         <name>Ivan Panchenko</name>
+         <list>
+            <item>Fix archaic spellings</item>
+            <item>Remove broken and superfluous translations</item>
+            <item>Add missing spaces</item>
+         </list>
+      </change>
       <change n="0.3.2" when="2018-08-06">
       <name>Sebastian Humenda</name>
       remove doubled definitions with better detection algorithm
