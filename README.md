@@ -2,13 +2,11 @@ FreeDict - free bilingual dictionaries
 =======================================
 
 The FreeDict project aims at providing free (open source) dictionary databases,
-to be used both by humans and machines
+to be used both by humans and machines.
+The official home is at <http://freedict.org>, where you can find documentation
+for dictionary usage and development.
 
-The official home is at <http://freedict.org>. This page details how to get and
-use the dictionaries. This document lists some resources if you want to develop
-and build the dictionaries yourself.
-
-Sources
+Dictionary Sources
 -------
 
 This repository only contains dictionaries which are *not* auto-imported, so
