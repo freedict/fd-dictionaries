@@ -1,0 +1,1 @@
+../freedict-dictionary.xsl
