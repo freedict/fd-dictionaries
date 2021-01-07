@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../freedict-P5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="../freedict-P5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:wikdict="http://www.wikdict.com/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>test FreeDict Dictionary</title>
+                <respStmt>
+                    <resp>Maintainer</resp>
+                    <name>[up for grabs]</name>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <edition>0.x.x</edition>
+            </editionStmt>
+            <extent>5 headwords</extent>
+            <publicationStmt>
+                <publisher>FreeDict</publisher>
+                <availability status="free">
+                    <p>Copyright (C) 1999-2019 by various authors listed below.</p>
+                    <p>Available under the terms of the <ref
+                            target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public
+                            License ver. 2.0 and any later version</ref>.</p>
+                </availability>
+                <pubPlace>
+                    <ref target="http://freedict.org/">http://freedict.org/</ref>
+                </pubPlace>
+            </publicationStmt>
+            <notesStmt>
+                <note type="status">too small</note>
+            </notesStmt>
+            <sourceDesc>
+                <p>No source: created in the electronic form.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>This dictionary comes to you through nice people making it available for free and
+                    for good. It is part of the FreeDict project, <ref target="http://freedict.org/"
+                        >http://freedict.org/</ref>. This project aims to make available many
+                    translating dictionaries for free. Your contributions are welcome! </p>
+            </projectDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <change n="0.0.1" when="2021-01-07">
+                <name>Piotr</name> began the compilation of good and problematic entries </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body xml:lang="de">
+            <entry xml:id="test_1">
+<!-- provided by Karl; it is not obvious how the info is structured here               -->
+                <form>
+                    <orth>abel</orth>
+                </form>
+                <gramGrp>
+                    <pos>suffix</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>bar</quote>
+                    </cit>
+                    <sense>
+                        <def>def1</def>
+                    </sense>
+                    <sense>
+                        <def>def2</def>
+                    </sense>
+                </sense>
+            </entry>
+            <entry xml:id="test_1.2">
+<!-- variation of test_1: equivalent in sv + two definitions in de        -->
+                <form>
+                    <orth>abel</orth>
+                </form>
+                <gramGrp>
+                    <pos>suffix</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>bar</quote>
+                    </cit>
+                </sense>
+                <sense>
+                    <def>def1</def>
+                </sense>
+                <sense>
+                    <def>def2</def>
+                </sense>
+            </entry>
+            <entry xml:id="test_1.3">
+                <!-- variation of test_1: equivalent in sv with two definitions in sv        -->
+                <form>
+                    <orth>abel</orth>
+                </form>
+                <gramGrp>
+                    <pos>suffix</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>bar</quote>
+                        <def>def1</def>
+                        <def>def2</def>
+                    </cit>
+                </sense>
+            </entry>
+            <entry xml:id="test_1.4">
+                <!-- copy of test_1: @n attributes carry some info        -->
+                <form>
+                    <orth>abel</orth>
+                </form>
+                <gramGrp>
+                    <pos>suffix</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>bar</quote>
+                    </cit>
+                    <sense n="1">
+                        <def>def1</def>
+                    </sense>
+                    <sense n="2">
+                        <def>def2</def>
+                    </sense>
+                </sense>
+            </entry>
+        </body>
+    </text>
+</TEI>
