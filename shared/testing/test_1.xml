@@ -8,17 +8,17 @@
                 <title>test FreeDict Dictionary</title>
                 <respStmt>
                     <resp>Maintainer</resp>
-                    <name>[up for grabs]</name>
+                    <name>Piotr</name>
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>0.x.x</edition>
+                <edition>0.0.1</edition>
             </editionStmt>
-            <extent>5 headwords</extent>
+            <!--<extent>several test headwords</extent>-->
             <publicationStmt>
                 <publisher>FreeDict</publisher>
                 <availability status="free">
-                    <p>Copyright (C) 1999-2019 by various authors listed below.</p>
+                    <p>Copyright (C) 1999-2021 by the various authors listed in the headers of each of the dictionaries mentioned below.</p>
                     <p>Available under the terms of the <ref
                             target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public
                             License ver. 2.0 and any later version</ref>.</p>
@@ -31,7 +31,7 @@
                 <note type="status">too small</note>
             </notesStmt>
             <sourceDesc>
-                <p>No source: created in the electronic form.</p>
+                <p>No source: created in the electronic form as a test suite, with material copied from various Freedict dictionaries.</p>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
@@ -48,9 +48,739 @@
         </revisionDesc>
     </teiHeader>
     <text>
-        <body xml:lang="de">
-            <entry xml:id="test_1">
-<!-- provided by Karl; it is not obvious how the info is structured here               -->
+        <body>
+
+            <!-- ********************  
+                 afr-deu  *********** 
+            -->
+
+<!-- OK
+    issues: none
+-->
+            
+            <entry>
+                <form>
+                    <orth>Afrikaans</orth>
+                </form>
+                <sense n="1">
+                    <cit type="trans">
+                        <quote>afrikanisch</quote>
+                    </cit>
+                </sense>
+                <sense n="2">
+                    <cit type="trans">
+                        <quote>kapholländisch</quote>
+                    </cit>
+                </sense>
+                <sense n="3">
+                    <cit type="trans">
+                        <quote>Afrikaans</quote>
+                    </cit>
+                    <cit type="trans">
+                        <quote>Kapholländisch</quote>
+                    </cit>
+                </sense>
+            </entry>
+
+            <!-- ********************  
+                 bre-fra  *********** 
+            -->
+<!-- messed up
+    issues: wild indent, nl after subsense numbers, NOTE: gramGrp inside form
+-->
+            
+            
+            <entry>
+                <form><orth>-er</orth><gramGrp><pos>lg.</pos></gramGrp></form>
+                <sense>
+                    <def>Suffixe marquant un nom d'agent masculin. Pluriel en -erien. Le nom d'agent
+                        féminin est marqué par -erez, pluriel -erezed.</def>
+                    <cit type="example">
+                        <quote>kaner</quote>
+                        <cit type="trans">
+                            <quote>chanteur</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>kanerez</quote>
+                        <cit type="trans">
+                            <quote>chanteuse</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>pesketaer</quote>
+                        <cit type="trans">
+                            <quote>pêcheur</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>pesketaerez</quote>
+                        <cit type="trans">
+                            <quote>pêcheuse</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>bleiner</quote>
+                        <cit type="trans">
+                            <quote>conducteur</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>bleinerez</quote>
+                        <cit type="trans">
+                            <quote>conductrice</quote>
+                        </cit>
+                    </cit>
+                </sense>
+                <sense>
+                    <def>Suffixe marquant un nom masculin de machine. Pluriel en -erioù. Les noms
+                        de machines en -erez sont féminins et ont habituellement un pluriel en
+                        -erezed, parfois en -erezioù.</def>
+                    <cit type="example">
+                        <quote>pellgomzer</quote>
+                        <cit type="trans">
+                            <quote>appareil téléphonique</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>mederez</quote>
+                        <cit type="trans">
+                            <quote>moissonneuse</quote>
+                        </cit>
+                    </cit>
+                    <cit type="example">
+                        <quote>moullerez</quote>
+                        <cit type="trans">
+                            <quote>imprimante</quote>
+                        </cit>
+                    </cit>
+                </sense>
+            </entry>
+            
+            
+            <!-- ********************  
+                 deu-eng  *********** 
+            -->
+            
+<!-- OK
+    issues: none
+-->
+            
+            <entry xml:id="Haus.1">
+                <form>
+                    <orth>Haus</orth>
+                </form>
+                <gramGrp>
+                    <gen>neut</gen>
+                    <pos>n</pos>
+                    <number>sg</number>
+                </gramGrp>
+                <sense>
+                    <usg type="hint">adm.</usg>
+                    <cit type="trans">
+                        <quote xml:lang="en">establishment</quote>
+                        <gramGrp>
+                            <pos>n</pos>
+                        </gramGrp>
+                    </cit>
+                    <cit type="trans">
+                        <quote xml:lang="en">institution</quote>
+                        <gramGrp>
+                            <pos>n</pos>
+                        </gramGrp>
+                    </cit>
+                    <xr type="syn">
+                        <ref target="#Einrichtung.7">Einrichtung</ref>
+                    </xr>
+                    <xr type="syn">
+                        <ref target="#Institution.1">Institution</ref>
+                    </xr>
+                    <xr type="syn">
+                        <ref target="#Anstalt.1">Anstalt</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Einrichtungen.1">Einrichtungen</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Institutionen.1">Institutionen</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Anstalten.1">Anstalten</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Häuser.1">Häuser</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Bildungseinrichtung.2">Bildungseinrichtung</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#Forschungeinrichtung.1">Forschungeinrichtung</ref>
+                    </xr>
+                </sense>
+            </entry>
+
+<!-- ~ OK
+    issues: prefix spaces before usg labels; Synonym and Note a bit off
+-->
+            
+            <entry xml:id="A-__und__B-Horizont.1">
+                <form>
+                    <orth>A- und B-Horizont</orth>
+                </form>
+                <gramGrp>
+                    <gen>masc</gen>
+                    <pos>n</pos>
+                    <number>sg</number>
+                </gramGrp>
+                <sense>
+                    <usg type="dom">agr.</usg>
+                    <usg type="dom">geol.</usg>
+                    <cit type="trans">
+                        <quote xml:lang="en">A and B horizons</quote>
+                        <gramGrp>
+                            <pos>n</pos>
+                        </gramGrp>
+                    </cit>
+                    <cit type="trans">
+                        <quote xml:lang="en">solum</quote>
+                        <gramGrp>
+                            <pos>n</pos>
+                        </gramGrp>
+                    </cit>
+                    <cit type="example">
+                        <quote xml:lang="de">A- und B-Horizonte</quote>
+                        <cit type="trans">
+                            <quote xml:lang="en">A and B horizons</quote>
+                        </cit>
+                        <cit type="trans">
+                            <quote xml:lang="en">sola</quote>
+                        </cit>
+                        <cit type="trans">
+                            <quote xml:lang="en">solums</quote>
+                        </cit>
+                    </cit>
+                    <xr type="syn">
+                        <ref target="#A-__und__B-Boden.1">A- und B-Boden</ref>
+                    </xr>
+                    <xr type="see">
+                        <ref target="#A-__und__B-Böden.1">A- und B-Böden</ref>
+                    </xr>
+                    <note>des Bodenprofils</note>
+                </sense>
+            </entry>
+            
+            <!-- ********************  
+                 deu-swe  *********** 
+            -->
+
+<!-- messed up
+    issues: sense numbering, newlines after numbers, wild indentation
+-->
+            
+            <entry>
+                <form>
+                    <orth>end</orth>
+                    <pron>-ənd-</pron>
+                    <pron>-ənt</pron>
+                    <pron>ˈfaləndə</pron>
+                    <pron>ˈfalənt</pron>
+                </form>
+                <gramGrp>
+                    <pos>suffix</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>ande</quote>
+                    </cit>
+                    <sense>
+                        <def>nachgestelltes Wortbildungselement zur Bildung des Präsenspartizips,
+                            welches dazu verwendet wird, eine Handlung auszudrücken, die parallel zu
+                            einer anderen zur selben Zeit läuft</def>
+                    </sense>
+                    <sense>
+                        <def>nachgestelltes Wortbildungselement zur Ableitung eines Adjektivs von
+                            einem Verb</def>
+                    </sense>
+                </sense>
+            </entry>
+            
+            <entry>
+                <form>
+                    <orth>Aak</orth>
+                    <pron>aːk</pron>
+                </form>
+                <gramGrp>
+                    <pos>n</pos>
+                    <gen>neut</gen>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>aak</quote>
+                        <quote>pråm</quote>
+                    </cit>
+                    <sense>
+                        <def>Schifffahrt: flaches Frachtschiff, das im Gebiet des Niederrheins
+                            eingesetzt wird</def>
+                    </sense>
+                </sense>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Abbild</orth>
+                    <pron>ˈapˌbɪlt</pron>
+                </form>
+                <gramGrp>
+                    <pos>n</pos>
+                    <gen>neut</gen>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>avbild</quote>
+                        <quote>avbildning</quote>
+                        <quote>beläte</quote>
+                        <quote>kopia</quote>
+                    </cit>
+                    <sense>
+                        <def>etwas bildlich, grafisch, durch optische oder elektronische Verfahren
+                            oder symbolisch Dargestelltes, etwas Abgebildetes</def>
+                    </sense>
+                </sense>
+            </entry>
+           
+<!-- ~ OK
+    issues: neglectable lack of indent below numbers
+-->
+            <entry>
+                <form>
+                    <orth>Abgabe</orth>
+                    <pron>ˈapˌɡaːbə</pron>
+                </form>
+                <gramGrp>
+                    <pos>n</pos>
+                    <gen>fem</gen>
+                </gramGrp>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>avgift</quote>
+                        <quote>skatt</quote>
+                    </cit>
+                    <sense>
+                        <def>Zahlungen an Behörden</def>
+                    </sense>
+                </sense>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>avlämning</quote>
+                        <quote>inlämning</quote>
+                    </cit>
+                    <sense>
+                        <def>Hinterlegen von Stoffen (bei Sammelstellen oder Verkaufsstellen)</def>
+                    </sense>
+                </sense>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>inlämning</quote>
+                        <quote>avlämning</quote>
+                    </cit>
+                    <sense>
+                        <def>Hinterlegen von Erklärungen, Absichten, Stimmen</def>
+                    </sense>
+                </sense>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>passning</quote>
+                    </cit>
+                    <sense>
+                        <def>Weitergabe von Strahlen oder Stoffen</def>
+                    </sense>
+                </sense>
+                <sense>
+                    <cit type="trans" xml:lang="sv">
+                        <quote>förlust av</quote>
+                    </cit>
+                    <sense>
+                        <def>Weitergabe eines Balles</def>
+                    </sense>
+                </sense>
+            </entry>
+            
+            <!--  ********************  
+                  eng-pol  *********** 
+            -->
+<!-- ~ OK
+    issues: line 5 (idarex forces a nl)
+-->
+            <entry xml:id="a-abandon">
+                <form xml:lang="en">
+                    <orth>abandon</orth>
+                    <pron>əˈbændən</pron>
+                </form>
+                <gramGrp>
+                    <pos>V</pos>
+                </gramGrp>
+                <sense level="0">
+                    <sense level="1" n="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>zostawiać</quote>
+                            </cit>
+                            <cit type="trans">
+                                <quote>opuszczać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="2">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>zaprzestawać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="3">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>rzucać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="4">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>oddawać</quote>
+                                <cit type="colloc" subtype="prep">
+                                    <quote xml:lang="en">oneself to emotion</quote>
+                                    <cit type="trans">
+                                        <quote>się emocji</quote>
+                                    </cit>
+                                </cit>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="5">
+                        <sense level="2">
+                            <cit type="idiom">
+                                <quote xml:lang="en">with abandon</quote>
+                                <note type="idarex" xml:lang="en">:with ADJ :abandon</note>
+                                <cit type="trans">
+                                    <quote>beztrosko</quote>
+                                </cit>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+            </entry>
+            
+<!-- messed up
+    issues: idarex forces a nl; first subsense needs a prefixed nl
+-->
+            
+            <entry xml:id="w-wash">
+                <form xml:lang="en">
+                    <orth>wash</orth>
+                    <pron>wɒʃ</pron>
+                </form>
+                <sense level="0" n="I">
+                    <gramGrp>
+                        <pos>V</pos>
+                    </gramGrp>
+                    <sense level="1" n="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>myć</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="2">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>prać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="3">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>obmywać</quote>
+                            </cit>
+                            <cit type="trans">
+                                <quote>wymywać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+                <sense level="0" n="II">
+                    <gramGrp>
+                        <pos>N</pos>
+                    </gramGrp>
+                    <sense level="1" n="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>pranie</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="2">
+                        <sense level="2">
+                            <cit type="idiom">
+                                <quote xml:lang="en">give sth a wash</quote>
+                                <note type="idarex" xml:lang="en">give V: NP :a :wash</note>
+                                <cit type="trans">
+                                    <quote>wymyć coś</quote>
+                                </cit>
+                                <cit type="trans">
+                                    <quote>wyprać coś</quote>
+                                </cit>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="3">
+                        <sense level="2">
+                            <cit type="idiom">
+                                <quote xml:lang="en">have a wash</quote>
+                                <note type="idarex" xml:lang="en">have V: :a :wash</note>
+                                <cit type="trans">
+                                    <quote>umyć się</quote>
+                                </cit>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+                <sense level="0" n="III">
+                    <gramGrp>
+                        <pos>V Phras</pos>
+                    </gramGrp>
+                    <form>
+                        <orth xml:lang="en" type="variant">wash away</orth>
+                    </form>
+                    <sense level="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>zmywać się</quote>
+                            </cit>
+                            <cit type="trans">
+                                <quote>zmywać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+                <sense level="0" n="IV">
+                    <gramGrp>
+                        <pos>V Phras</pos>
+                    </gramGrp>
+                    <form>
+                        <orth xml:lang="en" type="variant">wash up</orth>
+                    </form>
+                    <sense level="1" n="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>zmywać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="2">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>wymywać</quote>
+                            </cit>
+                            <cit type="trans">
+                                <quote>wyrzucać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+            </entry>
+ 
+<!-- messed up
+    issues: first subsense needs a prefixed nl
+-->
+            
+            <entry xml:id="w-wedge">
+                <form xml:lang="en">
+                    <orth>wedge</orth>
+                    <pron>weʤ</pron>
+                </form>
+                <sense level="0" n="I">
+                    <gramGrp>
+                        <pos>V</pos>
+                    </gramGrp>
+                    <sense level="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>zaklinowywać</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+                <sense level="0" n="II">
+                    <gramGrp>
+                        <pos>N</pos>
+                    </gramGrp>
+                    <sense level="1" n="1">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>klin</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                    <sense level="1" n="2">
+                        <sense level="2">
+                            <cit type="trans">
+                                <quote>kawałek</quote>
+                            </cit>
+                        </sense>
+                    </sense>
+                </sense>
+            </entry>
+            
+            
+            <!--  ********************  
+                  kha-deu  *********** 
+            -->
+<!-- OK
+    issues: none
+-->
+            
+            <entry>
+                <form xml:lang="kha">
+                    <orth>dei</orth>
+                </form>
+                <gramGrp>
+                    <pos>v</pos>
+                </gramGrp>
+                <sense>
+                    <cit type="trans">
+                        <quote>sein</quote>
+                    </cit>
+                    <cit type="trans">
+                        <quote>sollen</quote>
+                    </cit>
+                </sense>
+                <sense>
+                    <cit type="trans">
+                        <quote>zufällig berühren</quote>
+                    </cit>
+                    <cit type="trans">
+                        <quote>ertasten</quote>
+                    </cit>
+                </sense>
+            </entry>
+            
+            
+            <!--  ********************
+                  lat-deu  *********** 
+            -->
+
+<!-- OK ?
+    issues: none unless the % are not meant to be there
+-->
+            
+            <entry xml:id="sub_abavus_m">
+                <form xml:lang="la">
+                    <orth>abavus</orth>
+                    <form type="infl">
+                        <orth>abavi</orth>
+                        <gramGrp>
+                            <case>gen</case>
+                        </gramGrp>
+                    </form>
+                </form>
+                <gramGrp>
+                    <pos>n</pos>
+                    <number>sg</number>
+                    <gen>m</gen>
+                </gramGrp>
+                <sense level="1">
+                    <cit type="trans">
+                        <quote>Ururgroßvater</quote>
+                    </cit>
+                </sense>
+                <sense level="1">
+                    <cit type="trans">
+                        <quote>Vorfahre</quote>
+                    </cit>
+                    <cit type="trans">
+                        <quote>Ahnherr</quote>
+                    </cit>
+                </sense>
+            </entry>
+            
+            <!--  ********************  
+                  swh-eng  *********** 
+            -->
+<!-- messed up
+    issues: nl after subsense number
+-->
+            <entry xml:id="agano">
+                <form xml:lang="sw">
+                    <orth>agano</orth>
+                </form>
+                <xr type="plural-form">
+                    <ref target="#maagano">maagano</ref>
+                </xr>
+                <gramGrp>
+                    <pos>n</pos>
+                </gramGrp>
+                <sense xml:id="agano.1" n="1">
+                    <def>promise</def>
+                </sense>
+                <sense xml:id="agano.2" n="2">
+                    <def>agreement, contract</def>
+                    <xr type="cf">See also: <ref target="#ahadi">ahadi</ref>
+                    </xr>
+                </sense>
+            </entry>
+
+<!-- messed up
+    issues: nl after subsense number, split at the semicolon
+-->
+            
+            <entry xml:id="agiza">
+                <form xml:lang="sw">
+                    <orth>agiza</orth>
+                </form>
+                <gramGrp>
+                    <pos>v</pos>
+                    <subc>caus</subc>
+                </gramGrp>
+                <sense xml:id="agiza.1" n="1">
+                    <def>order, command, instruct</def>
+                    <def>direct, instruct, give instructions</def>
+                </sense>
+                <sense xml:id="agiza.2" n="2">
+                    <def>order, place an order</def>
+                </sense>
+            </entry>
+
+            <entry xml:id="ajabu">
+                <form xml:lang="sw">
+                    <orth>ajabu</orth>
+                </form>
+                <xr type="plural-form">
+                    <ref target="#maajabu">maajabu</ref>
+                </xr>
+                <gramGrp>
+                    <pos>n</pos>
+                </gramGrp>
+                <sense xml:id="ajabu.1" n="1">
+                    <def>wonder, marvel, miracle</def>
+                    <def>surprise</def>
+                </sense>
+                <sense xml:id="ajabu.2" n="2">
+                    <def>awe, amazement, astonishment</def>
+                </sense>
+            </entry>
+
+
+
+        </body>
+    </text>
+</TEI>
+
+
+<!-- some initial stuff, probably to be scratched (real examples are so much better) -->
+    
+<!--            <entry xml:id="test_1">
+                <!-\- provided by Karl; it is not obvious how the info is structured here               -\->
                 <form>
                     <orth>abel</orth>
                 </form>
@@ -70,7 +800,7 @@
                 </sense>
             </entry>
             <entry xml:id="test_1.2">
-<!-- variation of test_1: equivalent in sv + two definitions in de        -->
+                <!-\- variation of test_1: equivalent in sv + two definitions in de        -\->
                 <form>
                     <orth>abel</orth>
                 </form>
@@ -90,7 +820,7 @@
                 </sense>
             </entry>
             <entry xml:id="test_1.3">
-                <!-- variation of test_1: equivalent in sv with two definitions in sv        -->
+                <!-\- variation of test_1: equivalent in sv with two definitions in sv        -\->
                 <form>
                     <orth>abel</orth>
                 </form>
@@ -106,7 +836,7 @@
                 </sense>
             </entry>
             <entry xml:id="test_1.4">
-                <!-- copy of test_1: @n attributes carry some info        -->
+                <!-\- copy of test_1: @n attributes carry some info        -\->
                 <form>
                     <orth>abel</orth>
                 </form>
@@ -125,6 +855,6 @@
                     </sense>
                 </sense>
             </entry>
-        </body>
-    </text>
-</TEI>
+
+-->
+
