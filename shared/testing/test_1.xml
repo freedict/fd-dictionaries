@@ -12,7 +12,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>0.0.1</edition>
+                <edition>0.0.2</edition>
             </editionStmt>
             <!--<extent>several test headwords</extent>-->
             <publicationStmt>
@@ -45,18 +45,45 @@
         <revisionDesc>
             <change n="0.0.1" when="2021-01-07">
                 <name>Piotr</name> began the compilation of good and problematic entries </change>
+            <change n="0.0.2" when="2021-01-10">
+                <name>Piotr</name> added more structure and descriptions, to make this document
+                serve a broader purpose</change>
         </revisionDesc>
     </teiHeader>
     <text>
-        <body>
-
-            <!-- ********************  
-                 afr-deu  *********** 
-            -->
-
+        <body><div xml:id="intro">
+            <head>Introduction</head>
+                <p>This document is part of the demo suite of Freedict dictionaries. It is
+                    distributed under GNU GPL 2.0 and later variants. Fragments taken from
+                    dictionaries that are part of Freedict under a different free license are used
+                    here as illustrative excerpts and thus qualify for redistribution under GPL,
+                    under EU law.</p>
+            <p>Please see the header for more information, such as the changelog and credits.</p>
+                <p>The initial form of this document is accompanied by the example_entries_c5.txt
+                    file, which demonstrates how Freedict tools render the TEI XML fragments below,
+                    in a format suitable for further processing by DICT tools. That format only
+                    makes provisions for dictionary entries, so none of the narrative or structural
+                    divisions in this XML document can make it into c5.</p>
+                <p>This document also acts as part of a (primitive) test suite, and therefore
+                    contains both the simplest examples of entries and many intricate ones (which
+                    are the focus).</p>
+                <p>One false impression that this collection may create is that Freedict in any way
+                    prioritizes complex entry structures. Not at all: we welcome all sorts of
+                    dictionaries. The entries here simply pose special challenges and at the same
+                    time illustrate possible answers to 'frequently' asked questions.</p>
+        </div>
+            <div xml:id="afr-deu">
+                <head>Afrikaans - German</head>
+                <p>Features: <list>
+                        <item>multiple senses</item>
+                        <item>multiple cit per sense</item>
+                        <item>sense numbering hard-coded with @n attributes</item>
+                    </list></p>
+                <p>Technicalities: <list>
+                    <item>entries not uniquely identified with xml:id - that is not cool</item>
+                </list></p>
 <!-- OK
     issues: none
-    features: multiple cit per sense; senses numbers hard-coded
 -->
             
             <entry>
@@ -81,94 +108,114 @@
                         <quote>Kapholländisch</quote>
                     </cit>
                 </sense>
-            </entry>
+            </entry></div>
 
-            <!-- ********************  
-                 bre-fra  *********** 
-            -->
-<!-- ~OK
+            <div xml:id="bre-fra">
+                <head>Breton - French</head>
+                <p>In many respects, this dictionary is an example of the art of lexicography, far
+                    from a simple glossary.</p>
+                <p>Features: <list>
+                        <item>multiple senses</item>
+                        <item>multiple cit per sense, following a def - this is somewhat
+                            unusual</item>
+                        <item>form _contains_ gramGrp - this is unusual but OK (gramGrp describes
+                            just the lemma, here)</item>
+                        <item>sense numbering not hard-coded</item>
+                    </list>.</p>
+
+                <p>Technicalities: <list>
+                        <item>technically, "examples" have translations, not translation
+                            equivalents. But here, individual words are examples of the use of a
+                            suffix, and the are accompanied by true translation equivalents (marked
+                            with @type="trans")</item>
+                        <item>typically, grammatical description references the entire entry (and
+                            may be narrowed down in subparts of the entry, mostly in individual
+                            senses); here, it should be interpreted as describing the headword
+                            (lemma) alone; in most cases, that shouldn't matter, but the recommended
+                            way for Freedict is to separate form and gramGrp</item>
+                        <item>no xml:id at the entry level = not cool</item>
+                    </list></p>
+
+                <!-- ~OK
     issues: spurious newlines after defs?
-    features: def followed by cit/@type="example", with nested cit/@type="trans"
-              no hard-coded numbering
-              form _contains_ gramGrp - this is unusual but OK (gramGrp describes just the lemma, here)
 -->
-            
-            
-            <entry>
-                <form><orth>-er</orth><gramGrp><pos>lg.</pos></gramGrp></form>
-                <sense>
-                    <def>Suffixe marquant un nom d'agent masculin. Pluriel en -erien. Le nom d'agent
-                        féminin est marqué par -erez, pluriel -erezed.</def>
-                    <cit type="example">
-                        <quote>kaner</quote>
-                        <cit type="trans">
-                            <quote>chanteur</quote>
+                <entry>
+                    <form><orth>-er</orth><gramGrp><pos>lg.</pos></gramGrp></form>
+                    <sense>
+                        <def>Suffixe marquant un nom d'agent masculin. Pluriel en -erien. Le nom
+                            d'agent féminin est marqué par -erez, pluriel -erezed.</def>
+                        <cit type="example">
+                            <quote>kaner</quote>
+                            <cit type="trans">
+                                <quote>chanteur</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>kanerez</quote>
-                        <cit type="trans">
-                            <quote>chanteuse</quote>
+                        <cit type="example">
+                            <quote>kanerez</quote>
+                            <cit type="trans">
+                                <quote>chanteuse</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>pesketaer</quote>
-                        <cit type="trans">
-                            <quote>pêcheur</quote>
+                        <cit type="example">
+                            <quote>pesketaer</quote>
+                            <cit type="trans">
+                                <quote>pêcheur</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>pesketaerez</quote>
-                        <cit type="trans">
-                            <quote>pêcheuse</quote>
+                        <cit type="example">
+                            <quote>pesketaerez</quote>
+                            <cit type="trans">
+                                <quote>pêcheuse</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>bleiner</quote>
-                        <cit type="trans">
-                            <quote>conducteur</quote>
+                        <cit type="example">
+                            <quote>bleiner</quote>
+                            <cit type="trans">
+                                <quote>conducteur</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>bleinerez</quote>
-                        <cit type="trans">
-                            <quote>conductrice</quote>
+                        <cit type="example">
+                            <quote>bleinerez</quote>
+                            <cit type="trans">
+                                <quote>conductrice</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                </sense>
-                <sense>
-                    <def>Suffixe marquant un nom masculin de machine. Pluriel en -erioù. Les noms
-                        de machines en -erez sont féminins et ont habituellement un pluriel en
-                        -erezed, parfois en -erezioù.</def>
-                    <cit type="example">
-                        <quote>pellgomzer</quote>
-                        <cit type="trans">
-                            <quote>appareil téléphonique</quote>
+                    </sense>
+                    <sense>
+                        <def>Suffixe marquant un nom masculin de machine. Pluriel en -erioù. Les
+                            noms de machines en -erez sont féminins et ont habituellement un pluriel
+                            en -erezed, parfois en -erezioù.</def>
+                        <cit type="example">
+                            <quote>pellgomzer</quote>
+                            <cit type="trans">
+                                <quote>appareil téléphonique</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>mederez</quote>
-                        <cit type="trans">
-                            <quote>moissonneuse</quote>
+                        <cit type="example">
+                            <quote>mederez</quote>
+                            <cit type="trans">
+                                <quote>moissonneuse</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                    <cit type="example">
-                        <quote>moullerez</quote>
-                        <cit type="trans">
-                            <quote>imprimante</quote>
+                        <cit type="example">
+                            <quote>moullerez</quote>
+                            <cit type="trans">
+                                <quote>imprimante</quote>
+                            </cit>
                         </cit>
-                    </cit>
-                </sense>
-            </entry>
-            
-            
-            <!-- ********************  
-                 deu-eng  *********** 
-            -->
-            
+                    </sense>
+                </entry>
+
+            </div>            
+<div>
+    <head>German - English</head>
+<p>Features: <list>
+    <item>usg labels, rich gramGrp, gramGrp also in equivalents, multiple xr references</item>
+    <item>entries systematically ID-ed with xml:id</item>
+</list></p>
+
 <!-- ~ OK
     issues: a bit too much whitespace
-    features: usg labels, rich gramGrp, gramGrp also in equivalents, multiple xr references
 -->
             
             <entry xml:id="Haus.1">
@@ -224,9 +271,11 @@
                 </sense>
             </entry>
 
+    <p>Features: <list>
+        <item>mutiple usg labels, examples with multiple translations, final note</item>
+    </list></p>
 <!-- ~ OK
     issues: Synonym and Note a bit off
-    features: mutiple usg labels, examples with multiple translations
 -->
             
             <entry xml:id="A-__und__B-Horizont.1">
@@ -274,16 +323,18 @@
                     <note>des Bodenprofils</note>
                 </sense>
             </entry>
-            
-            <!-- ********************  
-                 deu-swe  *********** 
-            -->
-
+</div>            
+<div>
+    <head>German - Swedish</head>
+    <p>Features: <list>
+        <item>multiple pron, equivalents with definitions, no hard-coded numbering</item>
+    </list></p>
+    <p>Technicalities: <list>
+        <item>entries not uniquely identified with xml:id - that is not cool</item>
+    </list></p>
 <!-- ~ OK
     issues: spurious nl after def
-    features: multiple pron, equivalents with definitions, no hard-coded numbering
 -->
-            
             <entry>
                 <form>
                     <orth>end</orth>
@@ -311,37 +362,13 @@
                 </sense>
             </entry>
 
-<!-- OK (redundant, should go)
-    issues: none
-    features: no numbering for single senses or defs
--->
-            
-            <entry>
-                <form>
-                    <orth>Aak</orth>
-                    <pron>aːk</pron>
-                </form>
-                <gramGrp>
-                    <pos>n</pos>
-                    <gen>neut</gen>
-                </gramGrp>
-                <sense>
-                    <cit type="trans" xml:lang="sv">
-                        <quote>aak</quote>
-                        <quote>pråm</quote>
-                    </cit>
-                    <sense>
-                        <def>Schifffahrt: flaches Frachtschiff, das im Gebiet des Niederrheins
-                            eingesetzt wird</def>
-                    </sense>
-                </sense>
-            </entry>
-
+    <p>Features: <list>
+        <item>no numbering for single senses or defs</item>
+    </list></p>
+    
 <!-- OK 
     issues: none
-    features: no numbering for single senses or defs
 -->
-            
             <entry>
                 <form>
                     <orth>Abbild</orth>
@@ -364,10 +391,12 @@
                     </sense>
                 </sense>
             </entry>
-           
+
+    <p>Features: <list>
+        <item>multiple sets of equivalent + definition, no hard-coded numbering</item>
+    </list></p>
 <!-- ~ OK
     issues: none unless too much vertical distance
-    features: multiple sets of equivalent + definition, no hard-coded numbering
 -->
             <entry>
                 <form>
@@ -422,10 +451,24 @@
                     </sense>
                 </sense>
             </entry>
-            
-            <!--  ********************  
-                  eng-pol  *********** 
-            -->
+</div>            
+<div>
+    <head>English - Polish</head>
+                <p>This is a conversion from TeX sources of a print dictionary, innovative in
+                    assuming no homography at the top level - all the homography is described at the
+                    level of multiply nested senses</p>
+    
+    <p>Features:<list>
+        <item>cit colloc, idioms templated with idarex (idiom as regular expressions)</item>
+        <item>complex hard-coded sense numbering (levels and ordering)</item>
+    </list></p>
+    <p>Technicalities:<list>
+                        <item>It is a bit surprising that, in the idiomatic meaning, _abandon_ is
+                            not labeled as a noun (which it definitely is, grammatically: in a
+                            post-prepositional position, potentially modified by an adjective); that
+                            may be due to an inadequacy of the conversion, and is worth
+                            investigating</item>
+    </list></p>
 <!-- OK
     issues: no obvious reason why (1) is indented
 -->
@@ -651,45 +694,48 @@
                     </sense>
                 </sense>
             </entry>
-            
-            
-            <!--  ********************  
-                  kha-deu  *********** 
-            -->
+</div>            
+            <div xml:id="kha-deu">
+                <head>Khasi - German</head>
+                <p>Features:<list>
+                        <item>multiple senses, with multiple equivalents</item>
+                    </list></p>
 <!-- OK
     issues: none
 -->
-            
-            <entry>
-                <form xml:lang="kha">
-                    <orth>dei</orth>
-                </form>
-                <gramGrp>
-                    <pos>v</pos>
-                </gramGrp>
-                <sense>
-                    <cit type="trans">
-                        <quote>sein</quote>
-                    </cit>
-                    <cit type="trans">
-                        <quote>sollen</quote>
-                    </cit>
-                </sense>
-                <sense>
-                    <cit type="trans">
-                        <quote>zufällig berühren</quote>
-                    </cit>
-                    <cit type="trans">
-                        <quote>ertasten</quote>
-                    </cit>
-                </sense>
-            </entry>
-            
-            
-            <!--  ********************
-                  lat-deu  *********** 
-            -->
 
+                <entry>
+                    <form xml:lang="kha">
+                        <orth>dei</orth>
+                    </form>
+                    <gramGrp>
+                        <pos>v</pos>
+                    </gramGrp>
+                    <sense>
+                        <cit type="trans">
+                            <quote>sein</quote>
+                        </cit>
+                        <cit type="trans">
+                            <quote>sollen</quote>
+                        </cit>
+                    </sense>
+                    <sense>
+                        <cit type="trans">
+                            <quote>zufällig berühren</quote>
+                        </cit>
+                        <cit type="trans">
+                            <quote>ertasten</quote>
+                        </cit>
+                    </sense>
+                </entry>
+            </div>            
+<div>
+    <head>Latin - German</head>
+<p>Features:<list>
+    <item>complex grammatical and form information</item>
+    <item>entries identified with xml:id</item>
+    <item>no hard-coded sense numbering</item>
+</list></p>
 <!-- OK ?
     issues: none unless the % are not meant to be there
 -->
@@ -723,10 +769,21 @@
                     </cit>
                 </sense>
             </entry>
-            
-            <!--  ********************  
-                  swh-eng  *********** 
-            -->
+</div>            
+<div>
+    <head>Kiswahili - English</head>
+    
+    <p>Features: cross-entry references that rely on the xml:id mechanism</p>
+    
+    <p>Technicalities: <list>
+                        <item>schema abuse: defs should not hold translation equivalents; this is
+                            why no big deal is made of this dictionary not transforming seamlessly
+                            into c5; note that it's all right to do this in e.g. mass-digitized
+                            dictionaries that later receive more intricate markup, so this kind of
+                            markup should be considered peripheral, not recommended, but
+                            nevertheless acceptable</item>
+    </list>
+    </p>
 <!-- ~ OK
     issues: too much vertical whitespace, but the markup is not fully proper (defs instead of cits)
 -->
@@ -750,6 +807,8 @@
                 </sense>
             </entry>
 
+                <p>Features: the following entries illustrate the handling of multiple def elements
+                    (even if, in this case, they should be marked up differently)</p>
 <!-- ~ OK
     issues: too many newlines (but note that the markup is suboptimal)
     features: multiple defs that are joined and then formatted together 
@@ -792,7 +851,7 @@
                     <def>awe, amazement, astonishment</def>
                 </sense>
             </entry>
-
+</div>
 
 
         </body>
