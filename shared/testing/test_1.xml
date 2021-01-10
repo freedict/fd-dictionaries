@@ -56,6 +56,7 @@
 
 <!-- OK
     issues: none
+    features: multiple cit per sense; senses numbers hard-coded
 -->
             
             <entry>
@@ -85,8 +86,11 @@
             <!-- ********************  
                  bre-fra  *********** 
             -->
-<!-- messed up
-    issues: wild indent, nl after subsense numbers, NOTE: gramGrp inside form
+<!-- ~OK
+    issues: spurious newlines after defs?
+    features: def followed by cit/@type="example", with nested cit/@type="trans"
+              no hard-coded numbering
+              form _contains_ gramGrp - this is unusual but OK (gramGrp describes just the lemma, here)
 -->
             
             
@@ -162,8 +166,9 @@
                  deu-eng  *********** 
             -->
             
-<!-- OK
-    issues: none
+<!-- ~ OK
+    issues: a bit too much whitespace
+    features: usg labels, rich gramGrp, gramGrp also in equivalents, multiple xr references
 -->
             
             <entry xml:id="Haus.1">
@@ -220,7 +225,8 @@
             </entry>
 
 <!-- ~ OK
-    issues: prefix spaces before usg labels; Synonym and Note a bit off
+    issues: Synonym and Note a bit off
+    features: mutiple usg labels, examples with multiple translations
 -->
             
             <entry xml:id="A-__und__B-Horizont.1">
@@ -273,8 +279,9 @@
                  deu-swe  *********** 
             -->
 
-<!-- messed up
-    issues: sense numbering, newlines after numbers, wild indentation
+<!-- ~ OK
+    issues: spurious nl after def
+    features: multiple pron, equivalents with definitions, no hard-coded numbering
 -->
             
             <entry>
@@ -303,6 +310,11 @@
                     </sense>
                 </sense>
             </entry>
+
+<!-- OK (redundant, should go)
+    issues: none
+    features: no numbering for single senses or defs
+-->
             
             <entry>
                 <form>
@@ -324,6 +336,12 @@
                     </sense>
                 </sense>
             </entry>
+
+<!-- OK 
+    issues: none
+    features: no numbering for single senses or defs
+-->
+            
             <entry>
                 <form>
                     <orth>Abbild</orth>
@@ -348,7 +366,8 @@
             </entry>
            
 <!-- ~ OK
-    issues: neglectable lack of indent below numbers
+    issues: none unless too much vertical distance
+    features: multiple sets of equivalent + definition, no hard-coded numbering
 -->
             <entry>
                 <form>
@@ -407,8 +426,8 @@
             <!--  ********************  
                   eng-pol  *********** 
             -->
-<!-- ~ OK
-    issues: line 5 (idarex forces a nl)
+<!-- OK
+    issues: no obvious reason why (1) is indented
 -->
             <entry xml:id="a-abandon">
                 <form xml:lang="en">
@@ -470,8 +489,9 @@
                 </sense>
             </entry>
             
-<!-- messed up
-    issues: idarex forces a nl; first subsense needs a prefixed nl
+<!-- ~ OK
+    issues: potentially more indent needed (investigate), III should be fixed (note the ordering of 
+            gram, form, sense there - the markup may be wrong, not the rendering
 -->
             
             <entry xml:id="w-wash">
@@ -590,8 +610,8 @@
                 </sense>
             </entry>
  
-<!-- messed up
-    issues: first subsense needs a prefixed nl
+<!-- ~ OK
+    issues: more indent for the subsenses?
 -->
             
             <entry xml:id="w-wedge">
@@ -707,8 +727,8 @@
             <!--  ********************  
                   swh-eng  *********** 
             -->
-<!-- messed up
-    issues: nl after subsense number
+<!-- ~ OK
+    issues: too much vertical whitespace, but the markup is not fully proper (defs instead of cits)
 -->
             <entry xml:id="agano">
                 <form xml:lang="sw">
@@ -730,8 +750,11 @@
                 </sense>
             </entry>
 
-<!-- messed up
-    issues: nl after subsense number, split at the semicolon
+<!-- ~ OK
+    issues: too many newlines (but note that the markup is suboptimal)
+    features: multiple defs that are joined and then formatted together 
+            (it's wrong here, where they should be cits, but we might have multiple 
+            defs also in properly marked up dictionaries
 -->
             
             <entry xml:id="agiza">
