@@ -272,6 +272,49 @@
             </entry>
 
     <p>Features: <list>
+        <item>as in the previous entry, but here, the external references are grouped</item>
+    </list></p>
+    
+    <entry xml:id="Haus.1x">
+        <form>
+            <orth>Haus</orth>
+        </form>
+        <gramGrp>
+            <gen>neut</gen>
+            <pos>n</pos>
+            <number>sg</number>
+        </gramGrp>
+        <sense>
+            <usg type="hint">adm.</usg>
+            <cit type="trans">
+                <quote xml:lang="en">establishment</quote>
+                <gramGrp>
+                    <pos>n</pos>
+                </gramGrp>
+            </cit>
+            <cit type="trans">
+                <quote xml:lang="en">institution</quote>
+                <gramGrp>
+                    <pos>n</pos>
+                </gramGrp>
+            </cit>
+            <xr type="syn">
+                <ref target="#Einrichtung.7">Einrichtung</ref>
+                <ref target="#Institution.1">Institution</ref>
+                <ref target="#Anstalt.1">Anstalt</ref>
+            </xr>
+            <xr type="see">
+                <ref target="#Einrichtungen.1">Einrichtungen</ref>
+                <ref target="#Institutionen.1">Institutionen</ref>
+                <ref target="#Anstalten.1">Anstalten</ref>
+                <ref target="#Häuser.1">Häuser</ref>
+                <ref target="#Bildungseinrichtung.2">Bildungseinrichtung</ref>
+                <ref target="#Forschungeinrichtung.1">Forschungeinrichtung</ref>
+            </xr>
+        </sense>
+    </entry>
+
+    <p>Features: <list>
         <item>mutiple usg labels, examples with multiple translations, final note</item>
     </list></p>
 <!-- ~ OK
@@ -532,7 +575,11 @@
                 </sense>
             </entry>
             
-<!-- ~ OK
+
+    <p>Features:<list>
+        <item>gramGrp precedes form where the part of speech discriminates between senses (see III, IV)</item>
+    </list></p>
+    <!-- ~ OK
     issues: potentially more indent needed (investigate), III should be fixed (note the ordering of 
             gram, form, sense there - the markup may be wrong, not the rendering
 -->
@@ -773,15 +820,18 @@
 <div>
     <head>Kiswahili - English</head>
     
-    <p>Features: cross-entry references that rely on the xml:id mechanism</p>
+    <p>Features: <list>
+        <item>cross-entry references that rely on the xml:id mechanism</item>
+        <item>the language of the dictionary is 'en', so only the form elements are marked for 'sw'</item>
+    </list></p>
     
     <p>Technicalities: <list>
                         <item>schema abuse: defs should not hold translation equivalents; this is
                             why no big deal is made of this dictionary not transforming seamlessly
                             into c5; note that it's all right to do this in e.g. mass-digitized
                             dictionaries that later receive more intricate markup, so this kind of
-                            markup should be considered peripheral, not recommended, but
-                            nevertheless acceptable</item>
+                            markup should be considered peripheral: not recommended, but
+                            nevertheless acceptable; see the last entry for a reformatted example.</item>
     </list>
     </p>
 <!-- ~ OK
@@ -851,6 +901,41 @@
                     <def>awe, amazement, astonishment</def>
                 </sense>
             </entry>
+    
+    <p>Features: <list>
+        <item>no abuse any longer (no def)</item>
+    </list></p>
+    <!-- ~ OK
+    issues: there is no semicolon between cits (before 'surprise')
+-->
+                <entry xml:id="ajabu.x">
+                    <form xml:lang="sw">
+                        <orth>ajabu</orth>
+                    </form>
+                    <xr type="plural-form">
+                        <ref target="#maajabu">maajabu</ref>
+                    </xr>
+                    <gramGrp>
+                        <pos>n</pos>
+                    </gramGrp>
+                    <sense xml:id="ajabu.x.1" n="1">
+                        <cit type="trans">
+                            <quote>wonder</quote>
+                            <quote>marvel</quote>
+                            <quote>miracle</quote>
+                        </cit>
+                        <cit type="trans">
+                            <quote>surprise</quote>
+                        </cit>
+                    </sense>
+                    <sense xml:id="ajabu.x.2" n="2">
+                        <cit type="trans">
+                            <quote>awe</quote>
+                            <quote>amazement</quote>
+                            <quote>astonishment</quote>
+                        </cit>
+                    </sense>
+                </entry>
 </div>
 
 
