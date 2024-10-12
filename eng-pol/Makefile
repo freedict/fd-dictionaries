@@ -1,9 +1,13 @@
 # The line below is really just a fallback and only works if you have got a copy of the tools directory at this location. It's better to set the environment variable in your shell.
 FREEDICT_TOOLS ?= ../../tools
 DISTFILES = AUTHORS ChangeLog COPYING eng-pol.tei INSTALL README Makefile freedict-P5.dtd eng-pol.css freedict-P5.rng freedict-P5.xml letters etc
+#supported_phonetics_lang=2
 
-eng-pol.tei:
-	mkdir -p build/tei
-	ln -s letters build/tei/letters
+eng-pol.tei: build/tei/letters
+	touch engpol.tei
+
+build/tei/letters:
+	mkdir -p $(dir $@)
+	cd $(dir $@) && ln -s ../../letters
 
 include $(FREEDICT_TOOLS)/mk/dicts.mk

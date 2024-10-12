@@ -34,7 +34,7 @@
         </respStmt>
       </titleStmt>
       <editionStmt>
-        <edition>0.2</edition>
+        <edition>0.2.1</edition>
         <!-- description of this particular edition; paste the old one at the bottom of the change log entry for that version  -->
         <respStmt>
           <resp>The first TEI P5 version: converted from an XML-ised SGML version (see changelogs for details).</resp>
@@ -118,6 +118,12 @@
       </tagsDecl>
     </encodingDesc>
     <revisionDesc>
+      <change n="0.2" when="2024-10-12">
+        Distribution-only release: the dictionary's nature of including files
+        made some tools stop assume the dictionary to be empty. This build-only
+        release made it worked for the supported output formats (stardict,
+        dictd, slob).
+      </change>
       <change n="0.2" who="#bansp" when="2010-05-11">
         <list type="bulleted">
           <head>Version 0.2, <date>6 May 2010</date>. Changes by <name>Piotr Bański</name>:</head>
