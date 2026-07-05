@@ -54,7 +54,11 @@ $(ODD_SCHEMA):
 	$(CURL) -fL -o $@ $(ODD_SCHEMA_URL)
 
 validate-odd: $(ODD_SCHEMA) $(ODD)
-	$(JING) $(ODD_SCHEMA) $(ODD)
+	@if [ -n "$(USE_JING)" ]; then \
+		$(JING) $(ODD_SCHEMA) $(ODD); \
+	else \
+		$(XMLLINT) --noout --relaxng $(ODD_SCHEMA) $(ODD); \
+	fi
 
 dependencies: check-dependencies fetch-dependencies
 
