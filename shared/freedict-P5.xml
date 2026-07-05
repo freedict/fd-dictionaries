@@ -46,6 +46,10 @@
               <gi>p</gi> paragraphs.</item>
             <item>Allow multiple licence refs inside the required paragraph
               (<gi>oneOrMore</gi> refs), not just a single one.</item>
+            <item>Restrict <gi>edition</gi> to FreeDict version strings, based
+              on semantic versioning:
+              <code>major.minor</code>, <code>major.minor.patch</code>, and the
+              three-part form with SemVer build metadata.</item>
           </list>
         </item>
         <item><label>Version 0.10, <date when="2011-09-09">9 September 2011</date>, by <name>Piotr Bański</name></label>: Added the <gi>cell</gi>, <gi>row</gi>, and <gi>table</gi> elements, to handle front matter better.</item>
@@ -120,6 +124,14 @@
                 <rng:ref name="tei_model.pLike"/>
               </rng:zeroOrMore>
             </rng:group>
+          </content>
+        </elementSpec>
+
+        <elementSpec module="header" ident="edition" mode="change">
+          <content>
+            <rng:data type="token">
+              <rng:param name="pattern">[0-9]+\.[0-9]+(\.[0-9]+(\+[0-9A-Za-z][0-9A-Za-z\-]*(\.[0-9A-Za-z][0-9A-Za-z\-]*)*)?)?</rng:param>
+            </rng:data>
           </content>
         </elementSpec>
 

@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2026-07-05T17:04:06Z. .This file is released as part of the FreeDict package (https://freedict.org/). It is licensed under the GNU Public License version 2.0 or later.
+DTD generated from ODD source 2026-07-05T17:17:46Z. .This file is released as part of the FreeDict package (https://freedict.org/). It is licensed under the GNU Public License version 2.0 or later.
 TEI Edition: P5 Version 4.11.0. Last updated on 18th February 2026, revision 358d2e48e 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.11.0/
 
@@ -1510,7 +1510,7 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.canonical.attributes; >
 <!--doc:(edition) describes the particularities of one edition of a text. [2.2.2. The Edition Statement] -->
-<!ELEMENT edition %macro.phraseSeq;>
+<!ELEMENT edition  (#PCDATA)>
 <!ATTLIST edition xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST edition
  %tei_att.global.attributes; >

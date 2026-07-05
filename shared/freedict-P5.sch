@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
    <title>ISO Schematron rules</title>
-   <!-- This file generated 2026-07-05T17:04:13Z by 'extract-isosch.xsl'. -->
+   <!-- This file generated 2026-07-05T17:17:54Z by 'extract-isosch.xsl'. -->
    <!-- ********************* -->
    <!-- namespaces, declared: -->
    <!-- ********************* -->
@@ -14,7 +14,7 @@
    <!-- ********************* -->
    <!-- namespaces, implicit: -->
    <!-- ********************* -->
-   <ns prefix="esp-d3e64049" uri="http://www.w3.org/2001/XInclude"/>
+   <ns prefix="esp-d3e64033" uri="http://www.w3.org/2001/XInclude"/>
    <!-- ******************************************************* -->
    <!-- constraints in en, und, mul, zxx, of which there are 53 -->
    <!-- ******************************************************* -->
