@@ -130,7 +130,7 @@
         <elementSpec module="header" ident="edition" mode="change">
           <content>
             <rng:data type="token">
-              <rng:param name="pattern">[0-9]+\.[0-9]+(\.[0-9]+(\+[0-9A-Za-z][0-9A-Za-z\-]*(\.[0-9A-Za-z][0-9A-Za-z\-]*)*)?)?</rng:param>
+              <rng:param name="pattern">[0-9]+\.[0-9]+(\.[0-9]+(\+[0-9A-Za-z][0-9A-Za-z\-]*(\.[0-9A-Za-z][0-9A-Za-z\-]*)*)?|-fd[0-9]+)?</rng:param>
             </rng:data>
           </content>
         </elementSpec>
