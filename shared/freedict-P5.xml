@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- vim: set expandtab sts=2 ts=2 sw=2 tw=88:
+<!-- vim: set expandtab sts=2 ts=2 sw=2 tw=88: -->
 <?oxygen RNGSchema="tei_odds.rng" type="xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -15,6 +15,7 @@
         </respStmt>
       </titleStmt>
       <publicationStmt>
+        <publisher>FreeDict</publisher>
         <availability status="free">
           <p>This file is released as part of the FreeDict package (https://freedict.org/). It is licensed under the GNU Public License version 2.0 or later.</p>
         </availability>
@@ -39,12 +40,12 @@
         <item><label>Version 0.11, <date when="2026-07-05">5th of July 2026</date>,
           by <name>Sebastian Humenda</name></label>:
           <list type="numbered">
-            <item>Require at least one licence paragraph in <gi><availability></gi>.</item>
+            <item>Require at least one licence paragraph in <gi>availability</gi>.</item>
             <item>Allow normal TEI model.p-like content before and after that
               required licence paragraph, instead of only plain-text
-              <gi><p></gi> paragraphs.</item>
+              <gi>p</gi> paragraphs.</item>
             <item>Allow multiple licence refs inside the required paragraph
-              (<gi><oneOrMore></gi> refs), not just a single one.</item>
+              (<gi>oneOrMore</gi> refs), not just a single one.</item>
           </list>
         </item>
         <item><label>Version 0.10, <date when="2011-09-09">9 September 2011</date>, by <name>Piotr Bański</name></label>: Added the <gi>cell</gi>, <gi>row</gi>, and <gi>table</gi> elements, to handle front matter better.</item>
@@ -101,22 +102,24 @@
         <elementSpec module="header" ident="availability" mode="change">
           <content>
             <!-- Make sure that at least one <p> contains one or more <ref target="">...</ref>. This should be the licence name and URL. -->
-            <rng:zeroOrMore>
-              <rng:ref name="tei_model.pLike"/>
-            </rng:zeroOrMore>
-            <rng:element name="p">
-              <rng:text/>
-              <rng:oneOrMore>
-                <rng:element name="ref">
-                  <rng:attribute name="target"/>
-                  <rng:text/>
-                </rng:element>
+            <rng:group>
+              <rng:zeroOrMore>
+                <rng:ref name="tei_model.pLike"/>
+              </rng:zeroOrMore>
+              <rng:element name="p">
                 <rng:text/>
-              </rng:oneOrMore>
-            </rng:element>
-            <rng:zeroOrMore>
-              <rng:ref name="tei_model.pLike"/>
-            </rng:zeroOrMore>
+                <rng:oneOrMore>
+                  <rng:element name="ref">
+                    <rng:attribute name="target"/>
+                    <rng:text/>
+                  </rng:element>
+                  <rng:text/>
+                </rng:oneOrMore>
+              </rng:element>
+              <rng:zeroOrMore>
+                <rng:ref name="tei_model.pLike"/>
+              </rng:zeroOrMore>
+            </rng:group>
           </content>
         </elementSpec>
 
